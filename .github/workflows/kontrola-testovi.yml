@@ -15,29 +15,35 @@ permissions:
 
 jobs:
   testovi:
-    name: PHP ${{ matrix.php }}
+    name: PHP ${{ matrix.php }}, mbstring ${{ matrix.mb }}
     runs-on: ubuntu-latest
     strategy:
       fail-fast: false
       matrix:
         php: ['7.4', '8.3']
+        mb: ['да', 'не']
     steps:
       - uses: actions/checkout@v4
       - uses: shivammathur/setup-php@v2
         with:
           php-version: ${{ matrix.php }}
-          extensions: mbstring
+          extensions: ${{ matrix.mb == 'да' && 'mbstring' || ':mbstring' }}
           coverage: none
-      - name: Верзија PHP-а
-        run: php -v
+      - name: Верзија и проширења
+        run: |
+          php -v
+          php -r 'echo "mbstring: ", extension_loaded("mbstring") ? "да" : "не", "\n";'
+      - name: Проверено да mbstring одговара матрици
+        run: |
+          php -r 'exit((extension_loaded("mbstring") ? "да" : "не") === "${{ matrix.mb }}" ? 0 : 1);'
       - name: Синтакса
         run: |
-          php -l tools/kontrola/kontrola.php
-          php -l tools/kontrola/tests/run.php
-          php -l tools/kontrola/tests/router.php
+          for f in tools/kontrola/kontrola.php tools/kontrola/tests/run.php tools/kontrola/tests/router.php; do
+            php -l "$f" > out.txt 2>&1 || { echo "::error::$(tr '\n' ' ' < out.txt)"; exit 1; }
+          done
       - name: Јединични тестови
-        run: php tools/kontrola/tests/run.php
-      - name: Јединични тестови без проширења (без mbstring)
-        run: php -n tools/kontrola/tests/run.php
+        run: |
+          php tools/kontrola/tests/run.php > out.txt 2>&1 && cat out.txt || { cat out.txt; echo "::error::$(tail -n 15 out.txt | tr '\n' ' ')"; exit 1; }
       - name: Интеграциони тестови
-        run: bash tools/kontrola/tests/integracija.sh
+        run: |
+          bash tools/kontrola/tests/integracija.sh > out.txt 2>&1 && cat out.txt || { cat out.txt; echo "::error::$(tail -n 15 out.txt | tr '\n' ' ')"; exit 1; }

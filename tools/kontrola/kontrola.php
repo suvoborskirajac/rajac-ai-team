@@ -82,6 +82,12 @@ function main(): void
     header('X-Robots-Tag: noindex, nofollow');
     header('Cache-Control: no-store');
 
+    foreach (['json_encode', 'preg_match', 'session_start', 'random_bytes'] as $fn) {
+        if (!function_exists($fn)) {
+            page('Недостаје PHP проширење', '<p>На серверу није доступна функција <code>' . h($fn) . '</code>. Јави Claude-у.</p>');
+            return;
+        }
+    }
     if (!auth_ok($_SERVER)) {
         http_response_code(403);
         page('Фолдер није заштићен',
