@@ -43,6 +43,6 @@
 
 ## Тестови
 
-- `php tools/kontrola/tests/run.php` — 80 јединичних тестова, позитивни и негативни пример за сваку проверу
+- `php tools/kontrola/tests/run.php` — 100 јединичних тестова, позитивни и негативни пример за сваку проверу
 - `php -n tools/kontrola/tests/run.php` — исто, без проширења (без mbstring)
 - `bash tools/kontrola/tests/integracija.sh` — 29 тестова целог тока на локалном серверу: одбијање без лозинке, са измишљеним Authorization и Remote-User заглављем и са непримењеним .htaccess; CSRF, резултати ван public_html, преузимање, закључавање, брисање

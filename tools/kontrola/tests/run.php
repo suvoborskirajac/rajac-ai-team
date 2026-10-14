@@ -107,6 +107,29 @@ ok('9- title само у коментару',        $hc2['title'] === '');
 ok('9- празан description',            $hc2['description'] === false);
 ok('9+ два h1',                        $hc2['h1'] === 2);
 
+/* ---------- регресија: друга ChatGPT рецензија ---------- */
+ok('Р1- data-note=\'target="_blank"\' није _blank', count_blank("<a data-note='target=\"_blank\"' href=\"/x\">x</a>") === 0);
+ok('Р1+ прави _blank после лажног',     count_blank("<a data-note='target=\"_blank\"' target=\"_blank\" href=\"/x\">x</a>") === 1);
+ok('Р1- title=\'href="/fake"\' није href', attr("<a title='href=\"/fake\"' href=\"/real/\">x</a>", 'href') === '/real/');
+ok('Р1- лажни href из title у менију',  menu_info('a.html', "<nav><a title='href=\"/\"' href=\"/ptice/\">Птице</a></nav>")['home'] === null);
+ok('Р1  „>“ у вредности атрибута',      image_info('<img alt="a > b" src="https://rajac.rs/x.jpg">') === ['alt_missing' => 0, 'alt_empty' => 0, 'ext' => ['rajac.rs']]);
+ok('Р1  важи прво појављивање',         attr('<a href="/prvi/" href="/drugi/">x</a>', 'href') === '/prvi/');
+ok('Р1  вредност без наводника',        attr('<a href=/ptice/ class=x>x</a>', 'href') === '/ptice/');
+ok('Р1  атрибут без вредности',         attr('<input disabled type="text">', 'disabled') === '' && attr('<input disabled>', 'type') === null);
+ok('Р1  велика слова у називу',         attr('<A HREF="/x/">x</A>', 'href') === '/x/');
+ok('Р2- @import споља није слика',      image_info('<style>@import url("https://cdn.example.com/lib.css");</style>')['ext'] === []);
+ok('Р2- @font-face споља није слика',   image_info('<style>@font-face{font-family:X;src:url(https://fonts.example.com/f.woff2)}</style>')['ext'] === []);
+ok('Р2- CSS коментар није слика',       image_info('<style>/* background:url(https://rajac.rs/x.jpg) */</style>')['ext'] === []);
+ok('Р2+ позадина поред @import',        image_info('<style>@import url(https://cdn.example.com/a.css);.h{background:#000 url(https://rajac.rs/h.jpg) no-repeat}</style>')['ext'] === ['rajac.rs']);
+ok('Р2+ border-image и list-style',     image_info('<style>ul{list-style-image:url(https://a.org/d.png)}.b{border-image:url(https://b.org/e.png) 30}</style>')['ext'] === ['a.org', 'b.org']);
+$pg = '<html><head><title>Rajac test page</title><meta name="description" content="Opis"></head><body><h1>Мишар</h1><p>Текст о мишару.</p></body></html>';
+ok('Р3- <title> није видљив текст',     visible_text($pg) === 'Мишар Текст о мишару.');
+ok('Р3- латиница из <title> се не броји', latin_words($pg) === []);
+ok('Р3- мешано у <title> није у тексту', mixed_words(visible_text('<html><head><title>Сoко</title></head><body><p>соко</p></body></html>')) === []);
+ok('Р3  страница без <body>, само <head>', visible_text('<head><title>Rajac</title></head><p>Текст</p>') === 'Текст');
+ok('Р3  наслов се и даље чита за title проверу', head_checks($pg)['title'] === 'Rajac test page');
+ok('Р3  текст линка у менију и даље постоји', plain('<a href="/">ПИО <b>„Рајац“</b></a>') === 'ПИО „Рајац“');
+
 /* ---------- безбедност: заштита фолдера ---------- */
 ok('А+ REMOTE_USER од сервера',         auth_ok(['REMOTE_USER' => 'zoran']) === true);
 ok('А+ REDIRECT_REMOTE_USER',           auth_ok(['REDIRECT_REMOTE_USER' => 'zoran']) === true);

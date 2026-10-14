@@ -65,6 +65,9 @@ const ALLOW_LATIN = [
 /* Линк <a> није на списку: суседни линкови у менију су засебне речи, иако између њих нема размака. */
 const INLINE_TAGS = 'abbr|b|bdi|bdo|cite|code|data|dfn|em|font|i|kbd|mark|q|s|samp|small|span|strong|sub|sup|time|u|var|wbr';
 
+/* Тело ознаке: наводници се прате, па ни „>“ ни назив атрибута у вредности не варају анализу. */
+const TAG_BODY = '(?:[^>"\']|"[^"]*"|\'[^\']*\')*';
+
 if (!defined('KONTROLA_TEST')) {
     main();
 }
@@ -271,20 +274,35 @@ function strip_code(string $html): string
 /** Видљив текст: inline ознаке не прекидају реч, остале ознаке дају размак. */
 function visible_text(string $html, string $dropTags = ''): string
 {
-    $s = strip_code($html);
+    $s = body_of(strip_code($html));
     if ($dropTags !== '') {
-        $s = (string)preg_replace('~<(' . $dropTags . ')\b[^>]*>.*?</\1\s*>~is', ' ', $s);
+        $s = (string)preg_replace('~<(' . $dropTags . ')\b' . TAG_BODY . '>.*?</\1\s*>~is', ' ', $s);
     }
-    $s = (string)preg_replace('~</?(?:' . INLINE_TAGS . ')\b[^>]*>~i', '', $s);
-    $s = (string)preg_replace('~<[^>]*>~', ' ', $s);
+    $s = (string)preg_replace('~</?(?:' . INLINE_TAGS . ')\b' . TAG_BODY . '>~i', '', $s);
+    $s = (string)preg_replace('~</?[a-z][a-z0-9:-]*\b' . TAG_BODY . '>|<!' . TAG_BODY . '>~i', ' ', $s);
     $s = html_entity_decode($s, ENT_QUOTES | ENT_HTML5, 'UTF-8');
     return tr((string)preg_replace('~\s+~u', ' ', $s));
+}
+
+/** Садржај <body> ако постоји; иначе HTML без <head> и <title>. Метаподаци се проверавају одвојено. */
+function body_of(string $html): string
+{
+    if (preg_match('~<body\b' . TAG_BODY . '>~i', $html, $m, PREG_OFFSET_CAPTURE)) {
+        $s = substr($html, (int)$m[0][1] + strlen($m[0][0]));
+        $end = stripos($s, '</body');
+        return $end === false ? $s : substr($s, 0, $end);
+    }
+    $s = (string)preg_replace('~<head\b.*?</head\s*>~is', ' ', $html);
+    return (string)preg_replace('~<title\b.*?</title\s*>~is', ' ', $s);
 }
 
 /** Кратак текст из HTML фрагмента (наслов, текст линка). */
 function plain(string $s): string
 {
-    return visible_text($s);
+    $s = (string)preg_replace('~</?(?:' . INLINE_TAGS . ')\b' . TAG_BODY . '>~i', '', strip_code($s));
+    $s = (string)preg_replace('~</?[a-z][a-z0-9:-]*\b' . TAG_BODY . '>~i', ' ', $s);
+    $s = html_entity_decode($s, ENT_QUOTES | ENT_HTML5, 'UTF-8');
+    return tr((string)preg_replace('~\s+~u', ' ', $s));
 }
 
 /** Речи са и ћириличним и латиничним словима: [реч => број]. */
@@ -328,19 +346,39 @@ function latin_words(string $html): array
 
 /* ============ АТРИБУТИ И ОЗНАКЕ ============ */
 
-/** Вредност атрибута из тела једне ознаке; null ако атрибута нема. */
-function attr(string $tag, string $name): ?string
+/**
+ * Атрибути једне ознаке, читани редом: назив, па вредност у наводницима или без њих.
+ * Вредност се прогута цела, па назив унутар туђе вредности (title='href="/x"') није атрибут.
+ * Као у прегледачу, важи прво појављивање истог атрибута.
+ */
+function attrs(string $tag): array
 {
-    if (preg_match('~(?<![\w-])' . preg_quote($name, '~') . '\s*=\s*(?:"([^"]*)"|\'([^\']*)\'|([^\s>]+))~i', $tag, $m)) {
-        return html_entity_decode($m[1] !== '' ? $m[1] : ($m[2] ?? '') . ($m[3] ?? ''), ENT_QUOTES | ENT_HTML5, 'UTF-8');
+    $body = (string)preg_replace('~^<[a-z][a-z0-9:-]*~i', '', $tag);
+    $body = (string)preg_replace('~/?>$~', '', $body);
+    $out = [];
+    if (preg_match_all('~([^\s"\'>/=]+)(?:\s*=\s*(?:"([^"]*)"|\'([^\']*)\'|([^\s"\'=<>`]+)))?~', $body, $m, PREG_SET_ORDER)) {
+        foreach ($m as $a) {
+            $name = strtolower($a[1]);
+            if (isset($out[$name])) { continue; }
+            $val = isset($a[2]) && $a[2] !== '' ? $a[2] : (($a[3] ?? '') !== '' ? $a[3] : ($a[4] ?? ''));
+            $out[$name] = html_entity_decode($val, ENT_QUOTES | ENT_HTML5, 'UTF-8');
+        }
     }
-    return null;
+    return $out;
 }
 
-/** Све ознаке датог имена (почетне ознаке). */
+/** Вредност атрибута из једне ознаке; null ако атрибута нема. */
+function attr(string $tag, string $name): ?string
+{
+    $a = attrs($tag);
+    $k = strtolower($name);
+    return array_key_exists($k, $a) ? $a[$k] : null;
+}
+
+/** Све почетне ознаке датог имена (наводници се поштују). */
 function tags(string $html, string $names): array
 {
-    preg_match_all('~<(?:' . $names . ')\b[^>]*>~i', $html, $m);
+    preg_match_all('~<(?:' . $names . ')\b' . TAG_BODY . '>~i', $html, $m);
     return $m[0];
 }
 
@@ -440,7 +478,7 @@ function is_home(?string $p): bool
 /** Главно заглавље: прво <header> или <nav> пре <main>/<h1>; иначе прво уопште. */
 function main_header(string $html): string
 {
-    $s = strip_code($html);
+    $s = body_of(strip_code($html));
     $limit = strlen($s);
     if (preg_match('~<(?:main|h1)\b~i', $s, $m, PREG_OFFSET_CAPTURE)) { $limit = (int)$m[0][1]; }
     if (!preg_match_all('~<(header|nav)\b.*?</\1\s*>~is', $s, $all, PREG_OFFSET_CAPTURE)) { return ''; }
@@ -453,7 +491,7 @@ function main_header(string $html): string
 function menu_info(string $fromRel, string $block): array
 {
     $items = []; $home = null;
-    if (preg_match_all('~<a\b([^>]*)>(.*?)</a\s*>~is', $block, $as, PREG_SET_ORDER)) {
+    if (preg_match_all('~<a\b(' . TAG_BODY . ')>(.*?)</a\s*>~is', $block, $as, PREG_SET_ORDER)) {
         foreach ($as as $a) {
             $label = plain($a[2]);
             $href  = (string)attr('<a ' . $a[1] . '>', 'href');
@@ -521,8 +559,7 @@ function image_info(string $html): array
     foreach (tags($s, 'source') as $t) {
         if (($v = attr($t, 'srcset')) !== null) { $urls = array_merge($urls, srcset_urls($v)); }
     }
-    $css = strip_comments_only($html);
-    if (preg_match_all('~url\(\s*["\']?([^"\')]+)~i', $css, $u)) { $urls = array_merge($urls, $u[1]); }
+    $urls = array_merge($urls, css_image_urls(strip_comments_only($html)));
     $hosts = [];
     foreach ($urls as $url) {
         if (preg_match('~^(?:https?:)?//([^/\s"\']+)~i', tr($url), $hm)) {
@@ -533,6 +570,25 @@ function image_info(string $html): array
         }
     }
     return ['alt_missing' => $missing, 'alt_empty' => $empty, 'ext' => array_keys($hosts)];
+}
+
+/**
+ * Адресе слика из CSS-а: само вредности својстава која приказују слику
+ * (background, border-image, list-style, mask, content, cursor).
+ * @import и @font-face (фонтови, стилови) се прескачу.
+ */
+function css_image_urls(string $css): array
+{
+    $css = (string)preg_replace('~/\*.*?\*/~s', ' ', $css);
+    $css = (string)preg_replace('~@import\b[^;]*;?~i', ' ', $css);
+    $css = (string)preg_replace('~@font-face\s*\{[^}]*\}~i', ' ', $css);
+    $out = [];
+    if (preg_match_all('~(?:^|[;{\s])(?:-webkit-)?(?:background(?:-image)?|border-image(?:-source)?|list-style(?:-image)?|mask(?:-image)?|content|cursor)\s*:\s*([^;}]*)~i', $css, $d)) {
+        foreach ($d[1] as $val) {
+            if (preg_match_all('~url\(\s*["\']?([^"\')]+)~i', $val, $u)) { $out = array_merge($out, $u[1]); }
+        }
+    }
+    return $out;
 }
 
 function srcset_urls(string $v): array

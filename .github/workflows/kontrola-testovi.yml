@@ -1,0 +1,43 @@
+name: Тестови контролне скрипте
+
+on:
+  pull_request:
+    paths:
+      - 'tools/kontrola/**'
+      - '.github/workflows/kontrola-testovi.yml'
+  push:
+    branches: [main]
+    paths:
+      - 'tools/kontrola/**'
+
+permissions:
+  contents: read
+
+jobs:
+  testovi:
+    name: PHP ${{ matrix.php }}
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        php: ['7.4', '8.3']
+    steps:
+      - uses: actions/checkout@v4
+      - uses: shivammathur/setup-php@v2
+        with:
+          php-version: ${{ matrix.php }}
+          extensions: mbstring
+          coverage: none
+      - name: Верзија PHP-а
+        run: php -v
+      - name: Синтакса
+        run: |
+          php -l tools/kontrola/kontrola.php
+          php -l tools/kontrola/tests/run.php
+          php -l tools/kontrola/tests/router.php
+      - name: Јединични тестови
+        run: php tools/kontrola/tests/run.php
+      - name: Јединични тестови без проширења (без mbstring)
+        run: php -n tools/kontrola/tests/run.php
+      - name: Интеграциони тестови
+        run: bash tools/kontrola/tests/integracija.sh
