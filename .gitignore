@@ -1,0 +1,43 @@
+# Тајне и поверљиви подаци — никад на GitHub
+.env
+*.env
+*config*.php.bak
+wp-config.php
+*.key
+*.pem
+*token*
+*password*
+*lozink*
+
+# Базе и подаци
+*.sqlite
+*.sqlite3
+*.db
+*.xlsx
+*.csv.gz
+
+# Резервне копије и архиве
+*.zip
+*.tar
+*.tar.gz
+*.bak
+*.bak-*
+backup/
+backups/
+_arhiva/
+
+# РИС и генерисани излази
+site/ris/
+site/baza/
+site/kopindeksi/output/
+site/monitoring-izvestaji/
+
+# Велике медијске датотеке
+*.mp4
+*.mov
+*.wav
+*.mp3
+
+# Систем
+.DS_Store
+Thumbs.db
