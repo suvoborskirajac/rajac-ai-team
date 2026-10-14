@@ -79,13 +79,15 @@ function main(): void
     header('X-Robots-Tag: noindex, nofollow');
     header('Cache-Control: no-store');
 
-    if (!auth_ok(__DIR__, $_SERVER)) {
+    if (!auth_ok($_SERVER)) {
         http_response_code(403);
         page('Фолдер није заштићен',
             '<p>Скрипта ради само ако је фолдер <code>public_html/kontrola/</code> заштићен лозинком.</p>'
             . '<p>У cPanel-у отвори <b>Directory Privacy</b>, изабери <code>public_html/kontrola</code>, '
             . 'укључи <b>Password protect this directory</b>, сачувај и додај корисника са лозинком. '
-            . 'Затим поново отвори ову страницу.</p>');
+            . 'Затим поново отвори ову страницу.</p>'
+            . '<p>Ако је лозинка већ укључена, а ова порука се и даље појављује, сервер скрипти не прослеђује '
+            . 'потврђеног корисника. Тада јави Claude-у — скрипта намерно не ради без те потврде.</p>');
         return;
     }
 
@@ -203,14 +205,20 @@ function main(): void
     }
 }
 
-/** Скрипта сме да ради само иза лозинке (Basic Auth) на свом фолдеру. */
-function auth_ok(string $dir, array $server): bool
+/**
+ * Скрипта ради само ако је веб-сервер СТВАРНО проверио лозинку.
+ * Верује се искључиво REMOTE_USER (и REDIRECT_REMOTE_USER после унутрашњег
+ * преусмерења): то поставља сервер тек после успешне Basic провере, а
+ * посетилац га не може послати заглављем. PHP_AUTH_USER се НЕ узима у обзир —
+ * PHP га попуњава из заглавља Authorization које посетилац може да измисли.
+ * Постојање .htaccess фајла није доказ ни за шта. У сумњи — одбиј.
+ */
+function auth_ok(array $server): bool
 {
-    foreach (['REMOTE_USER', 'PHP_AUTH_USER', 'REDIRECT_REMOTE_USER', 'AUTH_USER'] as $k) {
-        if (!empty($server[$k])) { return true; }
+    foreach (['REMOTE_USER', 'REDIRECT_REMOTE_USER'] as $k) {
+        if (isset($server[$k]) && is_string($server[$k]) && tr($server[$k]) !== '') { return true; }
     }
-    $ht = is_file($dir . '/.htaccess') ? (string)@file_get_contents($dir . '/.htaccess') : '';
-    return (bool)preg_match('~^\s*AuthType\s+Basic~mi', $ht) && (bool)preg_match('~^\s*Require\s+valid-user~mi', $ht);
+    return false;
 }
 
 /* ============ ПОПИС ФАЈЛОВА ============ */

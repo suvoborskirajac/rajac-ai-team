@@ -23,18 +23,28 @@ cat > "$PUB/ptice/buteo-buteo/index.html" <<'EOF'
 EOF
 echo '<p>Тајно Сoко</p>' > "$PUB/ris/a.html"
 
-php -S 127.0.0.1:$PORT -t "$PUB" >/dev/null 2>&1 &
-SRV=$!
+ROUTER="$HERE/tests/router.php"
+start_srv() {  # $1 = корисник кога је "сервер" потврдио, или празно
+  [ -n "${SRV:-}" ] && { kill $SRV 2>/dev/null; wait $SRV 2>/dev/null; }
+  KONTROLA_TEST_KORISNIK="$1" php -S 127.0.0.1:$PORT -t "$PUB" "$ROUTER" >/dev/null 2>&1 &
+  SRV=$!; sleep 1
+}
 trap 'kill $SRV 2>/dev/null; wait $SRV 2>/dev/null; rm -rf "$W"' EXIT
-sleep 1
 
-# 1. без лозинке на фолдеру — одбија
-CODE=$(curl -s -o /dev/null -w '%{http_code}' "$URL")
-ok "без заштите фолдера одговор 403" '[ "$CODE" = "403" ]'
-ok "без заштите се ништа не прави ван public_html" '[ ! -d "$W/kontrola-podaci" ]'
-
-# 2. заштита као у cPanel Directory Privacy
+# 1. сервер НЕ проверава лозинку (као хостинг без заштите или са игнорисаним .htaccess)
+start_srv ""
+c() { curl -s -o /dev/null -w '%{http_code}' "$@"; }
+ok "без лозинке: 403"                         '[ "$(c "$URL")" = "403" ]'
+ok "измишљено Authorization заглавље: 403"    '[ "$(c -u napadac:lozinka "$URL")" = "403" ]'
+ok "измишљено Remote-User заглавље: 403"      '[ "$(c -H "Remote-User: zoran" "$URL")" = "403" ]'
 printf 'AuthType Basic\nAuthName "kontrola"\nAuthUserFile "/home/x/.htpasswds/public_html/kontrola/passwd"\nrequire valid-user\n' > "$PUB/kontrola/.htaccess"
+ok ".htaccess постоји, сервер га не примењује: 403" '[ "$(c -u napadac:lozinka "$URL")" = "403" ]'
+ok "POST без лозинке: 403"                    '[ "$(c -d "akcija=pokreni&csrf=x" "$URL")" = "403" ]'
+ok "преузимање без лозинке: 403"              '[ "$(c "$URL?preuzmi=kontrola.json")" = "403" ]'
+ok "без лозинке се ништа не прави ван public_html" '[ ! -d "$W/kontrola-podaci" ]'
+
+# 2. сервер ЈЕСТЕ проверио лозинку (као cPanel Directory Privacy)
+start_srv "zoran"
 J="$W/kolacic"
 PAGE=$(curl -s -c "$J" -b "$J" "$URL")
 CSRF=$(printf '%s' "$PAGE" | grep -o 'name="csrf" value="[0-9a-f]*"' | head -1 | sed 's/.*value="//;s/"//')

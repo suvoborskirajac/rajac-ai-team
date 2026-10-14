@@ -108,15 +108,14 @@ ok('9- празан description',            $hc2['description'] === false);
 ok('9+ два h1',                        $hc2['h1'] === 2);
 
 /* ---------- безбедност: заштита фолдера ---------- */
-$tmp = sys_get_temp_dir() . '/kontrola-auth-' . getmypid();
-@mkdir($tmp);
-ok('А+ REMOTE_USER',                   auth_ok($tmp, ['REMOTE_USER' => 'zoran']) === true);
-ok('А- без лозинке и без .htaccess',   auth_ok($tmp, []) === false);
-file_put_contents($tmp . '/.htaccess', "AuthType Basic\nAuthName \"x\"\nAuthUserFile \"/home/x/.htpasswds/public_html/kontrola/passwd\"\nrequire valid-user\n");
-ok('А+ cPanel Directory Privacy .htaccess', auth_ok($tmp, []) === true);
-file_put_contents($tmp . '/.htaccess', "# AuthType Basic\nOptions -Indexes\n");
-ok('А- закоментарисан AuthType',       auth_ok($tmp, []) === false);
-@unlink($tmp . '/.htaccess'); @rmdir($tmp);
+ok('А+ REMOTE_USER од сервера',         auth_ok(['REMOTE_USER' => 'zoran']) === true);
+ok('А+ REDIRECT_REMOTE_USER',           auth_ok(['REDIRECT_REMOTE_USER' => 'zoran']) === true);
+ok('А- ништа',                          auth_ok([]) === false);
+ok('А- празан REMOTE_USER',             auth_ok(['REMOTE_USER' => '  ']) === false);
+ok('А- само PHP_AUTH_USER (измишљено заглавље)', auth_ok(['PHP_AUTH_USER' => 'napadac', 'PHP_AUTH_PW' => 'x']) === false);
+ok('А- само HTTP_AUTHORIZATION',        auth_ok(['HTTP_AUTHORIZATION' => 'Basic ' . base64_encode('a:b')]) === false);
+ok('А- AUTH_USER није довољан',         auth_ok(['AUTH_USER' => 'x']) === false);
+ok('А- HTTP_REMOTE_USER (заглавље Remote-User)', auth_ok(['HTTP_REMOTE_USER' => 'x']) === false);
 
 /* ---------- провере на пробном сајту (фајлови) ---------- */
 $site = sys_get_temp_dir() . '/kontrola-site-' . getmypid();
