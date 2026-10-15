@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+
+<html lang="sr-Cyrl">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<title>Алати за посетиоце — гљиве Рајца | ПИО Рајац</title>
+<meta content="Практична страница за посетиоце ПИО Рајац: како фотографисати и пријавити налаз гљиве, шта забележити на терену, како заштитити микростаништа и безбедно користити податке без ризичног брања и конзумирања." name="description"/>
+<meta content="no-referrer" name="referrer"/>
+<style>
+:root{
+  --forest:#2d5a27;--forest-dark:#1a3a15;--forest-light:#4a7c43;--nav:#0d1b2a;--blue:#163a58;
+  --cream:#f7f4ef;--warm-white:#fdfcfa;--paper:#fffdf8;--soft:#f2f0eb;--text:#2a2a2a;--muted:#5a5a5a;
+  --border:#d8d0c4;--accent:#8b6914;--gold:#d8b55b;--warn:#b56a1f;--red:#9a2d2d;
+  --tag-bg:#e8f0e6;--tag-border:#a8c4a4;--shadow:0 2px 12px rgba(0,0,0,.08);--shadow-hover:0 6px 24px rgba(0,0,0,.14);
+  --radius:10px;--font:"Cormorant Garamond","EB Garamond",Garamond,"Palatino Linotype","Book Antiqua",Georgia,"Times New Roman",serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--font);font-size:16px;line-height:1.75;color:var(--text);background:var(--warm-white)}
+a{color:inherit;text-decoration:none} img,svg{display:block;max-width:100%}
+.wrap{max-width:1180px;margin:0 auto;padding:0 22px}
+.rajac-ds-nav{background:#0d1b2a;position:sticky;top:0;z-index:50;border-bottom:1px solid rgba(255,255,255,.08)}
+.rajac-ds-nav-inner{max-width:1180px;margin:auto;display:flex;align-items:stretch;min-height:58px;padding:0 18px;gap:0;overflow-x:auto;scrollbar-width:none}
+.rajac-ds-nav-inner::-webkit-scrollbar{display:none}
+.rajac-ds-home{display:flex;align-items:center;gap:9px;padding-right:20px;margin-right:8px;border-right:1px solid rgba(255,255,255,.12);color:#d8b55b!important;font-weight:600;font-size:18px;white-space:nowrap}
+.rajac-ds-nav-item{position:relative;display:flex;align-items:center;gap:7px;padding:0 15px;color:rgba(255,255,255,.72);font-size:16px;font-weight:600;letter-spacing:.045em;text-transform:uppercase;white-space:nowrap}
+.rajac-ds-nav-item:hover{color:#fff;background:rgba(255,255,255,.035)}
+.rajac-ds-nav-item.rajac-ds-active{color:#d8b55b}.rajac-ds-nav-item.rajac-ds-active:after{content:"";position:absolute;left:15px;right:15px;bottom:8px;height:2px;border-radius:2px;background:#d8b55b}
+.rajac-ds-icon{font-size:15px}.rajac-ds-current{text-transform:none;letter-spacing:.02em;font-size:14px}
+.hero{position:relative;overflow:hidden;background:radial-gradient(circle at 18% 12%,rgba(200,168,75,.16),transparent 24%),linear-gradient(180deg,#fffdf8 0%,#f8f4ed 100%);border-bottom:1px solid var(--border)}
+.topline{display:flex;align-items:center;justify-content:space-between;gap:18px;padding:22px 0 8px;color:var(--muted);font-size:15px;letter-spacing:.08em;text-transform:uppercase;font-weight:600}.topline a{color:var(--forest);font-weight:700}
+.hero-grid{position:relative;z-index:2;display:grid;grid-template-columns:minmax(0,.94fr) minmax(420px,1.06fr);gap:46px;align-items:end;padding:40px 0 82px}
+.badge{display:inline-flex;align-items:center;gap:10px;width:max-content;padding:8px 14px;border-radius:999px;background:var(--tag-bg);border:1px solid var(--tag-border);color:var(--forest);font-size:15px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;margin-bottom:22px}
+h1{font-weight:300;letter-spacing:-.02em;line-height:.98;font-size:clamp(2.15rem,3.75vw,3.55rem);max-width:760px;margin:0 0 22px;color:var(--forest-dark)}
+.hero-lead{max-width:760px;color:var(--muted);font-size:clamp(1.12rem,1.55vw,1.34rem);line-height:1.48;margin:0}.hero-lead strong{color:var(--forest-dark)}
+.hero-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:30px;max-width:760px}.stat{background:var(--soft);border:1px solid var(--border);border-radius:var(--radius);padding:15px 14px;box-shadow:var(--shadow)}.stat b{display:block;font-size:34px;line-height:1;color:var(--forest);font-weight:300}.stat span{display:block;color:var(--muted);font-size:16px;line-height:1.35;margin-top:6px}
+.hero-visual{position:relative;min-height:430px;border-radius:var(--radius);overflow:hidden;border:1px solid var(--border);box-shadow:var(--shadow);background:#f2f0eb;isolation:isolate;align-self:end}.hero-visual svg{width:100%;height:100%;min-height:430px}.hero-visual-badge{position:absolute;left:22px;bottom:22px;z-index:2;max-width:min(500px,calc(100% - 44px));padding:15px 17px;border-radius:var(--radius);background:rgba(26,58,21,.84);border:1px solid rgba(255,255,255,.18);box-shadow:0 18px 48px rgba(0,0,0,.18)}.hero-visual-badge strong{display:block;color:#f2d785;font-size:18px;line-height:1.2;font-weight:700;letter-spacing:.04em;text-transform:uppercase}.hero-visual-badge span{display:block;margin-top:5px;color:rgba(255,255,255,.86);font-size:17px;line-height:1.35}
+.quick-nav{position:relative;z-index:3;margin-top:-38px;margin-bottom:42px}.quick-nav-inner{background:rgba(255,255,255,.94);border:1px solid var(--border);border-radius:var(--radius);padding:12px;box-shadow:var(--shadow);display:grid;grid-template-columns:repeat(6,1fr);gap:10px;backdrop-filter:blur(10px)}.quick-nav a{border-radius:8px;padding:10px 9px;background:#fff;border:1px solid var(--border);text-align:center;font-size:16px;font-weight:700;color:var(--forest)}.quick-nav a:hover{background:var(--tag-bg);border-color:var(--tag-border)}
+.section{padding:34px 0}.section-head{margin-bottom:20px}.kicker{display:inline-flex;gap:9px;align-items:center;color:var(--accent);font-size:15px;font-weight:700;letter-spacing:.13em;text-transform:uppercase;margin-bottom:9px}h2{font-weight:300;font-size:clamp(2.1rem,4.2vw,3.45rem);line-height:1.02;letter-spacing:-.02em;color:var(--forest-dark);margin:0}.section-intro{max-width:930px;color:var(--muted);font-size:21px;line-height:1.52;margin:12px 0 0}
+.card{background:rgba(255,255,255,.88);border:1px solid var(--border);border-radius:var(--radius);box-shadow:var(--shadow)}.grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.grid-2{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+.rule-card{padding:23px;min-height:222px;position:relative;overflow:hidden}.rule-card:before{content:"";position:absolute;right:-45px;top:-45px;width:120px;height:120px;border-radius:50%;background:rgba(200,168,75,.12)}.rule-icon{font-size:34px;margin-bottom:12px}.rule-card h3{font-weight:600;font-size:1.5rem;line-height:1.15;margin:0 0 10px;color:var(--forest-dark)}.rule-card p{color:#3f4d5f;font-size:19px;line-height:1.45;margin:0}
+.highlight{margin:26px 0;padding:20px 22px;border-radius:var(--radius);background:linear-gradient(135deg,var(--forest-dark),#163a58);color:#fff;box-shadow:var(--shadow)}.highlight strong{color:#f2d785}.green-box{background:var(--tag-bg);border:1px solid var(--tag-border);border-left:4px solid var(--forest);border-radius:var(--radius);padding:16px 20px;margin-top:14px;font-size:18px;line-height:1.62;color:var(--forest-dark)}.warning-box{background:#fff8e6;border:1px solid #e8cc88;border-left:4px solid var(--accent);border-radius:var(--radius);padding:16px 20px;margin-top:14px;font-size:18px;line-height:1.62}.warning-box strong{color:var(--accent)}.danger-box{background:#fff1ef;border:1px solid #e7b2aa;border-left:4px solid var(--red);border-radius:var(--radius);padding:16px 20px;margin-top:14px;font-size:18px;line-height:1.62}.danger-box strong{color:var(--red)}
+.panel{padding:23px}.panel h3{font-size:1.45rem;color:var(--forest-dark);font-weight:600;margin:0 0 12px}.panel ul{list-style:none;margin:0;padding:0;display:grid;gap:10px}.panel li{position:relative;padding:12px 13px 12px 34px;border:1px solid #eadfce;background:#fffaf1;border-radius:var(--radius);color:#4f5f72;font-size:18px;line-height:1.42}.panel li:before{content:"→";position:absolute;left:13px;top:12px;color:var(--accent);font-weight:700}.ok-list li:before{content:"✓";color:var(--forest)}.no-list li:before{content:"✗";color:var(--red)}
+.finder{display:grid;grid-template-columns:330px 1fr;gap:18px;align-items:start}.finder-tabs{display:grid;gap:8px}.finder-btn{border:1px solid var(--border);background:#fff;border-radius:var(--radius);padding:13px 14px;text-align:left;font-family:var(--font);font-size:18px;color:var(--forest-dark);font-weight:700;cursor:pointer;box-shadow:var(--shadow)}.finder-btn.is-active{background:var(--tag-bg);border-color:var(--tag-border)}.finder-panel{padding:23px;min-height:390px}.finder-panel h3{font-size:1.7rem;line-height:1.1;color:var(--forest-dark);margin-bottom:12px}.finder-panel p{font-size:19px;color:#3f4d5f;line-height:1.48;margin-bottom:12px}.finder-panel .meta{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-top:12px}.meta div{background:#fffaf1;border:1px solid #eadfce;border-radius:8px;padding:10px 12px;font-size:17px}.finder-svg{margin-top:16px;background:#fffdf8;border:1px solid #eadfce;border-radius:10px;overflow:hidden}
+.quiz{display:grid;grid-template-columns:1fr .82fr;gap:18px;align-items:start}.quiz-card{padding:24px}.quiz-card h3{font-size:1.8rem;color:var(--forest-dark);margin-bottom:10px}.quiz-card p{font-size:19px;color:#3f4d5f;line-height:1.48}.quiz-options{display:grid;gap:10px;margin-top:15px}.quiz-options button{border:1px solid var(--border);background:#fffaf1;border-radius:8px;padding:11px 12px;text-align:left;font-family:var(--font);font-size:18px;color:var(--forest-dark);font-weight:700;cursor:pointer}.quiz-options button:hover{background:var(--tag-bg)}.quiz-options button.correct{background:#e8f0e6;border-color:#2d5a27}.quiz-options button.wrong{background:#fff1ef;border-color:#9a2d2d}.quiz-visual{background:#fff;border:1px solid var(--border);border-radius:var(--radius);box-shadow:var(--shadow);overflow:hidden}.quiz-visual svg{width:100%;height:auto}.quiz-controls{display:flex;gap:10px;flex-wrap:wrap;margin-top:16px}.small-btn{border:0;border-radius:999px;background:var(--forest);color:#fff;padding:10px 14px;font-family:var(--font);font-size:17px;font-weight:700;cursor:pointer}.small-btn.light{background:#fff;border:1px solid var(--border);color:var(--forest-dark)}
+.season-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}.season-card{padding:20px;min-height:190px}.season-card h3{font-size:1.5rem;color:var(--forest-dark);margin-bottom:8px}.season-card p{font-size:18px;color:#4f5f72;line-height:1.45}.season-months{display:flex;flex-wrap:wrap;gap:5px;margin-top:12px}.month{display:inline-flex;align-items:center;justify-content:center;min-width:30px;height:28px;border-radius:8px;border:1px solid #eadfce;background:#fffaf1;font-size:13px;color:#6b665c}.month.on{background:var(--tag-bg);border-color:var(--tag-border);color:var(--forest-dark);font-weight:700}.map-policy{display:grid;grid-template-columns:1fr 1fr;gap:18px}.map-card{padding:23px}.map-card h3{font-size:1.55rem;color:var(--forest-dark);margin-bottom:10px}.map-card p{font-size:19px;color:#3f4d5f;line-height:1.48}.trofo{background:#fff;border:1px solid var(--border);border-radius:var(--radius);box-shadow:var(--shadow);overflow:hidden}.trofo svg{width:100%;height:auto}.table-card{overflow:hidden}.table-card table{width:100%;border-collapse:collapse;background:#fffdf8}.table-card th,.table-card td{border-bottom:1px solid var(--border);padding:13px 15px;text-align:left;font-size:18px;vertical-align:top}.table-card th{background:#f2f0eb;color:var(--forest-dark);font-weight:700}.table-card td{color:#4f5f72}.guide-links{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:20px}.guide-link{display:flex;align-items:center;gap:12px;padding:16px;border-radius:var(--radius);background:#fff;border:1px solid var(--border);box-shadow:var(--shadow)}.guide-link:hover{box-shadow:var(--shadow-hover);transform:translateY(-1px)}.guide-link .ico{font-size:26px}.guide-link strong{display:block;color:var(--forest-dark);font-size:18px;line-height:1.1}.guide-link span span{display:block;color:var(--muted);font-size:15px;line-height:1.25;margin-top:3px}.guide-link .arr{margin-left:auto;color:var(--accent)}
+.footer-nav{padding:34px 0 54px}.footer-box{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:18px;padding:18px;border:1px solid var(--border);border-radius:var(--radius);background:#fffdf8;box-shadow:var(--shadow)}.footer-box a{font-size:17px;color:var(--forest-dark);font-weight:700}.footer-box a:last-child{text-align:right}.footer-box .primary{background:var(--forest);color:#fff;padding:10px 15px;border-radius:999px;text-align:center}.site-footer{padding:25px 20px;text-align:center;background:#0d1b2a;color:rgba(255,255,255,.75);font-size:15px}
+@media(max-width:1040px){.hero-grid{grid-template-columns:1fr;gap:28px;padding-bottom:70px}.hero-visual{min-height:360px}.quick-nav-inner{grid-template-columns:repeat(3,1fr)}.grid-3,.season-grid{grid-template-columns:repeat(2,1fr)}.finder,.quiz,.map-policy{grid-template-columns:1fr}.guide-links{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:700px){body{font-size:15px}.wrap{padding:0 16px}.rajac-ds-nav-inner{padding:0 10px}.rajac-ds-nav-item{font-size:14px;padding:0 11px}.topline{flex-direction:column;align-items:flex-start}.hero-grid{padding:26px 0 56px}.hero-stats,.grid-3,.grid-2,.season-grid,.guide-links{grid-template-columns:1fr}.quick-nav{margin-top:-28px}.quick-nav-inner{grid-template-columns:repeat(2,1fr)}.rule-card,.panel,.finder-panel,.quiz-card,.map-card{padding:18px}.finder-panel .meta{grid-template-columns:1fr}.footer-box{grid-template-columns:1fr;text-align:center}.footer-box a:last-child{text-align:center}.table-card{overflow-x:auto}.badge{white-space:normal;width:auto}.hero-visual-badge{left:14px;right:14px;bottom:14px;max-width:none}}
+</style>
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"WebPage",
+  "name":"Алати за посетиоце — гљиве Рајца",
+  "description":"Фотографисање, пријава налаза, интерактивни водич, квиз, сезонски календар и правила безбедног понашања према гљивама и њиховим стаништима у ПИО Рајац.",
+  "inLanguage":"sr-Cyrl",
+  "about":["гљиве","фотографисање гљива","пријава налаза","микориза","шумска станишта","ПИО Рајац"],
+  "isPartOf":{"@type":"WebSite","name":"ПИО Рајац","url":"https://piorajac.rs/"},
+  "breadcrumb":{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"ПИО Рајац","item":"https://piorajac.rs/"},{"@type":"ListItem","position":2,"name":"Гљиве","item":"https://piorajac.rs/gljive/"},{"@type":"ListItem","position":3,"name":"Алати за посетиоце"}]}
+}
+</script>
+<style id="glj-fix">
+/* === Рајац · поправке приказа (glj-fix) === */
+/* Херо слика: шира и ЦЕЛА видљива, без сечења */
+.glj-hdr-img{text-align:center !important;margin:0 0 20px !important}
+.glj-hdr-img img{
+  width:100% !important;
+  max-width:540px !important;
+  height:520px !important;
+  max-height:520px !important;
+  object-fit:cover !important;
+  object-position:center center !important;
+  border-radius:10px !important;
+}
+/* Галеријске слике: ЦЕЛЕ видљиве, поравнате по висини, без сечења и без
+   беж трака. Трик: фиксирамо ВИСИНУ, а ширина прати саму слику
+   (широке → шира ћелија, усправне → ужа ћелија). */
+  display:flex !important;
+  flex-wrap:wrap !important;
+  justify-content:center !important;
+  align-items:flex-start !important;
+  gap:16px !important;
+  grid-template-columns:none !important;
+}
+  flex:0 0 auto !important;
+  max-width:100% !important;
+}
+  width:auto !important;
+  height:340px !important;
+  max-width:100% !important;
+  object-fit:contain !important;
+}
+/* Читљивија најситнија слова */
+.glj-hdr-crumb{font-size:12.5px !important}
+.glj-fact-l{font-size:12.5px !important}
+.glj-month{font-size:12.5px !important}
+.glj-rule-num{font-size:13px !important}
+/* На уском екрану слике мало ниже да стану */
+@media (max-width:600px){
+  .glj-hdr-img img{max-height:380px !important}
+}
+</style>
+<style id="rajac-ds-menu-static-css">
+:root{--rajac-nav:#0d1b2a;--rajac-gold:#d8b55b;--rajac-nav-text:rgba(255,255,255,.72)}
+.rajac-ds-nav{background:var(--rajac-nav);position:sticky;top:0;z-index:999999;border-bottom:1px solid rgba(255,255,255,.08);font-family:"Cormorant Garamond","EB Garamond",Garamond,"Palatino Linotype","Book Antiqua",Georgia,"Times New Roman",serif!important}
+body.admin-bar .rajac-ds-nav{top:32px}.rajac-ds-nav *{box-sizing:border-box}.rajac-ds-nav-inner{max-width:1180px;margin:0 auto;padding:0 18px;display:flex;align-items:stretch;min-height:56px;gap:0;overflow-x:auto;scrollbar-width:none}.rajac-ds-nav-inner::-webkit-scrollbar{display:none}.rajac-ds-home{display:flex;align-items:center;gap:9px;padding-right:20px;margin-right:8px;border-right:1px solid rgba(255,255,255,.12);flex-shrink:0;color:var(--rajac-gold)!important;text-decoration:none!important;font-weight:600;font-size:16px;letter-spacing:.03em}.rajac-ds-home-mark{width:18px;height:18px;display:inline-grid;place-items:center;color:var(--rajac-gold)}.rajac-ds-nav-item{position:relative;display:flex;align-items:center;gap:7px;padding:0 15px;color:var(--rajac-nav-text)!important;font-size:15px;font-weight:600;letter-spacing:.045em;text-transform:uppercase;white-space:nowrap;text-decoration:none!important}.rajac-ds-nav-item:hover{color:rgba(255,255,255,.94)!important;background:rgba(255,255,255,.035)}.rajac-ds-icon{font-size:15px;line-height:1}.rajac-ds-nav-item.rajac-ds-active{color:var(--rajac-gold)!important}.rajac-ds-nav-item.rajac-ds-active:after{content:"";position:absolute;left:15px;right:15px;bottom:8px;height:2px;border-radius:2px;background:var(--rajac-gold)}.rajac-ds-nav-trofo{color:#c8a24e!important}.rajac-ds-nav-trofo:hover{color:#f0cb78!important}.ins-topnav-wrap,.sisari-topnav-wrap,.glj-topnav-wrap,.site-header{display:none!important;height:0!important;min-height:0!important;max-height:0!important;overflow:hidden!important;visibility:hidden!important}@media(max-width:720px){.rajac-ds-nav-inner{padding:0 12px}.rajac-ds-home{padding-right:14px}.rajac-ds-nav-item{font-size:13px;padding:0 12px}.rajac-ds-nav-item.rajac-ds-active:after{left:12px;right:12px}}
+</style>
+<style id="glj-mobile-tablet-polish-2805">
+/* Мобилни и таблет приказ — фино поравнање менија и картица */
+@media (max-width: 820px){
+  .rajac-ds-nav{overflow:hidden!important;}
+  .rajac-ds-nav-inner{
+    width:100%!important;
+    max-width:none!important;
+    min-height:54px!important;
+    padding-left:calc(50vw - 58px)!important;
+    padding-right:calc(50vw - 58px)!important;
+    justify-content:flex-start!important;
+    overflow-x:auto!important;
+    scroll-snap-type:x proximity;
+    -webkit-overflow-scrolling:touch;
+  }
+  .rajac-ds-home,
+  .rajac-ds-nav-item{flex:0 0 auto!important;scroll-snap-align:center;}
+  .rajac-ds-nav-item{min-height:54px!important;font-size:13px!important;padding:0 13px!important;}
+  .rajac-ds-home{min-height:54px!important;font-size:14px!important;}
+  .rajac-ds-nav-item.rajac-ds-active{
+    color:var(--rajac-gold)!important;
+    background:rgba(255,255,255,.04)!important;
+  }
+  .rajac-ds-nav-item.rajac-ds-active:after{left:13px!important;right:13px!important;bottom:7px!important;display:block!important;}
+}
+@media (max-width: 480px){
+  .rajac-ds-nav-inner{padding-left:calc(50vw - 48px)!important;padding-right:calc(50vw - 48px)!important;}
+  .rajac-ds-nav-item{font-size:12px!important;padding:0 11px!important;letter-spacing:.035em!important;}
+  .rajac-ds-home{font-size:13px!important;padding-right:12px!important;margin-right:5px!important;}
+}
+@media (min-width: 769px) and (max-width: 1050px){
+  .glj-hdr-inner,.glj-main-wrap{padding-left:22px!important;padding-right:22px!important;}
+  .glj-hdr-grid{gap:32px!important;}
+  .glj-section{padding:32px 34px!important;}
+  .glj-info-grid{padding-left:22px!important;padding-right:22px!important;}
+}
+@media (max-width: 768px){
+  .glj-hdr-img img{height:360px!important;max-height:360px!important;object-fit:cover!important;object-position:center center!important;}
+  .glj-photo-credit{margin:10px 14px 0!important;font-size:11.5px!important;line-height:1.45!important;}
+  .glj-section{content-visibility:visible!important;contain-intrinsic-size:auto!important;}
+  .glj-warn-inline{margin-left:0!important;margin-right:0!important;border-radius:0!important;}
+  .glj-bottom-nav{padding-left:16px!important;padding-right:16px!important;}
+}
+</style>
+<style id="glj-warn-full-width-2805">
+/* Црвено упозорење на десктопу иде до десне ивице главног блока, као доње секције */
+@media (min-width: 1101px){
+  .glj-two > div:first-child .glj-warn-inline{
+    width: calc(100% + 352px) !important;
+    max-width: calc(100% + 352px) !important;
+  }
+}
+@media (max-width: 1100px){
+  .glj-two > div:first-child .glj-warn-inline{
+    width:100% !important;
+    max-width:100% !important;
+  }
+}
+</style>
+<link href="https://piorajac.rs/gljive/alati-za-posetioce-gljive-rajca/" rel="canonical"/>
+<meta content="article" property="og:type"/>
+<meta content="Алати за посетиоце — гљиве Рајца | ПИО Рајац" property="og:title"/>
+<meta content="https://piorajac.rs/gljive/alati-za-posetioce-gljive-rajca/" property="og:url"/>
+
+<style id="glj-hover-credit-css">
+/* Извор фотографије приказује се преко главне слике, само на прелаз мишем. */
+.glj-hdr-img{position:relative !important;display:inline-block !important;max-width:680px !important;vertical-align:top !important;}
+.glj-hdr-img .glj-photo-credit{position:absolute !important;left:12px !important;right:12px !important;bottom:12px !important;margin:0 !important;padding:10px 12px !important;border-radius:10px !important;background:rgba(255,250,240,.96) !important;border:1px solid rgba(201,168,76,.62) !important;box-shadow:0 8px 24px rgba(20,34,18,.18) !important;color:#2e2c22 !important;font-size:12px !important;line-height:1.45 !important;text-align:left !important;opacity:0 !important;visibility:hidden !important;transform:translateY(8px) !important;transition:opacity .18s ease,transform .18s ease,visibility .18s ease !important;pointer-events:none !important;z-index:5 !important;}
+.glj-hdr-img:hover .glj-photo-credit,.glj-hdr-img:focus-within .glj-photo-credit{opacity:1 !important;visibility:visible !important;transform:translateY(0) !important;pointer-events:auto !important;}
+.glj-hdr-img .glj-photo-credit strong{color:#142212 !important;}
+.glj-hdr-img .glj-photo-credit a{color:#5c6b4c !important;text-decoration:underline !important;text-underline-offset:2px !important;pointer-events:auto !important;}
+@media(max-width:768px){.glj-hdr-img .glj-photo-credit{left:10px !important;right:10px !important;bottom:10px !important;font-size:11px !important;max-height:46% !important;overflow:auto !important;}}
+</style>
+<link rel="stylesheet" href="../gljive-responsive.css?v=20260716-v13"></head>
+<body class="rajac-gljive-responsive">
+<nav aria-label="Главни мени ПИО Рајац" class="rajac-ds-nav"><div class="rajac-ds-nav-inner"><a class="rajac-ds-home" href="https://piorajac.rs/"><span aria-hidden="true" class="rajac-ds-home-mark">⊙</span><span>ПИО Рајац</span></a><button class="rajac-gljive-menu-toggle" type="button" aria-expanded="false" aria-label="Отвори мени"><span class="rajac-gljive-menu-icon" aria-hidden="true"></span>МЕНИ</button><a class="rajac-ds-nav-item" href="https://piorajac.rs/biljke/"><span aria-hidden="true" class="rajac-ds-icon">🌿</span><span>БИЉКЕ</span></a><a class="rajac-ds-nav-item" href="https://piorajac.rs/ptice/"><span aria-hidden="true" class="rajac-ds-icon">🦉</span><span>ПТИЦЕ</span></a><a class="rajac-ds-nav-item" href="https://piorajac.rs/insekti/"><span aria-hidden="true" class="rajac-ds-icon">🦋</span><span>ИНСЕКТИ</span></a><a class="rajac-ds-nav-item" href="https://piorajac.rs/sisari/"><span aria-hidden="true" class="rajac-ds-icon">🐾</span><span>СИСАРИ</span></a><a class="rajac-ds-nav-item rajac-ds-active" href="https://piorajac.rs/gljive/"><span aria-hidden="true" class="rajac-ds-icon">🍄</span><span>ГЉИВЕ</span></a><a class="rajac-ds-nav-item rajac-ds-nav-trofo" href="https://piorajac.rs/trofodinamika/"><span aria-hidden="true" class="rajac-ds-icon">🔗</span><span>ТРОФОДИНАМИКА</span></a></div></nav>
+<header class="hero">
+<div class="wrap">
+<div class="topline"><span>ПИО Рајац · посетилачки водич</span><a href="https://piorajac.rs/gljive/">Све гљиве Рајца →</a></div>
+<div class="hero-grid">
+<div>
+<div class="badge">🍄 фотографија · налаз · станиште · безбедност</div>
+<h1>Алати за посетиоце — гљиве Рајца</h1>
+<p class="hero-lead">Гљиве су једна од најлакше уочљивих, али и најризичнијих група за тумачење на терену. Ова страница помаже посетиоцима да направе корисну пријаву налаза, фотографишу без оштећивања станишта и разумеју да је <strong>сваки налаз податак за мониторинг, а не препорука за јело</strong>.</p>
+<div class="hero-stats">
+<div class="stat"><b>6</b><span>кључних кадрова за добру фотографску пријаву</span></div>
+<div class="stat"><b>12</b><span>месеци сезонског праћења плодних тела</span></div>
+<div class="stat"><b>10</b><span>питања у квизу са измешаним одговорима</span></div>
+</div>
+</div>
+<div aria-label="Илустрација гљива, листинца и шумског микростаништа" class="hero-visual">
+<svg aria-label="шумско тло са гљивама" role="img" viewbox="0 0 900 620">
+<defs>
+<lineargradient id="sky" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#efe7d4"></stop><stop offset="1" stop-color="#cdbf98"></stop></lineargradient>
+<lineargradient id="soil" x1="0" x2="1" y1="0" y2="1"><stop offset="0" stop-color="#5b472f"></stop><stop offset="1" stop-color="#2d2218"></stop></lineargradient>
+<radialgradient cx="50%" cy="35%" id="cap" r="60%"><stop offset="0" stop-color="#f2d785"></stop><stop offset=".62" stop-color="#b56a1f"></stop><stop offset="1" stop-color="#6e351a"></stop></radialgradient>
+</defs>
+<rect fill="url(#sky)" height="620" width="900"></rect>
+<circle cx="740" cy="88" fill="#f2d785" opacity=".55" r="54"></circle>
+<g fill="#2d5a27" opacity=".22"><path d="M28 327 C143 247 219 294 331 209 C457 114 590 216 705 148 C776 108 841 121 900 96 L900 620 L0 620 L0 361Z"></path></g>
+<rect fill="url(#soil)" height="240" width="900" y="380"></rect>
+<path d="M0 420 C120 383 230 450 350 410 C483 366 630 440 900 390 L900 620 L0 620Z" fill="#1a3a15" opacity=".74"></path>
+<g opacity=".42" stroke="#6e573a" stroke-linecap="round" stroke-width="10"><path d="M80 512 C172 452 234 536 338 478"></path><path d="M430 545 C528 480 628 535 766 463"></path><path d="M164 430 C248 394 339 412 417 380"></path></g>
+<g fill="#c08a3d" opacity=".45"><ellipse cx="118" cy="475" rx="50" ry="12" transform="rotate(-12 118 475)"></ellipse><ellipse cx="246" cy="546" rx="58" ry="13" transform="rotate(8 246 546)"></ellipse><ellipse cx="718" cy="524" rx="64" ry="14" transform="rotate(-10 718 524)"></ellipse><ellipse cx="602" cy="436" rx="44" ry="10" transform="rotate(17 602 436)"></ellipse></g>
+<g transform="translate(146 250)"><path d="M86 132 C76 164 71 203 77 251 L132 251 C141 202 132 161 121 132Z" fill="#f8ead0" stroke="#8f744c" stroke-width="5"></path><path d="M18 126 C38 48 168 45 201 126 C168 159 55 158 18 126Z" fill="url(#cap)" stroke="#5b321d" stroke-width="6"></path><path d="M48 129 C84 146 137 145 174 129" fill="none" opacity=".7" stroke="#f8ead0" stroke-width="7"></path><circle cx="75" cy="90" fill="#fff3c7" opacity=".75" r="9"></circle><circle cx="126" cy="76" fill="#fff3c7" opacity=".72" r="7"></circle></g>
+<g transform="translate(433 305) scale(.82)"><path d="M86 132 C76 164 71 203 77 251 L132 251 C141 202 132 161 121 132Z" fill="#f8ead0" stroke="#8f744c" stroke-width="5"></path><path d="M18 126 C38 48 168 45 201 126 C168 159 55 158 18 126Z" fill="#b98a56" stroke="#5b321d" stroke-width="6"></path><path d="M48 129 C84 146 137 145 174 129" fill="none" opacity=".7" stroke="#f8ead0" stroke-width="7"></path></g>
+<g transform="translate(642 288) scale(.62)"><path d="M86 132 C76 164 71 203 77 251 L132 251 C141 202 132 161 121 132Z" fill="#f8ead0" stroke="#8f744c" stroke-width="5"></path><path d="M18 126 C38 48 168 45 201 126 C168 159 55 158 18 126Z" fill="#e1c58d" stroke="#5b321d" stroke-width="6"></path><path d="M48 129 C84 146 137 145 174 129" fill="none" opacity=".8" stroke="#fff5d6" stroke-width="7"></path></g>
+<g font-family="Georgia" text-anchor="middle"><text fill="#1a3a15" font-size="35" x="450" y="82">фотографија + станиште + датум</text><text fill="#5a5a5a" font-size="21" x="450" y="118">то је податак за заштиту, не дозвола за конзумирање</text></g>
+</svg>
+<div class="hero-visual-badge"><strong>Правило странице</strong><span>Не јести гљиве на основу фотографије, апликације или описа са сајта. Налаз служи за едукацију и мониторинг.</span></div>
+</div>
+</div>
+</div>
+</header>
+<nav aria-label="Брза навигација" class="quick-nav"><div class="wrap"><div class="quick-nav-inner">
+<a href="#fotografija">Фотографија</a><a href="#nalaz">Пријава налаза</a><a href="#vodic">Шта сам нашао</a><a href="#kviz">Квиз</a><a href="#sezona">Сезона</a><a href="#bezbednost">Безбедност</a>
+</div></div></nav>
+<main>
+<section class="section" id="fotografija">
+<div class="wrap">
+<div class="section-head"><div class="kicker">📷 теренска фотографија</div><h2>Шест кадрова који налаз чине употребљивим</h2><p class="section-intro">Једна лепа фотографија често није довољна за поуздано тумачење. За гљиве су важни положај у станишту, доња страна шешира, основа стручка, подлога и време појаве.</p></div>
+<div class="grid-3">
+<article class="card rule-card"><div class="rule-icon">🌲</div><h3>Шири кадар станишта</h3><p>Снимити да ли гљива расте у буковој шуми, на ливади, крај пања, на трулом дрвету, у листинцу или на отвореној ивици шуме.</p></article>
+<article class="card rule-card"><div class="rule-icon">🍄</div><h3>Плодно тело одозго</h3><p>Потребан је јасан снимак шешира: боја, облик, пукотине, љуспице, влажност и промене на ивици често су важни детаљи.</p></article>
+<article class="card rule-card"><div class="rule-icon">🔍</div><h3>Доња страна шешира</h3><p>Снимити да ли постоје листићи, цевчице, бодљице или набори. Ово је један од најважнијих кадрова за разликовање група.</p></article>
+<article class="card rule-card"><div class="rule-icon">📏</div><h3>Размера без оштећивања</h3><p>Поред гљиве може се ставити штапић, лист или други безопасан оријентир. Не газити око гљиве због лепше фотографије.</p></article>
+<article class="card rule-card"><div class="rule-icon">🪵</div><h3>Подлога и домаћин</h3><p>Забележити да ли је гљива на земљишту, пању, стаблу, трулој грани, маховини или у близини букве, храста, четинара или воћкарица.</p></article>
+<article class="card rule-card"><div class="rule-icon">🧭</div><h3>Датум и приближна зона</h3><p>Датум, време после кише и приближна зона станишта често су кориснији од јавног објављивања тачних координата.</p></article>
+</div>
+<div class="danger-box"><strong>Важно:</strong> страница није водич за јестивост. Иста или слична врста може изгледати различито по старости, влажности и станишту. За јело није довољна ни фотографија, ни апликација, ни опис на сајту.</div>
+</div>
+</section>
+<section class="section" id="nalaz">
+<div class="wrap">
+<div class="section-head"><div class="kicker">📋 пријава налаза</div><h2>Шта треба да садржи добра пријава</h2><p class="section-intro">Пријава налаза треба да омогући проверу и касније поређење са другим налазима. Најбољи податак је онај који се може разумети и после више месеци.</p></div>
+<div class="grid-2">
+<article class="card panel">
+<h3>Пожељно је забележити</h3>
+<ul class="ok-list"><li>датум, део дана и услове после кише или сушног периода</li><li>тип станишта: шума, ливада, ивица шуме, пањ, труло дрво, влажно удубљење</li><li>најмање три фотографије: станиште, шешир и доња страна</li><li>приближну локацију или зону без јавног откривања осетљивих тачака</li><li>број плодних тела: једно, неколико, група, круг, појава на више места</li></ul>
+</article>
+<article class="card panel">
+<h3>Не радити на терену</h3>
+<ul class="no-list"><li>не пробати непознату гљиву и не доносити закључак о јестивости на лицу места</li><li>не чупати и не сецкати примерке само ради фотографисања</li><li>не грабуљати листинац и не раскопавати основу стабла</li><li>не објављивати тачне координате ретких или осетљивих налаза</li><li>не уништавати старе, црвљиве или отровне гљиве — и оне имају улогу у екосистему</li></ul>
+</article>
+</div>
+<div class="highlight"><strong>Суштина:</strong> посетиоцима није потребно да „одреде гљиву до краја”. Довољно је да правилно фотографишу, забележе станиште и пошаљу податак који касније може проверити стручна особа.</div>
+</div>
+</section>
+<section class="section" id="vodic">
+<div class="wrap">
+<div class="section-head"><div class="kicker">🔎 водич „шта сам нашао”</div><h2>Изабери оно што највише личи на налаз</h2><p class="section-intro">Овај водич не даје коначну идентификацију. Он помаже посетиоцу да зна шта треба фотографисати и шта треба забележити.</p></div>
+<div class="finder">
+<div aria-label="Тип налаза гљиве" class="finder-tabs" role="tablist">
+<button class="finder-btn is-active" data-finder="listici">Гљива са листићима</button>
+<button class="finder-btn" data-finder="cevčice">Гљива са цевчицама</button>
+<button class="finder-btn" data-finder="drvo">Гљива на дрвету</button>
+<button class="finder-btn" data-finder="puff">Пухара или округла гљива</button>
+<button class="finder-btn" data-finder="korasta">Кораста или разливена гљива</button>
+<button class="finder-btn" data-finder="nepoznato">Нисам сигуран/сигурна</button>
+</div>
+<article class="card finder-panel" id="finderPanel"></article>
+</div>
+</div>
+</section>
+<section class="section" id="sezona">
+<div class="wrap">
+<div class="section-head"><div class="kicker">📅 сезонски календар</div><h2>Када су налази најчешћи</h2><p class="section-intro">Гљиве су снажно везане за влагу, температуру, листинац и стање дрвета. Календар не значи да гљива мора да се појави, већ помаже да се планира пажљивије праћење.</p></div>
+<div class="season-grid">
+<article class="card season-card"><h3>Пролеће</h3><p>Прате се прве појаве после отопљавања, влажна удубљења, ивице шума и трули остаци дрвета.</p><div class="season-months"><span class="month">I</span><span class="month">II</span><span class="month on">III</span><span class="month on">IV</span><span class="month on">V</span><span class="month">VI</span></div></article>
+<article class="card season-card"><h3>Лето после кише</h3><p>Кратки влажни периоди могу дати нагле појаве, нарочито у шумским сенкама и уз мртво дрво.</p><div class="season-months"><span class="month">V</span><span class="month on">VI</span><span class="month on">VII</span><span class="month on">VIII</span><span class="month">IX</span></div></article>
+<article class="card season-card"><h3>Јесен</h3><p>Најважнији период за већину посетилачких налаза: микоризне, сапрофитске и дрвне врсте лакше се уочавају.</p><div class="season-months"><span class="month on">IX</span><span class="month on">X</span><span class="month on">XI</span><span class="month">XII</span></div></article>
+<article class="card season-card"><h3>Зима</h3><p>Мање меснатих плодних тела, али су корисни налази дрвних, жилавих, корастих и вишегодишњих гљива на стаблима.</p><div class="season-months"><span class="month on">XII</span><span class="month on">I</span><span class="month on">II</span><span class="month">III</span></div></article>
+</div>
+</div>
+</section>
+<section class="section" id="kviz">
+<div class="wrap">
+<div class="section-head"><div class="kicker">🎮 квиз за посетиоце</div><h2>Квиз: шта је најважније код налаза гљиве?</h2><p class="section-intro">Квиз је намењен посетиоцима, деци и школским групама. Циљ није учење јестивости, већ безбедно посматрање и боља теренска пријава.</p></div>
+<div class="quiz">
+<div class="card quiz-card">
+<h3 id="quizTitle">Питање 1 / 10</h3>
+<p id="quizText"></p>
+<div class="quiz-options" id="quizOptions"></div>
+<div class="green-box" id="quizFeedback" style="display:none"></div>
+<div class="quiz-controls"><button class="small-btn" onclick="nextQuiz()" type="button">Следеће питање</button><button class="small-btn light" onclick="resetQuiz()" type="button">Почни испочетка</button></div>
+</div>
+<div class="quiz-visual" id="quizVisual"></div>
+</div>
+</div>
+</section>
+<section class="section" id="mapa">
+<div class="wrap">
+<div class="section-head"><div class="kicker">🗺 јавни приказ налаза</div><h2>Карта треба да помогне мониторингу, а не да открије све</h2><p class="section-intro">За гљиве је карта корисна за праћење станишта, сезона и промена у појављивању. Међутим, тачне координате осетљивих врста и малих популација не треба јавно приказивати.</p></div>
+<div class="map-policy">
+<article class="card map-card"><h3>Јавно приказати</h3><p>Општу зону, тип станишта, месец налаза, фотографију плодног тела и статус провере. За едукативне потребе довољан је приказ у оквиру шире зоне ПИО Рајац.</p><div class="green-box"><strong>Добро:</strong> тачка са благим померањем или приказ по мрежи, без прецизне координате за осетљив налаз.</div></article>
+<article class="card map-card"><h3>Сакрити или ублажити</h3><p>Тачне координате ретких, заштићених, лако угрожених или атрактивних врста, као и налазе у осетљивим шумским микростаништима.</p><div class="warning-box"><strong>Опрез:</strong> добра карта не мора бити прецизна до метра да би била корисна за управљање.</div></article>
+</div>
+</div>
+</section>
+<section class="section" id="bezbednost">
+<div class="wrap">
+<div class="section-head"><div class="kicker">🟡 безбедност</div><h2>Кратка правила за терен, децу и посетиоце</h2></div>
+<div class="grid-3">
+<article class="card rule-card"><div class="rule-icon">🟡</div><h3>Не пробати</h3><p>Ни најмањи залогај непознате гљиве није прихватљив. Опасност не зависи од величине примерка.</p></article>
+<article class="card rule-card"><div class="rule-icon">🟢</div><h3>Фотографисати</h3><p>Најбоља помоћ је добра фотографија и опис станишта. То не оштећује плодна тела нити мицелијум.</p></article>
+<article class="card rule-card"><div class="rule-icon">🔴</div><h3>Не давати савете о јелу</h3><p>Посетилачки налаз није стручна потврда јестивости. На јавним страницама не охрабривати брање.</p></article>
+<article class="card rule-card"><div class="rule-icon">🟡</div><h3>Деца под надзором</h3><p>Деца могу фотографисати и посматрати, али не треба да беру, ломе, миришу из близине или додирују непознате гљиве.</p></article>
+<article class="card rule-card"><div class="rule-icon">🟢</div><h3>Очувати листинац</h3><p>Листинац, труло дрво и влажна сеновита места су део станишта. Не чистити терен ради фотографије.</p></article>
+<article class="card rule-card"><div class="rule-icon">🟡</div><h3>Пси и групе</h3><p>Псе држати под контролом, а групе усмеравати стазама да не газе влажна микростаништа и младе плодоносеће зоне.</p></article>
+</div>
+</div>
+</section>
+<section class="section" id="trofo">
+<div class="wrap">
+<div class="section-head"><div class="kicker">🔗 гљиве у трофодинамици</div><h2>Гљиве као невидљива мрежа шуме</h2><p class="section-intro">Гљиве нису само плодна тела која видимо после кише. Оне разлажу органску материју, повезују биљке са земљиштем, хране инсекте и утичу на здравље шумских екосистема.</p></div>
+<div class="trofo">
+<svg aria-label="Графички приказ улоге гљива у екосистему Рајца" role="img" viewbox="0 0 1180 470">
+<rect fill="#fffdf8" height="470" width="1180"></rect>
+<g fill="none" stroke="#d8d0c4" stroke-width="4"><path d="M220 130 C360 70 480 85 590 210"></path><path d="M220 330 C375 385 500 350 590 250"></path><path d="M960 120 C790 80 700 120 590 210"></path><path d="M960 335 C800 390 710 340 590 250"></path><path d="M590 210 C590 160 590 105 590 70"></path><path d="M590 250 C590 310 590 368 590 410"></path></g>
+<g font-family="Georgia" text-anchor="middle">
+<g transform="translate(470 168)"><rect fill="#e8f0e6" height="116" rx="18" stroke="#a8c4a4" width="240"></rect><text fill="#1a3a15" font-size="30" x="120" y="46">Гљиве Рајца</text><text fill="#5a5a5a" font-size="16" x="120" y="76">мицелијум, плодна тела, споре</text></g>
+<g transform="translate(60 70)"><rect fill="#fff8e6" height="100" rx="16" stroke="#d8d0c4" width="260"></rect><text fill="#1a3a15" font-size="23" x="130" y="40">Дрвеће</text><text fill="#5a5a5a" font-size="15" x="130" y="68">микориза и размена материја</text></g>
+<g transform="translate(60 285)"><rect fill="#fff8e6" height="100" rx="16" stroke="#d8d0c4" width="260"></rect><text fill="#1a3a15" font-size="23" x="130" y="40">Земљиште</text><text fill="#5a5a5a" font-size="15" x="130" y="68">хумус, листинац, влажност</text></g>
+<g transform="translate(860 70)"><rect fill="#fff8e6" height="100" rx="16" stroke="#d8d0c4" width="260"></rect><text fill="#1a3a15" font-size="23" x="130" y="40">Инсекти и пужеви</text><text fill="#5a5a5a" font-size="15" x="130" y="68">исхрана и микростаништа</text></g>
+<g transform="translate(860 285)"><rect fill="#fff8e6" height="100" rx="16" stroke="#d8d0c4" width="260"></rect><text fill="#1a3a15" font-size="23" x="130" y="40">Птице и сисари</text><text fill="#5a5a5a" font-size="15" x="130" y="68">посредне везе преко станишта</text></g>
+<g transform="translate(458 20)"><rect fill="#f2f0eb" height="80" rx="16" stroke="#d8d0c4" width="264"></rect><text fill="#1a3a15" font-size="21" x="132" y="34">Мртво дрво</text><text fill="#5a5a5a" font-size="15" x="132" y="58">сапрофити и кружење материје</text></g>
+<g transform="translate(458 370)"><rect fill="#f2f0eb" height="80" rx="16" stroke="#d8d0c4" width="264"></rect><text fill="#1a3a15" font-size="21" x="132" y="34">Клима и влага</text><text fill="#5a5a5a" font-size="15" x="132" y="58">појављивање плодних тела</text></g>
+</g>
+</svg>
+</div>
+</div>
+</section>
+<section class="section" id="zakljucak">
+<div class="wrap">
+<div class="highlight"><strong>Закључак:</strong> најбољи посетилац није онај који убере гљиву, већ онај који препозна станиште, направи корисну фотографију, не оштети мицелијум и остави податак који помаже дугорочном праћењу Рајца.</div>
+<div class="guide-links">
+<a class="guide-link" href="https://piorajac.rs/gljive/alati-za-posetioce-gljive-rajca/"><span class="ico">🍄</span><span><strong>Алати за посетиоце</strong><span>налази, водич и квиз</span></span><b class="arr">→</b></a>
+<a class="guide-link" href="https://piorajac.rs/gljive/fotografisanje-gljiva-rajca/"><span class="ico">📷</span><span><strong>Фотографисање гљива</strong><span>кадрови и теренски запис</span></span><b class="arr">→</b></a>
+<a class="guide-link" href="https://piorajac.rs/gljive/ponasanje-prema-gljivama-i-stanistima-rajca/"><span class="ico">🌲</span><span><strong>Понашање у станишту</strong><span>листинац, дрво и микростаништа</span></span><b class="arr">→</b></a>
+<a class="guide-link" href="https://piorajac.rs/gljive/pomoc-gljivama-rajca/"><span class="ico">🤝</span><span><strong>Помоћ гљивама</strong><span>грађанска наука и очување</span></span><b class="arr">→</b></a>
+</div>
+</div>
+</section>
+<div class="footer-nav"><div class="wrap"><div class="footer-box"><a href="https://piorajac.rs/gljive/ponasanje-prema-gljivama-i-stanistima-rajca/">← Понашање према гљивама</a><a class="primary" href="https://piorajac.rs/gljive/">Све гљиве Рајца →</a><a href="https://piorajac.rs/gljive/fotografisanje-gljiva-rajca/">Фотографисање гљива →</a></div></div></div>
+</main>
+<footer class="site-footer">Ауторска права © 2026 — Предео изузетних одлика „Рајац” · Туристичка организација општине Љиг</footer>
+<script>
+const finderData={
+  listici:{title:"Гљива са листићима",text:"Код овог налаза најважније је снимити доњу страну шешира, начин прирастања листића уз стручак, боју листића и основу стручка. Врсте са листићима могу бити јестиве, нејестиве или опасно отровне, па се налаз не тумачи као препорука за конзумирање.",do:"Сними шешир, листиће, стручак, основу и шири кадар станишта.",dont:"Не пробај, не мириши из непосредне близине и не доноси закључак о јестивости.",possible:"могуће групе: лисичарке, млечнице, сунчанице, пупавке, русуле и друге"},
+  cevčice:{title:"Гљива са цевчицама",text:"Код вргањевки и сродних група важна је доња страна са цевчицама, боја порa, промена боје на притисак, мрежица или тачкице на стручку и дрво у чијој близини расте.",do:"Фотографиши доњу страну, стручак и стабла у близини.",dont:"Не сеци примерке само ради провере промене боје ако нема потребе за стручном потврдом.",possible:"могуће групе: вргањи и сродне цевчарке"},
+  drvo:{title:"Гљива на дрвету",text:"Гљиве на живом или мртвом дрвету често су важне за разлагање и кружење материје. Треба забележити да ли је дрво живо, суво, пањ, оборена грана или труло стабло.",do:"Сними цело дрво/пањ и крупан кадар плодних тела.",dont:"Не љушти кору, не ломи труло дрво и не одваја плодна тела са стабла.",possible:"могуће групе: трудови, корасте гљиве, буковаче, дрвне сапрофитске врсте"},
+  puff:{title:"Пухара или округла гљива",text:"Округла плодна тела могу бити пухаре, земљаче или младе форме других група. Облик и старост су важни, али почетнику није довољан само спољашњи изглед.",do:"Сними више примерака ако их има, станиште и величину.",dont:"Не гази и не шутира зреле примерке ради „облака праха”. Споре су део природног циклуса.",possible:"могуће групе: пухаре, земљаче и сродне форме"},
+  korasta:{title:"Кораста или разливена гљива",text:"Корасте гљиве се често виде као танак слој на дрвету, кори или трулим остацима. Иако нису упадљиве, могу бити веома важне за праћење старог дрвета и шумске влажности.",do:"Сними подлогу, површину и шири контекст мртвог дрвета.",dont:"Не скидати слој са подлоге и не односити комаде дрвета.",possible:"могуће групе: корасте сапрофитске гљиве"},
+  nepoznato:{title:"Нисам сигуран/сигурна",text:"Ако не знаш шта гледаш, то је у реду. Код гљива је боље послати више добрих фотографија и кратак опис станишта него нагађати врсту или јестивост.",do:"Сними станиште, плодна тела из више углова и забележи датум.",dont:"Не користи апликацију као коначну потврду; налаз третирај као непроверен.",possible:"најбољи статус: непозната гљива — потребна провера"}
+};
+function finderSvg(type){
+  const colors={listici:'#b56a1f','cevčice':'#8b6914',drvo:'#6f4a2a',puff:'#d8b55b',korasta:'#9b7b4d',nepoznato:'#4a7c43'};
+  const c=colors[type]||'#b56a1f';
+  return `<div class="finder-svg"><svg viewBox="0 0 640 230" role="img" aria-label="илустрација налаза"><rect width="640" height="230" fill="#fffdf8"/><rect y="160" width="640" height="70" fill="#eadfce"/><path d="M0 172 C130 142 210 182 340 152 C470 123 535 163 640 138 L640 230 L0 230Z" fill="#e8f0e6"/><g transform="translate(238 38)"><path d="M82 92 C74 121 70 148 73 174 L124 174 C129 145 126 118 115 92Z" fill="#f8ead0" stroke="#8f744c" stroke-width="4"/><path d="M20 92 C39 30 161 29 190 92 C155 122 55 121 20 92Z" fill="${c}" stroke="#5b321d" stroke-width="5"/><path d="M54 96 C86 112 127 111 158 96" fill="none" stroke="#fff5d6" stroke-width="6" opacity=".75"/></g><g fill="#7d5d38" opacity=".35"><ellipse cx="108" cy="190" rx="46" ry="11"/><ellipse cx="478" cy="198" rx="62" ry="12"/><ellipse cx="540" cy="164" rx="38" ry="8"/></g></svg></div>`;
+}
+function renderFinder(key){
+  const d=finderData[key]||finderData.nepoznato;
+  document.querySelectorAll('.finder-btn').forEach(btn=>btn.classList.toggle('is-active',btn.dataset.finder===key));
+  document.getElementById('finderPanel').innerHTML=`<h3>${d.title}</h3><p>${d.text}</p><div class="meta"><div><strong>Уради:</strong><br>${d.do}</div><div><strong>Не ради:</strong><br>${d.dont}</div><div style="grid-column:1/-1"><strong>Могуће тумачење:</strong><br>${d.possible}</div></div>${finderSvg(key)}`;
+}
+document.querySelectorAll('.finder-btn').forEach(btn=>btn.addEventListener('click',()=>renderFinder(btn.dataset.finder)));
+renderFinder('listici');
+const quiz=[
+ {q:"За добру пријаву налаза гљиве најважније је:",a:["више фотографија и опис станишта","само лепа фотографија шешира","да се одмах напише да је јестива"],ok:"више фотографија и опис станишта",why:"Код гљива су битни шешир, доња страна, основа, подлога, станиште и датум."},
+ {q:"Ако ниси сигуран/сигурна која је врста, најбоље је:",a:["послати налаз као непроверен","послати налаз на стручну проверу","објавити тачну координату ретке врсте"],ok:"послати налаз као непроверен",why:"Непроверен налаз је користан ако има добре фотографије и опис, али не сме бити основ за јело."},
+ {q:"Доња страна шешира је важна зато што показује:",a:["листиће, цевчице, бодљице или наборе","само да ли је гљива мокра","да ли је фотографија лепа"],ok:"листиће, цевчице, бодљице или наборе",why:"Хименофор је један од најважнијих видљивих детаља за грубо разврставање."},
+ {q:"Код налаза на дрвету треба забележити:",a:["да ли је дрво живо, мртво, пањ или грана","само боју гљиве","колико лако се гљива одваја"],ok:"да ли је дрво живо, мртво, пањ или грана",why:"Подлога је код дрвних гљива веома важан еколошки податак."},
+ {q:"Јавна карта налаза треба да:",a:["штити осетљиве тачне локације","прикаже сваку координату до метра","служи као евиденција станишта и мониторинга"],ok:"штити осетљиве тачне локације",why:"За управљање су довољне зоне и станишта; тачне координате осетљивих налаза не морају бити јавне."},
+ {q:"Шта је најбезбедније правило за посетиоце?",a:["не конзумирати гљиве на основу сајта или апликације","ако личи на познату врсту, безбедна је","мале количине нису ризичне"],ok:"не конзумирати гљиве на основу сајта или апликације",why:"Фотографија, апликација и опис нису довољни за безбедну процену јестивости."},
+ {q:"Листинац и труло дрво на терену треба:",a:["оставити на месту као део станишта","склонити ради чисте фотографије","преврнути да се виде скривене гљиве"],ok:"оставити на месту као део станишта",why:"Листинац, мицелијум и мртво дрво су део екосистема гљива."},
+ {q:"Најбољи снимак станишта је:",a:["шири кадар који показује околину налаза","увек максимално крупан кадар без позадине","слика само из корпе"],ok:"шири кадар који показује околину налаза",why:"Станиште често даје више података од саме боје плодног тела."},
+ {q:"Зреле пухаре и спороносна плодна тела не треба шутирати јер:",a:["споре и плодна тела имају природну улогу","тако се увек трују друге врсте","то квари само изглед стазе"],ok:"споре и плодна тела имају природну улогу",why:"И старе, оштећене или нејестиве гљиве учествују у животном циклусу и исхрани других организама."},
+ {q:"Посетилац највише помаже мониторингу када:",a:["остави добар, проверљив запис без оштећивања станишта","убере што више примерака","погађа врсту без фотографија"],ok:"остави добар, проверљив запис без оштећивања станишта",why:"Добар налаз је комбинација фотографије, датума, станишта и опрезног тумачења."}
+];
+let qi=0,score=0,answered=false,currentOptions=[];
+function shuffle(arr){const a=[...arr];for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]];}return a;}
+function quizSvg(n){
+  const captions=['станиште','доња страна','дрвна подлога','приближна зона'];
+  return `<svg viewBox="0 0 400 300" aria-label="илустрација квиза"><rect width="400" height="300" fill="#fffdf8"/><circle cx="328" cy="62" r="36" fill="#e8f0e6"/><path d="M0 212 C95 176 177 227 271 190 C330 166 366 173 400 154 L400 300 L0 300Z" fill="#eadfce"/><g transform="translate(92 78)"><path d="M72 96 C63 124 61 147 65 174 L113 174 C118 146 113 121 104 96Z" fill="#f8ead0" stroke="#8f744c" stroke-width="4"/><path d="M16 95 C37 36 143 34 174 95 C145 124 48 124 16 95Z" fill="#b56a1f" stroke="#5b321d" stroke-width="5"/><path d="M45 99 C75 112 113 112 146 99" fill="none" stroke="#fff5d6" stroke-width="5"/></g><text x="200" y="263" text-anchor="middle" font-family="Georgia" font-size="22" fill="#1a3a15">${captions[n%captions.length]}</text></svg>`;
+}
+function renderQuiz(){
+ const item=quiz[qi];answered=false;currentOptions=shuffle(item.a);
+ document.getElementById('quizTitle').textContent=`Питање ${qi+1} / ${quiz.length}`;
+ document.getElementById('quizText').textContent=item.q;
+ document.getElementById('quizVisual').innerHTML=quizSvg(qi);
+ document.getElementById('quizFeedback').style.display='none';
+ document.getElementById('quizOptions').innerHTML=currentOptions.map((x,i)=>`<button type="button" onclick="answerQuiz(${i})">${x}</button>`).join('');
+}
+function answerQuiz(i){
+ if(answered)return;answered=true;
+ const item=quiz[qi];const selected=currentOptions[i];const buttons=[...document.querySelectorAll('#quizOptions button')];
+ buttons.forEach((b,idx)=>{if(currentOptions[idx]===item.ok)b.classList.add('correct');else if(idx===i)b.classList.add('wrong');});
+ if(selected===item.ok)score++;
+ const fb=document.getElementById('quizFeedback');fb.style.display='block';fb.innerHTML=`<strong>${selected===item.ok?'Тачно.':'Није тачно.'}</strong> ${item.why}<br>Резултат: ${score} / ${quiz.length}`;
+}
+function nextQuiz(){qi=(qi+1)%quiz.length;renderQuiz();}
+function resetQuiz(){qi=0;score=0;renderQuiz();}
+renderQuiz();
+</script>
+<script id="rajac-ds-old-menu-cleanup">(function(){function killOldMenus(){try{var selectors=[".rfx-chapter-nav","nav.rfx-chapter-nav","nav.topnav",".topnav",".ins-topnav-wrap",".sisari-topnav-wrap",".glj-topnav",".glj-nav",".rfw-edit-bar"];selectors.forEach(function(sel){document.querySelectorAll(sel).forEach(function(el){if(!el.classList.contains("rajac-ds-nav")){el.remove();}});});}catch(e){}} if(document.readyState==="loading"){document.addEventListener("DOMContentLoaded",killOldMenus);}else{killOldMenus();} setTimeout(killOldMenus,50); setTimeout(killOldMenus,300); setTimeout(killOldMenus,1000);})();</script>
+<script id="glj-center-active-mobile-menu-2805">
+(function(){
+  function centerActiveRajacMenu(){
+    var mq = window.matchMedia ? window.matchMedia('(max-width: 820px)') : null;
+    if (mq && !mq.matches) return;
+    var scroller = document.querySelector('.rajac-ds-nav-inner');
+    var active = scroller ? scroller.querySelector('.rajac-ds-nav-item.rajac-ds-active') : null;
+    if(!scroller || !active) return;
+    var left = active.offsetLeft - (scroller.clientWidth - active.offsetWidth) / 2;
+    scroller.scrollLeft = Math.max(0, left);
+  }
+  if(document.readyState === 'loading'){
+    document.addEventListener('DOMContentLoaded', centerActiveRajacMenu, {once:true});
+  }else{
+    centerActiveRajacMenu();
+  }
+  window.addEventListener('resize', centerActiveRajacMenu, {passive:true});
+  window.setTimeout(centerActiveRajacMenu, 120);
+})();
+</script>
+<!-- SITE_EDITOR_ADMIN_BAR_START -->
+<script defer="" src="/admin-site-editor.php?admin_bar_js=1"></script>
+<!-- SITE_EDITOR_ADMIN_BAR_END -->
+<link rel="stylesheet" href="../gljive-responsive.css?v=20260716-v13" data-gljive-responsive-final="true"><button id="rajac-gljive-vrh" type="button" aria-label="Врати се на врх странице" title="ВРХ"><span class="arr" aria-hidden="true">↑</span><span class="txt">ВРХ</span></button><script defer src="../gljive-responsive.js?v=20260716-v13"></script></body>
+</html>
