@@ -1,0 +1,201 @@
+/* ПИО Рајац — Гљиве: мобилни и таблет слој, 2026-07-14 v1 */
+.rajac-gljive-menu-toggle{display:none}
+body.rajac-gljive-form .rajac-ds-nav{background:#0d1b2a;position:sticky;top:0;z-index:999999;border-bottom:1px solid rgba(255,255,255,.08)}
+body.rajac-gljive-form .rajac-ds-nav *{box-sizing:border-box}
+body.rajac-gljive-form .rajac-ds-nav-inner{max-width:1180px;min-height:56px;margin:0 auto;padding:0 18px;display:flex;align-items:stretch;overflow-x:auto}
+body.rajac-gljive-form .rajac-ds-home,body.rajac-gljive-form .rajac-ds-nav-item{display:flex;align-items:center;text-decoration:none}
+body.rajac-gljive-form .rajac-ds-home{gap:9px;padding-right:20px;margin-right:8px;border-right:1px solid rgba(255,255,255,.12);flex-shrink:0;color:#d8b55b;font-weight:700}
+body.rajac-gljive-form .rajac-ds-nav-item{position:relative;gap:7px;padding:0 15px;color:rgba(255,255,255,.72);font-weight:700;white-space:nowrap}
+body.rajac-gljive-form .rajac-ds-nav-item.rajac-ds-active{color:#d8b55b}
+
+@media(max-width:1100px){
+  html{max-width:100%;overflow-x:hidden;-webkit-text-size-adjust:100%;text-size-adjust:100%}
+  body.rajac-gljive-responsive{width:100%;max-width:100%;overflow-x:hidden!important}
+  body.rajac-gljive-responsive *,body.rajac-gljive-responsive *::before,body.rajac-gljive-responsive *::after{box-sizing:border-box}
+  body.rajac-gljive-responsive img,body.rajac-gljive-responsive picture,body.rajac-gljive-responsive video,body.rajac-gljive-responsive iframe,body.rajac-gljive-responsive canvas,body.rajac-gljive-responsive svg{max-width:100%}
+  body.rajac-gljive-responsive img{height:auto}
+
+  html body.rajac-gljive-responsive nav.rajac-ds-nav{position:sticky!important;top:0!important;z-index:999999!important;width:100%!important;overflow:visible!important;background:#0d1b2a!important}
+  html body.rajac-gljive-responsive nav.rajac-ds-nav .rajac-ds-nav-inner{width:min(100% - 28px,1180px)!important;max-width:1180px!important;min-height:58px!important;margin:0 auto!important;padding:8px 0!important;display:grid!important;grid-template-columns:minmax(0,1fr) auto!important;align-items:center!important;align-content:center!important;justify-content:stretch!important;gap:8px 14px!important;overflow:visible!important}
+  html body.rajac-gljive-responsive nav.rajac-ds-nav .rajac-ds-home{grid-column:1!important;justify-self:start!important;min-height:42px!important;margin:0!important;padding:0!important;border:0!important;white-space:nowrap!important}
+  html body.rajac-gljive-responsive nav.rajac-ds-nav .rajac-ds-home-mark{display:none!important}
+  html body.rajac-gljive-responsive nav.rajac-ds-nav .rajac-ds-home span:last-child{color:#d8b55b!important;font-size:15px!important;font-weight:700!important;letter-spacing:.035em!important}
+  html body.rajac-gljive-responsive .rajac-gljive-menu-toggle{grid-column:2!important;justify-self:end!important;display:inline-flex!important;align-items:center!important;justify-content:center!important;gap:8px!important;min-width:92px!important;min-height:42px!important;margin:0!important;padding:0 14px!important;border:1px solid rgba(255,255,255,.25)!important;border-radius:999px!important;background:rgba(255,255,255,.08)!important;color:#fff!important;font:800 13px/1 system-ui,-apple-system,"Segoe UI",sans-serif!important;letter-spacing:.08em!important;cursor:pointer!important}
+  .rajac-gljive-menu-icon{position:relative;display:inline-block;width:16px;height:12px;border-top:2px solid currentColor;border-bottom:2px solid currentColor}
+  .rajac-gljive-menu-icon::after{content:"";position:absolute;left:0;right:0;top:3px;border-top:2px solid currentColor}
+  html body.rajac-gljive-responsive nav.rajac-ds-nav.is-open .rajac-gljive-menu-icon{border-color:transparent}
+  html body.rajac-gljive-responsive nav.rajac-ds-nav.is-open .rajac-gljive-menu-icon::before,html body.rajac-gljive-responsive nav.rajac-ds-nav.is-open .rajac-gljive-menu-icon::after{content:"";position:absolute;left:0;top:4px;width:16px;border-top:2px solid currentColor;transform:rotate(45deg)}
+  html body.rajac-gljive-responsive nav.rajac-ds-nav.is-open .rajac-gljive-menu-icon::after{transform:rotate(-45deg)}
+  html body.rajac-gljive-responsive nav.rajac-ds-nav .rajac-ds-nav-item{grid-column:1/-1!important;display:none!important;width:100%!important;min-height:44px!important;margin:0!important;padding:10px 13px!important;border:1px solid rgba(255,255,255,.11)!important;border-radius:12px!important;background:rgba(255,255,255,.055)!important;color:rgba(255,255,255,.9)!important;white-space:normal!important;text-align:left!important;font-size:13px!important;line-height:1.25!important}
+  html body.rajac-gljive-responsive nav.rajac-ds-nav.is-open .rajac-ds-nav-item{display:flex!important}
+  html body.rajac-gljive-responsive nav.rajac-ds-nav .rajac-ds-nav-item.rajac-ds-active{border-color:rgba(216,181,91,.72)!important;background:rgba(216,181,91,.10)!important;color:#f2cf78!important}
+  html body.rajac-gljive-responsive nav.rajac-ds-nav .rajac-ds-nav-item::after{display:none!important}
+
+  body.rajac-gljive-responsive .glj-arc,body.rajac-gljive-responsive .glj-main-wrap,body.rajac-gljive-responsive .glj-hdr-inner,body.rajac-gljive-responsive .wrap,body.rajac-gljive-responsive .container,body.rajac-gljive-responsive .page-wrap{width:min(100% - 36px,920px)!important;max-width:calc(100% - 36px)!important;margin-left:auto!important;margin-right:auto!important}
+  body.rajac-gljive-responsive .glj-grid{grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:15px!important}
+  body.rajac-gljive-responsive .glj-hdr-grid,body.rajac-gljive-responsive .glj-main-wrap,body.rajac-gljive-responsive .glj-two,body.rajac-gljive-responsive .hero-grid{grid-template-columns:minmax(0,1fr)!important;gap:24px!important}
+  body.rajac-gljive-responsive .glj-hdr-img{min-height:340px!important;height:auto!important;aspect-ratio:16/10!important}
+  body.rajac-gljive-responsive .glj-info-grid,body.rajac-gljive-responsive .glj-morph-grid,body.rajac-gljive-responsive .glj-eco-items,body.rajac-gljive-responsive .grid-3,body.rajac-gljive-responsive .season-grid,body.rajac-gljive-responsive .hero-stats{grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:14px!important}
+  body.rajac-gljive-responsive .glj-sidebar{position:relative!important;top:auto!important;width:100%!important;max-width:none!important}
+  body.rajac-gljive-responsive .glj-months{grid-template-columns:repeat(4,minmax(0,1fr))!important;gap:8px!important}
+  body.rajac-gljive-responsive .glj-bottom-nav{display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:10px!important}
+  body.rajac-gljive-responsive .glj-bottom-nav a{min-height:46px!important;padding:6px 10px!important;display:flex!important;flex-direction:row!important;align-items:center!important;justify-content:flex-start!important;gap:7px!important}
+  body.rajac-gljive-responsive .glj-bottom-nav b{font-size:17px!important;line-height:1!important;flex:0 0 auto!important}
+  body.rajac-gljive-responsive .glj-bottom-nav span{font-size:13px!important;line-height:1.2!important}
+  body.rajac-gljive-responsive .glj-bottom-nav .glj-bottom-next{justify-content:flex-end!important;text-align:right!important}
+  body.rajac-gljive-responsive .glj-bottom-nav .glj-bottom-all{justify-content:center!important;text-align:center!important}
+  body.rajac-gljive-responsive .glj-bottom-all{grid-column:1/-1!important}
+  body.rajac-gljive-responsive .glj-card,body.rajac-gljive-responsive .glj-info-card,body.rajac-gljive-responsive .glj-section,body.rajac-gljive-responsive .card{min-width:0!important;max-width:100%!important}
+  body.rajac-gljive-responsive .glj-controls,body.rajac-gljive-responsive .glj-filter-row,body.rajac-gljive-responsive .actions,body.rajac-gljive-responsive .quick-nav-inner{max-width:100%!important;flex-wrap:wrap!important}
+  body.rajac-archive--gljive .glj-filter-row{display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:8px!important;width:100%!important}
+  body.rajac-archive--gljive .glj-filter-label{grid-column:1/-1!important;min-width:0!important}
+  body.rajac-archive--gljive .glj-filter{width:100%!important;min-width:0!important;min-height:34px!important;padding:6px 8px!important;font-size:12px!important;line-height:1.15!important;gap:6px!important}
+  body.rajac-gljive-responsive input,body.rajac-gljive-responsive select,body.rajac-gljive-responsive textarea,body.rajac-gljive-responsive button{max-width:100%!important;font-size:16px}
+  body.rajac-gljive-responsive .table-card,body.rajac-gljive-responsive .table-wrap,body.rajac-gljive-responsive table{max-width:100%!important}
+  body.rajac-gljive-responsive .table-card,body.rajac-gljive-responsive .table-wrap{overflow-x:auto!important;-webkit-overflow-scrolling:touch!important;overscroll-behavior-inline:contain}
+  body.rajac-gljive-responsive table{width:100%!important;min-width:680px!important}
+  body.rajac-gljive-responsive .glj-q-options,body.rajac-gljive-responsive .quiz-options{grid-template-columns:minmax(0,1fr)!important}
+  body.rajac-gljive-responsive a,body.rajac-gljive-responsive button,body.rajac-gljive-responsive [role="button"]{touch-action:manipulation}
+}
+
+/* v12: širi osnovni stubac i odmak glavne fotografije od menija. */
+@media(max-width:1100px){
+  html body.rajac-gljive-responsive .glj-hdr{
+    padding-top:12px!important;
+  }
+  html body.rajac-gljive-responsive .glj-hdr-inner,
+  html body.rajac-gljive-responsive .glj-main-wrap,
+  html body.rajac-gljive-responsive .glj-arc,
+  html body.rajac-gljive-responsive .wrap,
+  html body.rajac-gljive-responsive .container,
+  html body.rajac-gljive-responsive .page-wrap{
+    width:calc(100% - 20px)!important;
+    max-width:calc(100% - 20px)!important;
+  }
+  html body.rajac-gljive-responsive .glj-hdr-img{
+    width:100%!important;
+    max-width:none!important;
+  }
+  html body.rajac-gljive-responsive .glj-hdr-img img{
+    width:100%!important;
+    max-width:none!important;
+  }
+}
+
+@media(max-width:700px){
+  html body.rajac-gljive-responsive .glj-hdr-inner,
+  html body.rajac-gljive-responsive .glj-main-wrap,
+  html body.rajac-gljive-responsive .glj-arc,
+  html body.rajac-gljive-responsive .wrap,
+  html body.rajac-gljive-responsive .container,
+  html body.rajac-gljive-responsive .page-wrap{
+    width:calc(100% - 16px)!important;
+    max-width:calc(100% - 16px)!important;
+  }
+  html body.rajac-gljive-responsive .glj-hdr-inner,
+  html body.rajac-gljive-responsive .glj-main-wrap{
+    padding-left:8px!important;
+    padding-right:8px!important;
+  }
+}
+
+/* Mobilni/tablet prikaz dopunskih stranica: kompaktnije ilustracije i tabela bez bočnog skrola. */
+@media(max-width:1100px){
+  html body.rajac-gljive-responsive .hero-visual{
+    display:flex!important;
+    flex-direction:column!important;
+    min-height:0!important;
+    height:auto!important;
+  }
+  html body.rajac-gljive-responsive .hero-visual svg{
+    position:relative!important;
+    left:0!important;
+    top:0!important;
+    width:100%!important;
+    height:auto!important;
+    min-height:0!important;
+    flex:0 0 auto!important;
+    transform:translateY(-48px)!important;
+    margin-bottom:-48px!important;
+  }
+  html body.rajac-gljive-responsive .hero-visual-badge{
+    position:relative!important;
+    left:auto!important;
+    right:auto!important;
+    bottom:auto!important;
+    width:100%!important;
+    max-width:none!important;
+    margin:0!important;
+    border-radius:0!important;
+    box-sizing:border-box!important;
+  }
+  html body.rajac-gljive-responsive.rajac-gljive-ponasanje .table-card{
+    overflow:visible!important;
+  }
+  html body.rajac-gljive-responsive.rajac-gljive-ponasanje .table-card table,
+  html body.rajac-gljive-responsive.rajac-gljive-ponasanje .table-card tbody,
+  html body.rajac-gljive-responsive.rajac-gljive-ponasanje .table-card tr,
+  html body.rajac-gljive-responsive.rajac-gljive-ponasanje .table-card td{
+    display:block!important;
+    width:100%!important;
+    min-width:0!important;
+    max-width:100%!important;
+  }
+  html body.rajac-gljive-responsive.rajac-gljive-ponasanje .table-card thead{display:none!important}
+  html body.rajac-gljive-responsive.rajac-gljive-ponasanje .table-card tr{
+    padding:8px 0!important;
+    border-bottom:1px solid var(--border,#ddd)!important;
+  }
+  html body.rajac-gljive-responsive.rajac-gljive-ponasanje .table-card td{
+    padding:8px 14px!important;
+    border:0!important;
+    overflow-wrap:anywhere!important;
+  }
+  html body.rajac-gljive-responsive.rajac-gljive-ponasanje .table-card td::before{
+    display:block!important;
+    margin-bottom:2px!important;
+    color:var(--forest-dark,#173322)!important;
+    font-weight:700!important;
+  }
+  html body.rajac-gljive-responsive.rajac-gljive-ponasanje .table-card td:nth-child(1)::before{content:"Понашање посетилаца"}
+  html body.rajac-gljive-responsive.rajac-gljive-ponasanje .table-card td:nth-child(2)::before{content:"Зашто је важно"}
+  html body.rajac-gljive-responsive.rajac-gljive-ponasanje .table-card td:nth-child(3)::before{content:"Корист за управљање"}
+}
+
+@media(max-width:700px){
+  html body.rajac-gljive-responsive nav.rajac-ds-nav .rajac-ds-nav-inner{width:calc(100% - 24px)!important}
+  body.rajac-gljive-responsive .glj-arc,body.rajac-gljive-responsive .glj-main-wrap,body.rajac-gljive-responsive .glj-hdr-inner,body.rajac-gljive-responsive .wrap,body.rajac-gljive-responsive .container,body.rajac-gljive-responsive .page-wrap{width:calc(100% - 28px)!important;max-width:calc(100% - 28px)!important}
+  body.rajac-gljive-responsive .glj-grid,body.rajac-gljive-responsive .glj-info-grid,body.rajac-gljive-responsive .glj-morph-grid,body.rajac-gljive-responsive .glj-eco-items,body.rajac-gljive-responsive .grid-3,body.rajac-gljive-responsive .season-grid,body.rajac-gljive-responsive .hero-stats{grid-template-columns:minmax(0,1fr)!important}
+  body.rajac-gljive-responsive .glj-hero{min-height:360px!important;padding:48px 14px!important}
+  body.rajac-gljive-responsive .glj-hero h1,body.rajac-gljive-responsive .glj-hdr h1,body.rajac-gljive-responsive .hero h1{font-size:clamp(2.15rem,11vw,3.25rem)!important;line-height:1.02!important;overflow-wrap:anywhere}
+  body.rajac-gljive-responsive .glj-hdr-img{min-height:240px!important;aspect-ratio:4/3!important}
+  body.rajac-gljive-responsive .glj-months{grid-template-columns:repeat(3,minmax(0,1fr))!important}
+  body.rajac-gljive-responsive .glj-bottom-nav{grid-template-columns:minmax(0,1fr)!important}
+  body.rajac-gljive-responsive .glj-bottom-nav a{min-height:44px!important;padding:5px 9px!important}
+  body.rajac-gljive-responsive .glj-bottom-all{grid-column:auto!important}
+  body.rajac-gljive-responsive .glj-card-body,body.rajac-gljive-responsive .glj-info-body,body.rajac-gljive-responsive .glj-section,body.rajac-gljive-responsive .card{padding:18px!important}
+  body.rajac-gljive-responsive table{min-width:620px!important}
+}
+
+#rajac-gljive-vrh{position:fixed;right:16px;bottom:16px;z-index:999998;width:52px;height:52px;padding:0;border:1px solid rgba(23,51,34,.38);border-radius:50%;background:rgba(255,255,255,.16);color:#173322;box-shadow:0 8px 24px rgba(0,0,0,.18);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1px;opacity:0;visibility:hidden;transform:translateY(10px);pointer-events:none;transition:.2s;cursor:pointer;text-shadow:0 1px 2px rgba(255,255,255,.8)}
+#rajac-gljive-vrh.is-visible{opacity:1;visibility:visible;transform:none;pointer-events:auto}
+#rajac-gljive-vrh .arr{font:800 20px/17px system-ui}#rajac-gljive-vrh .txt{font:800 9px/10px system-ui;letter-spacing:.08em}
+@media(prefers-reduced-motion:reduce){#rajac-gljive-vrh{transition:none}}
+
+/* v6: kompaktniji prelaz sa glavne fotografije na naslov vrste. */
+@media(max-width:1100px){
+  html body.rajac-gljive-responsive .glj-hdr-img{
+    height:auto!important;
+    min-height:0!important;
+    aspect-ratio:auto!important;
+    margin:0!important;
+    padding:0!important;
+    line-height:0!important;
+  }
+  html body.rajac-gljive-responsive .glj-hdr-img img{
+    display:block!important;
+    margin:0!important;
+  }
+  html body.rajac-gljive-responsive .glj-hdr-img .glj-photo-credit{line-height:1.45!important}
+  html body.rajac-gljive-responsive .glj-hdr-grid>div:first-child .glj-hdr-crumb{margin-top:6px!important}
+}
