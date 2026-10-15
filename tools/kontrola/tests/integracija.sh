@@ -86,7 +86,7 @@ ok "слика без alt" '[ "$(v alt)" = "1" ]'
 ok "прескочени фолдери у извештају" '[ "$(v skip)" = "kontrola/ ris/" ]'
 
 # 6. преузимање само дозвољених фајлова
-ok "преузимање kontrola.json" 'curl -s -b "$J" "$URL?preuzmi=kontrola.json" | grep -q "\"verzija\": \"1.1\""'
+ok "преузимање kontrola.json" 'curl -s -b "$J" "$URL?preuzmi=kontrola.json" | grep -q "\"verzija\": \""'
 CODE=$(curl -s -o /dev/null -w '%{http_code}' -b "$J" "$URL?preuzmi=../../etc/passwd")
 ok "покушај изласка из фолдера одбијен (404)" '[ "$CODE" = "404" ]'
 CODE=$(curl -s -o /dev/null -w '%{http_code}' -b "$J" "$URL?preuzmi=stanje.json")
@@ -98,10 +98,32 @@ exec 9>"$D/.lock"; flock 9
 ok "друга серија чека док прва ради" 'curl -s -b "$J" "$URL?nastavi=1" | grep -q "Контрола већ ради"'
 flock -u 9; exec 9>&-
 
-# 8. брисање само POST-ом
+# 8. извоз изворног кода
+mkdir -p "$PUB/vlasnici/data/invoices" "$PUB/ptice/_backup_x" "$PUB/assets"
+echo '<p>Рачун</p>' > "$PUB/vlasnici/data/invoices/RJ-1.html"
+echo '<p>копија</p>' > "$PUB/ptice/_backup_x/index.html"
+echo 'body{}' > "$PUB/assets/site.css"
+echo '<?php $lozinka="x";' > "$PUB/config.php"
+CODE=$(curl -s -o /dev/null -w '%{http_code}' -b "$J" -d "akcija=izvoz&csrf=pogresno" "$URL")
+ok "извоз са погрешним CSRF одбијен" '[ "$CODE" = "400" ] && [ ! -f "$D/izvoz-sajta.zip" ]'
+curl -s -b "$J" "$URL?akcija=izvoz" >/dev/null
+ok "извоз се не покреће GET-ом" '[ ! -f "$D/izvoz-sajta.zip" ]'
+curl -s -b "$J" -d "akcija=izvoz&csrf=$CSRF" "$URL" | grep -q "Извоз је готов"
+ok "извоз POST-ом" '[ -f "$D/izvoz-sajta.zip" ]'
+curl -s -b "$J" "$URL?preuzmi=izvoz-sajta.zip" -o "$W/izvoz.zip"
+LIST=$(python3 -c "import zipfile,sys;print('\n'.join(zipfile.ZipFile(sys.argv[1]).namelist()))" "$W/izvoz.zip")
+ok "у ZIP-у је сајт" 'echo "$LIST" | grep -qx "site/index.html" && echo "$LIST" | grep -qx "site/ptice/buteo-buteo/index.html" && echo "$LIST" | grep -qx "site/assets/site.css"'
+ok "у ZIP-у нема рачуна власника" '! echo "$LIST" | grep -q "vlasnici"'
+ok "у ZIP-у нема копија, РИС-а, PHP-а ни контроле" '! echo "$LIST" | grep -qE "_backup|/ris/|\.php$|kontrola"'
+ok "ZIP није у public_html" '[ -z "$(find "$PUB" -name "*.zip")" ]'
+
+# 9. брисање само POST-ом
 curl -s -b "$J" -d "akcija=obrisi&csrf=$CSRF" "$URL" >/dev/null
 ok "брисање уклања резултате" '[ ! -f "$D/kontrola.json" ] && [ ! -f "$D/stanje.json" ]'
 ok "брисање не дира сајт" '[ -f "$PUB/index.html" ] && [ -f "$PUB/ptice/buteo-buteo/index.html" ]'
+ok "брисање уклања и извоз" '[ ! -f "$D/izvoz-sajta.zip" ]'
+start_srv ""
+ok "без лозинке нема преузимања извоза" '[ "$(c "$URL?preuzmi=izvoz-sajta.zip")" = "403" ]'
 
 echo "Интеграционих тестова: $((PASS+FAIL)), прошло: $PASS, пало: $FAIL"
 [ $FAIL -eq 0 ]

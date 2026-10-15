@@ -27,7 +27,7 @@ jobs:
       - uses: shivammathur/setup-php@v2
         with:
           php-version: ${{ matrix.php }}
-          extensions: ${{ matrix.mb == 'да' && 'mbstring' || ':mbstring' }}
+          extensions: ${{ matrix.mb == 'да' && 'mbstring, zip' || ':mbstring, zip' }}
           coverage: none
       - name: Верзија и проширења
         run: |

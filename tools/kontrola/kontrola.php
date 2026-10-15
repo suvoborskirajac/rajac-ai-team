@@ -30,13 +30,26 @@ declare(strict_types=1);
 
 /* ============ ПОДЕШАВАЊА ============ */
 
-const VERSION     = '1.1';
+const VERSION     = '1.2';
 const MAX_SECONDS = 15;             // колико секунди сме да траје једна серија
 const MAX_BATCH   = 400;            // највише страница у једној серији
 const MAX_LINKS   = 3000;           // највише мртвих линкова у извештају
 const MAX_SAMPLES = 8;              // примера по страници за сваку проверу
 const HOME_NAME   = 'ПИО „Рајац“';  // прописани текст линка ка почетној
 const DATA_DIR    = 'kontrola-podaci';
+const IZVOZ_ZIP   = 'izvoz-sajta.zip';
+const IZVOZ_MAX   = 2097152;        // највише 2 MB по фајлу у извозу
+
+/* Извоз: само текстуални изворни фајлови правог сајта, без слика и података. */
+const IZVOZ_EXT = ['html', 'htm', 'css', 'js'];
+/* Путање (почетак) које се никад не извозе: генерисано, лични подаци, копије. */
+const IZVOZ_SKIP_PREFIX = [
+    'agro-kopernikus/copernicus_data/', 'agro-kopernikus/_cache', 'amsrajac/dnevna-statistika/',
+    'vlasnici/', 'vlasnici_backup', 'rajac-vesti/public_html/', 'rajac-vesti/vesti1007-rad/',
+    'rajac-sajt-komplet-vesti-thumbcards-2105/', 'kopernikindeks/20', 'za-vlasnike/data/',
+];
+/* Делови путање који значе копију, радну верзију или кеш. */
+const IZVOZ_SKIP_RE = '~(^|/)[_.]|backup|rezerva|patch|probni|-test|_test|test/|kumulativni|izvoz|cache|kopija~i';
 
 /* Фолдери (по имену, на било ком нивоу) који се не читају. */
 const SKIP_DIRS = [
@@ -127,14 +140,15 @@ function main(): void
         return;
     }
     if (isset($_GET['preuzmi'])) {
-        $allowed = ['kontrola.json' => 'application/json', 'stranice.csv' => 'text/csv'];
+        $allowed = ['kontrola.json' => 'application/json', 'stranice.csv' => 'text/csv', IZVOZ_ZIP => 'application/zip'];
         $name = (string)$_GET['preuzmi'];
         if (!isset($allowed[$name]) || !is_file($data . '/' . $name)) {
             http_response_code(404);
             page('Нема фајла', '<p>Тражени фајл не постоји.</p>');
             return;
         }
-        header('Content-Type: ' . $allowed[$name] . '; charset=utf-8');
+        header('Content-Type: ' . $allowed[$name] . ($allowed[$name] === 'application/zip' ? '' : '; charset=utf-8'));
+        header('Content-Length: ' . (string)filesize($data . '/' . $name));
         header('Content-Disposition: attachment; filename="' . $name . '"');
         readfile($data . '/' . $name);
         return;
@@ -159,10 +173,23 @@ function main(): void
 
     try {
         if ($action === 'obrisi') {
-            foreach (['stanje.json', 'kontrola.json', 'stranice.csv', 'izvestaj.html'] as $f) {
+            foreach (['stanje.json', 'kontrola.json', 'stranice.csv', 'izvestaj.html', IZVOZ_ZIP] as $f) {
                 if (is_file($data . '/' . $f)) { @unlink($data . '/' . $f); }
             }
             page('Обрисано', '<p>Резултати су обрисани. Сајт није мењан.</p><p><a href="' . h($self) . '">Назад</a></p>');
+            return;
+        }
+        if ($action === 'izvoz') {
+            $r = make_export($root, $data . '/' . IZVOZ_ZIP);
+            if ($r['ok']) {
+                page('Извоз је готов',
+                    '<p>Спаковано фајлова: <b>' . $r['n'] . '</b> (' . h(number_format($r['bytes'] / 1048576, 1, ',', '.')) . ' MB пре паковања).</p>'
+                    . '<p><a class="b" href="' . h($self) . '?preuzmi=' . IZVOZ_ZIP . '">Преузми ' . IZVOZ_ZIP . '</a></p>'
+                    . '<p>Само HTML, CSS и JS правог сајта. Нема слика, PHP фајлова, података власника ни резервних копија. Сајт није мењан.</p>'
+                    . '<p><a href="' . h($self) . '">Назад</a></p>');
+            } else {
+                page('Извоз није успео', '<p>' . h($r['error']) . '</p><p><a href="' . h($self) . '">Назад</a></p>');
+            }
             return;
         }
         if ($action === 'pokreni') {
@@ -207,7 +234,7 @@ function main(): void
             }
         }
 
-        echo home_html($self, $csrf, is_array($st) ? $st : null);
+        echo home_html($self, $csrf, is_array($st) ? $st : null, is_file($data . '/' . IZVOZ_ZIP) ? (int)filemtime($data . '/' . IZVOZ_ZIP) : 0);
     } finally {
         flock($lock, LOCK_UN);
         fclose($lock);
@@ -744,7 +771,7 @@ function refresh_html(string $url, int $sec, string $title, string $line): strin
         . '<h1>' . h($title) . ' ' . h($line) . '</h1><p>Страница се сама освежава. Не затварај прозор.</p></body></html>';
 }
 
-function home_html(string $self, string $csrf, ?array $st): string
+function home_html(string $self, string $csrf, ?array $st, int $izvozTime = 0): string
 {
     $form = function (string $akcija, string $label, string $cls = '', string $confirm = '') use ($self, $csrf): string {
         return '<form method="post" action="' . h($self) . '" style="display:inline"'
@@ -768,7 +795,77 @@ function home_html(string $self, string $csrf, ?array $st): string
         page('Контрола сајта ПИО „Рајац“',
             '<p>Скрипта чита јавне странице и пописује грешке. Сајт не мења.</p><p>' . $form('pokreni', 'Покрени контролу') . '</p>');
     }
+    echo '<div style="max-width:760px;margin:-20px auto 40px;padding:0 16px;font:16px/1.6 system-ui,sans-serif">'
+        . '<h2>Извоз изворног кода</h2><p>ZIP са HTML, CSS и JS фајловима правог сајта за GitHub — без слика, PHP-а, '
+        . 'података власника и резервних копија.</p><p>' . $form('izvoz', 'Направи извоз')
+        . ($izvozTime > 0 ? ' <a href="' . h($self) . '?preuzmi=' . IZVOZ_ZIP . '">Преузми последњи извоз (' . h(date('d. m. Y. H:i', $izvozTime)) . ')</a>' : '')
+        . '</p></div>';
     return (string)ob_get_clean();
+}
+
+/* ============ ИЗВОЗ ============ */
+
+/** Да ли фолдер (путања у односу на public_html, без косе црте на крају) улази у извоз. */
+function izvoz_dir_ok(string $dir): bool
+{
+    $dir = trim(str_replace('\\', '/', $dir), '/');
+    if ($dir === '' || $dir === '.') { return true; }
+    foreach (IZVOZ_SKIP_PREFIX as $p) {
+        if (strncasecmp($dir . '/', $p, strlen($p)) === 0) { return false; }
+        if (substr($p, -1) !== '/' && strncasecmp($dir, $p, strlen($p)) === 0) { return false; }
+    }
+    if (preg_match(IZVOZ_SKIP_RE, $dir . '/')) { return false; }
+    foreach (explode('/', $dir) as $seg) {
+        if (in_array(strtolower($seg), SKIP_DIRS, true) || stripos($seg, '.bak') !== false) { return false; }
+    }
+    return true;
+}
+
+/** Да ли фајл (путања у односу на public_html) улази у извоз. */
+function izvoz_ok(string $rel): bool
+{
+    $rel = str_replace('\\', '/', $rel);
+    $ext = strtolower((string)pathinfo($rel, PATHINFO_EXTENSION));
+    if (!in_array($ext, IZVOZ_EXT, true)) { return false; }
+    if (preg_match('#\.bak|\.old$|~$|\.min\.(js|css)$#i', basename($rel))) { return false; }
+    foreach (IZVOZ_SKIP_PREFIX as $p) {
+        if (strncasecmp($rel, $p, strlen($p)) === 0) { return false; }
+    }
+    return izvoz_dir_ok(dirname($rel));
+}
+
+/** Прави ZIP извоза атомски (привремени фајл, па rename). */
+function make_export(string $root, string $zipPath): array
+{
+    if (!class_exists('ZipArchive')) {
+        return ['ok' => false, 'error' => 'На серверу није укључено PHP проширење zip (ZipArchive). Јави Claude-у.'];
+    }
+    $tmp = $zipPath . '.tmp' . getmypid();
+    @unlink($tmp);
+    $zip = new ZipArchive();
+    if ($zip->open($tmp, ZipArchive::CREATE | ZipArchive::OVERWRITE) !== true) {
+        return ['ok' => false, 'error' => 'Не могу да направим ZIP фајл.'];
+    }
+    $n = 0; $bytes = 0;
+    $it = new RecursiveIteratorIterator(new RecursiveCallbackFilterIterator(
+        new RecursiveDirectoryIterator($root, FilesystemIterator::SKIP_DOTS),
+        function ($cur) use ($root) {
+            return !$cur->isDir() || izvoz_dir_ok(rel_of($root, $cur->getPathname()));
+        }
+    ));
+    foreach ($it as $f) {
+        if (!$f->isFile() || $f->isLink()) { continue; }
+        $rel = rel_of($root, $f->getPathname());
+        if (!izvoz_ok($rel) || $f->getSize() > IZVOZ_MAX) { continue; }
+        if (!$zip->addFile($f->getPathname(), 'site/' . $rel)) { $zip->close(); @unlink($tmp); return ['ok' => false, 'error' => 'Грешка при паковању: ' . $rel]; }
+        $n++; $bytes += $f->getSize();
+    }
+    $zip->addFromString('site/_IZVOZ.txt', 'Извоз сајта ПИО „Рајац“, ' . date('d. m. Y. H:i') . ', верзија ' . VERSION . ', фајлова: ' . $n . "\n");
+    if (!$zip->close() || !@rename($tmp, $zipPath)) {
+        @unlink($tmp);
+        return ['ok' => false, 'error' => 'ZIP није могао да се сачува.'];
+    }
+    return ['ok' => true, 'n' => $n, 'bytes' => $bytes];
 }
 
 /* ============ ИЗВЕШТАЈИ ============ */

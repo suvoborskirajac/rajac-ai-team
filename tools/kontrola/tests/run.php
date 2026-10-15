@@ -130,6 +130,28 @@ ok('Р3  страница без <body>, само <head>', visible_text('<head><
 ok('Р3  наслов се и даље чита за title проверу', head_checks($pg)['title'] === 'Rajac test page');
 ok('Р3  текст линка у менију и даље постоји', plain('<a href="/">ПИО <b>„Рајац“</b></a>') === 'ПИО „Рајац“');
 
+/* ---------- извоз изворног кода ---------- */
+foreach (['index.html', 'biljke/index.html', 'ptice/buteo-buteo/index.html', 'assets/site.css', 'zvezdani-park/assets/site.js',
+          'биљке/index.html', 'sisari/ursus-arctos/index.html', 'rajac-vesti/perseidi-rajac-2026/index.html'] as $okp) {
+    ok("И+ улази: $okp", izvoz_ok($okp));
+}
+foreach (['vlasnici/data/invoices/RJ-2026-0001.html', 'vlasnici/index_parcele.html', 'vlasnici_backup_20260711/index.html',
+          '_piorajac_izvoz/x/a.html', 'ris/index.html', 'ris/pozari/a.js', 'baza/a.html', 'kontrola/kontrola.php',
+          'ptice/_backup_krediti_20260816-153142/a/index.html', 'insekti/_patch_insekti_krediti_20260817/a.html',
+          'zvezdani-park/_rezerva-sumrak/index.html', 'agro-kopernikus/copernicus_data/reports/a/index.html',
+          'amsrajac/dnevna-statistika/2026-07-01/index.html', 'rajac-vesti/vesti1007-rad/a/index.html',
+          'rajac-vesti/public_html/a/index.html', 'kopernikindeks/2025-01-05/index.html', 'amsrajac/probni/index.html',
+          'wp-content/themes/a/style.css', 'svetlosno-zagadjenje/astro-prognoza-v60-test/index.html',
+          'index.php', 'config.php', 'assets/vendor/leaflet.js', 'assets/app.min.js', 'stara.html.bak', 'a/b.old',
+          'slika.jpg', 'podaci.json', 'baza.sqlite', '.htaccess', 'zvezdani-park/ZVEZDANI_PARK_v100_KUMULATIVNI/index.html',
+          'amsrajac/cache/a.html', 'ptice/patch_files/index.html'] as $nop) {
+    ok("И- не улази: $nop", !izvoz_ok($nop));
+}
+ok('И- фолдер vlasnici се одмах прескаче', !izvoz_dir_ok('vlasnici') && !izvoz_dir_ok('vlasnici/data'));
+ok('И- vlasnici_backup се одмах прескаче', !izvoz_dir_ok('vlasnici_backup_20260711'));
+ok('И+ корен и обични фолдери',           izvoz_dir_ok('') && izvoz_dir_ok('ptice') && izvoz_dir_ok('zvezdani-park/kurs-astronomije'));
+ok('И+ za-vlasnike страница улази, подаци не', izvoz_ok('za-vlasnike/index.html') && !izvoz_ok('za-vlasnike/data/a.html'));
+
 /* ---------- безбедност: заштита фолдера ---------- */
 ok('А+ REMOTE_USER од сервера',         auth_ok(['REMOTE_USER' => 'zoran']) === true);
 ok('А+ REDIRECT_REMOTE_USER',           auth_ok(['REDIRECT_REMOTE_USER' => 'zoran']) === true);
