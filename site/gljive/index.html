@@ -380,7 +380,7 @@ body.admin-bar .rajac-ds-nav{top:32px}.rajac-ds-nav *{box-sizing:border-box}.raj
 <div class="glj-hero">
 <div class="glj-hero-content">
 <h1>Гљиве Рајца</h1>
-<p class="glj-hero-sub">Детаљан каталог гљива евидентираних на подручју ПИО „Рајац“ — са стаништима, сезонама растења, микоризним односима и упутствима за описно препознавање. Подручје није довољно истражено миколошки, па каталог комбинује потврђене налазе и предиктивно очекиване таксоне.</p>
+<p class="glj-hero-sub">Каталог гљива које се могу очекивати на подручју ПИО „Рајац“ — са стаништима, сезонама растења, микоризним односима и описима за препознавање. Подручје још није довољно истражено миколошки, па каталог приказује врсте очекиване према стаништима; налаз се сматра потврђеним тек после стручне провере.</p>
 </div>
 <span aria-label="Фото: Davide Puddu / Wikimedia Commons, CC BY 4.0 — оригинал" class="glj-hero-credit" data-credit-url="https://commons.wikimedia.org/wiki/File:Boletus_edulis_collection_cropped.jpg" role="link" tabindex="0">Фото: Davide Puddu / Wikimedia Commons, CC BY 4.0 — оригинал</span></div>
 </div>
@@ -390,22 +390,22 @@ body.admin-bar .rajac-ds-nav{top:32px}.rajac-ds-nav *{box-sizing:border-box}.raj
 <button class="glj-filter f-edib" onclick="gljFilter(this,'edible','edib')">Јестиве</button>
 <button class="glj-filter f-edib f-toxic" onclick="gljFilter(this,'toxic','edib')">☠️ Отровне</button>
 <button class="glj-filter f-edib f-suspect" onclick="gljFilter(this,'suspect','edib')">⚠️ Опасне</button>
-<button class="glj-filter f-edib f-medicinal" onclick="gljFilter(this,'medicinal','edib')">🔬 Лековите</button>
+<button class="glj-filter f-edib f-medicinal" onclick="gljFilter(this,'medicinal','edib')">🔬 Дрвне гљиве</button>
 </div>
 </div>
 </div>
 <h2 class="glj-sr-only">Каталог врста</h2>
 <div class="glj-grid" id="glj-grid">
-<div class="glj-card toxic" data-edib="toxic" data-hay="Бледа пупавка (Мухара) amanita phalloides смртоносна, отровна, зелена, аматоксин, мухара" data-sg="indicator">
-<a href="https://piorajac.rs/gljive/amanita-phalloides/">
-<div class="glj-card-photo"><img alt="Бледа пупавка (Мухара) — Amanita phalloides" decoding="async" height="420" loading="lazy" referrerpolicy="no-referrer" src="assets/img/species/amanita-phalloides.jpg" width="640"/>
-<span class="glj-card-badge" style="background:#fef2f2;color:#8b1a1a">ОТРОВНА</span>
-<span aria-label="Фото: Archenzo / Wikimedia Commons, CC BY-SA 3.0 / GFDL — оригинал" class="glj-card-credit" data-credit-url="https://commons.wikimedia.org/wiki/File:Amanita_phalloides_1.JPG" role="link" tabindex="0">Фото: Archenzo / Wikimedia Commons, CC BY-SA 3.0 / GFDL — оригинал</span></div>
+<div class="glj-card" data-edib="edible_med" data-hay="Бисерка amanita rubescens rumenac, crvenac, ružičasta, amanita, prsten, crveni, bledajka" data-sg="mixed_forest">
+<a href="https://piorajac.rs/gljive/amanita-rubescens/">
+<div class="glj-card-photo"><img alt="Бисерка — Amanita rubescens" decoding="async" height="420" loading="lazy" referrerpolicy="no-referrer" src="assets/img/species/amanita-rubescens.jpg" width="640"/>
+<span class="glj-card-badge" style="background:#f0fdf4;color:#166534">Условно јестива</span>
+<span aria-label="Фото: Archenzo / Wikimedia Commons, CC BY-SA 3.0 / GFDL — оригинал" class="glj-card-credit" data-credit-url="https://commons.wikimedia.org/wiki/File:Amanita_rubescens.JPG" role="link" tabindex="0">Фото: Archenzo / Wikimedia Commons, CC BY-SA 3.0 / GFDL — оригинал</span></div>
 <div class="glj-card-right">
 <div class="glj-card-body">
-<h3 class="glj-card-name">Бледа пупавка (Мухара)</h3>
-<p class="glj-card-latin">Amanita phalloides</p>
-<p class="glj-card-short">СМРТОНОСНА ГЉИВА — један од главних узрока смртних тровања гљивама. Нема противотрова. Први симптоми могу да се јаве тек 6–24 сата после јела. При сумњи на тровање одмах потражити хитну помоћ — не чекати симптоме.</p> </div>
+<h3 class="glj-card-name">Бисерка</h3>
+<p class="glj-card-latin">Amanita rubescens</p>
+<p class="glj-card-short">Ризична Amanita са црвенкастом капом и сивим брадавицама. Због могуће замене са опасним врстама рода Amanita није препорука за брање или исхрану.</p> </div>
 <div class="glj-card-foot">
 <span class="glj-card-season">Јун–Новембар</span>
 <span class="glj-card-arr">→</span>
@@ -474,7 +474,7 @@ body.admin-bar .rajac-ds-nav{top:32px}.rajac-ds-nav *{box-sizing:border-box}.raj
 <div class="glj-card-body">
 <h3 class="glj-card-name">Говеђи језик</h3>
 <p class="glj-card-latin">Fistulina hepatica</p>
-<p class="glj-card-short">Јединствена гљива која наликује говеђем језику или сирини меса. Расте на старим храстовима и кестенима. Месо је сочно, кисело-слатко, подсећа на сирово месо по изгледу.</p> </div>
+<p class="glj-card-short">Јединствена гљива која наликује говеђем језику или сировом месу. Расте на старим храстовима и кестенима. Месо је сочно, кисело-слатко, подсећа на сирово месо по изгледу.</p> </div>
 <div class="glj-card-foot">
 <span class="glj-card-season">Август–Новембар</span>
 <span class="glj-card-arr">→</span>
@@ -508,7 +508,7 @@ body.admin-bar .rajac-ds-nav{top:32px}.rajac-ds-nav *{box-sizing:border-box}.raj
 <div class="glj-card-body">
 <h3 class="glj-card-name">Ђаволска гљива</h3>
 <p class="glj-card-latin">Rubroboletus satanas</p>
-<p class="glj-card-short">☠️ ОТРОВНА! Велика гљива са белом капом, крваво-црвеним порама и плавим месом на пресеку. Узрокује тешка тровања. НИКАДА не користити за исхрану!</p> </div>
+<p class="glj-card-short">☠️ ОТРОВНА! Велика гљива са беличасто-сивом капом, крваво-црвеним порама и плавим месом на пресеку. Узрокује тешка тровања. НИКАДА не користити за исхрану!</p> </div>
 <div class="glj-card-foot">
 <span class="glj-card-season">Јун–Септембар</span>
 <span class="glj-card-arr">→</span>
@@ -567,6 +567,23 @@ body.admin-bar .rajac-ds-nav{top:32px}.rajac-ds-nav *{box-sizing:border-box}.raj
 </div>
 </a>
 </div>
+<div class="glj-card toxic" data-edib="toxic" data-hay="Зелена пупавка amanita phalloides смртоносна, отровна, зелена, аматоксин, пупавка" data-sg="indicator">
+<a href="https://piorajac.rs/gljive/amanita-phalloides/">
+<div class="glj-card-photo"><img alt="Зелена пупавка — Amanita phalloides" decoding="async" height="420" loading="lazy" referrerpolicy="no-referrer" src="assets/img/species/amanita-phalloides.jpg" width="640"/>
+<span class="glj-card-badge" style="background:#fef2f2;color:#8b1a1a">ОТРОВНА</span>
+<span aria-label="Фото: Archenzo / Wikimedia Commons, CC BY-SA 3.0 / GFDL — оригинал" class="glj-card-credit" data-credit-url="https://commons.wikimedia.org/wiki/File:Amanita_phalloides_1.JPG" role="link" tabindex="0">Фото: Archenzo / Wikimedia Commons, CC BY-SA 3.0 / GFDL — оригинал</span></div>
+<div class="glj-card-right">
+<div class="glj-card-body">
+<h3 class="glj-card-name">Зелена пупавка</h3>
+<p class="glj-card-latin">Amanita phalloides</p>
+<p class="glj-card-short">СМРТОНОСНА ГЉИВА — један од главних узрока смртних тровања гљивама. Нема противотрова. Први симптоми могу да се јаве тек 6–24 сата после јела. При сумњи на тровање одмах потражити хитну помоћ — не чекати симптоме.</p> </div>
+<div class="glj-card-foot">
+<span class="glj-card-season">Јун–Новембар</span>
+<span class="glj-card-arr">→</span>
+</div>
+</div>
+</a>
+</div>
 <div class="glj-card" data-edib="suspect" data-hay="Јеленаста љускавача pholiota squarrosa љускавача, јеленаста, љуске, гроздови, дрво, жута, паразит" data-sg="mixed_forest">
 <a href="https://piorajac.rs/gljive/pholiota-squarrosa/">
 <div class="glj-card-photo"><img alt="Јеленаста љускавача — Pholiota squarrosa" decoding="async" height="420" loading="lazy" referrerpolicy="no-referrer" src="assets/img/species/pholiota-squarrosa.jpg" width="640"/>
@@ -576,7 +593,7 @@ body.admin-bar .rajac-ds-nav{top:32px}.rajac-ds-nav *{box-sizing:border-box}.raj
 <div class="glj-card-body">
 <h3 class="glj-card-name">Јеленаста љускавача</h3>
 <p class="glj-card-latin">Pholiota squarrosa</p>
-<p class="glj-card-short">⚠️ Препознатљива гљива — жута капа покривена крупним тамнијим љускама попут јелењих рогова. Расте у густим гроздовима на основи стабала. Сматра се сумњивом — изазива тровање код неких особа, нарочито уз алкохол.</p> </div>
+<p class="glj-card-short">⚠️ Препознатљива гљива — жута капа покривена крупним тамнијим љускама. Расте у густим гроздовима на основи стабала. Сматра се сумњивом — изазива тровање код неких особа, нарочито уз алкохол.</p> </div>
 <div class="glj-card-foot">
 <span class="glj-card-season">Август–Новембар</span>
 <span class="glj-card-arr">→</span>
@@ -594,7 +611,7 @@ body.admin-bar .rajac-ds-nav{top:32px}.rajac-ds-nav *{box-sizing:border-box}.raj
 <div class="glj-card-body">
 <h3 class="glj-card-name">Лисичарка</h3>
 <p class="glj-card-latin">Cantharellus cibarius</p>
-<p class="glj-card-short">Препознатљива по живописној жуто-наранџастој боји и воћном мирису на кајсију. Кључна одлика: нема правих листића — на дну капе налазе се вилицасти набори (псеудоламеле).</p> </div>
+<p class="glj-card-short">Препознатљива по живописној жуто-наранџастој боји и воћном мирису на кајсију. Кључна одлика: нема правих листића — на дну капе налазе се рачвасти набори (псеудоламеле).</p> </div>
 <div class="glj-card-foot">
 <span class="glj-card-season">Јун–Октобар</span>
 <span class="glj-card-arr">→</span>
@@ -690,23 +707,6 @@ body.admin-bar .rajac-ds-nav{top:32px}.rajac-ds-nav *{box-sizing:border-box}.raj
 </div>
 </a>
 </div>
-<div class="glj-card" data-edib="edible_med" data-hay="Ружичаста бледајка amanita rubescens rumenac, crvenac, ružičasta, amanita, prsten, crveni, bledajka" data-sg="mixed_forest">
-<a href="https://piorajac.rs/gljive/amanita-rubescens/">
-<div class="glj-card-photo"><img alt="Ружичаста бледајка — Amanita rubescens" decoding="async" height="420" loading="lazy" referrerpolicy="no-referrer" src="assets/img/species/amanita-rubescens.jpg" width="640"/>
-<span class="glj-card-badge" style="background:#f0fdf4;color:#166534">Условно јестива</span>
-<span aria-label="Фото: Archenzo / Wikimedia Commons, CC BY-SA 3.0 / GFDL — оригинал" class="glj-card-credit" data-credit-url="https://commons.wikimedia.org/wiki/File:Amanita_rubescens.JPG" role="link" tabindex="0">Фото: Archenzo / Wikimedia Commons, CC BY-SA 3.0 / GFDL — оригинал</span></div>
-<div class="glj-card-right">
-<div class="glj-card-body">
-<h3 class="glj-card-name">Ружичаста бледајка</h3>
-<p class="glj-card-latin">Amanita rubescens</p>
-<p class="glj-card-short">Ризична Amanita са црвенкастом капом и сивим брадавицама. Због могуће замене са опасним врстама рода Amanita није препорука за брање или исхрану.</p> </div>
-<div class="glj-card-foot">
-<span class="glj-card-season">Јун–Новембар</span>
-<span class="glj-card-arr">→</span>
-</div>
-</div>
-</a>
-</div>
 <div class="glj-card" data-edib="edible" data-hay="Рујница (рижа) lactarius deliciosus riža, mlečnica, bor, narandžasta, mleko, crvena" data-sg="conifer">
 <a href="https://piorajac.rs/gljive/lactarius-deliciosus/">
 <div class="glj-card-photo"><img alt="Рујница (рижа) — Lactarius deliciosus" decoding="async" height="420" loading="lazy" referrerpolicy="no-referrer" src="assets/img/species/lactarius-deliciosus.jpg" width="640"/>
@@ -716,7 +716,7 @@ body.admin-bar .rajac-ds-nav{top:32px}.rajac-ds-nav *{box-sizing:border-box}.raj
 <div class="glj-card-body">
 <h3 class="glj-card-name">Рујница (рижа)</h3>
 <p class="glj-card-latin">Lactarius deliciosus</p>
-<p class="glj-card-short">У литератури се наводи као јестива гљива борових шума, али ова страница није препорука за брање или исхрану. Карактеристична наранџаста боја и наранџасто млеко које се јавља на оштећењу. Увек уз бор — без бора нема риже.</p> </div>
+<p class="glj-card-short">У литератури се наводи као јестива гљива борових шума, али ова страница није препорука за брање или исхрану. Карактеристична наранџаста боја и наранџасто млеко које се јавља на оштећењу. Расте уз бор.</p> </div>
 <div class="glj-card-foot">
 <span class="glj-card-season">Август–Новембар</span>
 <span class="glj-card-arr">→</span>
@@ -727,13 +727,13 @@ body.admin-bar .rajac-ds-nav{top:32px}.rajac-ds-nav *{box-sizing:border-box}.raj
 <div class="glj-card" data-edib="medicinal" data-hay="Сјајна гарба (Рајши) ganoderma lucidum сапробна, паразит, сјаjna, лечење, медицина, кинеска" data-sg="indicator">
 <a href="https://piorajac.rs/gljive/ganoderma-lucidum/">
 <div class="glj-card-photo"><img alt="Сјајна гарба (Рајши) — Ganoderma lucidum" decoding="async" height="420" loading="lazy" referrerpolicy="no-referrer" src="assets/img/species/ganoderma-lucidum.jpg" width="640"/>
-<span class="glj-card-badge" style="background:#f4f1fa;color:#5d4a7c">Лековита</span>
+<span class="glj-card-badge" style="background:#f4f1fa;color:#5d4a7c">Дрвна гљива</span>
 <span aria-label="Фото: Eric Steinert / Wikimedia Commons, CC BY-SA / GFDL — оригинал" class="glj-card-credit" data-credit-url="https://commons.wikimedia.org/wiki/File:Ganoderma_lucidum_01.jpg" role="link" tabindex="0">Фото: Eric Steinert / Wikimedia Commons, CC BY-SA / GFDL — оригинал</span></div>
 <div class="glj-card-right">
 <div class="glj-card-body">
 <h3 class="glj-card-name">Сјајна гарба (Рајши)</h3>
 <p class="glj-card-latin">Ganoderma lucidum</p>
-<p class="glj-card-short">Необична медицинска гљива са сјајном лаком површином. Није јестива као класична храна; наводи се у традиционалној литератури, али овај каталог не даје препоруке за употребу. На Рајцу расте на пањевима листопадних дрвета.</p> </div>
+<p class="glj-card-short">Необична медицинска гљива са сјајном лаком површином. Није јестива као класична храна; наводи се у традиционалној литератури, али овај каталог не даје препоруке за употребу. Расте на пањевима листопадних дрвета.</p> </div>
 <div class="glj-card-foot">
 <span class="glj-card-season">Јун–Новембар</span>
 <span class="glj-card-arr">→</span>
@@ -763,7 +763,7 @@ body.admin-bar .rajac-ds-nav{top:32px}.rajac-ds-nav *{box-sizing:border-box}.raj
 <a href="https://piorajac.rs/gljive/macrolepiota-procera/">
 <div class="glj-card-photo"><img alt="Сунчаница — Macrolepiota procera" decoding="async" height="420" loading="lazy" referrerpolicy="no-referrer" src="assets/img/species/macrolepiota-procera.jpg" width="640"/>
 <span class="glj-card-badge" style="background:#ecfdf5;color:#15803d">Јестива</span>
-<span aria-label="Фото: George Chernilevsky / Wikimedia Commons, Public domain — оригинал" class="glj-card-credit" data-credit-url="https://commons.wikimedia.org/wiki/File:Macrolepiota_procera_2013_G1.jpg" role="link" tabindex="0">Фото: George Chernilevsky / Wikimedia Commons, Public domain — оригинал</span></div>
+<span aria-label="Фото: George Chernilevsky / Wikimedia Commons, јавно власништво — оригинал" class="glj-card-credit" data-credit-url="https://commons.wikimedia.org/wiki/File:Macrolepiota_procera_2013_G1.jpg" role="link" tabindex="0">Фото: George Chernilevsky / Wikimedia Commons, јавно власништво — оригинал</span></div>
 <div class="glj-card-right">
 <div class="glj-card-body">
 <h3 class="glj-card-name">Сунчаница</h3>
@@ -797,7 +797,7 @@ body.admin-bar .rajac-ds-nav{top:32px}.rajac-ds-nav *{box-sizing:border-box}.raj
 <div class="glj-card" data-edib="medicinal" data-hay="Шарена трамета (Ћуран-репат) trametes versicolor ćuran repić, drvo, šarena, konzola, saprofit, lečenje" data-sg="mixed_forest">
 <a href="https://piorajac.rs/gljive/trametes-versicolor/">
 <div class="glj-card-photo"><img alt="Шарена трамета (Ћуран-репат) — Trametes versicolor" decoding="async" height="420" loading="lazy" referrerpolicy="no-referrer" src="assets/img/species/trametes-versicolor.jpg" width="640"/>
-<span class="glj-card-badge" style="background:#f4f1fa;color:#5d4a7c">Лековита</span>
+<span class="glj-card-badge" style="background:#f4f1fa;color:#5d4a7c">Дрвна гљива</span>
 <span aria-label="Фото: Hans Hillewaert / Wikimedia Commons, CC BY-SA 4.0 — оригинал" class="glj-card-credit" data-credit-url="https://commons.wikimedia.org/wiki/File:Trametes_versicolor.jpg" role="link" tabindex="0">Фото: Hans Hillewaert / Wikimedia Commons, CC BY-SA 4.0 — оригинал</span></div>
 <div class="glj-card-right">
 <div class="glj-card-body">
@@ -1016,14 +1016,14 @@ body.admin-bar .rajac-ds-nav{top:32px}.rajac-ds-nav *{box-sizing:border-box}.raj
       // ═══ ВРСТЕ ═══
       {
         cat:'vrste', catLbl:'🍄 Врсте', catCls:'glj-q-cat-vrste',
-        q:'Зашто је Бледа пупавка (<em>Amanita phalloides</em>) посебно опасна?',
+        q:'Зашто је Зелена пупавка (<em>Amanita phalloides</em>) посебно опасна?',
         opts:['Јер се лако препознаје','Јер тровање може бити смртоносно, а први симптоми могу да касне 6–24 сата','Јер расте само зими','Јер је отровна само сирова'], ans:1,
         exp:'<em>Amanita phalloides</em> је <strong>један од главних узрока смртних тровања гљивама</strong>. Садржи аматоксине који уништавају јетру — први симптоми могу да се јаве тек 6–24 сата после јела. Зато се при сумњи одмах тражи хитна помоћ — рано започето лечење значајно повећава изгледе за опоравак.'
       },
       {
         cat:'vrste', catLbl:'🍄 Врсте', catCls:'glj-q-cat-vrste',
         q:'Која гљива у опису има <strong>наранџасто млеко</strong> на месту оштећења?',
-        opts:['Лисичарка (Cantharellus cibarius)','Ружичаста бледајка (Amanita rubescens)','Рујница (Lactarius deliciosus)','Голубача (Russula virescens)'], ans:2,
+        opts:['Лисичарка (Cantharellus cibarius)','Бисерка (Amanita rubescens)','Рујница (Lactarius deliciosus)','Голубача (Russula virescens)'], ans:2,
         exp:'<strong>Рујница (<em>Lactarius deliciosus</em>)</strong> има наранџасто млеко; оштећена места и трагови млека временом могу да позелене. Расте уз бор. Ово је опис, не упутство за брање.'
       },
       {
@@ -1034,7 +1034,7 @@ body.admin-bar .rajac-ds-nav{top:32px}.rajac-ds-nav *{box-sizing:border-box}.raj
       },
       {
         cat:'vrste', catLbl:'🍄 Врсте', catCls:'glj-q-cat-vrste',
-        q:'Бледајка (<em>Amanita vaginata</em>) је <strong>условно јестива</strong>. Шта је <strong>кључна разлика</strong> од смртоносне Бледе пупавке (<em>A. phalloides</em>)?',
+        q:'Бледајка (<em>Amanita vaginata</em>) је <strong>условно јестива</strong>. Шта је <strong>кључна разлика</strong> од смртоносне Зелене пупавке (<em>A. phalloides</em>)?',
         opts:['Бледајка је сива, пупавка је зелена','Бледајка нема прстен на стручку, пупавка га има','Бледајка је мања по величини','Бледајка расте у другом месецу'], ans:1,
         exp:'<strong>Одсуство прстена на стручку</strong> је важна разлика у опису, али није довољно за употребу у исхрани. Међутим, у младости (у „јајету") обе врсте изгледају веома слично — без пресека и стручне провере тешко их је поуздано разликовати.'
       },
@@ -1065,7 +1065,7 @@ body.admin-bar .rajac-ds-nav{top:32px}.rajac-ds-nav *{box-sizing:border-box}.raj
       },
       {
         cat:'bezb', catLbl:'🛡️ Безбедност', catCls:'glj-q-cat-bezb',
-        q:'По чему се у опису препознаје ружичаста бледајка (<em>Amanita rubescens</em>)?',
+        q:'По чему се у опису препознаје бисерка (<em>Amanita rubescens</em>)?',
         opts:['Расте само у боровим шумама','Листићи постају црвени у старости','Месо на пресеку порумени / поружичасти се (мења боју у ружичасту)','Капа је увек потпуно бела'], ans:2,
         exp:'Код рода <em>Amanita</em> постоји висок ризик замене. Због тога се налаз не користи као препорука за брање, већ се документује и проверава стручном идентификацијом.'
       },
@@ -1106,7 +1106,7 @@ body.admin-bar .rajac-ds-nav{top:32px}.rajac-ds-nav *{box-sizing:border-box}.raj
         cat:'eko', catLbl:'🌿 Екологија', catCls:'glj-q-cat-eko',
         q:'Шта је „Wood Wide Web" у контексту гљива у шуми Рајца?',
         opts:['Онлајн база података о шумским врстама','Подземна мрежа хифа микоризних гљива које повезује дрвеће и омогућава размену хранљивих материја','WiFi мрежа постављена за посетиоце Рајца','Научни часопис о биодиверзитету'] , ans:1,
-        exp:'<strong>Wood Wide Web</strong> — подземна мрежа хифа микоризних гљива која буквално <em>povezuje</em> дрвеће у шуми. Пренос материја микоризним везама је предмет истраживања; његов обим и еколошки значај не могу се уопштити за сваку шуму. Присуство заједничке микоризне мреже само по себи није доказ да старија стабла усмеравају ресурсе млађим стаблима; научни резултати зависе од услова и не дозвољавају опште закључке.'
+        exp:'<strong>Wood Wide Web</strong> — подземна мрежа хифа микоризних гљива која буквално <em>повезује</em> дрвеће у шуми. Пренос материја микоризним везама је предмет истраживања; његов обим и еколошки значај не могу се уопштити за сваку шуму. Присуство заједничке микоризне мреже само по себи није доказ да старија стабла усмеравају ресурсе млађим стаблима; научни резултати зависе од услова и не дозвољавају опште закључке.'
       },
     ];
 
