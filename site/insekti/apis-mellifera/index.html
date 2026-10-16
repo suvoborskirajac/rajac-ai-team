@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+
+<html lang="sr">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Медоносна пчела — Apis mellifera | Инсекти Рајца</title>
+<style>
+:root{
+  --sky:#0b2744;--sky-light:#1e5a84;
+  --honey:#f0a020;--honey-light:#f8d080;
+  --bg1:#0a1808;--bg2:#101808;
+  --cream:#f8f4ed;--border:#e0dbd3;--muted:#6b7280;--text:#1a1a2e;
+  --forest:#2d5a27;--forest-bg:#edf7f0;
+  --radius:12px;--shadow:0 2px 12px rgba(0,0,0,.08);--shadow-lg:0 8px 28px rgba(0,0,0,.14);
+  --font-serif:"Cormorant Garamond","EB Garamond",Garamond,"Palatino Linotype","Book Antiqua",Georgia,"Times New Roman",serif;
+  --font-sans:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:var(--font-sans);background:var(--cream);color:var(--text);font-size:15px;line-height:1.75}
+a{text-decoration:none;color:inherit}
+img{max-width:100%;display:block}
+.site-header{background:var(--sky);color:#fff;padding:0 32px;display:flex;align-items:center;justify-content:space-between;height:58px;border-bottom:3px solid var(--sky-light);position:sticky;top:0;z-index:100}
+html.admin-bar .site-header{top:32px}
+.site-header .logo{font-weight:700;font-size:14px;letter-spacing:.06em;text-transform:uppercase}
+.site-header nav a{color:rgba(255,255,255,.82);margin-left:18px;font-size:12.5px}
+.breadcrumb-bar{background:var(--cream);border-bottom:1px solid var(--border);padding:10px 0}
+.breadcrumb-bar .inner{max-width:960px;margin:0 auto;padding:0 24px;font-size:13px;color:var(--muted)}
+.breadcrumb-bar a{color:var(--sky-light);font-weight:600}
+.breadcrumb-bar .sep{margin:0 6px;opacity:.4}
+.species-hero{background:linear-gradient(145deg,#0a1808 0%,#101808 50%,#081010 100%);overflow:hidden}
+.hero-inner{max-width:960px;margin:0 auto;display:grid;grid-template-columns:1fr 380px;align-items:stretch}
+.hero-text{padding:40px 32px 36px 24px;display:flex;flex-direction:column;justify-content:center}
+.back-link{color:rgba(255,255,255,.65);font-size:13px;font-weight:500;margin-bottom:18px;display:inline-flex;align-items:center;gap:6px}
+.common-name{font-family:var(--font-serif);font-size:clamp(2.15rem,4.4vw,3rem);font-weight:300;color:#fff;line-height:1.05;letter-spacing:0;margin-bottom:6px}
+.latin-name{font-family:var(--font-serif);font-style:italic;font-size:1.25rem;color:var(--honey-light);margin-bottom:16px}
+.hero-short{color:rgba(255,255,255,.82);font-size:14px;max-width:520px;line-height:1.75;margin-bottom:18px}
+.hero-pills{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:14px}
+.pill{font-size:11px;font-weight:700;padding:6px 13px;border-radius:999px}
+.pill-order{background:rgba(240,160,32,.2);border:1px solid rgba(248,208,128,.4);color:var(--honey-light)}
+.pill-family{background:rgba(255,255,255,.10);border:1px solid rgba(255,255,255,.16);color:rgba(255,255,255,.85)}
+.pill-pol{background:rgba(45,90,39,.3);border:1px solid rgba(100,200,80,.35);color:#a0e080}
+.hero-tags{display:flex;gap:7px;flex-wrap:wrap}
+.htag{font-size:11px;background:rgba(255,255,255,.10);border:1px solid rgba(255,255,255,.15);color:rgba(255,255,255,.85);padding:4px 10px;border-radius:999px;font-weight:600}
+.hero-photo{position:relative;overflow:hidden;border-left:1px solid rgba(255,255,255,.07)}
+.hero-photo img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s}
+.hero-photo:hover img{transform:scale(1.04)}
+.hero-photo-cap{position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(0,0,0,.7));padding:18px 12px 10px;font-size:10.5px;color:rgba(255,255,255,.75);font-style:italic;text-align:right}
+.infobar{background:var(--sky);border-top:1px solid rgba(255,255,255,.07)}
+.infobar-inner{max-width:960px;margin:0 auto;display:grid;grid-template-columns:repeat(5,1fr)}
+.info-cell{padding:14px 18px;border-right:1px solid rgba(255,255,255,.07)}
+.info-cell:last-child{border-right:none}
+.info-label{font-size:10px;text-transform:uppercase;letter-spacing:1.4px;color:rgba(255,255,255,.4);font-weight:700;margin-bottom:4px}
+.info-val{font-size:13px;color:rgba(255,255,255,.9);font-weight:600}
+.page-wrap{max-width:960px;margin:0 auto;padding:32px 24px 64px}
+.gallery-section{margin-bottom:28px}
+.gallery-label{font-size:11px;text-transform:uppercase;letter-spacing:.1em;color:var(--muted);font-weight:800;margin-bottom:12px}
+.gallery-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.gallery-grid figure{border-radius:10px;overflow:hidden;box-shadow:var(--shadow);background:#e8d060;transition:transform .2s,box-shadow .2s}
+.gallery-grid figure:hover{transform:translateY(-2px);box-shadow:var(--shadow-lg)}
+.gallery-grid img{width:100%;aspect-ratio:4/3;object-fit:cover;display:block}
+.gallery-grid figcaption{font-size:10.5px;color:var(--muted);font-style:italic;padding:6px 8px;background:var(--cream);border:1px solid var(--border);border-top:none}
+.tabs{display:flex;border-bottom:2px solid var(--border);overflow-x:auto;scrollbar-width:none}
+.tabs::-webkit-scrollbar{display:none}
+.tab{padding:12px 18px;font-size:13px;font-weight:700;color:var(--muted);cursor:pointer;border:none;background:none;white-space:nowrap;border-bottom:2.5px solid transparent;margin-bottom:-2px;transition:all .2s;display:inline-flex;align-items:center;gap:6px}
+.tab:hover{color:var(--sky)}.tab.active{color:var(--sky);border-bottom-color:var(--sky-light)}
+.tab-panel{display:none;padding:28px 0}.tab-panel.active{display:block}
+.card{background:#fff;border:1px solid var(--border);border-radius:var(--radius);padding:20px;margin-bottom:16px}
+.card-title{font-size:11px;text-transform:uppercase;letter-spacing:.1em;color:var(--muted);font-weight:800;margin-bottom:14px;display:flex;align-items:center;gap:8px}
+.card-body{font-size:14px;color:#374151;line-height:1.85}
+.card-body p{margin-bottom:12px}.card-body p:last-child{margin-bottom:0}
+.card-body ul{margin:8px 0 12px 20px}.card-body li{margin-bottom:5px}
+.card-body strong{color:var(--text)}
+.honey-card{background:linear-gradient(135deg,#2a1800,#1a1000);border-radius:var(--radius);padding:22px;margin-bottom:16px;color:#fff}
+.honey-card .card-title{color:var(--honey-light)}
+.honey-card .card-body{color:rgba(255,255,255,.85)}
+.honey-card .card-body strong{color:var(--honey-light)}
+.warn-card{background:linear-gradient(135deg,#fefce8,#fef9c3);border:1px solid #fde68a;border-left:4px solid #f59e0b;border-radius:var(--radius);padding:20px;margin-bottom:16px}
+.warn-card .card-title{color:#92400e}.warn-card .card-body{color:#78350f}
+.eco-card{background:linear-gradient(135deg,var(--forest-bg),#f0faf2);border:1px solid #b8dfc5;border-left:4px solid var(--forest);border-radius:var(--radius);padding:20px;margin-bottom:16px}
+.eco-card .card-title{color:#166534}.eco-card .card-body{color:#155a30}
+.kv-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:18px}
+.kv-item{background:#fff;border:1px solid var(--border);border-radius:10px;padding:14px 16px}
+.kv-l{font-size:10px;text-transform:uppercase;letter-spacing:.1em;color:var(--muted);font-weight:800;margin-bottom:5px}
+.kv-v{font-size:13px;font-weight:700;color:var(--text);line-height:1.3}
+.colony-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:16px}
+.colony-stat{background:#fff;border:1px solid var(--border);border-radius:10px;padding:16px;text-align:center}
+.colony-stat .csn{font-size:22px;font-weight:800;color:var(--sky);display:block;margin-bottom:4px}
+.colony-stat .csl{font-size:11px;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);font-weight:700}
+.pheno-grid{display:grid;grid-template-columns:repeat(12,1fr);gap:4px;margin-bottom:8px}
+.pheno-month{text-align:center;padding:4px 2px;border-radius:5px;font-size:9px}
+.m-name{display:block;font-weight:700;color:var(--muted);margin-bottom:3px}
+.m-icon{display:block;font-size:14px}
+.ph-active{background:#f8d080}.ph-absent{background:#f0ede8}.ph-partial{background:#fcecc8}
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:16px}
+.info-box{background:#fff;border:1px solid var(--border);border-radius:10px;padding:16px}
+.info-box h4{font-size:12px;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);font-weight:800;margin-bottom:8px}
+.info-box p{font-size:13px;line-height:1.7;color:#374151}
+.smart-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-bottom:14px}
+.smart-card{background:#fff;border:1px solid var(--border);border-radius:10px;padding:14px 16px;border-left:3px solid var(--sky-light)}
+.smart-card h4{font-size:13px;font-weight:800;color:var(--sky);margin-bottom:6px}
+.smart-card p{font-size:13px;line-height:1.65;color:#374151}
+.plant-list{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:16px}
+.plant-item{background:#fff;border:1px solid var(--border);border-radius:8px;padding:12px 14px}
+.plant-item .pi{font-size:22px;display:block;margin-bottom:6px}
+.plant-item strong{font-size:13px;display:block;color:var(--text);margin-bottom:2px}
+.plant-item em{font-size:11px;color:var(--muted)}
+.ext-links{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px}
+.ext-btn{display:inline-flex;align-items:center;gap:7px;background:var(--cream);border:1.5px solid var(--border);border-radius:8px;padding:9px 16px;font-size:13px;font-weight:700;color:var(--sky);transition:all .18s}
+.ext-btn:hover{background:var(--sky);color:#fff}
+.ext-btn.gbif{border-color:#c8a020;color:#7a5a00}.ext-btn.gbif:hover{background:#c8a020;color:#fff}
+.ext-btn.inat{border-color:#4a8c5c;color:var(--forest)}.ext-btn.inat:hover{background:var(--forest);color:#fff}
+.bottom-section{margin-top:56px;border-top:3px solid var(--border);padding-top:44px}
+.bottom-section-heading{text-align:center;margin-bottom:36px}
+.bottom-section-heading h2{font-size:1.6rem;font-weight:800;color:var(--sky);margin-bottom:8px}
+.bottom-section-heading p{font-size:14px;color:var(--muted);max-width:580px;margin:0 auto;line-height:1.7}
+.obs-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-bottom:28px}
+.obs-card{background:#fff;border:1px solid var(--border);border-radius:var(--radius);padding:18px 16px;text-align:center}
+.obs-icon{font-size:28px;display:block;margin-bottom:10px}
+.obs-card h4{font-size:12px;font-weight:800;text-transform:uppercase;letter-spacing:.08em;color:var(--sky);margin-bottom:8px}
+.obs-card p{font-size:12.5px;color:#4b5563;line-height:1.65}
+.inat-cta{background:linear-gradient(135deg,#0a1808,#101808);border-radius:var(--radius);padding:28px 32px;display:grid;grid-template-columns:1fr auto;gap:24px;align-items:center;margin-bottom:28px}
+.inat-cta-text h3{font-size:1.1rem;font-weight:800;color:#fff;margin-bottom:8px}
+.inat-cta-text p{font-size:13px;color:rgba(255,255,255,.82);line-height:1.7;max-width:520px}
+.inat-cta-btns{display:flex;flex-direction:column;gap:10px;flex-shrink:0}
+.cta-btn{display:inline-flex;align-items:center;gap:8px;padding:11px 20px;border-radius:8px;font-size:13px;font-weight:700;transition:all .18s;white-space:nowrap}
+.cta-btn-primary{background:var(--honey-light);color:#1a0800}.cta-btn-primary:hover{background:#fce898}
+.cta-btn-secondary{background:rgba(255,255,255,.12);color:rgba(255,255,255,.9);border:1.5px solid rgba(255,255,255,.25)}
+.species-nav{display:flex;justify-content:space-between;align-items:center;margin-top:44px;padding-top:22px;border-top:2px solid var(--border);gap:12px;flex-wrap:wrap}
+.species-nav a{font-size:13px;font-weight:700;color:var(--sky-light);padding:9px 18px;border:1.5px solid #c0d8e8;border-radius:8px;background:#f0f8ff;transition:all .18s}
+.species-nav a:hover{background:var(--sky);color:#fff}
+.species-nav .center-link{background:var(--sky);color:#fff;border-color:var(--sky)}
+.site-footer{background:#1a3a15;color:rgba(255,255,255,.65);text-align:center;padding:22px;font-size:13px}
+@media(max-width:720px){
+  .hero-inner{grid-template-columns:1fr}.hero-photo{display:none}
+  .infobar-inner,.kv-grid,.colony-grid,.two-col,.smart-grid,.plant-list{grid-template-columns:1fr 1fr}
+  .gallery-grid,.obs-grid{grid-template-columns:1fr 1fr}
+  .inat-cta{grid-template-columns:1fr}
+  .site-header nav{display:none}
+}
+
+/* ── SISARI TOPNAV ── */
+.ins-topnav-wrap{background:linear-gradient(90deg,#142212 0%,#182a14 45%,#132312 100%);border-bottom:1px solid rgba(201,168,76,.18);position:sticky;top:0;z-index:200;box-shadow:0 1px 0 rgba(255,255,255,.03) inset}
+html.admin-bar .ins-topnav-wrap{top:32px}
+.ins-topnav{max-width:1240px;margin:0 auto;padding:0 18px;display:flex;align-items:center;min-height:70px;gap:4px;flex-wrap:wrap}
+.ins-topnav-link{position:relative;color:rgba(255,255,255,.62);font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;padding:22px 10px 20px;transition:color .2s;font-family:'Outfit',system-ui,sans-serif;white-space:nowrap;text-decoration:none}
+.ins-topnav-link:hover{color:#f4f0e6}
+.ins-topnav-link.is-active{color:#c9a84c}
+.ins-topnav-link.is-active::after{content:"";position:absolute;left:10px;right:10px;bottom:0;height:3px;border-radius:3px;background:#c9a84c}
+.ins-topnav-sep{color:rgba(255,255,255,.2);padding:0 2px;font-size:14px;align-self:center}
+.ins-topnav-current{color:rgba(255,255,255,.88);font-size:14px;font-weight:600;letter-spacing:.01em;text-transform:none;padding:22px 8px 20px;font-family:'Outfit',system-ui,sans-serif;font-style:italic;max-width:300px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.ins-topnav-current-inline{color:var(--gold);font-size:.84em;text-transform:none;letter-spacing:0;font-weight:700;margin-left:2px;max-width:190px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.ins-warn-bar{background:linear-gradient(90deg,#8b1e1e,#b91c1c);color:#fff;padding:9px 24px;font-size:12.5px;font-weight:600;display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+/* ── HIDE OLD HEADER ── */
+.site-header,.breadcrumb-bar,.top-banner{display:none!important}
+/* ── FONT FIX ── */
+.common-name{font-family:var(--font-serif)!important;font-weight:300!important;letter-spacing:0!important}
+/* ── WING DIAGRAM ENHANCED ── */
+.wing-diagram-box{background:linear-gradient(135deg,#0f2744,#1a3a5c);border-radius:12px;padding:22px 24px;display:flex;gap:24px;align-items:center;margin-bottom:16px;border:1px solid rgba(201,168,76,.2)}
+.wing-diagram-box .wd-svg{flex-shrink:0}
+.wing-diagram-box .wd-legend{flex:1;color:#fff}
+.wing-diagram-box .wd-title{font-size:11px;text-transform:uppercase;letter-spacing:.12em;color:#c9a84c;font-weight:700;margin-bottom:10px;font-family:'Outfit',sans-serif}
+.wing-diagram-box .wd-legend ul{list-style:none;margin:0;padding:0}
+.wing-diagram-box .wd-legend li{display:flex;align-items:flex-start;gap:8px;font-size:13px;color:rgba(255,255,255,.88);line-height:1.55;margin-bottom:7px}
+.wing-diagram-box .wd-dot{width:13px;height:13px;border-radius:2px;flex-shrink:0;margin-top:2px}
+/* Legacy diagram class compat */
+.diagram{background:linear-gradient(135deg,#0f2744,#1a3a5c)!important;border-radius:12px!important;padding:22px 24px!important;border:1px solid rgba(201,168,76,.2)!important}
+.diagram h4{color:#c9a84c!important}
+@media(max-width:640px){.wing-diagram-box{flex-direction:column}.ins-topnav{padding:0 12px}.ins-topnav-current{display:none}.ins-topnav-current-inline{color:var(--gold);font-size:.84em;text-transform:none;letter-spacing:0;font-weight:700;margin-left:2px;max-width:190px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}}
+
+
+@media(max-width:960px){.hero-inner{grid-template-columns:1fr!important}.hero-photo{order:-1;min-height:260px;border-left:none!important;border-bottom:1px solid rgba(255,255,255,.08)}.hero-photo img{width:100%;height:100%;object-fit:cover;display:block}.hero-text{padding:32px 24px 28px!important}}
+@media(max-width:640px){.hero-text{padding:30px 18px 24px!important}.common-name{font-size:clamp(2rem,10vw,2.7rem)!important}.hero-photo{min-height:220px!important}.ins-topnav-current{display:none}.ins-topnav-current-inline{color:var(--gold);font-size:.84em;text-transform:none;letter-spacing:0;font-weight:700;margin-left:2px;max-width:190px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}}
+
+.review-grid-4{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
+.review-grid-3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-top:12px}
+.review-micro,.review-mini{background:#fff;border:1px solid var(--border);border-radius:12px;padding:14px}
+.review-micro h4,.review-mini h4{font-size:13px;color:var(--forest-dark);margin-bottom:6px;font-family:var(--font-sans)}
+.review-micro p,.review-mini p{font-size:13.5px;line-height:1.72;color:var(--text)}
+.legend-note,.note-soft{margin-top:12px;font-size:13px;line-height:1.7;color:var(--text-muted);background:#f7f4ef;border:1px solid var(--border);border-radius:10px;padding:10px 12px}
+.pheno-grid{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:10px;margin-top:14px}
+.pheno-card{border-radius:12px;padding:12px 10px;border:1px solid var(--border)}
+.pheno-month{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--forest-dark);margin-bottom:6px}
+.pheno-note{font-size:12px;line-height:1.55;color:var(--text)}
+.phase-rest{background:#f1eee8}.phase-early{background:#eef5ff}.phase-active{background:#eef8f0}.phase-peak{background:#fff1cf;border-color:#edc661}.phase-late{background:#fff3e8}
+.pheno-legend{display:flex;flex-wrap:wrap;gap:10px;margin-top:12px}.pheno-chip{display:inline-flex;align-items:center;gap:7px;font-size:12px;color:var(--text-muted);background:#fff;border:1px solid var(--border);border-radius:999px;padding:6px 10px}.pheno-dot{width:10px;height:10px;border-radius:50%;display:inline-block}.pheno-dot.early{background:#cfe0ff}.pheno-dot.active{background:#cfeccb}.pheno-dot.peak{background:#ffd779}.pheno-dot.late{background:#ffd7b0}.pheno-dot.rest{background:#d9d4ca}
+.cta-green{margin-top:14px;background:#edf7f0;border:1px solid #b5d5b5;border-radius:12px;padding:14px 16px}.cta-green h3{font-size:16px;color:#1f5d2b;margin-bottom:6px;font-family:var(--font-sans)}.cta-green p{font-size:14px;line-height:1.7;color:#21442a}
+
+@media(max-width:900px){.hero-inner{grid-template-columns:1fr!important}.hero-photo{order:-1;aspect-ratio:16/10;min-height:240px!important}.ins-topnav-current{display:none!important}.ins-topnav-current-inline{color:var(--gold);font-size:.84em;text-transform:none;letter-spacing:0;font-weight:700;margin-left:2px;max-width:190px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.review-grid-4{grid-template-columns:repeat(2,minmax(0,1fr))}.review-grid-3{grid-template-columns:1fr}}
+@media(max-width:640px){.hero-text{padding:38px 22px 34px!important}.page-wrap{padding:28px 18px 48px!important}.common-name{font-size:clamp(2rem,10vw,2.7rem)!important}.pheno-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.kv-grid,.obs-grid{grid-template-columns:1fr!important}}
+
+
+/* unified mobile hero + thin species names */
+.common-name,.latin-name{font-weight:300!important}
+.hero-photo img{display:block!important;visibility:visible!important;opacity:1!important;max-width:100%}
+@media(max-width:960px){.hero-inner{grid-template-columns:1fr!important}.hero-photo{order:-1!important;display:block!important;aspect-ratio:16/10!important;min-height:240px!important;border-left:none!important;border-bottom:1px solid rgba(255,255,255,.08)!important}.hero-photo img{width:100%!important;height:100%!important;object-fit:cover!important;object-position:center center!important}}
+@media(max-width:640px){.hero-photo{min-height:220px!important}.hero-photo-cap{font-size:10px!important;line-height:1.45!important;padding:16px 12px 11px!important}.common-name{font-size:clamp(2rem,10vw,2.7rem)!important}}
+
+</style>
+<style id="rajac-ds-menu-static-css">
+:root{--rajac-nav:#0d1b2a;--rajac-gold:#d8b55b;--rajac-nav-text:rgba(255,255,255,.72)}
+.rajac-ds-nav{background:var(--rajac-nav);position:sticky;top:0;z-index:999999;border-bottom:1px solid rgba(255,255,255,.08);font-family:"Cormorant Garamond","EB Garamond",Garamond,"Palatino Linotype","Book Antiqua",Georgia,"Times New Roman",serif!important}
+body.admin-bar .rajac-ds-nav{top:32px}.rajac-ds-nav *{box-sizing:border-box}.rajac-ds-nav-inner{max-width:1180px;margin:0 auto;padding:0 18px;display:flex;align-items:stretch;min-height:56px;gap:0;overflow-x:auto;scrollbar-width:none}.rajac-ds-nav-inner::-webkit-scrollbar{display:none}.rajac-ds-home{display:flex;align-items:center;gap:9px;padding-right:20px;margin-right:8px;border-right:1px solid rgba(255,255,255,.12);flex-shrink:0;color:var(--rajac-gold)!important;text-decoration:none!important;font-weight:600;font-size:16px;letter-spacing:.03em}.rajac-ds-home-mark{width:18px;height:18px;display:inline-grid;place-items:center;color:var(--rajac-gold)}.rajac-ds-nav-item{position:relative;display:flex;align-items:center;gap:7px;padding:0 15px;color:var(--rajac-nav-text)!important;font-size:15px;font-weight:600;letter-spacing:.045em;text-transform:uppercase;white-space:nowrap;text-decoration:none!important}.rajac-ds-nav-item:hover{color:rgba(255,255,255,.94)!important;background:rgba(255,255,255,.035)}.rajac-ds-icon{font-size:15px;line-height:1}.rajac-ds-nav-item.rajac-ds-active{color:var(--rajac-gold)!important}.rajac-ds-nav-item.rajac-ds-active:after{content:"";position:absolute;left:15px;right:15px;bottom:8px;height:2px;border-radius:2px;background:var(--rajac-gold)}.rajac-ds-nav-trofo{color:#c8a24e!important}.rajac-ds-nav-trofo:hover{color:#f0cb78!important}.ins-topnav-wrap,.site-header{display:none!important;height:0!important;min-height:0!important;max-height:0!important;overflow:hidden!important;visibility:hidden!important}@media(max-width:720px){.rajac-ds-nav-inner{padding:0 12px}.rajac-ds-home{padding-right:14px}.rajac-ds-nav-item{font-size:13px;padding:0 12px}.rajac-ds-nav-item.rajac-ds-active:after{left:12px;right:12px}}
+
+/* v5: чиста навигација врста и извор фотографије на hover */
+.back-link{display:none!important}
+.hero-photo{cursor:help}
+.hero-photo:focus{outline:2px solid rgba(255,255,255,.55);outline-offset:-3px}
+.hero-photo-cap{opacity:0;transform:translateY(8px);transition:opacity .18s ease,transform .18s ease;pointer-events:none}
+.hero-photo:hover .hero-photo-cap,.hero-photo:focus .hero-photo-cap,.hero-photo:focus-within .hero-photo-cap{opacity:1;transform:translateY(0)}
+@media(hover:none){.hero-photo-cap{opacity:1;transform:none}}
+.species-nav{display:grid!important;grid-template-columns:1fr auto 1fr;align-items:center;margin-top:42px;padding-top:24px;border-top:2px solid var(--border,#e0dbd3);gap:14px;clear:both}
+.species-nav a{display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:10px 20px;border-radius:10px;border:1.5px solid #b8d3e7;background:#f7fbff;color:var(--sky,#0b2744)!important;font-size:13px;font-weight:800;text-decoration:none!important;box-shadow:0 1px 0 rgba(255,255,255,.8) inset;white-space:nowrap}
+.species-nav .prev-link{justify-self:start}.species-nav .next-link{justify-self:end}.species-nav .center-link{justify-self:center;background:var(--sky,#0b2744)!important;color:#fff!important;border-color:var(--sky,#0b2744)!important}
+.species-nav a:hover{background:var(--sky,#0b2744)!important;color:#fff!important;border-color:var(--sky,#0b2744)!important}
+@media(max-width:640px){.species-nav{grid-template-columns:1fr;gap:8px}.species-nav .prev-link,.species-nav .next-link,.species-nav .center-link{justify-self:stretch;width:100%}}
+</style>
+<link rel="stylesheet" href="../insekti-responsive.css?v=20260716-v3">
+
+<link rel="stylesheet" href="/insekti/insekti-krediti-kao-ptice.css?v=20260817v3" data-pio="PIO-INSEKTI-FOTO-KREDITI-20260817-V3">
+<style id="pio-insekti-credit-nobg-final" data-pio="PIO-INSEKTI-CREDIT-NOBG-FINAL-20260817">
+/* FINAL: kredit je samo taman tekst preko fotografije — bez trake, gradijenta ili box-a. */
+html body .species-hero .hero-photo .hero-photo-cap,
+html body .hero-photo .hero-photo-cap{
+  position:absolute!important;
+  left:12px!important;right:12px!important;bottom:9px!important;
+  width:auto!important;max-width:calc(100% - 24px)!important;
+  z-index:999!important;margin:0!important;padding:0!important;
+  border:0!important;border-radius:0!important;
+  background:transparent!important;background-color:transparent!important;background-image:none!important;
+  box-shadow:none!important;backdrop-filter:none!important;-webkit-backdrop-filter:none!important;
+  color:#111827!important;
+  font:600 11px/1.35 Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif!important;
+  font-style:normal!important;text-align:left!important;text-transform:none!important;letter-spacing:0!important;
+  text-shadow:0 1px 1px rgba(255,255,255,.98),0 0 3px rgba(255,255,255,.92),0 0 6px rgba(255,255,255,.72)!important;
+  opacity:0!important;visibility:hidden!important;transform:translateY(4px)!important;pointer-events:none!important;
+  transition:opacity .14s ease 0s,transform .14s ease 0s,visibility 0s linear .14s!important;
+}
+html body .species-hero .hero-photo .hero-photo-cap *,
+html body .hero-photo .hero-photo-cap *{
+  background:transparent!important;background-color:transparent!important;background-image:none!important;
+  border:0!important;border-radius:0!important;box-shadow:none!important;
+  color:#111827!important;text-shadow:inherit!important;
+}
+html body .hero-photo .hero-photo-cap::before,
+html body .hero-photo .hero-photo-cap::after,
+html body .hero-photo .hero-photo-cap *::before,
+html body .hero-photo .hero-photo-cap *::after{background:transparent!important;background-image:none!important;box-shadow:none!important;}
+html body .hero-photo .hero-photo-cap a{color:#111827!important;text-decoration:none!important;pointer-events:inherit!important;}
+html body .hero-photo .hero-photo-cap .pio-original{text-decoration:underline!important;text-underline-offset:2px!important;}
+@media (hover:hover) and (pointer:fine){
+  html body .species-hero .hero-photo:hover .hero-photo-cap,
+  html body .hero-photo:hover .hero-photo-cap,
+  html body .hero-photo:focus-within .hero-photo-cap,
+  html body .hero-photo.pio-credit-open .hero-photo-cap,
+  html body .hero-photo.is-credit-visible .hero-photo-cap{
+    opacity:1!important;visibility:visible!important;transform:translateY(0)!important;pointer-events:auto!important;
+    transition:opacity .14s ease 1s,transform .14s ease 1s,visibility 0s linear 1s!important;
+  }
+}
+@media (hover:none), (pointer:coarse){
+  html body .hero-photo.pio-credit-open .hero-photo-cap,
+  html body .hero-photo.is-credit-visible .hero-photo-cap{
+    opacity:1!important;visibility:visible!important;transform:none!important;pointer-events:auto!important;transition:none!important;
+  }
+}
+@media(max-width:680px){
+  html body .hero-photo .hero-photo-cap{left:8px!important;right:8px!important;bottom:7px!important;max-width:calc(100% - 16px)!important;font-size:10px!important;}
+}
+</style>
+<style id="rajac-okvir-v1">.rajac-ds-home,.rfx-nav-home{display:flex!important;align-items:center!important;line-height:1!important}.rajac-ds-home>span,.rfx-nav-home>span{display:inline-flex!important;align-items:center!important;line-height:1!important}.rajac-ds-home>span:first-child,.rfx-nav-home>span:first-child{justify-content:center;width:18px;height:18px}</style>
+</head>
+<body class="pio-insekti-responsive">
+<nav aria-label="Главни мени ПИО Рајац" class="rajac-ds-nav"><div class="rajac-ds-nav-inner"><a class="rajac-ds-home" href="https://piorajac.rs/"><span aria-hidden="true" class="rajac-ds-home-mark">⊙</span><span>ПИО „РАЈАЦ“</span></a><button class="pio-insekti-menu-toggle" type="button" aria-expanded="false" aria-label="Отвори мени"><span class="pio-insekti-menu-icon" aria-hidden="true"></span>МЕНИ</button><a class="rajac-ds-nav-item" href="https://piorajac.rs/biljke/"><span aria-hidden="true" class="rajac-ds-icon">🌿</span><span>БИЉКЕ</span></a><a class="rajac-ds-nav-item" href="https://piorajac.rs/ptice/"><span aria-hidden="true" class="rajac-ds-icon">🦉</span><span>ПТИЦЕ</span></a><a class="rajac-ds-nav-item rajac-ds-active" href="https://piorajac.rs/insekti/"><span aria-hidden="true" class="rajac-ds-icon">🦋</span><span>ИНСЕКТИ</span></a><a class="rajac-ds-nav-item" href="https://piorajac.rs/sisari/"><span aria-hidden="true" class="rajac-ds-icon">🐾</span><span>СИСАРИ</span></a><a class="rajac-ds-nav-item" href="https://piorajac.rs/gljive/"><span aria-hidden="true" class="rajac-ds-icon">🍄</span><span>ГЉИВЕ</span></a><a class="rajac-ds-nav-item rajac-ds-nav-trofo" href="https://piorajac.rs/trofodinamika/"><span aria-hidden="true" class="rajac-ds-icon">🔗</span><span>ТРОФОДИНАМИКА</span></a></div></nav>
+<header class="site-header">
+<a class="logo" href="https://piorajac.rs">Предео изузетних одлика „Рајац"</a>
+<nav>
+<a href="https://piorajac.rs/">ПИО „РАЈАЦ“</a>
+<a href="https://piorajac.rs/ptice">Птице</a>
+<a href="https://piorajac.rs/sisari">Сисари</a>
+<a href="https://piorajac.rs/insekti/">Инсекти</a>
+</nav>
+</header>
+<div class="breadcrumb-bar">
+<div class="inner">
+<a href="https://piorajac.rs">ПИО „Рајац"</a><span class="sep">›</span>
+<a href="https://piorajac.rs/insekti/">Инсекти Рајца</a><span class="sep">›</span>
+<a href="https://piorajac.rs/insekti?order=Hymenoptera">Hymenoptera</a><span class="sep">›</span>
+    Медоносна пчела
+  </div>
+</div>
+<div class="species-hero">
+<div class="hero-inner">
+<div class="hero-text">
+<h1 class="common-name">Медоносна пчела</h1>
+<div class="latin-name"><em>Apis mellifera</em> Linnaeus, 1758</div>
+<p class="hero-short">Друштвени опрашивач — колонија као „суперорганизам". На Рајцу повезује ливаде, рубове шума и воћњаке кроз сезону цветања.</p>
+<div class="hero-pills">
+<span class="pill pill-order">Hymenoptera</span>
+<span class="pill pill-family">Apidae</span>
+<span class="pill pill-pol">🌸 Опрашивач</span>
+</div>
+<div class="hero-tags">
+<span class="htag">🍯 мед</span>
+<span class="htag">🏠 еусоцијалан</span>
+<span class="htag">🌼 полифаг</span>
+<span class="htag">📡 биоиндикатор</span>
+</div>
+</div>
+<div class="hero-photo" tabindex="0" aria-label="Извор фотографије доступан је задржавањем миша, фокусом или додиром.">
+<img alt="Медоносна пчела на цвету" data-fallback="/insekti/assets/order-hymenoptera.webp" decoding="async" fetchpriority="high" height="1094" loading="eager" onerror="if(this.dataset.fallback&amp;&amp;!this.dataset.fallbackTried&amp;&amp;this.src!==this.dataset.fallback){this.dataset.fallbackTried='1';this.src=this.dataset.fallback;this.removeAttribute('srcset');return;}this.onerror=null;" sizes="(max-width: 960px) 100vw, 420px" src="/insekti/assets/heroes/apis-mellifera.webp" srcset="/insekti/assets/heroes-mobile/apis-mellifera.webp 640w, /insekti/assets/heroes/apis-mellifera.webp 1280w" width="1280"/>
+<div class="hero-photo-cap"><a class="pio-insect-credit" href="https://commons.wikimedia.org/wiki/File:Apis_mellifera,_Drone,_face2,_MD,_Talbot_County_2013-09-30-18.21.11_ZS_PMax_(10062826934).jpg" target="_blank" rel="noopener noreferrer"><strong>Фото: USGS Bee Inventory and Monitoring Lab / Wikimedia Commons</strong>, Public domain (USGS) — <span class="pio-original">оригинал</span></a></div>
+</div>
+</div>
+<div class="infobar">
+<div class="infobar-inner">
+<div class="info-cell"><div class="info-label">Дужина радилице</div><div class="info-val">≈ 15 mm</div></div>
+<div class="info-cell"><div class="info-label">Колонија</div><div class="info-val">20.000–80.000</div></div>
+<div class="info-cell"><div class="info-label">Храна</div><div class="info-val">нектар + полен</div></div>
+<div class="info-cell"><div class="info-label">Активна</div><div class="info-val">март–октобар</div></div>
+<div class="info-cell"><div class="info-label">IUCN</div><div class="info-val">NE</div></div>
+</div>
+</div>
+</div>
+<main class="page-wrap">
+<div class="tabs" id="mainTabs">
+<button class="tab active" data-tab="opis">🔍 Опис</button>
+<button class="tab" data-tab="biologija">🏠 Биологија</button>
+<button class="tab" data-tab="staniste">🌿 Станиште</button>
+<button class="tab" data-tab="oprasivanje">🌼 Опрашивање</button>
+<button class="tab" data-tab="pretnje">⚠️ Претње</button>
+<button class="tab" data-tab="monitoring">📡 Мониторинг</button>
+<button class="tab" data-tab="ekonomija">🍯 Вредност</button>
+</div>
+<div class="tab-panel active" id="tab-opis">
+<div class="kv-grid">
+<div class="kv-item"><div class="kv-l">Ред</div><div class="kv-v">Hymenoptera</div></div>
+<div class="kv-item"><div class="kv-l">Фамилија</div><div class="kv-v">Apidae</div></div>
+<div class="kv-item"><div class="kv-l">Дужина</div><div class="kv-v">≈ 15 mm (рад.)</div></div>
+<div class="kv-item"><div class="kv-l">Матица</div><div class="kv-v">18–20 mm</div></div>
+<div class="kv-item"><div class="kv-l">Тип</div><div class="kv-v">еусоцијалан</div></div>
+<div class="kv-item"><div class="kv-l">Аутор</div><div class="kv-v">Linnaeus, 1758</div></div>
+</div>
+<div class="card">
+<div class="card-title"><span>🔍</span> Морфологија и препознавање</div>
+<div class="card-body">
+<p>Медоносна пчела је <strong>средња смеђкасто-жута пчела</strong> са тамним пругама на трбуху. Тело умерено длакаво — мање пухасто него бумбари. Крила провидна са венатуром Apidae. У лету карактеристичан висококи „зуj".</p>
+<p>Кључни знак: <strong>наранџасте пелудне корпице</strong> на задњим ногама радилица — видљиве голим оком. Разлика од бумбара: виткије тело, мање „пухасто". Разлика од самотарских пчела: крупнија, у роју, са корпицама.</p>
+</div>
+</div>
+<div class="card">
+<div class="card-title"><span>🗓</span> Феносезонски календар</div>
+<div class="card-body">
+<div class="pheno-grid">
+<div class="pheno-month ph-absent"><span class="m-name">ЈАН</span><span class="m-icon">🏠</span></div>
+<div class="pheno-month ph-absent"><span class="m-name">ФЕБ</span><span class="m-icon">🏠</span></div>
+<div class="pheno-month ph-partial"><span class="m-name">МАР</span><span class="m-icon">🌱</span></div>
+<div class="pheno-month ph-partial"><span class="m-name">АПР</span><span class="m-icon">🌸</span></div>
+<div class="pheno-month ph-active"><span class="m-name">МАЈ</span><span class="m-icon">🐝</span></div>
+<div class="pheno-month ph-active"><span class="m-name">ЈУН</span><span class="m-icon">🐝</span></div>
+<div class="pheno-month ph-active"><span class="m-name">ЈУЛ</span><span class="m-icon">☀️</span></div>
+<div class="pheno-month ph-active"><span class="m-name">АВГ</span><span class="m-icon">🐝</span></div>
+<div class="pheno-month ph-partial"><span class="m-name">СЕП</span><span class="m-icon">🍂</span></div>
+<div class="pheno-month ph-partial"><span class="m-name">ОКТ</span><span class="m-icon">🍂</span></div>
+<div class="pheno-month ph-absent"><span class="m-name">НОВ</span><span class="m-icon">🏠</span></div>
+<div class="pheno-month ph-absent"><span class="m-name">ДЕЦ</span><span class="m-icon">🏠</span></div>
+</div>
+</div>
+</div>
+</div>
+<div class="tab-panel" id="tab-biologija">
+<div class="honey-card">
+<div class="card-title"><span>🏠</span> Колонија — суперорганизам</div>
+<div class="card-body">
+<p>Медоносна пчела је <strong>еусоцијалан инсект</strong> — колонија функционише као јединствени организам. Матица (1 по колонији) је једина репродуктивна женка. Радилице (стерилне женке) обављају све остале функције. Трутови (мужјаци) служе за оплодњу матице.</p>
+<p>Колонија у летњем врхунцу: <strong>20.000–80.000 јединки</strong>. Зими: мали клуб ~10.000 радилица загрева кошницу мишићима. Нема праве дијапаузе.</p>
+</div>
+</div>
+<div class="colony-grid">
+<div class="colony-stat"><span class="csn">1</span><span class="csl">Матица</span></div>
+<div class="colony-stat"><span class="csn">80k</span><span class="csl">Радилица макс.</span></div>
+<div class="colony-stat"><span class="csn">21д</span><span class="csl">Развој радилице</span></div>
+<div class="colony-stat"><span class="csn">5 год</span><span class="csl">Живот матице</span></div>
+</div>
+<div class="card">
+<div class="card-title"><span>⚙️</span> Касте и подела рада</div>
+<div class="card-body">
+<p><strong>Радилица:</strong> 21 дан развоја. Животни програм по старости: 1–10 дана — чишћење и грејање легла; 10–21 — производња воска и изградња саћа; преко 21 — лет, сакупљање нектара и полена (2–6 недеља лета). Носи до 40 mg нектара по излету.</p>
+<p><strong>Трут:</strong> Само пролеће/лето. Нема жалца. Задатак — оплодња нове матице у „сватовском лету". Јесен: радилице иштерују трутове.</p>
+<p><strong>Матица:</strong> До 2.000 јаја дневно. Живи 2–5 година. Феромони матице контролишу понашање целе колоније.</p>
+</div>
+</div>
+</div>
+<div class="tab-panel" id="tab-staniste">
+<div class="card">
+<div class="card-title"><span>🌿</span> Станишни захтеви на Рајцу</div>
+<div class="card-body">
+<p>Медоносна пчела је <strong>мозаична врста</strong> — потребан пејзаж разних станишта у радиусу лета до 5 km: ливаде са нектарским биљкама, шумски рубови са цветајућим шибљем, воћњаци и влажне депресије за воду.</p>
+<p>На Рајцу: ливаде са детелинама, жалфијом, тимијаном — примарна паша. Шумски рубови са трњином и глогом — важна рана пролећна паша. Потоци — извор воде и минерала.</p>
+</div>
+</div>
+<div class="two-col">
+<div class="info-box">
+<h4>🌡️ Метеоролошки услови</h4>
+<p>Активна при T &gt;10°C без кише. Оптимум 18–30°C. Топлотни таласи (&gt;35°C) смањују лет. Суше смањују нектар у цветовима.</p>
+</div>
+<div class="info-box">
+<h4>🏡 Управљане vs. дивље</h4>
+<p>На Рајцу претежно <em>управљана</em> пчела са пчелињака. Дивље колоније у шупљинама дрвећа — ретке, вредне документовати. Разликовати при мониторингу.</p>
+</div>
+</div>
+</div>
+<div class="tab-panel" id="tab-oprasivanje">
+<div class="eco-card">
+<div class="card-title"><span>🌼</span> Кључна улога опрашивача</div>
+<div class="card-body">
+<p>Apis mellifera је један од најзначајнијих опрашивача дивљих биљака и усева. На ливадама Рајца директно доприноси формирању семена детелина, жалфије и бројних других зељастих врста — чиме подржава биодиверзитет биљних заједница.</p>
+</div>
+</div>
+<div class="plant-list">
+<div class="plant-item"><span class="pi">🍀</span><strong>Trifolium spp.</strong><em>детелине — главна паша</em></div>
+<div class="plant-item"><span class="pi">🌿</span><strong>Salvia pratensis</strong><em>ливадска жалфија</em></div>
+<div class="plant-item"><span class="pi">🌸</span><strong>Prunus, Malus</strong><em>воћке — рана паша</em></div>
+<div class="plant-item"><span class="pi">🌼</span><strong>Thymus spp.</strong><em>тимијан</em></div>
+<div class="plant-item"><span class="pi">🌻</span><strong>Centaurea spp.</strong><em>различак</em></div>
+<div class="plant-item"><span class="pi">🌾</span><strong>Lamiaceae spp.</strong><em>уснаће — ароматична паша</em></div>
+</div>
+<div class="card">
+<div class="card-title"><span>🕺</span> Плесна комуникација</div>
+<div class="card-body">
+<p>Радилица са богатог извора хране изводи <strong>„waggle dance"</strong> (тресући плес) — правцем и трајањем плеса указује на смер и удаљеност паше. Ова комуникација омогућава брзу мобилизацију сакупљача ка најбогатијим изворима нектара.</p>
+</div>
+</div>
+</div>
+<div class="tab-panel" id="tab-pretnje">
+<div class="warn-card">
+<div class="card-title"><span>⚠️</span> Главне претње</div>
+<div class="card-body">
+<p><strong>Варооза (<em>Varroa destructor</em>)</strong> — паразитска гриња; без третмана уништава колонију за 2–3 године. Највећа претња свим пчелама.</p>
+<p><strong>Пестициди</strong> — неоникотиноиди и инсектициди; акутна токсичност и хронични ефекти на оријентацију и имунитет.</p>
+<p><strong>Губитак пашне базе</strong> — интензивно кошење, монокултуре, нестанак ливадских биљних врста.</p>
+<p><strong>Климатске промене</strong> — измена фенологије цветања, суше, топлотни таласи — мање нектара у сезони.</p>
+</div>
+</div>
+<div class="card">
+<div class="card-title"><span>✅</span> Мере заштите на Рајцу</div>
+<div class="card-body">
+<p>Одложено и мозаично кошење ливада, одржавање нектарских трака, смањење употребе инсектицида у заштитној зони и одржавање површина са разноврсним цветним покривачем — подржава и медоносну пчелу и дивље врсте (Bombus, Andrena, Osmia).</p>
+</div>
+</div>
+</div>
+<div class="tab-panel" id="tab-monitoring">
+<div class="smart-grid">
+<div class="smart-card"><h4>📊 Трансект-бројање</h4><p>300 m трансект кроз ливаду — бројати пчеле на цветовима, 10–14h, T&gt;18°C. Вишегодишна серија пореди флуктуације колонија и квалитет пашне базе.</p></div>
+<div class="smart-card"><h4>🌡️ Фенолошки запис</h4><p>Датум прве активности у пролеће и последње јесенске активности. Временска серија указује на климатске трендове.</p></div>
+<div class="smart-card"><h4>🏡 Пчеларски индикатори</h4><p>У сарадњи са локалним пчеларима: снага друштва пре зимовања, зимски губици (%), принос меда. Индиректни показатељи здравља пашне базе.</p></div>
+<div class="smart-card"><h4>📱 iNaturalist</h4><p>Масовне паше — Apis mellifera лако идентификује AI. GPS + датум + биљка хранитељ. Посебно вредно: пчела + биљка у кадру.</p></div>
+</div>
+<div class="ext-links">
+<a class="ext-btn inat" href="https://www.inaturalist.org/taxa/47219-Apis-mellifera" target="_blank">🌿 iNaturalist</a>
+<a class="ext-btn gbif" href="https://www.gbif.org/species/1340278" target="_blank">🗺️ GBIF</a>
+</div>
+</div>
+<div class="tab-panel" id="tab-ekonomija">
+<div class="card">
+<div class="card-title"><span>🍯</span> Eкономска и еколошка вредност</div>
+<div class="card-body">
+<p>Медоносна пчела је <strong>економски најважнији опрашивач на свету</strong>. Процена: преко 75% пољопривредних врста зависи делимично или потпуно од опрашивача, а Apis mellifera је главни опрашивач у умереном климату. На Рајцу: неколико пчелара традиционално користи ливаде за пашу — <em>Тимијанов мед Рајца</em> је препознати локални производ.</p>
+<p>Поред меда, колонија производи: восак (изградња саћа, традиционална употреба), прополис (антимикробна смола), матичну млеч (исхрана матице) и полен (богат протеинима). Ови производи представљају <strong>додатну вредност очуваних ливада Рајца</strong>.</p>
+</div>
+</div>
+<div class="two-col">
+<div class="info-box">
+<h4>🌿 Пашна база Рајца</h4>
+<p>Тимијан, детелине, жалфија, воћке и шумско шибље формирају разнолику пашну базу Рајца. Очување ливада = очување квалитета меда. Монокултуре и урбанизација директно угрожавају разноврсност пашне базе.</p>
+</div>
+<div class="info-box">
+<h4>🤝 Пчелари партнери</h4>
+<p>Локални пчелари Рајца могу бити вредни партнери у мониторингу: зимски губици, јачина друштва, принос меда — неформални показатељи здравља ливадских екосистема и притиска штеточина попут Varroa.</p>
+</div>
+</div>
+</div>
+
+<nav class="species-nav" aria-label="Навигација између страница врста">
+  <a class="prev-link" href="https://piorajac.rs/insekti/calopteryx-virgo/" title="Претходна: Мала вивка">← Претходна</a>
+  <a class="center-link" href="https://piorajac.rs/insekti/">🪲 Сви инсекти</a>
+  <a class="next-link" href="https://piorajac.rs/insekti/omalium-rivulare/" title="Следећа: Омалијум ривуларе">Следећа →</a>
+</nav>
+</main>
+<footer class="site-footer">ПИО „Рајац”</footer>
+<script>
+(function(){
+  const tabs=document.querySelectorAll('#mainTabs .tab');
+  const panels=document.querySelectorAll('.tab-panel');
+  tabs.forEach(t=>t.addEventListener('click',()=>{
+    tabs.forEach(x=>x.classList.remove('active'));
+    panels.forEach(p=>p.classList.remove('active'));
+    t.classList.add('active');
+    const el=document.getElementById('tab-'+t.dataset.tab);
+    if(el){el.classList.add('active');window.scrollTo({top:document.querySelector('.tabs').offsetTop-70,behavior:'smooth'});}
+  }));
+})();
+</script>
+<script defer="" src="/insekti/assets/insekti-doprinos.js?v=20260817-nobg-final"></script>
+<button id="pio-insekti-vrh" type="button" aria-label="Врати се на врх странице" title="ВРХ"><span class="arr" aria-hidden="true">↑</span><span class="txt">ВРХ</span></button><script defer src="../insekti-responsive.js?v=20260716-v3"></script>
+
+<script src="/insekti/insekti-krediti-kao-ptice.js?v=20260817v3" defer data-pio="PIO-INSEKTI-FOTO-KREDITI-20260817-V3"></script>
+</body>
+</html>
