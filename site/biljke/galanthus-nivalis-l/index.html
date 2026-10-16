@@ -155,6 +155,7 @@
 </style>
 <link rel="stylesheet" href="/biljke/assets/biljke-photo-credits.css?v=20260818d24">
 <style id="rajac-okvir-v1">.rajac-ds-home,.rfx-nav-home{display:flex!important;align-items:center!important;line-height:1!important}.rajac-ds-home>span,.rfx-nav-home>span{display:inline-flex!important;align-items:center!important;line-height:1!important}.rajac-ds-home>span:first-child,.rfx-nav-home>span:first-child{justify-content:center;width:18px;height:18px}</style>
+<link rel="stylesheet" href="/biljke-map-live/assets/live-map.css?v=13">
 </head>
 <body>
 <nav aria-label="Навигација ПИО „Рајац”" class="rfx-chapter-nav">
@@ -207,7 +208,7 @@
 <div class="rfw-h">Хабитат и распрострањеност</div>
 <div class="rfw-body">
 <p>Насељава светле шуме, шумске рубове, влажније ливаде, поточне долине и заклоњена места са довољно влаге у раном пролећу. На Рајцу је треба пратити у свежијим увалама и рубовима шума.</p>
-<p>Карта на овој страници намерно остаје празна док се не унесе први проверен теренски налаз са фотографијом, координатама и описом станишта. Тако се избегава преношење старих или непроверених тачака у управљачку базу.</p>
+<p>Карта приказује само јавно доступна посматрања истраживачког квалитета за која су познати координате и прецизност локације. Код заштићених и осетљивих врста тачне координате нису јавне. Ако тачка није приказана, то не значи да врста није присутна на Рајцу.</p>
 </div>
 </section>
 <section class="rfw-block">
@@ -440,6 +441,17 @@
 </form>
 </div>
 </section>
+<!-- rajac-flora-map:start v13 -->
+<section class="rfw-block rfm-section" data-rfm-slug="galanthus-nivalis-l" aria-label="Карта налаза биљке">
+<h2 class="rfw-h">Карта документованих налаза на Рајцу</h2>
+<p class="rfm-description">Јавно доступна посматрања врсте <em>Galanthus nivalis</em> у границама ПИО „Рајац“.</p>
+<div class="rfm-map" role="region" aria-label="Интерактивна карта налаза: Висибаба"></div>
+<div class="rfm-status" role="status" aria-live="polite">Учитавање података о налазима…</div>
+<div class="rfm-legend" aria-label="Легенда карте"><span><i style="--c:#e5af29"></i>Граница ПИО</span><span><i style="--c:#e44e4e"></i>I</span><span><i style="--c:#f5b35b"></i>II</span><span><i style="--c:#73b98c"></i>III</span><span class="rfm-legend-point" hidden><i style="--c:#007f68"></i>Истраживачки налаз</span></div>
+<p class="rfm-cta" hidden><strong>Буди први који ће пронаћи ту биљку на Рајцу!</strong> Фотографиши је и додај посматрање на <a href="https://www.inaturalist.org/observations/upload">iNaturalist</a>.</p>
+<p class="rfm-method">Приказују се само проверљива посматрања истраживачког квалитета са познатом GPS прецизношћу. Код осетљивих врста тачне локације остају скривене. Одсуство јавне тачке не доказује одсуство врсте.</p>
+</section>
+<!-- rajac-flora-map:end v13 -->
 <footer class="rfw-footer rfw-footer-nav">
 <a class="rfw-footlink rfw-footlink-prev" href="../ruscus-aculeatus-l/index.html">
 <span class="rfw-foot-arrow">←</span>
@@ -554,5 +566,6 @@
 <script defer="" src="/biljke/assets/rajac-flora/rfw-direct-forms.js?v=20260608"></script>
 <script defer src="/biljke/assets/mobile/biljke-mobile.js?v=20260717-v1"></script>
 <script defer src="/biljke/assets/biljke-photo-credits.js?v=20260818d24"></script>
+<script defer src="/biljke-map-live/assets/live-map.js?v=13"></script>
 </body>
 </html>

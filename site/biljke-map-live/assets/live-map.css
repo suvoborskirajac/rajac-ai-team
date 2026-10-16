@@ -1,0 +1,18 @@
+/* Isolated map module: does not modify original species components. */
+.rfm-section { box-sizing:border-box; margin:28px 0; overflow:hidden; }
+.rfm-section * { box-sizing:border-box; }
+.rfm-section h2 { margin:0 0 12px; font-weight:700; }
+.rfm-description { margin:0 0 14px; color:#4d6355; line-height:1.55; }
+.rfm-map { height:395px; width:100%; border-radius:12px; overflow:hidden; background:#e5e9df; }
+.rfm-status { padding:12px 14px; margin-top:10px; background:#f0f5ee; color:#244933; border-radius:9px; line-height:1.55; font-size:14px; }
+.rfm-legend {display:flex;align-items:center;gap:8px 13px;flex-wrap:wrap;font-size:12px;color:#455b48;margin:9px 0 0;}
+.rfm-legend span {display:inline-flex;align-items:center;gap:5px;}
+.rfm-legend span[hidden]{display:none;}
+.rfm-legend i {display:inline-block;width:10px;height:10px;border:2px solid var(--c);border-radius:2px;}
+.rfm-legend-point i {border-radius:50%;background:var(--c);}
+.rfm-cta { padding:12px 14px; background:#f0f5ee; border-radius:9px; margin:10px 0 0; line-height:1.6; }
+.rfm-cta a { color:#125b37; font-weight:700; text-decoration:underline; }
+.rfm-method { font-size:12px; line-height:1.5; color:#647468; margin:10px 0 0; }
+.rfm-map .leaflet-control-attribution { font-size:10px; }
+.rfm-map .leaflet-popup-content { font-size:13px; line-height:1.5; }
+@media(max-width:700px){.rfm-section{padding:0;margin:20px 0}.rfm-map{height:310px}.rfm-status{font-size:13px}}

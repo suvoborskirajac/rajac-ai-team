@@ -1,0 +1,7 @@
+Options -Indexes
+<Files "refresh.php">
+ Require all denied
+</Files>
+<Files "install_maps.php">
+ Require all denied
+</Files>
