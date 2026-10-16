@@ -1,0 +1,3 @@
+Options -Indexes
+# cPanel Directory Privacy MUST ADD AuthType, AuthName, AuthUserFile and Require valid-user.
+# Without cPanel password protection both PHP scripts fail closed.
