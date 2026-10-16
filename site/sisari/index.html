@@ -1,0 +1,1047 @@
+<!DOCTYPE html>
+
+<html lang="sr">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Сисари Рајца | ПИО „Рајац"</title>
+<meta content="Комплетан преглед врста сисара (Mammalia) Предела изузетних одлика Рајац — папкари, звери, глодари, бубоједи, слепи мишеви." name="description"/>
+<noscript>
+</noscript>
+<style>
+:root{--forest:#2d5a27;--forest-dark:#1a3a15;--forest-light:#4a7c43;--cream:#f7f4ef;--warm-white:#fdfcfa;--text:#2a2a2a;--text-muted:#5a5a5a;--border:#d8d0c4;--accent:#8b6914;--section-bg:#f2f0eb;--tag-bg:#e8f0e6;--tag-border:#a8c4a4;--shadow:0 2px 12px rgba(0,0,0,.08);--shadow-hover:0 6px 24px rgba(0,0,0,.14);--radius:10px;--font-serif:'Cormorant Garamond','EB Garamond',Garamond,'Palatino Linotype','Book Antiqua',Georgia,'Times New Roman',serif;--font-sans:'Source Sans 3',system-ui,sans-serif}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:var(--font-sans);font-size:16px;line-height:1.75;color:var(--text);background:var(--warm-white)}
+a{text-decoration:none;color:inherit}
+/* HEADER */
+/* HERO */
+.page-hero{background:#06110f;color:#fff;padding:40px 24px;text-align:left;position:relative;overflow:hidden;min-height:400px;display:flex;align-items:center;content-visibility:visible}
+.page-hero-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center center;z-index:0}
+.page-hero::before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,#06110f 0%,#06110f 40%,rgba(6,17,15,.92) 48%,rgba(6,17,15,.36) 57%,rgba(6,17,15,0) 66%);z-index:1}
+.page-hero-inner{position:relative;z-index:2;max-width:1100px;width:100%;margin:0 auto;text-align:left}
+.section-super{font-size:14px;font-weight:700;text-transform:uppercase;letter-spacing:.17em;color:rgba(255,255,255,.84);margin-bottom:12px;text-shadow:0 2px 12px rgba(0,0,0,.48)}
+.page-hero h1{font-family:var(--font-serif);font-size:3.05rem;font-weight:300;line-height:1.12;margin-bottom:14px;color:#fff;text-shadow:0 3px 24px rgba(0,0,0,.60)}
+.page-hero h1 em{font-style:italic;color:rgba(255,255,255,.93);font-size:1.6rem;display:block;margin-top:6px;text-shadow:0 2px 14px rgba(0,0,0,.50)}
+.page-hero p{font-size:18px;line-height:1.82;color:rgba(255,255,255,.98);max-width:600px;margin:0 0 26px;text-shadow:0 2px 16px rgba(0,0,0,.46)}
+.hero-stats{display:flex;gap:32px;justify-content:flex-start;flex-wrap:wrap;margin-top:28px}
+.hero-stat{text-align:center}
+.hero-stat .num{font-family:var(--font-serif);font-size:2.2rem;font-weight:300;color:#fff;line-height:1;text-shadow:0 3px 16px rgba(0,0,0,.48)}
+.hero-stat .lbl{font-size:13.5px;color:rgba(255,255,255,.92);font-weight:700;text-transform:uppercase;letter-spacing:.09em;margin-top:6px;text-shadow:0 2px 10px rgba(0,0,0,.34)}
+/* BREADCRUMB */
+.breadcrumb-bar{background:var(--cream);border-bottom:1px solid var(--border);padding:10px 0}
+.breadcrumb-bar .inner{max-width:980px;margin:0 auto;padding:0 24px;font-size:13px;color:var(--text-muted)}
+.breadcrumb-bar a{color:var(--forest);font-weight:600}
+.breadcrumb-bar .sep{margin:0 6px;opacity:.5}
+/* WRAP */
+.page-wrap{max-width:980px;margin:0 auto;padding:40px 24px 60px}
+/* INTRO */
+.intro-text{font-size:15.5px;line-height:1.85;color:var(--text);max-width:780px;margin-bottom:14px}
+.confirmed-note{display:inline-flex;align-items:center;gap:8px;font-size:13px;font-weight:600;padding:6px 14px;border-radius:20px;margin-right:8px;margin-bottom:8px}
+.note-confirmed{background:var(--tag-bg);color:var(--forest);border:1px solid var(--tag-border)}
+.note-potential{background:#fff8e6;color:#7a5a00;border:1px solid #e8cc88}
+.notes-row{margin-bottom:32px}
+/* FILTER */
+.filter-bar{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:36px;padding-bottom:20px;border-bottom:2px solid var(--border)}
+.filter-btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;flex:0 0 auto;white-space:nowrap;font-family:var(--font-sans);font-size:13.5px;font-weight:600;padding:9px 18px;border-radius:8px;border:1px solid #b3bfce;background:#eef1f5;color:#1f3354;letter-spacing:.05em;text-transform:uppercase;cursor:pointer;transition:background .15s,border-color .15s,color .15s}
+.filter-btn:hover{background:#fff;border-color:#c9a84c;color:#0e1c2f}
+.filter-btn.active{background:#2f6db5;color:#fff;border-color:#2f6db5}
+/* GROUP */
+.species-group{margin-bottom:48px;content-visibility:auto;contain-intrinsic-size:1px 900px}
+.group-header{display:flex;align-items:center;gap:14px;margin-bottom:20px;padding-bottom:12px;border-bottom:2px solid var(--border)}
+.group-icon{font-size:2rem;width:52px;height:52px;background:var(--forest);border-radius:12px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.group-header-text h2{font-family:var(--font-serif);font-size:1.25rem;font-weight:300;color:var(--forest-dark);line-height:1.2}
+.group-header-text .group-latin{font-style:italic;color:var(--forest-light);font-size:.95rem}
+.group-header-text .group-count{font-size:12px;color:var(--text-muted);font-weight:600;text-transform:uppercase;letter-spacing:.06em;margin-top:2px}
+.group-desc{font-size:14px;line-height:1.7;color:var(--text-muted);max-width:780px;margin-bottom:18px}
+/* CARDS */
+.species-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.species-card{background:#fff;border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow);transition:box-shadow .2s,transform .2s;display:flex;flex-direction:column}
+.species-card:hover{box-shadow:var(--shadow-hover);transform:translateY(-2px)}
+.species-card.has-page:hover .card-img-wrap img{transform:scale(1.07)}
+.card-img-wrap{aspect-ratio:4/3;overflow:hidden;background:#c8bfaa;position:relative;display:flex;align-items:center;justify-content:center}
+.card-img-wrap img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .35s}
+.card-status-dot{position:absolute;top:8px;right:8px;width:10px;height:10px;border-radius:50%;border:2px solid #fff}
+.dot-confirmed{background:#4caf50}
+.dot-potential{background:#f0a020}
+.card-body{padding:11px 13px 13px;flex:1;display:flex;flex-direction:column;gap:3px}
+.card-common{font-weight:300;font-size:16.5px;color:var(--forest-dark);line-height:1.3}
+.card-latin{font-style:italic;font-size:13.5px;color:var(--forest-light);line-height:1.3}
+.card-tags{display:flex;gap:4px;flex-wrap:wrap;margin-top:6px}
+.card-tag{font-size:12px;font-weight:600;padding:3px 8px;border-radius:4px}
+.tag-protected{background:var(--tag-bg);color:var(--forest);border:1px solid var(--tag-border)}
+.tag-game{background:#fff3e0;color:#c05000;border:1px solid #f0c080}
+.tag-iucn{background:#e8f5e9;color:#2e7d32;border:1px solid #a5d6a7}
+.tag-iucn-nt{background:#fff8e6;color:#7a5a00;border:1px solid #ffe082}
+.card-arrow{margin-top:auto;padding-top:8px;font-size:13.5px;color:var(--forest);font-weight:600}
+.card-arrow.no-page{color:var(--text-muted);font-style:italic}
+/* BATS */
+.bats-block{background:var(--section-bg);border:1px solid var(--border);border-radius:var(--radius);padding:20px 22px}
+.bats-block h3{font-family:var(--font-serif);font-size:1rem;font-weight:300;color:var(--forest-dark);margin-bottom:8px}
+.bats-block p{font-size:14px;line-height:1.75;color:var(--text);margin-bottom:12px}
+.bats-species-list{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:12px}
+.bat-chip{font-size:12.5px;background:#fff;border:1px solid var(--border);border-radius:6px;padding:4px 10px;color:var(--text)}
+.bat-chip em{color:var(--forest-light);font-style:italic}
+.bats-img-row{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:14px}
+.bats-img-row figure{border-radius:8px;overflow:hidden;background:#b8b0a0;box-shadow:var(--shadow);aspect-ratio:3/2}
+.bats-img-row figure img{width:100%;height:100%;object-fit:cover;display:block}
+.bats-img-row figcaption{font-size:10.5px;color:var(--text-muted);font-style:italic;padding:5px 8px;background:var(--cream);border:1px solid var(--border);border-top:none}
+/* POTENTIAL */
+.potential-section{margin-bottom:48px}
+.potential-section{content-visibility:auto;contain-intrinsic-size:1px 900px}.potential-section .group-header{border-bottom-style:dashed}
+.potential-list{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.potential-item{background:#fff;border:1.5px dashed var(--border);border-radius:var(--radius);padding:13px 15px;font-size:13.5px}
+.potential-item strong{display:block;font-weight:700;color:var(--text);margin-bottom:2px}
+.potential-item em{color:var(--forest-light);font-style:italic;font-size:12.5px}
+.potential-item .p-note{font-size:12px;color:var(--text-muted);margin-top:5px;line-height:1.5}
+/* BOTTOM NAV */
+.section-nav{background:var(--forest-dark);border-radius:var(--radius);padding:24px 28px;display:flex;gap:16px;align-items:center;justify-content:space-between;margin-top:20px;flex-wrap:wrap}
+.section-nav p{color:rgba(255,255,255,.75);font-size:14px}
+.section-nav a{color:#fff;font-weight:700;font-size:14px;background:rgba(255,255,255,.15);padding:9px 18px;border-radius:6px;transition:background .2s}
+.section-nav a:hover{background:rgba(255,255,255,.28)}
+.site-footer{background:var(--forest-dark);color:rgba(255,255,255,.7);text-align:center;padding:22px;font-size:13px;margin-top:60px}
+@media(max-width:860px){.species-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:620px){.species-grid{grid-template-columns:repeat(2,1fr)}.potential-list{grid-template-columns:1fr 1fr}.bats-img-row{grid-template-columns:1fr}.page-hero h1{font-size:2.2rem}.page-hero h1 em{font-size:1.28rem}.page-hero p{font-size:16.5px;line-height:1.72}.section-super{font-size:12.5px}.hero-stats{gap:20px}.hero-stat .num{font-size:1.9rem}.hero-stat .lbl{font-size:12px}}
+@media(max-width:720px){.page-hero{min-height:560px;align-items:flex-end;padding:170px 20px 28px}.page-hero-bg{object-position:center top}.page-hero::before{background:linear-gradient(180deg,rgba(6,17,15,.05) 0%,rgba(6,17,15,.18) 30%,rgba(6,17,15,.84) 58%,#06110f 100%)}.page-hero p{max-width:100%}.hero-stats{gap:16px 22px}.hero-stat{text-align:left}}
+
+/* 09.06.2026 — hero лисица је уграђена у HTML, без зависности од посебног image фајла. */
+@media(max-width:720px){
+  .page-hero{min-height:560px;align-items:flex-end;padding:240px 22px 36px;}
+  .page-hero-bg{object-position:72% center;}
+  .page-hero::before{background:linear-gradient(180deg,rgba(8,20,18,.05) 0%,rgba(8,20,18,.12) 28%,rgba(8,20,18,.82) 58%,#081412 100%);}
+  .page-hero p{max-width:100%;}
+}
+
+
+/* === SISARI STATUS V4: uredjeni IUCN / nacionalni status === */
+.status-clarification-box{margin:14px 0 18px;padding:12px 14px;border:1px solid #d9c9a3;background:#fffaf0;border-radius:12px;color:#3f3421;font-size:15px;line-height:1.55}
+.status-clarification-box strong{font-weight:800;color:#3b2c12}
+.status-clarification-box .status-row{display:block;margin:4px 0}
+.badge-iucn-lc,.badge-iucn-nt,.badge-iucn-vu,.badge-iucn-dd,.badge-iucn-ne{font-weight:800}
+.badge-national,.badge-serbia-status{background:#f3efe3;border:1px solid #d6c7a2;color:#42351e}
+
+
+/* Строга јавна фото-провера: не приказуј фотографије без провереног извора */
+.rajac-photo-placeholder{
+  width:100%; min-height:220px; border:1px dashed rgba(80,80,80,.35); border-radius:10px;
+  background:linear-gradient(135deg,#f7f4ef,#ffffff); color:#5a5147;
+  display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center;
+  padding:18px; font-size:15px; line-height:1.45; box-shadow:inset 0 0 0 1px rgba(255,255,255,.7);
+}
+.rajac-photo-placeholder strong{font-family:var(--font-serif, Georgia, serif); font-size:1.1rem; color:#3a332b; font-weight:500;}
+.rajac-photo-placeholder small{display:block; margin-top:6px; color:#7a7065; font-size:13px;}
+.species-thumb .rajac-photo-placeholder,.card-image .rajac-photo-placeholder,.species-card .rajac-photo-placeholder{min-height:160px; border-radius:8px; font-size:13px;}
+.page-hero .rajac-photo-placeholder{display:none;}
+
+
+.card-note{font-size:12.5px;color:var(--text-muted);line-height:1.45;margin-top:4px;margin-bottom:4px}
+.dot-potential{background:#d4a020}
+
+/* SISARI v12 — ujednačen sitan potpis ispod fotografije */
+.img-caption,
+figure figcaption,
+.inline-img figcaption{
+  font-family: Georgia, "Times New Roman", serif !important;
+  font-size: 12px !important;
+  line-height: 1.35 !important;
+  color: #5f5a52 !important;
+  text-align: left !important;
+  font-style: italic !important;
+  font-weight: 400 !important;
+  letter-spacing: 0 !important;
+  margin: 6px auto 26px !important;
+  padding: 0 4px !important;
+  max-width: 900px !important;
+}
+.img-caption em,
+figure figcaption em,
+.inline-img figcaption em{
+  font-size: inherit !important;
+  line-height: inherit !important;
+  color: inherit !important;
+  font-style: italic !important;
+  font-weight: inherit !important;
+}
+.hero-image-wrap img{
+  object-fit: contain !important;
+  object-position: center center !important;
+  background: #f7f4ef !important;
+  transform: none !important;
+}
+.hero-image-wrap:hover img{
+  transform: none !important;
+}
+
+</style>
+<style id="sisari1-bio-menu-style">
+.rajac-ds-nav{background:#0d1b2a!important;position:sticky!important;top:0!important;z-index:999999!important;border-bottom:1px solid rgba(255,255,255,.08)!important;font-family:"Cormorant Garamond","EB Garamond",Garamond,"Palatino Linotype","Book Antiqua",Georgia,"Times New Roman",serif!important;box-shadow:none!important;}
+body.admin-bar .rajac-ds-nav{top:32px!important;}
+.rajac-ds-nav *{box-sizing:border-box!important;}
+.rajac-ds-nav-inner{max-width:1180px!important;margin:0 auto!important;padding:0 18px!important;display:flex!important;align-items:stretch!important;min-height:56px!important;gap:0!important;overflow-x:auto!important;scrollbar-width:none!important;}
+.rajac-ds-nav-inner::-webkit-scrollbar{display:none!important;}
+.rajac-ds-home{display:flex!important;align-items:center!important;gap:9px!important;padding:0 20px 0 0!important;margin:0 8px 0 0!important;border-right:1px solid rgba(255,255,255,.12)!important;flex-shrink:0!important;color:#d8b55b!important;text-decoration:none!important;font-weight:600!important;font-size:16px!important;letter-spacing:.03em!important;white-space:nowrap!important;line-height:1!important;}
+.rajac-ds-home-mark{width:18px!important;height:18px!important;display:inline-grid!important;place-items:center!important;color:#d8b55b!important;}
+.rajac-ds-nav-item{position:relative!important;display:flex!important;align-items:center!important;gap:7px!important;padding:0 15px!important;color:rgba(255,255,255,.72)!important;font-size:15px!important;font-weight:600!important;letter-spacing:.045em!important;text-transform:uppercase!important;white-space:nowrap!important;text-decoration:none!important;line-height:1!important;}
+.rajac-ds-nav-item:hover{color:rgba(255,255,255,.94)!important;background:rgba(255,255,255,.035)!important;}
+.rajac-ds-icon{font-size:15px!important;line-height:1!important;}
+.rajac-ds-nav-item.rajac-ds-active{color:#d8b55b!important;}
+.rajac-ds-nav-item.rajac-ds-active:after{content:""!important;position:absolute!important;left:15px!important;right:15px!important;bottom:8px!important;height:2px!important;border-radius:2px!important;background:#d8b55b!important;display:block!important;}
+.rajac-ds-current{color:#d8b55b!important;font-size:.84em!important;text-transform:none!important;letter-spacing:0!important;font-weight:500!important;margin-left:-2px!important;max-width:190px!important;overflow:hidden!important;text-overflow:ellipsis!important;white-space:nowrap!important;}
+.rajac-ds-nav-trofo{color:#c8a24e!important;}
+.rajac-ds-nav-trofo:hover{color:#f0cb78!important;}
+/* Танки наслови — уједначено са секцијама Птице/Биљке */
+html body h1,
+html body h2,
+html body h3,
+html body .page-hero h1,
+html body .page-hero h1 em,
+html body .species-hero .common-name,
+html body .species-hero .latin-name,
+html body .common-name,
+html body .latin-name,
+html body .sisari-title,
+html body .sisari-latin,
+html body .section-title,
+html body .group-header-text h2,
+html body .card-common,
+html body .card-latin,
+html body .bats-block h3,
+html body .potential-item strong,
+html body .sisari-tool strong,
+html body .guide-link strong,
+html body .hero .hero-grid h1,
+html body .hero h1,
+html body .section-head h2,
+html body .record-preview h3,
+html body .ethics-card h3,
+html body .season h3,
+html body .step h3,
+html body .photo-body strong,
+html body .taxonomy-box h3,
+html body .track-card h4,
+html body .camtrap-card h4,
+html body .sound-card h4,
+html body .status-text h4{
+  font-family:"Cormorant Garamond","EB Garamond",Garamond,"Palatino Linotype","Book Antiqua",Georgia,"Times New Roman",serif!important;
+  font-weight:300!important;
+  letter-spacing:0!important;
+}
+html body .section-super,
+html body .badge,
+html body .kicker,
+html body .hero-stat .lbl,
+html body .card-title,
+html body .char-label,
+html body .info-label,
+html body .pcard-label,
+html body .sisari-tool-kicker{
+  font-weight:500!important;
+}
+html body .hero-stat .num{
+  font-family:"Cormorant Garamond","EB Garamond",Garamond,"Palatino Linotype","Book Antiqua",Georgia,"Times New Roman",serif!important;
+  font-weight:300!important;
+}
+@media(max-width:720px){.rajac-ds-nav-inner{padding:0 12px!important}.rajac-ds-home{padding-right:14px!important}.rajac-ds-nav-item{font-size:13px!important;padding:0 12px!important}.rajac-ds-nav-item.rajac-ds-active:after{left:12px!important;right:12px!important}.rajac-ds-current{max-width:140px!important}}
+</style><style id="rajac-ds-menu-static-css">
+:root{--rajac-nav:#0d1b2a;--rajac-gold:#d8b55b;--rajac-nav-text:rgba(255,255,255,.72);--rajac-font-primary:"Cormorant Garamond","EB Garamond",Garamond,"Palatino Linotype","Book Antiqua",Georgia,"Times New Roman",serif;}
+body .sisari-topnav-wrap,body nav.rfx-chapter-nav,body .rfx-chapter-nav,body .rfw-edit-bar{display:none!important;height:0!important;min-height:0!important;max-height:0!important;overflow:hidden!important;visibility:hidden!important;}
+.rajac-ds-nav{background:var(--rajac-nav);position:sticky;top:0;z-index:999999;border-bottom:1px solid rgba(255,255,255,.08);font-family:var(--rajac-font-primary)!important;box-shadow:none!important;}
+.rajac-ds-nav *{box-sizing:border-box;}
+.rajac-ds-nav-inner{max-width:1180px;margin:0 auto;padding:0 18px;display:flex;align-items:stretch;min-height:56px;gap:0;overflow-x:auto;scrollbar-width:none;}
+.rajac-ds-nav-inner::-webkit-scrollbar{display:none;}
+.rajac-ds-home{display:flex;align-items:center;gap:9px;padding:0 20px 0 0;margin:0 8px 0 0;border-right:1px solid rgba(255,255,255,.12);flex-shrink:0;color:var(--rajac-gold)!important;text-decoration:none!important;font-weight:600;font-size:16px;letter-spacing:.03em;white-space:nowrap;line-height:1;}
+.rajac-ds-home-mark{width:18px;height:18px;display:inline-grid;place-items:center;color:var(--rajac-gold);}
+.rajac-ds-nav-item{position:relative;display:flex;align-items:center;gap:7px;padding:0 15px;color:var(--rajac-nav-text)!important;font-size:15px;font-weight:600;letter-spacing:.045em;text-transform:uppercase;white-space:nowrap;text-decoration:none!important;line-height:1;}
+.rajac-ds-nav-item:hover{color:rgba(255,255,255,.94)!important;background:rgba(255,255,255,.035);}
+.rajac-ds-icon{font-size:15px;line-height:1;}
+.rajac-ds-nav-item.rajac-ds-active{color:var(--rajac-gold)!important;}
+.rajac-ds-nav-item.rajac-ds-active:after{content:"";position:absolute;left:15px;right:15px;bottom:8px;height:2px;border-radius:2px;background:var(--rajac-gold);display:block;}
+.rajac-ds-nav-trofo{color:#c8a24e!important;}
+.rajac-ds-nav-trofo:hover{color:#f0cb78!important;}
+@media(max-width:720px){.rajac-ds-nav-inner{padding:0 12px}.rajac-ds-home{padding-right:14px}.rajac-ds-nav-item{font-size:13px;padding:0 12px}.rajac-ds-nav-item.rajac-ds-active:after{left:12px;right:12px}}
+.rajac-photo-credit-link{max-width:1180px;margin:24px auto 0;padding:0 18px 18px;text-align:center;font-family:var(--rajac-font-primary);font-size:15px;line-height:1.5;color:#6b7280;}
+.rajac-photo-credit-link a{color:#6b4b13;text-decoration:underline;}
+</style>
+<link href="../assets/rajac-stanista.css" rel="stylesheet"/>
+<style id="rajac-sisari-photo-source-hover">
+/* Rajac SISARI: izvor fotografije na prelazak mišem / fokus */
+.rajac-photo-source-wrap{
+  position:relative!important;
+  display:block!important;
+  overflow:hidden!important;
+  line-height:0!important;
+}
+.rajac-photo-source-wrap>img{
+  display:block!important;
+}
+.hero-image-wrap>.rajac-photo-source-wrap,
+.card-img-wrap>.rajac-photo-source-wrap,
+.hero-visual>.rajac-photo-source-wrap{
+  width:100%!important;
+  height:100%!important;
+}
+.hero-image-wrap>.rajac-photo-source-wrap>img,
+.card-img-wrap>.rajac-photo-source-wrap>img,
+.hero-visual>.rajac-photo-source-wrap>img{
+  width:100%!important;
+  height:100%!important;
+  object-fit:cover!important;
+}
+.rajac-photo-source-wrap::after,
+.page-hero.rajac-photo-source-hero::after{
+  content:attr(data-photo-source);
+  position:absolute;
+  left:10px;
+  right:10px;
+  bottom:10px;
+  z-index:20;
+  padding:7px 10px;
+  border-radius:8px;
+  background:rgba(0,0,0,.74);
+  color:#fff;
+  font-size:12px;
+  line-height:1.35;
+  letter-spacing:.01em;
+  text-align:left;
+  white-space:normal;
+  opacity:0;
+  transform:translateY(6px);
+  transition:opacity .18s ease, transform .18s ease;
+  pointer-events:none;
+  box-shadow:0 3px 12px rgba(0,0,0,.25);
+}
+.rajac-photo-source-wrap:hover::after,
+.rajac-photo-source-wrap:focus::after,
+.rajac-photo-source-wrap:focus-within::after,
+.page-hero.rajac-photo-source-hero:hover::after,
+.page-hero.rajac-photo-source-hero:focus-within::after{
+  opacity:1;
+  transform:translateY(0);
+}
+.rajac-photo-source-wrap[data-photo-source*="допунити"]::after,
+.page-hero.rajac-photo-source-hero[data-photo-source*="допунити"]::after{
+  background:rgba(95,55,0,.86);
+}
+@media (hover:none){
+  .rajac-photo-source-wrap::after,
+  .page-hero.rajac-photo-source-hero::after{
+    opacity:.92;
+    transform:none;
+    font-size:11px;
+    bottom:8px;
+  }
+}
+</style>
+<style id="rajac-sisari-full-photo-contain-v2">
+/* V2: фотографије се више не секу у оквирима; приказује се цела фотографија/врста. */
+.hero-image-wrap,
+.inline-img,
+.track-photo-wrap,
+.house-photo,
+.photo-card figure,
+.card-img-wrap,
+.hero-visual,
+.rajac-photo-source-wrap{
+  background:#f7f4ef!important;
+}
+.hero-image-wrap img,
+.inline-img img,
+.track-photo-wrap img,
+.house-photo img,
+.photo-card figure img,
+.card-img-wrap img,
+.hero-visual img,
+.rajac-photo-source-wrap>img{
+  object-fit:contain!important;
+  object-position:center center!important;
+  background:#f7f4ef!important;
+}
+.hero-image-wrap>.rajac-photo-source-wrap,
+.card-img-wrap>.rajac-photo-source-wrap,
+.hero-visual>.rajac-photo-source-wrap{
+  width:100%!important;
+  height:100%!important;
+  display:block!important;
+}
+.hero-image-wrap>.rajac-photo-source-wrap>img,
+.card-img-wrap>.rajac-photo-source-wrap>img,
+.hero-visual>.rajac-photo-source-wrap>img{
+  width:100%!important;
+  height:100%!important;
+  display:block!important;
+}
+.inline-img img{
+  height:220px!important;
+  max-height:220px!important;
+}
+.track-photo-wrap img,
+.house-photo img,
+.photo-card figure img{
+  max-height:360px!important;
+}
+@media(max-width:820px){
+  .inline-img img{height:auto!important;max-height:340px!important;}
+  .hero-image-wrap{aspect-ratio:4/3!important;}
+}
+</style>
+<style id="sisari-v5-status-presence">
+/* === SISARI V5: potvrđene / potencijalne vrste i jedinstveni statusi === */
+.badge-presence-confirmed{background:#eef1e6;border:1px solid #c9d1b6;color:#3d4a23;font-weight:800}
+.badge-presence-potential{background:#fff4d8;border:1px solid #d8b66b;color:#67450a;font-weight:800}
+.rajac-presence-box{margin:12px 0 22px;padding:13px 15px;border-radius:12px;border:1px solid #d8cfbd;background:#fffdf7;color:#3b3325;font-size:15px;line-height:1.6}
+.rajac-presence-box strong{color:#2d3c1f;font-weight:800}
+.rajac-presence-box.potential{border-color:#d8b66b;background:#fff8e6}
+.card-tag.tag-presence-confirmed{background:#eef1e6!important;color:#3d4a23!important;border:1px solid #c9d1b6!important}
+.card-tag.tag-presence-potential,.pi-presence{display:inline-block;margin-top:8px;padding:3px 8px;border-radius:999px;background:#fff4d8;color:#67450a;border:1px solid #d8b66b;font-size:11.5px;font-weight:800;letter-spacing:.02em}
+.card-img-wrap img,.pi-img img{object-fit:contain!important;background:#f7f4ef!important}
+.hero-image-wrap img,.gallery-grid img,.inline-img img{object-fit:contain!important;background:#f7f4ef!important}
+</style>
+<style id="sisari-v8-one-photo-standard">
+/* SISARI v8: једна главна фотографија по врсти, са извором на hover. */
+.hero-image-wrap{aspect-ratio:16/9!important;background:#f7f4ef!important}
+.hero-image-wrap img,.card-img-wrap img{object-fit:contain!important;object-position:center center!important;background:#f7f4ef!important}
+.card-img-wrap .rajac-photo-source-wrap{width:100%!important;height:100%!important}
+.card-img-wrap .rajac-photo-source-wrap img{width:100%!important;height:100%!important;display:block!important}
+</style>
+<style>
+/* v14: исправна атрибуција фотографија — без browser title tooltip-а */
+.rajac-photo-source-wrap>img,.hero-image-wrap img,.card-img-wrap img{object-fit:contain!important;object-position:center center!important;background:#f7f4ef!important;}
+@media (min-width:980px){.species-grid{grid-template-columns:repeat(3,minmax(0,1fr))!important;}}
+.filter-bar,.filter-controls{display:flex!important;flex-wrap:nowrap!important;gap:10px;justify-content:center;align-items:center;}
+.filter-btn{white-space:nowrap;}
+</style><style id="sisari-v15-index-layout-fix">
+/* SISARI v15 — prva strana: dugmad u jednom redu i vrste u jednoj mreži od 3 kolone */
+body .page-wrap{
+  max-width:1280px!important;
+}
+body .filter-bar.filter-bar-v15{
+  display:flex!important;
+  flex-wrap:nowrap!important;
+  justify-content:center!important;
+  align-items:center!important;
+  gap:8px!important;
+  width:100%!important;
+  max-width:1180px!important;
+  margin:0 auto 28px!important;
+  padding:0 0 14px!important;
+  border-bottom:0!important;
+  overflow:visible!important;
+}
+body .filter-bar.filter-bar-v15 .filter-btn{
+  flex:0 1 auto!important;
+  min-width:0!important;
+  height:46px!important;
+  padding:8px 15px!important;
+  white-space:nowrap!important;
+  font-size:12.2px!important;
+  line-height:1!important;
+}
+body .species-grid-main.species-grid-v15{
+  display:grid!important;
+  grid-template-columns:repeat(3,minmax(0,1fr))!important;
+  gap:26px!important;
+  width:100%!important;
+  max-width:1180px!important;
+  margin:0 auto!important;
+  align-items:stretch!important;
+}
+body .species-grid-main.species-grid-v15 .species-card{
+  width:100%!important;
+}
+body .species-grid-main.species-grid-v15 .card-img-wrap{
+  height:auto!important;
+  aspect-ratio:4/3!important;
+}
+body .group-header,
+body .group-desc{
+  display:none!important;
+}
+@media(max-width:980px){
+  body .filter-bar.filter-bar-v15{
+    flex-wrap:wrap!important;
+    max-width:760px!important;
+  }
+  body .species-grid-main.species-grid-v15{
+    grid-template-columns:repeat(2,minmax(0,1fr))!important;
+    max-width:760px!important;
+  }
+}
+@media(max-width:620px){
+  body .filter-bar.filter-bar-v15{
+    justify-content:flex-start!important;
+    overflow-x:auto!important;
+    flex-wrap:nowrap!important;
+    padding-bottom:12px!important;
+  }
+  body .filter-bar.filter-bar-v15 .filter-btn{
+    flex:0 0 auto!important;
+  }
+  body .species-grid-main.species-grid-v15{
+    grid-template-columns:1fr!important;
+    max-width:420px!important;
+    gap:18px!important;
+  }
+}
+</style>
+<style id="sisari-v16-final-photo-layout-fix">
+/* SISARI v16 — završna zaštita: dugmad jedan red, vrste tri kolone, sitan potpis i lokalne fotografije gde postoje */
+@media (min-width: 981px){
+  body .filter-bar.filter-bar-v15{
+    display:grid!important;
+    grid-template-columns:repeat(7,minmax(0,1fr))!important;
+    gap:10px!important;
+    flex-wrap:nowrap!important;
+    max-width:1180px!important;
+    width:100%!important;
+    margin-left:auto!important;
+    margin-right:auto!important;
+  }
+  body .filter-bar.filter-bar-v15 .filter-btn{
+    width:100%!important;
+    min-width:0!important;
+    max-width:none!important;
+    height:44px!important;
+    padding:0 8px!important;
+    font-size:11.5px!important;
+    line-height:1!important;
+    white-space:nowrap!important;
+  }
+  body .species-grid-main.species-grid-v15{
+    display:grid!important;
+    grid-template-columns:repeat(3,minmax(0,1fr))!important;
+    gap:26px!important;
+    max-width:1180px!important;
+    width:100%!important;
+    margin:0 auto!important;
+  }
+}
+@media (max-width:980px){
+  body .filter-bar.filter-bar-v15{
+    display:flex!important;
+    flex-wrap:nowrap!important;
+    overflow-x:auto!important;
+    justify-content:flex-start!important;
+    gap:10px!important;
+    padding-bottom:12px!important;
+  }
+  body .filter-bar.filter-bar-v15 .filter-btn{flex:0 0 auto!important;}
+}
+body .hero-image-wrap{
+  width:100%!important;
+  max-width:900px!important;
+  margin-left:auto!important;
+  margin-right:auto!important;
+  aspect-ratio:16/9!important;
+  background:#f7f4ef!important;
+  overflow:hidden!important;
+}
+body .hero-image-wrap .rajac-photo-source-wrap{
+  display:block!important;
+  width:100%!important;
+  height:100%!important;
+}
+body .hero-image-wrap img,
+body .card-img-wrap img,
+body .rajac-photo-source-wrap>img{
+  width:100%!important;
+  height:100%!important;
+  object-fit:contain!important;
+  object-position:center center!important;
+  background:#f7f4ef!important;
+  transform:none!important;
+}
+body .species-card:hover .card-img-wrap img,
+body .hero-image-wrap:hover img{transform:none!important;}
+body p.img-caption,
+body .img-caption,
+body figure figcaption,
+body .caption{
+  font-family:Georgia,"Times New Roman",serif!important;
+  font-size:12px!important;
+  line-height:1.35!important;
+  color:#5f5a52!important;
+  text-align:left!important;
+  font-style:italic!important;
+  font-weight:400!important;
+  letter-spacing:0!important;
+  margin:7px auto 24px!important;
+  padding:0 4px!important;
+  max-width:900px!important;
+}
+body .img-caption em,
+body figure figcaption em,
+body .caption em{
+  font-size:inherit!important;
+  line-height:inherit!important;
+  color:inherit!important;
+  font-style:italic!important;
+  font-weight:inherit!important;
+}
+</style>
+<style id="sisari-v19-dugmad-stvarno-jedan-red">
+/* SISARI v19 — desktop dugmad strogo u jednom redu: 8 dugmadi = 8 kolona */
+@media (min-width: 981px){
+  body.rajac-archive--sisari .page-wrap{
+    max-width:1320px!important;
+    width:100%!important;
+  }
+  body.rajac-archive--sisari .filter-bar.filter-bar-v15{
+    display:grid!important;
+    grid-template-columns:repeat(8,minmax(0,1fr))!important;
+    grid-auto-flow:column!important;
+    grid-auto-columns:minmax(0,1fr)!important;
+    gap:8px!important;
+    width:100%!important;
+    max-width:1260px!important;
+    margin:0 auto 28px!important;
+    padding:0 0 14px!important;
+    border-bottom:0!important;
+    overflow:visible!important;
+    flex-wrap:nowrap!important;
+    justify-content:center!important;
+    align-items:center!important;
+  }
+  body.rajac-archive--sisari .filter-bar.filter-bar-v15 .filter-btn{
+    width:100%!important;
+    min-width:0!important;
+    max-width:none!important;
+    height:46px!important;
+    padding:0 4px!important;
+    font-size:11px!important;
+    line-height:1!important;
+    white-space:nowrap!important;
+    overflow:hidden!important;
+    text-overflow:clip!important;
+    flex:none!important;
+    letter-spacing:.02em!important;
+  }
+  body.rajac-archive--sisari .species-grid-main.species-grid-v15{
+    display:grid!important;
+    grid-template-columns:repeat(3,minmax(0,1fr))!important;
+    gap:26px!important;
+    max-width:1180px!important;
+    width:100%!important;
+    margin:0 auto!important;
+  }
+}
+@media (max-width:980px){
+  body.rajac-archive--sisari .filter-bar.filter-bar-v15{
+    display:flex!important;
+    flex-wrap:nowrap!important;
+    overflow-x:auto!important;
+    justify-content:flex-start!important;
+  }
+  body.rajac-archive--sisari .filter-bar.filter-bar-v15 .filter-btn{flex:0 0 auto!important;}
+}
+</style><link rel="stylesheet" href="/sisari/assets/mobile/sisari-mobile.css?v=20260716f"/>
+<script defer src="/sisari/assets/mobile/sisari-mobile.js?v=20260716f"></script>
+
+<link rel="stylesheet" href="/sisari/assets/sisari-photo-credits-v2.css?v=20260817">
+</head>
+<body class="rajac-archive rajac-archive--sisari">
+<nav aria-label="Главни мени ПИО Рајац" class="rajac-ds-nav"><div class="rajac-ds-nav-inner"><a class="rajac-ds-home" href="https://piorajac.rs/"><span aria-hidden="true" class="rajac-ds-home-mark">⊙</span><span>ПИО Рајац</span></a><a class="rajac-ds-nav-item" href="https://piorajac.rs/biljke/"><span aria-hidden="true" class="rajac-ds-icon">🌿</span><span>БИЉКЕ</span></a><a class="rajac-ds-nav-item" href="https://piorajac.rs/ptice/"><span aria-hidden="true" class="rajac-ds-icon">🦉</span><span>ПТИЦЕ</span></a><a class="rajac-ds-nav-item" href="https://piorajac.rs/insekti/"><span aria-hidden="true" class="rajac-ds-icon">🦋</span><span>ИНСЕКТИ</span></a><a class="rajac-ds-nav-item rajac-ds-active" href="https://piorajac.rs/sisari/"><span aria-hidden="true" class="rajac-ds-icon">🐾</span><span>СИСАРИ</span></a><a class="rajac-ds-nav-item" href="https://piorajac.rs/gljive/"><span aria-hidden="true" class="rajac-ds-icon">🍄</span><span>ГЉИВЕ</span></a><a class="rajac-ds-nav-item rajac-ds-nav-trofo" href="https://piorajac.rs/trofodinamika/"><span aria-hidden="true" class="rajac-ds-icon">🔗</span><span>ТРОФОДИНАМИКА</span></a></div></nav>
+<!-- Hero лисица: адаптирано (crop/webp) из Wikimedia Commons фотографије Charles J. Sharp, CC BY-SA 4.0: Red fox (Vulpes vulpes crucigera), Skalnaté Pleso, Slovakia. -->
+<!-- HERO FOX IMAGE IS EMBEDDED AS DATA URI, SO IT WORKS EVEN IF assets/images WERE NOT UPLOADED -->
+<div class="page-hero rajac-photo-source-hero" data-photo-source="Фото: Clément Bardot / Wikimedia Commons, CC BY-SA 4.0 — оригинал" data-source-page="https://commons.wikimedia.org/wiki/File:Roe_deer_in_woodland,_France.jpg">
+<img alt="Срна у шумском станишту — херо фотографија каталога сисара" aria-hidden="true" class="page-hero-bg" data-credit="Фото: Clément Bardot / Wikimedia Commons, CC BY-SA 4.0 — оригинал" decoding="async" fetchpriority="high" height="520" loading="eager" referrerpolicy="no-referrer" src="assets/images/hero-sisari-roe-deer.webp" width="1600"/>
+<div class="page-hero-inner">
+<div class="section-super">ПИО „Рајац" · Фауна</div>
+<h1>Сисари Рајца<em>Mammalia</em></h1>
+<p>Предео изузетних одлика „Рајац" станиште је богате заједнице сисара — од крупних папкара и звери до ситних глодара, инсективора и 19 врста слепих мишева. Откријте сваку врсту, њене трагове, биологију и начин да јој помогнете.</p>
+<div class="hero-stats">
+<div class="hero-stat"><div class="num">43</div><div class="lbl">Врсте у основном каталогу</div></div>
+<div class="hero-stat"><div class="num">19</div><div class="lbl">Врста слепих мишева</div></div>
+<div class="hero-stat"><div class="num">6</div><div class="lbl">Редова сисара</div></div>
+<div class="hero-stat"><div class="num">7</div><div class="lbl">Потенцијалних / спорадичних</div></div>
+</div>
+</div>
+</div>
+<main class="page-wrap">
+<div class="filter-bar filter-bar-v15"><button class="filter-btn active" onclick="filterGroup('sve',this)">Све врсте</button>
+<button class="filter-btn" onclick="filterGroup('papkari',this)">🦌 Папкари</button>
+<button class="filter-btn" onclick="filterGroup('zecoliki',this)">🐇 Зецолики</button>
+<button class="filter-btn" onclick="filterGroup('zveri',this)">🦊 Звери</button>
+<button class="filter-btn" onclick="filterGroup('glodari',this)">🐿 Глодари</button>
+<button class="filter-btn" onclick="filterGroup('bubojedi',this)">🦔 Бубоједи</button>
+<button class="filter-btn" onclick="filterGroup('slepi_misevi',this)">🦇 Слепи мишеви</button>
+<button class="filter-btn" onclick="filterGroup('potencijalne',this)">Потенцијалне</button>
+</div><div class="species-grid species-grid-main species-grid-v15" id="speciesGrid"><a class="species-card has-page" data-group="papkari" data-presence="osnovni" href="https://piorajac.rs/sisari/capreolus-capreolus/">
+<div class="card-img-wrap"><div class="rajac-photo-source-wrap" data-photo-source="Фото: Ken Billington / Wikimedia Commons, CC BY-SA 3.0 — оригинал" data-source-page="https://commons.wikimedia.org/wiki/File:Roe_Deer_(Capreolus_capreolus)_(1).jpg"><img alt="Срна (Capreolus capreolus) — фотографија врсте" class="card-photo" data-credit="Фото: Ken Billington / Wikimedia Commons, CC BY-SA 3.0 — оригинал" loading="lazy" referrerpolicy="no-referrer" src="assets/images/thumbs/capreolus-capreolus.webp"/></div><div class="card-status-dot dot-confirmed"></div></div>
+<div class="card-body">
+<div class="card-common">Срна</div>
+<div class="card-latin">Capreolus capreolus</div>
+<div class="card-tags"><span class="card-tag tag-status">дивљач чије је коришћење регулисано прописима</span><span class="card-tag tag-iucn">IUCN LC</span><span class="card-tag tag-presence-confirmed">основни каталог</span></div>
+<div class="card-arrow">Прочитај више →</div> </div>
+</a><a class="species-card has-page" data-group="papkari" data-presence="osnovni" href="https://piorajac.rs/sisari/sus-scrofa/">
+<div class="card-img-wrap"><div class="rajac-photo-source-wrap" data-photo-source="Фото: Diego Delso / Wikimedia Commons, CC BY-SA 4.0 — оригинал" data-source-page="https://commons.wikimedia.org/wiki/File:Jabal%C3%AD_(Sus_scrofa),_monte_Pf%C3%A4nder,_Bregenz,_Austria,_2022-10-23,_DD_12.jpg"><img alt="Дивља свиња (Sus scrofa) — фотографија врсте" class="card-photo" data-credit="Фото: Diego Delso / Wikimedia Commons, CC BY-SA 4.0 — оригинал" loading="lazy" referrerpolicy="no-referrer" src="assets/images/thumbs/sus-scrofa.webp"/></div><div class="card-status-dot dot-confirmed"></div></div>
+<div class="card-body">
+<div class="card-common">Дивља свиња</div>
+<div class="card-latin">Sus scrofa</div>
+<div class="card-tags"><span class="card-tag tag-status">дивљач чије је коришћење регулисано прописима</span><span class="card-tag tag-iucn">IUCN LC</span><span class="card-tag tag-presence-confirmed">основни каталог</span></div>
+<div class="card-arrow">Прочитај више →</div> </div>
+</a><a class="species-card has-page" data-group="zecoliki" data-presence="osnovni" href="https://piorajac.rs/sisari/lepus-europaeus/">
+<div class="card-img-wrap"><div class="rajac-photo-source-wrap" data-photo-source="Фото: Evelyn Simak / Wikimedia Commons / Geograph, CC BY-SA 2.0 — оригинал" data-source-page="https://commons.wikimedia.org/wiki/File:Brown_hare_(Lepus_europaeus)_-_geograph.org.uk_-_846593.jpg"><img alt="Дивљи зец (Lepus europaeus) — фотографија врсте" class="card-photo" data-credit="Фото: Evelyn Simak / Wikimedia Commons / Geograph, CC BY-SA 2.0 — оригинал" loading="lazy" referrerpolicy="no-referrer" src="assets/images/thumbs/lepus-europaeus.webp"/></div><div class="card-status-dot dot-confirmed"></div></div>
+<div class="card-body">
+<div class="card-common">Дивљи зец</div>
+<div class="card-latin">Lepus europaeus</div>
+<div class="card-tags"><span class="card-tag tag-status">дивљач чије је коришћење регулисано прописима</span><span class="card-tag tag-iucn">IUCN LC</span><span class="card-tag tag-presence-confirmed">основни каталог</span></div>
+<div class="card-arrow">Прочитај више →</div> </div>
+</a><a class="species-card has-page" data-group="zveri" data-presence="osnovni" href="https://piorajac.rs/sisari/vulpes-vulpes/">
+<div class="card-img-wrap"><div class="rajac-photo-source-wrap" data-photo-source="Фото: Charles J. Sharp / Wikimedia Commons, CC BY-SA 4.0 — оригинал" data-source-page="https://commons.wikimedia.org/wiki/File:Red_fox_(Vulpes_vulpes_crucigera)_Skalnate_Pleso.jpg"><img alt="Лисица (Vulpes vulpes) — фотографија врсте" class="card-photo" data-credit="Фото: Charles J. Sharp / Wikimedia Commons, CC BY-SA 4.0 — оригинал" loading="lazy" referrerpolicy="no-referrer" src="assets/images/thumbs/vulpes-vulpes.webp"/></div><div class="card-status-dot dot-confirmed"></div></div>
+<div class="card-body">
+<div class="card-common">Лисица</div>
+<div class="card-latin">Vulpes vulpes</div>
+<div class="card-tags"><span class="card-tag tag-status">дивљач чије је коришћење регулисано прописима</span><span class="card-tag tag-iucn">IUCN LC</span><span class="card-tag tag-presence-confirmed">основни каталог</span></div>
+<div class="card-arrow">Прочитај више →</div> </div>
+</a><a class="species-card has-page" data-group="zveri" data-presence="osnovni" href="https://piorajac.rs/sisari/canis-aureus/">
+<div class="card-img-wrap"><div class="rajac-photo-source-wrap" data-photo-source="Фото: Dr Tarak N. Khan / Wikimedia Commons, CC BY-SA 2.0 — оригинал" data-source-page="https://commons.wikimedia.org/wiki/File:Canis_aureus_indicus.jpg"><img alt="Шакал (Canis aureus) — фотографија врсте" class="card-photo" data-credit="Фото: Dr Tarak N. Khan / Wikimedia Commons, CC BY-SA 2.0 — оригинал" loading="lazy" referrerpolicy="no-referrer" src="assets/images/thumbs/canis-aureus.webp"/></div><div class="card-status-dot dot-confirmed"></div></div>
+<div class="card-body">
+<div class="card-common">Шакал</div>
+<div class="card-latin">Canis aureus</div>
+<div class="card-tags"><span class="card-tag tag-status">дивљач чије је коришћење регулисано прописима</span><span class="card-tag tag-iucn">IUCN LC</span><span class="card-tag tag-presence-confirmed">основни каталог</span></div>
+<div class="card-arrow">Прочитај више →</div> </div>
+</a><a class="species-card has-page" data-group="zveri" data-presence="osnovni" href="https://piorajac.rs/sisari/meles-meles/">
+<div class="card-img-wrap"><div class="rajac-photo-source-wrap" data-photo-source="Фото: BadgerHero / Wikimedia Commons, CC BY-SA 3.0 — оригинал" data-source-page="https://commons.wikimedia.org/wiki/File:Badger-badger.jpg"><img alt="Јазавац (Meles meles) — фотографија врсте" class="card-photo" data-credit="Фото: BadgerHero / Wikimedia Commons, CC BY-SA 3.0 — оригинал" loading="lazy" referrerpolicy="no-referrer" src="assets/images/thumbs/meles-meles.webp"/></div><div class="card-status-dot dot-confirmed"></div></div>
+<div class="card-body">
+<div class="card-common">Јазавац</div>
+<div class="card-latin">Meles meles</div>
+<div class="card-tags"><span class="card-tag tag-status">заштићена врста</span><span class="card-tag tag-iucn">IUCN LC</span><span class="card-tag tag-presence-confirmed">основни каталог</span></div>
+<div class="card-arrow">Прочитај више →</div> </div>
+</a><a class="species-card has-page" data-group="zveri" data-presence="osnovni" href="https://piorajac.rs/sisari/felis-silvestris/">
+<div class="card-img-wrap"><div class="rajac-photo-source-wrap" data-photo-source="Фото: Michael Gäbler / Wikimedia Commons, CC BY 3.0 — оригинал" data-source-page="https://commons.wikimedia.org/wiki/File:Felis_silvestris_silvestris.jpg"><img alt="Дивља мачка (Felis silvestris) — фотографија врсте" class="card-photo" data-credit="Фото: Michael Gäbler / Wikimedia Commons, CC BY 3.0 — оригинал" loading="lazy" referrerpolicy="no-referrer" src="assets/images/thumbs/felis-silvestris.webp"/></div><div class="card-status-dot dot-confirmed"></div></div>
+<div class="card-body">
+<div class="card-common">Дивља мачка</div>
+<div class="card-latin">Felis silvestris</div>
+<div class="card-tags"><span class="card-tag tag-status">строго заштићена врста</span><span class="card-tag tag-iucn">IUCN LC</span><span class="card-tag tag-presence-confirmed">основни каталог</span></div>
+<div class="card-arrow">Прочитај више →</div> </div>
+</a><a class="species-card has-page" data-group="zveri" data-presence="osnovni" href="https://piorajac.rs/sisari/martes-foina/">
+<div class="card-img-wrap"><div class="rajac-photo-source-wrap" data-photo-source="Фото: Stanislaw Szydlo / Wikimedia Commons, CC BY-SA 3.0 — оригинал" data-source-page="https://commons.wikimedia.org/wiki/File:Martes_foina_kuna.jpg"><img alt="Куна белица (Martes foina) — фотографија врсте" class="card-photo" data-credit="Фото: Stanislaw Szydlo / Wikimedia Commons, CC BY-SA 3.0 — оригинал" loading="lazy" referrerpolicy="no-referrer" src="assets/images/thumbs/martes-foina.webp"/></div><div class="card-status-dot dot-confirmed"></div></div>
+<div class="card-body">
+<div class="card-common">Куна белица</div>
+<div class="card-latin">Martes foina</div>
+<div class="card-tags"><span class="card-tag tag-status">дивљач чије је коришћење регулисано прописима</span><span class="card-tag tag-iucn">IUCN LC</span><span class="card-tag tag-presence-confirmed">основни каталог</span></div>
+<div class="card-arrow">Прочитај више →</div> </div>
+</a><a class="species-card has-page" data-group="zveri" data-presence="osnovni" href="https://piorajac.rs/sisari/martes-martes/">
+<div class="card-img-wrap"><div class="rajac-photo-source-wrap" data-photo-source="Фото: Christian Fischer / Wikimedia Commons, CC BY-SA 4.0 — оригинал" data-source-page="https://commons.wikimedia.org/wiki/File:MartesMartes.jpg"><img alt="Куна златица (Martes martes) — фотографија врсте" class="card-photo" data-credit="Фото: Christian Fischer / Wikimedia Commons, CC BY-SA 4.0 — оригинал" loading="lazy" referrerpolicy="no-referrer" src="assets/images/thumbs/martes-martes.webp"/></div><div class="card-status-dot dot-confirmed"></div></div>
+<div class="card-body">
+<div class="card-common">Куна златица</div>
+<div class="card-latin">Martes martes</div>
+<div class="card-tags"><span class="card-tag tag-status">заштићена врста</span><span class="card-tag tag-iucn">IUCN LC</span><span class="card-tag tag-presence-confirmed">основни каталог</span></div>
+<div class="card-arrow">Прочитај више →</div> </div>
+</a><a class="species-card has-page" data-group="zveri" data-presence="osnovni" href="https://piorajac.rs/sisari/mustela-putorius/">
+<div class="card-img-wrap"><div class="rajac-photo-source-wrap" data-photo-source="Фото: Mike Peel / Wikimedia Commons, CC BY-SA 4.0 — оригинал" data-source-page="https://commons.wikimedia.org/wiki/File:Old_photos_(MP)_328.jpg"><img alt="Мрки твор (Mustela putorius) — фотографија врсте" class="card-photo" data-credit="Фото: Mike Peel / Wikimedia Commons, CC BY-SA 4.0 — оригинал" loading="lazy" referrerpolicy="no-referrer" src="assets/images/thumbs/mustela-putorius.webp"/></div><div class="card-status-dot dot-confirmed"></div></div>
+<div class="card-body">
+<div class="card-common">Мрки твор</div>
+<div class="card-latin">Mustela putorius</div>
+<div class="card-tags"><span class="card-tag tag-status">строго заштићена врста</span><span class="card-tag tag-iucn">IUCN LC</span><span class="card-tag tag-presence-confirmed">основни каталог</span></div>
+<div class="card-arrow">Прочитај више →</div> </div>
+</a><a class="species-card has-page" data-group="zveri" data-presence="osnovni" href="https://piorajac.rs/sisari/mustela-nivalis/">
+<div class="card-img-wrap"><div class="rajac-photo-source-wrap" data-photo-source="Фото: Anatolii Vlasov / Wikimedia Commons, CC BY-SA 3.0 — оригинал" data-source-page="https://commons.wikimedia.org/wiki/File:Mustela_nivalis_-_2013'04'13-19h21m17s.jpg"><img alt="Риђа ласица (Mustela nivalis) — фотографија врсте" class="card-photo" data-credit="Фото: Anatolii Vlasov / Wikimedia Commons, CC BY-SA 3.0 — оригинал" loading="lazy" referrerpolicy="no-referrer" src="assets/images/thumbs/mustela-nivalis.webp"/></div><div class="card-status-dot dot-confirmed"></div></div>
+<div class="card-body">
+<div class="card-common">Риђа ласица</div>
+<div class="card-latin">Mustela nivalis</div>
+<div class="card-tags"><span class="card-tag tag-status">заштићена врста</span><span class="card-tag tag-iucn">IUCN LC</span><span class="card-tag tag-presence-confirmed">основни каталог</span></div>
+<div class="card-arrow">Прочитај више →</div> </div>
+</a><a class="species-card has-page" data-group="zveri" data-presence="potencijalne" href="https://piorajac.rs/sisari/canis-lupus/">
+<div class="card-img-wrap"><span class="rajac-photo-source-wrap" data-photo-source="Фото: Mikkel Houmøller / Wikimedia Commons, CC BY-SA 4.0 — оригинал" data-source-page="https://commons.wikimedia.org/wiki/File:Canis_lupus_Europe.jpg" tabindex="0"><img alt="Вук (Canis lupus) — фотографија врсте" class="card-photo" data-credit="Фото: Mikkel Houmøller / Wikimedia Commons, CC BY-SA 4.0 — оригинал" loading="lazy" referrerpolicy="no-referrer" src="assets/images/canis-lupus.webp"/></span><div class="card-status-dot dot-potential"></div></div>
+<div class="card-body">
+<div class="card-common">Вук</div>
+<div class="card-latin">Canis lupus</div>
+<div class="card-note">Рајац користи само као „саобраћајницу“ при сезонском кретању.</div>
+<div class="card-tags"><span class="card-tag tag-status">сложен статус — проверити прописе</span><span class="card-tag tag-iucn">IUCN LC</span><span class="card-tag tag-presence-potential">потенцијална / спорадична</span></div>
+<div class="card-arrow">Прочитај више →</div> </div>
+</a><a class="species-card has-page" data-group="zveri" data-presence="potencijalne" href="https://piorajac.rs/sisari/ursus-arctos/">
+<div class="card-img-wrap"><span class="rajac-photo-source-wrap" data-photo-source="Фото: Charles J. Sharp / Wikimedia Commons, CC BY-SA 4.0 — оригинал" data-source-page="https://commons.wikimedia.org/wiki/File:Eurasian_brown_bear_(Ursus_arctos_arctos)_female_5.jpg" tabindex="0"><img alt="Мрки медвед (Ursus arctos) — фотографија врсте" class="card-photo" data-credit="Фото: Charles J. Sharp / Wikimedia Commons, CC BY-SA 4.0 — оригинал" loading="lazy" referrerpolicy="no-referrer" src="assets/images/ursus-arctos.webp"/></span><div class="card-status-dot dot-potential"></div></div>
+<div class="card-body">
+<div class="card-common">Мрки медвед</div>
+<div class="card-latin">Ursus arctos</div>
+<div class="card-note">Крајње спорадична опажања; не сматра се сталним фаунистичким саставом.</div>
+<div class="card-tags"><span class="card-tag tag-status">строго заштићена врста</span><span class="card-tag tag-iucn">IUCN LC</span><span class="card-tag tag-presence-potential">потенцијална / спорадична</span></div>
+<div class="card-arrow">Прочитај више →</div> </div>
+</a><a class="species-card has-page" data-group="zveri" data-presence="potencijalne" href="https://piorajac.rs/sisari/lutra-lutra/">
+<div class="card-img-wrap"><span class="rajac-photo-source-wrap" data-photo-source="Фото: Aditya4wiki / Wikimedia Commons, CC BY-SA 4.0 — оригинал" data-source-page="https://commons.wikimedia.org/wiki/File:Eurasian_otter_Central_India.jpg" tabindex="0"><img alt="Видра (Lutra lutra) — фотографија врсте" class="card-photo" data-credit="Фото: Aditya4wiki / Wikimedia Commons, CC BY-SA 4.0 — оригинал" loading="lazy" referrerpolicy="no-referrer" src="assets/images/lutra-lutra.webp"/></span><div class="card-status-dot dot-potential"></div></div>
+<div class="card-body">
+<div class="card-common">Видра</div>
+<div class="card-latin">Lutra lutra</div>
+<div class="card-note">Могућа повремена појава уз водотокове.</div>
+<div class="card-tags"><span class="card-tag tag-status">строго заштићена врста</span><span class="card-tag tag-iucn">IUCN NT</span><span class="card-tag tag-presence-potential">потенцијална / спорадична</span></div>
+<div class="card-arrow">Прочитај више →</div> </div>
+</a><a class="species-card has-page" data-group="glodari" data-presence="osnovni" href="https://piorajac.rs/sisari/sciurus-vulgaris/">
+<div class="card-img-wrap"><div class="rajac-photo-source-wrap" data-photo-source="Фото: Nemanja Časar / Wikimedia Commons, CC BY-SA 4.0 — оригинал" data-source-page="https://commons.wikimedia.org/wiki/File:Evropska_veverica_(Sciurus_vulgaris),_Eurasian_red_squirrel.jpg"><img alt="Веверица (Sciurus vulgaris) — фотографија врсте" class="card-photo" data-credit="Фото: Nemanja Časar / Wikimedia Commons, CC BY-SA 4.0 — оригинал" loading="lazy" referrerpolicy="no-referrer" src="assets/images/thumbs/sciurus-vulgaris.webp"/></div><div class="card-status-dot dot-confirmed"></div></div>
+<div class="card-body">
+<div class="card-common">Веверица</div>
+<div class="card-latin">Sciurus vulgaris</div>
+<div class="card-tags"><span class="card-tag tag-status">заштићена врста</span><span class="card-tag tag-iucn">IUCN LC</span><span class="card-tag tag-presence-confirmed">основни каталог</span></div>
+<div class="card-arrow">Прочитај више →</div> </div>
+</a><a class="species-card has-page" data-group="glodari" data-presence="osnovni" href="https://piorajac.rs/sisari/glis-glis/">
+<div class="card-img-wrap"><div class="rajac-photo-source-wrap" data-photo-source="Фото: Bouke ten Cate / Wikimedia Commons, CC BY-SA 4.0 — оригинал" data-source-page="https://commons.wikimedia.org/wiki/File:Edible_dormouse_-_Relmuis_-_Glis_glis_04.jpg"><img alt="Сиви пух (Glis glis) — фотографија врсте" class="card-photo" data-credit="Фото: Bouke ten Cate / Wikimedia Commons, CC BY-SA 4.0 — оригинал" loading="lazy" referrerpolicy="no-referrer" src="assets/images/thumbs/glis-glis.webp"/></div><div class="card-status-dot dot-confirmed"></div></div>
+<div class="card-body">
+<div class="card-common">Сиви пух</div>
+<div class="card-latin">Glis glis</div>
+<div class="card-tags"><span class="card-tag tag-status">строго заштићена врста</span><span class="card-tag tag-iucn">IUCN LC</span><span class="card-tag tag-presence-confirmed">основни каталог</span></div>
+<div class="card-arrow">Прочитај више →</div> </div>
+</a><a class="species-card has-page" data-group="glodari" data-presence="osnovni" href="https://piorajac.rs/sisari/muscardinus-avellanarius/">
+<div class="card-img-wrap"><div class="rajac-photo-source-wrap" data-photo-source="Фото: Zoë Helene Kindermann / Wikimedia Commons, CC BY-SA 4.0 — оригинал" data-source-page="https://commons.wikimedia.org/wiki/File:Dormouse2.jpg"><img alt="Пух лешникар (Muscardinus avellanarius) — фотографија врсте" class="card-photo" data-credit="Фото: Zoë Helene Kindermann / Wikimedia Commons, CC BY-SA 4.0 — оригинал" loading="lazy" referrerpolicy="no-referrer" src="assets/images/thumbs/muscardinus-avellanarius.webp"/></div><div class="card-status-dot dot-confirmed"></div></div>
+<div class="card-body">
+<div class="card-common">Пух лешникар</div>
+<div class="card-latin">Muscardinus avellanarius</div>
+<div class="card-tags"><span class="card-tag tag-status">строго заштићена врста</span><span class="card-tag tag-iucn">IUCN LC</span><span class="card-tag tag-presence-confirmed">основни каталог</span></div>
+<div class="card-arrow">Прочитај више →</div> </div>
+</a><a class="species-card has-page" data-group="glodari" data-presence="osnovni" href="https://piorajac.rs/sisari/nannospalax-leucodon/">
+<div class="card-img-wrap"><div class="rajac-photo-source-wrap" data-photo-source="Фото: Lajos.rozsa / Wikimedia Commons, CC BY-SA 3.0 — оригинал" data-source-page="https://commons.wikimedia.org/wiki/File:Nannospalax_leucodon.jpg"><img alt="Слепо куче (Nannospalax leucodon) — фотографија врсте" class="card-photo" data-credit="Фото: Lajos.rozsa / Wikimedia Commons, CC BY-SA 3.0 — оригинал" loading="lazy" referrerpolicy="no-referrer" src="assets/images/thumbs/nannospalax-leucodon.webp"/></div><div class="card-status-dot dot-confirmed"></div></div>
+<div class="card-body">
+<div class="card-common">Слепо куче</div>
+<div class="card-latin">Nannospalax leucodon</div>
+<div class="card-tags"><span class="card-tag tag-status">строго заштићена врста</span><span class="card-tag tag-iucn">IUCN DD</span><span class="card-tag tag-presence-confirmed">основни каталог</span></div>
+<div class="card-arrow">Прочитај више →</div> </div>
+</a><a class="species-card has-page" data-group="glodari" data-presence="osnovni" href="https://piorajac.rs/sisari/apodemus-flavicollis/">
+<div class="card-img-wrap"><div class="rajac-photo-source-wrap" data-photo-source="Фото: James Lindsey at Ecology of Commanster / Wikimedia Commons, CC BY-SA 3.0 / 2.5 — оригинал" data-source-page="https://commons.wikimedia.org/wiki/File:Apodemus.flavicollis.jpg"><img alt="Жутогрли миш (Apodemus flavicollis (Melchior, 1834)) — фотографија врсте" class="card-photo" data-credit="Фото: James Lindsey at Ecology of Commanster / Wikimedia Commons, CC BY-SA 3.0 / 2.5 — оригинал" loading="lazy" referrerpolicy="no-referrer" src="assets/images/thumbs/apodemus-flavicollis.webp"/></div><div class="card-status-dot dot-confirmed"></div></div>
+<div class="card-body">
+<div class="card-common">Жутогрли миш</div>
+<div class="card-latin">Apodemus flavicollis</div>
+<div class="card-tags"><span class="card-tag tag-status">заштићена врста</span><span class="card-tag tag-iucn">IUCN LC</span><span class="card-tag tag-presence-confirmed">основни каталог</span></div>
+<div class="card-arrow">Прочитај више →</div> </div>
+</a><a class="species-card has-page" data-group="glodari" data-presence="osnovni" href="https://piorajac.rs/sisari/apodemus-sylvaticus/">
+<div class="card-img-wrap"><div class="rajac-photo-source-wrap" data-photo-source="Фото: Rasbak / Wikimedia Commons, CC BY-SA 3.0 — оригинал" data-source-page="https://commons.wikimedia.org/wiki/File:Apodemus_sylvaticus_bosmuis.jpg"><img alt="Шумски миш (Apodemus sylvaticus (Linnaeus, 1758)) — фотографија врсте" class="card-photo" data-credit="Фото: Rasbak / Wikimedia Commons, CC BY-SA 3.0 — оригинал" loading="lazy" referrerpolicy="no-referrer" src="assets/images/thumbs/apodemus-sylvaticus.webp"/></div><div class="card-status-dot dot-confirmed"></div></div>
+<div class="card-body">
+<div class="card-common">Шумски миш</div>
+<div class="card-latin">Apodemus sylvaticus</div>
+<div class="card-tags"><span class="card-tag tag-status">заштићена врста</span><span class="card-tag tag-iucn">IUCN LC</span><span class="card-tag tag-presence-confirmed">основни каталог</span></div>
+<div class="card-arrow">Прочитај више →</div> </div>
+</a><a class="species-card has-page" data-group="glodari" data-presence="osnovni" href="https://piorajac.rs/sisari/apodemus-agrarius/">
+<div class="card-img-wrap"><div class="rajac-photo-source-wrap" data-photo-source="Фото: Mardus / Wikimedia Commons, CC BY-SA 4.0 — оригинал" data-source-page="https://commons.wikimedia.org/wiki/File:Juttselg-hiir_Mustam%C3%A4el,_2016-08-15.jpg"><img alt="Пругасти миш (Apodemus agrarius (Pallas, 1771)) — фотографија врсте" class="card-photo" data-credit="Фото: Mardus / Wikimedia Commons, CC BY-SA 4.0 — оригинал" loading="lazy" referrerpolicy="no-referrer" src="assets/images/thumbs/apodemus-agrarius.webp"/></div><div class="card-status-dot dot-confirmed"></div></div>
+<div class="card-body">
+<div class="card-common">Пругасти миш</div>
+<div class="card-latin">Apodemus agrarius</div>
+<div class="card-tags"><span class="card-tag tag-status">заштићена врста</span><span class="card-tag tag-iucn">IUCN LC</span><span class="card-tag tag-presence-confirmed">основни каталог</span></div>
+<div class="card-arrow">Прочитај више →</div> </div>
+</a><a class="species-card has-page" data-group="glodari" data-presence="osnovni" href="https://piorajac.rs/sisari/myodes-glareolus/">
+<div class="card-img-wrap"><div class="rajac-photo-source-wrap" data-photo-source="Фото: Reinhold Möller / Wikimedia Commons, CC BY-SA 4.0 — оригинал" data-source-page="https://commons.wikimedia.org/wiki/File:R%C3%B6telmaus-20200410-RM-113838.jpg"><img alt="Риђа волухарица (Myodes glareolus (Schreber, 1780)) — фотографија врсте" class="card-photo" data-credit="Фото: Reinhold Möller / Wikimedia Commons, CC BY-SA 4.0 — оригинал" loading="lazy" referrerpolicy="no-referrer" src="assets/images/thumbs/myodes-glareolus.webp"/></div><div class="card-status-dot dot-confirmed"></div></div>
+<div class="card-body">
+<div class="card-common">Риђа волухарица</div>
+<div class="card-latin">Myodes glareolus</div>
+<div class="card-tags"><span class="card-tag tag-status">заштићена врста</span><span class="card-tag tag-iucn">IUCN LC</span><span class="card-tag tag-presence-confirmed">основни каталог</span></div>
+<div class="card-arrow">Прочитај више →</div> </div>
+</a><a class="species-card has-page" data-group="glodari" data-presence="osnovni" href="https://piorajac.rs/sisari/microtus-subterraneus/">
+<div class="card-img-wrap"><div class="rajac-photo-source-wrap" data-photo-source="Фото: Teacoolish / Wikimedia Commons, CC BY-SA 3.0 — оригинал" data-source-page="https://commons.wikimedia.org/wiki/File:Microtus_subterraneus_(Cologne,_Germany).jpg"><img alt="Подземна волухарица (Microtus subterraneus (de Sélys-Longchamps, 1836)) — фотографија врсте" class="card-photo" data-credit="Фото: Teacoolish / Wikimedia Commons, CC BY-SA 3.0 — оригинал" loading="lazy" referrerpolicy="no-referrer" src="assets/images/thumbs/microtus-subterraneus.webp"/></div><div class="card-status-dot dot-confirmed"></div></div>
+<div class="card-body">
+<div class="card-common">Подземна волухарица</div>
+<div class="card-latin">Microtus subterraneus</div>
+<div class="card-tags"><span class="card-tag tag-status">заштићена врста</span><span class="card-tag tag-iucn">IUCN LC</span><span class="card-tag tag-presence-confirmed">основни каталог</span></div>
+<div class="card-arrow">Прочитај више →</div> </div>
+</a><a class="species-card has-page" data-group="glodari" data-presence="osnovni" href="https://piorajac.rs/sisari/microtus-arvalis/">
+<div class="card-img-wrap"><div class="rajac-photo-source-wrap" data-photo-source="Фото: Dieter TD / Wikimedia Commons, CC BY-SA 3.0 — оригинал" data-source-page="https://commons.wikimedia.org/wiki/File:Feldmaus_Microtus_arvalis.jpg"><img alt="Пољска волухарица (Microtus arvalis (Pallas, 1778)) — фотографија врсте" class="card-photo" data-credit="Фото: Dieter TD / Wikimedia Commons, CC BY-SA 3.0 — оригинал" loading="lazy" referrerpolicy="no-referrer" src="assets/images/thumbs/microtus-arvalis.webp"/></div><div class="card-status-dot dot-confirmed"></div></div>
+<div class="card-body">
+<div class="card-common">Пољска волухарица</div>
+<div class="card-latin">Microtus arvalis</div>
+<div class="card-tags"><span class="card-tag tag-status">заштићена врста</span><span class="card-tag tag-iucn">IUCN LC</span><span class="card-tag tag-presence-confirmed">основни каталог</span></div>
+<div class="card-arrow">Прочитај више →</div> </div>
+</a><a class="species-card has-page" data-group="bubojedi" data-presence="osnovni" href="https://piorajac.rs/sisari/erinaceus-roumanicus/">
+<div class="card-img-wrap"><div class="rajac-photo-source-wrap" data-photo-source="Фото: Stefan.lefnaer / Wikimedia Commons, CC BY-SA 3.0 — оригинал" data-source-page="https://commons.wikimedia.org/wiki/File:Erinaceus_roumanicus_sl_1.jpg"><img alt="Јеж (Erinaceus roumanicus) — фотографија врсте" class="card-photo" data-credit="Фото: Stefan.lefnaer / Wikimedia Commons, CC BY-SA 3.0 — оригинал" loading="lazy" referrerpolicy="no-referrer" src="assets/images/thumbs/erinaceus-roumanicus.webp"/></div><div class="card-status-dot dot-confirmed"></div></div>
+<div class="card-body">
+<div class="card-common">Јеж</div>
+<div class="card-latin">Erinaceus roumanicus</div>
+<div class="card-tags"><span class="card-tag tag-status">строго заштићена врста</span><span class="card-tag tag-iucn">IUCN LC</span><span class="card-tag tag-presence-confirmed">основни каталог</span></div>
+<div class="card-arrow">Прочитај више →</div> </div>
+</a><a class="species-card has-page" data-group="bubojedi" data-presence="osnovni" href="https://piorajac.rs/sisari/talpa-europaea/">
+<div class="card-img-wrap"><div class="rajac-photo-source-wrap" data-photo-source="Фото: Luc Hoogenstein / Wikimedia Commons, CC BY-SA 4.0 — оригинал" data-source-page="https://commons.wikimedia.org/wiki/File:Talpa_europaea,_Common_Mole,_Mol_04.jpg"><img alt="Кртица (Talpa europaea (Linnaeus, 1758)) — фотографија врсте" class="card-photo" data-credit="Фото: Luc Hoogenstein / Wikimedia Commons, CC BY-SA 4.0 — оригинал" loading="lazy" referrerpolicy="no-referrer" src="assets/images/thumbs/talpa-europaea.webp"/></div><div class="card-status-dot dot-confirmed"></div></div>
+<div class="card-body">
+<div class="card-common">Кртица</div>
+<div class="card-latin">Talpa europaea</div>
+<div class="card-tags"><span class="card-tag tag-status">заштићена врста</span><span class="card-tag tag-iucn">IUCN LC</span><span class="card-tag tag-presence-confirmed">основни каталог</span></div>
+<div class="card-arrow">Прочитај више →</div> </div>
+</a><a class="species-card has-page" data-group="bubojedi" data-presence="osnovni" href="https://piorajac.rs/sisari/sorex-araneus/">
+<div class="card-img-wrap"><div class="rajac-photo-source-wrap" data-photo-source="Фото: Emőke Dénes / Wikimedia Commons, CC BY-SA 4.0 — оригинал" data-source-page="https://commons.wikimedia.org/wiki/File:E_-_Sorex_araneus.jpg"><img alt="Шумска ровчица (Sorex araneus (Linnaeus, 1758)) — фотографија врсте" class="card-photo" data-credit="Фото: Emőke Dénes / Wikimedia Commons, CC BY-SA 4.0 — оригинал" loading="lazy" referrerpolicy="no-referrer" src="assets/images/thumbs/sorex-araneus.webp"/></div><div class="card-status-dot dot-confirmed"></div></div>
+<div class="card-body">
+<div class="card-common">Шумска ровчица</div>
+<div class="card-latin">Sorex araneus</div>
+<div class="card-tags"><span class="card-tag tag-status">заштићена врста</span><span class="card-tag tag-iucn">IUCN LC</span><span class="card-tag tag-presence-confirmed">основни каталог</span></div>
+<div class="card-arrow">Прочитај више →</div> </div>
+</a><a class="species-card has-page" data-group="bubojedi" data-presence="potencijalne" href="https://piorajac.rs/sisari/sorex-minutus/">
+<div class="card-img-wrap"><span class="rajac-photo-source-wrap" data-photo-source="Фото: John Cummings / Wikimedia Commons, CC BY-SA 3.0 — оригинал" data-source-page="https://commons.wikimedia.org/wiki/File:Eurasian_pygmy_shrew_(Sorex_minutus),_Natural_History_Museum,_London,_Mammals_Gallery.JPG" tabindex="0"><img alt="Мала ровчица (Sorex minutus) — фотографија врсте" class="card-photo" data-credit="Фото: John Cummings / Wikimedia Commons, CC BY-SA 3.0 — оригинал" loading="lazy" referrerpolicy="no-referrer" src="assets/images/sorex-minutus.webp"/></span><div class="card-status-dot dot-potential"></div></div>
+<div class="card-body">
+<div class="card-common">Мала ровчица</div>
+<div class="card-latin">Sorex minutus</div>
+<div class="card-note">Погодна станишта присутна; недостају директни теренски налази.</div>
+<div class="card-tags"><span class="card-tag tag-status">заштићена врста</span><span class="card-tag tag-iucn">IUCN LC</span><span class="card-tag tag-presence-potential">потенцијална / спорадична</span></div>
+<div class="card-arrow">Прочитај више →</div> </div>
+</a><a class="species-card has-page" data-group="bubojedi" data-presence="potencijalne" href="https://piorajac.rs/sisari/neomys-fodiens/">
+<div class="card-img-wrap"><span class="rajac-photo-source-wrap" data-photo-source="Фото: R. Altenkamp / Accipiter / Wikimedia Commons, CC BY-SA 3.0 — оригинал" data-source-page="https://commons.wikimedia.org/wiki/File:Neomys_fodiens_TF_090829.jpg" tabindex="0"><img alt="Водена ровчица (Neomys fodiens) — фотографија врсте" class="card-photo" data-credit="Фото: R. Altenkamp / Accipiter / Wikimedia Commons, CC BY-SA 3.0 — оригинал" loading="lazy" referrerpolicy="no-referrer" src="assets/images/neomys-fodiens.webp"/></span><div class="card-status-dot dot-potential"></div></div>
+<div class="card-body">
+<div class="card-common">Водена ровчица</div>
+<div class="card-latin">Neomys fodiens</div>
+<div class="card-note">Везана за влажне обале потока и ивице мочвара.</div>
+<div class="card-tags"><span class="card-tag tag-status">строго заштићена врста</span><span class="card-tag tag-iucn">IUCN LC</span><span class="card-tag tag-presence-potential">потенцијална / спорадична</span></div>
+<div class="card-arrow">Прочитај више →</div> </div>
+</a><a class="species-card has-page" data-group="bubojedi" data-presence="potencijalne" href="https://piorajac.rs/sisari/crocidura-suaveolens/">
+<div class="card-img-wrap"><span class="rajac-photo-source-wrap" data-photo-source="Фото: Sebastian Ritter / Wikimedia Commons, CC BY-SA 2.0 DE — оригинал" data-source-page="https://commons.wikimedia.org/wiki/File:Gartenspitzmaus_(cropped).jpg" tabindex="0"><img alt="Баштенска ровчица (Crocidura suaveolens) — фотографија врсте" class="card-photo" data-credit="Фото: Sebastian Ritter / Wikimedia Commons, CC BY-SA 2.0 DE — оригинал" loading="lazy" referrerpolicy="no-referrer" src="assets/images/crocidura-suaveolens.webp"/></span><div class="card-status-dot dot-potential"></div></div>
+<div class="card-body">
+<div class="card-common">Баштенска ровчица</div>
+<div class="card-latin">Crocidura suaveolens</div>
+<div class="card-note">Погодна станишта у рубним зонама насеља и баштама.</div>
+<div class="card-tags"><span class="card-tag tag-status">заштићена врста</span><span class="card-tag tag-iucn">IUCN LC</span><span class="card-tag tag-presence-potential">потенцијална / спорадична</span></div>
+<div class="card-arrow">Прочитај више →</div> </div>
+</a><a class="species-card has-page" data-group="bubojedi" data-presence="potencijalne" href="https://piorajac.rs/sisari/crocidura-leucodon/">
+<div class="card-img-wrap"><span class="rajac-photo-source-wrap" data-photo-source="Фото: Dodoni / Wikimedia Commons, CC BY-SA 2.5 / 2.0 / 1.0 — оригинал" data-source-page="https://commons.wikimedia.org/wiki/File:Crocidura_leucodon.JPG" tabindex="0"><img alt="Пољска ровчица (Crocidura leucodon) — фотографија врсте" class="card-photo" data-credit="Фото: Dodoni / Wikimedia Commons, CC BY-SA 2.5 / 2.0 / 1.0 — оригинал" loading="lazy" referrerpolicy="no-referrer" src="assets/images/crocidura-leucodon.webp"/></span><div class="card-status-dot dot-potential"></div></div>
+<div class="card-body">
+<div class="card-common">Пољска ровчица</div>
+<div class="card-latin">Crocidura leucodon</div>
+<div class="card-note">Очекивана на полуотвореним стаништима у периферним зонама.</div>
+<div class="card-tags"><span class="card-tag tag-status">заштићена врста</span><span class="card-tag tag-iucn">IUCN LC</span><span class="card-tag tag-presence-potential">потенцијална / спорадична</span></div>
+<div class="card-arrow">Прочитај више →</div> </div>
+</a><a class="species-card has-page" data-group="slepi_misevi" data-presence="osnovni" href="https://piorajac.rs/sisari/rhinolophus-ferrumequinum/">
+<div class="card-img-wrap"><div class="rajac-photo-source-wrap" data-photo-source="Фото: Musa geçit / Wikimedia Commons, CC BY-SA 4.0 — оригинал" data-source-page="https://commons.wikimedia.org/wiki/File:Rhinolophus_ferrumequinum_16.JPG"><img alt="Велики потковичар (Rhinolophus ferrumequinum) — фотографија врсте" class="card-photo" data-credit="Фото: Musa geçit / Wikimedia Commons, CC BY-SA 4.0 — оригинал" loading="lazy" referrerpolicy="no-referrer" src="assets/images/thumbs/rhinolophus-ferrumequinum.webp"/></div><div class="card-status-dot dot-confirmed"></div></div>
+<div class="card-body">
+<div class="card-common">Велики потковичар</div>
+<div class="card-latin">Rhinolophus ferrumequinum</div>
+<div class="card-tags"><span class="card-tag tag-status">строго заштићена врста</span><span class="card-tag tag-iucn">IUCN LC</span><span class="card-tag tag-presence-confirmed">основни каталог</span></div>
+<div class="card-arrow">Прочитај више →</div> </div>
+</a><a class="species-card has-page" data-group="slepi_misevi" data-presence="osnovni" href="https://piorajac.rs/sisari/rhinolophus-hipposideros/">
+<div class="card-img-wrap"><div class="rajac-photo-source-wrap" data-photo-source="Фото: Falcoperegrinus / Wikimedia Commons, CC BY-SA 3.0 — оригинал" data-source-page="https://commons.wikimedia.org/wiki/File:Rhinolophus_hipposideros_2.jpg"><img alt="Мали потковичар (Rhinolophus hipposideros) — фотографија врсте" class="card-photo" data-credit="Фото: Falcoperegrinus / Wikimedia Commons, CC BY-SA 3.0 — оригинал" loading="lazy" referrerpolicy="no-referrer" src="assets/images/thumbs/rhinolophus-hipposideros.webp"/></div><div class="card-status-dot dot-confirmed"></div></div>
+<div class="card-body">
+<div class="card-common">Мали потковичар</div>
+<div class="card-latin">Rhinolophus hipposideros</div>
+<div class="card-tags"><span class="card-tag tag-status">строго заштићена врста</span><span class="card-tag tag-iucn">IUCN LC</span><span class="card-tag tag-presence-confirmed">основни каталог</span></div>
+<div class="card-arrow">Прочитај више →</div> </div>
+</a><a class="species-card has-page" data-group="slepi_misevi" data-presence="osnovni" href="https://piorajac.rs/sisari/rhinolophus-euryale/">
+<div class="card-img-wrap"><div class="rajac-photo-source-wrap" data-photo-source="Фото: Carlosblh / Medium69 / Wikimedia Commons, CC BY 3.0 / GFDL — оригинал" data-source-page="https://commons.wikimedia.org/wiki/File:Rhinolophus_euryale-cropped.jpg"><img alt="Јужни потковичар (Rhinolophus euryale) — фотографија врсте" class="card-photo" data-credit="Фото: Carlosblh / Medium69 / Wikimedia Commons, CC BY 3.0 / GFDL — оригинал" loading="lazy" referrerpolicy="no-referrer" src="https://commons.wikimedia.org/wiki/Special:FilePath/Rhinolophus%20euryale-cropped.jpg?width=1400"/></div><div class="card-status-dot dot-confirmed"></div></div>
+<div class="card-body">
+<div class="card-common">Јужни потковичар</div>
+<div class="card-latin">Rhinolophus euryale</div>
+<div class="card-tags"><span class="card-tag tag-status">строго заштићена врста</span><span class="card-tag tag-iucn">IUCN NT</span><span class="card-tag tag-presence-confirmed">основни каталог</span></div>
+<div class="card-arrow">Прочитај више →</div> </div>
+</a><a class="species-card has-page" data-group="slepi_misevi" data-presence="osnovni" href="https://piorajac.rs/sisari/rhinolophus-blasii/">
+<div class="card-img-wrap"><div class="rajac-photo-source-wrap" data-photo-source="Фото: Sylvain Eichhorn / Wikimedia Commons / iNaturalist, CC BY 4.0 — оригинал" data-source-page="https://commons.wikimedia.org/wiki/File:Rhinolophus_blasii.jpg"><img alt="Средоземни потковичар (Rhinolophus blasii) — фотографија врсте" class="card-photo" data-credit="Фото: Sylvain Eichhorn / Wikimedia Commons / iNaturalist, CC BY 4.0 — оригинал" loading="lazy" referrerpolicy="no-referrer" src="https://commons.wikimedia.org/wiki/Special:FilePath/Rhinolophus%20blasii.jpg?width=1400"/></div><div class="card-status-dot dot-confirmed"></div></div>
+<div class="card-body">
+<div class="card-common">Средоземни потковичар</div>
+<div class="card-latin">Rhinolophus blasii</div>
+<div class="card-tags"><span class="card-tag tag-status">строго заштићена врста</span><span class="card-tag tag-iucn">IUCN LC</span><span class="card-tag tag-presence-confirmed">основни каталог</span></div>
+<div class="card-arrow">Прочитај више →</div> </div>
+</a><a class="species-card has-page" data-group="slepi_misevi" data-presence="osnovni" href="https://piorajac.rs/sisari/myotis-mystacinus/">
+<div class="card-img-wrap"><div class="rajac-photo-source-wrap" data-photo-source="Фото: Manuel Ruedi / Wikimedia Commons, CC BY 3.0 — оригинал" data-source-page="https://commons.wikimedia.org/wiki/File:Myotis_mystacinus_-_Manuel_Ruedi.JPG"><img alt="Мали бркати вечерњак (Myotis mystacinus) — фотографија врсте" class="card-photo" data-credit="Фото: Manuel Ruedi / Wikimedia Commons, CC BY 3.0 — оригинал" loading="lazy" referrerpolicy="no-referrer" src="https://commons.wikimedia.org/wiki/Special:FilePath/Myotis%20mystacinus%20-%20Manuel%20Ruedi.JPG?width=1400"/></div><div class="card-status-dot dot-confirmed"></div></div>
+<div class="card-body">
+<div class="card-common">Мали бркати вечерњак</div>
+<div class="card-latin">Myotis mystacinus</div>
+<div class="card-tags"><span class="card-tag tag-status">строго заштићена врста</span><span class="card-tag tag-iucn">IUCN LC</span><span class="card-tag tag-presence-confirmed">основни каталог</span></div>
+<div class="card-arrow">Прочитај више →</div> </div>
+</a><a class="species-card has-page" data-group="slepi_misevi" data-presence="osnovni" href="https://piorajac.rs/sisari/myotis-emarginatus/">
+<div class="card-img-wrap"><div class="rajac-photo-source-wrap" data-photo-source="Фото: Gilles San Martin / Wikimedia Commons / Flickr, CC BY-SA 2.0 — оригинал" data-source-page="https://commons.wikimedia.org/wiki/File:Myotis_emarginatus_(2862277831).jpg"><img alt="Шиљоухи вечерњак (Myotis emarginatus) — фотографија врсте" class="card-photo" data-credit="Фото: Gilles San Martin / Wikimedia Commons / Flickr, CC BY-SA 2.0 — оригинал" loading="lazy" referrerpolicy="no-referrer" src="https://commons.wikimedia.org/wiki/Special:FilePath/Myotis%20emarginatus%20(2862277831).jpg?width=1400"/></div><div class="card-status-dot dot-confirmed"></div></div>
+<div class="card-body">
+<div class="card-common">Шиљоухи вечерњак</div>
+<div class="card-latin">Myotis emarginatus</div>
+<div class="card-tags"><span class="card-tag tag-status">строго заштићена врста</span><span class="card-tag tag-iucn">IUCN LC</span><span class="card-tag tag-presence-confirmed">основни каталог</span></div>
+<div class="card-arrow">Прочитај више →</div> </div>
+</a><a class="species-card has-page" data-group="slepi_misevi" data-presence="osnovni" href="https://piorajac.rs/sisari/myotis-nattereri/">
+<div class="card-img-wrap"><div class="rajac-photo-source-wrap" data-photo-source="Фото: Gilles San Martin / Wikimedia Commons / Flickr, CC BY-SA 2.0 — оригинал" data-source-page="https://commons.wikimedia.org/wiki/File:Myotis_nattereri_(2862347369).jpg"><img alt="Ресасти вечерњак (Myotis nattereri) — фотографија врсте" class="card-photo" data-credit="Фото: Gilles San Martin / Wikimedia Commons / Flickr, CC BY-SA 2.0 — оригинал" loading="lazy" referrerpolicy="no-referrer" src="https://commons.wikimedia.org/wiki/Special:FilePath/Myotis%20nattereri%20(2862347369).jpg?width=1400"/></div><div class="card-status-dot dot-confirmed"></div></div>
+<div class="card-body">
+<div class="card-common">Ресасти вечерњак</div>
+<div class="card-latin">Myotis nattereri</div>
+<div class="card-tags"><span class="card-tag tag-status">строго заштићена врста</span><span class="card-tag tag-iucn">IUCN LC</span><span class="card-tag tag-presence-confirmed">основни каталог</span></div>
+<div class="card-arrow">Прочитај више →</div> </div>
+</a><a class="species-card has-page" data-group="slepi_misevi" data-presence="osnovni" href="https://piorajac.rs/sisari/myotis-bechsteinii/">
+<div class="card-img-wrap"><div class="rajac-photo-source-wrap" data-photo-source="Фото: Gilles San Martin / Wikimedia Commons / Flickr, CC BY-SA 2.0 — оригинал" data-source-page="https://commons.wikimedia.org/wiki/File:Myotis_bechsteinii_(2862366039).jpg"><img alt="Дугоухи вечерњак (Myotis bechsteinii) — фотографија врсте" class="card-photo" data-credit="Фото: Gilles San Martin / Wikimedia Commons / Flickr, CC BY-SA 2.0 — оригинал" loading="lazy" referrerpolicy="no-referrer" src="https://commons.wikimedia.org/wiki/Special:FilePath/Myotis%20bechsteinii%20(2862366039).jpg?width=1400"/></div><div class="card-status-dot dot-confirmed"></div></div>
+<div class="card-body">
+<div class="card-common">Дугоухи вечерњак</div>
+<div class="card-latin">Myotis bechsteinii</div>
+<div class="card-tags"><span class="card-tag tag-status">строго заштићена врста</span><span class="card-tag tag-iucn">IUCN NT</span><span class="card-tag tag-presence-confirmed">основни каталог</span></div>
+<div class="card-arrow">Прочитај више →</div> </div>
+</a><a class="species-card has-page" data-group="slepi_misevi" data-presence="osnovni" href="https://piorajac.rs/sisari/myotis-myotis/">
+<div class="card-img-wrap"><div class="rajac-photo-source-wrap" data-photo-source="Фото: Gilles San Martin / Wikimedia Commons, CC BY-SA 2.0 — оригинал" data-source-page="https://commons.wikimedia.org/wiki/File:Myotis_myotis.jpg"><img alt="Велики мишоухи вечерњак (Myotis myotis) — фотографија врсте" class="card-photo" data-credit="Фото: Gilles San Martin / Wikimedia Commons, CC BY-SA 2.0 — оригинал" loading="lazy" referrerpolicy="no-referrer" src="assets/images/thumbs/myotis-myotis.webp"/></div><div class="card-status-dot dot-confirmed"></div></div>
+<div class="card-body">
+<div class="card-common">Велики мишоухи вечерњак</div>
+<div class="card-latin">Myotis myotis</div>
+<div class="card-tags"><span class="card-tag tag-status">строго заштићена врста</span><span class="card-tag tag-iucn">IUCN LC</span><span class="card-tag tag-presence-confirmed">основни каталог</span></div>
+<div class="card-arrow">Прочитај више →</div> </div>
+</a><a class="species-card has-page" data-group="slepi_misevi" data-presence="osnovni" href="https://piorajac.rs/sisari/myotis-blythii/">
+<div class="card-img-wrap"><div class="rajac-photo-source-wrap" data-photo-source="Фото: Amirekul / Wikimedia Commons, CC BY-SA 4.0 — оригинал" data-source-page="https://commons.wikimedia.org/wiki/File:Myotis_blythii_02.jpg"><img alt="Мали мишоухи вечерњак (Myotis blythii) — фотографија врсте" class="card-photo" data-credit="Фото: Amirekul / Wikimedia Commons, CC BY-SA 4.0 — оригинал" loading="lazy" referrerpolicy="no-referrer" src="https://commons.wikimedia.org/wiki/Special:FilePath/Myotis%20blythii%2002.jpg?width=1400"/></div><div class="card-status-dot dot-confirmed"></div></div>
+<div class="card-body">
+<div class="card-common">Мали мишоухи вечерњак</div>
+<div class="card-latin">Myotis blythii</div>
+<div class="card-tags"><span class="card-tag tag-status">строго заштићена врста</span><span class="card-tag tag-iucn">IUCN LC</span><span class="card-tag tag-presence-confirmed">основни каталог</span></div>
+<div class="card-arrow">Прочитај више →</div> </div>
+</a><a class="species-card has-page" data-group="slepi_misevi" data-presence="osnovni" href="https://piorajac.rs/sisari/myotis-daubentonii/">
+<div class="card-img-wrap"><div class="rajac-photo-source-wrap" data-photo-source="Фото: Gilles San Martin / Wikimedia Commons, CC BY-SA 3.0 — оригинал" data-source-page="https://commons.wikimedia.org/wiki/File:Myotis_daubentoni.jpg"><img alt="Водени вечерњак (Myotis daubentonii) — фотографија врсте" class="card-photo" data-credit="Фото: Gilles San Martin / Wikimedia Commons, CC BY-SA 3.0 — оригинал" loading="lazy" referrerpolicy="no-referrer" src="assets/images/thumbs/myotis-daubentonii.webp"/></div><div class="card-status-dot dot-confirmed"></div></div>
+<div class="card-body">
+<div class="card-common">Водени вечерњак</div>
+<div class="card-latin">Myotis daubentonii</div>
+<div class="card-tags"><span class="card-tag tag-status">строго заштићена врста</span><span class="card-tag tag-iucn">IUCN LC</span><span class="card-tag tag-presence-confirmed">основни каталог</span></div>
+<div class="card-arrow">Прочитај више →</div> </div>
+</a><a class="species-card has-page" data-group="slepi_misevi" data-presence="osnovni" href="https://piorajac.rs/sisari/myotis-capaccinii/">
+<div class="card-img-wrap"><div class="rajac-photo-source-wrap" data-photo-source="Фото: Joxerra Aihartza / Wikimedia Commons, Free Art License — оригинал" data-source-page="https://commons.wikimedia.org/wiki/File:Myotis_capaccinii_0105b.jpg"><img alt="Дугопрсти вечерњак (Myotis capaccinii) — фотографија врсте" class="card-photo" data-credit="Фото: Joxerra Aihartza / Wikimedia Commons, Free Art License — оригинал" loading="lazy" referrerpolicy="no-referrer" src="https://commons.wikimedia.org/wiki/Special:FilePath/Myotis%20capaccinii%200105b.jpg?width=1400"/></div><div class="card-status-dot dot-confirmed"></div></div>
+<div class="card-body">
+<div class="card-common">Дугопрсти вечерњак</div>
+<div class="card-latin">Myotis capaccinii</div>
+<div class="card-tags"><span class="card-tag tag-status">строго заштићена врста</span><span class="card-tag tag-iucn">IUCN VU</span><span class="card-tag tag-presence-confirmed">основни каталог</span></div>
+<div class="card-arrow">Прочитај више →</div> </div>
+</a><a class="species-card has-page" data-group="slepi_misevi" data-presence="osnovni" href="https://piorajac.rs/sisari/pipistrellus-pipistrellus/">
+<div class="card-img-wrap"><div class="rajac-photo-source-wrap" data-photo-source="Фото: Gilles San Martin / Wikimedia Commons / Flickr, CC BY-SA 2.0 — оригинал" data-source-page="https://commons.wikimedia.org/wiki/File:Pipistrellus_pipistrellus_(5933130195).jpg"><img alt="Патуљасти слепи мишић (Pipistrellus pipistrellus) — фотографија врсте" class="card-photo" data-credit="Фото: Gilles San Martin / Wikimedia Commons / Flickr, CC BY-SA 2.0 — оригинал" loading="lazy" referrerpolicy="no-referrer" src="https://commons.wikimedia.org/wiki/Special:FilePath/Pipistrellus%20pipistrellus%20(5933130195).jpg?width=1400"/></div><div class="card-status-dot dot-confirmed"></div></div>
+<div class="card-body">
+<div class="card-common">Патуљасти слепи мишић</div>
+<div class="card-latin">Pipistrellus pipistrellus</div>
+<div class="card-tags"><span class="card-tag tag-status">строго заштићена врста</span><span class="card-tag tag-iucn">IUCN LC</span><span class="card-tag tag-presence-confirmed">основни каталог</span></div>
+<div class="card-arrow">Прочитај више →</div> </div>
+</a><a class="species-card has-page" data-group="slepi_misevi" data-presence="osnovni" href="https://piorajac.rs/sisari/nyctalus-noctula/">
+<div class="card-img-wrap"><div class="rajac-photo-source-wrap" data-photo-source="Фото: Mnolf / Wikimedia Commons, CC BY-SA 2.0 / GFDL — оригинал" data-source-page="https://commons.wikimedia.org/wiki/File:Nyctalus_noctula.jpg"><img alt="Средњи ноћник (Nyctalus noctula) — фотографија врсте" class="card-photo" data-credit="Фото: Mnolf / Wikimedia Commons, CC BY-SA 2.0 / GFDL — оригинал" loading="lazy" referrerpolicy="no-referrer" src="https://commons.wikimedia.org/wiki/Special:FilePath/Nyctalus%20noctula.jpg?width=1400"/></div><div class="card-status-dot dot-confirmed"></div></div>
+<div class="card-body">
+<div class="card-common">Средњи ноћник</div>
+<div class="card-latin">Nyctalus noctula</div>
+<div class="card-tags"><span class="card-tag tag-status">строго заштићена врста</span><span class="card-tag tag-iucn">IUCN LC</span><span class="card-tag tag-presence-confirmed">основни каталог</span></div>
+<div class="card-arrow">Прочитај више →</div> </div>
+</a><a class="species-card has-page" data-group="slepi_misevi" data-presence="osnovni" href="https://piorajac.rs/sisari/eptesicus-serotinus/">
+<div class="card-img-wrap"><div class="rajac-photo-source-wrap" data-photo-source="Фото: Mnolf / Wikimedia Commons, CC BY-SA 2.0 / GFDL — оригинал" data-source-page="https://commons.wikimedia.org/wiki/File:Eptesicus_serotinus.jpg"><img alt="Ширококрили поноћњак (Eptesicus serotinus) — фотографија врсте" class="card-photo" data-credit="Фото: Mnolf / Wikimedia Commons, CC BY-SA 2.0 / GFDL — оригинал" loading="lazy" referrerpolicy="no-referrer" src="https://commons.wikimedia.org/wiki/Special:FilePath/Eptesicus%20serotinus.jpg?width=1400"/></div><div class="card-status-dot dot-confirmed"></div></div>
+<div class="card-body">
+<div class="card-common">Ширококрили поноћњак</div>
+<div class="card-latin">Eptesicus serotinus</div>
+<div class="card-tags"><span class="card-tag tag-status">строго заштићена врста</span><span class="card-tag tag-iucn">IUCN LC</span><span class="card-tag tag-presence-confirmed">основни каталог</span></div>
+<div class="card-arrow">Прочитај више →</div> </div>
+</a><a class="species-card has-page" data-group="slepi_misevi" data-presence="osnovni" href="https://piorajac.rs/sisari/barbastella-barbastellus/">
+<div class="card-img-wrap"><div class="rajac-photo-source-wrap" data-photo-source="Фото: Hyla meridionalis / Wikimedia Commons, CC BY-SA 3.0 — оригинал" data-source-page="https://commons.wikimedia.org/wiki/File:Barbastella_barbastellus_01.jpg"><img alt="Широкоухи љиљак (Barbastella barbastellus) — фотографија врсте" class="card-photo" data-credit="Фото: Hyla meridionalis / Wikimedia Commons, CC BY-SA 3.0 — оригинал" loading="lazy" referrerpolicy="no-referrer" src="https://commons.wikimedia.org/wiki/Special:FilePath/Barbastella%20barbastellus%2001.jpg?width=1400"/></div><div class="card-status-dot dot-confirmed"></div></div>
+<div class="card-body">
+<div class="card-common">Широкоухи љиљак</div>
+<div class="card-latin">Barbastella barbastellus</div>
+<div class="card-tags"><span class="card-tag tag-status">строго заштићена врста</span><span class="card-tag tag-iucn">IUCN NT</span><span class="card-tag tag-presence-confirmed">основни каталог</span></div>
+<div class="card-arrow">Прочитај више →</div> </div>
+</a><a class="species-card has-page" data-group="slepi_misevi" data-presence="osnovni" href="https://piorajac.rs/sisari/plecotus-auritus/">
+<div class="card-img-wrap"><div class="rajac-photo-source-wrap" data-photo-source="Фото: Evelyn Simak / Wikimedia Commons / Geograph, CC BY-SA 2.0 — оригинал" data-source-page="https://commons.wikimedia.org/wiki/File:Plecotus_auritus01.jpg"><img alt="Смеђи дугоухи љиљак (Plecotus auritus) — фотографија врсте" class="card-photo" data-credit="Фото: Evelyn Simak / Wikimedia Commons / Geograph, CC BY-SA 2.0 — оригинал" loading="lazy" referrerpolicy="no-referrer" src="https://commons.wikimedia.org/wiki/Special:FilePath/Plecotus%20auritus01.jpg?width=1400"/></div><div class="card-status-dot dot-confirmed"></div></div>
+<div class="card-body">
+<div class="card-common">Смеђи дугоухи љиљак</div>
+<div class="card-latin">Plecotus auritus</div>
+<div class="card-tags"><span class="card-tag tag-status">строго заштићена врста</span><span class="card-tag tag-iucn">IUCN LC</span><span class="card-tag tag-presence-confirmed">основни каталог</span></div>
+<div class="card-arrow">Прочитај више →</div> </div>
+</a><a class="species-card has-page" data-group="slepi_misevi" data-presence="osnovni" href="https://piorajac.rs/sisari/plecotus-austriacus/">
+<div class="card-img-wrap"><div class="rajac-photo-source-wrap" data-photo-source="Фото: Andrei Sakhno / Wikimedia Commons, CC BY-SA 4.0 — оригинал" data-source-page="https://commons.wikimedia.org/wiki/File:Plecotus_austriacus_(cropped).jpg"><img alt="Сиви дугоухи љиљак (Plecotus austriacus) — фотографија врсте" class="card-photo" data-credit="Фото: Andrei Sakhno / Wikimedia Commons, CC BY-SA 4.0 — оригинал" loading="lazy" referrerpolicy="no-referrer" src="https://commons.wikimedia.org/wiki/Special:FilePath/Plecotus%20austriacus%20(cropped).jpg?width=1400"/></div><div class="card-status-dot dot-confirmed"></div></div>
+<div class="card-body">
+<div class="card-common">Сиви дугоухи љиљак</div>
+<div class="card-latin">Plecotus austriacus</div>
+<div class="card-tags"><span class="card-tag tag-status">строго заштићена врста</span><span class="card-tag tag-iucn">IUCN LC</span><span class="card-tag tag-presence-confirmed">основни каталог</span></div>
+<div class="card-arrow">Прочитај више →</div> </div>
+</a><a class="species-card has-page" data-group="slepi_misevi" data-presence="osnovni" href="https://piorajac.rs/sisari/miniopterus-schreibersii/">
+<div class="card-img-wrap"><div class="rajac-photo-source-wrap" data-photo-source="Фото: Lukáš Jurek / OJJ / Wikimedia Commons, CC BY-SA 4.0 — оригинал" data-source-page="https://commons.wikimedia.org/wiki/File:Miniopterus_schreibersii.jpg"><img alt="Дугокрили љиљак (Miniopterus schreibersii) — фотографија врсте" class="card-photo" data-credit="Фото: Lukáš Jurek / OJJ / Wikimedia Commons, CC BY-SA 4.0 — оригинал" loading="lazy" referrerpolicy="no-referrer" src="https://commons.wikimedia.org/wiki/Special:FilePath/Miniopterus%20schreibersii.jpg?width=1400"/></div><div class="card-status-dot dot-confirmed"></div></div>
+<div class="card-body">
+<div class="card-common">Дугокрили љиљак</div>
+<div class="card-latin">Miniopterus schreibersii</div>
+<div class="card-tags"><span class="card-tag tag-status">строго заштићена врста</span><span class="card-tag tag-iucn">IUCN NT</span><span class="card-tag tag-presence-confirmed">основни каталог</span></div>
+<div class="card-arrow">Прочитај више →</div> </div>
+</a></div>
+<!-- ПОТЕНЦИЈАЛНЕ ВРСТЕ -->
+</main>
+<script>
+function filterGroup(group, btn){
+  document.querySelectorAll('.filter-btn').forEach(function(b){b.classList.remove('active')});
+  if(btn) btn.classList.add('active');
+
+  document.querySelectorAll('#speciesGrid .species-card').forEach(function(card){
+    var show = false;
+    if(group === 'sve') show = true;
+    else if(group === 'potencijalne') show = (card.dataset.presence === 'potencijalne');
+    else show = (card.dataset.group === group);
+    card.style.display = show ? '' : 'none';
+  });
+}
+</script>
+<!-- SITE_EDITOR_ADMIN_BAR_START -->
+<script defer="" src="/admin-site-editor.php?admin_bar_js=1"></script>
+<!-- SITE_EDITOR_ADMIN_BAR_END -->
+
+<script defer src="/sisari/assets/sisari-photo-credits-v2.js?v=20260817"></script>
+</body>
+</html>

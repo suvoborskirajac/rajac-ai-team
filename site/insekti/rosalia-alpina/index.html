@@ -1,0 +1,1024 @@
+<!DOCTYPE html>
+
+<html lang="sr">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Алпска стрижибуба — Rosalia alpina | Инсекти Рајца | ПИО „Рајац"</title>
+<meta content="Алпска стрижибуба (Rosalia alpina) — строго заштићени инсект, симбол старих букових шума. Биоиндикатор старишта, Анекс II Директиве о стаништима. Биологија, станиште, мониторинг на Рајцу." name="description"/>
+<style>
+/* ──────────── ТОКЕНИ ──────────── */
+:root {
+  --sky:#0b2744; --sky-mid:#163a58; --sky-light:#1e5a84;
+  --gold:#c8a84b; --gold-light:#e8cc7a;
+  --rosalia-blue:#5a8fa8; --rosalia-dark:#2d5a6e; --rosalia-accent:#89c4d8;
+  --cream:#f8f4ed; --warm:#fdfcfa;
+  --text:#1a1a2e; --muted:#6b7280; --border:#e0dbd3;
+  --forest:#2d5a27; --forest-bg:#edf7f0;
+  --radius:12px; --shadow:0 2px 12px rgba(0,0,0,.08);
+  --shadow-lg:0 8px 28px rgba(0,0,0,.14);
+  --font-serif:"Cormorant Garamond","EB Garamond",Garamond,"Palatino Linotype","Book Antiqua",Georgia,"Times New Roman",serif;
+  --font-sans:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+}
+* { box-sizing:border-box; margin:0; padding:0 }
+body { font-family:var(--font-sans); background:var(--cream); color:var(--text); font-size:15px; line-height:1.75 }
+a { text-decoration:none; color:inherit }
+img { max-width:100%; display:block }
+
+/* ──────────── HEADER ──────────── */
+.site-header {
+  background:var(--sky); color:#fff;
+  padding:0 32px; display:flex; align-items:center;
+  justify-content:space-between; height:58px;
+  border-bottom:3px solid var(--sky-light);
+  position:sticky; top:0; z-index:100;
+}
+html.admin-bar .site-header { top:32px }
+.site-header .logo { font-weight:700; font-size:14px; color:#fff;
+  letter-spacing:.06em; text-transform:uppercase; }
+.site-header nav a { color:rgba(255,255,255,.82); margin-left:18px; font-size:12.5px; transition:color .15s }
+.site-header nav a:hover { color:#fff }
+
+/* ──────────── BREADCRUMB ──────────── */
+.breadcrumb-bar { background:var(--cream); border-bottom:1px solid var(--border); padding:10px 0 }
+.breadcrumb-bar .inner { max-width:960px; margin:0 auto; padding:0 24px; font-size:13px; color:var(--muted) }
+.breadcrumb-bar a { color:var(--sky-light); font-weight:600 }
+.breadcrumb-bar .sep { margin:0 6px; opacity:.4 }
+
+/* ──────────── HERO ──────────── */
+.species-hero {
+  background:linear-gradient(145deg, var(--sky) 0%, #1a3a2a 50%, #0f2d1f 100%);
+  padding:0; overflow:hidden; position:relative;
+}
+.hero-inner {
+  max-width:960px; margin:0 auto;
+  display:grid; grid-template-columns:1fr 380px;
+  gap:0; align-items:stretch;
+}
+.hero-text {
+  padding:40px 32px 36px 24px;
+  display:flex; flex-direction:column; justify-content:center;
+}
+.back-link {
+  display:inline-flex; align-items:center; gap:6px;
+  color:rgba(255,255,255,.65); font-size:13px; font-weight:500;
+  margin-bottom:18px; transition:color .18s;
+}
+.back-link:hover { color:var(--gold-light) }
+.common-name{font-family:var(--font-serif);font-size:clamp(2.15rem,4.4vw,3rem);font-weight:300;color:#fff;line-height:1.05;letter-spacing:0;margin-bottom:6px}
+.latin-name {
+  font-family:var(--font-serif); font-style:italic;
+  font-size:1.25rem; color:var(--rosalia-accent); margin-bottom:16px;
+  font-weight:400; letter-spacing:.01em;
+}
+.hero-short {
+  color:rgba(255,255,255,.82); font-size:14px;
+  max-width:520px; line-height:1.75; margin-bottom:18px;
+}
+.hero-pills { display:flex; gap:8px; flex-wrap:wrap; margin-bottom:14px }
+.pill {
+  font-size:11px; font-weight:700; letter-spacing:.04em;
+  padding:6px 13px; border-radius:999px;
+}
+.pill-order { background:rgba(89,143,168,.22); border:1px solid rgba(89,143,168,.4); color:var(--rosalia-accent) }
+.pill-family { background:rgba(255,255,255,.10); border:1px solid rgba(255,255,255,.16); color:rgba(255,255,255,.85) }
+.pill-strict { background:rgba(220,38,38,.20); border:1px solid rgba(220,38,38,.35); color:#fca5a5 }
+.pill-eu { background:rgba(59,130,246,.20); border:1px solid rgba(59,130,246,.35); color:#93c5fd }
+.hero-tags { display:flex; gap:7px; flex-wrap:wrap }
+.htag {
+  font-size:11px; background:rgba(255,255,255,.10);
+  border:1px solid rgba(255,255,255,.15); color:rgba(255,255,255,.85);
+  padding:4px 10px; border-radius:999px; font-weight:600;
+}
+
+.hero-photo {
+  background:linear-gradient(to bottom, rgba(255,255,255,.04), rgba(0,0,0,.2));
+  position:relative; overflow:hidden;
+  border-left:1px solid rgba(255,255,255,.07);
+}
+.hero-photo img {
+  width:100%; height:100%; object-fit:cover;
+  object-position:center 30%; display:block;
+  transition:transform .5s ease;
+}
+.hero-photo:hover img { transform:scale(1.04) }
+.hero-photo-cap {
+  position:absolute; bottom:0; left:0; right:0;
+  background:linear-gradient(transparent, rgba(0,0,0,.65));
+  padding:18px 12px 10px;
+  font-size:10.5px; color:rgba(255,255,255,.75); font-style:italic; text-align:right;
+}
+
+/* ──────────── INFOBAR ──────────── */
+.infobar {
+  background:var(--sky); border-top:1px solid rgba(255,255,255,.07);
+}
+.infobar-inner {
+  max-width:960px; margin:0 auto;
+  display:grid; grid-template-columns:repeat(5,1fr);
+}
+.info-cell {
+  padding:14px 18px; border-right:1px solid rgba(255,255,255,.07);
+}
+.info-cell:last-child { border-right:none }
+.info-label {
+  font-size:10px; text-transform:uppercase; letter-spacing:1.4px;
+  color:rgba(255,255,255,.4); font-weight:700; margin-bottom:4px;
+}
+.info-val { font-size:13px; color:rgba(255,255,255,.9); font-weight:600 }
+
+/* ──────────── MAIN ──────────── */
+.page-wrap { max-width:960px; margin:0 auto; padding:32px 24px 64px }
+
+/* ──────────── TABS ──────────── */
+.tabs {
+  display:flex; border-bottom:2px solid var(--border);
+  overflow-x:auto; scrollbar-width:none; margin-bottom:0;
+}
+.tabs::-webkit-scrollbar { display:none }
+.tab {
+  padding:12px 18px; font-size:13px; font-weight:700;
+  color:var(--muted); cursor:pointer; border:none; background:none;
+  white-space:nowrap; border-bottom:2.5px solid transparent;
+  margin-bottom:-2px; transition:all .2s;
+  display:inline-flex; align-items:center; gap:6px;
+}
+.tab:hover { color:var(--sky) }
+.tab.active { color:var(--sky); border-bottom-color:var(--sky-light) }
+.tab-panel { display:none; padding:28px 0 }
+.tab-panel.active { display:block }
+
+/* ──────────── CARDS ──────────── */
+.card {
+  background:#fff; border:1px solid var(--border);
+  border-radius:var(--radius); padding:20px; margin-bottom:16px;
+}
+.card-title {
+  font-size:11px; text-transform:uppercase; letter-spacing:.1em;
+  color:var(--muted); font-weight:800; margin-bottom:14px;
+  display:flex; align-items:center; gap:8px;
+}
+.card-body { font-size:14px; color:#374151; line-height:1.85 }
+.card-body p { margin-bottom:12px }
+.card-body p:last-child { margin-bottom:0 }
+.card-body ul { margin:8px 0 12px 20px }
+.card-body li { margin-bottom:5px }
+.card-body strong { color:var(--text) }
+
+.eco-card {
+  background:linear-gradient(135deg, var(--forest-bg), #f5fbf7);
+  border:1px solid #b8dfc5; border-left:4px solid var(--forest);
+  border-radius:var(--radius); padding:20px; margin-bottom:16px;
+}
+.eco-card .card-title { color:#166534 }
+.eco-card .card-body { color:#155a30 }
+
+.warn-card {
+  background:#fef9ee; border:1px solid #f0c040;
+  border-left:4px solid #e6a700; border-radius:var(--radius);
+  padding:18px 20px; margin-bottom:16px;
+}
+.strict-card {
+  background:linear-gradient(135deg,#fff2f2,#fff8f8);
+  border:1px solid #fecaca; border-left:4px solid #dc2626;
+  border-radius:var(--radius); padding:20px; margin-bottom:16px;
+}
+.strict-card .card-title { color:#991b1b }
+
+.eu-card {
+  background:linear-gradient(135deg,#eff6ff,#f5f8ff);
+  border:1px solid #bfdbfe; border-left:4px solid #2563eb;
+  border-radius:var(--radius); padding:20px; margin-bottom:16px;
+}
+.eu-card .card-title { color:#1e40af }
+
+/* ──────────── KV GRID ──────────── */
+.kv-grid {
+  display:grid; grid-template-columns:repeat(3,1fr); gap:12px; margin-bottom:18px;
+}
+.kv-item {
+  background:#fff; border:1px solid var(--border); border-radius:10px; padding:14px 16px;
+}
+.kv-l { font-size:10px; text-transform:uppercase; letter-spacing:.1em; color:var(--muted); font-weight:800; margin-bottom:5px }
+.kv-v { font-size:13px; font-weight:700; color:var(--text); line-height:1.3 }
+
+/* ──────────── BEETLE DIAGRAM ──────────── */
+.beetle-diagram {
+  background:linear-gradient(135deg, #1a3a2a, #0f2d1f);
+  border-radius:var(--radius);
+  padding:24px; display:flex; gap:24px; align-items:center;
+  margin-bottom:16px;
+}
+.beetle-legend { flex:1; color:rgba(255,255,255,.9); font-size:13px }
+.beetle-legend h4 { font-size:12px; text-transform:uppercase; letter-spacing:.1em; color:var(--rosalia-accent); margin-bottom:10px }
+.beetle-legend li { margin-bottom:7px; display:flex; align-items:flex-start; gap:8px; line-height:1.5 }
+.bl-dot { width:12px; height:12px; border-radius:2px; flex-shrink:0; margin-top:3px }
+
+/* ──────────── PHENOLOGY ──────────── */
+.pheno-section { margin-bottom:16px }
+.pheno-title {
+  font-size:11px; text-transform:uppercase; letter-spacing:.1em;
+  color:var(--muted); font-weight:800; margin-bottom:10px;
+  display:flex; align-items:center; gap:8px;
+}
+.pheno-grid { display:grid; grid-template-columns:repeat(12,1fr); gap:4px; margin-bottom:8px }
+.pheno-month { text-align:center; padding:4px 2px; border-radius:5px; font-size:9px }
+.m-name { display:block; font-weight:700; color:var(--muted); margin-bottom:3px }
+.m-icon { display:block; font-size:14px }
+.ph-flight { background:#b8e0d0; }
+.ph-larvae { background:#d4ebd0; border:1px solid #90cc9a }
+.ph-absent { background:#f0ede8; }
+.ph-partial { background:#e8f4f0; }
+.pheno-legend { display:flex; gap:16px; flex-wrap:wrap; font-size:12px; color:var(--muted); margin-top:6px }
+.pheno-legend span { display:flex; align-items:center; gap:5px }
+.pdot { width:12px; height:12px; border-radius:3px; display:inline-block }
+
+/* ──────────── PHOTO GALLERY ──────────── */
+.gallery-section { margin-bottom:28px }
+.gallery-label { font-size:11px; text-transform:uppercase; letter-spacing:.1em; color:var(--muted); font-weight:800; margin-bottom:12px }
+.gallery-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:12px }
+.gallery-grid figure {
+  border-radius:10px; overflow:hidden;
+  box-shadow:var(--shadow); background:#c8c0b0;
+  transition:transform .2s, box-shadow .2s;
+}
+.gallery-grid figure:hover { transform:translateY(-2px); box-shadow:var(--shadow-lg) }
+.gallery-grid img {
+  width:100%; aspect-ratio:4/3; object-fit:cover; display:block;
+}
+.gallery-grid figcaption {
+  font-size:10.5px; color:var(--muted); font-style:italic;
+  padding:6px 8px; background:var(--cream);
+  border:1px solid var(--border); border-top:none;
+}
+
+/* ──────────── TWO COLUMN ──────────── */
+.two-col { display:grid; grid-template-columns:1fr 1fr; gap:14px; margin-bottom:16px }
+.info-box {
+  background:#fff; border:1px solid var(--border); border-radius:10px; padding:16px;
+}
+.info-box h4 { font-size:12px; text-transform:uppercase; letter-spacing:.08em; color:var(--muted); font-weight:800; margin-bottom:8px }
+.info-box p { font-size:13px; line-height:1.7; color:#374151 }
+
+/* ──────────── HABITAT BLOCK ──────────── */
+.habitat-block {
+  background:linear-gradient(135deg,#1a3a2a,#0f2d1f);
+  border-radius:var(--radius); padding:22px; margin-bottom:16px;
+  display:grid; grid-template-columns:1fr 1fr; gap:18px;
+  color:#fff;
+}
+.hab-text h4 { font-size:13px; font-weight:800; color:var(--rosalia-accent); margin-bottom:8px }
+.hab-text p { font-size:13px; line-height:1.7; color:rgba(255,255,255,.85) }
+.hab-stats { display:flex; flex-direction:column; gap:10px }
+.hab-stat { background:rgba(255,255,255,.08); border:1px solid rgba(255,255,255,.12); border-radius:8px; padding:10px 14px }
+.hab-stat .hn { font-size:20px; font-weight:800; color:var(--rosalia-accent) }
+.hab-stat .hl { font-size:11px; color:rgba(255,255,255,.65); text-transform:uppercase; letter-spacing:.08em; margin-top:2px }
+
+/* ──────────── MONITORING ──────────── */
+.smart-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:12px; margin-bottom:14px }
+.smart-card {
+  background:#fff; border:1px solid var(--border); border-radius:10px; padding:14px 16px;
+  border-left:3px solid var(--sky-light);
+}
+.smart-card h4 { font-size:13px; font-weight:800; color:var(--sky); margin-bottom:6px }
+.smart-card p { font-size:13px; line-height:1.65; color:#374151 }
+
+/* ──────────── EXTERNAL LINKS ──────────── */
+.ext-links { display:flex; gap:10px; flex-wrap:wrap; margin-top:14px }
+.ext-btn {
+  display:inline-flex; align-items:center; gap:7px;
+  background:var(--cream); border:1.5px solid var(--border);
+  border-radius:8px; padding:9px 16px; font-size:13px; font-weight:700;
+  color:var(--sky); transition:all .18s;
+}
+.ext-btn:hover { background:var(--sky); color:#fff; border-color:var(--sky) }
+.ext-btn.gbif { border-color:#c8a020; color:#7a5a00 }
+.ext-btn.gbif:hover { background:#c8a020; color:#fff }
+.ext-btn.inat { border-color:#4a8c5c; color:var(--forest) }
+.ext-btn.inat:hover { background:var(--forest); color:#fff }
+
+/* ══════════════════════════════════════════════
+   ──────── НОВА СЕКЦИЈА ДНА СТРАНИЦЕ ──────────
+   ══════════════════════════════════════════════ */
+
+.bottom-section {
+  margin-top: 56px;
+  border-top: 3px solid var(--border);
+  padding-top: 44px;
+}
+
+.bottom-section-heading {
+  text-align: center;
+  margin-bottom: 36px;
+}
+.bottom-section-heading h2 {
+  font-family: var(--font-sans);
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: var(--sky);
+  letter-spacing: -.02em;
+  margin-bottom: 8px;
+}
+.bottom-section-heading p {
+  font-size: 14px;
+  color: var(--muted);
+  max-width: 580px;
+  margin: 0 auto;
+  line-height: 1.7;
+}
+
+/* 4 иконске картице */
+.obs-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+  margin-bottom: 28px;
+}
+.obs-card {
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 18px 16px;
+  text-align: center;
+}
+.obs-icon {
+  font-size: 28px;
+  display: block;
+  margin-bottom: 10px;
+}
+.obs-card h4 {
+  font-size: 12px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: .08em;
+  color: var(--sky);
+  margin-bottom: 8px;
+}
+.obs-card p {
+  font-size: 12.5px;
+  color: #4b5563;
+  line-height: 1.65;
+}
+
+/* Три широке картице за детаље */
+.obs-details {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 14px;
+  margin-bottom: 28px;
+}
+.obs-detail-card {
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 18px;
+}
+.obs-detail-card h4 {
+  font-size: 12px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: .08em;
+  color: var(--muted);
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+.obs-detail-card ul {
+  list-style: none;
+  padding: 0;
+}
+.obs-detail-card ul li {
+  font-size: 13px;
+  color: #374151;
+  padding: 5px 0;
+  border-bottom: 1px solid var(--border);
+  line-height: 1.5;
+}
+.obs-detail-card ul li:last-child { border-bottom: none }
+.obs-detail-card ul li::before {
+  content: "→ ";
+  color: var(--sky-light);
+  font-weight: 700;
+}
+
+/* iNaturalist позив */
+.inat-cta {
+  background: linear-gradient(135deg, #2d6a4f, #1b4332);
+  border-radius: var(--radius);
+  padding: 28px 32px;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 24px;
+  align-items: center;
+  margin-bottom: 28px;
+}
+.inat-cta-text h3 {
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: #fff;
+  margin-bottom: 8px;
+}
+.inat-cta-text p {
+  font-size: 13px;
+  color: rgba(255,255,255,.82);
+  line-height: 1.7;
+  max-width: 520px;
+}
+.inat-cta-btns {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  flex-shrink: 0;
+}
+.cta-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 11px 20px;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 700;
+  transition: all .18s;
+  white-space: nowrap;
+}
+.cta-btn-primary {
+  background: #74c69d;
+  color: #1b4332;
+  border: none;
+}
+.cta-btn-primary:hover { background: #95d5b2 }
+.cta-btn-secondary {
+  background: rgba(255,255,255,.12);
+  color: rgba(255,255,255,.9);
+  border: 1.5px solid rgba(255,255,255,.25);
+}
+.cta-btn-secondary:hover { background: rgba(255,255,255,.2) }
+
+/* ──────────── СПЕЦИФИЧНО ЗА ТВРДОКРИЛЦЕ ──────────── */
+.coleoptera-tips {
+  background: linear-gradient(135deg, #fefce8, #fef9c3);
+  border: 1px solid #fde68a;
+  border-left: 4px solid #f59e0b;
+  border-radius: var(--radius);
+  padding: 20px;
+  margin-bottom: 28px;
+}
+.coleoptera-tips h4 {
+  font-size: 12px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: .08em;
+  color: #92400e;
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+.coleoptera-tips p {
+  font-size: 13px;
+  color: #78350f;
+  line-height: 1.75;
+}
+.coleoptera-tips strong { color: #451a03 }
+
+/* ──────────── PBA SPOTLIGHT ──────────── */
+/* (не приказује се на страницама тврдокрилаца —
+    видети лептирске странице за пуни spotlight) */
+
+/* ──────────── NAVIGATION ──────────── */
+.species-nav {
+  display:flex; justify-content:space-between; align-items:center;
+  margin-top:44px; padding-top:22px; border-top:2px solid var(--border);
+  gap:12px; flex-wrap:wrap;
+}
+.species-nav a {
+  font-size:13px; font-weight:700; color:var(--sky-light);
+  padding:9px 18px; border:1.5px solid #c0d8e8;
+  border-radius:8px; background:#f0f8ff; transition:all .18s;
+}
+.species-nav a:hover { background:var(--sky); color:#fff; border-color:var(--sky) }
+.species-nav .center-link { background:var(--sky); color:#fff; border-color:var(--sky) }
+.species-nav .center-link:hover { background:var(--sky-mid) }
+
+/* ──────────── FOOTER ──────────── */
+.site-footer {
+  background:#1a3a15; color:rgba(255,255,255,.65);
+  text-align:center; padding:22px; font-size:13px; margin-top:0;
+}
+
+/* ──────────── RESPONSIVE ──────────── */
+@media(max-width:720px){
+  .hero-inner { grid-template-columns:1fr }
+  .hero-photo { display:none }
+  .infobar-inner { grid-template-columns:1fr 1fr }
+  .kv-grid { grid-template-columns:1fr 1fr }
+  .two-col,.smart-grid,.habitat-block { grid-template-columns:1fr }
+  .gallery-grid { grid-template-columns:1fr 1fr }
+  .beetle-diagram { flex-direction:column }
+  .obs-grid { grid-template-columns:1fr 1fr }
+  .obs-details { grid-template-columns:1fr }
+  .inat-cta { grid-template-columns:1fr }
+  .site-header nav { display:none }
+}
+
+/* ── SISARI TOPNAV ── */
+.ins-topnav-wrap{background:linear-gradient(90deg,#142212 0%,#182a14 45%,#132312 100%);border-bottom:1px solid rgba(201,168,76,.18);position:sticky;top:0;z-index:200;box-shadow:0 1px 0 rgba(255,255,255,.03) inset}
+html.admin-bar .ins-topnav-wrap{top:32px}
+.ins-topnav{max-width:1240px;margin:0 auto;padding:0 18px;display:flex;align-items:center;min-height:70px;gap:4px;flex-wrap:wrap}
+.ins-topnav-link{position:relative;color:rgba(255,255,255,.62);font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;padding:22px 10px 20px;transition:color .2s;font-family:var(--font-sans);white-space:nowrap;text-decoration:none}
+.ins-topnav-link:hover{color:#f4f0e6}
+.ins-topnav-link.is-active{color:#c9a84c}
+.ins-topnav-link.is-active::after{content:"";position:absolute;left:10px;right:10px;bottom:0;height:3px;border-radius:3px;background:#c9a84c}
+.ins-topnav-sep{color:rgba(255,255,255,.2);padding:0 2px;font-size:14px;align-self:center}
+.ins-topnav-current{color:rgba(255,255,255,.88);font-size:14px;font-weight:600;letter-spacing:.01em;text-transform:none;padding:22px 8px 20px;font-family:var(--font-sans);font-style:italic;max-width:300px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.ins-topnav-current-inline{color:var(--gold);font-size:.84em;text-transform:none;letter-spacing:0;font-weight:700;margin-left:2px;max-width:190px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.ins-warn-bar{background:linear-gradient(90deg,#8b1e1e,#b91c1c);color:#fff;padding:9px 24px;font-size:12.5px;font-weight:600;display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+/* ── HIDE OLD HEADER ── */
+.site-header,.breadcrumb-bar,.top-banner{display:none!important}
+/* ── FONT FIX ── */
+.common-name{font-family:var(--font-serif)!important;font-weight:300!important;letter-spacing:0!important}
+/* ── WING DIAGRAM ENHANCED ── */
+.wing-diagram-box{background:linear-gradient(135deg,#0f2744,#1a3a5c);border-radius:12px;padding:22px 24px;display:flex;gap:24px;align-items:center;margin-bottom:16px;border:1px solid rgba(201,168,76,.2)}
+.wing-diagram-box .wd-svg{flex-shrink:0}
+.wing-diagram-box .wd-legend{flex:1;color:#fff}
+.wing-diagram-box .wd-title{font-size:11px;text-transform:uppercase;letter-spacing:.12em;color:#c9a84c;font-weight:700;margin-bottom:10px;font-family:'Outfit',sans-serif}
+.wing-diagram-box .wd-legend ul{list-style:none;margin:0;padding:0}
+.wing-diagram-box .wd-legend li{display:flex;align-items:flex-start;gap:8px;font-size:13px;color:rgba(255,255,255,.88);line-height:1.55;margin-bottom:7px}
+.wing-diagram-box .wd-dot{width:13px;height:13px;border-radius:2px;flex-shrink:0;margin-top:2px}
+/* Legacy diagram class compat */
+.diagram{background:linear-gradient(135deg,#0f2744,#1a3a5c)!important;border-radius:12px!important;padding:22px 24px!important;border:1px solid rgba(201,168,76,.2)!important}
+.diagram h4{color:#c9a84c!important}
+@media(max-width:640px){.wing-diagram-box{flex-direction:column}.ins-topnav{padding:0 12px}.ins-topnav-current{display:none}.ins-topnav-current-inline{color:var(--gold);font-size:.84em;text-transform:none;letter-spacing:0;font-weight:700;margin-left:2px;max-width:190px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}}
+
+.monitoring-intro{margin-bottom:18px}
+.monitoring-intro h2{font-size:1.45rem;font-weight:800;color:var(--sky);letter-spacing:0;margin-bottom:10px}
+.monitoring-intro p{font-size:14px;color:#374151;line-height:1.75;max-width:840px}
+.common-name{font-family:var(--font-serif)!important;font-weight:300!important;letter-spacing:0!important}
+.latin-name{font-weight:300!important}
+.tip-box{background:#f8e8ee;border:1px solid #efc9d4;border-radius:12px;padding:18px 20px;margin:18px 0 20px}.tip-box h4{font-size:13px;font-weight:800;color:#8b2941;margin-bottom:8px;text-transform:uppercase;letter-spacing:.06em}.tip-box p{font-size:13px;line-height:1.75;color:#5b3241}
+.inat-cta{background:linear-gradient(135deg,#17313d,#375f4f);border-radius:12px;padding:24px 26px;display:grid;grid-template-columns:1fr auto;gap:18px;align-items:center;margin-bottom:8px}.inat-cta-text h3{font-size:1.05rem;font-weight:800;color:#fff;margin-bottom:8px}.inat-cta-text p{font-size:13px;line-height:1.75;color:rgba(255,255,255,.84);max-width:560px}.inat-cta-btns{display:flex;flex-direction:column;gap:10px;flex-shrink:0}.cta-btn{display:inline-flex;align-items:center;justify-content:center;padding:11px 16px;border-radius:999px;font-size:12.5px;font-weight:700;text-decoration:none;border:1px solid rgba(255,255,255,.18)}.cta-btn-p{background:#fff;color:#17313d}.cta-btn-s{background:rgba(255,255,255,.10);color:#fff}
+@media(max-width:720px){.inat-cta{grid-template-columns:1fr}.inat-cta-btns{flex-direction:column}}
+
+
+@media(max-width:960px){.hero-inner{grid-template-columns:1fr!important}.hero-photo{order:-1;min-height:260px;border-left:none!important;border-bottom:1px solid rgba(255,255,255,.08)}.hero-photo img{width:100%;height:100%;object-fit:cover;display:block}.hero-text{padding:32px 24px 28px!important}}
+@media(max-width:640px){.hero-text{padding:30px 18px 24px!important}.common-name{font-size:clamp(2rem,10vw,2.7rem)!important}.hero-photo{min-height:220px!important}.ins-topnav-current{display:none}.ins-topnav-current-inline{color:var(--gold);font-size:.84em;text-transform:none;letter-spacing:0;font-weight:700;margin-left:2px;max-width:190px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}}
+
+.review-grid-4{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
+.review-grid-3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-top:12px}
+.review-micro,.review-mini{background:#fff;border:1px solid var(--border);border-radius:12px;padding:14px}
+.review-micro h4,.review-mini h4{font-size:13px;color:var(--forest-dark);margin-bottom:6px;font-family:var(--font-sans)}
+.review-micro p,.review-mini p{font-size:13.5px;line-height:1.72;color:var(--text)}
+.legend-note,.note-soft{margin-top:12px;font-size:13px;line-height:1.7;color:var(--text-muted);background:#f7f4ef;border:1px solid var(--border);border-radius:10px;padding:10px 12px}
+.pheno-grid{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:10px;margin-top:14px}
+.pheno-card{border-radius:12px;padding:12px 10px;border:1px solid var(--border)}
+.pheno-month{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--forest-dark);margin-bottom:6px}
+.pheno-note{font-size:12px;line-height:1.55;color:var(--text)}
+.phase-rest{background:#f1eee8}.phase-early{background:#eef5ff}.phase-active{background:#eef8f0}.phase-peak{background:#fff1cf;border-color:#edc661}.phase-late{background:#fff3e8}
+.pheno-legend{display:flex;flex-wrap:wrap;gap:10px;margin-top:12px}.pheno-chip{display:inline-flex;align-items:center;gap:7px;font-size:12px;color:var(--text-muted);background:#fff;border:1px solid var(--border);border-radius:999px;padding:6px 10px}.pheno-dot{width:10px;height:10px;border-radius:50%;display:inline-block}.pheno-dot.early{background:#cfe0ff}.pheno-dot.active{background:#cfeccb}.pheno-dot.peak{background:#ffd779}.pheno-dot.late{background:#ffd7b0}.pheno-dot.rest{background:#d9d4ca}
+.cta-green{margin-top:14px;background:#edf7f0;border:1px solid #b5d5b5;border-radius:12px;padding:14px 16px}.cta-green h3{font-size:16px;color:#1f5d2b;margin-bottom:6px;font-family:var(--font-sans)}.cta-green p{font-size:14px;line-height:1.7;color:#21442a}
+
+@media(max-width:900px){.hero-inner{grid-template-columns:1fr!important}.hero-photo{order:-1;aspect-ratio:16/10;min-height:240px!important}.ins-topnav-current{display:none!important}.ins-topnav-current-inline{color:var(--gold);font-size:.84em;text-transform:none;letter-spacing:0;font-weight:700;margin-left:2px;max-width:190px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.review-grid-4{grid-template-columns:repeat(2,minmax(0,1fr))}.review-grid-3{grid-template-columns:1fr}}
+@media(max-width:640px){.hero-text{padding:38px 22px 34px!important}.page-wrap{padding:28px 18px 48px!important}.common-name{font-size:clamp(2rem,10vw,2.7rem)!important}.pheno-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.kv-grid,.obs-grid{grid-template-columns:1fr!important}}
+
+
+/* unified mobile hero + thin species names */
+.common-name,.latin-name{font-weight:300!important}
+.hero-photo img{display:block!important;visibility:visible!important;opacity:1!important;max-width:100%}
+@media(max-width:960px){.hero-inner{grid-template-columns:1fr!important}.hero-photo{order:-1!important;display:block!important;aspect-ratio:16/10!important;min-height:240px!important;border-left:none!important;border-bottom:1px solid rgba(255,255,255,.08)!important}.hero-photo img{width:100%!important;height:100%!important;object-fit:cover!important;object-position:center center!important}}
+@media(max-width:640px){.hero-photo{min-height:220px!important}.hero-photo-cap{font-size:10px!important;line-height:1.45!important;padding:16px 12px 11px!important}.common-name{font-size:clamp(2rem,10vw,2.7rem)!important}}
+
+</style>
+<style id="rajac-ds-menu-static-css">
+:root{--rajac-nav:#0d1b2a;--rajac-gold:#d8b55b;--rajac-nav-text:rgba(255,255,255,.72)}
+.rajac-ds-nav{background:var(--rajac-nav);position:sticky;top:0;z-index:999999;border-bottom:1px solid rgba(255,255,255,.08);font-family:"Cormorant Garamond","EB Garamond",Garamond,"Palatino Linotype","Book Antiqua",Georgia,"Times New Roman",serif!important}
+body.admin-bar .rajac-ds-nav{top:32px}.rajac-ds-nav *{box-sizing:border-box}.rajac-ds-nav-inner{max-width:1180px;margin:0 auto;padding:0 18px;display:flex;align-items:stretch;min-height:56px;gap:0;overflow-x:auto;scrollbar-width:none}.rajac-ds-nav-inner::-webkit-scrollbar{display:none}.rajac-ds-home{display:flex;align-items:center;gap:9px;padding-right:20px;margin-right:8px;border-right:1px solid rgba(255,255,255,.12);flex-shrink:0;color:var(--rajac-gold)!important;text-decoration:none!important;font-weight:600;font-size:16px;letter-spacing:.03em}.rajac-ds-home-mark{width:18px;height:18px;display:inline-grid;place-items:center;color:var(--rajac-gold)}.rajac-ds-nav-item{position:relative;display:flex;align-items:center;gap:7px;padding:0 15px;color:var(--rajac-nav-text)!important;font-size:15px;font-weight:600;letter-spacing:.045em;text-transform:uppercase;white-space:nowrap;text-decoration:none!important}.rajac-ds-nav-item:hover{color:rgba(255,255,255,.94)!important;background:rgba(255,255,255,.035)}.rajac-ds-icon{font-size:15px;line-height:1}.rajac-ds-nav-item.rajac-ds-active{color:var(--rajac-gold)!important}.rajac-ds-nav-item.rajac-ds-active:after{content:"";position:absolute;left:15px;right:15px;bottom:8px;height:2px;border-radius:2px;background:var(--rajac-gold)}.rajac-ds-nav-trofo{color:#c8a24e!important}.rajac-ds-nav-trofo:hover{color:#f0cb78!important}.ins-topnav-wrap,.site-header{display:none!important;height:0!important;min-height:0!important;max-height:0!important;overflow:hidden!important;visibility:hidden!important}@media(max-width:720px){.rajac-ds-nav-inner{padding:0 12px}.rajac-ds-home{padding-right:14px}.rajac-ds-nav-item{font-size:13px;padding:0 12px}.rajac-ds-nav-item.rajac-ds-active:after{left:12px;right:12px}}
+
+/* v5: чиста навигација врста и извор фотографије на hover */
+.back-link{display:none!important}
+.hero-photo{cursor:help}
+.hero-photo:focus{outline:2px solid rgba(255,255,255,.55);outline-offset:-3px}
+.hero-photo-cap{opacity:0;transform:translateY(8px);transition:opacity .18s ease,transform .18s ease;pointer-events:none}
+.hero-photo:hover .hero-photo-cap,.hero-photo:focus .hero-photo-cap,.hero-photo:focus-within .hero-photo-cap{opacity:1;transform:translateY(0)}
+@media(hover:none){.hero-photo-cap{opacity:1;transform:none}}
+.species-nav{display:grid!important;grid-template-columns:1fr auto 1fr;align-items:center;margin-top:42px;padding-top:24px;border-top:2px solid var(--border,#e0dbd3);gap:14px;clear:both}
+.species-nav a{display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:10px 20px;border-radius:10px;border:1.5px solid #b8d3e7;background:#f7fbff;color:var(--sky,#0b2744)!important;font-size:13px;font-weight:800;text-decoration:none!important;box-shadow:0 1px 0 rgba(255,255,255,.8) inset;white-space:nowrap}
+.species-nav .prev-link{justify-self:start}.species-nav .next-link{justify-self:end}.species-nav .center-link{justify-self:center;background:var(--sky,#0b2744)!important;color:#fff!important;border-color:var(--sky,#0b2744)!important}
+.species-nav a:hover{background:var(--sky,#0b2744)!important;color:#fff!important;border-color:var(--sky,#0b2744)!important}
+@media(max-width:640px){.species-nav{grid-template-columns:1fr;gap:8px}.species-nav .prev-link,.species-nav .next-link,.species-nav .center-link{justify-self:stretch;width:100%}}
+</style>
+<link rel="stylesheet" href="../insekti-responsive.css?v=20260716-v3">
+
+<link rel="stylesheet" href="/insekti/insekti-krediti-kao-ptice.css?v=20260817v3" data-pio="PIO-INSEKTI-FOTO-KREDITI-20260817-V3">
+<style id="pio-insekti-credit-nobg-final" data-pio="PIO-INSEKTI-CREDIT-NOBG-FINAL-20260817">
+/* FINAL: kredit je samo taman tekst preko fotografije — bez trake, gradijenta ili box-a. */
+html body .species-hero .hero-photo .hero-photo-cap,
+html body .hero-photo .hero-photo-cap{
+  position:absolute!important;
+  left:12px!important;right:12px!important;bottom:9px!important;
+  width:auto!important;max-width:calc(100% - 24px)!important;
+  z-index:999!important;margin:0!important;padding:0!important;
+  border:0!important;border-radius:0!important;
+  background:transparent!important;background-color:transparent!important;background-image:none!important;
+  box-shadow:none!important;backdrop-filter:none!important;-webkit-backdrop-filter:none!important;
+  color:#111827!important;
+  font:600 11px/1.35 Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif!important;
+  font-style:normal!important;text-align:left!important;text-transform:none!important;letter-spacing:0!important;
+  text-shadow:0 1px 1px rgba(255,255,255,.98),0 0 3px rgba(255,255,255,.92),0 0 6px rgba(255,255,255,.72)!important;
+  opacity:0!important;visibility:hidden!important;transform:translateY(4px)!important;pointer-events:none!important;
+  transition:opacity .14s ease 0s,transform .14s ease 0s,visibility 0s linear .14s!important;
+}
+html body .species-hero .hero-photo .hero-photo-cap *,
+html body .hero-photo .hero-photo-cap *{
+  background:transparent!important;background-color:transparent!important;background-image:none!important;
+  border:0!important;border-radius:0!important;box-shadow:none!important;
+  color:#111827!important;text-shadow:inherit!important;
+}
+html body .hero-photo .hero-photo-cap::before,
+html body .hero-photo .hero-photo-cap::after,
+html body .hero-photo .hero-photo-cap *::before,
+html body .hero-photo .hero-photo-cap *::after{background:transparent!important;background-image:none!important;box-shadow:none!important;}
+html body .hero-photo .hero-photo-cap a{color:#111827!important;text-decoration:none!important;pointer-events:inherit!important;}
+html body .hero-photo .hero-photo-cap .pio-original{text-decoration:underline!important;text-underline-offset:2px!important;}
+@media (hover:hover) and (pointer:fine){
+  html body .species-hero .hero-photo:hover .hero-photo-cap,
+  html body .hero-photo:hover .hero-photo-cap,
+  html body .hero-photo:focus-within .hero-photo-cap,
+  html body .hero-photo.pio-credit-open .hero-photo-cap,
+  html body .hero-photo.is-credit-visible .hero-photo-cap{
+    opacity:1!important;visibility:visible!important;transform:translateY(0)!important;pointer-events:auto!important;
+    transition:opacity .14s ease 1s,transform .14s ease 1s,visibility 0s linear 1s!important;
+  }
+}
+@media (hover:none), (pointer:coarse){
+  html body .hero-photo.pio-credit-open .hero-photo-cap,
+  html body .hero-photo.is-credit-visible .hero-photo-cap{
+    opacity:1!important;visibility:visible!important;transform:none!important;pointer-events:auto!important;transition:none!important;
+  }
+}
+@media(max-width:680px){
+  html body .hero-photo .hero-photo-cap{left:8px!important;right:8px!important;bottom:7px!important;max-width:calc(100% - 16px)!important;font-size:10px!important;}
+}
+</style>
+</head>
+<body class="pio-insekti-responsive">
+<nav aria-label="Главни мени ПИО Рајац" class="rajac-ds-nav"><div class="rajac-ds-nav-inner"><a class="rajac-ds-home" href="https://piorajac.rs/"><span aria-hidden="true" class="rajac-ds-home-mark">⊙</span><span>ПИО Рајац</span></a><button class="pio-insekti-menu-toggle" type="button" aria-expanded="false" aria-label="Отвори мени"><span class="pio-insekti-menu-icon" aria-hidden="true"></span>МЕНИ</button><a class="rajac-ds-nav-item" href="https://piorajac.rs/biljke/"><span aria-hidden="true" class="rajac-ds-icon">🌿</span><span>БИЉКЕ</span></a><a class="rajac-ds-nav-item" href="https://piorajac.rs/ptice/"><span aria-hidden="true" class="rajac-ds-icon">🦉</span><span>ПТИЦЕ</span></a><a class="rajac-ds-nav-item rajac-ds-active" href="https://piorajac.rs/insekti/"><span aria-hidden="true" class="rajac-ds-icon">🦋</span><span>ИНСЕКТИ</span></a><a class="rajac-ds-nav-item" href="https://piorajac.rs/sisari/"><span aria-hidden="true" class="rajac-ds-icon">🐾</span><span>СИСАРИ</span></a><a class="rajac-ds-nav-item" href="https://piorajac.rs/gljive/"><span aria-hidden="true" class="rajac-ds-icon">🍄</span><span>ГЉИВЕ</span></a><a class="rajac-ds-nav-item rajac-ds-nav-trofo" href="https://piorajac.rs/trofodinamika/"><span aria-hidden="true" class="rajac-ds-icon">🔗</span><span>ТРОФОДИНАМИКА</span></a></div></nav>
+<!-- ══ HEADER ══ -->
+<header class="site-header">
+<a class="logo" href="https://piorajac.rs">Предео изузетних одлика „Рајац"</a>
+<nav>
+<a href="https://piorajac.rs/">ПИО „Рајац"</a>
+<a href="https://piorajac.rs/flora">Флора Рајца</a>
+<a href="https://piorajac.rs/ptice">Птице Рајца</a>
+<a href="https://piorajac.rs/sisari">Сисари Рајца</a>
+<a href="https://piorajac.rs/insekti/">Инсекти Рајца</a>
+</nav>
+</header>
+<!-- ══ BREADCRUMB ══ -->
+<div class="breadcrumb-bar">
+<div class="inner">
+<a href="https://piorajac.rs">ПИО „Рајац"</a><span class="sep">›</span>
+<a href="https://piorajac.rs/insekti/">Инсекти Рајца</a><span class="sep">›</span>
+<a href="https://piorajac.rs/insekti?order=Coleoptera">Coleoptera — Тврдокрилци</a><span class="sep">›</span>
+    Алпска стрижибуба — <em>Rosalia alpina</em>
+</div>
+</div>
+<!-- ══ HERO ══ -->
+<div class="species-hero">
+<div class="hero-inner">
+<div class="hero-text">
+<h1 class="common-name">Алпска стрижибуба</h1>
+<div class="latin-name"><em>Rosalia alpina</em> (Linnaeus, 1758)</div>
+<p class="hero-short">
+        Најдрагоценији инсект старих букових шума — строго заштићена врста плаво-сивог тела са 
+        карактеристичним тамним пегама. Биоиндикатор вековних шума, врста Анекса II и IV Директиве о стаништима.
+      </p>
+<div class="hero-pills">
+<span class="pill pill-order">Coleoptera</span>
+<span class="pill pill-family">Cerambycidae</span>
+<span class="pill pill-strict">Строго заштићена</span>
+<span class="pill pill-eu">EU Анекс II &amp; IV</span>
+</div>
+<div class="hero-tags">
+<span class="htag">🏔 стара буква</span>
+<span class="htag">📡 биоиндикатор</span>
+<span class="htag">🇪🇺 Директива о стаништима</span>
+<span class="htag">🪲 Cerambycidae</span>
+</div>
+</div>
+<div class="hero-photo" tabindex="0" aria-label="Извор фотографије доступан је задржавањем миша, фокусом или додиром.">
+<img alt="Алпска стрижибуба — Rosalia alpina" data-fallback="/insekti/assets/order-coleoptera.webp" decoding="async" fetchpriority="high" height="800" loading="eager" onerror="if(this.dataset.fallback&amp;&amp;!this.dataset.fallbackTried&amp;&amp;this.src!==this.dataset.fallback){this.dataset.fallbackTried='1';this.src=this.dataset.fallback;this.removeAttribute('srcset');return;}this.onerror=null;" sizes="(max-width: 960px) 100vw, 420px" src="/insekti/assets/heroes/rosalia-alpina.webp" srcset="/insekti/assets/heroes-mobile/rosalia-alpina.webp 640w, /insekti/assets/heroes/rosalia-alpina.webp 1280w" width="700"/>
+<div class="hero-photo-cap"><a class="pio-insect-credit" href="https://commons.wikimedia.org/wiki/File:Rosalia_alpina.jpg" target="_blank" rel="noopener noreferrer"><strong>Фото: Franz Xaver / Wikimedia Commons</strong>, CC BY-SA 3.0 — <span class="pio-original">оригинал</span></a></div>
+</div>
+</div>
+<!-- Infobar -->
+<div class="infobar">
+<div class="infobar-inner">
+<div class="info-cell"><div class="info-label">Дужина тела</div><div class="info-val">15–38 mm</div></div>
+<div class="info-cell"><div class="info-label">Животни циклус</div><div class="info-val">3–4 године</div></div>
+<div class="info-cell"><div class="info-label">Биљка домаћин</div><div class="info-val"><em>Fagus sylvatica</em></div></div>
+<div class="info-cell"><div class="info-label">Имаго активан</div><div class="info-val">јун–август</div></div>
+<div class="info-cell"><div class="info-label">Заштита</div><div class="info-val" style="color:#fca5a5">Строго заштићена — СРБ</div></div>
+</div>
+</div>
+</div>
+<!-- ══ MAIN CONTENT ══ -->
+<main class="page-wrap">
+<!-- GALLERY -->
+<!-- TABS -->
+<div class="tabs" id="mainTabs">
+<button class="tab active" data-tab="opis">🔍 Опис</button>
+<button class="tab" data-tab="staniste">🌲 Станиште</button>
+<button class="tab" data-tab="biologija">🔬 Биологија</button>
+<button class="tab" data-tab="zastita">🛡 Заштита</button>
+<button class="tab" data-tab="pretnje">⚠️ Претње</button>
+<button class="tab" data-tab="monitoring">📡 Мониторинг</button>
+<button class="tab" data-tab="lokacije">📍 Локације</button>
+</div>
+<!-- ══════════ ТАБ: ОПИС ══════════ -->
+<div class="tab-panel active" id="tab-opis">
+<div class="kv-grid">
+<div class="kv-item"><div class="kv-l">Ред</div><div class="kv-v">Coleoptera</div></div>
+<div class="kv-item"><div class="kv-l">Фамилија</div><div class="kv-v">Cerambycidae</div></div>
+<div class="kv-item"><div class="kv-l">Врста</div><div class="kv-v"><em>Rosalia alpina</em></div></div>
+<div class="kv-item"><div class="kv-l">Дужина тела</div><div class="kv-v">15–38 mm</div></div>
+<div class="kv-item"><div class="kv-l">Заштита СРБ</div><div class="kv-v">Строго заштићена</div></div>
+<div class="kv-item"><div class="kv-l">EU статус</div><div class="kv-v">Анекс II + IV</div></div>
+</div>
+<div class="card">
+<div class="card-title"><span>🔍</span> Морфолошки опис — препознавање</div>
+<div class="card-body">
+<p>Алпска стрижибуба је <strong>један од најлепших европских инсеката</strong> и неизбежна фотографска звезда. Тело је покривено <strong>пепељасто-плавом до плаво-сивом длачастом покривком</strong> са упадљивим <strong>тамним пегама и попречним пругама</strong> на поклопцима крила (елитрама). Пеге варирају по величини и распореду — свака јединка практично јединствена.</p>
+<p>Антене су <strong>изузетно дугачке</strong> — код мужјака дуже од тела, са карактеристичним <strong>тамним прстеновима на свакој чланки</strong>. Управо ове антене дале су фамилији назив Cerambycidae (дугорошци).</p>
+<p>Дужина тела: <strong>15–38 mm</strong> — женке су нешто крупније. Боје нису хемијске пигментне, него структурне — расип светлости у микроструктури длачица, zbog чему плавичаста боја блиста на сунцу.</p>
+</div>
+</div>
+<!-- Beetle SVG Diagram -->
+<div class="beetle-diagram">
+<svg height="170" viewbox="0 0 200 170" width="200" xmlns="http://www.w3.org/2000/svg">
+<!-- Тело (pronotum + elytra) -->
+<ellipse cx="100" cy="95" fill="#5a8fa8" opacity="0.9" rx="28" ry="42"></ellipse>
+<!-- Елитре - пеге -->
+<circle cx="90" cy="82" fill="#1a3a2a" opacity="0.8" r="6"></circle>
+<circle cx="110" cy="82" fill="#1a3a2a" opacity="0.8" r="6"></circle>
+<circle cx="88" cy="100" fill="#1a3a2a" opacity="0.8" r="8"></circle>
+<circle cx="112" cy="100" fill="#1a3a2a" opacity="0.8" r="8"></circle>
+<circle cx="92" cy="120" fill="#1a3a2a" opacity="0.7" r="5"></circle>
+<circle cx="108" cy="120" fill="#1a3a2a" opacity="0.7" r="5"></circle>
+<!-- Шав елитри -->
+<line opacity="0.6" stroke="#1a3a2a" stroke-width="1.5" x1="100" x2="100" y1="58" y2="138"></line>
+<!-- Pronotum -->
+<ellipse cx="100" cy="62" fill="#4a7f98" opacity="0.95" rx="18" ry="12"></ellipse>
+<circle cx="88" cy="60" fill="#1a3a2a" opacity="0.7" r="4"></circle>
+<circle cx="112" cy="60" fill="#1a3a2a" opacity="0.7" r="4"></circle>
+<!-- Глава -->
+<ellipse cx="100" cy="46" fill="#3d6e85" rx="12" ry="9"></ellipse>
+<!-- Леве антене (дугачке) -->
+<line stroke="#5a8fa8" stroke-width="2" x1="94" x2="30" y1="40" y2="10"></line>
+<line stroke="#1a3a2a" stroke-width="2" x1="30" x2="10" y1="10" y2="5"></line>
+<line stroke="#5a8fa8" stroke-width="0" x1="10" x2="30" y1="5" y2="10"></line>
+<!-- Десне антене -->
+<line stroke="#5a8fa8" stroke-width="2" x1="106" x2="170" y1="40" y2="10"></line>
+<line stroke="#1a3a2a" stroke-width="2" x1="170" x2="190" y1="10" y2="5"></line>
+<!-- Ноге - леве 3 -->
+<line stroke="#3d6e85" stroke-width="2.5" x1="80" x2="50" y1="72" y2="90"></line>
+<line stroke="#3d6e85" stroke-width="2.5" x1="80" x2="48" y1="90" y2="108"></line>
+<line stroke="#3d6e85" stroke-width="2.5" x1="80" x2="52" y1="108" y2="130"></line>
+<!-- Ноге - десне 3 -->
+<line stroke="#3d6e85" stroke-width="2.5" x1="120" x2="150" y1="72" y2="90"></line>
+<line stroke="#3d6e85" stroke-width="2.5" x1="120" x2="152" y1="90" y2="108"></line>
+<line stroke="#3d6e85" stroke-width="2.5" x1="120" x2="148" y1="108" y2="130"></line>
+<!-- Ознаке -->
+<text fill="#89c4d8" font-family="Outfit,sans-serif" font-size="9" x="55" y="80">А</text>
+<text fill="#89c4d8" font-family="Outfit,sans-serif" font-size="9" x="10" y="18">Б</text>
+<text fill="#89c4d8" font-family="Outfit,sans-serif" font-size="9" x="88" y="132">В</text>
+</svg>
+<div class="beetle-legend">
+<h4>Легенда дијаграма</h4>
+<ul style="list-style:none;padding:0">
+<li><span class="bl-dot" style="background:#1a3a2a"></span> А — тамне пеге на елитрама (кључни знак)</li>
+<li><span class="bl-dot" style="background:#5a8fa8"></span> Б — антене: дуже од тела код мужјака</li>
+<li><span class="bl-dot" style="background:#4a7f98"></span> В — plavo-сива структурна боја (длачаста)</li>
+<li><span class="bl-dot" style="background:#3d6e85"></span> Pronotum — предњи тергит са пегама</li>
+</ul>
+</div>
+</div>
+<div class="card">
+<div class="card-title"><span>⚤</span> Полни диморфизам</div>
+<div class="card-body">
+<p><strong>Мужјаци:</strong> антене знатно дуже од тела (до 1.5× дужина тела), тело нешто витко, активно траже женке на наслагама мртве букве. <strong>Женке:</strong> нешто крупније и шире, антене краће, носе јаједост органа — уочене при одлагању јаја у пукотинама коре.</p>
+</div>
+</div>
+</div>
+<!-- ══════════ ТАБ: СТАНИШТЕ ══════════ -->
+<div class="tab-panel" id="tab-staniste">
+<div class="habitat-block">
+<div class="hab-text">
+<h4>🌲 Станиште — искључиво стара буква</h4>
+<p>Алпска стрижибуба је <strong>строги стенотоп</strong> — готово искључиво везана за <em>Fagus sylvatica</em> (обичну букву). Кључан услов: <strong>присуство старих, делимично угинулих букви</strong> са изложеним деловима беликe (sapwood) на сунчаним позицијама.</p>
+<p>На Рајцу, букове шуме прекривају велики дeo заштићеног подручја. Потенцијална станишта: <strong>стара стабла на рубовима шума, извалнице, суви стојећи букви</strong> (snags) у зонама I и II — посебно где сунце директно пада на кору.</p>
+</div>
+<div class="hab-stats">
+<div class="hab-stat"><div class="hn">&gt;100 год.</div><div class="hl">минимална старост букве за гнежђење</div></div>
+<div class="hab-stat"><div class="hn">3–4 год.</div><div class="hl">дужина животног циклуса ларве</div></div>
+<div class="hab-stat"><div class="hn">јун–авг</div><div class="hl">активност одрасле јединке</div></div>
+</div>
+</div>
+<!-- Phenology -->
+<div class="card">
+<div class="pheno-section">
+<div class="pheno-title"><span>🗓</span> Феносезонски календар на Рајцу</div>
+<div class="pheno-grid">
+<div class="pheno-month ph-absent"><span class="m-name">ЈАН</span><span class="m-icon">💤</span></div>
+<div class="pheno-month ph-absent"><span class="m-name">ФЕБ</span><span class="m-icon">💤</span></div>
+<div class="pheno-month ph-absent"><span class="m-name">МАР</span><span class="m-icon">💤</span></div>
+<div class="pheno-month ph-absent"><span class="m-name">АПР</span><span class="m-icon">🪲</span></div>
+<div class="pheno-month ph-larvae"><span class="m-name">МАЈ</span><span class="m-icon">🌱</span></div>
+<div class="pheno-month ph-flight"><span class="m-name">ЈУН</span><span class="m-icon">🪲</span></div>
+<div class="pheno-month ph-flight"><span class="m-name">ЈУЛ</span><span class="m-icon">☀️</span></div>
+<div class="pheno-month ph-flight"><span class="m-name">АВГ</span><span class="m-icon">🪲</span></div>
+<div class="pheno-month ph-partial"><span class="m-name">СЕП</span><span class="m-icon">🍂</span></div>
+<div class="pheno-month ph-absent"><span class="m-name">ОКТ</span><span class="m-icon">💤</span></div>
+<div class="pheno-month ph-absent"><span class="m-name">НОВ</span><span class="m-icon">💤</span></div>
+<div class="pheno-month ph-absent"><span class="m-name">ДЕЦ</span><span class="m-icon">💤</span></div>
+</div>
+<div class="pheno-legend">
+<span><span class="pdot" style="background:#b8e0d0;border:1px solid #70c09a"></span> Имаго активан</span>
+<span><span class="pdot" style="background:#d4ebd0;border:1px solid #90cc9a"></span> Ларва у дрвету (вишегодишња)</span>
+<span><span class="pdot" style="background:#e8f4f0;border:1px solid #b0d8c8"></span> Спорадично</span>
+<span><span class="pdot" style="background:#f0ede8;border:1px solid var(--border)"></span> Дрвна фаза / зимовање</span>
+</div>
+</div>
+</div>
+<div class="two-col">
+<div class="info-box">
+<h4>☀️ Микроклиматски захтеви</h4>
+<p>Имаго је <strong>термофилан</strong> — бира сунчане позиције на дрвима. Најактивнији при температурама 20–32°C и директном сунцу. Облачно, хладно или ветровито = неактиван, скрива се под кором. <strong>Сунчани јулски дан</strong> је оптимум за налаз.</p>
+</div>
+<div class="info-box">
+<h4>🌲 Дрвна специфичност</h4>
+<p>На Рајцу доминира буква — савршен услов. Повремено и горски јавор (<em>Acer pseudoplatanus</em>), леска, орах. Свака пречка: стабло мора имати <strong>изложену беликy</strong> на осунчаном делу, не сасвим суво ни сасвим здраво дрво — "половично угинуло" је идеал.</p>
+</div>
+</div>
+</div>
+<!-- ══════════ ТАБ: БИОЛОГИЈА ══════════ -->
+<div class="tab-panel" id="tab-biologija">
+<div class="card">
+<div class="card-title"><span>🔬</span> Животни циклус — три до четири године у дрвету</div>
+<div class="card-body">
+<p><strong>Јаја:</strong> Женка одлаже јаја у пукотине коре поврандалих букви, посебно на осунчаним деловима. Свако женско полаже 15–25 јаја током свог кратkog живота (3–5 недеља). Јаје се излеже за 2–3 недеље.</p>
+<p><strong>Ларва:</strong> Безнога, кремасто-бела ларва буши ходнике у беликy и накнадно у срчевини букве. <strong>Развиће траје 3–4 године</strong> — ларва зимује унутар стабла. Ходници су дугачки до 30 cm, пуни дрвне прашине (frass) карактеристичне за ову врсту.</p>
+<p><strong>Лутка:</strong> Лутка у дрвету, у посебно изгризеној комоpи. Стадијум лутке: 3–4 недеље. <strong>Имаго излеће крајем маја–јуна</strong>, грицка излазни отвор елиптичног облика (карактеристичан "прозорчић" ≈ 10×15 mm).</p>
+<p><strong>Имаго:</strong> Живи кратко — 3–5 недеља. Храни се нектаром цветница и соковима на рањеним стаблима. Мужјаци патролирају "своје" стабло и бране га од риваla. Парење следи брзо по изласку.</p>
+</div>
+</div>
+<div class="two-col">
+<div class="info-box">
+<h4>🪲 Излазни отвор</h4>
+<p>Карактеристичан <strong>елиптичан отвор</strong> (≈ 10×15 mm) на кори — директан доказ присуства. Налаз старих излазних отвора = подручје је коришћено. Свеже рупе + трупац = активна популација ове сезоне.</p>
+</div>
+<div class="info-box">
+<h4>🌸 Исхрана одраслих</h4>
+<p>Имаго се храни нектаром бујних цветница уз шумске прогале — Apiaceae (штитарке), Rubus (купине), повремено и сокoвима из оштећених стабала. Не штети живим стаблима — ларве само у угинулом дрвету.</p>
+</div>
+</div>
+</div>
+<!-- PIO FIX 20260817 — затворен tab-biologija; наредни табови су поново самостални -->
+<!-- ══════════ ТАБ: ЗАШТИТА ══════════ -->
+<div class="tab-panel" id="tab-zastita">
+<div class="eu-card">
+<div class="card-title"><span>🇪🇺</span> Директива о стаништима — Анекс II и IV</div>
+<div class="card-body">
+<p>Rosalia alpina је врста <strong>Анекса II</strong> Директиве о стаништима ЕУ (92/43/ЕЕЗ) — врста за чије очување је потребно успоставити посебна станишта заштите (<strong>Natura 2000</strong>). Такође је врста <strong>Анекса IV</strong> — строга заштита у целом ареалу.</p>
+<p>Ово значи да је Рајац, са својим буковим шумама, потенцијално важно подручје Natura 2000 мреже и да налаз ове врсте може бити основ за управљачке одлуке о заштити старих стабала.</p>
+</div>
+</div>
+<div class="strict-card">
+<div class="card-title"><span>🛡</span> Заштита у Србији</div>
+<div class="card-body">
+<p>У Србији је Rosalia alpina <strong>строго заштићена врста</strong> (Уредба о заштити природних реткости, Сл. гласник РС). Забрањено је хватање, убијање, узнемиравање, уклањање са станишта, поседовање и трговина. Новчане казне за кршење: 200.000–3.000.000 динара за правна лица.</p>
+<p>Важно: <strong>ни фотографисање не сме нарушити врсту</strong> — не сме се померати, хватати у руке, постављати у позу. Посматрати са безбедне удаљености.</p>
+</div>
+</div>
+<div class="two-col">
+<div class="info-box">
+<h4>🌲 Шта штити ову врсту на Рајцу</h4>
+<p>Очување старих и умрлих стабала букве у зони I. Забрана сече стабала прсног пречника &gt;60 cm. Очување суварака (snags) — "мртво" стабло је живо станиште за дугорошце. Смањење прогреба дрвне масе на "паљевинама".</p>
+</div>
+<div class="info-box">
+<h4>📊 Стање популације</h4>
+<p>IUCN: врста је NT (Скоро угрожена) на европском нивоу, са трендом пада популација услед губитка старих шума. У Србији: процена недовољна, дистрибуција непотпуна. Рајац је потенцијално значајно локалитет — али налаза са самог Рајца нема у GBIF-у.</p>
+</div>
+</div>
+</div>
+<!-- ══════════ ТАБ: ПРЕТЊЕ ══════════ -->
+<div class="tab-panel" id="tab-pretnje">
+<div class="warn-card">
+<div style="display:flex;align-items:flex-start;gap:14px">
+<span style="font-size:26px">⚠️</span>
+<div>
+<strong>Главна претња: нестанак старих буковних шума.</strong> Врста не може постојати без вековних стабала — то је неупитна условљеност. Свако стабло букве старо &gt;100 година које се посеком уклони може уклонити и локалну популацију.
+        </div>
+</div>
+</div>
+<div class="two-col">
+<div class="info-box">
+<h4>🪚 Санитарна сеча</h4>
+<p>Уклањање "оболелих" и "сувих" стабала је главна директна претња. Управо та стабла — делимично угинула, са изложеном беликом — чине незаменљиво станиште. "Санитарна" сеча = уклањање станишта, не заштита шуме.</p>
+</div>
+<div class="info-box">
+<h4>🚜 Шумска механизација</h4>
+<p>Тешка механизација оштећује корен стабала и кору, али и директно уклања трупце у којима се налазе ларве. Извлачење дрвне масе из зоне I ПИО-а директно угрожава активне ларве.</p>
+</div>
+<div class="info-box">
+<h4>☀️ Климатске промене</h4>
+<p>Загревање климе мења феносинхронизацију: излазак имага може да се деси пре оптималних температура. Суше стресирају стабла, али могу краткорочно повећати доступност погодних стабала — дугорочно: нестабилност.</p>
+</div>
+<div class="info-box">
+<h4>🌿 Мере заштите на Рајцу</h4>
+<p>Забрана сече старих стабала у зони I. Маркирање и очување суварака. Едукација шумарских служби о значају мртвог дрвета. Мониторинг излазних отвора и имага у јулу. Евидентирање у GBIF.</p>
+</div>
+</div>
+</div>
+<!-- ══════════ ТАБ: МОНИТОРИНГ ══════════ -->
+<div class="tab-panel" id="tab-monitoring">
+<div class="card" style="border-top:3px solid var(--rosalia-blue)">
+<div class="card-title"><span>📡</span> Како пратити врсту на Рајцу</div>
+<div class="card-body">
+<p>Праћење <em>Rosalia alpina</em> треба да комбинује преглед старих, осунчаних букви и мртвог дрвета, тражење одраслих јединки и бележење излазних отвора. Код ове врсте налаз има највећу вредност када је повезан са конкретним стаблом домаћином и стањем шумског микростаништа.</p>
+<p>Најважнији су поновљени прегледи истих старих букових састојина у периоду активности имага, без хватања и померања јединки и без нарушавања мртвог дрвета.</p>
+</div>
+</div>
+<div class="smart-grid">
+<div class="smart-card"><h4>🚶 Прегледати стара стабла</h4><p>На истим трансектима прегледати старе букве, сувараке и осунчане трупце, посебно делове са оштећеном кором и видљивим мртвим дрветом.</p></div>
+<div class="smart-card"><h4>📷 Фотографисати без дирања</h4><p>Снимити јединку и цело стабло домаћина, уз GPS координату, датум, висину налаза на стаблу и положај у односу на сунце.</p></div>
+<div class="smart-card"><h4>🪵 Тражити излазне отворе</h4><p>Ван директног налаза имага бележити карактеристичне излазне отворе и свежу дрвну прашину, али без ломљења коре и отварања дрвета.</p></div>
+<div class="smart-card"><h4>🗂️ Пратити иста стабла</h4><p>Означена стабла и микролокалитете контролисати сваке сезоне; тако се добија податак о континуитету станишта, а не само појединачан налаз.</p></div>
+</div>
+<div class="ext-links"><a class="ext-btn inat" href="https://www.inaturalist.org/taxa/54604-Rosalia-alpina" target="_blank">🌿 iNaturalist — пријави налаз</a><a class="ext-btn gbif" href="https://www.gbif.org/species/1044141" target="_blank">🗺️ GBIF — дистрибуција у Европи</a><a class="ext-btn" href="https://www.coleoptera.eu/species/rosalia-alpina" target="_blank">🪲 Coleoptera.eu</a></div>
+</div>
+<!-- ══════════ ТАБ: ЛОКАЦИЈЕ ══════════ -->
+<div class="tab-panel" id="tab-lokacije">
+<div class="card">
+<div class="card-title"><span>📍</span> Потенцијална станишта на ПИО Рајац</div>
+<div class="card-body">
+<p>На основу станишних захтева врсте и карактеристика буковог покривача Рајца, потенцијалне зоне за Rosalia alpina су:</p>
+<ul>
+<li><strong>Стара буковина у зони I</strong> — вековна стабла у строгом резервату, без интензивне сеча; највероватнија зона присуства</li>
+<li><strong>Рубови шуме на ЈЗ-ЈЈЗ експозицијама</strong> — сунчани рубови са оштећеним стаблима; оптимум за имага</li>
+<li><strong>Суварaци и трупци у шуми</strong> — "мртво дрво" у шумском склопу; ларвено станиште</li>
+<li><strong>Шумске просеке и путеви</strong> — трупци и пањеви поред путева, осунчани 3–4 h/дан</li>
+</ul>
+</div>
+</div>
+<div class="card" style="background:linear-gradient(135deg,#1a3a2a,#0f2d1f);border:none">
+<div class="card-title" style="color:var(--rosalia-accent)"><span>📡</span> Пријавите налаз</div>
+<div class="card-body" style="color:rgba(255,255,255,.85)">
+<p>Видели сте Алпску стрижибубу на Рајцу? <strong>Ово је потенцијално НОВИ НАЛАЗ за ово подручје</strong> — у GBIF-у не постоје потврђени подаци за Рајац. Сваки налаз је научни допринос. Пријавите са фотографијом и GPS координатама, и обавестите управљача ПИО Рајац.</p>
+</div>
+<div class="ext-links" style="margin-top:14px">
+<a class="ext-btn inat" href="https://www.inaturalist.org/taxa/54604-Rosalia-alpina" target="_blank">
+          🌿 Пријави на iNaturalist
+        </a>
+<a class="ext-btn" href="https://piorajac.rs/kontakt" style="background:rgba(255,255,255,.12);color:#fff;border-color:rgba(255,255,255,.25)" target="_blank">
+          📬 Контакт ПИО Рајац
+        </a>
+</div>
+</div>
+</div>
+<!-- ══════════════════════════════════════════════
+       ══ НОВА СЕКЦИЈА: ДНО СТРАНИЦЕ — ИНСЕКТИ ══
+       ══════════════════════════════════════════════ -->
+<!-- ══ КРАЈ НОВЕ СЕКЦИЈЕ ══ -->
+<!-- NAVIGATION -->
+</div>
+
+<nav class="species-nav" aria-label="Навигација између страница врста">
+  <a class="prev-link" href="https://piorajac.rs/insekti/vanessa-atalanta/" title="Претходна: Адмирал">← Претходна</a>
+  <a class="center-link" href="https://piorajac.rs/insekti/">🪲 Сви инсекти</a>
+  <a class="next-link" href="https://piorajac.rs/insekti/trechus-cardioderus-balcanicus/" title="Следећа: Балкански трехус">Следећа →</a>
+</nav>
+</main>
+<footer class="site-footer">ПИО „Рајац”</footer>
+<script>
+(function(){
+  const tabs = document.querySelectorAll('#mainTabs .tab');
+  const panels = document.querySelectorAll('.tab-panel');
+  tabs.forEach(function(t){
+    t.addEventListener('click', function(){
+      tabs.forEach(x => x.classList.remove('active'));
+      panels.forEach(p => p.classList.remove('active'));
+      t.classList.add('active');
+      const id = 'tab-' + t.getAttribute('data-tab');
+      const el = document.getElementById(id);
+      if(el) el.classList.add('active');
+      window.scrollTo({top: document.querySelector('.tabs').offsetTop - 70, behavior: 'smooth'});
+    });
+  });
+})();
+</script>
+<script defer="" src="/insekti/assets/insekti-doprinos.js?v=20260817-nobg-final"></script>
+<button id="pio-insekti-vrh" type="button" aria-label="Врати се на врх странице" title="ВРХ"><span class="arr" aria-hidden="true">↑</span><span class="txt">ВРХ</span></button><script defer src="../insekti-responsive.js?v=20260716-v3"></script>
+
+<script src="/insekti/insekti-krediti-kao-ptice.js?v=20260817v3" defer data-pio="PIO-INSEKTI-FOTO-KREDITI-20260817-V3"></script>
+</body>
+</html>

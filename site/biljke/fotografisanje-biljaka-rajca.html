@@ -1,0 +1,1643 @@
+<!doctype html>
+<html lang="sr-Cyrl">
+<head>
+<meta charset="utf-8" />
+<link rel="canonical" href="https://piorajac.rs/biljke/fotografisanje-biljaka-rajca.html"/>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Фотографисање биљака Рајца — ПИО „Рајац”</title>
+<meta name="description" content="Практични теренски протокол за фотографисање биљака у ПИО „Рајац”: цела биљка, цвет, лист, станиште, белешка и провера налаза." />
+<link rel="stylesheet" href="assets/rajac-flora/rfw-species.min.css?v=20260510-full-guides" />
+<style>
+:root{--rajac-nav:#0d1b2a;--rajac-gold:#d8b55b;--rajac-nav-text:rgba(255,255,255,.72);--rajac-font-primary:"Cormorant Garamond", "EB Garamond", Garamond, Georgia, serif;}
+body{margin:0;background:#fffdf8;font-family:var(--rajac-font-primary);}
+.rajac-ds-nav{background:var(--rajac-nav);position:sticky;top:0;z-index:999999;border-bottom:1px solid rgba(255,255,255,.08);font-family:var(--rajac-font-primary)!important;}
+.rajac-ds-nav-inner{max-width:1180px;margin:0 auto;padding:0 18px;display:flex;align-items:stretch;min-height:56px;gap:0;overflow-x:auto;scrollbar-width:none;}
+.rajac-ds-nav-inner::-webkit-scrollbar{display:none;}
+.rajac-ds-home{display:flex;align-items:center;gap:9px;padding-right:20px;margin-right:8px;border-right:1px solid rgba(255,255,255,.12);flex-shrink:0;color:var(--rajac-gold)!important;text-decoration:none!important;font-weight:600;font-size:16px;letter-spacing:.03em;}
+.rajac-ds-nav-item{position:relative;display:flex;align-items:center;gap:7px;padding:0 15px;color:var(--rajac-nav-text)!important;font-size:15px;font-weight:600;letter-spacing:.045em;text-transform:uppercase;white-space:nowrap;text-decoration:none!important;}
+.rajac-ds-nav-item.rajac-ds-active{color:var(--rajac-gold)!important;}
+.rajac-ds-nav-item.rajac-ds-active:after{content:"";position:absolute;left:15px;right:15px;bottom:8px;height:2px;border-radius:2px;background:var(--rajac-gold);}
+.rfw-photo-standalone{max-width:1180px;margin:0 auto;padding:34px 18px 58px;}
+.rfw-photo-standalone .rfw-photo-guide-shell{margin-top:0;}
+</style>
+<meta content="article" property="og:type"/><meta content="Фотографисање биљака Рајца — ПИО „Рајац”" property="og:title"/><meta content="Практични теренски протокол за фотографисање биљака у ПИО „Рајац”: цела биљка, цвет, лист, станиште, белешка и провера налаза." property="og:description"/><meta content="https://piorajac.rs/biljke/fotografisanje-biljaka-rajca.html" property="og:url"/><meta content="https://piorajac.rs/biljke/assets/rajac-flora/external/pexels-2590237-w900.jpg" property="og:image"/><meta content="ПИО „Рајац”" property="og:site_name"/><meta content="sr_RS" property="og:locale"/>
+<style id="pio-mobile-tablet-ugradjen">
+/*
+ * Биљке ПИО „Рајац” — заједничка правила за телефон и таблет.
+ * Сва правила су ограничена на екране до 1100 px; десктоп остаје непромењен.
+ */
+
+.pio-mobile-nav-toggle,
+.pio-back-to-top {
+  display: none;
+}
+
+@media (max-width: 1100px) {
+  :root {
+    --pio-mobile-pad: clamp(16px, 3.6vw, 24px);
+    --pio-mobile-nav: #0d1b2a;
+    --pio-mobile-gold: #f1cb65;
+    --pio-mobile-paper: #fffdf8;
+  }
+
+  html {
+    max-width: 100%;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+    overflow-x: hidden;
+  }
+
+  body,
+  button,
+  input,
+  select,
+  textarea {
+    text-rendering: optimizeLegibility;
+  }
+
+  img,
+  picture,
+  video,
+  canvas,
+  svg,
+  iframe {
+    max-width: 100%;
+  }
+
+  img,
+  video {
+    height: auto;
+  }
+
+  a,
+  button,
+  input,
+  select,
+  textarea,
+  summary {
+    touch-action: manipulation;
+  }
+
+  p,
+  li,
+  dd,
+  td,
+  th,
+  figcaption,
+  a,
+  strong,
+  em,
+  span {
+    overflow-wrap: anywhere;
+  }
+
+  /* Заједничка горња навигација */
+  .rajac-ds-nav,
+  .rfx-chapter-nav {
+    position: sticky !important;
+    top: 0 !important;
+    z-index: 9998 !important;
+    min-height: 58px !important;
+    background: var(--pio-mobile-nav) !important;
+  }
+
+  .rajac-ds-nav-inner,
+  .rfx-nav-inner {
+    position: relative !important;
+    display: flex !important;
+    align-items: center !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    min-height: 58px !important;
+    margin: 0 !important;
+    padding: 0 max(var(--pio-mobile-pad), env(safe-area-inset-right)) 0 max(var(--pio-mobile-pad), env(safe-area-inset-left)) !important;
+    overflow: visible !important;
+    box-sizing: border-box !important;
+  }
+
+  .rajac-ds-home,
+  .rfx-nav-home {
+    display: inline-flex !important;
+    align-items: center !important;
+    flex: 0 1 auto !important;
+    min-width: 0 !important;
+    min-height: 58px !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    border: 0 !important;
+    color: var(--pio-mobile-gold) !important;
+    font-size: 16px !important;
+    line-height: 1.2 !important;
+    text-decoration: none !important;
+    white-space: nowrap !important;
+  }
+
+  .rajac-ds-home-mark,
+  .rfx-nav-home-mark {
+    margin-right: 8px !important;
+  }
+
+  .pio-mobile-nav-toggle,
+  .rfx-nav-toggle {
+    position: static !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    flex: 0 0 auto !important;
+    width: auto !important;
+    min-width: 78px !important;
+    min-height: 44px !important;
+    margin: 7px 0 7px auto !important;
+    padding: 9px 12px !important;
+    gap: 8px !important;
+    border: 1px solid rgba(241, 203, 101, .35) !important;
+    border-radius: 7px !important;
+    background: rgba(255, 255, 255, .04) !important;
+    color: var(--pio-mobile-gold) !important;
+    font: 700 13px/1 system-ui, sans-serif !important;
+    letter-spacing: .08em !important;
+    cursor: pointer !important;
+  }
+
+  .pio-mobile-nav-toggle::before {
+    content: "☰";
+    font-size: 19px;
+    font-weight: 400;
+    line-height: 1;
+  }
+
+  .rfx-nav-toggle span {
+    display: none !important;
+  }
+
+  .rfx-nav-toggle::before {
+    content: "☰";
+    font-size: 19px;
+    font-weight: 400;
+    line-height: 1;
+  }
+
+  .rfx-nav-toggle::after {
+    content: "МЕНИ";
+  }
+
+  .pio-mobile-nav-toggle[aria-expanded="true"]::before,
+  .rfx-nav-toggle[aria-expanded="true"]::before {
+    content: "×";
+    font-size: 24px;
+  }
+
+  .rajac-ds-nav-item,
+  .rfx-bio-menu {
+    display: none !important;
+  }
+
+  .rajac-ds-nav-inner.pio-menu-open {
+    flex-wrap: wrap !important;
+  }
+
+  .rajac-ds-nav-inner.pio-menu-open .rajac-ds-nav-item,
+  .rfx-bio-menu.is-open {
+    display: flex !important;
+  }
+
+  .rajac-ds-nav-inner.pio-menu-open .rajac-ds-nav-item {
+    flex: 0 0 100% !important;
+    justify-content: flex-start !important;
+    min-height: 50px !important;
+    padding: 0 4px !important;
+    border-top: 1px solid rgba(255, 255, 255, .08) !important;
+    color: rgba(255, 255, 255, .84) !important;
+    font-size: 14px !important;
+    white-space: normal !important;
+  }
+
+  .rajac-ds-nav-inner.pio-menu-open .rajac-ds-nav-item.rajac-ds-active {
+    color: var(--pio-mobile-gold) !important;
+  }
+
+  .rajac-ds-nav-item.rajac-ds-active::after {
+    display: none !important;
+  }
+
+  .rfx-bio-menu {
+    position: absolute !important;
+    top: 100% !important;
+    right: 0 !important;
+    left: 0 !important;
+    z-index: 9999 !important;
+    flex-direction: column !important;
+    max-height: calc(100vh - 58px) !important;
+    max-height: calc(100dvh - 58px) !important;
+    overflow-y: auto !important;
+    background: var(--pio-mobile-nav) !important;
+    box-shadow: 0 18px 36px rgba(0, 0, 0, .28) !important;
+  }
+
+  .rfx-bio-menu .rfx-nav-item {
+    display: flex !important;
+    align-items: center !important;
+    min-height: 50px !important;
+    padding: 0 var(--pio-mobile-pad) !important;
+    border-bottom: 1px solid rgba(255, 255, 255, .08) !important;
+    white-space: normal !important;
+  }
+
+  .rfx-nav-breadcrumb,
+  .rfx-nav-divider {
+    display: none !important;
+  }
+
+  /* Главни каталог биљака */
+  .rfx-page {
+    width: 100% !important;
+    max-width: 100% !important;
+    padding: 22px 0 max(72px, env(safe-area-inset-bottom)) !important;
+    overflow-x: hidden !important;
+  }
+
+  .rfx-page .rfx-shell,
+  .rfx-page .rf-filter-row,
+  .rfx-page .rf-wrap {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin-right: auto !important;
+    margin-left: auto !important;
+    padding-right: var(--pio-mobile-pad) !important;
+    padding-left: var(--pio-mobile-pad) !important;
+    box-sizing: border-box !important;
+    overflow: visible !important;
+  }
+
+  .rfx-page .rf-hero {
+    display: grid !important;
+    grid-template-columns: minmax(0, 1fr) !important;
+    gap: 18px !important;
+    width: 100% !important;
+    min-height: 0 !important;
+    margin: 0 0 20px !important;
+    padding: 8px 0 22px !important;
+  }
+
+  .rfx-page .rf-hero-body {
+    order: 1 !important;
+    width: 100% !important;
+    min-height: 0 !important;
+    padding: 0 !important;
+  }
+
+  .rfx-page .rf-hero-media {
+    order: 2 !important;
+    width: 100% !important;
+    height: clamp(260px, 46vw, 430px) !important;
+    min-height: 0 !important;
+    margin: 0 !important;
+    border-radius: 10px !important;
+  }
+
+  .rfx-page .rf-hero-body h1,
+  .rfx-page .rf-hero-body h2 {
+    margin: 0 0 12px !important;
+    font-size: clamp(2.15rem, 7vw, 3.25rem) !important;
+    line-height: 1.02 !important;
+    white-space: normal !important;
+  }
+
+  .rfx-page .rf-hero-intro {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    padding: 14px 16px !important;
+    font-size: 16px !important;
+    line-height: 1.65 !important;
+    box-sizing: border-box !important;
+  }
+
+  .rfx-page .rf-filter-row {
+    padding-top: 4px !important;
+    padding-bottom: 18px !important;
+  }
+
+  html body .rfx-page .rf-filter-row #rf-pills.rf-pills {
+    display: grid !important;
+    grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+    gap: 10px !important;
+    width: 100% !important;
+    min-width: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    overflow: visible !important;
+  }
+
+  html body .rfx-page .rf-filter-row #rf-pills.rf-pills .rf-pill {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 100% !important;
+    min-width: 0 !important;
+    min-height: 52px !important;
+    padding: 11px 10px !important;
+    border: 1px solid #b9c5d3 !important;
+    border-radius: 9px !important;
+    background: #f5f7fa !important;
+    color: #30445f !important;
+    font-size: 13px !important;
+    line-height: 1.15 !important;
+    letter-spacing: .02em !important;
+    white-space: nowrap !important;
+    overflow: hidden !important;
+  }
+
+  html body .rfx-page .rf-filter-row #rf-pills.rf-pills .rf-pill--active {
+    border-color: #2f6db5 !important;
+    background: #2f6db5 !important;
+    color: #fff !important;
+  }
+
+  html body .rfx-page .rf-filter-row #rf-pills.rf-pills .rf-pill > span:last-child {
+    min-width: 0 !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+    white-space: nowrap !important;
+  }
+
+  .rfx-page .rf-cards {
+    display: grid !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 16px !important;
+  }
+
+  .rfx-page .rf-card,
+  .rfx-page .rf-card-link {
+    min-width: 0 !important;
+    height: 100% !important;
+  }
+
+  .rfx-page .rf-card-img {
+    width: 100% !important;
+    height: auto !important;
+    aspect-ratio: 4 / 3 !important;
+  }
+
+  .rfx-page .rf-card-img img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+  }
+
+  .rfx-page .rf-title,
+  .rfx-page .rf-common {
+    max-width: 100% !important;
+    white-space: normal !important;
+    overflow: visible !important;
+    text-overflow: clip !important;
+  }
+
+  .rfx-page .rf-title {
+    font-size: clamp(1.2rem, 3.5vw, 1.55rem) !important;
+    line-height: 1.15 !important;
+  }
+
+  .rfx-page .rf-common {
+    font-size: 15px !important;
+    line-height: 1.35 !important;
+  }
+
+  /* Странице појединачних врста */
+  main.rfw,
+  .rfw.rfw-photo-standalone {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 auto !important;
+    padding: 24px var(--pio-mobile-pad) max(92px, calc(76px + env(safe-area-inset-bottom))) !important;
+    box-sizing: border-box !important;
+    overflow: hidden !important;
+  }
+
+  .rfw *,
+  .rfw-photo-standalone * {
+    box-sizing: border-box;
+    min-width: 0;
+  }
+
+  .rfw-head {
+    display: grid !important;
+    grid-template-columns: minmax(0, 1fr) !important;
+    gap: 20px !important;
+    align-items: start !important;
+  }
+
+  .rfw-head-text,
+  .rfw-head-img,
+  .rfw-head-img.rfw-hero-fig {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  .rfw-head-img,
+  .rfw-head-img.rfw-hero-fig {
+    height: auto !important;
+    min-height: 0 !important;
+    aspect-ratio: auto !important;
+    overflow: hidden !important;
+  }
+
+  .rfw-head-img img,
+  .rfw-head-img.rfw-hero-fig img {
+    width: 100% !important;
+    height: clamp(300px, 50vw, 500px) !important;
+    object-fit: cover !important;
+  }
+
+  .rfw-title {
+    font-size: clamp(2rem, 7vw, 3.2rem) !important;
+    line-height: 1.02 !important;
+  }
+
+  .rfw-common,
+  .rfw-lead,
+  .rfw-body,
+  .rfw-body p,
+  .rfw-block p,
+  .rfw-block li,
+  .rfw-block dd {
+    font-size: 16px !important;
+    line-height: 1.65 !important;
+  }
+
+  .rfw-block {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin-right: 0 !important;
+    margin-left: 0 !important;
+    padding: clamp(16px, 3vw, 22px) !important;
+  }
+
+  .rfw-tax,
+  .rfw-links,
+  .rfw-role-gateway-grid,
+  .rfw-plant-guides-grid,
+  .rfw-research-grid,
+  .rfw-form-grid,
+  .rfw-supp-grid,
+  .rfw-supp-grid.three,
+  .rfw-supp-video {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+
+  .rfw-calendar-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+  }
+
+  .rfw-footer-nav {
+    grid-template-columns: 1fr !important;
+  }
+
+  .rfw-footlink {
+    min-height: 50px !important;
+  }
+
+  .rfw-fig figcaption {
+    position: static !important;
+    inset: auto !important;
+    max-height: none !important;
+    margin: 0 !important;
+    padding: 10px 12px !important;
+    overflow: visible !important;
+    border-radius: 0 !important;
+    background: #fbfaf6 !important;
+    color: #4b5563 !important;
+    opacity: 1 !important;
+    transform: none !important;
+    box-shadow: none !important;
+    text-shadow: none !important;
+    pointer-events: auto !important;
+  }
+
+  .rfw-fig figcaption strong,
+  .rfw-fig figcaption p,
+  .rfw-fig .rfw-source-small,
+  .rfw-fig .rfw-source-small a {
+    color: #4b5563 !important;
+  }
+
+  .rfw-month-table-wrap,
+  .matrix,
+  .table-wrap {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  .rfw input,
+  .rfw select,
+  .rfw textarea,
+  .form-box input,
+  .form-box select,
+  .form-box textarea {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-height: 46px !important;
+    padding: 11px 12px !important;
+    font-size: 16px !important;
+  }
+
+  .rfw textarea,
+  .form-box textarea {
+    min-height: 118px !important;
+  }
+
+  .rfw button,
+  .rfw .btn,
+  .rfw a.btn,
+  .form-box button,
+  .hero-actions .btn {
+    min-height: 44px;
+  }
+
+  .rfw-contribute-bar {
+    right: var(--pio-mobile-pad) !important;
+    bottom: max(8px, env(safe-area-inset-bottom)) !important;
+    left: var(--pio-mobile-pad) !important;
+    width: auto !important;
+    transform: translateY(130%) !important;
+  }
+
+  .rfw-contribute-bar.is-visible {
+    transform: translateY(0) !important;
+  }
+
+  .rfw-contribute-panel {
+    max-height: calc(100vh - 24px) !important;
+    max-height: calc(100dvh - 24px) !important;
+  }
+
+  .rfw-contribute-row {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* Упутства, календар, алати и пријава налаза */
+  main > .wrap,
+  body > main .wrap,
+  .wrap {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin-right: auto !important;
+    margin-left: auto !important;
+    padding-right: var(--pio-mobile-pad) !important;
+    padding-left: var(--pio-mobile-pad) !important;
+    box-sizing: border-box !important;
+  }
+
+  .hero-grid,
+  .grid-2,
+  .grid-3,
+  .guide-grid,
+  .project-grid,
+  .photo-gallery,
+  .infographic-cards,
+  .season-grid,
+  .process-grid,
+  .template-grid,
+  .status-grid,
+  .check-grid,
+  .app-grid,
+  .pack-grid,
+  .month-grid,
+  .month-grid-simple,
+  .phenophase-grid,
+  .season-graphic-grid,
+  .purpose-grid-top,
+  .equip-grid,
+  .ethics-wrap,
+  .steps,
+  .groups-grid,
+  .light-grid,
+  .errors-grid,
+  .minimum-wrap,
+  .offline-wrap {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+
+  .hero,
+  .section,
+  .sec,
+  .sec-alt-in,
+  .sec-dark-in,
+  .rfw-photo-guide-intro,
+  .rfw-photo-guide-content {
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  .hero {
+    padding-top: 30px !important;
+    padding-bottom: 30px !important;
+  }
+
+  .hero-visual,
+  .hero-visual img,
+  .purpose-visual,
+  .purpose-visual img,
+  .step-img,
+  .step-img img,
+  .group-img,
+  .group-img img,
+  .photo-card img {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  .hero-visual,
+  .purpose-visual,
+  .step-img,
+  .group-img {
+    max-height: 520px !important;
+    overflow: hidden !important;
+  }
+
+  .hero-visual img,
+  .purpose-visual img,
+  .step-img img,
+  .group-img img {
+    height: 100% !important;
+    object-fit: cover !important;
+  }
+
+  .quick-nav-inner {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    gap: 8px !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    overflow: visible !important;
+  }
+
+  .quick-nav-inner a,
+  .hero-actions .btn,
+  .footer-nav a,
+  .guide-links a {
+    min-height: 44px !important;
+  }
+
+  .section-head,
+  .sec-title,
+  .hero h1,
+  .hero h2,
+  .rfw-photo-guide h2 {
+    overflow-wrap: anywhere !important;
+  }
+
+  .section-head,
+  .sec-title {
+    font-size: clamp(1.75rem, 5vw, 2.55rem) !important;
+    line-height: 1.08 !important;
+  }
+
+  .hero h1,
+  .hero h2,
+  .rfw-photo-guide-intro h1 {
+    font-size: clamp(2rem, 7vw, 3.15rem) !important;
+    line-height: 1.04 !important;
+  }
+
+  .section p,
+  .section li,
+  .sec p,
+  .sec li,
+  .card p,
+  .panel p,
+  .hero-lead,
+  .section-intro {
+    font-size: 16px !important;
+    line-height: 1.65 !important;
+  }
+
+  .footer-nav,
+  .site-footer,
+  .footer-box {
+    max-width: 100% !important;
+  }
+
+  /* Дугме Врх */
+  .pio-back-to-top {
+    position: fixed;
+    right: max(16px, env(safe-area-inset-right));
+    bottom: max(18px, env(safe-area-inset-bottom));
+    z-index: 9997;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 58px;
+    min-height: 44px;
+    padding: 9px 12px;
+    border: 1px solid rgba(241, 203, 101, .45);
+    border-radius: 999px;
+    background: #0d1b2a;
+    color: #f1cb65;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, .2);
+    font: 700 13px/1 system-ui, sans-serif;
+    letter-spacing: .04em;
+    opacity: 0;
+    transform: translateY(12px);
+    pointer-events: none;
+    transition: opacity .2s ease, transform .2s ease;
+  }
+
+  .pio-back-to-top.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+  }
+}
+
+@media (max-width: 680px) {
+  :root {
+    --pio-mobile-pad: 17px;
+  }
+
+  .rfx-page {
+    padding-top: 18px !important;
+  }
+
+  .rfx-page .rf-hero {
+    gap: 15px !important;
+  }
+
+  .rfx-page .rf-hero-media {
+    height: clamp(235px, 66vw, 320px) !important;
+  }
+
+  html body .rfx-page .rf-filter-row #rf-pills.rf-pills {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 8px !important;
+  }
+
+  html body .rfx-page .rf-filter-row #rf-pills.rf-pills .rf-pill {
+    min-height: 52px !important;
+    padding: 10px 8px !important;
+    font-size: 12.5px !important;
+    gap: 6px !important;
+  }
+
+  html body .rfx-page .rf-filter-row #rf-pills.rf-pills .rf-pill > span:last-child {
+    overflow: visible !important;
+    text-overflow: clip !important;
+  }
+
+  .rfx-page .rf-cards {
+    grid-template-columns: minmax(0, 1fr) !important;
+    gap: 16px !important;
+  }
+
+  .rfx-page .rf-card-img {
+    aspect-ratio: 16 / 10 !important;
+  }
+
+  main.rfw,
+  .rfw.rfw-photo-standalone {
+    padding-top: 18px !important;
+  }
+
+  .rfw-head {
+    gap: 16px !important;
+  }
+
+  .rfw-head-img,
+  .rfw-head-img.rfw-hero-fig {
+    aspect-ratio: auto !important;
+  }
+
+  .rfw-head-img img,
+  .rfw-head-img.rfw-hero-fig img {
+    height: clamp(245px, 70vw, 340px) !important;
+  }
+
+  .rfw-block {
+    padding: 16px !important;
+  }
+
+  .rfw-tax,
+  .rfw-links,
+  .rfw-role-gateway-grid,
+  .rfw-plant-guides-grid,
+  .rfw-research-grid,
+  .rfw-form-grid,
+  .rfw-supp-grid,
+  .rfw-supp-grid.three,
+  .rfw-supp-video,
+  .hero-grid,
+  .grid-2,
+  .grid-3,
+  .guide-grid,
+  .project-grid,
+  .photo-gallery,
+  .infographic-cards,
+  .season-grid,
+  .process-grid,
+  .template-grid,
+  .status-grid,
+  .check-grid,
+  .app-grid,
+  .pack-grid,
+  .month-grid,
+  .month-grid-simple,
+  .phenophase-grid,
+  .season-graphic-grid,
+  .purpose-grid-top,
+  .equip-grid,
+  .ethics-wrap,
+  .steps,
+  .groups-grid,
+  .light-grid,
+  .errors-grid,
+  .minimum-wrap,
+  .offline-wrap {
+    grid-template-columns: minmax(0, 1fr) !important;
+  }
+
+  .rfw-calendar-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+
+  .hero {
+    padding-top: 24px !important;
+    padding-bottom: 24px !important;
+  }
+
+  .rfw-photo-guide-intro {
+    display: block !important;
+    padding: 18px 16px !important;
+  }
+
+  .rfw-photo-guide-action {
+    display: inline-flex !important;
+    margin-top: 12px !important;
+  }
+
+  .rule-items {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+
+  .pio-mobile-table-card,
+  .pio-mobile-table-card tbody,
+  .pio-mobile-table-card tr,
+  .pio-mobile-table-card td,
+  .pio-mobile-table-card th {
+    display: block !important;
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  .pio-mobile-table-card {
+    min-width: 0 !important;
+    border: 0 !important;
+    background: transparent !important;
+  }
+
+  .pio-mobile-table-card thead {
+    position: absolute !important;
+    width: 1px !important;
+    height: 1px !important;
+    padding: 0 !important;
+    overflow: hidden !important;
+    clip: rect(0 0 0 0) !important;
+    white-space: nowrap !important;
+  }
+
+  .pio-mobile-table-card tr {
+    margin: 0 0 14px !important;
+    overflow: hidden !important;
+    border: 1px solid rgba(24, 33, 27, .14) !important;
+    border-radius: 10px !important;
+    background: #fff !important;
+  }
+
+  .pio-mobile-table-card tbody th,
+  .pio-mobile-table-card td {
+    display: grid !important;
+    grid-template-columns: minmax(96px, .8fr) minmax(0, 1.2fr) !important;
+    gap: 12px !important;
+    min-height: 42px !important;
+    padding: 10px 12px !important;
+    border: 0 !important;
+    border-bottom: 1px solid rgba(24, 33, 27, .1) !important;
+    text-align: left !important;
+    white-space: normal !important;
+  }
+
+  .pio-mobile-table-card tbody tr > :last-child {
+    border-bottom: 0 !important;
+  }
+
+  .pio-mobile-table-card tbody th::before,
+  .pio-mobile-table-card td::before {
+    content: attr(data-pio-label);
+    color: #6b5a30;
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: .04em;
+    text-transform: uppercase;
+  }
+
+  .pio-back-to-top {
+    right: 14px;
+  }
+}
+
+@media (max-width: 380px) {
+  :root {
+    --pio-mobile-pad: 15px;
+  }
+
+  .rajac-ds-home,
+  .rfx-nav-home {
+    font-size: 15px !important;
+  }
+
+  .pio-mobile-nav-toggle,
+  .rfx-nav-toggle {
+    min-width: 72px !important;
+    padding-right: 9px !important;
+    padding-left: 9px !important;
+  }
+
+  html body .rfx-page .rf-filter-row #rf-pills.rf-pills .rf-pill {
+    font-size: 11.5px !important;
+  }
+
+  .rfw-title,
+  .hero h1,
+  .hero h2,
+  .rfw-photo-guide-intro h1 {
+    font-size: 2rem !important;
+  }
+}
+
+/* Mobile guide refinements: captions, compact navigation and calendar. */
+@media (max-width: 1100px) {
+  .hero-visual {
+    display: block !important;
+    max-height: none !important;
+    overflow: hidden !important;
+  }
+
+  .hero-visual > img {
+    display: block !important;
+    width: 100% !important;
+    height: clamp(240px, 56vw, 430px) !important;
+    object-fit: cover !important;
+  }
+
+  .hero-visual-badge,
+  .purpose-visual-cap {
+    position: static !important;
+    inset: auto !important;
+    width: 100% !important;
+    max-width: none !important;
+    margin: 0 !important;
+    box-sizing: border-box !important;
+    border-radius: 0 0 14px 14px !important;
+    box-shadow: none !important;
+  }
+}
+
+@media (max-width: 680px) {
+  .quick-nav-inner {
+    display: grid !important;
+    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+    gap: 8px !important;
+  }
+
+  .quick-nav-inner a {
+    display: flex !important;
+    width: 100% !important;
+    min-width: 0 !important;
+    min-height: 52px !important;
+    padding: 8px 5px !important;
+    align-items: center !important;
+    justify-content: center !important;
+    box-sizing: border-box !important;
+    font-size: 12px !important;
+    line-height: 1.2 !important;
+    text-align: center !important;
+    white-space: normal !important;
+  }
+
+  .hero-actions {
+    display: grid !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 8px !important;
+  }
+
+  .hero-actions .btn,
+  .hero-actions a {
+    width: 100% !important;
+    min-width: 0 !important;
+    padding: 11px 8px !important;
+    box-sizing: border-box !important;
+    font-size: 12px !important;
+    line-height: 1.25 !important;
+    text-align: center !important;
+    white-space: normal !important;
+  }
+
+  .month-grid,
+  .month-grid-simple {
+    display: grid !important;
+    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+    gap: 8px !important;
+  }
+
+  .month-grid-simple .month {
+    min-height: 78px !important;
+    padding: 10px 8px !important;
+    border-radius: 12px !important;
+  }
+
+  .month-grid-simple .month b {
+    margin-bottom: 8px !important;
+    font-size: 15px !important;
+  }
+
+  .month-grid-simple .month .band {
+    height: 8px !important;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .pio-back-to-top,
+  .rfw-contribute-bar {
+    transition: none !important;
+  }
+}
+
+</style>
+
+<meta content="index,follow,max-snippet:-1,max-image-preview:large,max-video-preview:-1" name="robots"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="Фотографисање биљака Рајца — ПИО „Рајац”" name="twitter:title"/>
+<meta content="https://piorajac.rs/biljke/assets/rajac-flora/external/pexels-2590237-w900.jpg" name="twitter:image"/>
+</head>
+<body>
+<nav class="rajac-ds-nav" aria-label="Главни мени ПИО „Рајац”"><div class="rajac-ds-nav-inner"><a class="rajac-ds-home" href="https://piorajac.rs/"><span>⊙</span><span>ПИО „Рајац”</span></a><a class="rajac-ds-nav-item rajac-ds-active" href="https://piorajac.rs/biljke/"><span>🌿</span><span>БИЉКЕ</span></a><a class="rajac-ds-nav-item" href="https://piorajac.rs/ptice/"><span>🦉</span><span>ПТИЦЕ</span></a><a class="rajac-ds-nav-item" href="https://piorajac.rs/insekti/"><span>🦋</span><span>ИНСЕКТИ</span></a><a class="rajac-ds-nav-item" href="https://piorajac.rs/sisari/"><span>🐾</span><span>СИСАРИ</span></a><a class="rajac-ds-nav-item" href="https://piorajac.rs/gljive/"><span>🍄</span><span>ГЉИВЕ</span></a><a class="rajac-ds-nav-item" href="https://piorajac.rs/trofodinamika/"><span>🔗</span><span>ТРОФОДИНАМИКА</span></a></div></nav>
+<main class="rfw rfw-photo-standalone">
+<section class="rfw-block rfw-photo-guide-shell" id="protokol-fotografisanja-biljaka">
+<details class="rfw-photo-guide" open>
+<summary>
+<div class="rfw-photo-guide-intro">
+<div class="rfw-photo-guide-intro-text">
+<div class="rfw-photo-guide-kicker">теренски протокол</div>
+<h1>Како фотографисати биљку за поуздан налаз</h1>
+<p>Овај додатак служи да сваки посетилац, ученик или сарадник на терену сними биљку тако да фотографија не буде само лепа успомена, већ употребљив ботанички запис за препознавање, проверу, картографисање и мониторинг флоре ПИО „Рајац”.</p>
+</div>
+<span class="rfw-photo-guide-action"><span class="rfw-photo-guide-action-label"></span></span>
+</div>
+</summary>
+<div class="rfw-photo-guide-content">
+<div class="rfw-protocol-embed"> <section class="sec" id="svrha">
+<div class="purpose-grid-top">
+<div class="purpose-left">
+<div class="sec-sup"><span class="sec-sup-n">01</span>Сврха протокола</div>
+<h2 class="sec-title">Више од фотографије —<br/><em>употребљив ботанички запис</em></h2>
+<p class="sec-intro">Овај протокол служи да уједначи начин снимања биљака на терену, како би снимци били довољно добри за систематичан рад, а не само за личну евиденцију.</p>
+<div class="purpose-text purpose-text-top">
+<h3>За шта служе снимци</h3>
+<ul class="purpose-list">
+<li>Препознавање врста у апликацији Flora Incognita</li>
+<li>Вођење сопствене теренске евиденције</li>
+<li>Каснију стручну проверу налаза</li>
+<li>Израду извештаја, карата и база података</li>
+<li>Едукацију, мониторинг и презентацију флоре ПИО „Рајац"</li>
+</ul>
+</div>
+</div>
+<div class="purpose-right">
+<div class="purpose-visual purpose-visual-top">
+<img alt="Сарадник на терену снима биљку телефоном" crossorigin="anonymous" decoding="async" fetchpriority="low" loading="lazy" referrerpolicy="no-referrer" src="assets/rajac-flora/external/pexels-2590237-w900.jpg"/>
+<div class="purpose-visual-cap">Добар налаз није само лепа слика — то је <em>јасна, просторно одређена, станишно објашњена и документована</em> појава биљке.</div>
+</div>
+</div>
+</div>
+</section> <section class="sec sec-alt" id="pravilo">
+<div class="sec-alt-in sec-narrow" style="margin:0 auto">
+<div class="sec-sup"><span class="sec-sup-n">02</span>Основно правило рада на терену</div>
+<h2 class="sec-title">Четири обавезна <em>кадра</em></h2>
+<div class="rule-card">
+<p class="rule-quote">Свака биљка се снима тако да се јасно виде: <em>цела биљка, цвет или цваст, лист и станиште.</em></p>
+<p style="font-size:14.5px;color:var(--muted);line-height:1.75;margin-top:16px">По могућству додај и: стабло, плод, кора, основа биљке, наличје листа или други карактеристични детаљи. Све фотографије које улазе у једну идентификацију морају припадати <strong>истој јединки</strong>, или — ако то није могуће — истој несумњиво истој врсти на непосредној локацији.</p>
+<div class="rule-items">
+<div class="rule-item"><div class="rule-item-ic">🌿</div><div class="rule-item-n">Цела биљка</div></div>
+<div class="rule-item"><div class="rule-item-ic">🌸</div><div class="rule-item-n">Цвет или цваст</div></div>
+<div class="rule-item"><div class="rule-item-ic">🍃</div><div class="rule-item-n">Лист</div></div>
+<div class="rule-item"><div class="rule-item-ic">🏞️</div><div class="rule-item-n">Станиште</div></div>
+</div>
+</div>
+</div>
+</section> <section class="sec" id="oprema">
+<div class="sec-sup"><span class="sec-sup-n">03</span>Опрема за терен</div>
+<h2 class="sec-title">Минимална опрема <em>— максималан резултат</em></h2>
+<p class="sec-intro">За рад је довољан мобилни телефон са добром камером и инсталираном апликацијом Flora Incognita. За озбиљнији рад препоручује се и следеће:</p>
+<div class="equip-grid">
+<div class="equip-item"><div class="equip-ic">📱</div><div><strong>Мобилни телефон</strong><span>Напуњена батерија</span></div></div>
+<div class="equip-item"><div class="equip-ic">🔋</div><div><strong>Екстерна батерија</strong><span>Power bank</span></div></div>
+<div class="equip-item"><div class="equip-ic">📍</div><div><strong>GPS укључен</strong><span>Проверено пре поласка</span></div></div>
+<div class="equip-item"><div class="equip-ic">📓</div><div><strong>Теренски нотес</strong><span>Или дигиталне белешке</span></div></div>
+<div class="equip-item"><div class="equip-ic">📏</div><div><strong>Скала за размеру</strong><span>Мали лењир или предмет</span></div></div>
+<div class="equip-item"><div class="equip-ic">🔎</div><div><strong>Ручна лупа</strong><span>За ситне детаље</span></div></div>
+<div class="equip-item"><div class="equip-ic">📂</div><div><strong>Кеса/фасцикла</strong><span>За белешке и скице</span></div></div>
+<div class="equip-item"><div class="equip-ic">🧴</div><div><strong>Крпица за сочиво</strong><span>Камера мора бити чиста</span></div></div>
+</div>
+<div class="equip-preflight">
+<div class="equip-preflight-ic">✓</div>
+<div>
+<div class="equip-preflight-h">Пре поласка — обавезна провера</div>
+<ul class="equip-preflight-list">
+<li>Сочиво камере је чисто</li>
+<li>Апликација ради</li>
+<li>Камера и локација имају дозволе</li>
+<li>Има довољно меморије</li>
+</ul>
+</div>
+</div>
+</section> <section class="sec sec-alt" id="etika">
+<div class="sec-alt-in">
+<div class="sec-sup"><span class="sec-sup-n">04</span>Понашање у заштићеном подручју</div>
+<h2 class="sec-title">Ненаметљиво и без <em>оштећивања природе</em></h2>
+<p class="sec-intro">Снимање биљака у ПИО „Рајац" мора бити у функцији документације, а не нарушавања станишта.</p>
+<div class="ethics-wrap">
+<div class="ethics-dont">
+<h3>❌ Није дозвољено</h3>
+<ul>
+<li>Чупати биљке ради бољег кадра</li>
+<li>Ломити стабљике</li>
+<li>Газити осетљива станишта</li>
+<li>Уклањати суседну вегетацију само ради фотографије</li>
+<li>Брати ретке и заштићене врсте без посебног разлога и дозволе</li>
+</ul>
+</div>
+<div class="ethics-warn">
+<div class="ethics-warn-tag">🟡 Важно упозорење</div>
+<h3 class="ethics-warn-h">Ако биљка расте на неприступачном, влажном, стеновитом или осетљивом месту, предност увек има очување станишта — а не „идеалан" снимак.</h3>
+<p class="ethics-warn-p">Фотографисање треба да буде у функцији документације, не нарушавања станишта. Боље је да снимак није савршен него да се оштети осетљиво место на којем расте ретка врста.</p>
+</div>
+</div>
+</div>
+</section> <section class="sec sec-wide" id="koraci">
+<div class="sec-sup"><span class="sec-sup-n">05</span>Поступак снимања једне биљке</div>
+<h2 class="sec-title">Пет корака <em>— истим редом, сваки пут</em></h2>
+<p class="sec-intro">За сваку биљку коју желите да унесете у Flora Incognita, радите овим редом. Овај ред није случајан — он штити логичан след: од општег ка детаљу.</p>
+<div class="steps">
+<div class="step">
+<div class="step-n">01</div>
+<h3 class="step-title">Станиште</h3>
+<p class="step-desc">Шира фотографија која приказује где биљка расте: ливада, руб шуме, стеновито место, влажна удолина, пашњак, поред пута.</p>
+<div class="step-img">
+<img alt="Станиште — ливада уз шумски руб" crossorigin="anonymous" decoding="async" fetchpriority="low" loading="lazy" referrerpolicy="no-referrer" src="assets/rajac-flora/external/pexels-17437443-w900.jpg"/>
+</div>
+</div>
+<div class="step">
+<div class="step-n">02</div>
+<h3 class="step-title">Цела биљка</h3>
+<p class="step-desc">Од основе до врха. Види се општи изглед, висина, начин гранања, положај листова и цветова.</p>
+<div class="step-img">
+<img alt="Цела биљка — једна јединка у станишту" crossorigin="anonymous" decoding="async" fetchpriority="low" loading="lazy" referrerpolicy="no-referrer" src="assets/rajac-flora/external/pexels-32063500-w900.jpg"/>
+</div>
+</div>
+<div class="step">
+<div class="step-n">03</div>
+<h3 class="step-title">Цвет или цваст</h3>
+<p class="step-desc">Најважнији снимак код цветница: оштар, добро осветљен, без сенке руке или других врста у кадру. Одозго или са стране.</p>
+<div class="step-img">
+<img alt="Цвет — крупан план" crossorigin="anonymous" decoding="async" fetchpriority="low" loading="lazy" referrerpolicy="no-referrer" src="assets/rajac-flora/external/pexels-16116746-w900.jpg"/>
+</div>
+</div>
+<div class="step">
+<div class="step-n">04</div>
+<h3 class="step-title">Лист</h3>
+<p class="step-desc">Облик, ивица, нерватура, врх, основа, начин причвршћивања за стабло. По могућству и горња и доња страна.</p>
+<div class="step-img">
+<img alt="Лист — крупан план са видљивом нерватуром" crossorigin="anonymous" decoding="async" fetchpriority="low" loading="lazy" referrerpolicy="no-referrer" src="assets/rajac-flora/external/pexels-4072850-w900.jpg"/>
+</div>
+</div>
+<div class="step">
+<div class="step-n">05</div>
+<h3 class="step-title">Детаљи</h3>
+<p class="step-desc">Плод, семе, стабло, основа, розета, кора код дрвећа, трнови, длакавост — све што је карактеристично.</p>
+<div class="step-img">
+<img alt="Детаљ — плод или семеница" crossorigin="anonymous" decoding="async" fetchpriority="low" loading="lazy" referrerpolicy="no-referrer" src="assets/rajac-flora/external/pexels-11001236-w900.jpg"/>
+</div>
+</div>
+</div>
+</section> <section class="sec" id="grupe">
+<div class="sec-sup"><span class="sec-sup-n">06</span>Различите групе биљака</div>
+<h2 class="sec-title">Свака група тражи <em>свој приступ</em></h2>
+<p class="sec-intro">Нису све биљке исте — различити ботанички преглед захтева различите кадрове. Ево шта је најважније у свакој групи.</p>
+<div class="groups-grid">
+<div class="group-card">
+<div class="group-img"><img alt="Зељасте цветнице" crossorigin="anonymous" decoding="async" fetchpriority="low" loading="lazy" referrerpolicy="no-referrer" src="assets/rajac-flora/external/pexels-8823402-w900.jpg"/></div>
+<div class="group-body">
+<div class="group-title">Зељасте цветнице</div>
+<div class="group-latin">Herbaceae — најбројнија група</div>
+<div class="group-req">
+<div class="group-req-item">Цвет (најважнији)</div>
+<div class="group-req-item">Лист (горња и доња страна)</div>
+<div class="group-req-item">Цела биљка у станишту</div>
+</div>
+</div>
+</div>
+<div class="group-card">
+<div class="group-img"><img alt="Траве на ливади" crossorigin="anonymous" decoding="async" fetchpriority="low" loading="lazy" referrerpolicy="no-referrer" src="assets/rajac-flora/external/pexels-19147147-w900.jpg"/></div>
+<div class="group-body">
+<div class="group-title">Траве, шашеви и ситови</div>
+<div class="group-latin">Poaceae · Cyperaceae · Juncaceae</div>
+<div class="group-req">
+<div class="group-req-item">Цваст или клас</div>
+<div class="group-req-item">Основа биљке</div>
+<div class="group-req-item">Лист и цела јединка</div>
+</div>
+<p style="font-size:11.5px;color:var(--muted);margin-top:12px;line-height:1.55;font-style:italic">Тешка група за аутоматско препознавање — правите више оштрих снимака</p>
+</div>
+</div>
+<div class="group-card">
+<div class="group-img"><img alt="Дрвеће и жбуње — кора и лишће" crossorigin="anonymous" decoding="async" fetchpriority="low" loading="lazy" referrerpolicy="no-referrer" src="assets/rajac-flora/external/pexels-36950613-w900.jpg"/></div>
+<div class="group-body">
+<div class="group-title">Дрвеће и жбуње</div>
+<div class="group-latin">Arbor · Frutex</div>
+<div class="group-req">
+<div class="group-req-item">Цела биљка или крошња</div>
+<div class="group-req-item">Лист</div>
+<div class="group-req-item">Кора стабла</div>
+<div class="group-req-item">Цвет или плод (ако има)</div>
+</div>
+</div>
+</div>
+<div class="group-card">
+<div class="group-img"><img alt="Папрати у шумском станишту" crossorigin="anonymous" decoding="async" fetchpriority="low" loading="lazy" referrerpolicy="no-referrer" src="assets/rajac-flora/external/pexels-18044154-w900.jpg"/></div>
+<div class="group-body">
+<div class="group-title">Папрати</div>
+<div class="group-latin">Pteridophyta</div>
+<div class="group-req">
+<div class="group-req-item">Цела биљка</div>
+<div class="group-req-item">Облик и деоба листа</div>
+<div class="group-req-item">Наличје листа (споре!)</div>
+<div class="group-req-item">Станиште</div>
+</div>
+</div>
+</div>
+</div>
+</section> <section class="sec sec-alt" id="svetlo">
+<div class="sec-alt-in">
+<div class="sec-sup"><span class="sec-sup-n">07</span>Услови за добро снимање</div>
+<h2 class="sec-title">Светло је <em>све</em></h2>
+<p class="sec-intro">Најбоље светло је меко и равномерно. Идеално је облачно време или јутарњи и каснопоподневни часови.</p>
+<div class="light-grid">
+<div class="light-good">
+<h3 class="light-h"><span class="light-h-ic">☀️</span>Најбоље услови</h3>
+<ul class="light-list">
+<li>Меко, равномерно светло</li>
+<li>Облачно време</li>
+<li>Рано јутро (7–10h)</li>
+<li>Касни поподневни часови (16–19h)</li>
+<li>Мирна рука, фокус додиром</li>
+</ul>
+<div class="light-tip">💡 Када снимате, приђите ближе уместо да користите дигитални зум — он квари квалитет. Фокус увек поставите додиром на саму биљку.</div>
+</div>
+<div class="light-bad">
+<h3 class="light-h"><span class="light-h-ic">⛔</span>Избегавати</h3>
+<ul class="light-list">
+<li>Јако подневно сунце</li>
+<li>Дубоке сенке и контрасветло</li>
+<li>Снимке против неба (силуета)</li>
+<li>Брзо померање телефона</li>
+<li>Ветар који помера биљку</li>
+</ul>
+<div class="light-tip">⚠️ Ако је биљка превише у сенци, прво је покушајте пажљиво склонити сенку (или свој положај), а тек онда снимајте.</div>
+</div>
+</div>
+</div>
+</section> <section class="sec" id="greske">
+<div class="sec-sup"><span class="sec-sup-n">08</span>Најчешће грешке на терену</div>
+<h2 class="sec-title">Шта полази <em>по злу</em></h2>
+<p class="sec-intro">Већина проблема у идентификацији потиче од предвидивих грешака. Ако их препознате — лако их избегнете.</p>
+<div class="errors-grid">
+<div class="error-card"><div class="error-n">01</div><div class="error-text"><strong>Снимак није оштар.</strong> Нестабилна рука или брзо отпуштање окидача.</div></div>
+<div class="error-card"><div class="error-n">02</div><div class="error-text"><strong>Цвет није у фокусу.</strong> Аутофокус је ухватио лист или позадину.</div></div>
+<div class="error-card"><div class="error-n">03</div><div class="error-text"><strong>Лист делимично скривен.</strong> Иза другог листа, стабљике или у дубокој сенци.</div></div>
+<div class="error-card"><div class="error-n">04</div><div class="error-text"><strong>У кадру више врста.</strong> Мешање цветова суседних биљака ствара забуну.</div></div>
+<div class="error-card"><div class="error-n">05</div><div class="error-text"><strong>Снима се само један део.</strong> Без целе биљке идентификација је далеко тежа.</div></div>
+<div class="error-card"><div class="error-n">06</div><div class="error-text"><strong>Превелика удаљеност.</strong> Биљка је преситна у кадру да би се видели детаљи.</div></div>
+<div class="error-card"><div class="error-n">07</div><div class="error-text"><strong>Биљка у сенци.</strong> Недостатак светла скрива боје и текстуре.</div></div>
+<div class="error-card"><div class="error-n">08</div><div class="error-text"><strong>Лист са друге биљке.</strong> Најлукавија грешка — цвет једне, лист оближње врсте.</div></div>
+<div class="error-card"><div class="error-n">09</div><div class="error-text"><strong>Дигитални зум.</strong> Губитак резолуције — прићи ближе је увек боље.</div></div>
+</div>
+</section> <section class="sec sec-alt" id="minimum">
+<div class="sec-alt-in sec-narrow" style="margin:0 auto">
+<div class="sec-sup"><span class="sec-sup-n">09</span>Минимални стандард налаза</div>
+<h2 class="sec-title">Испод овога, <em>запис губи вредност</em></h2>
+<p class="sec-intro">Да би један налаз био добар за интерну евиденцију ПИО „Рајац", треба да има све ове елементе.</p>
+<div class="minimum-wrap">
+<div class="minimum-list">
+<div class="minimum-item"><div class="minimum-item-ic">🏞️</div><div class="minimum-item-h">Снимак станишта</div></div>
+<div class="minimum-item"><div class="minimum-item-ic">🌿</div><div class="minimum-item-h">Цела биљка</div></div>
+<div class="minimum-item"><div class="minimum-item-ic">🌸</div><div class="minimum-item-h">Цвет или цваст</div></div>
+<div class="minimum-item"><div class="minimum-item-ic">🍃</div><div class="minimum-item-h">Лист</div></div>
+<div class="minimum-item"><div class="minimum-item-ic">📍</div><div class="minimum-item-h">Локација (GPS)</div></div>
+<div class="minimum-item"><div class="minimum-item-ic">📅</div><div class="minimum-item-h">Датум</div></div>
+<div class="minimum-item"><div class="minimum-item-ic">📝</div><div class="minimum-item-h">Напомена о станишту</div></div>
+</div>
+</div>
+<div style="margin-top:40px;display:grid;grid-template-columns:1fr 1fr;gap:18px">
+<div style="padding:22px 26px;background:#fff;border-radius:12px;border:1px solid var(--border)">
+<div style="font-size:10.5px;font-weight:700;letter-spacing:1.8px;text-transform:uppercase;color:var(--sun);margin-bottom:8px">Станиште — примери</div>
+<div style="font-size:14px;line-height:1.75;color:var(--text)">„отворена ливада на кречњачкој подлози" · „руб шумског пута" · „влажна удолина" · „под буковом шумом" · „уз стазу"</div>
+</div>
+<div style="padding:22px 26px;background:#fff;border-radius:12px;border:1px solid var(--border)">
+<div style="font-size:10.5px;font-weight:700;letter-spacing:1.8px;text-transform:uppercase;color:var(--sun);margin-bottom:8px">Бројност и фенофаза</div>
+<div style="font-size:14px;line-height:1.75;color:var(--text)">„појединачна јединка" · „више десетина" · „у цвету" · „у плоду" · „покошено станиште"</div>
+</div>
+</div>
+</div>
+</section> <section class="sec sec-dark" id="offline">
+<div class="sec-dark-in">
+<div class="sec-sup"><span class="sec-sup-n">11</span>Како радити без интернета</div>
+<div class="offline-wrap">
+<div class="offline-visual">
+<img alt="Рад без интернета — телефон и теренски запис" crossorigin="anonymous" decoding="async" fetchpriority="low" loading="lazy" referrerpolicy="no-referrer" src="assets/rajac-flora/external/pexels-8316300-w900.jpg"/>
+<div class="offline-badge">📵 Без сигнала</div>
+</div>
+<div class="offline-text">
+<h3>Нема мреже? <em>И даље се све може.</em></h3>
+<p>Ако на терену нема сигнала, биљке се и даље могу добро документовати. Најбитније је да не одлажете снимање само зато што нема мреже — добар налаз се не сме изгубити због привремене техничке препреке.</p>
+<ul class="offline-steps">
+<li>Снимите све потребне фотографије (станиште, биљка, цвет, лист, детаљи)</li>
+<li>Сачувајте налаз у апликацији</li>
+<li>Проверите да GPS ради — локација се снима и без мреже</li>
+<li>Касније, на месту са интернетом, покрените идентификацију</li>
+</ul>
+</div>
+</div>
+</div>
+</section> <section class="sec" id="provera">
+<div class="sec-sup"><span class="sec-sup-n">12</span>Провера тачности резултата</div>
+<h2 class="sec-title">Не верујте апликацији на <em>прву</em></h2>
+<p class="sec-intro">Када Flora Incognita предложи врсту, резултат не треба прихватити аутоматски. Увек поставите себи пет питања.</p>
+<div class="check-grid">
+<div class="check-item"><div class="check-q">?</div><div class="check-t">Да ли се <strong>изглед</strong> поклапа са ботаничким описом?</div></div>
+<div class="check-item"><div class="check-q">?</div><div class="check-t">Да ли је <strong>време цветања</strong> логично за тренутни датум?</div></div>
+<div class="check-item"><div class="check-q">?</div><div class="check-t">Да ли се врста <strong>очекује у том станишту</strong>?</div></div>
+<div class="check-item"><div class="check-q">?</div><div class="check-t">Да ли се <strong>лист и цвет слажу</strong> са описом?</div></div>
+<div class="check-item"><div class="check-q">?</div><div class="check-t">Да ли је налаз <strong>реалан за подручје Рајца</strong>?</div></div>
+</div>
+<div class="check-callout">
+<div class="check-callout-h">Ако апликација није сигурна, пре него закључите врсту:</div>
+<ul class="check-callout-list">
+<li>Додајте још фотографија</li>
+<li>Поновите снимање</li>
+<li>Означите налаз као привремен</li>
+<li>Проверите у литератури или са стручњаком</li>
+</ul>
+</div>
+</section> <section class="sec sec-alt">
+<div class="sec-alt-in sec-narrow" style="margin:0 auto">
+<div class="sec-sup"><span class="sec-sup-n">13</span>Посебна препорука за Рајац</div>
+<h2 class="sec-title">Биљка + <em>микростаниште</em> = пуна слика</h2>
+<p class="sec-intro">Многе врсте се не препознају само по изгледу, већ и по томе где расту. За систематично праћење флоре на Рајцу, сваки налаз треба да има и једну фотографију која приказује однос биљке према микростаништу.</p>
+<div style="display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:28px">
+<div style="padding:20px;background:#fff;border-radius:12px;border:1px solid var(--border);text-align:center"><div style="font-size:26px;margin-bottom:8px">🌾</div><div style="font-family:var(--serif);font-size:14px;color:var(--forest);font-weight:500">Ливаде</div></div>
+<div style="padding:20px;background:#fff;border-radius:12px;border:1px solid var(--border);text-align:center"><div style="font-size:26px;margin-bottom:8px">🌳</div><div style="font-family:var(--serif);font-size:14px;color:var(--forest);font-weight:500">Шумски рубови</div></div>
+<div style="padding:20px;background:#fff;border-radius:12px;border:1px solid var(--border);text-align:center"><div style="font-size:26px;margin-bottom:8px">💧</div><div style="font-family:var(--serif);font-size:14px;color:var(--forest);font-weight:500">Влажне депресије</div></div>
+<div style="padding:20px;background:#fff;border-radius:12px;border:1px solid var(--border);text-align:center"><div style="font-size:26px;margin-bottom:8px">🪨</div><div style="font-family:var(--serif);font-size:14px;color:var(--forest);font-weight:500">Стеновита места</div></div>
+<div style="padding:20px;background:#fff;border-radius:12px;border:1px solid var(--border);text-align:center"><div style="font-size:26px;margin-bottom:8px">🥾</div><div style="font-family:var(--serif);font-size:14px;color:var(--forest);font-weight:500">Уз стазе</div></div>
+<div style="padding:20px;background:#fff;border-radius:12px;border:1px solid var(--border);text-align:center"><div style="font-size:26px;margin-bottom:8px">🏜️</div><div style="font-family:var(--serif);font-size:14px;color:var(--forest);font-weight:500">Полусува станишта</div></div>
+</div>
+<div style="margin-top:26px;padding:22px 26px;background:#fff;border-radius:12px;border-left:4px solid var(--sage)">
+<div style="font-family:var(--serif);font-size:15px;color:var(--forest);font-weight:500;margin-bottom:8px">Зашто је то важно</div>
+<p style="font-size:14px;color:var(--muted);line-height:1.75">За израду станишних карти, праћење промена, тумачење угрожености и управљачке одлуке — однос биљке према простору је подједнако важан као њен изглед.</p>
+</div>
+</div>
+</section> <section class="sec sec-narrow" id="obrazac" style="margin:0 auto">
+<div class="sec-sup"><span class="sec-sup-n">14</span>Брзи теренски образац</div>
+<h2 class="sec-title">Попуни — <em>потом снимај</em></h2>
+<p class="sec-intro">За сваку снимљену биљку може се користити овај кратки образац. Можете да га одштампате или држите у белешкама на телефону.</p>
+<div class="form-tpl">
+<div class="form-tpl-head">Теренски образац — ПИО „Рајац" · Flora Incognita</div>
+<div class="form-tpl-row"><div class="form-tpl-row-k">Шифра налаза:</div><div class="form-tpl-row-v">__________</div></div>
+<div class="form-tpl-row"><div class="form-tpl-row-k">Датум:</div><div class="form-tpl-row-v">__________</div></div>
+<div class="form-tpl-row"><div class="form-tpl-row-k">Време:</div><div class="form-tpl-row-v">__________</div></div>
+<div class="form-tpl-row"><div class="form-tpl-row-k">Локалитет:</div><div class="form-tpl-row-v">__________________________</div></div>
+<div class="form-tpl-row"><div class="form-tpl-row-k">Координате:</div><div class="form-tpl-row-v">__________, __________</div></div>
+<div class="form-tpl-row"><div class="form-tpl-row-k">Тип станишта:</div><div class="form-tpl-row-v">__________________________</div></div>
+<div class="form-tpl-row"><div class="form-tpl-row-k">Бројност:</div><div class="form-tpl-row-v">__________</div></div>
+<div class="form-tpl-row"><div class="form-tpl-row-k">Фенофаза:</div><div class="form-tpl-row-v">__________</div></div>
+<div class="form-tpl-row"><div class="form-tpl-row-k">Прив. идентификација:</div><div class="form-tpl-row-v">__________________________</div></div>
+<div class="form-tpl-row"><div class="form-tpl-row-k">Напомена:</div><div class="form-tpl-row-v">__________________________</div></div>
+<div class="form-tpl-photos">
+<div class="form-tpl-chip">🏞️ Станиште</div>
+<div class="form-tpl-chip">🌿 Цела биљка</div>
+<div class="form-tpl-chip">🌸 Цвет</div>
+<div class="form-tpl-chip">🍃 Лист</div>
+<div class="form-tpl-chip">🔍 Детаљ</div>
+</div>
+</div>
+</section> <section class="sec sec-dark" id="volonteri">
+<div class="sec-dark-in">
+<div class="sec-sup"><span class="sec-sup-n">15</span>Најкраћа правила за волонтере</div>
+<h2 class="sec-title">Седам правила, <em>и готово</em></h2>
+<p class="sec-intro">Ако требате свести све на неколико кратких правила — ово су она.</p>
+<ol class="rules-list">
+<li class="rule-line"><div class="rule-text">Снимај <em>једну биљку</em>, не више њих одједном.</div></li>
+<li class="rule-line"><div class="rule-text">Сними <em>станиште, целу биљку, цвет и лист</em>.</div></li>
+<li class="rule-line"><div class="rule-text">Пази да фотографија буде <em>оштра</em>.</div></li>
+<li class="rule-line"><div class="rule-text">Не чупај и не оштећуј биљку.</div></li>
+<li class="rule-line"><div class="rule-text">Укључи <em>локацију</em> (GPS).</div></li>
+<li class="rule-line"><div class="rule-text">Уз сваки налаз <em>запиши</em> где је снимљено и у каквом станишту.</div></li>
+<li class="rule-line"><div class="rule-text">Ако ниси сигуран, <em>немој нагађати</em> — означи налаз као привремен.</div></li>
+</ol>
+</div>
+</section> <section class="closing">
+<div class="closing-in">
+<div class="closing-orn">✻ ❀ ✻</div>
+<div class="sec-sup" style="justify-content:center"><span class="sec-sup-n">16</span>Закључни теренски стандард</div>
+<h2 class="closing-h">Добар налаз није само лепа фотографија —<br/>то је <em>ботанички запис</em></h2>
+<p class="closing-p">Јасна, оштро снимљена, просторно одређена, станишно објашњена и документована појава биљке. Тако снимљени подаци касније служе за стручне извештаје, управљање подручјем, едукацију, мониторинг и израду карата.</p>
+<div class="closing-tags">
+<span class="closing-tag">Јасноћа</span>
+<span class="closing-tag">Оштрина</span>
+<span class="closing-tag">Локација</span>
+<span class="closing-tag">Станиште</span>
+<span class="closing-tag">Документ</span>
+</div>
+</div>
+</section><footer class="foot">© 2026 <strong>ПИО „Рајац"</strong> — Теренски протокол за снимање биљака · Flora Incognita стандард</footer>
+</div>
+</div>
+</details>
+</section>
+
+</main>
+
+<script id="pio-mobile-tablet-js">
+(function () {
+  "use strict";
+
+  function closeMenus(except) {
+    document.querySelectorAll(".rajac-ds-nav-inner.pio-menu-open").forEach(function (nav) {
+      if (nav === except) return;
+      nav.classList.remove("pio-menu-open");
+      var button = nav.querySelector(".pio-mobile-nav-toggle");
+      if (button) button.setAttribute("aria-expanded", "false");
+    });
+
+    document.querySelectorAll(".rfx-bio-menu.is-open").forEach(function (menu) {
+      if (menu === except) return;
+      menu.classList.remove("is-open");
+      var toggle = document.querySelector('[aria-controls="' + menu.id + '"]');
+      if (toggle) toggle.setAttribute("aria-expanded", "false");
+    });
+  }
+
+  function setupDesktopStyleNav() {
+    document.querySelectorAll(".rajac-ds-nav-inner").forEach(function (nav, index) {
+      if (nav.querySelector(".pio-mobile-nav-toggle")) return;
+
+      var items = nav.querySelectorAll(".rajac-ds-nav-item");
+      if (!items.length) return;
+
+      var button = document.createElement("button");
+      button.type = "button";
+      button.className = "pio-mobile-nav-toggle";
+      button.setAttribute("aria-expanded", "false");
+      button.setAttribute("aria-label", "Отвори мени");
+      button.setAttribute("aria-controls", "pio-mobile-menu-" + index);
+      button.textContent = "МЕНИ";
+      nav.id = nav.id || "pio-mobile-menu-" + index;
+
+      var home = nav.querySelector(".rajac-ds-home");
+      if (home && home.nextSibling) {
+        nav.insertBefore(button, home.nextSibling);
+      } else {
+        nav.appendChild(button);
+      }
+
+      button.addEventListener("click", function (event) {
+        event.stopPropagation();
+        var open = !nav.classList.contains("pio-menu-open");
+        closeMenus(nav);
+        nav.classList.toggle("pio-menu-open", open);
+        button.setAttribute("aria-expanded", String(open));
+        button.setAttribute("aria-label", open ? "Затвори мени" : "Отвори мени");
+      });
+
+      items.forEach(function (link) {
+        link.addEventListener("click", function () {
+          nav.classList.remove("pio-menu-open");
+          button.setAttribute("aria-expanded", "false");
+        });
+      });
+    });
+  }
+
+  function setupExistingNav() {
+    document.querySelectorAll(".rfx-nav-toggle").forEach(function (toggle) {
+      var id = toggle.getAttribute("aria-controls") || "rfx-bio-menu";
+      var menu = document.getElementById(id);
+      if (!menu) return;
+
+      toggle.addEventListener("click", function (event) {
+        event.stopPropagation();
+        window.setTimeout(function () {
+          var open = menu.classList.contains("is-open");
+          toggle.setAttribute("aria-expanded", String(open));
+          toggle.setAttribute("aria-label", open ? "Затвори мени" : "Отвори мени");
+        }, 0);
+      });
+
+      menu.querySelectorAll("a").forEach(function (link) {
+        link.addEventListener("click", function () {
+          menu.classList.remove("is-open");
+          toggle.setAttribute("aria-expanded", "false");
+        });
+      });
+    });
+  }
+
+  function setupResponsiveTables() {
+    document.querySelectorAll("table").forEach(function (table) {
+      var headers = Array.from(table.querySelectorAll("thead th")).map(function (cell) {
+        return cell.textContent.trim();
+      });
+
+      if (!headers.length) return;
+      table.classList.add("pio-mobile-table-card");
+
+      table.querySelectorAll("tbody tr").forEach(function (row) {
+        Array.from(row.children).forEach(function (cell, index) {
+          var label = headers[index] || headers[headers.length - 1] || "Податак";
+          cell.setAttribute("data-pio-label", label);
+        });
+      });
+    });
+  }
+
+  function setupBackToTop() {
+    if (document.querySelector(".pio-back-to-top")) return;
+
+    var button = document.createElement("button");
+    button.type = "button";
+    button.className = "pio-back-to-top";
+    button.setAttribute("aria-label", "Врати се на врх странице");
+    button.textContent = "↑ Врх";
+    document.body.appendChild(button);
+
+    function update() {
+      button.classList.toggle("is-visible", window.scrollY > 520);
+    }
+
+    button.addEventListener("click", function () {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+
+    window.addEventListener("scroll", update, { passive: true });
+    update();
+  }
+
+  function closeOnOutsideClick(event) {
+    if (event.target.closest(".rajac-ds-nav, .rfx-chapter-nav")) return;
+    closeMenus(null);
+  }
+
+  function closeOnEscape(event) {
+    if (event.key !== "Escape") return;
+    closeMenus(null);
+  }
+
+  function init() {
+    setupDesktopStyleNav();
+    setupExistingNav();
+    setupResponsiveTables();
+    setupBackToTop();
+    document.addEventListener("click", closeOnOutsideClick);
+    document.addEventListener("keydown", closeOnEscape);
+  }
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", init, { once: true });
+  } else {
+    init();
+  }
+})();
+
+</script>
+</body>
+</html>

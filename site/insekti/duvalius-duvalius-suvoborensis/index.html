@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+
+<html lang="sr">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Сувоборски дувалијус — Duvalius (Duvalius) suvoborensis | Инсекти Рајца | ПИО „Рајац”</title>
+<meta content="Сувоборски дувалијус (Duvalius (Duvalius) suvoborensis) — страница о станишту, екологији, значају и мониторингу на Рајцу." name="description"/>
+<style>
+
+:root {
+  --sky:#0b2744; --sky-mid:#163a58; --sky-light:#1e5a84;
+  --gold:#c8a84b; --gold-light:#e8cc7a;
+  --cave:#1e1428; --cave-mid:#332046; --cave-light:#6a4a8a;
+  --cave-accent:#c5ace8; --cave-soft:#ece4f8;
+  --earth:#4c3526; --earth-mid:#6b4a34; --earth-light:#b58962;
+  --green:#2d5a27; --green-bg:#edf7f0;
+  --warn:#8b1e1e; --warn-bg:#fff2f2;
+  --new:#d9480f; --new-bg:#fff4eb;
+  --cream:#f8f4ed; --warm:#fdfcfa;
+  --text:#1a1a2e; --muted:#6b7280; --border:#e0dbd3;
+  --radius:12px; --shadow:0 2px 12px rgba(0,0,0,.08); --shadow-lg:0 8px 28px rgba(0,0,0,.14);
+  --font-serif:"Cormorant Garamond","EB Garamond",Garamond,"Palatino Linotype","Book Antiqua",Georgia,"Times New Roman",serif;
+  --font-sans:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:var(--font-sans);background:var(--cream);color:var(--text);font-size:15px;line-height:1.75}
+a{text-decoration:none;color:inherit}
+img{max-width:100%;display:block}
+.site-header{background:var(--sky);color:#fff;padding:0 32px;display:flex;align-items:center;justify-content:space-between;height:58px;border-bottom:3px solid var(--sky-light);position:sticky;top:0;z-index:100}
+html.admin-bar .site-header{top:32px}
+.site-header .logo{font-weight:700;font-size:14px;letter-spacing:.06em;text-transform:uppercase}
+.site-header nav a{color:rgba(255,255,255,.82);margin-left:18px;font-size:12.5px;transition:color .15s}
+.site-header nav a:hover{color:#fff}
+.breadcrumb-bar{background:var(--cream);border-bottom:1px solid var(--border);padding:10px 0}
+.breadcrumb-bar .inner{max-width:960px;margin:0 auto;padding:0 24px;font-size:13px;color:var(--muted)}
+.breadcrumb-bar a{color:var(--sky-light);font-weight:600}.breadcrumb-bar .sep{margin:0 6px;opacity:.4}
+.top-banner{padding:10px 24px;text-align:center;color:#fff;font-size:13px;font-weight:700;letter-spacing:.03em}
+.top-banner span{font-weight:400;opacity:.85;margin-left:8px}
+.banner-new{background:linear-gradient(90deg,var(--new),#f06a2f)}
+.banner-strict{background:linear-gradient(90deg,#6d0019,#b11d3b)}
+.banner-cave{background:linear-gradient(90deg,#231032,#4a2868)}
+.species-hero{background:linear-gradient(145deg,#120a1e 0%,#1e1030 45%,#0d1820 100%);overflow:hidden;position:relative}
+.hero-inner{max-width:960px;margin:0 auto;display:grid;grid-template-columns:1fr 380px;align-items:stretch}
+.hero-text{padding:40px 32px 36px 24px;display:flex;flex-direction:column;justify-content:center}
+.back-link{display:inline-flex;align-items:center;gap:6px;color:rgba(255,255,255,.65);font-size:13px;font-weight:500;margin-bottom:18px;transition:color .18s}
+.back-link:hover{color:var(--gold-light)}
+.common-name{font-family:var(--font-serif);font-size:clamp(2.15rem,4.4vw,3rem);font-weight:300;color:#fff;line-height:1.05;letter-spacing:0;margin-bottom:6px}
+.latin-name{font-family:var(--font-serif);font-style:italic;font-size:1.18rem;color:var(--cave-accent);margin-bottom:16px}
+.hero-short{color:rgba(255,255,255,.84);font-size:14px;max-width:540px;line-height:1.78;margin-bottom:18px}
+.hero-pills{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:14px}
+.pill{font-size:11px;font-weight:700;letter-spacing:.04em;padding:6px 13px;border-radius:999px}
+.pill-order{background:rgba(197,172,232,.16);border:1px solid rgba(197,172,232,.35);color:var(--cave-accent)}
+.pill-family{background:rgba(255,255,255,.10);border:1px solid rgba(255,255,255,.16);color:rgba(255,255,255,.85)}
+.pill-cave{background:rgba(106,74,138,.25);border:1px solid rgba(197,172,232,.3);color:#e7dbfa}
+.pill-alert{background:rgba(217,72,15,.20);border:1px solid rgba(255,176,132,.35);color:#ffd4bf}
+.hero-tags{display:flex;gap:7px;flex-wrap:wrap}.htag{font-size:11px;background:rgba(255,255,255,.10);border:1px solid rgba(255,255,255,.15);color:rgba(255,255,255,.85);padding:4px 10px;border-radius:999px;font-weight:600}
+.hero-photo{position:relative;overflow:hidden;border-left:1px solid rgba(255,255,255,.07);background:linear-gradient(135deg,#21142e,#0f1a22)}
+.hero-photo img{width:100%;height:100%;object-fit:cover;object-position:center;display:block;transition:transform .5s ease}
+.hero-photo:hover img{transform:scale(1.04)}
+.hero-photo-cap{position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(0,0,0,.72));padding:18px 12px 10px;font-size:10.5px;color:rgba(255,255,255,.75);font-style:italic;text-align:right}
+.hero-fallback{width:100%;height:100%;min-height:320px;display:flex;align-items:center;justify-content:center;flex-direction:column;color:rgba(255,255,255,.5)}
+.hero-fallback .big{font-size:88px;margin-bottom:14px}.hero-fallback p{max-width:180px;text-align:center;font-size:12px;line-height:1.5}
+.infobar{background:var(--sky);border-top:1px solid rgba(255,255,255,.07)}
+.infobar-inner{max-width:960px;margin:0 auto;display:grid;grid-template-columns:repeat(5,1fr)}
+.info-cell{padding:14px 18px;border-right:1px solid rgba(255,255,255,.07)}.info-cell:last-child{border-right:none}
+.info-label{font-size:10px;text-transform:uppercase;letter-spacing:1.4px;color:rgba(255,255,255,.4);font-weight:700;margin-bottom:4px}
+.info-val{font-size:13px;color:rgba(255,255,255,.9);font-weight:600}
+.page-wrap{max-width:960px;margin:0 auto;padding:32px 24px 64px}
+.tabs{display:flex;border-bottom:2px solid var(--border);overflow-x:auto;scrollbar-width:none}.tabs::-webkit-scrollbar{display:none}
+.tab{padding:12px 18px;font-size:13px;font-weight:700;color:var(--muted);cursor:pointer;border:none;background:none;white-space:nowrap;border-bottom:2.5px solid transparent;margin-bottom:-2px;transition:all .2s;display:inline-flex;align-items:center;gap:6px}
+.tab:hover{color:var(--sky)}.tab.active{color:var(--sky);border-bottom-color:var(--sky-light)}
+.tab-panel{display:none;padding:28px 0}.tab-panel.active{display:block}
+.card{background:#fff;border:1px solid var(--border);border-radius:var(--radius);padding:20px;margin-bottom:16px}
+.card-title{font-size:11px;text-transform:uppercase;letter-spacing:.1em;color:var(--muted);font-weight:800;margin-bottom:14px;display:flex;align-items:center;gap:8px}
+.card-body{font-size:14px;color:#374151;line-height:1.85}.card-body p{margin-bottom:12px}.card-body p:last-child{margin-bottom:0}.card-body ul{margin:8px 0 12px 20px}.card-body li{margin-bottom:6px}.card-body strong{color:var(--text)}
+.kv-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:18px}.kv-item{background:#fff;border:1px solid var(--border);border-radius:10px;padding:14px 16px}.kv-l{font-size:10px;text-transform:uppercase;letter-spacing:.1em;color:var(--muted);font-weight:800;margin-bottom:5px}.kv-v{font-size:13px;font-weight:700;color:var(--text);line-height:1.35}
+.cave-card{background:linear-gradient(135deg,#f7f2fc,#fcfbfe);border:1px solid #d9c9ef;border-left:4px solid var(--cave-light);border-radius:var(--radius);padding:20px;margin-bottom:16px}.cave-card .card-title{color:#5b2f83}.cave-card .card-body{color:#4b2f64}
+.eco-card{background:linear-gradient(135deg,var(--green-bg),#f5fbf7);border:1px solid #b8dfc5;border-left:4px solid var(--green);border-radius:var(--radius);padding:20px;margin-bottom:16px}.eco-card .card-title{color:#166534}.eco-card .card-body{color:#155a30}
+.warn-card{background:var(--warn-bg);border:1px solid #fecaca;border-left:4px solid #dc2626;border-radius:var(--radius);padding:20px;margin-bottom:16px}.warn-card .card-title{color:#991b1b}
+.new-card{background:var(--new-bg);border:1px solid #fdba74;border-left:4px solid var(--new);border-radius:var(--radius);padding:20px;margin-bottom:16px}.new-card .card-title{color:#9a3412}
+.dark-card{background:linear-gradient(135deg,#151026,#2b1c3d);border:none;border-radius:var(--radius);padding:22px;margin-bottom:16px;color:#fff}.dark-card .card-title{color:var(--cave-soft)}.dark-card .card-body{color:rgba(255,255,255,.86)}
+.diagram{background:linear-gradient(135deg,#191427,#332046);border-radius:var(--radius);padding:24px;display:grid;grid-template-columns:1fr 1fr;gap:20px;align-items:start;margin-bottom:16px;color:#fff}
+.diagram h4{font-size:12px;text-transform:uppercase;letter-spacing:.1em;color:var(--gold-light);margin-bottom:10px}.diagram p,.diagram li{font-size:13px;line-height:1.7;color:rgba(255,255,255,.88)}.diagram ul{margin-left:18px}
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:16px}.info-box{background:#fff;border:1px solid var(--border);border-radius:10px;padding:16px}.info-box h4{font-size:12px;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);font-weight:800;margin-bottom:8px}.info-box p{font-size:13px;line-height:1.72;color:#374151}
+.smart-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-bottom:14px}.smart-card{background:#fff;border:1px solid var(--border);border-radius:10px;padding:14px 16px;border-left:3px solid var(--sky-light)}.smart-card h4{font-size:13px;font-weight:800;color:var(--sky);margin-bottom:6px}.smart-card p{font-size:13px;line-height:1.68;color:#374151}
+.ext-links{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px}.ext-btn{display:inline-flex;align-items:center;gap:7px;background:var(--cream);border:1.5px solid var(--border);border-radius:8px;padding:9px 16px;font-size:13px;font-weight:700;color:var(--sky);transition:all .18s}.ext-btn:hover{background:var(--sky);color:#fff;border-color:var(--sky)}.ext-btn.gbif{border-color:#c8a020;color:#7a5a00}.ext-btn.gbif:hover{background:#c8a020;color:#fff}.ext-btn.inat{border-color:#4a8c5c;color:var(--green)}.ext-btn.inat:hover{background:var(--green);color:#fff}
+.bottom-section{margin-top:56px;border-top:3px solid var(--border);padding-top:44px}.bottom-section-heading{text-align:center;margin-bottom:36px}.bottom-section-heading h2{font-size:1.6rem;font-weight:800;color:var(--sky);letter-spacing:0;margin-bottom:8px}.bottom-section-heading p{font-size:14px;color:var(--muted);max-width:580px;margin:0 auto;line-height:1.7}
+.obs-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-bottom:28px}.obs-card{background:#fff;border:1px solid var(--border);border-radius:var(--radius);padding:18px 16px;text-align:center}.obs-icon{font-size:28px;display:block;margin-bottom:10px}.obs-card h4{font-size:12px;font-weight:800;text-transform:uppercase;letter-spacing:.08em;color:var(--sky);margin-bottom:8px}.obs-card p{font-size:12.5px;color:#4b5563;line-height:1.65}
+.inat-cta{background:var(--sky);border-radius:var(--radius);padding:28px 32px;display:grid;grid-template-columns:1fr auto;gap:24px;align-items:center;margin-bottom:28px}.inat-cta-text h3{font-size:1.1rem;font-weight:800;color:#fff;margin-bottom:8px}.inat-cta-text p{font-size:13px;color:rgba(255,255,255,.82);line-height:1.7;max-width:520px}.inat-cta-btns{display:flex;flex-direction:column;gap:10px;flex-shrink:0}.cta-btn{display:inline-flex;align-items:center;gap:8px;padding:11px 20px;border-radius:8px;font-size:13px;font-weight:700;transition:all .18s;white-space:nowrap}.cta-btn-primary{background:#fff;color:var(--sky)}.cta-btn-primary:hover{background:#e8f0ff}.cta-btn-secondary{background:rgba(255,255,255,.15);color:#fff;border:1.5px solid rgba(255,255,255,.3)}.cta-btn-secondary:hover{background:rgba(255,255,255,.25)}
+.species-nav{display:flex;justify-content:space-between;align-items:center;margin-top:44px;padding-top:22px;border-top:2px solid var(--border);gap:12px;flex-wrap:wrap}.species-nav a{font-size:13px;font-weight:700;color:var(--sky-light);padding:9px 18px;border:1.5px solid #c0d8e8;border-radius:8px;background:#f0f8ff;transition:all .18s}.species-nav a:hover{background:var(--sky);color:#fff;border-color:var(--sky)}.species-nav .center-link{background:var(--sky);color:#fff;border-color:var(--sky)}.species-nav .center-link:hover{background:var(--sky-mid)}
+.site-footer{background:#1a3a15;color:rgba(255,255,255,.65);text-align:center;padding:22px;font-size:13px}
+@media(max-width:720px){.hero-inner{grid-template-columns:1fr}.hero-photo{display:none}.infobar-inner{grid-template-columns:1fr 1fr}.kv-grid{grid-template-columns:1fr 1fr}.two-col,.smart-grid,.diagram,.inat-cta{grid-template-columns:1fr}.obs-grid{grid-template-columns:1fr 1fr}.site-header nav{display:none}}
+
+
+/* ── SISARI TOPNAV ── */
+.ins-topnav-wrap{background:linear-gradient(90deg,#142212 0%,#182a14 45%,#132312 100%);border-bottom:1px solid rgba(201,168,76,.18);position:sticky;top:0;z-index:200;box-shadow:0 1px 0 rgba(255,255,255,.03) inset}
+html.admin-bar .ins-topnav-wrap{top:32px}
+.ins-topnav{max-width:1240px;margin:0 auto;padding:0 18px;display:flex;align-items:center;min-height:70px;gap:4px;flex-wrap:wrap}
+.ins-topnav-link{position:relative;color:rgba(255,255,255,.62);font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;padding:22px 10px 20px;transition:color .2s;font-family:'Outfit',system-ui,sans-serif;white-space:nowrap;text-decoration:none}
+.ins-topnav-link:hover{color:#f4f0e6}
+.ins-topnav-link.is-active{color:#c9a84c}
+.ins-topnav-link.is-active::after{content:"";position:absolute;left:10px;right:10px;bottom:0;height:3px;border-radius:3px;background:#c9a84c}
+.ins-topnav-sep{color:rgba(255,255,255,.2);padding:0 2px;font-size:14px;align-self:center}
+.ins-topnav-current{color:rgba(255,255,255,.88);font-size:14px;font-weight:600;letter-spacing:.01em;text-transform:none;padding:22px 8px 20px;font-family:'Outfit',system-ui,sans-serif;font-style:italic;max-width:300px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.ins-topnav-current-inline{color:var(--gold);font-size:.84em;text-transform:none;letter-spacing:0;font-weight:700;margin-left:2px;max-width:190px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.ins-warn-bar{background:linear-gradient(90deg,#8b1e1e,#b91c1c);color:#fff;padding:9px 24px;font-size:12.5px;font-weight:600;display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+/* ── HIDE OLD HEADER ── */
+.site-header,.breadcrumb-bar,.top-banner{display:none!important}
+/* ── FONT FIX ── */
+.common-name{font-family:var(--font-serif)!important;font-weight:300!important;letter-spacing:0!important}
+/* ── WING DIAGRAM ENHANCED ── */
+.wing-diagram-box{background:linear-gradient(135deg,#0f2744,#1a3a5c);border-radius:12px;padding:22px 24px;display:flex;gap:24px;align-items:center;margin-bottom:16px;border:1px solid rgba(201,168,76,.2)}
+.wing-diagram-box .wd-svg{flex-shrink:0}
+.wing-diagram-box .wd-legend{flex:1;color:#fff}
+.wing-diagram-box .wd-title{font-size:11px;text-transform:uppercase;letter-spacing:.12em;color:#c9a84c;font-weight:700;margin-bottom:10px;font-family:'Outfit',sans-serif}
+.wing-diagram-box .wd-legend ul{list-style:none;margin:0;padding:0}
+.wing-diagram-box .wd-legend li{display:flex;align-items:flex-start;gap:8px;font-size:13px;color:rgba(255,255,255,.88);line-height:1.55;margin-bottom:7px}
+.wing-diagram-box .wd-dot{width:13px;height:13px;border-radius:2px;flex-shrink:0;margin-top:2px}
+/* Legacy diagram class compat */
+.diagram{background:linear-gradient(135deg,#0f2744,#1a3a5c)!important;border-radius:12px!important;padding:22px 24px!important;border:1px solid rgba(201,168,76,.2)!important}
+.diagram h4{color:#c9a84c!important}
+@media(max-width:640px){.wing-diagram-box{flex-direction:column}.ins-topnav{padding:0 12px}.ins-topnav-current{display:none}.ins-topnav-current-inline{color:var(--gold);font-size:.84em;text-transform:none;letter-spacing:0;font-weight:700;margin-left:2px;max-width:190px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}}
+
+
+/* Added normalization blocks */
+.monitoring-intro{margin-bottom:24px;text-align:center}
+.monitoring-intro h2{font-family:var(--font-serif, ui-serif, Georgia, serif);font-weight:300;font-size:clamp(2rem,3.1vw,2.7rem);line-height:1.15;color:#23405a;margin:0 0 12px}
+.monitoring-intro p{max-width:760px;margin:0 auto;color:#5b6775;font-size:14.5px;line-height:1.8}
+.id-box{display:grid;grid-template-columns:auto 1fr;gap:28px;align-items:center;background:linear-gradient(135deg,#11283b,#1c425c);color:#fff;border-radius:16px;padding:24px;border:1px solid rgba(217,191,120,.18);margin:18px 0 16px}
+.id-box svg{max-width:180px;height:auto}.id-legend ul{list-style:none;padding:0;margin:0}.id-legend li{display:flex;align-items:flex-start;gap:8px;margin-bottom:8px;font-size:13px;line-height:1.58;color:rgba(255,255,255,.9)}.id-title{font-size:11px;text-transform:uppercase;letter-spacing:.12em;color:#e8cc7a;font-weight:800;margin-bottom:10px}.id-dot{width:14px;height:14px;border-radius:4px;flex:0 0 14px;margin-top:3px}
+.pheno-section{margin:18px 0 18px}.pheno-title{font-size:12px;text-transform:uppercase;letter-spacing:.1em;color:#5c6470;font-weight:800;margin-bottom:12px}
+.pheno-grid{display:grid;grid-template-columns:repeat(12,1fr);gap:6px}.pheno-month{background:#fff;border:1px solid #e0dbd3;border-radius:12px;padding:8px 4px 10px;text-align:center;box-shadow:0 3px 12px rgba(17,25,40,.03)}
+.m-name{display:block;font-size:10px;font-weight:800;letter-spacing:.08em;color:#6b7280;margin-bottom:6px}.m-icon{display:flex;align-items:center;justify-content:center;width:34px;height:34px;margin:0 auto 6px;border-radius:10px;font-size:16px;font-weight:800}.m-desc{display:block;font-size:10px;line-height:1.28;color:#43505e}
+.ph-absent .m-icon{background:#f0ede8}.ph-partial .m-icon{background:#fff2cb}.ph-flight .m-icon{background:#dff1ff}.ph-peak .m-icon{background:#cdeccf}.ph-hiber .m-icon{background:#e7eef8}.ph-larva .m-icon{background:#f7e4d0}.ph-underground .m-icon{background:#ede7f7}.ph-colony .m-icon{background:#fbe7b9}.ph-repro .m-icon{background:#f8d9df}
+.pheno-legend{display:flex;gap:10px;flex-wrap:wrap;margin-top:12px}.pheno-key{display:inline-flex;align-items:center;gap:7px;padding:6px 10px;border-radius:999px;background:#fff;border:1px solid #e0dbd3;font-size:12px;color:#4b5563}.phsw{width:14px;height:14px;border-radius:4px;display:inline-block}.phsw.ph-absent{background:#f0ede8}.phsw.ph-partial{background:#fff2cb}.phsw.ph-flight{background:#dff1ff}.phsw.ph-peak{background:#cdeccf}.phsw.ph-hiber{background:#e7eef8}.phsw.ph-larva{background:#f7e4d0}.phsw.ph-underground{background:#ede7f7}.phsw.ph-colony{background:#fbe7b9}.phsw.ph-repro{background:#f8d9df}
+@media(max-width:900px){.id-box{grid-template-columns:1fr;text-align:center}.pheno-grid{grid-template-columns:repeat(6,1fr)}}
+
+
+@media(max-width:960px){.hero-inner{grid-template-columns:1fr!important}.hero-photo{order:-1;min-height:260px;border-left:none!important;border-bottom:1px solid rgba(255,255,255,.08)}.hero-photo img{width:100%;height:100%;object-fit:cover;display:block}.hero-text{padding:32px 24px 28px!important}}
+@media(max-width:640px){.hero-text{padding:30px 18px 24px!important}.common-name{font-size:clamp(2rem,10vw,2.7rem)!important}.hero-photo{min-height:220px!important}.ins-topnav-current{display:none}.ins-topnav-current-inline{color:var(--gold);font-size:.84em;text-transform:none;letter-spacing:0;font-weight:700;margin-left:2px;max-width:190px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}}
+
+.review-grid-4{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
+.review-grid-3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-top:12px}
+.review-micro,.review-mini{background:#fff;border:1px solid var(--border);border-radius:12px;padding:14px}
+.review-micro h4,.review-mini h4{font-size:13px;color:var(--forest-dark);margin-bottom:6px;font-family:var(--font-sans)}
+.review-micro p,.review-mini p{font-size:13.5px;line-height:1.72;color:var(--text)}
+.legend-note,.note-soft{margin-top:12px;font-size:13px;line-height:1.7;color:var(--text-muted);background:#f7f4ef;border:1px solid var(--border);border-radius:10px;padding:10px 12px}
+.pheno-grid{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:10px;margin-top:14px}
+.pheno-card{border-radius:12px;padding:12px 10px;border:1px solid var(--border)}
+.pheno-month{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--forest-dark);margin-bottom:6px}
+.pheno-note{font-size:12px;line-height:1.55;color:var(--text)}
+.phase-rest{background:#f1eee8}.phase-early{background:#eef5ff}.phase-active{background:#eef8f0}.phase-peak{background:#fff1cf;border-color:#edc661}.phase-late{background:#fff3e8}
+.pheno-legend{display:flex;flex-wrap:wrap;gap:10px;margin-top:12px}.pheno-chip{display:inline-flex;align-items:center;gap:7px;font-size:12px;color:var(--text-muted);background:#fff;border:1px solid var(--border);border-radius:999px;padding:6px 10px}.pheno-dot{width:10px;height:10px;border-radius:50%;display:inline-block}.pheno-dot.early{background:#cfe0ff}.pheno-dot.active{background:#cfeccb}.pheno-dot.peak{background:#ffd779}.pheno-dot.late{background:#ffd7b0}.pheno-dot.rest{background:#d9d4ca}
+.cta-green{margin-top:14px;background:#edf7f0;border:1px solid #b5d5b5;border-radius:12px;padding:14px 16px}.cta-green h3{font-size:16px;color:#1f5d2b;margin-bottom:6px;font-family:var(--font-sans)}.cta-green p{font-size:14px;line-height:1.7;color:#21442a}
+
+@media(max-width:900px){.hero-inner{grid-template-columns:1fr!important}.hero-photo{order:-1;aspect-ratio:16/10;min-height:240px!important}.ins-topnav-current{display:none!important}.ins-topnav-current-inline{color:var(--gold);font-size:.84em;text-transform:none;letter-spacing:0;font-weight:700;margin-left:2px;max-width:190px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.review-grid-4{grid-template-columns:repeat(2,minmax(0,1fr))}.review-grid-3{grid-template-columns:1fr}}
+@media(max-width:640px){.hero-text{padding:38px 22px 34px!important}.page-wrap{padding:28px 18px 48px!important}.common-name{font-size:clamp(2rem,10vw,2.7rem)!important}.pheno-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.kv-grid,.obs-grid{grid-template-columns:1fr!important}}
+
+
+/* unified mobile hero + thin species names */
+.common-name,.latin-name{font-weight:300!important}
+.hero-photo img{display:block!important;visibility:visible!important;opacity:1!important;max-width:100%}
+@media(max-width:960px){.hero-inner{grid-template-columns:1fr!important}.hero-photo{order:-1!important;display:block!important;aspect-ratio:16/10!important;min-height:240px!important;border-left:none!important;border-bottom:1px solid rgba(255,255,255,.08)!important}.hero-photo img{width:100%!important;height:100%!important;object-fit:cover!important;object-position:center center!important}}
+@media(max-width:640px){.hero-photo{min-height:220px!important}.hero-photo-cap{font-size:10px!important;line-height:1.45!important;padding:16px 12px 11px!important}.common-name{font-size:clamp(2rem,10vw,2.7rem)!important}}
+
+</style>
+<style id="rajac-ds-menu-static-css">
+:root{--rajac-nav:#0d1b2a;--rajac-gold:#d8b55b;--rajac-nav-text:rgba(255,255,255,.72)}
+.rajac-ds-nav{background:var(--rajac-nav);position:sticky;top:0;z-index:999999;border-bottom:1px solid rgba(255,255,255,.08);font-family:"Cormorant Garamond","EB Garamond",Garamond,"Palatino Linotype","Book Antiqua",Georgia,"Times New Roman",serif!important}
+body.admin-bar .rajac-ds-nav{top:32px}.rajac-ds-nav *{box-sizing:border-box}.rajac-ds-nav-inner{max-width:1180px;margin:0 auto;padding:0 18px;display:flex;align-items:stretch;min-height:56px;gap:0;overflow-x:auto;scrollbar-width:none}.rajac-ds-nav-inner::-webkit-scrollbar{display:none}.rajac-ds-home{display:flex;align-items:center;gap:9px;padding-right:20px;margin-right:8px;border-right:1px solid rgba(255,255,255,.12);flex-shrink:0;color:var(--rajac-gold)!important;text-decoration:none!important;font-weight:600;font-size:16px;letter-spacing:.03em}.rajac-ds-home-mark{width:18px;height:18px;display:inline-grid;place-items:center;color:var(--rajac-gold)}.rajac-ds-nav-item{position:relative;display:flex;align-items:center;gap:7px;padding:0 15px;color:var(--rajac-nav-text)!important;font-size:15px;font-weight:600;letter-spacing:.045em;text-transform:uppercase;white-space:nowrap;text-decoration:none!important}.rajac-ds-nav-item:hover{color:rgba(255,255,255,.94)!important;background:rgba(255,255,255,.035)}.rajac-ds-icon{font-size:15px;line-height:1}.rajac-ds-nav-item.rajac-ds-active{color:var(--rajac-gold)!important}.rajac-ds-nav-item.rajac-ds-active:after{content:"";position:absolute;left:15px;right:15px;bottom:8px;height:2px;border-radius:2px;background:var(--rajac-gold)}.rajac-ds-nav-trofo{color:#c8a24e!important}.rajac-ds-nav-trofo:hover{color:#f0cb78!important}.ins-topnav-wrap,.site-header{display:none!important;height:0!important;min-height:0!important;max-height:0!important;overflow:hidden!important;visibility:hidden!important}@media(max-width:720px){.rajac-ds-nav-inner{padding:0 12px}.rajac-ds-home{padding-right:14px}.rajac-ds-nav-item{font-size:13px;padding:0 12px}.rajac-ds-nav-item.rajac-ds-active:after{left:12px;right:12px}}
+
+/* v5: чиста навигација врста и извор фотографије на hover */
+.back-link{display:none!important}
+.hero-photo{cursor:help}
+.hero-photo:focus{outline:2px solid rgba(255,255,255,.55);outline-offset:-3px}
+.hero-photo-cap{opacity:0;transform:translateY(8px);transition:opacity .18s ease,transform .18s ease;pointer-events:none}
+.hero-photo:hover .hero-photo-cap,.hero-photo:focus .hero-photo-cap,.hero-photo:focus-within .hero-photo-cap{opacity:1;transform:translateY(0)}
+@media(hover:none){.hero-photo-cap{opacity:1;transform:none}}
+.species-nav{display:grid!important;grid-template-columns:1fr auto 1fr;align-items:center;margin-top:42px;padding-top:24px;border-top:2px solid var(--border,#e0dbd3);gap:14px;clear:both}
+.species-nav a{display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:10px 20px;border-radius:10px;border:1.5px solid #b8d3e7;background:#f7fbff;color:var(--sky,#0b2744)!important;font-size:13px;font-weight:800;text-decoration:none!important;box-shadow:0 1px 0 rgba(255,255,255,.8) inset;white-space:nowrap}
+.species-nav .prev-link{justify-self:start}.species-nav .next-link{justify-self:end}.species-nav .center-link{justify-self:center;background:var(--sky,#0b2744)!important;color:#fff!important;border-color:var(--sky,#0b2744)!important}
+.species-nav a:hover{background:var(--sky,#0b2744)!important;color:#fff!important;border-color:var(--sky,#0b2744)!important}
+@media(max-width:640px){.species-nav{grid-template-columns:1fr;gap:8px}.species-nav .prev-link,.species-nav .next-link,.species-nav .center-link{justify-self:stretch;width:100%}}
+</style>
+<link rel="stylesheet" href="../insekti-responsive.css?v=20260716-v3">
+
+<link rel="stylesheet" href="/insekti/insekti-krediti-kao-ptice.css?v=20260817v3" data-pio="PIO-INSEKTI-FOTO-KREDITI-20260817-V3">
+<style id="pio-insekti-credit-nobg-final" data-pio="PIO-INSEKTI-CREDIT-NOBG-FINAL-20260817">
+/* FINAL: kredit je samo taman tekst preko fotografije — bez trake, gradijenta ili box-a. */
+html body .species-hero .hero-photo .hero-photo-cap,
+html body .hero-photo .hero-photo-cap{
+  position:absolute!important;
+  left:12px!important;right:12px!important;bottom:9px!important;
+  width:auto!important;max-width:calc(100% - 24px)!important;
+  z-index:999!important;margin:0!important;padding:0!important;
+  border:0!important;border-radius:0!important;
+  background:transparent!important;background-color:transparent!important;background-image:none!important;
+  box-shadow:none!important;backdrop-filter:none!important;-webkit-backdrop-filter:none!important;
+  color:#111827!important;
+  font:600 11px/1.35 Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif!important;
+  font-style:normal!important;text-align:left!important;text-transform:none!important;letter-spacing:0!important;
+  text-shadow:0 1px 1px rgba(255,255,255,.98),0 0 3px rgba(255,255,255,.92),0 0 6px rgba(255,255,255,.72)!important;
+  opacity:0!important;visibility:hidden!important;transform:translateY(4px)!important;pointer-events:none!important;
+  transition:opacity .14s ease 0s,transform .14s ease 0s,visibility 0s linear .14s!important;
+}
+html body .species-hero .hero-photo .hero-photo-cap *,
+html body .hero-photo .hero-photo-cap *{
+  background:transparent!important;background-color:transparent!important;background-image:none!important;
+  border:0!important;border-radius:0!important;box-shadow:none!important;
+  color:#111827!important;text-shadow:inherit!important;
+}
+html body .hero-photo .hero-photo-cap::before,
+html body .hero-photo .hero-photo-cap::after,
+html body .hero-photo .hero-photo-cap *::before,
+html body .hero-photo .hero-photo-cap *::after{background:transparent!important;background-image:none!important;box-shadow:none!important;}
+html body .hero-photo .hero-photo-cap a{color:#111827!important;text-decoration:none!important;pointer-events:inherit!important;}
+html body .hero-photo .hero-photo-cap .pio-original{text-decoration:underline!important;text-underline-offset:2px!important;}
+@media (hover:hover) and (pointer:fine){
+  html body .species-hero .hero-photo:hover .hero-photo-cap,
+  html body .hero-photo:hover .hero-photo-cap,
+  html body .hero-photo:focus-within .hero-photo-cap,
+  html body .hero-photo.pio-credit-open .hero-photo-cap,
+  html body .hero-photo.is-credit-visible .hero-photo-cap{
+    opacity:1!important;visibility:visible!important;transform:translateY(0)!important;pointer-events:auto!important;
+    transition:opacity .14s ease 1s,transform .14s ease 1s,visibility 0s linear 1s!important;
+  }
+}
+@media (hover:none), (pointer:coarse){
+  html body .hero-photo.pio-credit-open .hero-photo-cap,
+  html body .hero-photo.is-credit-visible .hero-photo-cap{
+    opacity:1!important;visibility:visible!important;transform:none!important;pointer-events:auto!important;transition:none!important;
+  }
+}
+@media(max-width:680px){
+  html body .hero-photo .hero-photo-cap{left:8px!important;right:8px!important;bottom:7px!important;max-width:calc(100% - 16px)!important;font-size:10px!important;}
+}
+</style>
+</head>
+<body class="pio-insekti-responsive">
+<nav aria-label="Главни мени ПИО Рајац" class="rajac-ds-nav"><div class="rajac-ds-nav-inner"><a class="rajac-ds-home" href="https://piorajac.rs/"><span aria-hidden="true" class="rajac-ds-home-mark">⊙</span><span>ПИО Рајац</span></a><button class="pio-insekti-menu-toggle" type="button" aria-expanded="false" aria-label="Отвори мени"><span class="pio-insekti-menu-icon" aria-hidden="true"></span>МЕНИ</button><a class="rajac-ds-nav-item" href="https://piorajac.rs/biljke/"><span aria-hidden="true" class="rajac-ds-icon">🌿</span><span>БИЉКЕ</span></a><a class="rajac-ds-nav-item" href="https://piorajac.rs/ptice/"><span aria-hidden="true" class="rajac-ds-icon">🦉</span><span>ПТИЦЕ</span></a><a class="rajac-ds-nav-item rajac-ds-active" href="https://piorajac.rs/insekti/"><span aria-hidden="true" class="rajac-ds-icon">🦋</span><span>ИНСЕКТИ</span></a><a class="rajac-ds-nav-item" href="https://piorajac.rs/sisari/"><span aria-hidden="true" class="rajac-ds-icon">🐾</span><span>СИСАРИ</span></a><a class="rajac-ds-nav-item" href="https://piorajac.rs/gljive/"><span aria-hidden="true" class="rajac-ds-icon">🍄</span><span>ГЉИВЕ</span></a><a class="rajac-ds-nav-item rajac-ds-nav-trofo" href="https://piorajac.rs/trofodinamika/"><span aria-hidden="true" class="rajac-ds-icon">🔗</span><span>ТРОФОДИНАМИКА</span></a></div></nav>
+
+<div class="top-banner banner-strict">СТЕНОЕНДЕМИТ РАЈЦА И ТИПСКИ ПЕЋИНСКИ ТАКСОН<span>описан из пећине у Брезацима; посебно осетљив на узнемиравање и измену микроклиме</span></div>
+<header class="site-header">
+<a class="logo" href="https://piorajac.rs">Предео изузетних одлика „Рајац”</a>
+<nav>
+<a href="https://piorajac.rs/">ПИО „Рајац”</a>
+<a href="https://piorajac.rs/flora">Флора Рајца</a>
+<a href="https://piorajac.rs/ptice">Птице Рајца</a>
+<a href="https://piorajac.rs/sisari">Сисари Рајца</a>
+<a href="https://piorajac.rs/insekti/">Инсекти Рајца</a>
+</nav>
+</header>
+<div class="breadcrumb-bar"><div class="inner"><a href="https://piorajac.rs">Почетна</a><span class="sep">/</span><a href="https://piorajac.rs/insekti/">Инсекти Рајца</a><span class="sep">/</span>Сувоборски дувалијус</div></div>
+<section class="species-hero">
+<div class="hero-inner">
+<div class="hero-text">
+<h1 class="common-name">Сувоборски дувалијус</h1>
+<div class="latin-name">Duvalius (Duvalius) suvoborensis</div>
+<p class="hero-short">Троглобионтни тврдокрилац описан са Рајца, један од најјачих биоспелеолошких аргумената да подземна станишта овог подручја имају висок конзервациони значај, локални ендемизам и потребу за веома опрезним управљањем.</p>
+<div class="hero-pills"><span class="pill pill-order">Coleoptera</span><span class="pill pill-family">Carabidae</span><span class="pill pill-cave">троглобионт</span><span class="pill pill-alert">стеноендемит</span></div>
+<div class="hero-tags"><span class="htag">пећина</span><span class="htag">ендемит Рајца</span><span class="htag">подземна фауна</span><span class="htag">осетљиво станиште</span></div>
+</div>
+<div class="hero-photo" tabindex="0" aria-label="Извор фотографије доступан је задржавањем миша, фокусом или додиром.">
+<img alt="Duvalius (Duvalius) suvoborensis" data-fallback="/insekti/assets/order-coleoptera.webp" decoding="async" fetchpriority="high" height="1128" loading="eager" onerror="if(this.dataset.fallback&amp;&amp;!this.dataset.fallbackTried&amp;&amp;this.src!==this.dataset.fallback){this.dataset.fallbackTried='1';this.src=this.dataset.fallback;this.removeAttribute('srcset');return;}this.onerror=null;" sizes="(max-width: 960px) 100vw, 420px" src="/insekti/assets/heroes/duvalius-duvalius-suvoborensis.webp" srcset="/insekti/assets/heroes-mobile/duvalius-duvalius-suvoborensis.webp 640w, /insekti/assets/heroes/duvalius-duvalius-suvoborensis.webp 1280w" width="676"/>
+<div class="hero-photo-cap"><a class="pio-insect-credit" href="https://commons.wikimedia.org/wiki/File:Trechus_quadristriatus.jpg" target="_blank" rel="noopener noreferrer"><strong>Илустрација: Edmund Reitter / Wikimedia Commons</strong>, Public domain — <span class="pio-original">оригинал</span></a></div>
+</div>
+</div>
+</section>
+<section class="infobar"><div class="infobar-inner"><div class="info-cell"><div class="info-label">Тип локалитета</div><div class="info-val">пећина у Брезацима</div></div><div class="info-cell"><div class="info-label">Екологија</div><div class="info-val">прави троглобионт</div></div><div class="info-cell"><div class="info-label">Значај</div><div class="info-val">локални ендемит Рајца</div></div><div class="info-cell"><div class="info-label">Ризик</div><div class="info-val">светло, гажење, сушење</div></div><div class="info-cell"><div class="info-label">Приоритет</div><div class="info-val">мир и микроклима</div></div></div>
+</section>
+<main class="page-wrap">
+<div class="tabs" id="mainTabs">
+<button class="tab active" data-tab="opis">🔍 Опис</button>
+<button class="tab" data-tab="pecina">🕳️ Станиште</button>
+<button class="tab" data-tab="biologija">🔬 Биологија</button>
+<button class="tab" data-tab="ekologija">♻️ Значај</button>
+<button class="tab" data-tab="pretnje">⚠️ Претње</button>
+<button class="tab" data-tab="monitoring">📡 Мониторинг</button>
+<button class="tab" data-tab="izvori">📚 Налази и извори</button>
+</div>
+<div class="tab-panel active" id="tab-opis">
+<div class="kv-grid"><div class="kv-item"><div class="kv-l">Таксонска група</div><div class="kv-v">Carabidae / Trechini</div></div><div class="kv-item"><div class="kv-l">Еколошки профил</div><div class="kv-v">облигатна подземна врста</div></div><div class="kv-item"><div class="kv-l">Локални контекст</div><div class="kv-v">типски таксон везан за Рајац</div></div><div class="kv-item"><div class="kv-l">Кључна особина</div><div class="kv-v">дугорочна зависност од стабилне влаге и мрака</div></div><div class="kv-item"><div class="kv-l">Управљачки смисао</div><div class="kv-v">биолошки аргумент за строгу заштиту пећине</div></div><div class="kv-item"><div class="kv-l">Јавни режим податка</div><div class="kv-v">само генерализована локација</div></div></div>
+<div class="card"><div class="card-title"><span>🧾</span> Основни преглед врсте</div><div class="card-body"><p>Duvalius (Duvalius) suvoborensis је један од најважнијих локалних таксона у целом блоку „Инсекти Рајца“, јер је описан управо са подручја Рајца, из пећине у Брезацима. То га чини много више од још једне ситне бубе у списку — он представља доказ да Рајац има сопствену, еволутивно издвојену подземну фауну.</p><p>Овакве врсте су типично безначајне за случајног посетиоца, али пресудне за заштиту природе. Њихово присуство показује да подземни простор није само геоморфолошка појава, већ живо и осетљиво станиште чији се квалитет мери стабилношћу микроклиме, влагом, природним наносом и одсуством узнемиравања.</p><p>У литератури постоји и каснија таксономска напомена да је овај таксон издвајан у род <em>Javorella</em>, али је за потребе сајта задржан назив који је усаглашен са постојећим slug-ом, базом Рајца и најпрепознатљивијим навођењем у локалним материјалима.</p></div></div>
+<div class="diagram">
+<div>
+<h4>Зашто је ова страница важна</h4>
+<ul>
+<li>Приказује врсту која Рајцу даје снажан биоспелеолошки идентитет.</li>
+<li>Повезује ентомолошки податак са управљањем пећином и режимом посета.</li>
+<li>Уводи опрезан јавни приступ — без непотребног откривања осетљивих микролокација.</li>
+</ul>
+</div>
+<div>
+<h4>Практична порука за управљање</h4>
+<p>Код правих пећинских ендемита није циљ „пронаћи што више јединки“, већ очувати услове да популација опстане. Највећа вредност странице је у томе што локални налаз претвара у јасан конзервациони аргумент.</p>
+</div>
+</div>
+<div class="ext-links"><a class="ext-btn" href="https://www.eds.org.rs/AES/Vol6/Vol6%20No%2002.pdf" target="_blank">📄 Оригинални опис</a><a class="ext-btn gbif" href="https://subtbiol.pensoft.net/article/76049/" target="_blank">🧭 Каталог српских Duvalius</a><a class="ext-btn" href="https://rajac.rs/%D0%B1%D0%B8%D1%99%D0%BA%D0%B5/" target="_blank">🌿 Локални контекст Рајца</a></div>
+</div>
+<div class="tab-panel" id="tab-pecina">
+<div class="cave-card"><div class="card-title"><span>🕳️</span> Станиште и локални контекст</div><div class="card-body"><p>За ову врсту кључни су стабилни, влажни и тамни делови подземног простора у којима нема честих осцилација температуре, јаких светлосних поремећаја и механичког ремећења супстрата. То су микростаништа у којима се органска материја споро акумулира и разлаже, а ситни бескичмењаци чине хранбену основу за пећинске предаторе.</p><p>На Рајцу овај таксон треба тумачити као врсту везану за веома ограничен простор и веома специфичне услове. Због тога се на сајту наводи само општа локација, док би прецизнији подаци требало да остану у интерној бази управљача и истраживача.</p></div></div>
+<div class="two-col">
+<div class="info-box"><h4>💧 Кључни услови</h4><p>Висока и релативно стабилна влажност, одсуство јаких струјања ваздуха, природни нанос органског материјала и непоремећен седимент. Код правих троглобионата чак и мали поремећаји могу дуго остати видљиви у популацији.</p></div>
+<div class="info-box"><h4>🔎 Где га има смисла тражити</h4><p>Не у „атрактивним“ туристичким тачкама, већ у мирним деловима подземног система, нарочито тамо где се задржава влага, ситан нанос, гуано или органски детритус. За јавност је важнија порука о очувању станишта него прецизна микролокација.</p></div>
+</div>
+</div>
+<div class="tab-panel" id="tab-biologija"><div class="pheno-section"><div class="pheno-title">① ФЕНОСЕЗОНСКИ КАЛЕНДАР НА РАЈЦУ</div><div class="pheno-grid"><div class="pheno-month ph-underground"><span class="m-name">ЈАН</span><span class="m-icon">●</span><span class="m-desc">могућ налаз</span></div><div class="pheno-month ph-underground"><span class="m-name">ФЕБ</span><span class="m-icon">●</span><span class="m-desc">могућ налаз</span></div><div class="pheno-month ph-underground"><span class="m-name">МАР</span><span class="m-icon">●</span><span class="m-desc">влага</span></div><div class="pheno-month ph-underground"><span class="m-name">АПР</span><span class="m-icon">◎</span><span class="m-desc">повољно</span></div><div class="pheno-month ph-underground"><span class="m-name">МАЈ</span><span class="m-icon">◎</span><span class="m-desc">повољно</span></div><div class="pheno-month ph-underground"><span class="m-name">ЈУН</span><span class="m-icon">●</span><span class="m-desc">стабилно</span></div><div class="pheno-month ph-underground"><span class="m-name">ЈУЛ</span><span class="m-icon">●</span><span class="m-desc">стабилно</span></div><div class="pheno-month ph-underground"><span class="m-name">АВГ</span><span class="m-icon">●</span><span class="m-desc">стабилно</span></div><div class="pheno-month ph-underground"><span class="m-name">СЕП</span><span class="m-icon">◎</span><span class="m-desc">влага</span></div><div class="pheno-month ph-underground"><span class="m-name">ОКТ</span><span class="m-icon">◎</span><span class="m-desc">влага</span></div><div class="pheno-month ph-underground"><span class="m-name">НОВ</span><span class="m-icon">●</span><span class="m-desc">могућ налаз</span></div><div class="pheno-month ph-underground"><span class="m-name">ДЕЦ</span><span class="m-icon">●</span><span class="m-desc">могућ налаз</span></div></div><div class="pheno-legend"><span class="pheno-key"><span class="phsw ph-underground"></span>Подземна активност / могућ налаз</span><span class="pheno-key"><span class="phsw ph-peak"></span>Влажнији периоди погодни за преглед</span></div></div>
+<div class="dark-card"><div class="card-title"><span>🔬</span> Биологија и начин живота</div><div class="card-body"><p>Као и други подземни тречини, ова врста је прилагођена животу у тами: тело је депигментисано, чулни апарати су функционално важнији од боје, а читав животни циклус ослања се на дугорочну стабилност станишта. Популације су обично малобројне и просторно ограничене.</p><p>Највероватније је реч о ситном предатору који користи доступне бескичмењаке влажног супстрата. Због спорог ритма подземних екосистема, сваки губитак микростаништа може имати знатно веће последице него код површинских сродника.</p></div></div>
+<div class="two-col">
+<div class="info-box"><h4>🐾 Шта то значи у пракси</h4><p>Одсуство налаза током једног обиласка не значи да врсте нема. Подземне популације су често расуте, сезонски неупадљиве и зависне од микролокација које се не уочавају без пажљивог рада.</p></div>
+<div class="info-box"><h4>🧬 Научна вредност</h4><p>Због локалног ендемизма овакви таксони имају већу научну вредност од бројних широко распрострањених врста. Сваки поуздан налаз и свако добро документовано микростаниште доприносе разумевању еволуције пећинске фауне у Србији.</p></div>
+</div>
+</div>
+<div class="tab-panel" id="tab-ekologija">
+<div class="eco-card"><div class="card-title"><span>🌿</span> Еколошки и управљачки значај</div><div class="card-body"><p>За Рајац, <em>Duvalius suvoborensis</em> није само фаунистички податак већ врста која подиже укупну вредност подземних локалитета. Његово присуство потврђује да пећине и јаме треба посматрати као приоритетна станишта заштите, а не само као геолошке објекте или излетничке тачке.</p><p>Управљачки гледано, ова врста оправдава строжи режим заштите улазних и унутрашњих зона, ограничење непотребних посета и опрез при било каквом „уређивању“ или чишћењу подземних објеката.</p></div></div>
+<div class="smart-grid"><div class="smart-card"><h4>🕳️ Пећина као станиште</h4><p>Локалитет мора бити третиран као жив систем, а не само као празан простор за обилазак.</p></div><div class="smart-card"><h4>📚 Значај за науку</h4><p>Типски таксон са Рајца даје снажан аргумент за даља циљана истраживања подземне фауне.</p></div><div class="smart-card"><h4>🧭 Значај за управљање</h4><p>Омогућава да се заштита пећине образложи биолошким, а не само геолошким разлозима.</p></div><div class="smart-card"><h4>🌙 Осетљивост на поремећаје</h4><p>Светло, бука и механичко ремећење код оваквих врста имају знатно већи значај него код површинских инсеката.</p></div></div>
+</div>
+<div class="tab-panel" id="tab-pretnje">
+<div class="warn-card"><div class="card-title"><span>⚠️</span> Главне претње</div><div class="card-body"><p>Највећи ризици за ову врсту нису класичне „велике“ претње, већ мали, али упорни поремећаји: често улажење у пећину, јако осветљење, гажење влажних седимената, уклањање наноса или гуана, померање камења и промена влажности око улаза. Подземни ендемити најтеже подносе управо овакве ситне интервенције.</p></div></div>
+<div class="smart-grid"><div class="smart-card"><h4>🚫 Шта избегавати</h4><p>„Чишћење“ унутрашњости, ширење стазе, осветљавање пећине и честа демонстративна обилажења.</p></div><div class="smart-card"><h4>🌡️ Микроклиматски ризик</h4><p>Сушење улаза, мењање протока воде и уклањање природних препрека могу дугорочно изменити услове унутра.</p></div><div class="smart-card"><h4>📣 Ризик јавног промовисања</h4><p>Код оваквих врста није добро ширити прецизне детаље о приступу локалитету без јасног заштитног режима.</p></div><div class="smart-card"><h4>🛡️ Мера очувања</h4><p>Најбоља мера је минимум интервенције и максимум архивирања података у стручном режиму.</p></div></div>
+</div>
+<div class="tab-panel" id="tab-monitoring">
+<div class="card"><div class="card-title"><span>📡</span> Како пратити врсту на Рајцу</div><div class="card-body"><p>Мониторинг треба да буде редак, циљан и минимално инвазиван. Код правих пећинских таксона приоритет је потврда присуства, стања микростаништа и евентуалних поремећаја, а не масовно узорковање.</p></div></div>
+<div class="smart-grid"><div class="smart-card"><h4>📷 Фото-потврда</h4><p>Макро фотографија јединке и супстрата има већу вредност од неформалног „виђења“ без доказа.</p></div><div class="smart-card"><h4>🌡️ Микроклима</h4><p>Бележити температуру, влажност, присуство воде, наноса и знаке недавног поремећаја.</p></div><div class="smart-card"><h4>🗂️ Интерна архива</h4><p>Детаљне тачке чувати у интерној бази управљача, а на јавном сајту задржати генерализован опис локалитета.</p></div><div class="smart-card"><h4>🧪 Ограничити сакупљање</h4><p>Хватање или изузимање јединки оправдано је само када постоји јасан научни разлог и одговарајући режим дозвола.</p></div></div>
+</div>
+<div class="tab-panel" id="tab-izvori">
+<div class="card"><div class="card-title"><span>📚</span> Налази, статус и извори</div><div class="card-body"><p>Типски локалитет је пећина у Брезацима на Рајцу, одакле је врста и описана. Каснији радови о српским представницима рода <em>Duvalius</em> поново је наводе као пећинску врсту са планине Сувобор/Рајац и потврђују њен локално изузетан значај.</p><p>За јавни приказ је довољно навести општи локалитет и значај. Прецизнији подаци о месту налаза, режиму приступа и интерним белешкама треба да остану у стручном архиву управљача.</p></div></div>
+<div class="two-col"><div class="info-box"><h4>🧭 Спољни извори</h4><p>Оригинални опис врсте, каснији каталог српских таксона рода <em>Duvalius</em> и локални материјали о Рајцу дају довољну основу да се страница ослони на проверљиве податке, а да притом не открива осетљиве детаље.</p></div><div class="info-box"><h4>🔒 Напомена о осетљивости</h4><p>Код стеноендемичних пећинских врста јавна комуникација мора увек бити рестриктивнија од интерне научне документације. То је део добре праксе заштите, а не недостатак података.</p></div></div>
+<div class="ext-links"><a class="ext-btn" href="https://www.eds.org.rs/AES/Vol6/Vol6%20No%2002.pdf" target="_blank">📄 Оригинални опис</a><a class="ext-btn gbif" href="https://subtbiol.pensoft.net/article/76049/" target="_blank">🪲 Каталог и напомене</a><a class="ext-btn" href="https://piorajac.rs/kontakt" target="_blank">📬 Контакт управљача</a></div>
+</div>
+
+<nav class="species-nav" aria-label="Навигација између страница врста">
+  <a class="prev-link" href="https://piorajac.rs/insekti/proteinus-ovalis/" title="Претходна: Протеинус овалис">← Претходна</a>
+  <a class="center-link" href="https://piorajac.rs/insekti/">🪲 Сви инсекти</a>
+  <a class="next-link" href="https://piorajac.rs/insekti/coenagrion-pulchellum/" title="Следећа: Украшена вивка">Следећа →</a>
+</nav>
+</main>
+<footer class="site-footer">ПИО „Рајац”</footer>
+<script>
+(function(){
+  const tabs=document.querySelectorAll('#mainTabs .tab');
+  const panels=document.querySelectorAll('.tab-panel');
+  tabs.forEach(t=>t.addEventListener('click',()=>{
+    tabs.forEach(x=>x.classList.remove('active'));
+    panels.forEach(p=>p.classList.remove('active'));
+    t.classList.add('active');
+    const el=document.getElementById('tab-'+t.dataset.tab);
+    if(el){el.classList.add('active');window.scrollTo({top:document.querySelector('.tabs').offsetTop-70,behavior:'smooth'});}
+  }));
+})();
+</script>
+<script defer="" src="/insekti/assets/insekti-doprinos.js?v=20260817-nobg-final"></script>
+<button id="pio-insekti-vrh" type="button" aria-label="Врати се на врх странице" title="ВРХ"><span class="arr" aria-hidden="true">↑</span><span class="txt">ВРХ</span></button><script defer src="../insekti-responsive.js?v=20260716-v3"></script>
+
+<script src="/insekti/insekti-krediti-kao-ptice.js?v=20260817v3" defer data-pio="PIO-INSEKTI-FOTO-KREDITI-20260817-V3"></script>
+</body>
+</html>

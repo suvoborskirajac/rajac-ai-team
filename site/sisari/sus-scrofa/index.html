@@ -1,0 +1,1106 @@
+<!DOCTYPE html>
+
+<html lang="sr">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Дивља свиња — Sus scrofa | Сисари Рајца | ПИО „Рајац"</title>
+<meta content="Дивља свиња (Sus scrofa) — велики свеједер и интензивни обликовач шумских станишта ПИО Рајац. Опис, трагови, биологија, фото-замке, заштита." name="description"/>
+<style>
+  :root {
+    --forest: #2d5a27;
+    --forest-dark: #1a3a15;
+    --forest-light: #4a7c43;
+    --cream: #f7f4ef;
+    --warm-white: #fdfcfa;
+    --text: #2a2a2a;
+    --text-muted: #5a5a5a;
+    --border: #d8d0c4;
+    --accent: #8b6914;
+    --accent-warm: #c4500a;
+    --iucn-lc: #4caf50;
+    --section-bg: #f2f0eb;
+    --tag-bg: #e8f0e6;
+    --tag-border: #a8c4a4;
+    --shadow: 0 2px 12px rgba(0,0,0,0.08);
+    --shadow-hover: 0 6px 24px rgba(0,0,0,0.14);
+    --radius: 10px;
+    --font-serif: 'Merriweather', Georgia, serif;
+    --font-sans: 'Source Sans 3', system-ui, sans-serif;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: var(--font-sans); font-size: 16px; line-height: 1.75; color: var(--text); background: var(--warm-white); }
+
+  .site-header { background: var(--forest-dark); color: #fff; padding: 0 32px; display: flex; align-items: center; justify-content: space-between; height: 58px; border-bottom: 3px solid var(--forest-light); }
+  .site-header .logo { font-weight: 700; font-size: 15px; color: #fff; text-decoration: none; letter-spacing: 0.05em; text-transform: uppercase; }
+  .site-header nav a { color: rgba(255,255,255,0.85); text-decoration: none; margin-left: 20px; font-size: 12.5px; }
+  .site-header nav a:hover { color: #fff; }
+
+  .breadcrumb-bar { background: var(--cream); border-bottom: 1px solid var(--border); padding: 10px 0; }
+  .breadcrumb-bar .inner { max-width: 900px; margin: 0 auto; padding: 0 24px; font-size: 13px; color: var(--text-muted); }
+  .breadcrumb-bar a { color: var(--forest); text-decoration: none; font-weight: 600; }
+  .breadcrumb-bar .sep { margin: 0 6px; opacity: 0.5; }
+
+  .page-wrap { max-width: 900px; margin: 0 auto; padding: 36px 24px 60px; }
+
+  .species-hero { text-align: center; padding: 8px 0 28px; border-bottom: 2px solid var(--border); margin-bottom: 30px; }
+  .species-hero .common-name { font-family: var(--font-serif); font-size: 2.5rem; font-weight: 700; color: var(--forest-dark); line-height: 1.2; margin-bottom: 6px; }
+  .species-hero .latin-name { font-family: var(--font-serif); font-size: 1.3rem; font-style: italic; color: var(--forest-light); margin-bottom: 14px; }
+  .badges { display: flex; gap: 8px; justify-content: center; flex-wrap: wrap; }
+  .badge { display: inline-flex; align-items: center; gap: 6px; font-size: 13px; font-weight: 700; padding: 5px 14px; border-radius: 20px; letter-spacing: 0.03em; }
+  .badge-iucn { background: var(--iucn-lc); color: #fff; }
+  .badge-game { background: #fff3e0; color: #c05000; border: 1px solid #f0c080; }
+  .badge-pred { background: #e8f0e6; color: var(--forest); border: 1px solid var(--tag-border); }
+
+  .hero-image-wrap { width: 100%; border-radius: var(--radius); overflow: hidden; margin-bottom: 10px; box-shadow: var(--shadow); aspect-ratio: 16/8; background: #6b5a3e; }
+  .hero-image-wrap img { width: 100%; height: 100%; object-fit: cover; object-position: center 40%; display: block; transition: transform 0.4s; }
+  .hero-image-wrap:hover img { transform: scale(1.02); }
+  .img-caption { font-size: 12px; color: var(--text-muted); text-align: center; margin-bottom: 30px; font-style: italic; padding: 0 16px; }
+
+  .gallery-section { margin-bottom: 36px; }
+  .section-label { font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--text-muted); margin-bottom: 12px; display: flex; align-items: center; gap: 8px; }
+  .section-label::after { content: ''; flex: 1; height: 1px; background: var(--border); }
+  .gallery-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
+  .gallery-grid figure { margin: 0; aspect-ratio: 4/3; border-radius: 8px; overflow: hidden; background: #9a8060; box-shadow: var(--shadow); position: relative; cursor: pointer; }
+  .gallery-grid figure img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.35s; }
+  .gallery-grid figure:hover img { transform: scale(1.06); }
+  .gallery-grid figcaption { position: absolute; bottom: 0; left: 0; right: 0; background: linear-gradient(transparent, rgba(0,0,0,0.65)); color: #fff; font-size: 11px; padding: 22px 8px 7px; line-height: 1.35; opacity: 0; transition: opacity 0.25s; }
+  .gallery-grid figure:hover figcaption { opacity: 1; }
+
+  .gallery-grid figure.upload-slot { background: var(--section-bg); border: 2px dashed var(--border); display: flex; flex-direction: column; cursor: default; }
+  .gallery-grid figure.upload-slot:hover { box-shadow: var(--shadow); }
+  .upload-placeholder { flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 12px 10px; gap: 5px; text-align: center; }
+  .upload-placeholder .up-icon { font-size: 28px; }
+  .upload-placeholder .up-title { font-size: 12px; font-weight: 700; color: var(--forest-dark); line-height: 1.3; }
+  .upload-placeholder .up-hint { font-size: 10.5px; color: var(--text-muted); font-style: italic; line-height: 1.4; }
+  .gallery-grid figure.upload-slot figcaption { position: static; opacity: 1; background: var(--cream); border-top: 1px solid var(--border); color: var(--text-muted); padding: 6px 8px; font-size: 10.5px; font-style: italic; line-height: 1.35; }
+  .img-credit { font-size: 11px; color: var(--text-muted); font-style: italic; text-align: right; margin-top: 6px; }
+  .img-credit a { color: var(--forest); }
+
+  .taxonomy-box { background: var(--section-bg); border: 1px solid var(--border); border-left: 4px solid var(--forest); border-radius: var(--radius); padding: 20px 22px; margin-bottom: 36px; }
+  .taxonomy-box h3 { font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--text-muted); margin-bottom: 14px; }
+  .taxonomy-box table { width: 100%; border-collapse: collapse; font-size: 14px; }
+  .taxonomy-box td { padding: 4px 8px 4px 0; }
+  .taxonomy-box td:first-child { font-weight: 700; color: var(--text-muted); font-size: 12px; text-transform: uppercase; letter-spacing: 0.05em; width: 110px; vertical-align: top; padding-top: 5px; }
+  .taxonomy-box td em { color: var(--forest-light); font-style: italic; }
+
+  .content-section { margin-bottom: 32px; padding-bottom: 32px; border-bottom: 1px solid var(--border); }
+  .content-section:last-of-type { border-bottom: none; }
+  .section-title { font-family: var(--font-serif); font-size: 1.15rem; font-weight: 700; color: var(--forest-dark); margin-bottom: 13px; display: flex; align-items: center; gap: 9px; }
+  .content-section p { font-size: 15.5px; line-height: 1.8; color: var(--text); margin-bottom: 12px; }
+  .content-section p:last-child { margin-bottom: 0; }
+
+  .inline-img { float: right; margin: 0 0 16px 22px; width: 260px; border-radius: 8px; overflow: hidden; box-shadow: var(--shadow); }
+  .inline-img img { width: 100%; display: block; }
+  .inline-img figcaption { font-size: 11px; color: var(--text-muted); font-style: italic; padding: 6px 10px; background: var(--cream); border: 1px solid var(--border); border-top: none; line-height: 1.4; }
+  .clearfix::after { content: ''; display: table; clear: both; }
+
+  .highlight-box { background: var(--tag-bg); border: 1px solid var(--tag-border); border-radius: var(--radius); padding: 16px 20px; margin-top: 14px; font-size: 14.5px; line-height: 1.7; color: var(--forest-dark); }
+  .highlight-box strong { color: var(--forest); }
+  .warning-box { background: #fff8e6; border: 1px solid #e8cc88; border-left: 4px solid var(--accent); border-radius: var(--radius); padding: 16px 20px; margin-top: 14px; font-size: 14px; line-height: 1.7; }
+  .warning-box strong { color: var(--accent); }
+
+  .protection-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-top: 14px; }
+  .protection-card { background: #fff; border: 1px solid var(--border); border-radius: var(--radius); padding: 14px 16px; font-size: 14px; }
+  .protection-card .pcard-label { font-size: 11px; text-transform: uppercase; letter-spacing: 0.08em; color: var(--text-muted); font-weight: 700; margin-bottom: 4px; }
+  .protection-card .pcard-value { font-weight: 600; color: var(--forest-dark); }
+
+  .pheno-section { margin-bottom: 36px; padding-bottom: 36px; border-bottom: 1px solid var(--border); }
+  .pheno-section .section-title { font-family: var(--font-serif); font-size: 1.15rem; font-weight: 700; color: var(--forest-dark); margin-bottom: 16px; display: flex; align-items: center; gap: 9px; }
+  .pheno-grid { display: grid; grid-template-columns: repeat(12, 1fr); gap: 4px; margin-bottom: 12px; }
+  .pheno-month { text-align: center; border-radius: 6px; padding: 8px 2px 6px; font-size: 11px; font-weight: 700; color: #fff; position: relative; }
+  .pheno-month .m-name { display: block; font-size: 10px; opacity: 0.88; margin-bottom: 4px; letter-spacing: 0.03em; }
+  .pheno-month .m-icon { font-size: 16px; display: block; margin-bottom: 2px; }
+  .ph-active  { background: var(--forest); }
+  .ph-mating  { background: #c4500a; }
+  .ph-young   { background: #e8a020; color: #3a2000; }
+  .ph-low     { background: #b0bfaa; color: #2a3a28; }
+  .pheno-legend { display: flex; gap: 16px; flex-wrap: wrap; font-size: 12.5px; margin-top: 10px; }
+  .pheno-legend span { display: flex; align-items: center; gap: 6px; }
+  .pheno-legend .dot { width: 12px; height: 12px; border-radius: 3px; flex-shrink: 0; }
+
+  .tracks-section { margin-bottom: 36px; padding-bottom: 36px; border-bottom: 1px solid var(--border); }
+  .tracks-section .section-title { font-family: var(--font-serif); font-size: 1.15rem; font-weight: 700; color: var(--forest-dark); margin-bottom: 16px; display: flex; align-items: center; gap: 9px; }
+  .tracks-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 16px; }
+  .track-card { background: var(--section-bg); border: 1px solid var(--border); border-radius: var(--radius); padding: 16px 18px; }
+  .track-card h4 { font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; color: var(--text-muted); margin-bottom: 10px; }
+  .track-card p { font-size: 14px; line-height: 1.65; color: var(--text); }
+
+  .paw-diagram { background: #fff; border: 1px solid var(--border); border-radius: var(--radius); padding: 20px; display: flex; gap: 24px; align-items: flex-start; margin-bottom: 16px; flex-wrap: wrap; }
+  .paw-svg-wrap { text-align: center; }
+  .paw-svg-wrap svg { display: block; margin: 0 auto 6px; }
+  .paw-svg-wrap .paw-label { font-size: 11px; color: var(--text-muted); font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; }
+  .paw-specs { flex: 1; min-width: 180px; }
+  .paw-specs table { width: 100%; font-size: 13.5px; border-collapse: collapse; }
+  .paw-specs td { padding: 5px 6px 5px 0; border-bottom: 1px solid var(--border); vertical-align: top; }
+  .paw-specs td:first-child { color: var(--text-muted); font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.04em; width: 130px; }
+  .paw-specs tr:last-child td { border-bottom: none; }
+
+  .camtrap-section { margin-bottom: 36px; padding-bottom: 36px; border-bottom: 1px solid var(--border); }
+  .camtrap-section .section-title { font-family: var(--font-serif); font-size: 1.15rem; font-weight: 700; color: var(--forest-dark); margin-bottom: 16px; display: flex; align-items: center; gap: 9px; }
+  .camtrap-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-bottom: 16px; }
+  .camtrap-card { background: #fff; border: 1px solid var(--border); border-top: 3px solid var(--forest); border-radius: var(--radius); padding: 14px 15px; font-size: 14px; }
+  .camtrap-card .ct-icon { font-size: 26px; margin-bottom: 8px; display: block; }
+  .camtrap-card h4 { font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.07em; color: var(--text-muted); margin-bottom: 6px; }
+  .camtrap-card p { font-size: 13.5px; line-height: 1.6; color: var(--text); }
+  
+  
+  
+
+  .species-nav { display: flex; justify-content: space-between; align-items: center; margin-top: 48px; padding-top: 24px; border-top: 2px solid var(--border); gap: 12px; flex-wrap: wrap; }
+  .species-nav a { display: inline-flex; align-items: center; gap: 7px; font-size: 13px; font-weight: 600; color: var(--forest); text-decoration: none; padding: 9px 16px; border: 1.5px solid var(--forest); border-radius: 6px; transition: all 0.2s; }
+  .species-nav a:hover { background: var(--forest); color: #fff; }
+  .species-nav .center-link { border: none !important; padding: 0 !important; font-size: 13px; color: var(--text-muted); }
+  .species-nav .center-link:hover { background: none !important; color: var(--forest) !important; }
+
+  .site-footer { background: var(--forest-dark); color: rgba(255,255,255,0.7); text-align: center; padding: 22px; font-size: 13px; }
+
+  @media (max-width: 660px) {
+    .camtrap-grid { grid-template-columns: repeat(2, 1fr); }
+    .tracks-grid, .protection-grid { grid-template-columns: 1fr; }
+    .pheno-grid { grid-template-columns: repeat(6, 1fr); }
+    .species-hero .common-name { font-size: 1.9rem; }
+    .site-nav { width: 100%; overflow-x: auto; flex-wrap: nowrap; min-height: 64px; }
+    .inline-img { float: none; width: 100%; margin: 0 0 16px 0; }
+    .paw-diagram { flex-direction: column; }
+  }
+
+  .sisari-topnav-wrap{background:linear-gradient(90deg,#142212 0%,#182a14 45%,#132312 100%);border-bottom:1px solid rgba(211,173,72,.18);box-shadow:0 1px 0 rgba(255,255,255,.03) inset}
+  .sisari-topnav{max-width:1240px;margin:0 auto;padding:0 18px;display:flex;align-items:center;min-height:76px}
+  .sisari-topnav-links{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+  .sisari-topnav-link{position:relative;color:rgba(255,255,255,.62);font-size:12.5px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;padding:26px 10px 24px;text-decoration:none;transition:color .2s ease}
+  .sisari-topnav-link:hover{color:#f4f0e6}
+  .sisari-topnav-link.is-active{color:#d3ad48}
+  .sisari-topnav-link.is-active::after{content:"";position:absolute;left:10px;right:10px;bottom:0;height:3px;border-radius:3px;background:#d3ad48}
+  .sisari-topnav-link-current{cursor:default;max-width:260px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;text-transform:none;letter-spacing:.03em;font-size:15px;font-weight:600}
+  .badge-sound{text-decoration:none}
+
+  .breadcrumb-bar{display:none!important}
+
+/* Rajac fix: bočne slike u tekstu ne smeju da se razvuku po visini. */
+.inline-img{width:230px!important;max-width:32%!important;margin:0 0 14px 20px!important;align-self:flex-start!important;}
+.inline-img img{width:100%!important;height:220px!important;max-height:220px!important;object-fit:cover!important;object-position:center center!important;display:block!important;}
+.inline-img figcaption{font-size:14px!important;line-height:1.35!important;}
+@media(max-width:820px){.inline-img{float:none!important;width:100%!important;max-width:100%!important;margin:0 0 16px 0!important}.inline-img img{height:auto!important;max-height:320px!important;object-fit:contain!important;background:#f7f4ef!important;}}
+
+/* === SISARI STATUS V4: uredjeni IUCN / nacionalni status === */
+.status-clarification-box{margin:14px 0 18px;padding:12px 14px;border:1px solid #d9c9a3;background:#fffaf0;border-radius:12px;color:#3f3421;font-size:15px;line-height:1.55}
+.status-clarification-box strong{font-weight:800;color:#3b2c12}
+.status-clarification-box .status-row{display:block;margin:4px 0}
+.badge-iucn-lc,.badge-iucn-nt,.badge-iucn-vu,.badge-iucn-dd,.badge-iucn-ne{font-weight:800}
+.badge-national,.badge-serbia-status{background:#f3efe3;border:1px solid #d6c7a2;color:#42351e}
+
+/* Строга јавна фото-провера: не приказуј фотографије без провереног извора */
+.rajac-photo-placeholder{
+  width:100%; min-height:220px; border:1px dashed rgba(80,80,80,.35); border-radius:10px;
+  background:linear-gradient(135deg,#f7f4ef,#ffffff); color:#5a5147;
+  display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center;
+  padding:18px; font-size:15px; line-height:1.45; box-shadow:inset 0 0 0 1px rgba(255,255,255,.7);
+}
+.rajac-photo-placeholder strong{font-family:var(--font-serif, Georgia, serif); font-size:1.1rem; color:#3a332b; font-weight:500;}
+.rajac-photo-placeholder small{display:block; margin-top:6px; color:#7a7065; font-size:13px;}
+.species-thumb .rajac-photo-placeholder,.card-image .rajac-photo-placeholder,.species-card .rajac-photo-placeholder{min-height:160px; border-radius:8px; font-size:13px;}
+.page-hero .rajac-photo-placeholder{display:none;}
+
+
+/* SISARI v12 — ujednačen sitan potpis ispod fotografije */
+.img-caption,
+figure figcaption,
+.inline-img figcaption{
+  font-family: Georgia, "Times New Roman", serif !important;
+  font-size: 12px !important;
+  line-height: 1.35 !important;
+  color: #5f5a52 !important;
+  text-align: left !important;
+  font-style: italic !important;
+  font-weight: 400 !important;
+  letter-spacing: 0 !important;
+  margin: 6px auto 26px !important;
+  padding: 0 4px !important;
+  max-width: 900px !important;
+}
+.img-caption em,
+figure figcaption em,
+.inline-img figcaption em{
+  font-size: inherit !important;
+  line-height: inherit !important;
+  color: inherit !important;
+  font-style: italic !important;
+  font-weight: inherit !important;
+}
+.hero-image-wrap img{
+  object-fit: contain !important;
+  object-position: center center !important;
+  background: #f7f4ef !important;
+  transform: none !important;
+}
+.hero-image-wrap:hover img{
+  transform: none !important;
+}
+
+</style>
+<style id="rajac-ds-font-menu-css">
+:root{
+  --rajac-font-primary:"Cormorant Garamond", "EB Garamond", Garamond, "Palatino Linotype", "Book Antiqua", Georgia, "Times New Roman", serif;
+  --rajac-font-title:var(--rajac-font-primary);
+  --rajac-font-body:var(--rajac-font-primary);
+  --rajac-font-ui:var(--rajac-font-primary);
+  --serif:var(--rajac-font-primary)!important;
+  --sans:var(--rajac-font-primary)!important;
+  --font-serif:var(--rajac-font-primary)!important;
+  --font-sans:var(--rajac-font-primary)!important;
+  --font-body:var(--rajac-font-primary)!important;
+  --font-ui:var(--rajac-font-primary)!important;
+  --rajac-nav:#0d1b2a;
+  --rajac-gold:#d8b55b;
+  --rajac-nav-text:rgba(255,255,255,.72);
+}
+html body,body[class],body .rfw,body .i-page,body .ins-page,body .sisari-page,body .glj-page,body .bird-page,body .ptice-page,body .audio-wrap,body .archive-wrap,body .page-wrap,body .wrap{font-family:var(--rajac-font-body)!important;}
+body h1,body h2,body h3,body h4,body h5,body h6,body .rfw-title,body .rfw-h,body .rfw-common,body .rfw-tax em,body .hero h1,body .page-hero h1,body .audio-hero h1,body .hero-h1,body .i-title,body .i-card-common,body .i-latin,body .sisari-title,body .sisari-latin,body .glj-hero h1,body .glj-title,body .glj-latin,body .card h1,body .card h2,body .card h3,body .species-card h3,body .intro h2,body .intro-box h3,body .map-head h2,body .bird-card-title,body .bird-card-sci,body .latin,body .card-latin,body .bcard-lat{font-family:var(--rajac-font-title)!important;font-weight:300!important;letter-spacing:0!important;}
+body p,body li,body figcaption,body small,body label,body input,body select,body textarea,body button,body .rfw-lead,body .rfw-body p,body .rfw-p,body .rfw-pheno-intro,body .rfw-link-card p,body .rfw-map-note,body .lead,body .card p,body .card-body,body .note,body .intro p,body .intro-box p,body .audio-intro,body .info strong,body .research-box p,body .figure figcaption,body .bird-card-copy,body .glj-card p,body .sisari-lead{font-family:var(--rajac-font-body)!important;}
+body nav,body nav *,body .rajac-ds-nav,body .rajac-ds-nav *,body .rfw-tag,body .rfw-infol,body .rfw-link-kicker,body .rfw-map-badge,body .rfw-month-card span,body .rfw-month-table th,body .rfw-footlink em,body .tab,body .pill,body .tag,body .card-tag,body .filter-btn,body .ins-pill,body .navlink,body .topnav a,body .rfx-nav-item,body .rfx-nav-home,body .ins-topnav-link,body .sisari-topnav-link,body .glj-filter,body .glj-filter-btn,body .cta span,body .kicker,body .section-super,body .super,body .chip,body .seasonchip{font-family:var(--rajac-font-ui)!important;}
+body .latin,body .i-latin,body .card-latin,body .bcard-lat,body .rfw-latin,body .rfw-common,body .bird-card-sci,body .sisari-latin,body .glj-latin{font-family:var(--rajac-font-title)!important;font-style:italic!important;font-weight:300!important;letter-spacing:0!important;}
+/* ════════════════════════════════════════════════════════════
+   УЈЕДНАЧЕНИ СИСТЕМ ВЕЛИЧИНА ФОНТОВА — сви плагини ПИО Рајац
+   Основа: sisari-final-readable (23px / 1.52)
+   ════════════════════════════════════════════════════════════ */
+
+/* ── 1. ОСНОВНИ ТЕКСТ — параграфи, листе, табеле ─────────── */
+body .page-wrap p,body .rfw p,body .rfw-body p,body .rfw-p,
+body .ins-page p,body .ins-page li,body .ins-page td,
+body .bird-page p,body .bird-page li,
+body .glj-page p,body .glj-page li,
+body .sisari-page p,body .sisari-page li,body .sisari-page td,
+body .ptice-page p,body .ptice-page li,
+body .content-section p,body .section-body p,
+body .trofodinamika p,body .trofo-page p,
+body .audio-wrap p,body .archive-wrap p{font-size:23px!important;line-height:1.54!important;}
+
+/* ── 2. НАСЛОВИ СЕКЦИЈА h2 ────────────────────────────────── */
+body .page-wrap h2,body .rfw h2,body .content-section h2,
+body .ins-page h2,body .bird-page h2,body .glj-page h2,
+body .sisari-page h2,body .ptice-page h2,body .trofodinamika h2,
+body .section-title,body .rfw-h{font-size:1.72rem!important;line-height:1.22!important;font-weight:300!important;}
+
+/* ── 3. ПОДНАСЛОВИ h3 ─────────────────────────────────────── */
+body .page-wrap h3,body .rfw h3,body .ins-page h3,
+body .bird-page h3,body .glj-page h3,body .sisari-page h3,
+body .ptice-page h3,body .trofodinamika h3,
+body .rfw-common,body .intro-box h3{font-size:1.35rem!important;line-height:1.28!important;font-weight:300!important;}
+
+/* ── 4. h4 ────────────────────────────────────────────────── */
+body .page-wrap h4,body .ins-page h4,body .bird-page h4,
+body .glj-page h4,body .sisari-page h4,body .track-card h4,
+body .camtrap-card h4{font-size:1.1rem!important;line-height:1.3!important;}
+
+/* ── 5. ГЛАВНИ НАСЛОВ ВРСТЕ h1 ───────────────────────────── */
+body .common-name,body .species-hero h1,body .i-title,
+body .glj-title,body .sisari-title,body .bird-hero h1,
+body .rfw-title,body .hero h1,body .page-hero h1{font-size:2.9rem!important;line-height:1.1!important;font-weight:300!important;}
+
+/* ── 6. ЛАТИНСКИ НАЗИВ ────────────────────────────────────── */
+body .latin-name,body .i-latin,body .sisari-latin,body .glj-latin,
+body .bird-card-sci,body .rfw-latin,body .latin,body .card-latin,
+body .ins-page .ins-sci{font-size:1.55rem!important;font-weight:300!important;}
+
+/* ── 7. HIGHLIGHT / WARNING BOXEVI ──────────────────────────*/
+body .highlight-box,body .warning-box,body .invasion-box,
+body .rfw-lead,body .lead,body .info-box,body .obs-box,
+body .protection-card,body .contact-card{font-size:20.5px!important;line-height:1.5!important;}
+
+/* ── 8. ТАБЕЛЕ — таксономија, детаљи ────────────────────────*/
+body .taxonomy-box table,body .rfw-tax table,
+body .paw-specs table,body .compare-table{font-size:22px!important;line-height:1.56!important;}
+body .taxonomy-box td:first-child,body .paw-specs td:first-child,
+body .rfw-infol,body .taxonomy-box h3{font-size:15px!important;}
+
+/* ── 9. TRACK / CAMTRAP КАРТИЦЕ ─────────────────────────────*/
+body .track-card p,body .camtrap-card p,body .camtrap-card,
+body .guide-rule,body .obs-card p{font-size:20px!important;line-height:1.5!important;}
+
+/* ── 10. МАЛЕ ОЗНАКЕ — таг, пил, навигација, легенда ────────*/
+body .tag,body .pill,body .ins-pill,body .chip,body .badge,
+body .rfw-tag,body .card-tag,body .filter-btn,body .glj-filter-btn,
+body .kicker,body .section-super,body .super,body .seasonchip,
+body .pheno-legend,body .map-legend,body .rfw-month-card span,
+body .obs-date,body .obs-loc,body .rfw-link-kicker{font-size:15px!important;line-height:1.4!important;}
+
+/* ── 11. ФУСНОТЕ, ПОТПИСИ, СИТНА СЛОВА ───────────────────── */
+body figcaption,body .img-caption,body .caption,
+body .inline-img figcaption,body .track-photo-wrap figcaption,
+body .gallery-grid figcaption,body .rfw-map-note,
+body .img-credit,body .rajac-sound-help{font-size:15px!important;line-height:1.45!important;}
+
+/* ── 12. КАРТИЦЕ НА АРХИВНОЈ СТРАНИ ─────────────────────────*/
+body .archive-wrap .card p,body .archive-wrap .card-body,
+body .archive-wrap .card .note,body .bird-card-copy,
+body .glj-card p,body .species-card p{font-size:18px!important;line-height:1.58!important;}
+body .archive-wrap .card h3,body .archive-wrap .species-card h3,
+body .bird-card-title,body .glj-card-title{font-size:1.25rem!important;}
+body .archive-wrap .card .latin,body .archive-wrap .card-latin,
+body .bcard-lat{font-size:16px!important;}
+
+/* ── 13. НАВИГАЦИОНИ ЛИНКОВИ ─────────────────────────────── */
+body .species-nav a,body .ct-link-btn,body .rfw-footlink,
+body .rfw-link-card p{font-size:17px!important;}
+
+/* ── 14. МОБИЛНА ПРИЛАГОЂЕНОСТ ───────────────────────────── */
+/* ── 15. ИНСЕКТИ — архивска страна ───────────────────────── */
+body .card-tag,body .i-card-tag{font-size:14px!important;padding:4px 9px!important;}
+body .card-arrow,body .i-card-arrow{font-size:16px!important;}
+body .card-common,body .i-card-common{font-size:1.2rem!important;line-height:1.12!important;}
+body .card-latin,body .i-card-latin{font-size:15px!important;}
+body .load-more-btn{font-size:17px!important;padding:12px 22px!important;}
+body .filter-btn{font-size:15px!important;padding:8px 14px!important;}
+body .ins-pill,body .i-pill{font-size:15px!important;padding:9px 16px!important;}
+
+/* ── 16. ИНСЕКТИ — страница врсте ────────────────────────── */
+body .pill,body .pill-order,body .pill-family,body .pill-par,body .pill-sapr{font-size:15px!important;padding:8px 15px!important;}
+body .tab{font-size:16px!important;padding:13px 20px!important;}
+body .info-label,body .kv-l{font-size:13px!important;letter-spacing:.08em!important;}
+body .info-val,body .kv-v{font-size:18px!important;font-weight:600!important;}
+body .obs-details,body .obs-icon{font-size:15px!important;}
+
+/* ── 17. ПТИЦЕ — архивска страна ─────────────────────────── */
+body .bird-card-pill{font-size:14px!important;padding:8px 12px!important;}
+body .bird-card-link{font-size:16px!important;letter-spacing:.04em!important;}
+body .bird-card-badge{font-size:12px!important;letter-spacing:.08em!important;}
+body .loadbtn{font-size:16px!important;padding:14px 22px!important;}
+body .loadinfo,body .countline{font-size:15px!important;}
+body .hstat-l{font-size:11px!important;letter-spacing:.14em!important;}
+body .searchlabel{font-size:14px!important;letter-spacing:.1em!important;}
+body .searchinput{font-size:16px!important;}
+body .chip,body .seasonchip{font-size:15px!important;padding:10px 16px!important;}
+
+@media(max-width:820px){
+  body .page-wrap p,body .rfw p,body .content-section p,
+  body .ins-page p,body .bird-page p,body .glj-page p,
+  body .sisari-page p,body .ptice-page p,body .trofodinamika p{font-size:21px!important;line-height:1.52!important;}
+  body .taxonomy-box table,body .paw-specs table{font-size:19px!important;}
+  body .highlight-box,body .warning-box,body .protection-card{font-size:18.5px!important;}
+  body .track-card p,body .camtrap-card p{font-size:18.5px!important;}
+  body .common-name,body .species-hero h1,body .i-title{font-size:2.2rem!important;}
+  body .section-title,body .rfw-h{font-size:1.45rem!important;}
+}
+body .rfx-chapter-nav,body nav.rfx-chapter-nav,body .topnav,body nav.topnav,body .ins-topnav-wrap,body .sisari-topnav-wrap,body .glj-topnav,body .glj-nav,body .rfw-edit-bar,body .top:not(.rajac-ds-nav){display:none!important;height:0!important;min-height:0!important;max-height:0!important;overflow:hidden!important;visibility:hidden!important;}
+.rajac-ds-nav{background:var(--rajac-nav);position:sticky;top:0;z-index:999999;border-bottom:1px solid rgba(255,255,255,.08);font-family:var(--rajac-font-ui)!important;}
+body.admin-bar .rajac-ds-nav{top:32px;}
+.rajac-ds-nav *{box-sizing:border-box;}
+.rajac-ds-nav-inner{max-width:1180px;margin:0 auto;padding:0 18px;display:flex;align-items:stretch;min-height:56px;gap:0;overflow-x:auto;scrollbar-width:none;}
+.rajac-ds-nav-inner::-webkit-scrollbar{display:none;}
+.rajac-ds-home{display:flex;align-items:center;gap:9px;padding-right:20px;margin-right:8px;border-right:1px solid rgba(255,255,255,.12);flex-shrink:0;color:var(--rajac-gold)!important;text-decoration:none!important;font-weight:600;font-size:16px;letter-spacing:.03em;}
+.rajac-ds-home-mark{width:18px;height:18px;display:inline-grid;place-items:center;color:var(--rajac-gold);}
+.rajac-ds-nav-item{position:relative;display:flex;align-items:center;gap:7px;padding:0 15px;color:var(--rajac-nav-text)!important;font-size:15px;font-weight:600;letter-spacing:.045em;text-transform:uppercase;white-space:nowrap;text-decoration:none!important;}
+.rajac-ds-nav-item:hover{color:rgba(255,255,255,.94)!important;background:rgba(255,255,255,.035);}
+.rajac-ds-icon{font-size:15px;line-height:1;}
+.rajac-ds-nav-item.rajac-ds-active{color:var(--rajac-gold)!important;}
+.rajac-ds-nav-item.rajac-ds-active:after{content:"";position:absolute;left:15px;right:15px;bottom:8px;height:2px;border-radius:2px;background:var(--rajac-gold);}
+.rajac-ds-current{color:var(--rajac-gold);font-size:.84em;text-transform:none;letter-spacing:0;font-weight:500;margin-left:-2px;max-width:190px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+.rajac-ds-nav-trofo{color:#c8a24e!important;}
+.rajac-ds-nav-trofo:hover{color:#f0cb78!important;}
+@media(max-width:720px){.rajac-ds-nav-inner{padding:0 12px}.rajac-ds-home{padding-right:14px}.rajac-ds-nav-item{font-size:13px;padding:0 12px}.rajac-ds-nav-item.rajac-ds-active:after{left:12px;right:12px}.rajac-ds-current{max-width:140px}}
+</style>
+<style id="sisari-bottom-guides-css">
+.sisari-guide-bottom{margin:44px 0 36px;padding-top:10px;border-top:1px solid var(--border,#d8d0c4)}
+.sisari-guide-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin-bottom:18px}
+.sisari-guide-card{display:flex;align-items:center;gap:14px;min-height:112px;padding:18px 18px;border:1px solid var(--border,#d8d0c4);border-radius:12px;background:var(--warm-white,#fdfcfa);box-shadow:var(--shadow,0 2px 12px rgba(0,0,0,.08));text-decoration:none;color:var(--text,#2a2a2a);transition:transform .18s ease,box-shadow .18s ease,border-color .18s ease}
+.sisari-guide-card:hover{transform:translateY(-2px);box-shadow:var(--shadow-hover,0 6px 24px rgba(0,0,0,.14));border-color:var(--forest-light,#4a7c43)}
+.sisari-guide-icon{width:48px;height:48px;flex:0 0 48px;display:grid;place-items:center;border-radius:10px;background:var(--tag-bg,#e8f0e6);border:1px solid var(--border,#d8d0c4);font-size:25px;line-height:1}
+.sisari-guide-text{min-width:0;display:block}.sisari-guide-text strong{display:block;font-family:var(--font-serif,Georgia,serif);font-size:18px;line-height:1.16;color:var(--forest-dark,#1a3a15);font-weight:700;margin-bottom:5px}.sisari-guide-text span{display:block;font-size:13.5px;line-height:1.35;color:var(--text-muted,#5a5a5a)}
+.sisari-guide-arrow{margin-left:auto;color:var(--accent,#8b6914);font-size:18px}
+.sisari-guide-banner{display:flex;align-items:center;justify-content:center;gap:12px;min-height:44px;padding:10px 18px;border-radius:10px;background:linear-gradient(90deg,#0d2a46 0%,#213f25 52%,#c2a33d 100%);color:#fff;text-decoration:none;font-size:16px;letter-spacing:.02em;box-shadow:var(--shadow,0 2px 12px rgba(0,0,0,.08))}
+.sisari-guide-banner strong{color:#f5d978}.sisari-guide-banner span{opacity:.92}.sisari-guide-banner b{font-size:18px;color:#fff}
+@media(max-width:900px){.sisari-guide-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:560px){.sisari-guide-grid{grid-template-columns:1fr}.sisari-guide-card{min-height:96px}.sisari-guide-banner{align-items:flex-start;flex-direction:column;gap:3px}}
+</style>
+<style id="rajac-final-user-fixes">
+  .breadcrumb-bar{display:none!important}
+  .sisari-guide-bottom{
+    margin:44px 0 48px!important;
+    padding:0!important;
+    border-top:1px solid var(--border)!important;
+    border-bottom:1px solid var(--border)!important;
+  }
+  .sisari-guide-grid{
+    display:grid!important;
+    grid-template-columns:repeat(4,minmax(0,1fr))!important;
+    gap:18px!important;
+    padding:18px 0!important;
+    width:100%!important;
+  }
+  .sisari-guide-card{
+    min-height:116px!important;
+    width:100%!important;
+    display:grid!important;
+    grid-template-columns:56px 1fr 28px!important;
+    align-items:center!important;
+    gap:16px!important;
+    padding:18px 20px!important;
+  }
+  .sisari-guide-text strong{font-size:20px!important;line-height:1.05!important}
+  .sisari-guide-text span{font-size:15px!important;line-height:1.35!important}
+  .taxonomy-box{
+    max-height:3cm!important;
+    min-height:3cm!important;
+    overflow-y:auto!important;
+    overflow-x:hidden!important;
+    padding:12px 18px!important;
+    scrollbar-width:thin;
+  }
+  .taxonomy-box h3{margin-bottom:8px!important;font-size:11px!important}
+  .taxonomy-box table{font-size:13px!important}
+  .taxonomy-box td{padding:2px 8px 2px 0!important;line-height:1.35!important}
+  @media(max-width:760px){
+    .sisari-guide-grid{grid-template-columns:1fr!important}
+    .sisari-guide-card{min-height:104px!important}
+  }
+</style>
+<style id="rajac-divlja-alati-final-grid">
+  .sisari-guide-grid{
+    grid-template-columns:repeat(4,minmax(0,1fr))!important;
+    gap:14px!important;
+  }
+  .sisari-guide-card{
+    padding:16px 16px!important;
+    grid-template-columns:50px 1fr 24px!important;
+  }
+  .sisari-guide-text strong{font-size:18px!important}
+  .sisari-guide-text span{font-size:14px!important}
+  @media(max-width:1040px){
+    .sisari-guide-grid{grid-template-columns:repeat(2,minmax(0,1fr))!important}
+  }
+  @media(max-width:620px){
+    .sisari-guide-grid{grid-template-columns:1fr!important}
+  }
+</style>
+<style id="rajac-divlja-remove-extra-lines-and-link-check">
+  .sisari-guide-bottom{
+    border-top:0!important;
+    border-bottom:0!important;
+    margin:34px 0 32px!important;
+    padding:0!important;
+  }
+  .species-nav{
+    border-top:0!important;
+    margin-top:34px!important;
+    padding-top:0!important;
+  }
+  .sisari-guide-grid{
+    grid-template-columns:repeat(4,minmax(0,1fr))!important;
+    gap:14px!important;
+  }
+  .sisari-guide-card{
+    min-height:116px!important;
+  }
+  @media(max-width:1040px){
+    .sisari-guide-grid{grid-template-columns:repeat(2,minmax(0,1fr))!important}
+  }
+  @media(max-width:620px){
+    .sisari-guide-grid{grid-template-columns:1fr!important}
+  }
+</style>
+<style id="rajac-sisari-toolstrip-clean-final">
+  .sisari-guide-bottom{display:none!important}
+  .sisari-toolstrip{
+    display:grid!important;
+    grid-template-columns:repeat(4,minmax(0,1fr))!important;
+    gap:14px!important;
+    margin:34px 0 34px!important;
+    padding:0!important;
+    border:0!important;
+  }
+  .sisari-tool{
+    position:relative!important;
+    display:block!important;
+    min-height:122px!important;
+    padding:18px 48px 18px 18px!important;
+    border:1px solid var(--border,#d8d0c4)!important;
+    border-radius:10px!important;
+    background:linear-gradient(180deg,#fffdf8,#fbf8f1)!important;
+    color:var(--text,#2a2a2a)!important;
+    text-decoration:none!important;
+    box-shadow:0 2px 12px rgba(0,0,0,.08)!important;
+    transition:transform .18s ease,box-shadow .18s ease,border-color .18s ease!important;
+  }
+  .sisari-tool:hover{
+    transform:translateY(-2px)!important;
+    box-shadow:0 6px 24px rgba(0,0,0,.14)!important;
+    border-color:var(--forest-light,#4a7c43)!important;
+  }
+  .sisari-tool-kicker{
+    display:block!important;
+    margin:0 0 8px!important;
+    color:var(--accent,#8b6914)!important;
+    font-size:12px!important;
+    line-height:1!important;
+    font-weight:700!important;
+    letter-spacing:.12em!important;
+    text-transform:uppercase!important;
+  }
+  .sisari-tool strong{
+    display:block!important;
+    margin:0 0 7px!important;
+    color:var(--forest-dark,#1a3a15)!important;
+    font-family:var(--font-serif,Georgia,serif)!important;
+    font-size:21px!important;
+    line-height:1.05!important;
+    font-weight:700!important;
+  }
+  .sisari-tool em{
+    display:block!important;
+    color:var(--text-muted,#5a5a5a)!important;
+    font-family:var(--font-serif,Georgia,serif)!important;
+    font-style:normal!important;
+    font-size:15px!important;
+    line-height:1.35!important;
+  }
+  .sisari-tool-arrow{
+    position:absolute!important;
+    right:18px!important;
+    top:50%!important;
+    transform:translateY(-50%)!important;
+    color:var(--accent,#8b6914)!important;
+    font-size:20px!important;
+    line-height:1!important;
+  }
+  @media(max-width:1040px){
+    .sisari-toolstrip{grid-template-columns:repeat(2,minmax(0,1fr))!important}
+  }
+  @media(max-width:620px){
+    .sisari-toolstrip{grid-template-columns:1fr!important}
+    .sisari-tool{min-height:104px!important}
+  }
+</style>
+<style id="rajac-species-nav-fix">
+  .breadcrumb-bar{display:none!important;}
+  nav.species-nav{display:grid!important;grid-template-columns:minmax(0,1fr) auto minmax(0,1fr)!important;align-items:center!important;gap:18px!important;flex-wrap:nowrap!important;}
+  nav.species-nav a{display:inline-flex!important;align-items:center!important;justify-content:center!important;min-height:58px!important;padding:12px 18px!important;text-align:center!important;line-height:1.2!important;}
+  nav.species-nav a:first-child{justify-self:start!important;}
+  nav.species-nav a.center-link{justify-self:center!important;white-space:nowrap!important;min-width:175px!important;}
+  nav.species-nav a:last-child{justify-self:end!important;}
+  @media(max-width:960px){nav.species-nav a{font-size:12px!important;padding:10px 12px!important;}nav.species-nav a.center-link{min-width:150px!important;}}
+  @media(max-width:760px){nav.species-nav{grid-template-columns:1fr!important;gap:10px!important;}nav.species-nav a,nav.species-nav a.center-link{width:100%!important;justify-self:stretch!important;min-width:0!important;}}
+</style>
+<style id="rajac-ds-menu-static-css">
+:root{--rajac-nav:#0d1b2a;--rajac-gold:#d8b55b;--rajac-nav-text:rgba(255,255,255,.72);--rajac-font-primary:"Cormorant Garamond","EB Garamond",Garamond,"Palatino Linotype","Book Antiqua",Georgia,"Times New Roman",serif;}
+body .sisari-topnav-wrap,body nav.rfx-chapter-nav,body .rfx-chapter-nav,body .rfw-edit-bar{display:none!important;height:0!important;min-height:0!important;max-height:0!important;overflow:hidden!important;visibility:hidden!important;}
+.rajac-ds-nav{background:var(--rajac-nav);position:sticky;top:0;z-index:999999;border-bottom:1px solid rgba(255,255,255,.08);font-family:var(--rajac-font-primary)!important;box-shadow:none!important;}
+.rajac-ds-nav *{box-sizing:border-box;}
+.rajac-ds-nav-inner{max-width:1180px;margin:0 auto;padding:0 18px;display:flex;align-items:stretch;min-height:56px;gap:0;overflow-x:auto;scrollbar-width:none;}
+.rajac-ds-nav-inner::-webkit-scrollbar{display:none;}
+.rajac-ds-home{display:flex;align-items:center;gap:9px;padding:0 20px 0 0;margin:0 8px 0 0;border-right:1px solid rgba(255,255,255,.12);flex-shrink:0;color:var(--rajac-gold)!important;text-decoration:none!important;font-weight:600;font-size:16px;letter-spacing:.03em;white-space:nowrap;line-height:1;}
+.rajac-ds-home-mark{width:18px;height:18px;display:inline-grid;place-items:center;color:var(--rajac-gold);}
+.rajac-ds-nav-item{position:relative;display:flex;align-items:center;gap:7px;padding:0 15px;color:var(--rajac-nav-text)!important;font-size:15px;font-weight:600;letter-spacing:.045em;text-transform:uppercase;white-space:nowrap;text-decoration:none!important;line-height:1;}
+.rajac-ds-nav-item:hover{color:rgba(255,255,255,.94)!important;background:rgba(255,255,255,.035);}
+.rajac-ds-icon{font-size:15px;line-height:1;}
+.rajac-ds-nav-item.rajac-ds-active{color:var(--rajac-gold)!important;}
+.rajac-ds-nav-item.rajac-ds-active:after{content:"";position:absolute;left:15px;right:15px;bottom:8px;height:2px;border-radius:2px;background:var(--rajac-gold);display:block;}
+.rajac-ds-nav-trofo{color:#c8a24e!important;}
+.rajac-ds-nav-trofo:hover{color:#f0cb78!important;}
+@media(max-width:720px){.rajac-ds-nav-inner{padding:0 12px}.rajac-ds-home{padding-right:14px}.rajac-ds-nav-item{font-size:13px;padding:0 12px}.rajac-ds-nav-item.rajac-ds-active:after{left:12px;right:12px}}
+.rajac-photo-credit-link{max-width:1180px;margin:24px auto 0;padding:0 18px 18px;text-align:center;font-family:var(--rajac-font-primary);font-size:15px;line-height:1.5;color:#6b7280;}
+.rajac-photo-credit-link a{color:#6b4b13;text-decoration:underline;}
+</style>
+<style id="rajac-sisari-photo-source-hover">
+/* Rajac SISARI: izvor fotografije na prelazak mišem / fokus */
+.rajac-photo-source-wrap{
+  position:relative!important;
+  display:block!important;
+  overflow:hidden!important;
+  line-height:0!important;
+}
+.rajac-photo-source-wrap>img{
+  display:block!important;
+}
+.hero-image-wrap>.rajac-photo-source-wrap,
+.card-img-wrap>.rajac-photo-source-wrap,
+.hero-visual>.rajac-photo-source-wrap{
+  width:100%!important;
+  height:100%!important;
+}
+.hero-image-wrap>.rajac-photo-source-wrap>img,
+.card-img-wrap>.rajac-photo-source-wrap>img,
+.hero-visual>.rajac-photo-source-wrap>img{
+  width:100%!important;
+  height:100%!important;
+  object-fit:cover!important;
+}
+.rajac-photo-source-wrap::after,
+.page-hero.rajac-photo-source-hero::after{
+  content:attr(data-photo-source);
+  position:absolute;
+  left:10px;
+  right:10px;
+  bottom:10px;
+  z-index:20;
+  padding:7px 10px;
+  border-radius:8px;
+  background:rgba(0,0,0,.74);
+  color:#fff;
+  font-size:12px;
+  line-height:1.35;
+  letter-spacing:.01em;
+  text-align:left;
+  white-space:normal;
+  opacity:0;
+  transform:translateY(6px);
+  transition:opacity .18s ease, transform .18s ease;
+  pointer-events:none;
+  box-shadow:0 3px 12px rgba(0,0,0,.25);
+}
+.rajac-photo-source-wrap:hover::after,
+.rajac-photo-source-wrap:focus::after,
+.rajac-photo-source-wrap:focus-within::after,
+.page-hero.rajac-photo-source-hero:hover::after,
+.page-hero.rajac-photo-source-hero:focus-within::after{
+  opacity:1;
+  transform:translateY(0);
+}
+.rajac-photo-source-wrap[data-photo-source*="допунити"]::after,
+.page-hero.rajac-photo-source-hero[data-photo-source*="допунити"]::after{
+  background:rgba(95,55,0,.86);
+}
+@media (hover:none){
+  .rajac-photo-source-wrap::after,
+  .page-hero.rajac-photo-source-hero::after{
+    opacity:.92;
+    transform:none;
+    font-size:11px;
+    bottom:8px;
+  }
+}
+</style>
+<style id="rajac-sisari-full-photo-contain-v2">
+/* V2: фотографије се више не секу у оквирима; приказује се цела фотографија/врста. */
+.hero-image-wrap,
+.inline-img,
+.track-photo-wrap,
+.house-photo,
+.photo-card figure,
+.card-img-wrap,
+.hero-visual,
+.rajac-photo-source-wrap{
+  background:#f7f4ef!important;
+}
+.hero-image-wrap img,
+.inline-img img,
+.track-photo-wrap img,
+.house-photo img,
+.photo-card figure img,
+.card-img-wrap img,
+.hero-visual img,
+.rajac-photo-source-wrap>img{
+  object-fit:contain!important;
+  object-position:center center!important;
+  background:#f7f4ef!important;
+}
+.hero-image-wrap>.rajac-photo-source-wrap,
+.card-img-wrap>.rajac-photo-source-wrap,
+.hero-visual>.rajac-photo-source-wrap{
+  width:100%!important;
+  height:100%!important;
+  display:block!important;
+}
+.hero-image-wrap>.rajac-photo-source-wrap>img,
+.card-img-wrap>.rajac-photo-source-wrap>img,
+.hero-visual>.rajac-photo-source-wrap>img{
+  width:100%!important;
+  height:100%!important;
+  display:block!important;
+}
+.inline-img img{
+  height:220px!important;
+  max-height:220px!important;
+}
+.track-photo-wrap img,
+.house-photo img,
+.photo-card figure img{
+  max-height:360px!important;
+}
+@media(max-width:820px){
+  .inline-img img{height:auto!important;max-height:340px!important;}
+  .hero-image-wrap{aspect-ratio:4/3!important;}
+}
+</style>
+<style id="sisari-v5-status-presence">
+/* === SISARI V5: potvrđene / potencijalne vrste i jedinstveni statusi === */
+.badge-presence-confirmed{background:#eef1e6;border:1px solid #c9d1b6;color:#3d4a23;font-weight:800}
+.badge-presence-potential{background:#fff4d8;border:1px solid #d8b66b;color:#67450a;font-weight:800}
+.rajac-presence-box{margin:12px 0 22px;padding:13px 15px;border-radius:12px;border:1px solid #d8cfbd;background:#fffdf7;color:#3b3325;font-size:15px;line-height:1.6}
+.rajac-presence-box strong{color:#2d3c1f;font-weight:800}
+.rajac-presence-box.potential{border-color:#d8b66b;background:#fff8e6}
+.card-tag.tag-presence-confirmed{background:#eef1e6!important;color:#3d4a23!important;border:1px solid #c9d1b6!important}
+.card-tag.tag-presence-potential,.pi-presence{display:inline-block;margin-top:8px;padding:3px 8px;border-radius:999px;background:#fff4d8;color:#67450a;border:1px solid #d8b66b;font-size:11.5px;font-weight:800;letter-spacing:.02em}
+.card-img-wrap img,.pi-img img{object-fit:contain!important;background:#f7f4ef!important}
+.hero-image-wrap img,.gallery-grid img,.inline-img img{object-fit:contain!important;background:#f7f4ef!important}
+</style>
+<style id="sisari-v8-one-photo-standard">
+/* SISARI v8: једна главна фотографија по врсти, са извором на hover. */
+.hero-image-wrap{aspect-ratio:16/9!important;background:#f7f4ef!important}
+.hero-image-wrap img,.card-img-wrap img{object-fit:contain!important;object-position:center center!important;background:#f7f4ef!important}
+.card-img-wrap .rajac-photo-source-wrap{width:100%!important;height:100%!important}
+.card-img-wrap .rajac-photo-source-wrap img{width:100%!important;height:100%!important;display:block!important}
+</style>
+<style>
+/* v14: исправна атрибуција фотографија — без browser title tooltip-а */
+.rajac-photo-source-wrap>img,.hero-image-wrap img,.card-img-wrap img{object-fit:contain!important;object-position:center center!important;background:#f7f4ef!important;}
+@media (min-width:980px){.species-grid{grid-template-columns:repeat(3,minmax(0,1fr))!important;}}
+.filter-bar,.filter-controls{display:flex!important;flex-wrap:nowrap!important;gap:10px;justify-content:center;align-items:center;}
+.filter-btn{white-space:nowrap;}
+</style>
+<style id="sisari-v16-final-photo-layout-fix">
+/* SISARI v16 — završna zaštita: dugmad jedan red, vrste tri kolone, sitan potpis i lokalne fotografije gde postoje */
+@media (min-width: 981px){
+  body .filter-bar.filter-bar-v15{
+    display:grid!important;
+    grid-template-columns:repeat(7,minmax(0,1fr))!important;
+    gap:10px!important;
+    flex-wrap:nowrap!important;
+    max-width:1180px!important;
+    width:100%!important;
+    margin-left:auto!important;
+    margin-right:auto!important;
+  }
+  body .filter-bar.filter-bar-v15 .filter-btn{
+    width:100%!important;
+    min-width:0!important;
+    max-width:none!important;
+    height:44px!important;
+    padding:0 8px!important;
+    font-size:11.5px!important;
+    line-height:1!important;
+    white-space:nowrap!important;
+  }
+  body .species-grid-main.species-grid-v15{
+    display:grid!important;
+    grid-template-columns:repeat(3,minmax(0,1fr))!important;
+    gap:26px!important;
+    max-width:1180px!important;
+    width:100%!important;
+    margin:0 auto!important;
+  }
+}
+@media (max-width:980px){
+  body .filter-bar.filter-bar-v15{
+    display:flex!important;
+    flex-wrap:nowrap!important;
+    overflow-x:auto!important;
+    justify-content:flex-start!important;
+    gap:10px!important;
+    padding-bottom:12px!important;
+  }
+  body .filter-bar.filter-bar-v15 .filter-btn{flex:0 0 auto!important;}
+}
+body .hero-image-wrap{
+  width:100%!important;
+  max-width:900px!important;
+  margin-left:auto!important;
+  margin-right:auto!important;
+  aspect-ratio:16/9!important;
+  background:#f7f4ef!important;
+  overflow:hidden!important;
+}
+body .hero-image-wrap .rajac-photo-source-wrap{
+  display:block!important;
+  width:100%!important;
+  height:100%!important;
+}
+body .hero-image-wrap img,
+body .card-img-wrap img,
+body .rajac-photo-source-wrap>img{
+  width:100%!important;
+  height:100%!important;
+  object-fit:contain!important;
+  object-position:center center!important;
+  background:#f7f4ef!important;
+  transform:none!important;
+}
+body .species-card:hover .card-img-wrap img,
+body .hero-image-wrap:hover img{transform:none!important;}
+body p.img-caption,
+body .img-caption,
+body figure figcaption,
+body .caption{
+  font-family:Georgia,"Times New Roman",serif!important;
+  font-size:12px!important;
+  line-height:1.35!important;
+  color:#5f5a52!important;
+  text-align:left!important;
+  font-style:italic!important;
+  font-weight:400!important;
+  letter-spacing:0!important;
+  margin:7px auto 24px!important;
+  padding:0 4px!important;
+  max-width:900px!important;
+}
+body .img-caption em,
+body figure figcaption em,
+body .caption em{
+  font-size:inherit!important;
+  line-height:inherit!important;
+  color:inherit!important;
+  font-style:italic!important;
+  font-weight:inherit!important;
+}
+</style>
+<style id="rajac-caption-clean-v17">
+body p.img-caption, body .img-caption{
+  font-size:12px !important;
+  line-height:1.35 !important;
+  color:var(--text-muted,#5a5a5a) !important;
+  text-align:left !important;
+  margin:8px 0 28px !important;
+  padding:0 4px !important;
+  font-style:italic !important;
+}
+body p.img-caption em, body .img-caption em{font-style:italic !important;}
+</style><link rel="stylesheet" href="/sisari/assets/mobile/sisari-mobile.css?v=20260716f"/>
+<script defer src="/sisari/assets/mobile/sisari-mobile.js?v=20260716f"></script>
+
+<link rel="stylesheet" href="/sisari/assets/sisari-photo-credits-v2.css?v=20260817">
+</head>
+<body>
+<nav aria-label="Главни мени ПИО Рајац" class="rajac-ds-nav"><div class="rajac-ds-nav-inner"><a class="rajac-ds-home" href="https://piorajac.rs/"><span aria-hidden="true" class="rajac-ds-home-mark">⊙</span><span>ПИО Рајац</span></a><a class="rajac-ds-nav-item" href="https://piorajac.rs/biljke/"><span aria-hidden="true" class="rajac-ds-icon">🌿</span><span>БИЉКЕ</span></a><a class="rajac-ds-nav-item" href="https://piorajac.rs/ptice/"><span aria-hidden="true" class="rajac-ds-icon">🦉</span><span>ПТИЦЕ</span></a><a class="rajac-ds-nav-item" href="https://piorajac.rs/insekti/"><span aria-hidden="true" class="rajac-ds-icon">🦋</span><span>ИНСЕКТИ</span></a><a class="rajac-ds-nav-item rajac-ds-active" href="https://piorajac.rs/sisari/"><span aria-hidden="true" class="rajac-ds-icon">🐾</span><span>СИСАРИ</span></a><a class="rajac-ds-nav-item" href="https://piorajac.rs/gljive/"><span aria-hidden="true" class="rajac-ds-icon">🍄</span><span>ГЉИВЕ</span></a><a class="rajac-ds-nav-item rajac-ds-nav-trofo" href="https://piorajac.rs/trofodinamika/"><span aria-hidden="true" class="rajac-ds-icon">🔗</span><span>ТРОФОДИНАМИКА</span></a></div></nav>
+<main class="page-wrap">
+<div class="species-hero">
+<h1 class="common-name">Дивља свиња</h1>
+<div class="latin-name"><em>Sus scrofa</em> Linnaeus, 1758</div>
+<div class="badges"><span class="badge badge-iucn-lc">IUCN (глобално) LC — најмања забринутост</span><span class="badge badge-national badge-serbia-status">Статус у Србији: дивљач чије је коришћење регулисано прописима</span><span class="badge badge-presence-confirmed">Статус на Рајцу: основни каталог</span>
+<span class="badge badge-pred">Папкари — Artiodactyla</span>
+<a class="badge badge-info badge-sound" href="#zvuk-vrste">🔊 Звук врсте</a>
+</div>
+</div>
+<div class="hero-image-wrap">
+<span class="rajac-photo-source-wrap" data-photo-source="Фото: Diego Delso / Wikimedia Commons, CC BY-SA 4.0 — оригинал" data-source-page="https://commons.wikimedia.org/wiki/File:Jabal%C3%AD_(Sus_scrofa),_monte_Pf%C3%A4nder,_Bregenz,_Austria,_2022-10-23,_DD_12.jpg" tabindex="0"><img alt="Дивља свиња (Sus scrofa) — одрасла јединка у природном станишту" data-credit="Фото: Diego Delso / Wikimedia Commons, CC BY-SA 4.0 — оригинал" decoding="async" height="600" referrerpolicy="no-referrer" src="../assets/images/sus-scrofa.webp" width="750"/></span>
+</div>
+<p class="img-caption">Дивља свиња (Sus scrofa).</p>
+<div class="taxonomy-box">
+<h3>□ Таксономија</h3>
+<table>
+<tr><td>Царство:</td><td>Animalia</td></tr>
+<tr><td>Тип:</td><td>Chordata</td></tr>
+<tr><td>Класа:</td><td><em>Mammalia</em> — Сисари</td></tr>
+<tr><td>Ред:</td><td><em>Artiodactyla</em> — Папкари</td></tr>
+<tr><td>Породица:</td><td><em>Suidae</em> — Свиње</td></tr>
+<tr><td>Род:</td><td><em>Sus</em> Linnaeus, 1758</td></tr>
+<tr><td>Врста:</td><td><em>Sus scrofa</em> Linnaeus, 1758</td></tr>
+<tr><td>Подврста:</td><td><em>S. s. scrofa</em> — западноевропска дивља свиња</td></tr>
+<tr><td>Статус:</td><td>IUCN (глобално) LC — најмања забринутост · дивљач чије је коришћење регулисано прописима</td></tr>
+<tr><td>Станиште:</td><td>Листопадне шуме богате жиром, блатишта, ливаде — све зоне Рајца</td></tr>
+<tr><td>Маса / дужина:</td><td>50–200 kg · 100–180 cm тело</td></tr>
+</table>
+</div>
+<div style="margin-top:12px">
+<audio controls="" preload="none" style="width:100%;max-width:720px">
+<source src="https://upload.wikimedia.org/wikipedia/commons/8/8a/Boar.Grwls%281%29.ogg" type="audio/ogg"/>
+Ваш прегледач не подржава HTML5 аудио елемент.
+</audio>
+</div>
+<p style="margin-top:10px;font-size:13px;line-height:1.65;color:#4a5a45">Извор звука: Wikimedia Commons — File:Боар.Грвлс(1).огг.</p>
+<div class="content-section clearfix">
+<h2 class="section-title"><span>🔍</span> Морфологија и карактеристике</h2>
+<p>Дивља свиња (<em>Sus scrofa</em>) је један од најширим ареалом распрострањених крупних сисара на свету, и претком домаћих свиња. Тело је снажно, бачвасто, са кратким ногама и карактеристичном великом, клинастом главом. Вратни и леђни мишићи чине мало грбу. Нос завршава „ружицом" — хрскавичном подлогом са ноздрвама — која је снажан орган за копање и њушкање.</p>
+<p>Длака је чврста, четинаста, обично тамносива до смеђецрна. Дуж кичме је гребен дуже длаке. Прасад имају карактеристичне уздужне беле пруге по тамносмеђој длаци — „бастуна" образац — которји нестаје са 3–4 месеца. Мужјаци (веприси) знатно су крупнији од женки (крмача). Одрасли вепар може тежити 150–200 kg, изузетно и до 300 kg. Клице (кутњаци) мужјака дужине 10–15 cm изражено вире из уста — примарни инструмент одбране и борбе.</p>
+<p>Чуло мириса изузетно је развијено — дивља свиња може осетити мирис хране закопане 10–15 cm испод земље. Слух је такође одличан; вид нешто слабији, али добро разликује покрет.</p>
+<div class="highlight-box">
+<strong>Биотип обликовач станишта:</strong> Дивља свиња је <em>ecosystem engineer</em> — интензивним ровањем тла копитастим носом разрахљује земљу, ствара мала блатишта (валишта) и директно утиче на структуру приземне вегетације. Сваке ноћи може преврнути 100–500 m² шумског тла у потрази за храном.
+    </div>
+</div>
+<div class="content-section">
+<h2 class="section-title"><span>🌿</span> Станиште на Рајцу</h2>
+<p>Дивља свиња је еколошки универзалиста — насељава листопадне шуме, мешовите шуме, ретке грмове, мочвартна подручја и пољопривредне терене. На Рајцу је доминантна врста у свим шумским зонама, са највећом густином у буковим и храстовим шумама богатим жиром. Посебно воли шумске депресије са влажним, меким тлом погодним за ровање и валање.</p>
+<p>Валишта (блатишта) — плитка калишта у ниским деловима терена — кључна су за терморегулацију и уклањање паразита. Свиња прво облокаше блато а затим се трља о корење или дрво — типичан знак присуства у пределу. Радиус кретања чопора обично је 5–15 km², а при оскудици хране јединке могу путовати 30–40 km у потрази за жиром.</p>
+</div>
+<div class="content-section">
+<h2 class="section-title"><span>🔬</span> Биологија и понашање</h2>
+<p>Дивља свиња је претежно ноћна и сумрачна животиња — дање мирује у густом подраслику или грабском шикарју. Друштвена је врста: крмаче живе у чопорима 4–20 јединки (матрилинеарни клан), а мужјаци су солитарни ван сезоне парења. Млади вепрови (годишњаци) могу формирати сопствене „момачке" чопоре.</p>
+<p>Гласање је разноврсно: грокотање при мирном ровању, оштро „уф" при узбуни, вриштање при страху или болу, лупкање зубима вепра при претњи. Свиња је изузетно интелигентна животиња са добром просторном меморијом — памти изворе хране, локације валишта и безбедних путева.</p>
+<div class="highlight-box">
+<strong>Ровање тла:</strong> Свиња рова „ружицом" по целом станишту трагајући за луковицама, корењем, гљивама, земљаним червима и ларвама инсеката. Преврнуто тло лако препознатљиво — плиће него кртичњак, знатно шире захваћено. После ровања појединачне свиње видљиви „путеви" у листопаду.
+    </div>
+</div>
+<div class="content-section">
+<h2 class="section-title"><span>🍃</span> Исхрана</h2>
+<p>Дивља свиња је типичан свеједер — опортунистичка и сезонска. Основу дијете на Рајцу чине: жир (херастов, буков, кестенов) — до 70% јесење дијете; корење и луковице шумских биљака; гљиве подземне и надземне; земљани черви, ларве хруштева и других инсеката; мишеви и волухарице (ловљени копањем); птичја јаја и птице гнездарице на тлу (повремено); стрвина и угинуле животиње.</p>
+<p>Потражња хране по јединки износи 3–5 kg дневно. Јесен је кључна сезона гојења — свиња акумулира масне резерве за зиму и период прасења. Свиња може процесуирати и биљни материјал са отровима које друге врсте не могу — нпр. неке врсте гљива и луковица.</p>
+</div>
+<div class="content-section">
+<h2 class="section-title"><span>🌸</span> Размножавање</h2>
+<p>Риј (парење) одвија се у новембру–јануару, са врхунцем у децембру. Вепар у рију испушта жлезде мириса (слиновне и вратне) и активно тражи рецептивне крмаче у широком кругу. Доминантни мужјаци боре се гласним грокотањем, трчањем и бодежима клица.</p>
+<p>Гравидитет траје 115–120 дана (ок. 4 месеца). Крмача прасе у марту–мају, изолована од чопора, у гнезду направљеном од грана и листопада. Легло броји 4–12 прасади, просечно 5–7. Прасад су неколико сати после рођења способна да прате мајку. Дојење траје 3–4 месеца, а млади остају уз мајку до следеће сезоне прасења.</p>
+<div class="highlight-box">
+<strong>Висока репродуктивна способност:</strong> Крмача полно дозрева са 8–10 месеци. Под повољним условима (обиље жира, блага зима) прасе се два пута годишње, са леглима до 12 прасади. То чини дивљу свињу врстом са највишим репродуктивним потенцијалом међу крупним сисарима Европе.
+    </div>
+</div>
+<div class="content-section">
+<h2 class="section-title"><span>🔄</span> Екологија и улога у екосистему</h2>
+<p>Дивља свиња је кључна врста (<em>keystone species</em>) шумских екосистема умереног климата. Ровањем тла ствара мозаик микростаништа — преврнута земља представља идеалан клијалиште за шумске биљке, гљиве и нове стале биљних заједница. Свиња је уједно главни распрострањивач спора хиогених гљива.</p>
+<p>Са друге стране, прекомерна бројност (пренасељеност) доводи до деградације приземне вегетације, ускоро уклањања гнезда птица тла и значајних штета на пољопривредним усевима у периферним зонама. На Рајцу је ровање видљиво у готово свим деловима шуме и представља стални изазов за мониторинг популације.</p>
+</div>
+<div class="content-section">
+<h2 class="section-title"><span>🛡</span> Заштита и статус</h2><div class="status-clarification-box"><span class="status-row"><strong>IUCN: </strong>глобална процена ризика: LC — најмања забринутост.</span><span class="status-row"><strong>Србија / Рајац: </strong>Статус у Србији: дивљач чије је коришћење регулисано прописима</span><span class="status-row"><strong>Напомена: </strong>IUCN оцена, национални статус и режим ПИО „Рајац” нису исто; у заштићеном подручју примењују се режим заштите, план управљања и важећи прописи.</span></div><div class="rajac-presence-box confirmed"><strong>Статус на Рајцу: врста у основном каталогу. </strong>Ова врста је у јавном каталогу одвојена од потенцијалних и спорадичних врста. За прецизне тачке налаза и сезонску динамику користити теренске записе, фото-замке, акустички мониторинг и проверене базе налаза.</div>
+<p>Дивља свиња је у Србији класификована као <strong>дивљач чије је коришћење регулисано прописима</strong> под Законом о дивљачи и ловству. Популација је бројна и у порасту широм Европе — захваљујући редукцији природних предатора (вук, рис) и интензивног дохрањивања у ловиштима. На Рајцу лов је регулисан управљачким планом ловишта.</p>
+<p>Главна здравствена претња: Африканска куга свиња (<em>ASF — African Swine Fever</em>) — вирусна болест без лека, не преноси се на људе, али је фатална за свиње. У Србији је присутна у суседним регионима. Болест се шири директним контактом и преко стрвина. Мониторинг популације на Рајцу укључује редовна узорковања ради надзора ASF.</p>
+<div class="protection-grid">
+<div class="protection-card">
+<div class="pcard-label">Глобални статус (IUCN)</div>
+<div class="pcard-value">LC — најмања забринутост</div>
+</div>
+<div class="protection-card">
+<div class="pcard-label">Статус у Србији</div>
+<div class="pcard-value">регулисано прописима из области дивљачи и ловства</div>
+</div>
+<div class="protection-card">
+<div class="pcard-label">Главне претње</div>
+<div class="pcard-value">Африканска куга свиња (ASF), лов ван сезоне</div>
+</div>
+<div class="protection-card">
+<div class="pcard-label">Управљање на Рајцу</div>
+<div class="pcard-value">Управљачки план ловишта · ASF мониторинг</div>
+</div>
+</div>
+<div class="warning-box">
+<strong>⚠️ Упозорење за посетиоце:</strong> Не прилазите крмачи са прасадима — може бити агресивна у одбрани младих. Пронађену угинулу дивљу свињу не додирујте голим рукама и пријавите ветеринарским службама или управи ПИО — потенцијални ризик од ASF.
+    </div>
+</div>
+<div class="pheno-section">
+<h2 class="section-title"><span>🗓</span> Календар активности на Рајцу</h2>
+<p style="font-size:14.5px;line-height:1.75;color:var(--text);margin-bottom:16px;">Када је дивљу свињу <strong>најлакше опазити</strong> и шта очекивати у сваком месецу на подручју ПИО „Рајац":</p>
+<div class="pheno-grid">
+<div class="pheno-month ph-low"><span class="m-name">ЈАН</span><span class="m-icon">❄️</span></div>
+<div class="pheno-month ph-low"><span class="m-name">ФЕБ</span><span class="m-icon">❄️</span></div>
+<div class="pheno-month ph-young"><span class="m-name">МАР</span><span class="m-icon">🐷</span></div>
+<div class="pheno-month ph-young"><span class="m-name">АПР</span><span class="m-icon">🐷</span></div>
+<div class="pheno-month ph-young"><span class="m-name">МАЈ</span><span class="m-icon">🐷</span></div>
+<div class="pheno-month ph-active"><span class="m-name">ЈУН</span><span class="m-icon">🌿</span></div>
+<div class="pheno-month ph-active"><span class="m-name">ЈУЛ</span><span class="m-icon">🌿</span></div>
+<div class="pheno-month ph-active"><span class="m-name">АВГ</span><span class="m-icon">🌿</span></div>
+<div class="pheno-month ph-active"><span class="m-name">СЕП</span><span class="m-icon">🍂</span></div>
+<div class="pheno-month ph-active"><span class="m-name">ОКТ</span><span class="m-icon">🌰</span></div>
+<div class="pheno-month ph-mating"><span class="m-name">НОВ</span><span class="m-icon">💕</span></div>
+<div class="pheno-month ph-mating"><span class="m-name">ДЕЦ</span><span class="m-icon">💕</span></div>
+</div>
+<div class="pheno-legend">
+<span><span class="dot" style="background:#c4500a"></span> Риј / парење — нов–дец</span>
+<span><span class="dot" style="background:#e8a020"></span> Прасење и одгој прасади — мар–мај</span>
+<span><span class="dot" style="background:#2d5a27"></span> Пуна активност — жирење и ровање</span>
+<span><span class="dot" style="background:#b0bfaa"></span> Смањена активност при хладноћи</span>
+</div>
+<div class="highlight-box" style="margin-top:14px">
+<strong>Најбоље доба за посматрање:</strong> Сумрак и ноћ — фото-замке дају далеко боље резултате од директног посматрања. Октобар је кључни период: свиња интензивно жири у храстовим шумама у поподневним часовима. Зима (снег) — трагови чопора добро видљиви.
+    </div>
+</div>
+<div class="tracks-section">
+<h2 class="section-title"><span>🐾</span> Трагови и знаци присуства</h2>
+<p style="font-size:14.5px;line-height:1.75;color:var(--text);margin-bottom:16px;">Дивља свиња оставља <strong>изразито видљиве и карактеристичне трагове</strong> — присуство на Рајцу готово увек је лако потврдити:</p>
+<div class="paw-diagram">
+<div class="paw-svg-wrap">
+<svg height="115" viewbox="0 0 90 115" width="90" xmlns="http://www.w3.org/2000/svg">
+<ellipse cx="30" cy="48" fill="#5a4a35" opacity="0.85" rx="16" ry="24"></ellipse>
+<ellipse cx="60" cy="48" fill="#5a4a35" opacity="0.85" rx="16" ry="24"></ellipse>
+<ellipse cx="20" cy="77" fill="#5a4a35" opacity="0.65" rx="9" ry="11"></ellipse>
+<ellipse cx="70" cy="77" fill="#5a4a35" opacity="0.65" rx="9" ry="11"></ellipse>
+<line stroke="#c8b080" stroke-dasharray="3,3" stroke-width="1.5" x1="45" x2="45" y1="22" y2="72"></line>
+<line stroke="#aaa" stroke-width="1" x1="4" x2="86" y1="102" y2="102"></line>
+<text fill="#888" font-size="9" text-anchor="middle" x="45" y="114">6–9 cm</text>
+</svg>
+<div class="paw-label">Отисак папка</div>
+</div>
+<div class="paw-specs">
+<table>
+<tr><td>Дужина папка</td><td>6–9 cm (много шири и округлији него код срне)</td></tr>
+<tr><td>Ширина папка</td><td>5–7 cm</td></tr>
+<tr><td>Облик</td><td>Широк, округао; задњи прсти скоро увек видљиви</td></tr>
+<tr><td>Задњи прсти</td><td>Видљиви уназад — главна разлика од срне</td></tr>
+<tr><td>Ходни образац</td><td>Широке, изразите стазе у шуми; лист. и блато избраздано</td></tr>
+<tr><td>Дужина корака</td><td>50–70 cm у умереном ходу одраслог вепра</td></tr>
+</table>
+</div>
+</div>
+<div class="tracks-grid">
+<div class="track-card">
+<h4>🌱 Ровање тла</h4>
+<p>Главни знак присуства: преврнути слојеви тла и листопада, уздужне бразде широке 10–20 cm. Дубина 5–15 cm. Свежи трагови имају влажну, тамну унутрашњост. Ровање видљиво у целој шуми, посебно у влажним деловима терена.</p>
+</div>
+<div class="track-card">
+<h4>🛁 Валишта (блатишта)</h4>
+<p>Плитка удубљења у влажном тлу, промера 1–3 m, пуна блата и длаке. Свиња прво калиша тело а затим трља о оближња дрва — кора обојена блатом до висине 70–100 cm. Дрво остаје мокро дуго после посете.</p>
+</div>
+<div class="track-card">
+<h4>💩 Измет</h4>
+<p>Компактне, цилиндричне пилуле дужине 3–5 cm, у гомили. Садржи биљне остатке, семена, кости. Може бити веома мекан и неформиран у периоду жирења. Обично одложен на видљивом месту уз стазу.</p>
+</div>
+<div class="track-card">
+<h4>🌲 Трагови на дрвећу</h4>
+<p>Клице вепра остављају карактеристичне паралелне бразде у кори млаðих дрвета. Трљиште — гладак ожиљак коре до висине 50–80 cm са остатком длаке и трагом блата. Типично на стаблима са пречником 15–30 cm.</p>
+</div>
+</div>
+</div>
+<div class="camtrap-section">
+<h2 class="section-title"><span>📷</span> Фото-замке — водич за посматрање</h2>
+<p style="font-size:14.5px;line-height:1.75;color:var(--text);margin-bottom:16px;">Дивља свиња је <strong>ноћна и опрезна</strong> — лако је идентификовати трагове, али директно посматрање захтева стрпљење. Фото-замка поред активног валишта или стазе бележи скоро сваку ноћ.</p>
+<div class="camtrap-grid">
+<div class="camtrap-card">
+<span class="ct-icon">📍</span>
+<h4>Где поставити</h4>
+<p>Поред активних валишта — најбоља позиција. Дуж шумских стаза са видљивим ровинама. Уз блатна подручја и извора. На пролазу кроз ограду или рупу у шикарју.</p>
+</div>
+<div class="camtrap-card">
+<span class="ct-icon">📐</span>
+<h4>Висина и угао</h4>
+<p>50–70 cm висине — висина трупа дивље свиње. Угао 20–30° надоле. Осетљивост на широко. Заштитити замку од ровања — учврстити конопцем јер свиња може порушити стубац!</p>
+</div>
+<div class="camtrap-card">
+<span class="ct-icon">🌙</span>
+<h4>Кад очекивати снимак</h4>
+<p>Највише снимака: 21 ч до поноћи и прво јутарње свитање. Октобар: свиња дневно код храстова. Март–мај: крмача са прасадима — врло ретко, не узнемиравати.</p>
+</div>
+</div>
+<div class="highlight-box">
+<strong>Савет за безбедност:</strong> Не прилазити активном валишту без провере ситуације — крмача са прасадима може бити веома агресивна. Замку постављати без мириса (рукавице при монтажи). Не остављати хранилице — дохрањивање дивљи диљих свиња повећава ризик ширења болести.
+    </div>
+</div>
+<section aria-label="Водичи и алати за посетиоце Рајца" class="sisari-toolstrip">
+<a class="sisari-tool" href="https://piorajac.rs/sisari/pomoc-sisarima-rajca/">
+<span class="sisari-tool-kicker">Водич 01</span>
+<strong>Помоћ сисарима</strong>
+<em>Како помоћи без узнемиравања</em>
+<span class="sisari-tool-arrow">→</span>
+</a>
+<a class="sisari-tool" href="https://piorajac.rs/sisari/fotografisanje-sisara-rajac/">
+<span class="sisari-tool-kicker">Водич 02</span>
+<strong>Фотографисање сисара</strong>
+<em>Теренски савети и етика снимања</em>
+<span class="sisari-tool-arrow">→</span>
+</a>
+<a class="sisari-tool" href="https://piorajac.rs/sisari/ponasanje-prema-sisarima-rajac/">
+<span class="sisari-tool-kicker">Водич 03</span>
+<strong>Понашање према сисарима</strong>
+<em>Правила за сусрет и посматрање</em>
+<span class="sisari-tool-arrow">→</span>
+</a>
+<a class="sisari-tool" href="https://piorajac.rs/sisari/alati-za-posetioce-sisari-rajca/">
+<span class="sisari-tool-kicker">Алат 04</span>
+<strong>Алати за посетиоце</strong>
+<em>Трагови, налази, сезонски водич и квиз</em>
+<span class="sisari-tool-arrow">→</span>
+</a>
+</section>
+<nav class="species-nav">
+<a href="https://piorajac.rs/sisari/capreolus-capreolus/">← Срна — <em>Capreolus capreolus</em></a>
+<a class="center-link" href="https://piorajac.rs/sisari/">📋 Сисари Рајца</a>
+<a href="https://piorajac.rs/sisari/lepus-europaeus/">Дивљи зец — <em>Lepus europaeus</em> →</a>
+</nav>
+</main>
+<footer class="site-footer">
+  © 2026 — Предео изузетних одлика „Рајац" · Туристичка организација општине Љиг
+
+</footer>
+<script id="rajac-ds-old-menu-cleanup">(function(){function killOldMenus(){try{var selectors=[".rfx-chapter-nav","nav.rfx-chapter-nav","nav.topnav",".topnav",".ins-topnav-wrap",".sisari-topnav-wrap",".glj-topnav",".glj-nav",".rfw-edit-bar"];selectors.forEach(function(sel){document.querySelectorAll(sel).forEach(function(el){if(!el.classList.contains("rajac-ds-nav")){el.remove();}});});}catch(e){}} if(document.readyState==="loading"){document.addEventListener("DOMContentLoaded",killOldMenus);}else{killOldMenus();} setTimeout(killOldMenus,50); setTimeout(killOldMenus,300); setTimeout(killOldMenus,1000);})();</script>
+<!-- SITE_EDITOR_ADMIN_BAR_START -->
+<script defer="" src="/admin-site-editor.php?admin_bar_js=1"></script>
+<!-- SITE_EDITOR_ADMIN_BAR_END -->
+
+<script defer src="/sisari/assets/sisari-photo-credits-v2.js?v=20260817"></script>
+</body>
+</html>

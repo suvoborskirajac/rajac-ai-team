@@ -1,0 +1,1789 @@
+<!DOCTYPE html>
+<html lang="sr-Cyrl">
+<head>
+<meta charset="utf-8">
+<link rel="canonical" href="https://piorajac.rs/biljke/ponasanje-prema-biljkama-rajca.html"/>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Понашање према биљкама и стаништима Рајца | ПИО „Рајац”</title>
+<meta name="description" content="Практични водич за посетиоце ПИО „Рајац”: како се кретати кроз ливаде, шуме, изворе и рубна станишта без оштећивања биљака, заштићених врста и осетљивих микростаништа.">
+<meta name="referrer" content="no-referrer">
+<link rel="preconnect" href="https://piorajac.rs">
+<link rel="preconnect" href="https://images.pexels.com">
+<style>
+:root{
+  --forest:#2d5a27;
+  --forest-dark:#1a3a15;
+  --forest-soft:#e8f0e6;
+  --leaf:#4a7c43;
+  --moss:#6e8a58;
+  --nav:#0d1b2a;
+  --cream:#f7f4ef;
+  --warm-white:#fdfcfa;
+  --paper:#fffdf8;
+  --soft:#f2f0eb;
+  --text:#2a2a2a;
+  --muted:#5a5a5a;
+  --line:#d8d0c4;
+  --gold:#d8b55b;
+  --accent:#8b6914;
+  --red:#9a2d2d;
+  --blue:#476d7c;
+  --shadow:0 2px 12px rgba(0,0,0,.08);
+  --shadow-hover:0 6px 24px rgba(0,0,0,.14);
+  --radius:10px;
+  --font:"Cormorant Garamond","EB Garamond",Garamond,"Palatino Linotype","Book Antiqua",Georgia,"Times New Roman",serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--font);font-size:16px;line-height:1.75;color:var(--text);background:var(--warm-white)}
+a{color:inherit;text-decoration:none}
+img,svg{display:block;max-width:100%}
+.wrap{max-width:1180px;margin:0 auto;padding:0 22px}
+.rajac-ds-nav{background:var(--nav);position:sticky;top:0;z-index:50;border-bottom:1px solid rgba(255,255,255,.08)}
+.rajac-ds-nav-inner{max-width:1180px;margin:auto;display:flex;align-items:stretch;min-height:58px;padding:0 18px;gap:0;overflow-x:auto;scrollbar-width:none}
+.rajac-ds-nav-inner::-webkit-scrollbar{display:none}
+.rajac-ds-home{display:flex;align-items:center;gap:9px;padding-right:20px;margin-right:8px;border-right:1px solid rgba(255,255,255,.12);color:var(--gold)!important;font-weight:600;font-size:18px;white-space:nowrap}
+.rajac-ds-home-mark{display:inline-grid;place-items:center;width:32px;height:32px;border-radius:12px;background:rgba(216,181,91,.12)}
+.rajac-ds-nav-item{position:relative;display:flex;align-items:center;gap:7px;padding:0 15px;color:rgba(255,255,255,.72);font-size:16px;font-weight:600;letter-spacing:.045em;text-transform:uppercase;white-space:nowrap}
+.rajac-ds-nav-item:hover{color:#fff;background:rgba(255,255,255,.035)}
+.rajac-ds-nav-item.rajac-ds-active{color:var(--gold)}
+.rajac-ds-nav-item.rajac-ds-active:after{content:"";position:absolute;left:15px;right:15px;bottom:8px;height:2px;border-radius:2px;background:var(--gold)}
+.rajac-ds-icon{font-size:15px}
+.hero{position:relative;overflow:hidden;background:radial-gradient(circle at 18% 12%,rgba(216,181,91,.16),transparent 24%),linear-gradient(180deg,#fffdf8 0%,#f8f4ed 100%);border-bottom:1px solid var(--line)}
+.topline{display:flex;align-items:center;justify-content:space-between;gap:18px;padding:22px 0 8px;color:var(--muted);font-size:15px;letter-spacing:.08em;text-transform:uppercase;font-weight:600}
+.topline a{color:var(--forest);font-weight:700}
+.hero-grid{position:relative;z-index:2;display:grid;grid-template-columns:minmax(0,.94fr) minmax(420px,1.06fr);gap:46px;align-items:stretch;padding:40px 0 82px}
+.badge{display:inline-flex;align-items:center;gap:10px;width:max-content;padding:8px 14px;border-radius:999px;background:var(--forest-soft);border:1px solid #a8c4a4;color:var(--forest);font-size:15px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;margin-bottom:22px}
+h1{font-weight:300;letter-spacing:-.02em;line-height:.98;font-size:clamp(2.3rem,4.1vw,4.1rem);max-width:760px;margin:0 0 22px;color:var(--forest-dark)}
+.hero-lead{max-width:760px;color:var(--muted);font-size:clamp(1.12rem,1.55vw,1.34rem);line-height:1.48;margin:0}
+.hero-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:46px;padding:12px 18px;border-radius:999px;border:1px solid var(--forest);background:var(--forest);color:#fff;font-size:15px;font-weight:700}
+.btn.light{background:#fff;color:var(--forest)}
+.hero-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:30px;max-width:760px}
+.stat{background:var(--soft);border:1px solid var(--line);border-radius:var(--radius);padding:15px 14px;box-shadow:var(--shadow)}
+.stat b{display:block;font-size:34px;line-height:1;color:var(--forest);font-weight:300}
+.stat span{display:block;color:var(--muted);font-size:16px;line-height:1.35;margin-top:6px}
+.hero-visual{position:relative;height:100%;min-height:430px;border-radius:var(--radius);overflow:hidden;border:1px solid var(--line);box-shadow:var(--shadow);background:#e7eadf;isolation:isolate;align-self:stretch}
+.hero-visual img{width:100%;height:100%;min-height:100%;object-fit:cover;object-position:center center;transform:scale(1.01)}
+.hero-visual:before{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(90deg,rgba(18,40,23,.24),transparent 42%),linear-gradient(0deg,rgba(18,40,23,.42),transparent 58%);pointer-events:none}
+.hero-visual-badge{position:absolute;left:22px;bottom:22px;z-index:2;max-width:min(470px,calc(100% - 44px));padding:15px 17px;border-radius:var(--radius);background:rgba(26,58,21,.84);border:1px solid rgba(255,255,255,.18);box-shadow:0 18px 48px rgba(0,0,0,.18)}
+.hero-visual-badge strong{display:block;color:#f2d785;font-size:18px;line-height:1.2;font-weight:700;letter-spacing:.04em;text-transform:uppercase}
+.hero-visual-badge span{display:block;margin-top:5px;color:rgba(255,255,255,.86);font-size:17px;line-height:1.35}
+.photo-source{display:block;margin-top:5px;color:rgba(255,255,255,.68);font-size:12px;line-height:1.25}
+.quick-nav{position:relative;z-index:3;margin-top:-38px;margin-bottom:42px}
+.quick-nav-inner{background:rgba(255,255,255,.94);border:1px solid var(--line);border-radius:var(--radius);padding:12px;box-shadow:var(--shadow);display:grid;grid-template-columns:repeat(5,1fr);gap:10px;backdrop-filter:blur(10px)}
+.quick-nav a{border-radius:8px;padding:10px 9px;background:#fff;border:1px solid var(--line);text-align:center;font-size:16px;font-weight:700;color:var(--forest)}
+.quick-nav a:hover{background:var(--forest-soft);border-color:#a8c4a4}
+.section{padding:34px 0}
+.section-head{margin-bottom:20px}
+.kicker{display:inline-flex;gap:9px;align-items:center;color:var(--accent);font-size:15px;font-weight:700;letter-spacing:.13em;text-transform:uppercase;margin-bottom:9px}
+h2{font-weight:300;font-size:clamp(2.1rem,4.2vw,3.45rem);line-height:1.02;letter-spacing:-.02em;color:var(--forest-dark);margin:0}
+.section-intro{max-width:900px;color:var(--muted);font-size:21px;line-height:1.52;margin:12px 0 0}
+.card{background:rgba(255,255,255,.88);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow)}
+.grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.grid-2{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+.rule-card{padding:23px;min-height:222px;position:relative;overflow:hidden}
+.rule-card:before{content:"";position:absolute;right:-45px;top:-45px;width:120px;height:120px;border-radius:50%;background:rgba(200,168,75,.12)}
+.rule-icon{font-size:34px;margin-bottom:12px}
+.rule-card h3{font-weight:600;font-size:1.5rem;line-height:1.15;margin:0 0 10px;color:var(--forest-dark)}
+.rule-card p{color:#3f4d5f;font-size:19px;line-height:1.45;margin:0}
+.highlight{margin:26px 0;padding:20px 22px;border-radius:var(--radius);background:linear-gradient(135deg,var(--forest-dark),#163a58);color:#fff;box-shadow:var(--shadow)}
+.highlight strong{color:#f2d785}
+.panel{padding:23px}
+.panel h3{font-size:1.45rem;color:var(--forest-dark);font-weight:600;margin:0 0 12px}
+.panel p,.panel li{font-size:18px;color:#3f4d5f;line-height:1.5}
+.panel ul{list-style:none;margin:0;padding:0;display:grid;gap:10px}
+.panel li{position:relative;padding:12px 13px 12px 34px;border:1px solid #eadfce;background:#fffaf1;border-radius:var(--radius)}
+.panel li:before{content:"→";position:absolute;left:13px;top:12px;color:var(--accent);font-weight:700}
+.no-list li:before{content:"✗";color:var(--red)}
+.ok-list li:before{content:"✓";color:var(--forest)}
+.graphic-box{overflow:hidden;background:linear-gradient(180deg,#fffdf8 0%,#f4f0e7 100%);padding:26px}
+.infographic-cards{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;align-items:stretch}
+.infographic-card{position:relative;min-height:166px;padding:18px 16px;border-radius:22px;background:#fffdf8;border:1px solid var(--line);box-shadow:0 10px 28px rgba(18,28,22,.06)}
+.infographic-card strong{display:block;color:var(--forest-dark);font-size:1.34rem;line-height:1.12;margin:10px 0 7px}
+.infographic-card span{display:block;color:#5a5a5a;font-size:16px;line-height:1.42}
+.infographic-icon{display:grid;place-items:center;width:46px;height:46px;border-radius:16px;background:var(--forest-soft);font-size:26px}
+.infographic-note{display:flex;align-items:flex-start;gap:14px;margin-top:18px;padding:17px 19px;border:1px dashed rgba(139,105,20,.42);border-radius:18px;background:rgba(255,250,240,.82)}
+.infographic-note b{display:grid;place-items:center;flex:0 0 42px;width:42px;height:42px;border-radius:12px;background:var(--forest);color:#f2d785;font-size:22px}
+.infographic-note p{margin:0;color:#3f4d5f;font-size:18px;line-height:1.48}
+.zone-strip{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:18px}
+.zone{padding:18px;border-radius:16px;border:1px solid var(--line);background:#fff}
+.zone b{display:block;color:var(--forest-dark);font-size:1.2rem;line-height:1.15;margin-bottom:6px}
+.zone span{display:block;color:#4f5f72;font-size:16px;line-height:1.38}
+.photo-gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.photo-card{overflow:hidden;border-radius:var(--radius);background:#fff;border:1px solid var(--line);box-shadow:var(--shadow);cursor:zoom-in}
+.photo-card figure{height:255px;background:#dfe6d8;overflow:hidden}
+.photo-card img{width:100%;height:100%;object-fit:cover;transition:transform .25s ease}
+.photo-card:hover img{transform:scale(1.035)}
+.photo-body{padding:16px}
+.photo-body strong{display:block;font-size:1.25rem;line-height:1.15;color:var(--forest-dark);margin-bottom:5px}
+.photo-body em{display:block;font-style:normal;color:var(--accent);font-size:13px;letter-spacing:.08em;text-transform:uppercase;margin-bottom:8px}
+.photo-body p{color:#3f4d5f;font-size:17px;line-height:1.45;margin:0 0 9px}
+.source-line{display:block;color:#777;font-size:12px;line-height:1.3}
+.season-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.season{padding:20px;background:#fff;border:1px solid var(--line);border-radius:16px;box-shadow:var(--shadow)}
+.season .month{display:inline-flex;border-radius:999px;padding:6px 11px;background:#fffaf1;border:1px solid #eadfce;font-weight:700;color:var(--accent);font-size:15px;margin-bottom:12px}
+.season h3{font-weight:600;font-size:1.35rem;line-height:1.12;color:var(--forest-dark);margin:0 0 9px}
+.season p{font-size:18px;color:#3f4d5f;line-height:1.45;margin:0}
+.project{background:linear-gradient(135deg,#fffdf8,#eef5ef);border:1px solid var(--line);border-radius:18px;padding:24px;box-shadow:var(--shadow)}
+.project-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:18px}
+.project-item{background:#fff;border:1px solid #eadfce;border-radius:14px;padding:14px}
+.project-item strong{display:block;color:var(--forest-dark);font-size:1.12rem;line-height:1.18;margin-bottom:6px}
+.project-item span{color:#4f5f72;font-size:16px;line-height:1.36}
+.guide-links{padding:38px 0 52px;background:#f2f0eb;border-top:1px solid var(--line);margin-top:28px}
+.guide-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.guide-card{position:relative;min-height:150px;padding:18px;background:#fffdf8;border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow)}
+.guide-card .ico{font-size:28px;display:block;margin-bottom:10px}
+.guide-card strong{display:block;font-size:1.25rem;color:var(--forest-dark);line-height:1.15;margin-bottom:6px}
+.guide-card span{display:block;font-size:16px;color:#4f5f72;line-height:1.35}
+.guide-card .arr{position:absolute;right:16px;bottom:12px;color:var(--accent);font-size:22px}
+.footer-nav{padding:28px 0 44px}
+.footer-box{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:18px;width:100%;margin:0;padding:18px;border:1px solid var(--line);border-radius:10px;background:#fffdf8;box-shadow:var(--shadow)}
+.footer-box a{display:flex;align-items:center;min-height:48px;color:var(--forest-dark);font-weight:700;font-size:17px}
+.footer-box a.primary{justify-content:center;padding:0 18px;border-radius:999px;background:var(--forest);color:#fff}
+.footer-box a:last-child{justify-content:flex-end;text-align:right}
+.site-footer{padding:22px;text-align:center;color:#687386;border-top:1px solid var(--line);background:#fff;font-size:14px}
+.lightbox{position:fixed;inset:0;z-index:99;background:rgba(5,10,8,.84);display:none;align-items:center;justify-content:center;padding:22px}
+.lightbox.is-open{display:flex}
+.lightbox button{position:absolute;right:20px;top:16px;width:42px;height:42px;border-radius:50%;border:1px solid rgba(255,255,255,.4);background:rgba(0,0,0,.28);color:#fff;font-size:28px;line-height:1;cursor:pointer}
+.lightbox figure{max-width:min(1100px,94vw);max-height:92vh}
+.lightbox img{width:auto;max-width:100%;max-height:82vh;border-radius:16px;box-shadow:0 30px 90px rgba(0,0,0,.38)}
+.lightbox figcaption{color:#fff;margin-top:12px;text-align:center;font-size:16px}
+@media(max-width:1040px){
+  .hero-grid{grid-template-columns:1fr}
+  .quick-nav-inner{grid-template-columns:repeat(3,1fr)}
+  .grid-3,.photo-gallery{grid-template-columns:repeat(2,1fr)}
+  .infographic-cards,.season-grid,.guide-grid,.project-grid,.zone-strip{grid-template-columns:repeat(2,1fr)}
+}
+@media(max-width:680px){
+  .wrap{padding:0 14px}
+  .topline{display:block}
+  .hero-grid{align-items:start;padding:26px 0 72px}
+  .hero-visual{height:auto;min-height:340px}
+  .hero-visual img{min-height:340px}
+  .hero-stats,.quick-nav-inner,.grid-3,.grid-2,.photo-gallery,.season-grid,.guide-grid,.project-grid,.zone-strip,.infographic-cards{grid-template-columns:1fr}
+  h1{font-size:clamp(2.1rem,10vw,3rem)}
+  .footer-box{grid-template-columns:1fr;text-align:left}
+  .footer-box a,.footer-box a:last-child{justify-content:flex-start;text-align:left}
+}
+</style>
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"WebPage",
+  "name":"Понашање према биљкама и стаништима Рајца",
+  "description":"Практични водич о кретању кроз биљна станишта ПИО „Рајац” без оштећивања флоре, земљишта и осетљивих микростаништа.",
+  "inLanguage":"sr-Cyrl",
+  "about":["биљке","станишта","флора","правила понашања","ПИО „Рајац”"],
+  "isPartOf":{"@type":"WebSite","name":"ПИО „Рајац”","url":"https://piorajac.rs/"}
+}
+</script>
+<meta content="article" property="og:type"/><meta content="Понашање према биљкама и стаништима Рајца | ПИО „Рајац”" property="og:title"/><meta content="Практични водич за посетиоце ПИО „Рајац”: како се кретати кроз ливаде, шуме, изворе и рубна станишта без оштећивања биљака, заштићених врста и осетљивих микростаништа." property="og:description"/><meta content="https://piorajac.rs/biljke/ponasanje-prema-biljkama-rajca.html" property="og:url"/><meta content="https://piorajac.rs/biljke/assets/rajac-flora/external/Woodland_path.jpg" property="og:image"/><meta content="ПИО „Рајац”" property="og:site_name"/><meta content="sr_RS" property="og:locale"/>
+<style id="pio-mobile-tablet-ugradjen">
+/*
+ * Биљке ПИО „Рајац” — заједничка правила за телефон и таблет.
+ * Сва правила су ограничена на екране до 1100 px; десктоп остаје непромењен.
+ */
+
+.pio-mobile-nav-toggle,
+.pio-back-to-top {
+  display: none;
+}
+
+@media (max-width: 1100px) {
+  :root {
+    --pio-mobile-pad: clamp(16px, 3.6vw, 24px);
+    --pio-mobile-nav: #0d1b2a;
+    --pio-mobile-gold: #f1cb65;
+    --pio-mobile-paper: #fffdf8;
+  }
+
+  html {
+    max-width: 100%;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+    overflow-x: hidden;
+  }
+
+  body,
+  button,
+  input,
+  select,
+  textarea {
+    text-rendering: optimizeLegibility;
+  }
+
+  img,
+  picture,
+  video,
+  canvas,
+  svg,
+  iframe {
+    max-width: 100%;
+  }
+
+  img,
+  video {
+    height: auto;
+  }
+
+  a,
+  button,
+  input,
+  select,
+  textarea,
+  summary {
+    touch-action: manipulation;
+  }
+
+  p,
+  li,
+  dd,
+  td,
+  th,
+  figcaption,
+  a,
+  strong,
+  em,
+  span {
+    overflow-wrap: anywhere;
+  }
+
+  /* Заједничка горња навигација */
+  .rajac-ds-nav,
+  .rfx-chapter-nav {
+    position: sticky !important;
+    top: 0 !important;
+    z-index: 9998 !important;
+    min-height: 58px !important;
+    background: var(--pio-mobile-nav) !important;
+  }
+
+  .rajac-ds-nav-inner,
+  .rfx-nav-inner {
+    position: relative !important;
+    display: flex !important;
+    align-items: center !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    min-height: 58px !important;
+    margin: 0 !important;
+    padding: 0 max(var(--pio-mobile-pad), env(safe-area-inset-right)) 0 max(var(--pio-mobile-pad), env(safe-area-inset-left)) !important;
+    overflow: visible !important;
+    box-sizing: border-box !important;
+  }
+
+  .rajac-ds-home,
+  .rfx-nav-home {
+    display: inline-flex !important;
+    align-items: center !important;
+    flex: 0 1 auto !important;
+    min-width: 0 !important;
+    min-height: 58px !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    border: 0 !important;
+    color: var(--pio-mobile-gold) !important;
+    font-size: 16px !important;
+    line-height: 1.2 !important;
+    text-decoration: none !important;
+    white-space: nowrap !important;
+  }
+
+  .rajac-ds-home-mark,
+  .rfx-nav-home-mark {
+    margin-right: 8px !important;
+  }
+
+  .pio-mobile-nav-toggle,
+  .rfx-nav-toggle {
+    position: static !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    flex: 0 0 auto !important;
+    width: auto !important;
+    min-width: 78px !important;
+    min-height: 44px !important;
+    margin: 7px 0 7px auto !important;
+    padding: 9px 12px !important;
+    gap: 8px !important;
+    border: 1px solid rgba(241, 203, 101, .35) !important;
+    border-radius: 7px !important;
+    background: rgba(255, 255, 255, .04) !important;
+    color: var(--pio-mobile-gold) !important;
+    font: 700 13px/1 system-ui, sans-serif !important;
+    letter-spacing: .08em !important;
+    cursor: pointer !important;
+  }
+
+  .pio-mobile-nav-toggle::before {
+    content: "☰";
+    font-size: 19px;
+    font-weight: 400;
+    line-height: 1;
+  }
+
+  .rfx-nav-toggle span {
+    display: none !important;
+  }
+
+  .rfx-nav-toggle::before {
+    content: "☰";
+    font-size: 19px;
+    font-weight: 400;
+    line-height: 1;
+  }
+
+  .rfx-nav-toggle::after {
+    content: "МЕНИ";
+  }
+
+  .pio-mobile-nav-toggle[aria-expanded="true"]::before,
+  .rfx-nav-toggle[aria-expanded="true"]::before {
+    content: "×";
+    font-size: 24px;
+  }
+
+  .rajac-ds-nav-item,
+  .rfx-bio-menu {
+    display: none !important;
+  }
+
+  .rajac-ds-nav-inner.pio-menu-open {
+    flex-wrap: wrap !important;
+  }
+
+  .rajac-ds-nav-inner.pio-menu-open .rajac-ds-nav-item,
+  .rfx-bio-menu.is-open {
+    display: flex !important;
+  }
+
+  .rajac-ds-nav-inner.pio-menu-open .rajac-ds-nav-item {
+    flex: 0 0 100% !important;
+    justify-content: flex-start !important;
+    min-height: 50px !important;
+    padding: 0 4px !important;
+    border-top: 1px solid rgba(255, 255, 255, .08) !important;
+    color: rgba(255, 255, 255, .84) !important;
+    font-size: 14px !important;
+    white-space: normal !important;
+  }
+
+  .rajac-ds-nav-inner.pio-menu-open .rajac-ds-nav-item.rajac-ds-active {
+    color: var(--pio-mobile-gold) !important;
+  }
+
+  .rajac-ds-nav-item.rajac-ds-active::after {
+    display: none !important;
+  }
+
+  .rfx-bio-menu {
+    position: absolute !important;
+    top: 100% !important;
+    right: 0 !important;
+    left: 0 !important;
+    z-index: 9999 !important;
+    flex-direction: column !important;
+    max-height: calc(100vh - 58px) !important;
+    max-height: calc(100dvh - 58px) !important;
+    overflow-y: auto !important;
+    background: var(--pio-mobile-nav) !important;
+    box-shadow: 0 18px 36px rgba(0, 0, 0, .28) !important;
+  }
+
+  .rfx-bio-menu .rfx-nav-item {
+    display: flex !important;
+    align-items: center !important;
+    min-height: 50px !important;
+    padding: 0 var(--pio-mobile-pad) !important;
+    border-bottom: 1px solid rgba(255, 255, 255, .08) !important;
+    white-space: normal !important;
+  }
+
+  .rfx-nav-breadcrumb,
+  .rfx-nav-divider {
+    display: none !important;
+  }
+
+  /* Главни каталог биљака */
+  .rfx-page {
+    width: 100% !important;
+    max-width: 100% !important;
+    padding: 22px 0 max(72px, env(safe-area-inset-bottom)) !important;
+    overflow-x: hidden !important;
+  }
+
+  .rfx-page .rfx-shell,
+  .rfx-page .rf-filter-row,
+  .rfx-page .rf-wrap {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin-right: auto !important;
+    margin-left: auto !important;
+    padding-right: var(--pio-mobile-pad) !important;
+    padding-left: var(--pio-mobile-pad) !important;
+    box-sizing: border-box !important;
+    overflow: visible !important;
+  }
+
+  .rfx-page .rf-hero {
+    display: grid !important;
+    grid-template-columns: minmax(0, 1fr) !important;
+    gap: 18px !important;
+    width: 100% !important;
+    min-height: 0 !important;
+    margin: 0 0 20px !important;
+    padding: 8px 0 22px !important;
+  }
+
+  .rfx-page .rf-hero-body {
+    order: 1 !important;
+    width: 100% !important;
+    min-height: 0 !important;
+    padding: 0 !important;
+  }
+
+  .rfx-page .rf-hero-media {
+    order: 2 !important;
+    width: 100% !important;
+    height: clamp(260px, 46vw, 430px) !important;
+    min-height: 0 !important;
+    margin: 0 !important;
+    border-radius: 10px !important;
+  }
+
+  .rfx-page .rf-hero-body h1,
+  .rfx-page .rf-hero-body h2 {
+    margin: 0 0 12px !important;
+    font-size: clamp(2.15rem, 7vw, 3.25rem) !important;
+    line-height: 1.02 !important;
+    white-space: normal !important;
+  }
+
+  .rfx-page .rf-hero-intro {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    padding: 14px 16px !important;
+    font-size: 16px !important;
+    line-height: 1.65 !important;
+    box-sizing: border-box !important;
+  }
+
+  .rfx-page .rf-filter-row {
+    padding-top: 4px !important;
+    padding-bottom: 18px !important;
+  }
+
+  html body .rfx-page .rf-filter-row #rf-pills.rf-pills {
+    display: grid !important;
+    grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+    gap: 10px !important;
+    width: 100% !important;
+    min-width: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    overflow: visible !important;
+  }
+
+  html body .rfx-page .rf-filter-row #rf-pills.rf-pills .rf-pill {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 100% !important;
+    min-width: 0 !important;
+    min-height: 52px !important;
+    padding: 11px 10px !important;
+    border: 1px solid #b9c5d3 !important;
+    border-radius: 9px !important;
+    background: #f5f7fa !important;
+    color: #30445f !important;
+    font-size: 13px !important;
+    line-height: 1.15 !important;
+    letter-spacing: .02em !important;
+    white-space: nowrap !important;
+    overflow: hidden !important;
+  }
+
+  html body .rfx-page .rf-filter-row #rf-pills.rf-pills .rf-pill--active {
+    border-color: #2f6db5 !important;
+    background: #2f6db5 !important;
+    color: #fff !important;
+  }
+
+  html body .rfx-page .rf-filter-row #rf-pills.rf-pills .rf-pill > span:last-child {
+    min-width: 0 !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+    white-space: nowrap !important;
+  }
+
+  .rfx-page .rf-cards {
+    display: grid !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 16px !important;
+  }
+
+  .rfx-page .rf-card,
+  .rfx-page .rf-card-link {
+    min-width: 0 !important;
+    height: 100% !important;
+  }
+
+  .rfx-page .rf-card-img {
+    width: 100% !important;
+    height: auto !important;
+    aspect-ratio: 4 / 3 !important;
+  }
+
+  .rfx-page .rf-card-img img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+  }
+
+  .rfx-page .rf-title,
+  .rfx-page .rf-common {
+    max-width: 100% !important;
+    white-space: normal !important;
+    overflow: visible !important;
+    text-overflow: clip !important;
+  }
+
+  .rfx-page .rf-title {
+    font-size: clamp(1.2rem, 3.5vw, 1.55rem) !important;
+    line-height: 1.15 !important;
+  }
+
+  .rfx-page .rf-common {
+    font-size: 15px !important;
+    line-height: 1.35 !important;
+  }
+
+  /* Странице појединачних врста */
+  main.rfw,
+  .rfw.rfw-photo-standalone {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 auto !important;
+    padding: 24px var(--pio-mobile-pad) max(92px, calc(76px + env(safe-area-inset-bottom))) !important;
+    box-sizing: border-box !important;
+    overflow: hidden !important;
+  }
+
+  .rfw *,
+  .rfw-photo-standalone * {
+    box-sizing: border-box;
+    min-width: 0;
+  }
+
+  .rfw-head {
+    display: grid !important;
+    grid-template-columns: minmax(0, 1fr) !important;
+    gap: 20px !important;
+    align-items: start !important;
+  }
+
+  .rfw-head-text,
+  .rfw-head-img,
+  .rfw-head-img.rfw-hero-fig {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  .rfw-head-img,
+  .rfw-head-img.rfw-hero-fig {
+    height: auto !important;
+    min-height: 0 !important;
+    aspect-ratio: auto !important;
+    overflow: hidden !important;
+  }
+
+  .rfw-head-img img,
+  .rfw-head-img.rfw-hero-fig img {
+    width: 100% !important;
+    height: clamp(300px, 50vw, 500px) !important;
+    object-fit: cover !important;
+  }
+
+  .rfw-title {
+    font-size: clamp(2rem, 7vw, 3.2rem) !important;
+    line-height: 1.02 !important;
+  }
+
+  .rfw-common,
+  .rfw-lead,
+  .rfw-body,
+  .rfw-body p,
+  .rfw-block p,
+  .rfw-block li,
+  .rfw-block dd {
+    font-size: 16px !important;
+    line-height: 1.65 !important;
+  }
+
+  .rfw-block {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin-right: 0 !important;
+    margin-left: 0 !important;
+    padding: clamp(16px, 3vw, 22px) !important;
+  }
+
+  .rfw-tax,
+  .rfw-links,
+  .rfw-role-gateway-grid,
+  .rfw-plant-guides-grid,
+  .rfw-research-grid,
+  .rfw-form-grid,
+  .rfw-supp-grid,
+  .rfw-supp-grid.three,
+  .rfw-supp-video {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+
+  .rfw-calendar-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+  }
+
+  .rfw-footer-nav {
+    grid-template-columns: 1fr !important;
+  }
+
+  .rfw-footlink {
+    min-height: 50px !important;
+  }
+
+  .rfw-fig figcaption {
+    position: static !important;
+    inset: auto !important;
+    max-height: none !important;
+    margin: 0 !important;
+    padding: 10px 12px !important;
+    overflow: visible !important;
+    border-radius: 0 !important;
+    background: #fbfaf6 !important;
+    color: #4b5563 !important;
+    opacity: 1 !important;
+    transform: none !important;
+    box-shadow: none !important;
+    text-shadow: none !important;
+    pointer-events: auto !important;
+  }
+
+  .rfw-fig figcaption strong,
+  .rfw-fig figcaption p,
+  .rfw-fig .rfw-source-small,
+  .rfw-fig .rfw-source-small a {
+    color: #4b5563 !important;
+  }
+
+  .rfw-month-table-wrap,
+  .matrix,
+  .table-wrap {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  .rfw input,
+  .rfw select,
+  .rfw textarea,
+  .form-box input,
+  .form-box select,
+  .form-box textarea {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-height: 46px !important;
+    padding: 11px 12px !important;
+    font-size: 16px !important;
+  }
+
+  .rfw textarea,
+  .form-box textarea {
+    min-height: 118px !important;
+  }
+
+  .rfw button,
+  .rfw .btn,
+  .rfw a.btn,
+  .form-box button,
+  .hero-actions .btn {
+    min-height: 44px;
+  }
+
+  .rfw-contribute-bar {
+    right: var(--pio-mobile-pad) !important;
+    bottom: max(8px, env(safe-area-inset-bottom)) !important;
+    left: var(--pio-mobile-pad) !important;
+    width: auto !important;
+    transform: translateY(130%) !important;
+  }
+
+  .rfw-contribute-bar.is-visible {
+    transform: translateY(0) !important;
+  }
+
+  .rfw-contribute-panel {
+    max-height: calc(100vh - 24px) !important;
+    max-height: calc(100dvh - 24px) !important;
+  }
+
+  .rfw-contribute-row {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* Упутства, календар, алати и пријава налаза */
+  main > .wrap,
+  body > main .wrap,
+  .wrap {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin-right: auto !important;
+    margin-left: auto !important;
+    padding-right: var(--pio-mobile-pad) !important;
+    padding-left: var(--pio-mobile-pad) !important;
+    box-sizing: border-box !important;
+  }
+
+  .hero-grid,
+  .grid-2,
+  .grid-3,
+  .guide-grid,
+  .project-grid,
+  .photo-gallery,
+  .infographic-cards,
+  .season-grid,
+  .process-grid,
+  .template-grid,
+  .status-grid,
+  .check-grid,
+  .app-grid,
+  .pack-grid,
+  .month-grid,
+  .month-grid-simple,
+  .phenophase-grid,
+  .season-graphic-grid,
+  .purpose-grid-top,
+  .equip-grid,
+  .ethics-wrap,
+  .steps,
+  .groups-grid,
+  .light-grid,
+  .errors-grid,
+  .minimum-wrap,
+  .offline-wrap {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+
+  .hero,
+  .section,
+  .sec,
+  .sec-alt-in,
+  .sec-dark-in,
+  .rfw-photo-guide-intro,
+  .rfw-photo-guide-content {
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  .hero {
+    padding-top: 30px !important;
+    padding-bottom: 30px !important;
+  }
+
+  .hero-visual,
+  .hero-visual img,
+  .purpose-visual,
+  .purpose-visual img,
+  .step-img,
+  .step-img img,
+  .group-img,
+  .group-img img,
+  .photo-card img {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  .hero-visual,
+  .purpose-visual,
+  .step-img,
+  .group-img {
+    max-height: 520px !important;
+    overflow: hidden !important;
+  }
+
+  .hero-visual img,
+  .purpose-visual img,
+  .step-img img,
+  .group-img img {
+    height: 100% !important;
+    object-fit: cover !important;
+  }
+
+  .quick-nav-inner {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    gap: 8px !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    overflow: visible !important;
+  }
+
+  .quick-nav-inner a,
+  .hero-actions .btn,
+  .footer-nav a,
+  .guide-links a {
+    min-height: 44px !important;
+  }
+
+  .section-head,
+  .sec-title,
+  .hero h1,
+  .hero h2,
+  .rfw-photo-guide h2 {
+    overflow-wrap: anywhere !important;
+  }
+
+  .section-head,
+  .sec-title {
+    font-size: clamp(1.75rem, 5vw, 2.55rem) !important;
+    line-height: 1.08 !important;
+  }
+
+  .hero h1,
+  .hero h2,
+  .rfw-photo-guide-intro h2 {
+    font-size: clamp(2rem, 7vw, 3.15rem) !important;
+    line-height: 1.04 !important;
+  }
+
+  .section p,
+  .section li,
+  .sec p,
+  .sec li,
+  .card p,
+  .panel p,
+  .hero-lead,
+  .section-intro {
+    font-size: 16px !important;
+    line-height: 1.65 !important;
+  }
+
+  .footer-nav,
+  .site-footer,
+  .footer-box {
+    max-width: 100% !important;
+  }
+
+  /* Дугме Врх */
+  .pio-back-to-top {
+    position: fixed;
+    right: max(16px, env(safe-area-inset-right));
+    bottom: max(18px, env(safe-area-inset-bottom));
+    z-index: 9997;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 58px;
+    min-height: 44px;
+    padding: 9px 12px;
+    border: 1px solid rgba(241, 203, 101, .45);
+    border-radius: 999px;
+    background: #0d1b2a;
+    color: #f1cb65;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, .2);
+    font: 700 13px/1 system-ui, sans-serif;
+    letter-spacing: .04em;
+    opacity: 0;
+    transform: translateY(12px);
+    pointer-events: none;
+    transition: opacity .2s ease, transform .2s ease;
+  }
+
+  .pio-back-to-top.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+  }
+}
+
+@media (max-width: 680px) {
+  :root {
+    --pio-mobile-pad: 17px;
+  }
+
+  .rfx-page {
+    padding-top: 18px !important;
+  }
+
+  .rfx-page .rf-hero {
+    gap: 15px !important;
+  }
+
+  .rfx-page .rf-hero-media {
+    height: clamp(235px, 66vw, 320px) !important;
+  }
+
+  html body .rfx-page .rf-filter-row #rf-pills.rf-pills {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 8px !important;
+  }
+
+  html body .rfx-page .rf-filter-row #rf-pills.rf-pills .rf-pill {
+    min-height: 52px !important;
+    padding: 10px 8px !important;
+    font-size: 12.5px !important;
+    gap: 6px !important;
+  }
+
+  html body .rfx-page .rf-filter-row #rf-pills.rf-pills .rf-pill > span:last-child {
+    overflow: visible !important;
+    text-overflow: clip !important;
+  }
+
+  .rfx-page .rf-cards {
+    grid-template-columns: minmax(0, 1fr) !important;
+    gap: 16px !important;
+  }
+
+  .rfx-page .rf-card-img {
+    aspect-ratio: 16 / 10 !important;
+  }
+
+  main.rfw,
+  .rfw.rfw-photo-standalone {
+    padding-top: 18px !important;
+  }
+
+  .rfw-head {
+    gap: 16px !important;
+  }
+
+  .rfw-head-img,
+  .rfw-head-img.rfw-hero-fig {
+    aspect-ratio: auto !important;
+  }
+
+  .rfw-head-img img,
+  .rfw-head-img.rfw-hero-fig img {
+    height: clamp(245px, 70vw, 340px) !important;
+  }
+
+  .rfw-block {
+    padding: 16px !important;
+  }
+
+  .rfw-tax,
+  .rfw-links,
+  .rfw-role-gateway-grid,
+  .rfw-plant-guides-grid,
+  .rfw-research-grid,
+  .rfw-form-grid,
+  .rfw-supp-grid,
+  .rfw-supp-grid.three,
+  .rfw-supp-video,
+  .hero-grid,
+  .grid-2,
+  .grid-3,
+  .guide-grid,
+  .project-grid,
+  .photo-gallery,
+  .infographic-cards,
+  .season-grid,
+  .process-grid,
+  .template-grid,
+  .status-grid,
+  .check-grid,
+  .app-grid,
+  .pack-grid,
+  .month-grid,
+  .month-grid-simple,
+  .phenophase-grid,
+  .season-graphic-grid,
+  .purpose-grid-top,
+  .equip-grid,
+  .ethics-wrap,
+  .steps,
+  .groups-grid,
+  .light-grid,
+  .errors-grid,
+  .minimum-wrap,
+  .offline-wrap {
+    grid-template-columns: minmax(0, 1fr) !important;
+  }
+
+  .rfw-calendar-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+
+  .hero {
+    padding-top: 24px !important;
+    padding-bottom: 24px !important;
+  }
+
+  .rfw-photo-guide-intro {
+    display: block !important;
+    padding: 18px 16px !important;
+  }
+
+  .rfw-photo-guide-action {
+    display: inline-flex !important;
+    margin-top: 12px !important;
+  }
+
+  .rule-items {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+
+  .pio-mobile-table-card,
+  .pio-mobile-table-card tbody,
+  .pio-mobile-table-card tr,
+  .pio-mobile-table-card td,
+  .pio-mobile-table-card th {
+    display: block !important;
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  .pio-mobile-table-card {
+    min-width: 0 !important;
+    border: 0 !important;
+    background: transparent !important;
+  }
+
+  .pio-mobile-table-card thead {
+    position: absolute !important;
+    width: 1px !important;
+    height: 1px !important;
+    padding: 0 !important;
+    overflow: hidden !important;
+    clip: rect(0 0 0 0) !important;
+    white-space: nowrap !important;
+  }
+
+  .pio-mobile-table-card tr {
+    margin: 0 0 14px !important;
+    overflow: hidden !important;
+    border: 1px solid rgba(24, 33, 27, .14) !important;
+    border-radius: 10px !important;
+    background: #fff !important;
+  }
+
+  .pio-mobile-table-card tbody th,
+  .pio-mobile-table-card td {
+    display: grid !important;
+    grid-template-columns: minmax(96px, .8fr) minmax(0, 1.2fr) !important;
+    gap: 12px !important;
+    min-height: 42px !important;
+    padding: 10px 12px !important;
+    border: 0 !important;
+    border-bottom: 1px solid rgba(24, 33, 27, .1) !important;
+    text-align: left !important;
+    white-space: normal !important;
+  }
+
+  .pio-mobile-table-card tbody tr > :last-child {
+    border-bottom: 0 !important;
+  }
+
+  .pio-mobile-table-card tbody th::before,
+  .pio-mobile-table-card td::before {
+    content: attr(data-pio-label);
+    color: #6b5a30;
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: .04em;
+    text-transform: uppercase;
+  }
+
+  .pio-back-to-top {
+    right: 14px;
+  }
+}
+
+@media (max-width: 380px) {
+  :root {
+    --pio-mobile-pad: 15px;
+  }
+
+  .rajac-ds-home,
+  .rfx-nav-home {
+    font-size: 15px !important;
+  }
+
+  .pio-mobile-nav-toggle,
+  .rfx-nav-toggle {
+    min-width: 72px !important;
+    padding-right: 9px !important;
+    padding-left: 9px !important;
+  }
+
+  html body .rfx-page .rf-filter-row #rf-pills.rf-pills .rf-pill {
+    font-size: 11.5px !important;
+  }
+
+  .rfw-title,
+  .hero h1,
+  .hero h2,
+  .rfw-photo-guide-intro h2 {
+    font-size: 2rem !important;
+  }
+}
+
+/* Mobile guide refinements: captions, compact navigation and calendar. */
+@media (max-width: 1100px) {
+  .hero-visual {
+    display: block !important;
+    max-height: none !important;
+    overflow: hidden !important;
+  }
+
+  .hero-visual > img {
+    display: block !important;
+    width: 100% !important;
+    height: clamp(240px, 56vw, 430px) !important;
+    object-fit: cover !important;
+  }
+
+  .hero-visual-badge,
+  .purpose-visual-cap {
+    position: static !important;
+    inset: auto !important;
+    width: 100% !important;
+    max-width: none !important;
+    margin: 0 !important;
+    box-sizing: border-box !important;
+    border-radius: 0 0 14px 14px !important;
+    box-shadow: none !important;
+  }
+}
+
+@media (max-width: 680px) {
+  .quick-nav-inner {
+    display: grid !important;
+    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+    gap: 8px !important;
+  }
+
+  .quick-nav-inner a {
+    display: flex !important;
+    width: 100% !important;
+    min-width: 0 !important;
+    min-height: 52px !important;
+    padding: 8px 5px !important;
+    align-items: center !important;
+    justify-content: center !important;
+    box-sizing: border-box !important;
+    font-size: 12px !important;
+    line-height: 1.2 !important;
+    text-align: center !important;
+    white-space: normal !important;
+  }
+
+  .hero-actions {
+    display: grid !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 8px !important;
+  }
+
+  .hero-actions .btn,
+  .hero-actions a {
+    width: 100% !important;
+    min-width: 0 !important;
+    padding: 11px 8px !important;
+    box-sizing: border-box !important;
+    font-size: 12px !important;
+    line-height: 1.25 !important;
+    text-align: center !important;
+    white-space: normal !important;
+  }
+
+  .month-grid,
+  .month-grid-simple {
+    display: grid !important;
+    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+    gap: 8px !important;
+  }
+
+  .month-grid-simple .month {
+    min-height: 78px !important;
+    padding: 10px 8px !important;
+    border-radius: 12px !important;
+  }
+
+  .month-grid-simple .month b {
+    margin-bottom: 8px !important;
+    font-size: 15px !important;
+  }
+
+  .month-grid-simple .month .band {
+    height: 8px !important;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .pio-back-to-top,
+  .rfw-contribute-bar {
+    transition: none !important;
+  }
+}
+
+</style>
+
+<meta content="index,follow,max-snippet:-1,max-image-preview:large,max-video-preview:-1" name="robots"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="Понашање према биљкама и стаништима Рајца | ПИО „Рајац”" name="twitter:title"/>
+<meta content="https://piorajac.rs/biljke/assets/rajac-flora/external/Woodland_path.jpg" name="twitter:image"/>
+</head>
+<body>
+<nav class="rajac-ds-nav" aria-label="Главни мени ПИО „Рајац”">
+  <div class="rajac-ds-nav-inner">
+    <a class="rajac-ds-home" href="https://piorajac.rs/"><span class="rajac-ds-home-mark" aria-hidden="true">⊙</span><span>ПИО „Рајац”</span></a>
+    <a class="rajac-ds-nav-item rajac-ds-active" href="https://piorajac.rs/biljke/"><span class="rajac-ds-icon" aria-hidden="true">🌿</span><span>БИЉКЕ</span></a>
+    <a class="rajac-ds-nav-item" href="https://piorajac.rs/ptice/"><span class="rajac-ds-icon" aria-hidden="true">🦉</span><span>ПТИЦЕ</span></a>
+    <a class="rajac-ds-nav-item" href="https://piorajac.rs/insekti/"><span class="rajac-ds-icon" aria-hidden="true">🦋</span><span>ИНСЕКТИ</span></a>
+    <a class="rajac-ds-nav-item" href="https://piorajac.rs/sisari/"><span class="rajac-ds-icon" aria-hidden="true">🐾</span><span>СИСАРИ</span></a>
+    <a class="rajac-ds-nav-item" href="https://piorajac.rs/gljive/"><span class="rajac-ds-icon" aria-hidden="true">🍄</span><span>ГЉИВЕ</span></a>
+    <a class="rajac-ds-nav-item" href="https://piorajac.rs/trofodinamika/"><span class="rajac-ds-icon" aria-hidden="true">🔗</span><span>ТРОФОДИНАМИКА</span></a>
+  </div>
+</nav>
+
+<header class="hero" id="vrh">
+  <div class="wrap">
+    <div class="topline">
+      <span>ПИО „Рајац” • правила понашања у стаништима</span>
+      <a href="https://piorajac.rs/biljke/">← Све биљке Рајца</a>
+    </div>
+    <div class="hero-grid">
+      <div>
+        <span class="badge">🥾 водич за кретање</span>
+        <h1>Понашање према биљкама и стаништима Рајца</h1>
+        <p class="hero-lead">Биљке су најосетљивије тамо где их посетилац најлакше превиди: у ниском травном покривачу, влажном тлу, уз изворе, на рубовима стаза и у шумској стељи. Зато је добро понашање у станишту први облик заштите флоре.</p>
+        <div class="hero-actions">
+          <a class="btn" href="#osnovna-pravila">Основна правила</a>
+          <a class="btn light" href="#zone">Осетљива станишта</a>
+        </div>
+        <div class="hero-stats" aria-label="Кључне поруке">
+          <div class="stat"><b>1</b><span>корак ван стазе може оштетити више малих јединки</span></div>
+          <div class="stat"><b>0</b><span>брања, копања, пресађивања и ломљења стабљика</span></div>
+          <div class="stat"><b>4</b><span>осетљива типа станишта траже посебан опрез</span></div>
+        </div>
+      </div>
+      <figure class="hero-visual">
+        <img alt="Шумска стаза као пример кретања без уласка у осетљива станишта" decoding="async" fetchpriority="high" src="assets/rajac-flora/external/Woodland_path.jpg" onerror="this.style.display='none';this.parentNode.style.background='linear-gradient(135deg,#cbdcc2,#eef4e9)'">
+        <figcaption class="hero-visual-badge">
+          <strong>Стаза је најбољи савезник станишта</strong>
+          <span>Када се крећемо обележеном стазом, смањујемо гажење младих изданака, ливадских цветница, маховина, шумске стеље и влажног земљишта.</span>
+          <span class="photo-source">Фотографија: Wikimedia Commons, Woodland path.jpg, CC0.</span>
+        </figcaption>
+      </figure>
+    </div>
+  </div>
+</header>
+
+<div class="quick-nav">
+  <div class="wrap">
+    <div class="quick-nav-inner" aria-label="Брза навигација">
+      <a href="#osnovna-pravila">Правила</a>
+      <a href="#zone">Станишта</a>
+      <a href="#grupe">Групе</a>
+      <a href="#graficki-prilog">Графички прилог</a>
+      <a href="#fotografije">Фотографије</a>
+    </div>
+  </div>
+</div>
+
+<main>
+<section class="section" id="osnovna-pravila">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="kicker">01 · основни кодекс</div>
+      <h2>Добро понашање почиње пре него што приђемо биљци</h2>
+      <p class="section-intro">У заштићеном подручју није довољно само „не брати”. Важно је како ходамо, где стајемо, да ли склањамо околну вегетацију ради фотографије и да ли својим кретањем стварамо нове стазе.</p>
+    </div>
+    <div class="grid-3">
+      <article class="card rule-card">
+        <div class="rule-icon">🥾</div>
+        <h3>Крећи се постојећом стазом</h3>
+        <p>Силазак са стазе оправдан је само ако се може урадити без гажења цветних површина, влажног тла, подмлатка и ниских биљака.</p>
+      </article>
+      <article class="card rule-card">
+        <div class="rule-icon">🌱</div>
+        <h3>Не померај биљку ради кадра</h3>
+        <p>Не савијај стабљике, не цепај листове и не уклањај суседне биљке да би се добила „чистија” фотографија.</p>
+      </article>
+      <article class="card rule-card">
+        <div class="rule-icon">📍</div>
+        <h3>Не откривај тачне локације ретких врста</h3>
+        <p>За осетљиве налазе користи општи опис зоне или податак достави управљачу, без јавног објављивања координата.</p>
+      </article>
+      <article class="card rule-card">
+        <div class="rule-icon">🔥</div>
+        <h3>Без ватре и отпада</h3>
+        <p>Паљење ватре, остављање отпада и гажење око места одмора мењају земљиште, уносе хранљиве материје и погодују коровским врстама.</p>
+      </article>
+      <article class="card rule-card">
+        <div class="rule-icon">🧴</div>
+        <h3>Не уноси семе и садни материјал</h3>
+        <p>Не садити „лепе” биљке, не бацати баштенски отпад и не преносити земљу. Тако се уносе инвазивне и нежељене врсте.</p>
+      </article>
+      <article class="card rule-card">
+        <div class="rule-icon">👣</div>
+        <h3>Не прави нове пречице</h3>
+        <p>Нове пречице најчешће почињу као један траг, а завршавају као трајно оштећена трака кроз станиште.</p>
+      </article>
+    </div>
+    <div class="highlight">
+      <p><strong>Практично правило:</strong> ако мораш да станеш на цветне биљке, маховину, влажну обалу или младе изданке да би направио фотографију — боље је одустати од тог снимка.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="zone">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="kicker">02 · осетљива станишта</div>
+      <h2>Нису сва места подједнако отпорна на посету</h2>
+      <p class="section-intro">Највећи ризик није увек на местима која изгледају „најлепше”, већ тамо где је тло влажно, плитко, меко или прекривено ниском вегетацијом.</p>
+    </div>
+    <div class="zone-strip">
+      <article class="zone"><b>Ливаде у цветању</b><span>Не газити групе цветница и не правити нове стазе кроз високу траву.</span></article>
+      <article class="zone"><b>Извори и влажна места</b><span>Обале и натопљено тло лако се разоре једним кораком или фотографисањем изблиза.</span></article>
+      <article class="zone"><b>Шумска стеља</b><span>Ране пролећнице, млади изданци и клијавци често су ниски и слабо уочљиви.</span></article>
+      <article class="zone"><b>Каменити и плитки терени</b><span>Биљке на танком земљишту споро се обнављају и не подносе често гажење.</span></article>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="graficki-prilog">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="kicker">03 · графички прилог</div>
+      <h2>Како један погрешан корак постаје трајна промена станишта</h2>
+      <p class="section-intro">Графички прилог је намењен постављању на страницу као кратак визуелни подсетник за посетиоце и школске групе.</p>
+    </div>
+    <div class="card graphic-box">
+      <div class="infographic-cards">
+        <article class="infographic-card">
+          <div class="infographic-icon">👣</div>
+          <strong>Гажење</strong>
+          <span>сабија земљиште и ломи ниске изданке</span>
+        </article>
+        <article class="infographic-card">
+          <div class="infographic-icon">🌧</div>
+          <strong>Вода отиче</strong>
+          <span>брже низ утабану површину и носи ситно земљиште</span>
+        </article>
+        <article class="infographic-card">
+          <div class="infographic-icon">🌿</div>
+          <strong>Покривач слаби</strong>
+          <span>цветнице и младе биљке се теже обнављају</span>
+        </article>
+        <article class="infographic-card">
+          <div class="infographic-icon">⚠️</div>
+          <strong>Станиште се мења</strong>
+          <span>појављују се пречице, ерозија и отпорније коровске врсте</span>
+        </article>
+      </div>
+      <div class="infographic-note">
+        <b>!</b>
+        <p><strong>Најбоља превенција је кретање по постојећим стазама.</strong> Један посетилац обично не направи видљиву штету, али исти траг поновљен десетинама пута постаје нова стаза кроз станиште.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="fotografije">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="kicker">04 · фотографије и примери</div>
+      <h2>Фотографије које одговарају правилима испод њих</h2>
+      <p class="section-intro">Свака фотографија је изабрана да подржи конкретно правило понашања: стаза, ливада, влажно место, шумска стеља, заштићени детаљи и станишни контекст.</p>
+    </div>
+    <div class="photo-gallery">
+      <article class="photo-card js-lightbox">
+        <figure><img alt="Стаза кроз ливадско станиште као пример контролисаног кретања" decoding="async" loading="lazy" src="assets/rajac-flora/external/Meadow_Trail_Wunderlich_Park.jpg" onerror="this.parentNode.style.background='#dfe6d8';this.style.display='none'"></figure>
+        <div class="photo-body">
+          <strong>Кретање стазом</strong>
+          <em>основно правило</em>
+          <p>Ова фотографија одговара тексту: посетилац треба да користи постојећу стазу, јер се тако избегава гажење ливадског покривача и прављење нових пречица.</p>
+          <span class="source-line">Фотографија: Wikimedia Commons, Meadow Trail Wunderlich Park.jpg.</span>
+        </div>
+      </article>
+      <article class="photo-card js-lightbox">
+        <figure><img alt="Ливада са дивљим цветовима у време цветања" decoding="async" loading="lazy" src="assets/rajac-flora/external/Wildflowers_meadow.jpg" onerror="this.parentNode.style.background='#dfe6d8';this.style.display='none'"></figure>
+        <div class="photo-body">
+          <strong>Ливада у цветању</strong>
+          <em>осетљиво станиште</em>
+          <p>Слика директно прати текст: у време цветања и семења не треба правити пречице кроз цветне површине нити газити ниске биљке ради фотографије.</p>
+          <span class="source-line">Фотографија: Wikimedia Commons, Wildflowers meadow.jpg.</span>
+        </div>
+      </article>
+      <article class="photo-card js-lightbox">
+        <figure><img alt="Влажно станиште са воденим и приобалним биљкама" decoding="async" loading="lazy" src="assets/rajac-flora/external/Wetland_plants_3757.jpg" onerror="this.parentNode.style.background='#dfe6d8';this.style.display='none'"></figure>
+        <div class="photo-body">
+          <strong>Влажна места и обале</strong>
+          <em>посебан опрез</em>
+          <p>Овде је фотографија усклађена са правилом: приобална и влажна места не подносе гажење, јер се меко тло и биљни покривач лако оштећују.</p>
+          <span class="source-line">Фотографија: Wikimedia Commons, Wetland plants 3757.jpg.</span>
+        </div>
+      </article>
+      <article class="photo-card js-lightbox">
+        <figure><img alt="Шумска стеља са опалим лишћем на шумском тлу" decoding="async" loading="lazy" src="assets/rajac-flora/external/Leaves_on_a_Forest_Floor_(3022315693).jpg" onerror="this.parentNode.style.background='#dfe6d8';this.style.display='none'"></figure>
+        <div class="photo-body">
+          <strong>Шумска стеља</strong>
+          <em>пролећнице и клијавци</em>
+          <p>Ова фотографија одговара теми шумског тла: испод лишћа и у ниском покривачу могу бити млади изданци, клијавци и ране пролећне врсте.</p>
+          <span class="source-line">Фотографија: Wikimedia Commons, Leaves on a Forest Floor.</span>
+        </div>
+      </article>
+      <article class="photo-card js-lightbox">
+        <figure><img alt="Крупан снимак дивљег цвета без брања" decoding="async" loading="lazy" src="assets/rajac-flora/external/Wildflower_close_up.jpg" onerror="this.parentNode.style.background='#dfe6d8';this.style.display='none'"></figure>
+        <div class="photo-body">
+          <strong>Сними без брања</strong>
+          <em>детаљ цвета</em>
+          <p>Овај крупан кадар добро прати текст: цвет се може документовати без кидања, савијања стабљике или уклањања околне вегетације.</p>
+          <span class="source-line">Фотографија: Wikimedia Commons, Wildflower close up.jpg.</span>
+        </div>
+      </article>
+      <article class="photo-card js-lightbox">
+        <figure><img alt="Цветнице уз стазу као пример ширег контекста станишта" decoding="async" loading="lazy" src="assets/rajac-flora/external/Meadow_flowers__Skyline_Trail__Mount_Rainier_01.jpg" onerror="this.parentNode.style.background='#dfe6d8';this.style.display='none'"></figure>
+        <div class="photo-body">
+          <strong>Контекст станишта</strong>
+          <em>стаза и цветни појас</em>
+          <p>Уместо поновљене слике јавора, овде је приказан шири контекст: где биљке расту у односу на стазу, што је важно за процену ризика од гажења.</p>
+          <span class="source-line">Фотографија: Wikimedia Commons, Meadow flowers, Skyline Trail.</span>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="do-dont">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="kicker">05 · дозвољено и недозвољено</div>
+      <h2>Кратак кодекс за посетиоце, фотографе и теренске групе</h2>
+    </div>
+    <div class="grid-2">
+      <article class="card panel">
+        <h3>Пожељно понашање</h3>
+        <ul class="ok-list">
+          <li>Користи обележене стазе и постојеће прилазе.</li>
+          <li>Фотографиши без брања, савијања и ломљења биљке.</li>
+          <li>Клечи или се нагни само ако не газиш околну вегетацију.</li>
+          <li>Остави станиште исто као што си га затекао.</li>
+          <li>Осетљиве налазе пријави без јавног откривања тачних координата.</li>
+        </ul>
+      </article>
+      <article class="card panel">
+        <h3>Непожељно понашање</h3>
+        <ul class="no-list">
+          <li>Не правити пречице кроз ливаде и шумске рубове.</li>
+          <li>Не улазити у влажна места ради боље фотографије.</li>
+          <li>Не чупати корен, луковице, ризоме или целе биљке.</li>
+          <li>Не одлагати отпад, баштенски материјал или земљу.</li>
+          <li>Не постављати јавне локације ретких и осетљивих врста.</li>
+        </ul>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="sezona">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="kicker">06 · понашање током године</div>
+      <h2>Свака сезона има свој ризик</h2>
+    </div>
+    <div class="season-grid">
+      <article class="season">
+        <span class="month">март–април</span>
+        <h3>Ране пролећнице</h3>
+        <p>Пажљиво кретање кроз шумску стељу. Младе биљке су ниске и лако се прегазе.</p>
+      </article>
+      <article class="season">
+        <span class="month">мај–јун</span>
+        <h3>Цветне ливаде</h3>
+        <p>Не правити пречице. Ово је период највеће видљивости, али и највеће осетљивости цветница.</p>
+      </article>
+      <article class="season">
+        <span class="month">јул–август</span>
+        <h3>Суша и извори</h3>
+        <p>Влажна места постају важна уточишта. Не газити обале и не сабијати натопљено тло.</p>
+      </article>
+      <article class="season">
+        <span class="month">септембар–октобар</span>
+        <h3>Плодови и семење</h3>
+        <p>Не сакупљати семе без разлога. Фотографија плодова често је довољна за белешку.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="grupe">
+  <div class="wrap">
+    <div class="project">
+      <div class="kicker">07 · школске групе и организоване посете</div>
+      <h2>Правило мале групе: гледај више, гази мање</h2>
+      <p class="section-intro">Код школских и волонтерских група највећи ризик није један појединац, већ масовно кретање ван стазе. Зато је боље да група ради у малим тимовима и да само један до два члана прилазе месту фотографисања.</p>
+      <div class="project-grid">
+        <div class="project-item"><strong>Водич бира место</strong><span>група не улази самостално у осетљива станишта</span></div>
+        <div class="project-item"><strong>Један снима</strong><span>остали посматрају са стазе или стабилног места</span></div>
+        <div class="project-item"><strong>Нема брања</strong><span>ученици раде са фотографијом, белешком и описом станишта</span></div>
+        <div class="project-item"><strong>Налаз се проверава</strong><span>врста се не проглашава сигурном без контроле више детаља</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="guide-links" aria-label="Повезани водичи за биљке">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="kicker">повезани водичи</div>
+      <h2>Посетилачки пакет за биљке Рајца</h2>
+    </div>
+    <div class="guide-grid">
+      <a class="guide-card" href="https://piorajac.rs/biljke/fotografisanje-biljaka-rajca/">
+        <span class="ico">📷</span>
+        <strong>Фотографисање биљака</strong>
+        <span>Како направити употребљив ботанички запис.</span>
+        <b class="arr">→</b>
+      </a>
+      <a class="guide-card" href="https://piorajac.rs/biljke/pomoc-biljkama-rajca/">
+        <span class="ico">🌿</span>
+        <strong>Помоћ биљкама</strong>
+        <span>Очување станишта, пријава налаза и пажљиво кретање.</span>
+        <b class="arr">→</b>
+      </a>
+      <a class="guide-card" href="https://piorajac.rs/biljke/ponasanje-prema-biljkama-rajca/">
+        <span class="ico">🥾</span>
+        <strong>Понашање у стаништима</strong>
+        <span>Правила за ливаде, шуме, изворе и осетљива места.</span>
+        <b class="arr">→</b>
+      </a>
+      <a class="guide-card" href="https://piorajac.rs/biljke/alati-za-posetioce-biljke-rajca/">
+        <span class="ico">🧰</span>
+        <strong>Алати за терен</strong>
+        <span>Flora Incognita, GPS, лупа, бележница и провера налаза.</span>
+        <b class="arr">→</b>
+      </a>
+    </div>
+  </div>
+</section>
+
+<div class="footer-nav">
+  <div class="wrap">
+    <div class="footer-box">
+      <a href="https://piorajac.rs/biljke/pomoc-biljkama-rajca/">← Помоћ биљкама</a>
+      <a class="primary" href="https://piorajac.rs/biljke/">Све биљке Рајца →</a>
+      <a href="https://piorajac.rs/biljke/alati-za-posetioce-biljke-rajca/">Алати за терен →</a>
+    </div>
+  </div>
+</div>
+</main>
+
+
+
+<div class="lightbox" id="lightbox" aria-hidden="true">
+  <button type="button" aria-label="Затвори">×</button>
+  <figure>
+    <img id="lightbox-img" src="" alt="">
+    <figcaption id="lightbox-cap"></figcaption>
+  </figure>
+</div>
+
+<script>
+(function(){
+  const lb=document.getElementById('lightbox');
+  const img=document.getElementById('lightbox-img');
+  const cap=document.getElementById('lightbox-cap');
+  document.querySelectorAll('.js-lightbox').forEach(function(card){
+    card.addEventListener('click',function(){
+      const source=card.querySelector('img');
+      const title=card.querySelector('strong');
+      if(!source || !source.src) return;
+      img.src=source.src;
+      img.alt=source.alt || '';
+      cap.textContent=title ? title.textContent : '';
+      lb.classList.add('is-open');
+      lb.setAttribute('aria-hidden','false');
+    });
+  });
+  function close(){
+    lb.classList.remove('is-open');
+    lb.setAttribute('aria-hidden','true');
+    img.src='';
+  }
+  lb.addEventListener('click',function(e){ if(e.target===lb) close(); });
+  lb.querySelector('button').addEventListener('click',close);
+  document.addEventListener('keydown',function(e){ if(e.key==='Escape') close(); });
+})();
+</script>
+
+<script id="pio-mobile-tablet-js">
+(function () {
+  "use strict";
+
+  function closeMenus(except) {
+    document.querySelectorAll(".rajac-ds-nav-inner.pio-menu-open").forEach(function (nav) {
+      if (nav === except) return;
+      nav.classList.remove("pio-menu-open");
+      var button = nav.querySelector(".pio-mobile-nav-toggle");
+      if (button) button.setAttribute("aria-expanded", "false");
+    });
+
+    document.querySelectorAll(".rfx-bio-menu.is-open").forEach(function (menu) {
+      if (menu === except) return;
+      menu.classList.remove("is-open");
+      var toggle = document.querySelector('[aria-controls="' + menu.id + '"]');
+      if (toggle) toggle.setAttribute("aria-expanded", "false");
+    });
+  }
+
+  function setupDesktopStyleNav() {
+    document.querySelectorAll(".rajac-ds-nav-inner").forEach(function (nav, index) {
+      if (nav.querySelector(".pio-mobile-nav-toggle")) return;
+
+      var items = nav.querySelectorAll(".rajac-ds-nav-item");
+      if (!items.length) return;
+
+      var button = document.createElement("button");
+      button.type = "button";
+      button.className = "pio-mobile-nav-toggle";
+      button.setAttribute("aria-expanded", "false");
+      button.setAttribute("aria-label", "Отвори мени");
+      button.setAttribute("aria-controls", "pio-mobile-menu-" + index);
+      button.textContent = "МЕНИ";
+      nav.id = nav.id || "pio-mobile-menu-" + index;
+
+      var home = nav.querySelector(".rajac-ds-home");
+      if (home && home.nextSibling) {
+        nav.insertBefore(button, home.nextSibling);
+      } else {
+        nav.appendChild(button);
+      }
+
+      button.addEventListener("click", function (event) {
+        event.stopPropagation();
+        var open = !nav.classList.contains("pio-menu-open");
+        closeMenus(nav);
+        nav.classList.toggle("pio-menu-open", open);
+        button.setAttribute("aria-expanded", String(open));
+        button.setAttribute("aria-label", open ? "Затвори мени" : "Отвори мени");
+      });
+
+      items.forEach(function (link) {
+        link.addEventListener("click", function () {
+          nav.classList.remove("pio-menu-open");
+          button.setAttribute("aria-expanded", "false");
+        });
+      });
+    });
+  }
+
+  function setupExistingNav() {
+    document.querySelectorAll(".rfx-nav-toggle").forEach(function (toggle) {
+      var id = toggle.getAttribute("aria-controls") || "rfx-bio-menu";
+      var menu = document.getElementById(id);
+      if (!menu) return;
+
+      toggle.addEventListener("click", function (event) {
+        event.stopPropagation();
+        window.setTimeout(function () {
+          var open = menu.classList.contains("is-open");
+          toggle.setAttribute("aria-expanded", String(open));
+          toggle.setAttribute("aria-label", open ? "Затвори мени" : "Отвори мени");
+        }, 0);
+      });
+
+      menu.querySelectorAll("a").forEach(function (link) {
+        link.addEventListener("click", function () {
+          menu.classList.remove("is-open");
+          toggle.setAttribute("aria-expanded", "false");
+        });
+      });
+    });
+  }
+
+  function setupResponsiveTables() {
+    document.querySelectorAll("table").forEach(function (table) {
+      var headers = Array.from(table.querySelectorAll("thead th")).map(function (cell) {
+        return cell.textContent.trim();
+      });
+
+      if (!headers.length) return;
+      table.classList.add("pio-mobile-table-card");
+
+      table.querySelectorAll("tbody tr").forEach(function (row) {
+        Array.from(row.children).forEach(function (cell, index) {
+          var label = headers[index] || headers[headers.length - 1] || "Податак";
+          cell.setAttribute("data-pio-label", label);
+        });
+      });
+    });
+  }
+
+  function setupBackToTop() {
+    if (document.querySelector(".pio-back-to-top")) return;
+
+    var button = document.createElement("button");
+    button.type = "button";
+    button.className = "pio-back-to-top";
+    button.setAttribute("aria-label", "Врати се на врх странице");
+    button.textContent = "↑ Врх";
+    document.body.appendChild(button);
+
+    function update() {
+      button.classList.toggle("is-visible", window.scrollY > 520);
+    }
+
+    button.addEventListener("click", function () {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+
+    window.addEventListener("scroll", update, { passive: true });
+    update();
+  }
+
+  function closeOnOutsideClick(event) {
+    if (event.target.closest(".rajac-ds-nav, .rfx-chapter-nav")) return;
+    closeMenus(null);
+  }
+
+  function closeOnEscape(event) {
+    if (event.key !== "Escape") return;
+    closeMenus(null);
+  }
+
+  function init() {
+    setupDesktopStyleNav();
+    setupExistingNav();
+    setupResponsiveTables();
+    setupBackToTop();
+    document.addEventListener("click", closeOnOutsideClick);
+    document.addEventListener("keydown", closeOnEscape);
+  }
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", init, { once: true });
+  } else {
+    init();
+  }
+})();
+
+</script>
+</body>
+</html>
