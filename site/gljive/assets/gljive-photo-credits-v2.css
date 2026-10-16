@@ -1,0 +1,104 @@
+/* PIO Rajac — Gljive photo credits v2, uskladjeno sa Pticama, 2026-08-17 */
+/* Kredit: skriven; pojavljuje se nakon ~1 s hover/focus; taman tekst; bez trake/pozadine. */
+.glj-hdr-img,
+.glj-card-photo,
+.glj-hero{position:relative}
+
+.glj-hdr-img .glj-photo-credit,
+.glj-card-photo .glj-card-credit,
+.glj-hero .glj-hero-credit{
+  position:absolute !important;
+  left:12px !important;
+  right:12px !important;
+  bottom:10px !important;
+  z-index:30 !important;
+  margin:0 !important;
+  padding:0 !important;
+  border:0 !important;
+  border-radius:0 !important;
+  background:transparent !important;
+  box-shadow:none !important;
+  color:#18241d !important;
+  font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif !important;
+  font-size:11.5px !important;
+  line-height:1.42 !important;
+  font-style:normal !important;
+  font-weight:650 !important;
+  text-align:left !important;
+  text-shadow:
+    0 1px 1px rgba(255,255,255,.98),
+    0 -1px 1px rgba(255,255,255,.90),
+    1px 0 1px rgba(255,255,255,.90),
+    -1px 0 1px rgba(255,255,255,.90),
+    0 0 4px rgba(255,255,255,.85) !important;
+  opacity:0 !important;
+  visibility:hidden !important;
+  transform:translateY(4px) !important;
+  transition:opacity .16s ease,transform .16s ease,visibility .16s ease !important;
+  pointer-events:none !important;
+  user-select:text !important;
+}
+
+.glj-card-photo .glj-card-credit{
+  left:9px !important;
+  right:9px !important;
+  bottom:8px !important;
+  font-size:10.2px !important;
+  line-height:1.34 !important;
+}
+
+.glj-hero .glj-hero-credit{
+  left:auto !important;
+  right:18px !important;
+  bottom:14px !important;
+  width:min(620px,calc(100% - 36px)) !important;
+  text-align:right !important;
+  font-size:11px !important;
+}
+
+/* Ponisti stari instant-hover stil na profilima; prikaz kontrolise JS nakon ~1 s. */
+.glj-hdr-img:hover:not(.glj-credit-visible) .glj-photo-credit,
+.glj-hdr-img:focus-within:not(.glj-credit-visible) .glj-photo-credit,
+.glj-card-photo:hover:not(.glj-credit-visible) .glj-card-credit,
+.glj-hero:hover:not(.glj-credit-visible) .glj-hero-credit{
+  opacity:0 !important;
+  visibility:hidden !important;
+  transform:translateY(4px) !important;
+  pointer-events:none !important;
+}
+
+.glj-hdr-img.glj-credit-visible .glj-photo-credit,
+.glj-card-photo.glj-credit-visible .glj-card-credit,
+.glj-hero.glj-credit-visible .glj-hero-credit{
+  opacity:1 !important;
+  visibility:visible !important;
+  transform:translateY(0) !important;
+  pointer-events:auto !important;
+}
+
+.glj-photo-credit a,
+.glj-hero-credit a{
+  color:inherit !important;
+  text-decoration:none !important;
+  font-weight:inherit !important;
+}
+.glj-photo-credit a:hover,
+.glj-hero-credit a:hover{text-decoration:underline !important;text-underline-offset:2px}
+
+.glj-card-credit[role="link"],
+.glj-hero-credit[role="link"]{cursor:pointer}
+.glj-card-credit[role="link"]:focus,
+.glj-hero-credit[role="link"]:focus,
+.glj-photo-credit a:focus{outline:2px solid rgba(20,34,18,.65);outline-offset:2px}
+
+/* Ne menjati object-fit globalno. Postojece fotografije zadrzavaju svoj kadar. */
+@media (hover:none), (pointer:coarse){
+  .glj-hdr-img .glj-photo-credit,
+  .glj-card-photo .glj-card-credit,
+  .glj-hero .glj-hero-credit{display:none !important}
+}
+@media(max-width:768px){
+  .glj-hdr-img .glj-photo-credit,
+  .glj-card-photo .glj-card-credit,
+  .glj-hero .glj-hero-credit{display:none !important}
+}
