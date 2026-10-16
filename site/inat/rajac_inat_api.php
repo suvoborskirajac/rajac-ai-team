@@ -205,6 +205,7 @@ function povuci_sve(SQLite3 $db, array $bbox, array $poly): bool {
     $sve = [];
     $vidjeno = [];
     $uspeo_bar_jedan_poziv = false;
+    $neuspeh = false; // било који неуспео захтев = не дирати постојећу евиденцију
 
     $ctx = stream_context_create([
         'http' => [
@@ -226,11 +227,13 @@ function povuci_sve(SQLite3 $db, array $bbox, array $poly): bool {
 
             $json = @file_get_contents($url, false, $ctx);
             if ($json === false || $json === '') {
-                break;
+                $neuspeh = true;
+                break 2;
             }
             $d = json_decode($json, true);
             if (!is_array($d) || !isset($d['results']) || !is_array($d['results'])) {
-                break;
+                $neuspeh = true;
+                break 2;
             }
             $uspeo_bar_jedan_poziv = true;
             if (count($d['results']) === 0) break;
@@ -282,10 +285,13 @@ function povuci_sve(SQLite3 $db, array $bbox, array $poly): bool {
             }
 
             if (count($d['results']) < 200) break;
+            if ($strana === MAX_STRANA) { $neuspeh = true; break 2; } // непотпун списак
+            usleep(1100000);
         }
     }
 
-    if (!$uspeo_bar_jedan_poziv) {
+    if (!$uspeo_bar_jedan_poziv || $neuspeh) {
+        fwrite(STDERR, date('c') . " iNaturalist освежавање није потпуно; задржана је постојећа евиденција.\n");
         flock($lock, LOCK_UN);
         fclose($lock);
         return false;
