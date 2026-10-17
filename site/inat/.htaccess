@@ -1,0 +1,14 @@
+Options -Indexes
+# Block every legacy and future local raw DB/backup/journal dump, plus locks/logs.
+<FilesMatch "(?i)\.(?:sqlite(?:3)?(?:-(?:wal|shm|journal))?|(?:db|wal|shm|lock|log|bak|old|zip|gz|sql)(?:\..*)?)$">
+    Require all denied
+</FilesMatch>
+<Files "species_privacy.json">
+    Require all denied
+</Files>
+<Files "rajac_inat_privacy.php">
+    Require all denied
+</Files>
+<Files "error_log">
+    Require all denied
+</Files>

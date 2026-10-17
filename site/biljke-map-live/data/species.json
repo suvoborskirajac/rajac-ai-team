@@ -1,0 +1,1092 @@
+{
+  "abies-alba-mill": {
+    "name": "Обична јела",
+    "scientific_name": "Abies alba",
+    "taxon_mode": "species",
+    "show_precise_points": false,
+    "taxon_id": null,
+    "taxon_query": "Abies alba",
+    "taxon_rank": "species",
+    "resolution_source": "pending_api"
+  },
+  "acer-campestre-l": {
+    "name": "Пољски јавор",
+    "scientific_name": "Acer campestre",
+    "taxon_mode": "species",
+    "show_precise_points": false,
+    "taxon_id": null,
+    "taxon_query": "Acer campestre",
+    "taxon_rank": "species",
+    "resolution_source": "pending_api"
+  },
+  "acer-platanoides-l": {
+    "name": "Обични јавор",
+    "scientific_name": "Acer platanoides",
+    "taxon_mode": "species",
+    "show_precise_points": false,
+    "taxon_id": null,
+    "taxon_query": "Acer platanoides",
+    "taxon_rank": "species",
+    "resolution_source": "pending_api"
+  },
+  "acer-pseudoplatanus-l": {
+    "name": "Горски јавор",
+    "scientific_name": "Acer pseudoplatanus",
+    "taxon_mode": "species",
+    "show_precise_points": false,
+    "taxon_id": null,
+    "taxon_query": "Acer pseudoplatanus",
+    "taxon_rank": "species",
+    "resolution_source": "pending_api"
+  },
+  "acer-tataricum-l": {
+    "name": "Татарски јавор",
+    "scientific_name": "Acer tataricum",
+    "taxon_mode": "species",
+    "show_precise_points": false,
+    "taxon_id": null,
+    "taxon_query": "Acer tataricum",
+    "taxon_rank": "species",
+    "resolution_source": "pending_api"
+  },
+  "achillea-millefolium-l": {
+    "name": "Хајдучка трава",
+    "scientific_name": "Achillea millefolium",
+    "taxon_mode": "species",
+    "show_precise_points": false,
+    "taxon_id": null,
+    "taxon_query": "Achillea millefolium",
+    "taxon_rank": "species",
+    "resolution_source": "pending_api"
+  },
+  "aconitum-napellus-l": {
+    "name": "Укољен",
+    "scientific_name": "Aconitum napellus",
+    "taxon_mode": "species",
+    "show_precise_points": false,
+    "taxon_id": null,
+    "taxon_query": "Aconitum napellus",
+    "taxon_rank": "species",
+    "resolution_source": "pending_api"
+  },
+  "agrostis-capillaris-l": {
+    "name": "Деликатна власуља",
+    "scientific_name": "Agrostis capillaris",
+    "taxon_mode": "species",
+    "show_precise_points": false,
+    "taxon_id": null,
+    "taxon_query": "Agrostis capillaris",
+    "taxon_rank": "species",
+    "resolution_source": "pending_api"
+  },
+  "agrostis-stolonifera-l": {
+    "name": "Пузава власуља",
+    "scientific_name": "Agrostis stolonifera",
+    "taxon_mode": "species",
+    "show_precise_points": false,
+    "taxon_id": null,
+    "taxon_query": "Agrostis stolonifera",
+    "taxon_rank": "species",
+    "resolution_source": "pending_api"
+  },
+  "allium-carinatum-l": {
+    "name": "Крљастогребени црни лук",
+    "scientific_name": "Allium carinatum",
+    "taxon_mode": "species",
+    "show_precise_points": false,
+    "taxon_id": null,
+    "taxon_query": "Allium carinatum",
+    "taxon_rank": "species",
+    "resolution_source": "pending_api"
+  },
+  "allium-ursinum-l": {
+    "name": "Сремуш",
+    "scientific_name": "Allium ursinum",
+    "taxon_mode": "species",
+    "show_precise_points": false,
+    "taxon_id": 56152,
+    "taxon_query": "Allium ursinum",
+    "taxon_rank": "species",
+    "resolution_source": "inat1610_sqlite"
+  },
+  "alyssum-markgrafii-bornm-dudley": {
+    "name": "Марграфијев алисум",
+    "scientific_name": "Alyssum markgrafii",
+    "taxon_mode": "species",
+    "show_precise_points": false,
+    "taxon_id": null,
+    "taxon_query": "Alyssum markgrafii",
+    "taxon_rank": "species",
+    "resolution_source": "pending_api"
+  },
+  "amaranthus-retroflexus-l": {
+    "name": "Повијена штирка",
+    "scientific_name": "Amaranthus retroflexus",
+    "taxon_mode": "species",
+    "show_precise_points": true,
+    "taxon_id": null,
+    "taxon_query": "Amaranthus retroflexus",
+    "taxon_rank": "species",
+    "resolution_source": "pending_api"
+  },
+  "ambrosia-artemisiifolia-l": {
+    "name": "Амброзија",
+    "scientific_name": "Ambrosia artemisiifolia",
+    "taxon_mode": "species",
+    "show_precise_points": true,
+    "taxon_id": 53587,
+    "taxon_query": "Ambrosia artemisiifolia",
+    "taxon_rank": "species",
+    "resolution_source": "inat1610_sqlite"
+  },
+  "anacamptis-morio": {
+    "name": "Обични каћун",
+    "scientific_name": "Anacamptis morio",
+    "taxon_mode": "species",
+    "show_precise_points": false,
+    "taxon_id": null,
+    "taxon_query": "Anacamptis morio",
+    "taxon_rank": "species",
+    "resolution_source": "pending_api"
+  },
+  "anacamptis-pyramidalis-l-rich": {
+    "name": "Пирамидална орхидеја",
+    "scientific_name": "Anacamptis pyramidalis",
+    "taxon_mode": "species",
+    "show_precise_points": false,
+    "taxon_id": 83085,
+    "taxon_query": "Anacamptis pyramidalis",
+    "taxon_rank": "species",
+    "resolution_source": "inat1610_sqlite"
+  },
+  "anemone-nemorosa": {
+    "name": "Шумска саса",
+    "scientific_name": "Anemone nemorosa",
+    "taxon_mode": "species",
+    "show_precise_points": false,
+    "taxon_id": null,
+    "taxon_query": "Anemone nemorosa",
+    "taxon_rank": "species",
+    "resolution_source": "pending_api"
+  },
+  "anemone-ranunculoides": {
+    "name": "Жута шумска саса",
+    "scientific_name": "Anemone ranunculoides",
+    "taxon_mode": "species",
+    "show_precise_points": false,
+    "taxon_id": null,
+    "taxon_query": "Anemone ranunculoides",
+    "taxon_rank": "species",
+    "resolution_source": "pending_api"
+  },
+  "anthoxanthum-odoratum-l": {
+    "name": "Мирисна љивадара",
+    "scientific_name": "Anthoxanthum odoratum",
+    "taxon_mode": "species",
+    "show_precise_points": false,
+    "taxon_id": null,
+    "taxon_query": "Anthoxanthum odoratum",
+    "taxon_rank": "species",
+    "resolution_source": "pending_api"
+  },
+  "anthyllis-vulneraria-l": {
+    "name": "Детелина камењарка",
+    "scientific_name": "Anthyllis vulneraria",
+    "taxon_mode": "species",
+    "show_precise_points": false,
+    "taxon_id": null,
+    "taxon_query": "Anthyllis vulneraria",
+    "taxon_rank": "species",
+    "resolution_source": "pending_api"
+  },
+  "arrhenatherum-elatius-l-p-beauv-ex-j-presl-c-presl": {
+    "name": "Високи јарчевињак",
+    "scientific_name": "Arrhenatherum elatius",
+    "taxon_mode": "species",
+    "show_precise_points": false,
+    "taxon_id": null,
+    "taxon_query": "Arrhenatherum elatius",
+    "taxon_rank": "species",
+    "resolution_source": "pending_api"
+  },
+  "aruncus-dioicus-walt-fernald": {
+    "name": "Суручица",
+    "scientific_name": "Aruncus dioicus",
+    "taxon_mode": "species",
+    "show_precise_points": false,
+    "taxon_id": null,
+    "taxon_query": "Aruncus dioicus",
+    "taxon_rank": "species",
+    "resolution_source": "pending_api"
+  },
+  "asperula-taurina-l": {
+    "name": "Таурска миришљивка",
+    "scientific_name": "Asperula taurina",
+    "taxon_mode": "species",
+    "show_precise_points": false,
+    "taxon_id": null,
+    "taxon_query": "Asperula taurina",
+    "taxon_rank": "species",
+    "resolution_source": "pending_api"
+  },
+  "asplenium-adulterinum-milde": {
+    "name": "Лажни жљебасти слез",
+    "scientific_name": "Asplenium adulterinum",
+    "taxon_mode": "species",
+    "show_precise_points": false,
+    "taxon_id": null,
+    "taxon_query": "Asplenium adulterinum",
+    "taxon_rank": "species",
+    "resolution_source": "pending_api"
+  },
+  "asplenium-ceterach-l": {
+    "name": "Златна папрат",
+    "scientific_name": "Asplenium ceterach",
+    "taxon_mode": "species",
+    "show_precise_points": false,
+    "taxon_id": null,
+    "taxon_query": "Asplenium ceterach",
+    "taxon_rank": "species",
+    "resolution_source": "pending_api"
+  },
+  "asplenium-scolopendrium-l": {
+    "name": "Јеленски језик",
+    "scientific_name": "Asplenium scolopendrium",
+    "taxon_mode": "species",
+    "show_precise_points": false,
+    "taxon_id": 129105,
+    "taxon_query": "Asplenium scolopendrium",
+    "taxon_rank": "species",
+    "resolution_source": "inat1610_sqlite"
+  },
+  "avena-sativa-l": {
+    "name": "Зоб",
+    "scientific_name": "Avena sativa",
+    "taxon_mode": "species",
+    "show_precise_points": false,
+    "taxon_id": null,
+    "taxon_query": "Avena sativa",
+    "taxon_rank": "species",
+    "resolution_source": "pending_api"
+  },
+  "betula-pendula-roth": {
+    "name": "Бреза",
+    "scientific_name": "Betula pendula",
+    "taxon_mode": "species",
+    "show_precise_points": false,
+    "taxon_id": null,
+    "taxon_query": "Betula pendula",
+    "taxon_rank": "species",
+    "resolution_source": "pending_api"
+  },
+  "briza-media-l": {
+    "name": "Средња звоњача",
+    "scientific_name": "Briza media",
+    "taxon_mode": "species",
+    "show_precise_points": false,
+    "taxon_id": null,
+    "taxon_query": "Briza media",
+    "taxon_rank": "species",
+    "resolution_source": "pending_api"
+  },
+  "bromus-benekenii-lange-trimen": {
+    "name": "Широколисна кострика",
+    "scientific_name": "Bromus benekenii",
+    "taxon_mode": "species",
+    "show_precise_points": false,
+    "taxon_id": null,
+    "taxon_query": "Bromus benekenii",
+    "taxon_rank": "species",
+    "resolution_source": "pending_api"
+  },
+  "bromus-erectus-huds": {
+    "name": "Оштролисна кострика",
+    "scientific_name": "Bromus erectus",
+    "taxon_mode": "species",
+    "show_precise_points": false,
+    "taxon_id": null,
+    "taxon_query": "Bromus erectus",
+    "taxon_rank": "species",
+    "resolution_source": "pending_api"
+  },
+  "cardamine-glauca-spreng": {
+    "name": "Сива режуха",
+    "scientific_name": "Cardamine glauca",
+    "taxon_mode": "species",
+    "show_precise_points": false,
+    "taxon_id": null,
+    "taxon_query": "Cardamine glauca",
+    "taxon_rank": "species",
+    "resolution_source": "pending_api"
+  },
+  "carlina-acaulis-l": {
+    "name": "Сребрна чичка",
+    "scientific_name": "Carlina acaulis",
+    "taxon_mode": "species",
+    "show_precise_points": false,
+    "taxon_id": null,
+    "taxon_query": "Carlina acaulis",
+    "taxon_rank": "species",
+    "resolution_source": "pending_api"
+  },
+  "carpinus-orientalis-mill": {
+    "name": "Мањи граб",
+    "scientific_name": "Carpinus orientalis",
+    "taxon_mode": "species",
+    "show_precise_points": false,
+    "taxon_id": null,
+    "taxon_query": "Carpinus orientalis",
+    "taxon_rank": "species",
+    "resolution_source": "pending_api"
+  },
+  "centaurea-jacea": {
+    "name": "Ливадска различка (агрегат)",
+    "scientific_name": "Centaurea jacea",
+    "taxon_mode": "species",
+    "show_precise_points": false,
+    "taxon_id": null,
+    "taxon_query": "Centaurea jacea",
+    "taxon_rank": "species",
+    "resolution_source": "pending_api"
+  },
+  "cephalanthera-damasonium-mill-druce": {
+    "name": "Бела наглавица",
+    "scientific_name": "Cephalanthera damasonium",
+    "taxon_mode": "species",
+    "show_precise_points": false,
+    "taxon_id": null,
+    "taxon_query": "Cephalanthera damasonium",
+    "taxon_rank": "species",
+    "resolution_source": "pending_api"
+  },
+  "cephalanthera-longifolia-l-fritsch": {
+    "name": "Дуголисна наглавица",
+    "scientific_name": "Cephalanthera longifolia",
+    "taxon_mode": "species",
+    "show_precise_points": false,
+    "taxon_id": null,
+    "taxon_query": "Cephalanthera longifolia",
+    "taxon_rank": "species",
+    "resolution_source": "pending_api"
+  },
+  "cephalanthera-rubra-l-rich": {
+    "name": "Црвена наглавица",
+    "scientific_name": "Cephalanthera rubra",
+    "taxon_mode": "species",
+    "show_precise_points": false,
+    "taxon_id": null,
+    "taxon_query": "Cephalanthera rubra",
+    "taxon_rank": "species",
+    "resolution_source": "pending_api"
+  },
+  "chrysosplenium-alternifolium-l": {
+    "name": "Наизменолисна златница",
+    "scientific_name": "Chrysosplenium alternifolium",
+    "taxon_mode": "species",
+    "show_precise_points": false,
+    "taxon_id": null,
+    "taxon_query": "Chrysosplenium alternifolium",
+    "taxon_rank": "species",
+    "resolution_source": "pending_api"
+  },
+  "colchicum-autumnale-l": {
+    "name": "Јесењи мразовац",
+    "scientific_name": "Colchicum autumnale",
+    "taxon_mode": "species",
+    "show_precise_points": false,
+    "taxon_id": 131586,
+    "taxon_query": "Colchicum autumnale",
+    "taxon_rank": "species",
+    "resolution_source": "inat1610_sqlite"
+  },
+  "cornus-mas-l": {
+    "name": "Дрен",
+    "scientific_name": "Cornus mas",
+    "taxon_mode": "species",
+    "show_precise_points": false,
+    "taxon_id": null,
+    "taxon_query": "Cornus mas",
+    "taxon_rank": "species",
+    "resolution_source": "pending_api"
+  },
+  "cornus-sanguinea-l": {
+    "name": "Црвени дрен",
+    "scientific_name": "Cornus sanguinea",
+    "taxon_mode": "species",
+    "show_precise_points": false,
+    "taxon_id": null,
+    "taxon_query": "Cornus sanguinea",
+    "taxon_rank": "species",
+    "resolution_source": "pending_api"
+  },
+  "corydalis-cava": {
+    "name": "Шупљика",
+    "scientific_name": "Corydalis cava",
+    "taxon_mode": "species",
+    "show_precise_points": false,
+    "taxon_id": 126193,
+    "taxon_query": "Corydalis cava",
+    "taxon_rank": "species",
+    "resolution_source": "inat1610_sqlite"
+  },
+  "corylus-avellana-l": {
+    "name": "Лешник",
+    "scientific_name": "Corylus avellana",
+    "taxon_mode": "species",
+    "show_precise_points": false,
+    "taxon_id": null,
+    "taxon_query": "Corylus avellana",
+    "taxon_rank": "species",
+    "resolution_source": "pending_api"
+  },
+  "corylus-colurna-l": {
+    "name": "Турски лешник",
+    "scientific_name": "Corylus colurna",
+    "taxon_mode": "species",
+    "show_precise_points": false,
+    "taxon_id": null,
+    "taxon_query": "Corylus colurna",
+    "taxon_rank": "species",
+    "resolution_source": "pending_api"
+  },
+  "crataegus-monogyna-jacq": {
+    "name": "Једносемени глог",
+    "scientific_name": "Crataegus monogyna",
+    "taxon_mode": "species",
+    "show_precise_points": false,
+    "taxon_id": null,
+    "taxon_query": "Crataegus monogyna",
+    "taxon_rank": "species",
+    "resolution_source": "pending_api"
+  },
+  "crocus-spp": {
+    "name": "Шафран",
+    "scientific_name": "Crocus spp",
+    "taxon_mode": "genus",
+    "show_precise_points": false,
+    "taxon_id": null,
+    "taxon_query": "Crocus",
+    "taxon_rank": "genus",
+    "resolution_source": "pending_api"
+  },
+  "dactylorhiza-sambucina-l-so": {
+    "name": "Зовин каћун",
+    "scientific_name": "Dactylorhiza sambucina",
+    "taxon_mode": "species",
+    "show_precise_points": false,
+    "taxon_id": 60885,
+    "taxon_query": "Dactylorhiza sambucina",
+    "taxon_rank": "species",
+    "resolution_source": "inat1610_sqlite"
+  },
+  "danthonia-decumbens-l-dc": {
+    "name": "Припојена лискава трава",
+    "scientific_name": "Danthonia decumbens",
+    "taxon_mode": "species",
+    "show_precise_points": false,
+    "taxon_id": null,
+    "taxon_query": "Danthonia decumbens",
+    "taxon_rank": "species",
+    "resolution_source": "pending_api"
+  },
+  "daphne-mezereum-l": {
+    "name": "Мирисна волчјица",
+    "scientific_name": "Daphne mezereum",
+    "taxon_mode": "species",
+    "show_precise_points": false,
+    "taxon_id": null,
+    "taxon_query": "Daphne mezereum",
+    "taxon_rank": "species",
+    "resolution_source": "pending_api"
+  },
+  "daucus-carota-l": {
+    "name": "Дивља шаргарепа",
+    "scientific_name": "Daucus carota",
+    "taxon_mode": "species",
+    "show_precise_points": false,
+    "taxon_id": null,
+    "taxon_query": "Daucus carota",
+    "taxon_rank": "species",
+    "resolution_source": "pending_api"
+  },
+  "dianthus-carthusianorum-l": {
+    "name": "Картузијански каранфил",
+    "scientific_name": "Dianthus carthusianorum",
+    "taxon_mode": "species",
+    "show_precise_points": false,
+    "taxon_id": null,
+    "taxon_query": "Dianthus carthusianorum",
+    "taxon_rank": "species",
+    "resolution_source": "pending_api"
+  },
+  "digitalis-grandiflora-mill": {
+    "name": "Жута наперстача",
+    "scientific_name": "Digitalis grandiflora",
+    "taxon_mode": "species",
+    "show_precise_points": false,
+    "taxon_id": null,
+    "taxon_query": "Digitalis grandiflora",
+    "taxon_rank": "species",
+    "resolution_source": "pending_api"
+  },
+  "erica-carnea-l": {
+    "name": "Пролећна вресковица",
+    "scientific_name": "Erica carnea",
+    "taxon_mode": "species",
+    "show_precise_points": false,
+    "taxon_id": null,
+    "taxon_query": "Erica carnea",
+    "taxon_rank": "species",
+    "resolution_source": "pending_api"
+  },
+  "erigeron-annuus-l-pers": {
+    "name": "Једногодишња красолика",
+    "scientific_name": "Erigeron annuus",
+    "taxon_mode": "species",
+    "show_precise_points": true,
+    "taxon_id": null,
+    "taxon_query": "Erigeron annuus",
+    "taxon_rank": "species",
+    "resolution_source": "pending_api"
+  },
+  "erythronium-dens-canis-l": {
+    "name": "Псећи зуб",
+    "scientific_name": "Erythronium dens-canis",
+    "taxon_mode": "species",
+    "show_precise_points": false,
+    "taxon_id": 162719,
+    "taxon_query": "Erythronium dens-canis",
+    "taxon_rank": "species",
+    "resolution_source": "inat1610_sqlite"
+  },
+  "euonymus-europaeus-l": {
+    "name": "Европска курика",
+    "scientific_name": "Euonymus europaeus",
+    "taxon_mode": "species",
+    "show_precise_points": false,
+    "taxon_id": null,
+    "taxon_query": "Euonymus europaeus",
+    "taxon_rank": "species",
+    "resolution_source": "pending_api"
+  },
+  "euphorbia-amygdaloides": {
+    "name": "Шумска млечика",
+    "scientific_name": "Euphorbia amygdaloides",
+    "taxon_mode": "species",
+    "show_precise_points": false,
+    "taxon_id": null,
+    "taxon_query": "Euphorbia amygdaloides",
+    "taxon_rank": "species",
+    "resolution_source": "pending_api"
+  },
+  "euphorbia-cyparissias-l": {
+    "name": "Чемпресаста млечика",
+    "scientific_name": "Euphorbia cyparissias",
+    "taxon_mode": "species",
+    "show_precise_points": false,
+    "taxon_id": null,
+    "taxon_query": "Euphorbia cyparissias",
+    "taxon_rank": "species",
+    "resolution_source": "pending_api"
+  },
+  "euphrasia-stricta-d-wolff-ex-j-f-lehm": {
+    "name": "Права очаница",
+    "scientific_name": "Euphrasia stricta",
+    "taxon_mode": "species",
+    "show_precise_points": false,
+    "taxon_id": null,
+    "taxon_query": "Euphrasia stricta",
+    "taxon_rank": "species",
+    "resolution_source": "pending_api"
+  },
+  "fagus-moesiaca-domin-maly-czecz": {
+    "name": "Мезијска буква",
+    "scientific_name": "Fagus sylvatica",
+    "taxon_mode": "species",
+    "show_precise_points": false,
+    "taxon_id": null,
+    "taxon_query": "Fagus sylvatica",
+    "taxon_rank": "species",
+    "resolution_source": "pending_api"
+  },
+  "festuca-arundinacea-schreb": {
+    "name": "Висока фестука",
+    "scientific_name": "Lolium arundinaceum",
+    "taxon_mode": "species",
+    "show_precise_points": false,
+    "taxon_id": null,
+    "taxon_query": "Lolium arundinaceum",
+    "taxon_rank": "species",
+    "resolution_source": "pending_api"
+  },
+  "filipendula-vulgaris": {
+    "name": "Пољска суручица",
+    "scientific_name": "Filipendula vulgaris",
+    "taxon_mode": "species",
+    "show_precise_points": false,
+    "taxon_id": null,
+    "taxon_query": "Filipendula vulgaris",
+    "taxon_rank": "species",
+    "resolution_source": "pending_api"
+  },
+  "fragaria-viridis": {
+    "name": "Зелена јагода",
+    "scientific_name": "Fragaria viridis",
+    "taxon_mode": "species",
+    "show_precise_points": false,
+    "taxon_id": null,
+    "taxon_query": "Fragaria viridis",
+    "taxon_rank": "species",
+    "resolution_source": "pending_api"
+  },
+  "fraxinus-ornus-l": {
+    "name": "Црни јасен",
+    "scientific_name": "Fraxinus ornus",
+    "taxon_mode": "species",
+    "show_precise_points": false,
+    "taxon_id": null,
+    "taxon_query": "Fraxinus ornus",
+    "taxon_rank": "species",
+    "resolution_source": "pending_api"
+  },
+  "galanthus-nivalis-l": {
+    "name": "Висибаба",
+    "scientific_name": "Galanthus nivalis",
+    "taxon_mode": "species",
+    "show_precise_points": false,
+    "taxon_id": null,
+    "taxon_query": "Galanthus nivalis",
+    "taxon_rank": "species",
+    "resolution_source": "pending_api"
+  },
+  "gentiana-asclepiadea-l": {
+    "name": "Широколисна линцура",
+    "scientific_name": "Gentiana asclepiadea",
+    "taxon_mode": "species",
+    "show_precise_points": false,
+    "taxon_id": null,
+    "taxon_query": "Gentiana asclepiadea",
+    "taxon_rank": "species",
+    "resolution_source": "pending_api"
+  },
+  "geranium-sanguineum": {
+    "name": "Девојачки здравац",
+    "scientific_name": "Geranium sanguineum",
+    "taxon_mode": "species",
+    "show_precise_points": false,
+    "taxon_id": null,
+    "taxon_query": "Geranium sanguineum",
+    "taxon_rank": "species",
+    "resolution_source": "pending_api"
+  },
+  "gymnadenia-conopsea-l-rbr": {
+    "name": "Врањак",
+    "scientific_name": "Gymnadenia conopsea",
+    "taxon_mode": "species",
+    "show_precise_points": false,
+    "taxon_id": null,
+    "taxon_query": "Gymnadenia conopsea",
+    "taxon_rank": "species",
+    "resolution_source": "pending_api"
+  },
+  "helleborus-odorus-waldst-kit-ex-willd": {
+    "name": "Миришљава морозовина",
+    "scientific_name": "Helleborus odorus",
+    "taxon_mode": "species",
+    "show_precise_points": false,
+    "taxon_id": 451952,
+    "taxon_query": "Helleborus odorus",
+    "taxon_rank": "species",
+    "resolution_source": "inat1610_sqlite"
+  },
+  "hypochaeris-maculata": {
+    "name": "Пегави свињак",
+    "scientific_name": "Hypochaeris maculata",
+    "taxon_mode": "species",
+    "show_precise_points": false,
+    "taxon_id": null,
+    "taxon_query": "Hypochaeris maculata",
+    "taxon_rank": "species",
+    "resolution_source": "pending_api"
+  },
+  "iris-reichenbachii-heuff": {
+    "name": "Балканска перуника",
+    "scientific_name": "Iris reichenbachii",
+    "taxon_mode": "species",
+    "show_precise_points": false,
+    "taxon_id": null,
+    "taxon_query": "Iris reichenbachii",
+    "taxon_rank": "species",
+    "resolution_source": "pending_api"
+  },
+  "lactuca-perennis-l": {
+    "name": "Вишегодишња салата, горкаљ",
+    "scientific_name": "Lactuca perennis",
+    "taxon_mode": "species",
+    "show_precise_points": false,
+    "taxon_id": null,
+    "taxon_query": "Lactuca perennis",
+    "taxon_rank": "species",
+    "resolution_source": "pending_api"
+  },
+  "leucanthemum-vulgare-agg": {
+    "name": "Бела рада (агрегат)",
+    "scientific_name": "Leucanthemum vulgare",
+    "taxon_mode": "species",
+    "show_precise_points": false,
+    "taxon_id": null,
+    "taxon_query": "Leucanthemum vulgare",
+    "taxon_rank": "species",
+    "resolution_source": "aggregate_manual_review"
+  },
+  "lilium-martagon-l": {
+    "name": "Шумски љиљан",
+    "scientific_name": "Lilium martagon",
+    "taxon_mode": "species",
+    "show_precise_points": false,
+    "taxon_id": null,
+    "taxon_query": "Lilium martagon",
+    "taxon_rank": "species",
+    "resolution_source": "pending_api"
+  },
+  "limodorum-abortivum-l-sw": {
+    "name": "Шиљореп, безлистна орхидеја",
+    "scientific_name": "Limodorum abortivum",
+    "taxon_mode": "species",
+    "show_precise_points": false,
+    "taxon_id": null,
+    "taxon_query": "Limodorum abortivum",
+    "taxon_rank": "species",
+    "resolution_source": "pending_api"
+  },
+  "linaria-vulgaris": {
+    "name": "Жута ланилица",
+    "scientific_name": "Linaria vulgaris",
+    "taxon_mode": "species",
+    "show_precise_points": false,
+    "taxon_id": null,
+    "taxon_query": "Linaria vulgaris",
+    "taxon_rank": "species",
+    "resolution_source": "pending_api"
+  },
+  "lolium-perenne-l": {
+    "name": "Вишегодишња љуљка",
+    "scientific_name": "Lolium perenne",
+    "taxon_mode": "species",
+    "show_precise_points": false,
+    "taxon_id": null,
+    "taxon_query": "Lolium perenne",
+    "taxon_rank": "species",
+    "resolution_source": "pending_api"
+  },
+  "lotus-corniculatus": {
+    "name": "Рогата детелина",
+    "scientific_name": "Lotus corniculatus",
+    "taxon_mode": "species",
+    "show_precise_points": false,
+    "taxon_id": null,
+    "taxon_query": "Lotus corniculatus",
+    "taxon_rank": "species",
+    "resolution_source": "pending_api"
+  },
+  "malus-sylvestris-l-mill": {
+    "name": "Дивља јабука, шумска јабука",
+    "scientific_name": "Malus sylvestris",
+    "taxon_mode": "species",
+    "show_precise_points": false,
+    "taxon_id": null,
+    "taxon_query": "Malus sylvestris",
+    "taxon_rank": "species",
+    "resolution_source": "pending_api"
+  },
+  "medicago-sativa-l": {
+    "name": "Луцерка",
+    "scientific_name": "Medicago sativa",
+    "taxon_mode": "species",
+    "show_precise_points": false,
+    "taxon_id": null,
+    "taxon_query": "Medicago sativa",
+    "taxon_rank": "species",
+    "resolution_source": "pending_api"
+  },
+  "melampyrum-hoermannianum-so": {
+    "name": "Херманова кукуњара",
+    "scientific_name": "Melampyrum hoermannianum",
+    "taxon_mode": "species",
+    "show_precise_points": false,
+    "taxon_id": null,
+    "taxon_query": "Melampyrum hoermannianum",
+    "taxon_rank": "species",
+    "resolution_source": "pending_api"
+  },
+  "muscari-botryoides": {
+    "name": "Пресличица",
+    "scientific_name": "Muscari botryoides",
+    "taxon_mode": "species",
+    "show_precise_points": false,
+    "taxon_id": 56134,
+    "taxon_query": "Muscari botryoides",
+    "taxon_rank": "species",
+    "resolution_source": "inat1610_sqlite"
+  },
+  "neotinea-tridentata": {
+    "name": "Трозуби каћун",
+    "scientific_name": "Neotinea tridentata",
+    "taxon_mode": "species",
+    "show_precise_points": false,
+    "taxon_id": 61329,
+    "taxon_query": "Neotinea tridentata",
+    "taxon_rank": "species",
+    "resolution_source": "inat1610_sqlite"
+  },
+  "notholaena-maranthae-l-desv": {
+    "name": "Марантова папрат",
+    "scientific_name": "Hemionitis marantae",
+    "taxon_mode": "species",
+    "show_precise_points": false,
+    "taxon_id": null,
+    "taxon_query": "Hemionitis marantae",
+    "taxon_rank": "species",
+    "resolution_source": "pending_api"
+  },
+  "ophrys-scolopax-subsp-cornuta-steven-ex-lindl-so": {
+    "name": "Рогата пчелиноусна",
+    "scientific_name": "Ophrys scolopax",
+    "taxon_mode": "species",
+    "show_precise_points": false,
+    "taxon_id": null,
+    "taxon_query": "Ophrys scolopax cornuta",
+    "taxon_rank": "subspecies",
+    "resolution_source": "pending_api"
+  },
+  "orchis-coriophora-l": {
+    "name": "Смрдљиви каћунак",
+    "scientific_name": "Orchis coriophora",
+    "taxon_mode": "species",
+    "show_precise_points": false,
+    "taxon_id": null,
+    "taxon_query": "Anacamptis coriophora",
+    "taxon_rank": "species",
+    "resolution_source": "pending_api"
+  },
+  "oreoselinum-majus": {
+    "name": "Шумска сиљевина",
+    "scientific_name": "Oreoselinum majus",
+    "taxon_mode": "species",
+    "show_precise_points": false,
+    "taxon_id": null,
+    "taxon_query": "Oreoselinum majus",
+    "taxon_rank": "species",
+    "resolution_source": "pending_api"
+  },
+  "origanum-vulgare-l": {
+    "name": "Маточина, дивљи оригано",
+    "scientific_name": "Origanum vulgare",
+    "taxon_mode": "species",
+    "show_precise_points": false,
+    "taxon_id": null,
+    "taxon_query": "Origanum vulgare",
+    "taxon_rank": "species",
+    "resolution_source": "pending_api"
+  },
+  "picea-abies-l-h-karst": {
+    "name": "Смрча",
+    "scientific_name": "Picea abies",
+    "taxon_mode": "species",
+    "show_precise_points": false,
+    "taxon_id": null,
+    "taxon_query": "Picea abies",
+    "taxon_rank": "species",
+    "resolution_source": "pending_api"
+  },
+  "pilosella": {
+    "name": "Руњике",
+    "scientific_name": "Pilosella spp",
+    "taxon_mode": "genus",
+    "show_precise_points": false,
+    "taxon_id": null,
+    "taxon_query": "Pilosella",
+    "taxon_rank": "genus",
+    "resolution_source": "pending_api"
+  },
+  "platanthera-chlorantha-custer-rchb": {
+    "name": "Зелена завратница",
+    "scientific_name": "Platanthera chlorantha",
+    "taxon_mode": "species",
+    "show_precise_points": false,
+    "taxon_id": null,
+    "taxon_query": "Platanthera chlorantha",
+    "taxon_rank": "species",
+    "resolution_source": "pending_api"
+  },
+  "polygonum-aviculare-l": {
+    "name": "Гушчија трава",
+    "scientific_name": "Polygonum aviculare",
+    "taxon_mode": "species",
+    "show_precise_points": false,
+    "taxon_id": null,
+    "taxon_query": "Polygonum aviculare",
+    "taxon_rank": "species",
+    "resolution_source": "pending_api"
+  },
+  "polystichum-aculeatum": {
+    "name": "Папратњача",
+    "scientific_name": "Polystichum aculeatum",
+    "taxon_mode": "species",
+    "show_precise_points": false,
+    "taxon_id": null,
+    "taxon_query": "Polystichum aculeatum",
+    "taxon_rank": "species",
+    "resolution_source": "pending_api"
+  },
+  "primula-veris": {
+    "name": "Пролећна јагорчевина",
+    "scientific_name": "Primula veris",
+    "taxon_mode": "species",
+    "show_precise_points": false,
+    "taxon_id": null,
+    "taxon_query": "Primula veris",
+    "taxon_rank": "species",
+    "resolution_source": "pending_api"
+  },
+  "prunella-laciniata": {
+    "name": "Бели црњевац",
+    "scientific_name": "Prunella laciniata",
+    "taxon_mode": "species",
+    "show_precise_points": false,
+    "taxon_id": null,
+    "taxon_query": "Prunella laciniata",
+    "taxon_rank": "species",
+    "resolution_source": "pending_api"
+  },
+  "raphanus-raphanistrum": {
+    "name": "Дивља ротква",
+    "scientific_name": "Raphanus raphanistrum",
+    "taxon_mode": "species",
+    "show_precise_points": false,
+    "taxon_id": null,
+    "taxon_query": "Raphanus raphanistrum",
+    "taxon_rank": "species",
+    "resolution_source": "pending_api"
+  },
+  "reynoutria-japonica-houtt": {
+    "name": "Јапански двозуб",
+    "scientific_name": "Reynoutria japonica",
+    "taxon_mode": "species",
+    "show_precise_points": true,
+    "taxon_id": null,
+    "taxon_query": "Reynoutria japonica",
+    "taxon_rank": "species",
+    "resolution_source": "pending_api"
+  },
+  "rhinanthus-rumelicus": {
+    "name": "Шушкавац",
+    "scientific_name": "Rhinanthus rumelicus",
+    "taxon_mode": "species",
+    "show_precise_points": false,
+    "taxon_id": null,
+    "taxon_query": "Rhinanthus rumelicus",
+    "taxon_rank": "species",
+    "resolution_source": "pending_api"
+  },
+  "ruscus-aculeatus-l": {
+    "name": "Кострика, рогач",
+    "scientific_name": "Ruscus aculeatus",
+    "taxon_mode": "species",
+    "show_precise_points": false,
+    "taxon_id": null,
+    "taxon_query": "Ruscus aculeatus",
+    "taxon_rank": "species",
+    "resolution_source": "pending_api"
+  },
+  "ruscus-hypoglossum": {
+    "name": "Језичаста кострика",
+    "scientific_name": "Ruscus hypoglossum",
+    "taxon_mode": "species",
+    "show_precise_points": false,
+    "taxon_id": null,
+    "taxon_query": "Ruscus hypoglossum",
+    "taxon_rank": "species",
+    "resolution_source": "pending_api"
+  },
+  "salvia-pratensis": {
+    "name": "Дивља жалфија",
+    "scientific_name": "Salvia pratensis",
+    "taxon_mode": "species",
+    "show_precise_points": false,
+    "taxon_id": 85338,
+    "taxon_query": "Salvia pratensis",
+    "taxon_rank": "species",
+    "resolution_source": "inat1610_sqlite"
+  },
+  "scilla-bifolia": {
+    "name": "Дволисни процепак",
+    "scientific_name": "Scilla bifolia",
+    "taxon_mode": "species",
+    "show_precise_points": false,
+    "taxon_id": 56934,
+    "taxon_query": "Scilla bifolia",
+    "taxon_rank": "species",
+    "resolution_source": "inat1610_sqlite"
+  },
+  "silene-sendtneri-boiss": {
+    "name": "Балканска слезница",
+    "scientific_name": "Silene sendtneri",
+    "taxon_mode": "species",
+    "show_precise_points": false,
+    "taxon_id": null,
+    "taxon_query": "Silene sendtneri",
+    "taxon_rank": "species",
+    "resolution_source": "pending_api"
+  },
+  "spiranthes-spiralis-l-chevall": {
+    "name": "Спиралица",
+    "scientific_name": "Spiranthes spiralis",
+    "taxon_mode": "species",
+    "show_precise_points": false,
+    "taxon_id": null,
+    "taxon_query": "Spiranthes spiralis",
+    "taxon_rank": "species",
+    "resolution_source": "pending_api"
+  },
+  "trifolium-montanum-l": {
+    "name": "Планинска детелина",
+    "scientific_name": "Trifolium montanum",
+    "taxon_mode": "species",
+    "show_precise_points": false,
+    "taxon_id": null,
+    "taxon_query": "Trifolium montanum",
+    "taxon_rank": "species",
+    "resolution_source": "pending_api"
+  },
+  "turritis-glabra": {
+    "name": "Глатка гушарка",
+    "scientific_name": "Turritis glabra",
+    "taxon_mode": "species",
+    "show_precise_points": false,
+    "taxon_id": null,
+    "taxon_query": "Turritis glabra",
+    "taxon_rank": "species",
+    "resolution_source": "pending_api"
+  },
+  "veronica-chamaedrys": {
+    "name": "Змијска честославица",
+    "scientific_name": "Veronica chamaedrys",
+    "taxon_mode": "species",
+    "show_precise_points": false,
+    "taxon_id": 51610,
+    "taxon_query": "Veronica chamaedrys",
+    "taxon_rank": "species",
+    "resolution_source": "inat1610_sqlite"
+  },
+  "viola-reichenbachiana": {
+    "name": "Шумска љубичица",
+    "scientific_name": "Viola reichenbachiana",
+    "taxon_mode": "species",
+    "show_precise_points": false,
+    "taxon_id": null,
+    "taxon_query": "Viola reichenbachiana",
+    "taxon_rank": "species",
+    "resolution_source": "pending_api"
+  }
+}
