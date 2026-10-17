@@ -1,0 +1,1757 @@
+<!-- ПИО Рајац complete static export 2026-05-21 | astronomska-posmatranja -->
+<!doctype html>
+<html lang="sr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Могућности за астрономска посматрања на Рајцу</title>
+  <meta name="description" content="Могућности за астрономска посматрања на Рајцу: квалитет ноћног неба, поређење са Београдом, локације за посматрање, астрофотографија, метеори, комете и Звездани парк Рајац.">
+  <style>
+    :root{
+      --rp-bg:#0b100d;
+      --rp-panel:#f7f2e8;
+      --rp-panel-2:#fffaf0;
+      --rp-ink:#1b211d;
+      --rp-muted:#6f736a;
+      --rp-green:#22392c;
+      --rp-green-2:#31513e;
+      --rp-gold:#d4ad52;
+      --rp-gold-2:#f0d587;
+      --rp-line:rgba(34,57,44,.16);
+      --rp-shadow:0 26px 70px rgba(0,0,0,.22);
+      --rp-radius:26px;
+      --rp-serif:"Cormorant Garamond","EB Garamond",Garamond,"Palatino Linotype","Book Antiqua",Georgia,"Times New Roman",serif;
+      --rp-sans:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      background:var(--rp-panel);
+      color:var(--rp-ink);
+      font-family:var(--rp-sans);
+      line-height:1.72;
+      -webkit-font-smoothing:antialiased;
+      text-rendering:optimizeLegibility;
+    }
+    img{max-width:100%;display:block}
+    a{color:inherit}
+    .rp-page{
+      overflow:hidden;
+      background:
+        radial-gradient(circle at top left, rgba(212,173,82,.14), transparent 36rem),
+        linear-gradient(180deg, #fbf7ee 0%, #f1eadc 100%);
+    }
+    .rp-hero h1,h1,h2,h3,h4,h5,h6,.rp-quote p,.rp-hero-card strong,.rp-measure strong{
+      font-family:var(--rp-serif)!important;
+      font-weight:300!important;
+      letter-spacing:0!important;
+      font-synthesis-weight:none;
+    }
+    .rp-hero{
+      position:relative;
+      height:60vh;
+      min-height:60vh;
+      display:grid;
+      align-items:end;
+      color:#fff;
+      background:
+        linear-gradient(180deg, rgba(5,9,7,.10) 0%, rgba(5,9,7,.48) 42%, rgba(5,9,7,.90) 100%),
+        url("/rajac-static-2105/assets/page-assets/astronomija/astronomija-01.webp") center center/cover no-repeat;
+      isolation:isolate;
+    }
+    .rp-hero::after{
+      content:"";
+      position:absolute;
+      inset:auto 0 0;
+      height:190px;
+      background:linear-gradient(180deg, transparent 0%, #fbf7ee 100%);
+      z-index:-1;
+    }
+    .rp-wrap{
+      width:min(1180px, calc(100% - 40px));
+      margin:0 auto;
+    }
+    .rp-hero-inner{
+      padding:92px 0 112px;
+      display:grid;
+      grid-template-columns:minmax(0,1.15fr) minmax(320px,.85fr);
+      gap:46px;
+      align-items:end;
+    }
+    .rp-kicker{
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      margin:0 0 18px;
+      color:var(--rp-gold-2);
+      font-size:12px;
+      letter-spacing:.18em;
+      text-transform:uppercase;
+      font-weight:700;
+    }
+    .rp-kicker::before{
+      content:"";
+      width:34px;
+      height:1px;
+      background:var(--rp-gold);
+    }
+    .rp-hero h1{
+      margin:0;
+      max-width:920px;
+      font-size:clamp(42px, 7vw, 86px);
+      line-height:.98;
+      color:#fff;
+    }
+    .rp-lead{
+      margin:28px 0 0;
+      max-width:790px;
+      font-size:clamp(17px, 1.8vw, 22px);
+      line-height:1.58;
+      color:rgba(255,255,255,.90);
+    }
+    .rp-hero-card{
+      padding:28px;
+      border:1px solid rgba(255,255,255,.15);
+      border-radius:var(--rp-radius);
+      background:rgba(255,255,255,.08);
+      backdrop-filter:blur(14px);
+      box-shadow:var(--rp-shadow);
+    }
+    .rp-hero-card strong{
+      display:block;
+      font-size:38px;
+      line-height:1;
+      color:var(--rp-gold-2);
+      margin:0 0 8px;
+    }
+    .rp-hero-card span{
+      display:block;
+      color:rgba(255,255,255,.78);
+      font-size:14px;
+      line-height:1.55;
+    }
+    .rp-hero-thumb{
+      margin:18px 0 18px;
+      border-radius:18px;
+      overflow:hidden;
+      border:1px solid rgba(255,255,255,.16);
+      background:rgba(0,0,0,.18);
+    }
+    .rp-hero-thumb img{
+      width:100%;
+      height:170px;
+      object-fit:cover;
+      object-position:center center;
+      display:block;
+    }
+    .rp-hero-thumb figcaption{
+      padding:10px 12px;
+      color:rgba(255,255,255,.82);
+      font-size:13px;
+      line-height:1.4;
+      background:rgba(0,0,0,.20);
+    }
+    .rp-stat-grid{
+      display:grid;
+      grid-template-columns:repeat(2,minmax(0,1fr));
+      gap:14px;
+      margin-top:18px;
+    }
+    .rp-stat{
+      border-radius:18px;
+      border:1px solid rgba(255,255,255,.13);
+      background:rgba(0,0,0,.18);
+      padding:16px;
+    }
+    .rp-nav{position:relative;z-index:2;margin-top:-44px}
+    .rp-nav-inner{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      padding:14px;
+      border-radius:24px;
+      background:#fffaf0;
+      box-shadow:0 16px 44px rgba(28,38,31,.13);
+      border:1px solid rgba(34,57,44,.10);
+    }
+    .rp-nav a{
+      text-decoration:none;
+      border:1px solid rgba(34,57,44,.12);
+      background:#f3ead9;
+      color:#243528;
+      padding:10px 14px;
+      border-radius:999px;
+      font-size:14px;
+      font-weight:700;
+      transition:.2s ease;
+    }
+    .rp-nav a:hover{background:var(--rp-green);color:#fff;border-color:var(--rp-green)}
+    .rp-section{padding:86px 0}
+    .rp-section.tight{padding-top:54px}
+    .rp-two{
+      display:grid;
+      grid-template-columns:minmax(0,.78fr) minmax(0,1.22fr);
+      gap:54px;
+      align-items:start;
+    }
+    .rp-side-title{position:sticky;top:24px}
+    .rp-label{
+      margin:0 0 12px;
+      color:var(--rp-green-2);
+      font-size:12px;
+      letter-spacing:.16em;
+      text-transform:uppercase;
+      font-weight:800;
+    }
+    h2{
+      margin:0;
+      font-size:clamp(34px,4vw,58px);
+      line-height:1.05;
+      color:#172119;
+    }
+    h3{
+      margin:38px 0 12px;
+      font-size:clamp(25px,2.6vw,36px);
+      line-height:1.12;
+      color:#1a2a20;
+    }
+    p{margin:0 0 18px;font-size:17px}
+    .rp-text p:last-child{margin-bottom:0}
+    .rp-intro-card{
+      padding:34px;
+      border-radius:var(--rp-radius);
+      background:var(--rp-panel-2);
+      border:1px solid var(--rp-line);
+      box-shadow:0 18px 50px rgba(44,55,47,.10);
+    }
+    .rp-highlight{
+      margin:28px 0;
+      padding:26px 28px;
+      border-radius:22px;
+      background:linear-gradient(135deg,#22392c 0%,#142119 100%);
+      color:#fff;
+      box-shadow:0 20px 50px rgba(12,20,15,.18);
+    }
+    .rp-highlight p{margin:0;color:rgba(255,255,255,.88)}
+    .rp-highlight b{color:var(--rp-gold-2)}
+    .rp-media-grid{
+      display:grid;
+      grid-template-columns:repeat(2,minmax(0,1fr));
+      gap:18px;
+      margin:34px 0 0;
+    }
+    .rp-figure{
+      margin:0;
+      border-radius:24px;
+      overflow:hidden;
+      background:#0c110e;
+      border:1px solid rgba(34,57,44,.16);
+      box-shadow:0 18px 46px rgba(21,30,23,.16);
+    }
+    .rp-figure img{
+      width:100%;
+      height:auto;
+      background:#0c110e;
+      opacity:1;
+    }
+    .rp-figure.media-cover img{
+      height:360px;
+      object-fit:cover;
+      object-position:center center;
+    }
+    .rp-figure.media-contain .rp-media-shell{
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      height:360px;
+      padding:14px;
+      background:#020705;
+    }
+    .rp-figure.media-contain img{
+      width:100%;
+      height:100%;
+      object-fit:contain;
+      background:transparent;
+    }
+    .rp-figure figcaption{
+      padding:15px 18px 17px;
+      background:#fffaf0;
+      color:#555d52;
+      font-size:14px;
+      line-height:1.55;
+      border-top:1px solid rgba(34,57,44,.10);
+    }
+    .rp-figure figcaption b{
+      display:block;
+      color:#22392c;
+      font-size:13px;
+      letter-spacing:.08em;
+      text-transform:uppercase;
+      margin-bottom:4px;
+    }
+    .rp-wide{grid-column:1/-1}
+    .rp-dark-band{
+      background:
+        radial-gradient(circle at 18% 10%, rgba(212,173,82,.16), transparent 28rem),
+        linear-gradient(135deg,#0b100d 0%,#17271d 100%);
+      color:#fff;
+      padding:86px 0;
+    }
+    .rp-dark-band h2,.rp-dark-band h3{color:#fff}
+    .rp-dark-band .rp-label{color:var(--rp-gold-2)}
+    .rp-dark-band p{color:rgba(255,255,255,.84)}
+    .rp-cards{
+      display:grid;
+      grid-template-columns:repeat(3,minmax(0,1fr));
+      gap:18px;
+      margin-top:32px;
+    }
+    .rp-card{
+      padding:26px;
+      border-radius:24px;
+      background:#fffaf0;
+      border:1px solid var(--rp-line);
+      box-shadow:0 14px 38px rgba(44,55,47,.09);
+    }
+    .rp-card-num{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      width:40px;
+      height:40px;
+      border-radius:50%;
+      background:#22392c;
+      color:var(--rp-gold-2);
+      font-weight:800;
+      margin-bottom:16px;
+    }
+    .rp-card h3{margin:0 0 10px;font-size:27px}
+    .rp-card p{font-size:16px;color:#555d52}
+    .rp-quote{
+      margin:0;
+      padding:34px;
+      border-radius:var(--rp-radius);
+      background:#22392c;
+      color:#fff;
+      box-shadow:0 20px 50px rgba(12,20,15,.18);
+    }
+    .rp-quote p{
+      margin:0;
+      font-size:clamp(25px,3vw,42px);
+      line-height:1.18;
+      color:#fff;
+    }
+    .rp-quote footer{
+      margin-top:18px;
+      color:var(--rp-gold-2);
+      font-size:14px;
+      letter-spacing:.08em;
+      text-transform:uppercase;
+      font-weight:800;
+    }
+
+    .rp-footer-cta{padding:70px 0 46px}
+    .rp-cta{
+      position:relative;
+      overflow:hidden;
+      border-radius:34px;
+      padding:44px;
+      background:rgba(255,250,240,.88);
+      border:1px solid rgba(34,57,44,.12);
+      color:#1b211d;
+      box-shadow:0 16px 44px rgba(28,38,31,.10);
+    }
+    .rp-cta h2{color:#172119;max-width:900px}
+    .rp-cta p{
+      color:#4d5148;
+      max-width:870px;
+      margin-top:20px;
+      font-size:18px;
+    }
+    .rp-update-strip{
+      background:#fffaf0;
+      color:#4d5148;
+      padding:14px 0;
+      font-size:14px;
+      border-top:1px solid rgba(34,57,44,.12);
+    }
+    .rp-update-strip .rp-wrap{
+      display:flex;
+      gap:10px;
+      align-items:center;
+      justify-content:center;
+      text-align:center;
+      flex-wrap:wrap;
+    }
+    .rp-update-strip a{
+      color:#8a6d24;
+      font-weight:800;
+      text-decoration:underline;
+      text-underline-offset:3px;
+    }
+
+
+    .rp-zoom-link{
+      display:block;
+      position:relative;
+      color:inherit;
+      text-decoration:none;
+      cursor:zoom-in;
+      outline:none;
+    }
+    .rp-media-shell .rp-zoom-link{
+      width:100%;
+      height:100%;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+    }
+    .rp-zoom-link::after{
+      content:"Клик за увећање";
+      position:absolute;
+      right:12px;
+      bottom:12px;
+      z-index:3;
+      padding:6px 10px;
+      border-radius:999px;
+      background:rgba(255,250,240,.92);
+      color:#1b211d;
+      font-size:12px;
+      line-height:1;
+      font-weight:800;
+      letter-spacing:.03em;
+      opacity:0;
+      transform:translateY(4px);
+      transition:opacity .18s ease, transform .18s ease;
+      pointer-events:none;
+    }
+    .rp-zoom-link:hover::after,
+    .rp-zoom-link:focus-visible::after{
+      opacity:1;
+      transform:translateY(0);
+    }
+    .rp-lightbox{
+      position:fixed;
+      inset:0;
+      z-index:9999999;
+      display:none;
+      align-items:center;
+      justify-content:center;
+      padding:clamp(16px,3vw,38px);
+      background:rgba(4,7,5,.92);
+    }
+    .rp-lightbox.is-open{display:flex;}
+    .rp-lightbox img{
+      display:block;
+      width:auto;
+      height:auto;
+      max-width:min(100%,1500px);
+      max-height:calc(100vh - 118px);
+      object-fit:contain;
+      border-radius:18px;
+      box-shadow:0 28px 90px rgba(0,0,0,.55);
+      background:#020705;
+    }
+    .rp-lightbox-caption{
+      position:absolute;
+      left:50%;
+      bottom:18px;
+      transform:translateX(-50%);
+      width:min(980px,calc(100% - 42px));
+      text-align:center;
+      color:rgba(255,250,240,.88);
+      font-size:14px;
+      line-height:1.45;
+    }
+    .rp-lightbox-close{
+      position:absolute;
+      top:18px;
+      right:18px;
+      width:44px;
+      height:44px;
+      border:1px solid rgba(255,255,255,.25);
+      border-radius:999px;
+      background:rgba(255,250,240,.12);
+      color:#fffaf0;
+      font-size:28px;
+      line-height:40px;
+      text-align:center;
+      cursor:pointer;
+    }
+
+    @media (max-width:980px){
+      .rp-hero-inner,.rp-two{grid-template-columns:1fr}
+      .rp-side-title{position:static}
+      .rp-hero{min-height:auto}
+      .rp-hero-inner{padding:84px 0 108px}
+      .rp-cards{grid-template-columns:1fr}
+    }
+    @media (max-width:720px){
+      .rp-wrap{width:min(100% - 28px,1180px)}
+      .rp-section{padding:62px 0}
+      .rp-media-grid{grid-template-columns:1fr}
+      .rp-figure.media-cover img{height:260px}
+      .rp-figure.media-contain .rp-media-shell{height:260px}
+      .rp-hero-card{padding:22px}
+      .rp-stat-grid{grid-template-columns:1fr}
+      .rp-cta{padding:30px 22px}
+      p{font-size:16px}
+      .rp-nav{margin-top:-34px}
+      .rp-nav-inner{border-radius:20px}
+    }
+  </style>
+
+<!-- RAJAC_DESIGN_SYSTEM=1.0.0 -->
+<link rel="stylesheet" href="/rajac-design/rajac-global.css?v=1.0.0">
+<link rel="stylesheet" href="/rajac-design/rajac-pages.css?v=1.0.0">
+
+<style id="rajac-astronomija-hotfix-2026-05-31">
+  /* Исправка странице: мањи наслов, без преклапања, без зелене позадине, звездане тамне секције. */
+  :root{
+    --rp-bg:#070a0b !important;
+    --rp-panel:#fbf7ee !important;
+    --rp-panel-2:#fffaf0 !important;
+    --rp-ink:#1b211d !important;
+    --rp-muted:#65685f !important;
+    --rp-green:#151b1c !important;
+    --rp-green-2:#58645d !important;
+    --rp-gold:#d4ad52 !important;
+    --rp-gold-2:#f0d587 !important;
+    --rp-line:rgba(25,31,28,.15) !important;
+  }
+  html,body{
+    background:#fbf7ee !important;
+  }
+  body{
+    overflow-x:hidden !important;
+  }
+  .rp-page{
+    overflow:hidden !important;
+    background:#fbf7ee !important;
+  }
+
+  /* HERO: висина више није фиксна, да се картица и велики наслов не преливају преко уводног блока. */
+  .rp-hero{
+    height:auto !important;
+    min-height:720px !important;
+    display:grid !important;
+    align-items:center !important;
+    background:
+      linear-gradient(180deg, rgba(3,6,8,.18) 0%, rgba(3,6,8,.58) 52%, rgba(3,6,8,.92) 100%),
+      url("/rajac-static-2105/assets/page-assets/astronomija/astronomija-01.webp") center center/cover no-repeat !important;
+    isolation:isolate !important;
+  }
+  .rp-hero::after{
+    z-index:0 !important;
+    height:145px !important;
+    background:linear-gradient(180deg, rgba(251,247,238,0) 0%, #fbf7ee 100%) !important;
+  }
+  .rp-hero-inner{
+    position:relative !important;
+    z-index:1 !important;
+    align-items:center !important;
+    grid-template-columns:minmax(0,1fr) minmax(300px,.74fr) !important;
+    gap:58px !important;
+    padding:118px 0 138px !important;
+  }
+  .rp-hero h1{
+    max-width:790px !important;
+    font-size:clamp(38px, 5.15vw, 68px) !important;
+    line-height:1.04 !important;
+    letter-spacing:-.018em !important;
+    text-wrap:balance;
+    overflow-wrap:normal !important;
+  }
+  .rp-lead{
+    max-width:760px !important;
+    margin-top:24px !important;
+    font-size:clamp(16px, 1.25vw, 20px) !important;
+    line-height:1.64 !important;
+    color:rgba(255,255,255,.90) !important;
+  }
+  .rp-hero-card{
+    width:100% !important;
+    max-width:430px !important;
+    justify-self:end !important;
+    align-self:center !important;
+    background:rgba(255,255,255,.10) !important;
+    border-color:rgba(255,255,255,.20) !important;
+  }
+  .rp-hero-card strong{
+    font-size:32px !important;
+    line-height:1.05 !important;
+  }
+  .rp-stat{
+    background:rgba(255,255,255,.12) !important;
+  }
+  .rp-stat strong{
+    font-size:30px !important;
+  }
+
+  /* Увод и светле секције: уклоњена је зелена позадина, остављена је топла светла подлога. */
+  .rp-section,
+  .rp-section.tight,
+  .rp-footer-cta,
+  .rp-update-strip{
+    background:#fbf7ee !important;
+  }
+  .rp-section.tight{
+    padding-top:86px !important;
+  }
+  .rp-intro-card,
+  .rp-card,
+  .rp-cta,
+  .rp-nav-inner,
+  .rp-figure figcaption{
+    background:#fffaf0 !important;
+  }
+  .rp-label{
+    color:#59665d !important;
+  }
+  .rp-nav a:hover{
+    background:#111719 !important;
+    border-color:#111719 !important;
+    color:#fffaf0 !important;
+  }
+
+  /* Тамне целине добијају исту звездану атмосферу као hero, без пуне зелене позадине. */
+  .rp-dark-band{
+    position:relative !important;
+    background:
+      radial-gradient(circle at 18% 8%, rgba(240,213,135,.13), transparent 28rem),
+      linear-gradient(180deg, rgba(2,5,7,.84) 0%, rgba(5,8,10,.91) 58%, rgba(3,5,7,.96) 100%),
+      url("/rajac-static-2105/assets/page-assets/astronomija/astronomija-01.webp") center center/cover no-repeat !important;
+    color:#fffaf0 !important;
+  }
+  .rp-dark-band h2,
+  .rp-dark-band h3{
+    color:#fffaf0 !important;
+  }
+  .rp-dark-band .rp-label{
+    color:#f0d587 !important;
+  }
+  .rp-dark-band p{
+    color:rgba(255,250,240,.88) !important;
+  }
+  .rp-highlight,
+  .rp-quote{
+    background:
+      radial-gradient(circle at 20% 0%, rgba(240,213,135,.14), transparent 24rem),
+      linear-gradient(135deg, rgba(2,5,7,.86) 0%, rgba(8,11,13,.92) 100%),
+      url("/rajac-static-2105/assets/page-assets/astronomija/astronomija-01.webp") center center/cover no-repeat !important;
+    border:1px solid rgba(240,213,135,.23) !important;
+    color:#fffaf0 !important;
+  }
+  .rp-card-num{
+    background:#111719 !important;
+    color:#f0d587 !important;
+  }
+
+  @media (max-width:980px){
+    .rp-hero{
+      min-height:auto !important;
+    }
+    .rp-hero-inner{
+      grid-template-columns:1fr !important;
+      gap:32px !important;
+      padding:88px 0 104px !important;
+      align-items:start !important;
+    }
+    .rp-hero h1{
+      max-width:820px !important;
+      font-size:clamp(36px, 8.2vw, 58px) !important;
+      line-height:1.06 !important;
+    }
+    .rp-hero-card{
+      justify-self:start !important;
+      max-width:100% !important;
+    }
+    .rp-section.tight{
+      padding-top:70px !important;
+    }
+  }
+  @media (max-width:720px){
+    .rp-hero-inner{
+      padding:72px 0 88px !important;
+    }
+    .rp-hero h1{
+      font-size:clamp(34px, 10.5vw, 46px) !important;
+      line-height:1.08 !important;
+    }
+    .rp-lead{
+      font-size:16px !important;
+      line-height:1.58 !important;
+    }
+    .rp-stat-grid{
+      grid-template-columns:repeat(2,minmax(0,1fr)) !important;
+    }
+    .rp-stat strong{
+      font-size:26px !important;
+    }
+  }
+  @media (max-width:460px){
+    .rp-stat-grid{
+      grid-template-columns:1fr !important;
+    }
+  }
+</style>
+
+
+<link rel="stylesheet" href="/rajac-design/rajac-vrh-button.css?v=20260707-v6-round-no-home">
+
+
+<style id="rajac-astronomija-v1-page-fix-20260707">
+/* PATCH: karta posmatračkih zona prikazuje se punom širinom osnovnog stupca, bez kropovanja. */
+.rp-figure.rp-observation-map img{
+  width:100%!important;
+  height:auto!important;
+  max-height:none!important;
+  object-fit:contain!important;
+  object-position:center center!important;
+}
+.rp-figure.rp-observation-map{
+  width:100%!important;
+}
+.rp-hero-thumb .rp-zoom-link::after{
+  right:10px;
+  bottom:44px;
+}
+@media (max-width:720px){
+  .rp-hero-thumb .rp-zoom-link::after{bottom:42px;}
+}
+</style>
+
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+
+<style id="rajac-astronomija-leaflet-zvezdani-park-v3">
+/* PATCH v2: статична слика карте служи као улаз у интерактивну Leaflet карту Звезданог парка. */
+#lokacije .rp-two{
+  grid-template-columns:minmax(0,.64fr) minmax(0,1.36fr)!important;
+}
+#lokacije .rp-observation-map{
+  width:100%!important;
+  max-width:none!important;
+  margin-top:34px!important;
+}
+#lokacije .rp-observation-map img{
+  width:100%!important;
+  height:auto!important;
+  max-height:none!important;
+  object-fit:contain!important;
+  object-position:center center!important;
+}
+.rp-map-trigger{
+  display:block!important;
+  position:relative!important;
+  width:100%!important;
+  color:inherit!important;
+  text-decoration:none!important;
+  cursor:zoom-in!important;
+  outline:none!important;
+  background:#0c110e!important;
+}
+.rp-map-trigger::after{
+  content:"Клик за интерактивну карту";
+  position:absolute;
+  right:16px;
+  bottom:16px;
+  z-index:4;
+  padding:8px 12px;
+  border-radius:999px;
+  background:rgba(255,250,240,.94);
+  color:#172119;
+  font-size:12px;
+  line-height:1;
+  font-weight:850;
+  letter-spacing:.04em;
+  box-shadow:0 10px 26px rgba(0,0,0,.20);
+  opacity:0;
+  transform:translateY(4px);
+  transition:opacity .18s ease, transform .18s ease;
+  pointer-events:none;
+}
+.rp-map-trigger:hover::after,
+.rp-map-trigger:focus-visible::after{
+  opacity:1;
+  transform:translateY(0);
+}
+.rp-map-modal{
+  position:fixed;
+  inset:0;
+  z-index:9999998;
+  display:none;
+  align-items:center;
+  justify-content:center;
+  padding:clamp(12px,2.4vw,34px);
+  background:rgba(4,7,5,.92);
+}
+.rp-map-modal.is-open{display:flex;}
+.rp-map-panel{
+  width:min(1280px,100%);
+  height:min(86vh,900px);
+  min-height:520px;
+  display:grid;
+  grid-template-rows:auto 1fr;
+  overflow:hidden;
+  border-radius:26px;
+  border:1px solid rgba(240,213,135,.26);
+  background:#0a0d0b;
+  box-shadow:0 32px 90px rgba(0,0,0,.58);
+}
+.rp-map-head{
+  display:flex;
+  align-items:flex-start;
+  justify-content:space-between;
+  gap:20px;
+  padding:18px 22px;
+  background:linear-gradient(180deg,rgba(255,250,240,.98),rgba(247,242,232,.94));
+  color:#172119;
+  border-bottom:1px solid rgba(34,57,44,.14);
+}
+.rp-map-head h2{
+  margin:0!important;
+  font-family:var(--rp-serif)!important;
+  font-size:clamp(24px,3vw,36px)!important;
+  line-height:1.05!important;
+  color:#172119!important;
+}
+.rp-map-head p{
+  margin:6px 0 0!important;
+  max-width:760px;
+  color:#4f594f!important;
+  font-size:14px!important;
+  line-height:1.45!important;
+}
+.rp-map-close{
+  flex:0 0 auto;
+  width:44px;
+  height:44px;
+  border-radius:999px;
+  border:1px solid rgba(34,57,44,.18);
+  background:#fffaf0;
+  color:#172119;
+  font-size:28px;
+  line-height:38px;
+  cursor:pointer;
+  box-shadow:0 8px 22px rgba(20,28,22,.10);
+}
+#rp-zvezdani-leaflet-map{
+  width:100%;
+  height:100%;
+  min-height:420px;
+  background:#101512;
+}
+.rp-map-modal .leaflet-container{
+  font-family:var(--rp-sans)!important;
+  background:#101512!important;
+}
+.rp-map-modal .leaflet-popup-content-wrapper{
+  border-radius:14px!important;
+  background:#fffaf0!important;
+  color:#172119!important;
+}
+.rp-map-modal .leaflet-popup-content{
+  margin:12px 14px!important;
+  font-size:14px!important;
+  line-height:1.45!important;
+}
+.rp-park-point-icon{
+  width:28px!important;
+  height:28px!important;
+  border-radius:50%;
+  display:grid!important;
+  place-items:center!important;
+  background:#01579b!important;
+  color:#fff!important;
+  border:2px solid rgba(255,255,255,.88)!important;
+  box-shadow:0 6px 18px rgba(0,0,0,.35)!important;
+  font:800 13px/1 system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif!important;
+}
+.rp-map-error{
+  padding:24px;
+  color:#fffaf0;
+  font-size:16px;
+}
+@media(max-width:980px){
+  #lokacije .rp-two{grid-template-columns:1fr!important;}
+  .rp-map-panel{height:88vh;min-height:500px;}
+}
+@media(max-width:640px){
+  .rp-map-modal{padding:8px;}
+  .rp-map-panel{height:92vh;min-height:460px;border-radius:18px;}
+  .rp-map-head{padding:14px 14px 12px;}
+  .rp-map-head p{font-size:13px!important;}
+  .rp-map-close{width:40px;height:40px;font-size:26px;}
+  .rp-map-trigger::after{opacity:1;transform:none;right:12px;bottom:12px;font-size:11px;}
+}
+</style>
+
+
+<style id="rajac-astronomija-final-visual-location-v4">
+/* PATCH v4: видљиве нове позадинске слике, уједначени наслови и горњи линк ка ПИО Рајац. */
+.rajac-astro-home-nav{
+  position:sticky!important;
+  top:0!important;
+  z-index:99999!important;
+  width:100%!important;
+  min-height:58px!important;
+  background:rgba(17,23,25,.96)!important;
+  border-bottom:1px solid rgba(212,173,82,.34)!important;
+  box-shadow:0 8px 22px rgba(0,0,0,.22)!important;
+  backdrop-filter:blur(12px)!important;
+  -webkit-backdrop-filter:blur(12px)!important;
+}
+.rajac-astro-home-nav__inner{
+  width:min(1180px,calc(100% - 40px))!important;
+  min-height:58px!important;
+  margin:0 auto!important;
+  display:flex!important;
+  align-items:center!important;
+}
+.rajac-astro-home-nav a{
+  color:#f3efe2!important;
+  text-decoration:none!important;
+  font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif!important;
+  font-size:.96rem!important;
+  font-weight:700!important;
+  letter-spacing:.02em!important;
+  white-space:nowrap!important;
+}
+.rajac-astro-home-nav a:hover{color:#f0d587!important;}
+.rp-two > *{min-width:0!important;}
+.rp-side-title{min-width:0!important;}
+.rp-dark-band{
+  position:relative!important;
+  overflow:hidden!important;
+  background:#030607!important;
+  isolation:isolate!important;
+}
+.rp-dark-band::before,
+.rp-dark-band::after{
+  content:""!important;
+  position:absolute!important;
+  inset:0!important;
+  pointer-events:none!important;
+}
+.rp-dark-band::before{
+  z-index:-2!important;
+  background-image:var(--rajac-astro-bg)!important;
+  background-size:cover!important;
+  background-position:center center!important;
+  background-repeat:no-repeat!important;
+  opacity:.72!important;
+  transform:scale(1.02)!important;
+}
+.rp-dark-band::after{
+  z-index:-1!important;
+  background:
+    radial-gradient(circle at 18% 8%, rgba(240,213,135,.18), transparent 30rem),
+    linear-gradient(90deg, rgba(3,6,8,.82) 0%, rgba(3,6,8,.58) 48%, rgba(3,6,8,.86) 100%)!important;
+}
+#kvalitet.rp-dark-band{--rajac-astro-bg:url('/astronomska-posmatranja/assets/bg-milky-way-cc0.webp?v=20260707-v4')!important;}
+#lokacije.rp-dark-band{--rajac-astro-bg:url('/astronomska-posmatranja/assets/bg-starry-mountain-cc0.webp?v=20260707-v4')!important;}
+#astroturizam.rp-dark-band{--rajac-astro-bg:url('/astronomska-posmatranja/assets/bg-starry-tatras-cc0.webp?v=20260707-v4')!important;}
+.rp-dark-band > .rp-wrap{position:relative!important;z-index:1!important;}
+.rp-dark-band .rp-two{
+  grid-template-columns:minmax(0,.68fr) minmax(0,1.32fr)!important;
+  gap:76px!important;
+}
+.rp-dark-band h2{
+  max-width:440px!important;
+  font-size:clamp(28px,2.28vw,40px)!important;
+  line-height:1.14!important;
+  letter-spacing:-.008em!important;
+  overflow-wrap:break-word!important;
+  word-break:normal!important;
+  hyphens:auto!important;
+}
+#lokacije .rp-two{
+  grid-template-columns:minmax(0,.58fr) minmax(0,1.42fr)!important;
+  gap:88px!important;
+}
+#lokacije h2{
+  max-width:370px!important;
+  font-size:clamp(27px,2.05vw,36px)!important;
+  line-height:1.15!important;
+}
+#astroturizam h2{
+  max-width:420px!important;
+  font-size:clamp(27px,2.15vw,38px)!important;
+}
+.rp-quote p{
+  font-size:clamp(21px,1.85vw,29px)!important;
+  line-height:1.24!important;
+  text-shadow:0 2px 12px rgba(0,0,0,.32)!important;
+}
+.rp-cta h2{
+  font-size:clamp(29px,2.75vw,43px)!important;
+  line-height:1.1!important;
+}
+.rp-highlight p,
+.rp-card p,
+.rp-cta p{
+  font-size:clamp(15px,.98vw,17px)!important;
+  line-height:1.72!important;
+}
+.rp-map-actions{
+  display:flex!important;
+  align-items:center!important;
+  gap:10px!important;
+  flex-wrap:wrap!important;
+  margin-top:10px!important;
+}
+.rp-locate-btn{
+  appearance:none!important;
+  border:1px solid rgba(34,57,44,.20)!important;
+  border-radius:999px!important;
+  background:#22392c!important;
+  color:#fffaf0!important;
+  padding:9px 14px!important;
+  font-size:13px!important;
+  font-weight:800!important;
+  letter-spacing:.02em!important;
+  cursor:pointer!important;
+  box-shadow:0 8px 20px rgba(20,28,22,.13)!important;
+}
+.rp-locate-btn:hover{background:#172119!important;}
+.rp-locate-status{
+  color:#4f594f!important;
+  font-size:13px!important;
+  line-height:1.4!important;
+}
+.rp-user-location-icon{
+  width:18px!important;
+  height:18px!important;
+  border-radius:50%!important;
+  background:#2f80ed!important;
+  border:3px solid #fff!important;
+  box-shadow:0 0 0 4px rgba(47,128,237,.28),0 7px 18px rgba(0,0,0,.35)!important;
+}
+@media(max-width:980px){
+  .rp-dark-band .rp-two,
+  #lokacije .rp-two{
+    grid-template-columns:1fr!important;
+    gap:30px!important;
+  }
+  .rp-dark-band h2,
+  #lokacije h2,
+  #astroturizam h2{
+    max-width:820px!important;
+    font-size:clamp(30px,7vw,44px)!important;
+  }
+}
+@media(max-width:640px){
+  .rajac-astro-home-nav__inner{width:min(100% - 28px,1180px)!important;min-height:54px!important;}
+  .rajac-astro-home-nav{min-height:54px!important;}
+  .rp-dark-band h2,
+  #lokacije h2,
+  #astroturizam h2{
+    font-size:clamp(27px,8vw,36px)!important;
+    line-height:1.15!important;
+  }
+  .rp-dark-band::before{opacity:.58!important;}
+  .rp-dark-band::after{background:linear-gradient(90deg, rgba(3,6,8,.88) 0%, rgba(3,6,8,.72) 52%, rgba(3,6,8,.90) 100%)!important;}
+  .rp-map-actions{align-items:flex-start!important;}
+  .rp-locate-btn{width:100%!important;justify-content:center!important;}
+}
+</style>
+
+<style id="rajac-astronomija-v6-visible-bg-backgrounds">
+/* PATCH v5: чисте небеске позадине без хоризонта/светлосног загађења, линк ПИО лево, уједначени наслови. */
+.rajac-astro-home-nav__inner{
+  width:100%!important;
+  max-width:none!important;
+  margin:0!important;
+  padding:0 34px!important;
+  justify-content:flex-start!important;
+}
+.rajac-astro-home-nav a{
+  display:inline-flex!important;
+  align-items:center!important;
+  min-height:42px!important;
+}
+.rp-dark-band::before{
+  opacity:.82!important;
+  background-size:cover!important;
+  background-repeat:no-repeat!important;
+}
+.rp-dark-band::after{
+  background:
+    radial-gradient(circle at 16% 10%, rgba(240,213,135,.12), transparent 26rem),
+    linear-gradient(90deg, rgba(3,6,8,.88) 0%, rgba(3,6,8,.68) 50%, rgba(3,6,8,.92) 100%)!important;
+}
+#kvalitet.rp-dark-band{
+  --rajac-astro-bg:url('/astronomska-posmatranja/assets/bg-milky-way-eso-clean.webp?v=20260707-v6')!important;
+}
+#kvalitet.rp-dark-band::before{
+  background-position:center center!important;
+  opacity:.80!important;
+}
+#lokacije.rp-dark-band{
+  --rajac-astro-bg:url('/astronomska-posmatranja/assets/bg-starry-sky-eso-clean-1.webp?v=20260707-v6')!important;
+}
+#lokacije.rp-dark-band::before{
+  background-position:center center!important;
+  opacity:.76!important;
+}
+#astroturizam.rp-dark-band{
+  --rajac-astro-bg:url('/astronomska-posmatranja/assets/bg-starry-sky-eso-clean-2.webp?v=20260707-v6')!important;
+}
+#astroturizam.rp-dark-band::before{
+  background-position:center center!important;
+  opacity:.72!important;
+}
+/* Без преклапања великих наслова и текста у левој/десној колони. */
+.rp-dark-band .rp-two,
+#lokacije .rp-two,
+#astroturizam .rp-two{
+  grid-template-columns:minmax(240px,.50fr) minmax(0,1.50fr)!important;
+  gap:92px!important;
+  align-items:start!important;
+}
+.rp-dark-band .rp-side-title,
+#lokacije .rp-side-title,
+#astroturizam .rp-side-title{
+  max-width:390px!important;
+  min-width:0!important;
+}
+.rp-dark-band h2,
+#lokacije h2,
+#astroturizam h2{
+  max-width:390px!important;
+  font-size:clamp(28px,2.0vw,38px)!important;
+  line-height:1.14!important;
+  letter-spacing:-.006em!important;
+  overflow-wrap:break-word!important;
+  word-break:normal!important;
+  hyphens:auto!important;
+  text-wrap:balance!important;
+}
+#lokacije h2{font-size:clamp(27px,1.92vw,36px)!important;}
+#astroturizam h2{font-size:clamp(27px,1.95vw,37px)!important;}
+.rp-dark-band .rp-text{min-width:0!important;max-width:820px!important;}
+.rp-dark-band .rp-text p{font-size:16px!important;line-height:1.72!important;}
+.rp-quote p{font-size:clamp(20px,1.65vw,27px)!important;line-height:1.26!important;}
+.rp-kicker,.rp-label{font-size:11px!important;letter-spacing:.15em!important;}
+@media(max-width:1180px){
+  .rp-dark-band .rp-two,
+  #lokacije .rp-two,
+  #astroturizam .rp-two{
+    grid-template-columns:minmax(220px,.60fr) minmax(0,1.40fr)!important;
+    gap:56px!important;
+  }
+  .rp-dark-band h2,#lokacije h2,#astroturizam h2{font-size:clamp(28px,3.1vw,38px)!important;}
+}
+@media(max-width:980px){
+  .rp-dark-band .rp-two,
+  #lokacije .rp-two,
+  #astroturizam .rp-two{grid-template-columns:1fr!important;gap:28px!important;}
+  .rp-dark-band .rp-side-title,#lokacije .rp-side-title,#astroturizam .rp-side-title{max-width:100%!important;}
+  .rp-dark-band h2,#lokacije h2,#astroturizam h2{max-width:820px!important;font-size:clamp(30px,6vw,42px)!important;}
+}
+@media(max-width:640px){
+  .rajac-astro-home-nav__inner{padding:0 16px!important;}
+  .rp-dark-band::before{opacity:.62!important;}
+  .rp-dark-band::after{background:linear-gradient(90deg, rgba(3,6,8,.92) 0%, rgba(3,6,8,.78) 50%, rgba(3,6,8,.94) 100%)!important;}
+}
+</style>
+
+
+<style id="rajac-astronomija-v6-visible-backgrounds-no-word-break">
+/* PATCH v6: видљиве позадинске слике, без цепања речи у насловима. */
+.rp-dark-band{
+  position:relative!important;
+  overflow:hidden!important;
+  isolation:isolate!important;
+  background-color:#030607!important;
+  background-image:
+    radial-gradient(circle at 18% 8%, rgba(240,213,135,.13), transparent 28rem),
+    linear-gradient(90deg, rgba(3,6,8,.72) 0%, rgba(3,6,8,.48) 48%, rgba(3,6,8,.78) 100%),
+    var(--rajac-astro-bg)!important;
+  background-size:cover,cover,cover!important;
+  background-repeat:no-repeat!important;
+  background-position:center center,center center,center center!important;
+}
+.rp-dark-band::before,
+.rp-dark-band::after{
+  display:none!important;
+  content:none!important;
+}
+#kvalitet.rp-dark-band{
+  --rajac-astro-bg:url('/astronomska-posmatranja/assets/bg-milky-way-visible-1.webp?v=20260707-v6')!important;
+  background-position:center center,center center,center 46%!important;
+}
+#lokacije.rp-dark-band{
+  --rajac-astro-bg:url('/astronomska-posmatranja/assets/bg-milky-way-visible-2.webp?v=20260707-v6')!important;
+  background-position:center center,center center,center 50%!important;
+}
+#astroturizam.rp-dark-band{
+  --rajac-astro-bg:url('/astronomska-posmatranja/assets/bg-milky-way-visible-3.webp?v=20260707-v6')!important;
+  background-position:center center,center center,center 54%!important;
+}
+.rp-dark-band > .rp-wrap{
+  position:relative!important;
+  z-index:2!important;
+}
+.rp-dark-band .rp-two,
+#lokacije .rp-two,
+#astroturizam .rp-two{
+  grid-template-columns:minmax(430px,.82fr) minmax(0,1.18fr)!important;
+  gap:74px!important;
+  align-items:start!important;
+}
+.rp-dark-band .rp-side-title,
+#lokacije .rp-side-title,
+#astroturizam .rp-side-title{
+  max-width:560px!important;
+  min-width:0!important;
+}
+.rp-dark-band h2,
+#lokacije h2,
+#astroturizam h2{
+  max-width:560px!important;
+  font-size:clamp(30px,2.62vw,45px)!important;
+  line-height:1.12!important;
+  letter-spacing:-.006em!important;
+  overflow-wrap:normal!important;
+  word-break:normal!important;
+  hyphens:none!important;
+  text-wrap:balance!important;
+}
+#lokacije h2{font-size:clamp(30px,2.45vw,42px)!important;max-width:590px!important;}
+#astroturizam h2{font-size:clamp(30px,2.48vw,43px)!important;max-width:560px!important;}
+.rp-nowrap{white-space:nowrap!important;}
+.rp-dark-band .rp-text{min-width:0!important;max-width:760px!important;}
+.rp-dark-band .rp-text p{font-size:16px!important;line-height:1.72!important;text-shadow:0 2px 12px rgba(0,0,0,.28)!important;}
+.rp-quote p{font-size:clamp(20px,1.55vw,27px)!important;line-height:1.26!important;}
+@media(max-width:1180px){
+  .rp-dark-band .rp-two,
+  #lokacije .rp-two,
+  #astroturizam .rp-two{
+    grid-template-columns:minmax(360px,.78fr) minmax(0,1.22fr)!important;
+    gap:54px!important;
+  }
+  .rp-dark-band h2,#lokacije h2,#astroturizam h2{
+    font-size:clamp(29px,3vw,39px)!important;
+    max-width:520px!important;
+  }
+}
+@media(max-width:980px){
+  .rp-dark-band .rp-two,
+  #lokacije .rp-two,
+  #astroturizam .rp-two{grid-template-columns:1fr!important;gap:28px!important;}
+  .rp-dark-band .rp-side-title,#lokacije .rp-side-title,#astroturizam .rp-side-title{max-width:100%!important;}
+  .rp-dark-band h2,#lokacije h2,#astroturizam h2{max-width:820px!important;font-size:clamp(30px,6vw,42px)!important;}
+  .rp-nowrap{white-space:normal!important;}
+}
+@media(max-width:640px){
+  .rp-dark-band h2,#lokacije h2,#astroturizam h2{font-size:clamp(28px,8vw,36px)!important;}
+  .rp-dark-band{
+    background-image:
+      linear-gradient(90deg, rgba(3,6,8,.84) 0%, rgba(3,6,8,.70) 50%, rgba(3,6,8,.88) 100%),
+      var(--rajac-astro-bg)!important;
+    background-size:cover,cover!important;
+    background-position:center center,center center!important;
+  }
+}
+</style>
+
+
+<style id="rajac-astronomija-v7-home-link-like-light-page">
+/* PATCH v7: горњи леви линк ка првој страни као на страници Светлосно загађење. */
+.rajac-single-nav{
+  position:sticky!important;
+  top:0!important;
+  z-index:99999!important;
+  background:#0d1b2a!important;
+  border-bottom:1px solid rgba(216,181,91,.22)!important;
+  min-height:54px!important;
+}
+.rajac-single-nav-inner{
+  width:min(1180px,calc(100% - 36px))!important;
+  margin:0 auto!important;
+  min-height:54px!important;
+  display:flex!important;
+  align-items:center!important;
+  justify-content:flex-start!important;
+  padding:0!important;
+}
+.rajac-home-link{
+  display:inline-flex!important;
+  align-items:center!important;
+  gap:10px!important;
+  color:#d8b55b!important;
+  font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif!important;
+  font-weight:700!important;
+  font-size:18px!important;
+  line-height:1!important;
+  letter-spacing:.035em!important;
+  text-decoration:none!important;
+  white-space:nowrap!important;
+}
+.rajac-home-link:hover{color:#fff!important;}
+.rajac-home-mark{
+  font-size:18px!important;
+  line-height:1!important;
+  color:#d8b55b!important;
+}
+@media(max-width:720px){
+  .rajac-single-nav-inner{width:min(100% - 28px,1180px)!important;}
+  .rajac-home-link{font-size:16px!important;}
+}
+</style>
+</head>
+<body>
+<nav class="rajac-single-nav" aria-label="Повратак на почетну страну">
+  <div class="rajac-single-nav-inner">
+    <a class="rajac-home-link" href="/" aria-label="ПИО Рајац — почетна страна"><span class="rajac-home-mark">◆</span><span>ПИО „РАЈАЦ“ — почетна</span></a>
+  </div>
+</nav>
+<main class="rp-page">
+
+  <header class="rp-hero">
+    <div class="rp-wrap rp-hero-inner">
+      <div>
+        <p class="rp-kicker">ПИО „Рајац“ · астротуризам · Звездани парк</p>
+        <h1>Могућности за астрономска посматрања на Рајцу</h1>
+        <p class="rp-lead">Рајац обједињује очувано ноћно небо, приступачност, планински предео и развијену идеју Звезданог парка — простор у коме се астрономија повезује са заштитом природе, образовањем, фотографијом и одрживим туризмом.</p>
+      </div>
+      <aside class="rp-hero-card" aria-label="Кључни услови за посматрање">
+        <strong>21,40</strong>
+        <span>mag/arcsec² — највиша приказана теренски измерена SQM вредност квалитета ноћног неба на Рајцу.</span>
+        <figure class="rp-hero-thumb">
+          <a class="rp-zoom-link" href="/rajac-static-2105/assets/page-assets/astronomija/astronomija-02.webp" data-caption="Звездано небо изнад Рајца" aria-label="Увећај слику: Звездано небо изнад Рајца"><img src="/rajac-static-2105/assets/page-assets/astronomija/astronomija-02.webp" alt="Звездано небо изнад Рајца" decoding="async"></a>
+          <figcaption>Звездано небо изнад Рајца</figcaption>
+        </figure>
+        <div class="rp-stat-grid">
+          <div class="rp-stat"><strong>848 m</strong><span>врх Рајца</span></div>
+          <div class="rp-stat"><strong>6</strong><span>репрезентативних зона</span></div>
+          <div class="rp-stat"><strong>21,50</strong><span>моделована зенитска вредност</span></div>
+          <div class="rp-stat"><strong>17,87</strong><span>зенит у центру Београда</span></div>
+        </div>
+      </aside>
+    </div>
+  </header>
+<section id="uvod" class="rp-section tight">
+    <div class="rp-wrap rp-two">
+      <div class="rp-side-title">
+        <p class="rp-label">Зашто Рајац</p>
+        <h2>Планина на којој ноћно небо постаје природна вредност</h2>
+      </div>
+      <div class="rp-text rp-intro-card">
+        <p>Могућности за астрономска посматрања на Рајцу су изузетно повољне, јер ова планина обједињује три ретке предности: очувано ноћно небо, добру саобраћајну доступност и разноврстан природни предео погодан за едукацију, истраживање, фотографисање и боравак посетилаца.</p>
+        <p>Пројекат формирања Звезданог парка „Рајац“ заснива се на систематском праћењу квалитета ноћног неба, анализи светлосног загађења, избору најбољих локација за посматрање и развоју програма који повезују астрономију, заштиту природе, образовање и одрживи туризам.</p>
+        <p>Циљ није само да се посетиоцима омогући леп поглед на звезде, већ да се Рајац постави као пример одговорног управљања ноћним пределом. Ноћно небо се овде посматра као део природне баштине, исто као шуме, ливаде, пећине, видиковци, ретке врсте и предеоне целине.</p>
+        <div class="rp-highlight">
+          <p><b>Кључна вредност:</b> Рајац је довољно приступачан да може примити посетиоце, али још увек довољно таман да пружи стварни доживљај звезданог неба.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="kvalitet" class="rp-dark-band">
+    <div class="rp-wrap rp-two">
+      <div class="rp-side-title">
+        <p class="rp-label">Квалитет ноћног неба</p>
+        <h2>Млечни пут, зенит и тамни делови небеског свода</h2>
+      </div>
+      <div class="rp-text">
+        <p>Досадашња мерења квалитета ноћног неба на Рајцу показују да овај простор располаже веома добрим условима за астрономска посматрања. Теренска мерења SQM-L уређајем регистровала су вредности у опсегу од око 21,00 до 21,40 mag/arcsec², што указује на висок степен очуваности природног мрака у условима централне Србије.</p>
+        <p>Ове вредности су посебно значајне јер су постигнуте у пределу који није потпуно изолован од насеља, путева и регионалних извора расвете. Рајац је релативно приступачан посетиоцима, али и даље задржава квалитет неба који омогућава посматрање Млечног пута, већег броја сазвежђа, метеора и бројних објеката дубоког неба.</p>
+        <p>Моделовани прикази за 2025. годину показују да се најбољи квалитет јавља у вишим деловима небеског свода, посебно у зони зенита. У пракси то значи да Рајац није само место за повремено гледање звезда, већ локација која има основу за систематска посматрања, астрофотографију и образовне програме.</p>
+        <figure class="rp-figure media-cover rp-wide">
+          <a class="rp-zoom-link" href="/rajac-static-2105/assets/page-assets/astronomija/astronomija-03.webp" data-caption="Звезде у зениту изнад Рајца" aria-label="Увећај слику: Звезде у зениту изнад Рајца"><img src="/rajac-static-2105/assets/page-assets/astronomija/astronomija-03.webp" alt="Звезде у зениту изнад Рајца" decoding="async"></a>
+          <figcaption><b>Звезде у зениту изнад Рајца</b> Снимак звезданог неба у зони зенита показује визуелни квалитет ноћног амбијента и бројност видљивих звезда у условима очуваног природног мрака.</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <section id="beograd" class="rp-section">
+    <div class="rp-wrap rp-two">
+      <div class="rp-side-title">
+        <p class="rp-label">Поређење са урбаним небом</p>
+        <h2>Разлика између Рајца и центра Београда види се на целом небу</h2>
+      </div>
+      <div class="rp-text">
+        <p>Поређење са центром Београда јасно показује зашто је Рајац важан као простор природног мрака. У урбаном језгру, моделовани all-sky приказ за 2025. годину показује знатно светлије небо, са зенитском вредношћу око 17,87 mag/arcsec². То је небо на коме се губи велики број звезда, Млечни пут није видљив, а хоризонт и велики део небеског свода остају под снажним утицајем вештачке расвете.</p>
+        <p>На Рајцу су теренски измерене вредности до 21,40 mag/arcsec², а моделовани панорамски и all-sky прикази показују знатно боље услове у зони зенита и у већем делу небеског свода. Разлика од неколико магнитуда у овој скали није мала визуелна нијанса, већ означава потпуно другачији доживљај ноћи: од урбаног неба са ограниченим бројем звезда до планинског неба на коме се препознају структуре Млечног пута.</p>
+        
+        <p><strong>Визуелно поређење:</strong> следећи прилози приказују две урбане визуелизације за центар Београда и две планинске визуелизације за Рајац, како би разлика у квалитету неба била што јаснија.</p>
+        <div class="rp-media-grid">
+          <figure class="rp-figure media-contain">
+            <div class="rp-media-shell">
+              <a class="rp-zoom-link" href="/rajac-static-2105/assets/page-assets/astronomija/astronomija-04.webp" data-caption="Панорамски приказ сјаја неба у центру Београда за 2025. годину" aria-label="Увећај слику: Панорамски приказ сјаја неба у центру Београда за 2025. годину"><img src="/rajac-static-2105/assets/page-assets/astronomija/astronomija-04.webp" alt="Панорамски приказ сјаја неба у центру Београда за 2025. годину" decoding="async"></a>
+            </div>
+            <figcaption><b>Панорамски приказ — центар Београда</b> Светло урбано небо има високо подигнуту позадину сјаја, па се губе слабије звезде и објекти дубоког неба.</figcaption>
+          </figure>
+          <figure class="rp-figure media-contain">
+            <div class="rp-media-shell">
+              <a class="rp-zoom-link" href="/rajac-static-2105/assets/page-assets/astronomija/astronomija-05.webp" data-caption="All-sky приказ сјаја неба у центру Београда за 2025. годину" aria-label="Увећај слику: All-sky приказ сјаја неба у центру Београда за 2025. годину"><img src="/rajac-static-2105/assets/page-assets/astronomija/astronomija-05.webp" alt="All-sky приказ сјаја неба у центру Београда за 2025. годину" decoding="async"></a>
+            </div>
+            <figcaption><b>All-sky приказ — центар Београда</b> Зенитска вредност око 17,87 mag/arcsec² и светли небески свод илуструју размере светлосног загађења у урбаној средини.</figcaption>
+          </figure>
+          <figure class="rp-figure media-contain">
+            <div class="rp-media-shell">
+              <a class="rp-zoom-link" href="/rajac-static-2105/assets/page-assets/astronomija/astronomija-06.webp" data-caption="Панорамски приказ сјаја неба изнад Рајца за 2025. годину" aria-label="Увећај слику: Панорамски приказ сјаја неба изнад Рајца за 2025. годину"><img src="/rajac-static-2105/assets/page-assets/astronomija/astronomija-06.webp" alt="Панорамски приказ сјаја неба изнад Рајца за 2025. годину" decoding="async"></a>
+            </div>
+            <figcaption><b>Панорамски приказ — Рајац</b> Панорамски приказ показује тамније небо, повољнији однос хоризонта и висине и далеко бољу основу за астрономска посматрања него у урбаној средини.</figcaption>
+          </figure>
+          <figure class="rp-figure media-contain">
+            <div class="rp-media-shell">
+              <a class="rp-zoom-link" href="/rajac-static-2105/assets/page-assets/astronomija/astronomija-07.webp" data-caption="All-sky приказ сјаја неба изнад Рајца за 2025. годину" aria-label="Увећај слику: All-sky приказ сјаја неба изнад Рајца за 2025. годину"><img src="/rajac-static-2105/assets/page-assets/astronomija/astronomija-07.webp" alt="All-sky приказ сјаја неба изнад Рајца за 2025. годину" decoding="async"></a>
+            </div>
+            <figcaption><b>All-sky приказ — Рајац</b> All-sky модел за Рајац показује знатно тамнији небески свод и зенитску вредност до око 21,50 mag/arcsec², што потврђује висок квалитет ноћног неба.</figcaption>
+          </figure>
+        </div>
+
+        <div class="rp-highlight">
+          <p><b>Практично тумачење:</b> док градско небо прикрива већину слабих небеских објеката, Рајац омогућава посматрање појава које су из урбаних средина готово недоступне.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="prednosti" class="rp-section">
+    <div class="rp-wrap rp-two">
+      <div class="rp-side-title">
+        <p class="rp-label">Географске и атмосферске предности</p>
+        <h2>Висина, отворен хоризонт и мање приземне измаглице</h2>
+      </div>
+      <div class="rp-text">
+        <p>Рајац има значајне географске предности за астрономска посматрања. Врх Рајца, са надморском висином од око 848 метара, омогућава посматрачима да се налазе изнад дела приземног атмосферског слоја у коме се најчешће задржавају влага, смог, прашина и локални аеросоли. То доприноси бољој провидности атмосфере, већем контрасту небеских објеката и пријатнијем визуелном доживљају ноћног неба.</p>
+        <p>Висина сама по себи није једини услов за добро посматрање, али у комбинацији са отвореним планинским пределом, добром вентилацијом ваздуха и релативно малим бројем директних извора расвете, она значајно побољшава укупне услове. Због тога су на Рајцу могућа и посматрања голим оком, и употреба двогледа, и рад са телескопима, као и астрофотографија широког поља.</p>
+        <p>Хоризонт је један од најважнијих елемената за процену квалитета астрономске локације. На северном хоризонту могу се уочити утицаји ширих светлосних купола, али источни, јужни и западни хоризонти на многим тачкама Рајца остају знатно повољнији. Посебно је значајан јужни хоризонт, јер је он најважнији за посматрање најбогатијих делова Млечног пута током летњих месеци.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="lokacije" class="rp-dark-band">
+    <div class="rp-wrap rp-two">
+      <div class="rp-side-title">
+        <p class="rp-label">Локације за посматрање</p>
+        <h2>Од јавних звезданих вечери до напредне <span class="rp-nowrap">астрофотографије</span></h2>
+      </div>
+      <div class="rp-text">
+        <p>На подручју ПИО „Рајац“ могу се издвојити различите локације за астрономске активности, у зависности од намене, приступачности, потребне опреме и профила посетилаца. Неке локације су погодне за почетнике, породице, школе и туристичке групе, док су друге прикладније за искусније посматраче, астрофотографе и истраживачке активности.</p>
+        <p>За јавне програме и организована посматрања најпогодније су локације које имају довољно таман хоризонт, добру приступачност и што мањи утицај директне расвете. Као најбоље зоне издвајају се врх Рајац, Груковица и јужни делови села Ба. Ове локације су погодне за „звездане вечери“, кратке едукативне радионице, посматрања Месеца, планета, метеора и упознавање посетилаца са основним сазвежђима, уз услов да се програми организују без јаке расвете и без нарушавања ноћног мира.</p>
+        <p>Тамнији делови у правцу села Ба и мирније подзоне удаљене од директних извора светла имају посебан значај за озбиљнија посматрања. У тим деловима могу се издвојити тачке погодне за дуге експозиције, постављање већих телескопа и процену стварног потенцијала Рајца као простора природног мрака.</p>
+        <figure class="rp-figure media-cover rp-wide rp-observation-map">
+          <a class="rp-map-trigger" href="#zvezdani-park-rajac-karta" aria-label="Отвори интерактивну карту Звезданог парка Рајац">
+            <img src="/rajac-static-2105/assets/page-assets/astronomija/astronomija-08.webp" alt="Карта најбољих локација за астрономска посматрања на Рајцу" decoding="async">
+          </a>
+          <figcaption><b>Карта посматрачких зона</b> Клик на слику отвара карту Звезданог парка са тачкама за посматрање. На телефону можете укључити своју локацију и видети где се налазите у односу на приказане тачке.</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <section id="aktivnosti" class="rp-section">
+    <div class="rp-wrap rp-two">
+      <div class="rp-side-title">
+        <p class="rp-label">Шта се може посматрати</p>
+        <h2>Метеори, комете, Млечни пут и објекти дубоког неба</h2>
+      </div>
+      <div class="rp-text">
+        <p>Рајац пружа могућности за више нивоа астрономских активности — од најједноставнијег посматрања голим оком до напредне астрофотографије и истраживачког мониторинга. На тамном небу Рајца посетиоци могу видети структуру Млечног пута, велики број звезда које нису видљиве из градова, сазвежђа, кретање планета, сјајне метеоре и сезонске појаве као што су Персеиди у августу и Геминиди у децембру.</p>
+        <p>Посматрање двогледом омогућава прелазак са основног визуелног доживљаја на истраживачко посматрање. Двоглед је идеалан за почетнике јер открива звездана јата, делове Млечног пута, Месец, светлије маглине и поједине галаксије. Телескопска посматрања могу обухватити Месец, планете, двојне звезде, звездана јата, светлије маглине и галаксије.</p>
+        <p>Астрофотографија представља један од највећих потенцијала Рајца. Планински предео, отворени хоризонти, тамно небо и препознатљиви пејзажи омогућавају снимање Млечног пута, метеора, трагова звезда, планетарних појава, комета и објеката дубоког неба.</p>
+        <div class="rp-media-grid">
+          <figure class="rp-figure media-cover">
+            <a class="rp-zoom-link" href="/rajac-static-2105/assets/page-assets/astronomija/astronomija-09.webp" data-caption="Метеор слабог сјаја изнад Рајца" aria-label="Увећај слику: Метеор слабог сјаја изнад Рајца"><img src="/rajac-static-2105/assets/page-assets/astronomija/astronomija-09.webp" alt="Снимак метеора слабог сјаја изнад Рајца" decoding="async"></a>
+            <figcaption><b>Метеор слабог сјаја</b> Тамно небо омогућава уочавање и снимање слабих метеора који би у урбаним условима били изгубљени у светлој позадини неба.</figcaption>
+          </figure>
+          <figure class="rp-figure media-cover">
+            <a class="rp-zoom-link" href="/rajac-static-2105/assets/page-assets/astronomija/astronomija-10.webp" data-caption="Комета изнад Рајца" aria-label="Увећај слику: Комета изнад Рајца"><img src="/rajac-static-2105/assets/page-assets/astronomija/astronomija-10.webp" alt="Снимак комете изнад Рајца" decoding="async"></a>
+            <figcaption><b>Комета изнад Рајца</b> Снимак комете показује потенцијал Рајца за праћење пролазних астрономских појава и астрофотографију широког поља.</figcaption>
+          </figure>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="oprema" class="rp-section">
+    <div class="rp-wrap rp-two">
+      <div class="rp-side-title">
+        <p class="rp-label">Опрема и мониторинг</p>
+        <h2>Од ручног мерења до континуалног праћења неба</h2>
+      </div>
+      <div class="rp-text">
+        <p>Развој астрономских програма на Рајцу није замишљен само као повремено посматрање неба, већ као део ширег система праћења стања простора. У оквиру SMART биомониторинга и планираног система заштите природног мрака, посебно место имају инструменти за континуирано праћење услова.</p>
+        <div class="rp-cards">
+          <article class="rp-card">
+            <span class="rp-card-num">1</span>
+            <h3>SQM-LE сензори</h3>
+            <p>Омогућавају аутоматско праћење квалитета ноћног неба током целе године и препознавање сезонских образаца, утицаја облачности, снега, влаге, Месеца и локалне расвете.</p>
+          </article>
+          <article class="rp-card">
+            <span class="rp-card-num">2</span>
+            <h3>All-sky камера</h3>
+            <p>Снима цео небески свод и омогућава визуелно праћење облачности, провидности атмосфере, метеора и стварног изгледа неба у тренутку мерења.</p>
+          </article>
+          <article class="rp-card">
+            <span class="rp-card-num">3</span>
+            <h3>Интерактивне мапе</h3>
+            <p>Посетиоцима могу приказати најбоље тачке за посматрање, степен приступачности, препоручене правце кретања, правила понашања ноћу и тренутне услове.</p>
+          </article>
+        </div>
+        <p>У наредној фази, подаци о квалитету неба могу се повезати са метеоролошким подацима, облачношћу, влажношћу, температуром, ветром, квалитетом ваздуха и биолошким мониторингом. Тако Рајац може развити јединствен систем у коме се ноћно небо прати као део укупног стања животне средине.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="astroturizam" class="rp-dark-band">
+    <div class="rp-wrap rp-two">
+      <div class="rp-side-title">
+        <p class="rp-label">Астротуризам</p>
+        <h2>Миран, едукативан и одржив облик посете</h2>
+      </div>
+      <div class="rp-text">
+        <p>Астротуризам је један од најпогоднијих облика туризма за заштићена подручја, јер се заснива на тихом боравку, малим групама, едукацији и поштовању природног ритма простора. За разлику од масовних дневних активности, ноћни програми могу се пажљиво планирати тако да не наруше мир, не угрозе дивље животиње и не доведу до повећања светлосног загађења.</p>
+        <p>Рајац има потенцијал да развије више типова астротуристичких програма: породичне вечери под звездама, вођене туре за препознавање сазвежђа, радионице астрофотографије, школске ноћне програме, посматрање метеорских ројева, тематске кампове и научно-популарна предавања на отвореном.</p>
+        <p>Да би астротуризам био заиста одржив, неопходно је да се развија уз јасна правила: без јаке расвете, без буке, без кретања ван дозвољених стаза у осетљивим зонама и без остављања отпада. Посетиоци треба да користе слабу црвену или амбер лампу, да поштују мир станишта и да разумеју да је мрак део природе који се штити исто као шуме, ливаде, пећине или ретке врсте.</p>
+        <blockquote class="rp-quote">
+          <p>Рајац може бити место првог сусрета са Млечним путем, али и пример како се природни мрак чува као део заштићеног предела.</p>
+        </blockquote>
+      </div>
+    </div>
+  </section>
+
+  <section class="rp-footer-cta">
+    <div class="rp-wrap">
+      <div class="rp-cta">
+        <p class="rp-kicker">Закључак</p>
+        <h2>Астрономска посматрања на Рајцу нису само туристичка активност, већ део шире заштите ноћног предела.</h2>
+        <p>Рајац нуди ретку комбинацију очуваног природног мрака, повољне надморске висине, добрих хоризоната, приступачности и снажног потенцијала за образовање, науку и одрживи туризам. Зато се ноћно небо овде препознаје као природно наслеђе, научни ресурс, образовни простор и један од симбола будућег Звезданог парка „Рајац“.</p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<div id="rp-zvezdani-map-modal" class="rp-map-modal" hidden>
+  <div class="rp-map-panel" role="dialog" aria-modal="true" aria-label="Интерактивна карта Звезданог парка Рајац">
+    <div class="rp-map-head">
+      <div>
+        <h2>Звездани парк Рајац — интерактивна карта</h2>
+        <p>Отворите карту, увећајте жељену тачку и на телефону укључите своју локацију да видите где се налазите у односу на зоне за посматрање.</p>
+        <div class="rp-map-actions"><button class="rp-locate-btn" type="button">Укључи моју локацију</button><span class="rp-locate-status" aria-live="polite"></span></div>
+      </div>
+      <button class="rp-map-close" type="button" aria-label="Затвори карту">×</button>
+    </div>
+    <div id="rp-zvezdani-leaflet-map"></div>
+  </div>
+</div>
+
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+  <script>
+    (function(){
+      var links = document.querySelectorAll('.rp-zoom-link');
+      if(!links.length){ return; }
+      var box = document.createElement('div');
+      box.className = 'rp-lightbox';
+      box.setAttribute('role','dialog');
+      box.setAttribute('aria-modal','true');
+      box.innerHTML = '<button class="rp-lightbox-close" type="button" aria-label="Затвори увећану слику">×</button><img alt="" decoding="async"><div class="rp-lightbox-caption"></div>';
+      document.body.appendChild(box);
+      var img = box.querySelector('img');
+      var caption = box.querySelector('.rp-lightbox-caption');
+      var close = box.querySelector('.rp-lightbox-close');
+      function openLightbox(link){
+        var thumb = link.querySelector('img');
+        img.src = link.getAttribute('href');
+        img.alt = thumb ? (thumb.getAttribute('alt') || '') : '';
+        caption.textContent = link.getAttribute('data-caption') || img.alt || '';
+        box.classList.add('is-open');
+        document.documentElement.style.overflow = 'hidden';
+        close.focus({preventScroll:true});
+      }
+      function closeLightbox(){
+        box.classList.remove('is-open');
+        document.documentElement.style.overflow = '';
+        img.removeAttribute('src');
+      }
+      links.forEach(function(link){
+        link.addEventListener('click', function(e){
+          e.preventDefault();
+          openLightbox(link);
+        });
+      });
+      close.addEventListener('click', closeLightbox);
+      box.addEventListener('click', function(e){ if(e.target === box){ closeLightbox(); } });
+      document.addEventListener('keydown', function(e){ if(e.key === 'Escape' && box.classList.contains('is-open')){ closeLightbox(); } });
+    })();
+  </script>
+
+
+<script id="rajac-astronomija-zvezdani-park-map-v3">
+(function(){
+  var trigger = document.querySelector('.rp-map-trigger');
+  var modal = document.getElementById('rp-zvezdani-map-modal');
+  if(!trigger || !modal){ return; }
+  var closeBtn = modal.querySelector('.rp-map-close');
+  var mapEl = document.getElementById('rp-zvezdani-leaflet-map');
+  var map = null;
+  var mapLoaded = false;
+  var userMarker = null;
+  var userCircle = null;
+  var locateBtn = modal.querySelector('.rp-locate-btn');
+  var locateStatus = modal.querySelector('.rp-locate-status');
+
+  function popupText(feature){
+    var p = feature.properties || {};
+    var name = p.name || 'Локација';
+    var extra = '';
+    if(p.sqm){ extra = '<br><small>SQM: '+String(p.sqm).replace(/[<>&]/g,'')+'</small>'; }
+    return '<strong>'+String(name).replace(/[<>&]/g,'')+'</strong>'+extra;
+  }
+  function polygonStyle(feature){
+    var k = feature.properties && feature.properties.kind;
+    if(k === 'protected_boundary'){
+      return {color:'#ffffff', weight:2, opacity:.92, fill:false, dashArray:'6 5'};
+    }
+    if(k === 'dark_sky_park'){
+      return {color:'#00a9d6', weight:3, opacity:.95, fillColor:'#00a9d6', fillOpacity:.26};
+    }
+    if(k === 'astro_trail'){
+      return {color:'#ff5252', weight:3, opacity:.95, fillColor:'#ff5252', fillOpacity:.16};
+    }
+    if(k === 'photo_zone'){
+      return {color:'#f08a24', weight:3, opacity:.95, fillColor:'#f08a24', fillOpacity:.20};
+    }
+    return {color:'#f0d587', weight:2, opacity:.9, fillColor:'#f0d587', fillOpacity:.12};
+  }
+  function initMap(){
+    if(mapLoaded){
+      setTimeout(function(){ map.invalidateSize(); },80);
+      return;
+    }
+    if(!window.L){
+      mapEl.innerHTML = '<div class="rp-map-error">Leaflet библиотека није учитана. Проверите интернет везу или CDN.</div>';
+      return;
+    }
+    map = L.map(mapEl, {scrollWheelZoom:true, zoomControl:true});
+    L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
+      maxZoom:19,
+      attribution:'Tiles &copy; Esri — Source: Esri, Maxar, Earthstar Geographics, and the GIS User Community'
+    }).addTo(map);
+    L.control.scale({imperial:false}).addTo(map);
+    fetch('/astronomska-posmatranja/assets/zvezdani-park-rajac.geojson?v=20260707-v6')
+      .then(function(r){ return r.json(); })
+      .then(function(data){
+        var layer = L.geoJSON(data, {
+          style: polygonStyle,
+          pointToLayer:function(feature, latlng){
+            var n = feature.properties && feature.properties.number ? feature.properties.number : '•';
+            return L.marker(latlng, {icon:L.divIcon({className:'rp-park-point-icon', html:String(n), iconSize:[28,28], iconAnchor:[14,14]})});
+          },
+          onEachFeature:function(feature, layer){ layer.bindPopup(popupText(feature)); }
+        }).addTo(map);
+        try{ map.fitBounds(layer.getBounds(), {padding:[24,24]}); }
+        catch(e){ map.setView([44.136333,20.224918], 13); }
+        mapLoaded = true;
+        setTimeout(function(){ map.invalidateSize(); },120);
+      })
+      .catch(function(){
+        map.setView([44.136333,20.224918], 13);
+        mapEl.insertAdjacentHTML('beforeend','<div class="rp-map-error">GeoJSON подаци нису учитани.</div>');
+        mapLoaded = true;
+      });
+  }
+  function openMap(e){
+    if(e){ e.preventDefault(); }
+    modal.hidden = false;
+    modal.classList.add('is-open');
+    document.documentElement.style.overflow = 'hidden';
+    initMap();
+    setTimeout(function(){ if(map){ map.invalidateSize(); } },160);
+    if(closeBtn){ closeBtn.focus({preventScroll:true}); }
+  }
+  function closeMap(){
+    modal.classList.remove('is-open');
+    modal.hidden = true;
+    document.documentElement.style.overflow = '';
+    trigger.focus({preventScroll:true});
+  }
+
+  function setLocateStatus(text){
+    if(locateStatus){ locateStatus.textContent = text || ''; }
+  }
+  function enableLocation(){
+    if(!navigator.geolocation){
+      setLocateStatus('Ваш прегледач не подржава приказ локације.');
+      return;
+    }
+    if(!mapLoaded){ initMap(); }
+    setLocateStatus('Тражи се локација...');
+    navigator.geolocation.getCurrentPosition(function(pos){
+      if(!map){ setLocateStatus('Карта још није спремна. Покушајте поново.'); return; }
+      var latlng = [pos.coords.latitude, pos.coords.longitude];
+      var accuracy = pos.coords.accuracy || 0;
+      if(userMarker){ map.removeLayer(userMarker); }
+      if(userCircle){ map.removeLayer(userCircle); }
+      userMarker = L.marker(latlng, {icon:L.divIcon({className:'rp-user-location-icon', html:'', iconSize:[18,18], iconAnchor:[9,9]})}).addTo(map).bindPopup('<strong>Ваша локација</strong><br><small>Приближна тачност: '+Math.round(accuracy)+' m</small>');
+      userCircle = L.circle(latlng, {radius:accuracy, color:'#2f80ed', weight:1, opacity:.9, fillColor:'#2f80ed', fillOpacity:.12}).addTo(map);
+      map.setView(latlng, Math.max(map.getZoom(), 15));
+      userMarker.openPopup();
+      setLocateStatus('Локација је приказана на карти.');
+    }, function(err){
+      var msg = 'Локација није доступна.';
+      if(err && err.code === 1){ msg = 'Локација није укључена у прегледачу/телефону.'; }
+      if(err && err.code === 2){ msg = 'Тренутно није могуће одредити локацију.'; }
+      if(err && err.code === 3){ msg = 'Претрага локације је истекла. Покушајте поново.'; }
+      setLocateStatus(msg);
+    }, {enableHighAccuracy:true, timeout:12000, maximumAge:30000});
+  }
+
+  trigger.addEventListener('click', openMap);
+  if(closeBtn){ closeBtn.addEventListener('click', closeMap); }
+  if(locateBtn){ locateBtn.addEventListener('click', enableLocation); }
+  modal.addEventListener('click', function(e){ if(e.target === modal){ closeMap(); } });
+  document.addEventListener('keydown', function(e){ if(e.key === 'Escape' && modal.classList.contains('is-open')){ closeMap(); } });
+})();
+</script>
+
+
+<script id="rajac-astronomija-vrh-inline-fallback-v2">
+(function(){
+  'use strict';
+  if (window.__rajacVrhButtonLoaded) return;
+  window.__rajacVrhButtonLoaded = true;
+  var BOTTOM_TOLERANCE = 120;
+  function ready(fn){ if(document.readyState === 'loading') document.addEventListener('DOMContentLoaded', fn, {once:true}); else fn(); }
+  function scrollInfo(){
+    var d=document.documentElement, b=document.body;
+    var top=window.scrollY || d.scrollTop || (b?b.scrollTop:0) || 0;
+    var vh=window.innerHeight || d.clientHeight || (b?b.clientHeight:0) || 0;
+    var sh=Math.max(b?b.scrollHeight:0,d?d.scrollHeight:0,b?b.offsetHeight:0,d?d.offsetHeight:0,b?b.clientHeight:0,d?d.clientHeight:0);
+    return {top:top,vh:vh,sh:sh,bottom:sh-(top+vh)};
+  }
+  ready(function(){
+    if(!document.body || document.querySelector('.rajac-vrh-button')) return;
+    if(!document.getElementById('rajac-vrh-button-inline-style')){
+      var st=document.createElement('style');
+      st.id='rajac-vrh-button-inline-style';
+      st.textContent='.rajac-vrh-button{position:fixed;left:18px;bottom:18px;z-index:2147483000;display:inline-flex;align-items:center;justify-content:center;width:42px;height:42px;min-width:42px;padding:0;border-radius:50%;border:1px solid rgba(176,145,63,.68);background:rgba(250,247,238,.96);color:#253126;font-family:Georgia,"Times New Roman",serif;font-size:22px;line-height:1;font-weight:400;text-decoration:none;cursor:pointer;box-shadow:0 8px 22px rgba(20,32,24,.16);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);opacity:0;transform:translateY(10px) scale(.96);pointer-events:none;transition:opacity .22s ease,transform .22s ease,background .18s ease,border-color .18s ease,color .18s ease,box-shadow .18s ease}.rajac-vrh-button.is-visible{opacity:1;transform:translateY(0) scale(1);pointer-events:auto}.rajac-vrh-button:hover,.rajac-vrh-button:focus-visible{background:#fffaf0;color:#1f2f24;border-color:#d4b256;box-shadow:0 10px 26px rgba(20,32,24,.20),0 0 0 4px rgba(212,178,86,.16);outline:none}.rajac-vrh-button:active{transform:translateY(1px) scale(.98)}@media(max-width:640px){.rajac-vrh-button{left:12px;bottom:12px;width:38px;height:38px;min-width:38px;font-size:20px}}@media print{.rajac-vrh-button{display:none}}';
+      document.head.appendChild(st);
+    }
+    var btn=document.createElement('button');
+    btn.type='button'; btn.className='rajac-vrh-button'; btn.innerHTML='↑';
+    btn.setAttribute('aria-label','Врати се на врх странице'); btn.setAttribute('title','Врх странице');
+    document.body.appendChild(btn);
+    function update(){var i=scrollInfo(); var can=i.sh>i.vh+BOTTOM_TOLERANCE; if(can && i.bottom<=BOTTOM_TOLERANCE) btn.classList.add('is-visible'); else btn.classList.remove('is-visible');}
+    btn.addEventListener('click', function(){var reduce=false; try{reduce=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;}catch(e){} window.scrollTo({top:0,left:0,behavior:reduce?'auto':'smooth'});});
+    update(); window.addEventListener('scroll',update,{passive:true}); window.addEventListener('resize',update); window.addEventListener('load',update,{once:true}); setTimeout(update,500);
+  });
+})();
+</script>
+
+<script src="/rajac-design/rajac-vrh-button.js?v=20260707-v6-round-no-home" defer></script>
+
+<!-- SITE_EDITOR_ADMIN_BAR_START -->
+<script src="/admin-site-editor.php?admin_bar_js=1" defer></script>
+<!-- SITE_EDITOR_ADMIN_BAR_END -->
+</body>
+</html>

@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+<html lang="sr-Cyrl">
+<head>
+<meta charset="utf-8"/><meta content="width=device-width,initial-scale=1" name="viewport"/>
+<title>Рајац добио интерактивну панораму ноћног неба од 360°</title>
+<meta content="Интерактивна панорама ноћног неба од 360 степени, снимљена са врха Рајца 8. јуна 2026. године." name="description"/>
+<meta content="article" property="og:type"/>
+<meta content="Рајац добио интерактивну панораму ноћног неба од 360°" property="og:title"/>
+<meta content="Интерактивна панорама ноћног неба од 360 степени, снимљена са врха Рајца 8. јуна 2026. године." property="og:description"/>
+<meta content="https://piorajac.rs/zvezdani-park/rajac360-najava.jpg" property="og:image"/>
+<link href="https://piorajac.rs/rajac-vesti/assets/css/rajac-unified-menu.css" rel="stylesheet"/>
+<style>
+:root{
+  --bg:#f4efe3;
+  --paper:#fffdf7;
+  --ink:#121a22;
+  --muted:#61706d;
+  --line:rgba(25,35,31,.14);
+  --line2:rgba(25,35,31,.08);
+  --nav:#0d1b2a;
+  --gold:#d9bd6a;
+  --gold2:#9b6b12;
+  --green:#173e27;
+  --green2:#1d6b37;
+  --blue:#0f2436;
+  --radius:28px;
+  --shadow:0 22px 60px rgba(19,29,22,.10);
+  --wrap:min(1180px,calc(100% - 42px));
+}
+
+*{box-sizing:border-box}
+
+html{scroll-behavior:smooth}
+
+body{
+  margin:0;
+  color:var(--ink);
+  font-family:Georgia,"Times New Roman",serif;
+  background:
+    radial-gradient(circle at 12% 0%,rgba(217,189,106,.18),transparent 32%),
+    radial-gradient(circle at 88% 0%,rgba(29,107,55,.12),transparent 36%),
+    var(--bg);
+}
+
+a{
+  color:inherit;
+  text-decoration:none;
+}
+
+img{
+  display:block;
+  max-width:100%;
+}
+
+.rajac-news-menu{
+  position:sticky;
+  top:0;
+  z-index:30;
+  background:var(--nav);
+  border-bottom:1px solid rgba(255,255,255,.10);
+  box-shadow:0 8px 26px rgba(0,0,0,.08);
+}
+
+.rajac-news-menu-inner{flex-wrap:wrap;
+  max-width:1180px;
+  margin:0 auto;
+  padding:0 18px;
+  min-height:56px;
+  display:flex;
+  align-items:center;
+  gap:8px;
+  overflow-x:visible;
+  scrollbar-width:none;
+}
+
+.rajac-news-menu-inner::-webkit-scrollbar{display:none}
+
+.rajac-news-menu a{
+  display:inline-flex;
+  align-items:center;
+  gap:6px;
+  min-height:38px;
+  padding:0 13px;
+  border-radius:999px;
+  color:rgba(255,255,255,.74);
+  font-family:Arial,sans-serif;
+  font-size:13px;
+  font-weight:800;
+  letter-spacing:.06em;
+  text-transform:uppercase;
+  white-space:nowrap;
+  line-height:1;
+}
+
+.rajac-news-menu a:hover{
+  background:rgba(255,255,255,.06);
+  color:#fff;
+}
+
+.rajac-news-menu .home{
+  color:#e0c678;
+  border:1px solid rgba(224,198,120,.34);
+  background:rgba(224,198,120,.06);
+}
+
+.rajac-news-menu a.active{
+  color:#e0c678;
+  background:rgba(224,198,120,.08);
+  outline:1px solid rgba(224,198,120,.26);
+}
+
+.rajac-news-menu small{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  min-width:20px;
+  height:20px;
+  padding:0 6px;
+  border-radius:999px;
+  background:rgba(255,255,255,.10);
+  color:#e0c678;
+  font-size:11px;
+  letter-spacing:0;
+}
+
+.shell{
+  width:var(--wrap);
+  margin:0 auto;
+}
+
+.hero{
+  padding:72px 0 34px;
+  border-bottom:1px solid var(--line);
+}
+
+.kicker{
+  margin:0 0 16px;
+  color:var(--gold2);
+  font-family:Arial,sans-serif;
+  font-size:13px;
+  font-weight:900;
+  letter-spacing:.24em;
+  text-transform:uppercase;
+}
+
+.hero h1{
+  margin:0;
+  max-width:1040px;
+  font-size:clamp(34px,4.6vw,62px);
+  line-height:1.02;
+  font-weight:400;
+  letter-spacing:-.045em;
+}
+
+.subtitle{
+  max-width:930px;
+  margin:24px 0 0;
+  color:var(--muted);
+  font-size:clamp(19px,1.6vw,24px);
+  line-height:1.66;
+}
+
+.actions{
+  display:flex;
+  gap:12px;
+  flex-wrap:wrap;
+  margin-top:30px;
+}
+
+.btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  min-height:48px;
+  padding:0 18px;
+  border-radius:999px;
+  font-family:Arial,sans-serif;
+  font-size:13px;
+  font-weight:900;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  border:1px solid var(--line);
+  transition:.18s ease;
+  background:#fffdf7;
+  color:var(--green);
+}
+
+.btn.primary{
+  background:var(--green2);
+  color:white;
+  border-color:transparent;
+}
+
+.btn:hover{
+  transform:translateY(-2px);
+  box-shadow:0 12px 28px rgba(25,31,24,.12);
+}
+
+.highlight-link{
+  margin:30px 0 34px;
+  padding:30px;
+  border-radius:30px;
+  background:
+    linear-gradient(145deg,rgba(23,62,39,.96),rgba(29,107,55,.94)),
+    var(--green);
+  color:white;
+  box-shadow:0 24px 70px rgba(19,29,22,.18);
+  display:grid;
+  grid-template-columns:minmax(0,1fr) auto;
+  gap:24px;
+  align-items:center;
+}
+
+.highlight-link span{
+  display:block;
+  margin-bottom:8px;
+  color:#e8c978;
+  font-family:Arial,sans-serif;
+  font-size:13px;
+  font-weight:900;
+  letter-spacing:.18em;
+  text-transform:uppercase;
+}
+
+.highlight-link h2{
+  margin:0;
+  color:#fff;
+  font-size:clamp(30px,3.2vw,46px);
+  font-weight:400;
+  line-height:1.08;
+  letter-spacing:-.025em;
+}
+
+.highlight-link p{
+  margin:12px 0 0;
+  color:rgba(255,255,255,.82);
+  font-size:19px;
+  line-height:1.62;
+}
+
+.highlight-link a{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  min-height:54px;
+  padding:0 22px;
+  border-radius:999px;
+  background:#fff;
+  color:var(--green);
+  font-family:Arial,sans-serif;
+  font-size:13px;
+  font-weight:900;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  white-space:nowrap;
+}
+
+.layout{
+  display:grid;
+  grid-template-columns:minmax(0,1.05fr) minmax(310px,.45fr);
+  gap:24px;
+  margin:30px 0 64px;
+  align-items:start;
+}
+
+.card{
+  background:rgba(255,253,247,.90);
+  border:1px solid var(--line2);
+  border-radius:var(--radius);
+  box-shadow:var(--shadow);
+  padding:clamp(24px,3.2vw,42px);
+}
+
+.prose p{
+  font-size:20px;
+  line-height:1.8;
+  color:var(--muted);
+  margin:0 0 18px;
+}
+
+.prose .lead{
+  font-size:23px;
+  line-height:1.72;
+  color:#38423f;
+  margin-bottom:24px;
+}
+
+.prose h2{
+  margin:36px 0 14px;
+  color:var(--green);
+  font-size:clamp(30px,3.1vw,44px);
+  font-weight:400;
+  line-height:1.08;
+  letter-spacing:-.025em;
+}
+
+.prose h2:first-child{margin-top:0}
+
+.prose strong{color:#1b2824}
+
+.note-box{
+  margin:26px 0;
+  padding:22px;
+  border-radius:22px;
+  background:#f1ead8;
+  border:1px solid rgba(155,107,18,.18);
+}
+
+.note-box p{
+  margin:0;
+  color:#4e4a3e;
+  font-size:19px;
+  line-height:1.65;
+}
+
+.note-box strong{
+  color:#111;
+}
+
+.audience-box{
+  padding:24px;
+  border-radius:24px;
+  background:#fffaf2;
+  border:1px solid rgba(155,107,18,.20);
+  border-left:5px solid var(--gold2);
+  margin:24px 0 24px;
+}
+
+.audience-box h3{
+  margin:0 0 10px;
+  color:#1b2824;
+  font-size:25px;
+  font-weight:700;
+  line-height:1.2;
+}
+
+.audience-box p{
+  margin:0;
+  font-size:19px;
+  line-height:1.72;
+  color:#4e4a3e;
+}
+
+.grid-3{
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:16px;
+  margin:20px 0 28px;
+}
+
+.mini{
+  padding:20px;
+  border-radius:22px;
+  background:#fbf7ed;
+  border:1px solid var(--line);
+}
+
+.mini span{
+  display:inline-flex;
+  margin-bottom:10px;
+  color:var(--gold2);
+  font-family:Arial,sans-serif;
+  font-size:12px;
+  font-weight:900;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+}
+
+.mini h3{
+  margin:0 0 8px;
+  color:var(--green);
+  font-size:24px;
+  font-weight:400;
+  line-height:1.16;
+}
+
+.mini p{
+  margin:0;
+  font-size:18px;
+  line-height:1.58;
+  color:var(--muted);
+}
+
+.callout{
+  margin-top:28px;
+  padding:28px;
+  border-radius:26px;
+  background:linear-gradient(145deg,#173e27,#1d6b37);
+  color:white;
+  box-shadow:var(--shadow);
+}
+
+.callout h2{
+  margin:0 0 10px!important;
+  color:#fff!important;
+  font-size:34px!important;
+}
+
+.callout p{
+  margin:0;
+  color:rgba(255,255,255,.82);
+  font-size:19px;
+  line-height:1.65;
+}
+
+.facts-card{
+  background:linear-gradient(155deg,#081421,#102719);
+  color:white;
+  border-color:rgba(255,255,255,.10);
+}
+
+.facts-card h2{
+  margin:0 0 18px;
+  font-size:34px;
+  font-weight:400;
+  color:white;
+  line-height:1.12;
+}
+
+.facts{
+  display:grid;
+  gap:13px;
+}
+
+.fact{
+  padding:15px 16px;
+  border-radius:18px;
+  background:rgba(255,255,255,.07);
+  border:1px solid rgba(255,255,255,.12);
+}
+
+.fact span{
+  display:block;
+  margin-bottom:6px;
+  color:#e8c978;
+  font-family:Arial,sans-serif;
+  font-size:12px;
+  font-weight:900;
+  letter-spacing:.15em;
+  text-transform:uppercase;
+}
+
+.fact strong{
+  display:block;
+  font-size:22px;
+  font-weight:400;
+  line-height:1.22;
+  color:white;
+}
+
+.fact em{
+  display:block;
+  margin-top:5px;
+  color:rgba(255,255,255,.72);
+  font-style:normal;
+  font-size:15px;
+  line-height:1.45;
+}
+
+.mini-nav{
+  display:grid;
+  gap:10px;
+  margin-top:20px;
+  padding-top:20px;
+  border-top:1px solid rgba(255,255,255,.12);
+}
+
+.mini-nav a{
+  display:block;
+  padding:13px 14px;
+  border-radius:15px;
+  background:rgba(255,255,255,.07);
+  color:rgba(255,255,255,.86);
+  font-family:Arial,sans-serif;
+  font-size:13px;
+  font-weight:900;
+  letter-spacing:.06em;
+  text-transform:uppercase;
+}
+
+.mini-nav a:hover{
+  background:rgba(255,255,255,.12);
+  color:#fff;
+}
+
+@media(max-width:960px){
+  .layout{
+    grid-template-columns:1fr;
+  }
+
+  .grid-3{
+    grid-template-columns:1fr;
+  }
+
+  .highlight-link{
+    grid-template-columns:1fr;
+  }
+
+  .highlight-link a{
+    justify-self:start;
+  }
+}
+
+@media(max-width:650px){
+  :root{
+    --wrap:min(100% - 24px,1180px);
+  }
+
+  .hero{
+    padding-top:52px;
+  }
+
+  .hero h1{
+    font-size:42px;
+  }
+
+  .card{
+    padding:24px 18px;
+  }
+
+  .prose p,
+  .prose .lead{
+    font-size:18px;
+  }
+
+  .rajac-news-menu-inner{
+    padding:0 10px;
+  }
+
+  .rajac-news-menu a{
+    font-size:12px;
+    padding:0 10px;
+  }
+}
+</style>
+<style>
+.fire-figure{margin:34px 0;background:#fffdf7;border:1px solid var(--line);border-radius:30px;box-shadow:var(--shadow);overflow:hidden}.fire-figure img{width:100%;height:auto}.fire-figure figcaption{padding:16px 22px 20px;color:#52615e;font:16px/1.65 Arial,sans-serif;background:#fffaf2}.layout{display:block}.prose{max-width:none}.prose p{max-width:none}.manager{margin:30px 0;padding:30px;border-radius:26px;background:linear-gradient(145deg,#173e27,#1d6b37);color:#fff}.manager h2{color:#fff!important;margin:0 0 14px!important}.manager p{color:rgba(255,255,255,.88)!important}.flow{display:grid;grid-template-columns:repeat(7,1fr);gap:8px;margin:24px 0}.flow div{padding:14px 8px;border-radius:16px;background:#f1ead8;text-align:center;font:800 13px/1.35 Arial,sans-serif;color:#173e27}.night{padding:26px;border-radius:24px;background:#0d1b2a;color:#fff;margin:28px 0}.night h2{color:#e8c978!important;margin-top:0!important}.night p{color:rgba(255,255,255,.84)!important}.source-note{font-size:16px!important}.source-note a{color:#173e27;font-weight:800;border-bottom:1px solid #173e27}@media(max-width:900px){.flow{grid-template-columns:1fr 1fr}.flow div:last-child{grid-column:1/-1}}@media(max-width:650px){.fire-figure{border-radius:20px}.manager,.night{padding:22px 18px}.flow{grid-template-columns:1fr}}
+</style>
+<style>
+.manager strong { color:#fff !important; font-weight:800; }
+.manager p { color:#fff !important; }
+.single-card { grid-template-columns:minmax(0,1fr) !important; width:100%; max-width:none; }
+.single-card .mini { width:100%; box-sizing:border-box; }
+</style>
+<style>
+.article-layout{display:grid;grid-template-columns:minmax(0,1fr) 340px;gap:24px;margin:30px 0 64px;align-items:start}
+.article-main{min-width:0}
+.article-photo{margin:0 0 18px;border-radius:22px;overflow:hidden;border:1px solid rgba(255,255,255,.12);background:#0b1720}
+.article-photo img{width:100%;height:250px;object-fit:cover;object-position:center}
+.article-photo figcaption{padding:12px 14px 14px;color:rgba(255,255,255,.72);font:14px/1.5 Arial,sans-serif}
+.tool-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin:20px 0 28px}
+.tool-card{padding:20px;border-radius:20px;background:#fbf7ed;border:1px solid var(--line)}
+.tool-card h3{margin:0 0 8px;color:var(--green);font-size:23px;font-weight:400}
+.tool-card p{margin:0!important;font-size:17px!important;line-height:1.6!important}
+.step-list{counter-reset:step;display:grid;gap:10px;margin:20px 0 26px}
+.step-list div{counter-increment:step;padding:16px 18px 16px 54px;border-radius:18px;background:#f7f1e4;border:1px solid var(--line);position:relative;color:var(--muted);font-size:18px;line-height:1.6}
+.step-list div:before{content:counter(step,decimal-leading-zero);position:absolute;left:17px;top:18px;color:var(--gold2);font:900 12px Arial,sans-serif;letter-spacing:.08em}
+.panorama-photo{margin:32px 0;border-radius:28px;overflow:hidden;border:1px solid var(--line);box-shadow:var(--shadow);background:#0d1b2a}
+.panorama-photo img{width:100%;height:360px;object-fit:cover;object-position:center}
+.panorama-photo figcaption{padding:14px 20px 18px;color:#52615e;font:15px/1.55 Arial,sans-serif;background:#fffaf2}
+@media(max-width:960px){.article-layout{grid-template-columns:1fr}.article-photo img{height:330px}}
+@media(max-width:650px){.tool-grid{grid-template-columns:1fr}.article-photo img{height:260px}.panorama-photo img{height:230px}}
+</style>
+</head>
+<body>
+<nav aria-label="Мени вести" class="rajac-news-menu"><div class="rajac-news-menu-inner"><a class="home" href="https://piorajac.rs/">ПИО „РАЈАЦ“</a><a href="https://piorajac.rs/rajac-vesti/">СВЕ ВЕСТИ</a><a class="active" href="https://piorajac.rs/rajac-vesti/kategorije/aktuelno/">АКТУЕЛНО<small>7</small></a><a href="https://piorajac.rs/rajac-vesti/kategorije/vesti/">ВЕСТИ<small>3</small></a><a href="https://piorajac.rs/rajac-vesti/kategorije/izvestaji/">ИЗВЕШТАЈИ<small>8</small></a><a href="https://piorajac.rs/rajac-vesti/kategorije/istrazivanja/">ИСТРАЖИВАЊА<small>9</small></a><a href="https://piorajac.rs/rajac-vesti/kategorije/dogadjaji/">ДОГАЂАЈИ<small>5</small></a><a href="https://piorajac.rs/rajac-vesti/kategorije/u-fokusu/">У ФОКУСУ<small>4</small></a></div></nav>
+<main class="shell">
+<section class="hero">
+<p class="kicker">АКТУЕЛНО · 18.09.2026.</p>
+<h1>Рајац добио интерактивну панораму ноћног неба од 360°</h1>
+<p class="subtitle">Снимци са врха Рајца спојени су у интерактивни приказ који омогућава поглед кроз цео хоризонт, праћење Млечног пута, страна света и светлосних купола око заштићеног подручја.</p>
+<div class="actions"><a class="btn primary" href="/zvezdani-park/nocno-nebo-rajac.html">Отвори панораму 360°</a><a class="btn" href="https://piorajac.rs/rajac-vesti/">Све вести</a></div>
+</section>
+<figure class="panorama-photo"><img alt="Панорама ноћног неба са врха Рајца" src="/zvezdani-park/rajac360-najava.jpg"/><figcaption>Ноћно небо са врха Рајца — широки поглед на хоризонт и светлосне куполе околних насеља. Панорама је основа новог интерактивног 360° приказа.</figcaption></figure>
+<section class="highlight-link">
+<div><span>Интерактивни приказ</span><h2>Окрените поглед кроз свих 360 степени</h2>
+<p>Панорама омогућава приближавање појединих делова неба и оријентацију према странама света, азимуту и висини изнад хоризонта.</p></div>
+<a href="/zvezdani-park/nocno-nebo-rajac.html">Истражи небо →</a>
+</section>
+<section class="article-layout">
+<article class="card prose article-main">
+<p class="lead"><strong>Рајац је добио нови интерактивни приказ ноћног неба од 360 степени.</strong> За разлику од једне класичне астрофотографије, овај приказ омогућава посетиоцу да се „окрене“ око тачке снимања и истражи цело небо изнад планине.</p>
+<h2>18 фотографија за један круг неба</h2>
+<p>Панорама је настала од снимака направљених <strong>8. јуна 2026. године</strong> са врха Рајца. Главна серија снимана је од 23.20 до 23.27. Употребљено је <strong>18 кадрова</strong>: четрнаест фотографија распоређених око хоризонта и још четири снимка усмерена ка зениту.</p>
+<p>Сваки кадар експониран је 15 секунди, фотоапаратом Nikon Z 6 и широкоугаоним објективом од 14 mm. После уклапања добијена је панорама резолуције приближно <strong>14.000 × 3.733 пиксела</strong>.</p>
+<h2>Оријентација није одређена „од ока“</h2>
+<p>Да би интерактивни приказ показивао исправан правац гледања, панорама је оријентисана помоћу звезданог неба. На снимку је идентификовано <strong>28 звезда</strong>, а њихов положај је упоређен са прорачунатим изгледом неба над Рајцем у време снимања.</p>
+<p>На тај начин су одређени азимут и висина изнад хоризонта са тачношћу од око <strong>0,2 степена</strong>. Северњача је послужила као додатна контрола јер њена висина одговара географској ширини Рајца.</p>
+<h2>На једној слици виде се и природна ноћ и светлосно загађење</h2>
+<p>Високо изнад хоризонта видљиво је тамније небо са звездама и структуром Млечног пута. Ближе хоризонту појављују се светлосне куполе околних насеља — расејана вештачка светлост која смањује контраст ноћног неба.</p>
+<p>Најизраженије осветљење на снимљеној панорами налази се према северу и северозападу. Зато овај материјал није само визуелна атракција већ и документ о просторном распореду светлосног загађења око ПИО „Рајац“.</p>
+<div class="note-box"><p><strong>Вредност за мониторинг:</strong> ако се снимање понавља са исте тачке и сличним параметрима, панораме се могу користити за визуелно поређење промена светлосних купола и стања ноћног пејзажа током година.</p></div>
+<h2>Интерактивни водич кроз небо</h2>
+<p>Корисник може мишем или прстом да помера поглед, приближава делове неба и укључује ознаке страна света, најсјајнијих звезда и сазвежђа. Приказ истовремено показује правац гледања, па панорама може да служи и као едукативни водич за оријентацију на стварном небу.</p>
+<h2>Део програма „Звездани парк Рајац“</h2>
+<p>Нови 360° приказ допуњује SQM мерења, астрофотографију и друге активности праћења квалитета ноћног неба. Циљ је да природна ноћ буде представљена као вредност предела — важна за астрономију, биодиверзитет, едукацију и доживљај посетилаца.</p>
+<div class="callout"><h2>Погледајте панораму</h2><p>Интерактивни приказ је јавно доступан и ради у прегледачу на рачунару, таблету и телефону.</p></div>
+</article>
+<aside class="card facts-card">
+<h2>Подаци о снимању</h2>
+<div class="facts">
+<div class="fact"><span>Датум</span><strong>8. јун 2026.</strong><em>снимљено са врха Рајца</em></div>
+<div class="fact"><span>Обухват</span><strong>360°</strong><em>цео хоризонт + зенит</em></div>
+<div class="fact"><span>Материјал</span><strong>18 кадрова</strong><em>експозиција 15 секунди</em></div>
+<div class="fact"><span>Оријентација</span><strong>28 звезда</strong><em>тачност приближно 0,2°</em></div>
+<div class="fact"><span>Резолуција</span><strong>14K</strong><em>око 14.000 × 3.733 пиксела</em></div>
+</div>
+<div class="mini-nav"><a href="/zvezdani-park/nocno-nebo-rajac.html">Отвори панораму →</a><a href="/svetlosno-zagadjenje/">Светлосно загађење →</a></div>
+</aside>
+</section>
+</main>
+</body></html>

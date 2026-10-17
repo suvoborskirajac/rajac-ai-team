@@ -1,0 +1,1144 @@
+<!DOCTYPE html>
+
+<html lang="sr"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, viewport-fit=cover" name="viewport"/><title>АМС Рајац — временски услови уживо и метеоролошки подаци</title><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&amp;family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,700;1,9..40,400&amp;display=swap" rel="stylesheet"/><link crossorigin="" href="https://cdn.jsdelivr.net" rel="preconnect"/><link href="https://cdn.jsdelivr.net" rel="dns-prefetch"/><link as="image" fetchpriority="high" href="ams_station.jpg" rel="preload"/><link as="style" href="assets/amsrajac-live-optimized-windrose-fix-20260607.css" rel="preload"/><link href="assets/amsrajac-live-optimized-windrose-fix-20260607.css" rel="stylesheet"/><style id="ams-tabs-redesign-v7">
+:root{
+  --ams-bg:#f7f1e8;
+  --ams-bg2:#fffaf2;
+  --ams-card:#fffdf8;
+  --ams-card-soft:#fff8ee;
+  --ams-border:#dfcfbc;
+  --ams-border-strong:#c4ad8f;
+  --ams-text:#2a241c;
+  --ams-muted:#6f6558;
+  --ams-accent:#9a6a35;
+  --ams-shadow:0 18px 44px rgba(81,61,37,.10);
+}
+*,*::before,*::after{box-sizing:border-box;}
+html,body{max-width:100%;overflow-x:hidden!important;background:var(--ams-bg)!important;color:var(--ams-text)!important;}
+body::before{content:"";position:fixed;inset:0;z-index:-2;background:radial-gradient(circle at 20% 0%,rgba(255,255,255,.75),transparent 34%),linear-gradient(180deg,#f6efe4 0%,#fffaf2 40%,#f6efe4 100%)!important;}
+.page-grid{opacity:.18!important;}
+/* горња трака без плаве подлоге */
+.topbar{background:rgba(255,250,242,.96)!important;border-bottom:1px solid var(--ams-border)!important;color:var(--ams-text)!important;box-shadow:0 8px 28px rgba(68,51,31,.08)!important;backdrop-filter:blur(10px);}
+.topbar .wrap,.topbar-inner{max-width:1320px!important;}
+.brand-title,.brand-sub,.brand-meta,.topbar strong{color:var(--ams-text)!important;}
+.brand-sub,.brand-meta{opacity:.78!important;}
+.brand-badge{background:#fff6e8!important;border:1px solid var(--ams-border)!important;color:#8d5f2c!important;box-shadow:none!important;}
+.site-home-link,.nav-btn{background:#fffaf2!important;border:1px solid var(--ams-border)!important;color:#3f3325!important;box-shadow:none!important;text-decoration:none!important;}
+.nav-btn.active{background:#efe0cd!important;border-color:var(--ams-border-strong)!important;color:#2a241c!important;}
+.live-pill{background:#fff8ee!important;color:#6c4b27!important;border:1px solid var(--ams-border)!important;}
+.live-dot{background:#b68a4a!important;}
+.theme-switch{display:none!important;}
+/* основни тон странице */
+.hero-section{background:transparent!important;padding-top:26px!important;}
+.glass,.panel-inner,.chart-card,.smart-shell,.wind-gauge,.compass-panel,.wind-dir-radar-card,.day-card,.idx-card,.norms-summary,.footer-panel{background:rgba(255,253,248,.94)!important;border:1px solid var(--ams-border)!important;color:var(--ams-text)!important;box-shadow:var(--ams-shadow)!important;}
+.hero-main{background:linear-gradient(135deg,rgba(255,253,248,.98),rgba(248,239,226,.93))!important;}
+h1,h2,h3,h4,h5,h6,.hero-title,.section-heading,.brand-title,.chart-head-left h5,.day-title{color:var(--ams-text)!important;}
+.hero-lead,.section-sub,.chart-head-left p,.hero-side-header p,.compass-row .k,.info-row .k,.side-stat .k,.day-note,.idx-desc{color:var(--ams-muted)!important;}
+.section-label,.hero-kicker,.smart-label,.day-kicker{color:#855f31!important;letter-spacing:.08em;}
+.hero-stat-chip,.temp-chip,.side-stat,.info-row,.compass-row,.day-mini,.day-big,.day-row,.idx-row{background:#fff8ee!important;border:1px solid #ead9c5!important;color:var(--ams-text)!important;}
+.status-banner.good{background:#fff8ea!important;border-color:#dec292!important;color:#3f3324!important;}
+.status-label{color:#6c4b27!important;}
+.chart-toolbar{background:rgba(255,253,248,.70)!important;border-color:var(--ams-border)!important;}
+.range-btn{background:#fffaf2!important;color:#4d3e2d!important;border:1px solid #dfcfbc!important;box-shadow:none!important;}
+.range-btn.active,.range-btn:hover{background:#eadbc8!important;color:#2f2519!important;border-color:#c6b095!important;}
+/* Табови — као школски табови, али без унутрашњег скрола и без сечења блокова */
+.ams-tabs-shell{width:var(--wrap);max-width:1420px;margin:26px auto 60px;overflow:visible!important;}
+.ams-tabs-nav{display:flex;align-items:stretch;gap:0;border-bottom:2px solid var(--ams-border-strong);overflow-x:auto;overflow-y:hidden;scrollbar-width:thin;padding:0;background:#f3eadf;}
+.ams-tab-btn{appearance:none;border:1px solid transparent;border-bottom:none;background:#f3eadf;color:#1f1b16;flex:1 1 0;text-align:center;font-family:inherit;font-weight:900;text-transform:uppercase;letter-spacing:.025em;padding:18px 28px;min-height:58px;white-space:nowrap;cursor:pointer;text-shadow:0 1px 0 rgba(255,255,255,.8);box-shadow:none;border-radius:0;transition:background .16s ease,border-color .16s ease,transform .16s ease;}
+.ams-tab-btn:hover{background:#fff9f0;border-color:#d5c6b4;}
+.ams-tab-btn[aria-selected="true"]{background:#fffdf8;border-color:var(--ams-border-strong);border-top:2px solid var(--ams-border-strong);transform:translateY(2px);box-shadow:0 -5px 18px rgba(70,52,31,.06);}
+.ams-tabs-content{background:rgba(255,253,248,.58);border:1px solid var(--ams-border);border-top:none;padding:6px 0 34px;box-shadow:var(--ams-shadow);overflow:visible!important;max-width:100%;}
+.ams-tab-pane{display:none;overflow:visible!important;max-width:100%;}
+.ams-tab-pane.active{display:block;}
+.ams-tab-note{width:min(1220px,calc(100% - 44px));margin:18px auto 0;padding:14px 16px;border:1px solid #dfcfbc;background:#fff9f0;color:#5d5144;border-radius:16px;font-weight:800;line-height:1.45;overflow-wrap:break-word;}
+.ams-tabs-content .section{padding-left:0!important;padding-right:0!important;margin-left:0!important;margin-right:0!important;overflow:visible!important;}
+.ams-tabs-content .section:first-child{margin-top:20px!important;}
+.ams-tabs-content .wrap{width:100%!important;max-width:1360px!important;margin-left:auto!important;margin-right:auto!important;padding-left:24px!important;padding-right:24px!important;overflow:visible!important;}
+.ams-tabs-content .glass,.ams-tabs-content .panel-inner,.ams-tabs-content .chart-card,.ams-tabs-content .day-card,.ams-tabs-content .idx-card,.ams-tabs-content .smart-shell,.ams-tabs-content .compass-panel,.ams-tabs-content .wind-gauge{min-width:0!important;max-width:100%!important;overflow:visible!important;}
+.ams-tabs-content .two-col-grid,.ams-tabs-content .wind-layout,.ams-tabs-content .day-context-grid{display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:18px!important;align-items:stretch!important;max-width:100%!important;}
+.ams-tabs-content .chart-grid{display:grid!important;grid-template-columns:repeat(3,minmax(0,1fr))!important;gap:18px!important;max-width:100%!important;}
+.ams-tabs-content .chart-grid-rain,.ams-tabs-content .wl-pro-layout,.ams-tabs-content .smart-grid,.ams-tabs-content .biometeo-groups{max-width:100%!important;min-width:0!important;}
+.ams-tabs-content .index-grid{display:grid!important;grid-template-columns:repeat(4,minmax(0,1fr))!important;gap:16px!important;max-width:100%!important;}
+#ams-panel-izvestaji .norms-summary{display:grid!important;grid-template-columns:repeat(3,minmax(0,1fr))!important;max-width:100%!important;}
+#ams-panel-izvestaji div[style*="display:grid"]{max-width:100%!important;min-width:0!important;}
+#ams-panel-izvestaji div[style*="grid-template-columns:repeat(3,1fr)"]{grid-template-columns:repeat(3,minmax(0,1fr))!important;}
+.ams-tabs-content .info-row,.ams-tabs-content .day-row,.ams-tabs-content .compass-row,.ams-tabs-content .idx-row{min-width:0!important;grid-template-columns:minmax(120px,.85fr) minmax(0,1.15fr)!important;}
+.ams-tabs-content .info-row .k,.ams-tabs-content .info-row .v,.ams-tabs-content .day-row .k,.ams-tabs-content .day-row .v,.ams-tabs-content .idx-row .k,.ams-tabs-content .idx-row .v,.ams-tabs-content .compass-row .k,.ams-tabs-content .compass-row .v,.ams-tabs-content .day-card,.ams-tabs-content .day-card *,.ams-tabs-content .idx-desc,.ams-tabs-content .chart-head-left,.ams-tabs-content .chart-meta,.ams-tabs-content h1,.ams-tabs-content h2,.ams-tabs-content h3,.ams-tabs-content h4,.ams-tabs-content h5,.ams-tabs-content p,.ams-tabs-content small{min-width:0!important;max-width:100%!important;overflow-wrap:break-word!important;word-break:normal!important;white-space:normal!important;}
+.ams-tabs-content .info-row .v,.ams-tabs-content .day-row .v,.ams-tabs-content .idx-row .v,.ams-tabs-content .compass-row .v{text-align:right!important;}
+.ams-tabs-content .section-heading{font-size:clamp(28px,3vw,42px)!important;line-height:1.1!important;margin-left:0!important;}
+.ams-tabs-content .section-sub{max-width:760px!important;}
+.ams-tabs-content .day-title{font-size:clamp(22px,2.2vw,30px)!important;line-height:1.15!important;}
+.ams-tabs-content .day-status,.ams-tabs-content .day-badge{max-width:100%!important;white-space:normal!important;}
+.ams-tabs-content .chart-toolbar,.ams-tabs-content .wind-dir-radar-toolbar,.ams-tabs-content .wl-pro-toolbar{flex-wrap:wrap!important;overflow:visible!important;}
+.ams-tabs-content canvas{max-width:100%!important;}
+/* локални праг је само искачући прозор, не сме да се види на страници */
+#ams-impact-modal[aria-hidden="true"]{display:none!important;visibility:hidden!important;pointer-events:none!important;opacity:0!important;}
+#ams-impact-modal:not([aria-hidden="true"]){display:flex!important;align-items:center!important;justify-content:center!important;position:fixed!important;inset:0!important;z-index:99999!important;}
+#ams-impact-modal .ams-impact-dialog{width:min(560px,calc(100vw - 32px))!important;max-width:560px!important;margin:auto!important;}
+@media (max-width:1120px){
+  .ams-tabs-shell{width:min(100%,calc(100vw - 28px));}
+  .ams-tabs-content .wrap{padding-left:16px!important;padding-right:16px!important;}
+  .ams-tabs-content .chart-grid,.ams-tabs-content .index-grid{grid-template-columns:repeat(2,minmax(0,1fr))!important;}
+  #ams-panel-izvestaji .norms-summary{grid-template-columns:1fr!important;}
+}
+@media (max-width:860px){
+  .ams-tabs-shell{width:100%!important;margin-top:12px!important;}
+  .ams-tabs-nav{padding-left:8px;border-top:1px solid var(--ams-border);}
+  .ams-tab-btn{font-size:12px;padding:14px 15px;min-height:50px;}
+  .ams-tabs-content{border-left:none;border-right:none;padding-bottom:22px;}
+  .ams-tab-note{width:calc(100% - 24px);font-size:13px;}
+  .ams-tabs-content .two-col-grid,.ams-tabs-content .wind-layout,.ams-tabs-content .day-context-grid,.ams-tabs-content .chart-grid,.ams-tabs-content .index-grid,#ams-panel-izvestaji .norms-summary,#ams-panel-izvestaji div[style*="grid-template-columns:repeat(3,1fr)"]{grid-template-columns:1fr!important;}
+  .ams-tabs-content .info-row,.ams-tabs-content .day-row,.ams-tabs-content .compass-row,.ams-tabs-content .idx-row{grid-template-columns:1fr!important;gap:4px!important;}
+  .ams-tabs-content .info-row .v,.ams-tabs-content .day-row .v,.ams-tabs-content .idx-row .v,.ams-tabs-content .compass-row .v{text-align:left!important;}
+}
+
+/* Додати табови: алармни резиме, сервиси и о станици */
+.ams-alert-summary-card,.ams-service-card,.ams-station-card,.ams-service-link{padding:22px!important;border-radius:22px!important;overflow:hidden!important;}
+.ams-alert-summary-card h4,.ams-service-card h4,.ams-station-card h4{font-family:var(--font-display);font-size:22px;line-height:1.15;margin:6px 0 10px;color:var(--ams-text)!important;letter-spacing:-.02em;}
+.ams-alert-summary-card p,.ams-service-card p,.ams-station-card p,.ams-service-link small{color:#64584a!important;line-height:1.65;font-size:14.5px;}
+.ams-alert-summary-list{display:grid;gap:12px;margin-top:18px;}
+.ams-alert-summary-ok{padding:16px 18px;border-radius:18px;background:#f2fbf6;border:1px solid #bfe7cf;color:#245b38;font-weight:850;}
+.ams-alert-summary-item{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:14px;align-items:center;padding:16px 18px;border-radius:18px;border:1px solid #dfcfbc;background:#fffaf2;box-shadow:0 8px 20px rgba(82,62,37,.06);}
+.ams-alert-summary-item strong{display:block;font-size:15px;color:#2f2519;margin-bottom:3px;}
+.ams-alert-summary-item small{display:block;color:#6d5f50;font-weight:750;}
+.ams-alert-summary-item.yellow{border-color:#facc15;background:#fffbea;}
+.ams-alert-summary-item.orange{border-color:#fb923c;background:#fff7ed;}
+.ams-alert-summary-item.red{border-color:#ef4444;background:#fff1f2;}
+.ams-alert-summary-item .ams-open-alert{border:0;border-radius:999px;padding:9px 12px;font-weight:900;letter-spacing:.06em;text-transform:uppercase;cursor:pointer;background:#2f2519;color:#fff;font-size:11px;white-space:nowrap;}
+.ams-alert-summary-legend{display:flex;gap:14px;flex-wrap:wrap;margin-top:14px;color:#6b5f52;font-weight:800;font-size:12px;text-transform:uppercase;letter-spacing:.04em;}
+.lvl-dot{display:inline-block;width:10px;height:10px;border-radius:50%;margin-right:5px;vertical-align:-1px}.lvl-dot.yellow{background:#facc15}.lvl-dot.orange{background:#f97316}.lvl-dot.red{background:#ef4444}
+.ams-service-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px;margin:14px 0 18px;}
+.ams-service-linkgrid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px;margin-top:16px;}
+.ams-service-link{display:block;border:1px solid var(--ams-border)!important;background:#fffdf8!important;transition:transform .18s ease,border-color .18s ease,box-shadow .18s ease;}
+.ams-service-link:hover{transform:translateY(-2px);border-color:#b8976c!important;box-shadow:0 16px 32px rgba(86,62,35,.12)!important;}
+.ams-service-link span{display:block;font-weight:950;color:#2f2519;margin-bottom:8px;font-size:16px;line-height:1.25;}
+.ams-station-grid{display:grid;grid-template-columns:1.15fr 1fr;gap:16px;margin-top:14px;}
+.ams-station-card.main{grid-row:span 2;}
+.ams-station-card ul{margin:10px 0 0 18px;color:#64584a;line-height:1.65;}
+.ams-station-card li{margin:4px 0;}
+@media (max-width:1120px){.ams-service-grid,.ams-service-linkgrid{grid-template-columns:repeat(2,minmax(0,1fr));}.ams-station-grid{grid-template-columns:1fr;}.ams-station-card.main{grid-row:auto;}}
+@media (max-width:640px){.ams-service-grid,.ams-service-linkgrid{grid-template-columns:1fr;}.ams-alert-summary-item{grid-template-columns:1fr;}.ams-alert-summary-item .ams-open-alert{justify-self:start;}}
+
+
+/* V7: враћен стабилан windrose-fix приказ; без вештачког враћања старих графикона. */
+#ams-panel-grafikoni .windrose-full .chart-wrap{min-height:370px;}
+@media (max-width:900px){.ams-tab-btn{flex:0 0 auto;}}
+
+
+/* V9: уређене табеле, размак бројева од ивице и прогноза */
+.ams-tabs-content .info-row,
+.ams-tabs-content .compass-row,
+.ams-tabs-content .idx-row,
+.ams-tabs-content .day-row{padding:13px 18px!important;gap:18px!important;align-items:center!important;}
+.ams-tabs-content .info-row .k,
+.ams-tabs-content .compass-row .k,
+.ams-tabs-content .idx-row .k,
+.ams-tabs-content .day-row .k{padding-left:2px!important;line-height:1.35!important;}
+.ams-tabs-content .info-row .v,
+.ams-tabs-content .compass-row .v,
+.ams-tabs-content .idx-row .v,
+.ams-tabs-content .day-row .v{padding-left:14px!important;padding-right:8px!important;line-height:1.35!important;text-align:right!important;white-space:normal!important;overflow:visible!important;}
+.ams-tabs-content #moon-astro-note{display:block!important;max-width:100%!important;}
+.ams-tabs-content .chart-head{padding-right:20px!important;gap:18px!important;}
+.ams-tabs-content .chart-meta{padding-right:8px!important;min-width:132px!important;text-align:right!important;}
+.ams-tabs-content .chart-meta .cur{font-size:clamp(26px,3.2vw,42px)!important;line-height:1.05!important;}
+.ams-tabs-content .rain-tall{min-height:250px!important;}
+#ams-panel-grafikoni .chart-card.full-width{padding-left:18px!important;padding-right:18px!important;}
+#ams-panel-o-stanici .ams-station-grid{align-items:start!important;}
+#ams-panel-o-stanici .ams-station-photo{height:568px!important;display:flex!important;flex-direction:column!important;justify-content:center!important;}
+#ams-panel-o-stanici .ams-station-photo img{max-height:472px!important;object-fit:contain!important;object-position:center bottom!important;margin-top:-22px!important;}
+#ams-panel-o-stanici .ams-station-photo figcaption{margin-top:auto!important;}
+.ams-forecast-status{padding:14px 18px;margin:0 0 18px;border-radius:16px;font-weight:800;color:#5d5144;}
+.ams-forecast-status.ok{border-color:#b7d0a9!important;background:#f3faef!important;color:#32522b!important;}
+.ams-forecast-status.warn{border-color:#e3c186!important;background:#fff8e7!important;color:#6d4d16!important;}
+.ams-forecast-status.bad{border-color:#ee9a9a!important;background:#fff0ee!important;color:#7a2525!important;}
+.ams-forecast-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;margin-bottom:18px;}
+.ams-forecast-card{padding:24px!important;border-radius:22px!important;min-width:0!important;}
+.ams-forecast-card h4{font-size:clamp(22px,2.1vw,30px)!important;line-height:1.12;margin:6px 0 10px;}
+.ams-forecast-card p{color:var(--ams-muted)!important;line-height:1.65;margin:0 0 14px;}
+.ams-forecast-mini{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin-top:12px;}
+.ams-forecast-mini .mini,
+.ams-hourly-strip .hour,
+.ams-forecast-day{background:#fff8ee;border:1px solid #ead9c5;border-radius:16px;padding:12px 14px;min-width:0;}
+.ams-forecast-mini .k,.ams-hourly-strip .k,.ams-forecast-day .k{font-size:12px;text-transform:uppercase;letter-spacing:.05em;font-weight:900;color:#7b5b35;}
+.ams-forecast-mini .v,.ams-hourly-strip .v,.ams-forecast-day .v{font-size:20px;font-weight:900;color:#10213b;margin-top:4px;line-height:1.15;}
+.ams-hourly-strip{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;margin-top:12px;}
+.ams-forecast-days{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin-top:12px;}
+.ams-forecast-day h5{font-size:18px;margin:0 0 10px;}
+.ams-forecast-day .row{display:flex;justify-content:space-between;gap:12px;border-top:1px solid #ead9c5;padding-top:8px;margin-top:8px;}
+.ams-forecast-note{font-size:13px!important;margin-top:14px!important;}
+@media(max-width:900px){.ams-forecast-grid,.ams-forecast-days{grid-template-columns:1fr}.ams-hourly-strip{grid-template-columns:repeat(2,minmax(0,1fr))}.ams-forecast-mini{grid-template-columns:1fr}}
+
+/* V19: Open-Meteo + AMS uporedni prikaz i lokalno prilagođavanje za posetioce */
+.ams-ai-lead{font-weight:850;color:#5d5144;background:#fff8ee;border:1px solid var(--ams-border);border-radius:18px;padding:16px 18px;margin:0 0 18px;line-height:1.55;}
+.ams-ai-status{padding:14px 18px;margin:0 0 18px;border-radius:16px;font-weight:850;color:#5d5144;line-height:1.55;}
+.ams-ai-status.ok{border-color:#b7d0a9!important;background:#f3faef!important;color:#32522b!important;}
+.ams-ai-status.warn{border-color:#e3c186!important;background:#fff8e7!important;color:#6d4d16!important;}
+.ams-ai-status.bad{border-color:#ee9a9a!important;background:#fff0ee!important;color:#7a2525!important;}
+.ams-ai-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-bottom:18px;}
+.ams-ai-card{padding:24px!important;border-radius:22px!important;min-width:0!important;overflow:hidden!important;}
+.ams-ai-card h4{font-size:clamp(22px,2.1vw,30px)!important;line-height:1.14;margin:6px 0 10px;}
+.ams-ai-card p{color:var(--ams-muted)!important;line-height:1.62;margin:0 0 12px;}
+.ams-ai-metrics{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:10px;margin-top:12px;}
+.ams-ai-metric{background:#fff8ee;border:1px solid #ead9c5;border-radius:16px;padding:12px 14px;min-width:0;}
+.ams-ai-metric .k{font-size:11px;text-transform:uppercase;letter-spacing:.05em;font-weight:950;color:#7b5b35;line-height:1.2;}
+.ams-ai-metric .v{font-size:clamp(18px,2.2vw,28px);font-weight:950;color:#10213b;margin-top:5px;line-height:1.05;word-break:break-word;}
+.ams-ai-metric .s{font-size:12px;color:#6d7f9d;font-weight:800;margin-top:5px;line-height:1.25;}
+.ams-ai-table-wrap{width:100%;max-height:430px;overflow:auto;-webkit-overflow-scrolling:touch;border:1px solid #ead9c5;border-radius:16px;background:#fffdf8;margin-top:12px;scrollbar-gutter:stable both-edges;}
+.ams-ai-table-wrap.is-short{max-height:360px;}
+.ams-ai-table-wrap.is-forecast{max-height:520px;}
+.ams-ai-table-wrap::-webkit-scrollbar{width:10px;height:10px;}
+.ams-ai-table-wrap::-webkit-scrollbar-thumb{background:#d1bda4;border-radius:999px;}
+.ams-ai-table-wrap::-webkit-scrollbar-track{background:#fff8ee;border-radius:999px;}
+.ams-ai-table{width:100%;min-width:980px;border-collapse:separate;border-spacing:0;font-size:13px;}
+.ams-ai-table th,.ams-ai-table td{padding:10px 12px;border-bottom:1px solid #ead9c5;text-align:left;vertical-align:top;white-space:nowrap;}
+.ams-ai-table th{position:sticky;top:0;background:#f4eadc;color:#6f4d26;font-size:11px;text-transform:uppercase;letter-spacing:.04em;font-weight:950;z-index:1;}
+.ams-ai-table tr:last-child td{border-bottom:0;}
+.ams-ai-table td strong{color:#10213b;}
+.ams-ai-table td small{display:block;color:#6d7f9d;font-size:11px;font-weight:850;line-height:1.25;margin-top:2px;}
+.ams-ai-delta-pos{color:#a44900;font-weight:900;}.ams-ai-delta-neg{color:#1769a6;font-weight:900;}.ams-ai-delta-ok{color:#3f6f31;font-weight:900;}
+.ams-ai-chart-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;margin-top:18px;}
+.ams-ai-chart-card{padding:20px!important;border-radius:22px!important;min-width:0!important;overflow:hidden!important;}
+.ams-ai-chart-card h5{font-size:20px;margin:0 0 4px;line-height:1.2;}.ams-ai-chart-card p{margin:0 0 12px;color:var(--ams-muted)!important;line-height:1.45;}
+.ams-ai-chart-wrap{height:290px;position:relative;width:100%;}
+.ams-ai-chart-wrap canvas{width:100%!important;height:100%!important;}
+.ams-ai-note{font-size:13px!important;color:#6b7f9b!important;margin-top:12px!important;line-height:1.55!important;}
+.ams-ai-pill{display:inline-flex;align-items:center;gap:7px;border:1px solid #d8c5ad;background:#fff8ee;border-radius:999px;padding:8px 12px;margin:4px 6px 4px 0;font-weight:850;color:#493a2b;}
+@media(max-width:1100px){.ams-ai-metrics{grid-template-columns:repeat(2,minmax(0,1fr));}.ams-ai-chart-grid{grid-template-columns:1fr;}}
+@media(max-width:900px){.ams-ai-grid{grid-template-columns:1fr}.ams-ai-metrics{grid-template-columns:1fr}.ams-ai-table{min-width:860px}.ams-ai-chart-wrap{height:250px}}
+
+
+/* V22: прогноза — графикони видљиви у картицама и сигурно исцртавање када се отвори таб */
+#ams-panel-prognoza .ams-ai-chart-card{background:#fffdf8!important;border:1px solid #dfc7aa!important;box-shadow:0 14px 34px rgba(88,62,33,.10)!important;}
+#ams-panel-prognoza .ams-ai-chart-card h5{color:#2b261f!important;}
+#ams-panel-prognoza .ams-ai-chart-wrap{height:330px!important;min-height:330px!important;background:linear-gradient(180deg,#fffefa 0%,#fff8ef 100%);border:1px solid #ead9c5;border-radius:16px;padding:8px;}
+#ams-panel-prognoza .ams-ai-chart-card.ams-ai-chart-wide{grid-column:1/-1;}
+#ams-panel-prognoza .ams-ai-chart-card.ams-ai-chart-wide .ams-ai-chart-wrap{height:380px!important;min-height:380px!important;}
+#ams-panel-prognoza .ams-ai-chart-wrap canvas{display:block!important;width:100%!important;height:100%!important;}
+@media(max-width:900px){#ams-panel-prognoza .ams-ai-chart-wrap,#ams-panel-prognoza .ams-ai-chart-card.ams-ai-chart-wide .ams-ai-chart-wrap{height:280px!important;min-height:280px!important;}}
+
+</style>
+<style id="ams-tabs-redesign-v5-extra">
+/* V5: дубоки линкови ка табовима, сервисне картице, дневни извештаји и страница о станици */
+.ams-tabs-shell{scroll-margin-top:90px;}
+.ams-service-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px;margin-top:18px;}
+.ams-service-card{display:flex;flex-direction:column;min-height:194px;padding:22px;border-radius:20px;}
+.ams-service-card h4{font-size:23px;line-height:1.08;margin:0 0 12px;}
+.ams-service-card p{line-height:1.55;margin:0;color:var(--ams-muted)!important;}
+.ams-service-link-card{min-height:194px;}
+.ams-more-link{display:inline-flex;align-items:center;justify-content:center;gap:8px;width:max-content;max-width:100%;margin-top:auto;padding:10px 14px;border-radius:999px;border:1px solid var(--ams-border-strong);background:#efe0cd;color:#2a241c!important;text-decoration:none!important;font-weight:900;box-shadow:0 8px 18px rgba(94,65,34,.10);}
+.ams-more-link:hover{background:#e3cfb8;transform:translateY(-1px);}
+.ams-more-link::after{content:'›';font-size:18px;line-height:1;}
+.ams-daily-reports-shell{padding:22px!important;}
+#rajac-dnevna-statistika-root{min-height:120px;}
+#rajac-dnevna-statistika-root:empty::before{content:'Учитавање дневних извештаја…';display:block;padding:18px;border:1px dashed var(--ams-border);border-radius:16px;color:var(--ams-muted);font-weight:800;background:#fff9f0;}
+.ams-station-grid{display:grid;grid-template-columns:minmax(320px,.95fr) minmax(360px,1.05fr);gap:18px;align-items:start;margin-top:18px;}
+.ams-station-left,.ams-station-right{display:grid;gap:18px;min-width:0;}
+.ams-station-photo{padding:18px!important;overflow:hidden!important;}
+.ams-station-photo img{display:block;width:100%;height:auto;max-height:520px;object-fit:contain;border-radius:18px;background:#fff;border:1px solid var(--ams-border);}
+.ams-station-photo figcaption{font-size:13px;line-height:1.45;color:var(--ams-muted);margin-top:10px;}
+.ams-station-card{padding:22px!important;}
+.ams-station-card h4{font-size:24px;margin:0 0 12px;line-height:1.12;}
+.ams-station-card p,.ams-station-card li{line-height:1.62;color:var(--ams-muted)!important;}
+.ams-station-card ul{margin:0;padding-left:19px;}
+.ams-station-card li+li{margin-top:6px;}
+.ams-alert-summary{padding:20px!important;margin-bottom:18px;}
+.ams-alert-summary h4{margin:0 0 8px;font-size:24px;}
+.ams-alert-summary p{margin:0 0 14px;color:var(--ams-muted)!important;line-height:1.55;}
+.ams-alert-summary-list{display:grid;gap:10px;}
+.ams-alert-summary-ok,.ams-alert-summary-item{border:1px solid var(--ams-border);border-radius:16px;padding:14px 16px;background:#fff9f0;}
+.ams-alert-summary-ok{font-weight:900;color:#40503d;}
+.ams-alert-summary-item{display:flex;align-items:center;justify-content:space-between;gap:12px;}
+.ams-alert-summary-item strong{display:block;margin-bottom:4px;}
+.ams-alert-summary-item small{display:block;color:var(--ams-muted);line-height:1.35;}
+.ams-alert-summary-item.yellow{border-color:#facc15;background:#fff9d8;}
+.ams-alert-summary-item.orange{border-color:#fb923c;background:#fff0dc;}
+.ams-alert-summary-item.red{border-color:#ef4444;background:#fff0f0;}
+.ams-open-alert{border:none;border-radius:999px;padding:9px 13px;font-weight:900;cursor:pointer;background:#2a241c;color:#fff;white-space:nowrap;}
+@media (max-width:1100px){.ams-service-grid{grid-template-columns:repeat(2,minmax(0,1fr));}.ams-station-grid{grid-template-columns:1fr;}.ams-station-photo img{max-height:420px;}}
+@media (max-width:700px){.ams-service-grid{grid-template-columns:1fr;}.ams-service-card{min-height:auto;}.ams-alert-summary-item{align-items:flex-start;flex-direction:column;}.ams-open-alert{width:100%;}.ams-tabs-shell{width:calc(100% - 20px);}.ams-tabs-content .wrap{padding-left:14px!important;padding-right:14px!important;}}
+
+
+/* V12: мањи бројеви у горњим графиконским картицама и већа ружа ветрова */
+#ams-panel-grafikoni .chart-grid{
+  grid-template-columns:repeat(3,minmax(0,1fr))!important;
+  gap:18px!important;
+  align-items:stretch!important;
+}
+#ams-panel-grafikoni .chart-card{min-width:0!important;overflow:hidden!important;}
+#ams-panel-grafikoni .chart-head{
+  display:grid!important;
+  grid-template-columns:minmax(0,1fr) minmax(134px,176px)!important;
+  align-items:start!important;
+  column-gap:14px!important;
+  padding-right:0!important;
+}
+#ams-panel-grafikoni .chart-head-left{min-width:0!important;max-width:100%!important;}
+#ams-panel-grafikoni .chart-head-left h5{
+  font-size:17px!important;
+  line-height:1.14!important;
+  letter-spacing:-.015em!important;
+  max-width:100%!important;
+}
+#ams-panel-grafikoni .chart-head-left p{
+  font-size:13px!important;
+  line-height:1.42!important;
+  max-width:100%!important;
+}
+#ams-panel-grafikoni .chart-meta{
+  justify-self:end!important;
+  width:100%!important;
+  max-width:176px!important;
+  min-width:0!important;
+  text-align:right!important;
+  padding-right:0!important;
+  overflow:visible!important;
+}
+#ams-panel-grafikoni .chart-meta .cur,
+#ams-panel-grafikoni .metric-value{
+  font-family:var(--font-metric)!important;
+  font-size:clamp(25px,2.15vw,34px)!important;
+  line-height:1!important;
+  letter-spacing:-.035em!important;
+  white-space:nowrap!important;
+  word-break:keep-all!important;
+  overflow-wrap:normal!important;
+  max-width:none!important;
+}
+#ams-panel-grafikoni #cc-press-hpa{
+  font-size:clamp(23px,1.95vw,30px)!important;
+  letter-spacing:-.04em!important;
+}
+#ams-panel-grafikoni .chart-meta small{
+  font-size:12px!important;
+  line-height:1.45!important;
+  white-space:normal!important;
+  overflow-wrap:normal!important;
+}
+#ams-panel-grafikoni .windrose-full{
+  padding-left:28px!important;
+  padding-right:28px!important;
+}
+#ams-panel-grafikoni .windrose-full .chart-wrap,
+#ams-panel-grafikoni .windrose-full .chart-wrap.tall{
+  height:560px!important;
+  min-height:560px!important;
+  max-width:980px!important;
+  margin:0 auto!important;
+}
+#ams-panel-grafikoni .windrose-full canvas#chart-windrose{
+  width:100%!important;
+  height:100%!important;
+}
+@media (max-width:1180px){
+  #ams-panel-grafikoni .chart-grid{grid-template-columns:repeat(2,minmax(0,1fr))!important;}
+  #ams-panel-grafikoni .windrose-full .chart-wrap,
+  #ams-panel-grafikoni .windrose-full .chart-wrap.tall{height:520px!important;min-height:520px!important;}
+}
+@media (max-width:760px){
+  #ams-panel-grafikoni .chart-grid{grid-template-columns:1fr!important;}
+  #ams-panel-grafikoni .chart-head{grid-template-columns:minmax(0,1fr) minmax(112px,150px)!important;}
+  #ams-panel-grafikoni .chart-meta .cur{font-size:28px!important;}
+  #ams-panel-grafikoni #cc-press-hpa{font-size:25px!important;}
+  #ams-panel-grafikoni .windrose-full{padding-left:14px!important;padding-right:14px!important;}
+  #ams-panel-grafikoni .windrose-full .chart-wrap,
+  #ams-panel-grafikoni .windrose-full .chart-wrap.tall{height:420px!important;min-height:420px!important;max-width:100%!important;}
+}
+</style>
+<style id="ams-ai-chart-contrast-v23">
+#ams-panel-prognoza .ams-ai-chart-card{background:#fffdf8!important;}
+#ams-panel-prognoza .ams-ai-chart-wrap{background:#fffaf1!important;}
+#ams-panel-prognoza .ams-ai-chart-wrap canvas{opacity:1!important;filter:none!important;mix-blend-mode:normal!important;}
+</style>
+<style id="ams-tabs-mobile-more-v24">
+/* V24: јачи табови и мобилни мени без хоризонталног скроловања */
+.ams-tabs-nav{
+  background:#e7d7c2!important;
+  border:1px solid #b89165!important;
+  border-bottom:2px solid #9a7246!important;
+  box-shadow:0 10px 28px rgba(78,54,30,.10)!important;
+  overflow:visible!important;
+  scrollbar-width:none!important;
+}
+.ams-tabs-nav::-webkit-scrollbar{display:none!important;}
+.ams-tab-btn{
+  background:#eadac5!important;
+  color:#19140e!important;
+  border-color:#c7aa87!important;
+  font-weight:950!important;
+  text-shadow:0 1px 0 rgba(255,255,255,.65)!important;
+}
+.ams-tab-btn:hover{
+  background:#fff5e6!important;
+  border-color:#a97e4f!important;
+}
+.ams-tab-btn[aria-selected="true"]{
+  background:#fffaf1!important;
+  color:#111!important;
+  border-color:#9a7246!important;
+  border-top:3px solid #8a5f31!important;
+  box-shadow:0 -5px 18px rgba(86,58,29,.12)!important;
+}
+.ams-tabs-more{display:none;}
+.ams-tabs-more-btn,
+.ams-more-tab-link{
+  font-family:inherit;
+  font-weight:950;
+  color:#1d160f;
+}
+@media (max-width:860px){
+  .ams-tabs-shell{width:100%!important;margin-top:12px!important;}
+  .ams-tabs-nav{
+    display:grid!important;
+    grid-template-columns:repeat(5,minmax(0,1fr));
+    gap:6px!important;
+    padding:7px!important;
+    border-left:none!important;
+    border-right:none!important;
+    border-radius:0!important;
+    background:#e4d1b8!important;
+  }
+  .ams-tab-btn{
+    display:none!important;
+    min-width:0!important;
+    width:100%!important;
+    flex:initial!important;
+    justify-content:center!important;
+    align-items:center!important;
+    min-height:48px!important;
+    padding:10px 4px!important;
+    border:1px solid #b99268!important;
+    border-radius:13px!important;
+    background:#f2e3d0!important;
+    font-size:0!important;
+    line-height:1!important;
+    letter-spacing:.02em!important;
+    white-space:normal!important;
+    text-align:center!important;
+    transform:none!important;
+  }
+  #ams-tab-brojevi,
+  #ams-tab-grafikoni,
+  #ams-tab-alarmi,
+  #ams-tab-prognoza{display:flex!important;}
+  .ams-tab-btn::after{
+    content:attr(data-mobile-label);
+    font-size:11px;
+    line-height:1.05;
+    display:block;
+  }
+  .ams-tab-btn[aria-selected="true"]{
+    background:#fffaf0!important;
+    border:2px solid #83582d!important;
+    box-shadow:0 8px 20px rgba(77,51,25,.16)!important;
+  }
+  .ams-tabs-more{display:block!important;position:relative;min-width:0;}
+  .ams-tabs-more-btn{
+    width:100%;
+    min-height:48px;
+    border:1px solid #b99268;
+    border-radius:13px;
+    background:#f2e3d0;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    gap:2px;
+    cursor:pointer;
+    font-size:11px;
+    line-height:1.05;
+    text-transform:uppercase;
+    letter-spacing:.03em;
+    box-shadow:none;
+  }
+  .ams-tabs-more-btn .dots{font-size:16px;letter-spacing:.05em;line-height:.75;margin-top:-2px;}
+  .ams-tabs-more.is-active .ams-tabs-more-btn,
+  .ams-tabs-more.open .ams-tabs-more-btn{
+    background:#fffaf0;
+    border:2px solid #83582d;
+    box-shadow:0 8px 20px rgba(77,51,25,.16);
+  }
+  .ams-tabs-more-menu{
+    position:absolute;
+    right:0;
+    top:calc(100% + 8px);
+    z-index:9999;
+    display:none;
+    width:min(310px,calc(100vw - 18px));
+    padding:8px;
+    border:1px solid #b99268;
+    border-radius:16px;
+    background:#fffaf1;
+    box-shadow:0 18px 44px rgba(48,31,15,.22);
+  }
+  .ams-tabs-more.open .ams-tabs-more-menu{display:grid;gap:7px;}
+  .ams-more-tab-link{
+    width:100%;
+    min-height:44px;
+    text-align:left;
+    padding:10px 13px;
+    border:1px solid #dfc8ab;
+    border-radius:12px;
+    background:#fff5e8;
+    cursor:pointer;
+    font-size:13px;
+  }
+  .ams-more-tab-link:hover{background:#f0dfc8;border-color:#a97e4f;}
+}
+@media (max-width:420px){
+  .ams-tab-btn::after,.ams-tabs-more-btn{font-size:10px;}
+  .ams-tabs-nav{gap:5px!important;padding:6px!important;}
+  .ams-tab-btn,.ams-tabs-more-btn{min-height:46px!important;border-radius:12px!important;}
+}
+</style>
+<style id="ams-topbar-tabs-v26-no-frame">
+/* V26: compact topbar and standalone tabs without an outer frame. */
+.topbar{
+  min-height:0!important;
+}
+.topbar .topbar-inner{
+  min-height:72px!important;
+  padding-top:9px!important;
+  padding-bottom:9px!important;
+  gap:18px!important;
+}
+.top-left-cluster{
+  gap:14px!important;
+  min-width:0!important;
+}
+.site-home-link{
+  min-height:38px!important;
+  padding:8px 13px!important;
+  font-size:12px!important;
+  white-space:nowrap!important;
+}
+.brand{
+  gap:12px!important;
+  min-width:0!important;
+}
+.brand-badge{
+  width:40px!important;
+  height:40px!important;
+  min-width:40px!important;
+  border-radius:12px!important;
+  font-size:21px!important;
+}
+.brand-title{
+  font-size:20px!important;
+  line-height:1.05!important;
+  margin-bottom:6px!important;
+  letter-spacing:-.02em!important;
+}
+.brand-info-line{
+  color:var(--ams-muted)!important;
+  font-size:13.5px!important;
+  line-height:1.25!important;
+  font-weight:650!important;
+  white-space:nowrap!important;
+}
+.brand-info-line strong{
+  color:var(--ams-text)!important;
+  font-weight:850!important;
+}
+.top-actions{
+  gap:0!important;
+  flex:0 0 auto!important;
+}
+.live-pill{
+  position:relative!important;
+  min-height:36px!important;
+  padding:8px 13px!important;
+  gap:9px!important;
+  background:#fbfff9!important;
+  color:#356142!important;
+  border-color:#bed8c4!important;
+  font-size:12px!important;
+  font-weight:900!important;
+  letter-spacing:.08em!important;
+  box-shadow:0 0 0 rgba(63,159,88,0)!important;
+  animation:amsLivePillGlow 2.8s ease-in-out infinite!important;
+}
+.live-dot{
+  position:relative!important;
+  width:9px!important;
+  height:9px!important;
+  min-width:9px!important;
+  background:#43a85d!important;
+  border-radius:50%!important;
+  box-shadow:0 0 0 3px rgba(67,168,93,.12),0 0 10px rgba(67,168,93,.72)!important;
+  animation:amsLiveDotGlow 1.9s ease-in-out infinite!important;
+}
+.live-dot::after{
+  content:"";
+  position:absolute;
+  inset:-5px;
+  border:1px solid rgba(67,168,93,.28);
+  border-radius:50%;
+  animation:amsLiveRing 1.9s ease-out infinite;
+}
+@keyframes amsLiveDotGlow{
+  0%,100%{transform:scale(.92);box-shadow:0 0 0 3px rgba(67,168,93,.10),0 0 7px rgba(67,168,93,.48);}
+  50%{transform:scale(1.08);box-shadow:0 0 0 4px rgba(67,168,93,.16),0 0 15px rgba(67,168,93,.90);}
+}
+@keyframes amsLiveRing{
+  0%{transform:scale(.72);opacity:.7;}
+  75%,100%{transform:scale(1.35);opacity:0;}
+}
+@keyframes amsLivePillGlow{
+  0%,100%{box-shadow:0 0 0 rgba(63,159,88,0);}
+  50%{box-shadow:0 0 15px rgba(63,159,88,.17);}
+}
+
+/* Desktop tabs: closer to header, shorter and with a mild folder-tab curvature. */
+@media (min-width:861px){
+  body > .ams-tabs-nav{
+    width:min(1420px,calc(100% - 54px))!important;
+    margin:10px auto 0!important;
+    display:flex!important;
+    align-items:stretch!important;
+    gap:3px!important;
+    padding:0!important;
+    background:transparent!important;
+    border:0!important;
+    border-radius:0!important;
+    overflow:visible!important;
+    box-shadow:none!important;
+  }
+  body > .ams-tabs-nav .ams-tab-btn{
+    min-height:46px!important;
+    padding:11px 14px!important;
+    font-size:13px!important;
+    line-height:1.1!important;
+    border:1px solid #c7aa87!important;
+    border-bottom:none!important;
+    border-radius:0 8px 0 0!important;
+    background:#efe2d1!important;
+    transform:none!important;
+  }
+  body > .ams-tabs-nav .ams-tab-btn:hover{
+    background:#fff6e9!important;
+    transform:none!important;
+  }
+  body > .ams-tabs-nav .ams-tab-btn[aria-selected="true"]{
+    min-height:46px!important;
+    padding-top:10px!important;
+    background:#fffaf1!important;
+    border-top:2px solid #8a5f31!important;
+    box-shadow:0 -4px 12px rgba(86,58,29,.10)!important;
+    transform:none!important;
+  }
+}
+
+/* Since navigation is now above the hero, the content shell starts cleanly below the hero. */
+.ams-tabs-shell{
+  margin-top:22px!important;
+}
+
+@media (max-width:1100px){
+  .brand-info-line{font-size:12.5px!important;}
+}
+@media (max-width:860px){
+  .topbar .topbar-inner{
+    min-height:64px!important;
+    padding-top:8px!important;
+    padding-bottom:8px!important;
+  }
+  .brand-title{font-size:18px!important;margin-bottom:4px!important;}
+  .brand-info-line{
+    font-size:11.5px!important;
+    white-space:normal!important;
+  }
+  body > .ams-tabs-nav{
+    margin-top:6px!important;
+    background:transparent!important;
+    border:0!important;
+    box-shadow:none!important;
+  }
+}
+@media (max-width:640px){
+  .site-home-link{padding:7px 10px!important;font-size:11px!important;}
+  .brand-badge{display:none!important;}
+  .live-pill{min-height:32px!important;padding:7px 10px!important;font-size:11px!important;}
+}
+@media (prefers-reduced-motion:reduce){
+  .live-pill,.live-dot,.live-dot::after{animation:none!important;}
+}
+</style>
+<style id="ams-final-responsive-fix">
+html,body{max-width:100%;overflow-x:hidden!important}.ams-tab-pane{scroll-margin-top:12px}.ams-tabs-content img,.ams-tabs-content svg,.ams-tabs-content video{max-width:100%;height:auto}.ams-tabs-content canvas{display:block;max-width:100%!important}.ams-tabs-content *{min-width:0}
+@media (max-width:1100px){.hero-section,.site-main,.ams-tabs-shell,.ams-tabs-content,.ams-tab-pane,.section{max-width:100%!important}.hero-grid{grid-template-columns:1fr!important;gap:16px!important}.hero-photo-col,.hero-main,.hero-side{width:100%!important;max-width:100%!important}.hero-photo-col img{width:100%!important;max-height:420px;object-fit:cover}.ams-ai-grid,.ams-ai-chart-grid,.ams-forecast-grid,.ams-forecast-days,.ams-station-grid{grid-template-columns:1fr!important}.chart-toolbar,.wind-dir-radar-toolbar,.wl-pro-toolbar{display:flex!important;flex-wrap:wrap!important;gap:8px!important}.ams-ai-table-wrap,.table-wrap{max-width:100%;overflow-x:auto!important;-webkit-overflow-scrolling:touch}}
+@media (max-width:700px){.wrap{width:100%!important;max-width:100%!important;padding-left:14px!important;padding-right:14px!important}.topbar-inner{display:grid!important;grid-template-columns:1fr!important;gap:10px!important}.top-left-cluster,.top-actions,.theme-switch{width:100%;max-width:100%;min-width:0}.top-actions,.theme-switch{display:flex!important;flex-wrap:wrap!important;gap:8px!important}.brand{min-width:0}.brand-info-line{white-space:normal!important;overflow-wrap:anywhere}.hero-section{padding-left:0!important;padding-right:0!important}.hero-main{grid-template-columns:1fr!important;padding:18px!important}.temp-display{margin-inline:auto;max-width:100%}.temp-ring-outer{max-width:78vw;max-height:78vw}.hero-stats,.side-stats-grid{grid-template-columns:1fr!important}.ams-tabs-shell{width:100%!important;margin-left:0!important;margin-right:0!important}.ams-tabs-content .wrap{padding-left:14px!important;padding-right:14px!important}.ams-service-grid,.ams-service-linkgrid,.ams-ai-metrics,.ams-hourly-strip{grid-template-columns:1fr!important}.range-btn,.ams-tab-btn,.ams-tabs-more-btn{min-height:42px}}
+</style>
+<!-- PIO-SEO-MAX-START -->
+<meta content="Тренутни и историјски подаци АМС Рајац: температура, влажност, притисак, ветар, падавине и други показатељи са Davis Vantage Pro2 станице." name="description"/>
+<meta content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" name="robots"/>
+<link href="https://piorajac.rs/amsrajac/" rel="canonical"/>
+<meta content="website" property="og:type"/>
+<meta content="sr_RS" property="og:locale"/>
+<meta content="ПИО „Рајац“" property="og:site_name"/>
+<meta content="АМС Рајац — временски услови уживо и метеоролошки подаци" property="og:title"/>
+<meta content="Тренутни и историјски подаци АМС Рајац: температура, влажност, притисак, ветар, падавине и други показатељи са Davis Vantage Pro2 станице." property="og:description"/>
+<meta content="https://piorajac.rs/amsrajac/" property="og:url"/>
+<meta content="https://piorajac.rs/assets/pio-rajac-og.png" property="og:image"/>
+<meta content="1200" property="og:image:width"/>
+<meta content="630" property="og:image:height"/>
+<meta content="ПИО Рајац — заштита природе, мониторинг и наука" property="og:image:alt"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="АМС Рајац — временски услови уживо и метеоролошки подаци" name="twitter:title"/>
+<meta content="Тренутни и историјски подаци АМС Рајац: температура, влажност, притисак, ветар, падавине и други показатељи са Davis Vantage Pro2 станице." name="twitter:description"/>
+<meta content="https://piorajac.rs/assets/pio-rajac-og.png" name="twitter:image"/>
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@graph": [
+        {
+            "@type": "WebPage",
+            "@id": "https://piorajac.rs/amsrajac/#webpage",
+            "url": "https://piorajac.rs/amsrajac/",
+            "name": "АМС Рајац — временски услови уживо и метеоролошки подаци",
+            "description": "Јавни приказ тренутних и историјских метеоролошких мерења на Рајцу.",
+            "inLanguage": "sr-Cyrl",
+            "isPartOf": {
+                "@id": "https://piorajac.rs/#website"
+            },
+            "mainEntity": {
+                "@id": "https://piorajac.rs/amsrajac/#dataset"
+            }
+        },
+        {
+            "@type": "Dataset",
+            "@id": "https://piorajac.rs/amsrajac/#dataset",
+            "name": "АМС Рајац — метеоролошка мерења",
+            "description": "Временска серија метеоролошких мерења са аутоматске станице на Рајцу.",
+            "url": "https://piorajac.rs/amsrajac/",
+            "inLanguage": "sr-Cyrl",
+            "isAccessibleForFree": true,
+            "spatialCoverage": {
+                "@type": "Place",
+                "@id": "https://piorajac.rs/#place",
+                "name": "Предео изузетних одлика „Рајац“",
+                "url": "https://piorajac.rs/",
+                "geo": {
+                    "@type": "GeoCoordinates",
+                    "latitude": 44.136333,
+                    "longitude": 20.224918
+                }
+            },
+            "variableMeasured": [
+                "температура",
+                "релативна влажност",
+                "ваздушни притисак",
+                "ветар",
+                "падавине"
+            ]
+        }
+    ]
+}
+</script>
+<!-- PIO-SEO-MAX-END -->
+
+<style id="ams-prognoza-v258-css">
+#ams-v256{--vbg:#f7f1e8;--vcard:#fffdf8;--vsoft:#fff8ee;--vline:#dfcfbc;--vtext:#2a241c;--vmuted:#74685a;--vblue:#173f69;--vorange:#d66b14;--vpurple:#7b2fb9;--vgreen:#31724a;--vshadow:0 16px 38px rgba(81,61,37,.10);color:var(--vtext);margin-top:18px}
+#ams-v256 *{box-sizing:border-box}#ams-v256 .v256-status{margin:0 0 18px;padding:14px 16px;border:1px solid var(--vline);background:var(--vcard);border-radius:16px;font-weight:850;color:#5c5145}#ams-v256 .v256-status.ok{background:#eff8ee;border-color:#bad7ad;color:#32552c}#ams-v256 .v256-status.warn{background:#fff8e7;border-color:#e3c186;color:#6d4d16}
+#ams-v256 .v256-grid4{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}#ams-v256 .v256-kpi,#ams-v256 .v256-card{background:rgba(255,253,248,.96);border:1px solid var(--vline);box-shadow:var(--vshadow);border-radius:22px}#ams-v256 .v256-kpi{padding:18px}#ams-v256 .v256-kpi .k{font-size:11px;text-transform:uppercase;letter-spacing:.06em;font-weight:900;color:#7b5b35}#ams-v256 .v256-kpi .v{font-size:30px;font-weight:950;color:#15355c;margin-top:5px}#ams-v256 .v256-kpi .s{font-size:12px;color:var(--vmuted);margin-top:5px;line-height:1.35}
+#ams-v256 .v256-card{padding:20px;margin-top:18px;min-width:0}#ams-v256 .v256-card h2,#ams-v256 .v256-card h3{margin:0;color:var(--vtext)!important}#ams-v256 .v256-card h2{font-size:26px}#ams-v256 .v256-card h3{font-size:20px}#ams-v256 .v256-card p{color:var(--vmuted)!important;line-height:1.5;margin:7px 0 14px}#ams-v256 .v256-mini{font-size:11px;font-weight:900;color:#8a6237;text-transform:uppercase;letter-spacing:.06em;margin-bottom:7px}
+#ams-v256 .v256-two{display:grid;grid-template-columns:1.35fr .65fr;gap:18px}#ams-v256 .v256-twoeq{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}#ams-v256 .v256-chart{height:360px;position:relative}#ams-v256 .v256-chart.small{height:280px}#ams-v256 canvas{max-width:100%!important}
+#ams-v256 .v256-phase{display:flex;align-items:center;justify-content:space-between;gap:15px;flex-wrap:wrap;padding:16px 18px;background:var(--vsoft);border:1px solid var(--vline);border-radius:18px;margin-top:16px}#ams-v256 .v256-phase strong{font-size:16px}#ams-v256 .v256-bar{height:12px;background:#eadfce;border-radius:999px;overflow:hidden;flex:1;min-width:220px}#ams-v256 .v256-bar>i{display:block;height:100%;width:0;background:linear-gradient(90deg,#b97b39,#376d4d);border-radius:999px}
+#ams-v256 .v256-forecast-strip{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:10px}#ams-v256 .v256-fc{background:var(--vsoft);border:1px solid #ead9c5;border-radius:16px;padding:12px;min-width:0}#ams-v256 .v256-fc .t{font-size:12px;font-weight:900;color:#6d563f}#ams-v256 .v256-fc .big{font-size:22px;font-weight:950;color:#173f69;margin:6px 0}#ams-v256 .v256-fc .line{font-size:12px;color:#5f5549;line-height:1.4}#ams-v256 .v256-local{display:inline-block;margin-top:6px;padding:3px 7px;border-radius:999px;background:#eaf6ee;color:#2f6843;font-size:10px;font-weight:900}#ams-v256 .v256-local.waiting{background:#fff5df;color:#805c1b}
+#ams-v256 .v256-notice{padding:12px 14px;border-radius:14px;background:#f1f5fb;border:1px solid #cbd6e4;color:#3a4e68;font-size:13px;font-weight:750;line-height:1.45}
+#ams-v256 .v257-validation-note{margin-top:10px;padding:10px 12px;border-radius:13px;background:#f3f8f4;border:1px solid #c8ddce;color:#315b40;font-size:12px;font-weight:800;line-height:1.45}#ams-v256 .v257-validation-note.wait{background:#fff8e7;border-color:#e6cf9d;color:#75561d}
+@media(max-width:1050px){#ams-v256 .v256-grid4{grid-template-columns:repeat(2,1fr)}#ams-v256 .v256-two,#ams-v256 .v256-twoeq{grid-template-columns:1fr}#ams-v256 .v256-forecast-strip{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:650px){#ams-v256 .v256-grid4{grid-template-columns:1fr}#ams-v256 .v256-forecast-strip{grid-template-columns:repeat(2,1fr)}#ams-v256 .v256-card{padding:15px}#ams-v256 .v256-chart{height:300px}#ams-v256 .v256-chart.small{height:245px}}
+</style>
+<link rel="stylesheet" href="/amsrajac/ams_chart_core_v24.css?v=20261012-v26">
+<link rel="stylesheet" href="/amsrajac/ams_ui_refine_v26.css?v=20261012-v26">
+</head>
+<body><div aria-hidden="true" class="page-grid"></div><!-- ═══════════════════ TOPBAR ═══════════════════ --><header class="topbar"><div class="wrap topbar-inner"><div class="top-left-cluster"><a aria-label="Отвори почетну страницу ПИО Рајац" class="site-home-link" href="https://piorajac.rs/">← ПИО „РАЈАЦ“</a><div class="brand"><div class="brand-badge">☼</div><div><div class="brand-title">АМС Рајац</div><div class="brand-info-line">Аутоматска метеоролошка станица • LIVE подаци Надморска висина: <strong>848 м</strong> • Последње мерење: <strong id="last-measurement">—</strong></div></div></div></div><div class="top-actions"><div aria-label="Избор теме" class="theme-switch"><button class="theme-btn" id="theme-light" type="button">Бела подлога</button><button class="theme-btn" id="theme-dark" type="button">Тамна подлога</button><button class="theme-btn" id="theme-astro" title="Ноћни режим за астрономе — минималан утицај на адаптацију ока" type="button">🔭 Астро</button></div><div class="live-pill"><span class="live-dot"></span>LIVE</div></div></div></header><div aria-label="АМС Рајац садржај" class="ams-tabs-nav" role="tablist"><button aria-controls="ams-panel-brojevi" aria-selected="true" class="ams-tab-btn" data-mobile-label="БРОЈЕВИ" data-tab-hash="brojcani-podaci" id="ams-tab-brojevi" role="tab" type="button">БРОЈЧАНИ ПОДАЦИ</button><button aria-controls="ams-panel-grafikoni" aria-selected="false" class="ams-tab-btn" data-mobile-label="ГРАФИК." data-tab-hash="grafikoni" id="ams-tab-grafikoni" role="tab" type="button">ГРАФИКОНИ</button><button aria-controls="ams-panel-alarmi" aria-selected="false" class="ams-tab-btn" data-mobile-label="АЛАРМИ" data-tab-hash="alarmi" id="ams-tab-alarmi" role="tab" type="button">АЛАРМИ</button><button aria-controls="ams-panel-pogodnost" aria-selected="false" class="ams-tab-btn" data-mobile-label="БОРАВАК" data-tab-hash="pogodnost-boravka" id="ams-tab-pogodnost" role="tab" type="button">ПОГОДНОСТ БОРАВКА</button><button aria-controls="ams-panel-prognoza" aria-selected="false" class="ams-tab-btn" data-mobile-label="ПРОГНОЗА" data-tab-hash="prognoza" id="ams-tab-prognoza" role="tab" type="button">ПРОГНОЗА</button><button aria-controls="ams-panel-izvestaji" aria-selected="false" class="ams-tab-btn" data-mobile-label="ИЗВЕШТАЈИ" data-tab-hash="izvestaji" id="ams-tab-izvestaji" role="tab" type="button">ИЗВЕШТАЈИ</button><button aria-controls="ams-panel-servisi" aria-selected="false" class="ams-tab-btn" data-mobile-label="СЕРВИСИ" data-tab-hash="servisi" id="ams-tab-servisi" role="tab" type="button">СЕРВИСИ</button><button aria-controls="ams-panel-o-stanici" aria-selected="false" class="ams-tab-btn" data-mobile-label="СТАНИЦА" data-tab-hash="o-stanici" id="ams-tab-o-stanici" role="tab" type="button">О СТАНИЦИ</button><div aria-label="Додатни табови" class="ams-tabs-more"><button aria-expanded="false" aria-haspopup="true" class="ams-tabs-more-btn" type="button"><span class="dots">•••</span><span>ЈОШ</span></button><div class="ams-tabs-more-menu" role="menu"><button class="ams-more-tab-link" data-tab-target="ams-tab-pogodnost" type="button">Погодност боравка</button><button class="ams-more-tab-link" data-tab-target="ams-tab-izvestaji" type="button">Извештаји</button><button class="ams-more-tab-link" data-tab-target="ams-tab-servisi" type="button">Сервиси</button><button class="ams-more-tab-link" data-tab-target="ams-tab-o-stanici" type="button">О станици</button></div></div></div><!-- ═══════════════════ HERO ═══════════════════ --><section class="hero-section"><div class="wrap hero-grid"><!-- Фотографија станице — вертикални стубац --><div class="hero-photo-col"><img alt="АМС Рајац — Davis Vantage Pro 2" decoding="async" fetchpriority="high" src="ams_station.jpg"/><div class="hero-photo-col-label"><strong>Davis Vantage Pro 2</strong><span>850 m н.в.<br/>ПИО Рајац</span></div></div><!-- Главна картица са температуром --><article class="glass hero-main ams-impact-target" id="alert-card-temp"><div class="hero-left"><span class="hero-kicker"><span class="hero-kicker-dot"></span>
+          Аутоматска метеоролошка станица · <span id="station-name">Рајац</span></span><h1 class="hero-title"><span class="hero-title-sub">LIVE услови на планини</span>
+          Рајац у реалном<br/>времену
+        </h1><p class="hero-lead">
+          Праћење температуре, влажности ваздуха, атмосферског притиска, ветра, падавина
+          и изведених индекса, уз процену услова за боравак, стазе и ноћно небо.
+        </p><div class="hero-stats"><span class="hero-stat-chip">💧 Влажност: <b id="h-hum">—</b></span><span class="hero-stat-chip ams-impact-target" id="alert-card-wind-summary">🪁 Ветар: <b id="h-wind">—</b></span><span class="hero-stat-chip">⏲ Притисак: <b id="h-press-pill">—</b></span><span class="hero-stat-chip ams-impact-target" id="alert-card-rain-summary">🌧 Падавине данас: <b id="h-rain">—</b></span></div></div><!-- Кружни приказ температуре --><div class="temp-display"><div class="temp-ring-outer"><div class="temp-ring-inner"><div class="temp-label-top">Температура ваздуха</div><div class="temp-number"><span id="h-temp">--</span><span class="temp-unit">°C</span></div><div class="temp-feels">Осетна: <strong id="h-feels">—</strong></div></div></div><div class="temp-chips"><span class="temp-chip">Мин/макс данас</span></div></div></article><!-- Бочна картица — процена за посетиоце --><aside class="hero-side"><div class="glass panel-inner" style="padding: 18px;"><div class="hero-side-header" style="margin-bottom: 14px;"><h2>Брза процена за посетиоце</h2><p>Оријентациона оцена погодности за боравак на отвореном.</p></div><div class="status-banner good" id="status-banner"><div class="status-top"><div class="status-icon" id="status-icon">✅</div><div><div class="status-label" id="status-label">ПОВОЉНО</div></div></div><div class="status-desc" id="status-desc">Услови су добри за боравак на отвореном.</div></div><div class="side-stats-grid" style="margin-top: 12px;"><div class="side-stat"><div class="k">Тачка росе</div><div class="v" id="d-dew">—</div></div><div class="side-stat"><div class="k">Осећај топлоте</div><div class="v" id="d-hi">—</div></div><div class="side-stat"><div class="k">UV индекс</div><div class="v">Ускоро</div></div><div class="side-stat"><div class="k">Соларно зрачење</div><div class="v">Ускоро</div></div></div></div></aside></div></section><main class="site-main clr" id="main" role="main"><div class="ams-tabs-shell" id="ams-tabs-main"><div class="ams-tabs-content">
+<div aria-labelledby="ams-tab-brojevi" class="ams-tab-pane active" id="ams-panel-brojevi" role="tabpanel"><!-- ═══════════════════ КЉУЧНИ ПОДАЦИ ═══════════════════ --><section class="section"><div class="wrap"><div class="section-hdr"><div class="section-hdr-left"><div class="section-label">Кратки преглед</div><h3 class="section-heading">Билтен стања и астрономски услови</h3><p class="section-sub">Сажет аутоматски билтен тренутног стања и основни подаци о Сунцу и Месецу за планирање боравка, теренског рада и ноћних активности на Рајцу.</p></div></div><div class="metric-grid compact-metric-grid"></div></div></section><!-- ═══════════════════ БИЛТЕН + СУНЦЕ/МЕСЕЦ ═══════════════════ --><section class="section"><div class="wrap two-col-grid"><article class="glass panel-inner"><div class="section-label">Аутоматски</div><h4>Кратки билтен стања</h4><div id="bulletin"><p>Учитавање билтена…</p></div></article><article class="glass panel-inner"><div class="section-label">Астрономија</div><h4>Сунце и Месец</h4><div class="info-rows"><div class="info-row"><span class="k">Излазак Сунца</span><span class="v" id="sun-rise">—</span></div><div class="info-row"><span class="k">Залазак Сунца</span><span class="v" id="sun-set">—</span></div><div class="info-row"><span class="k">Фаза Месеца</span><span class="v"><span id="moon-icon">🌙</span><span id="moon-phase">—</span></span></div><div class="info-row"><span class="k">Осветљеност Месеца</span><span class="v" id="moon-illum">—</span></div><div class="info-row"><span class="k">Напомена</span><span class="v" id="moon-astro-note">—</span></div></div></article></div></section><!-- ═══════════════════ ВЕТАР ═══════════════════ --><section class="section"><div class="wrap wind-layout"><article class="glass wind-gauge ams-impact-target" id="alert-card-wind"><div><div class="section-label">Мерења</div><div class="section-heading" style="font-size: clamp(22px,2.8vw,32px);">Ветар</div><div style="font-size:13px; color:var(--muted); margin-top:5px;">Тренутна брзина, удари и смер.</div></div><div><div class="wind-value"><div class="wind-number" id="w-speed">--</div><div class="wind-unit" id="w-unit">m/s</div></div><div class="wind-state-label" id="w-state">—</div></div><div><div class="wind-track"><div class="wind-fill" id="w-gauge-fill"></div></div><div class="wind-track-labels"><span>0</span><span id="w-pct-label">0%</span><span id="w-state2">—</span></div></div></article><article class="glass compass-panel"><div class="compass-wrap"><div class="compass"><div class="ring"></div><div class="ring r2"></div><div class="ring r3"></div><div class="needle" id="compass-needle"></div><div class="center"></div><div class="mark n">С</div><div class="mark e">И</div><div class="mark s">Ј</div><div class="mark w">З</div></div></div><div class="compass-data"><div class="compass-row"><span class="k">Смер</span><span class="v" id="w-dir-text">—</span></div><div class="compass-row"><span class="k">Пуни назив</span><span class="v" id="w-dir-full">—</span></div><div class="compass-row"><span class="k">Степени</span><span class="v" id="w-dir-deg">—</span></div><div class="compass-row"><span class="k">Удар ветра</span><span class="v" id="w-gust">—</span></div></div></article></div></section><!-- ═══════════════════ ИНДЕКСИ ═══════════════════ --><section class="section"><div class="wrap"><div class="section-hdr"><div class="section-hdr-left"><div class="section-label">Изведени показатељи</div><h3 class="section-heading">Индекси боравка и микроклиме</h3><p class="section-sub">За кретање стазама, рос и маглу, астро-посматрање и укупни доживљај простора.</p></div></div><div class="index-grid"><article class="glass idx-card"><div class="idx-top"><div class="idx-title">Индекс боравка</div><div class="idx-value" id="idx-hiking">—</div></div><div class="progress-track"><span class="progress-fill" id="idx-hiking-bar"></span></div><div class="idx-desc" id="idx-hiking-text">—</div></article><article class="glass idx-card"><div class="idx-top"><div class="idx-title">Ризик магле</div><div class="idx-value" id="idx-fog">—</div></div><div class="idx-desc">Процена на основу температуре, тачке росе и релативне влажности ваздуха.</div></article><article class="glass idx-card"><div class="idx-top"><div class="idx-title">T − Td</div><div class="idx-value" id="idx-ttd">—</div></div><div class="idx-desc">Мали распон повећава вероватноћу кондензације, росе и магле.</div></article><article class="glass idx-card"><div class="idx-top"><div class="idx-title">Апсолутна влажност</div><div class="idx-value" id="idx-abs">—</div></div><div class="idx-desc">Количина водене паре у ваздуху, изражена у g/m³.</div></article><article class="glass idx-card"><div class="idx-top"><div class="idx-title">VPD</div><div class="idx-value" id="idx-vpd">—</div></div><div class="idx-desc">Дефицит притиска водене паре — важан за сушење површина и осећај сувоће ваздуха.</div></article><article class="glass idx-card"><div class="idx-top"><div class="idx-title">Температурни екстреми данас</div></div><div class="idx-rows"><div class="idx-row"><span class="k">Минимум</span><span class="v"><span id="idx-tmin">—</span><small id="idx-tmin-t"></small></span></div><div class="idx-row"><span class="k">Максимум</span><span class="v"><span id="idx-tmax">—</span><small id="idx-tmax-t"></small></span></div></div></article><article class="glass idx-card"><div class="idx-top"><div class="idx-title">Астро индекс</div><div class="idx-value" id="idx-astro">—</div></div><div class="progress-track"><span class="progress-fill" id="idx-astro-bar"></span></div><div class="idx-desc" id="idx-astro-text">—</div></article><article class="glass idx-card"><div class="idx-top"><div class="idx-title">Стање стаза</div><div class="idx-value" id="idx-trail">—</div></div><div class="idx-desc">Оријентациона оцена влажности и клизавости на основу падавина и услова у ваздуху.</div></article></div></div></section></div>
+<div aria-labelledby="ams-tab-grafikoni" class="ams-tab-pane" id="ams-panel-grafikoni" role="tabpanel"><div class="ams-tab-note">Овде су ружа ветрова, дневни графикони, падавине и проширени WeatherLink Pro графички прикази.</div><!-- ═══════════════════ РАСПОРЕД ВЕТРОВА — ПОДИГНУТО ИСПОД БРЗИНЕ ПО ПРАВЦИМА ═══════════════════ --><section class="section"><div class="wrap"><article class="glass panel-inner windrose-full"><div class="section-label">Ружа ветрова</div><h4>Расподела ветрова</h4><div style="font-size:13px;color:var(--muted);margin-bottom:14px;line-height:1.5;">Расподела смерова и интензитета ветра у изабраном временском опсегу.</div><div class="chart-toolbar" id="windrose-toolbar" style="margin-bottom:16px;"><button class="range-btn windrose-btn" data-range="15m">15 мин</button><button class="range-btn windrose-btn" data-range="1h">1 h</button><button class="range-btn windrose-btn" data-range="6h">6 h</button><button class="range-btn windrose-btn active" data-range="24h">24 h</button><button class="range-btn windrose-btn" data-range="48h">48 h</button><button class="range-btn windrose-btn" data-range="7d">7 дана</button></div><div class="chart-wrap tall"><canvas id="chart-windrose"></canvas></div><article class="glass wind-dir-radar-card ams-impact-target wind-dir-under-rose" id="alert-card-wind-by-dir"><div class="wind-dir-radar-head"><div><h5>Просечна брзина ветра по правцима</h5><div class="section-label" style="margin-top:6px;">Распоред ветрова</div><p>Компактан приказ на првој страници, заснован на истим подацима као ружа ветрова.</p></div><div class="wind-dir-radar-meta"><div class="cur" id="wind-dir-period">24 h</div><small id="wind-dir-summary">Последњих 24 часа · m/s</small></div></div><div class="wind-dir-radar-toolbar" id="wind-dir-radar-toolbar"><button class="range-btn wind-dir-range-btn" data-range="6h">6 h</button><button class="range-btn wind-dir-range-btn active" data-range="24h">24 h</button><button class="range-btn wind-dir-range-btn" data-range="48h">48 h</button><button class="range-btn wind-dir-range-btn" data-range="7d">7 дана</button></div><div class="wind-dir-radar-wrap chart-wrap"><canvas id="chart-wind-dir-radar"></canvas></div><div aria-label="Просечна брзина ветра по правцима" class="wind-dir-values" id="wind-dir-values"></div></article></article></div></section><!-- ═══════════════════ ГРАФИКОНИ ═══════════════════ --><section class="section"><div class="wrap"><div class="section-hdr"><div class="section-hdr-left"><div class="section-label">Временска серија</div><h3 class="section-heading">Графикони у току дана</h3><p class="section-sub">Температура, влажност и притисак за изабрани временски опсег.</p></div><div class="chart-toolbar" id="chart-toolbar"><button class="range-btn" data-range="15m">15 мин</button><button class="range-btn" data-range="1h">1 h</button><button class="range-btn" data-range="6h">6 h</button><button class="range-btn" data-range="12h">12 h</button><button class="range-btn active" data-range="24h">24 h</button><button class="range-btn" data-range="48h">48 h</button><button class="range-btn" data-range="7d">7 дана</button></div></div><div class="chart-grid"><article class="glass chart-card"><div class="chart-head"><div class="chart-head-left"><h5>Температура ваздуха</h5><p>Тренутна вредност и дневни екстреми.</p></div><div class="chart-meta"><div class="cur" id="cc-temp">—</div><small>Мин: <span id="cc-tmin">—</span><br/>Макс: <span id="cc-tmax">—</span></small></div></div><div class="chart-wrap tall"><canvas id="chart-temp"></canvas></div></article><article class="glass chart-card"><div class="chart-head"><div class="chart-head-left"><h5>Влажност ваздуха</h5><p>Релативна влажност, тачка росе и VPD.</p></div><div class="chart-meta"><div class="cur" id="cc-hum">—</div><small>Тачка росе: <span id="cc-dew">—</span><br/>VPD: <span id="cc-vpd">—</span></small></div></div><div class="chart-wrap"><canvas id="chart-hum"></canvas></div></article><article class="glass chart-card"><div class="chart-head"><div class="chart-head-left"><h5>Притисак</h5><p>Атмосферски притисак и оријентациони тренд.</p></div><div class="chart-meta"><div class="cur" id="cc-press-hpa">—</div><small><span id="cc-press-mmhg">—</span><br/><span id="cc-press-trend">—</span></small></div></div><div class="chart-wrap"><canvas id="chart-press"></canvas></div></article></div><div class="chart-grid-rain"><article class="glass chart-card full-width ams-impact-target" id="alert-card-rain"><div class="chart-head"><div class="chart-head-left"><h5>Падавине</h5><p>Количина падавина по интервалима у изабраном временском опсегу.</p></div><div class="chart-meta"><div class="cur" id="cc-rain-total">—</div><small>Интензитет: <span id="cc-rain-rate">—</span><br/>Последња 24 h: <span id="cc-rain-24h">—</span></small></div></div><div class="chart-toolbar" id="rain-toolbar" style="margin-bottom:16px;"><button class="range-btn rain-btn" data-range="1m">1 мин</button><button class="range-btn rain-btn" data-range="15m">15 мин</button><button class="range-btn rain-btn" data-range="1h">1 h</button><button class="range-btn rain-btn" data-range="12h">12 h</button><button class="range-btn rain-btn active" data-range="24h">24 h</button><button class="range-btn rain-btn" data-range="7d">7 дана</button><button class="range-btn rain-btn" data-range="30d">30 дана</button></div><div class="chart-wrap rain-tall"><canvas id="chart-rain"></canvas></div><div class="chart-head" style="margin-top:22px;"><div class="chart-head-left"><h5>Кумулативне падавине</h5><p>Линијски приказ акумулиране количине падавина кроз исти изабрани временски опсег.</p></div></div><div class="chart-wrap rain-tall"><canvas id="chart-rain-cumulative"></canvas></div></article><!-- Месечни преглед падавина --><article class="glass chart-card full-width" style="margin-top:14px;"><div class="chart-head"><div class="chart-head-left"><h5>Месечни преглед падавина</h5><p>Дневне суме падавина у текућем месецу — оса приказује дане 1–30/31.</p></div><div class="chart-meta"><div class="cur" id="cc-rain-month-total">—</div><small>Укупно у текућем месецу</small></div></div><div class="chart-wrap rain-tall"><canvas id="chart-rain-monthly"></canvas></div></article></div></div></section><!-- ═══════════════════ WEATHERLINK PRO ГРАФИКОНИ ═══════════════════ --><section class="section" id="weatherlink-pro-grafikoni"><div class="wrap"><div class="section-hdr"><div class="section-hdr-left"><div class="section-label">WeatherLink Pro</div><h3 class="section-heading">Проширени графички прикази Davis Vantage Pro2</h3><p class="section-sub">Детаљан графикон за ручни избор параметара. Опсег 24 h је покретни приказ последња 24 часа; за директно поређење са Davis Strip Chart приказом треба подесити исти почетак дана и исти временски опсег.</p></div><div class="chart-toolbar" id="wl-pro-toolbar"><button class="range-btn wl-pro-range" data-range="15m">15 мин</button><button class="range-btn wl-pro-range" data-range="1h">1 h</button><button class="range-btn wl-pro-range" data-range="6h">6 h</button><button class="range-btn wl-pro-range" data-range="12h">12 h</button><button class="range-btn wl-pro-range active" data-range="24h">24 h</button><button class="range-btn wl-pro-range" data-range="48h">48 h</button><button class="range-btn wl-pro-range" data-range="7d">7 дана</button><button class="range-btn wl-pro-range" data-range="30d">30 дана</button></div></div><article class="glass chart-card full-width wl-pro-shell"><div class="wl-pro-layout"><div class="wl-pro-main"><div class="wl-pro-chart-head"><div class="wl-pro-chart-title"><h5 id="wl-pro-title">Графикон 1</h5><p id="wl-pro-note">Означи један или више параметара са десне стране. Најбоље је комбиновати параметре са истом јединицом, као у WeatherLink Pro приказу.</p></div><div class="wl-pro-meta"><div class="cur" id="wl-pro-current">—</div><small><span id="wl-pro-count">—</span><br/><span id="wl-pro-minmax">—</span></small></div></div><div class="chart-wrap wl-pro-chart-wrap"><canvas id="chart-pro"></canvas></div><div class="wl-pro-empty" hidden="" id="wl-pro-empty">За изабране параметре тренутно нема уписаних вредности у локалној историји. После наредних WeatherLink ажурирања, графикон ће се попуњавати аутоматски.</div><div class="wl-pro-legend-note" id="wl-pro-axis-note">—</div><div class="chart-explain" id="wl-pro-explain"><div class="chart-explain-title">Објашњење изабраних параметара</div><div class="chart-explain-row"><span class="term">Избор параметара</span><span class="def">клик на картицу или означавање са десне стране мења серије које се приказују на овом великом графикону.</span></div></div></div><aside aria-label="WeatherLink Pro избор параметара" class="wl-pro-picker"><div class="wl-pro-picker-title">Избор параметара</div><div class="wl-pro-picker-sub">Картице испод су кликабилне: клик на параметар отвара велики графикон тог елемента.</div><div class="wl-pro-presets"><button class="wl-pro-clear" id="wl-pro-clear" type="button">Очисти</button></div><select aria-label="Група параметара" class="wl-pro-select" id="wl-pro-category"></select><input autocomplete="off" class="wl-pro-search" id="wl-pro-search" placeholder="Претрага параметара…" type="search"/><div class="wl-pro-checks" id="wl-pro-checks"></div></aside></div><div class="wl-pro-values" id="wl-pro-values"></div></article></div></section></div>
+<div aria-labelledby="ams-tab-alarmi" class="ams-tab-pane" id="ams-panel-alarmi" role="tabpanel"><div class="ams-tab-note">Локални аларми и препоруке за росу, мраз, кишу, ветар, стазе, агро-радове и ноћни мониторинг.</div><section class="section"><div class="wrap"><article class="glass panel-inner ams-alert-summary"><div class="section-label">Активна прекорачења прагова</div><h4>Обавештења о локалним метео алармима</h4><p>Овај блок чита већ постојећи систем локалних прагова. Ако је неки елемент уоквирен жутом, наранџастом или црвеном бојом, овде се приказује кратко обавештење и дугме за детаље.</p><div class="ams-alert-summary-list" id="ams-alert-summary-list"><div class="ams-alert-summary-ok">Провера активних прагова…</div></div></article></div></section><!-- ═══════════════════ ПАМЕТНА ЛОКАЛНА АНАЛИТИКА ═══════════════════ --><section class="section" id="smart-ams-section"><div class="wrap"><div class="section-hdr"><div class="section-hdr-left"><div class="section-label">Паметна анализа Davis/WeatherLink података</div><h3 class="section-heading">Локални аларми и препоруке за Рајац</h3><p class="section-sub">Систем тумачи мерења станице: росу, мраз, влажење листа, ветар, кишу, ET, услове за посетиоце, агро-радове и ноћни мониторинг. UV и соларни параметри нису приказани јер сензори још нису постављени.</p></div></div><article class="glass smart-shell"><div class="smart-hero"><div class="smart-lead"><div class="smart-label" id="smart-summary-label">— ПАМЕТНИ СТАТУС</div><h4 id="smart-summary-title">Учитавање локалне процене…</h4><p id="smart-summary-text">Анализирају се последња мерења и локална историја са AMS Рајац.</p><small id="smart-summary-note">—</small></div><div class="smart-nowcast"><h5 id="smart-nowcast-title">Локална процена за наредне сате</h5><div id="smart-nowcast-items"><div class="smart-loading">Учитавање…</div></div><small id="smart-nowcast-note" style="display:block;color:var(--c-muted);font-weight:750;line-height:1.45;margin-top:8px;">—</small></div></div><div class="smart-grid" id="smart-cards"><div class="smart-loading">Учитавање паметних аларма…</div></div></article></div></section></div>
+<div aria-labelledby="ams-tab-pogodnost" class="ams-tab-pane" id="ams-panel-pogodnost" role="tabpanel"><div class="ams-tab-note">Погодност боравка и биометеоролошке препоруке за различите групе посетилаца.</div><!-- ═══════════════════ БИОМЕТЕОРОЛОШКЕ ПРЕПОРУКЕ ═══════════════════ --><section class="section biometeo-section"><div class="wrap"><div class="section-label">Биометеоролошке препоруке</div><h3 class="section-heading">Погодност времена за различите групе посетилаца</h3><p class="section-sub">Модул на дну стране у реалном времену прати податке са аутоматске метеоролошке станице. При наглим променама, као што су јак налет ветра, изненадни пљусак или брзо погоршање подлоге, аутоматски прелази у појачани режим освежавања.</p><div class="biometeo-banner" id="biometeo-nowcast-banner"></div><div class="biometeo-groups" id="activity-list"></div></div></section></div>
+<div aria-labelledby="ams-tab-prognoza" class="ams-tab-pane" id="ams-panel-prognoza" role="tabpanel">
+<div class="ams-tab-note">Локална прогноза за Рајац се проверава стварним мерењима АМС и постепено прилагођава условима на планини.</div>
+<section class="section" id="ams-prognoza-section">
+<div class="wrap">
+<div class="section-hdr"><div class="section-hdr-left">
+<div class="section-label">Open-Meteo + АМС Рајац</div>
+<h3 class="section-heading">Локална прогноза са провером тачности</h3>
+<p class="section-sub">Прогноза се упоређује са стварним мерењима на Рајцу. Како расте број проверених прогноза, систем све боље препознаје локална одступања.</p>
+</div></div>
+<div class="ams-v256" id="ams-v256">
+<div class="v256-status warn" id="v256-status">Учитавање прогнозе и података…</div>
+<div class="v256-grid4" id="v256-kpis">
+<div class="v256-kpi"><div class="k">Проверени парови</div><div class="v">—</div><div class="s">прогноза ↔ стварно мерење</div></div>
+<div class="v256-kpi"><div class="k">АМС часови</div><div class="v">—</div><div class="s">часовно обједињена мерења</div></div>
+<div class="v256-kpi"><div class="k">Архивиране прогнозе</div><div class="v">—</div><div class="s">сачуване прогнозне тачке</div></div>
+<div class="v256-kpi"><div class="k">Прогнозни циклуси</div><div class="v">—</div><div class="s">нови снимак прогнозе сваког сата</div></div>
+</div>
+<div class="v256-card">
+<div class="v256-mini">Напредак обуке</div>
+<h2 id="v256-phase-title">Почетна обука</h2>
+<p id="v256-phase-text">Систем сакупља прве проверене прогнозе.</p>
+<div class="v256-phase"><strong id="v256-phase-count">0 проверено</strong><div class="v256-bar"><i id="v256-phase-bar"></i></div><span>циљ: 72+ пара за стабилнију процену</span></div>
+</div>
+<div class="v256-two">
+<div class="v256-card">
+<div class="v256-mini">Главни графикон</div>
+<h2>Температура · АМС, Open-Meteo и локална корекција</h2>
+<p>Поређење измерене температуре и прогнозе за Рајац.</p>
+<div class="v256-chart"><canvas id="v256-temp-main"></canvas></div>
+</div>
+<div class="v256-card">
+<div class="v256-mini">Проверени узорци</div>
+<h3>Колико узорака имамо по хоризонту</h3>
+<p>Број проверених прогноза за различите рокове.</p>
+<div class="v256-chart small"><canvas id="v256-horizon"></canvas></div>
+</div>
+</div>
+<div class="v256-card">
+<div class="v256-mini">Наредни сати</div>
+<h2>Прогноза за Рајац</h2>
+<p>Прогноза по сатима за Рајац.</p>
+<div class="v256-forecast-strip" id="v256-forecast"><div class="v256-notice">Учитавање…</div></div>
+</div>
+<div class="v256-twoeq">
+<div class="v256-card"><div class="v256-mini">Влажност ваздуха</div><h3>АМС и Open-Meteo</h3><p>Историја и наредни сати.</p><div class="v256-chart small"><canvas id="v256-rh"></canvas></div></div>
+<div class="v256-card"><div class="v256-mini">Притисак</div><h3>АМС и Open-Meteo</h3><p>Мерење и прогноза атмосферског притиска.</p><div class="v256-chart small"><canvas id="v256-pressure"></canvas></div></div>
+</div>
+<div class="v256-twoeq">
+<div class="v256-card"><div class="v256-mini">Ветар</div><h3>Брзина ветра</h3><p>Мерење и прогноза брзине ветра.</p><div class="v256-chart small"><canvas id="v256-wind"></canvas></div></div>
+<div class="v256-card"><div class="v256-mini">Падавине</div><h3>Часовне падавине</h3><p>Мерење и прогноза часовних падавина.</p><div class="v256-chart small"><canvas id="v256-rain"></canvas></div></div>
+</div>
+<div class="v256-twoeq">
+<div class="v256-card"><div class="v256-mini">Прва наредна провера</div><h3>Прогноза и прво АМС мерење</h3><p>За прогнозу +1 сат приказује се прво стварно мерење станице после прогнозног термина.</p><div class="v256-chart small"><canvas id="v257-next-check"></canvas></div></div>
+<div class="v256-card"><div class="v256-mini">Провера локалне корекције</div><h3>Да ли корекција заиста побољшава прогнозу?</h3><p>Поређење просечне грешке основне и локално кориговане прогнозе на раније непознатим мерењима.</p><div class="v256-chart small"><canvas id="v257-mae"></canvas></div><div class="v257-validation-note wait" id="v257-validation-note">Провера корекције се припрема…</div></div>
+</div>
+<div class="v256-card" style="margin-top:18px;"><div class="v256-mini">Напредак локалне прогнозе</div><h3>Како се мења тачност модела</h3><p>Поређење грешке основне и локално прилагођене прогнозе кроз последња аутоматска ажурирања.</p><div class="v256-chart small"><canvas id="v258-model-history"></canvas></div><div class="v257-validation-note wait" id="v258-model-note">Систем сакупља историју аутоматских ажурирања…</div></div>
+<div class="v256-twoeq" style="margin-top:18px;">
+<div class="v256-card"><div class="v256-mini">Влажност · прва наредна провера</div><h3>Прогноза и прво АМС мерење</h3><p>Поређење прогнозиране и стварно измерене релативне влажности ваздуха.</p><div class="v256-chart small"><canvas id="v259-rh-next"></canvas></div></div>
+<div class="v256-card"><div class="v256-mini">Влажност · провера корекције</div><h3>Да ли локална корекција побољшава RH?</h3><p>Просечна апсолутна грешка основне и локално кориговане прогнозе по хоризонтима.</p><div class="v256-chart small"><canvas id="v259-rh-mae"></canvas></div><div class="v257-validation-note wait" id="v259-rh-validation-note">Провера влажности се припрема…</div></div>
+</div>
+<div class="v256-card" style="margin-top:18px;"><div class="v256-mini">Влажност · напредак локалног модела</div><h3>Како се мења тачност прогнозе влажности</h3><p>Поређење грешке Open-Meteo и локално прилагођене прогнозе кроз аутоматска ажурирања.</p><div class="v256-chart small"><canvas id="v259-rh-history"></canvas></div><div class="v257-validation-note wait" id="v259-rh-model-note">Систем сакупља историју модела влажности…</div></div>
+<div class="v256-twoeq">
+<div class="v256-card"><div class="v256-mini">Тачност по хоризонту</div><h3>Грешка температуре</h3><p>Просечна грешка последњих проверених прогноза за +1 до +6 сати.</p><div class="v256-chart small"><canvas id="v256-error"></canvas></div></div>
+<div class="v256-card"><div class="v256-mini">Шта тренутно знамо</div><h3 id="v256-summary-title">Још сакупљамо податке</h3><div class="v256-notice" id="v256-summary">После више проверених прогноза овде ће се приказати закључак о локалном одступању.</div></div>
+</div>
+</div>
+</div>
+</section>
+</div>
+<div aria-labelledby="ams-tab-izvestaji" class="ams-tab-pane" id="ams-panel-izvestaji" role="tabpanel"><div class="ams-tab-note">Овде су дневни извештаји који се сваког јутра аутоматски ажурирају, као и данашњи/јучерашњи климатски контекст и вишедеценијски просеци за Рајац.</div><section class="section ams-daily-reports-section" id="ams-dnevni-izvestaji"><div class="wrap"><div class="section-label">Дневни извештаји</div><h3 class="section-heading">Аутоматски дневни извештаји АМС Рајац</h3><p class="section-sub">Ово је изворни блок са дна АМС странице који се сваког јутра попуњава новим дневним извештајима.</p><article class="glass panel-inner ams-daily-reports-shell"><div aria-live="polite" id="rajac-dnevna-statistika-root"></div></article></div></section><!-- ═══════════════════ ДАНАС И ЈУЧЕ ═══════════════════ --><section class="section" id="danas-juce-kontekst"><div class="wrap"><div class="section-hdr"><div class="section-hdr-left"><div class="section-label">Историјски и климатски контекст</div><h3 class="section-heading">Данас и јуче на Рајцу</h3><p class="section-sub">LIVE подаци и графикони за данас већ су изнад. Овде можеш да видиш шта је уобичајено за данашњи датум и како је изгледао јучерашњи дан у односу на вишегодишњи просек.</p></div></div><div class="day-context-grid"><article class="glass day-card" id="today-context-card"><div class="day-head"><div><span class="day-kicker">Данас на Рајцу</span><h4 class="day-title">Шта је уобичајено за данашњи датум</h4><div class="day-date" id="today-context-date">—</div></div><div class="day-badge" id="today-context-badge">Климатска норма</div></div><div class="day-hero"><div class="day-big"><div class="cap">Просечна дневна температура</div><div class="num" id="today-mean-norm">—</div><div class="sub">Ово је уобичајена вредност за исти датум на Рајцу. Данашњи ток дана уживо и графикони већ се приказују у горњем делу странице.</div></div><div class="day-mini-grid"><div class="day-mini"><div class="cap">Типичан минимум</div><div class="num" id="today-min-norm">—</div><div class="sub">Уобичајена минимална температура за данашњи датум.</div></div><div class="day-mini"><div class="cap">Типичан максимум</div><div class="num" id="today-max-norm">—</div><div class="sub">Уобичајена максимална температура за данашњи датум.</div></div><div class="day-mini"><div class="cap">Рекордно најтоплије</div><div class="num" id="today-record-max">—</div><div class="sub" id="today-record-max-year">—</div></div><div class="day-mini"><div class="cap">Рекордно најхладније</div><div class="num" id="today-record-min">—</div><div class="sub" id="today-record-min-year">—</div></div></div></div><div class="day-note">Ово је кратак климатски оквир за данашњи датум. Дан још траје, па се потпуна дневна оцена формира тек по његовом завршетку.</div></article><article class="glass day-card" id="yesterday-context-card"><div class="day-head"><div><span class="day-kicker">Јуче на Рајцу</span><h4 class="day-title">Како је изгледао јучерашњи дан</h4><div class="day-date" id="yesterday-context-date">—</div></div><div class="day-status warn" id="yesterday-status">Учитавање…</div></div><div class="day-hero"><div class="day-big"><div class="cap">Јучерашња средња температура</div><div class="num" id="yesterday-mean">—</div><div class="sub" id="yesterday-mean-note">Учитавање јучерашњег дневног сажетка и поређења са вишегодишњим просеком.</div></div><div class="day-mini-grid"><div class="day-mini"><div class="cap">Јучерашњи минимум</div><div class="num" id="yesterday-min">—</div><div class="sub" id="yesterday-min-dev">—</div></div><div class="day-mini"><div class="cap">Јучерашњи максимум</div><div class="num" id="yesterday-max">—</div><div class="sub" id="yesterday-max-dev">—</div></div><div class="day-mini"><div class="cap">Одступање средње</div><div class="num" id="yesterday-mean-dev">—</div><div class="sub">У односу на просек за исти датум.</div></div><div class="day-mini"><div class="cap">Температурна амплитуда</div><div class="num" id="yesterday-range">—</div><div class="sub">Разлика између минималне и максималне температуре.</div></div></div></div><div class="day-rows"><div class="day-row"><span class="k">Просек за исти датум</span><span class="v" id="yesterday-norm-mean">—</span></div><div class="day-row"><span class="k">Типичан минимум / максимум</span><span class="v" id="yesterday-norm-minmax">—</span></div><div class="day-row"><span class="k">Шта то значи</span><span class="v" id="yesterday-summary">—</span></div></div></article></div></div></section><!-- ═══════════════════ КЛИМАТСКЕ НОРМЕ ═══════════════════ --><section class="section"><div class="wrap"><div class="section-label">Климатски контекст · 1950–2020</div><h3 class="section-heading">Вишедеценијски просеци за Рајац</h3><p class="section-sub">Просечне вредности за 71-годишњи период. Прозор ±7 дана од данашњег датума.</p><div class="norms-summary glass" style="display:grid;grid-template-columns:repeat(3,1fr);gap:0;margin-bottom:20px;border-radius:var(--radius-md);overflow:hidden;"><div style="padding:18px 20px;border-right:1px solid var(--border);text-align:center;"><div class="metric-eyebrow">Годишњи просек</div><div class="metric-eyebrow" style="margin-top:4px;opacity:.6;">Средња темп.</div><div style="font-family:var(--font-display);font-size:32px;font-weight:700;color:var(--text);margin-top:8px;letter-spacing:-.04em;">10.0°C</div></div><div style="padding:18px 20px;border-right:1px solid var(--border);text-align:center;"><div class="metric-eyebrow">Годишњи просек</div><div class="metric-eyebrow" style="margin-top:4px;opacity:.6;">Максимална темп.</div><div style="font-family:var(--font-display);font-size:32px;font-weight:700;color:#f97316;margin-top:8px;letter-spacing:-.04em;">15.3°C</div></div><div style="padding:18px 20px;text-align:center;"><div class="metric-eyebrow">Годишњи просек</div><div class="metric-eyebrow" style="margin-top:4px;opacity:.6;">Минимална темп.</div><div style="font-family:var(--font-display);font-size:32px;font-weight:700;color:#60a5fa;margin-top:8px;letter-spacing:-.04em;">5.2°C</div></div></div><div style="display:grid;grid-template-columns:repeat(3,1fr);gap:14px;"><!-- Средња температура --><article class="glass chart-card"><div class="chart-head"><div class="chart-head-left"><h5>Средња температура</h5><p>Вишедеценијска норма ±7 дана</p></div><div class="chart-meta"><div class="cur" id="norm-mean-today">—</div><small>данас · норма</small></div></div><div class="chart-wrap"><canvas id="chart-norm-mean"></canvas></div></article><!-- Максимална температура --><article class="glass chart-card"><div class="chart-head"><div class="chart-head-left"><h5>Максимална температура</h5><p>Вишедеценијска норма ±7 дана</p></div><div class="chart-meta"><div class="cur" id="norm-max-today">—</div><small>данас · норма</small></div></div><div class="chart-wrap"><canvas id="chart-norm-max"></canvas></div></article><!-- Минимална температура --><article class="glass chart-card"><div class="chart-head"><div class="chart-head-left"><h5>Минимална температура</h5><p>Вишедеценијска норма ±7 дана</p></div><div class="chart-meta"><div class="cur" id="norm-min-today">—</div><small>данас · норма</small></div></div><div class="chart-wrap"><canvas id="chart-norm-min"></canvas></div></article></div></div></section></div>
+<div aria-labelledby="ams-tab-servisi" class="ams-tab-pane" id="ams-panel-servisi" role="tabpanel"><section class="section" id="ams-servisi"><div class="wrap"><div class="ams-tab-note">Метео станица није само приказ тренутног времена, већ практичан сервис за управљање ПИО „Рајац“, посетиоце, пољопривреднике и истраживаче.</div><div class="section-hdr"><div class="section-hdr-left"><div class="section-label">Сервиси и примена података</div><h3 class="section-heading">Како АМС Рајац помаже на терену</h3><p class="section-sub">Подаци са станице се користе за процену услова боравка, планирање активности, праћење вегетације, тумачење промена у простору и припрему теренских обилазака.</p></div></div><div class="ams-service-grid"><article class="glass ams-service-card"><h4>Подршка управљачу</h4><p>Континуирана мерења помажу у праћењу стања стаза, ризика од јаког ветра, обилних падавина, мраза, суше и услова који могу утицати на безбедност посетилаца и рад на терену.</p></article><article class="glass ams-service-card"><h4>Подршка пољопривредницима</h4><p>Температура, влажност, падавине, роса, ризик од мраза и касније подаци о земљишту могу да помогну у процени сушног стреса, влажења површина, термина радова и стања травњака и засада.</p></article><article class="glass ams-service-card"><h4>Подршка посетиоцима Рајца</h4><p>Подаци се преводе у једноставне препоруке за шетњу, боравак на отвореном, припрему опреме, процену клизавости стаза и планирање доласка у зависности од времена.</p></article><article class="glass ams-service-card"><h4>Подршка истраживачима</h4><p>Метеоролошка серија је основа за повезивање појава у природи са температуром, влагом, ветром, падавинама, фазама вегетације, појавом дневних лептира и другим теренским запажањима.</p></article><article class="glass ams-service-card ams-service-link-card"><h4>Шта понети на Рајац</h4><p>Кратак водич за опрему и припрему посетилаца у складу са условима на терену.</p><a class="ams-more-link" href="https://piorajac.rs/staponeti/">Више информација</a></article><article class="glass ams-service-card ams-service-link-card"><h4>Подршка планинарима током шетњи</h4><p>Подаци о времену помажу у процени кретања стазама, ветра, влажности, клизавости и видљивости.</p><a class="ams-more-link" href="https://piorajac.rs/staze/">Више информација</a></article><article class="glass ams-service-card ams-service-link-card"><h4>Праћење вегетације — Copernicus</h4><p>Веза метеоролошких услова са сателитским индексима зеленила, влаге и опоравка вегетације.</p><a class="ams-more-link" href="https://piorajac.rs/kopindeksi/ams-copernicus-agent/output/latest_block.html">Више информација</a></article><article class="glass ams-service-card ams-service-link-card"><h4>Подршка посматрању дневних лептира</h4><p>Температура, ветар, облачност и влажност су важни за избор термина посматрања и тумачење активности лептира.</p><a class="ams-more-link" href="https://piorajac.rs/rajac-leptiri/">Више информација</a></article></div></div></section></div>
+<div aria-labelledby="ams-tab-o-stanici" class="ams-tab-pane" id="ams-panel-o-stanici" role="tabpanel"><section class="section" id="ams-o-stanici"><div class="wrap"><div class="section-hdr"><div class="section-hdr-left"><div class="section-label">Опрема и мерења</div><h3 class="section-heading">Davis Vantage Pro2 на Рајцу</h3><p class="section-sub">АМС Рајац је аутоматска метеоролошка станица постављена за континуирано праћење услова у пределу изузетних одлика „Рајац“, на приближно 848 m надморске висине.</p></div></div><div class="ams-station-grid"><div class="ams-station-left"><figure class="glass ams-station-photo"><img alt="Davis Vantage Pro2 аутоматска метеоролошка станица" decoding="async" loading="lazy" src="https://www.davisinstruments.com/cdn/shop/files/6252WirelessVP2_1500x1500.jpg?v=1759364631"/><figcaption>Илустрација модела Davis Vantage Pro2 са званичног сајта произвођача Davis Instruments.</figcaption></figure><article class="glass ams-station-card"><h4>Модел и улога</h4><p>Станица је заснована на систему <strong>Davis Vantage Pro2</strong>, са преносом података преко <strong>WeatherLink Live</strong>. На јавној страници се приказују тренутна мерења, дневни ток, графикони, локални прагови, погодност боравка и извештаји климатског контекста.</p></article></div><div class="ams-station-right"><article class="glass ams-station-card"><h4>Шта се тренутно мери</h4><ul><li>температура и релативна влажност ваздуха;</li><li>атмосферски притисак;</li><li>брзина, смер и удари ветра;</li><li>падавине, интензитет падавина и дневне/месечне суме;</li><li>изведени индекси: тачка росе, осетна температура, топлотни индекс, THW и VPD.</li></ul></article><article class="glass ams-station-card"><h4>Набављени додатни сензори</h4><p>Набављени су сензори за <strong>температуру земљишта</strong>, <strong>влажност земљишта</strong> и <strong>влажност листа</strong>. Њихово укључивање омогућиће боље праћење услова за травњаке, шумске и пољопривредне површине, као и процену влажења вегетације.</p></article><article class="glass ams-station-card"><h4>Планирана набавка</h4><p>У плану је набавка сензора за <strong>сунчев сјај / соларно зрачење</strong> и <strong>UV зрачење</strong>. До постављања ових сензора, UV и соларни параметри се не приказују као измерени подаци.</p></article></div></div></div></section></div>
+</div></div></main><!-- ═══════════════════ FOOTER ═══════════════════ --><footer class="footer"><div class="wrap"><div class="footer-panel"><p>
+        Ова страна приказује тренутне и изведене метеоролошке параметре за подручје Рајца.
+        Процене стања стаза, биометеоролошких услова и погодности за различите групе посетилаца су информативне и не замењују теренску процену, безбедносну процену нити лекарски савет.
+      </p></div></div></footer><!-- ═══════════════════ ЛОКАЛНИ ПРАГОВИ: ИСКАЧУЋИ ПРОЗОР ═══════════════════ --><div aria-hidden="true" class="ams-impact-modal" id="ams-impact-modal"><div class="ams-impact-backdrop" data-impact-close=""></div><section aria-labelledby="ams-impact-title" aria-modal="true" class="ams-impact-dialog" role="dialog"><button aria-label="Затвори" class="ams-impact-close" data-impact-close="" type="button">×</button><div class="ams-impact-badge" id="ams-impact-badge">Праг</div><h3 class="ams-impact-title" id="ams-impact-title">Локални праг</h3><div class="ams-impact-threshold" id="ams-impact-threshold">—</div><div class="ams-impact-measured" id="ams-impact-measured">—</div><div class="ams-impact-body" id="ams-impact-body"></div><div class="ams-impact-note">
+      Ово је локална информативна процена за подручје Рајца, заснована на прагoвима АМС Рајац и логици прогнозе засноване на последицама. Не замењује званична упозорења надлежних метеоролошких и служби за ванредне ситуације.
+    </div></section></div><!-- ═══════════════════ SCRIPTS ═══════════════════ --><script defer="" src="https://cdn.jsdelivr.net/npm/chart.js@4.4.9/dist/chart.umd.min.js"></script><script defer="" src="assets/amsrajac-live-optimized-windrose-fix-20260607.js?v=20260721c"></script><script defer="" src="/amsrajac/dnevna-statistika/embed.js?v=20260527"></script><!-- SITE_EDITOR_ADMIN_BAR_START --><!-- SITE_EDITOR_ADMIN_BAR_END -->
+<script id="ams-tabs-redesign-v5-js">
+(function(){
+  var hashToPanel={
+    'brojcani-podaci':'ams-panel-brojevi','brojevi':'ams-panel-brojevi',
+    'grafikoni':'ams-panel-grafikoni','alarmi':'ams-panel-alarmi','prognoza':'ams-panel-prognoza',
+    'pogodnost-boravka':'ams-panel-pogodnost','pogodnost':'ams-panel-pogodnost',
+    'izvestaji':'ams-panel-izvestaji','izveštaji':'ams-panel-izvestaji',
+    'servisi':'ams-panel-servisi','o-stanici':'ams-panel-o-stanici'
+  };
+  function resizeCharts(){
+    try{
+      if(window.Chart){
+        if(Chart.instances){Object.keys(Chart.instances).forEach(function(k){try{Chart.instances[k].resize();}catch(e){}});}
+        if(Chart.helpers && Chart.helpers.each){try{Chart.helpers.each(Chart.instances,function(instance){if(instance && instance.resize) instance.resize();});}catch(e){}}
+      }
+      window.dispatchEvent(new Event('resize'));
+    }catch(e){}
+  }
+  function scrollToActivePanel(target, behavior){
+    if(target === 'ams-panel-brojevi') return;
+    var panel=document.getElementById(target);
+    if(!panel) return;
+    var reduced=window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    window.requestAnimationFrame(function(){window.requestAnimationFrame(function(){
+      var top=panel.getBoundingClientRect().top + window.pageYOffset - 10;
+      window.scrollTo({top:Math.max(0,top),behavior:reduced ? 'auto' : (behavior || 'auto')});
+    });});
+  }
+  function activate(btn, updateHash, shouldScroll){
+    var shell = document.querySelector('.ams-tabs-shell');
+    var nav = document.querySelector('.ams-tabs-nav');
+    if(!shell || !nav || !btn) return;
+    var target = btn.getAttribute('aria-controls');
+    nav.querySelectorAll('.ams-tab-btn').forEach(function(b){b.setAttribute('aria-selected', b===btn ? 'true':'false');});
+    shell.querySelectorAll('.ams-tab-pane').forEach(function(p){p.classList.toggle('active', p.id===target);});
+    if(updateHash){
+      var h=btn.getAttribute('data-tab-hash') || target.replace('ams-panel-','');
+      if(location.hash !== '#'+h){ history.pushState(null,'','#'+h); }
+    }
+    if(shouldScroll) scrollToActivePanel(target,'smooth');
+    setTimeout(resizeCharts,60);
+    setTimeout(resizeCharts,320);
+  }
+  function activateFromHash(shouldScroll){
+    var h=decodeURIComponent((location.hash||'').replace(/^#/,''));
+    var panel=hashToPanel[h];
+    if(panel){
+      var btn=document.querySelector('.ams-tab-btn[aria-controls="'+panel+'"]');
+      if(btn){activate(btn,false,shouldScroll); return true;}
+    }
+    return false;
+  }
+  document.addEventListener('click',function(e){
+    var btn=e.target.closest('.ams-tab-btn');
+    if(btn){e.preventDefault();activate(btn,true,true);}
+  });
+  window.addEventListener('hashchange',function(){activateFromHash(true);});
+  document.addEventListener('DOMContentLoaded',function(){
+    if(!activateFromHash(true)){
+      var btn=document.querySelector('.ams-tabs-nav .ams-tab-btn[aria-selected="true"]');
+      if(btn) activate(btn,false,false);
+    }
+  });
+})();
+</script>
+<script id="ams-alert-summary-v5-js">
+(function(){
+  var cards={temp:{id:'alert-card-temp',label:'Температура'},wind:{id:'alert-card-wind',label:'Ветар'},rain:{id:'alert-card-rain',label:'Падавине'}};
+  function levelOf(node){
+    if(!node) return null;
+    if(node.classList.contains('ams-impact-red')) return 'red';
+    if(node.classList.contains('ams-impact-orange')) return 'orange';
+    if(node.classList.contains('ams-impact-yellow')) return 'yellow';
+    return null;
+  }
+  function levelText(level){return level==='red'?'ЦРВЕНИ ПРАГ':level==='orange'?'НАРАНЏАСТИ ПРАГ':level==='yellow'?'ЖУТИ ПРАГ':'ЛОКАЛНИ ПРАГ';}
+  function renderAlertSummary(){
+    var list=document.getElementById('ams-alert-summary-list');
+    if(!list) return;
+    var items=[];
+    Object.keys(cards).forEach(function(key){
+      var c=cards[key], node=document.getElementById(c.id), level=levelOf(node);
+      if(!level) return;
+      var btn=node.querySelector(':scope > .ams-impact-link') || node.querySelector('.ams-impact-link');
+      var text=(btn && btn.textContent.trim()) || levelText(level);
+      items.push('<div class="ams-alert-summary-item '+level+'"><div><strong>'+c.label+' — '+text+'</strong><small>Активно је прекорачење локалног прага. Детаљи су исти као у уоквиреној картици на страници.</small></div><button class="ams-open-alert" type="button" data-alert-key="'+key+'">Детаљи</button></div>');
+    });
+    if(!items.length){list.innerHTML='<div class="ams-alert-summary-ok">Тренутно нема активног прекорачења локалних прагова за температуру, ветар или падавине.</div>';}
+    else{list.innerHTML=items.join('');}
+  }
+  document.addEventListener('click',function(e){
+    var b=e.target.closest('.ams-open-alert');
+    if(!b) return;
+    e.preventDefault();
+    var key=b.getAttribute('data-alert-key');
+    var id=cards[key] && cards[key].id;
+    var node=id && document.getElementById(id);
+    var impact=node && (node.querySelector(':scope > .ams-impact-link') || node.querySelector('.ams-impact-link'));
+    if(impact) impact.click();
+  });
+  function observe(){
+    renderAlertSummary();
+    var targets=['alert-card-temp','alert-card-wind','alert-card-rain','alert-card-rain-summary','alert-card-wind-summary'];
+    var mo=new MutationObserver(renderAlertSummary);
+    targets.forEach(function(id){var n=document.getElementById(id); if(n) mo.observe(n,{attributes:true,childList:true,subtree:false,attributeFilter:['class']});});
+    setInterval(renderAlertSummary,5000);
+  }
+  if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',observe); else observe();
+})();
+</script>
+
+<script id="ams-tabs-mobile-more-v24-js">
+(function(){
+  function qs(sel, root){return (root||document).querySelector(sel);}
+  function qsa(sel, root){return Array.prototype.slice.call((root||document).querySelectorAll(sel));}
+  function syncMore(){
+    var more=qs('.ams-tabs-more');
+    if(!more) return;
+    var active=qs('.ams-tab-btn[aria-selected="true"]');
+    var hiddenIds=['ams-tab-pogodnost','ams-tab-izvestaji','ams-tab-servisi','ams-tab-o-stanici'];
+    more.classList.toggle('is-active', !!(active && hiddenIds.indexOf(active.id)>-1));
+  }
+  document.addEventListener('click',function(e){
+    var moreBtn=e.target.closest('.ams-tabs-more-btn');
+    if(moreBtn){
+      e.preventDefault();
+      var box=moreBtn.closest('.ams-tabs-more');
+      var open=!box.classList.contains('open');
+      box.classList.toggle('open',open);
+      moreBtn.setAttribute('aria-expanded', open?'true':'false');
+      return;
+    }
+    var item=e.target.closest('.ams-more-tab-link');
+    if(item){
+      e.preventDefault();
+      var id=item.getAttribute('data-tab-target');
+      var real=document.getElementById(id);
+      var box=item.closest('.ams-tabs-more');
+      if(box){
+        box.classList.remove('open');
+        var b=qs('.ams-tabs-more-btn',box); if(b) b.setAttribute('aria-expanded','false');
+      }
+      if(real){ real.click(); setTimeout(syncMore,40); }
+      return;
+    }
+    if(!e.target.closest('.ams-tabs-more')){
+      qsa('.ams-tabs-more.open').forEach(function(box){
+        box.classList.remove('open');
+        var b=qs('.ams-tabs-more-btn',box); if(b) b.setAttribute('aria-expanded','false');
+      });
+    }
+    if(e.target.closest('.ams-tab-btn')) setTimeout(syncMore,40);
+  });
+  window.addEventListener('hashchange',function(){setTimeout(syncMore,80);});
+  document.addEventListener('DOMContentLoaded',function(){setTimeout(syncMore,120);});
+  window.addEventListener('load',function(){setTimeout(syncMore,200);});
+})();
+</script>
+<script defer="" src="assets/amsrajac-rain-graph-sync-20260712.js?v=20260721-v29-hide-false-error"></script>
+<style id="ams-vrh-button-style">
+#ams-vrh-button{position:fixed;right:22px;bottom:22px;z-index:9998;width:58px;height:58px;border:1px solid rgba(16,42,70,.24);border-radius:50%;background:rgba(255,255,255,.68);color:#102a46;box-shadow:0 8px 24px rgba(16,42,70,.16);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:0;font:800 10px/1 system-ui,sans-serif;letter-spacing:.06em;cursor:pointer;opacity:0;visibility:hidden;transform:translateY(10px);transition:opacity .2s ease,transform .2s ease,visibility .2s ease}
+#ams-vrh-button .ams-vrh-arrow{font-size:19px;line-height:16px;letter-spacing:0}
+#ams-vrh-button.is-visible{opacity:1;visibility:visible;transform:none}
+#ams-vrh-button:hover,#ams-vrh-button:focus-visible{background:rgba(255,255,255,.9);outline:2px solid rgba(28,91,160,.38);outline-offset:2px}
+body.theme-dark #ams-vrh-button,body.theme-astro #ams-vrh-button{background:rgba(12,25,42,.68);color:#fff;border-color:rgba(255,255,255,.28)}
+@media(max-width:700px){#ams-vrh-button{right:14px;bottom:14px;width:52px;height:52px;font-size:9px}}
+@media(prefers-reduced-motion:reduce){#ams-vrh-button{transition:none}}
+</style>
+<button aria-label="Врати се на врх странице" id="ams-vrh-button" title="Врх" type="button"><span aria-hidden="true" class="ams-vrh-arrow">↑</span><span>ВРХ</span></button>
+<script id="ams-vrh-button-script">
+(function(){
+  var button=document.getElementById('ams-vrh-button');
+  if(!button) return;
+  function update(){button.classList.toggle('is-visible',window.pageYOffset>360);}
+  button.addEventListener('click',function(){
+    var reduced=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    window.scrollTo({top:0,behavior:reduced?'auto':'smooth'});
+  });
+  window.addEventListener('scroll',update,{passive:true});
+  update();
+})();
+</script>
+<!-- AMS_RAJAC_V27_RAIN_GRAPH_SYNC_FINAL -->
+<style id="ams-rain-false-overlay-guard-style">
+/* Ako su tačke već nacrtane, naknadni neuspešan statusni poziv ne sme da ih prekrije porukom. */
+.chart-wrap.ams-rain-has-rendered-data::after{display:none!important;}
+</style>
+<script id="ams-rain-false-overlay-guard-script">
+(function(){
+  'use strict';
+  var IDS=['chart-rain','chart-rain-cumulative'];
+
+  function chartFor(id){
+    if(!window.Chart) return null;
+    var canvas=document.getElementById(id);
+    if(!canvas) return null;
+    if(typeof Chart.getChart==='function') return Chart.getChart(canvas)||Chart.getChart(id)||null;
+    if(Chart.instances){
+      var keys=Object.keys(Chart.instances);
+      for(var i=0;i<keys.length;i++){
+        var chart=Chart.instances[keys[i]];
+        if(chart&&chart.canvas===canvas) return chart;
+      }
+    }
+    return null;
+  }
+
+  function hasRenderedSeries(chart){
+    if(!chart||!chart.data) return false;
+    var labels=Array.isArray(chart.data.labels)?chart.data.labels:[];
+    var ds=chart.data.datasets&&chart.data.datasets[0];
+    var values=ds&&Array.isArray(ds.data)?ds.data:[];
+    if(!labels.length||!values.length) return false;
+    return values.some(function(v){
+      if(v===null||v===undefined||v==='') return false;
+      return Number.isFinite(Number(v));
+    });
+  }
+
+  function syncOne(id){
+    var canvas=document.getElementById(id);
+    var wrap=canvas&&canvas.parentElement;
+    if(!wrap) return;
+    var hasData=hasRenderedSeries(chartFor(id));
+    wrap.classList.toggle('ams-rain-has-rendered-data',hasData);
+    if(hasData){
+      wrap.dataset.empty='0';
+      wrap.setAttribute('data-empty-msg','');
+    }
+  }
+
+  function sync(){ IDS.forEach(syncOne); }
+  function schedule(){
+    setTimeout(sync,80);
+    setTimeout(sync,300);
+    setTimeout(sync,900);
+    setTimeout(sync,2200);
+  }
+
+  function observe(){
+    IDS.forEach(function(id){
+      var canvas=document.getElementById(id);
+      var wrap=canvas&&canvas.parentElement;
+      if(!wrap||wrap.__amsRainOverlayObserver) return;
+      wrap.__amsRainOverlayObserver=true;
+      new MutationObserver(function(){ setTimeout(function(){syncOne(id);},0); })
+        .observe(wrap,{attributes:true,attributeFilter:['data-empty','data-empty-msg']});
+    });
+  }
+
+  document.addEventListener('click',function(e){
+    if(e.target.closest('.rain-btn')||e.target.closest('#ams-tab-grafikoni')) schedule();
+  });
+  document.addEventListener('visibilitychange',function(){ if(!document.hidden) schedule(); });
+  document.addEventListener('DOMContentLoaded',function(){ observe(); schedule(); });
+  window.addEventListener('load',function(){ observe(); schedule(); });
+  setInterval(function(){ observe(); sync(); },1200);
+})();
+</script>
+<script id="ams-openmeteo-v256-js">
+(function(){
+const LAT=44.136333,LON=20.224918,TZ='Europe%2FBelgrade';
+const HURL='https://api.open-meteo.com/v1/forecast?latitude='+LAT+'&longitude='+LON+'&hourly=temperature_2m,relative_humidity_2m,pressure_msl,surface_pressure,precipitation,precipitation_probability,wind_speed_10m,wind_direction_10m,wind_gusts_10m&wind_speed_unit=ms&timezone='+TZ+'&past_days=2&forecast_days=3';
+const API=(window.AMS_BASE||'.')+'/forecast_training_api.php';
+const HIST=(window.AMS_BASE||'.')+'/history.php?range=48h';
+const charts={}; let loaded=false;
+const $=id=>document.getElementById(id); const num=v=>{if(v===null||v===undefined||v==='')return null;v=Number(v);return Number.isFinite(v)?v:null}; const rhNum=v=>{const x=num(v);return (x!==null&&x>0&&x<=100)?x:null};
+function key(d){const z=x=>String(x).padStart(2,'0');return d.getFullYear()+'-'+z(d.getMonth()+1)+'-'+z(d.getDate())+'T'+z(d.getHours())+':00'}
+function lab(k){try{return new Date(k+':00').toLocaleString('sr-RS',{day:'2-digit',month:'2-digit',hour:'2-digit'}).replace(',','')}catch(e){return k}}
+function pick(o,ks){for(const k of ks){if(o&&o[k]!==undefined&&o[k]!==null&&o[k]!==''&&!isNaN(Number(o[k])))return Number(o[k]);}return null}
+function norm(hist){return ((hist&&hist.points)||[]).map(p=>{let ts=pick(p,['ts','timestamp','time','date_unix']);if(ts!==null&&ts<2e10)ts*=1000;const d=ts!==null?new Date(ts):new Date(p.datetime||p.date||p.created_at||p.local_time);if(!d||isNaN(d))return null;return{t:d,key:key(d),temp:pick(p,['temp_c','temperature_c','temp','temperature','out_temp_c']),rh:rhNum(pick(p,['humidity_pct','relative_humidity','humidity','hum','rh'])),pressureSea:pick(p,['pressure_hpa','barometer_hpa','barometer','pressure','press_hpa','sea_level_pressure_hpa']),pressureAbs:pick(p,['absolute_pressure_hpa','station_pressure_hpa','pressure_absolute_hpa','abs_pressure_hpa']),wind:pick(p,['wind_speed_ms','wind_speed_m_s','wind_speed','wind_ms','wind']),rainCum:pick(p,['rain_day_mm','rain_daily_mm','rain_day','rain_total_day']),rainDelta:pick(p,['rain_mm','rain_delta_mm','rain_interval_mm','rain_amount_mm'])}}).filter(Boolean).sort((a,b)=>a.t-b.t)}
+function hourly(pts){const m=new Map();for(const p of pts){const g=m.get(p.key)||{key:p.key,temp:[],rh:[],pressureSea:[],pressureAbs:[],wind:[],rainCum:[],rainDelta:0};for(const k of ['temp','rh','pressureSea','pressureAbs','wind','rainCum'])if(num(p[k])!==null)g[k].push(num(p[k]));if(num(p.rainDelta)!==null)g.rainDelta+=Math.max(0,num(p.rainDelta));m.set(p.key,g)}const avg=a=>a.length?a.reduce((s,x)=>s+x,0)/a.length:null;return [...m.values()].map(g=>{let rain=null;if(g.rainDelta>0)rain=g.rainDelta;else if(g.rainCum.length>=2)rain=Math.max(0,Math.max(...g.rainCum)-Math.min(...g.rainCum));return{key:g.key,temp:avg(g.temp),rh:avg(g.rh),pressureSea:avg(g.pressureSea),pressureAbs:avg(g.pressureAbs),wind:avg(g.wind),rain}}).sort((a,b)=>a.key.localeCompare(b.key))}
+function model(j){const h=(j&&j.hourly)||{},t=h.time||[];return t.map((x,i)=>({key:String(x).slice(0,13)+':00',temp:num((h.temperature_2m||[])[i]),rh:rhNum((h.relative_humidity_2m||[])[i]),pressureMsl:num((h.pressure_msl||[])[i]),pressureSurface:num((h.surface_pressure||[])[i]),wind:num((h.wind_speed_10m||[])[i]),rain:num((h.precipitation||[])[i]),rainProb:num((h.precipitation_probability||[])[i])}))}
+async function get(u){const r=await fetch(u+(u.includes('?')?'&':'?')+'_='+Date.now(),{cache:'no-store'});if(!r.ok)throw new Error('HTTP '+r.status);return r.json()}
+function chartReady(cb,n){n=n||0;if(window.Chart){cb();return}if(n<60)setTimeout(()=>chartReady(cb,n+1),100)}
+function mk(id,labels,sets,ylabel,zero,limits){chartReady(function(){const c=$(id);if(!c)return;if(charts[id]){try{charts[id].destroy()}catch(e){}}const ctx=c.getContext('2d');sets=sets.map(s=>Object.assign({borderWidth:s.width||1.6,tension:.34,spanGaps:true,pointRadius:s.points??1.2,pointHoverRadius:4,fill:s.fill||false},s));const yScale={beginAtZero:!!zero,title:{display:true,text:ylabel,color:'#31445f',font:{weight:'900'}},ticks:{color:'#68768a',font:{weight:'700'}},grid:{color:'rgba(80,95,115,.12)'}};if(ylabel==='hPa'){yScale.ticks.callback=v=>String(Math.round(Number(v)));yScale.ticks.precision=0;}if(limits&&Number.isFinite(limits.min)&&Number.isFinite(limits.max)){yScale.min=limits.min;yScale.max=limits.max;if(limits.stepSize)yScale.ticks.stepSize=limits.stepSize;}charts[id]=new Chart(ctx,{type:'line',data:{labels,datasets:sets},options:{responsive:true,maintainAspectRatio:false,normalized:true,animation:{duration:450},interaction:{mode:'index',intersect:false},plugins:{legend:{labels:{usePointStyle:true,pointStyle:'line',pointStyleWidth:34,boxWidth:38,boxHeight:5,padding:16,color:'#26364b',font:{weight:'800',size:11},generateLabels:function(chart){const items=Chart.defaults.plugins.legend.labels.generateLabels(chart);return items.map(function(it){it.pointStyle='line';it.lineWidth=3.4;it.strokeStyle=chart.data.datasets[it.datasetIndex].borderColor;it.fillStyle=chart.data.datasets[it.datasetIndex].borderColor;it.lineDash=chart.data.datasets[it.datasetIndex].borderDash||[];return it;});}}},tooltip:{backgroundColor:'rgba(30,35,42,.95)',padding:11,titleFont:{weight:'900'},bodyFont:{weight:'700'},callbacks:{afterLabel:function(ctx){const a=ctx.dataset&&ctx.dataset.sampleCounts;return a&&a[ctx.dataIndex]?'n='+a[ctx.dataIndex]:'';}}}},scales:{x:{ticks:{maxTicksLimit:8,color:'#68768a',font:{weight:'700'}},grid:{color:'rgba(80,95,115,.10)'}},y:yScale}}});setTimeout(()=>{try{charts[id].resize();charts[id].update('none')}catch(e){}},100)})}
+function ds(label,data,color,dash,fill){return{label,data,borderColor:color,backgroundColor:fill||color,borderDash:dash||[],fill:!!fill,pointBackgroundColor:color,pointBorderColor:'#fffaf2'}}
+function persistedN(api,metric,bucket='all'){return Number(api?.stats?.[metric]?.[bucket]?.n||0)}
+function renderKpi(api){const c=api.counts||{},vals=[Number(api.verified_pairs||0),Number(c.hourly_obs||0),Number(c.forecasts||0),Number(c.forecast_runs||0)];[...$('v256-kpis').querySelectorAll('.v')].forEach((e,i)=>e.textContent=vals[i]);const v=vals[0],tv=api.temp_validation||{},rv=api.rh_validation||{};const names={'h01_06':'+1–6 h','h07_12':'+7–12 h','h13_24':'+13–24 h','h25_48':'+25–48 h','h49_72':'+49–72 h'};const ta=Object.entries(tv).filter(([k,g])=>g&&g.active).map(([k])=>names[k]||k),ra=Object.entries(rv).filter(([k,g])=>g&&g.active).map(([k])=>names[k]||k);let title='Почетна обука',text='Систем сакупља проверене прогнозе и стварна мерења.';if(ta.length||ra.length){title='Локалне корекције су активне';const parts=[];if(ta.length)parts.push('температура '+ta.join(', '));if(ra.length)parts.push('влажност '+ra.join(', '));text='Независна провера је потврдила локалну корекцију за: '+parts.join(' · ')+'.'}else if(v>=72){title='Провера стабилности корекције';text='Имамо довољно парова; систем проверава да ли локалне корекције стварно побољшавају прогнозу.'}else if(v>=24){title='Образац се потврђује';text='Локална одступања су видљива, али корекције се још не објављују.'}else if(v>=6){title='Образац се формира';text='Прва локална одступања су видљива, али корекције се још не приказују у прогнози.'}$('v256-phase-title').textContent=title;$('v256-phase-text').textContent=text;$('v256-phase-count').textContent=v+' проверено';$('v256-phase-bar').style.width=Math.min(100,v/72*100)+'%'}
+function renderForecast(api){const arr=(api.forecast||[]).filter(x=>Number(x.horizon_h)>=1).slice(0,6);$('v256-forecast').innerHTML=arr.map(x=>{const o=x.open_meteo||{},l=x.local||{},tg=x.temp_gate||{},rg=x.rh_gate||{};const tActive=!!tg.active&&num(l.temp)!==null,rhActive=!!rg.active&&num(l.rh)!==null;const main=tActive?num(l.temp):num(o.temp),rhMain=rhActive?rhNum(l.rh):rhNum(o.rh);const base=tActive&&num(o.temp)!==null?'<br>Open-Meteo '+num(o.temp).toFixed(1)+' °C':'';const loc=tActive?'<span class="v256-local">локално кориговано</span>':'<span class="v256-local waiting">корекција се потврђује</span>';return '<div class="v256-fc"><div class="t">'+lab(String(x.time).replace(' ','T'))+'</div><div class="big">'+(main===null?'—':main.toFixed(1)+' °C')+'</div><div class="line">'+(base?base.slice(4)+'<br>':'')+'RH '+(rhMain===null?'—':Math.round(rhMain)+'%')+'<br>ветар '+(num(o.wind)===null?'—':num(o.wind).toFixed(1)+' m/s')+'<br>пад. '+(num(o.precip)===null?'—':num(o.precip).toFixed(2)+' mm')+'</div>'+loc+'</div>'}).join('')||'<div class="v256-notice">Још нема прогнозних термина.</div>'}
+function trainingCharts(api){const bs=[['h01_06','+1–6 h'],['h07_12','+7–12 h'],['h13_24','+13–24 h'],['h25_48','+25–48 h'],['h49_72','+49–72 h']];const vals=bs.map(b=>persistedN(api,'temp',b[0]));mk('v256-horizon',bs.map(b=>b[1]),[{label:'проверени узорци',data:vals,borderColor:'#376d4d',backgroundColor:'rgba(55,109,77,.28)',fill:true,pointRadius:2.5,borderWidth:1.6}],'n',true);const rv=[...(api.recent_verified||[])];const groups={1:[],2:[],3:[],4:[],5:[],6:[]};for(const r of rv){const h=Number(r.horizon_h||0),e=num(r.ft)!==null&&num(r.temp)!==null?num(r.ft)-num(r.temp):null;if(h>=1&&h<=6&&e!==null)groups[h].push(e)}const labels=[1,2,3,4,5,6].map(h=>'+'+h+' h');const errs=[1,2,3,4,5,6].map(h=>groups[h].length?groups[h].reduce((a,b)=>a+b,0)/groups[h].length:null);const counts=[1,2,3,4,5,6].map(h=>groups[h].length);mk('v256-error',labels,[{label:'просечна грешка Open-Meteo − АМС (°C)',data:errs,sampleCounts:counts,borderColor:'#b54735',backgroundColor:'#b54735',fill:false,pointRadius:3,borderWidth:1.6}],'°C',false);const st=api?.stats?.temp?.all||{};const n=Number(st.n||0),mae=num(st.mae),bias=num(st.bias),corr=num(st.corr);$('v256-summary-title').textContent=n<6?'Још сакупљамо податке':(n<24?'Образац се још потврђује':'Локални образац је потврђен за приказ');$('v256-summary').innerHTML=n<6?'Тренутно имамо <b>'+n+'</b> проверених температурних парова.':'Температура: <b>n='+n+'</b>, MAE <b>'+(mae===null?'—':mae.toFixed(2))+' °C</b>, одступање <b>'+(bias===null?'—':bias.toFixed(2))+' °C</b>, корелација <b>'+(corr===null?'—':corr.toFixed(2))+'</b>.'+(n<24?' Локална корекција се још не приказује у прогнози.':'')}
+function validationCharts(api){const checks=(api.next_measurement_checks||[]).slice(-14);const labels=checks.map(x=>lab(String(x.observed_time||x.target).replace(' ','T')));const om=checks.map(x=>num(x.open_meteo)),local=checks.map(x=>num(x.local_at_issue)),ams=checks.map(x=>num(x.ams_first));mk('v257-next-check',labels,[ds('Open-Meteo +1 h',om,'#d66b14',[6,5]),Object.assign(ds('Локално кориговано',local,'#31724a'),{spanGaps:false}),ds('Прво АМС мерење',ams,'#173f69')],'°C',false);const tv=api.temp_validation||{},bs=[['h01_06','+1–6 h'],['h07_12','+7–12 h'],['h13_24','+13–24 h'],['h25_48','+25–48 h'],['h49_72','+49–72 h']];const raw=bs.map(([k])=>num(tv[k]?.raw_mae)),corr=bs.map(([k])=>num(tv[k]?.corrected_mae));mk('v257-mae',bs.map(x=>x[1]),[ds('Open-Meteo MAE',raw,'#d66b14',[6,5]),ds('Локално кориговано MAE',corr,'#31724a')],'°C',true);const active=bs.filter(([k])=>tv[k]?.active).map(x=>x[1]);const el=$('v257-validation-note');if(active.length){el.className='v257-validation-note';el.textContent='Локална корекција температуре је активна за '+active.join(', ')+'. Приказује се само тамо где је независна провера показала јасно мању грешку.'}else{el.className='v257-validation-note wait';el.textContent='Корекција се још не објављује: потребно је најмање 72 парова по хоризонту и најмање 24 независне провере уз стварно мању грешку.'}}
+function modelVersionChart(api){const h=(api.temp_model_history_h01_06||[]).slice(-24);const labels=h.map(x=>{const t=String(x.time||'').replace(' ','T');return lab(t)});const raw=h.map(x=>num(x.raw_mae)),corr=h.map(x=>num(x.corrected_mae));mk('v258-model-history',labels,[ds('Open-Meteo MAE',raw,'#d66b14',[6,5]),ds('Локално кориговано MAE',corr,'#31724a')],'°C',false);const cur=api?.temp_model_versions?.current?.h01_06||null,el=$('v258-model-note');if(!el)return;if(cur){const when=cur.created_ts?new Date(Number(cur.created_ts)*1000).toLocaleString('sr-RS',{day:'2-digit',month:'2-digit',hour:'2-digit',minute:'2-digit'}):'—';if(cur.active){el.className='v257-validation-note';el.textContent='Локална корекција за блиске рокове је активна и аутоматски се поново проверава после сваког новог сата. Последње ажурирање: '+when+'.'}else{el.className='v257-validation-note wait';el.textContent='Модел се аутоматски ажурира, али локална корекција се приказује само када независна провера покаже да је боља од основне прогнозе. Последње ажурирање: '+when+'.'}}else{el.className='v257-validation-note wait';el.textContent='Историја модела ће се попунити после првог аутоматског ажурирања.'}}
+function humidityValidationCharts(api){const checks=(api.rh_next_measurement_checks||[]).slice(-14);const labels=checks.map(x=>lab(String(x.observed_time||x.target).replace(' ','T')));const om=checks.map(x=>rhNum(x.open_meteo)),local=checks.map(x=>rhNum(x.local_at_issue)),ams=checks.map(x=>rhNum(x.ams_first));mk('v259-rh-next',labels,[ds('Open-Meteo +1 h',om,'#d66b14',[6,5]),Object.assign(ds('Локално кориговано',local,'#31724a'),{spanGaps:false}),ds('Прво АМС мерење',ams,'#173f69')],'%',false);const rv=api.rh_validation||{},bs=[['h01_06','+1–6 h'],['h07_12','+7–12 h'],['h13_24','+13–24 h'],['h25_48','+25–48 h'],['h49_72','+49–72 h']];const raw=bs.map(([k])=>num(rv[k]?.raw_mae)),corr=bs.map(([k])=>num(rv[k]?.corrected_mae));mk('v259-rh-mae',bs.map(x=>x[1]),[ds('Open-Meteo MAE',raw,'#d66b14',[6,5]),ds('Локално кориговано MAE',corr,'#31724a')],'п.п.',true);const active=bs.filter(([k])=>rv[k]?.active).map(x=>x[1]);const el=$('v259-rh-validation-note');if(active.length){el.className='v257-validation-note';el.textContent='Локална корекција влажности је активна за '+active.join(', ')+'. Приказује се само где је независна провера смањила MAE најмање за 1 процентни поен или 5%.'}else{el.className='v257-validation-note wait';el.textContent='Корекција влажности се још не објављује. Потребно је најмање 72 парова, 24 независне провере и јасно смањење грешке.'}}
+function humidityModelVersionChart(api){const h=(api.rh_model_history_h01_06||[]).slice(-24);const labels=h.map(x=>lab(String(x.time||'').replace(' ','T')));const raw=h.map(x=>num(x.raw_mae)),corr=h.map(x=>num(x.corrected_mae));mk('v259-rh-history',labels,[ds('Open-Meteo MAE',raw,'#d66b14',[6,5]),ds('Локално кориговано MAE',corr,'#31724a')],'п.п.',false);const cur=api?.rh_model_versions?.current?.h01_06||null,el=$('v259-rh-model-note');if(!el)return;if(cur){const when=cur.created_ts?new Date(Number(cur.created_ts)*1000).toLocaleString('sr-RS',{day:'2-digit',month:'2-digit',hour:'2-digit',minute:'2-digit'}):'—';if(cur.active){el.className='v257-validation-note';el.textContent='Локална корекција влажности за блиске рокове је активна и поново се проверава после сваког новог сата. Последње ажурирање: '+when+'.'}else{el.className='v257-validation-note wait';el.textContent='Модел влажности се аутоматски ажурира, али корекција се приказује тек када независна провера покаже јасну предност. Последње ажурирање: '+when+'.'}}else{el.className='v257-validation-note wait';el.textContent='Историја модела влажности ће се попунити после првог аутоматског ажурирања.'}}
+function median(a){const b=a.filter(v=>num(v)!==null).map(Number).sort((x,y)=>x-y);if(!b.length)return null;const m=Math.floor(b.length/2);return b.length%2?b[m]:(b[m-1]+b[m])/2}
+function weatherCharts(obs,mod,api){const now=key(new Date()),all=[...new Set([...obs.map(x=>x.key),...mod.map(x=>x.key)])].sort().filter(k=>{const t=new Date(k+':00').getTime();return t>=Date.now()-36*3600e3&&t<=Date.now()+36*3600e3});const om=new Map(obs.map(x=>[x.key,x])),mm=new Map(mod.map(x=>[x.key,x]));const labels=all.map(lab);function series(src,m,part){return all.map(k=>{const o=om.get(k),x=mm.get(k);if(src==='obs')return o?num(o[m]):null;if(!x)return null;if(part==='past'&&k>now)return null;if(part==='future'&&k<=now)return null;return num(x[m])})}const rawPast=m=>series('m',m,'past'),rawFut=m=>series('m',m,'future'),meas=m=>series('obs',m);const tf=new Map((api.forecast||[]).map(x=>[String(x.time).replace(' ','T'),x]));const localTemp=all.map(k=>{if(k<=now)return null;const x=tf.get(k);return x&&x.temp_gate&&x.temp_gate.active&&num(x.local?.temp)!==null?num(x.local.temp):null});const localRh=all.map(k=>{if(k<=now)return null;const x=tf.get(k);return x&&x.rh_gate&&x.rh_gate.active&&rhNum(x.local?.rh)!==null?rhNum(x.local.rh):null});mk('v256-temp-main',labels,[ds('АМС измерено',meas('temp'),'#173f69'),ds('Open-Meteo · историја',rawPast('temp'),'#d66b14',[7,5]),ds('Open-Meteo · прогноза',rawFut('temp'),'#7b2fb9',[8,5]),Object.assign(ds('Локална корекција',localTemp,'#31724a'),{spanGaps:false})],'°C');mk('v256-rh',labels,[ds('АМС',meas('rh'),'#173f69'),ds('Open-Meteo · историја',rawPast('rh'),'#d66b14',[6,5]),ds('Open-Meteo · прогноза',rawFut('rh'),'#7b2fb9',[7,5]),Object.assign(ds('Локална корекција',localRh,'#31724a'),{spanGaps:false})],'%');
+const validP=v=>{v=num(v);return v!==null&&v>=800&&v<=1100?v:null};const pObs=meas('pressureSea').map(validP);const pPastRaw=rawPast('pressureMsl').map(validP);const pFutRaw=rawFut('pressureMsl').map(validP);const offsets=[];for(let i=0;i<all.length;i++){if(pObs[i]!==null&&pPastRaw[i]!==null)offsets.push(pObs[i]-pPastRaw[i])}let off=offsets.length>=6?median(offsets):0;if(off===null||Math.abs(off)>80)off=0;const pPast=pPastRaw.map(v=>v===null?null:v+off),pFut=pFutRaw.map(v=>v===null?null:v+off);const pVals=[...pObs,...pPast,...pFut].filter(v=>v!==null&&Number.isFinite(v));let lim=null;if(pVals.length){const lo=Math.min(...pVals),hi=Math.max(...pVals),pad=Math.max(2,(hi-lo)*.12);lim={min:Math.floor(lo-pad),max:Math.ceil(hi+pad),stepSize:2}}mk('v256-pressure',labels,[ds('АМС',pObs,'#173f69'),ds('Open-Meteo',pPast,'#d66b14',[6,5]),ds('Прогноза',pFut,'#7b2fb9',[7,5])],'hPa',false,lim);mk('v256-wind',labels,[ds('АМС',meas('wind'),'#173f69'),ds('Open-Meteo',rawPast('wind'),'#d66b14',[6,5]),ds('Прогноза',rawFut('wind'),'#7b2fb9',[7,5])],'m/s',true);mk('v256-rain',labels,[ds('АМС',meas('rain'),'#173f69'),ds('Open-Meteo',rawPast('rain'),'#d66b14',[6,5]),ds('Прогноза',rawFut('rain'),'#7b2fb9',[7,5])],'mm',true)}
+async function load(force){if(loaded&&!force)return;loaded=true;try{$('v256-status').className='v256-status warn';$('v256-status').textContent='Учитавање прогнозе и података…';const [hist,om,api]=await Promise.all([get(HIST),get(HURL),get(API)]);if(!api.ok)throw new Error(api.error||'training API');const obs=hourly(norm(hist)),mod=model(om);renderKpi(api);renderForecast(api);trainingCharts(api);validationCharts(api);modelVersionChart(api);humidityValidationCharts(api);humidityModelVersionChart(api);weatherCharts(obs,mod,api);$('v256-status').className='v256-status ok';$('v256-status').textContent='Подаци су учитани · '+Number(api.verified_pairs||0)+' проверених парова.'}catch(e){console.error(e);$('v256-status').className='v256-status warn';$('v256-status').textContent='Тренутно није успело учитавање прогнозе. Покушај поново за неколико тренутака.'}}
+function open(){setTimeout(()=>load(false),160)}
+document.addEventListener('click',e=>{if(e.target.closest('#ams-tab-prognoza'))open()});window.addEventListener('hashchange',()=>{if(location.hash==='#prognoza')open()});document.addEventListener('DOMContentLoaded',()=>{if(location.hash==='#prognoza')open()});window.amsForecastV259={reload:()=>{loaded=false;load(true)}};
+})();
+</script>
+<!-- AMS_5MIN_RAIN_FIX_V1 -->
+
+<script src="/amsrajac/ams_rain_canonical_v2.js?v=20261012-v2"></script>
+<script src="/amsrajac/ams_chart_core_v24.js?v=20261012-v26"></script>
+<script src="/amsrajac/ams_derived_cards_v25.js?v=20261012-v26"></script>
+<script src="/amsrajac/ams_ui_refine_v26.js?v=20261012-v26"></script>
+</body></html>

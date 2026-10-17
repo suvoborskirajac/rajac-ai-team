@@ -1,0 +1,1664 @@
+<!-- ПИО Рајац complete static export 2026-05-21 | savremene-tehnologije -->
+<!doctype html>
+<html lang="sr-RS">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Савремене технологије | ПИО Рајац</title>
+<meta name="description" content="Савремене технологије | ПИО Рајац">
+<link rel="stylesheet" id="rajac-static-common-menu-css" href="/rajac-static-2105/assets/menu/rajac-static-menu.css?v=20260521-complete" media="all">
+
+<!-- RAJAC_DESIGN_SYSTEM=1.0.0 -->
+<link rel="stylesheet" href="/rajac-design/rajac-global.css?v=1.0.0">
+<link rel="stylesheet" href="/rajac-design/rajac-pages.css?v=1.0.0">
+<style id="programske-responsive-v2-head">
+/*
+ * Mobilna i tablet optimizacija programskih stranica PIO Rajac.
+ * Aktivna je samo do 1100 px; desktop stilovi ostaju neizmenjeni.
+ * Verzija: 2026-07-14-v2
+ */
+
+.rajac-program-menu__toggle {
+  display: none;
+}
+
+@media (max-width: 1100px) {
+  html {
+    max-width: 100%;
+    overflow-x: hidden;
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+  }
+
+  body.rajac-static-output.pio-program-responsive {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden !important;
+  }
+
+  body.pio-program-responsive *,
+  body.pio-program-responsive *::before,
+  body.pio-program-responsive *::after {
+    box-sizing: border-box;
+  }
+
+  body.pio-program-responsive img,
+  body.pio-program-responsive picture,
+  body.pio-program-responsive video,
+  body.pio-program-responsive iframe,
+  body.pio-program-responsive canvas {
+    max-width: 100%;
+  }
+
+  body.pio-program-responsive img {
+    height: auto;
+  }
+
+  /* Zajednički meni: jedna mirna linija, pa meni na zahtev. */
+  body.pio-program-responsive .rajac-static-common-menu.rajac-program-menu {
+    position: relative !important;
+    z-index: 9999 !important;
+    width: 100% !important;
+    background: #112117 !important;
+    border: 0 !important;
+    border-bottom: 1px solid rgba(255, 255, 255, .12) !important;
+    box-shadow: 0 8px 24px rgba(5, 12, 8, .18) !important;
+  }
+
+  body.pio-program-responsive .rajac-static-common-menu.rajac-program-menu .rajac-static-common-menu__inner {
+    width: min(100% - 28px, 1180px) !important;
+    min-height: 58px !important;
+    margin: 0 auto !important;
+    padding: 8px 0 !important;
+    display: grid !important;
+    grid-template-columns: minmax(0, 1fr) auto !important;
+    align-items: center !important;
+    gap: 8px 14px !important;
+  }
+
+  body.pio-program-responsive .rajac-static-common-menu.rajac-program-menu .rajac-static-common-menu__logo,
+  body.pio-program-responsive .rajac-static-common-menu.rajac-program-menu .rajac-static-common-menu__logo:link,
+  body.pio-program-responsive .rajac-static-common-menu.rajac-program-menu .rajac-static-common-menu__logo:visited {
+    justify-self: start !important;
+    min-height: 40px !important;
+    padding: 0 !important;
+    border: 0 !important;
+    border-radius: 0 !important;
+    background: transparent !important;
+    color: #fffaf0 !important;
+    font-size: 14px !important;
+    font-weight: 800 !important;
+    letter-spacing: .045em !important;
+    text-decoration: none !important;
+  }
+
+  body.pio-program-responsive .rajac-program-menu__toggle {
+    justify-self: end;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    min-width: 92px;
+    min-height: 42px;
+    margin: 0;
+    padding: 0 13px;
+    border: 1px solid rgba(255, 255, 255, .24);
+    border-radius: 999px;
+    background: rgba(255, 255, 255, .08);
+    color: #fffaf0;
+    font: 800 13px/1 system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    letter-spacing: .08em;
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  body.pio-program-responsive .rajac-program-menu__toggle-icon {
+    width: 16px;
+    height: 12px;
+    position: relative;
+    display: inline-block;
+    border-top: 2px solid currentColor;
+    border-bottom: 2px solid currentColor;
+  }
+
+  body.pio-program-responsive .rajac-program-menu__toggle-icon::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 3px;
+    border-top: 2px solid currentColor;
+  }
+
+  body.pio-program-responsive .rajac-static-common-menu.rajac-program-menu.is-open .rajac-program-menu__toggle-icon {
+    border-color: transparent;
+  }
+
+  body.pio-program-responsive .rajac-static-common-menu.rajac-program-menu.is-open .rajac-program-menu__toggle-icon::before,
+  body.pio-program-responsive .rajac-static-common-menu.rajac-program-menu.is-open .rajac-program-menu__toggle-icon::after {
+    content: "";
+    position: absolute;
+    top: 4px;
+    left: 0;
+    width: 16px;
+    border-top: 2px solid currentColor;
+    transform: rotate(45deg);
+  }
+
+  body.pio-program-responsive .rajac-static-common-menu.rajac-program-menu.is-open .rajac-program-menu__toggle-icon::after {
+    transform: rotate(-45deg);
+  }
+
+  body.pio-program-responsive .rajac-static-common-menu.rajac-program-menu .rajac-static-common-menu__links {
+    grid-column: 1 / -1 !important;
+    width: 100% !important;
+    display: none !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 8px !important;
+    margin: 0 !important;
+    padding: 6px 0 4px !important;
+    overflow: visible !important;
+  }
+
+  body.pio-program-responsive .rajac-static-common-menu.rajac-program-menu.is-open .rajac-static-common-menu__links {
+    display: grid !important;
+  }
+
+  body.pio-program-responsive .rajac-static-common-menu.rajac-program-menu .rajac-static-common-menu__link,
+  body.pio-program-responsive .rajac-static-common-menu.rajac-program-menu .rajac-static-common-menu__link:link,
+  body.pio-program-responsive .rajac-static-common-menu.rajac-program-menu .rajac-static-common-menu__link:visited {
+    width: 100% !important;
+    min-width: 0 !important;
+    min-height: 44px !important;
+    padding: 9px 12px !important;
+    justify-content: flex-start !important;
+    white-space: normal !important;
+    text-align: left !important;
+    border: 1px solid rgba(255, 255, 255, .12) !important;
+    border-radius: 12px !important;
+    background: rgba(255, 255, 255, .055) !important;
+    color: rgba(255, 250, 240, .92) !important;
+    font-size: 12px !important;
+    line-height: 1.3 !important;
+    letter-spacing: .035em !important;
+  }
+
+  body.pio-program-responsive .rajac-static-common-menu.rajac-program-menu .rajac-static-common-menu__link.is-active,
+  body.pio-program-responsive .rajac-static-common-menu.rajac-program-menu .rajac-static-common-menu__link.is-active:link,
+  body.pio-program-responsive .rajac-static-common-menu.rajac-program-menu .rajac-static-common-menu__link.is-active:visited {
+    background: #233a2b !important;
+    border-color: rgba(212, 182, 90, .72) !important;
+    color: #fff !important;
+  }
+
+  /* HERO i osnovni stupac */
+  body.pio-program-responsive .rprog-wrap,
+  body.pio-program-responsive .rprog-hero-content,
+  body.pio-program-responsive #rajac-agro-page .shell,
+  body.pio-program-responsive #rajac-agro-page .hero-inner {
+    width: min(100% - 36px, 920px) !important;
+    max-width: calc(100% - 36px) !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+
+  body.pio-program-responsive .rprog-hero,
+  body.pio-program-responsive #rajac-agro-page section.hero {
+    width: 100% !important;
+    height: 560px !important;
+    min-height: 560px !important;
+    max-height: 560px !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    border-radius: 0 0 26px 26px !important;
+    overflow: hidden !important;
+  }
+
+  body.pio-program-responsive .rprog-hero-content,
+  body.pio-program-responsive #rajac-agro-page .hero-body {
+    padding: 92px 0 54px !important;
+  }
+
+  body.pio-program-responsive .rprog-title,
+  body.pio-program-responsive .rprog--smart .rprog-title,
+  body.pio-program-responsive #rajac-agro-page .hero h1 {
+    max-width: 820px !important;
+    margin-bottom: 16px !important;
+    font-size: clamp(2.55rem, 7.4vw, 4.7rem) !important;
+    line-height: 1 !important;
+    overflow-wrap: anywhere;
+    text-wrap: balance;
+  }
+
+  body.pio-program-responsive .rprog-lead,
+  body.pio-program-responsive #rajac-agro-page .hero-lead {
+    max-width: 760px !important;
+    font-size: 1rem !important;
+    line-height: 1.65 !important;
+  }
+
+  body.pio-program-responsive .rprog--ai .rprog-hero-media {
+    object-position: 58% center !important;
+  }
+
+  body.pio-program-responsive .rprog--sky .rprog-hero-media {
+    object-position: 54% center !important;
+  }
+
+  body.pio-program-responsive .rprog--smart .rprog-hero-media {
+    object-position: 57% center !important;
+  }
+
+  body.pio-program-responsive #rajac-agro-page .hero-media {
+    object-position: center top !important;
+  }
+
+  /* Sadržaj u jednom preglednom stupcu; manji parovi ostaju po dva na tabletu. */
+  body.pio-program-responsive .rprog-intro,
+  body.pio-program-responsive .rprog-story,
+  body.pio-program-responsive .rprog-bird-activity,
+  body.pio-program-responsive #rajac-agro-page .manage-grid {
+    grid-template-columns: minmax(0, 1fr) !important;
+    gap: 26px !important;
+  }
+
+  body.pio-program-responsive .rprog-grid,
+  body.pio-program-responsive .rprog-subgrid,
+  body.pio-program-responsive .rprog-metrics,
+  body.pio-program-responsive .rprog-equipment-grid,
+  body.pio-program-responsive .rprog-drone-gallery,
+  body.pio-program-responsive .rprog-sky-photo-grid,
+  body.pio-program-responsive #rajac-agro-page .key-grid,
+  body.pio-program-responsive #rajac-agro-page .al-now,
+  body.pio-program-responsive #rajac-agro-page .al-bottom-days {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 14px !important;
+  }
+
+  body.pio-program-responsive .rprog-story-aside {
+    position: relative !important;
+    top: auto !important;
+  }
+
+  body.pio-program-responsive .rprog--smart .rprog-story-list {
+    columns: 1 !important;
+  }
+
+  body.pio-program-responsive .rprog-equipment-card,
+  body.pio-program-responsive .rprog-equipment-card-wide,
+  body.pio-program-responsive .rprog-story-card,
+  body.pio-program-responsive .rprog-story-card-wide {
+    width: 100% !important;
+    max-width: 100% !important;
+    break-inside: avoid !important;
+  }
+
+  body.pio-program-responsive .rprog-equipment-card-wide,
+  body.pio-program-responsive .rprog-story-card-wide {
+    grid-column: 1 / -1 !important;
+  }
+
+  body.pio-program-responsive .rprog-band {
+    grid-template-columns: minmax(0, 1fr) !important;
+  }
+
+  body.pio-program-responsive .rprog-section,
+  body.pio-program-responsive .rprog-deep,
+  body.pio-program-responsive .rprog-equipment,
+  body.pio-program-responsive .rprog-drone-monitoring,
+  body.pio-program-responsive .rprog-sky-photo-block {
+    max-width: 100% !important;
+    overflow: hidden !important;
+  }
+
+  body.pio-program-responsive .rprog-card,
+  body.pio-program-responsive .rprog-story-card,
+  body.pio-program-responsive .rprog-story-aside,
+  body.pio-program-responsive .rprog-equipment-card,
+  body.pio-program-responsive #rajac-agro-page .key-card,
+  body.pio-program-responsive #rajac-agro-page .manage-copy,
+  body.pio-program-responsive #rajac-agro-page .side-card {
+    min-width: 0 !important;
+  }
+
+  body.pio-program-responsive .rprog-sky-photo-card img,
+  body.pio-program-responsive .rprog-equipment-card img,
+  body.pio-program-responsive .rprog-drone-gallery img,
+  body.pio-program-responsive .rprog-bird-activity-figure img,
+  body.pio-program-responsive #rajac-agro-page .agro-image-card img,
+  body.pio-program-responsive #rajac-agro-page .parcelimg-fig img {
+    display: block !important;
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  body.pio-program-responsive .rprog-smart-visual img {
+    height: auto !important;
+    max-height: 560px !important;
+    object-fit: contain !important;
+  }
+
+  body.pio-program-responsive .rprog-img-lightbox-inner {
+    width: min(94vw, 920px) !important;
+    max-height: 90svh !important;
+  }
+
+  body.pio-program-responsive .rprog-img-lightbox-stage img {
+    max-width: 100% !important;
+    max-height: 78svh !important;
+    object-fit: contain !important;
+  }
+
+  /* Poljoprivreda: grafikoni, prognoza i tabela ostaju čitljivi bez širenja stranice. */
+  body.pio-program-responsive #rajac-agro-page,
+  body.pio-program-responsive #rajac-agro-page .rp-agro,
+  body.pio-program-responsive #rajac-agro-page .agro-live,
+  body.pio-program-responsive #rajac-agro-page .agroday-sec,
+  body.pio-program-responsive #rajac-agro-page .parcelimg-sec {
+    width: 100% !important;
+    max-width: 100% !important;
+    overflow-x: hidden !important;
+  }
+
+  body.pio-program-responsive #rajac-agro-page .al-rain-wrap,
+  body.pio-program-responsive #rajac-agro-page .rain-axis-box,
+  body.pio-program-responsive #rajac-agro-page .agroday-table-wrap,
+  body.pio-program-responsive #rajac-agro-page .parcelimg-fig {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  body.pio-program-responsive #rajac-agro-page .agroday-table-wrap {
+    overflow-x: auto !important;
+    overscroll-behavior-inline: contain;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  body.pio-program-responsive #rajac-agro-page .agroday-table {
+    width: 100% !important;
+    min-width: 720px !important;
+  }
+
+  body.pio-program-responsive #rajac-agro-page .rain-bars {
+    min-width: 0 !important;
+  }
+
+  body.pio-program-responsive #rajac-agro-page .closing-box,
+  body.pio-program-responsive #rajac-agro-page .highlight-band {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  body.pio-program-responsive a,
+  body.pio-program-responsive button,
+  body.pio-program-responsive [role="button"] {
+    touch-action: manipulation;
+  }
+}
+
+@media (max-width: 700px) {
+  body.pio-program-responsive .rajac-static-common-menu.rajac-program-menu .rajac-static-common-menu__inner {
+    width: calc(100% - 24px) !important;
+  }
+
+  body.pio-program-responsive .rajac-static-common-menu.rajac-program-menu .rajac-static-common-menu__links {
+    grid-template-columns: minmax(0, 1fr) !important;
+  }
+
+  body.pio-program-responsive .rprog-wrap,
+  body.pio-program-responsive .rprog-hero-content,
+  body.pio-program-responsive #rajac-agro-page .shell,
+  body.pio-program-responsive #rajac-agro-page .hero-inner {
+    width: calc(100% - 28px) !important;
+    max-width: calc(100% - 28px) !important;
+  }
+
+  body.pio-program-responsive .rprog-hero,
+  body.pio-program-responsive #rajac-agro-page section.hero {
+    height: 510px !important;
+    min-height: 510px !important;
+    max-height: 510px !important;
+    border-radius: 0 0 22px 22px !important;
+  }
+
+  body.pio-program-responsive .rprog-hero-content,
+  body.pio-program-responsive #rajac-agro-page .hero-body {
+    padding: 78px 0 36px !important;
+  }
+
+  body.pio-program-responsive .rprog-title,
+  body.pio-program-responsive .rprog--smart .rprog-title,
+  body.pio-program-responsive #rajac-agro-page .hero h1 {
+    margin-bottom: 13px !important;
+    font-size: clamp(2rem, 11.2vw, 3.35rem) !important;
+    line-height: 1.02 !important;
+    letter-spacing: -.035em !important;
+  }
+
+  body.pio-program-responsive .rprog-lead,
+  body.pio-program-responsive #rajac-agro-page .hero-lead {
+    font-size: .94rem !important;
+    line-height: 1.58 !important;
+  }
+
+  body.pio-program-responsive .rprog-chips {
+    gap: 7px !important;
+    margin-top: 18px !important;
+  }
+
+  body.pio-program-responsive .rprog-chip {
+    min-height: 34px !important;
+    padding: 0 12px !important;
+    font-size: .78rem !important;
+  }
+
+  body.pio-program-responsive .rprog-grid,
+  body.pio-program-responsive .rprog-subgrid,
+  body.pio-program-responsive .rprog-metrics,
+  body.pio-program-responsive .rprog-equipment-grid,
+  body.pio-program-responsive .rprog-drone-gallery,
+  body.pio-program-responsive .rprog-sky-photo-grid,
+  body.pio-program-responsive #rajac-agro-page .key-grid,
+  body.pio-program-responsive #rajac-agro-page .al-now,
+  body.pio-program-responsive #rajac-agro-page .al-bottom-days {
+    grid-template-columns: minmax(0, 1fr) !important;
+  }
+
+  body.pio-program-responsive .rprog-card,
+  body.pio-program-responsive .rprog-story-card,
+  body.pio-program-responsive .rprog-story-aside,
+  body.pio-program-responsive .rprog-equipment-card,
+  body.pio-program-responsive .rprog-band,
+  body.pio-program-responsive #rajac-agro-page .key-card,
+  body.pio-program-responsive #rajac-agro-page .manage-copy,
+  body.pio-program-responsive #rajac-agro-page .side-card,
+  body.pio-program-responsive #rajac-agro-page .closing-box,
+  body.pio-program-responsive #rajac-agro-page .highlight-band {
+    padding: 20px !important;
+    border-radius: 20px !important;
+  }
+
+  body.pio-program-responsive .rprog-section,
+  body.pio-program-responsive .rprog-deep,
+  body.pio-program-responsive .rprog-equipment,
+  body.pio-program-responsive .rprog-drone-monitoring,
+  body.pio-program-responsive .rprog-sky-photo-block,
+  body.pio-program-responsive #rajac-agro-page .section,
+  body.pio-program-responsive #rajac-agro-page .agro-live,
+  body.pio-program-responsive #rajac-agro-page .agroday-sec,
+  body.pio-program-responsive #rajac-agro-page .parcelimg-sec {
+    padding-top: 34px !important;
+    padding-bottom: 34px !important;
+  }
+
+  body.pio-program-responsive #rajac-agro-page .agroday-table {
+    min-width: 660px !important;
+  }
+
+  body.pio-program-responsive #rajac-agro-page .rain-axis-box {
+    overflow-x: auto !important;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  body.pio-program-responsive #rajac-agro-page .rain-bars {
+    min-width: 0 !important;
+  }
+
+  body.pio-program-responsive .rprog-img-lightbox-close {
+    top: 8px !important;
+    right: 8px !important;
+    width: 44px !important;
+    height: 44px !important;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) and (max-width: 1100px) {
+  body.pio-program-responsive *,
+  body.pio-program-responsive *::before,
+  body.pio-program-responsive *::after {
+    scroll-behavior: auto !important;
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: .01ms !important;
+  }
+}
+
+</style>
+</head>
+<body class="rajac-static-output pio-program-responsive"><nav class="rajac-static-common-menu rajac-program-menu" aria-label="Странице ПИО Рајац"><div class="rajac-static-common-menu__inner"><a class="rajac-static-common-menu__logo" href="/">ПИО „РАЈАЦ“</a><button class="rajac-program-menu__toggle" type="button" aria-expanded="false" aria-controls="rajac-program-links"><span class="rajac-program-menu__toggle-icon" aria-hidden="true"></span>МЕНИ</button><div class="rajac-static-common-menu__links" id="rajac-program-links"><a class="rajac-static-common-menu__link is-active" href="/savremene-tehnologije/">САВРЕМЕНЕ ТЕХНОЛОГИЈЕ</a><a class="rajac-static-common-menu__link" href="/zvezdani-park/">Звездани парк</a><a class="rajac-static-common-menu__link" href="/pametni-park/">Паметни парк</a><a class="rajac-static-common-menu__link" href="/podrska-poljoprivredi-2/">Помоћ пољопривредницима</a></div></div></nav>
+
+
+<style id="rajac-program-pages-v30">
+:root{
+  --rprog-bg:#f5f1e8;
+  --rprog-paper:#fbfaf6;
+  --rprog-paper2:#f1eee6;
+  --rprog-ink:#22251f;
+  --rprog-muted:#51564d;
+  --rprog-line:rgba(34,37,31,.11);
+  --rprog-green:#223226;
+  --rprog-green2:#2f6645;
+  --rprog-gold:#d4b65a;
+  --rprog-serif:"Cormorant Garamond","Crimson Pro",Georgia,serif;
+  --rprog-sans:Outfit,Inter,system-ui,-apple-system,"Segoe UI",sans-serif;
+  --rprog-mono:"DM Mono","SFMono-Regular",Consolas,monospace;
+}
+html,body{margin:0;padding:0;background:var(--rprog-bg);color:var(--rprog-ink);}
+body.rajac-static-output{overflow-x:hidden;background:var(--rprog-bg)!important;}
+.rprog{font-family:var(--rprog-sans);background:var(--rprog-bg);color:var(--rprog-ink);overflow:hidden;}
+.rprog *{box-sizing:border-box;}
+.rprog a{color:inherit;text-decoration:none;}
+.rprog-wrap{width:min(1180px,calc(100% - 40px));margin:0 auto;}
+.rprog-hero{position:relative;min-height:calc(100svh - 48px);width:100vw;margin-left:calc(50% - 50vw);margin-right:calc(50% - 50vw);display:flex;align-items:flex-end;overflow:hidden;background:#08130e;isolation:isolate;border-radius:0 0 32px 32px;box-shadow:0 26px 70px rgba(12,18,14,.18);}
+.rprog-hero-media{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0;}
+.rprog--ai .rprog-hero-media{object-position:center center;filter:saturate(.96) contrast(.98);}
+.rprog--sky .rprog-hero-media{object-position:center center;filter:saturate(.95) contrast(1.03);}
+.rprog--smart .rprog-hero-media{object-position:center center;filter:saturate(.95) contrast(.98);}
+.rprog-hero-overlay{position:absolute;inset:0;z-index:1;pointer-events:none;background:linear-gradient(180deg,rgba(5,12,9,.10) 0%,rgba(5,12,9,.30) 43%,rgba(5,12,9,.82) 100%),linear-gradient(90deg,rgba(5,12,9,.74) 0%,rgba(5,12,9,.47) 38%,rgba(5,12,9,.15) 66%,rgba(5,12,9,.28) 100%);}
+.rprog--sky .rprog-hero-overlay{background:linear-gradient(180deg,rgba(3,8,14,.08) 0%,rgba(3,8,14,.36) 52%,rgba(3,8,14,.84) 100%),linear-gradient(90deg,rgba(3,7,12,.70) 0%,rgba(3,7,12,.38) 42%,rgba(3,7,12,.08) 72%,rgba(3,7,12,.26) 100%);}
+.rprog--ai .rprog-hero-overlay{background:linear-gradient(180deg,rgba(5,9,8,.18) 0%,rgba(5,9,8,.46) 52%,rgba(5,9,8,.88) 100%),linear-gradient(90deg,rgba(5,9,8,.82) 0%,rgba(5,9,8,.56) 44%,rgba(5,9,8,.25) 72%,rgba(5,9,8,.38) 100%);}
+.rprog-hero-content{position:relative;z-index:2;width:min(1180px,calc(100% - 40px));margin:0 auto;padding:clamp(132px,18vh,210px) 0 clamp(64px,8vh,94px);}
+.rprog-kicker{display:inline-flex;align-items:center;gap:10px;margin:0 0 16px;color:#75b486;font-family:var(--rprog-mono);font-size:.72rem;line-height:1;letter-spacing:.22em;text-transform:uppercase;font-weight:400;}
+.rprog-kicker::before{content:"";width:32px;height:1px;background:currentColor;opacity:.78;}
+.rprog-title{margin:0 0 18px;color:#fff;font-family:var(--rprog-serif);font-weight:300;line-height:.90;letter-spacing:-.045em;font-size:clamp(3rem,6.4vw,7.1rem);max-width:780px;text-shadow:0 2px 20px rgba(0,0,0,.20);}
+.rprog-title em{font-style:italic;font-weight:300;color:#72ad79;}
+.rprog--sky .rprog-title em{color:#fff;}
+.rprog-lead{max-width:760px;margin:0;color:rgba(255,255,255,.84);font-family:var(--rprog-sans);font-weight:300;font-size:clamp(1rem,1.18vw,1.12rem);line-height:1.82;}
+.rprog-chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:25px;}
+.rprog-chip{display:inline-flex;align-items:center;min-height:36px;padding:0 15px;border-radius:999px;background:rgba(255,255,255,.88);border:1px solid rgba(255,255,255,.22);color:#263126;font-family:var(--rprog-sans);font-weight:400;font-size:.88rem;line-height:1;box-shadow:0 10px 30px rgba(0,0,0,.08);backdrop-filter:blur(10px);}
+.rprog-hero-cards{display:grid;gap:12px;margin-top:28px;width:min(520px,100%);}
+.rprog-mini-card{display:grid;grid-template-columns:auto 1fr;align-items:center;gap:14px;padding:14px 17px;border-radius:18px;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.18);backdrop-filter:blur(14px);box-shadow:0 14px 36px rgba(0,0,0,.14);}
+.rprog-mini-card .icon{width:38px;height:38px;border-radius:50%;display:grid;place-items:center;background:rgba(255,255,255,.86);color:#3f7d55;font-size:1.05rem;}
+.rprog-mini-card strong{display:block;color:#fff;font-family:var(--rprog-sans);font-weight:500;font-size:1rem;letter-spacing:.04em;margin-bottom:2px;}
+.rprog-mini-card span{display:block;color:rgba(255,255,255,.78);font-family:var(--rprog-sans);font-weight:300;font-size:.92rem;line-height:1.5;}
+.rprog-section{padding:clamp(54px,7vw,92px) 0;background:var(--rprog-bg);}
+.rprog-intro{display:grid;grid-template-columns:minmax(0,.95fr) minmax(0,1.1fr);gap:clamp(34px,5vw,76px);align-items:start;}
+.rprog-copy{font-size:1.02rem;line-height:1.84;color:var(--rprog-muted);font-weight:300;}
+.rprog-copy p{margin:0 0 18px!important;font-size:1.02rem!important;line-height:1.84!important;color:var(--rprog-muted)!important;font-weight:300!important;}
+.rprog-section-kicker{display:flex;align-items:center;gap:10px;margin:0 0 15px;color:#4b845d;font-family:var(--rprog-mono);font-size:.72rem;letter-spacing:.20em;text-transform:uppercase;font-weight:400;}
+.rprog-section-kicker::before{content:"";width:24px;height:1px;background:currentColor;}
+.rprog-section-title{margin:0 0 18px;color:var(--rprog-ink);font-family:var(--rprog-serif);font-weight:300;line-height:1;letter-spacing:-.035em;font-size:clamp(2rem,3.2vw,3.4rem);}
+.rprog-feature-list{display:grid;gap:14px;}
+.rprog-feature{display:grid;grid-template-columns:62px 1fr;gap:16px;align-items:center;padding:18px 20px;border-radius:22px;background:rgba(255,255,255,.64);border:1px solid var(--rprog-line);box-shadow:0 16px 44px rgba(31,35,28,.055);}
+.rprog-feature-ico{width:48px;height:48px;border-radius:50%;display:grid;place-items:center;background:rgba(75,132,93,.10);color:#3d7752;font-size:1.26rem;}
+.rprog-feature strong{display:block;margin:0 0 5px;color:var(--rprog-ink);font-family:var(--rprog-sans);font-weight:500;font-size:1.02rem;}
+.rprog-feature p{margin:0!important;color:var(--rprog-muted)!important;font-family:var(--rprog-sans);font-weight:300!important;font-size:.96rem!important;line-height:1.58!important;}
+.rprog-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;margin-top:30px;}
+.rprog-card{padding:26px 28px;border-radius:24px;background:rgba(255,255,255,.62);border:1px solid var(--rprog-line);box-shadow:0 18px 50px rgba(31,35,28,.055);}
+.rprog-card h3{margin:0 0 10px;color:var(--rprog-ink);font-family:var(--rprog-serif);font-weight:300;font-size:clamp(1.45rem,2.1vw,2.05rem);line-height:1.05;letter-spacing:-.025em;}
+.rprog-card p{margin:0!important;color:var(--rprog-muted)!important;font-family:var(--rprog-sans);font-weight:300!important;font-size:.98rem!important;line-height:1.72!important;}
+.rprog-media-card{overflow:hidden;border-radius:24px;background:#fff;border:1px solid var(--rprog-line);box-shadow:0 18px 50px rgba(31,35,28,.065);}
+.rprog-media-card img{display:block;width:100%;height:100%;min-height:260px;object-fit:cover;}
+.rprog-action{display:inline-flex;align-items:center;gap:9px;min-height:42px;padding:0 18px;border-radius:999px;background:#213325;color:#fff;font-family:var(--rprog-sans);font-weight:400;font-size:.86rem;letter-spacing:.08em;text-transform:uppercase;margin-top:18px;}
+.rprog-band{margin-top:clamp(34px,5vw,62px);padding:30px 34px;border-radius:28px;background:#213325;color:#fff;display:grid;grid-template-columns:1fr auto;gap:22px;align-items:center;}
+.rprog-band h2{margin:0 0 8px;color:#fff;font-family:var(--rprog-serif);font-size:clamp(1.8rem,3vw,3rem);font-weight:300;line-height:1;letter-spacing:-.035em;}
+.rprog-band p{margin:0!important;color:rgba(255,255,255,.72)!important;font-weight:300!important;font-size:1rem!important;line-height:1.72!important;max-width:760px;}
+.rprog-badge{display:inline-flex;align-items:center;padding:11px 15px;border-radius:999px;border:1px solid rgba(255,255,255,.16);color:rgba(255,255,255,.84);font-family:var(--rprog-mono);font-size:.68rem;letter-spacing:.15em;text-transform:uppercase;white-space:nowrap;}
+@media (max-width:980px){.rprog-hero{min-height:auto}.rprog-hero-content{padding:120px 0 58px}.rprog-title{font-size:clamp(2.6rem,10vw,5.5rem);}.rprog-intro{grid-template-columns:1fr}.rprog-grid{grid-template-columns:1fr}.rprog-band{grid-template-columns:1fr}.rprog-media-card img{height:auto}}
+@media (max-width:640px){.rprog-wrap,.rprog-hero-content{width:min(100% - 28px,1180px)}.rprog-hero{border-radius:0 0 22px 22px}.rprog-hero-content{padding:96px 0 46px}.rprog-title{font-size:clamp(2.25rem,14vw,3.8rem)}.rprog-lead{font-size:.96rem;line-height:1.68}.rprog-mini-card{grid-template-columns:1fr}.rprog-feature{grid-template-columns:1fr}.rprog-card{padding:22px}.rprog-band{padding:24px}.rprog-kicker,.rprog-section-kicker{letter-spacing:.14em;font-size:.64rem}.rprog-chip{font-size:.82rem}}
+
+
+/* v33: vraćena kontrolisana visina hero bloka i ujednačena tipografija za programske stranice */
+.rprog-hero{
+  height:clamp(500px,60vh,620px)!important;
+  min-height:clamp(500px,60vh,620px)!important;
+  max-height:620px!important;
+  align-items:center!important;
+  border-radius:0 0 28px 28px!important;
+}
+.rprog-hero-content{
+  padding:72px 0 44px!important;
+  transform:none!important;
+}
+.rprog-title{
+  font-family:var(--rprog-serif)!important;
+  font-weight:300!important;
+  line-height:.96!important;
+  letter-spacing:-.04em!important;
+  font-size:clamp(3.05rem,5.1vw,5.85rem)!important;
+  max-width:720px!important;
+  margin-bottom:16px!important;
+}
+.rprog--ai .rprog-title{font-size:clamp(2.85rem,4.9vw,5.35rem)!important;max-width:690px!important;}
+.rprog--smart .rprog-title{font-size:clamp(3.15rem,5.4vw,6rem)!important;}
+.rprog-title em{font-weight:300!important;}
+.rprog-kicker{font-weight:300!important;font-size:.66rem!important;letter-spacing:.20em!important;margin-bottom:13px!important;}
+.rprog-lead{
+  max-width:700px!important;
+  font-weight:300!important;
+  font-size:clamp(.93rem,1.02vw,1rem)!important;
+  line-height:1.68!important;
+  color:rgba(255,255,255,.84)!important;
+}
+.rprog-chips{margin-top:18px!important;gap:9px!important;}
+.rprog-chip{min-height:32px!important;padding:0 13px!important;font-weight:350!important;font-size:.82rem!important;letter-spacing:0!important;}
+.rprog-hero-cards{margin-top:18px!important;gap:10px!important;width:min(500px,100%)!important;}
+.rprog-mini-card{padding:11px 14px!important;border-radius:16px!important;gap:12px!important;}
+.rprog-mini-card .icon{width:34px!important;height:34px!important;font-size:.95rem!important;}
+.rprog-mini-card strong{font-weight:400!important;font-size:.92rem!important;letter-spacing:.035em!important;}
+.rprog-mini-card span{font-weight:300!important;font-size:.84rem!important;line-height:1.42!important;}
+.rprog-section{padding:clamp(44px,5.2vw,76px) 0!important;}
+.rprog-section-title,.rprog-deep-title,.rprog-card h3,.rprog-feature strong,.rprog-story-card h3,.rprog-story-aside h3{
+  font-weight:300!important;
+}
+.rprog-feature strong{font-family:var(--rprog-sans)!important;font-size:.98rem!important;}
+.rprog-card h3{font-size:clamp(1.38rem,1.9vw,1.9rem)!important;}
+.rprog-deep-title{font-size:clamp(2rem,3.6vw,4rem)!important;}
+.rprog-story-card h3{font-size:clamp(1.45rem,2.1vw,2.2rem)!important;}
+.rprog--ai .rprog-hero-media{object-position:center center!important;}
+.rprog--sky .rprog-hero-media{object-position:center center!important;}
+.rprog--smart .rprog-hero-media{object-position:center center!important;}
+.rprog--ai .rprog-hero-overlay{
+  background:linear-gradient(180deg,rgba(5,9,8,.18) 0%,rgba(5,9,8,.36) 46%,rgba(5,9,8,.76) 100%),linear-gradient(90deg,rgba(5,9,8,.82) 0%,rgba(5,9,8,.54) 42%,rgba(5,9,8,.18) 72%,rgba(5,9,8,.34) 100%)!important;
+}
+.rprog--sky .rprog-hero-overlay{
+  background:linear-gradient(180deg,rgba(3,8,14,.10) 0%,rgba(3,8,14,.28) 48%,rgba(3,8,14,.72) 100%),linear-gradient(90deg,rgba(3,7,12,.66) 0%,rgba(3,7,12,.36) 44%,rgba(3,7,12,.08) 72%,rgba(3,7,12,.22) 100%)!important;
+}
+.rprog--smart .rprog-hero-overlay{
+  background:linear-gradient(180deg,rgba(5,12,9,.10) 0%,rgba(5,12,9,.31) 48%,rgba(5,12,9,.72) 100%),linear-gradient(90deg,rgba(5,12,9,.72) 0%,rgba(5,12,9,.46) 38%,rgba(5,12,9,.14) 66%,rgba(5,12,9,.26) 100%)!important;
+}
+@media (max-width:980px){
+  .rprog-hero{height:auto!important;min-height:560px!important;max-height:none!important;align-items:flex-end!important;}
+  .rprog-hero-content{padding:104px 0 48px!important;}
+  .rprog-title,.rprog--ai .rprog-title,.rprog--smart .rprog-title{font-size:clamp(2.55rem,9.5vw,5rem)!important;}
+  .rprog-intro,.rprog-grid,.rprog-story{grid-template-columns:1fr!important;}
+  .rprog-metrics{grid-template-columns:repeat(2,minmax(0,1fr))!important;}
+}
+@media (max-width:640px){
+  .rprog-wrap,.rprog-hero-content{width:min(100% - 28px,1180px)!important;}
+  .rprog-hero{min-height:auto!important;height:auto!important;border-radius:0 0 22px 22px!important;}
+  .rprog-hero-content{padding:88px 0 38px!important;}
+  .rprog-title,.rprog--ai .rprog-title,.rprog--smart .rprog-title{font-size:clamp(2.15rem,13vw,3.45rem)!important;line-height:1!important;}
+  .rprog-lead{font-size:.92rem!important;line-height:1.62!important;}
+  .rprog-mini-card{grid-template-columns:auto 1fr!important;}
+  .rprog-metrics{grid-template-columns:1fr!important;}
+}
+
+/* v35: pojačan kontrast, tanka slova, hero bez dugmića */
+.rprog-lead{color:rgba(255,255,255,.92)!important;}
+.rprog-band p{color:rgba(255,255,255,.86)!important;}
+.rprog-section-title{font-size:clamp(2rem,3.2vw,3.4rem)!important;line-height:1!important;letter-spacing:-.035em!important;}
+.rprog--ai .rprog-hero-overlay{background:linear-gradient(180deg,rgba(5,9,8,.22) 0%,rgba(5,9,8,.44) 46%,rgba(5,9,8,.90) 100%),linear-gradient(90deg,rgba(5,9,8,.88) 0%,rgba(5,9,8,.60) 42%,rgba(5,9,8,.22) 72%,rgba(5,9,8,.38) 100%)!important;}
+
+</style>
+
+
+<style id="programske-responsive-v2-final">
+/*
+ * Mobilna i tablet optimizacija programskih stranica PIO Rajac.
+ * Aktivna je samo do 1100 px; desktop stilovi ostaju neizmenjeni.
+ * Verzija: 2026-07-14-v2
+ */
+
+.rajac-program-menu__toggle {
+  display: none;
+}
+
+@media (max-width: 1100px) {
+  html {
+    max-width: 100%;
+    overflow-x: hidden;
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+  }
+
+  body.rajac-static-output.pio-program-responsive {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden !important;
+  }
+
+  body.pio-program-responsive *,
+  body.pio-program-responsive *::before,
+  body.pio-program-responsive *::after {
+    box-sizing: border-box;
+  }
+
+  body.pio-program-responsive img,
+  body.pio-program-responsive picture,
+  body.pio-program-responsive video,
+  body.pio-program-responsive iframe,
+  body.pio-program-responsive canvas {
+    max-width: 100%;
+  }
+
+  body.pio-program-responsive img {
+    height: auto;
+  }
+
+  /* Zajednički meni: jedna mirna linija, pa meni na zahtev. */
+  body.pio-program-responsive .rajac-static-common-menu.rajac-program-menu {
+    position: relative !important;
+    z-index: 9999 !important;
+    width: 100% !important;
+    background: #112117 !important;
+    border: 0 !important;
+    border-bottom: 1px solid rgba(255, 255, 255, .12) !important;
+    box-shadow: 0 8px 24px rgba(5, 12, 8, .18) !important;
+  }
+
+  body.pio-program-responsive .rajac-static-common-menu.rajac-program-menu .rajac-static-common-menu__inner {
+    width: min(100% - 28px, 1180px) !important;
+    min-height: 58px !important;
+    margin: 0 auto !important;
+    padding: 8px 0 !important;
+    display: grid !important;
+    grid-template-columns: minmax(0, 1fr) auto !important;
+    align-items: center !important;
+    gap: 8px 14px !important;
+  }
+
+  body.pio-program-responsive .rajac-static-common-menu.rajac-program-menu .rajac-static-common-menu__logo,
+  body.pio-program-responsive .rajac-static-common-menu.rajac-program-menu .rajac-static-common-menu__logo:link,
+  body.pio-program-responsive .rajac-static-common-menu.rajac-program-menu .rajac-static-common-menu__logo:visited {
+    justify-self: start !important;
+    min-height: 40px !important;
+    padding: 0 !important;
+    border: 0 !important;
+    border-radius: 0 !important;
+    background: transparent !important;
+    color: #fffaf0 !important;
+    font-size: 14px !important;
+    font-weight: 800 !important;
+    letter-spacing: .045em !important;
+    text-decoration: none !important;
+  }
+
+  body.pio-program-responsive .rajac-program-menu__toggle {
+    justify-self: end;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    min-width: 92px;
+    min-height: 42px;
+    margin: 0;
+    padding: 0 13px;
+    border: 1px solid rgba(255, 255, 255, .24);
+    border-radius: 999px;
+    background: rgba(255, 255, 255, .08);
+    color: #fffaf0;
+    font: 800 13px/1 system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    letter-spacing: .08em;
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  body.pio-program-responsive .rajac-program-menu__toggle-icon {
+    width: 16px;
+    height: 12px;
+    position: relative;
+    display: inline-block;
+    border-top: 2px solid currentColor;
+    border-bottom: 2px solid currentColor;
+  }
+
+  body.pio-program-responsive .rajac-program-menu__toggle-icon::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 3px;
+    border-top: 2px solid currentColor;
+  }
+
+  body.pio-program-responsive .rajac-static-common-menu.rajac-program-menu.is-open .rajac-program-menu__toggle-icon {
+    border-color: transparent;
+  }
+
+  body.pio-program-responsive .rajac-static-common-menu.rajac-program-menu.is-open .rajac-program-menu__toggle-icon::before,
+  body.pio-program-responsive .rajac-static-common-menu.rajac-program-menu.is-open .rajac-program-menu__toggle-icon::after {
+    content: "";
+    position: absolute;
+    top: 4px;
+    left: 0;
+    width: 16px;
+    border-top: 2px solid currentColor;
+    transform: rotate(45deg);
+  }
+
+  body.pio-program-responsive .rajac-static-common-menu.rajac-program-menu.is-open .rajac-program-menu__toggle-icon::after {
+    transform: rotate(-45deg);
+  }
+
+  body.pio-program-responsive .rajac-static-common-menu.rajac-program-menu .rajac-static-common-menu__links {
+    grid-column: 1 / -1 !important;
+    width: 100% !important;
+    display: none !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 8px !important;
+    margin: 0 !important;
+    padding: 6px 0 4px !important;
+    overflow: visible !important;
+  }
+
+  body.pio-program-responsive .rajac-static-common-menu.rajac-program-menu.is-open .rajac-static-common-menu__links {
+    display: grid !important;
+  }
+
+  body.pio-program-responsive .rajac-static-common-menu.rajac-program-menu .rajac-static-common-menu__link,
+  body.pio-program-responsive .rajac-static-common-menu.rajac-program-menu .rajac-static-common-menu__link:link,
+  body.pio-program-responsive .rajac-static-common-menu.rajac-program-menu .rajac-static-common-menu__link:visited {
+    width: 100% !important;
+    min-width: 0 !important;
+    min-height: 44px !important;
+    padding: 9px 12px !important;
+    justify-content: flex-start !important;
+    white-space: normal !important;
+    text-align: left !important;
+    border: 1px solid rgba(255, 255, 255, .12) !important;
+    border-radius: 12px !important;
+    background: rgba(255, 255, 255, .055) !important;
+    color: rgba(255, 250, 240, .92) !important;
+    font-size: 12px !important;
+    line-height: 1.3 !important;
+    letter-spacing: .035em !important;
+  }
+
+  body.pio-program-responsive .rajac-static-common-menu.rajac-program-menu .rajac-static-common-menu__link.is-active,
+  body.pio-program-responsive .rajac-static-common-menu.rajac-program-menu .rajac-static-common-menu__link.is-active:link,
+  body.pio-program-responsive .rajac-static-common-menu.rajac-program-menu .rajac-static-common-menu__link.is-active:visited {
+    background: #233a2b !important;
+    border-color: rgba(212, 182, 90, .72) !important;
+    color: #fff !important;
+  }
+
+  /* HERO i osnovni stupac */
+  body.pio-program-responsive .rprog-wrap,
+  body.pio-program-responsive .rprog-hero-content,
+  body.pio-program-responsive #rajac-agro-page .shell,
+  body.pio-program-responsive #rajac-agro-page .hero-inner {
+    width: min(100% - 36px, 920px) !important;
+    max-width: calc(100% - 36px) !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+
+  body.pio-program-responsive .rprog-hero,
+  body.pio-program-responsive #rajac-agro-page section.hero {
+    width: 100% !important;
+    height: 560px !important;
+    min-height: 560px !important;
+    max-height: 560px !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    border-radius: 0 0 26px 26px !important;
+    overflow: hidden !important;
+  }
+
+  body.pio-program-responsive .rprog-hero-content,
+  body.pio-program-responsive #rajac-agro-page .hero-body {
+    padding: 92px 0 54px !important;
+  }
+
+  body.pio-program-responsive .rprog-title,
+  body.pio-program-responsive .rprog--smart .rprog-title,
+  body.pio-program-responsive #rajac-agro-page .hero h1 {
+    max-width: 820px !important;
+    margin-bottom: 16px !important;
+    font-size: clamp(2.55rem, 7.4vw, 4.7rem) !important;
+    line-height: 1 !important;
+    overflow-wrap: anywhere;
+    text-wrap: balance;
+  }
+
+  body.pio-program-responsive .rprog-lead,
+  body.pio-program-responsive #rajac-agro-page .hero-lead {
+    max-width: 760px !important;
+    font-size: 1rem !important;
+    line-height: 1.65 !important;
+  }
+
+  body.pio-program-responsive .rprog--ai .rprog-hero-media {
+    object-position: 58% center !important;
+  }
+
+  body.pio-program-responsive .rprog--sky .rprog-hero-media {
+    object-position: 54% center !important;
+  }
+
+  body.pio-program-responsive .rprog--smart .rprog-hero-media {
+    object-position: 57% center !important;
+  }
+
+  body.pio-program-responsive #rajac-agro-page .hero-media {
+    object-position: center top !important;
+  }
+
+  /* Sadržaj u jednom preglednom stupcu; manji parovi ostaju po dva na tabletu. */
+  body.pio-program-responsive .rprog-intro,
+  body.pio-program-responsive .rprog-story,
+  body.pio-program-responsive .rprog-bird-activity,
+  body.pio-program-responsive #rajac-agro-page .manage-grid {
+    grid-template-columns: minmax(0, 1fr) !important;
+    gap: 26px !important;
+  }
+
+  body.pio-program-responsive .rprog-grid,
+  body.pio-program-responsive .rprog-subgrid,
+  body.pio-program-responsive .rprog-metrics,
+  body.pio-program-responsive .rprog-equipment-grid,
+  body.pio-program-responsive .rprog-drone-gallery,
+  body.pio-program-responsive .rprog-sky-photo-grid,
+  body.pio-program-responsive #rajac-agro-page .key-grid,
+  body.pio-program-responsive #rajac-agro-page .al-now,
+  body.pio-program-responsive #rajac-agro-page .al-bottom-days {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 14px !important;
+  }
+
+  body.pio-program-responsive .rprog-story-aside {
+    position: relative !important;
+    top: auto !important;
+  }
+
+  body.pio-program-responsive .rprog--smart .rprog-story-list {
+    columns: 1 !important;
+  }
+
+  body.pio-program-responsive .rprog-equipment-card,
+  body.pio-program-responsive .rprog-equipment-card-wide,
+  body.pio-program-responsive .rprog-story-card,
+  body.pio-program-responsive .rprog-story-card-wide {
+    width: 100% !important;
+    max-width: 100% !important;
+    break-inside: avoid !important;
+  }
+
+  body.pio-program-responsive .rprog-equipment-card-wide,
+  body.pio-program-responsive .rprog-story-card-wide {
+    grid-column: 1 / -1 !important;
+  }
+
+  body.pio-program-responsive .rprog-band {
+    grid-template-columns: minmax(0, 1fr) !important;
+  }
+
+  body.pio-program-responsive .rprog-section,
+  body.pio-program-responsive .rprog-deep,
+  body.pio-program-responsive .rprog-equipment,
+  body.pio-program-responsive .rprog-drone-monitoring,
+  body.pio-program-responsive .rprog-sky-photo-block {
+    max-width: 100% !important;
+    overflow: hidden !important;
+  }
+
+  body.pio-program-responsive .rprog-card,
+  body.pio-program-responsive .rprog-story-card,
+  body.pio-program-responsive .rprog-story-aside,
+  body.pio-program-responsive .rprog-equipment-card,
+  body.pio-program-responsive #rajac-agro-page .key-card,
+  body.pio-program-responsive #rajac-agro-page .manage-copy,
+  body.pio-program-responsive #rajac-agro-page .side-card {
+    min-width: 0 !important;
+  }
+
+  body.pio-program-responsive .rprog-sky-photo-card img,
+  body.pio-program-responsive .rprog-equipment-card img,
+  body.pio-program-responsive .rprog-drone-gallery img,
+  body.pio-program-responsive .rprog-bird-activity-figure img,
+  body.pio-program-responsive #rajac-agro-page .agro-image-card img,
+  body.pio-program-responsive #rajac-agro-page .parcelimg-fig img {
+    display: block !important;
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  body.pio-program-responsive .rprog-smart-visual img {
+    height: auto !important;
+    max-height: 560px !important;
+    object-fit: contain !important;
+  }
+
+  body.pio-program-responsive .rprog-img-lightbox-inner {
+    width: min(94vw, 920px) !important;
+    max-height: 90svh !important;
+  }
+
+  body.pio-program-responsive .rprog-img-lightbox-stage img {
+    max-width: 100% !important;
+    max-height: 78svh !important;
+    object-fit: contain !important;
+  }
+
+  /* Poljoprivreda: grafikoni, prognoza i tabela ostaju čitljivi bez širenja stranice. */
+  body.pio-program-responsive #rajac-agro-page,
+  body.pio-program-responsive #rajac-agro-page .rp-agro,
+  body.pio-program-responsive #rajac-agro-page .agro-live,
+  body.pio-program-responsive #rajac-agro-page .agroday-sec,
+  body.pio-program-responsive #rajac-agro-page .parcelimg-sec {
+    width: 100% !important;
+    max-width: 100% !important;
+    overflow-x: hidden !important;
+  }
+
+  body.pio-program-responsive #rajac-agro-page .al-rain-wrap,
+  body.pio-program-responsive #rajac-agro-page .rain-axis-box,
+  body.pio-program-responsive #rajac-agro-page .agroday-table-wrap,
+  body.pio-program-responsive #rajac-agro-page .parcelimg-fig {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  body.pio-program-responsive #rajac-agro-page .agroday-table-wrap {
+    overflow-x: auto !important;
+    overscroll-behavior-inline: contain;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  body.pio-program-responsive #rajac-agro-page .agroday-table {
+    width: 100% !important;
+    min-width: 720px !important;
+  }
+
+  body.pio-program-responsive #rajac-agro-page .rain-bars {
+    min-width: 0 !important;
+  }
+
+  body.pio-program-responsive #rajac-agro-page .closing-box,
+  body.pio-program-responsive #rajac-agro-page .highlight-band {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  body.pio-program-responsive a,
+  body.pio-program-responsive button,
+  body.pio-program-responsive [role="button"] {
+    touch-action: manipulation;
+  }
+}
+
+@media (max-width: 700px) {
+  body.pio-program-responsive .rajac-static-common-menu.rajac-program-menu .rajac-static-common-menu__inner {
+    width: calc(100% - 24px) !important;
+  }
+
+  body.pio-program-responsive .rajac-static-common-menu.rajac-program-menu .rajac-static-common-menu__links {
+    grid-template-columns: minmax(0, 1fr) !important;
+  }
+
+  body.pio-program-responsive .rprog-wrap,
+  body.pio-program-responsive .rprog-hero-content,
+  body.pio-program-responsive #rajac-agro-page .shell,
+  body.pio-program-responsive #rajac-agro-page .hero-inner {
+    width: calc(100% - 28px) !important;
+    max-width: calc(100% - 28px) !important;
+  }
+
+  body.pio-program-responsive .rprog-hero,
+  body.pio-program-responsive #rajac-agro-page section.hero {
+    height: 510px !important;
+    min-height: 510px !important;
+    max-height: 510px !important;
+    border-radius: 0 0 22px 22px !important;
+  }
+
+  body.pio-program-responsive .rprog-hero-content,
+  body.pio-program-responsive #rajac-agro-page .hero-body {
+    padding: 78px 0 36px !important;
+  }
+
+  body.pio-program-responsive .rprog-title,
+  body.pio-program-responsive .rprog--smart .rprog-title,
+  body.pio-program-responsive #rajac-agro-page .hero h1 {
+    margin-bottom: 13px !important;
+    font-size: clamp(2rem, 11.2vw, 3.35rem) !important;
+    line-height: 1.02 !important;
+    letter-spacing: -.035em !important;
+  }
+
+  body.pio-program-responsive .rprog-lead,
+  body.pio-program-responsive #rajac-agro-page .hero-lead {
+    font-size: .94rem !important;
+    line-height: 1.58 !important;
+  }
+
+  body.pio-program-responsive .rprog-chips {
+    gap: 7px !important;
+    margin-top: 18px !important;
+  }
+
+  body.pio-program-responsive .rprog-chip {
+    min-height: 34px !important;
+    padding: 0 12px !important;
+    font-size: .78rem !important;
+  }
+
+  body.pio-program-responsive .rprog-grid,
+  body.pio-program-responsive .rprog-subgrid,
+  body.pio-program-responsive .rprog-metrics,
+  body.pio-program-responsive .rprog-equipment-grid,
+  body.pio-program-responsive .rprog-drone-gallery,
+  body.pio-program-responsive .rprog-sky-photo-grid,
+  body.pio-program-responsive #rajac-agro-page .key-grid,
+  body.pio-program-responsive #rajac-agro-page .al-now,
+  body.pio-program-responsive #rajac-agro-page .al-bottom-days {
+    grid-template-columns: minmax(0, 1fr) !important;
+  }
+
+  body.pio-program-responsive .rprog-card,
+  body.pio-program-responsive .rprog-story-card,
+  body.pio-program-responsive .rprog-story-aside,
+  body.pio-program-responsive .rprog-equipment-card,
+  body.pio-program-responsive .rprog-band,
+  body.pio-program-responsive #rajac-agro-page .key-card,
+  body.pio-program-responsive #rajac-agro-page .manage-copy,
+  body.pio-program-responsive #rajac-agro-page .side-card,
+  body.pio-program-responsive #rajac-agro-page .closing-box,
+  body.pio-program-responsive #rajac-agro-page .highlight-band {
+    padding: 20px !important;
+    border-radius: 20px !important;
+  }
+
+  body.pio-program-responsive .rprog-section,
+  body.pio-program-responsive .rprog-deep,
+  body.pio-program-responsive .rprog-equipment,
+  body.pio-program-responsive .rprog-drone-monitoring,
+  body.pio-program-responsive .rprog-sky-photo-block,
+  body.pio-program-responsive #rajac-agro-page .section,
+  body.pio-program-responsive #rajac-agro-page .agro-live,
+  body.pio-program-responsive #rajac-agro-page .agroday-sec,
+  body.pio-program-responsive #rajac-agro-page .parcelimg-sec {
+    padding-top: 34px !important;
+    padding-bottom: 34px !important;
+  }
+
+  body.pio-program-responsive #rajac-agro-page .agroday-table {
+    min-width: 660px !important;
+  }
+
+  body.pio-program-responsive #rajac-agro-page .rain-axis-box {
+    overflow-x: auto !important;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  body.pio-program-responsive #rajac-agro-page .rain-bars {
+    min-width: 0 !important;
+  }
+
+  body.pio-program-responsive .rprog-img-lightbox-close {
+    top: 8px !important;
+    right: 8px !important;
+    width: 44px !important;
+    height: 44px !important;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) and (max-width: 1100px) {
+  body.pio-program-responsive *,
+  body.pio-program-responsive *::before,
+  body.pio-program-responsive *::after {
+    scroll-behavior: auto !important;
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: .01ms !important;
+  }
+}
+
+</style>
+<main class="rprog rprog--ai">
+<section class="rprog-hero" aria-labelledby="rprog-ai-title">
+  <img class="rprog-hero-media" src="/rajac-static-2105/assets/page-assets/vestacka-inteligencija/ai-hero-user-v34.webp" width="1600" height="678" alt="Савремене технологије и дигитални надзор у управљању Рајцем" loading="eager" fetchpriority="high" decoding="async">
+  <div class="rprog-hero-overlay"></div>
+  <div class="rprog-hero-content">
+<h1 id="rprog-ai-title" class="rprog-title">Савремене технологије</h1>
+    <p class="rprog-lead">Савремене технологије на Рајцу повезују вештачку интелигенцију, сензоре, сателитске снимке, аутоматске извештаје и базе података у практичан систем за бржу анализу, рано откривање проблема и подршку одлукама у заштити природе.</p>
+  </div>
+</section>
+<section class="rprog-section">
+  <div class="rprog-wrap rprog-intro">
+    <div class="rprog-copy">
+      <div class="rprog-section-kicker">Дигитални чувар</div>
+      <h2 class="rprog-section-title">Сигнали са терена постају употребљиве одлуке.</h2>
+      <p>Савремене технологије у оквиру SMART Биомониторинга Рајца не замењују стручњаке, већ њихов рад чине бржим, прецизнијим и оперативно кориснијим. Камере, акустични уређаји, сателитски снимци и аналитички модели заједно издвајају најважније појаве у простору.</p>
+      <p>Зато се ова страница више не односи само на вештачку интелигенцију, већ на шири оквир савремених технологија за управљање заштићеним подручјем: од прикупљања података, преко аутоматске анализе, до јасних упозорења и извештаја.</p>
+    </div>
+    <div class="rprog-feature-list">
+      <article class="rprog-feature"><div class="rprog-feature-ico">◎</div><div><strong>Аутоматска идентификација</strong><p>Птице, сисари, лептири и друге групе препознају се у првој обради снимака.</p></div></article>
+      <article class="rprog-feature"><div class="rprog-feature-ico">≋</div><div><strong>Акустични увид</strong><p>Оглашавање птица и слепих мишева анализира се без сталног присуства истраживача.</p></div></article>
+      <article class="rprog-feature"><div class="rprog-feature-ico">◷</div><div><strong>Реакција на време</strong><p>Аномалије и сумњиви догађаји издвајају се раније него у класичном надзору.</p></div></article>
+    </div>
+  </div>
+  <div class="rprog-wrap">
+    <div class="rprog-section-kicker" style="margin-top:34px;">Кључне примене</div>
+    <h2 class="rprog-section-title">Четири начина на које савремене технологије мењају надзор природе</h2>
+    <div class="rprog-grid">
+      <article class="rprog-card"><h3>Аутоматска идентификација врста</h3><p>Паметне камере и фото-замке препознају врсте на основу фотографија и видео-записа. Пажња истраживача усмерава се на ретке и неочекиване појаве — уместо на ручно прегледање хиљада снимака.</p></article>
+      <article class="rprog-card"><h3>Акустични мониторинг</h3><p>Модели машинског учења анализирају звучне записе и препознају оглашавање птица, слепих мишева и других група. Нарочито важно за шумска језгра, ливаде и спелеолошке објекте.</p></article>
+      <article class="rprog-card"><h3>Детекција претњи и ризика</h3><p>AI издваја акустичне потписе моторних тестера, пуцњева и кретања возила. Анализа сателитских снимака уочава аномалије — суша, деградација, нелегална сеча, ризик од пожара.</p></article>
+      <article class="rprog-card"><h3>AI у ноћном окружењу</h3><p>У систему звезданог парка модели помажу у процени расвете и уочавању нових извора светлосног загађења — прецизно, на основу стварних просторних података.</p></article>
+    </div>
+    <div class="rprog-grid">
+      <article class="rprog-card"><h3>Подаци претворени у употребљиве одлуке</h3><p>Највећа вредност AI система лежи у томе што огромну количину снимака, записа и сензорских очитавања своди на прегледне и применљиве информације.</p><p>Управљач добија јаснији увид у то где се јавља ризик, који налази траже теренску проверу и где треба усмерити ресурсе. Заштита природе тако прелази из реактивног у адаптивни модел.</p></article>
+      <article class="rprog-card"><h3>Шта овај модел доноси Рајцу</h3><p>Бржа прва обрада великих количина података и мање ручног прегледања; раније уочавање појава које захтевају теренску проверу или хитну реакцију; боље повезивање камера, акустике, сателитских снимака и управљачких мера; развој локалне базе знања о фауни, стаништима и ризицима Рајца.</p></article>
+    </div>
+    <div class="rprog-band"><div><h2>Савремене технологије овде нису ефекат — то је радна инфраструктура.</h2><p>У систему SMART Биомониторинга она постаје практичан слој између терена и управљања: препознаје, издваја, упозорава и помаже да свака следећа одлука буде заснованија на стварним подацима.</p></div><span class="rprog-badge">AI у пракси</span></div>
+  </div>
+</section>
+</main>
+
+
+<style id="rajac-program-final-unify-1406">
+/* 14.06 — ujednačenje menija, hero visine, fontova i naslovnih blokova za programske stranice */
+body.rajac-static-output .rajac-static-common-menu.rajac-program-menu{
+  position:relative!important;
+  z-index:99999!important;
+  width:100%!important;
+  background:rgba(12,24,16,.96)!important;
+  border-bottom:1px solid rgba(255,250,240,.14)!important;
+  box-shadow:0 12px 34px rgba(0,0,0,.28)!important;
+  backdrop-filter:blur(12px)!important;
+  -webkit-backdrop-filter:blur(12px)!important;
+  font-family:Outfit,Inter,system-ui,-apple-system,"Segoe UI",sans-serif!important;
+}
+body.rajac-static-output .rajac-static-common-menu.rajac-program-menu,
+body.rajac-static-output .rajac-static-common-menu.rajac-program-menu *{box-sizing:border-box!important;}
+body.rajac-static-output .rajac-static-common-menu.rajac-program-menu .rajac-static-common-menu__inner{
+  width:min(1180px,calc(100% - 40px))!important;
+  min-height:56px!important;
+  margin:0 auto!important;
+  display:flex!important;
+  align-items:center!important;
+  justify-content:space-between!important;
+  gap:18px!important;
+}
+body.rajac-static-output .rajac-static-common-menu.rajac-program-menu .rajac-static-common-menu__logo,
+body.rajac-static-output .rajac-static-common-menu.rajac-program-menu .rajac-static-common-menu__logo:link,
+body.rajac-static-output .rajac-static-common-menu.rajac-program-menu .rajac-static-common-menu__logo:visited{
+  display:inline-flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+  min-height:38px!important;
+  padding:0 16px!important;
+  border-radius:999px!important;
+  background:#243f2d!important;
+  color:#fffaf0!important;
+  text-decoration:none!important;
+  font-weight:800!important;
+  font-size:15px!important;
+  letter-spacing:.01em!important;
+  white-space:nowrap!important;
+  opacity:1!important;
+}
+body.rajac-static-output .rajac-static-common-menu.rajac-program-menu .rajac-static-common-menu__links{
+  display:flex!important;
+  align-items:center!important;
+  justify-content:flex-end!important;
+  gap:8px!important;
+  flex-wrap:wrap!important;
+}
+body.rajac-static-output .rajac-static-common-menu.rajac-program-menu .rajac-static-common-menu__link,
+body.rajac-static-output .rajac-static-common-menu.rajac-program-menu .rajac-static-common-menu__link:link,
+body.rajac-static-output .rajac-static-common-menu.rajac-program-menu .rajac-static-common-menu__link:visited{
+  display:inline-flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+  min-height:38px!important;
+  padding:0 14px!important;
+  border-radius:0!important;
+  border:0!important;
+  background:transparent!important;
+  color:rgba(255,250,240,.86)!important;
+  text-decoration:none!important;
+  text-transform:uppercase!important;
+  font-size:13px!important;
+  font-weight:800!important;
+  line-height:1!important;
+  letter-spacing:.08em!important;
+  white-space:nowrap!important;
+  opacity:1!important;
+  text-shadow:0 1px 2px rgba(0,0,0,.38)!important;
+}
+body.rajac-static-output .rajac-static-common-menu.rajac-program-menu .rajac-static-common-menu__link:hover,
+body.rajac-static-output .rajac-static-common-menu.rajac-program-menu .rajac-static-common-menu__link:focus{
+  background:rgba(255,250,240,.10)!important;
+  color:#fffaf0!important;
+}
+body.rajac-static-output .rajac-static-common-menu.rajac-program-menu .rajac-static-common-menu__link.is-active,
+body.rajac-static-output .rajac-static-common-menu.rajac-program-menu .rajac-static-common-menu__link.is-active:link,
+body.rajac-static-output .rajac-static-common-menu.rajac-program-menu .rajac-static-common-menu__link.is-active:visited{
+  background:#1f3527!important;
+  color:#fffaf0!important;
+  border-left:1px solid rgba(255,250,240,.10)!important;
+  border-right:1px solid rgba(255,250,240,.10)!important;
+  box-shadow:inset 0 -2px 0 rgba(212,182,90,.80)!important;
+}
+
+body.rajac-static-output .rprog,
+body.rajac-static-output #rajac-agro-page{
+  font-family:Outfit,Inter,system-ui,-apple-system,"Segoe UI",sans-serif!important;
+}
+body.rajac-static-output .rprog-hero,
+body.rajac-static-output #rajac-agro-page section.hero{
+  position:relative!important;
+  height:620px!important;
+  min-height:620px!important;
+  max-height:620px!important;
+  display:flex!important;
+  align-items:flex-end!important;
+  overflow:hidden!important;
+  background:#08130e!important;
+  border-radius:0 0 32px 32px!important;
+  box-shadow:0 26px 70px rgba(12,18,14,.18)!important;
+}
+body.rajac-static-output .rprog-hero-content{
+  width:min(1180px,calc(100% - 40px))!important;
+  padding:0 0 76px!important;
+  margin:0 auto!important;
+}
+body.rajac-static-output #rajac-agro-page .hero-inner{
+  position:relative!important;
+  z-index:2!important;
+  width:100%!important;
+  padding:0!important;
+}
+body.rajac-static-output #rajac-agro-page .hero-body{
+  width:min(1180px,calc(100% - 40px))!important;
+  margin:0 auto!important;
+  padding:0 0 76px!important;
+}
+body.rajac-static-output .rprog-kicker,
+body.rajac-static-output #rajac-agro-page .hero-eyebrow{
+  display:none!important;
+}
+body.rajac-static-output .rprog-title,
+body.rajac-static-output #rajac-agro-page .hero h1{
+  max-width:1120px!important;
+  margin:0 0 18px!important;
+  color:#fff!important;
+  font-family:"Cormorant Garamond","Crimson Pro",Georgia,serif!important;
+  font-size:clamp(3.35rem,5.55vw,6.15rem)!important;
+  font-weight:300!important;
+  line-height:.94!important;
+  letter-spacing:-.045em!important;
+  text-shadow:0 2px 22px rgba(0,0,0,.28)!important;
+}
+body.rajac-static-output .rprog-title em,
+body.rajac-static-output #rajac-agro-page .hero h1 em{
+  color:#fff!important;
+  font-style:normal!important;
+  font-weight:300!important;
+}
+body.rajac-static-output .rprog-lead,
+body.rajac-static-output #rajac-agro-page .hero-lead{
+  max-width:760px!important;
+  margin:0!important;
+  color:rgba(255,255,255,.86)!important;
+  font-size:clamp(.98rem,1.12vw,1.08rem)!important;
+  line-height:1.78!important;
+  font-weight:300!important;
+}
+body.rajac-static-output #rajac-agro-page .hero-media-wrap{
+  position:absolute!important;
+  inset:0!important;
+  width:100%!important;
+  height:100%!important;
+  min-height:0!important;
+  max-height:none!important;
+  overflow:hidden!important;
+  z-index:0!important;
+}
+body.rajac-static-output #rajac-agro-page .hero-media,
+body.rajac-static-output .rprog-hero-media{
+  position:absolute!important;
+  inset:0!important;
+  width:100%!important;
+  height:100%!important;
+  object-fit:cover!important;
+  z-index:0!important;
+}
+body.rajac-static-output #rajac-agro-page .hero-overlay{
+  position:absolute!important;
+  inset:0!important;
+  z-index:1!important;
+  background:
+    linear-gradient(180deg,rgba(5,12,9,.12) 0%,rgba(5,12,9,.32) 45%,rgba(5,12,9,.84) 100%),
+    linear-gradient(90deg,rgba(5,12,9,.76) 0%,rgba(5,12,9,.50) 40%,rgba(5,12,9,.18) 70%,rgba(5,12,9,.30) 100%)!important;
+}
+body.rajac-static-output #rajac-agro-page .hero::before{display:none!important;}
+body.rajac-static-output #rajac-agro-page .hero h1 br{display:none!important;}
+
+@media (max-width:980px){
+  body.rajac-static-output .rajac-static-common-menu.rajac-program-menu .rajac-static-common-menu__inner{
+    width:min(100% - 24px,1180px)!important;
+    flex-direction:column!important;
+    align-items:center!important;
+    justify-content:center!important;
+    gap:8px!important;
+    padding:10px 0!important;
+  }
+  body.rajac-static-output .rajac-static-common-menu.rajac-program-menu .rajac-static-common-menu__links{
+    width:100%!important;
+    justify-content:flex-start!important;
+    flex-wrap:nowrap!important;
+    overflow-x:auto!important;
+    padding-bottom:4px!important;
+    -webkit-overflow-scrolling:touch!important;
+  }
+  body.rajac-static-output .rajac-static-common-menu.rajac-program-menu .rajac-static-common-menu__link,
+  body.rajac-static-output .rajac-static-common-menu.rajac-program-menu .rajac-static-common-menu__link:link,
+  body.rajac-static-output .rajac-static-common-menu.rajac-program-menu .rajac-static-common-menu__link:visited{
+    flex:0 0 auto!important;
+    min-height:34px!important;
+    padding:0 10px!important;
+    font-size:12px!important;
+    letter-spacing:.055em!important;
+  }
+  body.rajac-static-output .rprog-hero,
+  body.rajac-static-output #rajac-agro-page section.hero{
+    height:560px!important;
+    min-height:560px!important;
+    max-height:560px!important;
+  }
+  body.rajac-static-output .rprog-hero-content,
+  body.rajac-static-output #rajac-agro-page .hero-body{padding-bottom:56px!important;}
+  body.rajac-static-output .rprog-title,
+  body.rajac-static-output #rajac-agro-page .hero h1{font-size:clamp(2.8rem,9vw,5rem)!important;}
+}
+@media (max-width:640px){
+  body.rajac-static-output .rprog-hero,
+  body.rajac-static-output #rajac-agro-page section.hero{
+    height:500px!important;
+    min-height:500px!important;
+    max-height:500px!important;
+    border-radius:0 0 24px 24px!important;
+  }
+  body.rajac-static-output .rprog-hero-content,
+  body.rajac-static-output #rajac-agro-page .hero-body{
+    width:min(100% - 28px,1180px)!important;
+    padding-bottom:38px!important;
+  }
+  body.rajac-static-output .rprog-title,
+  body.rajac-static-output #rajac-agro-page .hero h1{
+    font-size:clamp(2.35rem,12.5vw,3.6rem)!important;
+    line-height:1!important;
+  }
+  body.rajac-static-output .rprog-lead,
+  body.rajac-static-output #rajac-agro-page .hero-lead{
+    font-size:.94rem!important;
+    line-height:1.62!important;
+  }
+}
+</style>
+
+
+
+<style id="rajac-program-pages-v43-tanji-naslovi-bez-dugmadi">
+/* v43 — танји и мањи наслови на све четири програмске странице */
+body.rajac-static-output .rprog-title,
+body.rajac-static-output #rajac-agro-page .hero h1{
+  font-size:clamp(2.85rem,4.35vw,4.85rem)!important;
+  font-weight:250!important;
+  line-height:1.00!important;
+  letter-spacing:-.035em!important;
+  text-wrap:balance!important;
+}
+body.rajac-static-output .rprog-title em,
+body.rajac-static-output #rajac-agro-page .hero h1 em{
+  font-weight:250!important;
+}
+body.rajac-static-output .rprog-section-title,
+body.rajac-static-output .rprog-deep-title,
+body.rajac-static-output #rajac-agro-page .s-title,
+body.rajac-static-output #rajac-agro-page .closing-box h2,
+body.rajac-static-output #rajac-agro-page .al-head h2,
+body.rajac-static-output #rajac-agro-page .owner-head h2{
+  font-size:clamp(1.75rem,2.45vw,2.85rem)!important;
+  font-weight:300!important;
+  line-height:1.08!important;
+  letter-spacing:-.02em!important;
+}
+body.rajac-static-output .rprog-card h3,
+body.rajac-static-output .rprog-story-card h3,
+body.rajac-static-output .rprog-subcard h3,
+body.rajac-static-output .rprog-band h3,
+body.rajac-static-output #rajac-agro-page .key-card h3,
+body.rajac-static-output #rajac-agro-page .insight-card h3,
+body.rajac-static-output #rajac-agro-page .dark-card h3,
+body.rajac-static-output #rajac-agro-page .manage-copy h3,
+body.rajac-static-output #rajac-agro-page .side-card h3,
+body.rajac-static-output #rajac-agro-page .al-bottom-top h3,
+body.rajac-static-output #rajac-agro-page .al-fhead h3,
+body.rajac-static-output #rajac-agro-page .al-rain-head h3,
+body.rajac-static-output #rajac-agro-page .al-bottom-top h3,
+body.rajac-static-output #rajac-agro-page .owner-chart h3,
+body.rajac-static-output #rajac-agro-page .owner-bulletin h3,
+body.rajac-static-output #rajac-agro-page .owner-map-card h3,
+body.rajac-static-output #rajac-agro-page .owner-alerts h3,
+body.rajac-static-output #rajac-agro-page .al-cop-title{
+  font-size:clamp(1.15rem,1.55vw,1.65rem)!important;
+  font-weight:300!important;
+  line-height:1.16!important;
+  letter-spacing:-.012em!important;
+}
+body.rajac-static-output .rprog-feature strong,
+body.rajac-static-output .rprog-mini-card strong,
+body.rajac-static-output #rajac-agro-page .al-cop-label,
+body.rajac-static-output #rajac-agro-page .al-mlabel,
+body.rajac-static-output #rajac-agro-page .al-sname{
+  font-weight:500!important;
+}
+body.rajac-static-output #rajac-agro-page .al-cop{
+  grid-template-columns:1fr!important;
+}
+body.rajac-static-output #rajac-agro-page .al-cop-btn,
+body.rajac-static-output #rajac-agro-page #forecast-7d-bottom-link{
+  display:none!important;
+}
+@media (max-width:980px){
+  body.rajac-static-output .rprog-title,
+  body.rajac-static-output #rajac-agro-page .hero h1{
+    font-size:clamp(2.35rem,7.8vw,4.25rem)!important;
+  }
+}
+@media (max-width:640px){
+  body.rajac-static-output .rprog-title,
+  body.rajac-static-output #rajac-agro-page .hero h1{
+    font-size:clamp(2rem,10.5vw,3.15rem)!important;
+    line-height:1.04!important;
+  }
+  body.rajac-static-output .rprog-section-title,
+  body.rajac-static-output #rajac-agro-page .s-title,
+  body.rajac-static-output #rajac-agro-page .al-head h2{
+    font-size:clamp(1.55rem,7.2vw,2.35rem)!important;
+  }
+}
+</style>
+
+
+<style id="rajac-fixed-program-menu-1406">
+/* 14.06.2026 — fiksirani/sticky gornji meni za sve programske stranice */
+html{
+  scroll-padding-top:72px!important;
+}
+body.rajac-static-output .rajac-static-common-menu.rajac-program-menu{
+  position:sticky!important;
+  top:0!important;
+  left:0!important;
+  right:0!important;
+  z-index:2147483000!important;
+  width:100%!important;
+  background:rgba(12,24,16,.96)!important;
+  border-bottom:1px solid rgba(255,250,240,.14)!important;
+  box-shadow:0 12px 34px rgba(0,0,0,.24)!important;
+  backdrop-filter:blur(12px)!important;
+  -webkit-backdrop-filter:blur(12px)!important;
+  transform:translateZ(0)!important;
+}
+body.rajac-static-output .rajac-static-common-menu.rajac-program-menu .rajac-static-common-menu__inner{
+  min-height:56px!important;
+}
+body.rajac-static-output .rajac-static-common-menu.rajac-program-menu .rajac-static-common-menu__link.is-active{
+  box-shadow:inset 0 -2px 0 rgba(212,182,90,.90)!important;
+}
+@media (max-width:980px){
+  html{scroll-padding-top:112px!important;}
+  body.rajac-static-output .rajac-static-common-menu.rajac-program-menu{
+    position:sticky!important;
+    top:0!important;
+  }
+}
+</style>
+
+<!-- SITE_EDITOR_ADMIN_BAR_START -->
+<script src="/admin-site-editor.php?admin_bar_js=1" defer></script>
+<!-- SITE_EDITOR_ADMIN_BAR_END -->
+
+<script id="programske-responsive-v2-js">
+(function () {
+  "use strict";
+
+  var menu = document.querySelector(".rajac-program-menu");
+  if (!menu) return;
+
+  var toggle = menu.querySelector(".rajac-program-menu__toggle");
+  var links = menu.querySelector(".rajac-static-common-menu__links");
+  if (!toggle || !links) return;
+
+  function closeMenu() {
+    menu.classList.remove("is-open");
+    toggle.setAttribute("aria-expanded", "false");
+  }
+
+  toggle.addEventListener("click", function () {
+    var open = menu.classList.toggle("is-open");
+    toggle.setAttribute("aria-expanded", open ? "true" : "false");
+  });
+
+  links.addEventListener("click", function (event) {
+    if (event.target.closest("a")) closeMenu();
+  });
+
+  document.addEventListener("keydown", function (event) {
+    if (event.key === "Escape") closeMenu();
+  });
+
+  window.addEventListener("resize", function () {
+    if (window.innerWidth > 1100) closeMenu();
+  }, { passive: true });
+})();
+
+</script>
+
+<style id="programske-menu-v3-absolute-final">
+@media (max-width:1100px){
+html body.rajac-static-output.pio-program-responsive nav.rajac-static-common-menu.rajac-program-menu .rajac-static-common-menu__inner{width:min(100% - 28px,1180px)!important;min-height:58px!important;margin:0 auto!important;padding:8px 0!important;display:grid!important;grid-template-columns:minmax(0,1fr) auto!important;align-items:center!important;justify-content:stretch!important;gap:8px 14px!important;flex-direction:initial!important}
+html body.rajac-static-output.pio-program-responsive nav.rajac-static-common-menu.rajac-program-menu .rajac-static-common-menu__logo{justify-self:start!important;margin:0!important}
+html body.rajac-static-output.pio-program-responsive nav.rajac-static-common-menu.rajac-program-menu .rajac-program-menu__toggle{display:inline-flex!important;justify-self:end!important;margin:0!important}
+html body.rajac-static-output.pio-program-responsive nav.rajac-static-common-menu.rajac-program-menu .rajac-static-common-menu__links{grid-column:1/-1!important;width:100%!important;display:none!important;grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:8px!important;margin:0!important;padding:6px 0 4px!important;overflow:visible!important;flex-wrap:initial!important}
+html body.rajac-static-output.pio-program-responsive nav.rajac-static-common-menu.rajac-program-menu.is-open .rajac-static-common-menu__links{display:grid!important}
+}
+@media (max-width:700px){html body.rajac-static-output.pio-program-responsive nav.rajac-static-common-menu.rajac-program-menu .rajac-static-common-menu__links{grid-template-columns:minmax(0,1fr)!important}}
+</style>
+
+<script id="programske-menu-v3-enforce">
+(function(){"use strict";var m=document.querySelector(".rajac-program-menu"),l=m&&m.querySelector(".rajac-static-common-menu__links");if(!m||!l)return;function sync(){if(window.innerWidth<=1100){l.style.setProperty("display",m.classList.contains("is-open")?"grid":"none","important");}else{l.style.removeProperty("display");}}m.addEventListener("click",function(){window.requestAnimationFrame(sync);});document.addEventListener("keydown",function(e){if(e.key==="Escape")window.requestAnimationFrame(sync);});window.addEventListener("resize",sync,{passive:true});sync();})();
+</script>
+
+<style id="rajac-vrh-v5-transparent-style">#rajac-vrh-v4{position:fixed;right:18px;bottom:18px;z-index:100000;width:54px;height:54px;padding:0;border:1px solid rgba(23,51,34,.38);border-radius:50%;background:rgba(255,255,255,.16);color:#173322;box-shadow:0 8px 24px rgba(0,0,0,.18);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);text-shadow:0 1px 2px rgba(255,255,255,.75);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1px;opacity:0;visibility:hidden;transform:translateY(10px);pointer-events:none;transition:opacity .2s ease,transform .2s ease,visibility .2s ease;cursor:pointer;-webkit-tap-highlight-color:transparent}#rajac-vrh-v4.is-visible{opacity:1;visibility:visible;transform:none;pointer-events:auto}#rajac-vrh-v4 .arr{font:800 20px/17px system-ui}#rajac-vrh-v4 .txt{font:800 9px/10px system-ui;letter-spacing:.08em}@media(max-width:700px){#rajac-vrh-v4{right:14px;bottom:14px;width:52px;height:52px}}@media(prefers-reduced-motion:reduce){#rajac-vrh-v4{transition:none}}
+</style>
+<button id="rajac-vrh-v4" type="button" aria-label="Врати се на врх странице" title="ВРХ"><span class="arr" aria-hidden="true">↑</span><span class="txt">ВРХ</span></button>
+<script id="rajac-vrh-v5-transparent-js">(function(){"use strict";var b=document.getElementById("rajac-vrh-v4");if(!b)return;function show(){b.classList.toggle("is-visible",window.scrollY>280)}window.addEventListener("scroll",show,{passive:true});b.addEventListener("click",function(){window.scrollTo({top:0,behavior:"smooth"})});show()})();</script>
+<style id="rajac-meni-naziv-v1">@media(min-width:1101px){html body.rajac-static-output nav.rajac-static-common-menu.rajac-program-menu .rajac-static-common-menu__inner{gap:8px!important}html body.rajac-static-output nav.rajac-static-common-menu.rajac-program-menu .rajac-static-common-menu__links{flex-wrap:nowrap!important}}</style>
+</body>
+</html>
