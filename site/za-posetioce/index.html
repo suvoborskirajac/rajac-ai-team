@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="sr-RS">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>За посетиоце | ПИО Рајац</title>
+<meta name="description" content="Практични портал за посетиоце ПИО Рајац: стазе, време, карте, правила понашања, природа, ноћно небо, догађаји и пријаве са терена.">
+<style>
+:root{
+  --bg:#fff;
+  --ink:#172117;
+  --text:#334034;
+  --muted:#657064;
+  --line:rgba(23,33,23,.14);
+  --soft:#f6f7f3;
+  --soft2:#eef2ea;
+  --forest:#26301e;
+  --forest2:#102317;
+  --accent:#6f7f47;
+  --gold:#b99a45;
+  --sand:#e7cf85;
+  --blue:#4f8a9e;
+  --brown:#b3703f;
+  --display:'Cormorant Garamond',Georgia,'Times New Roman',serif;
+  --body:'Outfit','Segoe UI',system-ui,-apple-system,Roboto,Arial,sans-serif;
+  --mono:'DM Mono','Cascadia Code',Consolas,ui-monospace,monospace;
+  --shadow:0 16px 40px rgba(38,48,30,.10);
+  --radius:20px;
+  --nav-h:64px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:calc(var(--nav-h) + 18px)}
+body{margin:0;background:var(--bg);color:var(--text);font-family:var(--body);font-size:17px;line-height:1.72;padding-top:var(--nav-h)}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;height:auto;display:block}
+.shell{width:min(1180px,calc(100% - 40px));margin:0 auto}
+
+/* Главни мени — исти систем као постојећа страница */
+.book-nav{position:fixed;top:0;left:0;right:0;z-index:99999;height:var(--nav-h);background:rgba(38,48,30,.96);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid rgba(189,173,135,.45)}
+.book-nav .shell{display:flex;align-items:center;height:100%;overflow-x:auto;scrollbar-width:none}
+.book-nav .shell::-webkit-scrollbar{display:none}
+.nav-logo{display:flex;align-items:center;gap:9px;color:#fdf6e6;font-weight:600;white-space:nowrap;padding-right:20px;margin-right:12px;border-right:1px solid rgba(255,255,255,.12);height:42px}
+.nav-logo::before{content:"";width:9px;height:9px;border-radius:50%;background:#bdad87;box-shadow:0 0 0 4px rgba(189,173,135,.22)}
+.nav-links{display:flex;align-items:stretch;height:100%}
+.nav-link{display:flex;align-items:center;padding:0 12px;color:rgba(253,246,230,.82);font-size:.68rem;font-weight:500;text-transform:uppercase;letter-spacing:.14em;white-space:nowrap;border-bottom:2px solid transparent;transition:color .18s,background .18s,border-color .18s}
+.nav-link:hover{color:#fff;background:rgba(255,255,255,.04)}
+.nav-link.is-active{color:var(--sand);border-bottom-color:#bdad87}
+
+/* HERO */
+.hero{min-height:460px;max-height:520px;display:flex;align-items:center;position:relative;overflow:hidden;isolation:isolate;border-bottom:1px solid rgba(189,173,135,.6);background-image:linear-gradient(90deg,rgba(38,48,30,.78) 0%,rgba(38,48,30,.62) 42%,rgba(38,48,30,.18) 100%),url('https://piorajac.rs/wp-content/uploads/2026/06/1780416944132.jpg');background-position:center center;background-size:cover;background-repeat:no-repeat;background-color:var(--forest)}
+.hero-inner{width:min(1180px,calc(100% - 40px));margin:0 auto;padding:104px 0 60px;position:relative;z-index:2}
+.hero h1{font-family:var(--display);font-size:clamp(38px,4.2vw,56px);font-weight:500;line-height:1.06;letter-spacing:-.03em;max-width:720px;margin:0;color:#fff7df;text-shadow:0 2px 14px rgba(0,0,0,.35)}
+.hero .lead{font-size:clamp(16px,1.6vw,19px);line-height:1.8;max-width:760px;margin:22px 0 0;color:rgba(255,250,235,.92);text-shadow:0 1px 10px rgba(0,0,0,.28)}
+
+/* Четири принципа */
+.op-stats{width:min(1180px,calc(100% - 40px));margin:clamp(-44px,-4vw,-30px) auto 0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));background:#2a3420;border-radius:18px;overflow:hidden;box-shadow:var(--shadow);position:relative;z-index:3}
+.op-stat{position:relative;padding:26px 24px 24px;min-height:112px;transition:background .18s}
+.op-stat:hover{background:rgba(255,255,255,.05)}
+.op-stat::before{content:"";position:absolute;left:0;right:0;top:0;height:4px;background:var(--acc)}
+.op-stat::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,var(--acc) 0%,transparent 70%);opacity:.12;pointer-events:none}
+.op-stat b{display:block;font-family:var(--display);font-weight:500;font-size:clamp(1.4rem,2vw,1.85rem);line-height:1.06;color:var(--accl);position:relative}
+.op-stat span{display:block;margin-top:7px;font-family:var(--mono);font-size:.76rem;line-height:1.4;color:rgba(247,243,232,.67);position:relative}
+.op-stat--a{--acc:#5f8e45;--accl:#a4cd84}.op-stat--b{--acc:#b0913f;--accl:#e7cf85}.op-stat--c{--acc:#4f8a9e;--accl:#8fc4d4}.op-stat--d{--acc:#b3703f;--accl:#e6a577}
+
+/* Опште секције */
+.section{padding:clamp(60px,7vw,92px) 0;border-bottom:1px solid var(--line)}
+.section:first-of-type{padding-top:clamp(82px,8vw,112px)}
+.section.soft{background:var(--soft)}
+.section.dark{background:var(--forest);color:#f7f2e7;border-bottom-color:rgba(255,255,255,.10)}
+.eyebrow{display:inline-flex;align-items:center;gap:10px;font-family:var(--mono);font-size:.68rem;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);font-weight:650;margin-bottom:14px}
+.eyebrow::before{content:"";width:26px;height:1px;background:currentColor}
+.dark .eyebrow{color:var(--sand)}
+h2{font-family:var(--display);font-size:clamp(2.05rem,3.1vw,3.15rem);font-weight:400;line-height:1.08;letter-spacing:-.028em;color:var(--ink);margin:0}
+.dark h2{color:#fff7df}
+.lead2{font-size:1.06rem;line-height:1.82;color:var(--muted);margin:18px 0 0;max-width:820px}
+.dark .lead2{color:rgba(247,242,231,.78)}
+.section-head{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:56px;align-items:start}
+.section-head .intro{margin:0;color:var(--muted);font-size:1rem;line-height:1.82}
+.dark .section-head .intro{color:rgba(247,242,231,.73)}
+
+/* Сервисне картице */
+.service-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin-top:32px}.service-grid.two{grid-template-columns:repeat(2,minmax(0,1fr))}
+.service-card{display:flex;flex-direction:column;min-height:190px;padding:24px;border:1px solid var(--line);border-radius:var(--radius);background:#fff;transition:background .18s,border-color .18s,transform .18s,box-shadow .18s}
+.plan-equipment{order:1}.plan-weather{order:2}.plan-trails{order:3}
+.service-card:hover{background:var(--soft2);border-color:rgba(111,127,71,.38);transform:translateY(-2px);box-shadow:0 12px 28px rgba(38,48,30,.08)}
+.service-tag{display:inline-block;align-self:flex-start;padding:5px 10px;border-radius:999px;background:#f2f5ef;color:var(--accent);font-family:var(--mono);font-size:.62rem;letter-spacing:.1em;text-transform:uppercase;margin-bottom:18px}
+.service-card h3{font-family:var(--display);font-size:1.62rem;font-weight:500;line-height:1.12;letter-spacing:-.02em;color:var(--ink);margin:0 0 10px}
+.service-card p{margin:0;color:var(--muted);font-size:.94rem;line-height:1.68;flex:1}
+.service-link{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-top:20px;padding-top:15px;border-top:1px solid var(--line);color:var(--ink);font-size:.88rem;font-weight:650}
+.service-link span:last-child{transition:transform .18s}.service-card:hover .service-link span:last-child{transform:translateX(3px)}
+.dark .service-card{background:rgba(255,255,255,.045);border-color:rgba(255,255,255,.12)}
+.dark .service-card:hover{background:rgba(255,255,255,.08);border-color:rgba(231,207,133,.34);box-shadow:none}
+.dark .service-card h3,.dark .service-link{color:#fff7df}.dark .service-card p{color:rgba(247,242,231,.70)}.dark .service-link{border-top-color:rgba(255,255,255,.12)}.dark .service-tag{background:rgba(231,207,133,.10);color:var(--sand)}
+
+/* Одговорни боравак */
+.rules{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin-top:30px}
+.rule{border:1px solid var(--line);border-radius:16px;padding:20px;background:#fff}
+.rule b{display:block;color:var(--accent);font-family:var(--mono);font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;margin-bottom:8px}
+.rule span{display:block;color:var(--muted);font-size:.94rem;line-height:1.6}
+
+/* Биодиверзитет */
+.nature-grid{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:10px;margin-top:30px}
+.nature-pill{display:flex;align-items:center;justify-content:center;min-height:58px;padding:12px;border:1px solid var(--line);border-radius:999px;background:#fff;color:var(--ink);font-weight:600;font-size:.92rem;transition:background .18s,border-color .18s,transform .18s}
+.nature-pill:hover{background:var(--soft2);border-color:rgba(111,127,71,.38);transform:translateY(-1px)}
+.habitat-links{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin-top:18px}
+.habitat-link{padding:16px 18px;border:1px solid var(--line);border-radius:14px;background:#fff;font-size:.92rem;font-weight:600;color:var(--ink);transition:background .18s,border-color .18s}
+.habitat-link:hover{background:var(--soft2);border-color:rgba(111,127,71,.38)}
+
+/* Завршна секција */
+.cta-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:30px}
+.cta{border:1px solid var(--line);border-radius:var(--radius);padding:28px;background:#fff}
+.cta h3{font-family:var(--display);font-size:1.8rem;font-weight:500;color:var(--ink);margin:0 0 10px;letter-spacing:-.02em}
+.cta p{margin:0;color:var(--muted);line-height:1.7}
+.actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:20px}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:11px 17px;border-radius:999px;border:1px solid var(--line);background:#fff;color:var(--ink);font-size:.9rem;font-weight:650;transition:background .18s,color .18s,border-color .18s,transform .18s}
+.btn:hover{background:var(--soft2);border-color:rgba(111,127,71,.42);transform:translateY(-1px)}
+.btn.primary{background:var(--forest2);border-color:var(--forest2);color:#fff}
+.btn.primary:hover{background:#1b3525;border-color:#1b3525}
+
+.footer-note{padding:28px 0 44px;text-align:center;color:var(--muted);font-size:.82rem}
+
+@media(max-width:980px){
+  .op-stats{grid-template-columns:1fr 1fr}
+  .section-head{grid-template-columns:1fr;gap:20px}
+  .service-grid{grid-template-columns:1fr 1fr}
+  .rules{grid-template-columns:1fr 1fr}
+  .nature-grid{grid-template-columns:repeat(3,1fr)}
+  .habitat-links{grid-template-columns:1fr 1fr}
+}
+@media(max-width:700px){
+  :root{--nav-h:60px}
+  body{font-size:16px}
+  .shell,.hero-inner,.op-stats{width:min(100% - 28px,1180px)}
+  .book-nav .shell{width:100%;padding:0 14px}
+  .nav-logo{padding-right:16px;margin-right:6px;font-size:.82rem;height:38px}
+  .nav-link{padding:0 10px;font-size:.62rem;letter-spacing:.12em}
+  .hero{min-height:360px;max-height:none}
+  .hero-inner{padding:80px 0 46px}
+  .hero h1{font-size:34px}
+  .op-stats{grid-template-columns:1fr;margin-top:0;border-radius:0;width:100%}
+  .op-stat{min-height:auto;padding:19px 22px}
+  .section:first-of-type{padding-top:52px}
+  .service-grid,.rules,.cta-grid,.habitat-links{grid-template-columns:1fr}
+  .nature-grid{grid-template-columns:1fr 1fr}
+  .service-card{min-height:auto}
+}
+</style>
+<link data-pio-mobile="v1" rel="stylesheet" href="../assets/mobile/pio-mobile-glavni.css?v=20260714-gl-v8">
+<style id="rajac-nav-v1">.book-nav .nav-logo,.book-nav .nav-link{text-decoration:none!important}@media(min-width:721px){.book-nav{position:fixed!important;top:0!important;left:0!important;right:0!important;width:100%!important;height:64px!important;min-height:64px!important;box-sizing:border-box!important;z-index:99999!important}.book-nav .shell{width:min(1180px,calc(100% - 40px))!important;margin:0 auto!important;padding:0!important;display:flex!important;align-items:center!important;height:100%!important;box-sizing:border-box!important}.book-nav .nav-logo{box-sizing:border-box!important;height:42px!important;min-height:42px!important;font-size:17px!important;font-weight:600!important;letter-spacing:.02em!important;line-height:1.72!important;text-decoration:none!important;padding-right:20px!important;margin-right:12px!important}.book-nav .nav-links{display:flex!important;align-items:stretch!important;height:42px!important}.book-nav .nav-link{box-sizing:border-box!important;height:42px!important;min-height:42px!important;padding:0 12px!important;font-size:11.56px!important;letter-spacing:.14em!important;line-height:1.72!important;text-decoration:none!important;border-bottom-width:2px!important;color:rgba(253,246,230,.8)}.book-nav .nav-link.is-active{color:var(--gold-soft,#e3c983)}}</style>
+</head>
+<body class="rajac-static-output">
+
+<nav class="book-nav" aria-label="Странице ПИО Рајац">
+  <div class="shell">
+    <a class="nav-logo" href="https://piorajac.rs/">ПИО „РАЈАЦ“</a>
+    <div class="nav-links">
+      <a class="nav-link" href="https://piorajac.rs/o-platformi/">О платформи</a>
+      <a class="nav-link is-active" href="https://piorajac.rs/za-posetioce/" aria-current="page">За посетиоце</a>
+      <a class="nav-link" href="https://piorajac.rs/za-istrazivace/">За истраживаче</a>
+      <a class="nav-link" href="https://piorajac.rs/za-vlasnike/">За власнике</a>
+      <a class="nav-link" href="https://piorajac.rs/aplikacije/">Апликације</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="hero-inner">
+    <h1>За посетиоце</h1>
+    <p class="lead">Практични водич за одговоран, безбедан и садржајан боравак у ПИО „Рајац“ — од оријентације на карти, избора стазе и провере времена до правила понашања, природних вредности и ноћног неба.</p>
+  </div>
+</header>
+
+<div class="op-stats" aria-label="Четири корака за посету">
+  <a class="op-stat op-stat--a" href="#karta"><b>Оријентиши се</b><span>карта · зоне · локалитети</span></a>
+  <a class="op-stat op-stat--b" href="#planiraj"><b>Планирај</b><span>стаза · време · опрема</span></a>
+  <a class="op-stat op-stat--c" href="#planiraj"><b>Провери</b><span>метео · киша · ветар</span></a>
+  <a class="op-stat op-stat--d" href="#pravila"><b>Сачувај</b><span>правила · тишина · природа</span></a>
+</div>
+
+<main>
+  <section class="section" id="karta">
+    <div class="shell">
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">01 · карта Рајца</div>
+          <h2>Оријентиши се пре него што кренеш</h2>
+          <p class="lead2">За посетиоца су најважнији стазе, границе заштићеног подручја, зоне заштите, извори, водотокови и посебни локалитети.</p>
+        </div>
+        <p class="intro">За посетиоце су раздвојена два картографска приказа. Туристичка карта служи за оријентацију и приказ атракција, инфраструктуре, смештаја и околине. Карта природне основе и заштите приказује границу ПИО и I, II и III степен заштите, а преко независних слојева омогућава преглед карстног рељефа, геолошке грађе, земљишта и хидрографије. Тако се туристички садржаји не мешају са стручним просторним подацима.</p>
+      </div>
+      <div class="service-grid two">
+        <a class="service-card" href="https://piorajac.rs/za-posetioce/karta/?focus=zone">
+          <span class="service-tag">природна основа</span>
+          <h3>Природна основа и зоне ПИО</h3>
+          <p>Карта приказује границу ПИО и I, II и III степен заштите, уз независне слојеве карстног рељефа, геологије, земљишта и хидрографије, без катастарских парцела.</p>
+          <div class="service-link"><span>Отвори природну основу и зоне</span><span>→</span></div>
+        </a>
+        <a class="service-card" href="https://piorajac.rs/za-posetioce/karta/?focus=tourist">
+          <span class="service-tag">туристичка</span>
+          <h3>Туристичка карта Рајца</h3>
+          <p>Јединствена карта атракција, инфраструктуре, смештаја и важних тачака за обилазак Рајца.</p>
+          <div class="service-link"><span>Отвори туристичку карту</span><span>→</span></div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section soft" id="planiraj">
+    <div class="shell">
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">02 · планирај посету</div>
+          <h2>Стаза, време и опрема бирају се заједно</h2>
+          <p class="lead2">Пре поласка изаберите туру, проверите стварне услове на Рајцу и припремите опрему за активност коју планирате.</p>
+        </div>
+        <p class="intro">Ово је најкраћи пут до безбедније посете: прво одредите куда идете и колико траје тура, затим проверите температуру, ветар и падавине, па тек онда прилагодите обућу, одећу, воду, светло и осталу опрему.</p>
+      </div>
+      <div class="service-grid">
+        <a class="service-card plan-equipment" href="https://piorajac.rs/staponeti/">
+          <span class="service-tag">опрема</span>
+          <h3>Шта понети</h3>
+          <p>Интерактивна контролна листа за планинарење, спорт, фотографију, астрономију и теренски боравак.</p>
+          <div class="service-link"><span>Припреми опрему</span><span>→</span></div>
+        </a>
+        <a class="service-card plan-weather" href="https://piorajac.rs/amsrajac/">
+          <span class="service-tag">уживо</span>
+          <h3>АМС Рајац</h3>
+          <p>Локална температура, влажност, ветар, падавине и показатељи важни за боравак на отвореном.</p>
+          <div class="service-link"><span>Провери услове</span><span>→</span></div>
+        </a>
+        <a class="service-card plan-trails" href="https://piorajac.rs/staze/">
+          <span class="service-tag">стазе</span>
+          <h3>Пешачке стазе</h3>
+          <p>Интерактивна карта, дужина, успон, силазак, висински профил, GPX трасе и важни сектори стазе.</p>
+          <div class="service-link"><span>Изабери стазу</span><span>→</span></div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="pravila">
+    <div class="shell">
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">03 · борави одговорно</div>
+          <h2>Најбоља посета не оставља траг</h2>
+          <p class="lead2">Неколико једноставних правила штити и посетиоца и простор кроз који пролази.</p>
+        </div>
+        <p class="intro">ПИО „Рајац“ је заштићено подручје, а не само излетиште. Зато су кретање, бука, отпад, однос према дивљим врстама и употреба светла део одговорног боравка.</p>
+      </div>
+      <div class="rules">
+        <div class="rule"><b>стаза</b><span>Останите на обележеној траси и поштујте режиме заштите.</span></div>
+        <div class="rule"><b>отпад</b><span>Све што донесете понесите са собом; ништа не остављајте у природи.</span></div>
+        <div class="rule"><b>врсте</b><span>Не берите заштићене врсте, не храните и не узнемиравајте животиње.</span></div>
+        <div class="rule"><b>ноћ</b><span>Користите слабо, усмерено и по могућству црвено светло.</span></div>
+      </div>
+      <div class="actions">
+        <a class="btn primary" href="https://piorajac.rs/kodeks/">Погледај комплетан Кодекс</a>
+        <a class="btn" href="https://piorajac.rs/nadleznosti/">Зоне, режими и надлежности</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section soft" id="priroda">
+    <div class="shell">
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">04 · упознај природу</div>
+          <h2>Природњачки водич за оно што видиш на терену</h2>
+          <p class="lead2">Базе врста и странице о стаништима помажу да Рајац не буде само пејзаж, већ простор који посетилац уме да чита.</p>
+        </div>
+        <p class="intro">Изаберите групу организама или тип станишта. Садржај повезује фотографије, описе, екологију, сезону појављивања и значај врста, без објављивања осетљивих локација.</p>
+      </div>
+      <div class="nature-grid" aria-label="Групе врста">
+        <a class="nature-pill" href="https://piorajac.rs/biljke/">Биљке</a>
+        <a class="nature-pill" href="https://piorajac.rs/ptice/">Птице</a>
+        <a class="nature-pill" href="https://piorajac.rs/insekti/">Инсекти</a>
+        <a class="nature-pill" href="https://piorajac.rs/sisari/">Сисари</a>
+        <a class="nature-pill" href="https://piorajac.rs/gljive/">Гљиве</a>
+      </div>
+      <div class="habitat-links" aria-label="Типови станишта">
+        <a class="habitat-link" href="https://piorajac.rs/sumska-stanista/">Шумска станишта →</a>
+        <a class="habitat-link" href="https://piorajac.rs/livadska-stanista/">Ливадска и пашњачка →</a>
+        <a class="habitat-link" href="https://piorajac.rs/vodena-stanista/">Водена и приобална →</a>
+        <a class="habitat-link" href="https://piorajac.rs/speleoloska-stanista/">Спелеолошка и стенска →</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section dark" id="noc">
+    <div class="shell">
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">05 · ноћни Рајац</div>
+          <h2>Тишина, природни мрак и поглед ка небу</h2>
+          <p class="lead2">Ноћни боравак има своја правила: мање светла, мање буке и више пажње према времену, роси, облачности и живом свету.</p>
+        </div>
+        <p class="intro">Рајац има развијене садржаје о астрономским посматрањима и светлосном загађењу. Пре вечерњег изласка проверите метео услове и припремите црвено светло и топлији слој одеће.</p>
+      </div>
+      <div class="service-grid">
+        <a class="service-card" href="https://piorajac.rs/astronomska-posmatranja/">
+          <span class="service-tag">астрономија</span>
+          <h3>Посматрање неба</h3>
+          <p>Услови, препоруке и развој Звезданог парка Рајац са интерактивним садржајима.</p>
+          <div class="service-link"><span>Отвори водич</span><span>→</span></div>
+        </a>
+        <a class="service-card" href="https://piorajac.rs/monitoring-svetlosne-zagadjenosti/">
+          <span class="service-tag">тамно небо</span>
+          <h3>Светлосно загађење</h3>
+          <p>Праћење квалитета ноћног неба и утицаја вештачког светла на природу.</p>
+          <div class="service-link"><span>Погледај мониторинг</span><span>→</span></div>
+        </a>
+        <a class="service-card" href="astro-prognoza/">
+          <span class="service-tag">астро услови</span>
+          <h3>Провери време пре ноћи</h3>
+          <p>Облачност, seeing, прозирност, ветар, влажност, падавине, Месец и астрономски мрак — прорачун само за Рајац.</p>
+          <div class="service-link"><span>Астро услови Рајац</span><span>→</span></div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="dogadjaji">
+    <div class="shell">
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">06 · догађаји и допринос</div>
+          <h2>Посета може да буде и почетак сарадње</h2>
+          <p class="lead2">Погледајте шта се дешава на Рајцу, а после боравка пошаљите користан налаз, фотографију или пријаву проблема са терена.</p>
+        </div>
+        <p class="intro">Тачна информација са терена може помоћи управљачу: оштећење стазе, отпад, проблем са чесмом, пожарни ризик, занимљив налаз врсте или допуна постојећих података.</p>
+      </div>
+      <div class="cta-grid">
+        <div class="cta">
+          <h3>Шта се дешава на Рајцу</h3>
+          <p>Вести, извештаји, најаве активности, вођене посете, теренски рад и догађаји у заштићеном подручју.</p>
+          <div class="actions"><a class="btn" href="https://piorajac.rs/rajac-vesti/">Отвори дневник и догађаје</a></div>
+        </div>
+        <div class="cta">
+          <h3>Пријави налаз или проблем</h3>
+          <p>Пошаљите информацију са терена која може помоћи бољем познавању, одржавању и заштити Рајца.</p>
+          <div class="actions"><a class="btn primary" href="https://izvestaji.piorajac.rs/">Пошаљи пријаву</a></div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<div class="footer-note shell">ПИО „Рајац“ · практични портал за посетиоце</div>
+
+<!-- SITE_EDITOR_ADMIN_BAR_START -->
+<script src="/admin-site-editor.php?admin_bar_js=1" defer></script>
+<!-- SITE_EDITOR_ADMIN_BAR_END -->
+<script data-pio-mobile="v1" defer src="../assets/mobile/pio-mobile-glavni.js?v=20260714-gl-v8"></script>
+</body>
+</html>
