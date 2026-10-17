@@ -1,0 +1,688 @@
+<!doctype html>
+<html lang="sr-Cyrl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Кодекс понашања у ПИО „Рајац”</title>
+<meta name="description" content="Кратак, јасан и брз водич за одговоран боравак у Пределу изузетних одлика Рајац.">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<meta name="rajac-build" content="kodeks-redesign-white-page-warm-cards-20260616">
+<style>
+:root{
+  --page:#ffffff;
+  --sand:#fbf6ea;
+  --sand-2:#f4ead8;
+  --paper:#ffffff;
+  --card:#fffaf0;
+  --ink:#172116;
+  --muted:#5f685e;
+  --line:rgba(28,38,28,.13);
+  --line2:rgba(28,38,28,.22);
+  --olive:#5a6f3b;
+  --olive-soft:#eef2e6;
+  --gold:#bd8b20;
+  --gold-dark:#7b5515;
+  --gold-soft:#f4e2bf;
+  --shadow:0 16px 38px rgba(24,32,22,.075);
+  --r:24px;
+  --r2:18px;
+  --serif:Georgia,"Times New Roman",serif;
+  --sans:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;background:var(--page)}
+body{
+  margin:0;
+  background:var(--page);
+  color:var(--ink);
+  font-family:var(--sans);
+  font-size:17px;
+  line-height:1.65;
+  -webkit-font-smoothing:antialiased;
+}
+a{color:inherit}
+button,input{font:inherit}
+.site-home-link{
+  position:relative;
+  z-index:5;
+  display:inline-flex;
+  align-items:center;
+  gap:9px;
+  margin:22px 0 18px clamp(18px,3vw,54px);
+  color:#24311f;
+  text-decoration:none;
+  font-size:13px;
+  font-weight:850;
+  letter-spacing:.10em;
+  text-transform:uppercase;
+  padding:10px 15px;
+  border:1px solid rgba(30,42,25,.14);
+  border-radius:999px;
+  background:#fff;
+  box-shadow:0 8px 22px rgba(24,32,22,.045);
+}
+.site-home-link:hover{background:#fbf6ea;border-color:rgba(189,139,32,.42)}
+.page-frame{
+  width:min(1500px,calc(100% - 24px));
+  margin:0 auto 34px;
+  background:#fff;
+  border:1px solid rgba(28,38,28,.08);
+  border-radius:24px;
+  overflow:hidden;
+  box-shadow:0 22px 62px rgba(24,32,22,.06);
+}
+.wrap{width:min(1180px,calc(100% - 52px));margin-inline:auto}
+.hero{
+  position:relative;
+  overflow:hidden;
+  background:#fff;
+  padding:74px 0 62px;
+  border-bottom:1px solid rgba(28,38,28,.10);
+}
+.hero:before{
+  content:"";
+  position:absolute;
+  inset:auto 0 0 0;
+  height:1px;
+  background:linear-gradient(90deg,transparent,rgba(189,139,32,.28),transparent);
+}
+.hero-grid{
+  display:grid;
+  grid-template-columns:minmax(0,1.1fr) minmax(290px,.78fr);
+  gap:40px;
+  align-items:center;
+}
+.eyebrow{
+  display:inline-flex;
+  align-items:center;
+  gap:12px;
+  color:var(--gold);
+  font-size:.76rem;
+  letter-spacing:.20em;
+  text-transform:uppercase;
+  font-weight:850;
+  margin-bottom:16px;
+}
+.eyebrow:before{content:"";width:34px;height:1px;background:currentColor}
+.hero h1{
+  font-family:var(--serif);
+  font-size:clamp(2.9rem,5.7vw,5.8rem);
+  font-weight:400;
+  line-height:.96;
+  letter-spacing:-.045em;
+  margin:0;
+  color:#162014;
+  max-width:13ch;
+}
+.hero h1 span{color:var(--gold-dark)}
+.lead{
+  max-width:800px;
+  margin:24px 0 0;
+  color:var(--muted);
+  font-size:1.08rem;
+  line-height:1.82;
+}
+.notice-card{
+  border-radius:var(--r);
+  background:linear-gradient(180deg,#fffaf0 0%,#f7ecd8 100%);
+  color:var(--ink);
+  border:1px solid rgba(189,139,32,.22);
+  padding:30px;
+  box-shadow:var(--shadow);
+  min-height:282px;
+  display:flex;
+  flex-direction:column;
+  justify-content:space-between;
+}
+.notice-card h2{
+  font-family:var(--serif);
+  font-size:1.9rem;
+  font-weight:400;
+  line-height:1.12;
+  margin:0;
+  color:#182216;
+}
+.notice-card p{color:var(--muted);margin:14px 0 0}
+.notice-card .eyebrow{color:var(--gold)!important}
+.mini-rules{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:22px}
+.mini-rules span{
+  display:block;
+  border:1px solid rgba(189,139,32,.22);
+  border-radius:999px;
+  padding:9px 12px;
+  text-align:center;
+  background:#fff;
+  color:#6d5520;
+  font-size:.88rem;
+}
+.section{padding:68px 0;background:#fff}
+.section + .section{border-top:1px solid rgba(28,38,28,.08)}
+.section-head{
+  display:flex;
+  justify-content:space-between;
+  align-items:flex-end;
+  gap:24px;
+  margin-bottom:28px;
+}
+.section-head h2{
+  font-family:var(--serif);
+  font-size:clamp(2rem,3.45vw,3.3rem);
+  font-weight:400;
+  line-height:1.08;
+  letter-spacing:-.035em;
+  margin:0;
+  color:#142018;
+}
+.section-head p{margin:10px 0 0;color:var(--muted);max-width:760px}
+.grid{display:grid;gap:16px}
+.grid.five{grid-template-columns:repeat(5,1fr)}
+.grid.two{grid-template-columns:repeat(2,1fr)}
+.card{
+  background:var(--card);
+  border:1px solid rgba(189,139,32,.16);
+  border-radius:var(--r2);
+  box-shadow:var(--shadow);
+  padding:24px;
+}
+.principle{min-height:205px;background:#fff}
+.ic{
+  width:42px;
+  height:42px;
+  display:grid;
+  place-items:center;
+  border-radius:14px;
+  background:#fff7e8;
+  color:var(--gold);
+  border:1px solid rgba(189,139,32,.18);
+  font-size:1.25rem;
+  margin-bottom:16px;
+}
+.card h3{
+  font-family:var(--serif);
+  font-size:1.48rem;
+  font-weight:400;
+  line-height:1.15;
+  margin:0 0 10px;
+  color:#142018;
+}
+.card p{margin:0;color:var(--muted)}
+.rules{display:grid;grid-template-columns:1fr;gap:16px}
+.rule{position:relative;padding-left:44px;background:#fffaf0}
+.rule:before{
+  content:attr(data-num);
+  position:absolute;
+  left:18px;
+  top:26px;
+  width:44px;
+  height:44px;
+  border-radius:16px;
+  background:#f1dcc0;
+  color:#4b3411;
+  border:1px solid rgba(189,139,32,.24);
+  display:grid;
+  place-items:center;
+  font-weight:900;
+  box-shadow:0 8px 18px rgba(93,61,15,.08);
+}
+.rule .inner{padding-left:42px}
+.rule h3{font-size:1.72rem;margin-bottom:12px}
+.rule p{margin:0 0 10px}
+.rule b{color:#182216}
+.tag{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  border:1px solid rgba(189,139,32,.20);
+  background:#fff;
+  border-radius:999px;
+  padding:6px 11px;
+  color:#795817;
+  font-size:.84rem;
+  font-weight:800;
+  letter-spacing:.02em;
+  margin-bottom:12px;
+}
+.check-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.check{
+  display:flex;
+  gap:12px;
+  align-items:flex-start;
+  border:1px solid rgba(189,139,32,.15);
+  border-radius:16px;
+  background:#fff;
+  padding:15px;
+  cursor:pointer;
+  transition:.18s;
+}
+.check:hover{border-color:rgba(189,139,32,.36);transform:translateY(-1px)}
+.check input{width:20px;height:20px;accent-color:var(--gold);margin-top:4px}
+.check b{display:block;font-family:var(--serif);font-size:1.08rem;font-weight:600;line-height:1.2}
+.check small{display:block;color:var(--muted);font-size:.87rem;line-height:1.35;margin-top:4px}
+.progress-row{display:flex;gap:14px;align-items:center;justify-content:space-between;margin-top:18px}
+.bar{height:9px;background:#eadfcd;border-radius:999px;overflow:hidden;flex:1}
+.bar span{display:block;height:100%;width:0;background:linear-gradient(90deg,#e0bd78,var(--gold));transition:width .25s}
+.btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:8px;
+  border:1px solid rgba(28,38,28,.18);
+  background:#fff;
+  color:var(--ink);
+  border-radius:999px;
+  min-height:44px;
+  padding:0 18px;
+  font-weight:850;
+  cursor:pointer;
+  text-decoration:none;
+  transition:.18s;
+}
+.btn:hover{background:#fff7e8;border-color:rgba(189,139,32,.36);transform:translateY(-1px)}
+.btn.gold,.btn.green{background:var(--gold);color:#fff;border-color:transparent}
+.map-layout{display:grid;grid-template-columns:1fr;gap:16px}
+.mapbox{
+  min-height:560px;
+  border-radius:var(--r2);
+  overflow:hidden;
+  background:#f7f4ec;
+  border:1px solid rgba(189,139,32,.16);
+  position:relative;
+}
+.map-loading{position:absolute;inset:0;display:grid;place-items:center;color:var(--muted);padding:30px;text-align:center}
+.map-actions{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:12px}
+.poi-list{display:grid;gap:10px}
+.poi{border:1px solid rgba(189,139,32,.15);border-radius:16px;background:#fff;padding:14px;cursor:pointer}
+.poi:hover{border-color:rgba(189,139,32,.34)}
+.poi b{display:block}
+.poi small{color:var(--muted)}
+.quiz-tabs{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:16px}
+.tab{border:1px solid rgba(28,38,28,.18);border-radius:999px;background:#fff;padding:9px 15px;cursor:pointer;font-weight:850;color:#172116}
+.tab.active{background:var(--gold);color:#fff;border-color:var(--gold)}
+.q{border:1px solid rgba(189,139,32,.15);border-radius:18px;background:#fff;padding:18px;margin-bottom:12px}
+.q legend,.q b{font-family:var(--serif);font-size:1.22rem;font-weight:600}
+.opt{display:block;margin-top:10px;padding:11px 12px;border-radius:13px;background:#fffaf0;border:1px solid rgba(23,33,22,.08);cursor:pointer}
+.opt input{margin-right:8px;accent-color:var(--gold)}
+.result{display:none;margin-top:14px;border-radius:18px;padding:18px;background:#f6ead2;border:1px solid rgba(196,138,58,.32)}
+.ten ul{margin:16px 0 0;padding-left:1.2rem;color:var(--muted)}
+.ten li{margin:.34rem 0}
+
+.container-marker{
+  width:34px!important;
+  height:34px!important;
+  margin-left:-17px!important;
+  margin-top:-34px!important;
+  border-radius:50% 50% 50% 0;
+  transform:rotate(-45deg);
+  background:#5a6f3b;
+  border:3px solid #fff;
+  box-shadow:0 8px 18px rgba(24,32,22,.25);
+  display:grid;
+  place-items:center;
+}
+.container-marker span{
+  transform:rotate(45deg);
+  display:grid;
+  place-items:center;
+  width:22px;
+  height:22px;
+  border-radius:50%;
+  background:#fffaf0;
+  color:#4b5f31;
+  font-size:15px;
+  line-height:1;
+  font-weight:900;
+}
+.container-marker.small{
+  background:#bd8b20;
+}
+
+@media(max-width:1000px){
+  .hero-grid,.grid.two,.map-layout{grid-template-columns:1fr}
+  .grid.five,.check-grid{grid-template-columns:repeat(2,1fr)}
+  .notice-card{min-height:auto}
+  .section{padding:54px 0}
+}
+@media(max-width:760px){
+  .site-home-link{margin:12px 0 10px 14px;font-size:12px}
+  .page-frame{width:calc(100% - 12px);border-radius:18px}
+  .wrap{width:min(100% - 28px,1180px)}
+  .hero{padding:44px 0}
+  .hero h1{font-size:clamp(2.45rem,14vw,4.1rem)}
+  .grid.five,.check-grid{grid-template-columns:1fr}
+  .section-head{display:block}
+  .card{padding:20px}
+  .rule{padding-left:0}
+  .rule:before{position:static;margin-bottom:12px}
+  .rule .inner{padding-left:0}
+  .mapbox{min-height:380px}
+  .mini-rules{grid-template-columns:1fr}
+}
+@media print{
+  body{background:#fff}
+  .site-home-link,.hero,.map-layout,.quiz-tabs,.btn{display:none!important}
+  .page-frame{box-shadow:none;border:0;background:#fff}
+  .section{padding:18px 0}
+  .card{box-shadow:none}
+}
+
+/* rajac-kodeks-rule-number-offset-20260616 */
+</style>
+</head>
+<body>
+<a class="site-home-link" href="https://piorajac.rs/">← ПИО „Рајац”</a>
+
+<div class="page-frame">
+<section class="hero" id="pocetak">
+  <div class="wrap hero-grid">
+    <div>
+      <div class="eyebrow">ПИО „Рајац” · кодекс понашања</div>
+      <h1>Паметан боравак <span>у природи</span></h1>
+      <p class="lead">Рајац није забавни парк, већ живи екосистем ливада, шумских појасева, карста и осетљивих станишта. Ова страница је кратак водич за посетиоце: како да боравак буде безбедан, културан и што мање видљив у простору.</p>
+    </div>
+    <aside class="notice-card" aria-label="Основна порука кодекса">
+      <div>
+        <div class="eyebrow" style="color:var(--gold2);margin-bottom:14px">Ваша посета мора бити невидљива</div>
+        <h2>Поштуј стазу, тишину, воду, животиње и ноћно небо.</h2>
+        <p>Најбоља посета је она после које природа изгледа као да нико није прошао.</p>
+      </div>
+      <div class="mini-rules"><span>стазе</span><span>тишина</span><span>тамно небо</span></div>
+    </aside>
+  </div>
+</section>
+
+<main class="wrap" id="main">
+  <section class="section">
+    <div class="section-head">
+      <div>
+        <h2>5 принципа који решавају 90% проблема</h2>
+        <p>Ово су брза правила која највише смањују утицај на природу и ризике по безбедност.</p>
+      </div>
+    </div>
+    <div class="grid five">
+      <article class="card principle"><div class="ic">◇</div><h3>Остани на стази</h3><p>Маркација је закон. Пречице праве ерозију и „дивље стазе”.</p></article>
+      <article class="card principle"><div class="ic">🦌</div><h3>Правило палца</h3><p>Ако је животиња већа од палца испружене руке — преблизу си.</p></article>
+      <article class="card principle"><div class="ic">↺</div><h3>Све назад у ранац</h3><p>И органски отпад носиш са собом. Ништа не остављаш, ништа не узимаш.</p></article>
+      <article class="card principle"><div class="ic">♪</div><h3>Нулта бука</h3><p>Bluetooth звучници и пуштање музике нису за заштићено подручје.</p></article>
+      <article class="card principle"><div class="ic">☾</div><h3>Ноћ = црвено светло</h3><p>После заласка користи слабо, усмерено и по могућству црвено светло.</p></article>
+    </div>
+  </section>
+
+  <section class="section" id="pravila">
+    <div class="section-head">
+      <div>
+        <h2>Правила понашања</h2>
+        <p>Правила су дата директно, без претраге и сувишних команди, јер је списак кратак и лак за читање.</p>
+      </div>
+    </div>
+    <div class="rules">
+      <article class="card rule" data-num="1"><div class="inner"><span class="tag">Кретање</span><h3>Остани на трагу</h3><p><b>Маркација је закон:</b> кретање је дозвољено искључиво по стазама обележеним планинарском маркацијом, односно црвено-белим кругом.</p><p><b>Не прави „дивље стазе”:</b> скретање са стазе због пречица или фотографисања сабија земљиште, оштећује травни покривач и убрзава ерозију.</p><p><b>Правило првенства:</b> на уској стази предност има особа која се пење, односно иде узбрдо.</p></div></article>
+      <article class="card rule" data-num="2"><div class="inner"><span class="tag">Дивљи свет</span><h3>Правило палца и нулта бука</h3><p><b>Правило палца:</b> испружите руку и „покријте” животињу палцем. Ако је већа од палца, преблизу сте и треба полако да се удаљите.</p><p><b>Не хранити животиње:</b> животиње које се навикну на људску храну губе природне навике, мењају понашање и могу постати опасне за себе и посетиоце.</p><p><b>Зона без звучника:</b> пуштање музике и Bluetooth звучници на стазама нису прихватљиви. Бука је облик еколошког загађења.</p></div></article>
+      <article class="card rule" data-num="3"><div class="inner"><span class="tag">Без трагова</span><h3>Све што донесеш — враћаш са собом</h3><p><b>Pack it in, Pack it out:</b> сваки отпад, укључујући и органски, враћате са собом у ранац.</p><p><b>Не узимај сувенире:</b> камење, фосили, ретко цвеће, шишарке и други природни предмети остају тамо где су.</p><p><b>Пази шта делиш:</b> не геотагујте скривене локације и станишта ретких врста. Ако објављујете фотографије, довољно је означити „ПИО Рајац”.</p></div></article>
+      <article class="card rule" data-num="4"><div class="inner"><span class="tag">Безбедност</span><h3>Време и одговорност</h3><p><b>Систем 3 слоја:</b> понесите слојевиту одећу, кабаницу и минимум 1,5 l воде по особи, чак и када је сунчано.</p><p><b>Пожарна дисциплина:</b> од маја до октобра ливаде могу бити веома суве. Забрањено је паљење ватре и бацање опушака ван јасно дозвољених зона.</p><p><b>Прати услове:</b> на планини се време мења брже него у насељу. Не потцењујте ветар, маглу, пљускове и сумрак.</p></div></article>
+      <article class="card rule" data-num="5"><div class="inner"><span class="tag">Тамно небо</span><h3>Ноћни режим</h3><p><b>Само црвено светло:</b> након заласка користите слабо и усмерено светло, најбоље црвено светло на чеоној лампи.</p><p><b>Зашто:</b> бело светло уништава ноћни вид људи, ремети оријентацију ноћних животиња и нарушава доживљај тамног неба.</p><p><b>Без блица и рефлектора:</b> ноћно фотографисање и кретање треба да буду што дискретнији.</p></div></article>
+    </div>
+  </section>
+
+  <section class="section" id="check">
+    <div class="section-head">
+      <div>
+        <h2>Чек-листа за посету</h2>
+        <p>Означене ставке се памте у вашем прегледачу на овом уређају.</p>
+      </div>
+    </div>
+    <div class="card">
+      <div id="checkGrid" class="check-grid"></div>
+      <div class="progress-row">
+        <div class="bar" aria-hidden="true"><span id="barFill"></span></div>
+        <strong id="checkCount">0/12</strong>
+        <button class="btn" id="btnClearCheck" type="button">Поништи избор</button>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="mapa">
+    <div class="section-head">
+      <div>
+        <h2>Карта контејнера за отпад</h2>
+        <p>Карта приказује локације контејнера на Рајцу. Отпад одложите искључиво у контејнере, а ако су пуни, понесите отпад до следеће доступне локације.</p>
+      </div>
+    </div>
+    <div class="map-layout">
+      <div class="card">
+        <div class="map-actions">
+          <button class="btn" id="btnMapCenter" type="button">Центар</button>
+          <button class="btn" id="btnLocate" type="button">Мој положај</button>
+        </div>
+        <div class="mapbox" id="map">
+          <div class="map-loading">Карта контејнера се учитава тек када дођете до овог дела странице, да би страна брже стартовала.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="kviz">
+    <div class="section-head">
+      <div>
+        <h2>Квиз: да ли си „невидљив” посетилац?</h2>
+        <p>Кратак квиз уочи типичне грешке и враћа савет за поправку.</p>
+      </div>
+    </div>
+    <div class="card">
+      <div class="quiz-tabs">
+        <button class="tab active" data-quiz="basic" type="button">Основни</button>
+        <button class="tab" data-quiz="night" type="button">Ноћни режим</button>
+        <button class="tab" data-quiz="wildlife" type="button">Дивљи свет</button>
+      </div>
+      <form id="quizBox"></form>
+      <div style="display:flex;gap:10px;flex-wrap:wrap">
+        <button class="btn green" id="btnGrade" type="button">Провери одговоре</button>
+        <button class="btn" id="btnQuizReset" type="button">Ресетуј квиз</button>
+      </div>
+      <div id="quizResult" class="result"></div>
+    </div>
+  </section>
+
+  <section class="section ten" id="preuzmi">
+    <div class="section-head">
+      <div>
+        <h2>10 златних правила</h2>
+        <p>Кратка верзија за табле, објаве и брзо подсећање пре поласка.</p>
+      </div>
+    </div>
+    <div class="grid two">
+      <article class="card">
+        <h3>Брза верзија</h3>
+        <ul id="tenRules">
+          <li>Крећи се само маркираним стазама.</li>
+          <li>Не прави пречице и „дивље стазе”.</li>
+          <li>Предност има онај ко се пење узбрдо.</li>
+          <li>Држи дистанцу од дивљих животиња — правило палца.</li>
+          <li>Не храни животиње.</li>
+          <li>Без Bluetooth звучника — тишина је правило.</li>
+          <li>Сав отпад носиш са собом, укључујући органски.</li>
+          <li>Не узимај камење, биљке и природне сувенире.</li>
+          <li>Не геотагуј осетљиве локације.</li>
+          <li>После заласка користи само слабо и црвено светло.</li>
+        </ul>
+      </article>
+      <article class="card">
+        <h3>Ноћни режим и тамно небо</h3>
+        <p>За јавна посматрања, астрофотографију и ноћни боравак потребно је минимално осветљење, усмерено ка земљи, топло или црвено, без блица и без непотребног осветљавања простора.</p>
+        <p>Рајац има вредан ноћни пејзаж: тамно небо, широк хоризонт и услове за посматрање звезда, планета, Млечног пута и метеора. Зато је важно да се ноћу не користе јаки фарови, рефлектори, блицеви и беле лампе које се шире у простор.</p>
+        <p>Када је светло неопходно, користи се само кратко, усмерено надоле и што слабије. Црвено светло најмање ремети ноћни вид људи и мање узнемирава ноћне животиње, инсекте и птице.</p>
+        <p>Добар посетилац ноћу не осветљава шуму, ливаде, стене, друге посетиоце и небо. Светло служи само за безбедно кретање, а не за осветљавање предела.</p>
+      </article>
+    </div>
+  </section>
+</main>
+
+</div>
+
+<script>
+const $=(s,e=document)=>e.querySelector(s);
+const $$=(s,e=document)=>Array.from(e.querySelectorAll(s));
+
+const CHECK_KEY='rajac_kodeks_check_v2';
+const checklist=[
+  ['water','Довољно воде','Минимум 1,5 l по особи, више ако је топло.'],
+  ['layers','Систем 3 слоја','База + изолација + ветро/кишна заштита.'],
+  ['rain','Кабаница или ветровка','Планина мења услове брзо.'],
+  ['shoes','Планинарска обућа','Ђон против клизања и стабилност зглоба.'],
+  ['map','Офлајн мапа или рута','Не ослањај се само на мобилни сигнал.'],
+  ['firstaid','Основни први завој','Фластер, завој и дезинфекција.'],
+  ['trash','Врећица за отпад','Све назад у ранац, укључујући органски отпад.'],
+  ['quiet','Тихи режим','Без звучника и музике на стази.'],
+  ['wildlife','Дистанца од животиња','Правило палца, без храњења.'],
+  ['fire','Пожарна дисциплина','Нема ватре и опушака ван дозвољених зона.'],
+  ['redlight','Црвено светло ноћу','Чеона лампа на црвеном после заласка.'],
+  ['share','Без геотаговања','Не објављуј тачне осетљиве локације.']
+];
+
+function getCheck(){
+  try{return JSON.parse(localStorage.getItem(CHECK_KEY)||'{}')}catch{return{}}
+}
+function setCheck(x){localStorage.setItem(CHECK_KEY,JSON.stringify(x))}
+function renderCheck(){
+  const st=getCheck();
+  $('#checkGrid').innerHTML=checklist.map(i=>`<label class="check"><input type="checkbox" data-id="${i[0]}" ${st[i[0]]?'checked':''}><div><b>${i[1]}</b><small>${i[2]}</small></div></label>`).join('');
+  $$('#checkGrid input').forEach(i=>i.onchange=()=>{
+    const st=getCheck();
+    st[i.dataset.id]=i.checked;
+    setCheck(st);
+    updateCheck();
+  });
+  updateCheck();
+}
+function updateCheck(){
+  const st=getCheck();
+  const done=checklist.filter(i=>st[i[0]]).length;
+  $('#checkCount').textContent=done+'/'+checklist.length;
+  $('#barFill').style.width=Math.round(done/checklist.length*100)+'%';
+}
+$('#btnClearCheck').onclick=()=>{
+  localStorage.removeItem(CHECK_KEY);
+  renderCheck();
+};
+
+const poi=[
+  ['Локација 1',44.1431705,20.2441139,'1 ком'],
+  ['Локација 2',44.1427721,20.2455515,'2 ком'],
+  ['Локација 3',44.1430861,20.2461299,'4 ком'],
+  ['Локација 4',44.1408554,20.2447515,'1 ком'],
+  ['Локација 5',44.1390730,20.2473371,'1 ком'],
+  ['Локација 6',44.1383185,20.2408837,'3 ком']
+];
+let map,markers=[];
+function renderPoi(){
+  const list=$('#poiList');
+  if(!list)return;
+}
+function loadLeaflet(){
+  return new Promise((res,rej)=>{
+    if(window.L)return res();
+    const css=document.createElement('link');
+    css.rel='stylesheet';
+    css.href='https://unpkg.com/leaflet@1.9.4/dist/leaflet.css';
+    document.head.appendChild(css);
+    const s=document.createElement('script');
+    s.src='https://unpkg.com/leaflet@1.9.4/dist/leaflet.js';
+    s.defer=true;
+    s.onload=res;
+    s.onerror=rej;
+    document.head.appendChild(s);
+  });
+}
+function initMap(){
+  if(map||!window.L)return;
+  map=L.map('map',{scrollWheelZoom:false}).setView([44.1413,20.2446],15);
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',{maxZoom:19,attribution:'© OpenStreetMap'}).addTo(map);
+
+  const containerIcon=L.divIcon({
+    className:'',
+    html:'<div class="container-marker"><span>♻</span></div>',
+    iconSize:[34,34],
+    iconAnchor:[17,34],
+    popupAnchor:[0,-30]
+  });
+
+  markers=poi.map(p=>L.marker([p[1],p[2]],{icon:containerIcon}).addTo(map).bindPopup(`<b>${p[0]}</b><br>${p[3]} · контејнер за отпад<br><small>Отпад одложити у контејнер, не поред њега.</small>`));
+  try{map.fitBounds(L.featureGroup(markers).getBounds().pad(.25))}catch{}
+}
+function requestMap(){
+  loadLeaflet().then(initMap).catch(()=>{$('#map').innerHTML='<div class="map-loading">Мапа тренутно није доступна.</div>'});
+}
+const mapObs=new IntersectionObserver(es=>{
+  if(es.some(e=>e.isIntersecting)){
+    requestMap();
+    mapObs.disconnect();
+  }
+},{rootMargin:'180px'});
+mapObs.observe($('#map'));
+$('#btnMapCenter').onclick=()=>{
+  requestMap();
+  setTimeout(()=>{if(markers.length)map.fitBounds(L.featureGroup(markers).getBounds().pad(.3))},400);
+};
+$('#btnLocate').onclick=()=>{
+  requestMap();
+  if(!navigator.geolocation)return alert('Локација није доступна.');
+  navigator.geolocation.getCurrentPosition(pos=>{
+    const p=[pos.coords.latitude,pos.coords.longitude];
+    L.circleMarker(p,{radius:8,color:'#2f78b7',weight:3,fillOpacity:.25}).addTo(map).bindPopup('Твој положај').openPopup();
+    map.setView(p,15);
+  },()=>alert('Локација није одобрена.'));
+};
+
+const quizzes={
+  basic:[
+    ['Куда је дозвољено кретање на Рајцу?',['Свуда, ако пазим да не ломим гранчице.','Искључиво по маркираним стазама.','По стази или по ливади ако је сува.'],1],
+    ['Шта радим са кором од банане или огризком јабуке?',['Бацићу јер је биоразградиво.','Носим са собом у ранац.','Оставићу поред стазе.'],1],
+    ['Ко има предност на уској стази?',['Онај ко се пење узбрдо.','Онај ко се спушта.','Ко је бржи.'],0]
+  ],
+  night:[
+    ['После заласка сунца користим:',['Јако бело светло.','Искључиво слабо, усмерено и црвено светло.','Блиц на телефону.'],1],
+    ['Зашто избегавамо бело светло ноћу?',['Само због фотографија.','Ремети ноћни вид и оријентацију ноћних животиња.','Зато што је непријатно.'],1]
+  ],
+  wildlife:[
+    ['Како проверавам да ли сам преблизу животињи?',['Правило палца.','Приђем да видим да ли бежи.','Сликам зумом па наставим да прилазим.'],0],
+    ['Храњење дивљих животиња:',['Забрањено је и опасно.','Помаже им.','У реду је ако је воће.'],0],
+    ['Bluetooth звучник на стази:',['Није прихватљив у заштићеном подручју.','Дозвољен је ако није гласан.','Дозвољен је у групи.'],0]
+  ]
+};
+let qCurrent='basic';
+function renderQuiz(k='basic'){
+  qCurrent=k;
+  $('#quizBox').innerHTML=quizzes[k].map((q,idx)=>`<fieldset class="q"><legend>${q[0]}</legend>${q[1].map((o,i)=>`<label class="opt"><input type="radio" name="q${idx}" value="${i}"> ${o}</label>`).join('')}</fieldset>`).join('');
+  $('#quizResult').style.display='none';
+}
+$$('.tab').forEach(t=>t.onclick=()=>{
+  $$('.tab').forEach(x=>x.classList.remove('active'));
+  t.classList.add('active');
+  renderQuiz(t.dataset.quiz);
+});
+$('#btnGrade').onclick=()=>{
+  let s=0,total=quizzes[qCurrent].length;
+  quizzes[qCurrent].forEach((q,i)=>{
+    const v=$(`input[name="q${i}"]:checked`)?.value;
+    if(Number(v)===q[2])s++;
+  });
+  const pct=Math.round(s/total*100);
+  $('#quizResult').innerHTML=(pct===100?`✅ Одлично! ${s}/${total} — у складу са Рајац кодексом.`:pct>=67?`👍 Добро! ${s}/${total} — прочитај још једном спорна правила.`:`⚠️ Потребна корекција. ${s}/${total} — врати се на правила и понови.`);
+  $('#quizResult').style.display='block';
+};
+$('#btnQuizReset').onclick=()=>renderQuiz(qCurrent);
+
+document.addEventListener('DOMContentLoaded',()=>{
+  const y=$('#year'); if(y)y.textContent=new Date().getFullYear();
+  renderCheck();
+  renderPoi();
+  renderQuiz('basic');
+});
+</script>
+
+<!-- SITE_EDITOR_ADMIN_BAR_START -->
+<script src="/admin-site-editor.php?admin_bar_js=1" defer></script>
+<!-- SITE_EDITOR_ADMIN_BAR_END -->
+
+<script defer src="/rajac-design/rajac-vrh-button.js?v=20260707-v6-round-no-home"></script>
+</body>
+</html>

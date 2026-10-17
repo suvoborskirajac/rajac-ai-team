@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+
+<html lang="sr">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>Звездани парк „Рајац“ — ноћно небо Предела изузетних одлика „Рајац“</title>
+<meta content="Звездани парк „Рајац“: истраживање астроклиме, мерење квалитета ноћног неба, нова опсерваторија и стални мониторинг светлосног загађења." name="description"/>
+<meta content="#050a14" name="theme-color"/>
+<meta content="Звездани парк „Рајац“ — ноћно небо Предела изузетних одлика „Рајац“" property="og:title"/>
+<meta content="Звездани парк „Рајац“: истраживање астроклиме, мерење квалитета ноћног неба, нова опсерваторија и стални мониторинг светлосног загађења." property="og:description"/>
+<meta content="website" property="og:type"/>
+<link href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Ccircle cx='20' cy='20' r='20' fill='%23050a14'/%3E%3Cpath d='M20 6 22.2 17.8 34 20 22.2 22.2 20 34 17.8 22.2 6 20 17.8 17.8Z' fill='%23f1dca6'/%3E%3C/svg%3E" rel="icon"/>
+<link as="font" crossorigin="" href="assets/fonts/cormorant-garamond-cyrillic-500-normal.woff2" rel="preload" type="font/woff2"/>
+<link as="font" crossorigin="" href="assets/fonts/manrope-cyrillic-400-normal.woff2" rel="preload" type="font/woff2"/>
+<link href="assets/fonts.css?v=46" rel="stylesheet"/>
+<link href="assets/site.css?v=110" rel="stylesheet"/>
+<link href="https://piorajac.rs/zvezdani-park/" rel="canonical"/>
+<meta content="https://piorajac.rs/zvezdani-park/" property="og:url"/>
+<meta content="Звездани парк „Рајац“ · ПИО „Рајац“" property="og:site_name"/>
+<meta content="sr_RS" property="og:locale"/>
+<meta content="https://piorajac.rs/zvezdani-park/assets/img/og/og-zvezdani-park.jpg" property="og:image"/>
+<meta content="1200" property="og:image:width"/>
+<meta content="630" property="og:image:height"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "TouristAttraction", "name": "Звездани парк „Рајац“", "description": "Пројекат очувања природног ноћног неба у Пределу изузетних одлика „Рајац“: истраживање астроклиме, мерење квалитета ноћног неба, астрономска посматрања и едукација.", "url": "https://piorajac.rs/zvezdani-park/", "image": "https://piorajac.rs/zvezdani-park/assets/img/og/og-zvezdani-park.jpg", "geo": {"@type": "GeoCoordinates", "latitude": 44.13987, "longitude": 20.2175}, "address": {"@type": "PostalAddress", "addressLocality": "Љиг", "addressCountry": "RS"}, "containedInPlace": {"@type": "Park", "name": "Предео изузетних одлика „Рајац“", "url": "https://piorajac.rs/"}, "email": "office@piorajac.rs"}</script>
+<style id="hero-tlo-v3">
+/* 2026-10-05: посветљена само права слика у уском појасу испод хоризонта (брда и светла), без бојења */
+.hero-bg::after{background:radial-gradient(ellipse at 70% 10%,rgba(5,10,20,0) 0%,rgba(5,10,20,.07) 55%),linear-gradient(180deg,rgba(5,10,20,.13) 0%,rgba(5,10,20,0) 34%,rgba(5,10,20,0) 100%)!important}
+.hero-bg::before{content:"";position:absolute;left:0;right:0;top:var(--hz-top,100%);height:var(--hz-h,0px);z-index:1;pointer-events:none;
+  -webkit-backdrop-filter:brightness(2.4) saturate(1.15);backdrop-filter:brightness(2.4) saturate(1.15);
+  -webkit-mask-image:linear-gradient(to bottom,transparent 0,#000 25%,#000 60%,transparent 100%);mask-image:linear-gradient(to bottom,transparent 0,#000 25%,#000 60%,transparent 100%)}
+</style>
+<script>
+/* хоризонт је на 92,5 % висине фотографије; појас са брдима и светлима је 4 % висине испод њега */
+(function(){
+  function hz(){
+    var b=document.querySelector('.hero-bg'),i=b&&b.querySelector('img');
+    if(!i||!i.naturalWidth)return;
+    var r=i.getBoundingClientRect(),br=b.getBoundingClientRect();
+    var s=Math.max(r.width/i.naturalWidth,r.height/i.naturalHeight),rh=i.naturalHeight*s;
+    var p=(getComputedStyle(i).objectPosition.split(' ')[1]||'50%'),f=p.indexOf('%')>0?parseFloat(p)/100:.5;
+    var y0=(r.top-br.top)+(r.height-rh)*f;
+    b.style.setProperty('--hz-top',Math.round(y0+0.925*rh)+'px');
+    b.style.setProperty('--hz-h',Math.round(0.04*rh)+'px');
+  }
+  function init(){var i=document.querySelector('.hero-bg img');if(i){if(i.complete)hz();else i.addEventListener('load',hz);}hz();}
+  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',init);else init();
+  addEventListener('resize',hz);addEventListener('load',hz);
+})();
+</script>
+<style id="zp-kartice-nebo">
+/* ZP-KARTICE-NEBO: слика горе, текст испод — текст се више не преклапа са сликом неба */
+.sky-live-card{display:flex!important;flex-direction:column;min-height:0!important}
+.sky-live-card img{position:relative!important;inset:auto!important;display:block;width:100%!important;height:clamp(190px,17vw,240px)!important;flex:0 0 auto;object-fit:cover;box-sizing:border-box}
+.sky-live-card img.allsky-card-img{object-fit:contain!important;padding:8px;background:#050a14}
+.sky-live-overlay{inset:0 0 auto 0!important;height:clamp(190px,17vw,240px)!important;background:linear-gradient(180deg,rgba(5,10,20,0) 55%,rgba(5,10,20,.85) 100%)!important}
+.sky-live-copy{position:relative!important;left:auto!important;right:auto!important;bottom:auto!important;flex:1 1 auto;display:flex;flex-direction:column;padding:18px 24px 24px;background:var(--night,#050a14)}
+.sky-live-copy h3{font-size:clamp(1.6rem,2.3vw,2.2rem)!important;line-height:1.05!important}
+.sky-live-copy p{flex:1 1 auto}
+@media (max-width:760px){
+  .sky-live-card img,.sky-live-overlay{height:200px!important}
+  .sky-live-copy{padding:16px 20px 20px}
+}
+</style>
+</head>
+<body class="home">
+<a class="skip" href="#main">Прескочи на садржај</a>
+<div aria-hidden="true" class="progress"><span></span></div>
+<header class="topbar">
+<div class="topbar-in">
+<a aria-label="Звездани парк Рајац — почетна" class="brand" href="index.html"><svg aria-hidden="true" viewbox="0 0 40 40"><circle cx="20" cy="20" fill="none" r="19" stroke="rgba(241,220,166,.45)"></circle><path d="M20 6 22.2 17.8 34 20 22.2 22.2 20 34 17.8 22.2 6 20 17.8 17.8Z" fill="#f1dca6"></path><path d="M20 12.5 21 19 27.5 20 21 21 20 27.5 19 21 12.5 20 19 19Z" fill="#050a14" opacity=".35"></path></svg><span><b>Звездани парк</b><small>РАЈАЦ</small></span></a>
+<button aria-expanded="false" aria-label="Мени" class="menu-btn" type="button"><span></span><span></span><span></span></button>
+<nav aria-label="Главна навигација" class="nav"><a aria-current="page" class="active" href="index.html">Почетна</a><a href="lokacija.html">Локација</a><div class="nav-dd"><button aria-expanded="false" class="nav-dd-btn" type="button"><span class="nav-dd-label">Истраживања</span><span aria-hidden="true" class="nav-dd-caret"></span></button><div class="nav-dd-menu"><a href="01-uvod-i-rajac.html">Увод и истраживачки рад</a><a href="02-svetlosno-zagadjenje.html">Светлосно загађење</a><a href="03-predlog-i-merenja.html">Мерења и простор</a><a href="04-znacaj-i-upravljanje.html">Значај и управљање</a></div></div><a href="05-programi-i-turizam.html">Програми</a><a href="07-opservatorija-i-oprema.html">Опсерваторија</a><a href="nebo.html">Небо</a><a href="pravila-ponasanja.html">Правила</a><a href="sta-poneti.html">Шта понети</a><a href="prognoza.html">Прогноза</a><a href="kurs-astronomije/">Курс</a><a class="ext" href="https://piorajac.rs/">ПИО „Рајац“ ↗</a></nav>
+</div>
+</header>
+<section class="hero">
+<div class="hero-bg"><img width="1920" height="878" alt="Хоризонт на Рајцу под звезданим небом" class="hero-panorama-v28" fetchpriority="high" src="assets/img/hero-mlecni-put-v28.jpg"/></div>
+<canvas aria-hidden="true" class="stars"></canvas>
+<div class="hero-in">
+<span class="eyebrow">ПИО „Рајац“ · тамно небо · астрономија</span>
+<h1>Звездани парк<br/><em>„Рајац“</em></h1>
+<p class="lead">Од четири деценије истраживања астроклиме до нове опсерваторије и сталног мониторинга ноћног неба.</p>
+</div>
+<a class="scroll-cue" href="#main"><i></i>Скролуј</a>
+</section>
+<main id="main">
+<section class="sec home-intro">
+<div class="wrap">
+<div class="sec-head reveal">
+<div><span class="eyebrow dark">Рајац ноћу</span><h2>Тамно небо као природна вредност која се мери, прати и чува.</h2></div>
+<p>Звездани парк повезује више од четири деценије астроклиматских истраживања са савременим мерењима квалитета ноћног неба, просторним планирањем, јавним посматрањима и развојем опсерваторије.</p>
+</div>
+<div class="metrics reveal">
+<div><strong>&gt;40</strong><span>година истраживања астроклиме</span></div>
+<div><strong>21,00–21,40</strong><span>mag/arcsec² измерено инструментом SQM-L</span></div>
+<div><strong>6</strong><span>издвојених посматрачких локација</span></div>
+<div><strong>2027–2029</strong><span>развој опсерваторије и инструментације</span></div>
+</div>
+</div>
+</section>
+
+<section class="sec home-sky">
+<div class="wrap">
+<div class="sec-head reveal">
+<div><span class="eyebrow dark">Доживи небо</span><h2>Погледај небо над Рајцем, и када ниси на Рајцу.</h2></div>
+<p>Три интерактивна приказа: положај небеских тела у овом тренутку, панорама целог хоризонта и снимак целог неба од хоризонта до зенита.</p>
+</div>
+<div class="sky-live-grid">
+<a class="sky-live-card reveal" href="/zvezdano-nebo/">
+<img alt="Кружни all-sky снимак целог видљивог неба изнад Рајца" class="allsky-card-img" decoding="async" height="960" loading="lazy" src="assets/img/sm/nebo-riblje-oko-svetlije.jpg" width="960"/>
+<div class="sky-live-overlay"></div>
+<span class="sky-live-kicker">ALL-SKY · ЦЕЛО НЕБО</span>
+<div class="sky-live-copy"><h3>Цело небо изнад Рајца</h3><p>Снимак од хоризонта до зенита: тамни зенит и светлосне куполе околних градова.</p><span>Погледај снимак →</span></div>
+</a>
+<a class="sky-live-card reveal" href="nocno-nebo-rajac.html">
+<img alt="Панорама ноћног хоризонта Рајца са светлима околних градова" decoding="async" height="457" loading="lazy" src="rajac360-najava.jpg" width="1600"/>
+<div class="sky-live-overlay"></div>
+<span class="sky-live-kicker">360° · 8. ЈУН 2026.</span>
+<div class="sky-live-copy"><h3>Ноћно небо у 360°</h3><p>Интерактивна панорама целог хоризонта са врха Рајца: окрећи, приближавај и тражи стране света.</p><span>Отвори панораму →</span></div>
+</a>
+<a class="sky-live-card reveal" href="zivo-nebo-rajac.html">
+<img alt="Хоризонт Рајца са уцртаним сазвежђима, Месецом и планетама" decoding="async" height="457" loading="lazy" src="zivo-nebo-najava.jpg" width="1600"/>
+<div class="sky-live-overlay"></div>
+<span class="sky-live-kicker">УЖИВО · САДА</span>
+<div class="sky-live-copy"><h3>Живо небо над Рајцем</h3><p>Звезде, Месец и планете изнад фотографисаног хоризонта Рајца, израчунати за овај тренутак.</p><span>Отвори живо небо →</span></div>
+</a>
+</div>
+</div>
+</section>
+
+<section class="sec home-observe">
+<div class="wrap split home-observe-grid">
+<div class="reveal home-observe-copy">
+<span class="eyebrow dark">Посматрање</span>
+<h2 class="h-display">Небо је главни експонат.</h2>
+<p>Млечни пут, објекти дубоког неба, комете и метеори на Рајцу се посматрају у окружењу са малим локалним изворима светлости. Зато се сва будућа инфраструктура планира тако да не наруши мрак који треба да штити.</p>
+<p class="home-note">Звездани парк није затворен објекат, већ простор у коме је природна ноћ сама по себи део доживљаја.</p>
+</div>
+<div class="mosaic mosaic-compact mosaic-five reveal">
+<figure class="fig"><a class="zoom" data-cap="Млечни пут · Рајац" href="assets/img/hero-mlecni-put-v28.jpg"><img alt="Млечни пут снимљен са Рајца" decoding="async" height="800" loading="lazy" src="assets/img/sm/hero-mlecni-put-v28-card.jpg" width="640"/></a><figcaption>Млечни пут · Рајац</figcaption></figure>
+<figure class="fig"><a class="zoom" data-cap="Комета C/2023 A3" href="assets/img/image-25.jpg"><img alt="Комета C/2023 A3 снимљена са Рајца" decoding="async" height="520" loading="lazy" src="assets/img/sm/image-25.jpg" width="682"/></a><figcaption>Комета C/2023 A3</figcaption></figure>
+<figure class="fig"><a class="zoom" data-cap="Метеор · Рајац" href="assets/img/image-27.jpg"><img alt="Метеор снимљен са Рајца" decoding="async" height="478" loading="lazy" src="assets/img/sm/image-27.jpg" width="937"/></a><figcaption>Метеор · Рајац</figcaption></figure>
+<figure class="fig"><a class="zoom" data-cap="Помрачење Месеца · Рајац" href="assets/img/pomracenje-meseca-rajac-v96.webp"><img alt="Помрачење Месеца снимљено са Рајца" decoding="async" loading="lazy" src="assets/img/sm/pomracenje-meseca-rajac-v96.webp"/></a><figcaption>Помрачење Месеца · Рајац</figcaption></figure>
+<figure class="fig"><a class="zoom" data-cap="Звездано небо · Рајац" href="assets/img/zvezdano-nebo-rajac-v96.webp"><img alt="Звездано небо изнад Рајца" decoding="async" loading="lazy" src="assets/img/sm/zvezdano-nebo-rajac-v96.webp"/></a><figcaption>Звездано небо · Рајац</figcaption></figure>
+</div>
+</div>
+</section>
+
+<section class="sec sec-dark home-monitor">
+<div class="wrap split home-monitor-grid">
+<a class="zoom allsky reveal" data-cap="Снимак целог неба изнад Рајца објективом „рибље око“" href="assets/img/nebo-riblje-oko.jpg">
+<img alt="Снимак целог неба изнад Рајца објективом „рибље око“" decoding="async" height="960" loading="lazy" src="assets/img/sm/nebo-riblje-oko-svetlije.jpg" width="960"/>
+<span aria-hidden="true" class="allsky-ring"></span>
+</a>
+<div class="reveal">
+<span class="eyebrow">Како знамо колико је небо тамно</span>
+<h2 class="h-display">Једно небо, три нивоа мерења.</h2>
+<p>Квалитет ноћи се не процењује само погледом. Теренска мерења, снимак целог неба и сателитски подаци заједно показују локалне услове, правац светлосних купола и дугорочне промене.</p>
+<div class="monitor-layers">
+<div><b>01</b><strong>Терен</strong><span>SQM-L и SQM-LE бележе осветљеност неба на конкретним локацијама.</span></div>
+<div><b>02</b><strong>Цело небо</strong><span>All-sky и TESS-4C прате просторни распоред сјаја од хоризонта до зенита.</span></div>
+<div><b>03</b><strong>Орбита</strong><span>VIIRS омогућава поређење ширег простора и праћење тренда кроз године.</span></div>
+</div>
+</div>
+</div>
+</section>
+
+<section class="sec home-story">
+<div class="wrap">
+<div class="sec-head reveal">
+<div><span class="eyebrow dark">Континуитет</span><h2>Од истраживања астроклиме до трајног система заштите ноћи.</h2></div>
+<p>Звездани парк није једнократна туристичка идеја. Развија се као дугорочан систем у коме се истраживање, мониторинг, управљање и посматрање надовезују једно на друго.</p>
+</div>
+<div class="home-timeline reveal">
+<article><span>1980-е</span><h3>Почетак истраживачке традиције</h3><p>Рајац се препознаје као простор погодан за астрономска посматрања и проучавање астроклиматских услова.</p></article>
+<article><span>2025–2026</span><h3>Небо постаје мерљив ресурс</h3><p>SQM мерења, all-sky снимци, просторне анализе и сателитски низови дају основу за праћење светлосног загађења.</p></article>
+<article><span>2027–2029</span><h3>Опсерваторија и стална инструментација</h3><p>Следећа фаза повезује телескопе, континуални мониторинг и организоване програме посматрања и едукације.</p></article>
+</div>
+</div>
+</section>
+
+<section class="sec sec-dark home-observatory">
+<div class="wrap home-observatory-grid">
+<div class="reveal home-observatory-copy">
+<span class="eyebrow">Следећа фаза</span>
+<h2 class="h-display">Опсерваторија као место посматрања, учења и мерења.</h2>
+<p>Планирана опрема комбинује велики отвор за визуелно посматрање дубоког неба и екваторијални систем за прецизно праћење, Месец, планете и развој астрофотографских програма.</p>
+<p class="observatory-period"><b>Планирани период развоја:</b> 2027–2029.</p>
+</div>
+<div class="scope-pair reveal" aria-label="Планирани телескопи">
+<figure><img width="800" height="800" alt="Sky-Watcher 16-инчни телескоп" loading="lazy" src="assets/img/sm/skywatcher-16.webp"/><figcaption><small>Главни инструмент</small><b>Sky-Watcher 16″</b></figcaption></figure>
+<figure><img width="960" height="960" alt="Celestron C9.25 на AVX монтажи" loading="lazy" src="assets/img/sm/celestron-c925-avx.webp"/><figcaption><small>Праћење и снимање</small><b>Celestron C9.25 + AVX</b></figcaption></figure>
+</div>
+</div>
+</section>
+
+<section class="sec home-principles">
+<div class="wrap">
+<div class="principles-head reveal">
+<span class="eyebrow dark">Шта Звездани парк чува</span>
+<h2>Не само поглед на звезде, већ услове који тај поглед чине могућим.</h2>
+</div>
+<div class="principles-grid reveal">
+<article><span>01</span><h3>Природну таму</h3><p>Ноћ без непотребног расипања светлости према небу и околном пределу.</p></article>
+<article><span>02</span><h3>Отворен хоризонт</h3><p>Посматрачке тачке са што мање локалних извора светлости и јасним погледом на небо.</p></article>
+<article><span>03</span><h3>Континуитет мерења</h3><p>Исте вредности се прате кроз време како би се промене уочиле пре него што постану трајан проблем.</p></article>
+<article><span>04</span><h3>Доживљај ноћи</h3><p>Астрономски програми, едукација и боравак у природи развијају се без нарушавања мрака.</p></article>
+</div>
+</div>
+</section>
+
+<section class="sec sec-dark home-plan">
+<div class="wrap">
+<div class="sec-head reveal">
+<div><span class="eyebrow">Планирај посету</span><h2>Ноћ на Рајцу почиње припремом.</h2></div>
+<p>Пре поласка провери услове за посматрање, пронађи место са отвореним хоризонтом и спакуј оно што ће ти требати током ноћи.</p>
+</div>
+<div class="plan-grid reveal">
+<a class="plan-card" href="prognoza.html"><b>01</b><h3>Прогноза</h3><p>Астрономски услови за данас и мерења АМС Рајац за планирање ноћног посматрања.</p><span>Провери услове →</span></a>
+<a class="plan-card" href="lokacija.html"><b>02</b><h3>Локација</h3><p>Где је Рајац и како изгледа отворени хоризонт за астрономска посматрања.</p><span>Погледај локацију →</span></a>
+<a class="plan-card" href="sta-poneti.html"><b>03</b><h3>Шта понети</h3><p>Контролна листа опреме за астрономско посматрање и ноћни боравак на Рајцу.</p><span>Отвори листу →</span></a>
+<a class="plan-card" href="05-programi-i-turizam.html"><b>04</b><h3>Програми</h3><p>Јавна посматрања, астрофотографија, едукација и развој астро-туристичког програма.</p><span>Погледај програме →</span></a>
+</div>
+</div>
+</section>
+</main>
+<footer class="footer">
+<div class="footer-in">
+<div class="f-brand"><svg width="40" height="40" viewBox="0 0 40 40" aria-hidden="true"><circle cx="20" cy="20" r="19" fill="none" stroke="rgba(241,220,166,.45)"/><path d="M20 6 22.2 17.8 34 20 22.2 22.2 20 34 17.8 22.2 6 20 17.8 17.8Z" fill="#f1dca6"/><path d="M20 12.5 21 19 27.5 20 21 21 20 27.5 19 21 12.5 20 19 19Z" fill="#050a14" opacity=".35"/></svg><b>Звездани парк „Рајац“</b><p>Пројекат очувања природног ноћног неба у Пределу изузетних одлика „Рајац“ — истраживање, мерење, едукација и астрономски програми.</p></div>
+<div><h5>Пројекат</h5><ul>
+<li><a href="https://piorajac.rs/zvezdani-park/01-uvod-i-rajac.html">Истраживања</a></li>
+<li><a href="https://piorajac.rs/zvezdani-park/02-svetlosno-zagadjenje.html">Светлосно загађење</a></li>
+<li><a href="https://piorajac.rs/zvezdani-park/03-predlog-i-merenja.html">Мерења и простор</a></li>
+<li><a href="https://piorajac.rs/zvezdani-park/04-znacaj-i-upravljanje.html">Управљање</a></li>
+<li><a href="https://piorajac.rs/zvezdani-park/05-programi-i-turizam.html">Програми</a></li>
+<li><a href="https://piorajac.rs/zvezdani-park/07-opservatorija-i-oprema.html">Опсерваторија и опрема</a></li>
+</ul></div>
+<div><h5>Посета и небо</h5><ul>
+<li><a href="https://piorajac.rs/zvezdani-park/lokacija.html">Локација</a></li>
+<li><a href="https://piorajac.rs/zvezdani-park/sta-poneti.html">Шта понети</a></li>
+<li><a href="https://piorajac.rs/zvezdani-park/prognoza.html">Астрономска прогноза</a></li>
+<li><a href="https://piorajac.rs/zvezdani-park/nebo.html">Небо</a></li>
+<li><a href="https://piorajac.rs/zvezdani-park/zivo-nebo-rajac.html">Живо небо над Рајцем</a></li>
+<li><a href="https://piorajac.rs/zvezdani-park/nocno-nebo-rajac.html">Ноћно небо у 360°</a></li>
+</ul></div>
+<div><h5>Повезано</h5><ul>
+<li><a href="https://piorajac.rs/zvezdani-park/kurs-astronomije/">Курс астрономије</a></li>
+<li><a href="https://piorajac.rs/zvezdano-nebo/">All-sky снимак целог неба</a></li>
+<li><a href="https://piorajac.rs/amsrajac/">АМС Рајац</a></li>
+<li><a href="https://svetlo.piorajac.rs">Књига о светлосном загађењу</a></li>
+<li><a href="https://piorajac.rs/">ПИО „Рајац“</a></li>
+<li><a href="mailto:zvezdanipark@piorajac.rs">zvezdanipark@piorajac.rs</a></li>
+</ul></div>
+</div>
+<div class="footer-base"><span>© 2026 ПИО „Рајац“ · Љиг</span><span>Небо је део природе. Чувајмо мрак.</span></div>
+</footer>
+<script defer="" src="assets/site.js?v=46"></script>
+<!-- ZP-SUMRAK --><script src="https://piorajac.rs/zvezdani-park/assets/sumrak.js?v=7" defer></script>
+</body>
+</html>

@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="sr-Cyrl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Подешавања приватности | ПИО „Рајац”</title>
+<meta name="description" content="Подешавања приватности на сајту ПИО „Рајац”: контакт форме, достављени подаци, спољни сервиси и захтеви за исправку или брисање података.">
+<link rel="canonical" href="https://piorajac.rs/podesavanja-privatnosti/">
+<style>
+:root{
+  --navy:#0e1c2f;
+  --gold:#c9a84c;
+  --paper:#ffffff;
+  --ink:#22251f;
+  --muted:#5d625b;
+  --line:rgba(34,37,31,.14);
+  --serif:Georgia,"Times New Roman",serif;
+  --sans:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;
+}
+*{box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{margin:0;background:#fff;color:var(--ink);font-family:var(--sans);font-size:17px;line-height:1.72;}
+a{color:inherit;}
+.topbar{position:sticky;top:0;z-index:100;background:var(--navy);color:#fff;border-bottom:1px solid rgba(255,255,255,.14);}
+.topbar-inner{width:min(1120px,calc(100% - 36px));margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:18px;min-height:56px;}
+.brand{font-family:var(--serif);font-size:1.18rem;font-weight:700;text-decoration:none;color:#fff;white-space:nowrap;}
+.brand span{color:#e7d49a;}
+.back{font-size:.82rem;text-decoration:none;color:rgba(255,255,255,.78);white-space:nowrap;}
+.back:hover{color:#e7d49a;}
+.chips{background:#fff;border-bottom:1px solid var(--line);position:sticky;top:56px;z-index:90;}
+.chips-inner{width:min(1120px,calc(100% - 36px));margin:0 auto;display:flex;gap:8px;overflow-x:auto;padding:12px 0;}
+.chip{flex:0 0 auto;text-decoration:none;font-size:.86rem;line-height:1;padding:9px 14px;border:1px solid var(--line);border-radius:999px;color:var(--muted);background:#fff;white-space:nowrap;}
+.chip:hover{border-color:var(--gold);color:var(--ink);}
+.chip.active{background:var(--navy);border-color:var(--navy);color:#fff;}
+main{background:#fff;}
+.wrap{width:min(820px,calc(100% - 36px));margin:0 auto;padding:46px 0 70px;}
+h1{font-family:var(--serif);font-size:clamp(2rem,4vw,3rem);line-height:1.1;margin:0 0 22px;color:var(--navy);font-weight:700;}
+.lead{font-size:1.12rem;line-height:1.72;color:#2f342e;margin:0 0 26px;}
+h2{font-family:var(--serif);font-size:clamp(1.42rem,2.6vw,1.85rem);line-height:1.22;margin:38px 0 12px;padding-top:22px;border-top:1px solid var(--line);color:var(--navy);font-weight:700;}
+p{margin:0 0 16px;}
+ul{margin:0 0 18px 0;padding:0;list-style:none;}
+li{position:relative;margin:0 0 10px;padding-left:24px;}
+li::before{content:"";position:absolute;left:3px;top:.78em;width:7px;height:7px;border-radius:50%;background:var(--gold);}
+.note{background:#fafafa;border:1px solid var(--line);border-left:4px solid var(--gold);padding:16px 18px;margin:18px 0 22px;border-radius:10px;color:#353a34;}
+.menu-toggle,.back-to-top{display:none;}
+@media(max-width:1100px){
+  html,body{overflow-x:hidden;}
+  body{font-size:16px;overflow-wrap:break-word;}
+  img,picture,video,canvas,svg,iframe{display:block;max-width:100%;height:auto;}
+  pre,code{max-width:100%;overflow-wrap:anywhere;white-space:normal;}
+  .topbar{padding-top:env(safe-area-inset-top);}
+  .topbar-inner{width:calc(100% - 32px);min-height:60px;}
+  .brand{font-size:1.06rem;}
+  .back{display:none;}
+  .menu-toggle{display:inline-flex;width:46px;height:44px;flex:0 0 46px;align-items:center;justify-content:center;border:1px solid rgba(255,255,255,.4);border-radius:10px;background:transparent;color:#fff;cursor:pointer;}
+  .menu-toggle-box{display:grid;gap:5px;width:22px;}
+  .menu-toggle-box span{display:block;width:100%;height:2px;border-radius:2px;background:currentColor;transition:transform .2s ease,opacity .2s ease;}
+  .topbar.menu-open .menu-toggle-box span:nth-child(1){transform:translateY(7px) rotate(45deg);}
+  .topbar.menu-open .menu-toggle-box span:nth-child(2){opacity:0;}
+  .topbar.menu-open .menu-toggle-box span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
+  .chips{display:none;position:fixed;top:calc(60px + env(safe-area-inset-top));left:16px;right:16px;z-index:95;border:1px solid var(--line);border-radius:0 0 14px 14px;box-shadow:0 12px 28px rgba(14,28,47,.22);}
+  .chips.menu-open{display:block;}
+  .chips-inner{width:100%;max-height:calc(100vh - 92px - env(safe-area-inset-top));padding:10px;flex-direction:column;overflow-y:auto;}
+  .chip{display:flex;align-items:center;width:100%;min-height:44px;padding:11px 14px;border-radius:9px;white-space:normal;line-height:1.25;}
+  .wrap{width:calc(100% - 32px);padding:30px 0 calc(90px + env(safe-area-inset-bottom));}
+  h1{font-size:clamp(1.85rem,6vw,2.5rem);overflow-wrap:anywhere;}
+  h2{margin-top:32px;padding-top:20px;font-size:1.35rem;}
+  a{overflow-wrap:anywhere;}
+  .note{padding:14px 15px;}
+  .back-to-top{display:flex;position:fixed;right:max(16px,env(safe-area-inset-right));bottom:max(16px,env(safe-area-inset-bottom));z-index:100;width:58px;height:58px;align-items:center;justify-content:center;flex-direction:column;border:1.5px solid var(--navy);border-radius:50%;background:rgba(255,255,255,.92);color:var(--navy);font:700 .66rem/1 var(--sans);letter-spacing:.06em;cursor:pointer;opacity:0;visibility:hidden;transform:translateY(10px);transition:opacity .2s ease,transform .2s ease,visibility .2s ease;box-shadow:0 4px 14px rgba(14,28,47,.14);}
+  .back-to-top .arrow{font-size:1.25rem;line-height:1.05;letter-spacing:0;}
+  .back-to-top.is-visible{opacity:1;visibility:visible;transform:none;}
+}
+@media(max-width:480px){.topbar-inner,.wrap{width:calc(100% - 28px);}.chips{left:14px;right:14px;}h1{font-size:1.8rem;}.lead{font-size:1.05rem;line-height:1.6;}}
+</style>
+</head>
+<body>
+<header class="topbar">
+  <div class="topbar-inner">
+    <a class="brand" href="https://piorajac.rs/">ПИО <span>„Рајац”</span></a>
+    <a class="back" href="https://piorajac.rs/">↩ Назад на сајт</a>
+    <button class="menu-toggle" type="button" aria-label="Отвори мени" aria-controls="privacy-menu" aria-expanded="false"><span class="menu-toggle-box" aria-hidden="true"><span></span><span></span><span></span></span></button>
+  </div>
+</header>
+<nav class="chips" aria-label="Правни документи">
+  <div class="chips-inner" id="privacy-menu">
+    <a class="chip" href="https://piorajac.rs/politika-linkova/">Политика линкова</a>
+    <a class="chip" href="https://piorajac.rs/odricanje-odgovornosti/">Одрицање одговорности</a>
+    <a class="chip" href="https://piorajac.rs/uslovi-i-odredbe/">Услови и одредбе</a>
+    <a class="chip" href="https://piorajac.rs/politika-privatnosti/">Политика приватности</a>
+    <a class="chip active" href="https://piorajac.rs/podesavanja-privatnosti/">Подешавања приватности</a>
+  </div>
+</nav>
+<main>
+  <div class="wrap">
+    <h1>Подешавања приватности</h1>
+
+    <p class="lead">Ова страница објашњава како корисник може да управља својом приватношћу приликом коришћења сајта ПИО „Рајац”. Садржај се односи на податке које корисник сам достави, на контакт форме, пријаве са терена, спољне сервисе који могу бити приказани на страницама и на право корисника да затражи исправку или брисање података.</p>
+
+    <h2>Општи принцип</h2>
+    <p>Сајт ПИО „Рајац” је намењен информисању, едукацији, мониторингу природе, промоцији одговорног туризма и унапређењу управљања заштићеним подручјем. Прикупљају се само они подаци који су потребни за комуникацију са корисником, поступање по достављеној пријави или обезбеђивање нормалног рада сајта.</p>
+    <p>Сајт не користи колачиће за праћење посетилаца, профилисање корисника, персонализовано оглашавање или продају података трећим лицима.</p>
+
+    <h2>Подаци које корисник сам доставља</h2>
+    <p>Корисник може добровољно доставити податке путем контакт форме, пријаве проблема, теренског налаза, предлога, фотографије или другог облика комуникације са сајтом.</p>
+    <p>У тим случајевима могу се обрађивати подаци које је корисник сам унео, као што су име и презиме, имејл адреса, текст поруке, опис налаза, фотографија, локација налаза или други подаци неопходни за поступање по захтеву.</p>
+
+    <div class="note">Корисник треба да достави само оне податке који су неопходни за сврху контакта, пријаве или теренског налаза. Не треба уносити осетљиве личне податке, податке о трећим лицима или информације које нису потребне.</div>
+
+    <h2>Контакт форме и пријаве</h2>
+    <p>Када корисник пошаље поруку, пријаву проблема у заштићеном подручју, теренски налаз или други садржај путем форме на сајту, достављени подаци користе се ради одговора на упит, провере навода, вођења евиденције и унапређења мониторинга природе.</p>
+    <p>Поруке, пријаве и теренски налази могу се чувати ради документације, праћења поступања, израде извештаја и бољег управљања заштићеним подручјем.</p>
+
+    <h2>Спољни сервиси</h2>
+    <p>Поједине странице могу садржати уграђене мапе, временске податке, сателитске приказе, графиконе, видео садржаје, научне базе, интерактивне карте или друге спољне сервисе.</p>
+    <p>Када корисник приступи таквом садржају, спољни сервис може обрађивати одређене техничке податке у складу са сопственим правилима приватности. За такву обраду одговорни су пружаоци тих сервиса.</p>
+
+    <h2>Технички подаци и безбедност</h2>
+    <p>Ради нормалног рада и безбедности сајта могу се обрађивати основни технички подаци, као што су IP адреса, време приступа, тип уређаја, прегледач и посећене странице. Ови подаци користе се за техничку стабилност, заштиту од злоупотреба и отклањање грешака.</p>
+    <p>Предузимају се разумне техничке и организационе мере да се подаци заштите од неовлашћеног приступа, губитка, злоупотребе или измене.</p>
+
+    <h2>Како затражити исправку или брисање података</h2>
+    <p>Корисник може затражити информацију о подацима које је сам доставио, као и њихову исправку или брисање, уколико за то постоје услови.</p>
+    <p>Захтев се упућује руковаоцу подацима наведеном у Политици приватности, уз довољно информација да се може утврдити на који се податак захтев односи.</p>
+
+    <h2>Веза са Политиком приватности</h2>
+    <p>Ова страница је практично објашњење начина на који корисник може управљати својим подацима. Детаљнија правила о сврси обраде, чувању података, правима корисника и руковаоцу подацима налазе се у Политици приватности.</p>
+  </div>
+</main>
+<button class="back-to-top" type="button" aria-label="Врати се на врх странице"><span class="arrow" aria-hidden="true">↑</span><span>ВРХ</span></button>
+<script>
+(()=>{const header=document.querySelector('.topbar'),toggle=document.querySelector('.menu-toggle'),nav=document.querySelector('.chips'),topButton=document.querySelector('.back-to-top');if(header&&toggle&&nav){const close=()=>{header.classList.remove('menu-open');nav.classList.remove('menu-open');toggle.setAttribute('aria-expanded','false');toggle.setAttribute('aria-label','Отвори мени')};toggle.addEventListener('click',()=>{const open=!nav.classList.contains('menu-open');header.classList.toggle('menu-open',open);nav.classList.toggle('menu-open',open);toggle.setAttribute('aria-expanded',String(open));toggle.setAttribute('aria-label',open?'Затвори мени':'Отвори мени')});nav.addEventListener('click',e=>{if(e.target.closest('a'))close()});document.addEventListener('click',e=>{if(!header.contains(e.target)&&!nav.contains(e.target))close()});document.addEventListener('keydown',e=>{if(e.key==='Escape')close()});window.addEventListener('resize',()=>{if(innerWidth>1100)close()})}if(topButton){const update=()=>topButton.classList.toggle('is-visible',scrollY>320);addEventListener('scroll',update,{passive:true});update();topButton.addEventListener('click',()=>scrollTo({top:0,behavior:'smooth'}))}})();
+</script>
+</body>
+</html>

@@ -1,0 +1,620 @@
+<!DOCTYPE html>
+<html lang="sr-Cyrl">
+<head>
+<meta charset="utf-8"/><meta content="width=device-width,initial-scale=1" name="viewport"/>
+<title>Нови интерактивни приручник за посматрање птица на Рајцу</title>
+<meta content="Практичан интерактивни приручник за препознавање, посматрање и бележење птица ПИО „Рајац“." name="description"/>
+<meta content="article" property="og:type"/>
+<meta content="Нови интерактивни приручник за посматрање птица на Рајцу" property="og:title"/>
+<meta content="Практичан интерактивни приручник за препознавање, посматрање и бележење птица ПИО „Рајац“." property="og:description"/>
+<meta content="https://piorajac.rs/rajac-vesti/assets/img/reports/sumska-sova-alan-rajac.webp" property="og:image"/>
+<link href="https://piorajac.rs/rajac-vesti/assets/css/rajac-unified-menu.css" rel="stylesheet"/>
+<style>
+:root{
+  --bg:#f4efe3;
+  --paper:#fffdf7;
+  --ink:#121a22;
+  --muted:#61706d;
+  --line:rgba(25,35,31,.14);
+  --line2:rgba(25,35,31,.08);
+  --nav:#0d1b2a;
+  --gold:#d9bd6a;
+  --gold2:#9b6b12;
+  --green:#173e27;
+  --green2:#1d6b37;
+  --blue:#0f2436;
+  --radius:28px;
+  --shadow:0 22px 60px rgba(19,29,22,.10);
+  --wrap:min(1180px,calc(100% - 42px));
+}
+
+*{box-sizing:border-box}
+
+html{scroll-behavior:smooth}
+
+body{
+  margin:0;
+  color:var(--ink);
+  font-family:Georgia,"Times New Roman",serif;
+  background:
+    radial-gradient(circle at 12% 0%,rgba(217,189,106,.18),transparent 32%),
+    radial-gradient(circle at 88% 0%,rgba(29,107,55,.12),transparent 36%),
+    var(--bg);
+}
+
+a{
+  color:inherit;
+  text-decoration:none;
+}
+
+img{
+  display:block;
+  max-width:100%;
+}
+
+.rajac-news-menu{
+  position:sticky;
+  top:0;
+  z-index:30;
+  background:var(--nav);
+  border-bottom:1px solid rgba(255,255,255,.10);
+  box-shadow:0 8px 26px rgba(0,0,0,.08);
+}
+
+.rajac-news-menu-inner{flex-wrap:wrap;
+  max-width:1180px;
+  margin:0 auto;
+  padding:0 18px;
+  min-height:56px;
+  display:flex;
+  align-items:center;
+  gap:8px;
+  overflow-x:visible;
+  scrollbar-width:none;
+}
+
+.rajac-news-menu-inner::-webkit-scrollbar{display:none}
+
+.rajac-news-menu a{
+  display:inline-flex;
+  align-items:center;
+  gap:6px;
+  min-height:38px;
+  padding:0 13px;
+  border-radius:999px;
+  color:rgba(255,255,255,.74);
+  font-family:Arial,sans-serif;
+  font-size:13px;
+  font-weight:800;
+  letter-spacing:.06em;
+  text-transform:uppercase;
+  white-space:nowrap;
+  line-height:1;
+}
+
+.rajac-news-menu a:hover{
+  background:rgba(255,255,255,.06);
+  color:#fff;
+}
+
+.rajac-news-menu .home{
+  color:#e0c678;
+  border:1px solid rgba(224,198,120,.34);
+  background:rgba(224,198,120,.06);
+}
+
+.rajac-news-menu a.active{
+  color:#e0c678;
+  background:rgba(224,198,120,.08);
+  outline:1px solid rgba(224,198,120,.26);
+}
+
+.rajac-news-menu small{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  min-width:20px;
+  height:20px;
+  padding:0 6px;
+  border-radius:999px;
+  background:rgba(255,255,255,.10);
+  color:#e0c678;
+  font-size:11px;
+  letter-spacing:0;
+}
+
+.shell{
+  width:var(--wrap);
+  margin:0 auto;
+}
+
+.hero{
+  padding:72px 0 34px;
+  border-bottom:1px solid var(--line);
+}
+
+.kicker{
+  margin:0 0 16px;
+  color:var(--gold2);
+  font-family:Arial,sans-serif;
+  font-size:13px;
+  font-weight:900;
+  letter-spacing:.24em;
+  text-transform:uppercase;
+}
+
+.hero h1{
+  margin:0;
+  max-width:1040px;
+  font-size:clamp(34px,4.6vw,62px);
+  line-height:1.02;
+  font-weight:400;
+  letter-spacing:-.045em;
+}
+
+.subtitle{
+  max-width:930px;
+  margin:24px 0 0;
+  color:var(--muted);
+  font-size:clamp(19px,1.6vw,24px);
+  line-height:1.66;
+}
+
+.actions{
+  display:flex;
+  gap:12px;
+  flex-wrap:wrap;
+  margin-top:30px;
+}
+
+.btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  min-height:48px;
+  padding:0 18px;
+  border-radius:999px;
+  font-family:Arial,sans-serif;
+  font-size:13px;
+  font-weight:900;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  border:1px solid var(--line);
+  transition:.18s ease;
+  background:#fffdf7;
+  color:var(--green);
+}
+
+.btn.primary{
+  background:var(--green2);
+  color:white;
+  border-color:transparent;
+}
+
+.btn:hover{
+  transform:translateY(-2px);
+  box-shadow:0 12px 28px rgba(25,31,24,.12);
+}
+
+.highlight-link{
+  margin:30px 0 34px;
+  padding:30px;
+  border-radius:30px;
+  background:
+    linear-gradient(145deg,rgba(23,62,39,.96),rgba(29,107,55,.94)),
+    var(--green);
+  color:white;
+  box-shadow:0 24px 70px rgba(19,29,22,.18);
+  display:grid;
+  grid-template-columns:minmax(0,1fr) auto;
+  gap:24px;
+  align-items:center;
+}
+
+.highlight-link span{
+  display:block;
+  margin-bottom:8px;
+  color:#e8c978;
+  font-family:Arial,sans-serif;
+  font-size:13px;
+  font-weight:900;
+  letter-spacing:.18em;
+  text-transform:uppercase;
+}
+
+.highlight-link h2{
+  margin:0;
+  color:#fff;
+  font-size:clamp(30px,3.2vw,46px);
+  font-weight:400;
+  line-height:1.08;
+  letter-spacing:-.025em;
+}
+
+.highlight-link p{
+  margin:12px 0 0;
+  color:rgba(255,255,255,.82);
+  font-size:19px;
+  line-height:1.62;
+}
+
+.highlight-link a{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  min-height:54px;
+  padding:0 22px;
+  border-radius:999px;
+  background:#fff;
+  color:var(--green);
+  font-family:Arial,sans-serif;
+  font-size:13px;
+  font-weight:900;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  white-space:nowrap;
+}
+
+.layout{
+  display:grid;
+  grid-template-columns:minmax(0,1.05fr) minmax(310px,.45fr);
+  gap:24px;
+  margin:30px 0 64px;
+  align-items:start;
+}
+
+.card{
+  background:rgba(255,253,247,.90);
+  border:1px solid var(--line2);
+  border-radius:var(--radius);
+  box-shadow:var(--shadow);
+  padding:clamp(24px,3.2vw,42px);
+}
+
+.prose p{
+  font-size:20px;
+  line-height:1.8;
+  color:var(--muted);
+  margin:0 0 18px;
+}
+
+.prose .lead{
+  font-size:23px;
+  line-height:1.72;
+  color:#38423f;
+  margin-bottom:24px;
+}
+
+.prose h2{
+  margin:36px 0 14px;
+  color:var(--green);
+  font-size:clamp(30px,3.1vw,44px);
+  font-weight:400;
+  line-height:1.08;
+  letter-spacing:-.025em;
+}
+
+.prose h2:first-child{margin-top:0}
+
+.prose strong{color:#1b2824}
+
+.note-box{
+  margin:26px 0;
+  padding:22px;
+  border-radius:22px;
+  background:#f1ead8;
+  border:1px solid rgba(155,107,18,.18);
+}
+
+.note-box p{
+  margin:0;
+  color:#4e4a3e;
+  font-size:19px;
+  line-height:1.65;
+}
+
+.note-box strong{
+  color:#111;
+}
+
+.audience-box{
+  padding:24px;
+  border-radius:24px;
+  background:#fffaf2;
+  border:1px solid rgba(155,107,18,.20);
+  border-left:5px solid var(--gold2);
+  margin:24px 0 24px;
+}
+
+.audience-box h3{
+  margin:0 0 10px;
+  color:#1b2824;
+  font-size:25px;
+  font-weight:700;
+  line-height:1.2;
+}
+
+.audience-box p{
+  margin:0;
+  font-size:19px;
+  line-height:1.72;
+  color:#4e4a3e;
+}
+
+.grid-3{
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:16px;
+  margin:20px 0 28px;
+}
+
+.mini{
+  padding:20px;
+  border-radius:22px;
+  background:#fbf7ed;
+  border:1px solid var(--line);
+}
+
+.mini span{
+  display:inline-flex;
+  margin-bottom:10px;
+  color:var(--gold2);
+  font-family:Arial,sans-serif;
+  font-size:12px;
+  font-weight:900;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+}
+
+.mini h3{
+  margin:0 0 8px;
+  color:var(--green);
+  font-size:24px;
+  font-weight:400;
+  line-height:1.16;
+}
+
+.mini p{
+  margin:0;
+  font-size:18px;
+  line-height:1.58;
+  color:var(--muted);
+}
+
+.callout{
+  margin-top:28px;
+  padding:28px;
+  border-radius:26px;
+  background:linear-gradient(145deg,#173e27,#1d6b37);
+  color:white;
+  box-shadow:var(--shadow);
+}
+
+.callout h2{
+  margin:0 0 10px!important;
+  color:#fff!important;
+  font-size:34px!important;
+}
+
+.callout p{
+  margin:0;
+  color:rgba(255,255,255,.82);
+  font-size:19px;
+  line-height:1.65;
+}
+
+.facts-card{
+  background:linear-gradient(155deg,#081421,#102719);
+  color:white;
+  border-color:rgba(255,255,255,.10);
+}
+
+.facts-card h2{
+  margin:0 0 18px;
+  font-size:34px;
+  font-weight:400;
+  color:white;
+  line-height:1.12;
+}
+
+.facts{
+  display:grid;
+  gap:13px;
+}
+
+.fact{
+  padding:15px 16px;
+  border-radius:18px;
+  background:rgba(255,255,255,.07);
+  border:1px solid rgba(255,255,255,.12);
+}
+
+.fact span{
+  display:block;
+  margin-bottom:6px;
+  color:#e8c978;
+  font-family:Arial,sans-serif;
+  font-size:12px;
+  font-weight:900;
+  letter-spacing:.15em;
+  text-transform:uppercase;
+}
+
+.fact strong{
+  display:block;
+  font-size:22px;
+  font-weight:400;
+  line-height:1.22;
+  color:white;
+}
+
+.fact em{
+  display:block;
+  margin-top:5px;
+  color:rgba(255,255,255,.72);
+  font-style:normal;
+  font-size:15px;
+  line-height:1.45;
+}
+
+.mini-nav{
+  display:grid;
+  gap:10px;
+  margin-top:20px;
+  padding-top:20px;
+  border-top:1px solid rgba(255,255,255,.12);
+}
+
+.mini-nav a{
+  display:block;
+  padding:13px 14px;
+  border-radius:15px;
+  background:rgba(255,255,255,.07);
+  color:rgba(255,255,255,.86);
+  font-family:Arial,sans-serif;
+  font-size:13px;
+  font-weight:900;
+  letter-spacing:.06em;
+  text-transform:uppercase;
+}
+
+.mini-nav a:hover{
+  background:rgba(255,255,255,.12);
+  color:#fff;
+}
+
+@media(max-width:960px){
+  .layout{
+    grid-template-columns:1fr;
+  }
+
+  .grid-3{
+    grid-template-columns:1fr;
+  }
+
+  .highlight-link{
+    grid-template-columns:1fr;
+  }
+
+  .highlight-link a{
+    justify-self:start;
+  }
+}
+
+@media(max-width:650px){
+  :root{
+    --wrap:min(100% - 24px,1180px);
+  }
+
+  .hero{
+    padding-top:52px;
+  }
+
+  .hero h1{
+    font-size:42px;
+  }
+
+  .card{
+    padding:24px 18px;
+  }
+
+  .prose p,
+  .prose .lead{
+    font-size:18px;
+  }
+
+  .rajac-news-menu-inner{
+    padding:0 10px;
+  }
+
+  .rajac-news-menu a{
+    font-size:12px;
+    padding:0 10px;
+  }
+}
+</style>
+<style>
+.fire-figure{margin:34px 0;background:#fffdf7;border:1px solid var(--line);border-radius:30px;box-shadow:var(--shadow);overflow:hidden}.fire-figure img{width:100%;height:auto}.fire-figure figcaption{padding:16px 22px 20px;color:#52615e;font:16px/1.65 Arial,sans-serif;background:#fffaf2}.layout{display:block}.prose{max-width:none}.prose p{max-width:none}.manager{margin:30px 0;padding:30px;border-radius:26px;background:linear-gradient(145deg,#173e27,#1d6b37);color:#fff}.manager h2{color:#fff!important;margin:0 0 14px!important}.manager p{color:rgba(255,255,255,.88)!important}.flow{display:grid;grid-template-columns:repeat(7,1fr);gap:8px;margin:24px 0}.flow div{padding:14px 8px;border-radius:16px;background:#f1ead8;text-align:center;font:800 13px/1.35 Arial,sans-serif;color:#173e27}.night{padding:26px;border-radius:24px;background:#0d1b2a;color:#fff;margin:28px 0}.night h2{color:#e8c978!important;margin-top:0!important}.night p{color:rgba(255,255,255,.84)!important}.source-note{font-size:16px!important}.source-note a{color:#173e27;font-weight:800;border-bottom:1px solid #173e27}@media(max-width:900px){.flow{grid-template-columns:1fr 1fr}.flow div:last-child{grid-column:1/-1}}@media(max-width:650px){.fire-figure{border-radius:20px}.manager,.night{padding:22px 18px}.flow{grid-template-columns:1fr}}
+</style>
+<style>
+.manager strong { color:#fff !important; font-weight:800; }
+.manager p { color:#fff !important; }
+.single-card { grid-template-columns:minmax(0,1fr) !important; width:100%; max-width:none; }
+.single-card .mini { width:100%; box-sizing:border-box; }
+</style>
+<style>
+.article-layout{display:grid;grid-template-columns:minmax(0,1fr) 340px;gap:24px;margin:30px 0 64px;align-items:start}
+.article-main{min-width:0}
+.article-photo{margin:0 0 18px;border-radius:22px;overflow:hidden;border:1px solid rgba(255,255,255,.12);background:#0b1720}
+.article-photo img{width:100%;height:250px;object-fit:cover;object-position:center}
+.article-photo figcaption{padding:12px 14px 14px;color:rgba(255,255,255,.72);font:14px/1.5 Arial,sans-serif}
+.tool-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin:20px 0 28px}
+.tool-card{padding:20px;border-radius:20px;background:#fbf7ed;border:1px solid var(--line)}
+.tool-card h3{margin:0 0 8px;color:var(--green);font-size:23px;font-weight:400}
+.tool-card p{margin:0!important;font-size:17px!important;line-height:1.6!important}
+.step-list{counter-reset:step;display:grid;gap:10px;margin:20px 0 26px}
+.step-list div{counter-increment:step;padding:16px 18px 16px 54px;border-radius:18px;background:#f7f1e4;border:1px solid var(--line);position:relative;color:var(--muted);font-size:18px;line-height:1.6}
+.step-list div:before{content:counter(step,decimal-leading-zero);position:absolute;left:17px;top:18px;color:var(--gold2);font:900 12px Arial,sans-serif;letter-spacing:.08em}
+.panorama-photo{margin:32px 0;border-radius:28px;overflow:hidden;border:1px solid var(--line);box-shadow:var(--shadow);background:#0d1b2a}
+.panorama-photo img{width:100%;height:360px;object-fit:cover;object-position:center}
+.panorama-photo figcaption{padding:14px 20px 18px;color:#52615e;font:15px/1.55 Arial,sans-serif;background:#fffaf2}
+@media(max-width:960px){.article-layout{grid-template-columns:1fr}.article-photo img{height:330px}}
+@media(max-width:650px){.tool-grid{grid-template-columns:1fr}.article-photo img{height:260px}.panorama-photo img{height:230px}}
+</style>
+</head>
+<body>
+<nav aria-label="Мени вести" class="rajac-news-menu"><div class="rajac-news-menu-inner"><a class="home" href="https://piorajac.rs/">ПИО „РАЈАЦ”</a><a href="https://piorajac.rs/rajac-vesti/">СВЕ ВЕСТИ</a><a class="active" href="https://piorajac.rs/rajac-vesti/kategorije/aktuelno/">АКТУЕЛНО<small>7</small></a><a href="https://piorajac.rs/rajac-vesti/kategorije/vesti/">ВЕСТИ<small>3</small></a><a href="https://piorajac.rs/rajac-vesti/kategorije/izvestaji/">ИЗВЕШТАЈИ<small>8</small></a><a href="https://piorajac.rs/rajac-vesti/kategorije/istrazivanja/">ИСТРАЖИВАЊА<small>9</small></a><a href="https://piorajac.rs/rajac-vesti/kategorije/dogadjaji/">ДОГАЂАЈИ<small>5</small></a><a href="https://piorajac.rs/rajac-vesti/kategorije/u-fokusu/">У ФОКУСУ<small>4</small></a></div></nav>
+<main class="shell">
+<section class="hero">
+<p class="kicker">АКТУЕЛНО · 18.09.2026.</p>
+<h1>Нови интерактивни приручник за посматрање птица на Рајцу</h1>
+<p class="subtitle">Од првог погледа кроз двоглед до поузданог теренског записа: нови водич ПИО „Рајац“ обједињује препознавање врста, станишта, сезоне, гласове, каталог птица, квизове и лични теренски дневник.</p>
+<div class="actions"><a class="btn primary" href="https://piorajac.rs/ptice/prirucnik/index.html#top">Отвори приручник</a><a class="btn" href="https://piorajac.rs/rajac-vesti/">Све вести</a></div>
+</section>
+<section class="highlight-link">
+<div><span>Нови јавни ресурс</span><h2>Посматрање птица — потпуни водич за Рајац</h2>
+<p>Једно место за припрему, препознавање, поређење сличних врста, слушање гласова и бележење теренских налаза.</p></div>
+<a href="https://piorajac.rs/ptice/prirucnik/index.html#top">Покрени водич →</a>
+</section>
+<section class="article-layout">
+<article class="card prose article-main">
+<p class="lead"><strong>ПИО „Рајац“ објавио је нови интерактивни приручник за посматрање птица</strong> који је осмишљен као практичан теренски алат, а не само као књига за читање. Корисник може да крене од станишта или непознате птице, упореди сличне врсте, провери сезону и глас и на крају направи сопствени теренски запис.</p>
+<h2>20 поглавља повезаних у један теренски систем</h2>
+<p>Приручник има <strong>20 међусобно повезаних поглавља</strong>. Почетна поглавља објашњавају како се чита предео, како се птица посматра без узнемиравања и које особине треба прво уочити. Следе поглавља о шумама и старим стаблима, рубовима шума и живицама, ливадама и пашњацима, насељима, грабљивицама и птицама отвореног неба.</p>
+<p>Посебни делови посвећени су сеоби, зимовању, гнежђењу, сезонским променама, гласовима птица и исправном бележењу налаза. На тај начин корисник не добија само назив врсте већ и контекст — <em>где, када и како</em> ту врсту има смисла тражити на Рајцу.</p>
+<h2>91 профил — фотографија, глас, станиште и сезона</h2>
+<p>Каталог садржи <strong>91 структурисани профил</strong>. Профили повезују фотографије и илустрације са описом изгледа, понашања, типичног станишта, сезонског присуства и гласова. Тамо где постоји локални доказ, он је одвојен од опште референтне фотографије, тако да посетилац јасно види шта је илустрација за учење, а шта стварни налаз са Рајца.</p>
+<div class="tool-grid">
+<div class="tool-card"><h3>Брзи теренски кључ</h3><p>Када корисник не зна врсту, кључ полази од величине, силуете, боје, начина кретања и станишта.</p></div>
+<div class="tool-card"><h3>Сличне врсте</h3><p>Поређења су усмерена на детаље који у пракси најчешће доводе до погрешне идентификације.</p></div>
+<div class="tool-card"><h3>Гласови птица</h3><p>Звучни записи помажу код врста које се у шуми или густој вегетацији чешће прво чују него што се виде.</p></div>
+<div class="tool-card"><h3>Календар и квизови</h3><p>Сезонски календар и квизови повезују врсту са месецом, стаништем и стварним теренским ситуацијама.</p></div>
+</div>
+<h2>Лични дневник претвара посматрање у употребљив податак</h2>
+<p>Уграђени теренски дневник омогућава да се забележе врста, датум, време, белешка и локација. Записи остају доступни кориснику и могу да се извезу у CSV за каснију проверу и обраду. То је посебно важно када се налази касније преносе у eBird, iNaturalist или локални систем мониторинга.</p>
+<div class="note-box"><p><strong>Важно:</strong> добар налаз није само име птице. Вредност записа расте када су уз њега сачувани место, време, станиште, начин детекције, понашање и фотографија или звук ако постоје.</p></div>
+<h2>Како користити приручник на терену</h2>
+<div class="step-list">
+<div>Пре изласка изабрати станиште или месец који вас занима и прегледати највероватније врсте.</div>
+<div>На терену прво посматрати величину, силуету, понашање и станиште, па тек онда боје и ситне детаље.</div>
+<div>Ако је идентификација несигурна, користити брзи кључ и директно поређење сличних врста.</div>
+<div>На крају сачувати налаз у дневник и одвојити сигурну идентификацију од претпоставке која тек треба да се провери.</div>
+</div>
+<h2>За почетнике, посетиоце и искусније посматраче</h2>
+<p>Приручник је писан тако да почетник може да крене без претходног знања, али да и искуснији посматрач брзо дође до каталога, сезонског календара, поређења или теренског дневника. На телефону може да служи као подсетник на стази, док је на већем екрану погодан за припрему излета и учење код куће.</p>
+<div class="callout"><h2>Приручник је јавно доступан</h2><p>Нови водич је део дигиталне платформе ПИО „Рајац“ и доступан је без пријаве. Отвара се директно у прегледачу на телефону, таблету или рачунару.</p></div>
+</article>
+<aside class="card facts-card">
+<figure class="article-photo"><img alt="Шумска сова у оквиру постојеће фото-архиве ПИО Рајац" src="/rajac-vesti/assets/img/reports/sumska-sova-alan-rajac.webp"/><figcaption>Шумска сова (<em>Strix aluco</em>) — фотографија из постојеће фото-архиве вести ПИО „Рајац“.</figcaption></figure>
+<h2>Приручник у бројкама</h2>
+<div class="facts">
+<div class="fact"><span>Структура</span><strong>20 поглавља</strong><em>од основа до сезонског и теренског рада</em></div>
+<div class="fact"><span>Каталог</span><strong>91 профил</strong><em>врсте, фотографије, гласови и локални контекст</em></div>
+<div class="fact"><span>Терен</span><strong>Лични дневник</strong><em>белешке, GPS и CSV извоз</em></div>
+<div class="fact"><span>Учење</span><strong>Квизови и поређења</strong><em>систематично препознавање сличних врста</em></div>
+</div>
+<div class="mini-nav"><a href="https://piorajac.rs/ptice/prirucnik/index.html#top">Отвори приручник →</a><a href="https://piorajac.rs/ptice/">Птице Рајца →</a></div>
+</aside>
+</section>
+</main>
+</body></html>

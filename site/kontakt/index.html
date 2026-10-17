@@ -1,0 +1,890 @@
+<!DOCTYPE html>
+<html lang="sr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Контакт — ПИО Рајац</title>
+  <meta name="description" content="Контакт управљача ПИО Рајац и серверски формулар за питања, групне посете, дозволе, сагласности, истраживања, мониторинг и пријаве са терена.">
+  <link rel="canonical" href="https://piorajac.rs/kontakt/">
+
+  <style>
+    :root{
+      --bg:#f6f1e7;
+      --paper:#fffdf8;
+      --ink:#142219;
+      --muted:#5b6a60;
+      --dark:#07130c;
+      --green:#1f7a43;
+      --green2:#8bd49e;
+      --gold:#c99a3b;
+      --line:rgba(20,34,25,.13);
+      --serif:Georgia,"Times New Roman",serif;
+      --sans:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;
+      --shadow:0 18px 46px rgba(8,18,10,.10);
+      --radius:22px;
+    }
+
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      background:var(--bg);
+      color:var(--ink);
+      font-family:var(--sans);
+      line-height:1.65;
+      -webkit-font-smoothing:antialiased;
+    }
+    a{color:inherit;text-decoration:none}
+
+    .skip{position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden}
+    .skip:focus{left:18px;top:18px;width:auto;height:auto;z-index:999;padding:10px 14px;background:#111;color:var(--ink);border-radius:8px}
+
+    .top{
+      position:sticky;
+      top:0;
+      z-index:50;
+      background:rgba(255,253,248,.97);
+      border-bottom:1px solid rgba(20,34,25,.12);
+      backdrop-filter:blur(14px);
+    }
+    .top-inner{
+      max-width:1180px;
+      min-height:58px;
+      margin:0 auto;
+      padding:0 24px;
+      display:flex;
+      align-items:center;
+      justify-content:flex-start;
+      gap:14px;
+    }
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:10px;
+      color:var(--ink);
+      font-weight:800;
+      white-space:nowrap;
+    }
+    .brand-mark{
+      width:30px;
+      height:30px;
+      border-radius:8px;
+      display:grid;
+      place-items:center;
+      background:rgba(31,122,67,.10);
+      border:1px solid rgba(31,122,67,.24);
+      font-family:var(--serif);
+      font-weight:400;
+    }
+    .brand small{
+      display:block;
+      color:rgba(20,34,25,.62);
+      font-size:10px;
+      line-height:1;
+      letter-spacing:.08em;
+      text-transform:uppercase;
+      margin-top:2px;
+      font-weight:650;
+    }
+    .nav{
+      display:flex;
+      flex-wrap:wrap;
+      justify-content:flex-end;
+      gap:18px;
+    }
+    .nav a{
+      font-size:13px;
+      font-weight:750;
+      color:var(--muted);
+    }
+    .nav a:hover,.nav a.active{color:#fff}
+
+    .hero{
+      position:relative;
+      overflow:hidden;
+      color:var(--ink);
+      background:var(--bg);
+      min-height:0;
+    }
+    .hero::before{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:linear-gradient(180deg,rgba(255,253,248,.98),rgba(246,241,231,.98));
+    }
+    .hero::after{
+      content:"";
+      position:absolute;
+      left:0;
+      right:0;
+      bottom:0;
+      height:1px;
+      background:rgba(20,34,25,.08);
+    }
+    .hero-inner{
+      position:relative;
+      max-width:1180px;
+      margin:0 auto;
+      padding:82px 24px 74px;
+    }
+    .kicker{
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      color:var(--green);
+      font-size:11px;
+      font-weight:850;
+      letter-spacing:.22em;
+      text-transform:uppercase;
+    }
+    .kicker::before{
+      content:"";
+      width:8px;
+      height:8px;
+      border-radius:50%;
+      background:var(--green2);
+      box-shadow:0 0 0 5px rgba(139,212,158,.16);
+    }
+    h1{
+      font-family:var(--serif);
+      font-weight:300;
+      font-size:clamp(48px,7vw,84px);
+      line-height:.94;
+      letter-spacing:-.045em;
+      margin:18px 0 18px;
+    }
+    .lead{
+      max-width:780px;
+      color:var(--muted);
+      font-size:18px;
+      line-height:1.72;
+      margin:0;
+    }
+
+    .shell{
+      max-width:1180px;
+      margin:0 auto;
+      padding:44px 24px 62px;
+    }
+
+    .contact-grid{
+      display:grid;
+      grid-template-columns:420px minmax(0,1fr);
+      gap:18px;
+      align-items:start;
+    }
+
+    .info-panel{
+      border-radius:24px;
+      background:var(--paper);
+      color:var(--ink);
+      border:1px solid rgba(20,34,25,.12);
+      box-shadow:var(--shadow);
+      overflow:hidden;
+    }
+    .info-head{
+      padding:28px 28px 20px;
+      border-bottom:1px solid rgba(20,34,25,.08);
+    }
+    .info-head span{
+      display:block;
+      color:var(--green);
+      font-size:10px;
+      letter-spacing:.20em;
+      text-transform:uppercase;
+      font-weight:900;
+      margin-bottom:10px;
+    }
+    .info-head h2{
+      margin:0;
+      font-family:var(--serif);
+      font-weight:300;
+      font-size:34px;
+      line-height:1.04;
+      letter-spacing:-.03em;
+    }
+    .info-body{padding:20px 18px 24px}
+    .contact-row{
+      display:block;
+      padding:15px 14px;
+      border-radius:16px;
+      border:1px solid rgba(20,34,25,.12);
+      background:rgba(31,122,67,.055);
+      margin-bottom:10px;
+      transition:background .18s,border-color .18s;
+    }
+    a.contact-row:hover{
+      background:rgba(31,122,67,.09);
+      border-color:rgba(31,122,67,.28);
+    }
+    .contact-row span{
+      display:block;
+      color:var(--green);
+      font-size:10px;
+      letter-spacing:.16em;
+      text-transform:uppercase;
+      font-weight:900;
+      margin-bottom:3px;
+    }
+    .contact-row b{
+      display:block;
+      font-size:15px;
+      color:var(--ink);
+      line-height:1.35;
+    }
+    .contact-row small{
+      display:block;
+      margin-top:4px;
+      color:var(--muted);
+      font-size:12px;
+      line-height:1.45;
+    }
+
+    .form-panel{
+      border-radius:24px;
+      background:var(--paper);
+      border:1px solid rgba(20,34,25,.10);
+      box-shadow:var(--shadow);
+      overflow:hidden;
+    }
+    .form-head{
+      padding:30px 32px 20px;
+      border-bottom:1px solid var(--line);
+      background:linear-gradient(180deg,rgba(31,122,67,.08),rgba(255,253,248,.90));
+    }
+    .form-head span{
+      display:block;
+      color:var(--green);
+      font-size:10px;
+      letter-spacing:.20em;
+      text-transform:uppercase;
+      font-weight:900;
+      margin-bottom:9px;
+    }
+    .form-head h2{
+      margin:0 0 10px;
+      font-family:var(--serif);
+      font-weight:300;
+      font-size:42px;
+      line-height:1;
+      letter-spacing:-.035em;
+    }
+    .form-head p{
+      margin:0;
+      color:var(--muted);
+      font-size:14.5px;
+    }
+
+    form{padding:28px 32px 32px}
+    .form-grid{
+      display:grid;
+      grid-template-columns:repeat(2,minmax(0,1fr));
+      gap:16px;
+    }
+    .field{display:flex;flex-direction:column;gap:7px}
+    .field.full{grid-column:1/-1}
+    label{
+      font-size:12px;
+      font-weight:850;
+      color:#26372b;
+      letter-spacing:.02em;
+    }
+    input,select,textarea{
+      width:100%;
+      border:1px solid rgba(20,34,25,.17);
+      background:#fff;
+      color:var(--ink);
+      border-radius:14px;
+      padding:12px 13px;
+      min-height:48px;
+      font-family:var(--sans);
+      font-size:15px;
+      outline:none;
+      transition:border-color .18s,box-shadow .18s,background .18s;
+    }
+    textarea{
+      min-height:190px;
+      resize:vertical;
+      line-height:1.6;
+    }
+    input:focus,select:focus,textarea:focus{
+      border-color:rgba(31,122,67,.70);
+      box-shadow:0 0 0 4px rgba(31,122,67,.10);
+      background:#fffefb;
+    }
+    .help{
+      font-size:12px;
+      color:var(--muted);
+      line-height:1.45;
+    }
+    .required{color:#9a6b1e}
+    .honeypot{
+      position:absolute;
+      left:-9999px;
+      width:1px;
+      height:1px;
+      overflow:hidden;
+    }
+    .checks{
+      display:grid;
+      gap:10px;
+      margin-top:18px;
+      padding:16px;
+      border-radius:18px;
+      background:rgba(31,122,67,.065);
+      border:1px solid rgba(31,122,67,.13);
+    }
+    .check{
+      display:grid;
+      grid-template-columns:22px 1fr;
+      gap:10px;
+      align-items:start;
+      color:var(--muted);
+      font-size:13px;
+      line-height:1.5;
+    }
+    .check input{
+      min-height:0;
+      width:18px;
+      height:18px;
+      margin-top:2px;
+    }
+    .form-actions{
+      display:flex;
+      flex-wrap:wrap;
+      align-items:center;
+      gap:12px;
+      margin-top:20px;
+    }
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      min-height:46px;
+      padding:12px 20px;
+      border-radius:999px;
+      font-size:14px;
+      font-weight:850;
+      border:0;
+      cursor:pointer;
+      font-family:var(--sans);
+    }
+    .btn.green{
+      background:var(--green);
+      color:var(--ink);
+    }
+    .btn:disabled{
+      opacity:.58;
+      cursor:not-allowed;
+    }
+    .status{
+      display:none;
+      margin-top:18px;
+      border-radius:16px;
+      padding:14px 16px;
+      font-size:14px;
+      line-height:1.5;
+      border:1px solid transparent;
+    }
+    .status.ok{
+      display:block;
+      background:rgba(31,122,67,.10);
+      border-color:rgba(31,122,67,.24);
+      color:#1d5f37;
+    }
+    .status.err{
+      display:block;
+      background:rgba(160,58,48,.10);
+      border-color:rgba(160,58,48,.24);
+      color:#8a2f27;
+    }
+
+    .topics{
+      padding-top:0;
+    }
+    .section-head{
+      display:grid;
+      grid-template-columns:220px minmax(0,1fr);
+      gap:34px;
+      align-items:end;
+      margin-bottom:28px;
+    }
+    .section-label{
+      font-size:11px;
+      font-weight:900;
+      letter-spacing:.22em;
+      text-transform:uppercase;
+      color:var(--green);
+    }
+    .section-head h2{
+      font-family:var(--serif);
+      font-size:clamp(34px,4.4vw,54px);
+      font-weight:300;
+      letter-spacing:-.035em;
+      line-height:1;
+      margin:0;
+    }
+    .section-head p{
+      margin:12px 0 0;
+      color:var(--muted);
+      max-width:780px;
+    }
+    .cards{
+      display:grid;
+      grid-template-columns:repeat(3,minmax(0,1fr));
+      gap:14px;
+    }
+    .card{
+      border-radius:22px;
+      background:var(--paper);
+      border:1px solid var(--line);
+      box-shadow:0 12px 34px rgba(8,18,10,.06);
+      padding:26px;
+    }
+    .card span{
+      display:inline-flex;
+      margin-bottom:12px;
+      padding:5px 10px;
+      border-radius:999px;
+      background:rgba(201,154,59,.13);
+      color:#8a641f;
+      font-size:10px;
+      letter-spacing:.16em;
+      text-transform:uppercase;
+      font-weight:900;
+    }
+    .card h3{
+      margin:0 0 9px;
+      font-family:var(--serif);
+      font-weight:300;
+      font-size:30px;
+      line-height:1.05;
+    }
+    .card p{
+      margin:0;
+      color:var(--muted);
+      font-size:14px;
+    }
+
+
+    .info-panel, .info-panel *{
+      text-shadow:none;
+    }
+    .info-head h2{
+      color:var(--ink);
+      overflow-wrap:break-word;
+      hyphens:auto;
+    }
+    .contact-row b,
+    .contact-row small{
+      overflow-wrap:break-word;
+    }
+    .brand span{
+      line-height:1.15;
+    }
+
+    @media(max-width:980px){
+      .top-inner{
+        padding:13px 18px;
+        align-items:flex-start;
+        flex-direction:column;
+        gap:10px;
+      }
+      .nav{justify-content:flex-start}
+      .hero-inner{padding-top:74px;padding-bottom:64px}
+      .contact-grid,.section-head,.cards{grid-template-columns:1fr}
+      .shell{padding:34px 18px 50px}
+      .section-head{gap:12px}
+      .cards{gap:12px}
+    }
+    @media(max-width:640px){
+      h1{font-size:44px}
+      .lead{font-size:16px}
+      form,.form-head{padding-left:20px;padding-right:20px}
+      .form-grid{grid-template-columns:1fr}
+      .btn{width:100%}
+      .form-actions{align-items:stretch}
+      .contact-row b{font-size:14px}
+    }
+  </style>
+
+  <style id="pio-final-light-block-fix-v6">
+    /* FINAL v6: all content blocks are light, no dark panels except no top menu/footer. */
+    .info-panel,
+    .side-panel,
+    .contact,
+    .hero-card{
+      background:var(--paper,#fffdf8) !important;
+      color:var(--ink,#142219) !important;
+      border:1px solid rgba(20,34,25,.12) !important;
+      box-shadow:0 16px 38px rgba(8,18,10,.08) !important;
+    }
+
+    .info-panel *,
+    .side-panel *,
+    .contact *,
+    .hero-card *{
+      color:inherit !important;
+      text-shadow:none !important;
+    }
+
+    .info-head,
+    .contact-data{
+      background:linear-gradient(180deg,rgba(31,122,67,.07),rgba(255,253,248,.94)) !important;
+      border-color:rgba(20,34,25,.12) !important;
+    }
+
+    .contact-copy{
+      background:var(--paper,#fffdf8) !important;
+      border-right:1px solid rgba(20,34,25,.10) !important;
+    }
+
+    .contact-row{
+      background:rgba(31,122,67,.055) !important;
+      border:1px solid rgba(20,34,25,.12) !important;
+    }
+
+    .contact-row:hover{
+      background:rgba(31,122,67,.09) !important;
+      border-color:rgba(31,122,67,.28) !important;
+    }
+
+    .info-head span,
+    .contact-row span,
+    .side-panel .tag,
+    .contact-row .tag{
+      color:var(--green,#1f7a43) !important;
+      font-weight:900 !important;
+    }
+
+    .info-head h2,
+    .side-panel h3,
+    .contact-copy h2,
+    .contact-row b{
+      color:var(--ink,#142219) !important;
+    }
+
+    .info-panel p,
+    .side-panel p,
+    .contact-copy p,
+    .contact-row small,
+    .special-note,
+    .help{
+      color:var(--muted,#5b6a60) !important;
+    }
+
+    .wide .side-panel{
+      min-height:auto !important;
+    }
+
+    .brand,
+    .brand span,
+    .brand small{
+      color:var(--ink,#142219) !important;
+    }
+
+    .brand-mark{
+      color:var(--ink,#142219) !important;
+      background:rgba(31,122,67,.10) !important;
+      border-color:rgba(31,122,67,.24) !important;
+    }
+
+    .top{
+      background:rgba(255,253,248,.98) !important;
+      border-bottom:1px solid rgba(20,34,25,.12) !important;
+    }
+
+    .hero{
+      background:var(--bg,#f6f1e7) !important;
+      color:var(--ink,#142219) !important;
+    }
+
+    .hero::before{
+      background:linear-gradient(180deg,rgba(255,253,248,.98),rgba(246,241,231,.98)) !important;
+    }
+
+    .hero::after{
+      background:rgba(20,34,25,.08) !important;
+      height:1px !important;
+      bottom:0 !important;
+    }
+
+    .hero .lead{
+      color:var(--muted,#5b6a60) !important;
+    }
+
+    .kicker{
+      color:var(--green,#1f7a43) !important;
+    }
+
+    /* Do not show the old footer if an older version is mixed by cache. */
+    footer{
+      display:none !important;
+    }
+  </style>
+
+<link data-pio-mobile="group3-v1" rel="stylesheet" href="../assets/mobile/pio-mobile-upravljanje.css?v=20260714-upr-v9"></head>
+
+<body><nav class="rp-mainnav-list pio-contact-nav" aria-label="Главне странице"><a class="rp-home" href="https://piorajac.rs/">ПИО „Рајац”</a><a href="/ko-upravlja/">Ко управља</a><a href="/nadleznosti/">Надлежности</a><a href="/saradnja/">Сарадња</a><a href="/istorijat/">Историјат</a>
+        <a class="is-active" href="/kontakt/">Контакт</a></nav>
+  <a class="skip" href="#sadrzaj">Прескочи на садржај</a>
+
+  <header class="top" role="banner">
+    <div class="top-inner">
+      <a class="brand" href="https://piorajac.rs/" aria-label="Повратак на почетну страну ПИО Рајац">
+        <span class="brand-mark">Р</span>
+        <span>ПИО „Рајац”<small>заштићено подручје</small></span>
+      </a>
+    </div>
+  </header>
+
+  <main id="sadrzaj">
+    <section class="hero" aria-labelledby="page-title">
+      <div class="hero-inner">
+        <span class="kicker">Управљач · информације · пријава</span>
+        <h1 id="page-title">Контакт</h1>
+        <p class="lead">
+          За питања о посети, групним доласцима, дозволама, мониторингу,
+          истраживањима, стазама, пријавама са терена и сарадњи обратите се
+          управљачу ПИО „Рајац”.
+        </p>
+      </div>
+    </section>
+
+    <section class="shell" id="formular">
+      <div class="contact-grid">
+        <aside class="info-panel" aria-label="Контакт подаци">
+          <div class="info-head">
+            <span>Основни контакти</span>
+            <h2>Туристичка организација општине Љиг</h2>
+          </div>
+
+          <div class="info-body">
+            <div class="contact-row">
+              <span>Управљач</span>
+              <b>Туристичка организација општине Љиг</b>
+              <small>Управљач Предела изузетних одлика „Рајац”.</small>
+            </div>
+
+            <a class="contact-row" href="tel:+381143445242">
+              <span>Телефон</span>
+              <b>014/3445 242</b>
+              <small>За најаве, информације и хитније договоре.</small>
+            </a>
+
+            <a class="contact-row" href="mailto:office@piorajac.rs">
+              <span>Е-пошта</span>
+              <b>office@piorajac.rs</b>
+              <small>За званичне упите и документацију.</small>
+            </a>
+
+            <div class="contact-row">
+              <span>Адреса</span>
+              <b>14240 Љиг</b>
+              <small>Контакт управљача и туристичке информације.</small>
+            </div>
+
+            <a class="contact-row" href="https://piorajac.rs/grupne-posete-i-dozvole/">
+              <span>Групне посете</span>
+              <b>Правила и дозволе</b>
+              <small>Услови за организоване доласке и посебне активности.</small>
+            </a>
+          </div>
+        </aside>
+
+        <section class="form-panel" aria-labelledby="form-title">
+          <div class="form-head">
+            <span>Формулар</span>
+            <h2 id="form-title">Пошаљите поруку управљачу</h2>
+            <p>
+              Попуните податке што прецизније. За групне посете, дозволе,
+              истраживања и пријаве са терена додајте локацију, датум и кратак опис.
+            </p>
+          </div>
+
+          <form id="kontaktForm" action="api/kontakt-submit.php" method="post" novalidate>
+            <div class="honeypot" aria-hidden="true">
+              <label for="website">Не попуњавати</label>
+              <input id="website" name="website" type="text" tabindex="-1" autocomplete="off">
+            </div>
+
+            <div class="form-grid">
+              <div class="field">
+                <label for="tip">Тип контакта <span class="required">*</span></label>
+                <select id="tip" name="tip" required>
+                  <option value="">Изаберите тип контакта</option>
+                  <option>Опште питање</option>
+                  <option>Групна или организована посета</option>
+                  <option>Дозвола или сагласност управљача</option>
+                  <option>Научно истраживање / мониторинг</option>
+                  <option>Улазак у пећину или јаму</option>
+                  <option>Сакупљање биљака, гљива или плодова</option>
+                  <option>Пријава проблема на терену</option>
+                  <option>Метео станица / мониторинг подаци</option>
+                  <option>Стазе, мапе и туристичке информације</option>
+                  <option>Медији, сарадња и пројекти</option>
+                  <option>Власници, парцеле и локална заједница</option>
+                  <option>Друго</option>
+                </select>
+              </div>
+
+              <div class="field">
+                <label for="subject">Наслов поруке <span class="required">*</span></label>
+                <input id="subject" name="subject" type="text" required maxlength="160" placeholder="Нпр. Најава групне посете">
+              </div>
+
+              <div class="field">
+                <label for="name">Име и презиме <span class="required">*</span></label>
+                <input id="name" name="name" type="text" required maxlength="120" autocomplete="name">
+              </div>
+
+              <div class="field">
+                <label for="organization">Организација / установа</label>
+                <input id="organization" name="organization" type="text" maxlength="160" placeholder="Школа, удружење, факултет, фирма...">
+              </div>
+
+              <div class="field">
+                <label for="email">Е-пошта <span class="required">*</span></label>
+                <input id="email" name="email" type="email" required maxlength="160" autocomplete="email">
+              </div>
+
+              <div class="field">
+                <label for="phone">Телефон</label>
+                <input id="phone" name="phone" type="tel" maxlength="80" autocomplete="tel" placeholder="Нпр. 06x/xxx-xxxx">
+              </div>
+
+              <div class="field">
+                <label for="place">Место / општина</label>
+                <input id="place" name="place" type="text" maxlength="120" placeholder="Одакле долазите">
+              </div>
+
+              <div class="field">
+                <label for="date">Планирани датум</label>
+                <input id="date" name="date" type="date">
+              </div>
+
+              <div class="field">
+                <label for="participants">Број учесника</label>
+                <input id="participants" name="participants" type="number" min="1" max="5000" placeholder="За групне посете">
+              </div>
+
+              <div class="field">
+                <label for="location">Локација / стаза / зона</label>
+                <input id="location" name="location" type="text" maxlength="180" placeholder="Нпр. Рајац, Велика провалија, стаза...">
+              </div>
+
+              <div class="field full">
+                <label for="message">Опис захтева или поруке <span class="required">*</span></label>
+                <textarea id="message" name="message" required maxlength="6000" placeholder="Опишите шта планирате, шта пријављујете или шта је потребно да управљач одобри. За групне посете наведите трасу, сатницу, узраст учесника и одговорно лице."></textarea>
+                <div class="help">За прилоге, фотографије или документацију можете накнадно користити званичну е-пошту управљача.</div>
+              </div>
+            </div>
+
+            <div class="checks">
+              <label class="check">
+                <input type="checkbox" name="consent" value="yes" required>
+                <span>Потврђујем да су унети подаци тачни и да се могу користити ради одговора на овај упит. <span class="required">*</span></span>
+              </label>
+              <label class="check">
+                <input type="checkbox" name="rules" value="yes">
+                <span>За групне посете и активности на терену упознат/а сам да је потребно поштовати режиме заштите и упутства управљача.</span>
+              </label>
+            </div>
+
+            <div class="form-actions">
+              <button class="btn green" id="submitBtn" type="submit">Пошаљи поруку</button>
+            </div>
+
+            <div id="formStatus" class="status" role="status" aria-live="polite"></div>
+          </form>
+        </section>
+      </div>
+    </section>
+
+    <section class="shell topics" aria-labelledby="topics-title">
+      <div class="section-head">
+        <div class="section-label">Када користити формулар</div>
+        <div>
+          <h2 id="topics-title">Најчешћи разлози за контакт</h2>
+          <p>
+            Формулар служи за евидентирање упита и брже разврставање порука
+            по темама које су важне за управљање заштићеним подручјем.
+          </p>
+        </div>
+      </div>
+
+      <div class="cards">
+        <article class="card">
+          <span>Посета</span>
+          <h3>Групе, школе и водичи</h3>
+          <p>Најаве организованих долазака, едукативних програма, планинарских и туристичких група.</p>
+        </article>
+
+        <article class="card">
+          <span>Дозволе</span>
+          <h3>Сагласности и услови</h3>
+          <p>Упити за активности које захтевају посебне услове, одобрење или координацију са управљачем.</p>
+        </article>
+
+        <article class="card">
+          <span>Мониторинг</span>
+          <h3>Истраживања и подаци</h3>
+          <p>Научни рад, праћење стања природе, метео подаци, биодиверзитет и пријаве промена на терену.</p>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    (function(){
+      const form = document.getElementById('kontaktForm');
+      const status = document.getElementById('formStatus');
+      const btn = document.getElementById('submitBtn');
+
+      function showStatus(type, text){
+        status.className = 'status ' + type;
+        status.textContent = text;
+      }
+
+      form.addEventListener('submit', async function(e){
+        e.preventDefault();
+
+        if(!form.checkValidity()){
+          form.reportValidity();
+          return;
+        }
+
+        btn.disabled = true;
+        btn.textContent = 'Шаље се...';
+        status.className = 'status';
+        status.textContent = '';
+
+        try{
+          const formData = new FormData(form);
+          const response = await fetch(form.action, {
+            method: 'POST',
+            body: formData,
+            headers: {'X-Requested-With':'XMLHttpRequest'}
+          });
+
+          const data = await response.json().catch(() => null);
+
+          if(response.ok && data && data.ok){
+            showStatus('ok', data.message || 'Порука је успешно послата.');
+            form.reset();
+          }else{
+            showStatus('err', (data && data.message) ? data.message : 'Порука није послата. Покушајте поново.');
+          }
+        }catch(err){
+          showStatus('err', 'Порука није послата. Проверите да ли је постављен серверски фајл api/kontakt-submit.php.');
+        }finally{
+          btn.disabled = false;
+          btn.textContent = 'Пошаљи поруку';
+        }
+      });
+    })();
+  </script>
+
+<script defer src="/rajac-design/rajac-vrh-button.js?v=20260707-v6-round-no-home"></script>
+<script data-pio-mobile="group3-v1" defer src="../assets/mobile/pio-mobile-upravljanje.js?v=20260714-upr-v9"></script></body>
+</html>

@@ -1,0 +1,2092 @@
+<!-- ПИО Рајац complete static export 2026-05-21 | podrska-poljoprivredi-2 --><!doctype html><html lang="sr-RS"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"><title>Подршка пољопривреди | ПИО Рајац</title><meta name="description" content="Подршка пољопривреди на Рајцу кроз сателитске индексе, агроклиму, метеоролошке податке и приказ катастарских парцела."><style>html,body{margin:0;padding:0}body{background:#f6f2ea;color:#1e241d}a{color:inherit}img{max-width:100%;height:auto}</style><link rel="stylesheet" id="rajac-static-common-menu-css" href="/rajac-static-2105/assets/menu/rajac-static-menu.css?v=20260521-complete" media="all"><!-- RAJAC_DESIGN_SYSTEM=1.0.0 --><link rel="stylesheet" href="/rajac-design/rajac-global.css?v=1.0.0"><link rel="stylesheet" href="/rajac-design/rajac-pages.css?v=1.0.0"><style id="programske-responsive-v2-head">
+/*
+ * Mobilna i tablet optimizacija programskih stranica PIO Rajac.
+ * Aktivna je samo do 1100 px; desktop stilovi ostaju neizmenjeni.
+ * Verzija: 2026-07-14-v2
+ */
+
+.rajac-program-menu__toggle {
+  display: none;
+}
+
+@media (max-width: 1100px) {
+  html {
+    max-width: 100%;
+    overflow-x: hidden;
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+  }
+
+  body.rajac-static-output.pio-program-responsive {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden !important;
+  }
+
+  body.pio-program-responsive *,
+  body.pio-program-responsive *::before,
+  body.pio-program-responsive *::after {
+    box-sizing: border-box;
+  }
+
+  body.pio-program-responsive img,
+  body.pio-program-responsive picture,
+  body.pio-program-responsive video,
+  body.pio-program-responsive iframe,
+  body.pio-program-responsive canvas {
+    max-width: 100%;
+  }
+
+  body.pio-program-responsive img {
+    height: auto;
+  }
+
+  /* Zajednički meni: jedna mirna linija, pa meni na zahtev. */
+  body.pio-program-responsive .rajac-static-common-menu.rajac-program-menu {
+    position: relative !important;
+    z-index: 9999 !important;
+    width: 100% !important;
+    background: #112117 !important;
+    border: 0 !important;
+    border-bottom: 1px solid rgba(255, 255, 255, .12) !important;
+    box-shadow: 0 8px 24px rgba(5, 12, 8, .18) !important;
+  }
+
+  body.pio-program-responsive .rajac-static-common-menu.rajac-program-menu .rajac-static-common-menu__inner {
+    width: min(100% - 28px, 1180px) !important;
+    min-height: 58px !important;
+    margin: 0 auto !important;
+    padding: 8px 0 !important;
+    display: grid !important;
+    grid-template-columns: minmax(0, 1fr) auto !important;
+    align-items: center !important;
+    gap: 8px 14px !important;
+  }
+
+  body.pio-program-responsive .rajac-static-common-menu.rajac-program-menu .rajac-static-common-menu__logo,
+  body.pio-program-responsive .rajac-static-common-menu.rajac-program-menu .rajac-static-common-menu__logo:link,
+  body.pio-program-responsive .rajac-static-common-menu.rajac-program-menu .rajac-static-common-menu__logo:visited {
+    justify-self: start !important;
+    min-height: 40px !important;
+    padding: 0 !important;
+    border: 0 !important;
+    border-radius: 0 !important;
+    background: transparent !important;
+    color: #fffaf0 !important;
+    font-size: 14px !important;
+    font-weight: 800 !important;
+    letter-spacing: .045em !important;
+    text-decoration: none !important;
+  }
+
+  body.pio-program-responsive .rajac-program-menu__toggle {
+    justify-self: end;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    min-width: 92px;
+    min-height: 42px;
+    margin: 0;
+    padding: 0 13px;
+    border: 1px solid rgba(255, 255, 255, .24);
+    border-radius: 999px;
+    background: rgba(255, 255, 255, .08);
+    color: #fffaf0;
+    font: 800 13px/1 system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    letter-spacing: .08em;
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  body.pio-program-responsive .rajac-program-menu__toggle-icon {
+    width: 16px;
+    height: 12px;
+    position: relative;
+    display: inline-block;
+    border-top: 2px solid currentColor;
+    border-bottom: 2px solid currentColor;
+  }
+
+  body.pio-program-responsive .rajac-program-menu__toggle-icon::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 3px;
+    border-top: 2px solid currentColor;
+  }
+
+  body.pio-program-responsive .rajac-static-common-menu.rajac-program-menu.is-open .rajac-program-menu__toggle-icon {
+    border-color: transparent;
+  }
+
+  body.pio-program-responsive .rajac-static-common-menu.rajac-program-menu.is-open .rajac-program-menu__toggle-icon::before,
+  body.pio-program-responsive .rajac-static-common-menu.rajac-program-menu.is-open .rajac-program-menu__toggle-icon::after {
+    content: "";
+    position: absolute;
+    top: 4px;
+    left: 0;
+    width: 16px;
+    border-top: 2px solid currentColor;
+    transform: rotate(45deg);
+  }
+
+  body.pio-program-responsive .rajac-static-common-menu.rajac-program-menu.is-open .rajac-program-menu__toggle-icon::after {
+    transform: rotate(-45deg);
+  }
+
+  body.pio-program-responsive .rajac-static-common-menu.rajac-program-menu .rajac-static-common-menu__links {
+    grid-column: 1 / -1 !important;
+    width: 100% !important;
+    display: none !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 8px !important;
+    margin: 0 !important;
+    padding: 6px 0 4px !important;
+    overflow: visible !important;
+  }
+
+  body.pio-program-responsive .rajac-static-common-menu.rajac-program-menu.is-open .rajac-static-common-menu__links {
+    display: grid !important;
+  }
+
+  body.pio-program-responsive .rajac-static-common-menu.rajac-program-menu .rajac-static-common-menu__link,
+  body.pio-program-responsive .rajac-static-common-menu.rajac-program-menu .rajac-static-common-menu__link:link,
+  body.pio-program-responsive .rajac-static-common-menu.rajac-program-menu .rajac-static-common-menu__link:visited {
+    width: 100% !important;
+    min-width: 0 !important;
+    min-height: 44px !important;
+    padding: 9px 12px !important;
+    justify-content: flex-start !important;
+    white-space: normal !important;
+    text-align: left !important;
+    border: 1px solid rgba(255, 255, 255, .12) !important;
+    border-radius: 12px !important;
+    background: rgba(255, 255, 255, .055) !important;
+    color: rgba(255, 250, 240, .92) !important;
+    font-size: 12px !important;
+    line-height: 1.3 !important;
+    letter-spacing: .035em !important;
+  }
+
+  body.pio-program-responsive .rajac-static-common-menu.rajac-program-menu .rajac-static-common-menu__link.is-active,
+  body.pio-program-responsive .rajac-static-common-menu.rajac-program-menu .rajac-static-common-menu__link.is-active:link,
+  body.pio-program-responsive .rajac-static-common-menu.rajac-program-menu .rajac-static-common-menu__link.is-active:visited {
+    background: #233a2b !important;
+    border-color: rgba(212, 182, 90, .72) !important;
+    color: #fff !important;
+  }
+
+  /* HERO i osnovni stupac */
+  body.pio-program-responsive .rprog-wrap,
+  body.pio-program-responsive .rprog-hero-content,
+  body.pio-program-responsive #rajac-agro-page .shell,
+  body.pio-program-responsive #rajac-agro-page .hero-inner {
+    width: min(100% - 36px, 920px) !important;
+    max-width: calc(100% - 36px) !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+
+  body.pio-program-responsive .rprog-hero,
+  body.pio-program-responsive #rajac-agro-page section.hero {
+    width: 100% !important;
+    height: 560px !important;
+    min-height: 560px !important;
+    max-height: 560px !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    border-radius: 0 0 26px 26px !important;
+    overflow: hidden !important;
+  }
+
+  body.pio-program-responsive .rprog-hero-content,
+  body.pio-program-responsive #rajac-agro-page .hero-body {
+    padding: 92px 0 54px !important;
+  }
+
+  body.pio-program-responsive .rprog-title,
+  body.pio-program-responsive .rprog--smart .rprog-title,
+  body.pio-program-responsive #rajac-agro-page .hero h1 {
+    max-width: 820px !important;
+    margin-bottom: 16px !important;
+    font-size: clamp(2.55rem, 7.4vw, 4.7rem) !important;
+    line-height: 1 !important;
+    overflow-wrap: anywhere;
+    text-wrap: balance;
+  }
+
+  body.pio-program-responsive .rprog-lead,
+  body.pio-program-responsive #rajac-agro-page .hero-lead {
+    max-width: 760px !important;
+    font-size: 1rem !important;
+    line-height: 1.65 !important;
+  }
+
+  body.pio-program-responsive .rprog--ai .rprog-hero-media {
+    object-position: 58% center !important;
+  }
+
+  body.pio-program-responsive .rprog--sky .rprog-hero-media {
+    object-position: 54% center !important;
+  }
+
+  body.pio-program-responsive .rprog--smart .rprog-hero-media {
+    object-position: 57% center !important;
+  }
+
+  body.pio-program-responsive #rajac-agro-page .hero-media {
+    object-position: center top !important;
+  }
+
+  /* Sadržaj u jednom preglednom stupcu; manji parovi ostaju po dva na tabletu. */
+  body.pio-program-responsive .rprog-intro,
+  body.pio-program-responsive .rprog-story,
+  body.pio-program-responsive .rprog-bird-activity,
+  body.pio-program-responsive #rajac-agro-page .manage-grid {
+    grid-template-columns: minmax(0, 1fr) !important;
+    gap: 26px !important;
+  }
+
+  body.pio-program-responsive .rprog-grid,
+  body.pio-program-responsive .rprog-subgrid,
+  body.pio-program-responsive .rprog-metrics,
+  body.pio-program-responsive .rprog-equipment-grid,
+  body.pio-program-responsive .rprog-drone-gallery,
+  body.pio-program-responsive .rprog-sky-photo-grid,
+  body.pio-program-responsive #rajac-agro-page .key-grid,
+  body.pio-program-responsive #rajac-agro-page .al-now,
+  body.pio-program-responsive #rajac-agro-page .al-bottom-days {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 14px !important;
+  }
+
+  body.pio-program-responsive .rprog-story-aside {
+    position: relative !important;
+    top: auto !important;
+  }
+
+  body.pio-program-responsive .rprog--smart .rprog-story-list {
+    columns: 1 !important;
+  }
+
+  body.pio-program-responsive .rprog-equipment-card,
+  body.pio-program-responsive .rprog-equipment-card-wide,
+  body.pio-program-responsive .rprog-story-card,
+  body.pio-program-responsive .rprog-story-card-wide {
+    width: 100% !important;
+    max-width: 100% !important;
+    break-inside: avoid !important;
+  }
+
+  body.pio-program-responsive .rprog-equipment-card-wide,
+  body.pio-program-responsive .rprog-story-card-wide {
+    grid-column: 1 / -1 !important;
+  }
+
+  body.pio-program-responsive .rprog-band {
+    grid-template-columns: minmax(0, 1fr) !important;
+  }
+
+  body.pio-program-responsive .rprog-section,
+  body.pio-program-responsive .rprog-deep,
+  body.pio-program-responsive .rprog-equipment,
+  body.pio-program-responsive .rprog-drone-monitoring,
+  body.pio-program-responsive .rprog-sky-photo-block {
+    max-width: 100% !important;
+    overflow: hidden !important;
+  }
+
+  body.pio-program-responsive .rprog-card,
+  body.pio-program-responsive .rprog-story-card,
+  body.pio-program-responsive .rprog-story-aside,
+  body.pio-program-responsive .rprog-equipment-card,
+  body.pio-program-responsive #rajac-agro-page .key-card,
+  body.pio-program-responsive #rajac-agro-page .manage-copy,
+  body.pio-program-responsive #rajac-agro-page .side-card {
+    min-width: 0 !important;
+  }
+
+  body.pio-program-responsive .rprog-sky-photo-card img,
+  body.pio-program-responsive .rprog-equipment-card img,
+  body.pio-program-responsive .rprog-drone-gallery img,
+  body.pio-program-responsive .rprog-bird-activity-figure img,
+  body.pio-program-responsive #rajac-agro-page .agro-image-card img,
+  body.pio-program-responsive #rajac-agro-page .parcelimg-fig img {
+    display: block !important;
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  body.pio-program-responsive .rprog-smart-visual img {
+    height: auto !important;
+    max-height: 560px !important;
+    object-fit: contain !important;
+  }
+
+  body.pio-program-responsive .rprog-img-lightbox-inner {
+    width: min(94vw, 920px) !important;
+    max-height: 90svh !important;
+  }
+
+  body.pio-program-responsive .rprog-img-lightbox-stage img {
+    max-width: 100% !important;
+    max-height: 78svh !important;
+    object-fit: contain !important;
+  }
+
+  /* Poljoprivreda: grafikoni, prognoza i tabela ostaju čitljivi bez širenja stranice. */
+  body.pio-program-responsive #rajac-agro-page,
+  body.pio-program-responsive #rajac-agro-page .rp-agro,
+  body.pio-program-responsive #rajac-agro-page .agro-live,
+  body.pio-program-responsive #rajac-agro-page .agroday-sec,
+  body.pio-program-responsive #rajac-agro-page .parcelimg-sec {
+    width: 100% !important;
+    max-width: 100% !important;
+    overflow-x: hidden !important;
+  }
+
+  body.pio-program-responsive #rajac-agro-page .al-rain-wrap,
+  body.pio-program-responsive #rajac-agro-page .rain-axis-box,
+  body.pio-program-responsive #rajac-agro-page .agroday-table-wrap,
+  body.pio-program-responsive #rajac-agro-page .parcelimg-fig {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  body.pio-program-responsive #rajac-agro-page .agroday-table-wrap {
+    overflow-x: auto !important;
+    overscroll-behavior-inline: contain;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  body.pio-program-responsive #rajac-agro-page .agroday-table {
+    width: 100% !important;
+    min-width: 720px !important;
+  }
+
+  body.pio-program-responsive #rajac-agro-page .rain-bars {
+    min-width: 0 !important;
+  }
+
+  body.pio-program-responsive #rajac-agro-page .closing-box,
+  body.pio-program-responsive #rajac-agro-page .highlight-band {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  body.pio-program-responsive a,
+  body.pio-program-responsive button,
+  body.pio-program-responsive [role="button"] {
+    touch-action: manipulation;
+  }
+}
+
+@media (max-width: 700px) {
+  body.pio-program-responsive .rajac-static-common-menu.rajac-program-menu .rajac-static-common-menu__inner {
+    width: calc(100% - 24px) !important;
+  }
+
+  body.pio-program-responsive .rajac-static-common-menu.rajac-program-menu .rajac-static-common-menu__links {
+    grid-template-columns: minmax(0, 1fr) !important;
+  }
+
+  body.pio-program-responsive .rprog-wrap,
+  body.pio-program-responsive .rprog-hero-content,
+  body.pio-program-responsive #rajac-agro-page .shell,
+  body.pio-program-responsive #rajac-agro-page .hero-inner {
+    width: calc(100% - 28px) !important;
+    max-width: calc(100% - 28px) !important;
+  }
+
+  body.pio-program-responsive .rprog-hero,
+  body.pio-program-responsive #rajac-agro-page section.hero {
+    height: 510px !important;
+    min-height: 510px !important;
+    max-height: 510px !important;
+    border-radius: 0 0 22px 22px !important;
+  }
+
+  body.pio-program-responsive .rprog-hero-content,
+  body.pio-program-responsive #rajac-agro-page .hero-body {
+    padding: 78px 0 36px !important;
+  }
+
+  body.pio-program-responsive .rprog-title,
+  body.pio-program-responsive .rprog--smart .rprog-title,
+  body.pio-program-responsive #rajac-agro-page .hero h1 {
+    margin-bottom: 13px !important;
+    font-size: clamp(2rem, 11.2vw, 3.35rem) !important;
+    line-height: 1.02 !important;
+    letter-spacing: -.035em !important;
+  }
+
+  body.pio-program-responsive .rprog-lead,
+  body.pio-program-responsive #rajac-agro-page .hero-lead {
+    font-size: .94rem !important;
+    line-height: 1.58 !important;
+  }
+
+  body.pio-program-responsive .rprog-chips {
+    gap: 7px !important;
+    margin-top: 18px !important;
+  }
+
+  body.pio-program-responsive .rprog-chip {
+    min-height: 34px !important;
+    padding: 0 12px !important;
+    font-size: .78rem !important;
+  }
+
+  body.pio-program-responsive .rprog-grid,
+  body.pio-program-responsive .rprog-subgrid,
+  body.pio-program-responsive .rprog-metrics,
+  body.pio-program-responsive .rprog-equipment-grid,
+  body.pio-program-responsive .rprog-drone-gallery,
+  body.pio-program-responsive .rprog-sky-photo-grid,
+  body.pio-program-responsive #rajac-agro-page .key-grid,
+  body.pio-program-responsive #rajac-agro-page .al-now,
+  body.pio-program-responsive #rajac-agro-page .al-bottom-days {
+    grid-template-columns: minmax(0, 1fr) !important;
+  }
+
+  body.pio-program-responsive .rprog-card,
+  body.pio-program-responsive .rprog-story-card,
+  body.pio-program-responsive .rprog-story-aside,
+  body.pio-program-responsive .rprog-equipment-card,
+  body.pio-program-responsive .rprog-band,
+  body.pio-program-responsive #rajac-agro-page .key-card,
+  body.pio-program-responsive #rajac-agro-page .manage-copy,
+  body.pio-program-responsive #rajac-agro-page .side-card,
+  body.pio-program-responsive #rajac-agro-page .closing-box,
+  body.pio-program-responsive #rajac-agro-page .highlight-band {
+    padding: 20px !important;
+    border-radius: 20px !important;
+  }
+
+  body.pio-program-responsive .rprog-section,
+  body.pio-program-responsive .rprog-deep,
+  body.pio-program-responsive .rprog-equipment,
+  body.pio-program-responsive .rprog-drone-monitoring,
+  body.pio-program-responsive .rprog-sky-photo-block,
+  body.pio-program-responsive #rajac-agro-page .section,
+  body.pio-program-responsive #rajac-agro-page .agro-live,
+  body.pio-program-responsive #rajac-agro-page .agroday-sec,
+  body.pio-program-responsive #rajac-agro-page .parcelimg-sec {
+    padding-top: 34px !important;
+    padding-bottom: 34px !important;
+  }
+
+  body.pio-program-responsive #rajac-agro-page .agroday-table {
+    min-width: 660px !important;
+  }
+
+  body.pio-program-responsive #rajac-agro-page .rain-axis-box {
+    overflow-x: auto !important;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  body.pio-program-responsive #rajac-agro-page .rain-bars {
+    min-width: 0 !important;
+  }
+
+  body.pio-program-responsive .rprog-img-lightbox-close {
+    top: 8px !important;
+    right: 8px !important;
+    width: 44px !important;
+    height: 44px !important;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) and (max-width: 1100px) {
+  body.pio-program-responsive *,
+  body.pio-program-responsive *::before,
+  body.pio-program-responsive *::after {
+    scroll-behavior: auto !important;
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: .01ms !important;
+  }
+}
+
+</style>
+</head><body class="rajac-static-output pio-program-responsive"><nav class="rajac-static-common-menu rajac-program-menu" aria-label="Странице ПИО Рајац"><div class="rajac-static-common-menu__inner"><a class="rajac-static-common-menu__logo" href="/">PIO &quot;RAJAC&quot;</a><button class="rajac-program-menu__toggle" type="button" aria-expanded="false" aria-controls="rajac-program-links"><span class="rajac-program-menu__toggle-icon" aria-hidden="true"></span>МЕНИ</button><div class="rajac-static-common-menu__links" id="rajac-program-links"><a class="rajac-static-common-menu__link" href="/savremene-tehnologije/">САВРЕМЕНЕ ТЕХНОЛОГИЈЕ</a><a class="rajac-static-common-menu__link" href="/zvezdani-park/">Звездани парк</a><a class="rajac-static-common-menu__link" href="/pametni-park/">Паметни парк</a><a class="rajac-static-common-menu__link is-active" href="/podrska-poljoprivredi-2/">Помоћ пољопривредницима</a></div></div></nav><link href="/rajac-static-2105/assets/shared/rajac-series-shared.css" rel="stylesheet"/><style id="rajac-agro-cormorant-override">html{scroll-behavior:smooth}400;500;600;700&display=swap');#rajac-agro-page .nav-logo,#rajac-agro-page .hero h1,#rajac-agro-page .s-title,#rajac-agro-page .key-card h3,#rajac-agro-page .insight-card h3,#rajac-agro-page .dark-card h3,#rajac-agro-page .closing-box h2,#rajac-agro-page .highlight-band p,#rajac-agro-page .aside-title{font-family:'Cormorant Garamond',serif !important}#rajac-agro-page .hero h1,#rajac-agro-page .s-title,#rajac-agro-page .key-card h3,#rajac-agro-page .insight-card h3,#rajac-agro-page .dark-card h3,#rajac-agro-page .closing-box h2{font-weight:300 !important;letter-spacing:-0.015em}#rajac-agro-page .nav-logo{font-weight:500 !important}#rajac-agro-page .hero h1 em,#rajac-agro-page .s-title em,#rajac-agro-page .closing-box h2 em{font-family:'Cormorant Garamond',serif !important;font-style:normal !important;font-weight:300 !important}#rajac-agro-page .hero-media-wrap{min-height:min(92vh,900px)}#rajac-agro-page .hero-overlay{background:linear-gradient(100deg,rgba(8,14,10,.82) 0%,rgba(8,14,10,.66) 34%,rgba(8,14,10,.32) 62%,rgba(8,14,10,.16) 100%),linear-gradient(180deg,rgba(0,0,0,.10),rgba(0,0,0,.30))}#rajac-agro-page .hero-media{object-position:center center}#rajac-agro-page .hero-chips{display:flex;flex-wrap:wrap;gap:10px;margin:22px 0 0}#rajac-agro-page .hero-chip{display:inline-flex;align-items:center;min-height:38px;padding:0 14px;border-radius:999px;background:rgba(255,255,255,.10);border:1px solid rgba(255,255,255,.18);color:rgba(255,255,255,.92);font-size:.92rem;line-height:1;backdrop-filter:blur(6px)}#rajac-agro-page .hero-stats{margin-top:16px;row-gap:14px}#rajac-agro-page .hero-stat{min-height:76px;padding:14px 18px;align-items:flex-start}#rajac-agro-page .hero-stat strong,#rajac-agro-page .hero-stat span{line-height:1.3}#rajac-agro-page .key-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:22px}#rajac-agro-page .key-card{position:relative;overflow:hidden;padding:26px 24px 24px;border-radius:26px;background:#fff;border:1px solid rgba(20,30,22,.08);box-shadow:0 16px 36px rgba(19,25,21,.06)}#rajac-agro-page .key-card .key-num{font-size:.82rem;letter-spacing:.18em;text-transform:uppercase;color:#b88a3b;margin-bottom:10px}#rajac-agro-page .key-card h3{margin:0 0 12px;font-size:2rem;line-height:1.02;color:#18251d}#rajac-agro-page .key-card p{margin:0;color:#445148;line-height:1.76;font-size:1.02rem}#rajac-agro-page .insight-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px}#rajac-agro-page .insight-card{padding:26px 24px 24px;border-radius:26px;background:#fff;border:1px solid rgba(20,30,22,.08);box-shadow:0 16px 36px rgba(19,25,21,.06)}#rajac-agro-page .insight-card h3{margin:0 0 10px;font-size:2rem;line-height:1.04;color:#18251d}#rajac-agro-page .insight-card p{margin:0;color:#445148;line-height:1.78;font-size:1rem}#rajac-agro-page .manage-grid{display:grid;grid-template-columns:minmax(0,1.08fr) minmax(0,.92fr);gap:24px;align-items:stretch}#rajac-agro-page .manage-copy,#rajac-agro-page .side-card{padding:28px 28px 26px;border-radius:28px;background:#fff;border:1px solid rgba(20,30,22,.08);box-shadow:0 16px 36px rgba(19,25,21,.06)}#rajac-agro-page .manage-copy h3{margin:0 0 14px;color:#18251d;font-size:2.5rem;line-height:.98}#rajac-agro-page .manage-copy p{margin:0;color:#445148;line-height:1.82;font-size:1.03rem}#rajac-agro-page .side-card h3{margin:0 0 12px;color:#18251d;font-size:2rem;line-height:1.02}#rajac-agro-page .effect-list{margin:0;padding:0;list-style:none;display:grid;gap:12px}#rajac-agro-page .effect-list li{position:relative;padding:14px 16px 14px 44px;border-radius:18px;background:#f6f2e7;border:1px solid rgba(201,168,76,.18);color:#445148;line-height:1.68}#rajac-agro-page .effect-list li::before{content:"";position:absolute;left:16px;top:18px;width:12px;height:12px;border-radius:50%;background:linear-gradient(135deg,#c9a84c,#3d6b42)}#rajac-agro-page .highlight-band strong{color:#c9a84c}#rajac-agro-page .module-intro{margin-bottom:26px}#rajac-agro-page .module-intro p{max-width:860px}#rajac-agro-page .closing-box p{max-width:920px}#rajac-agro-page .closing-box{padding:34px 40px}#rajac-agro-page .closing-box h2{margin:0 0 18px;max-width:32ch;font-size:clamp(1.85rem,2.2vw,2.6rem) !important;line-height:1.08 !important;text-wrap:balance}#rajac-agro-page .closing-box p{max-width:980px}.rp-agro{background:transparent !important}.rp-agro .w{width:min(1280px,calc(100% - 40px)) !important}.rp-agro .agro-live{padding-top:74px !important}.rp-agro .agro-live,.rp-agro .owner-sec{scroll-margin-top:92px}.rp-agro .al-head h2,.rp-agro .owner-head h2,.rp-agro .owner-chart h3,.rp-agro .owner-bulletin h3,.rp-agro .owner-map-card h3,.rp-agro .owner-alerts h3,.rp-agro .al-rain-head h3,.rp-agro .al-bottom-top h3{font-family:'Cormorant Garamond',serif !important;font-weight:300 !important;letter-spacing:-0.02em}.rp-agro .owner-card,.rp-agro .al-metric,.rp-agro .al-status,.rp-agro .al-rain-wrap,.rp-agro .al-bottom-cta,.rp-agro .al-cop{border-radius:26px !important}#rajac-agro-page .section-head{display:flex !important;flex-direction:column !important;align-items:flex-start !important;justify-content:flex-start !important;text-align:left !important;margin-left:0 !important;margin-right:auto !important;max-width:none !important}#rajac-agro-page .section-head .eyebrow,#rajac-agro-page .section-head .s-title,#rajac-agro-page .section-head .s-desc{margin-left:0 !important;margin-right:0 !important;text-align:left !important;max-width:none !important;width:auto !important;align-self:flex-start !important}</style><style id="rajac-agro-live-original">.rp-agro{--bg:#f5f1e8;--surface:rgba(255,255,255,.82);--surface2:rgba(245,241,232,.80);--text:#19261a;--muted:#556355;--gold:#b78530;--gold2:#d4a655;--green:#3a6640;--green2:#527a57;--border:rgba(25,38,26,.09);--shadow:0 28px 64px rgba(14,24,12,.11);--r:30px;--hero-img:url('https://piorajac.rs/wp-content/uploads/2026/03/podrska-poljoprivredi.jpg');display:block;background:linear-gradient(180deg,#f0ece0 0%,#f5f1e8 100%);color:var(--text);font-family:'Inter',system-ui,sans-serif;overflow:hidden;isolation:isolate;position:relative;width:100vw;max-width:100vw;margin-left:calc(50% - 50vw);margin-right:calc(50% - 50vw)}.rp-agro *,.rp-agro *::before,.rp-agro *::after{box-sizing:border-box}.rp-agro a{color:inherit;text-decoration:none}.rp-agro .w{width:min(1380px,calc(100% - 40px));margin:0 auto}.rp-agro .hero{position:relative;min-height:96vh;display:flex;align-items:flex-end;background:linear-gradient(180deg,rgba(8,18,10,.22) 0%,rgba(8,18,10,.64) 100%),var(--hero-img) center center/cover no-repeat;overflow:hidden}.rp-agro .hero::before{content:"";position:absolute;inset:0;pointer-events:none;background:radial-gradient(ellipse at 70% 28%,rgba(58,102,64,.24),transparent 55%),linear-gradient(90deg,rgba(0,0,0,.20) 0%,rgba(0,0,0,.04) 55%,rgba(0,0,0,0) 100%)}.rp-agro .hero-inner{position:relative;z-index:2;width:100%;padding:128px 0 82px}.rp-agro .hero-label{display:inline-flex;align-items:center;gap:10px;color:var(--gold2);font:800 .82rem/1 'Inter',sans-serif;letter-spacing:.18em;text-transform:uppercase;margin-bottom:18px}.rp-agro .hero-label::before{content:"";width:28px;height:1px;background:currentColor;opacity:.8}.rp-agro .hero h1{margin:0 0 20px;color:#fff;font:600 clamp(3.1rem,6.2vw,6.4rem)/.88 'Cormorant Garamond',Georgia,serif;letter-spacing:-.03em;max-width:13ch}.rp-agro .hero h1 em{font-style:italic;color:rgba(255,255,255,.78)}.rp-agro .hero-lead{margin:0 0 28px;color:rgba(255,255,255,.84);font:500 clamp(1.02rem,1.2vw,1.12rem)/1.82 'Inter',sans-serif;max-width:760px}.rp-agro .hero-pills{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:32px}.rp-agro .hero-pill{display:inline-flex;align-items:center;min-height:36px;padding:0 14px;border-radius:999px;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.18);color:rgba(255,255,255,.90);font:700 .84rem/1 'Inter',sans-serif;backdrop-filter:blur(8px)}.rp-agro .hero-dates{display:flex;flex-wrap:wrap;gap:12px}.rp-agro .hero-date{display:flex;flex-direction:column;gap:5px;padding:14px 18px;background:rgba(255,255,255,.10);border:1px solid rgba(255,255,255,.14);border-radius:18px;backdrop-filter:blur(12px)}.rp-agro .hdl{color:rgba(255,255,255,.60);font:700 .75rem/1 'Inter',sans-serif;letter-spacing:.10em;text-transform:uppercase}.rp-agro .hdv{color:#fff;font:700 1rem/1.2 'Inter',sans-serif}.rp-agro .stats-bar{background:#141f15;border-top:1px solid rgba(255,255,255,.06)}.rp-agro .stats-inner{display:grid;grid-template-columns:repeat(3,1fr)}.rp-agro .sc{padding:22px 28px;border-right:1px solid rgba(255,255,255,.07)}.rp-agro .sc:last-child{border-right:none}.rp-agro .sv{font:800 2rem/1 'Cormorant Garamond',Georgia,serif;color:var(--gold2);margin-bottom:7px}.rp-agro .sl{color:rgba(255,255,255,.52);font:500 .88rem/1.55 'Inter',sans-serif}.rp-agro .content{padding:clamp(52px,7vw,96px) 0}.rp-agro .sec{margin-bottom:clamp(28px,4vw,48px)}.rp-agro .card{background:var(--surface);border:1px solid var(--border);border-radius:var(--r);box-shadow:var(--shadow);backdrop-filter:blur(12px)}.rp-agro .intro-grid{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(280px,.9fr);gap:24px;align-items:start}.rp-agro .intro-copy{padding:30px 32px}.rp-agro .kicker{display:inline-flex;align-items:center;gap:8px;color:var(--gold);font:800 .80rem/1 'Inter',sans-serif;letter-spacing:.16em;text-transform:uppercase;margin-bottom:14px}.rp-agro .kicker::before{content:"";width:5px;height:5px;border-radius:50%;background:currentColor}.rp-agro .intro-copy h2{margin:0 0 16px;color:var(--text);font:600 clamp(1.9rem,2.8vw,2.7rem)/.96 'Cormorant Garamond',Georgia,serif;letter-spacing:-.03em}.rp-agro .intro-copy h2 em{font-style:italic;color:var(--green)}.rp-agro .intro-copy p{margin:0 0 14px;color:var(--muted);font:500 1.01rem/1.82 'Inter',sans-serif}.rp-agro .intro-copy p:last-child{margin:0}.rp-agro .stat-stack{display:grid;gap:14px;padding:24px}.rp-agro .rj-stat{padding:16px 18px;border-radius:22px;background:rgba(58,102,64,.06);border:1px solid rgba(58,102,64,.10)}.rp-agro .rj-stat strong{display:block;margin-bottom:6px;color:var(--text);font:800 .84rem/1.2 'Inter',sans-serif;letter-spacing:.08em;text-transform:uppercase}.rp-agro .rj-stat span{color:var(--muted);font:500 .94rem/1.58 'Inter',sans-serif}.rp-agro .grid2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}.rp-agro .g-card{padding:26px 28px}.rp-agro .g-card h3{margin:0 0 12px;color:var(--text);font:600 clamp(1.55rem,2vw,2rem)/1.02 'Cormorant Garamond',Georgia,serif;letter-spacing:-.02em}.rp-agro .g-card p{margin:0;color:var(--muted);font:500 .99rem/1.78 'Inter',sans-serif}.rp-agro .manage-grid{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:20px;align-items:stretch}.rp-agro .manage-copy{padding:32px 34px}.rp-agro .manage-copy h2{margin:0 0 14px;color:var(--text);font:600 clamp(1.95rem,2.9vw,2.8rem)/.96 'Cormorant Garamond',Georgia,serif;letter-spacing:-.03em}.rp-agro .manage-copy p{margin:0;color:var(--muted);font:500 1rem/1.82 'Inter',sans-serif}.rp-agro .side-card{padding:26px;display:grid;gap:14px}.rp-agro .side-card h3{margin:0;color:var(--text);font:600 clamp(1.55rem,2.2vw,2.1rem)/.96 'Cormorant Garamond',Georgia,serif}.rp-agro .rj-list{list-style:none;margin:0;padding:0;display:grid;gap:10px}.rp-agro .rj-list li{position:relative;padding:13px 16px 13px 44px;border-radius:18px;background:rgba(58,102,64,.05);border:1px solid var(--border);color:var(--muted);font:500 .97rem/1.65 'Inter',sans-serif}.rp-agro .rj-list li::before{content:"";position:absolute;left:14px;top:17px;width:14px;height:14px;border-radius:50%;background:linear-gradient(135deg,var(--gold),var(--green))}.rp-agro .band{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:20px;align-items:center;padding:26px 30px}.rp-agro .band h3{margin:0 0 10px;color:var(--text);font:600 clamp(1.55rem,2.2vw,2.1rem)/1.08 'Cormorant Garamond',Georgia,serif}.rp-agro .band p{margin:0;color:var(--muted);font:500 1rem/1.76 'Inter',sans-serif}.rp-agro .band-tag{display:inline-flex;align-items:center;padding:12px 18px;border-radius:999px;background:linear-gradient(135deg,var(--gold),var(--green));color:#fff;font:800 .84rem/1 'Inter',sans-serif;letter-spacing:.10em;text-transform:uppercase;white-space:nowrap}.rp-agro .agro-live{background:#111c12;color:#e8f0e8;padding:clamp(56px,7vw,96px) 0 clamp(54px,6vw,86px);position:relative;overflow:hidden}.rp-agro .agro-live::before{content:"";position:absolute;inset:0;pointer-events:none;background:radial-gradient(ellipse at 15% 20%,rgba(58,102,64,.22),transparent 40%),radial-gradient(ellipse at 85% 80%,rgba(183,133,48,.14),transparent 38%)}.rp-agro .agro-live .w{position:relative;z-index:1}.rp-agro .al-head{margin-bottom:38px}.rp-agro .al-label{display:inline-flex;align-items:center;gap:10px;color:var(--gold2);font:800 .80rem/1 'Inter',sans-serif;letter-spacing:.18em;text-transform:uppercase;margin-bottom:12px}.rp-agro .al-label::before{content:"";width:28px;height:1px;background:currentColor;opacity:.7}.rp-agro .al-head h2{margin:0 0 10px;color:#fff;font:600 clamp(2.4rem,4vw,4rem)/.92 'Cormorant Garamond',Georgia,serif;letter-spacing:-.03em}.rp-agro .al-head p{color:rgba(232,240,232,.60);font:500 1rem/1.72 'Inter',sans-serif;max-width:760px;margin:0}.rp-agro .al-now{display:grid;grid-template-columns:repeat(auto-fill,minmax(170px,1fr));gap:14px;margin-bottom:28px}.rp-agro .al-metric{padding:18px 18px 16px;border-radius:22px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.09);display:flex;flex-direction:column;gap:6px;min-height:102px}.rp-agro .al-mlabel{color:rgba(232,240,232,.50);font:700 .74rem/1 'Inter',sans-serif;letter-spacing:.10em;text-transform:uppercase}.rp-agro .al-mval{color:#fff;font:700 1.55rem/1 'Cormorant Garamond',Georgia,serif}.rp-agro .al-mval span{font-size:.85rem;font-weight:500;color:rgba(255,255,255,.55);margin-left:2px}.rp-agro .al-msub{color:rgba(232,240,232,.44);font:500 .80rem/1.4 'Inter',sans-serif;min-height:18px}.rp-agro .al-metric.acc-gold{border-color:rgba(212,166,85,.25)}.rp-agro .al-metric.acc-gold .al-mval{color:var(--gold2)}.rp-agro .al-metric.acc-green{border-color:rgba(82,122,87,.30)}.rp-agro .al-metric.acc-green .al-mval{color:#7ec47e}.rp-agro .al-status-row{display:grid;grid-template-columns:repeat(auto-fill,minmax(170px,1fr));gap:14px;margin-bottom:0}.rp-agro .al-status{padding:18px 18px 16px;border-radius:22px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.09);display:flex;flex-direction:column;gap:7px;min-height:102px}.rp-agro .al-sname{color:rgba(232,240,232,.55);font:700 .76rem/1 'Inter',sans-serif;letter-spacing:.10em;text-transform:uppercase}.rp-agro .al-sbadge{display:inline-flex;align-items:center;gap:6px;min-height:28px;padding:0 11px;border-radius:999px;font:700 .82rem/1 'Inter',sans-serif;width:max-content}.rp-agro .b-ok{background:rgba(80,180,80,.15);color:#6fcf6f;border:1px solid rgba(80,180,80,.22)}.rp-agro .b-watch{background:rgba(212,166,85,.14);color:var(--gold2);border:1px solid rgba(212,166,85,.22)}.rp-agro .b-warn{background:rgba(230,100,60,.14);color:#f0876a;border:1px solid rgba(230,100,60,.22)}.rp-agro .al-status p{color:rgba(232,240,232,.46);font:500 .86rem/1.55 'Inter',sans-serif;margin:0}.rp-agro .al-bulletin{padding:22px 24px;border-radius:22px;margin-bottom:28px;background:rgba(58,102,64,.10);border:1px solid rgba(82,122,87,.22)}.rp-agro .al-bhead{display:flex;align-items:center;gap:10px;margin-bottom:12px;color:#7ec47e;font:800 .78rem/1 'Inter',sans-serif;letter-spacing:.14em;text-transform:uppercase}.rp-agro .al-bhead::before{content:"";width:8px;height:8px;border-radius:50%;background:#7ec47e;animation:blinkdot 2s infinite;flex:0 0 8px}@keyframes blinkdot{0%,100%{opacity:1}50%{opacity:.3}}.rp-agro .al-btext{color:rgba(232,240,232,.80);font:500 .99rem/1.78 'Inter',sans-serif;margin:0}.rp-agro .al-fhead{display:flex;align-items:center;justify-content:space-between;margin-bottom:16px;flex-wrap:wrap;gap:10px}.rp-agro .al-fhead h3{margin:0;color:#fff;font:600 1.48rem/1 'Cormorant Garamond',Georgia,serif}.rp-agro .al-fhead a{color:var(--gold2);font:700 .84rem/1 'Inter',sans-serif;border-bottom:1px solid rgba(212,166,85,.35);padding-bottom:2px;transition:.2s}.rp-agro .al-fhead a:hover{color:#fff;border-color:rgba(255,255,255,.4)}.rp-agro .al-forecast{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:10px;margin-bottom:22px}.rp-agro .af-day{padding:16px 8px;border-radius:20px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.07);text-align:center;display:flex;flex-direction:column;gap:8px;align-items:center;transition:.22s;min-height:144px}.rp-agro .af-day:hover{background:rgba(255,255,255,.09)}.rp-agro .af-day.today{background:rgba(58,102,64,.16);border-color:rgba(82,122,87,.30)}.rp-agro .af-day.rainy{box-shadow:inset 0 0 0 1px rgba(114,178,232,.18)}.rp-agro .af-dow{color:rgba(232,240,232,.50);font:700 .74rem/1 'Inter',sans-serif;letter-spacing:.08em;text-transform:uppercase}.rp-agro .af-icon{font-size:1.5rem;line-height:1}.rp-agro .af-tmax{color:#fff;font:700 1rem/1 'Inter',sans-serif}.rp-agro .af-tmin{color:rgba(232,240,232,.45);font:500 .85rem/1 'Inter',sans-serif}.rp-agro .af-rain{color:#72b2e8;font:600 .78rem/1 'Inter',sans-serif}.rp-agro .af-dot{width:8px;height:8px;border-radius:50%}.rp-agro .al-rain-wrap{margin:0 0 28px;padding:24px 24px 20px;border-radius:24px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.07)}.rp-agro .al-rain-head{display:flex;align-items:flex-end;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-bottom:14px}.rp-agro .al-rain-head h3{margin:0;color:#fff;font:600 1.34rem/1 'Cormorant Garamond',Georgia,serif}.rp-agro .al-rain-meta{color:rgba(232,240,232,.46);font:500 .82rem/1.5 'Inter',sans-serif}.rp-agro .rain-bars{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:10px;align-items:end;min-height:220px;padding-top:16px}.rp-agro .rain-col{display:flex;flex-direction:column;align-items:center;justify-content:flex-end;gap:8px;min-width:0}.rp-agro .rain-val{color:rgba(232,240,232,.82);font:700 .72rem/1 'Inter',sans-serif;min-height:12px;text-align:center;white-space:nowrap}.rp-agro .rain-bar-shell{width:100%;max-width:48px;height:160px;border-radius:18px;background:linear-gradient(180deg,rgba(255,255,255,.04),rgba(255,255,255,.02));border:1px solid rgba(255,255,255,.05);position:relative;overflow:hidden;display:flex;align-items:flex-end}.rp-agro .rain-bar{width:100%;background:linear-gradient(180deg,#87d0ff 0%,#4aa6e8 100%);border-top-left-radius:16px;border-top-right-radius:16px;box-shadow:0 0 18px rgba(74,166,232,.22);min-height:0}.rp-agro .rain-lbl{color:rgba(232,240,232,.44);font:700 .72rem/1 'Inter',sans-serif;letter-spacing:.02em;text-transform:uppercase;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:100%}.rp-agro .rain-empty{grid-column:1/-1;padding:20px 0 8px;color:rgba(232,240,232,.44);font:500 .93rem/1.7 'Inter',sans-serif;text-align:center}.rp-agro .al-bottom-cta{margin:0 0 28px;padding:20px 20px 18px;border-radius:28px;background:rgba(58,102,64,.12);border:1px solid rgba(82,122,87,.22)}.rp-agro .al-bottom-top{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:18px;align-items:center;margin-bottom:16px}.rp-agro .al-bottom-cta h3{margin:0 0 8px;color:#fff;font:600 1.7rem/1 'Cormorant Garamond',Georgia,serif}.rp-agro .al-bottom-cta p{margin:0;color:rgba(232,240,232,.78);font:500 .98rem/1.72 'Inter',sans-serif}.rp-agro .al-bottom-days{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:10px}.rp-agro .al-bottom-days .af-day{min-height:156px;background:rgba(255,255,255,.055)}.rp-agro .al-bottom-days .af-day.today{background:rgba(7,54,39,.36);border-color:rgba(82,122,87,.34)}.rp-agro .al-cop{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:20px;align-items:center;padding:22px 24px;border-radius:22px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.07)}.rp-agro .al-cop-label{color:rgba(232,240,232,.50);font:700 .74rem/1 'Inter',sans-serif;letter-spacing:.12em;text-transform:uppercase;margin-bottom:8px}.rp-agro .al-cop-title{color:#fff;font:600 1.3rem/1.1 'Cormorant Garamond',Georgia,serif;margin-bottom:8px}.rp-agro .al-cop-desc{color:rgba(232,240,232,.52);font:500 .90rem/1.60 'Inter',sans-serif;margin:0}.rp-agro .al-cop-pills{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}.rp-agro .al-cp{display:inline-flex;align-items:center;min-height:28px;padding:0 10px;border-radius:999px;background:rgba(58,102,64,.18);border:1px solid rgba(82,122,87,.25);color:#7ec47e;font:700 .76rem/1 'Inter',sans-serif}.rp-agro .al-cop-btn{display:inline-flex;align-items:center;gap:8px;min-height:46px;padding:0 22px;border-radius:999px;background:linear-gradient(135deg,var(--gold),#a06e20);color:#fff;font:800 .88rem/1 'Inter',sans-serif;white-space:nowrap;box-shadow:0 8px 24px rgba(183,133,48,.30);transition:.22s}.rp-agro .al-cop-btn:hover{transform:translateY(-2px);box-shadow:0 12px 28px rgba(183,133,48,.38)}.rp-agro .al-updated{margin-top:20px;text-align:right;color:rgba(232,240,232,.28);font:500 .80rem/1 'Inter',sans-serif}.rp-agro .sk{background:linear-gradient(90deg,rgba(255,255,255,.06) 25%,rgba(255,255,255,.12) 50%,rgba(255,255,255,.06) 75%);background-size:200% 100%;animation:shimmer 1.8s infinite;border-radius:6px;display:inline-block}@keyframes shimmer{0%{background-position:200% 0}100%{background-position:-200% 0}}@media(max-width:1080px){.rp-agro .intro-grid,.rp-agro .manage-grid{grid-template-columns:1fr}.rp-agro .hero h1{max-width:none}.rp-agro .al-bottom-top{grid-template-columns:1fr}}@media(max-width:760px){.rp-agro .w{width:min(100% - 24px,1380px)}.rp-agro .grid2,.rp-agro .band{grid-template-columns:1fr}.rp-agro .stats-inner{grid-template-columns:1fr}.rp-agro .sc{border-right:none;border-bottom:1px solid rgba(255,255,255,.07)}.rp-agro .sc:last-child{border-bottom:none}.rp-agro .al-forecast{grid-template-columns:repeat(4,minmax(0,1fr))}.rp-agro .al-bottom-days{grid-template-columns:repeat(4,minmax(0,1fr))}.rp-agro .al-cop{grid-template-columns:1fr}.rp-agro .rain-bars{grid-template-columns:repeat(6,minmax(0,1fr))}}@media(max-width:520px){.rp-agro .hero-inner{padding:110px 0 64px}.rp-agro .al-forecast{grid-template-columns:repeat(3,minmax(0,1fr))}.rp-agro .al-bottom-days{grid-template-columns:repeat(2,minmax(0,1fr))}.rp-agro .al-now{grid-template-columns:repeat(2,1fr)}.rp-agro .rain-bars{grid-template-columns:repeat(4,minmax(0,1fr))}}</style><style id="rajac-agro-heading-unify">#rajac-agro-page .intro-copy h2,#rajac-agro-page .g-card h3,#rajac-agro-page .manage-copy h3,#rajac-agro-page .side-card h3,#rajac-agro-page .al-head h2,#rajac-agro-page .owner-head h2,#rajac-agro-page .owner-chart h3,#rajac-agro-page .owner-bulletin h3,#rajac-agro-page .owner-map-card h3,#rajac-agro-page .owner-alerts h3,#rajac-agro-page .al-rain-head h3,#rajac-agro-page .al-bottom-top h3{font-family:'Cormorant Garamond',serif !important;font-weight:300 !important;letter-spacing:-0.015em !important}#rajac-agro-page .intro-copy h2 em,#rajac-agro-page .manage-copy h3 em,#rajac-agro-page .side-card h3 em,#rajac-agro-page .g-card h3 em,#rajac-agro-page .al-head h2 em,#rajac-agro-page .owner-head h2 em,#rajac-agro-page .owner-chart h3 em,#rajac-agro-page .owner-bulletin h3 em,#rajac-agro-page .owner-map-card h3 em,#rajac-agro-page .owner-alerts h3 em,#rajac-agro-page .al-rain-head h3 em,#rajac-agro-page .al-bottom-top h3 em{font-family:'Cormorant Garamond',serif !important;font-style:normal !important;font-weight:300 !important;color:inherit !important}</style><style id="rajac-agro-final-left-align">#rajac-agro-page .section-head,#rajac-agro-page .module-intro,#rajac-agro-page .monitoring-panel .section-head,#rajac-agro-page .closing-box{text-align:left !important;align-items:flex-start !important;justify-content:flex-start !important}#rajac-agro-page .closing-box .eyebrow,#rajac-agro-page .closing-box h2,#rajac-agro-page .closing-box p{text-align:left !important;margin-left:0 !important;margin-right:0 !important}</style><style id="programske-responsive-v2-final">
+/*
+ * Mobilna i tablet optimizacija programskih stranica PIO Rajac.
+ * Aktivna je samo do 1100 px; desktop stilovi ostaju neizmenjeni.
+ * Verzija: 2026-07-14-v2
+ */
+
+.rajac-program-menu__toggle {
+  display: none;
+}
+
+@media (max-width: 1100px) {
+  html {
+    max-width: 100%;
+    overflow-x: hidden;
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+  }
+
+  body.rajac-static-output.pio-program-responsive {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden !important;
+  }
+
+  body.pio-program-responsive *,
+  body.pio-program-responsive *::before,
+  body.pio-program-responsive *::after {
+    box-sizing: border-box;
+  }
+
+  body.pio-program-responsive img,
+  body.pio-program-responsive picture,
+  body.pio-program-responsive video,
+  body.pio-program-responsive iframe,
+  body.pio-program-responsive canvas {
+    max-width: 100%;
+  }
+
+  body.pio-program-responsive img {
+    height: auto;
+  }
+
+  /* Zajednički meni: jedna mirna linija, pa meni na zahtev. */
+  body.pio-program-responsive .rajac-static-common-menu.rajac-program-menu {
+    position: relative !important;
+    z-index: 9999 !important;
+    width: 100% !important;
+    background: #112117 !important;
+    border: 0 !important;
+    border-bottom: 1px solid rgba(255, 255, 255, .12) !important;
+    box-shadow: 0 8px 24px rgba(5, 12, 8, .18) !important;
+  }
+
+  body.pio-program-responsive .rajac-static-common-menu.rajac-program-menu .rajac-static-common-menu__inner {
+    width: min(100% - 28px, 1180px) !important;
+    min-height: 58px !important;
+    margin: 0 auto !important;
+    padding: 8px 0 !important;
+    display: grid !important;
+    grid-template-columns: minmax(0, 1fr) auto !important;
+    align-items: center !important;
+    gap: 8px 14px !important;
+  }
+
+  body.pio-program-responsive .rajac-static-common-menu.rajac-program-menu .rajac-static-common-menu__logo,
+  body.pio-program-responsive .rajac-static-common-menu.rajac-program-menu .rajac-static-common-menu__logo:link,
+  body.pio-program-responsive .rajac-static-common-menu.rajac-program-menu .rajac-static-common-menu__logo:visited {
+    justify-self: start !important;
+    min-height: 40px !important;
+    padding: 0 !important;
+    border: 0 !important;
+    border-radius: 0 !important;
+    background: transparent !important;
+    color: #fffaf0 !important;
+    font-size: 14px !important;
+    font-weight: 800 !important;
+    letter-spacing: .045em !important;
+    text-decoration: none !important;
+  }
+
+  body.pio-program-responsive .rajac-program-menu__toggle {
+    justify-self: end;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    min-width: 92px;
+    min-height: 42px;
+    margin: 0;
+    padding: 0 13px;
+    border: 1px solid rgba(255, 255, 255, .24);
+    border-radius: 999px;
+    background: rgba(255, 255, 255, .08);
+    color: #fffaf0;
+    font: 800 13px/1 system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    letter-spacing: .08em;
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  body.pio-program-responsive .rajac-program-menu__toggle-icon {
+    width: 16px;
+    height: 12px;
+    position: relative;
+    display: inline-block;
+    border-top: 2px solid currentColor;
+    border-bottom: 2px solid currentColor;
+  }
+
+  body.pio-program-responsive .rajac-program-menu__toggle-icon::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 3px;
+    border-top: 2px solid currentColor;
+  }
+
+  body.pio-program-responsive .rajac-static-common-menu.rajac-program-menu.is-open .rajac-program-menu__toggle-icon {
+    border-color: transparent;
+  }
+
+  body.pio-program-responsive .rajac-static-common-menu.rajac-program-menu.is-open .rajac-program-menu__toggle-icon::before,
+  body.pio-program-responsive .rajac-static-common-menu.rajac-program-menu.is-open .rajac-program-menu__toggle-icon::after {
+    content: "";
+    position: absolute;
+    top: 4px;
+    left: 0;
+    width: 16px;
+    border-top: 2px solid currentColor;
+    transform: rotate(45deg);
+  }
+
+  body.pio-program-responsive .rajac-static-common-menu.rajac-program-menu.is-open .rajac-program-menu__toggle-icon::after {
+    transform: rotate(-45deg);
+  }
+
+  body.pio-program-responsive .rajac-static-common-menu.rajac-program-menu .rajac-static-common-menu__links {
+    grid-column: 1 / -1 !important;
+    width: 100% !important;
+    display: none !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 8px !important;
+    margin: 0 !important;
+    padding: 6px 0 4px !important;
+    overflow: visible !important;
+  }
+
+  body.pio-program-responsive .rajac-static-common-menu.rajac-program-menu.is-open .rajac-static-common-menu__links {
+    display: grid !important;
+  }
+
+  body.pio-program-responsive .rajac-static-common-menu.rajac-program-menu .rajac-static-common-menu__link,
+  body.pio-program-responsive .rajac-static-common-menu.rajac-program-menu .rajac-static-common-menu__link:link,
+  body.pio-program-responsive .rajac-static-common-menu.rajac-program-menu .rajac-static-common-menu__link:visited {
+    width: 100% !important;
+    min-width: 0 !important;
+    min-height: 44px !important;
+    padding: 9px 12px !important;
+    justify-content: flex-start !important;
+    white-space: normal !important;
+    text-align: left !important;
+    border: 1px solid rgba(255, 255, 255, .12) !important;
+    border-radius: 12px !important;
+    background: rgba(255, 255, 255, .055) !important;
+    color: rgba(255, 250, 240, .92) !important;
+    font-size: 12px !important;
+    line-height: 1.3 !important;
+    letter-spacing: .035em !important;
+  }
+
+  body.pio-program-responsive .rajac-static-common-menu.rajac-program-menu .rajac-static-common-menu__link.is-active,
+  body.pio-program-responsive .rajac-static-common-menu.rajac-program-menu .rajac-static-common-menu__link.is-active:link,
+  body.pio-program-responsive .rajac-static-common-menu.rajac-program-menu .rajac-static-common-menu__link.is-active:visited {
+    background: #233a2b !important;
+    border-color: rgba(212, 182, 90, .72) !important;
+    color: #fff !important;
+  }
+
+  /* HERO i osnovni stupac */
+  body.pio-program-responsive .rprog-wrap,
+  body.pio-program-responsive .rprog-hero-content,
+  body.pio-program-responsive #rajac-agro-page .shell,
+  body.pio-program-responsive #rajac-agro-page .hero-inner {
+    width: min(100% - 36px, 920px) !important;
+    max-width: calc(100% - 36px) !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+
+  body.pio-program-responsive .rprog-hero,
+  body.pio-program-responsive #rajac-agro-page section.hero {
+    width: 100% !important;
+    height: 560px !important;
+    min-height: 560px !important;
+    max-height: 560px !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    border-radius: 0 0 26px 26px !important;
+    overflow: hidden !important;
+  }
+
+  body.pio-program-responsive .rprog-hero-content,
+  body.pio-program-responsive #rajac-agro-page .hero-body {
+    padding: 92px 0 54px !important;
+  }
+
+  body.pio-program-responsive .rprog-title,
+  body.pio-program-responsive .rprog--smart .rprog-title,
+  body.pio-program-responsive #rajac-agro-page .hero h1 {
+    max-width: 820px !important;
+    margin-bottom: 16px !important;
+    font-size: clamp(2.55rem, 7.4vw, 4.7rem) !important;
+    line-height: 1 !important;
+    overflow-wrap: anywhere;
+    text-wrap: balance;
+  }
+
+  body.pio-program-responsive .rprog-lead,
+  body.pio-program-responsive #rajac-agro-page .hero-lead {
+    max-width: 760px !important;
+    font-size: 1rem !important;
+    line-height: 1.65 !important;
+  }
+
+  body.pio-program-responsive .rprog--ai .rprog-hero-media {
+    object-position: 58% center !important;
+  }
+
+  body.pio-program-responsive .rprog--sky .rprog-hero-media {
+    object-position: 54% center !important;
+  }
+
+  body.pio-program-responsive .rprog--smart .rprog-hero-media {
+    object-position: 57% center !important;
+  }
+
+  body.pio-program-responsive #rajac-agro-page .hero-media {
+    object-position: center top !important;
+  }
+
+  /* Sadržaj u jednom preglednom stupcu; manji parovi ostaju po dva na tabletu. */
+  body.pio-program-responsive .rprog-intro,
+  body.pio-program-responsive .rprog-story,
+  body.pio-program-responsive .rprog-bird-activity,
+  body.pio-program-responsive #rajac-agro-page .manage-grid {
+    grid-template-columns: minmax(0, 1fr) !important;
+    gap: 26px !important;
+  }
+
+  body.pio-program-responsive .rprog-grid,
+  body.pio-program-responsive .rprog-subgrid,
+  body.pio-program-responsive .rprog-metrics,
+  body.pio-program-responsive .rprog-equipment-grid,
+  body.pio-program-responsive .rprog-drone-gallery,
+  body.pio-program-responsive .rprog-sky-photo-grid,
+  body.pio-program-responsive #rajac-agro-page .key-grid,
+  body.pio-program-responsive #rajac-agro-page .al-now,
+  body.pio-program-responsive #rajac-agro-page .al-bottom-days {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 14px !important;
+  }
+
+  body.pio-program-responsive .rprog-story-aside {
+    position: relative !important;
+    top: auto !important;
+  }
+
+  body.pio-program-responsive .rprog--smart .rprog-story-list {
+    columns: 1 !important;
+  }
+
+  body.pio-program-responsive .rprog-equipment-card,
+  body.pio-program-responsive .rprog-equipment-card-wide,
+  body.pio-program-responsive .rprog-story-card,
+  body.pio-program-responsive .rprog-story-card-wide {
+    width: 100% !important;
+    max-width: 100% !important;
+    break-inside: avoid !important;
+  }
+
+  body.pio-program-responsive .rprog-equipment-card-wide,
+  body.pio-program-responsive .rprog-story-card-wide {
+    grid-column: 1 / -1 !important;
+  }
+
+  body.pio-program-responsive .rprog-band {
+    grid-template-columns: minmax(0, 1fr) !important;
+  }
+
+  body.pio-program-responsive .rprog-section,
+  body.pio-program-responsive .rprog-deep,
+  body.pio-program-responsive .rprog-equipment,
+  body.pio-program-responsive .rprog-drone-monitoring,
+  body.pio-program-responsive .rprog-sky-photo-block {
+    max-width: 100% !important;
+    overflow: hidden !important;
+  }
+
+  body.pio-program-responsive .rprog-card,
+  body.pio-program-responsive .rprog-story-card,
+  body.pio-program-responsive .rprog-story-aside,
+  body.pio-program-responsive .rprog-equipment-card,
+  body.pio-program-responsive #rajac-agro-page .key-card,
+  body.pio-program-responsive #rajac-agro-page .manage-copy,
+  body.pio-program-responsive #rajac-agro-page .side-card {
+    min-width: 0 !important;
+  }
+
+  body.pio-program-responsive .rprog-sky-photo-card img,
+  body.pio-program-responsive .rprog-equipment-card img,
+  body.pio-program-responsive .rprog-drone-gallery img,
+  body.pio-program-responsive .rprog-bird-activity-figure img,
+  body.pio-program-responsive #rajac-agro-page .agro-image-card img,
+  body.pio-program-responsive #rajac-agro-page .parcelimg-fig img {
+    display: block !important;
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  body.pio-program-responsive .rprog-smart-visual img {
+    height: auto !important;
+    max-height: 560px !important;
+    object-fit: contain !important;
+  }
+
+  body.pio-program-responsive .rprog-img-lightbox-inner {
+    width: min(94vw, 920px) !important;
+    max-height: 90svh !important;
+  }
+
+  body.pio-program-responsive .rprog-img-lightbox-stage img {
+    max-width: 100% !important;
+    max-height: 78svh !important;
+    object-fit: contain !important;
+  }
+
+  /* Poljoprivreda: grafikoni, prognoza i tabela ostaju čitljivi bez širenja stranice. */
+  body.pio-program-responsive #rajac-agro-page,
+  body.pio-program-responsive #rajac-agro-page .rp-agro,
+  body.pio-program-responsive #rajac-agro-page .agro-live,
+  body.pio-program-responsive #rajac-agro-page .agroday-sec,
+  body.pio-program-responsive #rajac-agro-page .parcelimg-sec {
+    width: 100% !important;
+    max-width: 100% !important;
+    overflow-x: hidden !important;
+  }
+
+  body.pio-program-responsive #rajac-agro-page .al-rain-wrap,
+  body.pio-program-responsive #rajac-agro-page .rain-axis-box,
+  body.pio-program-responsive #rajac-agro-page .agroday-table-wrap,
+  body.pio-program-responsive #rajac-agro-page .parcelimg-fig {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  body.pio-program-responsive #rajac-agro-page .agroday-table-wrap {
+    overflow-x: auto !important;
+    overscroll-behavior-inline: contain;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  body.pio-program-responsive #rajac-agro-page .agroday-table {
+    width: 100% !important;
+    min-width: 720px !important;
+  }
+
+  body.pio-program-responsive #rajac-agro-page .rain-bars {
+    min-width: 0 !important;
+  }
+
+  body.pio-program-responsive #rajac-agro-page .closing-box,
+  body.pio-program-responsive #rajac-agro-page .highlight-band {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  body.pio-program-responsive a,
+  body.pio-program-responsive button,
+  body.pio-program-responsive [role="button"] {
+    touch-action: manipulation;
+  }
+}
+
+@media (max-width: 700px) {
+  body.pio-program-responsive .rajac-static-common-menu.rajac-program-menu .rajac-static-common-menu__inner {
+    width: calc(100% - 24px) !important;
+  }
+
+  body.pio-program-responsive .rajac-static-common-menu.rajac-program-menu .rajac-static-common-menu__links {
+    grid-template-columns: minmax(0, 1fr) !important;
+  }
+
+  body.pio-program-responsive .rprog-wrap,
+  body.pio-program-responsive .rprog-hero-content,
+  body.pio-program-responsive #rajac-agro-page .shell,
+  body.pio-program-responsive #rajac-agro-page .hero-inner {
+    width: calc(100% - 28px) !important;
+    max-width: calc(100% - 28px) !important;
+  }
+
+  body.pio-program-responsive .rprog-hero,
+  body.pio-program-responsive #rajac-agro-page section.hero {
+    height: 510px !important;
+    min-height: 510px !important;
+    max-height: 510px !important;
+    border-radius: 0 0 22px 22px !important;
+  }
+
+  body.pio-program-responsive .rprog-hero-content,
+  body.pio-program-responsive #rajac-agro-page .hero-body {
+    padding: 78px 0 36px !important;
+  }
+
+  body.pio-program-responsive .rprog-title,
+  body.pio-program-responsive .rprog--smart .rprog-title,
+  body.pio-program-responsive #rajac-agro-page .hero h1 {
+    margin-bottom: 13px !important;
+    font-size: clamp(2rem, 11.2vw, 3.35rem) !important;
+    line-height: 1.02 !important;
+    letter-spacing: -.035em !important;
+  }
+
+  body.pio-program-responsive .rprog-lead,
+  body.pio-program-responsive #rajac-agro-page .hero-lead {
+    font-size: .94rem !important;
+    line-height: 1.58 !important;
+  }
+
+  body.pio-program-responsive .rprog-chips {
+    gap: 7px !important;
+    margin-top: 18px !important;
+  }
+
+  body.pio-program-responsive .rprog-chip {
+    min-height: 34px !important;
+    padding: 0 12px !important;
+    font-size: .78rem !important;
+  }
+
+  body.pio-program-responsive .rprog-grid,
+  body.pio-program-responsive .rprog-subgrid,
+  body.pio-program-responsive .rprog-metrics,
+  body.pio-program-responsive .rprog-equipment-grid,
+  body.pio-program-responsive .rprog-drone-gallery,
+  body.pio-program-responsive .rprog-sky-photo-grid,
+  body.pio-program-responsive #rajac-agro-page .key-grid,
+  body.pio-program-responsive #rajac-agro-page .al-now,
+  body.pio-program-responsive #rajac-agro-page .al-bottom-days {
+    grid-template-columns: minmax(0, 1fr) !important;
+  }
+
+  body.pio-program-responsive .rprog-card,
+  body.pio-program-responsive .rprog-story-card,
+  body.pio-program-responsive .rprog-story-aside,
+  body.pio-program-responsive .rprog-equipment-card,
+  body.pio-program-responsive .rprog-band,
+  body.pio-program-responsive #rajac-agro-page .key-card,
+  body.pio-program-responsive #rajac-agro-page .manage-copy,
+  body.pio-program-responsive #rajac-agro-page .side-card,
+  body.pio-program-responsive #rajac-agro-page .closing-box,
+  body.pio-program-responsive #rajac-agro-page .highlight-band {
+    padding: 20px !important;
+    border-radius: 20px !important;
+  }
+
+  body.pio-program-responsive .rprog-section,
+  body.pio-program-responsive .rprog-deep,
+  body.pio-program-responsive .rprog-equipment,
+  body.pio-program-responsive .rprog-drone-monitoring,
+  body.pio-program-responsive .rprog-sky-photo-block,
+  body.pio-program-responsive #rajac-agro-page .section,
+  body.pio-program-responsive #rajac-agro-page .agro-live,
+  body.pio-program-responsive #rajac-agro-page .agroday-sec,
+  body.pio-program-responsive #rajac-agro-page .parcelimg-sec {
+    padding-top: 34px !important;
+    padding-bottom: 34px !important;
+  }
+
+  body.pio-program-responsive #rajac-agro-page .agroday-table {
+    min-width: 660px !important;
+  }
+
+  body.pio-program-responsive #rajac-agro-page .rain-axis-box {
+    overflow-x: auto !important;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  body.pio-program-responsive #rajac-agro-page .rain-bars {
+    min-width: 0 !important;
+  }
+
+  body.pio-program-responsive .rprog-img-lightbox-close {
+    top: 8px !important;
+    right: 8px !important;
+    width: 44px !important;
+    height: 44px !important;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) and (max-width: 1100px) {
+  body.pio-program-responsive *,
+  body.pio-program-responsive *::before,
+  body.pio-program-responsive *::after {
+    scroll-behavior: auto !important;
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: .01ms !important;
+  }
+}
+
+</style>
+<div id="rajac-progress-bar" style="position: fixed; top: 0px; left: 0px; height: 2px; background: linear-gradient(90deg, rgb(201, 168, 76), rgb(226, 200, 122)); width: 14.0826%; z-index: 1300; transition: width 0.1s; pointer-events: none;"></div><main aria-labelledby="rajac-agro-title" class="rajac-series-page" id="rajac-agro-page"><section aria-labelledby="rajac-agro-title" class="hero"><div aria-hidden="true" class="hero-media-wrap"><img alt="Сателитска подршка пољопривреди на Рајцу" class="hero-media" decoding="async" fetchpriority="high" height="900" loading="eager" src="https://piorajac.rs/wp-content/uploads/2026/06/ChatGPT-Image-14.-%D1%98%D1%83%D0%BD-2026.-11_02_33.png" width="1600"/><div class="hero-overlay"></div></div><div class="hero-inner"><div class="shell hero-body"><h1 id="rajac-agro-title">Подршка пољопривреди</h1><p class="hero-lead">Савремени мониторинг у ПИО „Рајац“ повезује сателитске снимке, метеоролошке податке и теренске увиде у практичну подршку локалној пољопривреди — посебно у условима климатске варијабилности и осетљивих станишта.</p></div></div></section><div class="divider"></div><section class="section lighter" id="pregled"><div class="shell"><header class="section-head"><div class="eyebrow">Повезани систем</div><h2 class="s-title">Поглед са неба <em>и подаци са земље</em></h2><p class="s-desc">Увођење савремених технологија у ПИО „Рајац“ доноси директну корист локалној пољопривреди јер повезује просторне снимке, метеоролошке услове и стање на парцелама у један систем подршке одлукама. Пољопривредници, управљач и локална заједница добијају јаснији увид у промене које утичу на производњу, ливаде, пашњаке и квалитет станишта.</p></header><div class="highlight-band" style="margin-bottom:28px;"><p>Овај приступ спаја <strong>поглед са неба</strong> и <strong>податке са земље</strong> — уместо да се проблеми уоче тек када постану видљиви на терену, систем омогућава раније препознавање и боље планирање активности.</p></div><div class="key-grid"><article class="key-card"><div class="key-num">01</div><h3>SMART приступ</h3><p>Повезивање сателитских снимака, метеоролошких станица и теренских запажања омогућава да важне информације буду доступне на једном месту. Уместо изолованих увида добија се континуирани систем који подржава разумније управљање производњом и простором.</p></article><article class="key-card"><div class="key-num">02</div><h3>Бујност вегетације и хлорофил</h3><p>Снимци Sentinel-2 омогућавају израду вегетационих мапа и раније откривање сушног стреса, неуједначеног развоја биљака и других одступања. Показатељи су прилагођени пољопривредницима кроз бујност, влагу у биљци, хлорофил и стање у односу на уобичајено.</p></article><article class="key-card"><div class="key-num">03</div><h3>Свакодневна подршка одлукама</h3><p>Аутоматска метеоролошка станица на Рајцу обезбеђује податке о температури, падавинама, влажности и ветру — параметрима важним за планирање пољопривредних активности у условима локалних микроклиматских разлика.</p></article><article class="key-card"><div class="key-num">04</div><h3>HNV и органска пољопривреда</h3><p>Исти систем података подржава производњу високе природне вредности, очување ливада и пашњака, јачање органске производње и боље разумевање односа пољопривреде и станишта — тако да развој не расте одвојен од заштите.</p></article></div></div></section><div class="divider"></div><section class="section light" id="koristi"><div class="shell"><div class="manage-grid"><article class="manage-copy"><div class="eyebrow">Значај за управљање</div><h3>Пољопривреда која <em>боље чита простор</em></h3><p>Највећа предност овог приступа је у томе што производња и управљање простором добијају заједнички аналитички оквир. Промене у вегетацији, влажности и временским условима могу се уочити раније, а реакције планирати прецизније. То показује да заштита природе може бити директна подршка одрживом коришћењу простора.</p></article><aside class="side-card"><h3>Практични ефекти за Рајац</h3><ul class="effect-list"><li>Раније уочавање стреса, неуједначеног развоја и промена у покрову парцела.</li><li>Боље планирање радова на основу реалних временских и просторних услова.</li><li>Подршка пољопривреди високе природне вредности и органској производњи.</li><li>Јача веза између локалне економије, очувања станишта и одрживог управљања.</li></ul></aside></div><div class="highlight-band" style="margin-top:28px;"><p>Подршка пољопривреди није засебна тема — <strong>продужетак је паметног управљања простором</strong>. Када се метео подаци, сателитски снимци и теренски увиди читају заједно, пољопривреда на Рајцу добија основу да буде одрживија и сигурнија, у складу са природним вредностима подручја.</p></div></div></section><div class="divider"></div><section class="section monitoring-wrap" id="platforma"><div class="shell"><header class="section-head module-intro"><div class="eyebrow">Дигитална платформа</div><h2 class="s-title">Рајац Агроклима у <em>реалном времену</em></h2><p class="s-desc">У овом делу странице задржан је оперативни блок са дневно ажурираним метеоролошким подацима, агрометеоролошким статусима, прогнозом за 7 дана и Copernicus индикаторима за ПИО „Рајац“ и катастарске парцеле насеља Ба.</p></header></div><section aria-label="Агроклима и парцеле" class="rp-agro"><div class="agro-live"><div class="w"><div class="al-head"><div class="al-label">Уживо са Рајца</div><h2>Рајац Агроклима<br/>— дигитална платформа</h2><p>Дневно ажурирани метеоролошки подаци, агрометеоролошки статуси, прогноза за 7 дана и сателитски вегетациони индекси за ПИО „Рајац" и катастарске парцеле насеља Ба.</p></div><div class="al-now"><div class="al-metric"><div class="al-mlabel">Температура</div><div class="al-mval" id="m-temp">10.8<span>°C</span></div><div class="al-msub" id="m-temp-sub"></div></div><div class="al-metric acc-green"><div class="al-mlabel">Влажност</div><div class="al-mval" id="m-hum">92<span>%</span></div><div class="al-msub" id="m-hum-sub">Висока влажност</div></div><div class="al-metric"><div class="al-mlabel">Ветар</div><div class="al-mval" id="m-wind">7.3<span>km/h</span></div><div class="al-msub" id="m-wind-sub">Ј налет 9.4 km/h</div></div><div class="al-metric"><div class="al-mlabel">Притисак</div><div class="al-mval" id="m-bar">1003<span>hPa</span></div><div class="al-msub">hPa</div></div><div class="al-metric acc-gold"><div class="al-mlabel">Падавине 24h</div><div class="al-mval" id="m-rain">22.0<span>mm</span></div><div class="al-msub">mm</div></div><div class="al-metric"><div class="al-mlabel">Тачка росе</div><div class="al-mval" id="m-dew">9.5<span>°C</span></div><div class="al-msub" id="m-dew-sub">⚠️ Ризик кондензације</div></div><div class="al-metric"><div class="al-mlabel">UV индекс</div><div class="al-mval" id="m-uv">—</div><div class="al-msub" id="m-uv-sub"></div></div><div class="al-metric acc-green"><div class="al-mlabel">GDD сезона</div><div class="al-mval" id="m-gdd">7<span>°C·d</span></div><div class="al-msub">°C·дан (база 10°)</div></div><div class="al-status"><div class="al-sname">Мраз — ризик</div><div class="al-sbadge b-ok" id="st-frost">✓ Без ризика</div><p id="st-frost-p">Тренутно 10.8°C — услови нису критични.</p></div><div class="al-status"><div class="al-sname">Пламењача кромпира</div><div class="al-sbadge b-ok" id="st-blight">…</div><p id="st-blight-p">—</p></div><div class="al-status"><div class="al-sname">Кошење ливада</div><div class="al-sbadge b-ok" id="st-mow">…</div><p id="st-mow-p">—</p></div><div class="al-status"><div class="al-sname">Соларни стрес</div><div class="al-sbadge b-ok" id="st-solar">…</div><p id="st-solar-p">—</p></div></div><div class="al-rain-wrap"><div class="al-rain-head"><h3>Падавине — реално време</h3><div class="al-rain-meta" id="rain-meta">Чекају се прва мерења са метео станице</div></div><div class="rain-bars" id="rain-bars"><div class="rain-empty">Подаци о падавинама са метео станице још нису доступни. Графикон ће се аутоматски појавити након првих мерења.</div></div></div><div class="al-bottom-cta"><div class="al-bottom-top"><div><h3>Агрометеоролошка прогноза — 7 дана</h3><p id="forecast-cta-text">Преглед прогнозе за наредних 7 дана са дневним оценама услова и очекиваним падавинама приказан је испод.</p></div></div><div class="al-bottom-days" id="al-bottom-days"><div class="af-day today rainy"><div class="af-dow">Данас</div><div class="af-icon">🌧️</div><div class="af-tmax">18°</div><div class="af-tmin">3°</div><div class="af-rain">10.7 mm</div><div class="af-dot" style="background:#d4a655;margin:0 auto" title="Агро оцена"></div></div><div class="af-day"><div class="af-dow">Сре</div><div class="af-icon">🌧️</div><div class="af-tmax">10°</div><div class="af-tmin">3°</div><div class="af-rain"></div><div class="af-dot" style="background:#6fcf6f;margin:0 auto" title="Агро оцена"></div></div><div class="af-day"><div class="af-dow">Чет</div><div class="af-icon">⛅</div><div class="af-tmax">17°</div><div class="af-tmin">3°</div><div class="af-rain"></div><div class="af-dot" style="background:#6fcf6f;margin:0 auto" title="Агро оцена"></div></div><div class="af-day rainy"><div class="af-dow">Пет</div><div class="af-icon">🌧️</div><div class="af-tmax">18°</div><div class="af-tmin">8°</div><div class="af-rain">0.7 mm</div><div class="af-dot" style="background:#6fcf6f;margin:0 auto" title="Агро оцена"></div></div><div class="af-day rainy"><div class="af-dow">Суб</div><div class="af-icon">🌧️</div><div class="af-tmax">17°</div><div class="af-tmin">10°</div><div class="af-rain">9.9 mm</div><div class="af-dot" style="background:#d4a655;margin:0 auto" title="Агро оцена"></div></div><div class="af-day rainy"><div class="af-dow">Нед</div><div class="af-icon">🌧️</div><div class="af-tmax">13°</div><div class="af-tmin">9°</div><div class="af-rain">23.7 mm</div><div class="af-dot" style="background:#d4a655;margin:0 auto" title="Агро оцена"></div></div><div class="af-day rainy"><div class="af-dow">Пон</div><div class="af-icon">🌧️</div><div class="af-tmax">12°</div><div class="af-tmin">7°</div><div class="af-rain">4.2 mm</div><div class="af-dot" style="background:#6fcf6f;margin:0 auto" title="Агро оцена"></div></div></div></div><div class="al-cop"><div><div class="al-cop-label">Сателитски индекси — Copernicus</div><div class="al-cop-title">Sentinel-2 вегетационе мапе за ПИО „Рајац"</div><p class="al-cop-desc">Недељно освежавање показатеља Бујност вегетације (NDVI), Влага у биљци (NDMI) и Хлорофил и раст (RECI), са аутоматском анимацијом по годинама и оштром границом ПИО. Праћење 1.211 катастарских парцела у КП Ба — кликни на парцелу за Стање у односу на уобичајено (VCI).</p><div class="al-cop-pills"><span class="al-cp">Бујност (NDVI)</span><span class="al-cp">Влага (NDMI)</span><span class="al-cp">Хлорофил (RECI)</span><span class="al-cp">Стање (VCI)</span><span class="al-cp">758 ha</span><span class="al-cp">Sentinel-2</span></div></div></div><section class="agro-image-section" aria-labelledby="agro-ndwi-title"><div class="w"><div class="agro-image-card"><h3 id="agro-ndwi-title">NDWI приказ стања влаге</h3><p>Испод Copernicus прегледа приказан је и NDWI слој, као допунска визуелна илустрација просторне расподеле влаге на Рајцу.</p><img src="https://piorajac.rs/wp-content/uploads/2026/06/ndwi.jpg" alt="NDWI приказ стања влаге на Рајцу" loading="lazy" decoding="async"></div></div></section></div></div>
+<script>(function(){  const DOW = ['Нед','Пон','Уто','Сре','Чет','Пет','Суб'];  const MON = ['јануар','фебруар','март','април','мај','јун','јул','август','септембар','октобар','новембар','децембар'];
+
+  /* ако је URL 7-дневне прогнозе другачији, promeni samo ovu konstantu */  const FORECAST_DETAIL_URL = 'https://piorajac.rs/kopindeksi/';
+
+  const LIVE_URLS = [
+    '/amsrajac/cache/current.json',
+    '/amsrajac/api.php',
+    '/amsrajac/current.json',
+    '/amsrajac/api/current.json',
+    '/amsrajac/api/current.php'
+  ];
+
+  const RAIN_HISTORY_URLS = [
+    '/amsrajac/history.php?range=24h&_ts=' + Math.floor(Math.floor(Date.now()/300000)/300000),
+    '/amsrajac/history.php?range=12h&_ts=' + Math.floor(Math.floor(Date.now()/300000)/300000),
+    '/amsrajac/api/history.php?range=24h&_ts=' + Math.floor(Math.floor(Date.now()/300000)/300000),
+    '/amsrajac/api/history.php?range=12h&_ts=' + Math.floor(Math.floor(Date.now()/300000)/300000)
+  ];
+
+  const f = (v,d=1) => (v==null||v===''||Number.isNaN(Number(v))) ? '—' : Number(v).toFixed(d);  const num = v => (v==null||v===''||Number.isNaN(Number(v))) ? null : Number(v);  const dirStr = deg => {    const n = num(deg);    if(n==null) return '';    return ['С','СИ','И','ЈИ','Ј','ЈЗ','З','СЗ'][Math.round(n/45)%8];  };  const uvLbl = u => u<3?'Низак':u<6?'Умерен':u<8?'Висок':u<11?'Врло висок':'Екстреман';  const wcIcon = w => w<=1?'☀️':w<=3?'⛅':w<=48?'☁️':w<=67?'🌧️':w<=77?'❄️':w<=82?'🌦️':'⛈️';  const agroDot = (tmin,rain,wc) => tmin<0?'#f0876a':(wc>=60||rain>10)?'#d4a655':'#6fcf6f';  const badge = (id, cls, label) => { const el=document.getElementById(id); if(el){el.className=`al-sbadge ${cls}`;el.textContent=label;} };  const setHtml = (id,html) => { const el=document.getElementById(id); if(el) el.innerHTML=html; };  const setTxt  = (id,t) => { const el=document.getElementById(id); if(el) el.textContent=t; };  const deepGet = (obj, path) => {    try{      return String(path).split('.').reduce((acc, key) => (acc != null ? acc[key] : undefined), obj);    }catch(e){ return undefined; }  };  const pick = (obj, paths) => {    for(const p of paths){      const v = deepGet(obj, p);      if(v !== undefined && v !== null && v !== '') return v;    }    return null;  };
+
+  function toLocalTs(ts){    if(ts == null || ts === '') return null;    if(typeof ts === 'number'){      const ms = ts < 1e12 ? ts * 1000 : ts;      return new Date(ms);    }    if(/^\d+$/.test(String(ts).trim())){      const n = Number(ts);      return new Date(n < 1e12 ? n * 1000 : n);    }    const d = new Date(ts);    return isNaN(d.getTime()) ? null : d;  }
+
+  function formatDateTime(dt){    if(!(dt instanceof Date) || isNaN(dt.getTime())) return '';    return dt.toLocaleString('sr-RS', {      day:'2-digit', month:'2-digit', year:'numeric',      hour:'2-digit', minute:'2-digit'    });  }
+
+  async function fetchJsonWithTimeout(url, timeoutMs){
+    const ctrl = new AbortController();
+    const timer = setTimeout(() => ctrl.abort(), timeoutMs || 3500);
+    try{
+      const res = await fetch(url, { cache:'default', credentials:'same-origin', signal: ctrl.signal });
+      if(!res.ok) return null;
+      return await res.json();
+    }catch(e){
+      return null;
+    }finally{
+      clearTimeout(timer);
+    }
+  }
+
+  async function fetchJsonFirst(urls, validator){
+    for(const url of urls){
+      const json = await fetchJsonWithTimeout(url, 3500);
+      if(!json) continue;
+      if(!validator || validator(json)) return { url, json };
+    }
+    return null;
+  }
+
+  function hasLiveValues(d){    return pick(d, [      'temp_out','tempOut','temperature','temp','values.temp','values.temperature','current.temp',      'hum_out','humOut','humidity','values.humidity','current.humidity',      'wind_speed_avg','windSpeed','wind','values.wind_speed','current.wind_speed'    ]) != null;  }
+
+  function normalizeLive(d){    const temp = num(pick(d, ['temp_out','tempOut','temperature','temp','values.temp','values.temperature','values.temp_out','current.temp','current.temperature']));    const hum  = num(pick(d, ['hum_out','humOut','humidity','hum','values.humidity','values.hum','current.humidity']));    const wind = num(pick(d, ['wind_speed_avg','windSpeed','wind','values.wind_speed','values.wind_speed_avg','current.wind_speed']));    const gust = num(pick(d, ['wind_gust','windGust','values.wind_gust','current.wind_gust']));    const wdir = num(pick(d, ['wind_dir','windDir','values.wind_dir','current.wind_dir']));    const bar  = num(pick(d, ['bar','pressure','pressure_hpa','values.pressure_hpa','values.bar','current.pressure_hpa']));    const rainDay = num(pick(d, ['rain_day','rainDay','rain_24h','rainfall_24h','values.rain_day','values.rain_24h','current.rain_day']));    const rainRate = num(pick(d, ['rain_rate','rainRate','values.rain_rate','current.rain_rate']));    const dew  = num(pick(d, ['dew_point','dewPoint','values.dew_point','current.dew_point']));    const uv   = num(pick(d, ['uv','uv_index','values.uv_index','values.uv','current.uv_index']));    const tsRaw = pick(d, ['updated_epoch','received_at','date_time','dateTime','ts','timestamp','observed_at','updated_at','time','current.timestamp']);    const tsDate = toLocalTs(tsRaw);
+
+    return { temp, hum, wind, gust, wdir, bar, rainDay, rainRate, dew, uv, tsRaw, tsDate, raw:d };  }
+
+  function renderLive(live){    setHtml('m-temp', live.temp!=null ? `${f(live.temp)}<span>°C</span>` : '—');    setTxt('m-temp-sub', live.temp!=null ? (live.temp<0?'❄️ Испод нуле':live.temp<5?'⚠️ Близу нуле':'') : '');
+
+    setHtml('m-hum', live.hum!=null ? `${f(live.hum,0)}<span>%</span>` : '—');    setTxt('m-hum-sub', live.hum!=null && live.hum>=75 ? 'Висока влажност' : '');
+
+    setHtml('m-wind', live.wind!=null ? `${f(live.wind,1)}<span>km/h</span>` : '—');    setTxt('m-wind-sub', [dirStr(live.wdir), live.gust!=null?`налет ${f(live.gust,1)} km/h`:'' ].filter(Boolean).join(' '));
+
+    setHtml('m-bar', live.bar!=null ? `${f(live.bar,0)}<span>hPa</span>` : '—');    setHtml('m-rain', live.rainDay!=null ? `${f(live.rainDay,1)}<span>mm</span>` : '—');    setHtml('m-dew', live.dew!=null ? `${f(live.dew,1)}<span>°C</span>` : '—');    setHtml('m-uv', live.uv!=null ? `${f(live.uv,0)}` : '—');
+
+    if(live.dew!=null && live.temp!=null){      const diff = live.temp - live.dew;      setTxt('m-dew-sub', diff < 2 ? '⚠️ Ризик кондензације' : `разл. ${f(diff,1)}°`);    }    setTxt('m-uv-sub', live.uv!=null ? uvLbl(live.uv) : '');
+
+    if(live.tsDate){      setTxt('al-updated', `Последње мерење: ${formatDateTime(live.tsDate)}`);    }else if(live.tsRaw){      setTxt('al-updated', `Последње мерење: ${live.tsRaw}`);    }else{      setTxt('al-updated', 'Последње мерење: тренутно недоступно');    }
+
+    /* статуси */    const now = new Date();    const month = now.getMonth(); // 0=јан    const beforePotatoSeason = month < 4; // јан–апр    const beforeMowingSeason = month < 5; // јан–мај
+
+    if(live.temp!=null){      if(live.temp < 0){        badge('st-frost','b-warn','❄️ Активан мраз');        setTxt('st-frost-p', `Температура ${f(live.temp)}°C — заштита осетљивих усева је неопходна.`);      }else if(live.temp < 4){        badge('st-frost','b-watch','⚠️ Ризик мраза');        setTxt('st-frost-p', `${f(live.temp)}°C — пратити јутарњи развој и тачку росе.`);      }else{        badge('st-frost','b-ok','✓ Без ризика');        setTxt('st-frost-p', `Тренутно ${f(live.temp)}°C — услови нису критични.`);      }    }
+
+    if(beforePotatoSeason){      badge('st-blight','b-watch','⏳ Није сезона');      setTxt('st-blight-p', 'Кромпир још није посађен или је тек у раној фази — ризик од пламењаче сада није оперативан.');    }else if(live.temp!=null && live.hum!=null){      if(live.temp>=10 && live.temp<=25 && live.hum>=75){        badge('st-blight','b-watch','⚠️ Праћење');        setTxt('st-blight-p', `T=${f(live.temp)}°C, RH=${f(live.hum,0)}% — услови су повољни за праћење пламењаче.`);      }else{        badge('st-blight','b-ok','✓ Низак ризик');        setTxt('st-blight-p', 'Тренутни услови нису у критичном опсегу.');      }    }
+
+    if(beforeMowingSeason){      badge('st-mow','b-watch','⏳ Није време');      setTxt('st-mow-p', 'Ливаде се на Рајцу по правилу не косе пре јуна и јула — ово је само информативна напомена.');    }else if(live.wind!=null && live.hum!=null){      if((live.rainDay!=null && live.rainDay>2) || live.hum>85){        badge('st-mow','b-warn','✗ Непогодно');        setTxt('st-mow-p', 'Влажно или кишовито — кошење и сушење треба одложити.');      }else if(live.wind>30){        badge('st-mow','b-watch','⚠️ Умерено');        setTxt('st-mow-p', 'Ветровито — могуће кошење, али проверити сушење.');      }else{        badge('st-mow','b-ok','✓ Погодно');        setTxt('st-mow-p', 'Услови одговарају кошењу и сушењу сена.');      }    }
+
+    if(live.uv!=null){      if(live.uv>=8){        badge('st-solar','b-warn','⚠️ Висок');        setTxt('st-solar-p', `UV ${f(live.uv,0)} — радове и третмане померити ка јутру/вечери.`);      }else if(live.uv>=5){        badge('st-solar','b-watch','◉ Умерен');        setTxt('st-solar-p', `UV ${f(live.uv,0)} — прилагодити рад у пољу.`);      }else{        badge('st-solar','b-ok','✓ Низак');        setTxt('st-solar-p', 'Соларни стрес тренутно није изражен.');      }    }
+
+    buildBulletin(live);  }
+
+  function buildBulletin(live){    const dt = new Date();    let s = `${dt.getDate()}. ${MON[dt.getMonth()]} ${dt.getFullYear()}. — `;    if(live && live.temp!=null){      s += `Тренутна температура на Рајцу износи ${f(live.temp)}°C`;      if(live.temp < 0) s += ', са активним мразом';      else if(live.temp < 5) s += ', са ризиком јутарњег мраза';      else if(live.temp > 28) s += ', уз изражен топлотни стрес';      s += '. ';    }    if(live && live.hum!=null){      s += `Релативна влажност ваздуха је ${f(live.hum,0)}%`;      if(live.hum >= 75 && live.temp!=null && live.temp>=10 && live.temp<=25){        s += ' — препоручује се праћење ризика од пламењаче';      }      s += '. ';    }    if(live && live.rainDay!=null){      s += live.rainDay > 0        ? `У последња 24 часа измерено је ${f(live.rainDay,1)} mm падавина. `        : 'У последња 24 часа нису измерене падавине. ';    }    if(live && live.wind!=null) s += `Ветар дува брзином ${f(live.wind,1)} km/h. `;    if(live && live.uv!=null) s += `UV индекс је ${f(live.uv,0)} (${uvLbl(live.uv)}). `;    s += 'За детаљну процену користите приказане агрометеоролошке податке и табелу дневне оцене на овој страници.';    setTxt('al-btext', s);  }
+
+  function normalizeHistoryPayload(raw){    if(Array.isArray(raw)) return raw;    if(Array.isArray(raw.points)) return raw.points;    if(Array.isArray(raw.data)) return raw.data;    if(Array.isArray(raw.hours)) return raw.hours;    if(Array.isArray(raw.observations)) return raw.observations;    if(raw.series && Array.isArray(raw.series)) return raw.series;    return [];  }
+
+  function historyPointToValue(point, prevPoint){    const mm = num(pick(point, ['rain_mm','rain','rain_1h','precipitation','precip_mm','hourly_rain','values.rain_mm','values.precipitation']));    if(mm != null) return mm;
+
+    const rate = num(pick(point, ['rain_rate','rainRate','values.rain_rate']));    if(rate != null) return rate;
+
+    const cum = num(pick(point, ['rain_total','rainTotal','rain_day','values.rain_total','values.rain_day']));    if(cum != null && prevPoint){      const prevCum = num(pick(prevPoint, ['rain_total','rainTotal','rain_day','values.rain_total','values.rain_day']));      if(prevCum != null){        const delta = cum - prevCum;        return delta >= 0 ? delta : 0;      }    }    return null;  }
+
+  function normalizeRainSeries(raw, live){
+    const arr = normalizeHistoryPayload(raw);
+    const rows = arr.map((p, i) => {
+      const dt = toLocalTs(pick(p, ['ts','timestamp','time','date_time','dateTime','datetime','observed_at','updated_at']));
+      return { raw:p, dt, idx:i };
+    }).filter(r => r.dt instanceof Date && !isNaN(r.dt.getTime()))
+      .sort((a,b) => a.dt - b.dt);
+
+    if(rows.length){
+      const grouped = new Map();
+      for(let i=0;i<rows.length;i++){
+        const r = rows[i];
+        const v = historyPointToValue(r.raw, i>0 ? rows[i-1].raw : null);
+        const bucketDate = new Date(r.dt);
+        const mins = bucketDate.getMinutes();
+        bucketDate.setMinutes(Math.floor(mins / 15) * 15, 0, 0);
+        const key = bucketDate.getTime();
+        const prev = grouped.get(key) || { dt: bucketDate, value: 0 };
+        prev.value += v == null ? 0 : Math.max(0, v);
+        grouped.set(key, prev);
+      }
+
+      const out = Array.from(grouped.values())
+        .sort((a,b) => a.dt - b.dt)
+        .slice(-48)
+        .map((item, idx, arr2) => {
+          const label = (idx === 0 || idx === arr2.length - 1 || item.dt.getMinutes() === 0)
+            ? item.dt.toLocaleTimeString('sr-RS', { hour:'2-digit', minute:'2-digit' })
+            : '';
+          return { label, value: item.value, dt: item.dt };
+        });
+
+      const sum = out.reduce((s, item) => s + (num(item.value) || 0), 0);
+      if(sum > 0 || (live && ((num(live.rainRate) || 0) > 0 || (num(live.rainDay) || 0) > 0))){
+        return out;
+      }
+    }
+
+    const liveRainDay = num(live && live.rainDay);
+    if(liveRainDay != null && liveRainDay > 0){
+      const now = (live && live.tsDate instanceof Date && !isNaN(live.tsDate.getTime())) ? live.tsDate : new Date();
+      return [{
+        label: now.toLocaleTimeString('sr-RS', { hour:'2-digit', minute:'2-digit' }),
+        value: liveRainDay,
+        dt: now,
+        fallback: true,
+        mode: 'day'
+      }];
+    }
+
+    const liveRainRate = num(live && live.rainRate);
+    if(liveRainRate != null && liveRainRate > 0){
+      const now = (live && live.tsDate instanceof Date && !isNaN(live.tsDate.getTime())) ? live.tsDate : new Date();
+      return [{
+        label: now.toLocaleTimeString('sr-RS', { hour:'2-digit', minute:'2-digit' }),
+        value: liveRainRate,
+        dt: now,
+        fallback: true,
+        mode: 'rate'
+      }];
+    }
+
+    return [];
+  }
+  function renderRainPending(){
+    const wrap = document.getElementById('rain-bars');
+    const meta = document.getElementById('rain-meta');
+    if(wrap){
+      wrap.innerHTML = '<div class="rain-empty">Подаци о падавинама са метео станице још нису доступни. Графикон ће се аутоматски појавити након првих мерења.</div>';
+    }
+    if(meta){
+      meta.textContent = 'Чекају се прва мерења са метео станице';
+    }
+  }
+
+  function renderRainBars(series){    const wrap = document.getElementById('rain-bars');    const meta = document.getElementById('rain-meta');    if(!wrap) return;
+
+    if(!series.length){      wrap.innerHTML = '<div class="rain-empty">Подаци о часовним падавинама тренутно нису доступни.</div>';      if(meta) meta.textContent = 'Последњих 12 часова · подаци нису пронађени';      return;    }
+
+    const max = Math.max(...series.map(s => num(s.value) || 0), 0.2);    wrap.innerHTML = series.map(s => {      const v = num(s.value) || 0;      const h = v <= 0 ? 0 : Math.max(8, Math.round((v / max) * 100));      return `<div class="rain-col">        <div class="rain-val">${v > 0 ? f(v,1)+' mm' : '&nbsp;'}</div>        <div class="rain-bar-shell"><div class="rain-bar" style="height:${h}%;${v<=0?'opacity:0;box-shadow:none;':''}"></div></div>        <div class="rain-lbl">${s.label}</div>      </div>`;    }).join('');
+
+    if(meta){      if(series[0].fallback && series[0].mode === 'rate'){        meta.textContent = 'Приказан је тренутни интензитет падавина (mm/h), јер часовна историја није пронађена';      }else if(series[0].fallback && series[0].mode === 'day'){        meta.textContent = 'Приказане су укупне дневне падавине, јер часовна историја није пронађена';      }else{        meta.textContent = 'Последњих 12 часова · корак 15 минута · метео станица';      }    }  }
+  async function loadRainChart(live){
+    const hit = await fetchJsonFirst(RAIN_HISTORY_URLS, raw => normalizeHistoryPayload(raw).length > 0);
+    const series = normalizeRainSeries(hit ? hit.json : [], live);
+
+    if(series.length){
+      renderRainBars(series);
+      return;
+    }
+
+    renderRainPending();
+  }
+  let gddAcc = 0;
+
+  async function loadForecast(){
+    try{
+      const url = 'https://api.open-meteo.com/v1/forecast?latitude=44.14&longitude=20.22&daily=temperature_2m_max,temperature_2m_min,precipitation_sum,weathercode&forecast_days=7&timezone=Europe%2FBelgrade';
+      const r = await fetch(url, { cache:'default' });
+      const d = await r.json();
+      const today = new Date().toISOString().slice(0,10);
+      gddAcc = 0;
+
+      const days = d.daily.time.map((date,i) => {
+        const dt   = new Date(date+'T12:00:00');
+        const tmax = num(d.daily.temperature_2m_max[i]);
+        const tmin = num(d.daily.temperature_2m_min[i]);
+        const prec = num(d.daily.precipitation_sum[i]) || 0;
+        const wc   = num(d.daily.weathercode[i]) || 0;
+        gddAcc += Math.max(0, (((tmax||0)+(tmin||0))/2)-10);
+
+        return {
+          date,
+          dow: date===today ? 'Данас' : DOW[dt.getDay()],
+          icon: wcIcon(wc),
+          tmax, tmin, prec, wc,
+          rainy: prec > 0.2
+        };
+      });
+
+      window.__rajacForecastDays = days;
+
+      const html = days.map(day => `
+        <div class="af-day${day.date===today?' today':''}${day.rainy?' rainy':''}">
+          <div class="af-dow">${day.dow}</div>
+          <div class="af-icon">${day.icon}</div>
+          <div class="af-tmax">${f(day.tmax,0)}°</div>
+          <div class="af-tmin">${f(day.tmin,0)}°</div>
+          ${day.prec>0.2 ? `<div class="af-rain">${f(day.prec,1)} mm</div>` : '<div class="af-rain">&nbsp;</div>'}
+          <div class="af-dot" style="background:${agroDot(day.tmin||0, day.prec||0, day.wc||0)};margin:0 auto" title="Агро оцена"></div>
+        </div>
+      `).join('');
+      setHtml('al-forecast', html);
+      setHtml('al-bottom-days', html);
+      setHtml('m-gdd', `${Math.round(gddAcc)}<span>°C·d</span>`);
+
+      const tomorrow = days[1];
+      if(tomorrow && tomorrow.prec > 0.2){
+        setTxt('forecast-cta-text', `Сутра се очекује око ${f(tomorrow.prec,1)} mm падавина. Погледај приказану 7-дневну прогнозу и дневну оцену услова.`);
+      }else{
+        setTxt('forecast-cta-text', 'Преглед прогнозе за наредних 7 дана са дневним оценама услова и очекиваним падавинама приказан је испод.');
+      }
+
+      const bulletin = document.getElementById('al-btext');
+      if(bulletin && /Учитавање/i.test(bulletin.textContent || '')){
+        bulletin.textContent = 'Агрометеоролошки билтен ће се аутоматски појавити након првих мерења са метео станице.';
+      }
+    }catch(e){
+      const errHtml = '<div class="rain-empty" style="grid-column:1/-1">Прогноза тренутно није доступна.</div>';
+      setHtml('al-forecast', errHtml);
+      setHtml('al-bottom-days', errHtml);
+
+      const bulletin = document.getElementById('al-btext');
+      if(bulletin && /Учитавање/i.test(bulletin.textContent || '')){
+        bulletin.textContent = 'Агрометеоролошки билтен тренутно није доступан.';
+      }
+    }
+  }
+
+  async function loadLive(){
+    const links = document.querySelectorAll('#forecast-7d-link, #forecast-7d-bottom-link');
+    links.forEach(a => a.setAttribute('href', FORECAST_DETAIL_URL));
+
+    try{
+      const hit = await fetchJsonFirst(LIVE_URLS, hasLiveValues);
+      const live = hit ? normalizeLive(hit.json) : normalizeLive({});
+      renderLive(live);
+      await loadRainChart(live);
+      if(!hit){
+        const bulletin = document.getElementById('al-btext');
+        if(bulletin && /аутоматски појавити|Учитавање/i.test(bulletin.textContent || '')){
+          bulletin.textContent = 'Билтен ће бити ажуриран чим AMS API врати валидан пакет података.';
+        }
+      }
+    }catch(e){
+      const bulletin = document.getElementById('al-btext');
+      if(bulletin && /аутоматски појавити|Учитавање/i.test(bulletin.textContent || '')){
+        bulletin.textContent = 'Билтен ће бити ажуриран чим AMS API врати валидан пакет података.';
+      }
+      renderRainPending();
+    }
+  }
+
+  loadForecast();
+  loadLive();
+})();</script>
+<style id="rajac-agroday-css">.agroday-sec{background:#0f170f;color:#e8f0e8;padding:clamp(42px,5vw,72px) 0 clamp(58px,7vw,96px);border-top:1px solid rgba(255,255,255,.06)}.agroday-head{margin-bottom:24px}.agroday-head h2{color:#fff;font-family:'Cormorant Garamond',Georgia,serif;font-weight:300;font-size:clamp(1.85rem,3vw,2.7rem);line-height:1.02;letter-spacing:-.025em;margin:8px 0 10px}.agroday-head p{color:rgba(232,240,232,.64);font:500 .97rem/1.72 'Inter',sans-serif;max-width:860px;margin:0}.agroday-head p a{color:#7ec47e;border-bottom:1px solid rgba(126,196,126,.42)}.agroday-table-wrap{overflow-x:auto;border:1px solid rgba(255,255,255,.08);border-radius:22px;background:rgba(255,255,255,.03);-webkit-overflow-scrolling:touch}.agroday-table{width:100%;border-collapse:collapse;min-width:720px}.agroday-table th,.agroday-table td{padding:13px 15px;text-align:left;border-bottom:1px solid rgba(255,255,255,.06);white-space:nowrap}.agroday-table thead th{position:sticky;top:0;background:#16231a;color:rgba(232,240,232,.66);font:700 .72rem/1 'Inter',sans-serif;letter-spacing:.06em;text-transform:uppercase;z-index:1}.agroday-table tbody td{color:#e8f0e8;font:500 .9rem/1.4 'Inter',sans-serif}.agroday-table tbody tr:last-child td{border-bottom:none}.agroday-table tbody tr.is-today td{background:rgba(58,102,64,.18)}.agroday-table tbody tr:hover td{background:rgba(255,255,255,.045)}.agroday-tval{font-weight:700;color:#fff}.agroday-rain{color:#72b2e8;font-weight:600}.agroday-dash{color:rgba(232,240,232,.4)}.agroday-badge{display:inline-flex;align-items:center;gap:5px;min-height:26px;padding:0 11px;border-radius:999px;font:700 .8rem/1 'Inter',sans-serif;white-space:nowrap}.agroday-badge.b-ok{background:rgba(80,180,80,.15);color:#6fcf6f;border:1px solid rgba(80,180,80,.22)}.agroday-badge.b-watch{background:rgba(212,166,85,.14);color:#d4a655;border:1px solid rgba(212,166,85,.22)}.agroday-badge.b-warn{background:rgba(230,100,60,.14);color:#f0876a;border:1px solid rgba(230,100,60,.22)}.agroday-loading{color:rgba(232,240,232,.5);text-align:center;padding:26px}.agroday-foot{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-top:14px;flex-wrap:wrap}.agroday-foot #agrodayUpdated{color:rgba(232,240,232,.4);font:500 .8rem/1.5 'Inter',sans-serif}.agroday-link{color:#d4a655;font:700 .84rem/1 'Inter',sans-serif;border-bottom:1px solid rgba(212,166,85,.35);padding-bottom:2px;white-space:nowrap}.agroday-link:hover{color:#fff;border-color:rgba(255,255,255,.4)}@media(max-width:640px){.agroday-table{min-width:640px}}</style><div class="agroday-sec" id="agro-ocena"><div class="w"><div class="agroday-head"><div class="al-label">Аутоматска дневна оцена</div><h2>Агрометеоролошка оцена по данима</h2><p>Процена за наредних 7 дана аутоматски се освежава сваког дана. Извор је Open-Meteo прогноза за Рајац (44.14°N, 20.22°E) — не користи метео станицу, већ прогностички модел.</p></div><div class="agroday-table-wrap"><table class="agroday-table"><thead><tr><th>Дан</th><th>Датум</th><th>Т мин/макс</th><th>Падавине</th><th>❄️ Мраз</th><th>🌾 Кошење</th><th>🥔 Пламењача</th><th>🍎 Воће</th></tr></thead><tbody id="agrodayBody"><tr><td colspan="8" class="agroday-loading">Учитавање прогнозе…</td></tr></tbody></table></div><div class="agroday-foot"><span id="agrodayUpdated">—</span></div></div></div>
+<script>(function(){
+  const DOW=['Нед','Пон','Уто','Сре','Чет','Пет','Суб'];
+  const f=(v,d=0)=>(v==null||v===''||Number.isNaN(Number(v)))?'—':Number(v).toFixed(d);
+  function badge(cls,txt){return '<span class="agroday-badge '+cls+'">'+txt+'</span>';}
+  function frost(tmin){ if(tmin==null) return badge('b-watch','—'); if(tmin<0) return badge('b-warn','❄️ Мраз'); if(tmin<3) return badge('b-watch','⚠️ Ризик'); return badge('b-ok','✓ Нема'); }
+  function mowing(tmax,prec,wc){ if((prec!=null&&prec>2)||wc>=61) return badge('b-warn','✗ Непогодно'); if(prec!=null&&prec>0.3) return badge('b-watch','◴ Умерено'); if(tmax!=null&&tmax>=15) return badge('b-ok','✓ Погодно'); return badge('b-watch','◴ Свежо'); }
+  function blight(hh){ if(hh>=11) return badge('b-warn','⚠ Висок'); if(hh>=6) return badge('b-watch','◴ Повишен'); return badge('b-ok','✓ Низак'); }
+  function fruit(tmin,tmax){ if(tmin!=null&&tmin<0) return badge('b-warn','❄️ Мраз'); if(tmin!=null&&tmin<2) return badge('b-watch','⚠️ Ризик мраза'); if(tmax!=null&&tmax>30) return badge('b-watch','☀️ Топл. стрес'); return badge('b-ok','✓ Повољно'); }
+  const URL='https://api.open-meteo.com/v1/forecast?latitude=44.14&longitude=20.22&daily=temperature_2m_max,temperature_2m_min,precipitation_sum,weathercode&hourly=temperature_2m,relative_humidity_2m&forecast_days=7&timezone=Europe%2FBelgrade';
+  function blightHours(date,hourly){
+    let c=0; const t=hourly.temperature_2m, rh=hourly.relative_humidity_2m, time=hourly.time;
+    if(!time||!t||!rh) return 0;
+    for(let i=0;i<time.length;i++){ if(String(time[i]).slice(0,10)===date){ const T=Number(t[i]),H=Number(rh[i]); if(T>=10&&T<=25&&H>=75) c++; } }
+    return c;
+  }
+  async function load(){
+    const body=document.getElementById('agrodayBody');
+    if(!body) return;
+    try{
+      const r=await fetch(URL,{cache:'default'});
+      const d=await r.json();
+      const today=new Date().toISOString().slice(0,10);
+      const hourly=d.hourly||{};
+      const rows=(d.daily.time||[]).map((date,i)=>{
+        const dt=new Date(date+'T12:00:00');
+        const tmax=Number(d.daily.temperature_2m_max[i]);
+        const tmin=Number(d.daily.temperature_2m_min[i]);
+        const prec=Number(d.daily.precipitation_sum[i])||0;
+        const wc=Number(d.daily.weathercode[i])||0;
+        const bh=blightHours(date,hourly);
+        const isT=date===today;
+        return '<tr class="'+(isT?'is-today':'')+'">'+
+          '<td>'+(isT?'Данас':DOW[dt.getDay()])+'</td>'+
+          '<td>'+dt.getDate()+'.'+(dt.getMonth()+1)+'.</td>'+
+          '<td><span class="agroday-tval">'+f(tmin)+'° / '+f(tmax)+'°</span></td>'+
+          '<td>'+(prec>0.2?'<span class="agroday-rain">'+f(prec,1)+' mm</span>':'<span class="agroday-dash">—</span>')+'</td>'+
+          '<td>'+frost(tmin)+'</td>'+
+          '<td>'+mowing(tmax,prec,wc)+'</td>'+
+          '<td>'+blight(bh)+'</td>'+
+          '<td>'+fruit(tmin,tmax)+'</td>'+
+        '</tr>';
+      }).join('');
+      body.innerHTML=rows||'<tr><td colspan="8" class="agroday-loading">Нема података.</td></tr>';
+      const u=document.getElementById('agrodayUpdated');
+      if(u) u.textContent='Последње освежавање: '+new Date().toLocaleString('sr-RS',{day:'2-digit',month:'2-digit',year:'numeric',hour:'2-digit',minute:'2-digit'});
+    }catch(e){
+      body.innerHTML='<tr><td colspan="8" class="agroday-loading">Прогноза тренутно није доступна.</td></tr>';
+    }
+  }
+  load();
+})();</script>
+<style id="rajac-parcel-img-css">.parcelimg-sec{background:#0f170f;color:#e8f0e8;padding:clamp(42px,5vw,72px) 0 clamp(58px,7vw,96px);border-top:1px solid rgba(255,255,255,.06)}.parcelimg-head{margin-bottom:22px}.parcelimg-head h2{color:#fff;font-family:'Cormorant Garamond',Georgia,serif;font-weight:300;font-size:clamp(1.85rem,3vw,2.7rem);line-height:1.02;letter-spacing:-.025em;margin:8px 0 10px}.parcelimg-head p{color:rgba(232,240,232,.64);font:500 .97rem/1.72 'Inter',sans-serif;max-width:880px;margin:0}.parcelimg-head p a{color:#7ec47e;border-bottom:1px solid rgba(126,196,126,.42)}.parcelimg-fig{margin:0;border:1px solid rgba(255,255,255,.08);border-radius:22px;overflow:hidden;background:rgba(255,255,255,.03)}.parcelimg-fig img{display:block;width:100%;height:auto}.parcelimg-foot{display:flex;justify-content:flex-end;gap:12px;margin-top:14px;flex-wrap:wrap}.parcelimg-link{color:#d4a655;font:700 .84rem/1 'Inter',sans-serif;border-bottom:1px solid rgba(212,166,85,.35);padding-bottom:2px}.parcelimg-link:hover{color:#fff;border-color:rgba(255,255,255,.4)}</style><div class="parcelimg-sec" id="parcele"><div class="w"><div class="parcelimg-head"><div class="al-label">Парцела власника</div><h2>Индекси по катастарским парцелама</h2><p>Преглед Copernicus индекса (NDVI, NDMI, RECI, VCI) по катастарским парцелама насеља Ба.</p></div><figure class="parcelimg-fig"><img src="https://piorajac.rs/wp-content/uploads/2026/06/indeksparcela.jpg" alt="Преглед Copernicus индекса по катастарским парцелама насеља Ба — ПИО Рајац" loading="lazy" decoding="async"></figure></div></div></section></section><div class="divider"></div><section class="section closing-wrap" id="zakljucak"><div class="shell"><div class="closing-box"><div class="eyebrow">Закључак</div><h2>Подршка пољопривреди на Рајцу има смисла тек када <em>подаци постану употребљиви</em></h2><p>Комбинација сателитских индекса, локалне агроклиме, прогностике и прегледа катастарских парцела даје пољопривреди на Рајцу алат који није само технички приказ, већ основ за правовремено реаговање, сигурније планирање и одрживије управљање простором.</p></div></div></section></main>
+<script>
+(function(){
+  const progress = document.getElementById('rajac-progress-bar');
+  const update = () => {
+    const scrollTop = window.scrollY || document.documentElement.scrollTop;
+    const max = document.documentElement.scrollHeight - window.innerHeight;
+    const pct = max > 0 ? (scrollTop / max) * 100 : 0;
+    progress.style.width = pct + '%';
+  };
+  window.addEventListener('scroll', update, {passive:true});
+  window.addEventListener('resize', update);
+  update();
+})();
+</script>
+<style id="rajac-program-font-unify-v28">body.rajac-static-output .rjai2,body.rajac-static-output .rj-page--sky,body.rajac-static-output .rj-page--smart,body.rajac-static-output #rajac-agro-page,body.rajac-static-output #rajac-agro-page .rp-agro{--rajac-program-serif:"Cormorant Garamond","Crimson Pro","Times New Roman",Georgia,serif;--rajac-program-sans:"Outfit","Inter",system-ui,-apple-system,"Segoe UI",sans-serif;--rajac-program-mono:"DM Mono","SFMono-Regular",Consolas,monospace;font-family:var(--rajac-program-sans)!important;font-weight:300!important;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}body.rajac-static-output .rjai2 h1,body.rajac-static-output .rjai2 h2,body.rajac-static-output .rjai2 .rjai2-h1,body.rajac-static-output .rjai2 .rjai2-h2,body.rajac-static-output .rj-page--sky h1,body.rajac-static-output .rj-page--sky h2,body.rajac-static-output .rj-page--smart h1,body.rajac-static-output .rj-page--smart h2,body.rajac-static-output #rajac-agro-page .hero h1,body.rajac-static-output #rajac-agro-page .s-title,body.rajac-static-output #rajac-agro-page .intro-copy h2,body.rajac-static-output #rajac-agro-page .manage-copy h2,body.rajac-static-output #rajac-agro-page .owner-head h2,body.rajac-static-output #rajac-agro-page .al-head h2,body.rajac-static-output #rajac-agro-page .closing-box h2{font-family:var(--rajac-program-serif)!important;font-weight:300!important;font-variation-settings:"wght" 300!important;letter-spacing:-.04em!important}body.rajac-static-output .rjai2 h3,body.rajac-static-output .rjai2 h4,body.rajac-static-output .rj-page--sky h3,body.rajac-static-output .rj-page--sky h4,body.rajac-static-output .rj-page--smart h3,body.rajac-static-output .rj-page--smart h4,body.rajac-static-output #rajac-agro-page h3,body.rajac-static-output #rajac-agro-page h4,body.rajac-static-output #rajac-agro-page .owner-chart h3,body.rajac-static-output #rajac-agro-page .owner-bulletin h3,body.rajac-static-output #rajac-agro-page .owner-map-card h3,body.rajac-static-output #rajac-agro-page .owner-alerts h3,body.rajac-static-output #rajac-agro-page .al-rain-head h3,body.rajac-static-output #rajac-agro-page .al-bottom-top h3{font-family:var(--rajac-program-serif)!important;font-weight:300!important;font-variation-settings:"wght" 300!important;letter-spacing:-.025em!important}body.rajac-static-output .rjai2 p,body.rajac-static-output .rjai2 li,body.rajac-static-output .rjai2 span,body.rajac-static-output .rjai2 a,body.rajac-static-output .rj-page--sky p,body.rajac-static-output .rj-page--sky li,body.rajac-static-output .rj-page--sky span,body.rajac-static-output .rj-page--sky a,body.rajac-static-output .rj-page--smart p,body.rajac-static-output .rj-page--smart li,body.rajac-static-output .rj-page--smart span,body.rajac-static-output .rj-page--smart a,body.rajac-static-output #rajac-agro-page p,body.rajac-static-output #rajac-agro-page li,body.rajac-static-output #rajac-agro-page span,body.rajac-static-output #rajac-agro-page a,body.rajac-static-output #rajac-agro-page label,body.rajac-static-output #rajac-agro-page button,body.rajac-static-output #rajac-agro-page input,body.rajac-static-output #rajac-agro-page select,body.rajac-static-output .rjai2 .rjai2-lead,body.rajac-static-output .rj-page--sky .rj-lead,body.rajac-static-output .rj-page--smart .rj-lead,body.rajac-static-output #rajac-agro-page .hero-lead,body.rajac-static-output #rajac-agro-page .s-desc{font-family:var(--rajac-program-sans)!important;font-weight:300!important}body.rajac-static-output .rjai2 strong,body.rajac-static-output .rjai2 b,body.rajac-static-output .rj-page--sky strong,body.rajac-static-output .rj-page--sky b,body.rajac-static-output .rj-page--smart strong,body.rajac-static-output .rj-page--smart b,body.rajac-static-output #rajac-agro-page strong,body.rajac-static-output #rajac-agro-page b,body.rajac-static-output .rjai2 .rjai2-chip,body.rajac-static-output .rj-page--sky .rj-pill,body.rajac-static-output .rj-page--sky .rj-tag,body.rajac-static-output .rj-page--smart .rj-pill,body.rajac-static-output .rj-page--smart .rj-tag,body.rajac-static-output #rajac-agro-page .hero-pill,body.rajac-static-output #rajac-agro-page .band-tag,body.rajac-static-output #rajac-agro-page .al-cp,body.rajac-static-output #rajac-agro-page .owner-pill{font-weight:400!important}body.rajac-static-output .rjai2 .rjai2-kicker,body.rajac-static-output .rjai2 .rjai2-mini,body.rajac-static-output .rj-page--sky .rj-eyebrow,body.rajac-static-output .rj-page--smart .rj-eyebrow,body.rajac-static-output #rajac-agro-page .hero-label,body.rajac-static-output #rajac-agro-page .kicker,body.rajac-static-output #rajac-agro-page .al-label,body.rajac-static-output #rajac-agro-page .owner-mini,body.rajac-static-output #rajac-agro-page .hdl,body.rajac-static-output #rajac-agro-page .al-mlabel,body.rajac-static-output #rajac-agro-page .hero-stat span{font-family:var(--rajac-program-mono)!important;font-weight:400!important;letter-spacing:.16em!important}body.rajac-static-output #rajac-agro-page .book-nav{display:none!important}</style><style id="rajac-v35-unify-agro">body.rajac-static-output #rajac-agro-page section.hero{height:clamp(500px,60vh,620px)!important;max-height:620px!important;min-height:clamp(500px,60vh,620px)!important;align-items:center!important}body.rajac-static-output #rajac-agro-page .hero-body{padding:72px 0 44px!important}body.rajac-static-output #rajac-agro-page .hero h1{font-size:clamp(2.85rem,5.1vw,5.6rem)!important;line-height:.96!important;letter-spacing:-.04em!important;font-weight:300!important;text-shadow:0 2px 22px rgba(0,0,0,.28)!important;margin-bottom:16px!important}body.rajac-static-output #rajac-agro-page .hero-lead{font-size:clamp(.93rem,1.02vw,1rem)!important;line-height:1.68!important;color:rgba(255,255,255,.92)!important;font-weight:300!important;max-width:700px!important;margin-bottom:0!important}body.rajac-static-output #rajac-agro-page .hero-eyebrow{color:#8fd09e!important;font-size:.66rem!important;letter-spacing:.20em!important;font-weight:400!important;opacity:1!important;animation:none!important;font-family:var(--rajac-program-mono)!important}body.rajac-static-output #rajac-agro-page .hero-overlay{background:linear-gradient(100deg,rgba(8,14,10,.90) 0%,rgba(8,14,10,.74) 34%,rgba(8,14,10,.40) 62%,rgba(8,14,10,.22) 100%),linear-gradient(180deg,rgba(0,0,0,.12),rgba(0,0,0,.46))!important}body.rajac-static-output #rajac-agro-page .s-title,body.rajac-static-output #rajac-agro-page .intro-copy h2,body.rajac-static-output #rajac-agro-page .manage-copy h2{font-size:clamp(2rem,3.2vw,3.4rem)!important;line-height:1!important;letter-spacing:-.035em!important;font-weight:300!important}body.rajac-static-output #rajac-agro-page .key-card h3,body.rajac-static-output #rajac-agro-page .insight-card h3,body.rajac-static-output #rajac-agro-page .g-card h3,body.rajac-static-output #rajac-agro-page .manage-copy h3,body.rajac-static-output #rajac-agro-page .side-card h3{font-size:clamp(1.38rem,1.9vw,1.9rem)!important;line-height:1.05!important;letter-spacing:-.025em!important;font-weight:300!important}body.rajac-static-output #rajac-agro-page .key-card p,body.rajac-static-output #rajac-agro-page .insight-card p,body.rajac-static-output #rajac-agro-page .g-card p,body.rajac-static-output #rajac-agro-page .manage-copy p{color:#3e4840!important;font-weight:300!important}body.rajac-static-output #rajac-agro-page .rp-agro .al-head p{color:rgba(232,240,232,.76)!important}body.rajac-static-output #rajac-agro-page .rp-agro .al-mlabel{color:rgba(232,240,232,.66)!important}body.rajac-static-output #rajac-agro-page .rp-agro .al-msub{color:rgba(232,240,232,.62)!important}body.rajac-static-output #rajac-agro-page .rp-agro .al-status p{color:rgba(232,240,232,.64)!important}body.rajac-static-output #rajac-agro-page .rp-agro .al-btext{color:rgba(232,240,232,.84)!important}body.rajac-static-output #rajac-agro-page .rp-agro .owner-status{color:rgba(232,240,232,.62)!important}body.rajac-static-output #rajac-agro-page .rp-agro .sl{color:rgba(255,255,255,.68)!important}body.rajac-static-output #rajac-agro-page .rp-agro .owner-head p{color:rgba(232,240,232,.72)!important}@media (max-width:980px){body.rajac-static-output #rajac-agro-page section.hero{height:auto!important;min-height:560px!important;max-height:none!important;align-items:flex-end!important}body.rajac-static-output #rajac-agro-page .hero-body{padding:104px 0 48px!important}}@media (max-width:640px){body.rajac-static-output #rajac-agro-page section.hero{min-height:auto!important}body.rajac-static-output #rajac-agro-page .hero-body{padding:88px 0 38px!important}body.rajac-static-output #rajac-agro-page .hero h1{font-size:clamp(2.15rem,13vw,3.45rem)!important;line-height:1!important}body.rajac-static-output #rajac-agro-page .hero-lead{font-size:.92rem!important;line-height:1.62!important}}</style><style id="rajac-program-final-unify-1406">body.rajac-static-output .rajac-static-common-menu.rajac-program-menu{position:relative!important;z-index:99999!important;width:100%!important;background:rgba(12,24,16,.96)!important;border-bottom:1px solid rgba(255,250,240,.14)!important;box-shadow:0 12px 34px rgba(0,0,0,.28)!important;backdrop-filter:blur(12px)!important;-webkit-backdrop-filter:blur(12px)!important;font-family:Outfit,Inter,system-ui,-apple-system,"Segoe UI",sans-serif!important}body.rajac-static-output .rajac-static-common-menu.rajac-program-menu,body.rajac-static-output .rajac-static-common-menu.rajac-program-menu *{box-sizing:border-box!important}body.rajac-static-output .rajac-static-common-menu.rajac-program-menu .rajac-static-common-menu__inner{width:min(1180px,calc(100% - 40px))!important;min-height:56px!important;margin:0 auto!important;display:flex!important;align-items:center!important;justify-content:space-between!important;gap:18px!important}body.rajac-static-output .rajac-static-common-menu.rajac-program-menu .rajac-static-common-menu__logo,body.rajac-static-output .rajac-static-common-menu.rajac-program-menu .rajac-static-common-menu__logo:link,body.rajac-static-output .rajac-static-common-menu.rajac-program-menu .rajac-static-common-menu__logo:visited{display:inline-flex!important;align-items:center!important;justify-content:center!important;min-height:38px!important;padding:0 16px!important;border-radius:999px!important;background:#243f2d!important;color:#fffaf0!important;text-decoration:none!important;font-weight:800!important;font-size:15px!important;letter-spacing:.01em!important;white-space:nowrap!important;opacity:1!important}body.rajac-static-output .rajac-static-common-menu.rajac-program-menu .rajac-static-common-menu__links{display:flex!important;align-items:center!important;justify-content:flex-end!important;gap:8px!important;flex-wrap:wrap!important}body.rajac-static-output .rajac-static-common-menu.rajac-program-menu .rajac-static-common-menu__link,body.rajac-static-output .rajac-static-common-menu.rajac-program-menu .rajac-static-common-menu__link:link,body.rajac-static-output .rajac-static-common-menu.rajac-program-menu .rajac-static-common-menu__link:visited{display:inline-flex!important;align-items:center!important;justify-content:center!important;min-height:38px!important;padding:0 14px!important;border-radius:0!important;border:0!important;background:transparent!important;color:rgba(255,250,240,.86)!important;text-decoration:none!important;text-transform:uppercase!important;font-size:13px!important;font-weight:800!important;line-height:1!important;letter-spacing:.08em!important;white-space:nowrap!important;opacity:1!important;text-shadow:0 1px 2px rgba(0,0,0,.38)!important}body.rajac-static-output .rajac-static-common-menu.rajac-program-menu .rajac-static-common-menu__link:hover,body.rajac-static-output .rajac-static-common-menu.rajac-program-menu .rajac-static-common-menu__link:focus{background:rgba(255,250,240,.10)!important;color:#fffaf0!important}body.rajac-static-output .rajac-static-common-menu.rajac-program-menu .rajac-static-common-menu__link.is-active,body.rajac-static-output .rajac-static-common-menu.rajac-program-menu .rajac-static-common-menu__link.is-active:link,body.rajac-static-output .rajac-static-common-menu.rajac-program-menu .rajac-static-common-menu__link.is-active:visited{background:#1f3527!important;color:#fffaf0!important;border-left:1px solid rgba(255,250,240,.10)!important;border-right:1px solid rgba(255,250,240,.10)!important;box-shadow:inset 0 -2px 0 rgba(212,182,90,.80)!important}body.rajac-static-output .rprog,body.rajac-static-output #rajac-agro-page{font-family:Outfit,Inter,system-ui,-apple-system,"Segoe UI",sans-serif!important}body.rajac-static-output .rprog-hero,body.rajac-static-output #rajac-agro-page section.hero{position:relative!important;height:620px!important;min-height:620px!important;max-height:620px!important;display:flex!important;align-items:flex-end!important;overflow:hidden!important;background:#08130e!important;border-radius:0 0 32px 32px!important;box-shadow:0 26px 70px rgba(12,18,14,.18)!important}body.rajac-static-output .rprog-hero-content{width:min(1180px,calc(100% - 40px))!important;padding:0 0 76px!important;margin:0 auto!important}body.rajac-static-output #rajac-agro-page .hero-inner{position:relative!important;z-index:2!important;width:100%!important;padding:0!important}body.rajac-static-output #rajac-agro-page .hero-body{width:min(1180px,calc(100% - 40px))!important;margin:0 auto!important;padding:0 0 76px!important}body.rajac-static-output .rprog-kicker,body.rajac-static-output #rajac-agro-page .hero-eyebrow{display:none!important}body.rajac-static-output .rprog-title,body.rajac-static-output #rajac-agro-page .hero h1{max-width:1120px!important;margin:0 0 18px!important;color:#fff!important;font-family:"Cormorant Garamond","Crimson Pro",Georgia,serif!important;font-size:clamp(3.35rem,5.55vw,6.15rem)!important;font-weight:300!important;line-height:.94!important;letter-spacing:-.045em!important;text-shadow:0 2px 22px rgba(0,0,0,.28)!important}body.rajac-static-output .rprog-title em,body.rajac-static-output #rajac-agro-page .hero h1 em{color:#fff!important;font-style:normal!important;font-weight:300!important}body.rajac-static-output .rprog-lead,body.rajac-static-output #rajac-agro-page .hero-lead{max-width:760px!important;margin:0!important;color:rgba(255,255,255,.86)!important;font-size:clamp(.98rem,1.12vw,1.08rem)!important;line-height:1.78!important;font-weight:300!important}body.rajac-static-output #rajac-agro-page .hero-media-wrap{position:absolute!important;inset:0!important;width:100%!important;height:100%!important;min-height:0!important;max-height:none!important;overflow:hidden!important;z-index:0!important}body.rajac-static-output #rajac-agro-page .hero-media,body.rajac-static-output .rprog-hero-media{position:absolute!important;inset:0!important;width:100%!important;height:100%!important;object-fit:cover!important;z-index:0!important}body.rajac-static-output #rajac-agro-page .hero-overlay{position:absolute!important;inset:0!important;z-index:1!important;background:linear-gradient(180deg,rgba(5,12,9,.12) 0%,rgba(5,12,9,.32) 45%,rgba(5,12,9,.84) 100%),linear-gradient(90deg,rgba(5,12,9,.76) 0%,rgba(5,12,9,.50) 40%,rgba(5,12,9,.18) 70%,rgba(5,12,9,.30) 100%)!important}body.rajac-static-output #rajac-agro-page .hero::before{display:none!important}body.rajac-static-output #rajac-agro-page .hero h1 br{display:none!important}@media (max-width:980px){body.rajac-static-output .rajac-static-common-menu.rajac-program-menu .rajac-static-common-menu__inner{width:min(100% - 24px,1180px)!important;flex-direction:column!important;align-items:center!important;justify-content:center!important;gap:8px!important;padding:10px 0!important}body.rajac-static-output .rajac-static-common-menu.rajac-program-menu .rajac-static-common-menu__links{width:100%!important;justify-content:flex-start!important;flex-wrap:nowrap!important;overflow-x:auto!important;padding-bottom:4px!important;-webkit-overflow-scrolling:touch!important}body.rajac-static-output .rajac-static-common-menu.rajac-program-menu .rajac-static-common-menu__link,body.rajac-static-output .rajac-static-common-menu.rajac-program-menu .rajac-static-common-menu__link:link,body.rajac-static-output .rajac-static-common-menu.rajac-program-menu .rajac-static-common-menu__link:visited{flex:0 0 auto!important;min-height:34px!important;padding:0 10px!important;font-size:12px!important;letter-spacing:.055em!important}body.rajac-static-output .rprog-hero,body.rajac-static-output #rajac-agro-page section.hero{height:560px!important;min-height:560px!important;max-height:560px!important}body.rajac-static-output .rprog-hero-content,body.rajac-static-output #rajac-agro-page .hero-body{padding-bottom:56px!important}body.rajac-static-output .rprog-title,body.rajac-static-output #rajac-agro-page .hero h1{font-size:clamp(2.8rem,9vw,5rem)!important}}@media (max-width:640px){body.rajac-static-output .rprog-hero,body.rajac-static-output #rajac-agro-page section.hero{height:500px!important;min-height:500px!important;max-height:500px!important;border-radius:0 0 24px 24px!important}body.rajac-static-output .rprog-hero-content,body.rajac-static-output #rajac-agro-page .hero-body{width:min(100% - 28px,1180px)!important;padding-bottom:38px!important}body.rajac-static-output .rprog-title,body.rajac-static-output #rajac-agro-page .hero h1{font-size:clamp(2.35rem,12.5vw,3.6rem)!important;line-height:1!important}body.rajac-static-output .rprog-lead,body.rajac-static-output #rajac-agro-page .hero-lead{font-size:.94rem!important;line-height:1.62!important}}</style><style id="rajac-program-pages-v43-tanji-naslovi-bez-dugmadi">body.rajac-static-output .rprog-title,body.rajac-static-output #rajac-agro-page .hero h1{font-size:clamp(2.85rem,4.35vw,4.85rem)!important;font-weight:250!important;line-height:1.00!important;letter-spacing:-.035em!important;text-wrap:balance!important}body.rajac-static-output .rprog-title em,body.rajac-static-output #rajac-agro-page .hero h1 em{font-weight:250!important}body.rajac-static-output .rprog-section-title,body.rajac-static-output .rprog-deep-title,body.rajac-static-output #rajac-agro-page .s-title,body.rajac-static-output #rajac-agro-page .closing-box h2,body.rajac-static-output #rajac-agro-page .al-head h2,body.rajac-static-output #rajac-agro-page .owner-head h2{font-size:clamp(1.75rem,2.45vw,2.85rem)!important;font-weight:300!important;line-height:1.08!important;letter-spacing:-.02em!important}body.rajac-static-output .rprog-card h3,body.rajac-static-output .rprog-story-card h3,body.rajac-static-output .rprog-subcard h3,body.rajac-static-output .rprog-band h3,body.rajac-static-output #rajac-agro-page .key-card h3,body.rajac-static-output #rajac-agro-page .insight-card h3,body.rajac-static-output #rajac-agro-page .dark-card h3,body.rajac-static-output #rajac-agro-page .manage-copy h3,body.rajac-static-output #rajac-agro-page .side-card h3,body.rajac-static-output #rajac-agro-page .al-bottom-top h3,body.rajac-static-output #rajac-agro-page .al-fhead h3,body.rajac-static-output #rajac-agro-page .al-rain-head h3,body.rajac-static-output #rajac-agro-page .al-bottom-top h3,body.rajac-static-output #rajac-agro-page .owner-chart h3,body.rajac-static-output #rajac-agro-page .owner-bulletin h3,body.rajac-static-output #rajac-agro-page .owner-map-card h3,body.rajac-static-output #rajac-agro-page .owner-alerts h3,body.rajac-static-output #rajac-agro-page .al-cop-title{font-size:clamp(1.15rem,1.55vw,1.65rem)!important;font-weight:300!important;line-height:1.16!important;letter-spacing:-.012em!important}body.rajac-static-output .rprog-feature strong,body.rajac-static-output .rprog-mini-card strong,body.rajac-static-output #rajac-agro-page .al-cop-label,body.rajac-static-output #rajac-agro-page .al-mlabel,body.rajac-static-output #rajac-agro-page .al-sname{font-weight:500!important}body.rajac-static-output #rajac-agro-page .al-cop{grid-template-columns:1fr!important}body.rajac-static-output #rajac-agro-page .al-cop-btn,body.rajac-static-output #rajac-agro-page #forecast-7d-bottom-link{display:none!important}@media (max-width:980px){body.rajac-static-output .rprog-title,body.rajac-static-output #rajac-agro-page .hero h1{font-size:clamp(2.35rem,7.8vw,4.25rem)!important}}@media (max-width:640px){body.rajac-static-output .rprog-title,body.rajac-static-output #rajac-agro-page .hero h1{font-size:clamp(2rem,10.5vw,3.15rem)!important;line-height:1.04!important}body.rajac-static-output .rprog-section-title,body.rajac-static-output #rajac-agro-page .s-title,body.rajac-static-output #rajac-agro-page .al-head h2{font-size:clamp(1.55rem,7.2vw,2.35rem)!important}}</style><style id="rajac-agro-hero-satellite-bright-final-1406">body.rajac-static-output #rajac-agro-page section.hero{background:#102016!important}body.rajac-static-output #rajac-agro-page .hero-media-wrap{overflow:hidden!important;background:#102016!important}body.rajac-static-output #rajac-agro-page .hero-media{object-fit:cover!important;object-position:center top!important;filter:brightness(1.42) contrast(1.05) saturate(1.12)!important}body.rajac-static-output #rajac-agro-page .hero-overlay{background:linear-gradient(180deg,rgba(5,12,9,.02) 0%,rgba(5,12,9,.10) 38%,rgba(5,12,9,.42) 100%),linear-gradient(90deg,rgba(5,12,9,.58) 0%,rgba(5,12,9,.32) 42%,rgba(5,12,9,.08) 72%,rgba(5,12,9,.12) 100%)!important}body.rajac-static-output #rajac-agro-page .hero h1,body.rajac-static-output #rajac-agro-page .hero-lead{text-shadow:0 3px 18px rgba(0,0,0,.62)!important}body.rajac-static-output #rajac-agro-page .agroday-foot{justify-content:flex-start!important}body.rajac-static-output #rajac-agro-page .parcelimg-foot{display:none!important}@media (max-width:980px){body.rajac-static-output #rajac-agro-page .hero-media{object-position:center top!important}}</style><style id="rajac-agro-light-compact-optimization-1406">body.rajac-static-output #rajac-agro-page{background:#f6f2ea!important;color:#1e241d!important}body.rajac-static-output #rajac-agro-page .divider{height:0!important;border:0!important;background:transparent!important}body.rajac-static-output #rajac-agro-page .section{padding:clamp(34px,4.2vw,58px) 0!important}body.rajac-static-output #rajac-agro-page .section-head{margin-bottom:22px!important}body.rajac-static-output #rajac-agro-page .s-title{margin-bottom:12px!important}body.rajac-static-output #rajac-agro-page p,body.rajac-static-output #rajac-agro-page li{line-height:1.58!important}body.rajac-static-output #rajac-agro-page p{margin-top:0!important;margin-bottom:9px!important}body.rajac-static-output #rajac-agro-page .key-grid{gap:16px!important}body.rajac-static-output #rajac-agro-page .key-card,body.rajac-static-output #rajac-agro-page .manage-copy,body.rajac-static-output #rajac-agro-page .side-card{padding:22px 22px 20px!important;box-shadow:0 12px 28px rgba(19,25,21,.045)!important}body.rajac-static-output #rajac-agro-page .highlight-band{margin-top:18px!important;margin-bottom:20px!important;padding:20px 24px!important}body.rajac-static-output #rajac-agro-page .monitoring-wrap{padding-top:34px!important;padding-bottom:0!important}body.rajac-static-output #rajac-agro-page .module-intro{margin-bottom:18px!important}body.rajac-static-output #rajac-agro-page .rp-agro,body.rajac-static-output #rajac-agro-page .rp-agro .agro-live,body.rajac-static-output #rajac-agro-page .agroday-sec,body.rajac-static-output #rajac-agro-page .parcelimg-sec{background:#f6f2ea!important;color:#1e241d!important;border-top:1px solid rgba(30,36,29,.08)!important}body.rajac-static-output #rajac-agro-page .rp-agro .agro-live{padding:clamp(30px,4vw,52px) 0 clamp(30px,4vw,52px)!important}body.rajac-static-output #rajac-agro-page .agroday-sec,body.rajac-static-output #rajac-agro-page .parcelimg-sec{padding:clamp(28px,4vw,48px) 0!important}body.rajac-static-output #rajac-agro-page .rp-agro .agro-live::before{display:none!important}body.rajac-static-output #rajac-agro-page .rp-agro .al-head{margin-bottom:22px!important}body.rajac-static-output #rajac-agro-page .rp-agro .al-head h2,body.rajac-static-output #rajac-agro-page .agroday-head h2,body.rajac-static-output #rajac-agro-page .parcelimg-head h2,body.rajac-static-output #rajac-agro-page .rp-agro .al-rain-head h3,body.rajac-static-output #rajac-agro-page .rp-agro .al-bottom-top h3,body.rajac-static-output #rajac-agro-page .rp-agro .al-cop-title{color:#1e241d!important;text-shadow:none!important}body.rajac-static-output #rajac-agro-page .rp-agro .al-head p,body.rajac-static-output #rajac-agro-page .rp-agro .al-cop-desc,body.rajac-static-output #rajac-agro-page .rp-agro .al-bottom-cta p,body.rajac-static-output #rajac-agro-page .agroday-head p,body.rajac-static-output #rajac-agro-page .parcelimg-head p,body.rajac-static-output #rajac-agro-page .rp-agro .al-rain-meta{color:#445148!important}body.rajac-static-output #rajac-agro-page .rp-agro .al-label,body.rajac-static-output #rajac-agro-page .rp-agro .al-cop-label,body.rajac-static-output #rajac-agro-page .al-label{color:#906d24!important}body.rajac-static-output #rajac-agro-page .rp-agro .al-metric,body.rajac-static-output #rajac-agro-page .rp-agro .al-status,body.rajac-static-output #rajac-agro-page .rp-agro .al-rain-wrap,body.rajac-static-output #rajac-agro-page .rp-agro .al-bottom-cta,body.rajac-static-output #rajac-agro-page .rp-agro .al-cop,body.rajac-static-output #rajac-agro-page .agroday-table-wrap,body.rajac-static-output #rajac-agro-page .parcelimg-fig,body.rajac-static-output #rajac-agro-page .agro-image-card{background:rgba(255,255,255,.82)!important;border:1px solid rgba(30,36,29,.10)!important;box-shadow:0 14px 32px rgba(19,25,21,.05)!important;color:#1e241d!important}body.rajac-static-output #rajac-agro-page .rp-agro .al-metric,body.rajac-static-output #rajac-agro-page .rp-agro .al-status{min-height:92px!important;padding:15px 16px!important}body.rajac-static-output #rajac-agro-page .rp-agro .al-now{gap:12px!important;margin-bottom:18px!important}body.rajac-static-output #rajac-agro-page .rp-agro .al-mlabel,body.rajac-static-output #rajac-agro-page .rp-agro .al-sname{color:#5b665e!important}body.rajac-static-output #rajac-agro-page .rp-agro .al-mval,body.rajac-static-output #rajac-agro-page .rp-agro .al-tmax,body.rajac-static-output #rajac-agro-page .rp-agro .af-tmax,body.rajac-static-output #rajac-agro-page .rp-agro .al-status strong{color:#1e241d!important}body.rajac-static-output #rajac-agro-page .rp-agro .al-mval span,body.rajac-static-output #rajac-agro-page .rp-agro .al-msub,body.rajac-static-output #rajac-agro-page .rp-agro .al-status p,body.rajac-static-output #rajac-agro-page .rp-agro .af-tmin,body.rajac-static-output #rajac-agro-page .rp-agro .af-dow{color:#4d5a50!important}body.rajac-static-output #rajac-agro-page .rp-agro .acc-green .al-mval{color:#2e7d3f!important}body.rajac-static-output #rajac-agro-page .rp-agro .acc-gold .al-mval{color:#946b1f!important}body.rajac-static-output #rajac-agro-page .rp-agro .al-bottom-days{gap:10px!important}body.rajac-static-output #rajac-agro-page .rp-agro .af-day,body.rajac-static-output #rajac-agro-page .rp-agro .al-bottom-days .af-day{background:#fff!important;border:1px solid rgba(30,36,29,.10)!important;box-shadow:0 8px 20px rgba(19,25,21,.035)!important;min-height:132px!important}body.rajac-static-output #rajac-agro-page .rp-agro .af-day.today{background:#f3f6ee!important;border-color:rgba(77,132,93,.24)!important}body.rajac-static-output #rajac-agro-page .rp-agro .rain-bar-shell{background:#eef3f5!important;border-color:rgba(30,36,29,.09)!important}body.rajac-static-output #rajac-agro-page .rp-agro .rain-val{color:#1e241d!important}body.rajac-static-output #rajac-agro-page .rp-agro .rain-lbl,body.rajac-static-output #rajac-agro-page .rp-agro .rain-empty{color:#556355!important}body.rajac-static-output #rajac-agro-page .agroday-table thead th{background:#eef1e7!important;color:#4a554d!important;border-bottom:1px solid rgba(30,36,29,.10)!important}body.rajac-static-output #rajac-agro-page .agroday-table tbody td{color:#1e241d!important;border-bottom:1px solid rgba(30,36,29,.08)!important}body.rajac-static-output #rajac-agro-page .agroday-table tbody tr.is-today td{background:#f1f5ed!important}body.rajac-static-output #rajac-agro-page .agroday-table tbody tr:hover td{background:#f8f6ef!important}body.rajac-static-output #rajac-agro-page .agroday-tval{color:#1e241d!important}body.rajac-static-output #rajac-agro-page .agroday-dash{color:#737b74!important}body.rajac-static-output #rajac-agro-page .agroday-foot #agrodayUpdated{color:#667066!important}body.rajac-static-output #rajac-agro-page .parcelimg-head{margin-bottom:16px!important}body.rajac-static-output #rajac-agro-page .parcelimg-head p a{display:none!important}body.rajac-static-output #rajac-agro-page .closing-wrap{padding-top:36px!important}body.rajac-static-output #rajac-agro-page .closing-box{padding:26px 32px!important}body.rajac-static-output #rajac-agro-page .closing-box h2{margin-bottom:12px!important}body.rajac-static-output #rajac-agro-page .closing-box p{line-height:1.58!important}@media(max-width:760px){body.rajac-static-output #rajac-agro-page .section{padding:28px 0!important}body.rajac-static-output #rajac-agro-page .key-grid{grid-template-columns:1fr!important}body.rajac-static-output #rajac-agro-page .rp-agro .al-now{grid-template-columns:repeat(2,minmax(0,1fr))!important}}@media(max-width:520px){body.rajac-static-output #rajac-agro-page .rp-agro .al-now{grid-template-columns:1fr!important}}</style>
+<script id="rajac-agro-status-fallback-1406">
+(function(){
+  function el(id){return document.getElementById(id);} 
+  function numFrom(id){
+    var n=el(id); if(!n) return null;
+    var t=(n.textContent||'').replace(',', '.').replace(/[^0-9.\-]/g,'');
+    if(!t || t==='-' || t==='—') return null;
+    var v=parseFloat(t); return Number.isFinite(v)?v:null;
+  }
+  function setBadge(id, cls, text){var n=el(id); if(n){n.className='al-sbadge '+cls; n.textContent=text;}}
+  function setText(id, text){var n=el(id); if(n){n.textContent=text;}}
+  function fixAgroStatuses(){
+    var temp=numFrom('m-temp'), hum=numFrom('m-hum'), wind=numFrom('m-wind'), rain=numFrom('m-rain');
+    var month=(new Date()).getMonth();
+    if(temp==null || hum==null){
+      setBadge('st-blight','b-watch','◴ Чека податке');
+      setText('st-blight-p','Оцена ће се појавити када се учитају температура и влажност.');
+    }else if(month<4){
+      setBadge('st-blight','b-watch','⏳ Није сезона');
+      setText('st-blight-p','Кромпир још није у главној сезони ризика; приказ је информативан.');
+    }else if(temp>=10 && temp<=25 && hum>=75){
+      setBadge('st-blight','b-watch','⚠️ Праћење');
+      setText('st-blight-p','T='+temp.toFixed(1)+'°C, RH='+hum.toFixed(0)+'% — услови су повољни за праћење пламењаче.');
+    }else{
+      setBadge('st-blight','b-ok','✓ Низак ризик');
+      setText('st-blight-p','Тренутни услови нису у критичном опсегу за пламењачу.');
+    }
+    if(temp==null || hum==null){
+      setBadge('st-mow','b-watch','◴ Чека податке');
+      setText('st-mow-p','Оцена ће се појавити када се учитају температура, влажност и падавине.');
+    }else if(month<5){
+      setBadge('st-mow','b-watch','⏳ Није време');
+      setText('st-mow-p','Пре главне сезоне кошења приказ је само информативан.');
+    }else if((rain!=null && rain>2) || hum>85){
+      setBadge('st-mow','b-warn','✗ Непогодно');
+      setText('st-mow-p','Влажно или кишовито — кошење и сушење треба одложити.');
+    }else if(wind!=null && wind>30){
+      setBadge('st-mow','b-watch','⚠️ Ветровито');
+      setText('st-mow-p','Могуће кошење, али треба проверити сушење и јачину ветра.');
+    }else if(temp>=12){
+      setBadge('st-mow','b-ok','✓ Погодно');
+      setText('st-mow-p','Услови су повољнији за кошење и сушење сена.');
+    }else{
+      setBadge('st-mow','b-watch','◴ Свежо');
+      setText('st-mow-p','Температура је нижа; услови су ограничени и треба пратити прогнозу.');
+    }
+  }
+  function schedule(){[300,1200,3500,7000].forEach(function(ms){setTimeout(fixAgroStatuses,ms);});}
+  if(document.readyState==='loading') document.addEventListener('DOMContentLoaded', schedule); else schedule();
+})();
+</script>
+<style id="rajac-agro-contrast-fix-1406b">body.rajac-static-output #rajac-agro-page{color:#162019!important}body.rajac-static-output #rajac-agro-page .section-head .s-desc,body.rajac-static-output #rajac-agro-page .manage-copy p,body.rajac-static-output #rajac-agro-page .key-card p,body.rajac-static-output #rajac-agro-page .side-card li,body.rajac-static-output #rajac-agro-page .closing-box p{color:#314037!important;font-weight:400!important}body.rajac-static-output #rajac-agro-page .rp-agro .al-head p,body.rajac-static-output #rajac-agro-page .rp-agro .al-cop-desc,body.rajac-static-output #rajac-agro-page .rp-agro .al-bottom-cta p,body.rajac-static-output #rajac-agro-page .agroday-head p,body.rajac-static-output #rajac-agro-page .parcelimg-head p,body.rajac-static-output #rajac-agro-page .rp-agro .al-rain-meta{color:#334238!important;font-weight:400!important}body.rajac-static-output #rajac-agro-page .rp-agro .al-metric,body.rajac-static-output #rajac-agro-page .rp-agro .al-status,body.rajac-static-output #rajac-agro-page .rp-agro .al-rain-wrap,body.rajac-static-output #rajac-agro-page .rp-agro .al-bottom-cta,body.rajac-static-output #rajac-agro-page .rp-agro .al-cop,body.rajac-static-output #rajac-agro-page .agroday-table-wrap,body.rajac-static-output #rajac-agro-page .parcelimg-fig,body.rajac-static-output #rajac-agro-page .agro-image-card{background:#fffdfa!important;border:1px solid rgba(22,32,25,.14)!important;box-shadow:0 14px 30px rgba(18,28,22,.06)!important}body.rajac-static-output #rajac-agro-page .rp-agro .al-mlabel,body.rajac-static-output #rajac-agro-page .rp-agro .al-sname,body.rajac-static-output #rajac-agro-page .agroday-table thead th{color:#3f4d43!important;font-weight:500!important}body.rajac-static-output #rajac-agro-page .rp-agro .al-mval,body.rajac-static-output #rajac-agro-page .rp-agro .al-mval span,body.rajac-static-output #rajac-agro-page .rp-agro .al-msub,body.rajac-static-output #rajac-agro-page .rp-agro .al-status p,body.rajac-static-output #rajac-agro-page .rp-agro .af-dow,body.rajac-static-output #rajac-agro-page .rp-agro .af-tmin,body.rajac-static-output #rajac-agro-page .rp-agro .rain-val,body.rajac-static-output #rajac-agro-page .rp-agro .rain-lbl,body.rajac-static-output #rajac-agro-page .rp-agro .rain-empty,body.rajac-static-output #rajac-agro-page .agroday-table tbody td,body.rajac-static-output #rajac-agro-page .agroday-tval,body.rajac-static-output #rajac-agro-page .agroday-foot #agrodayUpdated{color:#162019!important}body.rajac-static-output #rajac-agro-page .rp-agro .al-msub,body.rajac-static-output #rajac-agro-page .rp-agro .al-status p{font-weight:400!important}body.rajac-static-output #rajac-agro-page .rp-agro .al-label,body.rajac-static-output #rajac-agro-page .rp-agro .al-cop-label,body.rajac-static-output #rajac-agro-page .al-label{color:#8f6712!important}body.rajac-static-output #rajac-agro-page .rp-agro .al-cp{background:#edf5eb!important;border:1px solid rgba(65,110,74,.24)!important;color:#2f6d3c!important;font-weight:500!important}body.rajac-static-output #rajac-agro-page .agroday-table thead th{background:#ecefe5!important}body.rajac-static-output #rajac-agro-page .agroday-table tbody tr.is-today td{background:#eef4e7!important}body.rajac-static-output #rajac-agro-page .agroday-table tbody tr:hover td{background:#f7f4ec!important}body.rajac-static-output #rajac-agro-page .agroday-rain{color:#3a7bd5!important;font-weight:600!important}body.rajac-static-output #rajac-agro-page .agroday-dash{color:#58665c!important}body.rajac-static-output #rajac-agro-page .rp-agro .af-day,body.rajac-static-output #rajac-agro-page .rp-agro .al-bottom-days .af-day{background:#fffdfa!important;border:1px solid rgba(22,32,25,.11)!important}body.rajac-static-output #rajac-agro-page .rp-agro .af-day.today{background:#eef4e8!important;border-color:rgba(56,105,66,.22)!important}body.rajac-static-output #rajac-agro-page .rp-agro .al-cop-title,body.rajac-static-output #rajac-agro-page .rp-agro .al-head h2,body.rajac-static-output #rajac-agro-page .agroday-head h2,body.rajac-static-output #rajac-agro-page .parcelimg-head h2,body.rajac-static-output #rajac-agro-page .rp-agro .al-rain-head h3,body.rajac-static-output #rajac-agro-page .rp-agro .al-bottom-top h3{color:#142018!important}body.rajac-static-output #rajac-agro-page .rp-agro .acc-green .al-mval{color:#24743a!important}body.rajac-static-output #rajac-agro-page .rp-agro .acc-gold .al-mval{color:#9a6512!important}</style><style id="rajac-agro-strong-visible-contrast-1406c">
+/* v4 — видљиво јачи контраст: тамнији текст, јасније табеле и картице */
+body.rajac-static-output #rajac-agro-page,
+body.rajac-static-output #rajac-agro-page *{text-rendering:optimizeLegibility!important;-webkit-font-smoothing:antialiased!important;}
+body.rajac-static-output #rajac-agro-page{color:#07150c!important;background:#f6f2ea!important;}
+body.rajac-static-output #rajac-agro-page p,
+body.rajac-static-output #rajac-agro-page li,
+body.rajac-static-output #rajac-agro-page .s-desc,
+body.rajac-static-output #rajac-agro-page .rp-agro .al-head p,
+body.rajac-static-output #rajac-agro-page .rp-agro .al-cop-desc,
+body.rajac-static-output #rajac-agro-page .agroday-head p,
+body.rajac-static-output #rajac-agro-page .parcelimg-head p,
+body.rajac-static-output #rajac-agro-page .closing-box p{color:#18261d!important;font-weight:450!important;line-height:1.55!important;}
+body.rajac-static-output #rajac-agro-page h1,
+body.rajac-static-output #rajac-agro-page h2,
+body.rajac-static-output #rajac-agro-page h3,
+body.rajac-static-output #rajac-agro-page .s-title,
+body.rajac-static-output #rajac-agro-page .rp-agro .al-head h2,
+body.rajac-static-output #rajac-agro-page .rp-agro .al-cop-title,
+body.rajac-static-output #rajac-agro-page .agroday-head h2,
+body.rajac-static-output #rajac-agro-page .parcelimg-head h2{color:#06120a!important;}
+body.rajac-static-output #rajac-agro-page .eyebrow,
+body.rajac-static-output #rajac-agro-page .al-label,
+body.rajac-static-output #rajac-agro-page .rp-agro .al-label,
+body.rajac-static-output #rajac-agro-page .rp-agro .al-cop-label{color:#805400!important;font-weight:700!important;letter-spacing:.16em!important;}
+body.rajac-static-output #rajac-agro-page .rp-agro .al-metric,
+body.rajac-static-output #rajac-agro-page .rp-agro .al-status,
+body.rajac-static-output #rajac-agro-page .rp-agro .al-rain-wrap,
+body.rajac-static-output #rajac-agro-page .rp-agro .al-bottom-cta,
+body.rajac-static-output #rajac-agro-page .rp-agro .al-cop,
+body.rajac-static-output #rajac-agro-page .agroday-table-wrap,
+body.rajac-static-output #rajac-agro-page .parcelimg-fig,
+body.rajac-static-output #rajac-agro-page .agro-image-card,
+body.rajac-static-output #rajac-agro-page .key-card,
+body.rajac-static-output #rajac-agro-page .manage-copy,
+body.rajac-static-output #rajac-agro-page .side-card{background:#ffffff!important;border:1px solid rgba(7,21,12,.18)!important;box-shadow:0 12px 28px rgba(7,21,12,.07)!important;}
+body.rajac-static-output #rajac-agro-page .rp-agro .al-mlabel,
+body.rajac-static-output #rajac-agro-page .rp-agro .al-sname,
+body.rajac-static-output #rajac-agro-page .agroday-table thead th{color:#1f3126!important;font-weight:750!important;}
+body.rajac-static-output #rajac-agro-page .rp-agro .al-mval,
+body.rajac-static-output #rajac-agro-page .rp-agro .al-mval span,
+body.rajac-static-output #rajac-agro-page .rp-agro .al-msub,
+body.rajac-static-output #rajac-agro-page .rp-agro .al-status p,
+body.rajac-static-output #rajac-agro-page .rp-agro .af-dow,
+body.rajac-static-output #rajac-agro-page .rp-agro .af-tmax,
+body.rajac-static-output #rajac-agro-page .rp-agro .af-tmin,
+body.rajac-static-output #rajac-agro-page .rp-agro .rain-val,
+body.rajac-static-output #rajac-agro-page .rp-agro .rain-lbl,
+body.rajac-static-output #rajac-agro-page .agroday-table tbody td,
+body.rajac-static-output #rajac-agro-page .agroday-tval,
+body.rajac-static-output #rajac-agro-page .agroday-foot #agrodayUpdated{color:#06120a!important;font-weight:500!important;}
+body.rajac-static-output #rajac-agro-page .rp-agro .al-mval{font-weight:700!important;}
+body.rajac-static-output #rajac-agro-page .rp-agro .acc-green .al-mval{color:#126528!important;}
+body.rajac-static-output #rajac-agro-page .rp-agro .acc-gold .al-mval{color:#8b5200!important;}
+body.rajac-static-output #rajac-agro-page .agroday-table thead th{background:#e8eee4!important;border-bottom:1px solid rgba(7,21,12,.18)!important;}
+body.rajac-static-output #rajac-agro-page .agroday-table tbody td{border-bottom:1px solid rgba(7,21,12,.12)!important;}
+body.rajac-static-output #rajac-agro-page .agroday-table tbody tr.is-today td{background:#eaf2e4!important;}
+body.rajac-static-output #rajac-agro-page .agroday-table tbody tr:nth-child(even) td{background:#faf8f2!important;}
+body.rajac-static-output #rajac-agro-page .agroday-table tbody tr:hover td{background:#f0eddf!important;}
+body.rajac-static-output #rajac-agro-page .agroday-rain{color:#005fd0!important;font-weight:700!important;}
+body.rajac-static-output #rajac-agro-page .agroday-dash{color:#3b4b40!important;font-weight:700!important;}
+body.rajac-static-output #rajac-agro-page .agroday-badge{font-weight:750!important;border-width:1px!important;}
+body.rajac-static-output #rajac-agro-page .agroday-badge.b-ok,
+body.rajac-static-output #rajac-agro-page .rp-agro .b-ok{background:#dff2df!important;color:#0d6320!important;border-color:#8fcf93!important;}
+body.rajac-static-output #rajac-agro-page .agroday-badge.b-watch,
+body.rajac-static-output #rajac-agro-page .rp-agro .b-watch{background:#fff0d6!important;color:#9a5700!important;border-color:#e2ba72!important;}
+body.rajac-static-output #rajac-agro-page .agroday-badge.b-warn,
+body.rajac-static-output #rajac-agro-page .rp-agro .b-warn{background:#ffe3d6!important;color:#a53a18!important;border-color:#ec9a78!important;}
+body.rajac-static-output #rajac-agro-page .rp-agro .al-cp{background:#e6f1e4!important;border-color:#8dc492!important;color:#135f28!important;font-weight:700!important;}
+body.rajac-static-output #rajac-agro-page .rp-agro .af-day,
+body.rajac-static-output #rajac-agro-page .rp-agro .al-bottom-days .af-day{background:#fff!important;border:1px solid rgba(7,21,12,.15)!important;}
+body.rajac-static-output #rajac-agro-page .rp-agro .af-day.today{background:#eaf2e4!important;border-color:#8fcf93!important;}
+</style>
+<style id="rajac-agro-layout-fix-1406c">
+/* 14.06 v5 — korekcija izgleda posle optimizacije */
+body.rajac-static-output #rajac-agro-page{--agro-ink:#101914;--agro-text:#203027;--agro-muted:#39483e;--agro-paper:#fffdf8;--agro-soft:#f7f3ea;}
+body.rajac-static-output #rajac-agro-page .shell,
+body.rajac-static-output #rajac-agro-page .rp-agro .w{width:min(1280px,calc(100% - 80px))!important;margin-left:auto!important;margin-right:auto!important;}
+body.rajac-static-output #rajac-agro-page p,
+body.rajac-static-output #rajac-agro-page li{color:var(--agro-text)!important;font-weight:400!important;line-height:1.62!important;}
+body.rajac-static-output #rajac-agro-page .s-desc,
+body.rajac-static-output #rajac-agro-page .section-head p{max-width:920px!important;}
+body.rajac-static-output #rajac-agro-page .highlight-band{max-width:100%!important;border-radius:24px!important;background:#fffdf8!important;border:1px solid rgba(16,25,20,.11)!important;box-shadow:0 14px 32px rgba(16,25,20,.045)!important;padding:22px 26px!important;}
+body.rajac-static-output #rajac-agro-page .highlight-band p{font-family:Outfit,Inter,system-ui,sans-serif!important;font-size:1.02rem!important;line-height:1.64!important;color:#203027!important;max-width:980px!important;}
+body.rajac-static-output #rajac-agro-page .key-grid{display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:18px!important;align-items:stretch!important;}
+body.rajac-static-output #rajac-agro-page .key-card{padding:24px 26px!important;border-radius:24px!important;background:#fffdf8!important;border:1px solid rgba(16,25,20,.10)!important;box-shadow:0 14px 32px rgba(16,25,20,.045)!important;}
+body.rajac-static-output #rajac-agro-page .key-card .key-num{color:#8c6516!important;font-weight:700!important;letter-spacing:.16em!important;margin-bottom:8px!important;}
+body.rajac-static-output #rajac-agro-page .key-card h3{color:#101914!important;margin-bottom:10px!important;font-size:clamp(1.35rem,1.8vw,1.85rem)!important;}
+body.rajac-static-output #rajac-agro-page .key-card p{color:#26362d!important;font-size:.98rem!important;line-height:1.62!important;}
+body.rajac-static-output #rajac-agro-page .manage-grid{display:grid!important;grid-template-columns:minmax(0,1fr) minmax(0,1fr)!important;gap:18px!important;align-items:stretch!important;}
+body.rajac-static-output #rajac-agro-page .manage-copy,
+body.rajac-static-output #rajac-agro-page .side-card{padding:24px 26px!important;border-radius:24px!important;background:#fffdf8!important;border:1px solid rgba(16,25,20,.10)!important;box-shadow:0 14px 32px rgba(16,25,20,.045)!important;}
+body.rajac-static-output #rajac-agro-page .manage-copy h3,
+body.rajac-static-output #rajac-agro-page .side-card h3{color:#101914!important;font-size:clamp(1.45rem,1.95vw,2rem)!important;margin-bottom:12px!important;}
+body.rajac-static-output #rajac-agro-page .effect-list{gap:9px!important;}
+body.rajac-static-output #rajac-agro-page .effect-list li{background:#f6f1e7!important;border:1px solid rgba(16,25,20,.09)!important;color:#26362d!important;padding:12px 15px 12px 40px!important;line-height:1.55!important;}
+/* Live karte — jasna bela podloga i kontrast */
+body.rajac-static-output #rajac-agro-page .rp-agro .al-now{display:grid!important;grid-template-columns:repeat(6,minmax(0,1fr))!important;gap:14px!important;align-items:stretch!important;}
+body.rajac-static-output #rajac-agro-page .rp-agro .al-metric,
+body.rajac-static-output #rajac-agro-page .rp-agro .al-status{background:#fffdf8!important;color:#101914!important;border:1px solid rgba(16,25,20,.14)!important;box-shadow:0 12px 28px rgba(16,25,20,.055)!important;border-radius:22px!important;}
+body.rajac-static-output #rajac-agro-page .rp-agro .al-mlabel,
+body.rajac-static-output #rajac-agro-page .rp-agro .al-sname{color:#26362d!important;font-weight:700!important;letter-spacing:.13em!important;}
+body.rajac-static-output #rajac-agro-page .rp-agro .al-mval,
+body.rajac-static-output #rajac-agro-page .rp-agro .al-mval span{color:#101914!important;font-weight:700!important;}
+body.rajac-static-output #rajac-agro-page .rp-agro .al-msub,
+body.rajac-static-output #rajac-agro-page .rp-agro .al-status p{color:#26362d!important;font-weight:500!important;}
+body.rajac-static-output #rajac-agro-page .rp-agro .al-status p{font-size:.90rem!important;line-height:1.55!important;}
+body.rajac-static-output #rajac-agro-page .rp-agro .al-metric:has(#m-uv){order:12!important;}
+body.rajac-static-output #rajac-agro-page .rp-agro .al-status:has(#st-solar){order:11!important;}
+body.rajac-static-output #rajac-agro-page .rp-agro .al-status:has(#st-blight){order:9!important;}
+body.rajac-static-output #rajac-agro-page .rp-agro .al-status:has(#st-mow){order:10!important;}
+/* Zaključak više nije taman blok sa nevidljivim tekstom */
+body.rajac-static-output #rajac-agro-page .closing-box{background:#fffdf8!important;border:1px solid rgba(16,25,20,.12)!important;box-shadow:0 16px 34px rgba(16,25,20,.055)!important;border-radius:24px!important;color:#101914!important;}
+body.rajac-static-output #rajac-agro-page .closing-box h2,
+body.rajac-static-output #rajac-agro-page .closing-box h2 em{color:#101914!important;text-shadow:none!important;}
+body.rajac-static-output #rajac-agro-page .closing-box p{color:#26362d!important;font-weight:400!important;max-width:980px!important;}
+/* Copernicus i NDWI: ne lepiti u punu širinu */
+body.rajac-static-output #rajac-agro-page .rp-agro .al-cop,
+body.rajac-static-output #rajac-agro-page .agro-image-card,
+body.rajac-static-output #rajac-agro-page .parcelimg-fig{border-radius:24px!important;background:#fffdf8!important;border:1px solid rgba(16,25,20,.13)!important;box-shadow:0 12px 28px rgba(16,25,20,.045)!important;padding:22px 24px!important;overflow:hidden!important;}
+body.rajac-static-output #rajac-agro-page .agro-image-card img,
+body.rajac-static-output #rajac-agro-page .parcelimg-fig img{border-radius:14px!important;display:block!important;width:100%!important;height:auto!important;margin-top:12px!important;}
+body.rajac-static-output #rajac-agro-page .rp-agro .al-cop-desc{max-width:1040px!important;color:#203027!important;font-weight:400!important;line-height:1.58!important;}
+body.rajac-static-output #rajac-agro-page .rp-agro .al-cp{font-weight:700!important;color:#1f6632!important;background:#eaf4e7!important;border-color:rgba(31,102,50,.25)!important;}
+/* Prazan grafikon padavina sa vidljivim X/Y osama */
+body.rajac-static-output #rajac-agro-page .rp-agro .al-rain-wrap{background:#fffdf8!important;border:1px solid rgba(16,25,20,.13)!important;border-radius:24px!important;box-shadow:0 12px 28px rgba(16,25,20,.045)!important;}
+body.rajac-static-output #rajac-agro-page .rain-axis-box{position:relative;min-height:260px;margin-top:10px;padding:18px 18px 34px 46px;background:linear-gradient(180deg,#fff 0%,#fbfaf6 100%);border:1px solid rgba(16,25,20,.10);border-radius:18px;overflow:hidden;}
+body.rajac-static-output #rajac-agro-page .rain-axis-box::before{content:"";position:absolute;left:46px;right:18px;top:18px;bottom:34px;background:repeating-linear-gradient(to top,rgba(16,25,20,.09) 0 1px,transparent 1px 46px),repeating-linear-gradient(to right,rgba(16,25,20,.055) 0 1px,transparent 1px 84px);}
+body.rajac-static-output #rajac-agro-page .rain-axis-y{position:absolute;left:46px;top:18px;bottom:34px;width:2px;background:#26362d;}
+body.rajac-static-output #rajac-agro-page .rain-axis-x{position:absolute;left:46px;right:18px;bottom:34px;height:2px;background:#26362d;}
+body.rajac-static-output #rajac-agro-page .rain-y-label{position:absolute;left:8px;color:#26362d;font-size:.75rem;font-weight:700;}
+body.rajac-static-output #rajac-agro-page .rain-y-label.l3{top:16px}.rain-y-label.l2{top:86px}.rain-y-label.l1{top:156px}.rain-y-label.l0{bottom:27px}
+body.rajac-static-output #rajac-agro-page .rain-x-label{position:absolute;bottom:8px;color:#26362d;font-size:.75rem;font-weight:700;}
+body.rajac-static-output #rajac-agro-page .rain-x-label.x0{left:46px}.rain-x-label.x1{left:38%}.rain-x-label.x2{right:18px}
+body.rajac-static-output #rajac-agro-page .rain-axis-note{position:absolute;left:70px;right:34px;top:46%;transform:translateY(-50%);text-align:center;color:#26362d;font-weight:600;line-height:1.5;}
+body.rajac-static-output #rajac-agro-page .rain-axis-unit{position:absolute;left:10px;top:50%;transform:rotate(-90deg);transform-origin:left center;color:#26362d;font-size:.75rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;}
+body.rajac-static-output #rajac-agro-page .rain-axis-time{position:absolute;right:18px;bottom:8px;color:#26362d;font-size:.75rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;}
+@media(max-width:1100px){
+  body.rajac-static-output #rajac-agro-page .rp-agro .al-now{grid-template-columns:repeat(3,minmax(0,1fr))!important;}
+}
+@media(max-width:760px){
+  body.rajac-static-output #rajac-agro-page .shell,
+  body.rajac-static-output #rajac-agro-page .rp-agro .w{width:min(100% - 28px,1280px)!important;}
+  body.rajac-static-output #rajac-agro-page .key-grid,
+  body.rajac-static-output #rajac-agro-page .manage-grid{grid-template-columns:1fr!important;}
+  body.rajac-static-output #rajac-agro-page .rp-agro .al-now{grid-template-columns:1fr!important;}
+}
+</style>
+
+<script id="rajac-agro-rain-axis-fix-1406c">
+(function(){
+  function drawEmptyRainAxes(){
+    var wrap=document.getElementById('rain-bars');
+    if(!wrap) return;
+    var txt=(wrap.textContent||'').trim();
+    if(wrap.querySelector('.rain-col')) return;
+    if(wrap.querySelector('.rain-axis-box')) return;
+    if(!txt || /нису доступни|још нису доступни|Чекају|неће се аутоматски/i.test(txt)){
+      wrap.innerHTML =
+        '<div class="rain-axis-box" aria-label="Празан графикон падавина са X и Y осом">'+
+          '<div class="rain-axis-unit">mm</div>'+
+          '<div class="rain-axis-y"></div><div class="rain-axis-x"></div>'+
+          '<div class="rain-y-label l3">10</div><div class="rain-y-label l2">5</div><div class="rain-y-label l1">1</div><div class="rain-y-label l0">0</div>'+
+          '<div class="rain-x-label x0">сада −12h</div><div class="rain-x-label x1">сада −6h</div><div class="rain-x-label x2">сада</div>'+
+          '<div class="rain-axis-time">време</div>'+
+          '<div class="rain-axis-note">Подаци о падавинама ће се уписати чим AMS Рајац забележи мерљиву кишу.</div>'+
+        '</div>';
+      var meta=document.getElementById('rain-meta');
+      if(meta) meta.textContent='AMS Рајац · графикон је спреман, чека мерљиве падавине';
+    }
+  }
+  function markUvCard(){
+    var uv=document.getElementById('m-uv');
+    if(uv && uv.closest('.al-metric')) uv.closest('.al-metric').classList.add('metric-uv-last');
+  }
+  document.addEventListener('DOMContentLoaded',function(){
+    markUvCard();
+    setTimeout(drawEmptyRainAxes,800);
+    setTimeout(drawEmptyRainAxes,2500);
+    setTimeout(drawEmptyRainAxes,5000);
+  });
+})();
+</script>
+
+<style id="rajac-agro-v6-rain-ndwi-fix-1406">
+/* v6 — ispravka praznog grafikona padavina i NDWI bloka */
+body.rajac-static-output #rajac-agro-page .rp-agro .al-rain-wrap{
+  padding:24px 26px 26px!important;
+}
+body.rajac-static-output #rajac-agro-page .rp-agro .rain-bars.rain-axis-ready{
+  display:block!important;
+  grid-template-columns:none!important;
+  min-height:0!important;
+  padding:0!important;
+  margin-top:14px!important;
+}
+body.rajac-static-output #rajac-agro-page .rain-axis-box{
+  grid-column:1/-1!important;
+  display:block!important;
+  width:100%!important;
+  min-height:260px!important;
+  margin:0!important;
+  padding:18px 24px 42px 64px!important;
+  box-sizing:border-box!important;
+  background:#fffefb!important;
+  border:1px solid rgba(16,25,20,.14)!important;
+  border-radius:18px!important;
+  overflow:hidden!important;
+}
+body.rajac-static-output #rajac-agro-page .rain-axis-box::before{
+  left:64px!important;
+  right:24px!important;
+  top:18px!important;
+  bottom:42px!important;
+}
+body.rajac-static-output #rajac-agro-page .rain-axis-y{
+  left:64px!important;
+  top:18px!important;
+  bottom:42px!important;
+  width:2px!important;
+  background:#172219!important;
+}
+body.rajac-static-output #rajac-agro-page .rain-axis-x{
+  left:64px!important;
+  right:24px!important;
+  bottom:42px!important;
+  height:2px!important;
+  background:#172219!important;
+}
+body.rajac-static-output #rajac-agro-page .rain-y-label{
+  left:20px!important;
+  width:34px!important;
+  text-align:right!important;
+  color:#172219!important;
+  font-size:.78rem!important;
+  font-weight:800!important;
+}
+body.rajac-static-output #rajac-agro-page .rain-y-label.l3{top:14px!important;}
+body.rajac-static-output #rajac-agro-page .rain-y-label.l2{top:84px!important;}
+body.rajac-static-output #rajac-agro-page .rain-y-label.l1{top:154px!important;}
+body.rajac-static-output #rajac-agro-page .rain-y-label.l0{bottom:35px!important;}
+body.rajac-static-output #rajac-agro-page .rain-axis-unit{
+  left:12px!important;
+  top:50%!important;
+  color:#172219!important;
+  font-size:.78rem!important;
+  font-weight:900!important;
+}
+body.rajac-static-output #rajac-agro-page .rain-x-label{
+  bottom:14px!important;
+  color:#172219!important;
+  font-size:.78rem!important;
+  font-weight:800!important;
+  white-space:nowrap!important;
+}
+body.rajac-static-output #rajac-agro-page .rain-x-label.x0{left:64px!important;}
+body.rajac-static-output #rajac-agro-page .rain-x-label.x1{left:50%!important;transform:translateX(-50%)!important;}
+body.rajac-static-output #rajac-agro-page .rain-x-label.x2{right:24px!important;}
+body.rajac-static-output #rajac-agro-page .rain-axis-time{
+  right:24px!important;
+  bottom:14px!important;
+  transform:translateY(22px)!important;
+  color:#172219!important;
+}
+body.rajac-static-output #rajac-agro-page .rain-axis-note{
+  left:50%!important;
+  right:auto!important;
+  top:50%!important;
+  width:min(620px,calc(100% - 150px))!important;
+  transform:translate(-50%,-50%)!important;
+  text-align:center!important;
+  color:#26362d!important;
+  font-size:.96rem!important;
+  font-weight:600!important;
+  line-height:1.55!important;
+  background:rgba(255,255,255,.72)!important;
+  border:1px solid rgba(16,25,20,.08)!important;
+  border-radius:14px!important;
+  padding:12px 16px!important;
+}
+
+/* NDWI blok: ista širina kao Copernicus, odlepljen po visini */
+body.rajac-static-output #rajac-agro-page .agro-image-section{
+  margin-top:28px!important;
+  padding-top:0!important;
+}
+body.rajac-static-output #rajac-agro-page .agro-image-section .w{
+  width:min(1280px,calc(100% - 80px))!important;
+}
+body.rajac-static-output #rajac-agro-page .agro-image-card{
+  width:100%!important;
+  max-width:none!important;
+  margin:0 auto!important;
+  padding:28px 30px 30px!important;
+  border-radius:24px!important;
+}
+body.rajac-static-output #rajac-agro-page .agro-image-card h3{
+  margin:0 0 14px!important;
+  color:#101914!important;
+  font-size:clamp(1.35rem,1.8vw,1.9rem)!important;
+}
+body.rajac-static-output #rajac-agro-page .agro-image-card p{
+  max-width:980px!important;
+  margin:0 0 18px!important;
+  color:#26362d!important;
+  font-weight:400!important;
+}
+body.rajac-static-output #rajac-agro-page .agro-image-card img{
+  width:100%!important;
+  max-width:100%!important;
+  margin:0!important;
+  border-radius:16px!important;
+  display:block!important;
+}
+
+/* Copernicus kartica da ne lepi donji blok */
+body.rajac-static-output #rajac-agro-page .rp-agro .al-cop{
+  margin-bottom:0!important;
+}
+
+@media(max-width:760px){
+  body.rajac-static-output #rajac-agro-page .agro-image-section .w,
+  body.rajac-static-output #rajac-agro-page .rp-agro .w{
+    width:min(100% - 28px,1280px)!important;
+  }
+  body.rajac-static-output #rajac-agro-page .rain-axis-note{
+    width:calc(100% - 100px)!important;
+    font-size:.88rem!important;
+  }
+  body.rajac-static-output #rajac-agro-page .rain-axis-box{
+    padding-left:56px!important;
+  }
+  body.rajac-static-output #rajac-agro-page .rain-axis-y,
+  body.rajac-static-output #rajac-agro-page .rain-axis-x,
+  body.rajac-static-output #rajac-agro-page .rain-axis-box::before{
+    left:56px!important;
+  }
+}
+</style>
+
+<script id="rajac-agro-v6-rain-axis-class-1406">
+(function(){
+  function fixRainAxisWidth(){
+    var wrap=document.getElementById('rain-bars');
+    if(!wrap) return;
+    if(wrap.querySelector('.rain-axis-box')){
+      wrap.classList.add('rain-axis-ready');
+    }else{
+      wrap.classList.remove('rain-axis-ready');
+    }
+  }
+  document.addEventListener('DOMContentLoaded',function(){
+    fixRainAxisWidth();
+    setTimeout(fixRainAxisWidth,700);
+    setTimeout(fixRainAxisWidth,1800);
+    setTimeout(fixRainAxisWidth,4000);
+    setTimeout(fixRainAxisWidth,7000);
+  });
+})();
+</script>
+
+<style id="rajac-agro-v7-ndwi-fullwidth-1406">
+/* v7 — širi NDWI prikaz u širini stupca */
+body.rajac-static-output #rajac-agro-page .agro-image-section{
+  margin-top:34px!important;
+}
+body.rajac-static-output #rajac-agro-page .agro-image-section .w{
+  width:min(1380px,calc(100% - 48px))!important;
+  max-width:1380px!important;
+}
+body.rajac-static-output #rajac-agro-page .agro-image-card{
+  width:100%!important;
+  max-width:none!important;
+  padding:28px 28px 30px!important;
+  box-sizing:border-box!important;
+}
+body.rajac-static-output #rajac-agro-page .agro-image-card img{
+  width:100%!important;
+  max-width:none!important;
+  height:auto!important;
+  display:block!important;
+  margin:0!important;
+  border-radius:16px!important;
+  object-fit:cover!important;
+}
+body.rajac-static-output #rajac-agro-page .agro-image-card h3,
+body.rajac-static-output #rajac-agro-page .agro-image-card p{
+  max-width:1120px!important;
+}
+@media(max-width:760px){
+  body.rajac-static-output #rajac-agro-page .agro-image-section .w{
+    width:min(100% - 24px,1380px)!important;
+  }
+  body.rajac-static-output #rajac-agro-page .agro-image-card{
+    padding:20px 18px 20px!important;
+  }
+}
+</style>
+
+<style id="rajac-agro-v8-align-closing-1406">
+/* v8 — poravnanje NDWI bloka sa Copernicus karticom i bolji zaključni naslov */
+
+/* Zaključak: naslov u jednom do dva reda, bez uskog stupca */
+body.rajac-static-output #rajac-agro-page .closing-wrap .shell{
+  width:min(1280px,calc(100% - 80px))!important;
+}
+body.rajac-static-output #rajac-agro-page .closing-box{
+  width:100%!important;
+  padding:34px 38px 36px!important;
+}
+body.rajac-static-output #rajac-agro-page .closing-box h2{
+  max-width:1120px!important;
+  width:100%!important;
+  font-size:clamp(2rem,2.85vw,3.15rem)!important;
+  line-height:1.05!important;
+  letter-spacing:-.028em!important;
+  margin:0 0 16px!important;
+  text-wrap:balance!important;
+}
+body.rajac-static-output #rajac-agro-page .closing-box h2 em{
+  font-style:normal!important;
+}
+body.rajac-static-output #rajac-agro-page .closing-box p{
+  max-width:1080px!important;
+  font-size:1.02rem!important;
+  line-height:1.62!important;
+}
+
+/* Copernicus i NDWI: isti levi/desni rub */
+body.rajac-static-output #rajac-agro-page .rp-agro .w,
+body.rajac-static-output #rajac-agro-page .agro-image-section .w{
+  width:min(1280px,calc(100% - 80px))!important;
+  max-width:1280px!important;
+  margin-left:auto!important;
+  margin-right:auto!important;
+}
+
+/* Gornja Copernicus kartica i donja NDWI kartica: ista širina i ista unutrašnja logika */
+body.rajac-static-output #rajac-agro-page .rp-agro .al-cop,
+body.rajac-static-output #rajac-agro-page .agro-image-card{
+  width:100%!important;
+  max-width:none!important;
+  margin-left:0!important;
+  margin-right:0!important;
+  box-sizing:border-box!important;
+}
+
+/* NDWI blok malo bolje popunjava karticu */
+body.rajac-static-output #rajac-agro-page .agro-image-section{
+  margin-top:30px!important;
+}
+body.rajac-static-output #rajac-agro-page .agro-image-card{
+  padding:28px 28px 30px!important;
+}
+body.rajac-static-output #rajac-agro-page .agro-image-card img{
+  width:100%!important;
+  max-width:100%!important;
+  height:auto!important;
+  display:block!important;
+  margin:0!important;
+  border-radius:16px!important;
+}
+
+/* Da tekst iznad karte ne bude “uži” od same kartice */
+body.rajac-static-output #rajac-agro-page .agro-image-card h3,
+body.rajac-static-output #rajac-agro-page .agro-image-card p{
+  max-width:1120px!important;
+}
+
+/* Mobilno: čuva rubove i ne pravi horizontalni skrol */
+@media(max-width:760px){
+  body.rajac-static-output #rajac-agro-page .closing-wrap .shell,
+  body.rajac-static-output #rajac-agro-page .rp-agro .w,
+  body.rajac-static-output #rajac-agro-page .agro-image-section .w{
+    width:min(100% - 28px,1280px)!important;
+  }
+  body.rajac-static-output #rajac-agro-page .closing-box{
+    padding:24px 22px 26px!important;
+  }
+  body.rajac-static-output #rajac-agro-page .closing-box h2{
+    font-size:clamp(1.65rem,7vw,2.35rem)!important;
+    line-height:1.08!important;
+  }
+  body.rajac-static-output #rajac-agro-page .agro-image-card{
+    padding:20px 18px 20px!important;
+  }
+}
+</style>
+
+<style id="rajac-disable-late-title-animation-1406">
+/* 14.06 — uklonjeno naknadno animirano pojavljivanje naslova i blokova */
+body.rajac-static-output #rajac-agro-page .section-head,
+body.rajac-static-output #rajac-agro-page .highlight-band,
+body.rajac-static-output #rajac-agro-page .key-grid,
+body.rajac-static-output #rajac-agro-page .manage-grid,
+body.rajac-static-output #rajac-agro-page .closing-box{
+  opacity:1!important;
+  transform:none!important;
+  transition:none!important;
+  animation:none!important;
+}
+</style>
+
+
+
+<style id="rajac-fix-fixed-menu-no-title-animation-1506">
+/* 15.06 — HITNA ISPRAVKA: fiksni meni + potpuno ukidanje animiranog pojavljivanja naslova.
+   Ovaj blok je namerno na kraju stranice da pregazi ranije i spoljne CSS fajlove. */
+
+/* Gornji meni ostaje zalepljen za vrh ekrana tokom skrolovanja */
+body.rajac-static-output .rajac-static-common-menu.rajac-program-menu,
+body.rajac-static-output nav.rajac-static-common-menu.rajac-program-menu,
+body.rajac-static-output nav.rajac-static-common-menu{
+  position:fixed!important;
+  top:0!important;
+  left:0!important;
+  right:0!important;
+  width:100%!important;
+  z-index:1500!important;
+  opacity:1!important;
+  visibility:visible!important;
+  transform:none!important;
+  translate:none!important;
+  animation:none!important;
+  transition:none!important;
+  background:rgba(14,25,17,.94)!important;
+  border-bottom:1px solid rgba(255,255,255,.12)!important;
+  box-shadow:0 10px 30px rgba(0,0,0,.20)!important;
+  -webkit-backdrop-filter:blur(14px)!important;
+  backdrop-filter:blur(14px)!important;
+}
+
+body.rajac-static-output .rajac-static-common-menu.rajac-program-menu .rajac-static-common-menu__inner{
+  min-height:64px!important;
+}
+
+body.rajac-static-output .rajac-static-common-menu.rajac-program-menu .rajac-static-common-menu__logo,
+body.rajac-static-output .rajac-static-common-menu.rajac-program-menu .rajac-static-common-menu__link{
+  opacity:1!important;
+  visibility:visible!important;
+  transform:none!important;
+  translate:none!important;
+  animation:none!important;
+  transition:none!important;
+}
+
+/* Progres linija, ako ostane aktivna, ide iznad menija i ne utiče na meni */
+body.rajac-static-output #rajac-progress-bar{
+  position:fixed!important;
+  top:0!important;
+  z-index:1600!important;
+}
+
+/* Da skokovi ka sidrima ne završe ispod fiksnog menija */
+html{
+  scroll-padding-top:86px!important;
+}
+
+/* Potpuno ukidanje naknadnog/animiranog pojavljivanja naslova i naslovnih blokova */
+body.rajac-static-output #rajac-agro-page .hero h1,
+body.rajac-static-output #rajac-agro-page .hero-lead,
+body.rajac-static-output #rajac-agro-page .section-head,
+body.rajac-static-output #rajac-agro-page .section-head *,
+body.rajac-static-output #rajac-agro-page .eyebrow,
+body.rajac-static-output #rajac-agro-page .s-title,
+body.rajac-static-output #rajac-agro-page .s-desc,
+body.rajac-static-output #rajac-agro-page h1,
+body.rajac-static-output #rajac-agro-page h2,
+body.rajac-static-output #rajac-agro-page h3,
+body.rajac-static-output #rajac-agro-page .key-card,
+body.rajac-static-output #rajac-agro-page .key-card *,
+body.rajac-static-output #rajac-agro-page .manage-grid,
+body.rajac-static-output #rajac-agro-page .manage-grid *,
+body.rajac-static-output #rajac-agro-page .highlight-band,
+body.rajac-static-output #rajac-agro-page .highlight-band *,
+body.rajac-static-output #rajac-agro-page .closing-box,
+body.rajac-static-output #rajac-agro-page .closing-box *{
+  opacity:1!important;
+  visibility:visible!important;
+  transform:none!important;
+  translate:none!important;
+  animation:none!important;
+  animation-delay:0s!important;
+  animation-duration:0s!important;
+  transition:none!important;
+  transition-delay:0s!important;
+  filter:none!important;
+  clip-path:none!important;
+}
+
+/* Ako spoljni globalni CSS koristi klase za ulaznu animaciju, i one se ovde gase */
+body.rajac-static-output #rajac-agro-page .is-visible,
+body.rajac-static-output #rajac-agro-page .reveal,
+body.rajac-static-output #rajac-agro-page .fade,
+body.rajac-static-output #rajac-agro-page .animate,
+body.rajac-static-output #rajac-agro-page [data-animate],
+body.rajac-static-output #rajac-agro-page [data-reveal]{
+  opacity:1!important;
+  visibility:visible!important;
+  transform:none!important;
+  translate:none!important;
+  animation:none!important;
+  transition:none!important;
+}
+
+@media(max-width:980px){
+  html{scroll-padding-top:126px!important;}
+  body.rajac-static-output .rajac-static-common-menu.rajac-program-menu .rajac-static-common-menu__inner{
+    min-height:92px!important;
+  }
+}
+</style>
+
+<!-- SITE_EDITOR_ADMIN_BAR_START -->
+<script src="/admin-site-editor.php?admin_bar_js=1" defer></script>
+<!-- SITE_EDITOR_ADMIN_BAR_END -->
+<script id="programske-responsive-v2-js">
+(function () {
+  "use strict";
+
+  var menu = document.querySelector(".rajac-program-menu");
+  if (!menu) return;
+
+  var toggle = menu.querySelector(".rajac-program-menu__toggle");
+  var links = menu.querySelector(".rajac-static-common-menu__links");
+  if (!toggle || !links) return;
+
+  function closeMenu() {
+    menu.classList.remove("is-open");
+    toggle.setAttribute("aria-expanded", "false");
+  }
+
+  toggle.addEventListener("click", function () {
+    var open = menu.classList.toggle("is-open");
+    toggle.setAttribute("aria-expanded", open ? "true" : "false");
+  });
+
+  links.addEventListener("click", function (event) {
+    if (event.target.closest("a")) closeMenu();
+  });
+
+  document.addEventListener("keydown", function (event) {
+    if (event.key === "Escape") closeMenu();
+  });
+
+  window.addEventListener("resize", function () {
+    if (window.innerWidth > 1100) closeMenu();
+  }, { passive: true });
+})();
+
+</script>
+
+<style id="programske-menu-v3-absolute-final">
+@media (max-width:1100px){
+html body.rajac-static-output.pio-program-responsive nav.rajac-static-common-menu.rajac-program-menu .rajac-static-common-menu__inner{width:min(100% - 28px,1180px)!important;min-height:58px!important;margin:0 auto!important;padding:8px 0!important;display:grid!important;grid-template-columns:minmax(0,1fr) auto!important;align-items:center!important;justify-content:stretch!important;gap:8px 14px!important;flex-direction:initial!important}
+html body.rajac-static-output.pio-program-responsive nav.rajac-static-common-menu.rajac-program-menu .rajac-static-common-menu__logo{justify-self:start!important;margin:0!important}
+html body.rajac-static-output.pio-program-responsive nav.rajac-static-common-menu.rajac-program-menu .rajac-program-menu__toggle{display:inline-flex!important;justify-self:end!important;margin:0!important}
+html body.rajac-static-output.pio-program-responsive nav.rajac-static-common-menu.rajac-program-menu .rajac-static-common-menu__links{grid-column:1/-1!important;width:100%!important;display:none!important;grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:8px!important;margin:0!important;padding:6px 0 4px!important;overflow:visible!important;flex-wrap:initial!important}
+html body.rajac-static-output.pio-program-responsive nav.rajac-static-common-menu.rajac-program-menu.is-open .rajac-static-common-menu__links{display:grid!important}
+}
+@media (max-width:700px){html body.rajac-static-output.pio-program-responsive nav.rajac-static-common-menu.rajac-program-menu .rajac-static-common-menu__links{grid-template-columns:minmax(0,1fr)!important}}
+</style>
+
+<script id="programske-menu-v3-enforce">
+(function(){"use strict";var m=document.querySelector(".rajac-program-menu"),l=m&&m.querySelector(".rajac-static-common-menu__links");if(!m||!l)return;function sync(){if(window.innerWidth<=1100){l.style.setProperty("display",m.classList.contains("is-open")?"grid":"none","important");}else{l.style.removeProperty("display");}}m.addEventListener("click",function(){window.requestAnimationFrame(sync);});document.addEventListener("keydown",function(e){if(e.key==="Escape")window.requestAnimationFrame(sync);});window.addEventListener("resize",sync,{passive:true});sync();})();
+</script>
+
+<style id="rajac-vrh-v5-transparent-style">#rajac-vrh-v4{position:fixed;right:18px;bottom:18px;z-index:100000;width:54px;height:54px;padding:0;border:1px solid rgba(23,51,34,.38);border-radius:50%;background:rgba(255,255,255,.16);color:#173322;box-shadow:0 8px 24px rgba(0,0,0,.18);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);text-shadow:0 1px 2px rgba(255,255,255,.75);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1px;opacity:0;visibility:hidden;transform:translateY(10px);pointer-events:none;transition:opacity .2s ease,transform .2s ease,visibility .2s ease;cursor:pointer;-webkit-tap-highlight-color:transparent}#rajac-vrh-v4.is-visible{opacity:1;visibility:visible;transform:none;pointer-events:auto}#rajac-vrh-v4 .arr{font:800 20px/17px system-ui}#rajac-vrh-v4 .txt{font:800 9px/10px system-ui;letter-spacing:.08em}@media(max-width:700px){#rajac-vrh-v4{right:14px;bottom:14px;width:52px;height:52px}}@media(prefers-reduced-motion:reduce){#rajac-vrh-v4{transition:none}}
+</style>
+<button id="rajac-vrh-v4" type="button" aria-label="Врати се на врх странице" title="ВРХ"><span class="arr" aria-hidden="true">↑</span><span class="txt">ВРХ</span></button>
+<script id="rajac-vrh-v5-transparent-js">(function(){"use strict";var b=document.getElementById("rajac-vrh-v4");if(!b)return;function show(){b.classList.toggle("is-visible",window.scrollY>280)}window.addEventListener("scroll",show,{passive:true});b.addEventListener("click",function(){window.scrollTo({top:0,behavior:"smooth"})});show()})();</script>
+</body></html>

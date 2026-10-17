@@ -1,0 +1,1007 @@
+<!-- ПИО Рајац complete static export 2026-05-21 | pedologija -->
+<!DOCTYPE html>
+
+<html lang="sr-RS">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, viewport-fit=cover" name="viewport"/>
+<title>Педологија</title>
+<meta content="Педологија Рајца: типови земљишта, HNV системи, заштита земљишта и значај педолошког покривача за живи предео." name="description"/>
+<style>
+html,body{margin:0;padding:0;}
+body{background:#f6f2ea;color:#1e241d;}
+a{color:inherit;}
+img{max-width:100%;height:auto;}
+
+#rped-map{cursor:grab;}
+.leaflet-container{pointer-events:auto!important;}
+.map-card,.map-wrap,.map-stage{pointer-events:auto!important;}
+.legend-panel,.legend-row,#rped-legend-row{display:flex!important;visibility:visible!important;opacity:1!important;}
+.legend-panel{background:rgba(250,249,244,.96)!important;border-top:1px solid rgba(35,30,20,.10)!important;}
+
+
+/* Исправка приказа педолошке карте и HNV блока */
+.map-shell{position:relative!important;overflow:hidden!important;border-radius:16px!important;}
+.map-view,#rped-map{height:clamp(470px,52vh,560px)!important;min-height:470px!important;max-height:560px!important;}
+.map-legend{display:block!important;position:absolute!important;left:14px!important;right:14px!important;bottom:14px!important;z-index:700!important;background:rgba(250,250,248,.96)!important;border:1px solid rgba(34,37,31,.14)!important;border-radius:14px!important;box-shadow:0 12px 34px rgba(0,0,0,.13)!important;padding:12px 14px!important;visibility:visible!important;opacity:1!important;}
+.map-legend-title{font-family:'DM Mono','Josefin Sans',monospace!important;font-size:.62rem!important;letter-spacing:.16em!important;text-transform:uppercase!important;color:#4d5148!important;margin-bottom:8px!important;}
+.legend-row,#rped-legend-row{display:flex!important;flex-wrap:wrap!important;align-items:center!important;gap:8px 18px!important;visibility:visible!important;opacity:1!important;}
+.legend-entry{display:inline-flex!important;align-items:center!important;gap:7px!important;white-space:nowrap!important;background:transparent!important;}
+.legend-swatch{width:18px!important;height:18px!important;border-radius:5px!important;flex:0 0 auto!important;}
+.legend-swatch.boundary-sw{background:transparent!important;border:2px solid #1a237e!important;}
+.legend-text{font-family:'Outfit',system-ui,sans-serif!important;font-size:.78rem!important;line-height:1.3!important;color:#30342d!important;max-width:none!important;}
+.section-dark{background:#f3f0e8!important;color:#22251f!important;}
+.section-dark .s-title,.section-dark .s-title em{color:#22251f!important;}
+.section-dark .s-desc,.section-dark p{color:#4d5148!important;opacity:1!important;}
+.section-dark .eyebrow{color:#8a6d24!important;}
+.section-dark .hnv-item{background:#fbfaf6!important;border:1px solid rgba(34,37,31,.10)!important;color:#30342d!important;}
+.section-dark .hnv-item span{color:#30342d!important;opacity:1!important;}
+
+</style>
+<link rel="stylesheet" id="rajac-static-common-menu-css" href="https://piorajac.rs/rajac-static-2105/assets/menu/rajac-static-menu.css?v=20260521-complete" media="all">
+
+<!-- RAJAC_DESIGN_SYSTEM=1.0.0 -->
+<link rel="stylesheet" href="/rajac-design/rajac-global.css?v=1.0.0">
+<link rel="stylesheet" href="/rajac-design/rajac-pages.css?v=1.0.0">
+
+<style id="rajac-pedologija-hero-final-v1">
+/* FINAL PATCH: уједначен систем као на страници Рељеф — таман мени, светли hero, без hero картица/дугмади */
+html,body{
+  margin:0!important;
+  padding:0!important;
+}
+body.rajac-static-output{
+  background:#fafaf8!important;
+  color:#253126!important;
+  font-family:'Outfit','Segoe UI',system-ui,-apple-system,Roboto,sans-serif!important;
+}
+
+/* Таман горњи мени */
+.rajac-static-common-menu{
+  position:sticky!important;
+  top:0!important;
+  z-index:99999!important;
+  width:100%!important;
+  min-height:60px!important;
+  background:rgba(20,32,24,.96)!important;
+  border-bottom:1px solid rgba(176,145,63,.42)!important;
+  box-shadow:0 10px 24px rgba(0,0,0,.18)!important;
+  backdrop-filter:blur(12px)!important;
+  -webkit-backdrop-filter:blur(12px)!important;
+  font-family:'Outfit','Segoe UI',system-ui,-apple-system,Roboto,sans-serif!important;
+}
+.rajac-static-common-menu__inner{
+  width:min(1180px,calc(100% - 40px))!important;
+  min-height:60px!important;
+  margin:0 auto!important;
+  display:flex!important;
+  align-items:center!important;
+  gap:18px!important;
+  overflow-x:auto!important;
+  scrollbar-width:none!important;
+}
+.rajac-static-common-menu__inner::-webkit-scrollbar{
+  display:none!important;
+}
+.rajac-static-common-menu__logo{
+  display:flex!important;
+  align-items:center!important;
+  min-height:40px!important;
+  padding-right:20px!important;
+  border-right:1px solid rgba(255,255,255,.10)!important;
+  color:#f3efe2!important;
+  text-decoration:none!important;
+  font-weight:700!important;
+  font-size:.98rem!important;
+  letter-spacing:.02em!important;
+  white-space:nowrap!important;
+}
+.rajac-static-common-menu__links{
+  display:flex!important;
+  align-items:center!important;
+  gap:0!important;
+  white-space:nowrap!important;
+}
+.rajac-static-common-menu__link{
+  display:flex!important;
+  align-items:center!important;
+  min-height:40px!important;
+  padding:0 12px!important;
+  color:rgba(243,239,226,.76)!important;
+  text-decoration:none!important;
+  font-size:.82rem!important;
+  line-height:1!important;
+  font-weight:700!important;
+  text-transform:uppercase!important;
+  letter-spacing:.12em!important;
+  border-bottom:2px solid transparent!important;
+}
+.rajac-static-common-menu__link:hover{
+  color:#ffffff!important;
+}
+.rajac-static-common-menu__link.is-active,
+.rajac-static-common-menu__link.active,
+.rajac-static-common-menu__link[aria-current="page"]{
+  color:#d4b256!important;
+  border-bottom-color:#d4b256!important;
+}
+
+/* Hero: ista visina, samo naslov + jedna rečenica, svetla pozadina */
+.hero{
+  position:relative!important;
+  height:460px!important;
+  min-height:460px!important;
+  max-height:460px!important;
+  padding:0!important;
+  display:flex!important;
+  align-items:flex-end!important;
+  overflow:hidden!important;
+  isolation:isolate!important;
+  border-bottom:1px solid rgba(176,145,63,.42)!important;
+  background-color:#efe7d6!important;
+  background-image:
+    linear-gradient(90deg,rgba(247,243,232,.72) 0%,rgba(247,243,232,.56) 30%,rgba(247,243,232,.24) 55%,rgba(247,243,232,.06) 76%,rgba(247,243,232,0) 100%),
+    url('https://commons.wikimedia.org/wiki/Special:FilePath/Soil_profile_0-125cm.jpg?width=1600')!important;
+  background-size:cover!important;
+  background-position:center 45%!important;
+  background-repeat:no-repeat!important;
+}
+.hero-img,
+.hero-overlay,
+.hero-credit,
+.hero-eyebrow,
+.hero-card{
+  display:none!important;
+}
+.hero-body{
+  position:relative!important;
+  z-index:2!important;
+  width:min(1180px,calc(100% - 40px))!important;
+  margin:0 auto!important;
+  padding:0 0 58px!important;
+}
+.hero-inner{
+  display:block!important;
+  max-width:760px!important;
+  padding:0!important;
+  margin:0!important;
+}
+.hero h1{
+  margin:0!important;
+  max-width:760px!important;
+  font-family:'Cormorant Garamond',Georgia,'Times New Roman',serif!important;
+  font-size:clamp(40px,4.3vw,58px)!important;
+  font-weight:500!important;
+  line-height:1.06!important;
+  letter-spacing:-.03em!important;
+  color:#253126!important;
+  text-shadow:none!important;
+}
+.hero h1 br,
+.hero h1 em{
+  display:none!important;
+}
+.hero-lead{
+  max-width:760px!important;
+  margin:22px 0 0!important;
+  font-family:'Outfit','Segoe UI',system-ui,-apple-system,Roboto,sans-serif!important;
+  font-size:clamp(16px,1.55vw,19px)!important;
+  line-height:1.75!important;
+  color:rgba(37,49,38,.88)!important;
+  text-shadow:none!important;
+}
+
+/* Zbijenije sekcije i bez linije neposredno ispod hero-a */
+.divider{
+  display:none!important;
+}
+.section{
+  padding:clamp(32px,4.8vw,56px) 0!important;
+}
+.sec-head{
+  margin-bottom:32px!important;
+}
+.s-desc,
+.body-text,
+.soil-card p,
+.hnv-item span,
+.pitem p{
+  line-height:1.68!important;
+}
+.body-text + .body-text,
+.s-desc + .body-text,
+p + p{
+  margin-top:8px!important;
+}
+
+/* Bez tamnih pozadina u sadržaju */
+.section-dark,
+.closing{
+  background:linear-gradient(180deg,#f7f3e8 0%,#efe7d6 100%)!important;
+  color:#253126!important;
+}
+.section-dark .s-title,
+.section-dark .s-title em,
+.closing h2{
+  color:#253126!important;
+}
+.section-dark .s-desc,
+.section-dark p,
+.closing p{
+  color:rgba(37,49,38,.78)!important;
+  opacity:1!important;
+}
+.section-dark .eyebrow{
+  color:#8a6d24!important;
+}
+.section-dark .hnv-item{
+  background:#fbfaf6!important;
+  border:1px solid rgba(37,49,38,.10)!important;
+}
+.section-dark .hnv-item span{
+  color:rgba(37,49,38,.82)!important;
+}
+.closing-badge{
+  border:1px solid rgba(176,145,63,.55)!important;
+  background:rgba(255,255,255,.58)!important;
+  color:#6c5a2b!important;
+}
+
+@media(max-width:640px){
+  .rajac-static-common-menu{
+    min-height:58px!important;
+  }
+  .rajac-static-common-menu__inner{
+    width:min(100% - 28px,1180px)!important;
+    min-height:58px!important;
+  }
+  .rajac-static-common-menu__link{
+    font-size:.76rem!important;
+    padding:0 10px!important;
+  }
+  .hero{
+    height:360px!important;
+    min-height:360px!important;
+    max-height:360px!important;
+  }
+  .hero-body{
+    width:min(100% - 32px,1180px)!important;
+    padding:0 0 34px!important;
+  }
+  .hero h1{
+    font-size:34px!important;
+  }
+  .hero-lead{
+    font-size:16px!important;
+    line-height:1.62!important;
+  }
+}
+</style>
+
+<link data-pio-mobile="group3-v1" rel="stylesheet" href="../assets/mobile/pio-mobile.css?v=20260713-g3-3"></head>
+<body class="rajac-static-output"><nav class="rajac-static-common-menu" aria-label="Странице ПИО Рајац"><div class="rajac-static-common-menu__inner"><a class="rajac-static-common-menu__logo" href="/">ПИО „Рајац”</a><div class="rajac-static-common-menu__links"><a class="rajac-static-common-menu__link" href="../geologija/index.html">Геологија</a><a class="rajac-static-common-menu__link" href="../reljef/index.html">Рељеф</a><a class="rajac-static-common-menu__link is-active" href="../pedologija/index.html">Педологија</a><a class="rajac-static-common-menu__link" href="../hidrografija/index.html">Хидрографија</a><a class="rajac-static-common-menu__link" href="../klima/index.html">Клима</a></div></div></nav>
+
+<link href="../assets/vendor/leaflet/leaflet.css" rel="stylesheet"/>
+<script src="../assets/vendor/leaflet/leaflet.js"></script>
+<style>
+:root {
+  --bg:          #f5f1ea;
+  --bg2:         #eee9df;
+  --paper:       #faf8f4;
+  --ink:         #1a241e;
+  --ink2:        #2e422e;
+  --ink3:        #4a5a48;
+  --line:        rgba(26,36,30,.09);
+  --line2:       rgba(26,36,30,.16);
+  --green:       #2e5e38;
+  --green2:      #3d7249;
+  --green-deep:  #1a3620;
+  --green-pale:  rgba(46,94,56,.07);
+  --gold:        #c9a84c;
+  --gold2:       #e2c87a;
+  --gold-pale:   rgba(201,168,76,.12);
+  --dark:        #0f1a11;
+  --dark2:       #182019;
+  --dark-nav:    rgba(14,22,15,.94);
+  --shadow:      0 14px 48px rgba(18,32,20,.12);
+  --shadow-sm:   0 4px 20px rgba(18,32,20,.07);
+  --r:           2px;
+}
+
+*, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+html { scroll-behavior:smooth; }
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: 'Outfit', sans-serif;
+  font-weight: 300;
+  -webkit-font-smoothing: antialiased;
+  line-height: 1.6;
+}
+a { color: inherit; text-decoration: none; }
+img { display:block; max-width:100%; }
+
+.site-nav {
+  position: sticky; top: 0; z-index: 500;
+  background: var(--dark-nav);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-bottom: 1px solid rgba(201,168,76,.14);
+}
+.nav-inner {
+  max-width: 1200px; margin: 0 auto;
+  padding: 0 36px;
+  display: flex; align-items: center;
+  gap: 0; min-height: 56px;
+}
+.nav-logo {
+  font-family: 'Outfit', sans-serif;
+  font-weight: 600;
+  font-size: .88rem;
+  letter-spacing: .06em;
+  color: rgba(245,240,228,.9);
+  padding-right: 26px;
+  border-right: 1px solid rgba(255,255,255,.07);
+  margin-right: 18px;
+  white-space: nowrap;
+  flex-shrink: 0;
+  transition: color .18s;
+}
+.nav-logo:hover { color: var(--gold2); }
+.nav-links {
+  display: flex; flex-wrap: wrap;
+  gap: 0; flex: 1; overflow-x: auto;
+}
+.nav-link {
+  font-family: 'Josefin Sans', sans-serif;
+  font-weight: 100;
+  font-size: .68rem;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  color: rgba(245,240,228,.38);
+  padding: 0 15px;
+  height: 56px;
+  display: flex; align-items: center;
+  border-bottom: 2px solid transparent;
+  white-space: nowrap;
+  transition: color .18s, border-color .18s;
+}
+.nav-link:hover { color: rgba(245,240,228,.7); }
+.nav-link.active {
+  color: var(--gold);
+  border-bottom-color: var(--gold);
+  font-weight: 300;
+}
+
+.hero {
+  position: relative;
+  min-height: min(84vh, 760px);
+  display: flex; align-items: flex-end;
+  overflow: hidden;
+}
+.hero-img {
+  position: absolute; inset: 0;
+  width: 100%; height: 100%;
+  object-fit: cover; object-position: center 45%;
+}
+.hero-overlay {
+  position: absolute; inset: 0;
+  background:
+    linear-gradient(105deg, rgba(8,14,10,.88) 0%, rgba(8,14,10,.68) 38%, rgba(8,14,10,.22) 70%, transparent 100%),
+    linear-gradient(180deg, transparent 40%, rgba(8,14,10,.85) 100%);
+}
+.hero-credit{position:absolute;right:18px;top:16px;z-index:3;padding:6px 9px;border-radius:999px;background:rgba(8,14,10,.44);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);font-size:.62rem;line-height:1.2;color:rgba(245,240,228,.72);font-family:var(--pmono);letter-spacing:.04em;}
+.hero-credit a{color:rgba(245,240,228,.86);text-decoration:none;border-bottom:1px solid rgba(245,240,228,.28);}
+.hero-body {
+  position: relative; z-index: 2;
+  width: 100%; padding: 0 0 68px;
+}
+.hero-inner {
+  max-width: 1200px; margin: 0 auto;
+  padding: 0 36px;
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(280px, .9fr);
+  gap: 40px; align-items: end;
+}
+
+/* EYEBROW */
+.hero-eyebrow {
+  font-family: 'DM Mono', monospace;
+  font-size: .68rem;
+  letter-spacing: .26em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 18px;
+  display: flex; align-items: center; gap: 12px;
+}
+.hero-eyebrow::before {
+  content:'';
+  display: inline-block;
+  width: 24px; height: 1px;
+  background: var(--gold); opacity: .6;
+}
+
+/* H1 */
+.hero h1 {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 300;
+  font-size: clamp(3rem, 5.8vw, 5.6rem);
+  line-height: .96;
+  letter-spacing: -.025em;
+  color: rgba(245,240,228,.92);
+  margin-bottom: 22px;
+  max-width: 12ch;
+}
+.hero h1 em {
+  font-style: italic;
+  color: var(--gold2);
+}
+
+/* LEAD */
+.hero-lead {
+  font-family: 'Outfit', sans-serif;
+  font-weight: 200;
+  font-size: clamp(.95rem, 1.4vw, 1.08rem);
+  line-height: 1.8;
+  color: rgba(245,240,228,.56);
+  max-width: 620px;
+  margin-bottom: 40px;
+}
+
+/* STATS CARD */
+.hero-card {
+  background: rgba(255,255,255,.08);
+  border: 1px solid rgba(255,255,255,.11);
+  backdrop-filter: blur(12px);
+  border-radius: var(--r);
+  padding: 22px 24px;
+  box-shadow: 0 24px 56px rgba(0,0,0,.22);
+}
+.hero-card-lbl {
+  font-family: 'DM Mono', monospace;
+  font-size: .66rem;
+  letter-spacing: .2em;
+  text-transform: uppercase;
+  color: rgba(245,240,228,.45);
+  margin-bottom: 12px;
+}
+.hero-stat-row {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 10px; align-items: baseline;
+  padding: 11px 0;
+  border-top: 1px solid rgba(255,255,255,.08);
+}
+.hero-stat-row:first-of-type { border-top: none; padding-top: 0; }
+.hero-stat-row b {
+  font-family: 'DM Mono', monospace;
+  font-size: 1.1rem; font-weight: 500;
+  color: var(--gold2); white-space: nowrap;
+}
+.hero-stat-row span {
+  font-family: 'Outfit', sans-serif;
+  font-weight: 300; font-size: .88rem; line-height: 1.45;
+  color: rgba(245,240,228,.62);
+}
+
+.shell { max-width: 1200px; margin: 0 auto; padding: 0 34px; }
+.divider { height: 1px; background: var(--line2); }
+
+.section { padding: clamp(52px,6vw,84px) 0; }
+.section-light { background: var(--paper); }
+.section-cream { background: var(--bg); }
+.section-dark  { background: var(--dark2); }
+
+/* SEC HEAD */
+.sec-head { margin-bottom: 48px; max-width: 820px; }
+.eyebrow {
+  font-family: 'DM Mono', monospace;
+  font-size: .66rem; letter-spacing: .26em; text-transform: uppercase;
+  color: var(--gold); margin-bottom: 12px;
+  display: flex; align-items: center; gap: 10px;
+}
+.eyebrow::before {
+  content:''; display:inline-block;
+  width: 20px; height: 1px;
+  background: var(--gold); opacity: .55;
+}
+.s-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 300;
+  font-size: clamp(2rem, 3.2vw, 3.2rem);
+  line-height: 1.06; letter-spacing: -.022em;
+  color: var(--ink); margin-bottom: 16px;
+}
+.s-title em { font-style: italic; color: var(--green); }
+.section-dark .s-title { color: rgba(245,240,228,.92); }
+.section-dark .s-title em { color: var(--gold2); }
+.s-desc {
+  font-family: 'Outfit', sans-serif;
+  font-weight: 300; font-size: 1rem; line-height: 1.78;
+  color: var(--ink3); max-width: 680px;
+}
+.section-dark .s-desc { color: rgba(245,240,228,.5); }
+
+.soils-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+.soil-card {
+  background: var(--paper);
+  border: 1px solid var(--line2);
+  border-top: 3px solid var(--green);
+  border-radius: var(--r);
+  padding: 24px 22px 22px;
+  box-shadow: var(--shadow-sm);
+  transition: transform .22s, box-shadow .22s;
+}
+.soil-card:hover { transform: translateY(-3px); box-shadow: var(--shadow); }
+.soil-tag {
+  display: inline-flex; align-items: center;
+  height: 26px; padding: 0 11px;
+  background: rgba(201,168,76,.10);
+  border: 1px solid rgba(201,168,76,.22);
+  border-radius: 2px;
+  font-family: 'DM Mono', monospace;
+  font-size: .68rem; letter-spacing: .1em; text-transform: uppercase;
+  color: #7b6228; margin-bottom: 12px;
+}
+.soil-card h3 {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 300; font-size: 1.5rem;
+  line-height: 1.1; letter-spacing: -.015em;
+  color: var(--ink); margin-bottom: 8px;
+}
+.soil-card strong {
+  display: block;
+  font-family: 'Outfit', sans-serif;
+  font-weight: 500; font-size: .84rem;
+  color: var(--green2); margin-bottom: 8px;
+}
+.soil-card p {
+  font-family: 'Outfit', sans-serif;
+  font-weight: 300; font-size: .91rem;
+  line-height: 1.72; color: var(--ink3);
+}
+
+.map-shell {
+  border-radius: 12px; overflow: hidden;
+  border: 1px solid var(--line2);
+  box-shadow: var(--shadow);
+  margin-top: 32px;
+}
+.map-view {
+  height: min(68vh, 720px);
+  min-height: 500px;
+}
+.map-legend {
+  background: #fff;
+  border-top: 2px solid #d4d0c8;
+  padding: 14px 28px 16px;
+}
+.map-legend-title {
+  font-family: 'Josefin Sans', sans-serif;
+  font-weight: 300;
+  font-size: .68rem; letter-spacing: .2em; text-transform: uppercase;
+  color: #555; margin-bottom: 10px;
+}
+.legend-row { display: flex; flex-wrap: wrap; gap: 6px 20px; align-items: flex-start; }
+.legend-entry {
+  display: flex; align-items: center; gap: 7px;
+  cursor: pointer; padding: 3px 5px; border-radius: 3px;
+  transition: background .14s;
+}
+.legend-entry:hover { background: #f2eeea; }
+.legend-swatch {
+  width: 20px; height: 13px; border-radius: 2px;
+  flex-shrink: 0; border: 1px solid rgba(0,0,0,.16);
+}
+.legend-swatch.boundary-sw {
+  background: transparent; border: 2px dashed #E65100;
+}
+.legend-text {
+  font-family: 'Outfit', sans-serif;
+  font-weight: 300; font-size: .76rem;
+  color: #222; line-height: 1.3; max-width: 200px;
+}
+/* Leaflet overrides */
+.map-shell .poly-label { background: transparent; border: none; pointer-events: none; }
+.map-shell .poly-label-text {
+  font-family: 'Outfit', sans-serif; font-size: 11px; font-weight: 600;
+  color: #1a1a2e; text-align: center; line-height: 1.3;
+  text-shadow: 1px 1px 0 rgba(255,255,255,.95), -1px 1px 0 rgba(255,255,255,.95),
+               1px -1px 0 rgba(255,255,255,.95), -1px -1px 0 rgba(255,255,255,.95),
+               0 2px 8px rgba(255,255,255,.7);
+  white-space: normal; max-width: 130px;
+}
+.map-shell .leaflet-control-zoom a { font-weight: 700; border-color: #ccc !important; }
+.map-shell .leaflet-control-attribution { font-size: 9px; }
+
+.hnv-grid {
+  display: grid;
+  grid-template-columns: minmax(0,1fr) minmax(300px,.9fr);
+  gap: 48px; align-items: start;
+}
+.hnv-list { display: grid; gap: 10px; }
+.hnv-item {
+  display: flex; gap: 12px; align-items: flex-start;
+  padding: 14px 18px;
+  background: rgba(255,255,255,.05);
+  border: 1px solid rgba(255,255,255,.08);
+  border-radius: var(--r);
+}
+.hnv-item::before {
+  content: ''; width: 8px; height: 8px; border-radius: 50%;
+  background: linear-gradient(135deg, var(--gold2), #7fb97f);
+  flex: 0 0 8px; margin-top: 6px;
+}
+.hnv-item span {
+  font-family: 'Outfit', sans-serif;
+  font-weight: 300; font-size: .95rem; line-height: 1.65;
+  color: rgba(245,240,228,.7);
+}
+
+.protect-2col {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 32px; align-items: start;
+}
+.protect-list {
+  background: var(--paper);
+  border: 1px solid var(--line2);
+  border-radius: var(--r);
+  padding: 24px 26px;
+  box-shadow: var(--shadow-sm);
+}
+.pitem {
+  display: flex; gap: 14px; align-items: flex-start;
+  padding: 12px 0; border-bottom: 1px solid var(--line);
+}
+.pitem:first-child { padding-top: 0; }
+.pitem:last-child  { border-bottom: none; padding-bottom: 0; }
+.pitem::before {
+  content: ''; width: 7px; height: 7px; border-radius: 50%;
+  background: linear-gradient(135deg, var(--gold), var(--green));
+  flex: 0 0 7px; margin-top: 8px;
+}
+.pitem p {
+  font-family: 'Outfit', sans-serif;
+  font-weight: 300; font-size: .94rem;
+  line-height: 1.7; color: var(--ink3);
+}
+.body-text {
+  font-family: 'Outfit', sans-serif;
+  font-weight: 300; font-size: 1rem;
+  line-height: 1.78; color: var(--ink3);
+}
+.body-text + .body-text { margin-top: 14px; }
+
+.closing {
+  padding: clamp(48px,6vw,88px) 0;
+  background: var(--dark);
+}
+.closing-inner {
+  max-width: 1200px; margin: 0 auto;
+  padding: 0 36px;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 32px; align-items: center;
+}
+.closing h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 300; font-style: italic;
+  font-size: clamp(2rem, 3.4vw, 3.4rem);
+  line-height: 1.08; letter-spacing: -.022em;
+  color: rgba(245,240,228,.9); margin-bottom: 12px;
+  max-width: 18ch;
+}
+.closing p {
+  font-family: 'Outfit', sans-serif;
+  font-weight: 200; font-size: .98rem;
+  line-height: 1.78; color: rgba(245,240,228,.5);
+  max-width: 68ch;
+}
+.closing-badge {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 11px 18px; border-radius: 2px;
+  border: 1px solid rgba(255,255,255,.14);
+  color: rgba(245,240,228,.7);
+  font-family: 'DM Mono', monospace;
+  font-size: .68rem; letter-spacing: .16em; text-transform: uppercase;
+  white-space: nowrap;
+}
+.closing-badge::before {
+  content: ''; width: 7px; height: 7px; border-radius: 50%;
+  background: var(--gold2); box-shadow: 0 0 8px rgba(226,200,122,.45);
+}
+
+.metrics-grid {
+  display: grid; grid-template-columns: repeat(4,1fr);
+  gap: 1px; background: var(--line2);
+  border: 1px solid var(--line2); border-radius: var(--r);
+  overflow: hidden; margin-bottom: 0;
+}
+.metric-box {
+  background: var(--paper);
+  padding: 26px 22px;
+  display: flex; flex-direction: column; gap: 8px;
+  transition: background .18s;
+}
+.metric-box:hover { background: #fff; }
+.metric-box strong {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 300; font-size: 3rem;
+  line-height: 1; color: var(--green);
+  letter-spacing: -.02em;
+}
+.metric-box span {
+  font-family: 'Outfit', sans-serif;
+  font-weight: 300; font-size: .82rem;
+  line-height: 1.5; color: var(--ink3);
+}
+
+.reveal {
+  opacity: 0; transform: translateY(20px);
+  transition: opacity .6s cubic-bezier(.22,1,.36,1), transform .6s cubic-bezier(.22,1,.36,1);
+}
+.reveal.in { opacity: 1; transform: none; }
+.delay { transition-delay: .08s; }
+
+#pbar {
+  position: fixed; top: 0; left: 0; height: 2px;
+  background: linear-gradient(90deg, var(--gold), var(--gold2));
+  width: 0; z-index: 2000; transition: width .08s linear;
+  pointer-events: none;
+}
+
+@media (max-width: 1024px) {
+  .hero-inner, .hnv-grid { grid-template-columns: 1fr; }
+  .soils-grid { grid-template-columns: repeat(2,1fr); }
+  .metrics-grid { grid-template-columns: repeat(2,1fr); }
+}
+@media (max-width: 768px) {
+  .shell { padding: 0 20px; }
+  .nav-inner { padding: 0 20px; }
+  .hero-body { padding-bottom: 48px; }
+  .hero-inner { padding: 0 20px; }
+  .hero h1 { font-size: clamp(2.6rem, 9vw, 3.8rem); }
+  .soils-grid { grid-template-columns: 1fr; }
+  .protect-2col { grid-template-columns: 1fr; }
+  .closing-inner { grid-template-columns: 1fr; }
+  .map-view { min-height: 380px; height: 56vh; }
+  .map-legend { padding: 12px 18px; }
+  .nav-links { gap: 0; }
+}
+@media (max-width: 480px) {
+  .metrics-grid { grid-template-columns: 1fr 1fr; }
+  .site-nav .nav-links a { font-size: .6rem; padding: 0 10px; }
+}
+</style>
+<div id="pbar" style="width: 59.322%;"></div>
+<header aria-labelledby="page-title" class="hero">
+<div class="hero-body">
+<div class="hero-inner">
+<div class="reveal in">
+<h1 id="page-title">Педологија ПИО „Рајац“</h1>
+<p class="hero-lead">Педолошки покривач Рајца обједињује земљишта на кречњаку, серпентину и флишу, од којих зависе шуме, ливаде и стабилност живог предела.</p>
+</div>
+</div>
+</div>
+</header>
+<div class="divider"></div>
+<section class="section section-cream">
+<div class="shell">
+<header class="sec-head reveal in">
+<p class="eyebrow">Типови земљишта</p>
+<h2 class="s-title">Главни типови земљишта<br/>на подручју <em>Рајца</em></h2>
+<p class="s-desc">На релативно малом простору развијени су различити типови земљишта — сваки директно одређен матичном стеном, надморском висином и нагибом терена, и сваки са сопственом биолошком вредношћу.</p>
+</header>
+<div class="soils-grid" style="margin-bottom:48px;">
+<article class="soil-card reveal in">
+<div class="soil-tag">Камбисол</div>
+<h3>Смеђа рудо земљишта на кречњаку</h3>
+<strong>Добро развијен профил</strong>
+<p>Релативно добро развијен профил, умерена плодност и добар хумус — носе букове и мешовите шуме.</p>
+</article>
+<article class="soil-card reveal delay in">
+<div class="soil-tag">Рендзина</div>
+<h3>Црница на кречњаку</h3>
+<strong>Плитка и пропусна</strong>
+<p>Плитка, скелетна и пропусна — јавља се на платоима и стрмим падинама. Носи планинске ливаде.</p>
+</article>
+<article class="soil-card reveal in">
+<div class="soil-tag">Серпентинска</div>
+<h3>Црница на серпентину</h3>
+<strong>Посебан хемијски састав</strong>
+<p>Специфичан хемијски састав са Ni, Cr и Co. Домаћин јединствене серпентинске флоре.</p>
+</article>
+<article class="soil-card reveal delay in">
+<div class="soil-tag">Кисела</div>
+<h3>Смеђа кисела земљишта</h3>
+<strong>Силикатне стене и пешчари</strong>
+<p>На силикатним стенама и пешчарима. Кисела реакција — погодна за шуме букве.</p>
+</article>
+<article class="soil-card reveal in">
+<div class="soil-tag">Скелетна</div>
+<h3>Скелетна земљишта</h3>
+<strong>Ерозивне зоне</strong>
+<p>Најстрмији терени и ерозивне зоне. Важна станишта за специјализоване биљне заједнице.</p>
+</article>
+<article class="soil-card reveal delay in">
+<div class="soil-tag">Алувијал</div>
+<h3>Алувијална и влажна земљишта</h3>
+<strong>Долине потока</strong>
+<p>Висок садржај влаге — подржавају хидрофилну вегетацију и микроклиматску стабилност.</p>
+</article>
+</div>
+<div class="metrics-grid reveal in">
+<div class="metric-box"><strong>6</strong><span>типова земљишта</span></div>
+<div class="metric-box"><strong>7</strong><span>пећина у евиденцији</span></div>
+<div class="metric-box"><strong>3</strong><span>матичне подлоге</span></div>
+<div class="metric-box"><strong>HNV</strong><span>систем вис. прир. вредности</span></div>
+</div>
+</div>
+</section>
+<div class="divider"></div>
+<section class="section section-light" id="karta-zemljista">
+<div class="shell">
+<header class="sec-head reveal in">
+<p class="eyebrow">Педолошка карта</p>
+<h2 class="s-title">Карта типова земљишта<br/>на простору <em>Рајца</em></h2>
+<p class="s-desc">Педолошка карта приказује просторни распоред главних типова земљишта на Рајцу.</p>
+</header>
+<div class="map-shell reveal delay in">
+<div aria-label="Интерактивна педолошка карта ПИО Рајац" class="map-view" id="rped-map"></div>
+<div class="map-legend">
+<div class="map-legend-title">Легенда</div>
+<div class="legend-row" id="rped-legend-row"><div class="legend-entry" data-style="grey"><div class="legend-swatch" style="background:#BDBDBD;opacity:0.79;border-color:#757575;"></div><span class="legend-text">Црница на серпентину — скелетоидна</span></div><div class="legend-entry" data-style="orange" style=""><div class="legend-swatch" style="background:#EF8C00;opacity:0.76;border-color:#BF6000;"></div><span class="legend-text">Смеђе рудо земљиште на кречњаку</span></div><div class="legend-entry" data-style="brown"><div class="legend-swatch" style="background:#795548;opacity:0.8320000000000001;border-color:#4E342E;"></div><span class="legend-text">Црница на кречњаку</span></div><div class="legend-entry" data-style="yellow"><div class="legend-swatch" style="background:#FFD600;opacity:0.73;border-color:#C8A800;"></div><span class="legend-text">Скелет — кемењар</span></div><div class="legend-entry" data-style="lightyellow" style=""><div class="legend-swatch" style="background:#FFFF8D;opacity:0.76;border-color:#C8B800;"></div><span class="legend-text">Смеђе кисело земљиште на пешчару</span></div><div class="legend-entry" data-style="indigo" style=""><div class="legend-swatch" style="background:#3949AB;opacity:0.772;border-color:#1A237E;"></div><span class="legend-text">Смеђе скелетоидно кисело на граниту</span></div><div class="legend-entry" data-style="boundary"><div class="legend-swatch boundary-sw"></div><span class="legend-text">Граница заштићеног подручја</span></div></div>
+</div>
+</div>
+</div>
+</section>
+<div class="divider"></div>
+<section class="section section-dark">
+<div class="shell">
+<div class="hnv-grid">
+<div class="reveal in">
+<p class="eyebrow" style="color:var(--gold2);">Пољопривреда и биодиверзитет</p>
+<h2 class="s-title">HNV системи — пољопривреда<br/>високе <em>природне вредности</em></h2>
+<p class="s-desc">Рајац је препознат као простор пољопривредних система High Nature Value. Традиционално нискоинтензивно коришћење земљишта омогућава истовремено очување богатог биодиверзитета.</p>
+</div>
+<div class="hnv-list reveal delay in">
+<div class="hnv-item"><span>Умерено и традиционално коришћење пашњака и ливада</span></div>
+<div class="hnv-item"><span>Одсуство интензивне агрохемије</span></div>
+<div class="hnv-item"><span>Очување мозаичне структуре: међе, живице, усамљена стабла</span></div>
+<div class="hnv-item"><span>Висока разноврсност биљних и животињских врста</span></div>
+</div>
+</div>
+</div>
+</section>
+<div class="divider" style="background:rgba(255,255,255,.05);"></div>
+<section class="section section-cream">
+<div class="shell">
+<div class="protect-2col">
+<div class="reveal">
+<p class="eyebrow">Заштита земљишта</p>
+<h2 class="s-title">Осетљив ресурс<br/>под <em>притиском</em></h2>
+<p class="body-text">Земљиште Рајца је плитко, скелетно и осетљиво. Вековна косидба постепено износи хранљиве материје. Традиционална прихрана стајњаком одржава равнотежу ливадских екосистема.</p>
+<p class="body-text" style="margin-top:14px;">Ерозија, неконтролисана изградња, пожари и вожња ван путева могу уништити оно што је природа градила хиљадама година.</p>
+</div>
+<div class="reveal delay">
+<div class="protect-list">
+<div class="pitem"><p>Очување травног покривача и спречавање ерозије</p></div>
+<div class="pitem"><p>Одрживо коришћење ливада — са роковима косидбе прилагођеним биодиверзитету</p></div>
+<div class="pitem"><p>Подстицање органске пољопривреде и традиционалне прихране стајњаком</p></div>
+<div class="pitem"><p>Контрола ширења инвазивних биљних врста</p></div>
+<div class="pitem"><p>Забрана вожње моторних возила ван означених путева</p></div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<div class="closing">
+<div class="closing-inner reveal">
+<div>
+<h2>Очувањем земљишта чува се основа свих екосистема Рајца</h2>
+<p>Традиционални планински пејзаж по коме је Рајац препознатљив директно зависи од здравља, разноврсности и одрживог коришћења његових земљишта.</p>
+</div>
+<div class="closing-badge">6 типова · HNV · Серпентинска флора</div>
+</div>
+</div>
+<script>
+/* ── Progress bar ── */
+const pbar = document.getElementById('pbar');
+window.addEventListener('scroll', () => {
+  const h = document.documentElement;
+  const pct = (h.scrollTop / (h.scrollHeight - h.clientHeight)) * 100;
+  pbar.style.width = Math.min(100, pct) + '%';
+}, { passive: true });
+
+/* ── Reveal ── */
+const io = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+}, { threshold: .08, rootMargin: '0px 0px -28px 0px' });
+document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+(function () {
+  if (typeof L === 'undefined' || !document.getElementById('rped-map')) return;
+
+  const PEDOLOGY = [{"name":"Граница заштићеног подручја","style":"boundary","polygons":[[[20.175287,44.129119],[20.175421,44.12905],[20.175538,44.128983],[20.175573,44.128924],[20.175747,44.128705],[20.175856,44.128496],[20.175976,44.12816],[20.175997,44.128044],[20.176002,44.127979],[20.176001,44.127891],[20.176337,44.128064],[20.176518,44.12821],[20.176731,44.128358],[20.176995,44.128498],[20.177108,44.128581],[20.177417,44.128652],[20.177586,44.128712],[20.177723,44.12882],[20.177835,44.128864],[20.178079,44.128986],[20.178346,44.129129],[20.178601,44.129167],[20.178942,44.129217],[20.179438,44.129289],[20.179703,44.129336],[20.18008,44.129396],[20.180317,44.129437],[20.180491,44.129467],[20.180704,44.129547],[20.18096,44.129623],[20.181146,44.129609],[20.181329,44.129594],[20.181475,44.129628],[20.181503,44.129657],[20.181509,44.129685],[20.181466,44.12982],[20.181441,44.130046],[20.181452,44.130172],[20.181419,44.130406],[20.181433,44.130581],[20.181443,44.130713],[20.181487,44.130891],[20.181489,44.131075],[20.181465,44.131391],[20.181666,44.131768],[20.181797,44.131834],[20.181909,44.131914],[20.182064,44.131985],[20.182213,44.132039],[20.182392,44.132079],[20.182626,44.132088],[20.182662,44.132096],[20.182828,44.132131],[20.183008,44.132198],[20.183613,44.132447],[20.184046,44.132535],[20.184508,44.132668],[20.184992,44.132823],[20.185258,44.132939],[20.185386,44.133062],[20.185432,44.133106],[20.185497,44.133133],[20.185644,44.133222],[20.185804,44.133326],[20.185924,44.133417],[20.186001,44.1335],[20.186001,44.133509],[20.186013,44.133751],[20.186019,44.133889],[20.186187,44.134003],[20.186274,44.134037],[20.186327,44.134058],[20.186345,44.134065],[20.186608,44.134168],[20.186844,44.134257],[20.186867,44.134215],[20.186898,44.134086],[20.187209,44.133713],[20.187612,44.133526],[20.187634,44.133516],[20.188192,44.133442],[20.188495,44.133493],[20.188809,44.133534],[20.189419,44.133609],[20.189747,44.133637],[20.1899,44.13365],[20.190518,44.133593],[20.191136,44.13351],[20.191643,44.133465],[20.191788,44.133484],[20.192145,44.13363],[20.192242,44.133669],[20.192784,44.133902],[20.193304,44.134096],[20.193959,44.134362],[20.193879,44.134452],[20.19363,44.134736],[20.193456,44.134925],[20.193276,44.135485],[20.193051,44.135643],[20.19305,44.135644],[20.193018,44.135666],[20.192937,44.135722],[20.192687,44.135814],[20.192864,44.135769],[20.193038,44.135725],[20.193272,44.135665],[20.193288,44.135655],[20.193755,44.135369],[20.194033,44.135261],[20.194085,44.135299],[20.194393,44.135126],[20.194429,44.13511],[20.194624,44.135023],[20.194741,44.13497],[20.194765,44.134962],[20.194815,44.134945],[20.19498,44.134888],[20.195251,44.134819],[20.195354,44.134811],[20.195697,44.134782],[20.196018,44.134779],[20.196046,44.134774],[20.196313,44.134727],[20.196593,44.134657],[20.196784,44.134608],[20.197055,44.134566],[20.197266,44.134557],[20.197458,44.134573],[20.197518,44.134578],[20.197582,44.134579],[20.197872,44.134585],[20.197953,44.134586],[20.198276,44.13454],[20.198385,44.134517],[20.198687,44.134453],[20.198884,44.134417],[20.199151,44.134378],[20.199372,44.134296],[20.199515,44.13421],[20.199522,44.134205],[20.199757,44.134036],[20.199896,44.133976],[20.200204,44.133933],[20.200346,44.133913],[20.200415,44.133903],[20.200652,44.1339],[20.200771,44.133901],[20.200986,44.133942],[20.201145,44.134039],[20.201547,44.134268],[20.201714,44.134327],[20.201894,44.134387],[20.201928,44.134398],[20.201967,44.134411],[20.202263,44.134498],[20.202664,44.134619],[20.202699,44.13463],[20.203141,44.134727],[20.203406,44.134842],[20.203651,44.134947],[20.203789,44.134951],[20.20382,44.134952],[20.203864,44.134953],[20.204147,44.134949],[20.204356,44.134965],[20.204418,44.134964],[20.20448,44.134963],[20.204801,44.134957],[20.20491,44.13494],[20.204972,44.134931],[20.205313,44.13488],[20.2053,44.134834],[20.205263,44.134712],[20.205216,44.134564],[20.205193,44.134489],[20.204812,44.133262],[20.204827,44.133261],[20.205253,44.1333],[20.205756,44.133361],[20.207188,44.133116],[20.208027,44.133128],[20.208247,44.133348],[20.208565,44.133673],[20.208578,44.133692],[20.208725,44.1339],[20.208768,44.133961],[20.209077,44.133903],[20.209241,44.133702],[20.209482,44.133538],[20.20955,44.133509],[20.209933,44.133319],[20.21035,44.133158],[20.210584,44.133156],[20.21073,44.133198],[20.210847,44.133234],[20.211495,44.133433],[20.212189,44.133794],[20.21269,44.133779],[20.213219,44.133891],[20.213903,44.133899],[20.213955,44.133807],[20.214449,44.133651],[20.214527,44.133602],[20.214545,44.133591],[20.214674,44.13351],[20.215219,44.133349],[20.215222,44.133348],[20.215701,44.133252],[20.215826,44.133227],[20.216509,44.13307],[20.216786,44.132969],[20.217278,44.13279],[20.217485,44.132698],[20.217959,44.132489],[20.218196,44.132384],[20.218461,44.132302],[20.218764,44.132209],[20.219071,44.13206],[20.219286,44.131955],[20.219572,44.132164],[20.219707,44.132263],[20.219831,44.132338],[20.220052,44.132472],[20.220231,44.132746],[20.220441,44.133066],[20.220502,44.133219],[20.220535,44.133301],[20.220585,44.133417],[20.220645,44.133558],[20.22071,44.133713],[20.220716,44.133725],[20.220729,44.133757],[20.221088,44.134286],[20.221241,44.134512],[20.221502,44.134801],[20.221559,44.134814],[20.221612,44.134573],[20.221719,44.134348],[20.221725,44.134336],[20.221794,44.134191],[20.221948,44.13415],[20.222121,44.134118],[20.222546,44.134317],[20.222556,44.134319],[20.223175,44.134459],[20.223551,44.13467],[20.223644,44.13466],[20.223776,44.134644],[20.224249,44.13458],[20.224373,44.134524],[20.225014,44.134233],[20.225215,44.134146],[20.225369,44.13408],[20.22559,44.133912],[20.225813,44.133743],[20.226284,44.134087],[20.226415,44.134041],[20.22643,44.134036],[20.226567,44.133989],[20.226594,44.133712],[20.226635,44.13328],[20.227344,44.133306],[20.227384,44.133308],[20.227674,44.133319],[20.227969,44.133236],[20.228104,44.133198],[20.228499,44.1333],[20.228754,44.133336],[20.229038,44.133377],[20.229429,44.133192],[20.229658,44.133111],[20.229678,44.133103],[20.229969,44.132999],[20.230164,44.13296],[20.230639,44.132864],[20.230908,44.132809],[20.230952,44.132819],[20.231507,44.132942],[20.231576,44.132963],[20.231593,44.132968],[20.2321,44.13312],[20.232335,44.133147],[20.23258,44.133174],[20.232826,44.133239],[20.233154,44.13333],[20.233354,44.133382],[20.233601,44.133455],[20.233361,44.133685],[20.233657,44.133916],[20.233676,44.133931],[20.233778,44.134011],[20.234051,44.134247],[20.234254,44.134419],[20.234313,44.134469],[20.234327,44.13448],[20.234659,44.134763],[20.234548,44.134813],[20.234451,44.134863],[20.234371,44.134904],[20.234288,44.134955],[20.234198,44.134993],[20.234182,44.134999],[20.234062,44.13504],[20.233862,44.135109],[20.233811,44.135127],[20.234082,44.135359],[20.234234,44.135488],[20.234285,44.135528],[20.234296,44.135536],[20.234804,44.135938],[20.234905,44.136018],[20.235028,44.136084],[20.235016,44.136364],[20.235015,44.136378],[20.235011,44.136465],[20.234989,44.136967],[20.235021,44.136996],[20.235128,44.137089],[20.235142,44.1371],[20.235208,44.137157],[20.235378,44.137294],[20.235587,44.137463],[20.235554,44.13766],[20.235553,44.137671],[20.235546,44.137715],[20.235569,44.137833],[20.235528,44.138104],[20.235489,44.138106],[20.235496,44.138179],[20.235507,44.138294],[20.235515,44.138373],[20.235538,44.13846],[20.235559,44.138549],[20.235583,44.138634],[20.235586,44.138654],[20.235591,44.138684],[20.235583,44.138722],[20.235583,44.13875],[20.236126,44.138744],[20.236509,44.138755],[20.23674,44.138764],[20.236997,44.138781],[20.23736,44.138763],[20.238369,44.138736],[20.23869,44.138743],[20.239286,44.138746],[20.240063,44.13865],[20.240804,44.138364],[20.241664,44.137986],[20.242063,44.137769],[20.24243,44.137513],[20.242727,44.137262],[20.243254,44.137073],[20.243839,44.13687],[20.244668,44.136505],[20.245379,44.136396],[20.246214,44.13628],[20.246842,44.136084],[20.247498,44.13582],[20.248044,44.135468],[20.248624,44.135783],[20.24901,44.135961],[20.249439,44.136101],[20.25005,44.136213],[20.250841,44.13632],[20.251654,44.136392],[20.252225,44.136484],[20.25226,44.13626],[20.25118,44.135689],[20.251185,44.134944],[20.251242,44.133865],[20.251314,44.133651],[20.251361,44.133798],[20.252473,44.1338],[20.252831,44.133381],[20.253082,44.133048],[20.253204,44.132851],[20.253428,44.132534],[20.253746,44.132473],[20.254005,44.132433],[20.254176,44.132352],[20.254383,44.132209],[20.254654,44.132013],[20.254473,44.131813],[20.254775,44.13166],[20.255479,44.131338],[20.25569,44.131257],[20.255971,44.131163],[20.256314,44.131057],[20.256616,44.130863],[20.256853,44.130516],[20.257633,44.130098],[20.258465,44.13001],[20.259472,44.129959],[20.260639,44.129953],[20.261769,44.129875],[20.262013,44.130142],[20.262264,44.130112],[20.262854,44.129987],[20.263488,44.129924],[20.264002,44.13],[20.264489,44.130027],[20.265028,44.13012],[20.265585,44.130549],[20.265399,44.132097],[20.265462,44.132098],[20.266962,44.132215],[20.268558,44.132325],[20.269946,44.132193],[20.271498,44.132068],[20.27233,44.132006],[20.273578,44.131961],[20.274651,44.132503],[20.275614,44.132605],[20.276736,44.132503],[20.27826,44.132073],[20.279664,44.131755],[20.27983,44.131929],[20.280144,44.132257],[20.27966,44.13246],[20.2785,44.132887],[20.278156,44.133249],[20.27844,44.133566],[20.278858,44.134374],[20.279544,44.135424],[20.280596,44.136146],[20.281548,44.135935],[20.281918,44.13591],[20.281854,44.13612],[20.28188,44.136295],[20.28163,44.136503],[20.281058,44.136879],[20.280408,44.137192],[20.27998,44.137692],[20.279632,44.138103],[20.27951,44.138294],[20.279164,44.138194],[20.2792,44.138153],[20.27936,44.137977],[20.279196,44.137448],[20.278838,44.137076],[20.278782,44.136855],[20.279138,44.136583],[20.278446,44.135108],[20.277834,44.134336],[20.277246,44.134526],[20.277196,44.13467],[20.27702,44.134626],[20.276494,44.134635],[20.275878,44.135108],[20.27524,44.135494],[20.274897,44.135439],[20.274006,44.135358],[20.273667,44.135842],[20.273553,44.136287],[20.273759,44.136619],[20.273462,44.137077],[20.273315,44.1374],[20.274089,44.137314],[20.274536,44.136889],[20.274973,44.136853],[20.275479,44.136964],[20.276096,44.137022],[20.276442,44.13726],[20.276046,44.137178],[20.275438,44.137263],[20.275463,44.137468],[20.274785,44.137529],[20.273841,44.138161],[20.273038,44.138258],[20.27271,44.138234],[20.272484,44.138475],[20.272258,44.138661],[20.271876,44.138833],[20.271162,44.139033],[20.271533,44.13943],[20.272156,44.139938],[20.271741,44.140165],[20.2707,44.139224],[20.269674,44.139568],[20.269016,44.139468],[20.267916,44.139293],[20.267026,44.139452],[20.266659,44.139959],[20.266362,44.14008],[20.265741,44.140105],[20.265466,44.140404],[20.265005,44.140819],[20.265544,44.14112],[20.266963,44.141172],[20.268565,44.14127],[20.269382,44.141718],[20.269983,44.14211],[20.270887,44.143393],[20.271422,44.144093],[20.271841,44.144723],[20.273255,44.144915],[20.27464,44.144883],[20.276556,44.144903],[20.27709,44.144975],[20.278866,44.14543],[20.279734,44.145404],[20.280992,44.145033],[20.28113,44.144652],[20.281158,44.143969],[20.281848,44.143735],[20.283526,44.142876],[20.284626,44.14276],[20.285814,44.142509],[20.286878,44.142249],[20.287942,44.142014],[20.288922,44.14195],[20.289728,44.14201],[20.28989,44.142625],[20.290318,44.143066],[20.289744,44.143564],[20.28998,44.144948],[20.289574,44.145401],[20.288704,44.145649],[20.288314,44.146371],[20.287838,44.146921],[20.287144,44.147264],[20.286766,44.14731],[20.286516,44.147227],[20.286428,44.1473],[20.286592,44.147709],[20.286888,44.148321],[20.287064,44.148922],[20.287026,44.149704],[20.287014,44.150372],[20.287078,44.151448],[20.28702,44.152147],[20.28704,44.152554],[20.286974,44.152922],[20.286838,44.153698],[20.286806,44.154234],[20.286776,44.154467],[20.286572,44.154792],[20.286334,44.155712],[20.286022,44.156071],[20.285752,44.156293],[20.285432,44.155896],[20.285166,44.15563],[20.284878,44.155567],[20.284348,44.155382],[20.284102,44.15526],[20.283934,44.155077],[20.283796,44.154868],[20.28363,44.154751],[20.283502,44.154362],[20.282956,44.153909],[20.282058,44.153893],[20.282082,44.15346],[20.282244,44.152545],[20.282014,44.15214],[20.281414,44.151652],[20.280714,44.151535],[20.27864,44.151798],[20.278568,44.152232],[20.278898,44.152761],[20.279008,44.153051],[20.27804,44.153765],[20.277622,44.154415],[20.277002,44.154799],[20.276864,44.155527],[20.27693,44.155662],[20.276696,44.156897],[20.276808,44.157334],[20.276316,44.157567],[20.275671,44.157928],[20.275268,44.157666],[20.274889,44.15774],[20.274388,44.15798],[20.274018,44.157732],[20.274445,44.156438],[20.274343,44.155825],[20.274558,44.154958],[20.274069,44.154667],[20.273535,44.154675],[20.273253,44.154544],[20.27259,44.154283],[20.272875,44.15393],[20.272784,44.153533],[20.272160,44.153558],[20.271966,44.153508],[20.270887,44.15343],[20.27076,44.153265],[20.270059,44.153067],[20.269395,44.152506],[20.268907,44.152217],[20.268134,44.152629],[20.267972,44.152682],[20.267413,44.15281],[20.267184,44.152866],[20.266559,44.153033],[20.265995,44.153211],[20.265237,44.153441],[20.264509,44.153653],[20.264087,44.153489],[20.263498,44.153719],[20.263057,44.153889],[20.262937,44.154116],[20.262688,44.153391],[20.262378,44.153235],[20.262064,44.15315],[20.261509,44.153098],[20.260703,44.153063],[20.260019,44.15292],[20.260249,44.152286],[20.259717,44.151975],[20.259265,44.151136],[20.258652,44.151501],[20.258443,44.150518],[20.257542,44.150378],[20.257774,44.150769],[20.257251,44.151058],[20.256083,44.151454],[20.255643,44.15143],[20.254784,44.151573],[20.254303,44.151154],[20.253038,44.151102],[20.252468,44.150722],[20.252118,44.151364],[20.251648,44.151619],[20.250884,44.152114],[20.250802,44.152825],[20.250318,44.152974],[20.249734,44.153071],[20.249303,44.153215],[20.248773,44.153361],[20.248348,44.153183],[20.247357,44.152874],[20.24708,44.152667],[20.246252,44.152685],[20.245781,44.152903],[20.245357,44.152628],[20.244972,44.152255],[20.244703,44.152443],[20.24438,44.152887],[20.244175,44.153195],[20.243492,44.153098],[20.243016,44.153111],[20.242774,44.153056],[20.242022,44.152986],[20.241705,44.152735],[20.241238,44.152484],[20.24044,44.151838],[20.240225,44.151331],[20.240431,44.150744],[20.240287,44.150486],[20.239559,44.150425],[20.238759,44.150873],[20.238112,44.151079],[20.237242,44.150644],[20.237154,44.150318],[20.236519,44.150696],[20.236416,44.150974],[20.235295,44.150499],[20.234542,44.150611],[20.234093,44.150249],[20.233702,44.150527],[20.23342,44.15065],[20.233516,44.151102],[20.232841,44.151512],[20.23245,44.151112],[20.232221,44.150953],[20.232282,44.151588],[20.231479,44.151365],[20.230789,44.15114],[20.23046,44.151121],[20.23014,44.150379],[20.229659,44.150334],[20.228823,44.149888],[20.228528,44.149592],[20.22788,44.149701],[20.227365,44.149883],[20.226863,44.150042],[20.226314,44.150042],[20.225476,44.149925],[20.224569,44.149558],[20.223551,44.14956],[20.222192,44.149657],[20.221358,44.149643],[20.221161,44.14995],[20.22074,44.150051],[20.219635,44.149804],[20.219472,44.149788],[20.219387,44.150068],[20.218494,44.149865],[20.218612,44.149665],[20.218375,44.149201],[20.218162,44.149089],[20.217806,44.148945],[20.217741,44.14924],[20.217277,44.149493],[20.216693,44.14949],[20.215706,44.14924],[20.215099,44.149059],[20.214862,44.149342],[20.21456,44.14945],[20.214016,44.149385],[20.213094,44.149168],[20.212591,44.149155],[20.212592,44.149328],[20.211803,44.149274],[20.210616,44.149107],[20.210358,44.149129],[20.209650,44.149203],[20.208611,44.149098],[20.208447,44.149159],[20.207643,44.149349],[20.207387,44.148998],[20.207032,44.148272],[20.206465,44.148613],[20.206269,44.148574],[20.205613,44.148529],[20.205551,44.149059],[20.205043,44.149224],[20.204485,44.149278],[20.203469,44.14986],[20.20311,44.150141],[20.202537,44.150105],[20.20121,44.149361],[20.200272,44.149178],[20.199768,44.149081],[20.199228,44.148978],[20.198495,44.148969],[20.198153,44.148869],[20.198228,44.148588],[20.197891,44.148091],[20.197039,44.148318],[20.196027,44.148611],[20.195442,44.148597],[20.195212,44.148011],[20.194849,44.147768],[20.1947,44.147645],[20.194642,44.147032],[20.193793,44.146742],[20.193044,44.147006],[20.192929,44.147359],[20.19241,44.148064],[20.191855,44.148889],[20.191565,44.149317],[20.190877,44.149748],[20.189923,44.150156],[20.189333,44.149752],[20.188806,44.149598],[20.188317,44.149684],[20.187432,44.149842],[20.187124,44.150081],[20.186526,44.149974],[20.184011,44.149797],[20.183539,44.150456],[20.183479,44.151308],[20.183238,44.151981],[20.182964,44.152485],[20.182839,44.152695],[20.18214,44.152734],[20.181336,44.153019],[20.18036,44.153122],[20.179462,44.153325],[20.178897,44.153203],[20.178725,44.152676],[20.178063,44.151698],[20.17787,44.151383],[20.177258,44.150283],[20.177,44.15005],[20.176703,44.150039],[20.175336,44.149507],[20.174139,44.149422],[20.173618,44.149391],[20.173112,44.149155],[20.172342,44.149072],[20.171394,44.148758],[20.17104,44.148575],[20.170281,44.148332],[20.169886,44.148123],[20.169314,44.147757],[20.168706,44.147495],[20.168291,44.14698],[20.168444,44.146758],[20.169081,44.14633],[20.169726,44.146498],[20.169826,44.146018],[20.170015,44.14559],[20.170433,44.145122],[20.170336,44.144862],[20.169608,44.144759],[20.168738,44.143984],[20.168885,44.143197],[20.168635,44.1426],[20.16818,44.142627],[20.167862,44.142407],[20.167011,44.142027],[20.166535,44.141549],[20.166975,44.141482],[20.167219,44.141463],[20.16695,44.140994],[20.166273,44.140452],[20.165793,44.140175],[20.165581,44.139903],[20.165995,44.139636],[20.165511,44.139192],[20.165466,44.13893],[20.165633,44.138629],[20.165871,44.138146],[20.166093,44.138052],[20.165834,44.137748],[20.165499,44.137508],[20.165962,44.136673],[20.166499,44.13615],[20.16676,44.135789],[20.166958,44.135084],[20.167083,44.134515],[20.168217,44.134635],[20.168686,44.134533],[20.168107,44.133913],[20.167534,44.133668],[20.168351,44.133498],[20.168128,44.13318],[20.167697,44.13287],[20.167444,44.131979],[20.167509,44.131784],[20.168254,44.131572],[20.169094,44.13111],[20.169219,44.130682],[20.169692,44.130532],[20.170628,44.130141],[20.171431,44.129908],[20.172702,44.129385],[20.174493,44.129275],[20.175287,44.129119]]]},{"name":"Црница на серпентину — скелетоидна","style":"grey","polygons":[[[20.176,44.127894],[20.176338,44.128064],[20.176993,44.128496],[20.178347,44.12913],[20.179448,44.129291],[20.18049,44.129468],[20.18096,44.129625],[20.181477,44.129627],[20.181453,44.129928],[20.181484,44.131104],[20.18167,44.131769],[20.182625,44.132089],[20.183613,44.132449],[20.184997,44.132827],[20.18453,44.133129],[20.183303,44.133723],[20.182683,44.133823],[20.181093,44.133953],[20.17993,44.13354],[20.178924,44.133312],[20.177117,44.133876],[20.176665,44.134226],[20.175741,44.134326],[20.175132,44.134],[20.174396,44.134101],[20.17319,44.133811],[20.172069,44.133097],[20.171068,44.132207],[20.169438,44.131527],[20.168493,44.131441],[20.169092,44.131112],[20.16956,44.130582],[20.17062,44.130142],[20.171932,44.12969],[20.172694,44.129387],[20.173599,44.129326],[20.175161,44.129193],[20.175529,44.128998],[20.176012,44.128017],[20.176,44.127894]],[[20.211498,44.133436],[20.212186,44.133797],[20.213906,44.133892],[20.215274,44.133331],[20.217997,44.132475],[20.219256,44.131973],[20.220427,44.133086],[20.220992,44.134145],[20.221503,44.134799],[20.221794,44.134189],[20.22253,44.134313],[20.223396,44.134585],[20.222406,44.135022],[20.221345,44.135258],[20.21937,44.135071],[20.2182,44.135033],[20.213689,44.135177],[20.212021,44.134228],[20.211498,44.133436]],[[20.198198,44.134556],[20.199899,44.133977],[20.200989,44.133941],[20.201962,44.134413],[20.200997,44.134652],[20.19884,44.134823],[20.198198,44.134556]],[[20.205297,44.134817],[20.204806,44.133247],[20.208024,44.133117],[20.208754,44.133954],[20.208056,44.134375],[20.205899,44.134682],[20.205297,44.134817]]]},{"name":"Смеђе рудо земљиште на кречњаку","style":"orange","polygons":[[[20.240368,44.150829],[20.240534,44.152247],[20.24014,44.151133],[20.240368,44.150829]],[[20.222049,44.149652],[20.221195,44.149758],[20.22116,44.150134],[20.220499,44.15],[20.220838,44.149447],[20.221608,44.148945],[20.222049,44.149652]],[[20.238788,44.14989],[20.239446,44.150211],[20.2395,44.150513],[20.238921,44.150774],[20.237998,44.151022],[20.238441,44.15017],[20.238788,44.14989]],[[20.168484,44.13144],[20.172668,44.13341],[20.179914,44.133534],[20.181521,44.134047],[20.18453,44.133129],[20.185914,44.133408],[20.186849,44.134256],[20.18721,44.133718],[20.188192,44.133445],[20.190582,44.133591],[20.192479,44.133771],[20.193958,44.13436],[20.193276,44.135485],[20.193773,44.135365],[20.194724,44.134979],[20.196668,44.13464],[20.198193,44.134558],[20.199921,44.134816],[20.201786,44.134501],[20.202718,44.134643],[20.204141,44.134949],[20.205314,44.134836],[20.208629,44.134143],[20.209483,44.133541],[20.211493,44.13344],[20.212357,44.134657],[20.216092,44.135485],[20.217453,44.136969],[20.218161,44.137702],[20.217779,44.137945],[20.216921,44.138216],[20.21674,44.138968],[20.21679,44.139397],[20.217385,44.140668],[20.218924,44.140933],[20.220829,44.141153],[20.220396,44.142367],[20.219317,44.14397],[20.218374,44.14415],[20.216677,44.144688],[20.215255,44.14474],[20.212423,44.144425],[20.211508,44.144956],[20.210787,44.145332],[20.210447,44.146449],[20.209369,44.147529],[20.207025,44.148304],[20.206213,44.148408],[20.205551,44.149059],[20.204465,44.14928],[20.203469,44.14986],[20.202884,44.150178],[20.202152,44.149869],[20.200848,44.148873],[20.199363,44.148732],[20.198301,44.14816],[20.197325,44.147993],[20.196619,44.148108],[20.195271,44.148127],[20.194644,44.147053],[20.193178,44.145333],[20.191708,44.144703],[20.190668,44.144369],[20.189519,44.14481],[20.187848,44.145961],[20.186312,44.146368],[20.184725,44.146835],[20.183331,44.147811],[20.182536,44.148297],[20.181776,44.149027],[20.18176,44.149946],[20.181809,44.15053],[20.181467,44.151075],[20.180694,44.151154],[20.178916,44.1505],[20.177927,44.149757],[20.176595,44.149596],[20.175323,44.149502],[20.173876,44.149487],[20.173121,44.149161],[20.17139,44.148758],[20.170804,44.148442],[20.169888,44.148124],[20.168412,44.147319],[20.16837,44.146805],[20.169085,44.146339],[20.169864,44.146538],[20.170838,44.146431],[20.171206,44.147427],[20.172046,44.147527],[20.173465,44.14629],[20.173257,44.14512],[20.171755,44.144824],[20.170158,44.143178],[20.169265,44.142528],[20.167581,44.141173],[20.166922,44.140478],[20.166337,44.13919],[20.165758,44.136978],[20.165962,44.136673],[20.167022,44.13544],[20.167656,44.134592],[20.168361,44.134619],[20.168814,44.134421],[20.168633,44.134168],[20.168484,44.13144]]]},{"name":"Црница на кречњаку","style":"brown","polygons":[[[20.223552,44.134671],[20.225359,44.134085],[20.22628,44.134086],[20.226579,44.133882],[20.228107,44.133197],[20.229037,44.133376],[20.230908,44.132809],[20.233601,44.133455],[20.234662,44.134761],[20.234178,44.135002],[20.234909,44.136022],[20.235549,44.137693],[20.23557,44.137832],[20.235099,44.138963],[20.233882,44.139727],[20.233345,44.140843],[20.232563,44.14076],[20.231065,44.140234],[20.229721,44.140694],[20.228059,44.140459],[20.226186,44.140538],[20.224182,44.140455],[20.221612,44.141149],[20.21983,44.141096],[20.217385,44.140668],[20.216623,44.140027],[20.21679,44.139397],[20.216722,44.138842],[20.217779,44.137945],[20.21821,44.137481],[20.217453,44.136969],[20.216429,44.136292],[20.216046,44.135965],[20.216413,44.135274],[20.218225,44.135035],[20.219542,44.135056],[20.220998,44.135085],[20.221498,44.13534],[20.222409,44.135024],[20.222916,44.134772],[20.223398,44.134584],[20.223552,44.134671]]]},{"name":"Скелет — кемењар","style":"yellow","polygons":[[[20.193802,44.146746],[20.193041,44.147008],[20.192854,44.147467],[20.19241,44.148048],[20.192115,44.148437],[20.191471,44.149452],[20.19085,44.149759],[20.18992,44.15015],[20.187278,44.150058],[20.186515,44.149976],[20.183773,44.149826],[20.183565,44.150648],[20.183435,44.151459],[20.182963,44.152482],[20.18214,44.152734],[20.181449,44.153007],[20.18004,44.153159],[20.179338,44.153322],[20.178725,44.152676],[20.178629,44.151962],[20.178194,44.150974],[20.177902,44.150831],[20.177301,44.15033],[20.177001,44.150052],[20.176414,44.149906],[20.176589,44.149596],[20.178181,44.149929],[20.179735,44.150894],[20.181011,44.151232],[20.181804,44.150623],[20.181666,44.149274],[20.181919,44.148738],[20.183164,44.147911],[20.184078,44.14736],[20.184764,44.146805],[20.184951,44.146607],[20.18569,44.146522],[20.186505,44.146309],[20.187825,44.145975],[20.18952,44.144805],[20.190375,44.144374],[20.192622,44.145125],[20.193862,44.145631],[20.194267,44.146905],[20.193802,44.146746]],[[20.221609,44.141152],[20.223087,44.140825],[20.225089,44.140465],[20.228067,44.140462],[20.230113,44.140199],[20.232563,44.140765],[20.233879,44.14138],[20.235503,44.14249],[20.236713,44.144649],[20.238675,44.145213],[20.239998,44.144507],[20.241134,44.143745],[20.243228,44.143074],[20.243986,44.143341],[20.245833,44.145298],[20.249100,44.145644],[20.251474,44.145792],[20.253048,44.146305],[20.254484,44.148915],[20.255263,44.150301],[20.254896,44.151366],[20.254237,44.150917],[20.253546,44.150997],[20.252466,44.150736],[20.252214,44.151288],[20.25106,44.151908],[20.250817,44.152584],[20.250323,44.152979],[20.24992,44.152836],[20.249501,44.153199],[20.249148,44.153221],[20.248273,44.153161],[20.247373,44.152889],[20.246392,44.152614],[20.245504,44.152748],[20.244442,44.152814],[20.243236,44.153047],[20.241705,44.152735],[20.241238,44.152484],[20.240872,44.151897],[20.239351,44.150174],[20.238441,44.15017],[20.238536,44.150942],[20.237241,44.150649],[20.236218,44.149987],[20.235586,44.149961],[20.234035,44.149447],[20.233464,44.148922],[20.232579,44.14833],[20.231041,44.148463],[20.228848,44.148539],[20.226952,44.148467],[20.225017,44.149288],[20.224569,44.149555],[20.222051,44.149653],[20.221609,44.148943],[20.220838,44.149447],[20.220499,44.149999],[20.219565,44.149788],[20.21942,44.149984],[20.218493,44.149865],[20.21869,44.149244],[20.217741,44.14924],[20.21774,44.149416],[20.217291,44.149491],[20.216627,44.149482],[20.216014,44.149298],[20.214882,44.149007],[20.21487,44.14929],[20.214482,44.149489],[20.213089,44.149167],[20.212591,44.149154],[20.212184,44.149299],[20.211407,44.149248],[20.210492,44.149025],[20.210142,44.149401],[20.208447,44.149159],[20.207387,44.149006],[20.207576,44.148727],[20.20885,44.148122],[20.209368,44.147531],[20.210142,44.147345],[20.210447,44.146449],[20.210787,44.145332],[20.211566,44.144924],[20.212423,44.144425],[20.213742,44.144757],[20.21556,44.14483],[20.216667,44.144703],[20.21696,44.14433],[20.217744,44.14408],[20.218983,44.144219],[20.22011,44.142914],[20.220396,44.142359],[20.221609,44.141152]],[[20.20386,44.149561],[20.202869,44.150159],[20.201694,44.1496],[20.200787,44.149432],[20.199836,44.149137],[20.198745,44.149025],[20.198226,44.148737],[20.197885,44.148105],[20.196382,44.148572],[20.195572,44.148561],[20.195212,44.148037],[20.194717,44.147661],[20.195696,44.148172],[20.196612,44.148104],[20.197899,44.148047],[20.198601,44.148351],[20.19995,44.148827],[20.200831,44.148877],[20.20166,44.148794],[20.202626,44.149433],[20.20357,44.149602],[20.20386,44.149561]],[[20.165758,44.136978],[20.166226,44.137945],[20.166695,44.140112],[20.167571,44.141162],[20.16862,44.142036],[20.170159,44.143176],[20.170932,44.144439],[20.172697,44.144912],[20.173468,44.146297],[20.173245,44.147356],[20.171223,44.14744],[20.170732,44.146126],[20.170047,44.145525],[20.170678,44.144954],[20.170198,44.144823],[20.168747,44.143987],[20.168823,44.14288],[20.168543,44.142569],[20.167865,44.142401],[20.166674,44.141767],[20.166959,44.141488],[20.167436,44.141348],[20.166946,44.140993],[20.166653,44.140728],[20.165584,44.139913],[20.166003,44.139638],[20.165509,44.139189],[20.165467,44.138883],[20.165875,44.138149],[20.166181,44.137967],[20.165494,44.137507],[20.165758,44.136978]]]},{"name":"Смеђе кисело земљиште на пешчару","style":"lightyellow","polygons":[[[20.23557,44.138762],[20.24043,44.13855],[20.241664,44.137986],[20.242737,44.137269],[20.243643,44.136987],[20.245056,44.136452],[20.246789,44.136102],[20.247442,44.135838],[20.248474,44.135703],[20.249218,44.136027],[20.250841,44.13632],[20.251654,44.136392],[20.252225,44.136484],[20.25226,44.13626],[20.251193,44.134854],[20.251239,44.133888],[20.252474,44.1338],[20.252892,44.133308],[20.253607,44.132426],[20.254652,44.132014],[20.255654,44.131267],[20.256828,44.13053],[20.258377,44.130018],[20.259653,44.129961],[20.261769,44.129875],[20.263241,44.129896],[20.265175,44.130172],[20.265650,44.130875],[20.265374,44.132121],[20.266996,44.132232],[20.268795,44.132343],[20.270124,44.132178],[20.272829,44.131992],[20.273996,44.132056],[20.274647,44.132503],[20.276021,44.13252],[20.27673,44.132506],[20.277561,44.132192],[20.279677,44.131758],[20.280141,44.132251],[20.278403,44.132951],[20.278243,44.133084],[20.278447,44.133573],[20.279012,44.134646],[20.279784,44.135748],[20.28105,44.135977],[20.281886,44.136292],[20.281194,44.136842],[20.280208,44.137483],[20.279497,44.138369],[20.279136,44.138182],[20.27954,44.137684],[20.279044,44.137343],[20.278783,44.136861],[20.279013,44.136172],[20.278447,44.135109],[20.277833,44.134337],[20.277089,44.134623],[20.276503,44.134637],[20.275591,44.135343],[20.274561,44.135382],[20.273793,44.135406],[20.273627,44.135973],[20.273757,44.136622],[20.273365,44.137251],[20.274089,44.137314],[20.27454,44.136886],[20.274973,44.136853],[20.275481,44.136967],[20.276336,44.137154],[20.276434,44.137294],[20.275423,44.137144],[20.275463,44.137468],[20.274468,44.137627],[20.273437,44.1385],[20.272793,44.138099],[20.272258,44.138661],[20.271162,44.139033],[20.271658,44.139551],[20.272156,44.139938],[20.271347,44.139821],[20.269434,44.139533],[20.267026,44.139452],[20.266659,44.139959],[20.265466,44.140404],[20.265005,44.140819],[20.265544,44.14112],[20.266963,44.141172],[20.268951,44.14148],[20.269983,44.14211],[20.270887,44.143393],[20.271551,44.144232],[20.271541,44.144557],[20.272401,44.144896],[20.273887,44.144888],[20.27464,44.144883],[20.276592,44.1449],[20.277712,44.145051],[20.278866,44.14543],[20.279734,44.145404],[20.28117,44.14397],[20.281928,44.143692],[20.283246,44.142932],[20.284545,44.142771],[20.286285,44.142434],[20.287957,44.142011],[20.289217,44.141956],[20.28989,44.142631],[20.289885,44.144192],[20.289398,44.145512],[20.288706,44.145658],[20.287358,44.147201],[20.286763,44.147312],[20.286408,44.147368],[20.286605,44.14773],[20.286945,44.148627],[20.287117,44.149022],[20.287033,44.149705],[20.287062,44.151053],[20.286925,44.153094],[20.286804,44.154189],[20.286488,44.154974],[20.286344,44.155681],[20.285388,44.155855],[20.285269,44.155668],[20.284052,44.155244],[20.283622,44.154745],[20.283329,44.154186],[20.282085,44.153438],[20.282244,44.152677],[20.28212,44.152318],[20.281587,44.151779],[20.281074,44.151562],[20.279827,44.151565],[20.278639,44.151797],[20.27857,44.15223],[20.279031,44.15297],[20.27866,44.153211],[20.278139,44.153643],[20.277943,44.153993],[20.277295,44.154637],[20.276863,44.155489],[20.27673,44.15608],[20.276815,44.156939],[20.276811,44.157327],[20.276307,44.157573],[20.275684,44.157928],[20.275211,44.157689],[20.274899,44.157754],[20.274015,44.157748],[20.274445,44.156438],[20.274343,44.155825],[20.274558,44.154958],[20.274069,44.154667],[20.273247,44.154589],[20.273069,44.154475],[20.272587,44.154282],[20.272875,44.15393],[20.272160,44.153558],[20.270887,44.15343],[20.270059,44.153067],[20.268907,44.152217],[20.267972,44.152682],[20.267184,44.152866],[20.266559,44.153033],[20.265237,44.153441],[20.264509,44.153653],[20.263498,44.153719],[20.262937,44.154116],[20.262688,44.153391],[20.262064,44.15315],[20.261509,44.153098],[20.260019,44.15292],[20.260249,44.152286],[20.259265,44.151136],[20.258652,44.151481],[20.257542,44.150378],[20.257774,44.150769],[20.257251,44.151058],[20.256083,44.151454],[20.255644,44.151442],[20.254784,44.151573],[20.254303,44.151154],[20.253038,44.151102],[20.252466,44.150736],[20.252214,44.151288],[20.250939,44.152042],[20.250317,44.152979],[20.249734,44.153071],[20.248273,44.153161],[20.247357,44.152874],[20.246252,44.152685],[20.245504,44.152748],[20.244442,44.152814],[20.244175,44.153195],[20.243016,44.153111],[20.241705,44.152735],[20.24044,44.151838],[20.240287,44.150486],[20.239699,44.150205],[20.238787,44.149888],[20.238441,44.15017],[20.237241,44.150649],[20.236219,44.149987],[20.234547,44.150171],[20.233975,44.148971],[20.232697,44.148968],[20.232333,44.148145],[20.231041,44.148463],[20.228169,44.148475],[20.225761,44.148397],[20.225019,44.148779],[20.225017,44.149288],[20.225274,44.149911],[20.222396,44.149661],[20.221609,44.148943],[20.220497,44.149999],[20.219565,44.149788],[20.219387,44.150065],[20.218493,44.149865],[20.21869,44.149244],[20.217741,44.14924],[20.21774,44.149416],[20.216627,44.149482],[20.214862,44.149342],[20.214482,44.149489],[20.213089,44.149167],[20.212589,44.149326],[20.211407,44.149248],[20.210492,44.149025],[20.210142,44.149401],[20.208447,44.149159],[20.207387,44.149006],[20.208019,44.148551],[20.20885,44.148122],[20.209369,44.147531],[20.210447,44.146449],[20.211566,44.144924],[20.212423,44.144425],[20.213742,44.144757],[20.21556,44.14483],[20.216667,44.144703],[20.21696,44.14433],[20.217744,44.14408],[20.218983,44.144219],[20.22011,44.142914],[20.221609,44.141152],[20.222047,44.140979],[20.224172,44.140458],[20.228067,44.140462],[20.231782,44.140595],[20.233336,44.140981],[20.234654,44.141933],[20.236086,44.143372],[20.237749,44.145238],[20.239479,44.144836],[20.240588,44.144026],[20.2415,44.143373],[20.243228,44.143074],[20.244065,44.144141],[20.246992,44.14545],[20.252709,44.145889],[20.253048,44.146305],[20.253748,44.148213],[20.254967,44.149364],[20.255298,44.150465],[20.254772,44.151546],[20.253831,44.150966],[20.252776,44.150901],[20.252492,44.15092],[20.25192,44.151513],[20.251073,44.151902],[20.250804,44.152814],[20.250323,44.152979],[20.249920,44.152836],[20.24968,44.15315],[20.248786,44.15318],[20.248273,44.153163],[20.247686,44.152996],[20.247029,44.15256],[20.246392,44.152614],[20.245782,44.152886],[20.244905,44.152199],[20.244175,44.153195],[20.243236,44.153047],[20.241705,44.152735],[20.240872,44.151897],[20.239351,44.150174],[20.238441,44.15017],[20.238536,44.150942],[20.237241,44.150649],[20.236218,44.149987],[20.235586,44.149961],[20.234035,44.149447],[20.232697,44.148968],[20.231041,44.148463],[20.228848,44.148539],[20.225761,44.148397],[20.225017,44.149288],[20.222051,44.149653],[20.221113,44.14894],[20.220497,44.149999],[20.219565,44.149788],[20.21869,44.149244],[20.21774,44.149416],[20.217064,44.149525],[20.214862,44.149342],[20.213089,44.149167],[20.212589,44.149326],[20.211407,44.149248],[20.210492,44.149025],[20.210142,44.149401],[20.208447,44.149159],[20.207387,44.149006],[20.208019,44.148551],[20.209369,44.147531],[20.210447,44.146449],[20.211566,44.144924],[20.213742,44.144757],[20.21696,44.14433],[20.21986,44.141096],[20.22049,44.133742],[20.23557,44.138762]]]},{"name":"Смеђе скелетоидно кисело земљиште на граниту","style":"indigo","polygons":[[[20.241705,44.152735],[20.242663,44.153005],[20.243236,44.153047],[20.2435797,44.1531],[20.242877,44.153115],[20.242774,44.153056],[20.242326,44.153145],[20.242022,44.152986],[20.241918,44.152851],[20.241705,44.152735]]]}];
+
+  const STYLES = {
+    boundary:    { fill:'#E65100', fillOpacity:0.04, stroke:'#1A237E', strokeW:3,   dash:null,  label:'Граница заштићеног подручја', mapLabel:null },
+    grey:        { fill:'#BDBDBD', fillOpacity:0.65, stroke:'#757575', strokeW:1.4, dash:null,  label:'Црница на серпентину — скелетоидна', mapLabel:'Црница на серпентину', hex:'#BDBDBD' },
+    orange:      { fill:'#EF8C00', fillOpacity:0.60, stroke:'#BF6000', strokeW:1.4, dash:null,  label:'Смеђе рудо земљиште на кречњаку',   mapLabel:'Смеђе рудо земљиште', hex:'#EF8C00' },
+    brown:       { fill:'#795548', fillOpacity:0.72, stroke:'#4E342E', strokeW:1.4, dash:null,  label:'Црница на кречњаку',                  mapLabel:'Црница на кречњаку', hex:'#795548' },
+    yellow:      { fill:'#FFD600', fillOpacity:0.55, stroke:'#C8A800', strokeW:1.4, dash:null,  label:'Скелет — кемењар',                    mapLabel:'Скелет — кемењар', hex:'#FFD600' },
+    lightyellow: { fill:'#FFFF8D', fillOpacity:0.60, stroke:'#C8B800', strokeW:1.4, dash:null,  label:'Смеђе кисело земљиште на пешчару',    mapLabel:'Смеђе кисело на пешчару', hex:'#FFFF8D' },
+    indigo:      { fill:'#3949AB', fillOpacity:0.62, stroke:'#1A237E', strokeW:1.4, dash:null,  label:'Смеђе скелетоидно кисело на граниту', mapLabel:'Смеђе скелетоидно на граниту', hex:'#3949AB' },
+  };
+
+  const map = L.map('rped-map', { center:[44.1430,20.2279], zoom:13, scrollWheelZoom:true });
+  map.scrollWheelZoom.enable();
+  map.doubleClickZoom.enable();
+  L.tileLayer('https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png', {
+    attribution:'© <a href="https://opentopomap.org">OpenTopoMap</a> | © <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>',
+    maxZoom:17,
+  }).addTo(map);
+
+  function latlngs(poly){ return poly.map(([lon,lat])=>[lat,lon]); }
+  function centroid(poly){ let la=0,lo=0; poly.forEach(([x,y])=>{la+=y;lo+=x;}); return [la/poly.length,lo/poly.length]; }
+  function area(poly){ let a=0; for(let i=0,j=poly.length-1;i<poly.length;j=i++){ a+=(poly[j][0]+poly[i][0])*(poly[j][1]-poly[i][1]); } return Math.abs(a/2); }
+  function addLabel(lat,lon,text){ const ic=L.divIcon({className:'poly-label',html:'<div class="poly-label-text">'+text+'</div>',iconAnchor:[65,18],iconSize:[130,36]}); return L.marker([lat,lon],{icon:ic,interactive:false,zIndexOffset:-100}).addTo(map); }
+
+  const groups={};
+  function hlLegend(sk){ document.querySelectorAll('.legend-entry').forEach(el=>{ el.style.background=el.dataset.style===sk?'#f2eeea':''; }); }
+
+  ['grey','orange','brown','yellow','lightyellow','indigo','boundary'].forEach(sk=>{
+    const layer=PEDOLOGY.find(d=>d.style===sk); if(!layer) return;
+    const s=STYLES[sk];
+    const grp=L.featureGroup();
+    let bigPoly=null, bigArea=0;
+    layer.polygons.forEach(poly=>{
+      const a=area(poly); if(a>bigArea){bigArea=a;bigPoly=poly;}
+      const pg=L.polygon(latlngs(poly),{color:s.stroke,weight:s.strokeW,fillColor:s.fill,fillOpacity:s.fillOpacity,opacity:1});
+      if(sk!=='boundary'){
+        pg.bindTooltip(s.label,{sticky:true,direction:'top',offset:[0,-6]});
+        pg.on('mouseover',function(){this.setStyle({weight:s.strokeW+1.5,fillOpacity:Math.min(s.fillOpacity+.12,.9)});hlLegend(sk);});
+        pg.on('mouseout',function(){this.setStyle({weight:s.strokeW,fillOpacity:s.fillOpacity});hlLegend(null);});
+        pg.on('click',function(){map.fitBounds(this.getBounds(),{padding:[60,60]});});
+      }
+      grp.addLayer(pg);
+    });
+    if(sk!=='boundary'&&bigPoly&&bigArea>.000004){ addLabel(...centroid(bigPoly),s.mapLabel); }
+    groups[sk]=grp; grp.addTo(map);
+  });
+  groups['boundary']&&groups['boundary'].bringToFront();
+
+  const lr=document.getElementById('rped-legend-row');
+  if(lr){ lr.innerHTML=''; }
+  ['grey','orange','brown','yellow','lightyellow','indigo','boundary'].forEach(sk=>{
+    const s=STYLES[sk];
+    const en=document.createElement('div');
+    en.className='legend-entry'; en.dataset.style=sk;
+    const sw=sk==='boundary'?'<div class="legend-swatch boundary-sw"></div>':`<div class="legend-swatch" style="background:${s.fill};opacity:${.4+s.fillOpacity*.6};border-color:${s.stroke};"></div>`;
+    en.innerHTML=sw+`<span class="legend-text">${s.label}</span>`;
+    if(sk!=='boundary'){
+      en.addEventListener('click',()=>{if(groups[sk])map.fitBounds(groups[sk].getBounds(),{padding:[60,60]});hlLegend(sk);setTimeout(()=>hlLegend(null),1800);});
+      en.addEventListener('mouseover',()=>hlLegend(sk));
+      en.addEventListener('mouseout',()=>hlLegend(null));
+    }
+    lr.appendChild(en);
+  });
+
+  if(groups['boundary']) {
+    map.fitBounds(groups['boundary'].getBounds(),{padding:[28,28]});
+    setTimeout(function(){map.invalidateSize();map.fitBounds(groups['boundary'].getBounds(),{padding:[28,28]});},120);
+  }
+})();
+</script>
+
+<!-- SITE_EDITOR_ADMIN_BAR_START -->
+<script src="/admin-site-editor.php?admin_bar_js=1" defer></script>
+<!-- SITE_EDITOR_ADMIN_BAR_END -->
+
+<script defer src="/rajac-design/rajac-vrh-button.js?v=20260707-v6-round-no-home"></script>
+<script data-pio-mobile="group3-v1" defer src="../assets/mobile/pio-mobile.js?v=20260713-g3-1"></script></body>
+</html>
