@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+
+<html lang="sr-RS"><head><meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<meta content="width=device-width, initial-scale=1.0, viewport-fit=cover" name="viewport"/>
+<title>За власнике | ПИО Рајац</title>
+<style>
+html,body{margin:0;padding:0;}
+body.rajac-static-output{background:#fafaf8;color:#0e1210;}
+.rinfo{--pbg:#fafaf8;--bg2:#f2f0ea;--ptext:#0e1210;--pmuted:#3a4840;--pline:rgba(14,20,14,.09);--pacc:#7a5010;--pacc2:#a06a18;--serif:'Crimson Pro',Georgia,serif;--pmono:'DM Mono',monospace;--sans:'Outfit',system-ui,sans-serif;--r:6px;display:block;background:var(--pbg);color:var(--ptext);font-family:var(--sans);font-size:16px;line-height:1.65;}
+.rinfo *,.rinfo *::before,.rinfo *::after{box-sizing:border-box;margin:0;padding:0;}
+.rinfo a{color:inherit;text-decoration:none;}
+.rinfo img{max-width:100%;height:auto;display:block;}
+.rinfo-wrap{width:min(1240px,calc(100% - 40px));margin:0 auto;}
+.rinfo-section{padding:clamp(48px,7vw,88px) 0;border-bottom:1px solid var(--pline);}
+.rinfo-section:last-child{border-bottom:none;}
+.rinfo-label{display:inline-flex;align-items:center;gap:10px;font-family:var(--pmono);font-size:.68rem;letter-spacing:.22em;text-transform:uppercase;color:var(--pacc);margin-bottom:14px;}
+.rinfo-label::before{content:"";width:26px;height:1px;background:currentColor;}
+.rinfo-h1{font-family:var(--serif);font-size:clamp(2.15rem,3.7vw,4rem);font-weight:300;line-height:.98;letter-spacing:-.035em;color:#fff;text-shadow:0 2px 24px rgba(0,0,0,.34);}
+.rinfo-h1 em{font-style:italic;color:#e8c87a;display:block;margin-top:2px;}
+.rinfo-h2{font-family:var(--serif);font-size:clamp(2rem,3.8vw,4rem);font-weight:300;line-height:.95;letter-spacing:-.04em;color:var(--ptext);}
+.rinfo-h2 em{font-style:italic;color:#5f684c;}
+.rinfo-h3{font-family:var(--serif);font-size:clamp(1.32rem,2vw,1.85rem);font-weight:400;line-height:1.08;letter-spacing:-.025em;color:var(--ptext);margin-bottom:10px;}
+.rinfo-lead{font-size:1.08rem;color:var(--pmuted);line-height:1.82;margin-top:18px;}
+.rinfo-body{font-size:1.02rem;color:var(--pmuted);line-height:1.82;margin-top:14px;}
+.rinfo-hero{position:relative;overflow:hidden;border-bottom:1px solid var(--pline);padding:clamp(42px,5.5vw,68px) 0 clamp(30px,4vw,44px);min-height:60vh;background:#15100b;display:flex;align-items:center;}
+.rinfo-hero-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 50%;pointer-events:none;z-index:0;color:transparent;}
+.rinfo-hero-ov{position:absolute;inset:0;z-index:1;pointer-events:none;background:linear-gradient(105deg,rgba(8,6,4,.84) 0%,rgba(8,6,4,.56) 52%,rgba(8,6,4,.16) 100%),linear-gradient(180deg,transparent 58%,rgba(250,250,248,.96) 100%);}
+.rinfo-hero-full{position:relative;z-index:2;padding-left:clamp(20px,3vw,48px);padding-right:clamp(20px,3vw,48px);width:100%;}
+.rinfo-hero-inner{display:grid;grid-template-columns:minmax(0,1fr);gap:34px;align-items:center;max-width:1120px;margin:0 auto;}
+.rinfo-kicker{font-family:var(--pmono);font-size:.62rem;letter-spacing:.22em;text-transform:uppercase;color:rgba(255,255,255,.62);display:flex;align-items:center;gap:10px;margin-bottom:14px;}
+.rinfo-kicker::before{content:"";width:24px;height:1px;background:currentColor;}
+.rinfo-sub{max-width:650px;margin-top:16px;font-size:1rem;color:rgba(255,255,255,.76);line-height:1.74;}
+.rinfo-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:26px;}
+.rinfo-btn{display:inline-flex;align-items:center;justify-content:center;min-height:42px;padding:11px 16px;border-radius:4px;border:1px solid rgba(255,255,255,.22);font-family:var(--sans);font-size:.9rem;font-weight:500;color:#fff;background:rgba(255,255,255,.08);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);transition:.18s ease;}
+.rinfo-btn:hover{transform:translateY(-1px);background:rgba(255,255,255,.14);}
+.rinfo-btn-primary{background:#e8c87a;color:#15100b;border-color:#e8c87a;}
+.rinfo-hero-card{background:rgba(12,8,4,.72);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border:1px solid rgba(255,255,255,.12);border-radius:var(--r);padding:18px 20px;}
+.rinfo-card-lbl{font-family:var(--pmono);font-size:.58rem;letter-spacing:.18em;text-transform:uppercase;color:#e8c87a;margin-bottom:12px;display:flex;align-items:center;gap:8px;}
+.rinfo-card-lbl::before{content:"";width:5px;height:5px;border-radius:50%;background:#e8c87a;box-shadow:0 0 10px rgba(232,200,122,.8);}
+.rinfo-stat{display:flex;justify-content:space-between;gap:18px;align-items:baseline;padding:9px 0;border-bottom:1px solid rgba(255,255,255,.08);}
+.rinfo-stat:last-child{border-bottom:none;padding-bottom:0;}
+.rinfo-stat b{font-family:var(--pmono);font-size:.74rem;color:rgba(255,255,255,.86);font-weight:400;}
+.rinfo-stat span{font-family:var(--pmono);font-size:.58rem;letter-spacing:.08em;color:rgba(255,255,255,.42);text-align:right;}
+.rinfo-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0;border:1px solid var(--pline);border-radius:var(--r);overflow:hidden;margin-top:34px;background:#fff;}
+.rinfo-card{padding:26px 22px;border-right:1px solid var(--pline);border-bottom:1px solid var(--pline);background:#fff;min-height:190px;transition:background .18s;position:relative;}
+.rinfo-card:nth-child(3n){border-right:none;}
+.rinfo-card:nth-last-child(-n+3){border-bottom:none;}
+.rinfo-card:hover{background:var(--bg2);}
+.rinfo-card::before{content:"";position:absolute;top:0;left:0;right:0;height:3px;background:var(--pacc);transform:scaleX(0);transform-origin:left;transition:transform .28s ease;}
+.rinfo-card:hover::before{transform:scaleX(1);}
+.rinfo-card-tag{display:inline-block;padding:4px 10px;border-radius:3px;background:rgba(122,80,16,.08);border:1px solid rgba(122,80,16,.18);font-family:var(--pmono);font-size:.62rem;letter-spacing:.1em;text-transform:uppercase;color:var(--pacc);margin-bottom:12px;}
+.rinfo-card p{font-size:.94rem;color:var(--pmuted);line-height:1.65;margin:0;}
+.rinfo-2col{display:grid;grid-template-columns:minmax(0,.88fr) minmax(0,1.12fr);gap:64px;align-items:start;}
+.rinfo-flow{display:grid;gap:0;border-top:1px solid var(--pline);margin-top:8px;}
+.rinfo-flow-item{display:grid;grid-template-columns:64px minmax(0,1fr);gap:18px;padding:18px 0;border-bottom:1px solid var(--pline);}
+.rinfo-num{font-family:var(--pmono);font-size:.8rem;letter-spacing:.12em;color:var(--pacc);}
+.rinfo-flow-item p{font-size:.98rem;color:var(--pmuted);line-height:1.72;margin:0;}
+.rinfo-soft{background:var(--bg2);border:1px solid var(--pline);border-radius:var(--r);padding:26px;margin-top:26px;}
+.rinfo-soft p{font-size:1rem;line-height:1.78;color:var(--pmuted);margin-bottom:14px;}
+.rinfo-soft p:last-child{margin-bottom:0;}
+.rinfo-pills{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px;}
+.rinfo-pill{display:inline-flex;align-items:center;min-height:34px;padding:8px 12px;border:1px solid var(--pline);border-radius:999px;background:#fff;font-family:var(--pmono);font-size:.66rem;letter-spacing:.08em;text-transform:uppercase;color:#3a4840;}
+.rinfo-band{background:#20241d;color:#f4efe4;padding:clamp(54px,7vw,86px) 0;border-bottom:1px solid rgba(255,255,255,.10);}
+.rinfo-band .rinfo-label{color:#e8c87a;}
+.rinfo-band .rinfo-h2{color:#f4efe4;}
+.rinfo-band p{color:rgba(244,239,228,.76);}
+.rinfo-band-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin-top:28px;}
+.rinfo-band-card{border:1px solid rgba(255,255,255,.12);background:rgba(255,255,255,.045);border-radius:var(--r);padding:18px;min-height:130px;}
+.rinfo-band-card b{display:block;color:#e8c87a;font-family:var(--pmono);font-weight:400;font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;margin-bottom:10px;}
+.rinfo-band-card span{display:block;color:rgba(244,239,228,.8);font-size:.94rem;line-height:1.58;}
+.rinfo-cta{background:#fff;border:1px solid var(--pline);border-radius:var(--r);padding:34px;margin-top:36px;display:grid;grid-template-columns:minmax(0,1fr) auto;gap:24px;align-items:center;}
+.rinfo-cta p{color:var(--pmuted);font-size:1rem;line-height:1.72;margin-top:10px;}
+.rinfo-cta .rinfo-btn{border-color:rgba(14,20,14,.16);color:#15100b;background:#f3f0e8;}
+.rinfo-cta .rinfo-btn-primary{background:#20241d;color:#fff;border-color:#20241d;}
+.rinfo-disabled{cursor:default!important;pointer-events:none!important;opacity:.92;}
+.rinfo-card{cursor:default;}
+@media(max-width:980px){.rinfo-hero-inner,.rinfo-2col,.rinfo-cta{grid-template-columns:1fr;}.rinfo-grid{grid-template-columns:repeat(2,minmax(0,1fr));}.rinfo-card:nth-child(3n){border-right:1px solid var(--pline);}.rinfo-card:nth-child(2n){border-right:none;}.rinfo-card:nth-last-child(-n+3){border-bottom:1px solid var(--pline);}.rinfo-card:nth-last-child(-n+2){border-bottom:none;}.rinfo-band-grid{grid-template-columns:repeat(2,minmax(0,1fr));}}
+@media(max-width:640px){.rinfo-wrap{width:min(100% - 28px,1240px);}.rinfo-hero{min-height:60vh;}.rinfo-hero-full{padding-left:14px;padding-right:14px;}.rinfo-grid,.rinfo-band-grid{grid-template-columns:1fr;}.rinfo-card,.rinfo-card:nth-child(2n),.rinfo-card:nth-child(3n){border-right:none;}.rinfo-card:nth-last-child(-n+2),.rinfo-card:nth-last-child(-n+3){border-bottom:1px solid var(--pline);}.rinfo-card:last-child{border-bottom:none;}.rinfo-flow-item{grid-template-columns:42px minmax(0,1fr);}.rinfo-actions .rinfo-btn{width:100%;}.rinfo-hero-card{display:none;}}
+</style>
+<style id="rajac-static-common-menu-inline">/* RAJAC_STATIC_COMMON_MENU_INLINE: self-contained menu style for static directory pages */
+.rajac-static-common-menu{position:sticky;top:0;z-index:9999;background:rgba(14,22,15,.96);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid rgba(201,168,76,.16);font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;}
+.rajac-static-common-menu *{box-sizing:border-box;}
+.rajac-static-common-menu__inner{width:min(1180px,calc(100% - 44px));margin:0 auto;display:flex;align-items:center;min-height:58px;overflow-x:auto;scrollbar-width:none;}
+.rajac-static-common-menu__inner::-webkit-scrollbar{display:none;}
+.rajac-static-common-menu__logo{flex:0 0 auto;min-height:58px;display:flex;align-items:center;padding-right:26px;margin-right:14px;border-right:1px solid rgba(255,255,255,.08);color:rgba(245,240,228,.98);font-size:.88rem;font-weight:650;letter-spacing:.06em;white-space:nowrap;text-decoration:none;}
+.rajac-static-common-menu__links{display:flex;align-items:stretch;gap:0;}
+.rajac-static-common-menu__link{position:relative;display:flex;align-items:center;height:58px;padding:0 13px;color:rgba(245,240,228,.82);text-transform:uppercase;letter-spacing:.15em;font-size:.68rem;font-weight:450;white-space:nowrap;border-bottom:2px solid transparent;transition:color .18s ease,background .18s ease,border-color .18s ease;text-decoration:none;}
+.rajac-static-common-menu__link:hover{color:rgba(245,240,228,.98);background:rgba(255,255,255,.04);}
+.rajac-static-common-menu__link.is-active{color:#e1c978;border-bottom-color:#e1c978;}
+@media(max-width:700px){.rajac-static-common-menu__inner{width:100%;padding:0 14px;}.rajac-static-common-menu__logo{padding-right:16px;margin-right:6px;font-size:.82rem;}.rajac-static-common-menu__link{padding:0 10px;font-size:.62rem;letter-spacing:.12em;}}</style><style id="rajac-no-hero-fix">/* RAJAC_NO_HERO_FIX: top HERO blocks removed intentionally */
+.rp-strip{margin:0 auto 0!important;}
+.rp-main{margin-top:56px!important;}
+.rinfo > .rinfo-section:first-of-type{padding-top:clamp(42px,6vw,72px)!important;}
+.rir-page > .rir-section:first-of-type{padding-top:clamp(42px,6vw,72px)!important;}</style>
+<style id="rajac-force-no-hero-v2">
+/* SAFE v2: potpuno sklanja hero blokove ako je na serveru ostao stari HTML/CSS. */
+.rp-hero,.rinfo-hero,.rir-hero,header.rp-hero,section.rp-hero,section.rinfo-hero,section.rir-hero{display:none!important;height:0!important;min-height:0!important;max-height:0!important;padding:0!important;margin:0!important;overflow:hidden!important;border:0!important;}
+.rp-hero::before,.rp-hero::after,.rinfo-hero::before,.rinfo-hero::after,.rir-hero::before,.rir-hero::after{display:none!important;content:none!important;}
+.rp-strip{margin:0 auto!important;}
+.rinfo-section:first-of-type,.rir-section:first-of-type{padding-top:clamp(34px,5vw,62px)!important;}
+</style>
+<style id="rajac-unified-white-v4">
+/* RAJAC_UNIFIED_WHITE_V4
+   Беле позадине, уједначена типографија и мањи наслови за пет статичких страница. */
+:root{
+  --rajac-u-bg:#ffffff;
+  --rajac-u-paper:#ffffff;
+  --rajac-u-ink:#152015;
+  --rajac-u-text:#253126;
+  --rajac-u-muted:#586357;
+  --rajac-u-line:rgba(21,32,21,.14);
+  --rajac-u-soft:#f7f8f5;
+  --rajac-u-accent:#6f7f47;
+  --rajac-u-gold:#b99a45;
+  --rajac-u-serif:Georgia,"Times New Roman",serif;
+  --rajac-u-sans:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;
+}
+html,body,
+body.rajac-static-output{
+  background:#fff!important;
+  color:var(--rajac-u-text)!important;
+  font-family:var(--rajac-u-sans)!important;
+  font-size:17px!important;
+  line-height:1.72!important;
+}
+body.rajac-static-output{
+  margin:0!important;
+}
+.rajac-static-common-menu{
+  background:#0d1b12!important;
+  border-bottom:1px solid rgba(255,255,255,.12)!important;
+  box-shadow:none!important;
+  font-family:var(--rajac-u-sans)!important;
+}
+.rajac-static-common-menu__logo,
+.rajac-static-common-menu__link{
+  font-family:var(--rajac-u-sans)!important;
+}
+.rajac-static-common-menu__link{
+  font-size:.68rem!important;
+  letter-spacing:.13em!important;
+  font-weight:500!important;
+}
+.rajac-static-common-menu__link.is-active{
+  color:#d7c06c!important;
+  border-bottom-color:#d7c06c!important;
+}
+.rinfo,
+.rp-page,
+.rir-page{
+  background:#fff!important;
+  background-image:none!important;
+  color:var(--rajac-u-text)!important;
+  font-family:var(--rajac-u-sans)!important;
+  --pbg:#fff!important;
+  --bg2:#fff!important;
+  --ptext:var(--rajac-u-ink)!important;
+  --pmuted:var(--rajac-u-muted)!important;
+  --pline:var(--rajac-u-line)!important;
+  --pacc:var(--rajac-u-accent)!important;
+  --serif:var(--rajac-u-serif)!important;
+  --sans:var(--rajac-u-sans)!important;
+  --rp-bg:#fff!important;
+  --rp-paper:#fff!important;
+  --rp-ink:var(--rajac-u-ink)!important;
+  --rp-muted:var(--rajac-u-muted)!important;
+  --rp-line:var(--rajac-u-line)!important;
+  --rp-serif:var(--rajac-u-serif)!important;
+  --rp-sans:var(--rajac-u-sans)!important;
+  --rir-bg:#fff!important;
+  --rir-paper:#fff!important;
+  --rir-soft:#fff!important;
+  --rir-ink:var(--rajac-u-ink)!important;
+  --rir-text:var(--rajac-u-text)!important;
+  --rir-muted:var(--rajac-u-muted)!important;
+  --rir-line:var(--rajac-u-line)!important;
+  --rir-serif:var(--rajac-u-serif)!important;
+  --rir-sans:var(--rajac-u-sans)!important;
+}
+.rinfo-wrap,
+.rp-main,
+.rir-wrap{
+  width:min(1180px,calc(100% - 48px))!important;
+  margin-left:auto!important;
+  margin-right:auto!important;
+}
+.rp-main{
+  margin-top:clamp(44px,5vw,68px)!important;
+  padding-bottom:clamp(70px,7vw,100px)!important;
+}
+.rinfo-section,
+.rir-section{
+  background:#fff!important;
+  background-image:none!important;
+  padding:clamp(46px,5.8vw,76px) 0!important;
+  border-bottom:1px solid var(--rajac-u-line)!important;
+}
+.rp-section{
+  background:#fff!important;
+  background-image:none!important;
+  padding:clamp(48px,5.8vw,76px) 0!important;
+  border-top:1px solid var(--rajac-u-line)!important;
+}
+.rp-intro{
+  margin-bottom:clamp(42px,5vw,64px)!important;
+}
+.rp-grid,
+.rinfo-grid,
+.rir-cards,
+.rir-disciplines,
+.rinfo-band-grid{
+  margin-top:28px!important;
+}
+.rp-intro h2,
+.rp-section h2,
+.rp-final h2,
+.rp-wide h2,
+.rinfo-h2,
+.rir-title{
+  font-family:var(--rajac-u-serif)!important;
+  color:var(--rajac-u-ink)!important;
+  font-weight:400!important;
+  font-size:clamp(2.05rem,3.1vw,3.15rem)!important;
+  line-height:1.08!important;
+  letter-spacing:-.028em!important;
+  text-shadow:none!important;
+}
+.rp-card h3,
+.rp-note h3,
+.rinfo-h3,
+.rir-card h3,
+.rir-note h3,
+.rir-data-item b{
+  font-family:var(--rajac-u-serif)!important;
+  color:var(--rajac-u-ink)!important;
+  font-weight:400!important;
+  font-size:clamp(1.35rem,2vw,1.9rem)!important;
+  line-height:1.14!important;
+  letter-spacing:-.018em!important;
+}
+.rp-eyebrow,
+.rinfo-label,
+.rir-label,
+.rinfo-card-tag,
+.rinfo-num,
+.rir-card small,
+.rir-principle b,
+.rp-strip-label{
+  font-family:var(--rajac-u-sans)!important;
+  color:var(--rajac-u-accent)!important;
+  font-size:.72rem!important;
+  letter-spacing:.14em!important;
+  font-weight:650!important;
+}
+.rp-intro-card,
+.rp-card,
+.rp-note,
+.rp-feature-row,
+.rp-final,
+.rp-wide,
+.rinfo-card,
+.rinfo-soft,
+.rinfo-cta,
+.rinfo-band-card,
+.rinfo-feature-side,
+.rinfo-mini,
+.rir-card,
+.rir-note,
+.rir-data-list,
+.rir-data-item,
+.rir-principle,
+.rir-cta-box,
+.rir-application,
+.rir-form-wrap,
+.rir-summary,
+.rir-field,
+.rir-wide,
+.rir-pill,
+.rinfo-pill,
+.rp-pill{
+  background:#fff!important;
+  background-image:none!important;
+  color:var(--rajac-u-text)!important;
+  border-color:var(--rajac-u-line)!important;
+  box-shadow:none!important;
+}
+.rp-card,
+.rinfo-card,
+.rir-card,
+.rp-intro-card,
+.rp-note,
+.rp-feature-row,
+.rp-final,
+.rinfo-soft,
+.rinfo-cta,
+.rir-note,
+.rir-cta-box,
+.rir-form-wrap,
+.rir-summary{
+  border:1px solid var(--rajac-u-line)!important;
+  border-radius:22px!important;
+}
+.rp-card,
+.rinfo-card,
+.rir-card{
+  min-height:auto!important;
+}
+.rp-card:hover,
+.rinfo-card:hover,
+.rir-card:hover{
+  background:#fff!important;
+  transform:none!important;
+}
+.rinfo-card::before,
+.rir-card::before{
+  background:var(--rajac-u-accent)!important;
+}
+.rp-card-icon,
+.rp-feature-row span,
+.rir-summary-icon{
+  background:#f2f5ef!important;
+  color:var(--rajac-u-ink)!important;
+}
+.rinfo-band,
+.rir-dark,
+.rir-cta,
+.rp-wide{
+  background:#fff!important;
+  background-image:none!important;
+  color:var(--rajac-u-text)!important;
+  border-top:1px solid var(--rajac-u-line)!important;
+  border-bottom:1px solid var(--rajac-u-line)!important;
+  box-shadow:none!important;
+}
+.rinfo-band .rinfo-h2,
+.rir-dark .rir-title,
+.rp-wide h2{
+  color:var(--rajac-u-ink)!important;
+}
+.rinfo-band p,
+.rinfo-band-card span,
+.rir-dark .rir-lead,
+.rir-dark .rir-text,
+.rir-data-item span,
+.rp-wide p,
+.rp-card p,
+.rp-intro-card p,
+.rp-section-text p,
+.rp-feature-row p,
+.rp-final p,
+.rinfo-lead,
+.rinfo-body,
+.rinfo-card p,
+.rinfo-flow-item p,
+.rinfo-soft p,
+.rinfo-cta p,
+.rir-lead,
+.rir-text,
+.rir-note p,
+.rir-card p,
+.rir-principle p{
+  color:var(--rajac-u-muted)!important;
+  font-family:var(--rajac-u-sans)!important;
+  font-weight:400!important;
+}
+.rp-btn,
+.rinfo-btn,
+.rir-actions a,
+.rir-submit{
+  font-family:var(--rajac-u-sans)!important;
+  border-radius:999px!important;
+  box-shadow:none!important;
+}
+.rp-btn,
+.rinfo-btn,
+.rir-actions a{
+  background:#fff!important;
+  color:var(--rajac-u-ink)!important;
+  border:1px solid var(--rajac-u-line)!important;
+}
+.rp-btn-primary,
+.rinfo-btn-primary,
+.rir-submit{
+  background:#102317!important;
+  color:#fff!important;
+  border-color:#102317!important;
+}
+.rp-final .rp-btn,
+.rinfo-cta .rinfo-btn{
+  background:#fff!important;
+  color:var(--rajac-u-ink)!important;
+  border:1px solid var(--rajac-u-line)!important;
+}
+.rp-final .rp-btn-primary,
+.rinfo-cta .rinfo-btn-primary{
+  background:#102317!important;
+  color:#fff!important;
+  border-color:#102317!important;
+}
+.rp-pill,
+.rinfo-pill,
+.rir-pill{
+  border-radius:999px!important;
+  color:var(--rajac-u-muted)!important;
+}
+.rinfo-2col,
+.rir-intro-grid,
+.rir-dark-grid,
+.rp-intro,
+.rp-section,
+.rinfo-cta,
+.rir-cta-box{
+  gap:clamp(28px,4vw,48px)!important;
+}
+@media(max-width:980px){
+  .rp-grid,.rinfo-grid,.rir-cards,.rir-disciplines,.rinfo-band-grid{grid-template-columns:1fr 1fr!important;}
+}
+@media(max-width:720px){
+  html,body,body.rajac-static-output{font-size:16px!important;}
+  .rinfo-wrap,.rp-main,.rir-wrap{width:min(100% - 28px,1180px)!important;}
+  .rp-intro h2,.rp-section h2,.rp-final h2,.rp-wide h2,.rinfo-h2,.rir-title{
+    font-size:clamp(1.85rem,9vw,2.55rem)!important;
+    line-height:1.1!important;
+  }
+  .rp-grid,.rinfo-grid,.rir-cards,.rir-disciplines,.rinfo-band-grid{grid-template-columns:1fr!important;}
+}
+</style>
+<style id="rajac-vlasnici-hero-final">
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,500&family=Outfit:wght@300;400;500;600;700&family=DM+Mono:wght@400;500&display=swap');
+:root{
+  --rj-display:'Cormorant Garamond', Georgia, 'Times New Roman', serif;
+  --rj-body:'Outfit', 'Segoe UI', system-ui, -apple-system, Roboto, sans-serif;
+  --rj-mono:'DM Mono', 'Cascadia Code', Consolas, ui-monospace, monospace;
+  --rj-h1:clamp(38px,4.2vw,56px);
+  --rj-hero-min:460px; --rj-hero-max:520px; --rj-hero-pad:104px 0 60px; --rj-nav-height:64px;
+  --gold:#9c7e2e; --gold-soft:#e7cf85; --sand:#bdad87;
+  --c1:#5f8e45;--c1l:#a4cd84; --c2:#b0913f;--c2l:#e7cf85;
+  --c3:#4f8a9e;--c3l:#8fc4d4; --c4:#b3703f;--c4l:#e6a577;
+  --shadow:0 16px 40px rgba(38,48,30,.1);
+}
+html{scroll-padding-top:calc(var(--rj-nav-height) + 18px)!important;}
+body.rajac-static-output{padding-top:var(--rj-nav-height)!important;margin:0!important;background:#fff!important;color:#253126!important;font-family:var(--rj-body)!important;}
+.rajac-static-common-menu{display:none!important;}
+
+.book-nav{position:fixed!important;top:0!important;left:0!important;right:0!important;width:100%!important;height:var(--rj-nav-height)!important;min-height:var(--rj-nav-height)!important;z-index:99999!important;background:rgba(38,48,30,.96)!important;backdrop-filter:blur(12px)!important;-webkit-backdrop-filter:blur(12px)!important;border-bottom:1px solid rgba(189,173,135,.45)!important;font-family:var(--rj-body)!important;}
+.book-nav .shell{width:min(1180px,calc(100% - 40px))!important;margin:0 auto!important;display:flex!important;align-items:center!important;overflow-x:auto!important;scrollbar-width:none!important;height:var(--rj-nav-height)!important;}
+.book-nav .shell::-webkit-scrollbar{display:none!important;}
+.nav-logo{display:flex!important;align-items:center!important;gap:9px!important;color:#fdf6e6!important;font-weight:600!important;letter-spacing:.02em!important;padding-right:20px!important;margin-right:12px!important;border-right:1px solid rgba(255,255,255,.12)!important;white-space:nowrap!important;height:42px!important;min-height:42px!important;text-decoration:none!important;}
+.nav-logo::before{content:""!important;width:9px!important;height:9px!important;border-radius:50%!important;background:var(--sand)!important;box-shadow:0 0 0 4px rgba(189,173,135,.22)!important;}
+.nav-links{display:flex!important;align-items:stretch!important;}
+.nav-link{display:flex!important;align-items:center!important;padding:0 12px!important;color:rgba(253,246,230,.8)!important;font-size:.68rem!important;font-weight:500!important;text-transform:uppercase!important;letter-spacing:.14em!important;white-space:nowrap!important;border-bottom:2px solid transparent!important;height:42px!important;min-height:42px!important;text-decoration:none!important;}
+.nav-link:hover{color:#fff!important;}
+.nav-link.is-active{color:var(--gold-soft)!important;border-bottom-color:var(--sand)!important;}
+
+.rinfo-hero,.rp-hero,.rir-hero{display:none!important;}
+.hero{min-height:var(--rj-hero-min)!important;max-height:var(--rj-hero-max)!important;display:flex!important;align-items:center!important;position:relative!important;overflow:hidden!important;isolation:isolate!important;margin:0!important;padding:0!important;border-bottom:1px solid rgba(189,173,135,.6)!important;background-image:linear-gradient(90deg, rgba(38,48,30,.84) 0%, rgba(38,48,30,.68) 42%, rgba(38,48,30,.24) 100%),url('https://piorajac.rs/wp-content/uploads/2026/06/1781220391816.jpg')!important;background-position:center center!important;background-size:cover!important;background-repeat:no-repeat!important;background-color:#26301e!important;}
+.hero:after{display:none!important;content:none!important;}
+.hero-inner{width:min(1180px, calc(100% - 40px))!important;margin:0 auto!important;padding:var(--rj-hero-pad)!important;position:relative!important;z-index:2!important;}
+.hero h1{font-family:var(--rj-display)!important;font-size:var(--rj-h1)!important;font-weight:500!important;line-height:1.06!important;letter-spacing:-.03em!important;max-width:720px!important;margin:0!important;color:#fff7df!important;text-shadow:0 2px 14px rgba(0,0,0,.35)!important;}
+.hero .lead{font-family:var(--rj-body)!important;font-size:clamp(16px,1.6vw,19px)!important;line-height:1.8!important;max-width:760px!important;margin:22px 0 0!important;color:rgba(255,250,235,.92)!important;text-shadow:0 1px 10px rgba(0,0,0,.28)!important;}
+
+.op-stats{width:min(1180px,calc(100% - 40px))!important;margin:0 auto!important;display:grid!important;grid-template-columns:repeat(4,minmax(0,1fr))!important;background:#2a3420!important;border-radius:18px!important;overflow:hidden!important;box-shadow:var(--shadow)!important;margin-top:clamp(-44px,-4vw,-30px)!important;position:relative!important;z-index:3!important;}
+.op-stat{position:relative!important;padding:26px 24px 24px!important;}
+.op-stat::before{content:""!important;position:absolute!important;left:0!important;right:0!important;top:0!important;height:4px!important;background:var(--acc)!important;}
+.op-stat::after{content:""!important;position:absolute!important;inset:0!important;background:linear-gradient(180deg,var(--acc) 0%,transparent 70%)!important;opacity:.12!important;pointer-events:none!important;}
+.op-stat b{display:block!important;font-family:var(--rj-display)!important;font-weight:500!important;font-size:clamp(1.4rem,2vw,1.85rem)!important;line-height:1.06!important;color:var(--accl)!important;letter-spacing:-.01em!important;position:relative!important;}
+.op-stat span{display:block!important;margin-top:7px!important;font-family:var(--rj-mono)!important;font-size:.78rem!important;line-height:1.4!important;color:rgba(247,243,232,.66)!important;position:relative!important;}
+.op-stat--a{--acc:var(--c1);--accl:var(--c1l);}
+.op-stat--b{--acc:var(--c2);--accl:var(--c2l);}
+.op-stat--c{--acc:var(--c3);--accl:var(--c3l);}
+.op-stat--d{--acc:var(--c4);--accl:var(--c4l);}
+
+.rinfo{background:#fff!important;background-image:none!important;}
+.rinfo > .rinfo-section:first-of-type{padding-top:clamp(74px,7vw,104px)!important;}
+
+@media (max-width:980px){.op-stats{grid-template-columns:1fr 1fr!important;}}
+@media (max-width:640px){
+  :root{--rj-nav-height:60px;}
+  .book-nav .nav-logo,.book-nav .nav-link{height:38px!important;min-height:38px!important;}
+  .hero{min-height:360px!important;max-height:none!important;}
+  .hero-inner{padding:80px 0 46px!important;}
+  .hero h1{font-size:34px!important;}
+  .op-stats{grid-template-columns:1fr!important;margin-top:0!important;border-radius:0!important;width:100%!important;}
+  .rinfo > .rinfo-section:first-of-type{padding-top:clamp(42px,6vw,72px)!important;}
+}
+</style>
+<style id="rajac-owner-active-links-final">
+.rinfo-card-link{display:block!important;color:inherit!important;text-decoration:none!important;cursor:pointer!important;transition:background-color .18s ease,border-color .18s ease!important;}
+.rinfo-card-link:hover{background:#f4f1e7!important;}
+.rinfo-card-link:hover::before{transform:scaleX(1)!important;}
+.rinfo-card-link:focus-visible{outline:3px solid rgba(156,126,46,.35)!important;outline-offset:-3px!important;background:#f4f1e7!important;}
+</style><style id="rajac-owner-six-cards-final">
+#servisi .rinfo-grid{grid-template-columns:repeat(3,minmax(0,1fr))!important;}
+@media(max-width:980px){#servisi .rinfo-grid{grid-template-columns:repeat(2,minmax(0,1fr))!important;}}
+@media(max-width:640px){#servisi .rinfo-grid{grid-template-columns:1fr!important;}}
+
+
+/* ZA VLASNIKE V2 · integrisani servisi */
+.rinfo-service-intro{padding:clamp(52px,7vw,82px) 0 30px;border-bottom:1px solid var(--pline)}
+.rinfo-service-intro .rinfo-h2{max-width:900px}.rinfo-service-intro p{max-width:780px}
+.rinfo-service{border-bottom:1px solid var(--pline);background:#fff}
+.rinfo-service:nth-child(even){background:#f8f7f2}
+.rinfo-service-inner{width:min(1240px,calc(100% - 40px));margin:0 auto;padding:clamp(48px,6.5vw,82px) 0}
+.rinfo-service-head{display:grid;grid-template-columns:92px minmax(0,1fr) auto;gap:26px;align-items:start;padding-bottom:28px;border-bottom:1px solid var(--pline)}
+.rinfo-service-index{font-family:var(--pmono);font-size:.68rem;letter-spacing:.16em;color:var(--pacc);padding-top:8px}.rinfo-service-index b{display:block;font-size:1.05rem;color:#172019;margin-bottom:4px}
+.rinfo-service-kicker{font-family:var(--pmono);font-size:.66rem;letter-spacing:.18em;text-transform:uppercase;color:var(--pacc);margin-bottom:10px}
+.rinfo-service-title{font-family:var(--serif);font-size:clamp(2rem,3.5vw,3.55rem);line-height:.96;letter-spacing:-.035em;font-weight:300}
+.rinfo-service-summary{max-width:760px;margin-top:14px;color:var(--pmuted);font-size:1.04rem;line-height:1.76}
+.rinfo-service-action{display:inline-flex;align-items:center;gap:12px;min-height:48px;padding:12px 18px;border:1px solid #243129;border-radius:5px;background:#243129;color:#fff!important;font-size:.88rem;font-weight:600;white-space:nowrap;transition:.18s}
+.rinfo-service-action:after{content:"→";font-size:1.05rem;transition:.18s}.rinfo-service-action:hover{transform:translateY(-2px);background:#6d551b;border-color:#6d551b}.rinfo-service-action:hover:after{transform:translateX(4px)}
+.rinfo-service-body{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:64px;align-items:start;padding-top:30px}
+.rinfo-service-copy p{color:var(--pmuted);font-size:1rem;line-height:1.8;margin-bottom:14px}.rinfo-service-note{border-left:3px solid rgba(122,80,16,.55);padding:4px 0 4px 18px}
+.rinfo-service .rinfo-flow,.rinfo-service .rinfo-soft{margin-top:0}.rinfo-service .rinfo-soft{background:rgba(255,255,255,.72)}
+.rinfo-service-metrics{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px}
+.rinfo-service-metric{padding:18px;border:1px solid var(--pline);border-radius:5px;background:#fff;min-height:120px}
+.rinfo-service-metric b{display:block;font-family:var(--pmono);color:var(--pacc);font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;margin-bottom:9px}.rinfo-service-metric span{display:block;color:var(--pmuted);font-size:.91rem;line-height:1.56}
+@media(max-width:980px){.rinfo-service-head{grid-template-columns:70px minmax(0,1fr)}.rinfo-service-head .rinfo-service-action{grid-column:2;justify-self:start}.rinfo-service-body{grid-template-columns:1fr;gap:30px}.rinfo-service-metrics{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:640px){.rinfo-service-inner{width:min(100% - 28px,1240px)}.rinfo-service-head{grid-template-columns:1fr;gap:12px}.rinfo-service-index{display:flex;gap:8px;padding-top:0}.rinfo-service-index b{display:inline;margin:0}.rinfo-service-head .rinfo-service-action{grid-column:1;width:100%}.rinfo-service-metrics{grid-template-columns:1fr}}
+
+</style></head>
+<body class="rajac-static-output">
+<nav aria-label="Странице ПИО Рајац" class="book-nav">
+<div class="shell">
+<a class="nav-logo" href="https://piorajac.rs/">ПИО „Рајац“</a>
+<div class="nav-links">
+<a class="nav-link" href="https://piorajac.rs/o-platformi/">О платформи</a>
+<a class="nav-link" href="https://piorajac.rs/za-posetioce/">За посетиоце</a>
+<a class="nav-link" href="https://piorajac.rs/za-istrazivace/">За истраживаче</a>
+<a aria-current="page" class="nav-link is-active" href="https://piorajac.rs/za-vlasnike/">За власнике</a>
+<a class="nav-link" href="https://piorajac.rs/aplikacije/">Апликације</a>
+</div>
+</div>
+</nav>
+<header class="hero" style="--hero-img:url('https://piorajac.rs/wp-content/uploads/2026/06/1781220391816.jpg'); --hero-pos:center center;">
+<div class="hero-inner">
+<h1>За власнике</h1>
+<p class="lead">Дигитална подршка за власнике имања, објеката, ливада, пашњака, шума и пољопривредних површина у ПИО „Рајац“ — са подацима, картама, препорукама и лакшом комуникацијом са управљачем.</p>
+</div>
+</header>
+<div class="op-stats">
+<div class="op-stat op-stat--a"><b>Имање</b><span>објекти · парцеле · приступ</span></div>
+<div class="op-stat op-stat--b"><b>Подаци</b><span>карте · метео · сателити</span></div>
+<div class="op-stat op-stat--c"><b>Одржавање</b><span>ливаде · шуме · расвета</span></div>
+<div class="op-stat op-stat--d"><b>Сарадња</b><span>исправке · пријаве · предлози</span></div>
+</div>
+<div class="rinfo rinfo-owners">
+<section class="rinfo-section" id="uvod">
+<div class="rinfo-wrap rinfo-2col">
+<div>
+<div class="rinfo-label">сарадња на терену</div>
+<h2 class="rinfo-h2">Рајац се чува заједно са људима који овде имају имања</h2>
+<p class="rinfo-lead">ПИО „Рајац” није само простор природних вредности, стаза, шума, ливада, извора и станишта. То је и простор приватних имања, породичних кућа, викендица, ливада, пашњака, воћњака, шума и пољопривредних површина.</p>
+</div>
+<div class="rinfo-soft">
+<p>Циљ странице није да власницима наметне нове обавезе, већ да омогући јаснији увид у податке, лакшу комуникацију са управљачем, боље планирање радова и коришћење савремених алата за одрживо коришћење земљишта.</p>
+<p>Рајац се може чувати само ако се природне вредности посматрају заједно са људима који овде имају имовину, породичне везе, рад, одговорност и свакодневно присуство.</p>
+</div>
+</div>
+</section>
+
+<section class="rinfo-service-intro" id="servisi">
+<div class="rinfo-wrap"><div class="rinfo-label">сервиси за власнике</div>
+<h2 class="rinfo-h2">Све што је потребно за имање — на једном месту</h2>
+<p class="rinfo-lead">Шест сервиса је сада уграђено директно у тематске блокове који објашњавају чему служе и како их власник користи — без дуплирања истих садржаја на врху странице.</p></div>
+</section>
+<div class="rinfo-service-stack">
+
+<section class="rinfo-service" id="ams"><div class="rinfo-service-inner">
+<div class="rinfo-service-head"><div class="rinfo-service-index"><b>01</b> сервис</div><div><div class="rinfo-service-kicker">метео</div><h2 class="rinfo-service-title">АМС Рајац</h2><p class="rinfo-service-summary">Локални метеоролошки подаци за планирање кошења, обиласка имања, радова на објекту, приступа парцели и боравка.</p></div><a class="rinfo-service-action" href="/amsrajac/">Отвори АМС Рајац</a></div>
+<div class="rinfo-service-body"><div class="rinfo-service-copy"><h3 class="rinfo-h3">Локални услови за одлуке на имању</h3><p>АМС даје стварне услове на Рајцу, а не само општу прогнозу за шири крај.</p><p class="rinfo-service-note">Корисна је за избор времена за кошење, радове, процену ризика од јаког ветра, кише, мраза и сушног стреса.</p></div>
+<div class="rinfo-service-metrics"><div class="rinfo-service-metric"><b>температура</b><span>радови и заштита биљака</span></div><div class="rinfo-service-metric"><b>ветар</b><span>ризик за радове, стабла и објекте</span></div><div class="rinfo-service-metric"><b>падавине</b><span>влажност, приступ и кошење</span></div><div class="rinfo-service-metric"><b>сунце / УВ</b><span>услови за рад на отвореном</span></div></div></div>
+</div></section>
+
+<section class="rinfo-service" id="moj-objekat"><div class="rinfo-service-inner">
+<div class="rinfo-service-head"><div class="rinfo-service-index"><b>02</b> сервис</div><div><div class="rinfo-service-kicker">објекат</div><h2 class="rinfo-service-title">Мој објекат</h2><p class="rinfo-service-summary">Преглед основних података о објекту, положају, адреси, стању и контактима, уз могућност пријаве исправке.</p></div><a class="rinfo-service-action" href="/za-vlasnike/objekat/">Отвори мој објекат</a></div>
+<div class="rinfo-service-body"><div class="rinfo-service-copy"><h3 class="rinfo-h3">Дигитални модул за власнике објеката</h3><p>Власник на једном месту добија основне податке о свом објекту и везу са евиденцијом Управљача.</p><p class="rinfo-service-note">Ажурни подаци помажу код обавештавања, планирања активности и брже реакције на проблеме.</p></div>
+<div class="rinfo-flow"><div class="rinfo-flow-item"><span class="rinfo-num">01</span><p>Положај објекта, адреса и основни подаци.</p></div><div class="rinfo-flow-item"><span class="rinfo-num">02</span><p>Контакти важни за комуникацију са Управљачем.</p></div><div class="rinfo-flow-item"><span class="rinfo-num">03</span><p>Пријава исправке или допуне података.</p></div></div></div>
+</div></section>
+
+<section class="rinfo-service" id="moja-parcela"><div class="rinfo-service-inner">
+<div class="rinfo-service-head"><div class="rinfo-service-index"><b>03</b> сервис</div><div><div class="rinfo-service-kicker">парцела</div><h2 class="rinfo-service-title">Моја парцела</h2><p class="rinfo-service-summary">Положај парцеле у односу на границе ПИО „Рајац”, режиме заштите, приступне путеве и важне елементе простора.</p></div><a class="rinfo-service-action" href="/za-vlasnike/parcela/">Пронађи моју парцелу</a></div>
+<div class="rinfo-service-body"><div class="rinfo-service-copy"><h3 class="rinfo-h3">Парцела у ширем просторном контексту</h3><p>Карта показује где се имање налази у односу на заштићено подручје и режиме заштите.</p><p class="rinfo-service-note">Помаже при планирању приступа, одржавању, праћењу ерозије, зарастања, ливада и проблема са водом.</p></div>
+<div class="rinfo-soft"><p><strong>За власника:</strong> јаснији увид у положај и услове који важе баш за његову парцелу.</p><p><strong>За управљача:</strong> бржа комуникација и прецизније планирање терена.</p></div></div>
+</div></section>
+
+<section class="rinfo-service" id="sateliti"><div class="rinfo-service-inner">
+<div class="rinfo-service-head"><div class="rinfo-service-index"><b>04</b> сервис</div><div><div class="rinfo-service-kicker">сателити</div><h2 class="rinfo-service-title">Сателитско праћење</h2><p class="rinfo-service-summary">Праћење стања усева, ливада и друге вегетације кроз време на основу Sentinel-2 података за конкретну парцелу.</p></div><a class="rinfo-service-action" href="/za-vlasnike/satelit/">Отвори сателитско праћење</a></div>
+<div class="rinfo-service-body"><div class="rinfo-service-copy"><h3 class="rinfo-h3">Вегетација кроз сезону</h3><p>Прате се зелена маса, влажност, стрес биљака, сушење, зарастање и последице кошења или екстремног времена.</p><div class="rinfo-pills"><span class="rinfo-pill">NDVI</span><span class="rinfo-pill">NDMI</span><span class="rinfo-pill">NDRE</span><span class="rinfo-pill">NDWI</span><span class="rinfo-pill">NBR</span></div></div>
+<div class="rinfo-flow"><div class="rinfo-flow-item"><span class="rinfo-num">01</span><p>Временска серија показује промене кроз сезону.</p></div><div class="rinfo-flow-item"><span class="rinfo-num">02</span><p>Уочавају се сувљи делови и последице кошења.</p></div><div class="rinfo-flow-item"><span class="rinfo-num">03</span><p>Сателитски подаци допуњују искуство власника.</p></div></div></div>
+</div></section>
+
+<section class="rinfo-service" id="preporuke"><div class="rinfo-service-inner">
+<div class="rinfo-service-head"><div class="rinfo-service-index"><b>05</b> сервис</div><div><div class="rinfo-service-kicker">правила</div><h2 class="rinfo-service-title">Правила и препоруке</h2><p class="rinfo-service-summary">Практичне смернице за одржавање имања, расвету, отпад, ливаде, шуме и радове у заштићеном подручју.</p></div><a class="rinfo-service-action" href="/za-vlasnike/pravila/">Отвори правила и препоруке</a></div>
+<div class="rinfo-service-body"><div class="rinfo-service-copy"><h3 class="rinfo-h3">Имање у заштићеном пределу</h3><p>Коришћење приватне имовине треба ускладити са природним вредностима и режимом заштите.</p></div><div class="rinfo-soft"><p>Важни су одржавање ливада, спречавање зарастања, очување живица и међа, пажљиво уређење прилаза, управљање отпадом и одговорно одржавање објеката.</p><p>Спољна расвета треба да буде умерена, топла и усмерена.</p></div></div>
+</div></section>
+
+<section class="rinfo-service" id="saradnja"><div class="rinfo-service-inner">
+<div class="rinfo-service-head"><div class="rinfo-service-index"><b>06</b> сервис</div><div><div class="rinfo-service-kicker">сарадња</div><h2 class="rinfo-service-title">Сарадња са управљачем</h2><p class="rinfo-service-summary">Предлози, питања, фотографије, локални подаци и информације власника могу непосредно помоћи бољем управљању Рајцем.</p></div><a class="rinfo-service-action" href="/za-vlasnike/saradnja/">Отвори сарадњу</a></div>
+<div class="rinfo-service-body"><div class="rinfo-service-copy"><h3 class="rinfo-h3">Власници су важни сарадници</h3><p>Знање о изворима, старим путевима, ливадама, шумама и локалним називима представља вредност коју карта сама не може да замени.</p></div><div class="rinfo-flow"><div class="rinfo-flow-item"><span class="rinfo-num">подаци</span><p>Исправке, фотографије и локалне информације.</p></div><div class="rinfo-flow-item"><span class="rinfo-num">проблем</span><p>Пријава отпада, оштећења пута, пожара или ерозије.</p></div><div class="rinfo-flow-item"><span class="rinfo-num">заједно</span><p>Више тачних података и брже реаговање.</p></div></div></div>
+</div></section>
+</div>
+
+</div>
+<!--
+<!-- RAJAC_STATIC_WHITE_UNIFIED_V4 -->
+--&gt;
+<!-- SITE_EDITOR_ADMIN_BAR_START -->
+<script defer="" src="/admin-site-editor.php?admin_bar_js=1"></script>
+<!-- SITE_EDITOR_ADMIN_BAR_END -->
+</body></html>

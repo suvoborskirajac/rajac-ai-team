@@ -1,0 +1,1655 @@
+<!DOCTYPE html>
+<html lang="sr-RS"><head><meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<meta content="width=device-width, initial-scale=1.0, viewport-fit=cover" name="viewport"/>
+<title>За истраживаче | ПИО „Рајац“</title>
+<meta content="ПИО Рајац је отворен за научна и стручна истраживања геологије, климе, биодиверзитета, станишта, GIS анализа и мониторинга. Истраживачима су доступни документација, подаци и логистичка подршка." name="description"/>
+<style>
+:root{
+  --rir-bg:#f7f3ea;
+  --rir-paper:#fffdf8;
+  --rir-soft:#efe8db;
+  --rir-ink:#20241d;
+  --rir-text:#30362d;
+  --rir-muted:#606858;
+  --rir-line:rgba(32,36,29,.12);
+  --rir-dark:#141a14;
+  --rir-dark2:#20271d;
+  --rir-gold:#c9a84c;
+  --rir-gold2:#e1c978;
+  --rir-green:#5f684c;
+  --rir-green2:#2f3a2d;
+  --rir-radius:22px;
+  --rir-wrap:1160px;
+  --rir-serif:"Cormorant Garamond","Crimson Pro",Georgia,serif;
+  --rir-sans:Outfit,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  --rir-mono:"DM Mono","SFMono-Regular",Consolas,monospace;
+}
+
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{
+  background:var(--rir-bg);
+  color:var(--rir-text);
+  font-family:var(--rir-sans);
+  font-weight:300;
+  line-height:1.72;
+}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;height:auto}
+::selection{background:rgba(201,168,76,.28)}
+
+.rir-page{
+  min-height:100vh;
+  background:
+    radial-gradient(circle at 12% 0%,rgba(201,168,76,.18),transparent 34%),
+    radial-gradient(circle at 86% 14%,rgba(95,104,76,.16),transparent 32%),
+    linear-gradient(180deg,#fbf8f0 0%,var(--rir-bg) 45%,#efe7da 100%);
+}
+
+/* TOP NAV */
+.rir-nav{
+  position:sticky;
+  top:0;
+  z-index:1000;
+  background:rgba(14,22,15,.96);
+  backdrop-filter:blur(14px);
+  -webkit-backdrop-filter:blur(14px);
+  border-bottom:1px solid rgba(201,168,76,.16);
+}
+.rir-nav-inner{
+  width:min(var(--rir-wrap),calc(100% - 44px));
+  margin:0 auto;
+  display:flex;
+  align-items:center;
+  min-height:58px;
+  overflow-x:auto;
+  scrollbar-width:none;
+}
+.rir-nav-inner::-webkit-scrollbar{display:none}
+.rir-logo{
+  flex:0 0 auto;
+  min-height:58px;
+  display:flex;
+  align-items:center;
+  padding-right:26px;
+  margin-right:14px;
+  border-right:1px solid rgba(255,255,255,.08);
+  color:rgba(245,240,228,.98);
+  font-size:.88rem;
+  font-weight:650;
+  letter-spacing:.06em;
+  white-space:nowrap;
+}
+.rir-menu{
+  display:flex;
+  align-items:stretch;
+  gap:0;
+}
+.rir-menu a{
+  position:relative;
+  display:flex;
+  align-items:center;
+  height:58px;
+  padding:0 13px;
+  color:rgba(245,240,228,.82);
+  text-transform:uppercase;
+  letter-spacing:.15em;
+  font-size:.68rem;
+  font-weight:450;
+  white-space:nowrap;
+  border-bottom:2px solid transparent;
+  transition:color .18s ease,background .18s ease,border-color .18s ease;
+}
+.rir-menu a:hover{
+  color:rgba(245,240,228,.98);
+  background:rgba(255,255,255,.04);
+}
+.rir-menu a.is-active{
+  color:var(--rir-gold2);
+  border-bottom-color:var(--rir-gold2);
+}
+
+/* HERO */
+.rir-hero{
+  position:relative;
+  min-height:60vh;
+  display:flex;
+  align-items:center;
+  overflow:hidden;
+  background:
+    linear-gradient(115deg,rgba(12,18,12,.92) 0%,rgba(21,31,20,.78) 45%,rgba(68,61,37,.44) 100%),
+    radial-gradient(circle at 78% 20%,rgba(201,168,76,.34),transparent 34%),
+    linear-gradient(135deg,#162014,#2d3629 58%,#7a6a3e 100%);
+  color:#fff;
+}
+.rir-hero::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:
+    linear-gradient(90deg,rgba(255,255,255,.03) 1px,transparent 1px),
+    linear-gradient(0deg,rgba(255,255,255,.025) 1px,transparent 1px);
+  background-size:48px 48px;
+  opacity:.45;
+  mask-image:linear-gradient(90deg,#000 0%,rgba(0,0,0,.55) 55%,transparent 100%);
+}
+.rir-hero::after{
+  content:"";
+  position:absolute;
+  left:0;
+  right:0;
+  bottom:0;
+  height:34%;
+  background:linear-gradient(180deg,transparent 0%,var(--rir-bg) 100%);
+}
+.rir-hero-inner{
+  position:relative;
+  z-index:2;
+  width:min(var(--rir-wrap),calc(100% - 44px));
+  margin:0 auto;
+  display:grid;
+  grid-template-columns:minmax(0,1.05fr) minmax(280px,.55fr);
+  gap:44px;
+  align-items:end;
+  padding:74px 0 88px;
+}
+.rir-kicker{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  margin-bottom:16px;
+  font-family:var(--rir-mono);
+  font-size:.68rem;
+  letter-spacing:.22em;
+  text-transform:uppercase;
+  color:rgba(245,240,228,.64);
+}
+.rir-kicker::before{
+  content:"";
+  width:34px;
+  height:1px;
+  background:var(--rir-gold2);
+}
+.rir-hero h1{
+  margin:0;
+  max-width:760px;
+  font-family:var(--rir-serif);
+  font-size:clamp(2.55rem,5.6vw,5.7rem);
+  line-height:.92;
+  font-weight:300;
+  letter-spacing:-.055em;
+}
+.rir-hero h1 span{
+  display:block;
+  color:var(--rir-gold2);
+  font-style:italic;
+}
+.rir-hero-lead{
+  max-width:720px;
+  margin:24px 0 0;
+  color:rgba(245,240,228,.76);
+  font-size:1.08rem;
+  line-height:1.78;
+}
+.rir-hero-card{
+  background:rgba(12,18,12,.62);
+  border:1px solid rgba(255,255,255,.14);
+  border-radius:var(--rir-radius);
+  padding:24px;
+  backdrop-filter:blur(18px);
+  -webkit-backdrop-filter:blur(18px);
+  box-shadow:0 24px 80px rgba(0,0,0,.18);
+}
+.rir-hero-card-title{
+  font-family:var(--rir-mono);
+  font-size:.62rem;
+  letter-spacing:.18em;
+  text-transform:uppercase;
+  color:var(--rir-gold2);
+  margin-bottom:14px;
+}
+.rir-hero-card p{
+  margin:0;
+  color:rgba(245,240,228,.72);
+  font-size:.92rem;
+  line-height:1.72;
+}
+.rir-hero-tags{
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px;
+  margin-top:18px;
+}
+.rir-hero-tags span{
+  display:inline-flex;
+  padding:7px 10px;
+  border:1px solid rgba(255,255,255,.12);
+  border-radius:999px;
+  color:rgba(245,240,228,.72);
+  font-family:var(--rir-mono);
+  font-size:.58rem;
+  letter-spacing:.08em;
+}
+
+/* COMMON */
+.rir-wrap{
+  width:min(var(--rir-wrap),calc(100% - 44px));
+  margin:0 auto;
+}
+.rir-section{
+  padding:clamp(54px,7vw,92px) 0;
+  border-bottom:1px solid var(--rir-line);
+}
+.rir-section:last-child{border-bottom:none}
+.rir-label{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  margin-bottom:14px;
+  color:#8a7440;
+  font-family:var(--rir-mono);
+  font-size:.66rem;
+  letter-spacing:.22em;
+  text-transform:uppercase;
+  font-weight:600;
+}
+.rir-label::before{
+  content:"";
+  width:30px;
+  height:1px;
+  background:currentColor;
+}
+.rir-title{
+  margin:0;
+  max-width:840px;
+  font-family:var(--rir-serif);
+  font-size:clamp(2rem,3.8vw,4rem);
+  line-height:1;
+  font-weight:300;
+  letter-spacing:-.045em;
+  color:var(--rir-ink);
+}
+.rir-lead{
+  margin:18px 0 0;
+  max-width:880px;
+  color:var(--rir-muted);
+  font-size:1.06rem;
+  line-height:1.86;
+}
+.rir-text{
+  color:var(--rir-muted);
+  font-size:1rem;
+  line-height:1.84;
+}
+.rir-text p{margin:0 0 15px}
+.rir-text p:last-child{margin-bottom:0}
+
+/* INTRO */
+.rir-intro-grid{
+  display:grid;
+  grid-template-columns:minmax(0,1.05fr) minmax(280px,.55fr);
+  gap:44px;
+  align-items:start;
+}
+.rir-note{
+  background:linear-gradient(180deg,#fffdf8 0%,#f5efe2 100%);
+  border:1px solid var(--rir-line);
+  border-radius:var(--rir-radius);
+  padding:24px;
+  box-shadow:0 18px 60px rgba(32,36,29,.06);
+}
+.rir-note h3{
+  margin:0 0 10px;
+  font-family:var(--rir-serif);
+  font-size:1.6rem;
+  line-height:1.08;
+  font-weight:350;
+  letter-spacing:-.03em;
+  color:var(--rir-ink);
+}
+.rir-note p{
+  margin:0;
+  color:var(--rir-muted);
+  font-size:.96rem;
+}
+
+/* CARDS */
+.rir-cards{
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:18px;
+  margin-top:34px;
+}
+.rir-card{
+  position:relative;
+  overflow:hidden;
+  min-height:240px;
+  background:linear-gradient(180deg,#fffdf8 0%,#f1eadc 100%);
+  border:1px solid var(--rir-line);
+  border-radius:var(--rir-radius);
+  padding:24px 22px;
+  box-shadow:0 16px 46px rgba(32,36,29,.055);
+}
+.rir-card::before{
+  content:"";
+  position:absolute;
+  left:0;
+  top:0;
+  width:4px;
+  height:100%;
+  background:linear-gradient(180deg,var(--rir-gold),rgba(95,104,76,.45));
+}
+.rir-card small{
+  display:block;
+  margin-bottom:16px;
+  font-family:var(--rir-mono);
+  font-size:.62rem;
+  letter-spacing:.16em;
+  text-transform:uppercase;
+  color:#8a7440;
+}
+.rir-card h3{
+  margin:0 0 12px;
+  font-family:var(--rir-serif);
+  font-size:1.55rem;
+  line-height:1.08;
+  font-weight:350;
+  letter-spacing:-.035em;
+  color:var(--rir-ink);
+}
+.rir-card p{
+  margin:0;
+  color:var(--rir-muted);
+  font-size:.94rem;
+  line-height:1.72;
+}
+
+/* DISCIPLINES */
+.rir-disciplines{
+  display:grid;
+  grid-template-columns:repeat(4,minmax(0,1fr));
+  gap:10px;
+  margin-top:32px;
+}
+.rir-pill{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  min-height:58px;
+  padding:12px 14px;
+  border:1px solid var(--rir-line);
+  border-radius:999px;
+  background:rgba(255,253,248,.72);
+  color:var(--rir-text);
+  font-size:.88rem;
+  text-align:center;
+}
+
+/* DARK BAND */
+.rir-dark{
+  background:
+    radial-gradient(circle at 12% 12%,rgba(201,168,76,.16),transparent 30%),
+    linear-gradient(135deg,var(--rir-dark) 0%,var(--rir-dark2) 100%);
+  color:#fff;
+}
+.rir-dark .rir-title{color:#fff}
+.rir-dark .rir-lead,
+.rir-dark .rir-text{color:rgba(245,240,228,.68)}
+.rir-dark .rir-label{color:var(--rir-gold2)}
+.rir-dark-grid{
+  display:grid;
+  grid-template-columns:minmax(0,.75fr) minmax(0,1fr);
+  gap:44px;
+  align-items:start;
+}
+.rir-data-list{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:1px;
+  background:rgba(255,255,255,.08);
+  border:1px solid rgba(255,255,255,.10);
+  border-radius:var(--rir-radius);
+  overflow:hidden;
+}
+.rir-data-item{
+  background:rgba(255,255,255,.045);
+  padding:20px;
+}
+.rir-data-item b{
+  display:block;
+  margin-bottom:8px;
+  color:var(--rir-gold2);
+  font-family:var(--rir-serif);
+  font-size:1.22rem;
+  font-weight:350;
+  line-height:1.1;
+}
+.rir-data-item span{
+  color:rgba(245,240,228,.62);
+  font-size:.9rem;
+  line-height:1.62;
+}
+
+/* TIMELINE / PRINCIPLES */
+.rir-principles{
+  margin-top:34px;
+  border-top:1px solid var(--rir-line);
+}
+.rir-principle{
+  display:grid;
+  grid-template-columns:180px minmax(0,1fr);
+  gap:28px;
+  padding:24px 0;
+  border-bottom:1px solid var(--rir-line);
+}
+.rir-principle b{
+  color:#8a7440;
+  font-family:var(--rir-mono);
+  font-size:.72rem;
+  letter-spacing:.16em;
+  text-transform:uppercase;
+}
+.rir-principle p{
+  margin:0;
+  color:var(--rir-muted);
+}
+
+/* CTA */
+.rir-cta{
+  background:linear-gradient(180deg,#fffdf8 0%,#efe6d6 100%);
+}
+.rir-cta-box{
+  display:grid;
+  grid-template-columns:minmax(0,1fr) auto;
+  gap:28px;
+  align-items:center;
+  border:1px solid var(--rir-line);
+  border-radius:calc(var(--rir-radius) + 6px);
+  padding:32px;
+  background:
+    radial-gradient(circle at 82% 20%,rgba(201,168,76,.18),transparent 30%),
+    rgba(255,253,248,.78);
+  box-shadow:0 20px 80px rgba(32,36,29,.075);
+}
+.rir-cta h2{
+  margin:0 0 10px;
+  font-family:var(--rir-serif);
+  font-size:clamp(1.8rem,3vw,3.2rem);
+  line-height:1.02;
+  font-weight:300;
+  letter-spacing:-.04em;
+  color:var(--rir-ink);
+}
+.rir-cta p{
+  margin:0;
+  color:var(--rir-muted);
+  max-width:760px;
+}
+.rir-cta a{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  min-height:46px;
+  padding:0 18px;
+  border-radius:999px;
+  background:var(--rir-dark);
+  color:#fff;
+  font-family:var(--rir-mono);
+  font-size:.68rem;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+  white-space:nowrap;
+}
+
+/* FORM DETAILS */
+.rir-application{
+  padding:clamp(54px,7vw,92px) 0;
+  background:#ede3d2;
+}
+.rir-details{
+  width:min(var(--rir-wrap),calc(100% - 44px));
+  margin:0 auto;
+  border:1px solid rgba(32,36,29,.14);
+  border-radius:calc(var(--rir-radius) + 8px);
+  background:#fffdf8;
+  overflow:hidden;
+  box-shadow:0 20px 80px rgba(32,36,29,.08);
+}
+.rir-details summary{
+  list-style:none;
+}
+.rir-details summary::-webkit-details-marker{display:none}
+.rir-summary{
+  cursor:pointer;
+  display:grid;
+  grid-template-columns:auto minmax(0,1fr) auto;
+  gap:18px;
+  align-items:center;
+  padding:26px 30px;
+  background:
+    linear-gradient(135deg,rgba(20,26,20,.98) 0%,rgba(47,58,45,.96) 100%);
+  color:#fff;
+}
+.rir-summary-icon{
+  width:38px;
+  height:38px;
+  display:grid;
+  place-items:center;
+  border-radius:50%;
+  background:var(--rir-gold);
+  color:#141a14;
+  font-size:1.4rem;
+  line-height:1;
+  font-weight:400;
+}
+.rir-details[open] .rir-summary-icon::before{content:"−"}
+.rir-details:not([open]) .rir-summary-icon::before{content:"+"}
+.rir-summary-title{
+  display:block;
+  font-family:var(--rir-serif);
+  font-size:clamp(1.45rem,2.5vw,2.45rem);
+  line-height:1.05;
+  font-weight:300;
+  letter-spacing:-.035em;
+}
+.rir-summary-sub{
+  display:block;
+  margin-top:4px;
+  color:rgba(245,240,228,.62);
+  font-size:.92rem;
+}
+.rir-summary-badge{
+  color:var(--rir-gold2);
+  font-family:var(--rir-mono);
+  font-size:.62rem;
+  letter-spacing:.16em;
+  text-transform:uppercase;
+  white-space:nowrap;
+}
+.rir-form-wrap{
+  padding:32px 30px 34px;
+  animation:rirDrop .24s ease;
+}
+@keyframes rirDrop{
+  from{opacity:.15;transform:translateY(-6px)}
+  to{opacity:1;transform:none}
+}
+.rir-form-intro{
+  max-width:860px;
+  margin:0 0 26px;
+  color:var(--rir-muted);
+}
+.rir-form{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:18px;
+}
+.rir-field{
+  display:flex;
+  flex-direction:column;
+  gap:8px;
+}
+.rir-field.rir-wide{grid-column:1/-1}
+.rir-field label{
+  color:var(--rir-ink);
+  font-family:var(--rir-mono);
+  font-size:.68rem;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+  font-weight:600;
+}
+.rir-field input,
+.rir-field select,
+.rir-field textarea{
+  width:100%;
+  border:1px solid rgba(32,36,29,.16);
+  border-radius:14px;
+  background:#fbf8f0;
+  color:var(--rir-ink);
+  font-family:var(--rir-sans);
+  font-size:.96rem;
+  line-height:1.5;
+  padding:13px 14px;
+  outline:none;
+  transition:border-color .16s ease,box-shadow .16s ease,background .16s ease;
+}
+.rir-field textarea{
+  resize:vertical;
+  min-height:118px;
+}
+.rir-field input:focus,
+.rir-field select:focus,
+.rir-field textarea:focus{
+  border-color:rgba(138,116,64,.55);
+  box-shadow:0 0 0 4px rgba(201,168,76,.14);
+  background:#fffdf8;
+}
+.rir-form-note{
+  grid-column:1/-1;
+  margin-top:2px;
+  padding:16px 18px;
+  border:1px solid rgba(138,116,64,.22);
+  border-radius:16px;
+  background:rgba(201,168,76,.09);
+  color:#5a503a;
+  font-size:.92rem;
+}
+.rir-actions{
+  grid-column:1/-1;
+  display:flex;
+  flex-wrap:wrap;
+  gap:12px;
+  align-items:center;
+  margin-top:8px;
+}
+.rir-submit{
+  appearance:none;
+  border:none;
+  cursor:pointer;
+  min-height:48px;
+  padding:0 20px;
+  border-radius:999px;
+  background:var(--rir-dark);
+  color:#fff;
+  font-family:var(--rir-mono);
+  font-size:.7rem;
+  letter-spacing:.15em;
+  text-transform:uppercase;
+}
+.rir-mail{
+  color:#7a6a3e;
+  font-size:.92rem;
+}
+.rir-footer{
+  padding:26px 0;
+  background:var(--rir-dark);
+  color:rgba(245,240,228,.62);
+  text-align:center;
+  font-size:.86rem;
+}
+.rir-footer a{
+  color:var(--rir-gold2);
+}
+
+/* RESPONSIVE */
+@media(max-width:1024px){
+  .rir-hero-inner,
+  .rir-intro-grid,
+  .rir-dark-grid,
+  .rir-cta-box{
+    grid-template-columns:1fr;
+  }
+  .rir-hero-card{max-width:560px}
+  .rir-cards{grid-template-columns:1fr 1fr}
+  .rir-disciplines{grid-template-columns:1fr 1fr}
+}
+@media(max-width:720px){
+  .rir-nav-inner{width:calc(100% - 24px);min-height:54px}
+  .rir-logo{min-height:54px;padding-right:16px;margin-right:8px;font-size:.78rem}
+  .rir-menu a{height:54px;padding:0 10px;font-size:.6rem;letter-spacing:.12em}
+  .rir-hero{min-height:60vh}
+  .rir-hero-inner{width:calc(100% - 28px);padding:54px 0 72px;gap:26px}
+  .rir-hero h1{font-size:clamp(2.25rem,12vw,3.7rem)}
+  .rir-wrap{width:calc(100% - 28px)}
+  .rir-section{padding:48px 0}
+  .rir-cards{grid-template-columns:1fr}
+  .rir-disciplines{grid-template-columns:1fr}
+  .rir-data-list{grid-template-columns:1fr}
+  .rir-principle{grid-template-columns:1fr;gap:8px}
+  .rir-cta-box{padding:24px}
+  .rir-details{width:calc(100% - 28px)}
+  .rir-summary{grid-template-columns:auto 1fr;padding:22px}
+  .rir-summary-badge{grid-column:2}
+  .rir-form-wrap{padding:24px 20px 26px}
+  .rir-form{grid-template-columns:1fr}
+  .rir-field.rir-wide,
+  .rir-form-note,
+  .rir-actions{grid-column:auto}
+}
+</style>
+
+<style id="rajac-static-common-menu-inline">/* RAJAC_STATIC_COMMON_MENU_INLINE: self-contained menu style for static directory pages */
+.rajac-static-common-menu{position:sticky;top:0;z-index:9999;background:rgba(14,22,15,.96);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid rgba(201,168,76,.16);font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;}
+.rajac-static-common-menu *{box-sizing:border-box;}
+.rajac-static-common-menu__inner{width:min(1180px,calc(100% - 44px));margin:0 auto;display:flex;align-items:center;min-height:58px;overflow-x:auto;scrollbar-width:none;}
+.rajac-static-common-menu__inner::-webkit-scrollbar{display:none;}
+.rajac-static-common-menu__logo{flex:0 0 auto;min-height:58px;display:flex;align-items:center;padding-right:26px;margin-right:14px;border-right:1px solid rgba(255,255,255,.08);color:rgba(245,240,228,.98);font-size:.88rem;font-weight:650;letter-spacing:.06em;white-space:nowrap;text-decoration:none;}
+.rajac-static-common-menu__links{display:flex;align-items:stretch;gap:0;}
+.rajac-static-common-menu__link{position:relative;display:flex;align-items:center;height:58px;padding:0 13px;color:rgba(245,240,228,.82);text-transform:uppercase;letter-spacing:.15em;font-size:.68rem;font-weight:450;white-space:nowrap;border-bottom:2px solid transparent;transition:color .18s ease,background .18s ease,border-color .18s ease;text-decoration:none;}
+.rajac-static-common-menu__link:hover{color:rgba(245,240,228,.98);background:rgba(255,255,255,.04);}
+.rajac-static-common-menu__link.is-active{color:#e1c978;border-bottom-color:#e1c978;}
+@media(max-width:700px){.rajac-static-common-menu__inner{width:100%;padding:0 14px;}.rajac-static-common-menu__logo{padding-right:16px;margin-right:6px;font-size:.82rem;}.rajac-static-common-menu__link{padding:0 10px;font-size:.62rem;letter-spacing:.12em;}}</style><style id="rajac-no-hero-fix">/* RAJAC_NO_HERO_FIX: top HERO blocks removed intentionally */
+.rp-strip{margin:0 auto 0!important;}
+.rp-main{margin-top:56px!important;}
+.rinfo > .rinfo-section:first-of-type{padding-top:clamp(42px,6vw,72px)!important;}
+.rir-page > .rir-section:first-of-type{padding-top:clamp(42px,6vw,72px)!important;}</style>
+<style id="rajac-force-no-hero-v2">
+/* SAFE v2: potpuno sklanja hero blokove ako je na serveru ostao stari HTML/CSS. */
+.rp-hero,.rinfo-hero,.rir-hero,header.rp-hero,section.rp-hero,section.rinfo-hero,section.rir-hero{display:none!important;height:0!important;min-height:0!important;max-height:0!important;padding:0!important;margin:0!important;overflow:hidden!important;border:0!important;}
+.rp-hero::before,.rp-hero::after,.rinfo-hero::before,.rinfo-hero::after,.rir-hero::before,.rir-hero::after{display:none!important;content:none!important;}
+.rp-strip{margin:0 auto!important;}
+.rinfo-section:first-of-type,.rir-section:first-of-type{padding-top:clamp(34px,5vw,62px)!important;}
+</style>
+<style id="rajac-unified-white-v4">
+/* RAJAC_UNIFIED_WHITE_V4
+   Беле позадине, уједначена типографија и мањи наслови за пет статичких страница. */
+:root{
+  --rajac-u-bg:#ffffff;
+  --rajac-u-paper:#ffffff;
+  --rajac-u-ink:#152015;
+  --rajac-u-text:#253126;
+  --rajac-u-muted:#586357;
+  --rajac-u-line:rgba(21,32,21,.14);
+  --rajac-u-soft:#f7f8f5;
+  --rajac-u-accent:#6f7f47;
+  --rajac-u-gold:#b99a45;
+  --rajac-u-serif:Georgia,"Times New Roman",serif;
+  --rajac-u-sans:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;
+}
+html,body,
+body.rajac-static-output{
+  background:#fff!important;
+  color:var(--rajac-u-text)!important;
+  font-family:var(--rajac-u-sans)!important;
+  font-size:17px!important;
+  line-height:1.72!important;
+}
+body.rajac-static-output{
+  margin:0!important;
+}
+.rajac-static-common-menu{
+  background:#0d1b12!important;
+  border-bottom:1px solid rgba(255,255,255,.12)!important;
+  box-shadow:none!important;
+  font-family:var(--rajac-u-sans)!important;
+}
+.rajac-static-common-menu__logo,
+.rajac-static-common-menu__link{
+  font-family:var(--rajac-u-sans)!important;
+}
+.rajac-static-common-menu__link{
+  font-size:.68rem!important;
+  letter-spacing:.13em!important;
+  font-weight:500!important;
+}
+.rajac-static-common-menu__link.is-active{
+  color:#d7c06c!important;
+  border-bottom-color:#d7c06c!important;
+}
+.rinfo,
+.rp-page,
+.rir-page{
+  background:#fff!important;
+  background-image:none!important;
+  color:var(--rajac-u-text)!important;
+  font-family:var(--rajac-u-sans)!important;
+  --pbg:#fff!important;
+  --bg2:#fff!important;
+  --ptext:var(--rajac-u-ink)!important;
+  --pmuted:var(--rajac-u-muted)!important;
+  --pline:var(--rajac-u-line)!important;
+  --pacc:var(--rajac-u-accent)!important;
+  --serif:var(--rajac-u-serif)!important;
+  --sans:var(--rajac-u-sans)!important;
+  --rp-bg:#fff!important;
+  --rp-paper:#fff!important;
+  --rp-ink:var(--rajac-u-ink)!important;
+  --rp-muted:var(--rajac-u-muted)!important;
+  --rp-line:var(--rajac-u-line)!important;
+  --rp-serif:var(--rajac-u-serif)!important;
+  --rp-sans:var(--rajac-u-sans)!important;
+  --rir-bg:#fff!important;
+  --rir-paper:#fff!important;
+  --rir-soft:#fff!important;
+  --rir-ink:var(--rajac-u-ink)!important;
+  --rir-text:var(--rajac-u-text)!important;
+  --rir-muted:var(--rajac-u-muted)!important;
+  --rir-line:var(--rajac-u-line)!important;
+  --rir-serif:var(--rajac-u-serif)!important;
+  --rir-sans:var(--rajac-u-sans)!important;
+}
+.rinfo-wrap,
+.rp-main,
+.rir-wrap{
+  width:min(1180px,calc(100% - 48px))!important;
+  margin-left:auto!important;
+  margin-right:auto!important;
+}
+.rp-main{
+  margin-top:clamp(44px,5vw,68px)!important;
+  padding-bottom:clamp(70px,7vw,100px)!important;
+}
+.rinfo-section,
+.rir-section{
+  background:#fff!important;
+  background-image:none!important;
+  padding:clamp(46px,5.8vw,76px) 0!important;
+  border-bottom:1px solid var(--rajac-u-line)!important;
+}
+.rp-section{
+  background:#fff!important;
+  background-image:none!important;
+  padding:clamp(48px,5.8vw,76px) 0!important;
+  border-top:1px solid var(--rajac-u-line)!important;
+}
+.rp-intro{
+  margin-bottom:clamp(42px,5vw,64px)!important;
+}
+.rp-grid,
+.rinfo-grid,
+.rir-cards,
+.rir-disciplines,
+.rinfo-band-grid{
+  margin-top:28px!important;
+}
+.rp-intro h2,
+.rp-section h2,
+.rp-final h2,
+.rp-wide h2,
+.rinfo-h2,
+.rir-title{
+  font-family:var(--rajac-u-serif)!important;
+  color:var(--rajac-u-ink)!important;
+  font-weight:400!important;
+  font-size:clamp(2.05rem,3.1vw,3.15rem)!important;
+  line-height:1.08!important;
+  letter-spacing:-.028em!important;
+  text-shadow:none!important;
+}
+.rp-card h3,
+.rp-note h3,
+.rinfo-h3,
+.rir-card h3,
+.rir-note h3,
+.rir-data-item b{
+  font-family:var(--rajac-u-serif)!important;
+  color:var(--rajac-u-ink)!important;
+  font-weight:400!important;
+  font-size:clamp(1.35rem,2vw,1.9rem)!important;
+  line-height:1.14!important;
+  letter-spacing:-.018em!important;
+}
+.rp-eyebrow,
+.rinfo-label,
+.rir-label,
+.rinfo-card-tag,
+.rinfo-num,
+.rir-card small,
+.rir-principle b,
+.rp-strip-label{
+  font-family:var(--rajac-u-sans)!important;
+  color:var(--rajac-u-accent)!important;
+  font-size:.72rem!important;
+  letter-spacing:.14em!important;
+  font-weight:650!important;
+}
+.rp-intro-card,
+.rp-card,
+.rp-note,
+.rp-feature-row,
+.rp-final,
+.rp-wide,
+.rinfo-card,
+.rinfo-soft,
+.rinfo-cta,
+.rinfo-band-card,
+.rinfo-feature-side,
+.rinfo-mini,
+.rir-card,
+.rir-note,
+.rir-data-list,
+.rir-data-item,
+.rir-principle,
+.rir-cta-box,
+.rir-application,
+.rir-form-wrap,
+.rir-summary,
+.rir-field,
+.rir-wide,
+.rir-pill,
+.rinfo-pill,
+.rp-pill{
+  background:#fff!important;
+  background-image:none!important;
+  color:var(--rajac-u-text)!important;
+  border-color:var(--rajac-u-line)!important;
+  box-shadow:none!important;
+}
+.rp-card,
+.rinfo-card,
+.rir-card,
+.rp-intro-card,
+.rp-note,
+.rp-feature-row,
+.rp-final,
+.rinfo-soft,
+.rinfo-cta,
+.rir-note,
+.rir-cta-box,
+.rir-form-wrap,
+.rir-summary{
+  border:1px solid var(--rajac-u-line)!important;
+  border-radius:22px!important;
+}
+.rp-card,
+.rinfo-card,
+.rir-card{
+  min-height:auto!important;
+}
+.rp-card:hover,
+.rinfo-card:hover,
+.rir-card:hover{
+  background:#fff!important;
+  transform:none!important;
+}
+.rinfo-card::before,
+.rir-card::before{
+  background:var(--rajac-u-accent)!important;
+}
+.rp-card-icon,
+.rp-feature-row span,
+.rir-summary-icon{
+  background:#f2f5ef!important;
+  color:var(--rajac-u-ink)!important;
+}
+.rinfo-band,
+.rir-dark,
+.rir-cta,
+.rp-wide{
+  background:#fff!important;
+  background-image:none!important;
+  color:var(--rajac-u-text)!important;
+  border-top:1px solid var(--rajac-u-line)!important;
+  border-bottom:1px solid var(--rajac-u-line)!important;
+  box-shadow:none!important;
+}
+.rinfo-band .rinfo-h2,
+.rir-dark .rir-title,
+.rp-wide h2{
+  color:var(--rajac-u-ink)!important;
+}
+.rinfo-band p,
+.rinfo-band-card span,
+.rir-dark .rir-lead,
+.rir-dark .rir-text,
+.rir-data-item span,
+.rp-wide p,
+.rp-card p,
+.rp-intro-card p,
+.rp-section-text p,
+.rp-feature-row p,
+.rp-final p,
+.rinfo-lead,
+.rinfo-body,
+.rinfo-card p,
+.rinfo-flow-item p,
+.rinfo-soft p,
+.rinfo-cta p,
+.rir-lead,
+.rir-text,
+.rir-note p,
+.rir-card p,
+.rir-principle p{
+  color:var(--rajac-u-muted)!important;
+  font-family:var(--rajac-u-sans)!important;
+  font-weight:400!important;
+}
+.rp-btn,
+.rinfo-btn,
+.rir-actions a,
+.rir-submit{
+  font-family:var(--rajac-u-sans)!important;
+  border-radius:999px!important;
+  box-shadow:none!important;
+}
+.rp-btn,
+.rinfo-btn,
+.rir-actions a{
+  background:#fff!important;
+  color:var(--rajac-u-ink)!important;
+  border:1px solid var(--rajac-u-line)!important;
+}
+.rp-btn-primary,
+.rinfo-btn-primary,
+.rir-submit{
+  background:#102317!important;
+  color:#fff!important;
+  border-color:#102317!important;
+}
+.rp-final .rp-btn,
+.rinfo-cta .rinfo-btn{
+  background:#fff!important;
+  color:var(--rajac-u-ink)!important;
+  border:1px solid var(--rajac-u-line)!important;
+}
+.rp-final .rp-btn-primary,
+.rinfo-cta .rinfo-btn-primary{
+  background:#102317!important;
+  color:#fff!important;
+  border-color:#102317!important;
+}
+.rp-pill,
+.rinfo-pill,
+.rir-pill{
+  border-radius:999px!important;
+  color:var(--rajac-u-muted)!important;
+}
+.rinfo-2col,
+.rir-intro-grid,
+.rir-dark-grid,
+.rp-intro,
+.rp-section,
+.rinfo-cta,
+.rir-cta-box{
+  gap:clamp(28px,4vw,48px)!important;
+}
+@media(max-width:980px){
+  .rp-grid,.rinfo-grid,.rir-cards,.rir-disciplines,.rinfo-band-grid{grid-template-columns:1fr 1fr!important;}
+}
+@media(max-width:720px){
+  html,body,body.rajac-static-output{font-size:16px!important;}
+  .rinfo-wrap,.rp-main,.rir-wrap{width:min(100% - 28px,1180px)!important;}
+  .rp-intro h2,.rp-section h2,.rp-final h2,.rp-wide h2,.rinfo-h2,.rir-title{
+    font-size:clamp(1.85rem,9vw,2.55rem)!important;
+    line-height:1.1!important;
+  }
+  .rp-grid,.rinfo-grid,.rir-cards,.rir-disciplines,.rinfo-band-grid{grid-template-columns:1fr!important;}
+}
+</style>
+<style id="rajac-istrazivaci-hero-final">
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,500&family=Outfit:wght@300;400;500;600;700&family=DM+Mono:wght@400;500&display=swap');
+
+/* FINAL: isti gornji sistem kao na stranici O platformi */
+:root{
+  --rj-display:'Cormorant Garamond', Georgia, 'Times New Roman', serif;
+  --rj-body:'Outfit', 'Segoe UI', system-ui, -apple-system, Roboto, sans-serif;
+  --rj-mono:'DM Mono', 'Cascadia Code', Consolas, ui-monospace, monospace;
+  --rj-h1:clamp(38px,4.2vw,56px);
+  --rj-hero-min:460px;
+  --rj-hero-max:520px;
+  --rj-hero-pad:104px 0 60px;
+  --rj-nav-height:64px;
+  --gold:#9c7e2e;
+  --gold-soft:#e7cf85;
+  --sand:#bdad87;
+  --c1:#5f8e45;--c1l:#a4cd84;
+  --c2:#b0913f;--c2l:#e7cf85;
+  --c3:#4f8a9e;--c3l:#8fc4d4;
+  --c4:#b3703f;--c4l:#e6a577;
+  --shadow:0 16px 40px rgba(38,48,30,.1);
+}
+
+html{scroll-padding-top:calc(var(--rj-nav-height) + 18px)!important;}
+body.rajac-static-output{
+  padding-top:var(--rj-nav-height)!important;
+  margin:0!important;
+  background:#ffffff!important;
+  color:#253126!important;
+  font-family:var(--rj-body)!important;
+}
+
+/* stari meni se ne koristi */
+.rajac-static-common-menu,
+.rir-nav{
+  display:none!important;
+}
+
+/* isti fiksni meni kao O platformi */
+.book-nav{
+  position:fixed!important;
+  top:0!important;
+  left:0!important;
+  right:0!important;
+  width:100%!important;
+  height:var(--rj-nav-height)!important;
+  min-height:var(--rj-nav-height)!important;
+  z-index:99999!important;
+  transform:none!important;
+  background:rgba(38,48,30,.96)!important;
+  backdrop-filter:blur(12px)!important;
+  -webkit-backdrop-filter:blur(12px)!important;
+  border-bottom:1px solid rgba(189,173,135,.45)!important;
+  font-family:var(--rj-body)!important;
+}
+.book-nav .shell{
+  width:min(1180px,calc(100% - 40px))!important;
+  margin:0 auto!important;
+  display:flex!important;
+  align-items:center!important;
+  overflow-x:auto!important;
+  scrollbar-width:none!important;
+  min-height:var(--rj-nav-height)!important;
+  height:var(--rj-nav-height)!important;
+  max-height:var(--rj-nav-height)!important;
+  padding-top:0!important;
+  padding-bottom:0!important;
+}
+.book-nav .shell::-webkit-scrollbar{display:none!important;}
+.nav-logo{
+  display:flex!important;
+  align-items:center!important;
+  gap:9px!important;
+  color:#fdf6e6!important;
+  font-weight:600!important;
+  letter-spacing:.02em!important;
+  padding-right:20px!important;
+  margin-right:12px!important;
+  border-right:1px solid rgba(255,255,255,.12)!important;
+  white-space:nowrap!important;
+  height:42px!important;
+  min-height:42px!important;
+  text-decoration:none!important;
+}
+.nav-logo::before{
+  content:""!important;
+  width:9px!important;
+  height:9px!important;
+  border-radius:50%!important;
+  background:var(--sand)!important;
+  box-shadow:0 0 0 4px rgba(189,173,135,.22)!important;
+}
+.nav-links{display:flex!important;align-items:stretch!important;}
+.nav-link{
+  display:flex!important;
+  align-items:center!important;
+  padding:0 12px!important;
+  color:rgba(253,246,230,.8)!important;
+  font-size:.68rem!important;
+  font-weight:500!important;
+  text-transform:uppercase!important;
+  letter-spacing:.14em!important;
+  white-space:nowrap!important;
+  border-bottom:2px solid transparent!important;
+  transition:color .2s,border-color .2s!important;
+  height:42px!important;
+  min-height:42px!important;
+  text-decoration:none!important;
+}
+.nav-link:hover{color:#fff!important;}
+.nav-link.is-active{color:var(--gold-soft)!important;border-bottom-color:var(--sand)!important;}
+
+/* stari hero ne sme da se pojavi, novi .hero mora da se vidi */
+.rir-hero,
+.rp-hero,
+.rinfo-hero{
+  display:none!important;
+}
+
+.hero{
+  min-height:var(--rj-hero-min)!important;
+  max-height:var(--rj-hero-max)!important;
+  display:flex!important;
+  align-items:center!important;
+  position:relative!important;
+  overflow:hidden!important;
+  isolation:isolate!important;
+  margin:0!important;
+  padding:0!important;
+  border-bottom:1px solid rgba(189,173,135,.6)!important;
+  background-image:
+    linear-gradient(90deg, rgba(38,48,30,.84) 0%, rgba(38,48,30,.68) 42%, rgba(38,48,30,.24) 100%),
+    url('https://piorajac.rs/wp-content/uploads/2026/06/istrazivaci1-scaled.png')!important;
+  background-position:center center!important;
+  background-size:cover!important;
+  background-repeat:no-repeat!important;
+  background-color:#26301e!important;
+}
+.hero:after{display:none!important;content:none!important;}
+.hero-inner{
+  width:min(1180px, calc(100% - 40px))!important;
+  margin:0 auto!important;
+  padding:var(--rj-hero-pad)!important;
+  position:relative!important;
+  z-index:2!important;
+}
+.hero h1{
+  font-family:var(--rj-display)!important;
+  font-size:var(--rj-h1)!important;
+  font-weight:500!important;
+  font-style:normal!important;
+  line-height:1.06!important;
+  letter-spacing:-.03em!important;
+  max-width:720px!important;
+  margin:0!important;
+  color:#fff7df!important;
+  text-shadow:0 2px 14px rgba(0,0,0,.35)!important;
+}
+.hero .lead{
+  font-family:var(--rj-body)!important;
+  font-size:clamp(16px,1.6vw,19px)!important;
+  line-height:1.8!important;
+  max-width:760px!important;
+  margin:22px 0 0!important;
+  color:rgba(255,250,235,.92)!important;
+  text-shadow:0 1px 10px rgba(0,0,0,.28)!important;
+}
+
+/* četiri kartice ispod hero-a */
+.op-stats{
+  width:min(1180px,calc(100% - 40px))!important;
+  margin:0 auto!important;
+  display:grid!important;
+  grid-template-columns:repeat(4,minmax(0,1fr))!important;
+  background:#2a3420!important;
+  border-radius:18px!important;
+  overflow:hidden!important;
+  box-shadow:var(--shadow)!important;
+  margin-top:clamp(-44px,-4vw,-30px)!important;
+  position:relative!important;
+  z-index:3!important;
+}
+.op-stat{position:relative!important;padding:26px 24px 24px!important;}
+.op-stat::before{content:""!important;position:absolute!important;left:0!important;right:0!important;top:0!important;height:4px!important;background:var(--acc)!important;}
+.op-stat::after{content:""!important;position:absolute!important;inset:0!important;background:linear-gradient(180deg,var(--acc) 0%,transparent 70%)!important;opacity:.12!important;pointer-events:none!important;}
+.op-stat b{
+  display:block!important;
+  font-family:var(--rj-display)!important;
+  font-weight:500!important;
+  font-size:clamp(1.4rem,2vw,1.85rem)!important;
+  line-height:1.06!important;
+  color:var(--accl)!important;
+  letter-spacing:-.01em!important;
+  position:relative!important;
+}
+.op-stat span{
+  display:block!important;
+  margin-top:7px!important;
+  font-family:var(--rj-mono)!important;
+  font-size:.78rem!important;
+  line-height:1.4!important;
+  color:rgba(247,243,232,.66)!important;
+  position:relative!important;
+}
+.op-stat--a{--acc:var(--c1);--accl:var(--c1l);}
+.op-stat--b{--acc:var(--c2);--accl:var(--c2l);}
+.op-stat--c{--acc:var(--c3);--accl:var(--c3l);}
+.op-stat--d{--acc:var(--c4);--accl:var(--c4l);}
+
+/* prvi sadržaj ispod kartica */
+.rir-page{
+  background:#ffffff!important;
+  background-image:none!important;
+}
+.rir-page > main > .rir-section:first-of-type{
+  padding-top:clamp(74px,7vw,104px)!important;
+}
+
+@media (max-width:980px){
+  .op-stats{grid-template-columns:1fr 1fr!important;}
+}
+@media (max-width:640px){
+  :root{--rj-nav-height:60px;}
+  .book-nav .nav-logo,.book-nav .nav-link{height:38px!important;min-height:38px!important;}
+  .hero{min-height:360px!important;max-height:none!important;}
+  .hero-inner{padding:80px 0 46px!important;}
+  .hero h1{font-size:34px!important;}
+  .op-stats{grid-template-columns:1fr!important;margin-top:0!important;border-radius:0!important;width:100%!important;}
+  .rir-page > main > .rir-section:first-of-type{padding-top:clamp(42px,6vw,72px)!important;}
+}
+</style>
+
+
+<style id="rajac-istrazivaci-form-collapse-and-color">
+/* Слика у HERO блоку + затворен формулар на првом учитавању */
+.hero{
+  background-image:
+    linear-gradient(90deg, rgba(38,48,30,.82) 0%, rgba(38,48,30,.64) 42%, rgba(38,48,30,.18) 100%),
+    url('https://piorajac.rs/wp-content/uploads/2026/06/istrazivaci1-scaled.png')!important;
+  background-position:center center!important;
+  background-size:cover!important;
+}
+
+/* Дугме десно у позиву — зелено-златна боја, да се разликује од црних дугмади */
+.rir-cta a.rir-open-form-btn{
+  background:#6f7f47!important;
+  color:#fff!important;
+  border:1px solid #6f7f47!important;
+  box-shadow:0 10px 26px rgba(111,127,71,.22)!important;
+}
+.rir-cta a.rir-open-form-btn:hover,
+.rir-cta a.rir-open-form-btn:focus{
+  background:#55643a!important;
+  border-color:#55643a!important;
+  color:#fff!important;
+}
+
+/* Доњи формулар не сме да буде отворен при првом учитавању странице */
+#prijava-istrazivanja .rir-details:not([open]) .rir-form-wrap{
+  display:none!important;
+}
+#prijava-istrazivanja .rir-details:not([open]){
+  box-shadow:0 14px 46px rgba(32,36,29,.06)!important;
+}
+#prijava-istrazivanja .rir-summary{
+  background:linear-gradient(135deg,#5f684c 0%,#2f3a2d 100%)!important;
+}
+#prijava-istrazivanja .rir-summary-icon{
+  background:#e1c978!important;
+  color:#141a14!important;
+}
+#prijava-istrazivanja .rir-submit{
+  background:#5f684c!important;
+  color:#fff!important;
+}
+#prijava-istrazivanja .rir-submit:hover,
+#prijava-istrazivanja .rir-submit:focus{
+  background:#4d573c!important;
+}
+</style>
+
+<link data-pio-mobile="v1" rel="stylesheet" href="../assets/mobile/pio-mobile-glavni.css?v=20260714-gl-v8">
+</head>
+<body class="rajac-static-output">
+
+<nav class="book-nav" aria-label="Странице ПИО Рајац">
+  <div class="shell">
+    <a class="nav-logo" href="https://piorajac.rs/">ПИО „Рајац“</a>
+    <div class="nav-links">
+      <a class="nav-link" href="https://piorajac.rs/o-platformi/">О платформи</a>
+      <a class="nav-link" href="https://piorajac.rs/za-posetioce/">За посетиоце</a>
+      <a class="nav-link is-active" href="https://piorajac.rs/za-istrazivace/" aria-current="page">За истраживаче</a>
+      <a class="nav-link" href="https://piorajac.rs/za-vlasnike/">За власнике</a>
+      <a class="nav-link" href="https://piorajac.rs/aplikacije/">Апликације</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero" style="--hero-img:url('https://piorajac.rs/wp-content/uploads/2026/06/istrazivaci1-scaled.png'); --hero-pos:center center;">
+  <div class="hero-inner">
+    <h1>За истраживаче</h1>
+    <p class="lead">ПИО „Рајац“ као отворена теренска лабораторија за научна и стручна истраживања природе, климе, биодиверзитета, станишта, GIS анализа, светлосног загађења и савременог мониторинга.</p>
+  </div>
+</header>
+
+<div class="op-stats">
+  <div class="op-stat op-stat--a"><b>Истражи</b><span>терен · методе · подаци</span></div>
+  <div class="op-stat op-stat--b"><b>Повежи</b><span>институти · факултети · студенти</span></div>
+  <div class="op-stat op-stat--c"><b>Анализирај</b><span>GIS · сателити · мониторинг</span></div>
+  <div class="op-stat op-stat--d"><b>Примени</b><span>заштита · управљање · едукација</span></div>
+</div>
+
+<div class="rir-page">
+<main>
+<section class="rir-section">
+<div class="rir-wrap rir-intro-grid">
+<div>
+<div class="rir-label">отворена теренска лабораторија</div>
+<h2 class="rir-title">Рајац као простор за истраживање, учење и примену знања</h2>
+<div class="rir-text" style="margin-top:24px;">
+<p>
+              Предео изузетних одлика „Рајац“ представља вредан простор за научна,
+              стручна и примењена истраживања природе, предела, климе, биодиверзитета
+              и односа човека и заштићеног подручја. Захваљујући положају у оквиру
+              Сувоборског масива, разноврсној геолошкој подлози, израженом рељефу,
+              мозаичној структури станишта, очуваним ливадама, шумама, изворима,
+              пећинама и тамном небу, Рајац је простор у коме се могу развијати
+              различита интердисциплинарна истраживања.
+            </p>
+<p>
+              Циљ ове странице је да истраживачима омогући јасан улаз у сарадњу
+              са управљачем. Истраживања на Рајцу не треба да буду изоловани
+              појединачни радови, већ део шире базе знања која доприноси очувању
+              природе, бољем управљању, развоју мониторинга и квалитетнијој
+              едукацији јавности.
+            </p>
+</div>
+</div>
+<div class="rir-note">
+<h3>Коме је страница намењена?</h3>
+<p>
+            Професионалним истраживачима, научним институцијама, факултетима,
+            заводима, студентима, стручним организацијама и свима који желе да
+            теренски, аналитички или дигитални рад усмере ка бољем разумевању
+            и заштити Рајца.
+          </p>
+</div>
+</div>
+</section>
+<section class="rir-section">
+<div class="rir-wrap">
+<div class="rir-label">области истраживања</div>
+<h2 class="rir-title">За које дисциплине је Рајац посебно погодан?</h2>
+<p class="rir-lead">
+          Подручје омогућава истраживања од класичног теренског рада до савремених
+          дигиталних метода, даљинске детекције, акустичког мониторинга, просторног
+          моделовања и анализе климатских промена.
+        </p>
+<div class="rir-disciplines">
+<div class="rir-pill">Геологија</div>
+<div class="rir-pill">Геоморфологија</div>
+<div class="rir-pill">Климатологија</div>
+<div class="rir-pill">Метеорологија</div>
+<div class="rir-pill">Ботаника</div>
+<div class="rir-pill">Орнитологија</div>
+<div class="rir-pill">Ентомологија</div>
+<div class="rir-pill">Микологија</div>
+<div class="rir-pill">Шумарство</div>
+<div class="rir-pill">Хидрологија</div>
+<div class="rir-pill">Педологија</div>
+<div class="rir-pill">GIS и даљинска истраживања</div>
+<div class="rir-pill">Светлосно загађење</div>
+<div class="rir-pill">Астроклима</div>
+<div class="rir-pill">Мониторинг станишта</div>
+<div class="rir-pill">Заштита природе</div>
+</div>
+</div>
+</section>
+<section class="rir-section">
+<div class="rir-wrap">
+<div class="rir-label">шта нудимо</div>
+<h2 class="rir-title">Подршка истраживачима на Рајцу</h2>
+<div class="rir-cards">
+<article class="rir-card">
+<small>01</small>
+<h3>Документација и постојећи подаци</h3>
+<p>
+              Истраживачима се могу ставити на располагање постојећи стручни
+              материјали, карте, описи станишта, подаци о природним вредностима,
+              фотодокументација, теренске белешке и резултати досадашњег рада.
+            </p>
+</article>
+<article class="rir-card">
+<small>02</small>
+<h3>Логистичка подршка</h3>
+<p>
+              Могућа је помоћ у планирању терена, избору периода истраживања,
+              разумевању приступних праваца, режима заштите, локалитета и
+              ограничења која су важна за безбедан и одговоран рад.
+            </p>
+</article>
+<article class="rir-card">
+<small>03</small>
+<h3>Карте и просторни подаци</h3>
+<p>
+              За истраживања су посебно значајне границе заштићеног подручја,
+              зоне заштите, топоними, стазе, локалитети, GIS слојеви и просторни
+              подаци који омогућавају анализу станишта и промена у простору.
+            </p>
+</article>
+<article class="rir-card">
+<small>04</small>
+<h3>Метеоролошки и климатски подаци</h3>
+<p>
+              Истраживања се могу ослонити на климатске анализе, податке
+              аутоматске метеоролошке станице, температурне екстреме, падавине,
+              ветар, УВ и соларно зрачење, као и на показатеље услова боравка.
+            </p>
+</article>
+<article class="rir-card">
+<small>05</small>
+<h3>Биодиверзитет и станишта</h3>
+<p>
+              Рајац је погодан за истраживања флоре, птица, инсеката, сисара,
+              гљива, слепих мишева, опрашивача, ливадских и шумских станишта,
+              као и еколошких веза између врста и предеоних целина.
+            </p>
+</article>
+<article class="rir-card">
+<small>06</small>
+<h3>Дигитални мониторинг</h3>
+<p>
+              Платформа ПИО „Рајац“ развија се као систем за праћење природе:
+              сателитске анализе, GIS, акустички мониторинг, фото-замке,
+              метеоролошка мерења и дигиталне базе података.
+            </p>
+</article>
+</div>
+</div>
+</section>
+<section class="rir-section rir-dark">
+<div class="rir-wrap rir-dark-grid">
+<div>
+<div class="rir-label">доступни ресурси</div>
+<h2 class="rir-title">Истраживање повезано са управљањем</h2>
+<p class="rir-lead">
+            Подаци добијени истраживањем могу постати део дугорочне базе знања
+            о Рајцу и помоћи у планирању мера заштите, мониторинга, едукације и
+            одговорног коришћења простора.
+          </p>
+</div>
+<div class="rir-data-list">
+<div class="rir-data-item">
+<b>Природна основа</b>
+<span>геологија, рељеф, педологија, хидрографија и клима</span>
+</div>
+<div class="rir-data-item">
+<b>Биодиверзитет</b>
+<span>биљке, птице, инсекти, сисари, гљиве и станишта</span>
+</div>
+<div class="rir-data-item">
+<b>Мониторинг</b>
+<span>метео станица, GIS, сателити, акустика и фото-праћење</span>
+</div>
+<div class="rir-data-item">
+<b>Теренска подршка</b>
+<span>оријентација, локалитети, правила, контакти и препоруке</span>
+</div>
+</div>
+</div>
+</section>
+<section class="rir-section">
+<div class="rir-wrap">
+<div class="rir-label">одговорно истраживање</div>
+<h2 class="rir-title">Начела сарадње</h2>
+<p class="rir-lead">
+          Сарадња са истраживачима заснива се на поштовању научне методологије,
+          транспарентности, заштити осетљивих података и уважавању режима заштите.
+        </p>
+<div class="rir-principles">
+<div class="rir-principle">
+<b>пре терена</b>
+<p>
+              Пожељно је доставити кратак опис теме, циљ истраживања, методологију,
+              планирани период, просторни обухват и потребну логистику.
+            </p>
+</div>
+<div class="rir-principle">
+<b>током рада</b>
+<p>
+              Теренски рад треба спроводити тако да не доведе до оштећења станишта,
+              узнемиравања животиња, непотребног уласка у осетљиве зоне или
+              нарушавања режима заштите.
+            </p>
+</div>
+<div class="rir-principle">
+<b>осетљиви подаци</b>
+<p>
+              Локације ретких, строго заштићених и осетљивих врста, пећина,
+              склоништа и места гнежђења не објављују се јавно без процене ризика.
+            </p>
+</div>
+<div class="rir-principle">
+<b>после истраживања</b>
+<p>
+              Пожељно је доставити извештај, списак налаза, карте, фотографије,
+              библиографске податке, линк ка раду или препоруке важне за управљање.
+            </p>
+</div>
+</div>
+</div>
+</section>
+<section class="rir-section">
+<div class="rir-wrap">
+<div class="rir-label">могуће теме</div>
+<h2 class="rir-title">Од класичног терена до паметног мониторинга</h2>
+<p class="rir-lead">
+          Рајац може бити простор за класично теренско истраживање, али и за развој
+          савремених приступа који повезују природу, податке, сензоре, карте и
+          управљачке одлуке.
+        </p>
+<div class="rir-cards">
+<article class="rir-card">
+<small>геонаслеђе</small>
+<h3>Геологија, рељеф и спелеологија</h3>
+<p>
+              Истраживања геолошке грађе, љишког флиша, падинских процеса,
+              карстних и спелеолошких појава, ерозије и везе подлоге са стаништима.
+            </p>
+</article>
+<article class="rir-card">
+<small>клима</small>
+<h3>Климатске промене и локална мерења</h3>
+<p>
+              Анализа дугорочних серија, метеоролошких података, екстрема,
+              фенологије, суше, мразева, топлотних таласа и утицаја на екосистеме.
+            </p>
+</article>
+<article class="rir-card">
+<small>биодиверзитет</small>
+<h3>Врсте, станишта и еколошке везе</h3>
+<p>
+              Мониторинг флоре, птица, инсеката, опрашивача, слепих мишева,
+              сисара, гљива, шумских рубова, ливада и осетљивих станишта.
+            </p>
+</article>
+<article class="rir-card">
+<small>GIS</small>
+<h3>Картирање и просторна анализа</h3>
+<p>
+              Израда GIS слојева, веб-карата, просторних модела, анализа промена
+              покривача земљишта, NDVI/NDMI индекса и погодности станишта.
+            </p>
+</article>
+<article class="rir-card">
+<small>ноћно небо</small>
+<h3>Светлосно загађење и астроклима</h3>
+<p>
+              Праћење квалитета ноћног неба, извора светлосног загађења, утицаја
+              расвете на живи свет и услова за астрономска посматрања.
+            </p>
+</article>
+<article class="rir-card">
+<small>управљање</small>
+<h3>Примена резултата у заштити природе</h3>
+<p>
+              Препоруке за мере заштите, управљање стазама, очување станишта,
+              едукацију посетилаца, мониторинг и развој дигиталне платформе.
+            </p>
+</article>
+</div>
+</div>
+</section>
+<section class="rir-cta">
+<div class="rir-wrap">
+<div class="rir-cta-box">
+<div>
+<h2>Позив за научну и стручну сарадњу</h2>
+<p>
+              Позивамо истраживаче, факултете, институте, студенте и стручне
+              организације да предложе теме, теренске активности, мониторинг
+              програме, радионице, заједничке пројекте или обраду постојећих
+              података о ПИО „Рајац“.
+            </p>
+</div>
+</div>
+</div>
+</section>
+</main>
+</div>
+<!-- SITE_EDITOR_ADMIN_BAR_START -->
+<script src="/admin-site-editor.php?admin_bar_js=1" defer></script>
+<!-- SITE_EDITOR_ADMIN_BAR_END -->
+
+<script defer src="/rajac-design/rajac-vrh-button.js?v=20260707-v6-round-no-home"></script>
+<script data-pio-mobile="v1" defer src="../assets/mobile/pio-mobile-glavni.js?v=20260714-gl-v8"></script>
+</body></html>
