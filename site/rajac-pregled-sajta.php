@@ -68,7 +68,7 @@ function naslov(string $f): string {
 }
 function ima_naziv(string $f): ?bool {
     if (substr($f, -4) === '.php') return null; // PHP се не процењује по изворном коду
-    $s = (string)@file_get_contents($f, false, null, 0, 400000);
+    $s = (string)@file_get_contents($f, false, null, 0, 2500000);
     return (bool)preg_match('~ПИО(?:\s|&nbsp;|<[^>]{0,80}>)*„РАЈАЦ“~u', $s);
 }
 
