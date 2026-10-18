@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+
+<html lang="sr-RS">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>Посматрање дневних лептира на Рајцу</title>
+<meta content="Позив посетиоцима да се укључе у неинвазивно посматрање и фотографисање дневних лептира у ПИО „Рајац”, уз обуку у оквиру Истраживачког парка Рајац." name="description"/>
+<meta content="max-image-preview:large" name="robots"/>
+<link href="https://piorajac.rs/rajac-vesti/posmatranje-dnevnih-leptira-na-rajcu/" rel="canonical"/>
+<style>
+
+    :root{
+      --bg:#f5f0e4;--paper:#fbfaf4;--ink:#172018;--muted:#566254;--line:rgba(31,40,32,.14);
+      --line2:rgba(31,40,32,.08);--green:#1f3b2a;--green2:#2f563b;--gold:#a87312;--gold2:#d3a240;
+      --soft:#eee6d6;--shadow:0 22px 70px rgba(35,42,31,.08);--radius:28px;--wrap:min(1180px,calc(100% - 38px));
+    }
+    *{box-sizing:border-box} html{scroll-behavior:smooth} body{margin:0;background:radial-gradient(circle at 12% -10%,rgba(180,123,18,.13),transparent 34%),radial-gradient(circle at 88% 0%,rgba(31,59,42,.10),transparent 32%),var(--bg);color:var(--ink);font-family:Georgia,"Times New Roman",serif} a{color:inherit;text-decoration:none} img{display:block;max-width:100%;height:auto}
+    .rn-top{position:sticky;top:0;z-index:20;background:#0f1d2d;color:#eef2ea;border-bottom:1px solid rgba(255,255,255,.10)}
+    .rn-top-inner{flex-wrap:wrap;width:var(--wrap);margin:0 auto;min-height:54px;display:flex;align-items:center;gap:18px;overflow-x:visible;scrollbar-width:none}.rn-top-inner::-webkit-scrollbar{display:none}
+    .rn-brand{display:inline-flex;align-items:center;justify-content:center;border:1px solid rgba(216,181,91,.55);border-radius:999px;padding:8px 18px;color:#e1bf62;font-size:15px;font-weight:800;white-space:nowrap;letter-spacing:.03em}
+    .rn-nav{display:flex;gap:10px;align-items:center;white-space:nowrap;color:rgba(255,255,255,.70);font-size:13px;font-weight:800;letter-spacing:.05em}.rn-nav a{display:inline-flex;align-items:center;gap:7px;border:1px solid rgba(255,255,255,.10);border-radius:999px;padding:7px 11px}.rn-nav a:hover,.rn-nav .active{color:#e1bf62;border-color:rgba(225,191,98,.45)}.rn-nav span{display:inline-flex;align-items:center;justify-content:center;min-width:19px;height:19px;border-radius:999px;background:rgba(255,255,255,.10);color:rgba(255,255,255,.82);font-size:11px;letter-spacing:0}.rn-nav .active span{background:rgba(225,191,98,.18);color:#e1bf62}
+    .rn-shell{width:var(--wrap);margin:0 auto;padding:48px 0 64px} .rn-hero{display:grid;grid-template-columns:1fr;gap:28px;align-items:stretch;margin-bottom:28px}
+    .rn-title-card{background:rgba(255,255,255,.66);border:1px solid var(--line2);border-radius:var(--radius);box-shadow:var(--shadow);padding:clamp(30px,5vw,58px)}
+    .rn-kicker{display:inline-flex;align-items:center;gap:12px;margin-bottom:18px;color:var(--gold);font-family:Arial,sans-serif;font-size:12px;line-height:1;font-weight:900;letter-spacing:.22em;text-transform:uppercase}.rn-kicker:before{content:"";width:34px;height:1px;background:currentColor;opacity:.72}
+    h1{margin:0;max-width:980px;color:var(--ink);font-size:clamp(40px,5.8vw,76px);line-height:.98;font-weight:400;letter-spacing:-.045em}
+    .rn-lead{max-width:850px;margin:24px 0 0;color:var(--muted);font-size:clamp(18px,1.45vw,22px);line-height:1.7}
+    .rn-meta{background:linear-gradient(180deg,#24472f,#132318);color:#fff;border-radius:var(--radius);padding:26px;box-shadow:var(--shadow);display:grid;gap:13px;align-content:start}
+    .rn-meta h2{margin:0 0 6px;color:#fff;font-size:30px;font-weight:400;line-height:1.1;letter-spacing:-.02em}
+    .rn-m{border:1px solid rgba(255,255,255,.18);background:rgba(255,255,255,.08);border-radius:16px;padding:14px 15px}.rn-m span{display:block;margin-bottom:7px;color:rgba(255,255,255,.68);font-family:Arial,sans-serif;font-size:11px;font-weight:900;letter-spacing:.15em;text-transform:uppercase}.rn-m strong{display:block;font-size:20px;font-weight:400;line-height:1.2}
+    .rn-card{background:rgba(255,255,255,.72);border:1px solid var(--line2);border-radius:var(--radius);box-shadow:var(--shadow);padding:clamp(24px,4vw,44px);overflow:hidden}
+    .rp-prose{max-width:100%;color:var(--muted)} .rp-prose p{font-size:19px;line-height:1.78;color:var(--muted);margin:0 0 18px} .rp-prose strong{color:var(--ink)} .rp-prose h2{margin:42px 0 18px;padding-top:6px;color:var(--ink);font-size:clamp(30px,3.1vw,46px);line-height:1.08;font-weight:400;letter-spacing:-.025em;border-top:1px solid var(--line)} .rp-prose h3{margin:28px 0 12px;color:var(--green);font-size:25px;line-height:1.16;font-weight:400}
+    .rp-report-lead{font-size:21px!important;line-height:1.72!important;background:#f7f2e8;border:1px solid var(--line);border-radius:20px;padding:22px;margin-bottom:22px!important;color:#49594b!important}
+    .rp-data-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;margin:22px 0} .rp-data-card{background:#fffdf7;border:1px solid var(--line);border-radius:18px;padding:18px;box-shadow:0 10px 28px rgba(35,42,31,.05)} .rp-data-lbl{color:var(--gold);font-family:Arial,sans-serif;font-size:12px;font-weight:900;letter-spacing:.15em;text-transform:uppercase;margin-bottom:8px} .rp-data-val{color:var(--ink);font-size:32px;line-height:1.05;font-weight:400} .rp-data-note{margin-top:7px;color:#6a7167;font-size:15px;line-height:1.35}
+    .rp-figure{margin:28px 0;border:1px solid var(--line);background:#fffdf7;border-radius:22px;overflow:hidden;box-shadow:0 12px 34px rgba(35,42,31,.06)} .rp-figure img{width:100%;height:auto;background:#e6eadf} .rp-figure figcaption{padding:13px 16px;color:#687064;font-size:14px;line-height:1.5;font-family:Arial,sans-serif;background:#fbf7ed;border-top:1px solid var(--line2)}
+    .rp-mini-nav{display:flex;flex-wrap:wrap;gap:10px;margin:24px 0 30px;padding:14px;border:1px solid var(--line);background:#f8f3e8;border-radius:18px} .rp-mini-nav a{display:inline-flex;min-height:36px;align-items:center;padding:0 13px;border-radius:999px;background:#fff;border:1px solid rgba(31,40,32,.10);color:#315c39;font-family:Arial,sans-serif;font-size:12px;font-weight:900;letter-spacing:.08em;text-transform:uppercase}
+    .rp-report-table{width:100%;border-collapse:separate;border-spacing:0;overflow:hidden;border:1px solid var(--line);border-radius:18px;background:#fffdf7;margin:14px 0 24px} .rp-report-table th,.rp-report-table td{padding:13px 14px;border-bottom:1px solid rgba(31,40,32,.10);text-align:left;vertical-align:top;font-size:16px;line-height:1.45;color:#344035} .rp-report-table th{background:#efe6d5;color:#6f4b00;font-family:Arial,sans-serif;font-size:12px;letter-spacing:.12em;text-transform:uppercase} .rp-report-table tr:last-child td{border-bottom:0}
+    .rp-phase{display:grid;grid-template-columns:150px minmax(0,1fr);gap:18px;margin:16px 0;padding:18px;border:1px solid var(--line);border-radius:18px;background:#faf6ee} .rp-phase-k{display:grid;place-items:center;text-align:center;color:#fff;background:#315c39;border-radius:14px;min-height:94px;font-family:Arial,sans-serif;font-weight:900;letter-spacing:.08em;text-transform:uppercase;font-size:12px;line-height:1.45}
+    .rp-note,.rp-warning,.rp-sources{border:1px solid var(--line);border-radius:18px;padding:18px 20px;margin:22px 0;background:#f8f3e8;color:#4d5b4e} .rp-warning{background:#fff5df;border-color:rgba(184,137,63,.28)} .rp-sources ul{margin:0;padding-left:20px;color:#566254;line-height:1.7} .rp-sources li{font-size:16px;margin:4px 0}
+    .rn-foot{margin-top:26px;display:flex;justify-content:space-between;gap:16px;align-items:center;border-top:1px solid var(--line);padding-top:18px;color:#6b6d63;font-family:Arial,sans-serif;font-size:13px;line-height:1.5} .rn-foot a{color:#0f1d2d;font-weight:900;letter-spacing:.06em;text-transform:uppercase}
+    @media(max-width:980px){.rn-hero{grid-template-columns:1fr}.rn-meta{grid-template-columns:repeat(2,1fr)}.rn-meta h2{grid-column:1/-1}.rp-data-grid{grid-template-columns:repeat(2,1fr)}}
+    @media(max-width:650px){:root{--wrap:min(100% - 24px,1180px)}.rn-shell{padding:24px 0 42px}.rn-title-card,.rn-card{padding:22px 18px}.rn-meta{grid-template-columns:1fr}.rp-data-grid{grid-template-columns:1fr}.rp-phase{grid-template-columns:1fr}.rp-prose p{font-size:17px}.rp-report-table{display:block;overflow-x:auto}.rn-nav{gap:12px;font-size:12px}}
+  
+
+    .rp-btn-inline{
+      display:inline-flex;align-items:center;justify-content:center;min-height:42px;padding:0 18px;border-radius:999px;
+      background:#315c39;color:#fff!important;border:1px solid rgba(49,92,57,.20);
+      font-family:Arial,sans-serif;font-size:13px;font-weight:900;letter-spacing:.08em;text-transform:uppercase;
+      box-shadow:0 10px 24px rgba(35,42,31,.10);transition:.22s ease
+    }
+    .rp-btn-inline:hover{background:#1f3b2a;text-decoration:none!important;transform:translateY(-1px)}
+    .rp-event-photo img{width:100%;max-height:560px;object-fit:cover;object-position:center;background:#dfe8d8}
+    .rp-note-box{border:1px solid rgba(49,92,57,.18);background:#f2f6ee;border-radius:20px;padding:20px 22px;margin:24px 0;color:#3f5040}
+    .rp-note-box h3{margin:0 0 8px;color:#1f3b2a;font-size:24px;line-height:1.15;font-weight:400}
+    .rp-note-box p{margin:0;color:#4e5e4e}
+    .rp-cleanlist{margin:18px 0 26px;padding-left:26px;color:#566254}
+    .rp-cleanlist li{font-size:18px;line-height:1.72;margin:9px 0;color:#4f5c51}
+    .rn-meta .rn-meta-wide{grid-column:1/-1}
+
+  </style>
+<style id="rajac-static-news-menu-css">
+.rajac-news-menu{position:sticky;top:0;z-index:9999;background:#0d1b2a;border-bottom:1px solid rgba(255,255,255,.10);font-family:Georgia,"Times New Roman",serif;box-shadow:0 8px 26px rgba(0,0,0,.08)}
+.rajac-news-menu *{box-sizing:border-box}.rajac-news-menu-inner{max-width:1180px;margin:0 auto;padding:9px 18px;min-height:56px;display:flex;flex-wrap:wrap;align-items:center;gap:8px;overflow-x:visible;scrollbar-width:none}.rajac-news-menu-inner::-webkit-scrollbar{display:none}.rajac-news-menu a{display:inline-flex;align-items:center;gap:6px;min-height:38px;padding:0 13px;border-radius:999px;color:rgba(255,255,255,.74);text-decoration:none;font-size:13px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;white-space:nowrap}.rajac-news-menu a:hover{background:rgba(255,255,255,.06);color:#fff}.rajac-news-menu .home{color:#e0c678;border:1px solid rgba(224,198,120,.34);background:rgba(224,198,120,.06)}.rajac-news-menu a.active{color:#e0c678;background:rgba(224,198,120,.08);outline:1px solid rgba(224,198,120,.26)}.rajac-news-menu small,.rajac-news-menu .count{display:inline-flex;align-items:center;justify-content:center;min-width:20px;height:20px;padding:0 6px;border-radius:999px;background:rgba(255,255,255,.10);color:#e0c678;font-size:11px;letter-spacing:0}@media(max-width:720px){.rajac-news-menu-inner{padding:9px 10px}.rajac-news-menu a{font-size:12px;padding:0 10px}}
+</style>
+<style id="rajac-single-fix-css">.rajac-added-cover{width:min(1120px,calc(100% - 34px));margin:24px auto;border-radius:22px;overflow:hidden;border:1px solid rgba(30,40,30,.14);background:#fff;box-shadow:0 18px 55px rgba(35,42,31,.06)}.rajac-added-cover img{width:100%;max-height:420px;object-fit:cover;display:block}.rajac-added-cover figcaption{padding:10px 14px;color:#6c6f65;font:13px/1.45 Arial,sans-serif}</style>
+<style id="rajac-global-news-menu-style">
+.rajac-news-menu{position:sticky;top:0;z-index:9999;background:#0d1b2a;border-bottom:1px solid rgba(255,255,255,.10);font-family:Georgia,"Times New Roman",serif;box-shadow:0 8px 26px rgba(0,0,0,.08)}
+.rajac-news-menu *{box-sizing:border-box}.rajac-news-menu-inner{max-width:1180px;margin:0 auto;padding:9px 18px;min-height:56px;display:flex;flex-wrap:wrap;align-items:center;gap:8px;overflow-x:visible;scrollbar-width:none}.rajac-news-menu-inner::-webkit-scrollbar{display:none}
+.rajac-news-menu a{display:inline-flex;align-items:center;gap:6px;min-height:38px;padding:0 13px;border-radius:999px;color:rgba(255,255,255,.74);text-decoration:none;font-size:13px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;white-space:nowrap;line-height:1;font-family:Georgia,"Times New Roman",serif}
+.rajac-news-menu a:hover{background:rgba(255,255,255,.06);color:#fff}.rajac-news-menu .home{color:#e0c678;border:1px solid rgba(224,198,120,.34);background:rgba(224,198,120,.06)}
+.rajac-news-menu a.active{color:#e0c678!important;background:rgba(224,198,120,.08);outline:1px solid rgba(224,198,120,.26)}.rajac-news-menu small{display:inline-flex;align-items:center;justify-content:center;min-width:20px;height:20px;padding:0 6px;border-radius:999px;background:rgba(255,255,255,.10);color:#e0c678;font-size:11px;letter-spacing:0;font-family:Arial,sans-serif;font-weight:900}
+@media(max-width:650px){.rajac-news-menu-inner{padding:9px 10px}.rajac-news-menu a{font-size:12px;padding:0 10px}}
+</style>
+<style id="rajac-news-menu-one-row">
+/* Јединствен мени за све вести: један ред и исти sans-serif фонт као на осталим страницама сајта. */
+.rajac-news-menu{font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif!important}
+.rajac-news-menu-inner{width:min(100%,1600px)!important;max-width:1600px!important;margin:0 auto!important;padding:9px 14px!important;display:flex!important;flex-wrap:nowrap!important;align-items:center!important;justify-content:center!important;gap:4px!important;overflow-x:auto!important;overflow-y:hidden!important;scrollbar-width:none!important;-webkit-overflow-scrolling:touch}
+.rajac-news-menu-inner::-webkit-scrollbar{display:none!important}
+.rajac-news-menu a{flex:0 0 auto!important;min-height:38px!important;padding:0 10px!important;font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif!important;font-size:12px!important;font-weight:750!important;letter-spacing:.025em!important;line-height:1!important;text-transform:uppercase!important;white-space:nowrap!important}
+.rajac-news-menu small{font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif!important}
+@media(max-width:1050px){.rajac-news-menu-inner{justify-content:flex-start!important}.rajac-news-menu a{font-size:11px!important;padding:0 9px!important}}
+</style>
+<style id="rajac-unified-news-menu-v3">
+.rajac-news-menu{
+  position:sticky!important;top:0!important;z-index:9999!important;
+  width:100%!important;background:#0d1b2a!important;
+  border-bottom:1px solid rgba(255,255,255,.10)!important;
+  box-shadow:0 7px 22px rgba(0,0,0,.10)!important;
+  font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif!important;
+}
+.rajac-news-menu *{font-family:inherit!important;box-sizing:border-box!important}
+.rajac-news-menu-inner{
+  width:100%!important;max-width:1600px!important;margin:0 auto!important;
+  min-height:60px!important;padding:8px 14px!important;
+  display:flex!important;flex-direction:row!important;flex-wrap:nowrap!important;
+  align-items:center!important;justify-content:center!important;gap:6px!important;
+  overflow-x:auto!important;overflow-y:hidden!important;white-space:nowrap!important;
+  scrollbar-width:none!important;-webkit-overflow-scrolling:touch!important;
+}
+.rajac-news-menu-inner::-webkit-scrollbar{display:none!important}
+.rajac-news-menu a{
+  flex:0 0 auto!important;display:inline-flex!important;align-items:center!important;
+  justify-content:center!important;gap:6px!important;min-height:40px!important;
+  padding:0 12px!important;border-radius:999px!important;
+  color:rgba(255,255,255,.82)!important;background:transparent!important;
+  text-decoration:none!important;text-transform:uppercase!important;
+  white-space:nowrap!important;font-size:13px!important;line-height:1!important;
+  font-weight:750!important;letter-spacing:.025em!important;
+}
+.rajac-news-menu a:hover,.rajac-news-menu a:focus-visible{
+  color:#fff!important;background:rgba(255,255,255,.07)!important;
+}
+.rajac-news-menu a.home,.rajac-news-menu a.active{
+  color:#e4cb7e!important;background:rgba(228,203,126,.08)!important;
+  outline:1px solid rgba(228,203,126,.30)!important;
+}
+.rajac-news-menu small{
+  flex:0 0 auto!important;display:inline-flex!important;align-items:center!important;
+  justify-content:center!important;min-width:20px!important;height:20px!important;
+  padding:0 6px!important;border-radius:999px!important;
+  color:#e4cb7e!important;background:rgba(255,255,255,.10)!important;
+  font-size:11px!important;line-height:20px!important;font-weight:800!important;
+  letter-spacing:0!important;
+}
+@media(max-width:1180px){
+  .rajac-news-menu-inner{justify-content:flex-start!important;padding-inline:10px!important}
+  .rajac-news-menu a{font-size:12px!important;padding-inline:10px!important}
+}
+</style>
+<link href="https://piorajac.rs/rajac-vesti/assets/css/rajac-unified-menu.css" rel="stylesheet"/>
+<style id="pio-news-menu-one-row-final">
+
+/* === PIO RAJAC: JEDNOREDNI MENI NA SVIM STRANICAMA VESTI === */
+@media (min-width: 900px){
+  .rajac-news-menu{
+    width:100% !important;
+  }
+  .rajac-news-menu-inner{
+    width:100% !important;
+    max-width:1600px !important;
+    margin:0 auto !important;
+    padding:8px 12px !important;
+    display:flex !important;
+    flex-direction:row !important;
+    flex-wrap:nowrap !important;
+    align-items:center !important;
+    justify-content:center !important;
+    gap:clamp(3px,.55vw,9px) !important;
+    white-space:nowrap !important;
+    overflow-x:auto !important;
+    overflow-y:hidden !important;
+    scrollbar-width:none !important;
+  }
+  .rajac-news-menu-inner::-webkit-scrollbar{display:none !important;}
+  .rajac-news-menu a{
+    flex:0 0 auto !important;
+    white-space:nowrap !important;
+    padding-left:clamp(7px,.65vw,11px) !important;
+    padding-right:clamp(7px,.65vw,11px) !important;
+    font-size:clamp(11px,.86vw,14px) !important;
+  }
+}
+/* На ужим екранима мени остаје један ред и хоризонтално се помера, уместо да пада у други ред. */
+@media (max-width: 899px){
+  .rajac-news-menu-inner{
+    display:flex !important;
+    flex-wrap:nowrap !important;
+    justify-content:flex-start !important;
+    white-space:nowrap !important;
+    overflow-x:auto !important;
+    overflow-y:hidden !important;
+    scrollbar-width:none !important;
+    -webkit-overflow-scrolling:touch !important;
+  }
+  .rajac-news-menu-inner::-webkit-scrollbar{display:none !important;}
+  .rajac-news-menu a{flex:0 0 auto !important;white-space:nowrap !important;}
+}
+
+</style>
+</head>
+<body><nav aria-label="Мени вести" class="rajac-news-menu"><div class="rajac-news-menu-inner"><a class="home" href="https://piorajac.rs/">ПИО „РАЈАЦ“</a><a href="https://piorajac.rs/rajac-vesti/">СВЕ ВЕСТИ</a><a href="https://piorajac.rs/rajac-vesti/kategorije/aktuelno/">АКТУЕЛНО<small>7</small></a><a href="https://piorajac.rs/rajac-vesti/kategorije/vesti/">ВЕСТИ<small>3</small></a><a href="https://piorajac.rs/rajac-vesti/kategorije/izvestaji/">ИЗВЕШТАЈИ<small>8</small></a><a href="https://piorajac.rs/rajac-vesti/kategorije/istrazivanja/">ИСТРАЖИВАЊА<small>9</small></a><a href="https://piorajac.rs/rajac-vesti/kategorije/dogadjaji/">ДОГАЂАЈИ<small>5</small></a><a href="https://piorajac.rs/rajac-vesti/kategorije/u-fokusu/">У ФОКУСУ<small>4</small></a></div></nav>
+<main class="rn-shell">
+<section aria-label="Увод у вест" class="rn-hero">
+<article class="rn-title-card">
+<div class="rn-kicker">Догађај · 19. мај 2026.</div>
+<h1>Посматрање дневних лептира на Рајцу</h1>
+<p class="rn-lead">Позив посетиоцима да се укључе у неинвазивно посматрање и фотографисање дневних лептира у ПИО „Рајац”, уз обуку у оквиру Истраживачког парка Рајац.</p>
+</article>
+</section>
+<article class="rn-card">
+<div class="rp-prose">
+<p class="rp-report-lead"><strong>Позив посетиоцима.</strong> ПИО „Рајац” позива посетиоце, ученике, наставнике, планинаре, фотографе природе и све љубитеље живог света да се укључе у посматрање дневних лептира на Рајцу. Циљ догађаја је да се лептири посматрају пажљиво, без хватања и узнемиравања, да се налази фотографишу и да се подаци постепено укључују у систем праћења биодиверзитета.</p>
+<p><a class="rp-btn-inline" href="https://piorajac.rs/rajac-leptiri/">Отвори обуку за посетиоце</a></p>
+<figure class="rp-figure rp-event-photo">
+<img alt="Дневни лептир на цветној површини Рајца" decoding="async" fetchpriority="high" loading="eager" onerror="this.onerror=null;this.src='/wp-content/uploads/2025/09/%D0%BB%D0%B5%D0%BF%D1%82%D0%B8%D1%805.jpg';" src="https://rajac.rs/wp-content/uploads/2025/09/%D0%BB%D0%B5%D0%BF%D1%82%D0%B8%D1%805.jpg"/>
+<figcaption>Дневни лептир на цветној површини Рајца. Овакви фото-записи могу бити користан део грађанског мониторинга ако су праћени датумом, приближном локацијом и описом станишта.</figcaption>
+</figure>
+<div aria-label="Кључне информације о догађају" class="rp-data-grid">
+<div class="rp-data-card"><div class="rp-data-lbl">Тема</div><div class="rp-data-val">дневни лептири</div><div class="rp-data-note">индикатори стања ливада</div></div>
+<div class="rp-data-card"><div class="rp-data-lbl">Простор</div><div class="rp-data-val">ПИО „Рајац”</div><div class="rp-data-note">ливаде, пашњаци, рубови шума</div></div>
+<div class="rp-data-card"><div class="rp-data-lbl">Метод</div><div class="rp-data-val">фото-запис</div><div class="rp-data-note">без хватања и оштећења станишта</div></div>
+<div class="rp-data-card"><div class="rp-data-lbl">Обука</div><div class="rp-data-val"><a href="https://piorajac.rs/rajac-leptiri/">отвори водич</a></div><div class="rp-data-note">Истраживачки парк Рајац</div></div>
+</div>
+<h2 id="zasto">Зашто су дневни лептири важни за Рајац</h2>
+<p>Дневни лептири су једна од најбољих група за праћење стања отворених и полуотворених станишта. Њихова појава зависи од температуре, влажности, начина кошења, присуства биљака домаћина за гусенице, доступности нектарница и очуваности ливада, пашњака, шумских рубова и живица. Зато промене у броју и саставу врста често брзо показују да ли се станиште одржава, зараста, исушује, прекомерно гази или губи цветну разноврсност.</p>
+<p>За ПИО „Рајац” ова група је посебно значајна јер подручје има мозаик ливада, пашњака, шумских и жбунастих рубова, сеоских путева, воћњака и влажнијих микролокалитета. Управо та мозаичност омогућава присуство већег броја врста, али истовремено захтева пажљиво управљање. Праћење лептира може да помогне у процени када и како косити, које површине оставити као цветне појасеве, где су највреднији рубови и које делове треба заштитити од прекомерног узнемиравања.</p>
+<div class="rp-note-box"><h3>Порука догађаја</h3><p>Лептири нису само леп призор на летњој ливади. Они су показатељи живог, цветног и добро очуваног предела. Свако пажљиво посматрање може постати користан податак за управљање заштићеним подручјем.</p></div>
+<h2 id="ko-moze">Ко може да учествује</h2>
+<p>У догађају могу да учествују сви посетиоци који желе да посматрају природу без узнемиравања живог света: породице са децом, ученици, наставници, планинари, љубитељи фотографије, локални становници, волонтери и истраживачи. Није неопходно претходно познавање врста. Довољни су пажња, стрпљење, телефон или фото-апарат и спремност да се налаз забележи уредно.</p>
+<p>Посебно су добродошле фотографије лептира на цветовима, фотографије доње и горње стране крила, снимци понашања, подаци о биљци на којој је лептир уочен и кратка напомена о станишту. Чак и када врста није сигурно одређена на терену, добра фотографија може касније послужити за проверу.</p>
+<h2 id="kako">Како посматрати лептире без штете</h2>
+<ol class="rp-cleanlist">
+<li><strong>Крећите се споро и пажљиво.</strong> Не газити цветне површине, не улазити дубоко у високу траву без потребе и не уништавати биљке ради бољег кадра.</li>
+<li><strong>Не хватати лептире.</strong> За овај догађај довољан је визуелни и фотографски запис. Посматрање треба да буде неинвазивно.</li>
+<li><strong>Фотографисати више углова.</strong> За идентификацију су често важни положај крила, шара доње стране крила, врхови крила и боја тела.</li>
+<li><strong>Забележити место и станиште.</strong> Уписати да ли је налаз са ливаде, пашњака, шумског руба, уз стазу, код потока, у воћњаку или на другој површини.</li>
+<li><strong>Поштовати правила ПИО „Рајац”.</strong> Кретање прилагодити режиму заштите, не остављати отпад, не палити ватру и не узнемиравати дивљи свет.</li>
+</ol>
+<h2 id="obuka">Обука у оквиру Истраживачког парка Рајац</h2>
+<p>За све који желе да се припреме пре изласка на терен, припремљена је посебна едукативна страница <a href="https://piorajac.rs/rajac-leptiri/">„Истраживање дневних лептира на Рајцу”</a>. На њој су објашњени основни кораци теренског рада: избор сталне стазе, Pollard Walk приступ, фотографисање, вођење белешки, унос података, коришћење апликација и повезивање налаза са будућим мониторингом.</p>
+<p>Ова обука је део концепта Истраживачког парка Рајац, у коме посетиоци нису само пролазници, већ могу постати сарадници у прикупљању података о природи. На тај начин јавна едукација, грађанска наука и управљање заштићеним подручјем постају један повезан систем.</p>
+<div class="rp-note-box"><h3>Пре терена</h3><p>Пре доласка на Рајац препоручује се да посетилац отвори страницу за обуку, погледа правила фотографисања и припреми телефон или фото-апарат. Најкориснији налаз је онај који има датум, приближну локацију, фотографију и кратак опис станишта.</p></div>
+<h2 id="poziv">Позив посетиоцима</h2>
+<p>Позивамо све посетиоце Рајца да током шетње обрате пажњу на дневне лептире и цветне површине. Ако уочите лептира, застаните, фотографишите га без узнемиравања и забележите где сте га видели. Ваш налаз може помоћи да се временом направи боља слика о врстама које користе ливаде, пашњаке и рубове шума у ПИО „Рајац”.</p>
+<p>Посматрање дневних лептира је једноставан начин да се боравак у природи претвори у користан допринос очувању. Што више уредних података буде прикупљено, то ће управљач имати бољу основу за планирање кошења, одржавање стаза, очување цветних површина и заштиту станишта осетљивих врста.</p>
+<p><a class="rp-btn-inline" href="https://piorajac.rs/rajac-leptiri/">Отвори страницу за обуку: Истраживање дневних лептира на Рајцу</a></p>
+</div>
+<div class="rn-foot">
+<span>ПИО „Рајац” · Дневник заштићеног подручја</span>
+<a href="https://piorajac.rs/rajac-vesti/">Све вести →</a>
+</div>
+</article>
+<style id="rajac-nextvest-css">.rajac-next-vest{max-width:760px;margin:34px auto 44px;padding:0 18px;font-family:Georgia,"Times New Roman",serif}.rajac-next-vest a{display:flex;flex-direction:column;gap:5px;padding:16px 20px;border:1px solid rgba(70,56,28,.20);border-radius:16px;background:#fffaf2;text-decoration:none;color:#1e2c1c;box-shadow:0 8px 24px rgba(38,30,16,.05);transition:transform .2s,box-shadow .2s}.rajac-next-vest a:hover{transform:translateY(-2px);box-shadow:0 12px 30px rgba(38,30,16,.10)}.rajac-next-vest .rnv-k{font-size:12px;font-weight:900;letter-spacing:.14em;text-transform:uppercase;color:#9a7b32;font-family:Arial,sans-serif}.rajac-next-vest .rnv-title{font-size:17px;font-weight:800;line-height:1.32}</style><nav aria-label="Следећа вест" class="rajac-next-vest"><a href="https://piorajac.rs/rajac-vesti/posmatranje-ptica-na-rajcu/"><span class="rnv-k">Следећа вест →</span><span class="rnv-title">Посматрање птица на Рајцу</span></a></nav></main>
+<style id="rajac-admin-edit-style">.rajac-admin-edit-button{position:fixed;right:16px;bottom:16px;z-index:99999;display:none;align-items:center;justify-content:center;min-height:42px;padding:0 16px;border-radius:999px;background:#0d1b2a;color:#e0c678!important;text-decoration:none!important;font:900 12px/1 Arial,sans-serif;letter-spacing:.10em;text-transform:uppercase;box-shadow:0 12px 30px rgba(0,0,0,.22);border:1px solid rgba(224,198,120,.42)}</style><script id="rajac-admin-edit-script">(function(){try{if(document.cookie.indexOf("rajac_vesti_admin=1")===-1)return;var p=location.pathname.split("/").filter(Boolean);var slug=p[p.length-1]||"";if(!slug||slug==="rajac-vesti")return;var a=document.createElement("a");a.className="rajac-admin-edit-button";a.href="https://piorajac.rs/rajac-vesti/admin-edit.php?slug="+encodeURIComponent(slug);a.textContent="EDIT";a.style.display="inline-flex";document.body.appendChild(a);}catch(e){}})();</script>
+<!-- SITE_EDITOR_ADMIN_BAR_START -->
+<script defer="" src="/admin-site-editor.php?admin_bar_js=1"></script>
+<!-- SITE_EDITOR_ADMIN_BAR_END -->
+<button aria-label="На врх стране" id="rajac-totop" title="На врх" type="button">↑</button><style id="rajac-totop-css">#rajac-totop{position:fixed;right:16px;bottom:16px;z-index:10000;width:46px;height:46px;border-radius:999px;border:1px solid rgba(255,255,255,.4);background:rgba(20,30,40,.30);-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);color:#fff;font-size:22px;line-height:1;cursor:pointer;display:flex;align-items:center;justify-content:center;opacity:0;visibility:hidden;transition:opacity .25s,visibility .25s,background .2s;box-shadow:0 6px 20px rgba(0,0,0,.25);-webkit-tap-highlight-color:transparent}#rajac-totop.show{opacity:1;visibility:visible}#rajac-totop:hover{background:rgba(20,30,40,.55)}@media(max-width:1024px){#rajac-totop{right:12px;bottom:12px;width:44px;height:44px}}</style><script>(function(){var b=document.getElementById("rajac-totop");if(!b)return;function o(){if((window.pageYOffset||document.documentElement.scrollTop)>320)b.classList.add("show");else b.classList.remove("show");}window.addEventListener("scroll",o,{passive:true});o();b.addEventListener("click",function(){window.scrollTo({top:0,behavior:"smooth"});});})();</script></body>
+</html>

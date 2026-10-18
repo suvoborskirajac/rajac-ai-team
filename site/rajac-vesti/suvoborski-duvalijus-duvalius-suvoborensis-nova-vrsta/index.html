@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+
+<html lang="sr">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<title>Сувоборски дувалијус (Duvalius suvoborensis) – Нова врста за науку! — ПИО „Рајац”</title>
+<meta content="Оригинални текст вести о сувоборском дувалијусу, новој врсти за науку и ендемиту Сувоборско-рајачког масива." name="description"/>
+<link href="https://piorajac.rs/rajac-vesti/suvoborski-duvalijus-duvalius-suvoborensis-nova-vrsta/" rel="canonical"/>
+<style>
+    :root {
+      --bg:#f3efe4;
+      --paper:#fffdf8;
+      --ink:#172116;
+      --muted:#667064;
+      --nav:#0d1b2a;
+      --green:#174f2a;
+      --gold:#9a6a16;
+      --gold-soft:#ead7a6;
+      --line:rgba(28,36,27,.14);
+      --shadow:0 18px 50px rgba(33,33,24,.08);
+      --radius:28px;
+      --wrap:1120px;
+      --serif:"Cormorant Garamond","EB Garamond",Garamond,Georgia,serif;
+    }
+    * { box-sizing:border-box; }
+    html { scroll-behavior:smooth; }
+    body {
+      margin:0;
+      background:
+        radial-gradient(circle at 7% 0%, rgba(154,106,22,.08), transparent 28%),
+        linear-gradient(180deg,#f7f2e8 0%, var(--bg) 100%);
+      color:var(--ink);
+      font-family:var(--serif);
+      font-size:18px;
+      line-height:1.7;
+    }
+    a { color:inherit; }
+    .topbar {
+      position:sticky;
+      top:0;
+      z-index:50;
+      background:var(--nav);
+      border-bottom:1px solid rgba(255,255,255,.08);
+      box-shadow:0 8px 20px rgba(0,0,0,.08);
+    }
+    .topbar-inner {flex-wrap:wrap;
+      width:min(var(--wrap), calc(100% - 32px));
+      margin:auto;
+      min-height:58px;
+      display:flex;
+      align-items:center;
+      gap:10px;
+      overflow-x:visible;
+      scrollbar-width:none;
+      white-space:nowrap;
+    }
+    .topbar-inner::-webkit-scrollbar { display:none; }
+    .nav-home,
+    .nav-link {
+      text-decoration:none;
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      min-height:38px;
+      padding:0 14px;
+      border-radius:999px;
+      color:rgba(255,255,255,.74);
+      font-size:15px;
+      font-weight:700;
+      letter-spacing:.055em;
+      text-transform:uppercase;
+    }
+    .nav-home {
+      color:#f0d98c;
+      border:1px solid rgba(240,217,140,.36);
+      margin-right:8px;
+      text-transform:none;
+      letter-spacing:.035em;
+    }
+    .nav-link:hover,
+    .nav-home:hover {
+      background:rgba(255,255,255,.05);
+      color:#fff;
+    }
+    .nav-link.is-active {
+      color:#f0d98c;
+      border:1px solid rgba(240,217,140,.32);
+    }
+    .count {
+      display:inline-grid;
+      place-items:center;
+      min-width:20px;
+      height:20px;
+      padding:0 6px;
+      border-radius:999px;
+      background:rgba(240,217,140,.16);
+      color:#f0d98c;
+      font-size:12px;
+      line-height:1;
+      margin-left:2px;
+    }
+    .shell {
+      width:min(var(--wrap), calc(100% - 32px));
+      margin:0 auto;
+      padding:80px 0 90px;
+    }
+    .hero {
+      background:rgba(255,255,255,.62);
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
+      padding:62px 64px;
+      margin-bottom:26px;
+    }
+    .kicker {
+      margin:0 0 22px;
+      color:var(--gold);
+      font-weight:800;
+      letter-spacing:.22em;
+      text-transform:uppercase;
+      font-size:14px;
+    }
+    h1 {
+      margin:0;
+      max-width:950px;
+      font-size:clamp(42px, 5vw, 76px);
+      line-height:1.05;
+      font-weight:300;
+      letter-spacing:-.035em;
+      color:#172116;
+    }
+    .lead {
+      margin:26px 0 0;
+      max-width:820px;
+      color:var(--muted);
+      font-size:23px;
+      line-height:1.55;
+    }
+    .meta-grid {
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:14px;
+      margin:0 0 26px;
+    }
+    .meta-item {
+      background:rgba(255,255,255,.68);
+      border:1px solid var(--line);
+      border-radius:18px;
+      padding:18px 20px;
+    }
+    .meta-label {
+      display:block;
+      color:var(--gold);
+      font-size:13px;
+      letter-spacing:.18em;
+      text-transform:uppercase;
+      font-weight:800;
+      margin-bottom:6px;
+    }
+    .meta-value {
+      display:block;
+      font-size:20px;
+      color:#172116;
+      font-weight:600;
+    }
+    .article {
+      background:rgba(255,255,255,.74);
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
+      padding:58px 64px;
+      overflow:hidden;
+    }
+    .prose {
+      max-width:900px;
+      margin:auto;
+    }
+    .prose p {
+      margin:0 0 23px;
+      color:#4f5b4d;
+      font-size:23px;
+      line-height:1.62;
+    }
+    .prose h2,
+    .prose h3 {
+      color:#172116;
+      font-weight:300;
+      line-height:1.15;
+      margin:42px 0 16px;
+      letter-spacing:-.02em;
+    }
+    .prose h2 { font-size:42px; }
+    .prose h3 { font-size:34px; }
+    .prose ul,
+    .prose ol {
+      margin:18px 0 30px;
+      padding-left:28px;
+      color:#4f5b4d;
+      font-size:22px;
+      line-height:1.6;
+    }
+    .prose li { margin:0 0 12px; }
+    .prose strong { color:#172116; font-weight:700; }
+    .prose em { color:#172116; }
+    .news-figure {
+      margin:36px auto 38px;
+      max-width:820px;
+      border-radius:22px;
+      overflow:hidden;
+      border:1px solid rgba(28,36,27,.13);
+      box-shadow:0 16px 36px rgba(24,31,22,.12);
+      background:#fff;
+    }
+    .news-figure img {
+      display:block;
+      width:100%;
+      height:auto;
+    }
+    .foot {
+      display:flex;
+      justify-content:space-between;
+      gap:14px;
+      flex-wrap:wrap;
+      margin-top:26px;
+      padding-top:28px;
+      border-top:1px solid var(--line);
+    }
+    .btn {
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      min-height:42px;
+      padding:0 18px;
+      border-radius:999px;
+      border:1px solid rgba(23,79,42,.25);
+      background:#fff;
+      color:var(--green);
+      text-decoration:none;
+      font-size:15px;
+      font-weight:800;
+      letter-spacing:.08em;
+      text-transform:uppercase;
+    }
+    .btn:hover { background:#f2f8f1; }
+    @media (max-width:760px) {
+      .shell { width:min(100% - 22px, var(--wrap)); padding:34px 0 60px; }
+      .hero,.article { padding:30px 22px; border-radius:22px; }
+      .meta-grid { grid-template-columns:1fr; }
+      h1 { font-size:34px; }
+      .lead,.prose p,.prose ul,.prose ol { font-size:20px; }
+      .prose h2 { font-size:32px; }
+      .prose h3 { font-size:28px; }
+    }
+  </style>
+<style id="rajac-global-news-menu-style">
+.rajac-news-menu{position:sticky;top:0;z-index:9999;background:#0d1b2a;border-bottom:1px solid rgba(255,255,255,.10);font-family:Georgia,"Times New Roman",serif;box-shadow:0 8px 26px rgba(0,0,0,.08)}
+.rajac-news-menu *{box-sizing:border-box}.rajac-news-menu-inner{max-width:1180px;margin:0 auto;padding:9px 18px;min-height:56px;display:flex;flex-wrap:wrap;align-items:center;gap:8px;overflow-x:visible;scrollbar-width:none}.rajac-news-menu-inner::-webkit-scrollbar{display:none}
+.rajac-news-menu a{display:inline-flex;align-items:center;gap:6px;min-height:38px;padding:0 13px;border-radius:999px;color:rgba(255,255,255,.74);text-decoration:none;font-size:13px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;white-space:nowrap;line-height:1;font-family:Georgia,"Times New Roman",serif}
+.rajac-news-menu a:hover{background:rgba(255,255,255,.06);color:#fff}.rajac-news-menu .home{color:#e0c678;border:1px solid rgba(224,198,120,.34);background:rgba(224,198,120,.06)}
+.rajac-news-menu a.active{color:#e0c678!important;background:rgba(224,198,120,.08);outline:1px solid rgba(224,198,120,.26)}.rajac-news-menu small{display:inline-flex;align-items:center;justify-content:center;min-width:20px;height:20px;padding:0 6px;border-radius:999px;background:rgba(255,255,255,.10);color:#e0c678;font-size:11px;letter-spacing:0;font-family:Arial,sans-serif;font-weight:900}
+@media(max-width:650px){.rajac-news-menu-inner{padding:9px 10px}.rajac-news-menu a{font-size:12px;padding:0 10px}}
+</style>
+<style id="rajac-news-menu-one-row">
+/* Јединствен мени за све вести: један ред и исти sans-serif фонт као на осталим страницама сајта. */
+.rajac-news-menu{font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif!important}
+.rajac-news-menu-inner{width:min(100%,1600px)!important;max-width:1600px!important;margin:0 auto!important;padding:9px 14px!important;display:flex!important;flex-wrap:nowrap!important;align-items:center!important;justify-content:center!important;gap:4px!important;overflow-x:auto!important;overflow-y:hidden!important;scrollbar-width:none!important;-webkit-overflow-scrolling:touch}
+.rajac-news-menu-inner::-webkit-scrollbar{display:none!important}
+.rajac-news-menu a{flex:0 0 auto!important;min-height:38px!important;padding:0 10px!important;font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif!important;font-size:12px!important;font-weight:750!important;letter-spacing:.025em!important;line-height:1!important;text-transform:uppercase!important;white-space:nowrap!important}
+.rajac-news-menu small{font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif!important}
+@media(max-width:1050px){.rajac-news-menu-inner{justify-content:flex-start!important}.rajac-news-menu a{font-size:11px!important;padding:0 9px!important}}
+</style>
+<style id="rajac-unified-news-menu-v3">
+.rajac-news-menu{
+  position:sticky!important;top:0!important;z-index:9999!important;
+  width:100%!important;background:#0d1b2a!important;
+  border-bottom:1px solid rgba(255,255,255,.10)!important;
+  box-shadow:0 7px 22px rgba(0,0,0,.10)!important;
+  font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif!important;
+}
+.rajac-news-menu *{font-family:inherit!important;box-sizing:border-box!important}
+.rajac-news-menu-inner{
+  width:100%!important;max-width:1600px!important;margin:0 auto!important;
+  min-height:60px!important;padding:8px 14px!important;
+  display:flex!important;flex-direction:row!important;flex-wrap:nowrap!important;
+  align-items:center!important;justify-content:center!important;gap:6px!important;
+  overflow-x:auto!important;overflow-y:hidden!important;white-space:nowrap!important;
+  scrollbar-width:none!important;-webkit-overflow-scrolling:touch!important;
+}
+.rajac-news-menu-inner::-webkit-scrollbar{display:none!important}
+.rajac-news-menu a{
+  flex:0 0 auto!important;display:inline-flex!important;align-items:center!important;
+  justify-content:center!important;gap:6px!important;min-height:40px!important;
+  padding:0 12px!important;border-radius:999px!important;
+  color:rgba(255,255,255,.82)!important;background:transparent!important;
+  text-decoration:none!important;text-transform:uppercase!important;
+  white-space:nowrap!important;font-size:13px!important;line-height:1!important;
+  font-weight:750!important;letter-spacing:.025em!important;
+}
+.rajac-news-menu a:hover,.rajac-news-menu a:focus-visible{
+  color:#fff!important;background:rgba(255,255,255,.07)!important;
+}
+.rajac-news-menu a.home,.rajac-news-menu a.active{
+  color:#e4cb7e!important;background:rgba(228,203,126,.08)!important;
+  outline:1px solid rgba(228,203,126,.30)!important;
+}
+.rajac-news-menu small{
+  flex:0 0 auto!important;display:inline-flex!important;align-items:center!important;
+  justify-content:center!important;min-width:20px!important;height:20px!important;
+  padding:0 6px!important;border-radius:999px!important;
+  color:#e4cb7e!important;background:rgba(255,255,255,.10)!important;
+  font-size:11px!important;line-height:20px!important;font-weight:800!important;
+  letter-spacing:0!important;
+}
+@media(max-width:1180px){
+  .rajac-news-menu-inner{justify-content:flex-start!important;padding-inline:10px!important}
+  .rajac-news-menu a{font-size:12px!important;padding-inline:10px!important}
+}
+</style>
+<link href="https://piorajac.rs/rajac-vesti/assets/css/rajac-unified-menu.css" rel="stylesheet"/>
+<style id="pio-news-menu-one-row-final">
+
+/* === PIO RAJAC: JEDNOREDNI MENI NA SVIM STRANICAMA VESTI === */
+@media (min-width: 900px){
+  .rajac-news-menu{
+    width:100% !important;
+  }
+  .rajac-news-menu-inner{
+    width:100% !important;
+    max-width:1600px !important;
+    margin:0 auto !important;
+    padding:8px 12px !important;
+    display:flex !important;
+    flex-direction:row !important;
+    flex-wrap:nowrap !important;
+    align-items:center !important;
+    justify-content:center !important;
+    gap:clamp(3px,.55vw,9px) !important;
+    white-space:nowrap !important;
+    overflow-x:auto !important;
+    overflow-y:hidden !important;
+    scrollbar-width:none !important;
+  }
+  .rajac-news-menu-inner::-webkit-scrollbar{display:none !important;}
+  .rajac-news-menu a{
+    flex:0 0 auto !important;
+    white-space:nowrap !important;
+    padding-left:clamp(7px,.65vw,11px) !important;
+    padding-right:clamp(7px,.65vw,11px) !important;
+    font-size:clamp(11px,.86vw,14px) !important;
+  }
+}
+/* На ужим екранима мени остаје један ред и хоризонтално се помера, уместо да пада у други ред. */
+@media (max-width: 899px){
+  .rajac-news-menu-inner{
+    display:flex !important;
+    flex-wrap:nowrap !important;
+    justify-content:flex-start !important;
+    white-space:nowrap !important;
+    overflow-x:auto !important;
+    overflow-y:hidden !important;
+    scrollbar-width:none !important;
+    -webkit-overflow-scrolling:touch !important;
+  }
+  .rajac-news-menu-inner::-webkit-scrollbar{display:none !important;}
+  .rajac-news-menu a{flex:0 0 auto !important;white-space:nowrap !important;}
+}
+
+</style>
+</head>
+<body><nav aria-label="Мени вести" class="rajac-news-menu"><div class="rajac-news-menu-inner"><a class="home" href="https://piorajac.rs/">ПИО „РАЈАЦ“</a><a href="https://piorajac.rs/rajac-vesti/">СВЕ ВЕСТИ</a><a href="https://piorajac.rs/rajac-vesti/kategorije/aktuelno/">АКТУЕЛНО<small>7</small></a><a href="https://piorajac.rs/rajac-vesti/kategorije/vesti/">ВЕСТИ<small>3</small></a><a href="https://piorajac.rs/rajac-vesti/kategorije/izvestaji/">ИЗВЕШТАЈИ<small>8</small></a><a href="https://piorajac.rs/rajac-vesti/kategorije/istrazivanja/">ИСТРАЖИВАЊА<small>9</small></a><a href="https://piorajac.rs/rajac-vesti/kategorije/dogadjaji/">ДОГАЂАЈИ<small>5</small></a><a href="https://piorajac.rs/rajac-vesti/kategorije/u-fokusu/">У ФОКУСУ<small>4</small></a></div></nav>
+<main class="shell">
+<section class="hero">
+<p class="kicker">ТЕМА · 6. март 2026.</p>
+<h1>Сувоборски дувалијус (Duvalius suvoborensis) – Нова врста за науку!</h1>
+<p class="lead">Откриће врсте <em>Duvalius suvoborensis</em> показује изузетан научни и конзервациони значај подземних станишта Рајца и Сувобора.</p>
+</section>
+<section aria-label="Подаци о вести" class="meta-grid">
+<div class="meta-item"><span class="meta-label">Локација</span><span class="meta-value">ПИО „Рајац”</span></div>
+<div class="meta-item"><span class="meta-label">Датум</span><span class="meta-value">6. март 2026.</span></div>
+<div class="meta-item"><span class="meta-label">Категорија</span><span class="meta-value">Тема</span></div>
+</section>
+<article class="article">
+<div class="prose" id="rp-prose-1304">
+<p class="wp-block-paragraph">У оквиру најновијих истраживања која су претходила проглашењу Предела изузетних одлика „Рајац“, научна заједница дошла је до епохалног открића. Потврђено је постојање врсте <strong>Сувоборски дувалијус</strong> (<em>Duvalius suvoborensis</em>), ситног трчуљка који је потпуно нов за науку и представља светски куриозитет. Овај инсект је <strong>ендемит Сувоборско-рајачког масива</strong>, што значи да не живи нигде другде на планети. Његово присуство у подземним пукотинама и јамама Рајца сврстава ову планину на мапу најзначајнијих центара биодиверзитета у Европи. <em>Duvalius suvoborensis</em> припада групи пећинских трчуљака који су се хиљадама година прилагођавали животу у условима вечите таме:</p>
+<p class="wp-block-paragraph"><em>Duvalius suvoborensis</em> припада групи пећинских трчуљака који су се хиљадама година прилагођавали животу у условима вечите таме:</p>
+<ul class="wp-block-list">
+<li><strong>Адаптација на таму:</strong> Тело му је ситно, најчешће светложуте или кестењасте боје, са издуженим ногама и веома дугим антенама које му служе за оријентацију.</li>
+<li><strong>Без вида:</strong> Као прави становник подземља, ова врста нема развијене очи, већ се ослања на изузетно осетљиве чулне длачице.</li>
+<li><strong>Специфично станиште:</strong> Живи искључиво у хладним и влажним пукотинама стена и унутар пећинских система где је температура константна током целе године.</li>
+</ul>
+<figure class="wp-block-image aligncenter size-full news-figure"><img alt="Сувоборски дувалијус (Duvalius suvoborensis) — нова врста за науку" class="wp-image-1310" decoding="async" fetchpriority="high" height="507" loading="lazy" sizes="(max-width: 858px) 100vw, 858px" src="/wp-content/uploads/2026/03/duvalius.jpg" srcset="https://piorajac.rs/wp-content/uploads/2026/03/duvalius.jpg 858w, https://piorajac.rshttps://piorajac.rs/wp-content/uploads/2026/03/duvalius-300x177.jpg 300w, https://piorajac.rshttps://piorajac.rs/wp-content/uploads/2026/03/duvalius-768x454.jpg 768w" width="858"/></figure>
+<h3 class="wp-block-heading">Зашто је откриће овог инсекта прекретница?</h3>
+<p class="wp-block-paragraph">Проналазак нове врсте за науку у 21. веку на тако малом простору као што је Рајац јасан је сигнал да су наша планинска подручја још увек недовољно истражена и еколошки изузетно вредна.</p>
+<ol class="wp-block-list" start="1">
+<li><strong>Заштита вода и земљишта:</strong> Пошто живи у подземљу, ова врста је директно зависна од чистоће подножних вода. Свако загађење површинских вода на Рајцу директно прети опстанку ове врсте.</li>
+<li><strong>Научни значај:</strong> Опис ове врсте објављен је у еминентним научним часописима, чиме је Сувобор трајно уписан у светску ентомолошку литературу.</li>
+<li><strong>Еко-туризам:</strong> Оваква открића привлаче пажњу истраживача и љубитеља природе из целог света, подижући значај Рајца као еколошке дестинације.</li>
+</ol>
+</div>
+<footer class="foot">
+<a class="btn" href="https://piorajac.rs/rajac-vesti/">← Назад на све вести</a>
+<a class="btn" href="https://piorajac.rs/">Почетна страна →</a>
+</footer>
+</article>
+<style id="rajac-nextvest-css">.rajac-next-vest{max-width:760px;margin:34px auto 44px;padding:0 18px;font-family:Georgia,"Times New Roman",serif}.rajac-next-vest a{display:flex;flex-direction:column;gap:5px;padding:16px 20px;border:1px solid rgba(70,56,28,.20);border-radius:16px;background:#fffaf2;text-decoration:none;color:#1e2c1c;box-shadow:0 8px 24px rgba(38,30,16,.05);transition:transform .2s,box-shadow .2s}.rajac-next-vest a:hover{transform:translateY(-2px);box-shadow:0 12px 30px rgba(38,30,16,.10)}.rajac-next-vest .rnv-k{font-size:12px;font-weight:900;letter-spacing:.14em;text-transform:uppercase;color:#9a7b32;font-family:Arial,sans-serif}.rajac-next-vest .rnv-title{font-size:17px;font-weight:800;line-height:1.32}</style><nav aria-label="Следећа вест" class="rajac-next-vest"><a href="https://piorajac.rs/rajac-vesti/otkrice-u-pio-rajac-potvrdjeno-prisustvo-cheilosia-schnabli/"><span class="rnv-k">Следећа вест →</span><span class="rnv-title">Потврђено присуство строго заштићене осолике муве</span></a></nav></main>
+<style id="rajac-admin-edit-style">.rajac-admin-edit-button{position:fixed;right:16px;bottom:16px;z-index:99999;display:none;align-items:center;justify-content:center;min-height:42px;padding:0 16px;border-radius:999px;background:#0d1b2a;color:#e0c678!important;text-decoration:none!important;font:900 12px/1 Arial,sans-serif;letter-spacing:.10em;text-transform:uppercase;box-shadow:0 12px 30px rgba(0,0,0,.22);border:1px solid rgba(224,198,120,.42)}</style><script id="rajac-admin-edit-script">(function(){try{if(document.cookie.indexOf("rajac_vesti_admin=1")===-1)return;var p=location.pathname.split("/").filter(Boolean);var slug=p[p.length-1]||"";if(!slug||slug==="rajac-vesti")return;var a=document.createElement("a");a.className="rajac-admin-edit-button";a.href="https://piorajac.rs/rajac-vesti/admin-edit.php?slug="+encodeURIComponent(slug);a.textContent="EDIT";a.style.display="inline-flex";document.body.appendChild(a);}catch(e){}})();</script>
+<!-- SITE_EDITOR_ADMIN_BAR_START -->
+<script defer="" src="/admin-site-editor.php?admin_bar_js=1"></script>
+<!-- SITE_EDITOR_ADMIN_BAR_END -->
+<button aria-label="На врх стране" id="rajac-totop" title="На врх" type="button">↑</button><style id="rajac-totop-css">#rajac-totop{position:fixed;right:16px;bottom:16px;z-index:10000;width:46px;height:46px;border-radius:999px;border:1px solid rgba(255,255,255,.4);background:rgba(20,30,40,.30);-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);color:#fff;font-size:22px;line-height:1;cursor:pointer;display:flex;align-items:center;justify-content:center;opacity:0;visibility:hidden;transition:opacity .25s,visibility .25s,background .2s;box-shadow:0 6px 20px rgba(0,0,0,.25);-webkit-tap-highlight-color:transparent}#rajac-totop.show{opacity:1;visibility:visible}#rajac-totop:hover{background:rgba(20,30,40,.55)}@media(max-width:1024px){#rajac-totop{right:12px;bottom:12px;width:44px;height:44px}}</style><script>(function(){var b=document.getElementById("rajac-totop");if(!b)return;function o(){if((window.pageYOffset||document.documentElement.scrollTop)>320)b.classList.add("show");else b.classList.remove("show");}window.addEventListener("scroll",o,{passive:true});o();b.addEventListener("click",function(){window.scrollTo({top:0,behavior:"smooth"});});})();</script></body>
+</html>

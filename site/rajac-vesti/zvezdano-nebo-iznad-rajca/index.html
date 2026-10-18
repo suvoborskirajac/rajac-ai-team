@@ -1,0 +1,849 @@
+<!DOCTYPE html>
+
+<html lang="sr-Cyrl">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>Звездано небо изнад Рајца — снимак целог видљивог неба</title>
+<meta content="All-sky снимак са врха Рајца, настао од 23 фотографије у ноћи без Месеца и облака, приказује очувано тамно небо, хоризонталне изворе светлосног загађења и потенцијал подручја за астрономска посматрања и астрофотографију." name="description"/>
+<meta content="Звездано небо изнад Рајца — снимак целог видљивог неба" property="og:title"/>
+<meta content="All-sky снимак са врха Рајца, настао од 23 фотографије у ноћи без Месеца и облака, приказује очувано тамно небо, хоризонталне изворе светлосног загађења и потенцијал подручја за астрономска посматрања и астрофотографију." property="og:description"/>
+<meta content="/rajac-vesti/assets/img/reports/rajac-allsky-pravi-sever-2500.jpg" property="og:image"/>
+<style>
+:root{
+  --bg:#f4efe3;
+  --paper:#fffdf7;
+  --ink:#121a22;
+  --muted:#61706d;
+  --line:rgba(25,35,31,.14);
+  --line2:rgba(25,35,31,.08);
+  --nav:#0d1b2a;
+  --gold:#d9bd6a;
+  --gold2:#9b6b12;
+  --green:#173e27;
+  --green2:#1d6b37;
+  --night:#07101a;
+  --radius:28px;
+  --shadow:0 22px 60px rgba(19,29,22,.10);
+  --wrap:min(1180px,calc(100% - 42px));
+}
+
+*{box-sizing:border-box}
+
+html{scroll-behavior:smooth}
+
+body{
+  margin:0;
+  color:var(--ink);
+  font-family:Georgia,"Times New Roman",serif;
+  background:
+    radial-gradient(circle at 12% 0%,rgba(217,189,106,.18),transparent 32%),
+    radial-gradient(circle at 88% 0%,rgba(29,107,55,.12),transparent 36%),
+    var(--bg);
+}
+
+a{
+  color:inherit;
+  text-decoration:none;
+}
+
+img{
+  display:block;
+  max-width:100%;
+}
+
+.rajac-news-menu{
+  position:sticky;
+  top:0;
+  z-index:30;
+  background:var(--nav);
+  border-bottom:1px solid rgba(255,255,255,.10);
+  box-shadow:0 8px 26px rgba(0,0,0,.08);
+}
+
+.rajac-news-menu-inner{flex-wrap:wrap;
+  max-width:1180px;
+  margin:0 auto;
+  padding:0 18px;
+  min-height:56px;
+  display:flex;
+  align-items:center;
+  gap:8px;
+  overflow-x:visible;
+  scrollbar-width:none;
+}
+
+.rajac-news-menu-inner::-webkit-scrollbar{display:none}
+
+.rajac-news-menu a{
+  display:inline-flex;
+  align-items:center;
+  gap:6px;
+  min-height:38px;
+  padding:0 13px;
+  border-radius:999px;
+  color:rgba(255,255,255,.74);
+  font-family:Arial,sans-serif;
+  font-size:13px;
+  font-weight:800;
+  letter-spacing:.06em;
+  text-transform:uppercase;
+  white-space:nowrap;
+  line-height:1;
+}
+
+.rajac-news-menu a:hover{
+  background:rgba(255,255,255,.06);
+  color:#fff;
+}
+
+.rajac-news-menu .home{
+  color:#e0c678;
+  border:1px solid rgba(224,198,120,.34);
+  background:rgba(224,198,120,.06);
+}
+
+.rajac-news-menu a.active{
+  color:#e0c678;
+  background:rgba(224,198,120,.08);
+  outline:1px solid rgba(224,198,120,.26);
+}
+
+.rajac-news-menu small{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  min-width:20px;
+  height:20px;
+  padding:0 6px;
+  border-radius:999px;
+  background:rgba(255,255,255,.10);
+  color:#e0c678;
+  font-size:11px;
+  letter-spacing:0;
+}
+
+.shell{
+  width:var(--wrap);
+  margin:0 auto;
+}
+
+.hero{
+  padding:72px 0 34px;
+  border-bottom:1px solid var(--line);
+}
+
+.kicker{
+  margin:0 0 16px;
+  color:var(--gold2);
+  font-family:Arial,sans-serif;
+  font-size:13px;
+  font-weight:900;
+  letter-spacing:.24em;
+  text-transform:uppercase;
+}
+
+.hero h1{
+  margin:0;
+  max-width:1020px;
+  font-size:clamp(44px,6.6vw,82px);
+  line-height:.98;
+  font-weight:400;
+  letter-spacing:-.045em;
+}
+
+.subtitle{
+  max-width:900px;
+  margin:24px 0 0;
+  color:var(--muted);
+  font-size:clamp(19px,1.6vw,24px);
+  line-height:1.66;
+}
+
+.actions{
+  display:flex;
+  gap:12px;
+  flex-wrap:wrap;
+  margin-top:30px;
+}
+
+.btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  min-height:48px;
+  padding:0 18px;
+  border-radius:999px;
+  font-family:Arial,sans-serif;
+  font-size:13px;
+  font-weight:900;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  border:1px solid var(--line);
+  transition:.18s ease;
+  background:#fffdf7;
+  color:var(--green);
+}
+
+.btn.primary{
+  background:var(--green2);
+  color:white;
+  border-color:transparent;
+}
+
+.btn:hover{
+  transform:translateY(-2px);
+  box-shadow:0 12px 28px rgba(25,31,24,.12);
+}
+
+/* ISPRAVLJENO: uvećava se sam krug ribljeg oka, a višak crne pozadine se seče */
+.feature{
+  margin:38px 0 34px;
+  border-radius:34px;
+  overflow:hidden;
+  background:#07101a;
+  border:1px solid rgba(255,255,255,.10);
+  box-shadow:0 28px 80px rgba(5,12,18,.22);
+  padding:14px 14px 0;
+}
+
+.feature .sky-link{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  width:100%;
+  height:min(76vh,780px);
+  min-height:620px;
+  border-radius:24px;
+  overflow:hidden;
+  background:#000;
+  cursor:pointer;
+}
+
+.feature img{
+  width:100%;
+  height:100%;
+  max-width:none;
+  object-fit:contain;
+  object-position:center center;
+  background:#000;
+  transform:scale(1.68);
+  transform-origin:center center;
+  transition:transform .25s ease, filter .25s ease;
+  will-change:transform;
+}
+
+.feature .sky-link:hover img{
+  transform:scale(1.73);
+  filter:brightness(1.06) contrast(1.04);
+}
+
+.feature figcaption{
+  padding:15px 4px 18px;
+  color:rgba(255,255,255,.76);
+  font:14px/1.6 Arial,sans-serif;
+  background:#07101a;
+}
+
+.feature figcaption a{
+  color:#e0c678;
+  font-weight:900;
+  text-decoration:none;
+  border-bottom:1px solid rgba(224,198,120,.45);
+}
+
+.feature figcaption a:hover{
+  color:#fff;
+  border-bottom-color:#fff;
+}
+
+.layout{
+  display:grid;
+  grid-template-columns:minmax(0,1.05fr) minmax(310px,.45fr);
+  gap:24px;
+  margin:30px 0 64px;
+  align-items:start;
+}
+
+.card{
+  background:rgba(255,253,247,.86);
+  border:1px solid var(--line2);
+  border-radius:var(--radius);
+  box-shadow:var(--shadow);
+  padding:clamp(24px,3.2vw,42px);
+}
+
+.prose p{
+  font-size:20px;
+  line-height:1.8;
+  color:var(--muted);
+  margin:0 0 18px;
+}
+
+.prose .lead{
+  font-size:23px;
+  line-height:1.72;
+  color:#38423f;
+  margin-bottom:24px;
+}
+
+.prose h2{
+  margin:36px 0 14px;
+  color:var(--green);
+  font-size:clamp(30px,3.1vw,44px);
+  font-weight:400;
+  line-height:1.08;
+  letter-spacing:-.025em;
+}
+
+.prose h2:first-child{margin-top:0}
+
+.prose strong{color:#1b2824}
+
+.note-box{
+  margin:26px 0;
+  padding:22px;
+  border-radius:22px;
+  background:#f1ead8;
+  border:1px solid rgba(155,107,18,.18);
+}
+
+.note-box p{
+  margin:0;
+  color:#4e4a3e;
+  font-size:19px;
+  line-height:1.65;
+}
+
+.facts-card{
+  background:linear-gradient(155deg,#081421,#102719);
+  color:white;
+  border-color:rgba(255,255,255,.10);
+}
+
+.facts-card h2{
+  margin:0 0 18px;
+  font-size:34px;
+  font-weight:400;
+  color:white;
+  line-height:1.12;
+}
+
+.facts{
+  display:grid;
+  gap:13px;
+}
+
+.fact{
+  padding:15px 16px;
+  border-radius:18px;
+  background:rgba(255,255,255,.07);
+  border:1px solid rgba(255,255,255,.12);
+}
+
+.fact span{
+  display:block;
+  margin-bottom:6px;
+  color:#e8c978;
+  font-family:Arial,sans-serif;
+  font-size:12px;
+  font-weight:900;
+  letter-spacing:.15em;
+  text-transform:uppercase;
+}
+
+.fact strong{
+  display:block;
+  font-size:22px;
+  font-weight:400;
+  line-height:1.22;
+  color:white;
+}
+
+.fact em{
+  display:block;
+  margin-top:5px;
+  color:rgba(255,255,255,.72);
+  font-style:normal;
+  font-size:15px;
+  line-height:1.45;
+}
+
+.mini-nav{
+  display:grid;
+  gap:10px;
+  margin-top:20px;
+  padding-top:20px;
+  border-top:1px solid rgba(255,255,255,.12);
+}
+
+.mini-nav a{
+  display:block;
+  padding:13px 14px;
+  border-radius:15px;
+  background:rgba(255,255,255,.07);
+  color:rgba(255,255,255,.86);
+  font-family:Arial,sans-serif;
+  font-size:13px;
+  font-weight:900;
+  letter-spacing:.06em;
+  text-transform:uppercase;
+}
+
+.mini-nav a:hover{
+  background:rgba(255,255,255,.12);
+  color:#fff;
+}
+
+
+.side-photo{
+  margin:22px -8px 0;
+  padding:0;
+  border:0;
+  background:transparent;
+  border-radius:0;
+}
+
+.side-photo img{
+  display:block;
+  width:100%;
+  max-width:none;
+  height:auto;
+  border:0;
+  border-radius:18px;
+  box-shadow:none;
+}
+
+.side-photo figcaption{
+  margin:9px 8px 0;
+  color:rgba(255,255,255,.72);
+  font:13px/1.45 Arial,sans-serif;
+}
+
+.grid-3{
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:16px;
+  margin:20px 0 28px;
+}
+
+.mini{
+  padding:20px;
+  border-radius:22px;
+  background:#fbf7ed;
+  border:1px solid var(--line);
+}
+
+.mini span{
+  display:inline-flex;
+  margin-bottom:10px;
+  color:var(--gold2);
+  font-family:Arial,sans-serif;
+  font-size:12px;
+  font-weight:900;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+}
+
+.mini h3{
+  margin:0 0 8px;
+  color:var(--green);
+  font-size:24px;
+  font-weight:400;
+  line-height:1.16;
+}
+
+.mini p{
+  margin:0;
+  font-size:18px;
+  line-height:1.58;
+  color:var(--muted);
+}
+
+.callout{
+  margin-top:28px;
+  padding:28px;
+  border-radius:26px;
+  background:linear-gradient(145deg,#173e27,#1d6b37);
+  color:white;
+  box-shadow:var(--shadow);
+}
+
+.callout h2{
+  margin:0 0 10px!important;
+  color:#fff!important;
+  font-size:34px!important;
+}
+
+.callout p{
+  margin:0;
+  color:rgba(255,255,255,.80);
+  font-size:19px;
+  line-height:1.65;
+}
+
+.bottomnav{
+  display:flex;
+  justify-content:space-between;
+  gap:16px;
+  margin:0 0 58px;
+  padding-top:26px;
+  border-top:1px solid var(--line);
+}
+
+.bottomnav a{
+  font-family:Arial,sans-serif;
+  font-size:13px;
+  font-weight:900;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+  color:#8a650f;
+}
+
+@media(max-width:960px){
+  .layout{
+    grid-template-columns:1fr;
+  }
+
+  .grid-3{
+    grid-template-columns:1fr;
+  }
+
+  .feature .sky-link{
+    height:min(72vh,680px);
+    min-height:520px;
+  }
+
+  .feature img{
+    transform:scale(1.60);
+  }
+
+  .feature .sky-link:hover img{
+    transform:scale(1.64);
+  }
+}
+
+@media(max-width:650px){
+  :root{
+    --wrap:min(100% - 24px,1180px);
+  }
+
+  .hero{
+    padding-top:52px;
+  }
+
+  .hero h1{
+    font-size:42px;
+  }
+
+  .card{
+    padding:24px 18px;
+  }
+
+  .prose p,
+  .prose .lead{
+    font-size:18px;
+  }
+
+  .bottomnav{
+    display:grid;
+  }
+
+  .rajac-news-menu-inner{
+    padding:0 10px;
+  }
+
+  .rajac-news-menu a{
+    font-size:12px;
+    padding:0 10px;
+  }
+
+  .feature{
+    margin:28px 0 26px;
+    border-radius:24px;
+    padding:9px 9px 0;
+  }
+
+  .feature .sky-link{
+    height:min(68vh,540px);
+    min-height:420px;
+    border-radius:18px;
+  }
+
+  .feature img{
+    transform:scale(1.48);
+  }
+
+  .feature .sky-link:hover img{
+    transform:scale(1.50);
+  }
+
+  .feature figcaption{
+    font-size:13px;
+    padding:12px 2px 15px;
+  }
+}
+</style>
+<style id="rajac-news-menu-one-row">
+/* Јединствен мени за све вести: један ред и исти sans-serif фонт као на осталим страницама сајта. */
+.rajac-news-menu{font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif!important}
+.rajac-news-menu-inner{width:min(100%,1600px)!important;max-width:1600px!important;margin:0 auto!important;padding:9px 14px!important;display:flex!important;flex-wrap:nowrap!important;align-items:center!important;justify-content:center!important;gap:4px!important;overflow-x:auto!important;overflow-y:hidden!important;scrollbar-width:none!important;-webkit-overflow-scrolling:touch}
+.rajac-news-menu-inner::-webkit-scrollbar{display:none!important}
+.rajac-news-menu a{flex:0 0 auto!important;min-height:38px!important;padding:0 10px!important;font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif!important;font-size:12px!important;font-weight:750!important;letter-spacing:.025em!important;line-height:1!important;text-transform:uppercase!important;white-space:nowrap!important}
+.rajac-news-menu small{font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif!important}
+@media(max-width:1050px){.rajac-news-menu-inner{justify-content:flex-start!important}.rajac-news-menu a{font-size:11px!important;padding:0 9px!important}}
+</style>
+<style id="rajac-unified-news-menu-v3">
+.rajac-news-menu{
+  position:sticky!important;top:0!important;z-index:9999!important;
+  width:100%!important;background:#0d1b2a!important;
+  border-bottom:1px solid rgba(255,255,255,.10)!important;
+  box-shadow:0 7px 22px rgba(0,0,0,.10)!important;
+  font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif!important;
+}
+.rajac-news-menu *{font-family:inherit!important;box-sizing:border-box!important}
+.rajac-news-menu-inner{
+  width:100%!important;max-width:1600px!important;margin:0 auto!important;
+  min-height:60px!important;padding:8px 14px!important;
+  display:flex!important;flex-direction:row!important;flex-wrap:nowrap!important;
+  align-items:center!important;justify-content:center!important;gap:6px!important;
+  overflow-x:auto!important;overflow-y:hidden!important;white-space:nowrap!important;
+  scrollbar-width:none!important;-webkit-overflow-scrolling:touch!important;
+}
+.rajac-news-menu-inner::-webkit-scrollbar{display:none!important}
+.rajac-news-menu a{
+  flex:0 0 auto!important;display:inline-flex!important;align-items:center!important;
+  justify-content:center!important;gap:6px!important;min-height:40px!important;
+  padding:0 12px!important;border-radius:999px!important;
+  color:rgba(255,255,255,.82)!important;background:transparent!important;
+  text-decoration:none!important;text-transform:uppercase!important;
+  white-space:nowrap!important;font-size:13px!important;line-height:1!important;
+  font-weight:750!important;letter-spacing:.025em!important;
+}
+.rajac-news-menu a:hover,.rajac-news-menu a:focus-visible{
+  color:#fff!important;background:rgba(255,255,255,.07)!important;
+}
+.rajac-news-menu a.home,.rajac-news-menu a.active{
+  color:#e4cb7e!important;background:rgba(228,203,126,.08)!important;
+  outline:1px solid rgba(228,203,126,.30)!important;
+}
+.rajac-news-menu small{
+  flex:0 0 auto!important;display:inline-flex!important;align-items:center!important;
+  justify-content:center!important;min-width:20px!important;height:20px!important;
+  padding:0 6px!important;border-radius:999px!important;
+  color:#e4cb7e!important;background:rgba(255,255,255,.10)!important;
+  font-size:11px!important;line-height:20px!important;font-weight:800!important;
+  letter-spacing:0!important;
+}
+@media(max-width:1180px){
+  .rajac-news-menu-inner{justify-content:flex-start!important;padding-inline:10px!important}
+  .rajac-news-menu a{font-size:12px!important;padding-inline:10px!important}
+}
+</style>
+<link href="https://piorajac.rs/rajac-vesti/assets/css/rajac-unified-menu.css" rel="stylesheet"/>
+<style id="pio-news-menu-one-row-final">
+
+/* === PIO RAJAC: JEDNOREDNI MENI NA SVIM STRANICAMA VESTI === */
+@media (min-width: 900px){
+  .rajac-news-menu{
+    width:100% !important;
+  }
+  .rajac-news-menu-inner{
+    width:100% !important;
+    max-width:1600px !important;
+    margin:0 auto !important;
+    padding:8px 12px !important;
+    display:flex !important;
+    flex-direction:row !important;
+    flex-wrap:nowrap !important;
+    align-items:center !important;
+    justify-content:center !important;
+    gap:clamp(3px,.55vw,9px) !important;
+    white-space:nowrap !important;
+    overflow-x:auto !important;
+    overflow-y:hidden !important;
+    scrollbar-width:none !important;
+  }
+  .rajac-news-menu-inner::-webkit-scrollbar{display:none !important;}
+  .rajac-news-menu a{
+    flex:0 0 auto !important;
+    white-space:nowrap !important;
+    padding-left:clamp(7px,.65vw,11px) !important;
+    padding-right:clamp(7px,.65vw,11px) !important;
+    font-size:clamp(11px,.86vw,14px) !important;
+  }
+}
+/* На ужим екранима мени остаје један ред и хоризонтално се помера, уместо да пада у други ред. */
+@media (max-width: 899px){
+  .rajac-news-menu-inner{
+    display:flex !important;
+    flex-wrap:nowrap !important;
+    justify-content:flex-start !important;
+    white-space:nowrap !important;
+    overflow-x:auto !important;
+    overflow-y:hidden !important;
+    scrollbar-width:none !important;
+    -webkit-overflow-scrolling:touch !important;
+  }
+  .rajac-news-menu-inner::-webkit-scrollbar{display:none !important;}
+  .rajac-news-menu a{flex:0 0 auto !important;white-space:nowrap !important;}
+}
+
+</style>
+</head>
+<body>
+<nav aria-label="Мени вести" class="rajac-news-menu"><div class="rajac-news-menu-inner"><a class="home" href="https://piorajac.rs/">ПИО „РАЈАЦ“</a><a href="https://piorajac.rs/rajac-vesti/">СВЕ ВЕСТИ</a><a href="https://piorajac.rs/rajac-vesti/kategorije/aktuelno/">АКТУЕЛНО<small>7</small></a><a href="https://piorajac.rs/rajac-vesti/kategorije/vesti/">ВЕСТИ<small>3</small></a><a href="https://piorajac.rs/rajac-vesti/kategorije/izvestaji/">ИЗВЕШТАЈИ<small>8</small></a><a href="https://piorajac.rs/rajac-vesti/kategorije/istrazivanja/">ИСТРАЖИВАЊА<small>9</small></a><a href="https://piorajac.rs/rajac-vesti/kategorije/dogadjaji/">ДОГАЂАЈИ<small>5</small></a><a href="https://piorajac.rs/rajac-vesti/kategorije/u-fokusu/">У ФОКУСУ<small>4</small></a></div></nav>
+<main class="shell">
+<section class="hero">
+<p class="kicker">ИСТРАЖИВАЊА · 10.06.2026.</p>
+<h1>Звездано небо изнад Рајца на снимку целог видљивог неба</h1>
+<p class="subtitle">Нови all-sky снимак са врха Рајца показује да је ноћно небо још увек очувано и погодно за астрономска посматрања, астрофотографију и даљи мониторинг светлосног загађења.</p>
+<div class="actions">
+<a class="btn primary" href="https://piorajac.rs/zvezdano-nebo/">Погледај интерактивни снимак</a>
+<a class="btn" href="#tehnika">Како је снимљено</a>
+</div>
+</section>
+<figure class="feature">
+<a aria-label="Отвори интерактивни приказ звезданог неба изнад Рајца" class="sky-link" href="https://piorajac.rs/zvezdano-nebo/">
+<img alt="Звездано небо изнад Рајца у кружној all-sky пројекцији" onerror="this.onerror=null;this.src='https://piorajac.rs/zvezdano-nebo/rajac_allsky_8000_web_enhanced_dark.jpg';" src="/rajac-vesti/assets/img/reports/rajac-allsky-pravi-sever-2500.jpg"/>
+</a>
+<figcaption>
+      Снимак целог видљивог неба изнад Рајца у кружној пројекцији типа „рибље око”. Приказ је оријентисан према правом северу, како би се хоризонт и правци светлосних извора читали правилно.
+      <a href="https://piorajac.rs/zvezdano-nebo/">Отвори интерактивни приказ.</a>
+</figcaption>
+</figure>
+<section class="layout">
+<article class="card prose">
+<p class="lead">На врху Рајца је у ноћи без Месеца и облака снимљена панорама звезданог неба која обухвата готово цео небески свод. Снимак има и естетску и документациону вредност, јер приказује однос између тамног неба изнад Рајца и светлосног загађења које долази из ширег окружења.</p>
+<p>У тренутку снимања атмосфера је била веома чиста и стабилна. Квалитет ноћног неба био је изузетно добар, са вредностима већим од <strong>21,00 mag/arcsec²</strong>, што указује на услове погодне за посматрање звезда, Млечног пута и слабијих објеката дубоког неба.</p>
+<div class="note-box">
+<p>Почетна оријентација интерактивног приказа подешена је према <strong>правом северу</strong>. То је важно јер all-sky снимак није само лепа фотографија, већ и просторни документ: омогућава да се светлосни извори на хоризонту повежу са стварним правцима у околини Рајца.</p>
+</div>
+<h2 id="tehnika">Како је снимљено</h2>
+<p>Снимак звезданог неба изнад Рајца настао је <strong>8. јуна 2026. године, око 23:30 часова</strong>, са врха Рајца. Снимано је фото-апаратом <strong>Nikon Z6</strong>, широкоугаоним објективом <strong>16 mm</strong>.</p>
+<div aria-label="Основни подаци о снимању" class="grid-3">
+<article class="mini">
+<span>серија</span>
+<h3>23 фотографије</h3>
+<p>Панорама је састављена од више појединачних снимака, како би се обухватио цео видљиви небески свод.</p>
+</article>
+<article class="mini">
+<span>експозиција</span>
+<h3>15 секунди</h3>
+<p>Сваки снимак је експониран довољно дуго да се забележе звезде, али без прекомерног развлачења њиховог трага.</p>
+</article>
+<article class="mini">
+<span>подешавања</span>
+<h3>f/2.8 · ISO 1000</h3>
+<p>Комбинација отворене бленде и умерене осетљивости омогућила је добар однос између звезда и природне таме неба.</p>
+</article>
+</div>
+<h2>Како је добијен приказ „рибље око”</h2>
+<p>Ово није један класичан снимак, већ сложена панорамска обрада целог видљивог неба. Појединачне фотографије су софтверски поравнате и спојене у јединствену небеску панораму, а затим пројектоване у кружни приказ типа „рибље око”.</p>
+<p>Таква пројекција омогућава да се истовремено виде зенит, хоризонт и светлосни извори у околини. Током обраде задржан је природан однос између тамног неба, звезда, хоризонта и светлосног загађења, како би снимак био користан и за промоцију и за праћење стања ноћног неба.</p>
+<h2>Шта снимак показује</h2>
+<p>Снимак показује да је звездано небо изнад Рајца још увек очувано, и поред светлосних извора из удаљених насеља. Такви услови чине Рајац погодним за астрономска посматрања и астрофотографију.</p>
+<p>Истовремено, светлији делови хоризонта показују да заштита ноћног неба не зависи само од простора на коме се посматра, већ и од начина осветљавања у околним насељима, саобраћајницама и туристичким зонама.</p>
+<div class="callout">
+<h2>Мониторинг и „Звездани парк Рајац”</h2>
+<p>Снимање се спроводи у оквиру целогодишњег мониторинга ноћног неба и пројекта „Звездани парк Рајац”. Циљ је да се квалитет тамног неба документује, прати кроз време и представи као важна природна и едукативна вредност Предела изузетних одлика „Рајац”.</p>
+</div>
+</article>
+<aside class="card facts-card">
+<h2>Основни подаци</h2>
+<div class="facts">
+<div class="fact">
+<span>локација</span>
+<strong>врх Рајца</strong>
+<em>ПИО „Рајац”</em>
+</div>
+<div class="fact">
+<span>датум</span>
+<strong>8. јун 2026.</strong>
+<em>око 23:30 часова</em>
+</div>
+<div class="fact">
+<span>услови</span>
+<strong>без Месеца и облака</strong>
+<em>чиста и стабилна атмосфера</em>
+</div>
+<div class="fact">
+<span>квалитет неба</span>
+<strong>&gt; 21,00 mag/arcsec²</strong>
+<em>тамно небо погоднo за посматрање</em>
+</div>
+<div class="fact">
+<span>оријентација</span>
+<strong>прави север</strong>
+<em>исправљен почетни положај снимка</em>
+</div>
+<div class="fact">
+<span>опрема</span>
+<strong>Nikon Z6 · 16 mm</strong>
+<em>широкоугаони објектив</em>
+</div>
+<div class="fact">
+<span>серија</span>
+<strong>23 × 15 s</strong>
+<em>f/2.8 · ISO 1000</em>
+</div>
+</div>
+<nav aria-label="Брзе везе" class="mini-nav">
+<a href="https://piorajac.rs/zvezdano-nebo/">Интерактивни приказ</a>
+<a href="https://piorajac.rs/monitoring-svetlosno-zagadjenje/">Светлосно загађење</a>
+<a href="https://piorajac.rs/">ПИО „Рајац”</a>
+</nav>
+<figure class="side-photo">
+<img alt="Фото-документација звезданог неба и опреме за снимање на Рајцу" decoding="async" loading="lazy" src="https://piorajac.rs/wp-content/uploads/2026/06/1781170778323.png"/>
+<figcaption>Фото-документација снимања звезданог неба на Рајцу.</figcaption>
+</figure>
+</aside>
+</section>
+<nav class="bottomnav">
+<a href="https://piorajac.rs/rajac-vesti/">← Све вести</a>
+<a href="https://piorajac.rs/zvezdano-nebo/">Отвори снимак →</a>
+</nav>
+<style id="rajac-nextvest-css">.rajac-next-vest{max-width:760px;margin:34px auto 44px;padding:0 18px;font-family:Georgia,"Times New Roman",serif}.rajac-next-vest a{display:flex;flex-direction:column;gap:5px;padding:16px 20px;border:1px solid rgba(70,56,28,.20);border-radius:16px;background:#fffaf2;text-decoration:none;color:#1e2c1c;box-shadow:0 8px 24px rgba(38,30,16,.05);transition:transform .2s,box-shadow .2s}.rajac-next-vest a:hover{transform:translateY(-2px);box-shadow:0 12px 30px rgba(38,30,16,.10)}.rajac-next-vest .rnv-k{font-size:12px;font-weight:900;letter-spacing:.14em;text-transform:uppercase;color:#9a7b32;font-family:Arial,sans-serif}.rajac-next-vest .rnv-title{font-size:17px;font-weight:800;line-height:1.32}</style><nav aria-label="Следећа вест" class="rajac-next-vest"><a href="https://piorajac.rs/rajac-vesti/satelitski-monitoring-svetlosnog-zagadjenja/"><span class="rnv-k">Следећа вест →</span><span class="rnv-title">Сателитски мониторинг светлосног загађења</span></a></nav></main>
+<style id="rajac-admin-edit-style">
+.rajac-admin-edit-button{
+  position:fixed;
+  right:16px;
+  bottom:16px;
+  z-index:99999;
+  display:none;
+  align-items:center;
+  justify-content:center;
+  min-height:42px;
+  padding:0 16px;
+  border-radius:999px;
+  background:#0d1b2a;
+  color:#e0c678!important;
+  text-decoration:none!important;
+  font:900 12px/1 Arial,sans-serif;
+  letter-spacing:.10em;
+  text-transform:uppercase;
+  box-shadow:0 12px 30px rgba(0,0,0,.22);
+  border:1px solid rgba(224,198,120,.42);
+}
+</style>
+<script id="rajac-admin-edit-script">
+(function(){
+  try{
+    if(document.cookie.indexOf("rajac_vesti_admin=1")===-1)return;
+    var p=location.pathname.split("/").filter(Boolean);
+    var slug=p[p.length-1]||"";
+    if(!slug||slug==="rajac-vesti")return;
+    var a=document.createElement("a");
+    a.className="rajac-admin-edit-button";
+    a.href="https://piorajac.rs/rajac-vesti/admin-edit.php?slug="+encodeURIComponent(slug);
+    a.textContent="EDIT";
+    a.style.display="inline-flex";
+    document.body.appendChild(a);
+  }catch(e){}
+})();
+</script>
+<!-- SITE_EDITOR_ADMIN_BAR_START -->
+<script defer="" src="/admin-site-editor.php?admin_bar_js=1"></script>
+<!-- SITE_EDITOR_ADMIN_BAR_END -->
+<button aria-label="На врх стране" id="rajac-totop" title="На врх" type="button">↑</button><style id="rajac-totop-css">#rajac-totop{position:fixed;right:16px;bottom:16px;z-index:10000;width:46px;height:46px;border-radius:999px;border:1px solid rgba(255,255,255,.4);background:rgba(20,30,40,.30);-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);color:#fff;font-size:22px;line-height:1;cursor:pointer;display:flex;align-items:center;justify-content:center;opacity:0;visibility:hidden;transition:opacity .25s,visibility .25s,background .2s;box-shadow:0 6px 20px rgba(0,0,0,.25);-webkit-tap-highlight-color:transparent}#rajac-totop.show{opacity:1;visibility:visible}#rajac-totop:hover{background:rgba(20,30,40,.55)}@media(max-width:1024px){#rajac-totop{right:12px;bottom:12px;width:44px;height:44px}}</style><script>(function(){var b=document.getElementById("rajac-totop");if(!b)return;function o(){if((window.pageYOffset||document.documentElement.scrollTop)>320)b.classList.add("show");else b.classList.remove("show");}window.addEventListener("scroll",o,{passive:true});o();b.addEventListener("click",function(){window.scrollTo({top:0,behavior:"smooth"});});})();</script></body>
+</html>

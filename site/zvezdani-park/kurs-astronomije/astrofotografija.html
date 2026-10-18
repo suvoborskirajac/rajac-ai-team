@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="sr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Астрофотографија — Курс аматерске астрономије — Звездани парк „Рајац“</title>
+<meta name="description" content="Седма лекција курса аматерске астрономије: како снимати ноћно небо мобилним телефоном и фото-апаратом, правило 500, опрема корак по корак, светлосно загађење и галерија снимака.">
+<link rel="canonical" href="https://piorajac.rs/zvezdani-park/kurs-astronomije/astrofotografija.html">
+<meta property="og:type" content="article"><meta property="og:locale" content="sr_RS"><meta property="og:site_name" content="Звездани парк „Рајац“">
+<meta property="og:title" content="Астрофотографија — Курс аматерске астрономије">
+<meta property="og:description" content="Сними ноћно небо мобилним телефоном и фото-апаратом.">
+<meta property="og:url" content="https://piorajac.rs/zvezdani-park/kurs-astronomije/astrofotografija.html">
+<meta property="og:image" content="https://upload.wikimedia.org/wikipedia/commons/thumb/9/94/Kitt_Peak_National_Observatory_Beneath_Star_Trails_%28noirlab2512ae%29.jpg/1280px-Kitt_Peak_National_Observatory_Beneath_Star_Trails_%28noirlab2512ae%29.jpg">
+<meta name="theme-color" content="#050a14">
+<link rel="stylesheet" href="../assets/fonts.css?v=46">
+<link rel="stylesheet" href="assets/course.css?v=31">
+<style>
+/* Само за лекцију „Астрофотографија“ */
+.ins #obrada .hops{grid-template-columns:repeat(auto-fit,minmax(min(100%,340px),1fr))}
+</style>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Course","name":"Астрофотографија — Курс аматерске астрономије","description":"Фотографисање ноћног неба мобилним телефоном и фото-апаратом, опрема и обрада снимака.","inLanguage":"sr","url":"https://piorajac.rs/zvezdani-park/kurs-astronomije/astrofotografija.html","provider":{"@type":"Organization","name":"ПИО „Рајац“ — Звездани парк","url":"https://piorajac.rs/zvezdani-park/"},"isAccessibleForFree":true,"educationalLevel":"основна и средња школа, студенти, аматери"}
+</script>
+<style>
+/* Велики футер Звезданог парка (исти као на осталим странама секције; стил преузет из ../assets/site.css) */
+footer.zp-footer{position:relative;padding:0;background:var(--night);color:rgba(255,255,255,.62);font-size:.88rem;line-height:1.6;overflow:hidden}
+footer.zp-footer::before{content:"";position:absolute;inset:0;background:radial-gradient(ellipse at 15% 0%,rgba(214,180,106,.12),transparent 50%);pointer-events:none}
+footer.zp-footer .footer-in{position:relative;max-width:var(--max);margin:0 auto;padding:80px 28px 40px;display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:40px}
+footer.zp-footer h5{margin:0 0 16px;font:700 .68rem/1 var(--sans);letter-spacing:.22em;text-transform:uppercase;color:var(--gold)}
+footer.zp-footer ul{list-style:none;margin:0;padding:0}
+footer.zp-footer li{margin-bottom:9px}
+footer.zp-footer a{color:rgba(255,255,255,.75);text-decoration:none}
+footer.zp-footer a:hover{color:var(--gold-2)}
+footer.zp-footer .f-brand b{display:block;margin:14px 0 10px;font:500 1.9rem/1 var(--serif);color:#fff}
+footer.zp-footer .f-brand p{max-width:320px;margin:0}
+footer.zp-footer .footer-base{position:relative;max-width:var(--max);margin:0 auto;padding:22px 28px 34px;border-top:1px solid var(--line-dark);display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;font-size:.78rem;color:rgba(255,255,255,.45)}
+@media (max-width:900px){footer.zp-footer .footer-in{grid-template-columns:1fr 1fr}}
+@media (max-width:560px){footer.zp-footer .footer-in{grid-template-columns:1fr;padding:56px 20px 32px}footer.zp-footer .footer-base{padding:20px 20px 30px}}
+</style>
+<style>
+/* Литература: три колоне по пет једнаких картица */
+.ins .lib ul{grid-template-rows:repeat(5,1fr)}
+.ins .lib a{min-height:76px;height:100%;box-sizing:border-box}
+.ins .lib>div,.ins .lib ul,.ins .lib li,.ins .lib a>span{min-width:0}
+.ins .lib strong,.ins .lib small{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+</style>
+</head>
+<body class="page-astrofoto lesson-v2" id="top" style="--hero-bg:url('https://upload.wikimedia.org/wikipedia/commons/thumb/9/94/Kitt_Peak_National_Observatory_Beneath_Star_Trails_%28noirlab2512ae%29.jpg/1920px-Kitt_Peak_National_Observatory_Beneath_Star_Trails_%28noirlab2512ae%29.jpg')">
+<a class="skip" href="#sadrzaj">Прескочи на садржај</a>
+<header class="zp-topbar">
+<div class="zp-topbar-in">
+<a aria-label="Звездани парк Рајац — почетна" class="zp-brand" href="../index.html">
+<svg aria-hidden="true" viewbox="0 0 40 40"><circle cx="20" cy="20" fill="none" r="19" stroke="rgba(241,220,166,.45)"></circle><path d="M20 6 22.2 17.8 34 20 22.2 22.2 20 34 17.8 22.2 6 20 17.8 17.8Z" fill="#f1dca6"></path><path d="M20 12.5 21 19 27.5 20 21 21 20 27.5 19 21 12.5 20 19 19Z" fill="#050a14" opacity=".35"></path></svg>
+<span><b>Звездани парк</b><small>РАЈАЦ</small></span>
+</a>
+<button aria-expanded="false" aria-label="Мени" class="zp-menu-btn" type="button"><span></span><span></span><span></span></button>
+<nav aria-label="Главна навигација" class="zp-nav">
+<a href="../index.html">Почетна</a>
+<a href="../lokacija.html">Локација</a>
+<div class="zp-dd"><button aria-expanded="false" class="zp-dd-btn" type="button">Истраживања</button><div class="zp-dd-menu"><a href="../01-uvod-i-rajac.html">Увод и истраживачки рад</a><a href="../02-svetlosno-zagadjenje.html">Светлосно загађење</a><a href="../03-predlog-i-merenja.html">Мерења и простор</a><a href="../04-znacaj-i-upravljanje.html">Значај и управљање</a></div></div>
+<a href="../05-programi-i-turizam.html">Програми</a>
+<a href="../07-opservatorija-i-oprema.html">Опсерваторија</a>
+<a href="../nebo.html">Небо</a>
+<a href="../sta-poneti.html">Шта понети</a>
+<a href="../prognoza.html">Прогноза</a>
+<div class="zp-dd"><button aria-expanded="false" class="zp-dd-btn active" type="button">Курс</button><div class="zp-dd-menu"><a href="astrognozija.html"><span class="n">1</span>Астрогнозија</a><a href="instrumenti.html"><span class="n">2</span>Инструменти за посматрање</a><a href="sunce.html"><span class="n">3</span>Посматрање Сунца</a><a href="meteori.html"><span class="n">4</span>Посматрање метеора</a><a href="komete.html"><span class="n">5</span>Посматрање комета</a><a href="planete.html"><span class="n">6</span>Посматрање планета</a><a aria-current="page" class="active" href="astrofotografija.html"><span class="n">7</span>Астрофотографија</a><a href="promenljive-zvezde.html"><span class="n">8</span>Посматрање променљивих звезда</a></div></div>
+<a class="zp-ext" href="https://piorajac.rs/">ПИО „РАЈАЦ“ ↗</a>
+</nav>
+</div>
+</header>
+<section class="hero hero-astrofoto">
+<div class="wrap hero-in">
+<nav aria-label="Путања" class="crumbs"><a href="../index.html">Звездани парк</a><span aria-hidden="true">/</span><span>Курс аматерске астрономије</span><span aria-hidden="true">/</span><span>Лекција 7 од 8</span></nav>
+<span class="kicker">Курс аматерске астрономије · 07</span>
+<h1>Астрофотографија</h1>
+<p class="lede">Ноћно небо у твом телефону. Научићеш како да снимаш објекте и појаве на небу мобилним телефоном и фото-апаратом, од Млечног пута и трагова звезда до маглина и галаксија.</p>
+</div>
+</section>
+
+<nav aria-label="Лекције курса" class="path">
+<div class="wrap"><ol>
+<li><a href="astrognozija.html"><span class="n">1</span>Астрогнозија</a></li>
+<li><a href="instrumenti.html"><span class="n">2</span>Инструменти</a></li>
+<li><a href="sunce.html"><span class="n">3</span>Сунце</a></li>
+<li><a href="meteori.html"><span class="n">4</span>Метеори</a></li>
+<li><a href="komete.html"><span class="n">5</span>Комете</a></li>
+<li><a href="planete.html"><span class="n">6</span>Планете</a></li>
+<li><a aria-current="page" href="astrofotografija.html"><span class="n">7</span>Астрофотографија</a></li>
+<li><a href="promenljive-zvezde.html"><span class="n">8</span>Променљиве звезде</a></li>
+</ol></div>
+</nav>
+
+<main id="sadrzaj" class="ins">
+
+<!-- 1. УВОД -->
+<section class="sec" id="uvod">
+<div class="wrap lead-grid">
+  <div>
+    <div class="sec-head"><span class="kicker">Шта је астрофотографија</span><h2>Камера види више од ока</h2></div>
+    <p class="big-q"><b>Астрофотографија</b> је фотографисање <a href="https://sr.wikipedia.org/sr-ec/Небеско_тело">небеских тела</a> као што су <a href="https://sr.wikipedia.org/sr-ec/Планета">планете</a>, <a href="https://sr.wikipedia.org/sr-ec/Звезда">звезде</a> и <a href="https://sr.wikipedia.org/sr-ec/Галаксија">галаксије</a>.</p>
+    <p>Астрофотографија је јако важна техника за <a href="https://sr.wikipedia.org/sr-ec/Астрономија">астрономе</a> јер омогућава откривање небеских тела и детаља на небеским телима које иначе не би било могуће опазити голим <a href="https://sr.wikipedia.org/sr-ec/Око">оком</a>. Камера, за разлику од ока, сакупља светлост секундама, минутима, па и сатима.</p>
+    <ol class="rules" aria-label="Исходи учења">
+      <li><span class="ix">1</span><div><strong>Самостално фотографисање</strong><span>Снимаћеш објекте на ноћном и дневном небу.</span></div></li>
+      <li><span class="ix">2</span><div><strong>Савремена фото-опрема</strong><span>Научићеш да користиш мобилни телефон, фото-апарат, статив и уређај за праћење неба.</span></div></li>
+      <li><span class="ix">3</span><div><strong>Групна посматрања и снимања</strong><span>Учествоваћеш у групним посматрањима и снимањима објеката и појава.</span></div></li>
+    </ol>
+  </div>
+  <figure class="sun-video kom-photo">
+    <img src="assets/media/1024x729-187c458f.jpg" alt="Фотограф са фото-апаратом на стативу у сумрак" loading="lazy" decoding="async" width="1024" height="729">
+    <figcaption>Статив је први и најважнији део опреме за снимање ноћног неба.</figcaption>
+  </figure>
+</div>
+</section>
+
+<!-- 2. ШТА МОЖЕШ ДА СНИМИШ -->
+<section class="sec dark" id="vrste">
+<div class="wrap">
+  <div class="sec-head"><span class="kicker">Три врсте</span><h2>Шта можеш да снимиш</h2><p>Од једне експозиције телефоном до стотина снимака сложених у једну слику: астрофотографија има своје степенице.</p></div>
+  <div class="types">
+    <article class="type">
+      <figure><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b8/Southern_Crown_-_Flickr_-_HypatiaPhoto.jpg/1280px-Southern_Crown_-_Flickr_-_HypatiaPhoto.jpg" alt="Млечни пут изнад пејзажа" loading="lazy" decoding="async" width="1280" height="813">
+        <a class="credit" href="https://commons.wikimedia.org/wiki/File:Southern_Crown_-_Flickr_-_HypatiaPhoto.jpg">© Hypatia Alexandria · CC BY 2.0</a>
+        <div class="tag"><small>01 · статив</small><strong>Млечни пут</strong></div></figure>
+      <div class="body">
+        <p class="best"><b>Како:</b> телефон у ноћном режиму или фото-апарат са широкоугаоним објективом, на стативу. Експозиција 10 до 25 секунди, ISO 1600–6400, отвор што већи.</p>
+        <div class="pc"><div class="plus"><b>Тражи</b>статив, тамно небо, ноћ без Месеца</div><div class="minus"><b>Савет</b>укључи пејзаж: дрво, стену, опсерваторију</div></div>
+      </div>
+    </article>
+    <article class="type">
+      <figure><img src="https://upload.wikimedia.org/wikipedia/commons/0/01/Star_trail_at_plemmirio_W.jpg" alt="Кружни трагови звезда изнад светионика" loading="lazy" decoding="async" width="1200" height="800">
+        <a class="credit" href="https://commons.wikimedia.org/wiki/File:Star_trail_at_plemmirio_W.jpg">© Dario Giannobile · CC BY-SA 4.0</a>
+        <div class="tag"><small>02 · стрпљење</small><strong>Трагови звезда</strong></div></figure>
+      <div class="body">
+        <p class="best"><b>Како:</b> снимаш стотине узастопних експозиција од 20 до 30 секунди, па их програмом спојиш у једну слику. Окренут ка Северњачи, добићеш кругове око пола.</p>
+        <div class="pc"><div class="plus"><b>Тражи</b>статив, даљински окидач, резервну батерију</div><div class="minus"><b>Савет</b>сат снимања даје лук од око 15°</div></div>
+      </div>
+    </article>
+    <article class="type">
+      <figure><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/ce/The_Great_Orion_Nebula_M42.jpg/1280px-The_Great_Orion_Nebula_M42.jpg" alt="Велика маглина у Ориону" loading="lazy" decoding="async" width="1280" height="853">
+        <a class="credit" href="https://commons.wikimedia.org/wiki/File:The_Great_Orion_Nebula_M42.jpg">© Astrobond · CC BY-SA 4.0</a>
+        <div class="tag"><small>03 · праћење</small><strong>Дубоко небо</strong></div></figure>
+      <div class="body">
+        <p class="best"><b>Како:</b> фото-апарат или камера на телескопу и монтажи која прати ротацију неба. Десетине до стотине експозиција од по неколико минута слажу се и обрађују у програму.</p>
+        <div class="pc"><div class="plus"><b>Тражи</b>монтажу са праћењем, програм за обраду</div><div class="minus"><b>Савет</b>почни од светлих објеката: M42, M31, Плејаде</div></div>
+      </div>
+    </article>
+  </div>
+</div>
+</section>
+
+<!-- 3. ПРАВИЛО 500 -->
+<section class="sec" id="pravilo-500">
+<div class="wrap">
+  <div class="sec-head"><span class="kicker">Најважнији број</span><h2>Колико дуго сме да траје снимак?</h2><p>Земља се окреће, па се звезде на дугом снимку развлаче у цртице. Правило 500 је старо, приближно правило за почетнике: брза почетна процена најдуже експозиције на стативу при којој звезде остају тачке.</p></div>
+  <div class="specs">
+    <div class="formula">
+      <div><code>f</code><span><b>Жижна даљина</b> објектива у милиметрима. Што је мања (шири кадар), снимак сме дуже да траје.</span></div>
+      <div><code>k</code><span><b>Фактор исецања</b> сензора: 1 за пун формат, око 1,5 за APS-C, 1,6 за Canon APS-C, 2 за Micro 4/3.</span></div>
+      <div><code>t = 500 / (f · k)</code><span><b>Најдужа експозиција</b> у секундама. За објектив од 18 mm на APS-C апарату то је око 18 секунди.</span></div>
+      <div><code>300 или NPF</code><span><b>Строже правило</b>. Савремени сензори са много мегапиксела показују и мало развлачење, па правило 500 често даје предугу експозицију. Узми 300 уместо 500, или прецизније правило NPF, које узима у обзир и величину пиксела и отвор објектива (рачунају га апликације као PhotoPills).</span></div>
+      <div><code>ISO</code><span><b>Осетљивост</b>. Почни од ISO 1600 до 3200 и провери снимак. Превисок ISO доноси шум, пренизак тамну слику.</span></div>
+      <div><code>RAW</code><span><b>Снимај у RAW формату</b> ако апарат то дозвољава. Задржава много више података за каснију обраду.</span></div>
+    </div>
+    <aside class="calc" aria-labelledby="r500-t">
+      <h3 id="r500-t">Правило 500</h3>
+      <p>Унеси жижну даљину и изабери сензор.</p>
+      <div class="presets" aria-label="Сензор">
+        <button type="button" data-p="1">Пун формат</button>
+        <button type="button" data-p="1.5">APS-C</button>
+        <button type="button" data-p="1.6">Canon APS-C</button>
+        <button type="button" data-p="2">Micro 4/3</button>
+      </div>
+      <div class="in">
+        <div><label for="rF">Жижна f (mm)</label><input id="rF" type="number" inputmode="numeric" min="5" max="800" value="18"></div>
+        <div><label for="rK">Фактор k</label><input id="rK" type="number" inputmode="decimal" min="1" max="6" step="0.1" value="1.5"></div>
+        <div><label for="rS">Правило (500/300)</label><input id="rS" type="number" inputmode="numeric" min="200" max="600" step="50" value="500"></div>
+      </div>
+      <div class="out" aria-live="polite">
+        <div><small>Најдужа експозиција</small><strong id="rT">—</strong><em>секунди на стативу</em></div>
+        <div><small>Еквивалент</small><strong id="rE">—</strong><em>жижна у пуном формату</em></div>
+      </div>
+      <p class="verdict" id="rV">—</p>
+    </aside>
+  </div>
+  <figure class="pano">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2e/Milky_Way_core_panorama.jpg/1920px-Milky_Way_core_panorama.jpg" alt="Панорама средишта Млечног пута" loading="lazy" decoding="async" width="1920" height="539">
+    <figcaption>Средиште Млечног пута: шест кадрова по сто експозиција од 30 секунди, апарат Sony a6100 на уређају за праћење неба. · <a href="https://commons.wikimedia.org/wiki/File:Milky_Way_core_panorama.jpg">© Martin Bernardi · CC BY-SA 4.0</a></figcaption>
+  </figure>
+</div>
+</section>
+
+<!-- 4. ОПРЕМА КОРАК ПО КОРАК -->
+<section class="sec dark" id="oprema">
+<div class="wrap night">
+  <div>
+    <div class="sec-head"><span class="kicker">Опрема</span><h2>Корак по корак</h2></div>
+    <ol class="steps steps-dark">
+      <li><strong>Мобилни телефон</strong><span>Савремени телефони имају ноћни или астро режим. Ослони телефон на статив или камен и укључи самоокидач, да га не помериш додиром.</span></li>
+      <li><strong>Фото-апарат и статив</strong><span>Широкоугаони објектив, ручни режим и ручни фокус на сјајној звезди: укључи Live View, увећај звезду на екрану и окрећи прстен док не постане најмања могућа тачка. Ознака ∞ на објективу није увек тачан фокус за звезде.</span></li>
+      <li><strong>Уређај за праћење неба</strong><span>Мали мотор на стативу окреће апарат заједно са небом. Тада експозиција може да траје минутима, а звезде остају оштре, али само ако је уређај добро поравнат са небеским полом (поларно поравнање, помоћу тражила усмереног на Северњачу).</span></li>
+      <li><strong>Телескоп и камера</strong><span>Монтажа са праћењем, телескоп и астрономска камера отварају маглине и галаксије. Овде почиње права обрада снимака.</span></li>
+      <li><strong>Обрада</strong><span>Слагање више снимака смањује шум. Водич за програм PixInsight на српском објавило је <a href="https://www.astronomija.org.rs/images/stories/softver/2022/PixInsight/PIXINSIGHT.pdf">Астрономско друштво „Руђер Бошковић“</a>.</span></li>
+    </ol>
+  </div>
+  <div class="duo">
+    <figure class="vid-fig"><video controls controlslist="nodownload" playsinline preload="metadata" src="assets/media/media-a4ff41ae.mp4"></video><figcaption>Звездано небо снимљено мобилним телефоном.</figcaption></figure>
+    <a class="guide-card" href="https://science.nasa.gov/learn/heat/resource/a-guide-to-smartphone-astrophotography/">
+      <img src="assets/media/media-867ff0dc.jpg" alt="Корица NASA водича за астрофотографију паметним телефоном" loading="lazy" decoding="async" width="609" height="801">
+      <span><small>NASA · EN · PDF за преузимање</small><strong>Водич за астрофотографију паметним телефоном</strong><em>Отвори страницу водича ↗</em></span>
+    </a>
+  </div>
+</div>
+</section>
+
+<!-- 4а. ОД СНИМКА ДО СЛИКЕ -->
+<section class="sec" id="obrada" style="background:var(--paper-2)">
+<div class="wrap">
+  <div class="sec-head"><span class="kicker">Ток рада</span><h2>Зашто астрофотограф прави десетине снимака истог кадра</h2><p>Један снимак слабог објекта је пун шума. Тек кад се сложи много снимака истог кадра, слаб сигнал се издвоји из шума. Ово је редослед корака који користе и аматери и професионалци.</p></div>
+  <ol class="hops">
+    <li><strong>1. RAW формат</strong><span>Снимај у RAW-у. JPG је већ обрађен и сабијен, па губи управо слабе детаље које тражиш.</span></li>
+    <li><strong>2. Light снимци</strong><span>Што више снимака самог објекта, са истим подешавањима. Сложени заједно, смањују шум: четири пута више снимака даје око два пута мање шума.</span></li>
+    <li><strong>3. Dark снимци</strong><span>Исто трајање и ISO, исте температуре, али са поклопцем на објективу. Бележе топлотни шум и „вруће“ пикселе сензора, који се затим одузимају.</span></li>
+    <li><strong>4. Flat снимци</strong><span>Снимци равномерно осветљене беле површине, на пример неба у сумрак или екрана, без мењања фокуса. Исправљају тамније углове (вињетирање) и сенке прашине на сензору.</span></li>
+    <li><strong>5. Bias снимци</strong><span>Најкраћа могућа експозиција са поклопцем. Бележи шум електронике; користи се по потреби, уз flat снимке.</span></li>
+    <li><strong>6. Слагање (stacking)</strong><span>Програм поравна звезде на свим снимцима и сложи их у једну слику. Бесплатни су <a href="https://siril.org/">Siril</a> и <a href="https://github.com/deepskystacker/DSS">DeepSkyStacker</a>.</span></li>
+    <li><strong>7. Обрада</strong><span>Развлачење хистограма да изађу слаби детаљи, уклањање градијента светлосног загађења и поравнање боја. Мање је више: превише обраде ствара лажне детаље.</span></li>
+  </ol>
+  <div class="sec-head" style="margin-top:clamp(36px,5vw,56px)"><span class="kicker">Пракса</span><h2>Прва астрофотографска ноћ на Рајцу</h2></div>
+  <ul class="hops">
+    <li><strong>Дан пре</strong><span>Провери <a href="https://piorajac.rs/zvezdani-park/prognoza.html">прогнозу за Рајац</a> и мену Месеца. Напуни батерије (на хладноћи брже се празне) и испразни меморијску картицу.</span></li>
+    <li><strong>По доласку</strong><span>Постави статив на чврсто тло, у сумрак, док још видиш. Ако имаш уређај за праћење, поравнај га са Северњачом.</span></li>
+    <li><strong>Роса</strong><span>На планини се ноћу објектив брзо ороси. Грејна трака на батерију око објектива решава проблем; сенило помаже краће време. Не бриши орошено сочиво рукавом.</span></li>
+    <li><strong>Пре првог снимка</strong><span>Изоштри на сјајној звезди уз увећани Live View, па направи пробни снимак и погледај га увећан.</span></li>
+    <li><strong>На крају</strong><span>Сними dark снимке са поклопцем, док је температура још иста, а flat снимке пре него што помериш фокус.</span></li>
+  </ul>
+</div>
+</section>
+
+<!-- 5. СВЕТЛОСНО ЗАГАЂЕЊЕ -->
+<section class="sec" id="tamno-nebo">
+<div class="wrap">
+  <div class="sec-head"><span class="kicker">Највећи непријатељ</span><h2>Зашто је важно тамно небо</h2><p>Најбољи апарат не може да надокнади светло небо. Исто сазвежђе снимљено на селу и у граду изгледа као два различита неба.</p></div>
+  <div class="sun-feat">
+    <figure class="sun-photo lp-top"><img src="https://upload.wikimedia.org/wikipedia/commons/d/db/Light_pollution_country_versus_city.png" alt="Млечни пут изнад малог места под тамним небом" loading="lazy" decoding="async" width="972" height="648">
+      <figcaption>Стрелац, Шкорпија и Млечни пут изнад малог места у Јути. Из оближњег града, истим апаратом, на истом делу неба види се тек неколико звезда. · <a href="https://commons.wikimedia.org/wiki/File:Light_pollution_country_versus_city.png">© Jeremy Stanley · CC BY 2.0</a></figcaption></figure>
+    <ul class="hops">
+      <li><strong>Иди даље од светала</strong><span>Удаљавањем од светлосног ореола града небо постаје тамније. Колико далеко треба ићи зависи од величине града, расвете, влажности ваздуха, рељефа и правца у ком снимаш. На Рајцу се Млечни пут види голим оком.</span></li>
+      <li><strong>Пази на Месец</strong><span>За Млечни пут и маглине бирај ноћи око младог Месеца. Пун Месец је, с друге стране, леп мотив за себе.</span></li>
+      <li><strong>Провери прогнозу</strong><span>Облачност, влажност и прозирност ваздуха одлучују о снимку. Погледај <a href="https://piorajac.rs/zvezdani-park/prognoza.html">астрономску прогнозу за Рајац</a>.</span></li>
+      <li><strong>Сазнај више</strong><span>Зашто нестаје ноћно небо и како да га сачувамо, прочитај у дигиталној књизи <a href="https://piorajac.rs/svetlosno-zagadjenje/">„Светлосно загађење заштићених предела“</a>.</span></li>
+    </ul>
+  </div>
+</div>
+</section>
+
+<!-- 6. ОВОГ МЕСЕЦА -->
+<section class="sec" id="ovog-meseca" style="padding-top:0">
+<div class="wrap">
+  <div class="sec-head"><span class="kicker">Календар</span><h2>Шта можеш да снимиш на ноћном небу овога месеца</h2></div>
+  <div class="monthly-sky-module" data-monthly-sky="photography"><p class="monthly-status">Месечни видео садржај се учитава…</p></div>
+</div>
+</section>
+
+<!-- 7. ГАЛЕРИЈА -->
+<section class="sec dark" id="galerija">
+<div class="wrap">
+  <div class="sec-head"><span class="kicker">Галерија</span><h2>Фотографије са Астрономске опсерваторије Видојевица</h2><p>Овако изгледају објекти дубоког неба снимљени великим телескопом и обрађени из више експозиција.</p></div>
+  <div class="messier af-gal">
+    <figure><img src="assets/media/vid-m101-720.jpg" alt="Галаксија M101" loading="lazy" decoding="async" width="720" height="720"><figcaption><strong>M101</strong><span>Спирална галаксија Вртешка</span></figcaption></figure>
+    <figure><img src="assets/media/vid-m82-720.jpg" alt="Галаксија M82" loading="lazy" decoding="async" width="720" height="720"><figcaption><strong>M82</strong><span>Галаксија Цигара</span></figcaption></figure>
+    <figure><img src="assets/media/vid-m27-720.jpg" alt="Маглина M27" loading="lazy" decoding="async" width="720" height="720"><figcaption><strong>M27</strong><span>Планетарна маглина Бучица</span></figcaption></figure>
+    <figure><img src="assets/media/vid-m1-720.jpg" alt="Маглина M1" loading="lazy" decoding="async" width="720" height="714"><figcaption><strong>M1</strong><span>Маглина Рак</span></figcaption></figure>
+    <figure><img src="assets/media/vid-ic5146-720.jpg" alt="Маглина IC 5146" loading="lazy" decoding="async" width="720" height="720"><figcaption><strong>IC 5146</strong><span>Маглина Чаура</span></figcaption></figure>
+    <figure><img src="assets/media/vid-ic1396-720.jpg" alt="Маглина IC 1396" loading="lazy" decoding="async" width="720" height="720"><figcaption><strong>IC 1396</strong><span>Слонова сурла</span></figcaption></figure>
+    <figure><img src="assets/media/vid-m51-720.jpg" alt="Галаксија M51" loading="lazy" decoding="async" width="720" height="720"><figcaption><strong>M51</strong><span>Галаксија Вртлог</span></figcaption></figure>
+    <figure><img src="assets/media/vid-ngc6992-720.jpg" alt="Маглина NGC 6992" loading="lazy" decoding="async" width="720" height="720"><figcaption><strong>NGC 6992</strong><span>Маглина Вео</span></figcaption></figure>
+  </div>
+  <div class="albums">
+    <a href="https://www.flickr.com/photos/144845276@N03/albums/72177720303333866"><small>Албум на Flickr-у</small><strong>Фотографије Милоша Гагића</strong><span>Изложба астрофотографија ↗</span></a>
+    <a href="https://istrazivac.rs/?page_id=11568"><small>Истраживачка школа географије</small><strong>Фотографије Марка Матовића</strong><span>Цео албум ↗</span></a>
+  </div>
+</div>
+</section>
+
+<!-- 8. ЗАДАЦИ -->
+<section class="sec" id="zadaci" style="background:var(--paper-2)">
+<div class="wrap">
+<div class="sec-head"><span class="kicker">Вежба</span><h2>Практични задаци</h2></div>
+<div class="sun-feat">
+  <article class="task">
+    <span class="lvl">За све полазнике</span>
+    <h3>Задаци</h3>
+    <ol>
+      <li>Сними фото-апаратом или мобилним телефоном објекте или појаве на небу и објави их на свом блогу или друштвеним мрежама.</li>
+      <li>Неке од најинтересантнијих снимака објави <a href="https://www.facebook.com/profile.php?id=100091526779637">на страници „Астрофотографија“</a>.</li>
+      <li>Израчунај правило 500 за свој апарат или телефон и провери на снимку да ли звезде остају тачке.</li>
+    </ol>
+  </article>
+  <a class="contest" href="https://sites.google.com/view/uslikajnocnonebo/">
+    <img src="assets/media/takmicenje-1-7678fdf2.jpeg" alt="Усликај ноћно небо: такмичење у астрофотографији за ученике основних и средњих школа" loading="lazy" decoding="async" width="804" height="190">
+    <span><small>За ученике основних и средњих школа</small><strong>Пријави се на такмичење „Усликај ноћно небо“ ↗</strong></span>
+  </a>
+</div>
+</div>
+</section>
+
+<!-- 9. ОРГАНИЗАЦИЈА -->
+<section class="sec" id="organizacija">
+<div class="wrap">
+  <div class="rajac" style="background-image:url('https://upload.wikimedia.org/wikipedia/commons/thumb/b/b8/Southern_Crown_-_Flickr_-_HypatiaPhoto.jpg/1280px-Southern_Crown_-_Flickr_-_HypatiaPhoto.jpg')">
+    <div class="in">
+      <span class="kicker">Организација</span>
+      <h2>Снимај у друштву</h2>
+      <p>Формирајте уз помоћ наставника астрономску секцију у школи која ће се бавити астрофотографијом. Ако сте у граду са великим светлосним загађењем неба, организујте групни одлазак у околину где нема јавне расвете или на најближу планину. Ако у близини има астрономско друштво, обавезно се учлани.</p>
+      <div class="btns"><a class="btn btn-gold" href="https://www.facebook.com/groups/svemir.blog">Група SVEMIR.BLOG ↗</a><a class="btn btn-ghost" href="../05-programi-i-turizam.html">Посматрања на Рајцу</a></div>
+    </div>
+    <span class="credit">Фото: <a href="https://commons.wikimedia.org/wiki/File:Southern_Crown_-_Flickr_-_HypatiaPhoto.jpg">Hypatia Alexandria</a> · CC BY 2.0</span>
+  </div>
+</div>
+</section>
+
+<!-- 10. ЛИТЕРАТУРА -->
+<section class="sec" id="literatura" style="background:var(--paper-2)">
+<div class="wrap">
+  <div class="sec-head"><span class="kicker">За даље учење</span><h2>Литература, опрема и савети</h2><p>Сви линкови су проверени у октобру 2026.</p></div>
+  <div class="lib">
+    <div><h3>Књиге и приручници</h3><ul>
+      <li><a href="https://carpenoctem.rs/astrofotografija-za-pocetnike/"><span><strong>Астрофотографија за почетнике<span class="lang">SR</span></strong><small>Carpe Noctem · предавање В. Кржалића</small></span></a></li>
+      <li><a href="https://www.astronomija.org.rs/images/stories/softver/2022/PixInsight/PIXINSIGHT.pdf"><span><strong>PixInsight водич<span class="lang">SR</span></strong><small>PDF · АД „Руђер Бошковић“</small></span></a></li>
+      <li><a href="https://www.amazon.com/dp/1594858381"><span><strong>Фотографија ноћног неба<span class="lang">EN</span></strong><small>J. Martin, J. Wu · књига</small></span></a></li>
+      <li><a href="https://alynwallacephotography.com/shop/photographing-night-sky-astrophotography-book"><span><strong>Фотографисање ноћног неба<span class="lang">EN</span></strong><small>Alyn Wallace · књига</small></span></a></li>
+      <li><a href="https://www.amazon.com/dp/1138055360"><span><strong>Приручник за астрофотографију<span class="lang">EN</span></strong><small>C. Woodhouse · књига</small></span></a></li>
+    </ul></div>
+    <div><h3>Опрема</h3><ul>
+      <li><a href="https://astrobackyard.com/astrophotography-cameras/"><span><strong>Камере за астрофотографију<span class="lang">EN</span></strong><small>AstroBackyard</small></span></a></li>
+      <li><a href="https://www.the-digital-picture.com/Canon-Lenses/Canon-Astrophotography-Lens.aspx"><span><strong>Објективи за Canon<span class="lang">EN</span></strong><small>The-Digital-Picture</small></span></a></li>
+      <li><a href="https://astrobackyard.com/best-astrophotography-telescopes/"><span><strong>Телескопи за астрофото<span class="lang">EN</span></strong><small>AstroBackyard</small></span></a></li>
+      <li><a href="https://www.space.com/best-star-trackers-for-astrophotography"><span><strong>Уређаји за праћење неба<span class="lang">EN</span></strong><small>Space.com</small></span></a></li>
+      <li><a href="https://www.youtube.com/watch?v=jVjp2Krc4c0"><span><strong>Дубоко небо DSLR апаратом<span class="lang">EN</span></strong><small>видео</small></span></a></li>
+    </ul></div>
+    <div><h3>Савети и мобилни телефон</h3><ul>
+      <li><a href="https://teleskop.rs/blog/astrofotografija-bez-teleskopa"><span><strong>Астрофотографија без телескопа<span class="lang">SR</span></strong><small>teleskop.rs</small></span></a></li>
+      <li><a href="https://www.canon.rs/get-inspired/tips-and-techniques/night-sky-photography-tips/"><span><strong>Савети за ноћно небо<span class="lang">SR</span></strong><small>Canon Србија</small></span></a></li>
+      <li><a href="https://skyandtelescope.org/astronomy-resources/astrophotography-tips/"><span><strong>Савети и технике<span class="lang">EN</span></strong><small>Sky &amp; Telescope</small></span></a></li>
+      <li><a href="https://www.space.com/smartphone-astrophotography"><span><strong>Снимање телефоном<span class="lang">EN</span></strong><small>Space.com</small></span></a></li>
+      <li><a href="https://www.skyatnightmagazine.com/top-astronomy-kit/best-gadgets-turn-smartphone-into-astrophotography-camera/"><span><strong>Додаци за телефон<span class="lang">EN</span></strong><small>BBC Sky at Night</small></span></a></li>
+    </ul></div>
+  </div>
+</div>
+</section>
+
+<section aria-label="Навигација кроз курс" class="next"><div class="wrap"><a href="promenljive-zvezde.html"><span class="num">08</span><span><small>Следећа лекција</small><strong>Посматрање променљивих звезда</strong></span><span aria-hidden="true" class="arr">→</span></a><div class="back"><a href="#top">↑ На врх стране</a><a href="planete.html">← Претходна: Посматрање планета</a><a href="../index.html">Назад на Звездани парк</a></div></div></section>
+</main>
+<footer class="footer zp-footer">
+<div class="footer-in">
+<div class="f-brand"><svg width="40" height="40" viewBox="0 0 40 40" aria-hidden="true"><circle cx="20" cy="20" r="19" fill="none" stroke="rgba(241,220,166,.45)"/><path d="M20 6 22.2 17.8 34 20 22.2 22.2 20 34 17.8 22.2 6 20 17.8 17.8Z" fill="#f1dca6"/><path d="M20 12.5 21 19 27.5 20 21 21 20 27.5 19 21 12.5 20 19 19Z" fill="#050a14" opacity=".35"/></svg><b>Звездани парк „Рајац“</b><p>Пројекат очувања природног ноћног неба у Пределу изузетних одлика „Рајац“ — истраживање, мерење, едукација и астрономски програми.</p></div>
+<div><h5>Пројекат</h5><ul>
+<li><a href="https://piorajac.rs/zvezdani-park/01-uvod-i-rajac.html">Истраживања</a></li>
+<li><a href="https://piorajac.rs/zvezdani-park/02-svetlosno-zagadjenje.html">Светлосно загађење</a></li>
+<li><a href="https://piorajac.rs/zvezdani-park/03-predlog-i-merenja.html">Мерења и простор</a></li>
+<li><a href="https://piorajac.rs/zvezdani-park/04-znacaj-i-upravljanje.html">Управљање</a></li>
+<li><a href="https://piorajac.rs/zvezdani-park/05-programi-i-turizam.html">Програми</a></li>
+<li><a href="https://piorajac.rs/zvezdani-park/07-opservatorija-i-oprema.html">Опсерваторија и опрема</a></li>
+</ul></div>
+<div><h5>Посета и небо</h5><ul>
+<li><a href="https://piorajac.rs/zvezdani-park/lokacija.html">Локација</a></li>
+<li><a href="https://piorajac.rs/zvezdani-park/sta-poneti.html">Шта понети</a></li>
+<li><a href="https://piorajac.rs/zvezdani-park/prognoza.html">Астрономска прогноза</a></li>
+<li><a href="https://piorajac.rs/zvezdani-park/nebo.html">Небо</a></li>
+<li><a href="https://piorajac.rs/zvezdani-park/zivo-nebo-rajac.html">Живо небо над Рајцем</a></li>
+<li><a href="https://piorajac.rs/zvezdani-park/nocno-nebo-rajac.html">Ноћно небо у 360°</a></li>
+</ul></div>
+<div><h5>Повезано</h5><ul>
+<li><a href="https://piorajac.rs/zvezdani-park/kurs-astronomije/">Курс астрономије</a></li>
+<li><a href="https://piorajac.rs/zvezdano-nebo/">All-sky снимак целог неба</a></li>
+<li><a href="https://piorajac.rs/amsrajac/">АМС Рајац</a></li>
+<li><a href="https://svetlo.piorajac.rs">Књига о светлосном загађењу</a></li>
+<li><a href="https://piorajac.rs/">ПИО „Рајац“</a></li>
+<li><a href="mailto:zvezdanipark@piorajac.rs">zvezdanipark@piorajac.rs</a></li>
+</ul></div>
+</div>
+<div class="footer-base"><span>© 2026 ПИО „Рајац“ · Љиг</span><span>Небо је део природе. Чувајмо мрак.</span></div>
+</footer>
+<script defer src="assets/course.js?v=4"></script>
+<script defer src="assets/monthly-sky.js?v=1"></script>
+<script>
+(function(){
+  var F=document.getElementById('rF'),K=document.getElementById('rK'),S=document.getElementById('rS');
+  if(!F)return;
+  function num(i){return parseFloat(String(i.value).replace(',','.'));}
+  function calc(){
+    var f=num(F),k=num(K)||1,s=num(S)||500;if(!(f>0))return;
+    var t=s/(f*k),e=f*k;
+    document.getElementById('rT').textContent=(t<10?t.toFixed(1).replace('.',','):Math.round(t))+' s';
+    document.getElementById('rE').textContent=Math.round(e)+' mm';
+    var v;
+    if(t>=20)v='Широк кадар: идеално за Млечни пут и пејзаж са стативом.';
+    else if(t>=8)v='Добро за сазвежђа и Млечни пут. Подигни ISO ако је снимак таман.';
+    else if(t>=2)v='Кратке експозиције: снимај више кадрова и сложи их, или користи уређај за праћење неба.';
+    else v='Са оволиком жижном даљином без праћења неба звезде ће се развући. Потребна је монтажа која прати небо.';
+    document.getElementById('rV').textContent=v+' Код апарата са много мегапиксела узми 300 уместо 500.';
+  }
+  [F,K,S].forEach(function(i){i.addEventListener('input',calc);});
+  document.querySelectorAll('#pravilo-500 .presets button').forEach(function(b){b.addEventListener('click',function(){K.value=b.dataset.p;calc();});});
+  calc();
+})();
+</script>
+<!-- ZP-SUMRAK --><script src="https://piorajac.rs/zvezdani-park/assets/sumrak.js?v=7" defer></script>
+</body>
+</html>

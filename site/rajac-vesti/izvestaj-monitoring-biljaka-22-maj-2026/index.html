@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+
+<html lang="sr-RS">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>Извештај о мониторингу биљака у ПИО „Рајац” — 22. мај 2026.</title>
+<meta content="Теренски извештај о мониторингу биљака у ПИО Рајац 22. маја 2026. године, на основу Flora Incognita налаза и теренских фотографија." name="description"/>
+<meta content="max-image-preview:large" name="robots"/>
+<style>
+:root{
+  --bg:#f7f2e8;--paper:#fffaf2;--paper2:#ffffff;--ink:#121a16;--text:#2f3a35;--muted:#667064;
+  --line:rgba(42,36,25,.14);--line2:rgba(42,36,25,.09);--green:#173b25;--green2:#225334;
+  --nav:#0d1b2d;--gold:#b38a2e;--gold2:#e3c56e;--sage:#edf3e6;--radius:26px;--shadow:0 24px 70px rgba(38,30,16,.09);
+  --wrap:min(1180px, calc(100% - 44px));
+}
+*{box-sizing:border-box}html,body{margin:0;overflow-x:hidden}body{background:radial-gradient(circle at 12% -10%,rgba(179,138,46,.14),transparent 34%),linear-gradient(180deg,#fbf8f1 0%,var(--bg) 65%,#efe6d5 100%);color:var(--text);font-family:Georgia,"Times New Roman",serif;line-height:1.72}a{color:inherit;text-decoration:none}img{display:block;max-width:100%}button{font:inherit}
+.topnav{position:sticky;top:0;z-index:30;background:rgba(13,27,45,.98);border-bottom:1px solid rgba(227,197,110,.24);box-shadow:0 10px 28px rgba(5,13,23,.18)}
+.topnav-inner{flex-wrap:wrap;width:var(--wrap);margin:0 auto;min-height:58px;display:flex;align-items:center;gap:8px;overflow-x:visible;scrollbar-width:none}.topnav-inner::-webkit-scrollbar{display:none}
+.topnav a{display:inline-flex;align-items:center;justify-content:center;min-height:36px;padding:8px 15px;border-radius:999px;color:rgba(235,240,247,.62);font-family:system-ui,-apple-system,"Segoe UI",Arial,sans-serif;font-size:13px;font-weight:800;line-height:1;white-space:nowrap;border:1px solid transparent}.topnav a:hover{color:#f3ead1;background:rgba(255,255,255,.05);border-color:rgba(227,197,110,.28)}.topnav .home,.topnav .active{color:#f4d777;border-color:rgba(244,215,119,.38);background:rgba(244,215,119,.05)}.topnav .count{display:inline-flex;margin-left:7px;min-width:18px;height:18px;padding:0 6px;align-items:center;justify-content:center;border-radius:999px;background:rgba(227,197,110,.18);color:#ead28a;font-size:11px}
+.shell{width:var(--wrap);margin:0 auto;padding:38px 0 78px}
+.hero{display:block;margin:18px 0 28px}
+.hero-copy{background:rgba(255,250,242,.82);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:clamp(34px,5vw,64px);width:100%}
+.kicker{margin:0 0 16px;color:#7a5514;font-family:system-ui,-apple-system,"Segoe UI",Arial,sans-serif;font-size:12px;font-weight:900;letter-spacing:.28em;text-transform:uppercase}.hero h1{max-width:none;margin:0;color:var(--ink);font-size:clamp(42px,5.3vw,78px);line-height:.98;font-weight:400;letter-spacing:-.045em}.hero p{max-width:980px;margin:24px 0 0;color:var(--muted);font-size:clamp(18px,1.6vw,22px);line-height:1.72}
+.hero-photo{position:relative;min-height:560px;border-radius:var(--radius);overflow:hidden;border:1px solid rgba(255,255,255,.38);box-shadow:var(--shadow);background:#d8d1c4}.hero-photo img{width:100%;height:100%;min-height:560px;object-fit:cover}.hero-photo:after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(13,27,45,.72),transparent 48%);pointer-events:none}.hero-badge{position:absolute;left:24px;right:24px;bottom:24px;z-index:1;color:#fff}.hero-badge strong{display:block;font-size:26px;line-height:1.1;font-weight:400;letter-spacing:-.03em}.hero-badge span{display:block;margin-top:8px;color:rgba(255,255,255,.78);font-family:system-ui,-apple-system,"Segoe UI",Arial,sans-serif;font-size:13px;font-weight:800;letter-spacing:.09em;text-transform:uppercase}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin:0 0 24px}.stat{background:rgba(255,255,255,.72);border:1px solid var(--line2);border-radius:22px;padding:20px 22px;box-shadow:0 14px 42px rgba(38,30,16,.06)}.stat b{display:block;color:var(--ink);font-size:34px;line-height:1;font-weight:400;letter-spacing:-.04em}.stat span{display:block;margin-top:8px;color:var(--muted);font-family:system-ui,-apple-system,"Segoe UI",Arial,sans-serif;font-size:12px;font-weight:800;letter-spacing:.09em;text-transform:uppercase}
+.section-card{background:rgba(255,250,242,.78);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:34px 40px;margin:24px 0}.section-card h2{margin:0 0 16px;color:var(--ink);font-size:clamp(30px,3.6vw,48px);font-weight:400;line-height:1.04;letter-spacing:-.04em}.section-card p{margin:0 0 16px;font-size:18px}.section-card p:last-child{margin-bottom:0}.lead{font-size:20px!important;color:#39453e}
+.callout{border-left:4px solid var(--gold);padding:16px 18px;background:rgba(179,138,46,.08);border-radius:18px;margin:18px 0 0;color:#4c4b39}
+.species-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px;margin:24px 0}.species-card{overflow:hidden;background:rgba(255,255,255,.74);border:1px solid var(--line);border-radius:var(--radius);box-shadow:0 18px 50px rgba(38,30,16,.07)}.photo-button{display:block;width:100%;height:310px;border:0;margin:0;padding:0;cursor:zoom-in;background:#e9dfcf;overflow:hidden}.photo-button img{width:100%;height:100%;object-fit:cover;transition:transform .45s ease}.photo-button:hover img{transform:scale(1.035)}.species-copy{padding:24px 26px 28px}.species-top{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:12px}.time,.tag{display:inline-flex;align-items:center;justify-content:center;border-radius:999px;padding:7px 10px;font-family:system-ui,-apple-system,"Segoe UI",Arial,sans-serif;font-size:12px;font-weight:900;letter-spacing:.08em;text-transform:uppercase}.time{background:rgba(23,59,37,.08);color:var(--green)}.tag.warn{background:#f4ecd7;color:#7f5a13;border:1px solid rgba(127,90,19,.18)}.species-card h3{margin:0;color:var(--ink);font-size:30px;line-height:1.06;font-weight:400;letter-spacing:-.035em}.latin{margin:5px 0 16px!important;color:#647066;font-size:17px!important}.facts{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:16px 0 18px}.facts div{border:1px solid var(--line2);border-radius:16px;padding:11px 12px;background:rgba(247,242,232,.55)}.facts dt{margin:0;color:#6d756c;font-family:system-ui,-apple-system,"Segoe UI",Arial,sans-serif;font-size:11px;font-weight:900;letter-spacing:.08em;text-transform:uppercase}.facts dd{margin:2px 0 0;color:var(--ink);font-family:system-ui,-apple-system,"Segoe UI",Arial,sans-serif;font-size:15px;font-weight:900}.habitat{display:inline-block;margin:0 0 12px!important;border-radius:999px;background:var(--sage);padding:7px 11px;color:#2c5636;font-family:system-ui,-apple-system,"Segoe UI",Arial,sans-serif;font-size:13px!important;font-weight:800}
+.table-wrap{overflow:auto;border:1px solid var(--line);border-radius:22px;background:rgba(255,255,255,.66)}table{width:100%;border-collapse:collapse;min-width:860px}th,td{padding:15px 16px;border-bottom:1px solid var(--line2);text-align:left;vertical-align:top}th{color:#7a5514;background:rgba(179,138,46,.08);font-family:system-ui,-apple-system,"Segoe UI",Arial,sans-serif;font-size:12px;font-weight:900;letter-spacing:.08em;text-transform:uppercase}td{font-size:16px}td span{color:var(--muted)}tr:last-child td{border-bottom:0}
+.note-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}.note{border:1px solid var(--line2);border-radius:22px;background:rgba(255,255,255,.62);padding:22px}.note h3{margin:0 0 10px;color:var(--green);font-family:system-ui,-apple-system,"Segoe UI",Arial,sans-serif;font-size:15px;font-weight:900;letter-spacing:.08em;text-transform:uppercase}.note p{font-size:17px;margin:0}
+.gallery{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:20px}.gallery-item{position:relative;min-height:210px;border:0;border-radius:22px;overflow:hidden;padding:0;background:#e8dfcf;cursor:zoom-in;box-shadow:0 14px 32px rgba(38,30,16,.07)}.gallery-item img{width:100%;height:240px;object-fit:cover;transition:transform .45s ease}.gallery-item:hover img{transform:scale(1.04)}.gallery-item span{position:absolute;left:0;right:0;bottom:0;padding:42px 14px 13px;color:#fff;text-align:left;background:linear-gradient(0deg,rgba(0,0,0,.72),transparent);font-size:16px;line-height:1.15}.gallery-item small{display:block;margin-top:5px;color:rgba(255,255,255,.76);font-size:12px;font-family:system-ui,-apple-system,"Segoe UI",Arial,sans-serif}
+.cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:24px}.btn{display:inline-flex;align-items:center;justify-content:center;border-radius:999px;padding:12px 18px;background:var(--green);color:#fff;font-family:system-ui,-apple-system,"Segoe UI",Arial,sans-serif;font-size:13px;font-weight:900;letter-spacing:.06em;text-transform:uppercase;border:1px solid rgba(255,255,255,.14)}.btn.alt{background:rgba(255,255,255,.58);color:var(--green);border-color:var(--line)}
+.lightbox{position:fixed;inset:0;z-index:100;display:none;align-items:center;justify-content:center;background:rgba(8,13,11,.88);padding:24px}.lightbox.open{display:flex}.lightbox img{max-width:min(1180px,96vw);max-height:88vh;border-radius:18px;box-shadow:0 30px 90px rgba(0,0,0,.4)}.lightbox button{position:absolute;top:20px;right:20px;width:46px;height:46px;border-radius:999px;border:1px solid rgba(255,255,255,.24);background:rgba(255,255,255,.08);color:#fff;font-size:24px;cursor:pointer}
+.footer-note{margin:32px 0 0;color:var(--muted);font-family:system-ui,-apple-system,"Segoe UI",Arial,sans-serif;font-size:13px;line-height:1.6}
+@media (max-width:1080px){.hero{display:block}}
+@media (max-width:980px){.stats{grid-template-columns:repeat(2,1fr)}.species-grid,.note-grid{grid-template-columns:1fr}.gallery{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:620px){:root{--wrap:min(100% - 26px,1180px)}.shell{padding-top:24px}.hero-copy,.section-card{padding:26px 22px}.hero h1{font-size:42px}.stats{grid-template-columns:1fr}.facts{grid-template-columns:1fr}.gallery{grid-template-columns:1fr}.photo-button{height:260px}.topnav a{font-size:12px;padding-inline:11px}}
+</style>
+<style id="rajac-global-news-menu-style">
+.rajac-news-menu{position:sticky;top:0;z-index:9999;background:#0d1b2a;border-bottom:1px solid rgba(255,255,255,.10);font-family:Georgia,"Times New Roman",serif;box-shadow:0 8px 26px rgba(0,0,0,.08)}
+.rajac-news-menu *{box-sizing:border-box}.rajac-news-menu-inner{max-width:1180px;margin:0 auto;padding:9px 18px;min-height:56px;display:flex;flex-wrap:wrap;align-items:center;gap:8px;overflow-x:visible;scrollbar-width:none}.rajac-news-menu-inner::-webkit-scrollbar{display:none}
+.rajac-news-menu a{display:inline-flex;align-items:center;gap:6px;min-height:38px;padding:0 13px;border-radius:999px;color:rgba(255,255,255,.74);text-decoration:none;font-size:13px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;white-space:nowrap;line-height:1;font-family:Georgia,"Times New Roman",serif}
+.rajac-news-menu a:hover{background:rgba(255,255,255,.06);color:#fff}.rajac-news-menu .home{color:#e0c678;border:1px solid rgba(224,198,120,.34);background:rgba(224,198,120,.06)}
+.rajac-news-menu a.active{color:#e0c678!important;background:rgba(224,198,120,.08);outline:1px solid rgba(224,198,120,.26)}.rajac-news-menu small{display:inline-flex;align-items:center;justify-content:center;min-width:20px;height:20px;padding:0 6px;border-radius:999px;background:rgba(255,255,255,.10);color:#e0c678;font-size:11px;letter-spacing:0;font-family:Arial,sans-serif;font-weight:900}
+@media(max-width:650px){.rajac-news-menu-inner{padding:9px 10px}.rajac-news-menu a{font-size:12px;padding:0 10px}}
+</style>
+<style id="rajac-news-menu-one-row">
+/* Јединствен мени за све вести: један ред и исти sans-serif фонт као на осталим страницама сајта. */
+.rajac-news-menu{font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif!important}
+.rajac-news-menu-inner{width:min(100%,1600px)!important;max-width:1600px!important;margin:0 auto!important;padding:9px 14px!important;display:flex!important;flex-wrap:nowrap!important;align-items:center!important;justify-content:center!important;gap:4px!important;overflow-x:auto!important;overflow-y:hidden!important;scrollbar-width:none!important;-webkit-overflow-scrolling:touch}
+.rajac-news-menu-inner::-webkit-scrollbar{display:none!important}
+.rajac-news-menu a{flex:0 0 auto!important;min-height:38px!important;padding:0 10px!important;font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif!important;font-size:12px!important;font-weight:750!important;letter-spacing:.025em!important;line-height:1!important;text-transform:uppercase!important;white-space:nowrap!important}
+.rajac-news-menu small{font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif!important}
+@media(max-width:1050px){.rajac-news-menu-inner{justify-content:flex-start!important}.rajac-news-menu a{font-size:11px!important;padding:0 9px!important}}
+</style>
+<style id="rajac-unified-news-menu-v3">
+.rajac-news-menu{
+  position:sticky!important;top:0!important;z-index:9999!important;
+  width:100%!important;background:#0d1b2a!important;
+  border-bottom:1px solid rgba(255,255,255,.10)!important;
+  box-shadow:0 7px 22px rgba(0,0,0,.10)!important;
+  font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif!important;
+}
+.rajac-news-menu *{font-family:inherit!important;box-sizing:border-box!important}
+.rajac-news-menu-inner{
+  width:100%!important;max-width:1600px!important;margin:0 auto!important;
+  min-height:60px!important;padding:8px 14px!important;
+  display:flex!important;flex-direction:row!important;flex-wrap:nowrap!important;
+  align-items:center!important;justify-content:center!important;gap:6px!important;
+  overflow-x:auto!important;overflow-y:hidden!important;white-space:nowrap!important;
+  scrollbar-width:none!important;-webkit-overflow-scrolling:touch!important;
+}
+.rajac-news-menu-inner::-webkit-scrollbar{display:none!important}
+.rajac-news-menu a{
+  flex:0 0 auto!important;display:inline-flex!important;align-items:center!important;
+  justify-content:center!important;gap:6px!important;min-height:40px!important;
+  padding:0 12px!important;border-radius:999px!important;
+  color:rgba(255,255,255,.82)!important;background:transparent!important;
+  text-decoration:none!important;text-transform:uppercase!important;
+  white-space:nowrap!important;font-size:13px!important;line-height:1!important;
+  font-weight:750!important;letter-spacing:.025em!important;
+}
+.rajac-news-menu a:hover,.rajac-news-menu a:focus-visible{
+  color:#fff!important;background:rgba(255,255,255,.07)!important;
+}
+.rajac-news-menu a.home,.rajac-news-menu a.active{
+  color:#e4cb7e!important;background:rgba(228,203,126,.08)!important;
+  outline:1px solid rgba(228,203,126,.30)!important;
+}
+.rajac-news-menu small{
+  flex:0 0 auto!important;display:inline-flex!important;align-items:center!important;
+  justify-content:center!important;min-width:20px!important;height:20px!important;
+  padding:0 6px!important;border-radius:999px!important;
+  color:#e4cb7e!important;background:rgba(255,255,255,.10)!important;
+  font-size:11px!important;line-height:20px!important;font-weight:800!important;
+  letter-spacing:0!important;
+}
+@media(max-width:1180px){
+  .rajac-news-menu-inner{justify-content:flex-start!important;padding-inline:10px!important}
+  .rajac-news-menu a{font-size:12px!important;padding-inline:10px!important}
+}
+</style>
+<link href="https://piorajac.rs/rajac-vesti/assets/css/rajac-unified-menu.css" rel="stylesheet"/>
+<style id="pio-news-menu-one-row-final">
+
+/* === PIO RAJAC: JEDNOREDNI MENI NA SVIM STRANICAMA VESTI === */
+@media (min-width: 900px){
+  .rajac-news-menu{
+    width:100% !important;
+  }
+  .rajac-news-menu-inner{
+    width:100% !important;
+    max-width:1600px !important;
+    margin:0 auto !important;
+    padding:8px 12px !important;
+    display:flex !important;
+    flex-direction:row !important;
+    flex-wrap:nowrap !important;
+    align-items:center !important;
+    justify-content:center !important;
+    gap:clamp(3px,.55vw,9px) !important;
+    white-space:nowrap !important;
+    overflow-x:auto !important;
+    overflow-y:hidden !important;
+    scrollbar-width:none !important;
+  }
+  .rajac-news-menu-inner::-webkit-scrollbar{display:none !important;}
+  .rajac-news-menu a{
+    flex:0 0 auto !important;
+    white-space:nowrap !important;
+    padding-left:clamp(7px,.65vw,11px) !important;
+    padding-right:clamp(7px,.65vw,11px) !important;
+    font-size:clamp(11px,.86vw,14px) !important;
+  }
+}
+/* На ужим екранима мени остаје један ред и хоризонтално се помера, уместо да пада у други ред. */
+@media (max-width: 899px){
+  .rajac-news-menu-inner{
+    display:flex !important;
+    flex-wrap:nowrap !important;
+    justify-content:flex-start !important;
+    white-space:nowrap !important;
+    overflow-x:auto !important;
+    overflow-y:hidden !important;
+    scrollbar-width:none !important;
+    -webkit-overflow-scrolling:touch !important;
+  }
+  .rajac-news-menu-inner::-webkit-scrollbar{display:none !important;}
+  .rajac-news-menu a{flex:0 0 auto !important;white-space:nowrap !important;}
+}
+
+</style>
+</head>
+<body><nav aria-label="Мени вести" class="rajac-news-menu"><div class="rajac-news-menu-inner"><a class="home" href="https://piorajac.rs/">ПИО „РАЈАЦ“</a><a href="https://piorajac.rs/rajac-vesti/">СВЕ ВЕСТИ</a><a href="https://piorajac.rs/rajac-vesti/kategorije/aktuelno/">АКТУЕЛНО<small>7</small></a><a href="https://piorajac.rs/rajac-vesti/kategorije/vesti/">ВЕСТИ<small>3</small></a><a href="https://piorajac.rs/rajac-vesti/kategorije/izvestaji/">ИЗВЕШТАЈИ<small>8</small></a><a href="https://piorajac.rs/rajac-vesti/kategorije/istrazivanja/">ИСТРАЖИВАЊА<small>9</small></a><a href="https://piorajac.rs/rajac-vesti/kategorije/dogadjaji/">ДОГАЂАЈИ<small>5</small></a><a href="https://piorajac.rs/rajac-vesti/kategorije/u-fokusu/">У ФОКУСУ<small>4</small></a></div></nav>
+<main class="shell">
+<section class="hero">
+<div class="hero-copy">
+<p class="kicker">Теренски извештај · Flora Incognita</p>
+<h1>Извештај о мониторингу биљака у ПИО „Рајац”</h1>
+<p>Мајски теренски запис од 22. маја 2026. године, заснован на фотографијама, Flora Incognita детекцијама и радној процени поузданости идентификације.</p>
+<div class="callout">Јавна верзија не приказује прецизне координате налаза. Локацијски подаци се чувају у интерној бази за управљање, стручну проверу и каснију ГИС анализу.</div>
+</div>
+</section>
+<section aria-label="Основни подаци мониторинга" class="stats">
+<div class="stat"><b>10</b><span>теренских налаза</span></div>
+<div class="stat"><b>10</b><span>различитих таксона</span></div>
+<div class="stat"><b>661–890</b><span>m н.в.</span></div>
+<div class="stat"><b>97.6%</b><span>просечна поузданост</span></div>
+</section>
+<section class="section-card">
+<h2>Сажетак мониторинга</h2>
+<p class="lead">Током 22. маја 2026. године настављено је теренско бележење биљних врста на подручју ПИО „Рајац” и његовог непосредног контактног простора.</p>
+<p>Подаци су прикупљени фотографисањем биљака на терену и њиховом иницијалном идентификацијом помоћу апликације Flora Incognita. Овакав начин рада представља практичан облик брзог теренског мониторинга, јер омогућава да се уз сваку фотографисану биљку забележе датум, време, надморска висина, процена тачности локације и проценат поузданости аутоматске идентификације.</p>
+<p>Данашњи налази обухватају више типова станишта: отворене и полуотворене ливадске површине, рубове шуме, жбунасте и дрвенасте елементе предела, као и влажније и сеновитије шумске делове. У том смислу, резултати добро показују мозаични карактер рајачког предела.</p>
+</section>
+<section class="section-card">
+<h2>Забележене биљке</h2>
+<p>Фотографије су приказане као радни теренски материјал. Кликом на фотографију отвара се увећани приказ. Налази означени као агрегати или морфолошки осетљиве групе задржани су као иницијални мониторинг подаци до додатне стручне провере.</p>
+<div class="species-grid">
+<article class="species-card">
+<button aria-label="Увећај фотографију: Робертов здравац" class="photo-button" data-lightbox="assets/img/flora-monitoring-2026-05-22/geranium-robertianum-1353-0.webp" type="button">
+<img alt="Робертов здравац — Geranium robertianum" decoding="async" loading="lazy" src="/rajac-vesti/assets/img/flora-monitoring-2026-05-22/geranium-robertianum-1353-0.webp"/>
+</button>
+<div class="species-copy">
+<div class="species-top"><span class="time">13:53</span></div>
+<h3>Робертов здравац</h3>
+<p class="latin"><i>Geranium robertianum</i></p>
+<dl class="facts">
+<div><dt>Поузданост</dt><dd>98.5%</dd></div>
+<div><dt>Надм. висина</dt><dd>661 m</dd></div>
+<div><dt>Тачност GPS</dt><dd>±11.7 m</dd></div>
+</dl>
+<p class="habitat">сеновити шумски руб и свежа станишта</p>
+<p>Робертов здравац је типичан за сеновитије и хранљивије рубове, шумске стазе и свежије делове под шумом.</p>
+</div>
+</article>
+<article class="species-card">
+<button aria-label="Увећај фотографију: Сремуш" class="photo-button" data-lightbox="assets/img/flora-monitoring-2026-05-22/allium-ursinum-1354-0.webp" type="button">
+<img alt="Сремуш — Allium ursinum" decoding="async" loading="lazy" src="/rajac-vesti/assets/img/flora-monitoring-2026-05-22/allium-ursinum-1354-0.webp"/>
+</button>
+<div class="species-copy">
+<div class="species-top"><span class="time">13:54</span></div>
+<h3>Сремуш</h3>
+<p class="latin"><i>Allium ursinum</i></p>
+<dl class="facts">
+<div><dt>Поузданост</dt><dd>100.0%</dd></div>
+<div><dt>Надм. висина</dt><dd>661 m</dd></div>
+<div><dt>Тачност GPS</dt><dd>±11.7 m</dd></div>
+</dl>
+<p class="habitat">свежа и сеновита листопадна шума</p>
+<p>Сремуш је јасан индикатор свежих, влажнијих и сеновитијих листопадних станишта у пролећном периоду.</p>
+</div>
+</article>
+<article class="species-card">
+<button aria-label="Увећај фотографију: Штитарка — Chaerophyllum temulum" class="photo-button" data-lightbox="assets/img/flora-monitoring-2026-05-22/chaerophyllum-temulum-1355-0.webp" type="button">
+<img alt="Штитарка — Chaerophyllum temulum — Chaerophyllum temulum" decoding="async" loading="lazy" src="/rajac-vesti/assets/img/flora-monitoring-2026-05-22/chaerophyllum-temulum-1355-0.webp"/>
+</button>
+<div class="species-copy">
+<div class="species-top"><span class="time">13:55</span><span class="tag warn">потребна провера</span></div>
+<h3>Штитарка — Chaerophyllum temulum</h3>
+<p class="latin"><i>Chaerophyllum temulum</i></p>
+<dl class="facts">
+<div><dt>Поузданост</dt><dd>99.7%</dd></div>
+<div><dt>Надм. висина</dt><dd>661 m</dd></div>
+<div><dt>Тачност GPS</dt><dd>±14.1 m</dd></div>
+</dl>
+<p class="habitat">свежије засенчено и рубно шумско станиште</p>
+<p>Код штитарки је потребан опрез у коначној потврди, али овај налаз добро допуњује слику свежијег шумског појаса.</p>
+</div>
+</article>
+<article class="species-card">
+<button aria-label="Увећај фотографију: Танколисна грахорица" class="photo-button" data-lightbox="assets/img/flora-monitoring-2026-05-22/vicia-tenuifolia-1419-0.webp" type="button">
+<img alt="Танколисна грахорица — Vicia tenuifolia" decoding="async" loading="lazy" src="/rajac-vesti/assets/img/flora-monitoring-2026-05-22/vicia-tenuifolia-1419-0.webp"/>
+</button>
+<div class="species-copy">
+<div class="species-top"><span class="time">14:19</span></div>
+<h3>Танколисна грахорица</h3>
+<p class="latin"><i>Vicia tenuifolia</i></p>
+<dl class="facts">
+<div><dt>Поузданост</dt><dd>96.6%</dd></div>
+<div><dt>Надм. висина</dt><dd>846 m</dd></div>
+<div><dt>Тачност GPS</dt><dd>±3.8 m</dd></div>
+</dl>
+<p class="habitat">ливадско-рубна зељаста вегетација</p>
+<p>Грахорице су значајне у ливадским заједницама јер учествују у азотном циклусу и представљају ресурс за инсекте.</p>
+</div>
+</article>
+<article class="species-card">
+<button aria-label="Увећај фотографију: Црни јасен" class="photo-button" data-lightbox="assets/img/flora-monitoring-2026-05-22/fraxinus-ornus-1438-0.webp" type="button">
+<img alt="Црни јасен — Fraxinus ornus" decoding="async" loading="lazy" src="/rajac-vesti/assets/img/flora-monitoring-2026-05-22/fraxinus-ornus-1438-0.webp"/>
+</button>
+<div class="species-copy">
+<div class="species-top"><span class="time">14:38</span></div>
+<h3>Црни јасен</h3>
+<p class="latin"><i>Fraxinus ornus</i></p>
+<dl class="facts">
+<div><dt>Поузданост</dt><dd>99.9%</dd></div>
+<div><dt>Надм. висина</dt><dd>883 m</dd></div>
+<div><dt>Тачност GPS</dt><dd>±4.0 m</dd></div>
+</dl>
+<p class="habitat">топлији руб шуме и светлији шумски појас</p>
+<p>Црни јасен показује присуство топлијих рубних и светлијих шумских услова у вишем делу терена, на прелазу шуме и отворенијих површина.</p>
+</div>
+</article>
+<article class="species-card">
+<button aria-label="Увећај фотографију: Картузијански каранфил, агрегат" class="photo-button" data-lightbox="assets/img/flora-monitoring-2026-05-22/dianthus-carthusianorum-agg-1440-0.webp" type="button">
+<img alt="Картузијански каранфил, агрегат — Dianthus carthusianorum agg." decoding="async" loading="lazy" src="/rajac-vesti/assets/img/flora-monitoring-2026-05-22/dianthus-carthusianorum-agg-1440-0.webp"/>
+</button>
+<div class="species-copy">
+<div class="species-top"><span class="time">14:40</span><span class="tag warn">потребна провера</span></div>
+<h3>Картузијански каранфил, агрегат</h3>
+<p class="latin"><i>Dianthus carthusianorum agg.</i></p>
+<dl class="facts">
+<div><dt>Поузданост</dt><dd>95.2%</dd></div>
+<div><dt>Надм. висина</dt><dd>884 m</dd></div>
+<div><dt>Тачност GPS</dt><dd>±3.8 m</dd></div>
+</dl>
+<p class="habitat">сувља ливада и отворен травни терен</p>
+<p>Агрегат захтева додатну морфолошку проверу, али је еколошки важан као показатељ отворенијих и сувљих травних површина.</p>
+</div>
+</article>
+<article class="species-card">
+<button aria-label="Увећај фотографију: Бели глог" class="photo-button" data-lightbox="assets/img/flora-monitoring-2026-05-22/crataegus-monogyna-1441-0.webp" type="button">
+<img alt="Бели глог — Crataegus monogyna" decoding="async" loading="lazy" src="/rajac-vesti/assets/img/flora-monitoring-2026-05-22/crataegus-monogyna-1441-0.webp"/>
+</button>
+<div class="species-copy">
+<div class="species-top"><span class="time">14:41</span><span class="tag warn">потребна провера</span></div>
+<h3>Бели глог</h3>
+<p class="latin"><i>Crataegus monogyna</i></p>
+<dl class="facts">
+<div><dt>Поузданост</dt><dd>91.7%</dd></div>
+<div><dt>Надм. висина</dt><dd>890 m</dd></div>
+<div><dt>Тачност GPS</dt><dd>±5.0 m</dd></div>
+</dl>
+<p class="habitat">жбунасти руб, живица и полуотворено станиште</p>
+<p>Глог је важан жбунасти елемент рубних станишта, са значајем за птице, опрашиваче, ситне сисаре и структурну повезаност предела.</p>
+</div>
+</article>
+<article class="species-card">
+<button aria-label="Увећај фотографију: Јабука, агрегат" class="photo-button" data-lightbox="assets/img/flora-monitoring-2026-05-22/malus-domestica-agg-1442-0.webp" type="button">
+<img alt="Јабука, агрегат — Malus domestica agg." decoding="async" loading="lazy" src="/rajac-vesti/assets/img/flora-monitoring-2026-05-22/malus-domestica-agg-1442-0.webp"/>
+</button>
+<div class="species-copy">
+<div class="species-top"><span class="time">14:42</span><span class="tag warn">потребна провера</span></div>
+<h3>Јабука, агрегат</h3>
+<p class="latin"><i>Malus domestica agg.</i></p>
+<dl class="facts">
+<div><dt>Поузданост</dt><dd>98.3%</dd></div>
+<div><dt>Надм. висина</dt><dd>884 m</dd></div>
+<div><dt>Тачност GPS</dt><dd>±4.0 m</dd></div>
+</dl>
+<p class="habitat">рубни воћни, жбунасти или подивљали дрвенасти елемент</p>
+<p>Налаз треба третирати као радни јер је потребно разликовати култивисане, подивљале и сродне облике у ширем контактном простору Рајца.</p>
+</div>
+</article>
+<article class="species-card">
+<button aria-label="Увећај фотографију: Ливадска жалфија" class="photo-button" data-lightbox="assets/img/flora-monitoring-2026-05-22/salvia-pratensis-1442-0.webp" type="button">
+<img alt="Ливадска жалфија — Salvia pratensis" decoding="async" loading="lazy" src="/rajac-vesti/assets/img/flora-monitoring-2026-05-22/salvia-pratensis-1442-0.webp"/>
+</button>
+<div class="species-copy">
+<div class="species-top"><span class="time">14:42</span></div>
+<h3>Ливадска жалфија</h3>
+<p class="latin"><i>Salvia pratensis</i></p>
+<dl class="facts">
+<div><dt>Поузданост</dt><dd>99.4%</dd></div>
+<div><dt>Надм. висина</dt><dd>888 m</dd></div>
+<div><dt>Тачност GPS</dt><dd>±3.9 m</dd></div>
+</dl>
+<p class="habitat">ливада и пашњачки руб</p>
+<p>Врста је добар показатељ очуваних ливадских станишта и једна од атрактивних нектарских биљака за дневне лептире, дивље пчеле и друге опрашиваче.</p>
+</div>
+</article>
+<article class="species-card">
+<button aria-label="Увећај фотографију: Булка" class="photo-button" data-lightbox="assets/img/flora-monitoring-2026-05-22/papaver-rhoeas-1451-0.webp" type="button">
+<img alt="Булка — Papaver rhoeas" decoding="async" loading="lazy" src="/rajac-vesti/assets/img/flora-monitoring-2026-05-22/papaver-rhoeas-1451-0.webp"/>
+</button>
+<div class="species-copy">
+<div class="species-top"><span class="time">14:51</span></div>
+<h3>Булка</h3>
+<p class="latin"><i>Papaver rhoeas</i></p>
+<dl class="facts">
+<div><dt>Поузданост</dt><dd>97.1%</dd></div>
+<div><dt>Надм. висина</dt><dd>842 m</dd></div>
+<div><dt>Тачност GPS</dt><dd>±7.6 m</dd></div>
+</dl>
+<p class="habitat">отворено травно, рубно и повремено поремећено станиште</p>
+<p>Налаз указује на отворене травнате делове и рубове са сезонском динамиком, важне за опрашиваче и визуелни карактер мајских ливада.</p>
+</div>
+</article>
+</div>
+</section>
+<section class="section-card">
+<h2>Табеларни преглед налаза</h2>
+<div class="table-wrap">
+<table>
+<thead><tr><th>Време</th><th>Таксон</th><th>Надм. висина</th><th>Поузданост</th><th>GPS тачност</th><th>Станишна напомена</th></tr></thead>
+<tbody>
+<tr><td>13:53</td><td><strong>Робертов здравац</strong><br/><span><i>Geranium robertianum</i></span></td><td>661 m</td><td>98.5%</td><td>±11.7 m</td><td>сеновити шумски руб и свежа станишта</td></tr>
+<tr><td>13:54</td><td><strong>Сремуш</strong><br/><span><i>Allium ursinum</i></span></td><td>661 m</td><td>100.0%</td><td>±11.7 m</td><td>свежа и сеновита листопадна шума</td></tr>
+<tr><td>13:55</td><td><strong>Штитарка — Chaerophyllum temulum</strong><br/><span><i>Chaerophyllum temulum</i></span></td><td>661 m</td><td>99.7%</td><td>±14.1 m</td><td>свежије засенчено и рубно шумско станиште</td></tr>
+<tr><td>14:19</td><td><strong>Танколисна грахорица</strong><br/><span><i>Vicia tenuifolia</i></span></td><td>846 m</td><td>96.6%</td><td>±3.8 m</td><td>ливадско-рубна зељаста вегетација</td></tr>
+<tr><td>14:38</td><td><strong>Црни јасен</strong><br/><span><i>Fraxinus ornus</i></span></td><td>883 m</td><td>99.9%</td><td>±4.0 m</td><td>топлији руб шуме и светлији шумски појас</td></tr>
+<tr><td>14:40</td><td><strong>Картузијански каранфил, агрегат</strong><br/><span><i>Dianthus carthusianorum agg.</i></span></td><td>884 m</td><td>95.2%</td><td>±3.8 m</td><td>сувља ливада и отворен травни терен</td></tr>
+<tr><td>14:41</td><td><strong>Бели глог</strong><br/><span><i>Crataegus monogyna</i></span></td><td>890 m</td><td>91.7%</td><td>±5.0 m</td><td>жбунасти руб, живица и полуотворено станиште</td></tr>
+<tr><td>14:42</td><td><strong>Јабука, агрегат</strong><br/><span><i>Malus domestica agg.</i></span></td><td>884 m</td><td>98.3%</td><td>±4.0 m</td><td>рубни воћни, жбунасти или подивљали дрвенасти елемент</td></tr>
+<tr><td>14:42</td><td><strong>Ливадска жалфија</strong><br/><span><i>Salvia pratensis</i></span></td><td>888 m</td><td>99.4%</td><td>±3.9 m</td><td>ливада и пашњачки руб</td></tr>
+<tr><td>14:51</td><td><strong>Булка</strong><br/><span><i>Papaver rhoeas</i></span></td><td>842 m</td><td>97.1%</td><td>±7.6 m</td><td>отворено травно, рубно и повремено поремећено станиште</td></tr>
+</tbody>
+</table>
+</div>
+</section>
+<section class="section-card">
+<h2>Просторни и еколошки образац</h2>
+<p>Данашњи налази се могу груписати у три теренске целине. Прву целину чине налази на нижој надморској висини, око 660 m, где су забележени сремуш, Робертов здравац и <i>Chaerophyllum temulum</i>. Ова група указује на свежији, сеновитији и вероватно шумски или шумско-рубни микролокалитет, са довољно влаге и развијеним приземним слојем вегетације.</p>
+<p>Другу целину чине налази на вишим положајима, око 880–890 m надморске висине, где су забележени ливадска жалфија, бели глог, <i>Dianthus carthusianorum agg.</i>, црни јасен и <i>Malus domestica agg.</i> Ова група врста указује на мозаик ливадских, жбунастих и дрвенастих елемената, односно на прелазне зоне између отворених травних површина, живица, рубова шума и традиционално коришћеног предела.</p>
+<p>Трећу целину чине налази булке и танколисне грахорице на положајима око 840–846 m. Ове врсте упућују на отвореније или полуотворене површине, са већим утицајем травнате, ливадске, рубне или пољопривредне вегетације.</p>
+</section>
+<section class="section-card">
+<h2>Стручна напомена и значај за управљање</h2>
+<div class="note-grid">
+<article class="note">
+<h3>Поузданост података</h3>
+<p>Подаци из апликације Flora Incognita имају велику практичну вредност за брзо теренско бележење, али их треба третирати као иницијалне мониторинг податке. Код већине данашњих налаза процена поузданости је висока, углавном изнад 95%.</p>
+</article>
+<article class="note">
+<h3>Таксономска провера</h3>
+<p>За потребе званичне флористичке базе препоручује се додатна провера за таксоне наведене као агрегати, посебно <i>Malus domestica agg.</i> и <i>Dianthus carthusianorum agg.</i>, као и за штитарке и друге групе сличних врста.</p>
+</article>
+<article class="note">
+<h3>Управљачка вредност</h3>
+<p>Налази потврђују да је за очување биљног света Рајца важно управљати не само шумским целинама, већ и ливадама, пашњацима, рубним појасевима, живицама и појединачним дрвенастим елементима у пределу.</p>
+</article>
+<article class="note">
+<h3>Наставак мониторинга</h3>
+<p>Препоручује се наставак редовног фотографског бележења током целе вегетационе сезоне, са поновљеним обиласцима истих локалитета ради праћења фенологије, цветања и промена између ливадских, шумских, рубних и влажнијих станишта.</p>
+</article>
+</div>
+</section>
+<section class="section-card">
+<h2>Закључак</h2>
+<p>Мониторинг биљака спроведен 22. маја 2026. године потврђује да ПИО „Рајац” и његов контактни простор имају изражену станишну и флористичку разноврсност. У једном теренском изласку забележене су врсте отворених ливада, полуотворених рубова, жбунастих појасева, дрвенастих елемената и свежијих шумских микростаништа.</p>
+<p>Ово показује да је за разумевање и управљање биљним светом Рајца неопходан интегрисан приступ који повезује теренске фотографије, апликације за препознавање врста, стручну проверу налаза, ГИС базе података и дугорочно праћење стања станишта.</p>
+<div class="cta">
+<a class="btn" href="/biljke/">Биљке Рајца</a>
+<a class="btn alt" href="https://piorajac.rs/rajac-vesti/">Све вести и извештаји</a>
+</div>
+</section>
+<p class="footer-note">© 2026 ПИО „Рајац” · Радни теренски извештај за јавни приказ · Прецизне координате нису објављене у јавној верзији.</p>
+<style id="rajac-nextvest-css">.rajac-next-vest{max-width:760px;margin:34px auto 44px;padding:0 18px;font-family:Georgia,"Times New Roman",serif}.rajac-next-vest a{display:flex;flex-direction:column;gap:5px;padding:16px 20px;border:1px solid rgba(70,56,28,.20);border-radius:16px;background:#fffaf2;text-decoration:none;color:#1e2c1c;box-shadow:0 8px 24px rgba(38,30,16,.05);transition:transform .2s,box-shadow .2s}.rajac-next-vest a:hover{transform:translateY(-2px);box-shadow:0 12px 30px rgba(38,30,16,.10)}.rajac-next-vest .rnv-k{font-size:12px;font-weight:900;letter-spacing:.14em;text-transform:uppercase;color:#9a7b32;font-family:Arial,sans-serif}.rajac-next-vest .rnv-title{font-size:17px;font-weight:800;line-height:1.32}</style><nav aria-label="Све вести" class="rajac-next-vest"><a href="https://piorajac.rs/rajac-vesti/"><span class="rnv-k">Крај категорије</span><span class="rnv-title">Погледај све вести →</span></a></nav></main>
+<div aria-hidden="true" class="lightbox" id="lightbox"><button aria-label="Затвори увећани приказ" type="button">×</button><img alt="" src=""/></div>
+<script>
+(function(){
+  const box=document.getElementById('lightbox');
+  const img=box.querySelector('img');
+  const close=box.querySelector('button');
+  function open(src,alt){img.src=src;img.alt=alt||'';box.classList.add('open');box.setAttribute('aria-hidden','false');document.body.style.overflow='hidden';}
+  function shut(){box.classList.remove('open');box.setAttribute('aria-hidden','true');img.src='';document.body.style.overflow='';}
+  document.addEventListener('click',function(e){
+    const b=e.target.closest('[data-lightbox]');
+    if(b){e.preventDefault();const im=b.querySelector('img');open(b.getAttribute('data-lightbox'), im ? im.alt : '');}
+  });
+  close.addEventListener('click',shut);
+  box.addEventListener('click',function(e){if(e.target===box)shut();});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape')shut();});
+})();
+</script>
+<!-- SITE_EDITOR_ADMIN_BAR_START -->
+<script defer="" src="/admin-site-editor.php?admin_bar_js=1"></script>
+<!-- SITE_EDITOR_ADMIN_BAR_END -->
+<button aria-label="На врх стране" id="rajac-totop" title="На врх" type="button">↑</button><style id="rajac-totop-css">#rajac-totop{position:fixed;right:16px;bottom:16px;z-index:10000;width:46px;height:46px;border-radius:999px;border:1px solid rgba(255,255,255,.4);background:rgba(20,30,40,.30);-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);color:#fff;font-size:22px;line-height:1;cursor:pointer;display:flex;align-items:center;justify-content:center;opacity:0;visibility:hidden;transition:opacity .25s,visibility .25s,background .2s;box-shadow:0 6px 20px rgba(0,0,0,.25);-webkit-tap-highlight-color:transparent}#rajac-totop.show{opacity:1;visibility:visible}#rajac-totop:hover{background:rgba(20,30,40,.55)}@media(max-width:1024px){#rajac-totop{right:12px;bottom:12px;width:44px;height:44px}}</style><script>(function(){var b=document.getElementById("rajac-totop");if(!b)return;function o(){if((window.pageYOffset||document.documentElement.scrollTop)>320)b.classList.add("show");else b.classList.remove("show");}window.addEventListener("scroll",o,{passive:true});o();b.addEventListener("click",function(){window.scrollTo({top:0,behavior:"smooth"});});})();</script></body>
+</html>

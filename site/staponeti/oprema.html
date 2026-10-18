@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+
+<html data-theme="light" lang="sr-Cyrl">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<meta content="Шта понети на Рајац: опрема по активностима, климатске препоруке и прогноза." name="description"/>
+<title>Рајац – Основно + модули</title>
+<link href="assets/style.css" rel="stylesheet"/>
+</head>
+<body>
+<header class="site-header">
+<div class="container header-row">
+<a aria-label="ПИО Рајац - почетна страница сајта" class="brand" href="https://piorajac.rs/">
+<span class="brand-mark">ПИО „РАЈАЦ“</span>
+</a>
+<button aria-controls="mainNav" aria-expanded="false" aria-label="Отвори мени" class="menu-toggle" id="menuToggle" type="button">
+<span></span><span></span><span></span>
+</button>
+<nav aria-label="Навигација странице Шта понети" class="nav" id="mainNav">
+<a class="" href="index.html">Шта понети</a>
+<a class="active" href="oprema.html">Опрема</a>
+<a class="" href="sport.html">Спорт</a>
+<a class="" href="orijentiring.html">Оријентиринг</a>
+<a class="" href="fotografija.html">Фото</a>
+<a class="" href="astronomija.html">Астрономија</a>
+<a class="" href="bilje_gljive.html">Биље/гљиве</a>
+<a class="" href="istrazivanja.html">Истраживања</a>
+<a class="" href="klima.html">Клима</a>
+<a class="" href="prognoza.html">Прогноза</a>
+</nav>
+</div>
+</header>
+<main class="container">
+<section class="hero">
+<div class="hero-grid">
+<div>
+<h1>Основно + модули — шта понети</h1>
+<p class="lead">Означавање се памти у прегледачу. Филтрирај по тексту и тагу (модулу) да добијеш тачну листу за своју туру.</p>
+<div class="kv">
+<a class="btn" href="index.html">🏠 Почетна</a>
+</div>
+<div class="badge" id="pamti">Означено: <b id="checkedCount">0 / 0</b></div>
+</div>
+<div class="card"><div class="pad">
+<h2>Брзи ток</h2>
+<ul class="list">
+<li>Изабери таг “Основно” и означи базу.</li>
+<li>Промени таг (нпр. Астрономија) и означи модул.</li>
+<li>У филтер упиши “статив” или “компас” да брзо нађеш ставке.</li>
+</ul>
+<div class="note"><strong>Савет:</strong> Ресет ради само на овој листи (не брише ништа друго).</div>
+</div></div>
+</div>
+</section>
+<section class="section" id="checklist">
+<div class="section-head"><h2>Контролна листа + филтер</h2><p>Користи ово као практичан списак паковања.</p></div>
+<div class="toolbar">
+<div class="left">
+<label class="field" id="filter">
+<span>Филтер (текст)</span>
+<input id="filterInput" placeholder="нпр. вода, компас, црвена, статив…" type="search"/>
+</label>
+<label class="field" id="tag">
+<span>Таг (модул)</span>
+<select id="tagSelect">
+<option value="all">Све</option>
+<option value="osnovno">Основно</option>
+<option value="planinarenje">Планинарење</option>
+<option value="sport">Спорт</option>
+<option value="orijentiring">Оријентиринг</option>
+<option value="astronomija">Астрономија</option>
+<option value="bilje">Биље/Гљиве</option>
+<option value="istrazivanje">Истраживање/Фото</option>
+</select>
+</label>
+</div>
+<div class="right">
+<button class="btn" id="resetChecklist" type="button">Ресет</button>
+</div>
+</div>
+<div class="card"><div class="pad">
+<ul class="checklist" id="checklist">
+<li data-tags="osnovno"><label><input data-key="obuca" type="checkbox"/> 🥾 Обућа са добрим пријањањем (добар ђон)</label><div class="hint">Клизаво после кише и по мокрој трави; обућа је #1 фактор безбедности.</div></li>
+<li data-tags="osnovno"><label><input data-key="rezcarape" type="checkbox"/> 🧦 Резервне чарапе</label><div class="hint">Мокра чарапа = жуљеви + брже хлађење стопала.</div></li>
+<li data-tags="osnovno"><label><input data-key="slojevi" type="checkbox"/> 🧥 Слојевита одећа (мајица + средњи слој + ветровка)</label><div class="hint">И лети може захладнети увече; ветар на ливади појачава осећај хладноће.</div></li>
+<li data-tags="osnovno"><label><input data-key="kisa" type="checkbox"/> 🌧️ Кишна заштита (пончо/јакна)</label><div class="hint">Пљусак брзо расхлади тело и опрему.</div></li>
+<li data-tags="osnovno"><label><input data-key="voda" type="checkbox"/> 💧 Вода (1–2 Л минимум)</label><div class="hint">Не планирај руту тако да зависиш искључиво од извора.</div></li>
+<li data-tags="osnovno"><label><input data-key="uzina" type="checkbox"/> 🍫 Ужина/оброк + мала резерва</label><div class="hint">За дуже туре додај сланије и енергетске опције.</div></li>
+<li data-tags="osnovno"><label><input data-key="sunce" type="checkbox"/> 🧴 СПФ + капа + наочаре</label><div class="hint">Отворене ливаде = више сунца и ветра.</div></li>
+<li data-tags="osnovno"><label><input data-key="insekti" type="checkbox"/> 🦟 Репелент + пинцета за крпеље</label><div class="hint">Прегледај се после туре, посебно ноге и појас.</div></li>
+<li data-tags="osnovno"><label><input data-key="prvapomoc" type="checkbox"/> 🧻 Мини прва помоћ + лични лекови</label><div class="hint">Фластери за жуљеве, антисептик, еластични завој.</div></li>
+<li data-tags="osnovno"><label><input data-key="mapa" type="checkbox"/> 🗺️ Офлајн мапа + телефон</label><div class="hint">Преузми мапу унапред; сигнал може варирати.</div></li>
+<li data-tags="osnovno"><label><input data-key="power" type="checkbox"/> 🔋 Спољна батерија</label><div class="hint">ГПС/фото и хладноћа троше батерију брже.</div></li>
+<li data-tags="osnovno"><label><input data-key="otpad" type="checkbox"/> 🗑️ Кеса за отпад</label><div class="hint">Све што донесеш – врати назад.</div></li>
+<li data-tags="planinarenje"><label><input data-key="stapovi" type="checkbox"/> 🦯 Планинарски штапови</label><div class="hint">Растерећују колена и дају стабилност.</div></li>
+<li data-tags="planinarenje"><label><input data-key="termofolija" type="checkbox"/> 🪙 Термо-фолија (термо ћебе)</label><div class="hint">За случај наглог захлађења или повреде.</div></li>
+<li data-tags="planinarenje"><label><input data-key="zvizdaljka" type="checkbox"/> 📣 Звиждаљка</label><div class="hint">Сигнализација је лакша и ефикаснија од викања.</div></li>
+<li data-tags="planinarenje"><label><input data-key="rezhrana" type="checkbox"/> 🥨 Резервна храна</label><div class="hint">Да не останеш без енергије ако се тура продужи.</div></li>
+<li data-tags="planinarenje"><label><input data-key="gamase" type="checkbox"/> 🥾 Гамашне</label><div class="hint">Снег/блато и висока трава – штите панталоне и стопала.</div></li>
+<li data-tags="planinarenje"><label><input data-key="dereze" type="checkbox"/> 🧊 Мини дерезе / дерезице</label><div class="hint">За поледицу и залеђене деонице (зима, рано пролеће, касна јесен).</div></li>
+<li data-tags="sport"><label><input data-key="sat" type="checkbox"/> ⌚ Сат/пулсметар</label><div class="hint">Праћење зона пулса и темпа.</div></li>
+<li data-tags="sport"><label><input data-key="elektroliti" type="checkbox"/> 🧂 Електролити (по потреби)</label><div class="hint">Корисно за дуже тренинге и топле дане.</div></li>
+<li data-tags="sport"><label><input data-key="antitr" type="checkbox"/> 🧴 Крема против трења</label><div class="hint">Превенција жуљева на дугим турама.</div></li>
+<li data-tags="orijentiring"><label><input data-key="kompas" type="checkbox"/> 🧭 Компас</label><div class="hint">За прецизно очитавање азимута.</div></li>
+<li data-tags="orijentiring"><label><input data-key="karta" type="checkbox"/> 🗺️ Штампана карта + фолија</label><div class="hint">Папир ради и кад нема батерије.</div></li>
+<li data-tags="orijentiring"><label><input data-key="marker" type="checkbox"/> ✍️ Маркер/оловка</label><div class="hint">Брзе белешке и план деоница.</div></li>
+<li data-tags="astronomija"><label><input data-key="crvena" type="checkbox"/> 🔦 Црвена лампа</label><div class="hint">Бело светло руши ноћни вид и смета другима.</div></li>
+<li data-tags="astronomija"><label><input data-key="podloga" type="checkbox"/> 🧺 Подлога/каримат</label><div class="hint">Изолација од земље је обавезна.</div></li>
+<li data-tags="astronomija"><label><input data-key="cebe" type="checkbox"/> 🧣 Ћебе / додатни слој</label><div class="hint">Мировање брзо хлади тело.</div></li>
+<li data-tags="astronomija"><label><input data-key="dvogled" type="checkbox"/> 🔭 Двоглед (опционо)</label><div class="hint">Одличан за почетнике: Млечни пут, јата.</div></li>
+<li data-tags="astronomija"><label><input data-key="stativ" type="checkbox"/> 📷 Статив (опционо)</label><div class="hint">За ноћне експозиције и стабилне снимке.</div></li>
+<li data-tags="astronomija"><label><input data-key="termos" type="checkbox"/> 🫖 Термос (топао напитак)</label><div class="hint">Ноћно посматрање и зимске туре – помаже терморегулацији.</div></li>
+<li data-tags="bilje"><label><input data-key="noz" type="checkbox"/> 🔪 Мали нож (сечење)</label><div class="hint">Не чупај – чувај станиште/мицелијум.</div></li>
+<li data-tags="bilje"><label><input data-key="korpa" type="checkbox"/> 🧺 Корпа / папирне кесе</label><div class="hint">Без пластике; проветравање спречава пропадање.</div></li>
+<li data-tags="bilje"><label><input data-key="vodic" type="checkbox"/> 📘 Водич / апликација</label><div class="hint">Отровни двојници су реалан ризик.</div></li>
+<li data-tags="bilje"><label><input data-key="rukavice" type="checkbox"/> 🧤 Рукавице + четкица</label><div class="hint">Чишћење без прања у потоку.</div></li>
+<li data-tags="istrazivanje"><label><input data-key="sveska" type="checkbox"/> 📓 Теренска свеска + оловка</label><div class="hint">Папир је поуздан и без батерије.</div></li>
+<li data-tags="istrazivanje"><label><input data-key="gps" type="checkbox"/> 📍 ГПС/телефон + резервна батерија</label><div class="hint">Прецизне локације за евиденцију.</div></li>
+<li data-tags="istrazivanje"><label><input data-key="lenjir" type="checkbox"/> 📏 Мерна скала (лењир)</label><div class="hint">Димензије помажу идентификацију.</div></li>
+<li data-tags="istrazivanje"><label><input data-key="baterije" type="checkbox"/> 🔋 Резервне батерије/картице</label><div class="hint">Фото и хладноћа брзо троше ресурсе.</div></li>
+<li data-tags="osnovno"><label><input data-key="ceona" type="checkbox"/> 🔦 Чеона лампа</label><div class="hint">Кратак дан у јесен/зиму, магла и шума траже поуздано светло.</div></li>
+<li data-tags="osnovno"><label><input data-key="kapa" type="checkbox"/> 🧢 Капа/Баф</label><div class="hint">За сунце лети и топлоту зими; баф штити врат од ветра.</div></li>
+</ul>
+</div></div>
+</section>
+</main>
+<footer class="site-footer">
+<div class="container footer-grid">
+<div>
+<strong>Шта понети на Рајац</strong>
+<p>Практичан списак за безбедан и одговоран боравак у пределу Рајца.</p>
+</div>
+<div class="footer-links">
+<a href="https://piorajac.rs/">ПИО Рајац</a> · <a href="index.html">Шта понети</a> · <a href="oprema.html">Опрема</a> · <a href="klima.html">Клима</a> · <a href="prognoza.html">Прогноза</a>
+</div>
+</div>
+</footer>
+<script src="assets/app.js"></script>
+</body>
+</html>

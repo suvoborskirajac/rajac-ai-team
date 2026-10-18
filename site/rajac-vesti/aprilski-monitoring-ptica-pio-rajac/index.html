@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+
+<html lang="sr-RS">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>Априлски мониторинг птица у ПИО „Рајац”</title>
+<meta content="Збирни извештај о априлском акустичком мониторингу птица у ПИО Рајац, са обједињеним списком врста забележених 13. и 16. априла." name="description"/>
+<style>
+:root{
+  --bg:#f7f2e8;--paper:#fffaf2;--paper2:#ffffff;--ink:#121a16;--text:#2f3a35;--muted:#667064;
+  --line:rgba(42,36,25,.14);--line2:rgba(42,36,25,.09);--green:#173b25;--green2:#225334;
+  --nav:#0d1b2d;--gold:#b38a2e;--gold2:#e3c56e;--radius:26px;--shadow:0 24px 70px rgba(38,30,16,.09);
+  --wrap:min(1180px, calc(100% - 44px));
+}
+*{box-sizing:border-box}html,body{margin:0;overflow-x:hidden}body{background:radial-gradient(circle at 12% -10%,rgba(179,138,46,.14),transparent 34%),linear-gradient(180deg,#fbf8f1 0%,var(--bg) 65%,#efe6d5 100%);color:var(--text);font-family:Georgia,"Times New Roman",serif;line-height:1.72}a{color:inherit;text-decoration:none}img{display:block;max-width:100%}.topnav{position:sticky;top:0;z-index:30;background:rgba(13,27,45,.98);border-bottom:1px solid rgba(227,197,110,.24);box-shadow:0 10px 28px rgba(5,13,23,.18)}.topnav-inner{flex-wrap:wrap;width:var(--wrap);margin:0 auto;min-height:58px;display:flex;align-items:center;gap:8px;overflow-x:visible;scrollbar-width:none}.topnav-inner::-webkit-scrollbar{display:none}.topnav a{display:inline-flex;align-items:center;justify-content:center;min-height:36px;padding:8px 15px;border-radius:999px;color:rgba(235,240,247,.62);font-family:system-ui,-apple-system,"Segoe UI",Arial,sans-serif;font-size:13px;font-weight:800;line-height:1;white-space:nowrap;border:1px solid transparent}.topnav a:hover{color:#f3ead1;background:rgba(255,255,255,.05);border-color:rgba(227,197,110,.28)}.topnav .home,.topnav .active{color:#f4d777;border-color:rgba(244,215,119,.38);background:rgba(244,215,119,.05)}.topnav .count{display:inline-flex;margin-left:7px;min-width:18px;height:18px;padding:0 6px;align-items:center;justify-content:center;border-radius:999px;background:rgba(227,197,110,.18);color:#ead28a;font-size:11px}.shell{width:var(--wrap);margin:0 auto;padding:54px 0 78px}.hero{padding:34px 0 32px;border-bottom:1px solid var(--line)}.kicker{margin:0 0 16px;color:#7a5514;font-family:system-ui,-apple-system,"Segoe UI",Arial,sans-serif;font-size:12px;font-weight:900;letter-spacing:.28em;text-transform:uppercase}.hero h1{max-width:1020px;margin:0;color:var(--ink);font-size:clamp(42px,6vw,78px);line-height:1.0;font-weight:400;letter-spacing:-.045em}.hero p{max-width:850px;margin:24px 0 0;color:var(--muted);font-size:clamp(18px,1.6vw,22px);line-height:1.72}.report-grid{display:grid;grid-template-columns:minmax(0,1fr) 320px;gap:24px;align-items:stretch;margin:34px 0 24px}.intro-card,.stats-card,.section-card{background:rgba(255,250,242,.78);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow)}.intro-card{padding:34px 40px}.intro-card .label,.section-label{display:block;margin:0 0 12px;color:#7a5514;font-family:system-ui,-apple-system,"Segoe UI",Arial,sans-serif;font-size:12px;font-weight:900;letter-spacing:.18em;text-transform:uppercase}.intro-card h2,.section-title h2{margin:0;color:var(--ink);font-size:clamp(30px,3.4vw,46px);line-height:1.08;font-weight:400;letter-spacing:-.025em}.intro-card p{font-size:19px;color:var(--muted);margin:18px 0 0}.stats-card{padding:26px;background:linear-gradient(180deg,#24472f,#132318);color:#fff}.stats-card h2{margin:0 0 15px;color:#fff;font-size:29px;line-height:1.1;font-weight:400}.stat{border:1px solid rgba(255,255,255,.18);background:rgba(255,255,255,.08);border-radius:16px;padding:15px;margin-top:12px}.stat span{display:block;margin-bottom:5px;color:rgba(255,255,255,.68);font-family:system-ui,-apple-system,"Segoe UI",Arial,sans-serif;font-size:11px;font-weight:900;letter-spacing:.16em;text-transform:uppercase}.stat strong{display:block;color:#fff;font-size:27px;line-height:1.05;font-weight:400}.section-card{padding:34px 40px;margin:24px 0}.section-title{display:flex;align-items:flex-end;justify-content:space-between;gap:24px;margin-bottom:22px;padding-bottom:18px;border-bottom:1px solid var(--line)}.section-title p{max-width:520px;margin:0;color:var(--muted);font-size:16px;line-height:1.55}.section-card p{font-size:18px;color:var(--muted);margin:0 0 17px}.summary-grid,.analysis-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin-top:22px}.summary-box,.analysis-box{background:#f7f2e8;border:1px solid var(--line);border-radius:18px;padding:20px}.summary-box span{display:block;margin-bottom:8px;color:#7a5514;font-family:system-ui,-apple-system,"Segoe UI",Arial,sans-serif;font-size:11px;font-weight:900;letter-spacing:.16em;text-transform:uppercase}.summary-box strong{display:block;color:var(--ink);font-size:24px;line-height:1.15;font-weight:400}.gallery{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}.bird-card{overflow:hidden;border-radius:18px;border:1px solid var(--line);background:#fffdf7;box-shadow:0 12px 32px rgba(35,42,31,.06)}.bird-img{width:100%;height:170px;object-fit:cover;background:#dfe8d8}.bird-body{padding:14px 15px 16px}.bird-body strong{display:block;color:var(--ink);font-size:18px;line-height:1.2;font-weight:700}.bird-body em{display:block;margin-top:3px;color:#5e675f;font-size:14px;line-height:1.25}.bird-body small{display:block;margin-top:9px;color:#7a766b;font-family:system-ui,-apple-system,"Segoe UI",Arial,sans-serif;font-size:11px;line-height:1.35}.table-wrap{overflow-x:auto;border:1px solid var(--line);border-radius:20px;background:#fffdf7}table{width:100%;border-collapse:collapse;min-width:760px}th,td{padding:12px 13px;border-bottom:1px solid rgba(33,42,31,.10);text-align:left;vertical-align:middle}th{background:#efe7d8;color:#6f4b00;font-family:system-ui,-apple-system,"Segoe UI",Arial,sans-serif;font-size:11px;letter-spacing:.13em;text-transform:uppercase}td{color:#2b352b;font-size:15px;line-height:1.35}td em{color:#5a645a}td:first-child,td:nth-child(4),td:nth-child(5){text-align:center;width:76px}tr:last-child td{border-bottom:0}.analysis-grid{grid-template-columns:1fr 1fr}.analysis-box h3{margin:0 0 12px;color:var(--green);font-size:24px;line-height:1.1;font-weight:400}.analysis-box p{font-size:17px}.footer-nav{display:flex;justify-content:space-between;gap:18px;margin-top:30px;padding-top:24px;border-top:1px solid var(--line);font-family:system-ui,-apple-system,"Segoe UI",Arial,sans-serif;font-size:13px;font-weight:900;letter-spacing:.16em;text-transform:uppercase;color:#7a5514}.footer-nav a:hover{text-decoration:underline;text-underline-offset:4px}@media(max-width:980px){.report-grid{grid-template-columns:1fr}.stats-card{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}.stats-card h2{grid-column:1/-1}.stat{margin:0}.gallery{grid-template-columns:repeat(2,1fr)}.summary-grid{grid-template-columns:1fr}.analysis-grid{grid-template-columns:1fr}.section-title{display:block}.section-title p{margin-top:10px}}@media(max-width:620px){:root{--wrap:min(100% - 24px,1180px)}.shell{padding-top:34px}.topnav-inner{min-height:52px}.topnav a{font-size:12px;padding:8px 12px}.intro-card,.section-card{padding:24px 18px}.stats-card{grid-template-columns:1fr}.gallery{grid-template-columns:1fr}.bird-img{height:210px}.section-card p{font-size:16.5px}.hero h1{font-size:clamp(34px,11vw,48px)}}
+</style>
+<style id="rajac-static-news-menu-css">
+.rajac-news-menu{position:sticky;top:0;z-index:9999;background:#0d1b2a;border-bottom:1px solid rgba(255,255,255,.10);font-family:Georgia,"Times New Roman",serif;box-shadow:0 8px 26px rgba(0,0,0,.08)}
+.rajac-news-menu *{box-sizing:border-box}.rajac-news-menu-inner{max-width:1180px;margin:0 auto;padding:9px 18px;min-height:56px;display:flex;flex-wrap:wrap;align-items:center;gap:8px;overflow-x:visible;scrollbar-width:none}.rajac-news-menu-inner::-webkit-scrollbar{display:none}.rajac-news-menu a{display:inline-flex;align-items:center;gap:6px;min-height:38px;padding:0 13px;border-radius:999px;color:rgba(255,255,255,.74);text-decoration:none;font-size:13px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;white-space:nowrap}.rajac-news-menu a:hover{background:rgba(255,255,255,.06);color:#fff}.rajac-news-menu .home{color:#e0c678;border:1px solid rgba(224,198,120,.34);background:rgba(224,198,120,.06)}.rajac-news-menu a.active{color:#e0c678;background:rgba(224,198,120,.08);outline:1px solid rgba(224,198,120,.26)}.rajac-news-menu small,.rajac-news-menu .count{display:inline-flex;align-items:center;justify-content:center;min-width:20px;height:20px;padding:0 6px;border-radius:999px;background:rgba(255,255,255,.10);color:#e0c678;font-size:11px;letter-spacing:0}@media(max-width:720px){.rajac-news-menu-inner{padding:9px 10px}.rajac-news-menu a{font-size:12px;padding:0 10px}}
+</style>
+<style id="rajac-single-fix-css">.rajac-added-cover{width:min(1120px,calc(100% - 34px));margin:24px auto;border-radius:22px;overflow:hidden;border:1px solid rgba(30,40,30,.14);background:#fff;box-shadow:0 18px 55px rgba(35,42,31,.06)}.rajac-added-cover img{width:100%;max-height:420px;object-fit:cover;display:block}.rajac-added-cover figcaption{padding:10px 14px;color:#6c6f65;font:13px/1.45 Arial,sans-serif}</style>
+<style id="rajac-global-news-menu-style">
+.rajac-news-menu{position:sticky;top:0;z-index:9999;background:#0d1b2a;border-bottom:1px solid rgba(255,255,255,.10);font-family:Georgia,"Times New Roman",serif;box-shadow:0 8px 26px rgba(0,0,0,.08)}
+.rajac-news-menu *{box-sizing:border-box}.rajac-news-menu-inner{max-width:1180px;margin:0 auto;padding:9px 18px;min-height:56px;display:flex;flex-wrap:wrap;align-items:center;gap:8px;overflow-x:visible;scrollbar-width:none}.rajac-news-menu-inner::-webkit-scrollbar{display:none}
+.rajac-news-menu a{display:inline-flex;align-items:center;gap:6px;min-height:38px;padding:0 13px;border-radius:999px;color:rgba(255,255,255,.74);text-decoration:none;font-size:13px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;white-space:nowrap;line-height:1;font-family:Georgia,"Times New Roman",serif}
+.rajac-news-menu a:hover{background:rgba(255,255,255,.06);color:#fff}.rajac-news-menu .home{color:#e0c678;border:1px solid rgba(224,198,120,.34);background:rgba(224,198,120,.06)}
+.rajac-news-menu a.active{color:#e0c678!important;background:rgba(224,198,120,.08);outline:1px solid rgba(224,198,120,.26)}.rajac-news-menu small{display:inline-flex;align-items:center;justify-content:center;min-width:20px;height:20px;padding:0 6px;border-radius:999px;background:rgba(255,255,255,.10);color:#e0c678;font-size:11px;letter-spacing:0;font-family:Arial,sans-serif;font-weight:900}
+@media(max-width:650px){.rajac-news-menu-inner{padding:9px 10px}.rajac-news-menu a{font-size:12px;padding:0 10px}}
+</style>
+<style id="rajac-news-menu-one-row">
+/* Јединствен мени за све вести: један ред и исти sans-serif фонт као на осталим страницама сајта. */
+.rajac-news-menu{font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif!important}
+.rajac-news-menu-inner{width:min(100%,1600px)!important;max-width:1600px!important;margin:0 auto!important;padding:9px 14px!important;display:flex!important;flex-wrap:nowrap!important;align-items:center!important;justify-content:center!important;gap:4px!important;overflow-x:auto!important;overflow-y:hidden!important;scrollbar-width:none!important;-webkit-overflow-scrolling:touch}
+.rajac-news-menu-inner::-webkit-scrollbar{display:none!important}
+.rajac-news-menu a{flex:0 0 auto!important;min-height:38px!important;padding:0 10px!important;font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif!important;font-size:12px!important;font-weight:750!important;letter-spacing:.025em!important;line-height:1!important;text-transform:uppercase!important;white-space:nowrap!important}
+.rajac-news-menu small{font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif!important}
+@media(max-width:1050px){.rajac-news-menu-inner{justify-content:flex-start!important}.rajac-news-menu a{font-size:11px!important;padding:0 9px!important}}
+</style>
+<style id="rajac-unified-news-menu-v3">
+.rajac-news-menu{
+  position:sticky!important;top:0!important;z-index:9999!important;
+  width:100%!important;background:#0d1b2a!important;
+  border-bottom:1px solid rgba(255,255,255,.10)!important;
+  box-shadow:0 7px 22px rgba(0,0,0,.10)!important;
+  font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif!important;
+}
+.rajac-news-menu *{font-family:inherit!important;box-sizing:border-box!important}
+.rajac-news-menu-inner{
+  width:100%!important;max-width:1600px!important;margin:0 auto!important;
+  min-height:60px!important;padding:8px 14px!important;
+  display:flex!important;flex-direction:row!important;flex-wrap:nowrap!important;
+  align-items:center!important;justify-content:center!important;gap:6px!important;
+  overflow-x:auto!important;overflow-y:hidden!important;white-space:nowrap!important;
+  scrollbar-width:none!important;-webkit-overflow-scrolling:touch!important;
+}
+.rajac-news-menu-inner::-webkit-scrollbar{display:none!important}
+.rajac-news-menu a{
+  flex:0 0 auto!important;display:inline-flex!important;align-items:center!important;
+  justify-content:center!important;gap:6px!important;min-height:40px!important;
+  padding:0 12px!important;border-radius:999px!important;
+  color:rgba(255,255,255,.82)!important;background:transparent!important;
+  text-decoration:none!important;text-transform:uppercase!important;
+  white-space:nowrap!important;font-size:13px!important;line-height:1!important;
+  font-weight:750!important;letter-spacing:.025em!important;
+}
+.rajac-news-menu a:hover,.rajac-news-menu a:focus-visible{
+  color:#fff!important;background:rgba(255,255,255,.07)!important;
+}
+.rajac-news-menu a.home,.rajac-news-menu a.active{
+  color:#e4cb7e!important;background:rgba(228,203,126,.08)!important;
+  outline:1px solid rgba(228,203,126,.30)!important;
+}
+.rajac-news-menu small{
+  flex:0 0 auto!important;display:inline-flex!important;align-items:center!important;
+  justify-content:center!important;min-width:20px!important;height:20px!important;
+  padding:0 6px!important;border-radius:999px!important;
+  color:#e4cb7e!important;background:rgba(255,255,255,.10)!important;
+  font-size:11px!important;line-height:20px!important;font-weight:800!important;
+  letter-spacing:0!important;
+}
+@media(max-width:1180px){
+  .rajac-news-menu-inner{justify-content:flex-start!important;padding-inline:10px!important}
+  .rajac-news-menu a{font-size:12px!important;padding-inline:10px!important}
+}
+</style>
+<link href="https://piorajac.rs/rajac-vesti/assets/css/rajac-unified-menu.css" rel="stylesheet"/>
+<style id="pio-news-menu-one-row-final">
+
+/* === PIO RAJAC: JEDNOREDNI MENI NA SVIM STRANICAMA VESTI === */
+@media (min-width: 900px){
+  .rajac-news-menu{
+    width:100% !important;
+  }
+  .rajac-news-menu-inner{
+    width:100% !important;
+    max-width:1600px !important;
+    margin:0 auto !important;
+    padding:8px 12px !important;
+    display:flex !important;
+    flex-direction:row !important;
+    flex-wrap:nowrap !important;
+    align-items:center !important;
+    justify-content:center !important;
+    gap:clamp(3px,.55vw,9px) !important;
+    white-space:nowrap !important;
+    overflow-x:auto !important;
+    overflow-y:hidden !important;
+    scrollbar-width:none !important;
+  }
+  .rajac-news-menu-inner::-webkit-scrollbar{display:none !important;}
+  .rajac-news-menu a{
+    flex:0 0 auto !important;
+    white-space:nowrap !important;
+    padding-left:clamp(7px,.65vw,11px) !important;
+    padding-right:clamp(7px,.65vw,11px) !important;
+    font-size:clamp(11px,.86vw,14px) !important;
+  }
+}
+/* На ужим екранима мени остаје један ред и хоризонтално се помера, уместо да пада у други ред. */
+@media (max-width: 899px){
+  .rajac-news-menu-inner{
+    display:flex !important;
+    flex-wrap:nowrap !important;
+    justify-content:flex-start !important;
+    white-space:nowrap !important;
+    overflow-x:auto !important;
+    overflow-y:hidden !important;
+    scrollbar-width:none !important;
+    -webkit-overflow-scrolling:touch !important;
+  }
+  .rajac-news-menu-inner::-webkit-scrollbar{display:none !important;}
+  .rajac-news-menu a{flex:0 0 auto !important;white-space:nowrap !important;}
+}
+
+</style>
+</head>
+<body><nav aria-label="Мени вести" class="rajac-news-menu"><div class="rajac-news-menu-inner"><a class="home" href="https://piorajac.rs/">ПИО „РАЈАЦ“</a><a href="https://piorajac.rs/rajac-vesti/">СВЕ ВЕСТИ</a><a href="https://piorajac.rs/rajac-vesti/kategorije/aktuelno/">АКТУЕЛНО<small>7</small></a><a href="https://piorajac.rs/rajac-vesti/kategorije/vesti/">ВЕСТИ<small>3</small></a><a href="https://piorajac.rs/rajac-vesti/kategorije/izvestaji/">ИЗВЕШТАЈИ<small>8</small></a><a href="https://piorajac.rs/rajac-vesti/kategorije/istrazivanja/">ИСТРАЖИВАЊА<small>9</small></a><a href="https://piorajac.rs/rajac-vesti/kategorije/dogadjaji/">ДОГАЂАЈИ<small>5</small></a><a href="https://piorajac.rs/rajac-vesti/kategorije/u-fokusu/">У ФОКУСУ<small>4</small></a></div></nav>
+<main class="shell">
+<header class="hero">
+<p class="kicker">Извештаји · 21.05.2026.</p>
+<h1>Априлски мониторинг птица у ПИО „Рајац”</h1>
+<p>Збирни извештај о априлском акустичком мониторингу птица у ПИО Рајац, са обједињеним списком врста забележених 13. и 16. априла.</p>
+</header>
+<section aria-label="Увод и кључни резултати" class="report-grid">
+<article class="intro-card">
+<span class="label">Извештаји · априлски мониторинг птица</span>
+<h2>Пролећна активност птица на Рајцу</h2>
+<p>Током априла је у границама Предела изузетних одлика „Рајац” спроведен акустички мониторинг птица. Снимања су обављена 13. и 16. априла, у периоду изражене пролећне активности птица, када су многе врсте звучно активне због обележавања територија, почетка гнежђења и повратка пролећних селица.</p>
+</article>
+<aside aria-label="Кључни резултати" class="stats-card">
+<h2>Кључни резултати</h2>
+<div class="stat"><span>13. април</span><strong>16 врста</strong></div>
+<div class="stat"><span>16. април</span><strong>22 врсте</strong></div>
+<div class="stat"><span>Обједињено</span><strong>25 врста</strong></div>
+<div class="stat"><span>Простор</span><strong>ПИО „Рајац”</strong></div>
+</aside>
+</section>
+<section class="section-card">
+<div class="section-title">
+<h2>Сажетак налаза</h2>
+<p>Месечни преглед бележи пролећну активност птица и прве јасне показатеље гнездилишне сезоне на Рајцу.</p>
+</div>
+<p>На основу прегледаних снимака и уклањања дупликата, 13. априла је забележено 16 јединствених врста, а 16. априла 22 јединствене врсте. Обједињавањем оба датума добијен је збирни списак од 25 врста птица забележених током априлског мониторинга.</p>
+<p>Априлски налази показују да је у ПИО „Рајац” већ у раном делу пролећа активан разноврстан скуп птица различитих станишта. Забележене су шумске врсте, врсте шумских рубова и жбунастих појасева, птице отворених ливада и пашњака, као и врсте везане за сеоски и полукултурни предео.</p>
+<div class="summary-grid">
+<div class="summary-box"><span>Тип података</span><strong>акустички мониторинг</strong></div>
+<div class="summary-box"><span>Период</span><strong>13. и 16. април</strong></div>
+<div class="summary-box"><span>Значај</span><strong>пролећна активност и селице</strong></div>
+</div>
+</section>
+<section class="section-card">
+<div class="section-title">
+<h2>Неке од забележених врста</h2>
+<p>Издвојене су неке од врста које су забележене током априлског мониторинга.</p>
+</div>
+<div class="gallery">
+<article class="bird-card"><img alt="Велика сеница, Parus major" class="bird-img" decoding="async" loading="lazy" src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Parus%20major%20m.jpg"/><div class="bird-body"><strong>Велика сеница</strong><em>Parus major</em><small>фото-илустрација</small></div></article>
+<article class="bird-card"><img alt="Црвендаћ, Erithacus rubecula" class="bird-img" decoding="async" loading="lazy" src="https://commons.wikimedia.org/wiki/Special:Redirect/file/European%20Robin.jpg"/><div class="bird-body"><strong>Црвендаћ</strong><em>Erithacus rubecula</em><small>фото-илустрација</small></div></article>
+<article class="bird-card"><img alt="Обични кос, Turdus merula" class="bird-img" decoding="async" loading="lazy" src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Common%20Blackbird.jpg"/><div class="bird-body"><strong>Обични кос</strong><em>Turdus merula</em><small>фото-илустрација</small></div></article>
+<article class="bird-card"><img alt="Зеба, Fringilla coelebs" class="bird-img" decoding="async" loading="lazy" src="https://commons.wikimedia.org/wiki/Special:Redirect/file/FringillaCoelebsFemale.jpg"/><div class="bird-body"><strong>Зеба</strong><em>Fringilla coelebs</em><small>фото-илустрација</small></div></article>
+<article class="bird-card"><img alt="Плава сеница, Cyanistes caeruleus" class="bird-img" decoding="async" loading="lazy" src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Cyanistes%20caeruleus%20Oulu%2020170507%2003.jpg"/><div class="bird-body"><strong>Плава сеница</strong><em>Cyanistes caeruleus</em><small>фото-илустрација</small></div></article>
+<article class="bird-card"><img alt="Црноглава грмуша, Sylvia atricapilla" class="bird-img" decoding="async" loading="lazy" src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Sylvia%20atricapilla%20male%202.jpg"/><div class="bird-body"><strong>Црноглава грмуша</strong><em>Sylvia atricapilla</em><small>фото-илустрација</small></div></article>
+<article class="bird-card"><img alt="Обична кукавица, Cuculus canorus" class="bird-img" decoding="async" loading="lazy" src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Common%20Cuckoo%20%28Cuculus%20canorus%29%20%2831177813565%29.jpg"/><div class="bird-body"><strong>Обична кукавица</strong><em>Cuculus canorus</em><small>фото-илустрација</small></div></article>
+<article class="bird-card"><img alt="Беловрата мухарица, Ficedula albicollis" class="bird-img" decoding="async" loading="lazy" src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Collared%20flycatcher%20%28Ficedula%20albicollis%29.jpg"/><div class="bird-body"><strong>Беловрата мухарица</strong><em>Ficedula albicollis</em><small>фото-илустрација</small></div></article>
+</div>
+</section>
+<section class="section-card">
+<div class="section-title">
+<h2>Збирни списак врста забележених у априлу</h2>
+<p>Табела приказује обједињени списак без дупликата и присуство врста по датумима снимања.</p>
+</div>
+<div class="table-wrap">
+<table>
+<thead><tr><th>Бр.</th><th>Домаћи назив</th><th>Латински назив</th><th>13. април</th><th>16. април</th></tr></thead>
+<tbody>
+<tr><td>1</td><td>Велика сеница</td><td><em>Parus major</em></td><td>+</td><td>+</td></tr>
+<tr><td>2</td><td>Црвендаћ</td><td><em>Erithacus rubecula</em></td><td>+</td><td>+</td></tr>
+<tr><td>3</td><td>Шумска шева</td><td><em>Lullula arborea</em></td><td>+</td><td></td></tr>
+<tr><td>4</td><td>Црноглава грмуша</td><td><em>Sylvia atricapilla</em></td><td>+</td><td>+</td></tr>
+<tr><td>5</td><td>Обични кос</td><td><em>Turdus merula</em></td><td>+</td><td>+</td></tr>
+<tr><td>6</td><td>Пољска шева</td><td><em>Alauda arvensis</em></td><td>+</td><td>+</td></tr>
+<tr><td>7</td><td>Велика стрнадица</td><td><em>Emberiza calandra</em></td><td>+</td><td>+</td></tr>
+<tr><td>8</td><td>Дугокљуни пузић</td><td><em>Certhia brachydactyla</em></td><td>+</td><td></td></tr>
+<tr><td>9</td><td>Зеба</td><td><em>Fringilla coelebs</em></td><td>+</td><td>+</td></tr>
+<tr><td>10</td><td>Сеоска ласта</td><td><em>Hirundo rustica</em></td><td>+</td><td></td></tr>
+<tr><td>11</td><td>Царић</td><td><em>Troglodytes troglodytes</em></td><td>+</td><td>+</td></tr>
+<tr><td>12</td><td>Јелова сеница</td><td><em>Periparus ater</em></td><td>+</td><td>+</td></tr>
+<tr><td>13</td><td>Мали славуј</td><td><em>Luscinia megarhynchos</em></td><td>+</td><td>+</td></tr>
+<tr><td>14</td><td>Плава сеница</td><td><em>Cyanistes caeruleus</em></td><td>+</td><td>+</td></tr>
+<tr><td>15</td><td>Сива сеница</td><td><em>Poecile palustris</em></td><td>+</td><td>+</td></tr>
+<tr><td>16</td><td>Дрозд имелаш</td><td><em>Turdus viscivorus</em></td><td>+</td><td>+</td></tr>
+<tr><td>17</td><td>Чешљугар</td><td><em>Carduelis carduelis</em></td><td></td><td>+</td></tr>
+<tr><td>18</td><td>Обична кукавица</td><td><em>Cuculus canorus</em></td><td></td><td>+</td></tr>
+<tr><td>19</td><td>Ватроглави краљић</td><td><em>Regulus ignicapilla</em></td><td></td><td>+</td></tr>
+<tr><td>20</td><td>Беловрата мухарица</td><td><em>Ficedula albicollis</em></td><td></td><td>+</td></tr>
+<tr><td>21</td><td>Дугорепа сеница</td><td><em>Aegithalos caudatus</em></td><td></td><td>+</td></tr>
+<tr><td>22</td><td>Обична црвенрепка</td><td><em>Phoenicurus phoenicurus</em></td><td></td><td>+</td></tr>
+<tr><td>23</td><td>Обични звиждак</td><td><em>Phylloscopus collybita</em></td><td></td><td>+</td></tr>
+<tr><td>24</td><td>Жутарица</td><td><em>Serinus serinus</em></td><td></td><td>+</td></tr>
+<tr><td>25</td><td>Бела плиска</td><td><em>Motacilla alba</em></td><td></td><td>+</td></tr>
+</tbody>
+</table>
+</div>
+</section>
+<section class="section-card">
+<div class="section-title"><h2>Кратка анализа</h2><p>Налази потврђују значај мозаичности станишта у ПИО „Рајац”.</p></div>
+<div class="analysis-grid">
+<div class="analysis-box"><h3>Стабилно априлско језгро</h3><p>Најстабилније забележено језгро априлске орнитофауне чине врсте које су регистроване оба датума: велика сеница, црвендаћ, црноглава грмуша, обични кос, пољска шева, велика стрнадица, зеба, царић, јелова сеница, мали славуј, плава сеница, сива сеница и дрозд имелаш. Њихово понављање у оба снимања указује на поуздано присуство у пролећном периоду.</p></div>
+<div class="analysis-box"><h3>Пролећне селице</h3><p>Посебну вредност има бележење врста које указују на почетак активне пролећне сезоне, као што су мали славуј, обична кукавица, беловрата мухарица, обична црвенрепка, обични звиждак и сеоска ласта. Ове врсте су важне за праћење сезонске динамике и фенологије пролећних селица.</p></div>
+<div class="analysis-box"><h3>Шумска и рубна станишта</h3><p>Шумске и полушумске врсте, као што су сенице, царић, црвендаћ, зеба, дрозд имелаш, дугокљуни пузић, ватроглави краљић и беловрата мухарица, указују на вредност очуваних шумских структура, подраста, старих стабала и рубова шума.</p></div>
+<div class="analysis-box"><h3>Ливаде и отворени простори</h3><p>Врсте отворених и полуотворених станишта, као што су пољска шева, шумска шева, велика стрнадица, жутарица, чешљугар и бела плиска, показују да ливаде, пашњаци, отворени гребени и рубови парцела имају важну улогу у очувању птица Рајца.</p></div>
+</div>
+</section>
+<section class="section-card">
+<div class="section-title"><h2>Значај за управљање</h2><p>Ови подаци помажу да се месечно прати стање птица и боље разуме значај различитих станишта на Рајцу.</p></div>
+<p>Резултати априлског мониторинга показују да очување птица у ПИО „Рајац” зависи од очувања више типова станишта, а не само шумских целина. За орнитофауну су важни шуме, рубови шума, ливаде, пашњаци, жбунасти појасеви, живице, стари воћњаци и сеоски амбијенти.</p>
+<p>У априлском мониторингу птица у ПИО „Рајац” забележено је укупно 25 јединствених врста. Налази потврђују високу вредност мозаичног предела Рајца, у коме се смењују шумска, рубна, жбунаста, ливадска и сеоска станишта. Посебно је значајно присуство пролећних селица и врста које су индикативне за различите типове станишта.</p>
+</section>
+<nav aria-label="Навигација на дну странице" class="footer-nav">
+<a href="https://piorajac.rs/rajac-vesti/">← Архива вести</a>
+<a href="https://piorajac.rs/rajac-vesti/kategorije/izvestaji/">Извештаји →</a>
+</nav>
+<style id="rajac-nextvest-css">.rajac-next-vest{max-width:760px;margin:34px auto 44px;padding:0 18px;font-family:Georgia,"Times New Roman",serif}.rajac-next-vest a{display:flex;flex-direction:column;gap:5px;padding:16px 20px;border:1px solid rgba(70,56,28,.20);border-radius:16px;background:#fffaf2;text-decoration:none;color:#1e2c1c;box-shadow:0 8px 24px rgba(38,30,16,.05);transition:transform .2s,box-shadow .2s}.rajac-next-vest a:hover{transform:translateY(-2px);box-shadow:0 12px 30px rgba(38,30,16,.10)}.rajac-next-vest .rnv-k{font-size:12px;font-weight:900;letter-spacing:.14em;text-transform:uppercase;color:#9a7b32;font-family:Arial,sans-serif}.rajac-next-vest .rnv-title{font-size:17px;font-weight:800;line-height:1.32}</style><nav aria-label="Следећа вест" class="rajac-next-vest"><a href="https://piorajac.rs/rajac-vesti/satelitski-monitoring-vegetacije-pio-rajac-2017-2025/"><span class="rnv-k">Следећа вест →</span><span class="rnv-title">Сателитски мониторинг вегетације у ПИО „Рајац” 2017—2025</span></a></nav></main>
+<style id="rajac-admin-edit-style">.rajac-admin-edit-button{position:fixed;right:16px;bottom:16px;z-index:99999;display:none;align-items:center;justify-content:center;min-height:42px;padding:0 16px;border-radius:999px;background:#0d1b2a;color:#e0c678!important;text-decoration:none!important;font:900 12px/1 Arial,sans-serif;letter-spacing:.10em;text-transform:uppercase;box-shadow:0 12px 30px rgba(0,0,0,.22);border:1px solid rgba(224,198,120,.42)}</style><script id="rajac-admin-edit-script">(function(){try{if(document.cookie.indexOf("rajac_vesti_admin=1")===-1)return;var p=location.pathname.split("/").filter(Boolean);var slug=p[p.length-1]||"";if(!slug||slug==="rajac-vesti")return;var a=document.createElement("a");a.className="rajac-admin-edit-button";a.href="https://piorajac.rs/rajac-vesti/admin-edit.php?slug="+encodeURIComponent(slug);a.textContent="EDIT";a.style.display="inline-flex";document.body.appendChild(a);}catch(e){}})();</script>
+<!-- SITE_EDITOR_ADMIN_BAR_START -->
+<script defer="" src="/admin-site-editor.php?admin_bar_js=1"></script>
+<!-- SITE_EDITOR_ADMIN_BAR_END -->
+<button aria-label="На врх стране" id="rajac-totop" title="На врх" type="button">↑</button><style id="rajac-totop-css">#rajac-totop{position:fixed;right:16px;bottom:16px;z-index:10000;width:46px;height:46px;border-radius:999px;border:1px solid rgba(255,255,255,.4);background:rgba(20,30,40,.30);-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);color:#fff;font-size:22px;line-height:1;cursor:pointer;display:flex;align-items:center;justify-content:center;opacity:0;visibility:hidden;transition:opacity .25s,visibility .25s,background .2s;box-shadow:0 6px 20px rgba(0,0,0,.25);-webkit-tap-highlight-color:transparent}#rajac-totop.show{opacity:1;visibility:visible}#rajac-totop:hover{background:rgba(20,30,40,.55)}@media(max-width:1024px){#rajac-totop{right:12px;bottom:12px;width:44px;height:44px}}</style><script>(function(){var b=document.getElementById("rajac-totop");if(!b)return;function o(){if((window.pageYOffset||document.documentElement.scrollTop)>320)b.classList.add("show");else b.classList.remove("show");}window.addEventListener("scroll",o,{passive:true});o();b.addEventListener("click",function(){window.scrollTo({top:0,behavior:"smooth"});});})();</script></body>
+</html>

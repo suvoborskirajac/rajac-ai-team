@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="sr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Посматрање променљивих звезда — Курс аматерске астрономије — Звездани парк „Рајац“</title>
+<meta name="description" content="Осма лекција курса аматерске астрономије: врсте променљивих звезда, визуелна процена сјаја, звезде за почетак и слање посматрања у међународну базу AAVSO.">
+<link rel="canonical" href="https://piorajac.rs/zvezdani-park/kurs-astronomije/promenljive-zvezde.html">
+<meta property="og:type" content="article"><meta property="og:locale" content="sr_RS"><meta property="og:site_name" content="Звездани парк „Рајац“">
+<meta property="og:title" content="Посматрање променљивих звезда — Курс аматерске астрономије">
+<meta property="og:description" content="Аматери дају прави допринос науци посматрањем променљивих звезда.">
+<meta property="og:url" content="https://piorajac.rs/zvezdani-park/kurs-astronomije/promenljive-zvezde.html">
+<meta property="og:image" content="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d3/V838_Mon_HST.jpg/1280px-V838_Mon_HST.jpg">
+<meta name="theme-color" content="#050a14">
+<link rel="stylesheet" href="../assets/fonts.css?v=46">
+<link rel="stylesheet" href="assets/course.css?v=31">
+<style>
+/* Само за лекцију „Променљиве звезде“ */
+.page-promenljive .vs-filters{display:flex;flex-wrap:wrap;gap:6px 26px}
+.ins .vs-table.beg-only tbody tr:not(.beg){display:none}
+.ins .vs-note.beg-b{background:rgba(214,180,106,.18);color:var(--gold-2)}
+.ins .duo figure.curve-fig{background:#fff} /* крива сјаја има провидну позадину — без овога се види црн оквир */
+</style>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Course","name":"Посматрање променљивих звезда — Курс аматерске астрономије","description":"Врсте променљивих звезда, визуелна процена сјаја и слање посматрања у међународну базу.","inLanguage":"sr","url":"https://piorajac.rs/zvezdani-park/kurs-astronomije/promenljive-zvezde.html","provider":{"@type":"Organization","name":"ПИО „Рајац“ — Звездани парк","url":"https://piorajac.rs/zvezdani-park/"},"isAccessibleForFree":true,"educationalLevel":"основна и средња школа, студенти, аматери"}
+</script>
+<style>
+/* Велики футер Звезданог парка (исти као на осталим странама секције; стил преузет из ../assets/site.css) */
+footer.zp-footer{position:relative;padding:0;background:var(--night);color:rgba(255,255,255,.62);font-size:.88rem;line-height:1.6;overflow:hidden}
+footer.zp-footer::before{content:"";position:absolute;inset:0;background:radial-gradient(ellipse at 15% 0%,rgba(214,180,106,.12),transparent 50%);pointer-events:none}
+footer.zp-footer .footer-in{position:relative;max-width:var(--max);margin:0 auto;padding:80px 28px 40px;display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:40px}
+footer.zp-footer h5{margin:0 0 16px;font:700 .68rem/1 var(--sans);letter-spacing:.22em;text-transform:uppercase;color:var(--gold)}
+footer.zp-footer ul{list-style:none;margin:0;padding:0}
+footer.zp-footer li{margin-bottom:9px}
+footer.zp-footer a{color:rgba(255,255,255,.75);text-decoration:none}
+footer.zp-footer a:hover{color:var(--gold-2)}
+footer.zp-footer .f-brand b{display:block;margin:14px 0 10px;font:500 1.9rem/1 var(--serif);color:#fff}
+footer.zp-footer .f-brand p{max-width:320px;margin:0}
+footer.zp-footer .footer-base{position:relative;max-width:var(--max);margin:0 auto;padding:22px 28px 34px;border-top:1px solid var(--line-dark);display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;font-size:.78rem;color:rgba(255,255,255,.45)}
+@media (max-width:900px){footer.zp-footer .footer-in{grid-template-columns:1fr 1fr}}
+@media (max-width:560px){footer.zp-footer .footer-in{grid-template-columns:1fr;padding:56px 20px 32px}footer.zp-footer .footer-base{padding:20px 20px 30px}}
+</style>
+<style>
+/* Литература: три колоне по пет једнаких картица */
+.ins .lib ul{grid-template-rows:repeat(5,1fr)}
+.ins .lib a{min-height:76px;height:100%;box-sizing:border-box}
+.ins .lib>div,.ins .lib ul,.ins .lib li,.ins .lib a>span{min-width:0}
+.ins .lib strong,.ins .lib small{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+</style>
+</head>
+<body class="page-promenljive lesson-v2" id="top" style="--hero-bg:url('https://upload.wikimedia.org/wikipedia/commons/thumb/d/d3/V838_Mon_HST.jpg/1280px-V838_Mon_HST.jpg')">
+<a class="skip" href="#sadrzaj">Прескочи на садржај</a>
+<header class="zp-topbar">
+<div class="zp-topbar-in">
+<a aria-label="Звездани парк Рајац — почетна" class="zp-brand" href="../index.html">
+<svg aria-hidden="true" viewbox="0 0 40 40"><circle cx="20" cy="20" fill="none" r="19" stroke="rgba(241,220,166,.45)"></circle><path d="M20 6 22.2 17.8 34 20 22.2 22.2 20 34 17.8 22.2 6 20 17.8 17.8Z" fill="#f1dca6"></path><path d="M20 12.5 21 19 27.5 20 21 21 20 27.5 19 21 12.5 20 19 19Z" fill="#050a14" opacity=".35"></path></svg>
+<span><b>Звездани парк</b><small>РАЈАЦ</small></span>
+</a>
+<button aria-expanded="false" aria-label="Мени" class="zp-menu-btn" type="button"><span></span><span></span><span></span></button>
+<nav aria-label="Главна навигација" class="zp-nav">
+<a href="../index.html">Почетна</a>
+<a href="../lokacija.html">Локација</a>
+<div class="zp-dd"><button aria-expanded="false" class="zp-dd-btn" type="button">Истраживања</button><div class="zp-dd-menu"><a href="../01-uvod-i-rajac.html">Увод и истраживачки рад</a><a href="../02-svetlosno-zagadjenje.html">Светлосно загађење</a><a href="../03-predlog-i-merenja.html">Мерења и простор</a><a href="../04-znacaj-i-upravljanje.html">Значај и управљање</a></div></div>
+<a href="../05-programi-i-turizam.html">Програми</a>
+<a href="../07-opservatorija-i-oprema.html">Опсерваторија</a>
+<a href="../nebo.html">Небо</a>
+<a href="../sta-poneti.html">Шта понети</a>
+<a href="../prognoza.html">Прогноза</a>
+<div class="zp-dd"><button aria-expanded="false" class="zp-dd-btn active" type="button">Курс</button><div class="zp-dd-menu"><a href="astrognozija.html"><span class="n">1</span>Астрогнозија</a><a href="instrumenti.html"><span class="n">2</span>Инструменти за посматрање</a><a href="sunce.html"><span class="n">3</span>Посматрање Сунца</a><a href="meteori.html"><span class="n">4</span>Посматрање метеора</a><a href="komete.html"><span class="n">5</span>Посматрање комета</a><a href="planete.html"><span class="n">6</span>Посматрање планета</a><a href="astrofotografija.html"><span class="n">7</span>Астрофотографија</a><a aria-current="page" class="active" href="promenljive-zvezde.html"><span class="n">8</span>Посматрање променљивих звезда</a></div></div>
+<a class="zp-ext" href="https://piorajac.rs/">ПИО „РАЈАЦ“ ↗</a>
+</nav>
+</div>
+</header>
+<section class="hero hero-promenljive">
+<div class="wrap hero-in">
+<nav aria-label="Путања" class="crumbs"><a href="../index.html">Звездани парк</a><span aria-hidden="true">/</span><span>Курс аматерске астрономије</span><span aria-hidden="true">/</span><span>Лекција 8 од 8</span></nav>
+<span class="kicker">Курс аматерске астрономије · 08</span>
+<h1>Посматрање променљивих звезда</h1>
+<p class="lede">Звезде које пулсирају, помрачују се и експлодирају. Научићеш да процењујеш њихов сјај и да своја посматрања шаљеш у светску базу коју користе професионални астрономи.</p>
+</div>
+</section>
+
+<nav aria-label="Лекције курса" class="path">
+<div class="wrap"><ol>
+<li><a href="astrognozija.html"><span class="n">1</span>Астрогнозија</a></li>
+<li><a href="instrumenti.html"><span class="n">2</span>Инструменти</a></li>
+<li><a href="sunce.html"><span class="n">3</span>Сунце</a></li>
+<li><a href="meteori.html"><span class="n">4</span>Метеори</a></li>
+<li><a href="komete.html"><span class="n">5</span>Комете</a></li>
+<li><a href="planete.html"><span class="n">6</span>Планете</a></li>
+<li><a href="astrofotografija.html"><span class="n">7</span>Астрофотографија</a></li>
+<li><a aria-current="page" href="promenljive-zvezde.html"><span class="n">8</span>Променљиве звезде</a></li>
+</ol></div>
+</nav>
+
+<main id="sadrzaj" class="ins">
+
+<!-- 1. УВОД -->
+<section class="sec" id="uvod">
+<div class="wrap lead-grid">
+  <div>
+    <div class="sec-head"><span class="kicker">Шта су променљиве звезде</span><h2>Звезде које мењају сјај</h2></div>
+    <p class="big-q"><a href="https://sh.wikipedia.org/wiki/Promenljiva_zvezda"><b>Променљива звезда</b></a> је <a href="https://sh.wikipedia.org/wiki/Zvezda">звезда</a> чији се привидни сјај мења, тако да се промена може измерити током релативно кратког времена.</p>
+    <p>Кратког у <a href="https://sh.wikipedia.org/wiki/Astronomija">астрономским</a> мерилима: сатима, данима, годинама. Промена није узрокована појавама у <a href="https://sh.wikipedia.org/wiki/Zemljina_atmosfera">атмосфери</a> <a href="https://sh.wikipedia.org/wiki/Zemlja">Земље</a>. Колико ће звезда изгледати „променљиво“ зависи од тога колико прецизно меримо: савремена фотометрија из свемира открива мале промене сјаја код огромног броја звезда. Многе звезде, дакле, мењају сјај, али су за визуелног посматрача најважније оне чија је промена довољно велика и довољно спора да се може поуздано пратити.</p>
+    <p>Наше <a href="https://sh.wikipedia.org/wiki/Sunce">Сунце</a> је добар пример звезде која има готово сталан сјај: укупно зрачење Сунца мења се само око 0,1% током 11-годишњег <a href="https://sh.wikipedia.org/wiki/Solarni_ciklus">Сунчевог циклуса</a>. Такву промену око не може да примети.</p>
+  </div>
+  <ol class="rules" aria-label="Исходи учења">
+    <li><span class="ix">1</span><div><strong>Самостално посматрање и снимање</strong><span>Посматраћеш и снимати променљиве звезде голим оком, двогледом, телескопом и фото-апаратом.</span></div></li>
+    <li><span class="ix">2</span><div><strong>Обрада посматрачких података</strong><span>Самостално ћеш обрађивати своја посматрања и цртати криве сјаја.</span></div></li>
+    <li><span class="ix">3</span><div><strong>Истраживачки радови</strong><span>Научићеш да пишеш и објављујеш истраживачке радове.</span></div></li>
+    <li><span class="ix">4</span><div><strong>Групна посматрања</strong><span>Учествоваћеш у групним посматрањима и снимањима објеката и појава.</span></div></li>
+  </ol>
+</div>
+</section>
+
+<!-- 2. ВРСТЕ -->
+<section class="sec dark" id="vrste">
+<div class="wrap">
+  <div class="sec-head"><span class="kicker">Крива сјаја</span><h2>Четири лица променљивих звезда</h2><p>Свака врста има свој препознатљив „рукопис“: криву сјаја, графикон сјаја у времену. Цртајући своју криву, сазнајеш шта се са звездом дешава.</p></div>
+  <div class="types">
+    <article class="type wide">
+      <figure class="curve"><img src="https://upload.wikimedia.org/wikipedia/commons/8/89/Mira_light_curve.png" alt="Крива сјаја звезде Мира" loading="lazy" decoding="async" width="1125" height="579">
+        <a class="credit" href="https://commons.wikimedia.org/wiki/File:Mira_light_curve.png">© Lithopsian, подаци AAVSO · CC BY-SA 4.0</a>
+        <div class="tag"><small>пулсирајући џинови</small><strong>Мире</strong></div></figure>
+      <div class="body">
+        <p class="best"><b>Мира</b> (омикрон Кита) мења сјај приближно од 2–4. до 9–10. величине, са периодом од око 332 дана. Максимуми нису сви исто сјајни. Црвени џинови овог типа надимају се и скупљају. Најзахвалније звезде за почетнике: велике промене, видљиве и двогледом.</p>
+        <div class="pc"><div class="plus"><b>Период</b>100 до 1000 дана</div><div class="minus"><b>Посматрај</b>једном недељно</div></div>
+      </div>
+    </article>
+    <article class="type wide">
+      <figure class="curve anim"><img src="https://upload.wikimedia.org/wikipedia/commons/2/25/Algol-type_variable_binary_star_animation_3.gif" alt="Анимација помрачне двојне звезде и њене криве сјаја" loading="lazy" decoding="async" width="640" height="480">
+        <a class="credit" href="https://commons.wikimedia.org/wiki/File:Algol-type_variable_binary_star_animation_3.gif">© Merikanto · CC BY-SA 4.0</a>
+        <div class="tag"><small>звезде у пару</small><strong>Помрачне двојне</strong></div></figure>
+      <div class="body">
+        <p class="best"><b>Алгол</b> у Персеју свака 2 дана и 21 сат потамни са 2,1 на 3,4 величину, јер га заклони тамнији пратилац. Цело помрачење траје десетак сати и види се голим оком.</p>
+        <div class="pc"><div class="plus"><b>Период</b>сати до неколико дана</div><div class="minus"><b>Посматрај</b>сваких 10–15 минута око минимума</div></div>
+      </div>
+    </article>
+    <article class="type wide">
+      <figure class="curve"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Delta_cephei_v_engle_2014.png/1280px-Delta_cephei_v_engle_2014.png" alt="Крива сјаја звезде Делта Цефеја" loading="lazy" decoding="async" width="1280" height="960">
+        <a class="credit" href="https://commons.wikimedia.org/wiki/File:Delta_cephei_v_engle_2014.png">© Warrickball · CC BY-SA 4.0</a>
+        <div class="tag"><small>свемирски светионици</small><strong>Цефеиде</strong></div></figure>
+      <div class="body">
+        <p class="best"><b>Делта Цефеја</b> мења сјај између 3,5 и 4,4 величине за 5 дана и 9 сати. Што цефеида спорије пулсира, то је сјајнија. Захваљујући томе мере се удаљености до других галаксија.</p>
+        <div class="pc"><div class="plus"><b>Период</b>1 до 100 дана</div><div class="minus"><b>Посматрај</b>сваке ведре ноћи</div></div>
+      </div>
+    </article>
+    <article class="type wide">
+      <figure class="curve dark-curve"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/Betelgeuse%E2%80%99s_surface_before_and_during_its_2019%E2%80%932020_Great_Dimming_%28eso2109a%29.jpg/1280px-Betelgeuse%E2%80%99s_surface_before_and_during_its_2019%E2%80%932020_Great_Dimming_%28eso2109a%29.jpg" alt="Површина Бетелгезе пре и током великог затамњења" loading="lazy" decoding="async" width="1280" height="602">
+        <a class="credit" href="https://commons.wikimedia.org/wiki/File:Betelgeuse%E2%80%99s_surface_before_and_during_its_2019%E2%80%932020_Great_Dimming_(eso2109a).jpg">ESO/M. Montargès et al. · CC BY 4.0</a>
+        <div class="tag"><small>немирни црвени џинови</small><strong>Полуправилне</strong></div></figure>
+      <div class="body">
+        <p class="best"><b>Бетелгез</b> у Ориону мења сјај неправилно. Крајем 2019. и почетком 2020. изгубила је више од половине сјаја („Велико затамњење“). Према посматрањима, звезда је избацила велику количину материјала, део њене површине се охладио, а у избаченом гасу настала је прашина која је привремено заклонила део звезде. Ту промену могли су да прате и посматрачи голим оком.</p>
+        <div class="pc"><div class="plus"><b>Период</b>неправилан, месеци до година</div><div class="minus"><b>Посматрај</b>једном недељно</div></div>
+      </div>
+    </article>
+  </div>
+  <p class="showers-foot">Постоје и катаклизмичке звезде: нове и патуљасте нове. SS Лабуда, на пример, сваких 50-ак дана нагло порасте са 12. на 8. величину.</p>
+</div>
+</section>
+
+<!-- 3. ПРОЦЕНА СЈАЈА -->
+<section class="sec" id="procena">
+<div class="wrap">
+  <div class="sec-head"><span class="kicker">Визуелна процена</span><h2>Како се процењује сјај</h2><p>Око не мери сјај, али врло прецизно пореди. Звезду упоређујеш са две звезде поређења познатог сјаја, једном сјајнијом и једном слабијом, са карте AAVSO.</p></div>
+  <div class="specs">
+    <div class="formula">
+      <div><code>A</code><span><b>Сјајнија звезда поређења.</b> На картама AAVSO сјај је уписан без децималне запете: „84“ значи 8,4 величине.</span></div>
+      <div><code>B</code><span><b>Слабија звезда поређења.</b> Променљива мора бити између A и B по сјају.</span></div>
+      <div><code>x : y</code><span><b>Интервал.</b> Процени где је променљива: ако је размак A–B подељен на делове, x делова је од A, а y од B.</span></div>
+      <div><code>m = A + (B − A) · x / (x + y)</code><span><b>Процењени сјај</b> променљиве. Заокружи на десети део величине.</span></div>
+      <div><code>JD</code><span><b>Јулијански датум</b>: астрономи време бележе као број дана, са децималама, од једног датума у далекој прошлости. Претвори датум и време у JD <a href="https://aavso.org/apps/tools/julian-date-converter/">калкулатором AAVSO</a>. Уз сваку процену пишу се и ознака карте и ознаке звезда поређења.</span></div>
+    </div>
+    <aside class="calc" aria-labelledby="vs-t">
+      <h3 id="vs-t">Израчунај процену</h3>
+      <p>Унеси сјај звезда поређења и однос у ком је променљива између њих.</p>
+      <div class="in">
+        <div><label for="vA">Сјај A</label><input id="vA" type="number" inputmode="decimal" step="0.1" value="8.4"></div>
+        <div><label for="vB">Сјај B</label><input id="vB" type="number" inputmode="decimal" step="0.1" value="9.1"></div>
+        <div><label for="vX">x : y</label><input id="vX" type="text" inputmode="numeric" value="2:3"></div>
+      </div>
+      <div class="presets" aria-label="Однос">
+        <button type="button" data-p="1:4">1 : 4</button>
+        <button type="button" data-p="1:1">1 : 1</button>
+        <button type="button" data-p="3:2">3 : 2</button>
+        <button type="button" data-p="4:1">4 : 1</button>
+      </div>
+      <div class="out" aria-live="polite">
+        <div><small>Сјај променљиве</small><strong id="vM">—</strong><em>звездана величина</em></div>
+        <div><small>Звезде поређења</small><strong id="vR">—</strong><em>ознаке са карте, уз процену</em></div>
+      </div>
+      <p class="verdict" id="vV">—</p>
+    </aside>
+  </div>
+</div>
+</section>
+
+<!-- 4. ЗВЕЗДЕ ЗА ПОЧЕТАК -->
+<section class="sec dark" id="zvezde">
+<div class="wrap">
+  <div class="sec-head"><span class="kicker">За почетнике</span><h2>Променљиве звезде које се лако посматрају</h2><p>Ове звезде је релативно лако пронаћи и визуелно посматрати двогледом или малим и средњим телескопима. Све у максимуму имају довољан сјај и дуге историјске криве сјаја, па је твој допринос увек добродошао. За почетак је издвојено девет најпогоднијих; искључи прекидач да видиш целу листу.</p></div>
+  <div class="vs-filters"><label class="vs-filter"><input type="checkbox" id="vsOnlyBeg" checked> Само препоручене за почетак</label><label class="vs-filter"><input type="checkbox" id="vsOnlyNorth" checked> Само звезде видљиве из Србије</label></div>
+  <div class="vs-wrap">
+  <table class="vs-table" id="vsTable">
+    <thead><tr><th scope="col">Звезда</th><th scope="col">Тип</th><th scope="col">Опсег сјаја</th><th scope="col">Период (дана)</th><th scope="col">Скала карте VSP</th></tr></thead>
+    <tbody>
+<tr><th scope="row"><a href="https://vsx.aavso.org/index.php?view=results.get&ident=R+And">R And</a></th><td><abbr title="Мира">M</abbr></td><td>5,8 – 14,9</td><td>409</td><td>A, B, D, E</td></tr>
+<tr><th scope="row"><a href="https://vsx.aavso.org/index.php?view=results.get&ident=RX+And">RX And</a></th><td><abbr title="патуљаста нова (Z Cam)">UGZ</abbr></td><td>10,4 – 15,4</td><td>*14</td><td>D, E</td></tr>
+<tr><th scope="row"><a href="https://vsx.aavso.org/index.php?view=results.get&ident=R+Aqr">R Aqr</a></th><td><abbr title="Мира">M</abbr></td><td>5,8 – 12,4</td><td>387</td><td>B, D</td></tr>
+<tr><th scope="row"><a href="https://vsx.aavso.org/index.php?view=results.get&ident=SS+Aur">SS Aur</a></th><td><abbr title="патуљаста нова">UG</abbr></td><td>10,3 – 15,8</td><td>*55,5</td><td>B, D, E</td></tr>
+<tr class="south"><th scope="row"><a href="https://vsx.aavso.org/index.php?view=results.get&ident=S+Car">S Car</a> <span class="vs-note">јужно небо</span></th><td><abbr title="Мира">M</abbr></td><td>4,5 – 9,9</td><td>149</td><td>B</td></tr>
+<tr><th scope="row"><a href="https://vsx.aavso.org/index.php?view=results.get&ident=T+Cas">T Cas</a></th><td><abbr title="Мира">M</abbr></td><td>6,9 – 13,0</td><td>445</td><td>B, D, E</td></tr>
+<tr><th scope="row"><a href="https://vsx.aavso.org/index.php?view=results.get&ident=V+Cas">V Cas</a></th><td><abbr title="Мира">M</abbr></td><td>6,9 – 13,4</td><td>229</td><td>B, D, E</td></tr>
+<tr class="low"><th scope="row"><a href="https://vsx.aavso.org/index.php?view=results.get&ident=T+Cen">T Cen</a> <span class="vs-note">ниско</span></th><td><abbr title="полуправилна">SR</abbr></td><td>5,5 – 9,0</td><td>90</td><td>A, B</td></tr>
+<tr class="south"><th scope="row"><a href="https://vsx.aavso.org/index.php?view=results.get&ident=R+Cen">R Cen</a> <span class="vs-note">јужно небо</span></th><td><abbr title="Мира">M</abbr></td><td>5,3 – 11,8</td><td>546</td><td>A, B</td></tr>
+<tr class="beg"><th scope="row"><a href="https://vsx.aavso.org/index.php?view=results.get&ident=omi+Cet">omi Cet</a> <span class="vs-note beg-b">за почетак</span></th><td><abbr title="Мира">M</abbr></td><td>2,0 – 10,1</td><td>332</td><td>A, B</td></tr>
+<tr><th scope="row"><a href="https://vsx.aavso.org/index.php?view=results.get&ident=S+CMi">S CMi</a></th><td><abbr title="Мира">M</abbr></td><td>6,6 – 13,2</td><td>333</td><td>B, D</td></tr>
+<tr class="beg"><th scope="row"><a href="https://vsx.aavso.org/index.php?view=results.get&ident=R+CrB">R CrB</a> <span class="vs-note beg-b">за почетак</span></th><td><abbr title="R CrB">RCB</abbr></td><td>5,7 – 14,8</td><td>—</td><td>A, B, D, E</td></tr>
+<tr class="beg"><th scope="row"><a href="https://vsx.aavso.org/index.php?view=results.get&ident=chi+Cyg">chi Cyg</a> <span class="vs-note beg-b">за почетак</span></th><td><abbr title="Мира">M</abbr></td><td>3,3 – 14,2</td><td>408</td><td>A, B, D, E</td></tr>
+<tr><th scope="row"><a href="https://vsx.aavso.org/index.php?view=results.get&ident=R+Cyg">R Cyg</a></th><td><abbr title="Мира">M</abbr></td><td>6,1 – 14,4</td><td>426</td><td>B, D, E</td></tr>
+<tr class="beg"><th scope="row"><a href="https://vsx.aavso.org/index.php?view=results.get&ident=SS+Cyg">SS Cyg</a> <span class="vs-note beg-b">за почетак</span></th><td><abbr title="патуљаста нова">UG</abbr></td><td>7,7 – 12,4</td><td>*49,5</td><td>B, D, E</td></tr>
+<tr><th scope="row"><a href="https://vsx.aavso.org/index.php?view=results.get&ident=AB+Dra">AB Dra</a></th><td><abbr title="патуљаста нова">UG</abbr></td><td>11,0 – 15,3</td><td>*13,4</td><td>D, E</td></tr>
+<tr><th scope="row"><a href="https://vsx.aavso.org/index.php?view=results.get&ident=T+Her">T Her</a></th><td><abbr title="Мира">M</abbr></td><td>6,8 – 13,7</td><td>165</td><td>B, D</td></tr>
+<tr><th scope="row"><a href="https://vsx.aavso.org/index.php?view=results.get&ident=W+Her">W Her</a></th><td><abbr title="Мира">M</abbr></td><td>7,6 – 14,4</td><td>280</td><td>B, D, E</td></tr>
+<tr class="south"><th scope="row"><a href="https://vsx.aavso.org/index.php?view=results.get&ident=R+Hor">R Hor</a> <span class="vs-note">јужно небо</span></th><td><abbr title="Мира">M</abbr></td><td>4,7 – 14,3</td><td>408</td><td>A, B, D</td></tr>
+<tr class="south"><th scope="row"><a href="https://vsx.aavso.org/index.php?view=results.get&ident=T+Hor">T Hor</a> <span class="vs-note">јужно небо</span></th><td><abbr title="Мира">M</abbr></td><td>7,2 – 13,7</td><td>218</td><td>B, D</td></tr>
+<tr class="beg"><th scope="row"><a href="https://vsx.aavso.org/index.php?view=results.get&ident=R+Hya">R Hya</a> <span class="vs-note beg-b">за почетак</span></th><td><abbr title="Мира">M</abbr></td><td>3,5 – 10,9</td><td>389</td><td>A, B</td></tr>
+<tr><th scope="row"><a href="https://vsx.aavso.org/index.php?view=results.get&ident=R+LMi">R LMi</a></th><td><abbr title="Мира">M</abbr></td><td>6,3 – 13,2</td><td>372</td><td>B, D</td></tr>
+<tr class="beg"><th scope="row"><a href="https://vsx.aavso.org/index.php?view=results.get&ident=R+Leo">R Leo</a> <span class="vs-note beg-b">за почетак</span></th><td><abbr title="Мира">M</abbr></td><td>4,4 – 11,3</td><td>310</td><td>B</td></tr>
+<tr><th scope="row"><a href="https://vsx.aavso.org/index.php?view=results.get&ident=R+Oph">R Oph</a></th><td><abbr title="Мира">M</abbr></td><td>7,0 – 13,8</td><td>306</td><td>B, D</td></tr>
+<tr class="south"><th scope="row"><a href="https://vsx.aavso.org/index.php?view=results.get&ident=R+Pic">R Pic</a> <span class="vs-note">јужно небо</span></th><td><abbr title="полуправилна">SR</abbr></td><td>6,3 – 10,1</td><td>171</td><td>B</td></tr>
+<tr class="beg"><th scope="row"><a href="https://vsx.aavso.org/index.php?view=results.get&ident=R+Sct">R Sct</a> <span class="vs-note beg-b">за почетак</span></th><td><abbr title="RV Tau">RV</abbr></td><td>4,2 – 8,6</td><td>146</td><td>A, B</td></tr>
+<tr class="beg"><th scope="row"><a href="https://vsx.aavso.org/index.php?view=results.get&ident=R+Ser">R Ser</a> <span class="vs-note beg-b">за почетак</span></th><td><abbr title="Мира">M</abbr></td><td>5,2 – 14,4</td><td>356</td><td>A, B, D</td></tr>
+<tr><th scope="row"><a href="https://vsx.aavso.org/index.php?view=results.get&ident=R+Sgr">R Sgr</a></th><td><abbr title="Мира">M</abbr></td><td>6,7 – 12,8</td><td>269</td><td>B, D</td></tr>
+<tr><th scope="row"><a href="https://vsx.aavso.org/index.php?view=results.get&ident=RY+Sgr">RY Sgr</a></th><td><abbr title="R CrB">RCB</abbr></td><td>5,8 – 14,0</td><td>—</td><td>B, D</td></tr>
+<tr class="south"><th scope="row"><a href="https://vsx.aavso.org/index.php?view=results.get&ident=T+Tuc">T Tuc</a> <span class="vs-note">јужно небо</span></th><td><abbr title="Мира">M</abbr></td><td>7,5 – 13,8</td><td>250</td><td>B, D</td></tr>
+<tr><th scope="row"><a href="https://vsx.aavso.org/index.php?view=results.get&ident=S+UMa">S UMa</a></th><td><abbr title="Мира">M</abbr></td><td>7,1 – 12,7</td><td>226</td><td>B, D</td></tr>
+<tr><th scope="row"><a href="https://vsx.aavso.org/index.php?view=results.get&ident=T+UMa">T UMa</a></th><td><abbr title="Мира">M</abbr></td><td>6,6 – 13,5</td><td>257</td><td>B, D</td></tr>
+<tr class="beg"><th scope="row"><a href="https://vsx.aavso.org/index.php?view=results.get&ident=Z+UMa">Z UMa</a> <span class="vs-note beg-b">за почетак</span></th><td><abbr title="полуправилна">SR</abbr></td><td>6,2 – 9,4</td><td>196</td><td>A, B</td></tr>
+<tr><th scope="row"><a href="https://vsx.aavso.org/index.php?view=results.get&ident=R+Vul">R Vul</a></th><td><abbr title="Мира">M</abbr></td><td>7,0 – 14,3</td><td>137</td><td>B, D, E</td></tr>
+    </tbody>
+  </table>
+  </div>
+  <p class="showers-foot vs-legend"><b>M</b> Мира, дугопериодична · <b>SR</b> полуправилна · <b>RCB</b> тип R Северне круне · <b>RV</b> тип RV Бика · <b>UG</b> патуљаста нова типа U Близанаца · <b>UGZ</b> патуљаста нова типа Z Жирафе · <b>*</b> просечно време између избачаја. Клик на име звезде отвара њен запис у каталогу <a href="https://vsx.aavso.org/index.php?view=search.top">AAVSO VSX</a>. Карту са звездама поређења направи у програму <a href="https://apps.aavso.org/vsp/">AAVSO VSP</a>: упиши име звезде и изабери скалу из табеле (A је најшире поље, за голо око и двоглед; B за двоглед и тражење; D и E за телескоп и слабе минимуме).</p>
+</div>
+</section>
+
+<!-- 5. КОРАК ПО КОРАК -->
+<section class="sec" id="koraci">
+<div class="wrap night">
+  <div>
+    <div class="sec-head"><span class="kicker">Пракса</span><h2>Твоје прво посматрање: Мира</h2><p>Цео поступак, од карте до слања податка у светску базу, на примеру Мире, која је у јесен и зиму на вечерњем небу.</p></div>
+    <ol class="steps">
+      <li><strong>Изабери звезду</strong><span>За прву вежбу узми Миру (omi Cet) у сазвежђу Кит. Касније пређи на друге звезде означене „за почетак“ у табели.</span></li>
+      <li><strong>Направи карту</strong><span>У програму <a href="https://apps.aavso.org/vsp/">VSP</a> упиши „omi Cet“, изабери скалу A или B и оријентацију „Visual“. Добићеш карту са уцртаним звездама поређења; запиши ознаку карте (Chart ID) у горњем десном углу.</span></li>
+      <li><strong>Пронађи и упореди</strong><span>Голим оком или двогледом пронађи поље и препознај Миру по црвенкастој боји. Изабери две звезде поређења, једну сјајнију (A) и једну слабију (B), и процени у ком односу је Мира између њих, као у <a href="#procena">калкулатору изнад</a>.</span></li>
+      <li><strong>Запиши процену</strong><span>Датум и време, претворене у <a href="https://aavso.org/apps/tools/julian-date-converter/">Јулијански датум</a>, процењени сјај, ознаке звезда поређења, ознаку карте и услове посматрања (Месец, облаци, висина звезде).</span></li>
+      <li><strong>Пошаљи податке</strong><span><a href="https://aavso.org/register-as-an-observer/">Региструј се као посматрач</a> (добићеш посматрачку шифру), па процену <a href="https://aavso.org/apps/data/submit">пошаљи у међународну базу AAVSO</a>. Тако твоје посматрање постаје део криве сјаја коју користе астрономи широм света.</span></li>
+    </ol>
+  </div>
+  <div class="duo">
+    <figure><img src="assets/media/fonovic-768x741-2b8d3e76.jpg" alt="Посматрач променљивих звезда поред свог телескопа" loading="lazy" decoding="async" width="768" height="741"><figcaption>Посматрач променљивих звезда поред свог телескопа.</figcaption></figure>
+    <figure class="curve-fig"><img src="https://upload.wikimedia.org/wikipedia/commons/8/83/Chi_Cygni_light_curve.png" alt="Крива сјаја звезде хи Лабуда у пет година" loading="lazy" decoding="async" width="1152" height="806"><figcaption>Хи Лабуда кроз пет година, из посматрања чланова AAVSO. · <a href="https://commons.wikimedia.org/wiki/File:Chi_Cygni_light_curve.png">© Lithopsian · CC BY-SA 4.0</a></figcaption></figure>
+  </div>
+</div>
+</section>
+
+<!-- 6. AAVSO -->
+<section class="sec dark" id="aavso">
+<div class="wrap lead-grid">
+  <div>
+    <div class="sec-head"><span class="kicker">Допринеси науци</span><h2>Америчко удружење посматрача променљивих звезда</h2></div>
+    <p class="vid-p"><b>AAVSO</b> је непрофитна светска научна и образовна организација аматерских и професионалних астронома који су заинтересовани за звезде које се мењају у сјају. Основано је 1911. за координацију посматрања променљивих звезда које су углавном вршили аматери за Опсерваторију Харвард колеџа.</p>
+    <p class="vid-p">Данас је то независна истраживачка организација са седиштем у Кембриџу, у Масачусетсу, са посматрачима из више од 100 земаља и међународном базом од више десетина милиона посматрања. То је највеће светско удружење посматрача променљивих звезда.</p>
+    <p class="vid-p">Професионални астрономи немају ни времена ни телескопа да прикупе податке о хиљадама променљивих звезда, а аматери дају прави и користан допринос науци слањем својих запажања у међународну базу.</p>
+  </div>
+  <div class="aavso-links">
+    <a href="https://aavso.org/become-a-member/"><small>Отворено за све</small><strong>Чланство</strong><span>професионалци, аматери и наставници ↗</span></a>
+    <a href="https://aavso.org/search-and-download-data/"><small>Подаци</small><strong>Међународна база AID</strong><span>претрага и преузимање посматрања ↗</span></a>
+    <a href="https://aavso.org/getting-started/"><small>Први кораци</small><strong>Како почети</strong><span>водич AAVSO за нове посматраче ↗</span></a>
+    <a href="https://www.zooniverse.org/projects/ajnorton/superwasp-variable-stars"><small>Без телескопа</small><strong>SuperWASP на Zooniverse-у</strong><span>класификуј криве сјаја са рачунара ↗</span></a>
+  </div>
+</div>
+</section>
+
+<!-- 7. ЗАДАЦИ -->
+<section class="sec" id="zadaci" style="background:var(--paper-2)">
+<div class="wrap">
+<div class="sec-head"><span class="kicker">Вежба</span><h2>Практични задаци</h2></div>
+<div class="tasks">
+<article class="task">
+<span class="lvl">Основна школа</span>
+<h3>Задаци за основце</h3>
+<ol>
+<li>Пронађи Алгол у Персеју и неколико вечери заредом упореди његов сјај са суседним звездама. Да ли примећујеш вече кад је слабији?</li>
+<li>Упореди сјај Бетелгезе са Ригелом и Процијоном једном недељно током зиме и запиши шта видиш.</li>
+</ol>
+</article>
+<article class="task">
+<span class="lvl">Средња школа</span>
+<h3>Задаци за средњошколце</h3>
+<ol>
+<li>Изабери једну звезду типа Мира из табеле и процењуј њен сјај једном недељно током целе године. Нацртај криву сјаја и одреди период.</li>
+<li>Посматрај минимум Алгола из ноћи у ноћ, сваких 15 минута, и одреди тренутак најмањег сјаја.</li>
+<li>Пошаљи своје процене у базу AAVSO и упореди их са проценама других посматрача.</li>
+<li>Своје резултате напиши у облику кратког истраживачког рада.</li>
+</ol>
+</article>
+</div>
+</div>
+</section>
+
+<!-- 8. ОРГАНИЗАЦИЈА -->
+<section class="sec" id="organizacija">
+<div class="wrap">
+  <div class="rajac" style="background-image:url('https://upload.wikimedia.org/wikipedia/commons/thumb/c/cb/V838_Monocerotis_light_echo_%28HST%2C_November_2005%29.jpg/1280px-V838_Monocerotis_light_echo_%28HST%2C_November_2005%29.jpg')">
+    <div class="in">
+      <span class="kicker">Организација</span>
+      <h2>Посматрај са другима</h2>
+      <p>Учланите се у неко астрономско удружење које посматра променљиве звезде. Ако сте у граду са великим светлосним загађењем неба, организујте групни одлазак у околину где нема јавне расвете или на најближу планину где се виде звезде најслабијег сјаја.</p>
+      <div class="btns"><a class="btn btn-gold" href="https://www.facebook.com/spavss/">Одсек за променљиве звезде SPA ↗</a><a class="btn btn-ghost" href="../05-programi-i-turizam.html">Посматрања на Рајцу</a></div>
+    </div>
+    <span class="credit">Фото: <a href="https://commons.wikimedia.org/wiki/File:V838_Monocerotis_light_echo_(HST,_November_2005).jpg">NASA, ESA, H. Bond</a> · јавно власништво</span>
+  </div>
+</div>
+</section>
+
+<!-- 9. ЛИТЕРАТУРА -->
+<section class="sec" id="literatura" style="background:var(--paper-2)">
+<div class="wrap">
+  <div class="sec-head"><span class="kicker">За даље учење</span><h2>Литература, приручници и софтвер</h2><p>Сви линкови су проверени у октобру 2026.</p></div>
+  <div class="lib">
+    <div><h3>На нашем језику</h3><ul>
+      <li><a href="https://drive.google.com/file/d/17IFRwZsR79jNafLaIulfLz3K2X3DLSHB/view"><span><strong>Изучавање променљивих звезда<span class="lang">SR</span></strong><small>PDF</small></span></a></li>
+      <li><a href="https://drive.google.com/file/d/1KRKaNtwiAvyiLRD-NGeCmsb3kvOqA-8k/view"><span><strong>Упутство за посматрање<span class="lang">SR</span></strong><small>PDF</small></span></a></li>
+      <li><a href="https://web.archive.org/web/20070607004130/http://www.astro.hr/library/promjenjive_zvijezde.pdf"><span><strong>Визуално проматрање<span class="lang">HR</span></strong><small>PDF · архива</small></span></a></li>
+      <li><a href="https://www.astronomija.org.rs/posmatranja/1283-ss-cygni"><span><strong>Посматрање SS Лабуда<span class="lang">SR</span></strong><small>Астрономски магазин</small></span></a></li>
+      <li><a href="https://www.geocities.ws/fmr_aavso/novae_uai.pdf"><span><strong>Посматрања нових звезда<span class="lang">SR</span></strong><small>PDF</small></span></a></li>
+    </ul></div>
+    <div><h3>Приручници</h3><ul>
+      <li><a href="https://aavso.org/getting-started/"><span><strong>Први кораци за посматраче<span class="lang">EN</span></strong><small>AAVSO</small></span></a></li>
+      <li><a href="https://aavso.org/wp-content/uploads/2026/07/Visual-English-2013.pdf"><span><strong>Визуелно посматрање<span class="lang">EN</span></strong><small>PDF · AAVSO</small></span></a></li>
+      <li><a href="https://aavso.org/wp-content/uploads/2026/07/DSLR-English-1.4.pdf"><span><strong>Фотометрија DSLR апаратом<span class="lang">EN</span></strong><small>PDF · AAVSO</small></span></a></li>
+      <li><a href="https://www.popastro.com/variablestar/reference/how-to-observe-variable-stars/"><span><strong>Како посматрати<span class="lang">EN</span></strong><small>Society for Popular Astronomy</small></span></a></li>
+      <li><a href="https://www.skyatnightmagazine.com/advice/observe-variable-stars/"><span><strong>Праћење сјаја звезда<span class="lang">EN</span></strong><small>BBC Sky at Night</small></span></a></li>
+    </ul></div>
+    <div><h3>Алати и подаци</h3><ul>
+      <li><a href="https://apps.aavso.org/vsp/"><span><strong>Израда карата VSP<span class="lang">EN</span></strong><small>AAVSO</small></span></a></li>
+      <li><a href="https://vsx.aavso.org/index.php?view=search.top"><span><strong>Каталог VSX<span class="lang">EN</span></strong><small>AAVSO</small></span></a></li>
+      <li><a href="https://aavso.org/apps/tools/julian-date-converter/"><span><strong>Јулијански датум<span class="lang">EN</span></strong><small>AAVSO</small></span></a></li>
+      <li><a href="https://aavso.org/apps/data/submit"><span><strong>Слање посматрања<span class="lang">EN</span></strong><small>AAVSO · потребна регистрација</small></span></a></li>
+      <li><a href="https://www.zooniverse.org/projects/ajnorton/superwasp-variable-stars"><span><strong>SuperWASP на Zooniverse<span class="lang">EN</span></strong><small>Zooniverse · наука са рачунара</small></span></a></li>
+    </ul></div>
+  </div>
+</div>
+</section>
+
+<section aria-label="Навигација кроз курс" class="next"><div class="wrap"><a href="astrognozija.html"><span class="num">01</span><span><small>Почетак курса</small><strong>Астрогнозија</strong></span><span aria-hidden="true" class="arr">↺</span></a><div class="back"><a href="#top">↑ На врх стране</a><a href="astrofotografija.html">← Претходна: Астрофотографија</a><a href="../index.html">Назад на Звездани парк</a></div></div></section>
+</main>
+<footer class="footer zp-footer">
+<div class="footer-in">
+<div class="f-brand"><svg width="40" height="40" viewBox="0 0 40 40" aria-hidden="true"><circle cx="20" cy="20" r="19" fill="none" stroke="rgba(241,220,166,.45)"/><path d="M20 6 22.2 17.8 34 20 22.2 22.2 20 34 17.8 22.2 6 20 17.8 17.8Z" fill="#f1dca6"/><path d="M20 12.5 21 19 27.5 20 21 21 20 27.5 19 21 12.5 20 19 19Z" fill="#050a14" opacity=".35"/></svg><b>Звездани парк „Рајац“</b><p>Пројекат очувања природног ноћног неба у Пределу изузетних одлика „Рајац“ — истраживање, мерење, едукација и астрономски програми.</p></div>
+<div><h5>Пројекат</h5><ul>
+<li><a href="https://piorajac.rs/zvezdani-park/01-uvod-i-rajac.html">Истраживања</a></li>
+<li><a href="https://piorajac.rs/zvezdani-park/02-svetlosno-zagadjenje.html">Светлосно загађење</a></li>
+<li><a href="https://piorajac.rs/zvezdani-park/03-predlog-i-merenja.html">Мерења и простор</a></li>
+<li><a href="https://piorajac.rs/zvezdani-park/04-znacaj-i-upravljanje.html">Управљање</a></li>
+<li><a href="https://piorajac.rs/zvezdani-park/05-programi-i-turizam.html">Програми</a></li>
+<li><a href="https://piorajac.rs/zvezdani-park/07-opservatorija-i-oprema.html">Опсерваторија и опрема</a></li>
+</ul></div>
+<div><h5>Посета и небо</h5><ul>
+<li><a href="https://piorajac.rs/zvezdani-park/lokacija.html">Локација</a></li>
+<li><a href="https://piorajac.rs/zvezdani-park/sta-poneti.html">Шта понети</a></li>
+<li><a href="https://piorajac.rs/zvezdani-park/prognoza.html">Астрономска прогноза</a></li>
+<li><a href="https://piorajac.rs/zvezdani-park/nebo.html">Небо</a></li>
+<li><a href="https://piorajac.rs/zvezdani-park/zivo-nebo-rajac.html">Живо небо над Рајцем</a></li>
+<li><a href="https://piorajac.rs/zvezdani-park/nocno-nebo-rajac.html">Ноћно небо у 360°</a></li>
+</ul></div>
+<div><h5>Повезано</h5><ul>
+<li><a href="https://piorajac.rs/zvezdani-park/kurs-astronomije/">Курс астрономије</a></li>
+<li><a href="https://piorajac.rs/zvezdano-nebo/">All-sky снимак целог неба</a></li>
+<li><a href="https://piorajac.rs/amsrajac/">АМС Рајац</a></li>
+<li><a href="https://svetlo.piorajac.rs">Књига о светлосном загађењу</a></li>
+<li><a href="https://piorajac.rs/">ПИО „Рајац“</a></li>
+<li><a href="mailto:zvezdanipark@piorajac.rs">zvezdanipark@piorajac.rs</a></li>
+</ul></div>
+</div>
+<div class="footer-base"><span>© 2026 ПИО „Рајац“ · Љиг</span><span>Небо је део природе. Чувајмо мрак.</span></div>
+</footer>
+<script defer src="assets/course.js?v=4"></script>
+<script>
+(function(){
+  /* филтер табеле */
+  var cb=document.getElementById('vsOnlyNorth'),cbB=document.getElementById('vsOnlyBeg'),tb=document.getElementById('vsTable');
+  function f(){if(!tb)return;if(cb)tb.classList.toggle('north-only',cb.checked);if(cbB)tb.classList.toggle('beg-only',cbB.checked);}
+  [cb,cbB].forEach(function(c){if(c)c.addEventListener('change',f);});f();
+  /* процена сјаја */
+  var A=document.getElementById('vA'),B=document.getElementById('vB'),X=document.getElementById('vX');
+  if(!A)return;
+  function n(i){return parseFloat(String(i.value).replace(',','.'));}
+  function fx(v){return v.toFixed(1).replace('.',',');}
+  function calc(){
+    var a=n(A),b=n(B),p=String(X.value).split(/[:\/ ]+/),x=parseFloat(p[0]),y=parseFloat(p[1]);
+    var v=document.getElementById('vV'),M=document.getElementById('vM'),R=document.getElementById('vR');
+    if(!(a>-2&&b>-2&&x>=0&&y>=0&&x+y>0)){M.textContent='—';R.textContent='—';v.textContent='Унеси сјај обе звезде и однос, на пример 2:3.';v.classList.add('warn');return;}
+    if(b<a){var t=a;a=b;b=t;}
+    var m=a+(b-a)*x/(x+y);
+    M.textContent=fx(m);
+    R.textContent=Math.round(a*10)+' / '+Math.round(b*10);
+    var s;
+    if(b-a>1)s='Звезде поређења су далеко по сјају. Тачност је боља ако се разликују за мање од једне величине.';
+    else if(x===0||y===0)s='Променљива је исте јачине као једна од звезда поређења.';
+    else s='Добра процена. Понови је са другим паром звезда поређења и упореди резултате.';
+    v.textContent=s;v.classList.toggle('warn',b-a>1);
+  }
+  [A,B,X].forEach(function(i){i.addEventListener('input',calc);});
+  document.querySelectorAll('#procena .presets button').forEach(function(b){b.addEventListener('click',function(){X.value=b.dataset.p;calc();});});
+  calc();
+})();
+</script>
+<!-- ZP-SUMRAK --><script src="https://piorajac.rs/zvezdani-park/assets/sumrak.js?v=7" defer></script>
+</body>
+</html>

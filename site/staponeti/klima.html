@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+
+<html data-theme="light" lang="sr-Cyrl">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<meta content="Шта понети на Рајац: опрема по активностима, климатске препоруке и прогноза." name="description"/>
+<title>Рајац – Климатски калкулатор (по месецима)</title>
+<link href="assets/style.css" rel="stylesheet"/>
+</head>
+<body>
+<header class="site-header">
+<div class="container header-row">
+<a aria-label="ПИО Рајац - почетна страница сајта" class="brand" href="https://piorajac.rs/">
+<span class="brand-mark">ПИО „РАЈАЦ“</span>
+</a>
+<button aria-controls="mainNav" aria-expanded="false" aria-label="Отвори мени" class="menu-toggle" id="menuToggle" type="button">
+<span></span><span></span><span></span>
+</button>
+<nav aria-label="Навигација странице Шта понети" class="nav" id="mainNav">
+<a class="" href="index.html">Шта понети</a>
+<a class="" href="oprema.html">Опрема</a>
+<a class="" href="sport.html">Спорт</a>
+<a class="" href="orijentiring.html">Оријентиринг</a>
+<a class="" href="fotografija.html">Фото</a>
+<a class="" href="astronomija.html">Астрономија</a>
+<a class="" href="bilje_gljive.html">Биље/гљиве</a>
+<a class="" href="istrazivanja.html">Истраживања</a>
+<a class="active" href="klima.html">Клима</a>
+<a class="" href="prognoza.html">Прогноза</a>
+</nav>
+</div>
+</header>
+<main class="container">
+<section class="hero">
+<div class="hero-grid">
+<div>
+<h1>Климатски калкулатор – шта понети по месецу</h1>
+<p class="lead">
+Изабери месец и добијаш кључне ризике и <strong>топ препоруке опреме</strong> за боравак на Рајцу.
+Кликом на дугме можеш одмах да примениш препоручени модул у интерактивној контролној листи.
+</p>
+<div class="kv">
+<a class="btn primary" href="oprema.html" id="applyLink">✅ Примени у контролној листи</a>
+<a class="btn" href="prognoza.html">🌤 Прогноза и тренутно стање</a>
+</div>
+<div class="chips">
+<span class="chip">❄️ Зима: мраз, поледица, кратак дан</span>
+<span class="chip">🌱 Пролеће: блато, пљускови, инсекти</span>
+<span class="chip">☀️ Лето: UV, топлотни стрес, дехидрација</span>
+<span class="chip">🍂 Јесен: магла, роса, хладнија јутра</span>
+</div>
+<div class="note">
+<strong>Напомена:</strong>
+Ово је практична интерпретација климатских услова за планирање опреме.
+Коначну одлуку увек усклади са прогнозом за конкретан дан и тренутним стањем на терену.
+</div>
+</div>
+<div class="card">
+<div class="pad">
+<h2>Изабери месец</h2>
+<label class="field" style="max-width:360px">
+<span>Месец</span>
+<select id="monthSelect">
+<option value="01">Јануар</option>
+<option value="02">Фебруар</option>
+<option value="03">Март</option>
+<option value="04">Април</option>
+<option value="05">Мај</option>
+<option value="06">Јун</option>
+<option value="07">Јул</option>
+<option value="08">Август</option>
+<option value="09">Септембар</option>
+<option value="10">Октобар</option>
+<option value="11">Новембар</option>
+<option value="12">Децембар</option>
+</select>
+</label>
+<div class="chips" style="margin-top:14px;">
+<span class="chip"><strong>Летњи стрес</strong> је најизраженији у јулу и августу</span>
+<span class="chip"><strong>Екстремни пљускови</strong> су могући у топлом делу године</span>
+<span class="chip"><strong>Кратак дан</strong> зими мења и опрему и планирање руте</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="section">
+<div class="section-head">
+<h2 id="mTitle">Препоруке</h2>
+<p class="lead" id="mSeason" style="font-size:15px; margin-top:6px"></p>
+</div>
+<div class="hero-grid">
+<div class="card">
+<div class="pad">
+<h3>Кључни ризици</h3>
+<ul class="list" id="riskList"></ul>
+</div>
+</div>
+<div class="card">
+<div class="pad">
+<h3>Шта понети (топ)</h3>
+<ul class="list" id="recList"></ul>
+</div>
+</div>
+</div>
+<div class="card" style="margin-top:20px;">
+<div class="pad">
+<h3>Брза акција</h3>
+<p class="lead" style="font-size:15px">
+Кликни на „Примени у контролној листи” да аутоматски отвориш главну листу са препорученим модулом
+за тај месец. Најбоља пракса је да прво означиш <strong>основно</strong>, а затим месечне и
+активносне додатке.
+</p>
+<div class="note">
+<strong>Савет:</strong>
+За летње месеце приоритет су вода, заштита од сунца и лагани слојеви.
+За зимске месеце приоритет су термо заштита, добро пријањање и светло за повратак.
+</div>
+</div>
+</div>
+</section>
+<section class="section">
+<div class="section-head">
+<h2>Практична тумачења по сезони</h2>
+<p>Овде видиш шта климатски сигнали значе у стварном паковању и боравку на терену.</p>
+</div>
+<div class="icon-grid">
+<article class="icon-card">
+<div class="i">❄️</div>
+<div class="t">Зимски режим</div>
+<div class="d">Кратак дан, мраз и поледица траже лампу, топле слојеве и поуздану обућу.</div>
+</article>
+<article class="icon-card">
+<div class="i">🌧️</div>
+<div class="t">Пролећна променљивост</div>
+<div class="d">Блато, пљускови и активни инсекти траже резервне чарапе, кишну заштиту и репелент.</div>
+</article>
+<article class="icon-card">
+<div class="i">☀️</div>
+<div class="t">Летњи стрес</div>
+<div class="d">Највећи ризик су дехидрација, UV оптерећење и лоша процена количине воде.</div>
+</article>
+<article class="icon-card">
+<div class="i">🌫️</div>
+<div class="t">Јесења магла</div>
+<div class="d">Магла, роса и краћи дан траже јасније планирање, лампу и слојевиту одећу.</div>
+</article>
+<article class="icon-card">
+<div class="i">🌬️</div>
+<div class="t">Ветар</div>
+<div class="d">На платоу ветар често појачава осећај хладноће и утиче на комфор више него температура.</div>
+</article>
+<article class="icon-card">
+<div class="i">🔋</div>
+<div class="t">Енергија</div>
+<div class="d">Телефон, навигација и фотографија троше батерију брже у хладном и дугом теренском дану.</div>
+</article>
+</div>
+</section>
+</main>
+<footer class="site-footer">
+<div class="container footer-grid">
+<div>
+<strong>Шта понети на Рајац</strong>
+<p>Практичан списак за безбедан и одговоран боравак у пределу Рајца.</p>
+</div>
+<div class="footer-links">
+<a href="https://piorajac.rs/">ПИО Рајац</a> · <a href="index.html">Шта понети</a> · <a href="oprema.html">Опрема</a> · <a href="klima.html">Клима</a> · <a href="prognoza.html">Прогноза</a>
+</div>
+</div>
+</footer>
+<script src="assets/app.js"></script>
+<script>
+const DATA = {
+  "01": {
+    "season": "zima",
+    "title": "Јануар",
+    "risk": ["мраз и поледица", "кратак дан", "ветар и јаче хлађење", "залеђени делови стазе"],
+    "rec": ["термо веш и слојевита одећа", "водоотпорна обућа", "мини дерезе или дерезице", "чеона лампа", "рукавице и капа/баф", "термос"],
+    "tag": "planinarenje"
+  },
+  "02": {
+    "season": "zima",
+    "title": "Фебруар",
+    "risk": ["мраз и поледица", "нагле промене времена", "ветар", "кратак дан"],
+    "rec": ["слојевита одећа", "водоотпорна обућа", "мини дерезе", "чеона лампа", "рукавице и капа/баф"],
+    "tag": "planinarenje"
+  },
+  "03": {
+    "season": "prolece",
+    "title": "Март",
+    "risk": ["блато", "пљускови", "променљиви услови", "активирање крпеља"],
+    "rec": ["кишна јакна", "резервне чарапе", "репелент и пинцета", "чеона лампа", "заштита за опрему од влаге"],
+    "tag": "osnovno"
+  },
+  "04": {
+    "season": "prolece",
+    "title": "Април",
+    "risk": ["променљиво време", "блато", "инсекти", "влажна трава и клизав терен"],
+    "rec": ["кишна јакна", "резервне чарапе", "репелент", "гамашне по потреби", "водоотпорнија обућа"],
+    "tag": "osnovno"
+  },
+  "05": {
+    "season": "prolece",
+    "title": "Мај",
+    "risk": ["више UV зрачења", "крпељи", "локални пљускови", "дуже туре на отвореном"],
+    "rec": ["SPF и капа", "репелент и пинцета", "вода 1–2 литра", "лаган слој за ветар", "резервна мајица"],
+    "tag": "osnovno"
+  },
+  "06": {
+    "season": "leto",
+    "title": "Јун",
+    "risk": ["летњи дани", "дехидрација", "више UV оптерећење", "локални пљускови"],
+    "rec": ["вода најмање 2 литра", "SPF и капа", "лагана дуга одећа", "електролити за дуже туре", "танка кишна заштита"],
+    "tag": "sport"
+  },
+  "07": {
+    "season": "leto",
+    "title": "Јул",
+    "risk": ["тропски дани и топлотни таласи", "UV оптерећење", "дехидрација", "инсекти"],
+    "rec": ["вода 2–3 литра", "електролити", "SPF 30–50 и капа", "планирај полазак рано или предвече", "репелент"],
+    "tag": "sport"
+  },
+  "08": {
+    "season": "leto",
+    "title": "Август",
+    "risk": ["топлотни стрес", "нагли пљускови", "високо UV оптерећење", "замор при дужим турама"],
+    "rec": ["вода 2–3 литра", "SPF и капа", "лагана кишна заштита", "спољна батерија", "резервни лагани сув слој"],
+    "tag": "sport"
+  },
+  "09": {
+    "season": "jesen",
+    "title": "Септембар",
+    "risk": ["хладније вечери", "краћи дан", "роса у јутарњим сатима"],
+    "rec": ["ветровка и тањи дукс", "чеона лампа", "резервне чарапе", "танка подлога за предах"],
+    "tag": "planinarenje"
+  },
+  "10": {
+    "season": "jesen",
+    "title": "Октобар",
+    "risk": ["магла и роса", "хладнија јутра", "клизавија подлога", "ранији мрак"],
+    "rec": ["слојеви и ветровка", "водоотпорна обућа", "чеона лампа", "гамашне по потреби", "резервни сув слој"],
+    "tag": "planinarenje"
+  },
+  "11": {
+    "season": "jesen",
+    "title": "Новембар",
+    "risk": ["први мразеви", "кратак дан", "киша и влажан терен", "магла"],
+    "rec": ["топлији слој", "кишна јакна", "мини дерезе по потреби", "чеона лампа", "рукавице и капа/баф"],
+    "tag": "planinarenje"
+  },
+  "12": {
+    "season": "zima",
+    "title": "Децембар",
+    "risk": ["мраз", "поледица", "кратак дан", "јачи осећај хладноће на ветру"],
+    "rec": ["термо веш и слојеви", "мини дерезе", "чеона лампа", "рукавице и капа/баф", "термос"],
+    "tag": "planinarenje"
+  }
+};
+
+const monthSelect = document.getElementById('monthSelect');
+const riskList = document.getElementById('riskList');
+const recList = document.getElementById('recList');
+const mTitle = document.getElementById('mTitle');
+const mSeason = document.getElementById('mSeason');
+const applyLink = document.getElementById('applyLink');
+
+const seasonLabel = (s) => ({
+  "zima": "Зима — мраз, поледица и кратак дан",
+  "prolece": "Пролеће — променљиво време, блато и инсекти",
+  "leto": "Лето — топлотни стрес, UV и дехидрација",
+  "jesen": "Јесен — магла, роса, хладнија јутра и краћи дан"
+}[s] || "");
+
+function render() {
+  const m = monthSelect.value;
+  const d = DATA[m];
+
+  mTitle.textContent = d.title + " – препоруке";
+  mSeason.textContent = seasonLabel(d.season);
+  riskList.innerHTML = d.risk.map(x => `<li>${x}</li>`).join('');
+  recList.innerHTML = d.rec.map(x => `<li>${x}</li>`).join('');
+  applyLink.href = `oprema.html?month=${m}`;
+}
+
+const now = new Date();
+const mm = String(now.getMonth() + 1).padStart(2, '0');
+if (DATA[mm]) monthSelect.value = mm;
+
+monthSelect.addEventListener('change', render);
+render();
+</script>
+</body>
+</html>

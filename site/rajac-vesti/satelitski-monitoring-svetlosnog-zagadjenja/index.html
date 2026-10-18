@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+
+<html lang="sr-RS">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>Сателитски мониторинг светлосног загађења · ПИО „Рајац”</title>
+<meta content="Како аутоматизовани систем сваког месеца обрађује сателитске снимке ноћне Земље и преводи их у јавну карту стања тамног неба у границама ПИО Рајац." name="description"/>
+<style>
+:root{
+  --bg:#f7f2e8;--paper:#fffaf2;--paper2:#ffffff;--ink:#121a16;--text:#2f3a35;--muted:#667064;
+  --line:rgba(42,36,25,.14);--line2:rgba(42,36,25,.09);--green:#173b25;--green2:#225334;
+  --nav:#0d1b2d;--gold:#b38a2e;--gold2:#e3c56e;--night:#0b1820;--blue:#244b63;
+  --radius:26px;--shadow:0 24px 70px rgba(38,30,16,.09);--wrap:min(1180px, calc(100% - 44px));
+}
+*{box-sizing:border-box}html,body{margin:0;overflow-x:hidden}html{scroll-behavior:smooth}
+body{background:radial-gradient(circle at 12% -10%,rgba(179,138,46,.14),transparent 34%),linear-gradient(180deg,#fbf8f1 0%,var(--bg) 65%,#efe6d5 100%);color:var(--text);font-family:Georgia,"Times New Roman",serif;line-height:1.72}
+a{color:inherit;text-decoration:none}img{display:block;max-width:100%}
+.topnav{position:sticky;top:0;z-index:30;background:rgba(13,27,45,.98);border-bottom:1px solid rgba(227,197,110,.24);box-shadow:0 10px 28px rgba(5,13,23,.18)}
+.topnav-inner{flex-wrap:wrap;width:var(--wrap);margin:0 auto;min-height:58px;display:flex;align-items:center;gap:8px;overflow-x:visible;scrollbar-width:none}.topnav-inner::-webkit-scrollbar{display:none}
+.topnav a{display:inline-flex;align-items:center;justify-content:center;min-height:36px;padding:8px 15px;border-radius:999px;color:rgba(235,240,247,.62);font-family:system-ui,-apple-system,"Segoe UI",Arial,sans-serif;font-size:13px;font-weight:800;line-height:1;white-space:nowrap;border:1px solid transparent}.topnav a:hover{color:#f3ead1;background:rgba(255,255,255,.05);border-color:rgba(227,197,110,.28)}.topnav .home,.topnav .active{color:#f4d777;border-color:rgba(244,215,119,.38);background:rgba(244,215,119,.05)}.topnav .count{display:inline-flex;margin-left:7px;min-width:18px;height:18px;padding:0 6px;align-items:center;justify-content:center;border-radius:999px;background:rgba(227,197,110,.18);color:#ead28a;font-size:11px}
+.shell{width:var(--wrap);margin:0 auto;padding:54px 0 78px}.hero{padding:34px 0 32px;border-bottom:1px solid var(--line)}.kicker{margin:0 0 16px;color:#7a5514;font-family:system-ui,-apple-system,"Segoe UI",Arial,sans-serif;font-size:12px;font-weight:900;letter-spacing:.28em;text-transform:uppercase}.hero h1{max-width:1060px;margin:0;color:var(--ink);font-size:clamp(42px,6vw,78px);line-height:1.0;font-weight:400;letter-spacing:-.045em}.hero p{max-width:850px;margin:24px 0 0;color:var(--muted);font-size:clamp(18px,1.6vw,22px);line-height:1.72}
+.report-grid{display:grid;grid-template-columns:minmax(0,1fr) 330px;gap:24px;align-items:stretch;margin:34px 0 24px}.intro-card,.stats-card,.section-card{background:rgba(255,250,242,.78);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow)}.intro-card{padding:34px 40px}.intro-card .label,.section-label{display:block;margin:0 0 12px;color:#7a5514;font-family:system-ui,-apple-system,"Segoe UI",Arial,sans-serif;font-size:12px;font-weight:900;letter-spacing:.18em;text-transform:uppercase}.intro-card h2,.section-title h2{margin:0;color:var(--ink);font-size:clamp(30px,3.4vw,46px);line-height:1.08;font-weight:400;letter-spacing:-.025em}.intro-card p{font-size:19px;color:var(--muted);margin:18px 0 0}.stats-card{padding:26px;background:linear-gradient(180deg,#24472f,#132318);color:#fff}.stats-card h2{margin:0 0 15px;color:#fff;font-size:29px;line-height:1.1;font-weight:400}.stat{border:1px solid rgba(255,255,255,.18);background:rgba(255,255,255,.08);border-radius:16px;padding:15px;margin-top:12px}.stat span{display:block;margin-bottom:5px;color:rgba(255,255,255,.68);font-family:system-ui,-apple-system,"Segoe UI",Arial,sans-serif;font-size:11px;font-weight:900;letter-spacing:.16em;text-transform:uppercase}.stat strong{display:block;color:#fff;font-size:25px;line-height:1.1;font-weight:400}
+.system-visual{position:relative;min-height:360px;margin:34px 0 24px;border-radius:28px;overflow:hidden;background:radial-gradient(circle at 78% 18%,rgba(230,197,93,.21),transparent 24%),radial-gradient(circle at 18% 78%,rgba(68,171,93,.20),transparent 30%),linear-gradient(135deg,#07141e,#0b1b28 54%,#173528);box-shadow:0 26px 70px rgba(15,22,16,.16);border:1px solid rgba(20,38,24,.12)}
+.system-visual:before{content:"";position:absolute;inset:0;background-image:radial-gradient(circle,rgba(255,255,255,.45) 1px,transparent 1.4px);background-size:54px 54px;opacity:.16}.orbit{position:absolute;left:8%;right:8%;top:22%;height:48%;border:1px dashed rgba(244,215,119,.55);border-radius:50%;transform:rotate(-10deg)}.sat{position:absolute;left:18%;top:23%;font-size:56px;filter:drop-shadow(0 8px 20px rgba(0,0,0,.35))}.beam{position:absolute;left:21%;top:36%;width:50%;height:44%;clip-path:polygon(0 0,100% 46%,12% 100%);background:linear-gradient(90deg,rgba(215,183,95,.10),rgba(215,183,95,.34));filter:blur(.2px)}.map-glow{position:absolute;right:9%;bottom:13%;width:46%;height:42%;border-radius:48% 52% 44% 56%;background:radial-gradient(circle at 50% 46%,rgba(249,217,102,.45),rgba(70,167,84,.32) 38%,rgba(13,34,22,.35) 70%);box-shadow:0 0 0 1px rgba(255,255,255,.08),0 0 70px rgba(121,210,126,.14)}.visual-text{position:absolute;left:34px;bottom:30px;color:#fff}.visual-text strong{display:block;font-size:28px;font-weight:400;line-height:1.15;letter-spacing:.18em;text-transform:uppercase}.visual-text span{display:block;margin-top:8px;color:rgba(255,255,255,.68);font-family:system-ui,-apple-system,"Segoe UI",Arial,sans-serif;font-size:13px}.section-card{padding:34px 40px;margin:24px 0}.section-title{display:flex;align-items:flex-end;justify-content:space-between;gap:24px;margin-bottom:22px;padding-bottom:18px;border-bottom:1px solid var(--line)}.section-title p{max-width:520px;margin:0;color:var(--muted);font-size:16px;line-height:1.55}.section-card p{font-size:18px;color:var(--muted);margin:0 0 17px}.note{border-left:4px solid var(--gold);background:rgba(215,183,95,.11);border-radius:18px;padding:18px 20px;margin:24px 0}.note p{margin:0;color:#4d4328}.grid-2,.grid-3{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin-top:20px}.grid-3{grid-template-columns:repeat(3,minmax(0,1fr))}.info-box{background:#f7f2e8;border:1px solid var(--line);border-radius:18px;padding:20px}.info-box span{display:block;margin-bottom:8px;color:#7a5514;font-family:system-ui,-apple-system,"Segoe UI",Arial,sans-serif;font-size:11px;font-weight:900;letter-spacing:.16em;text-transform:uppercase}.info-box h3{margin:0 0 8px;color:var(--green);font-size:24px;line-height:1.12;font-weight:400}.info-box p{font-size:16px;margin:0;color:var(--muted)}.steps{counter-reset:item;display:grid;gap:12px;margin-top:18px}.step{counter-increment:item;display:grid;grid-template-columns:44px 1fr;gap:14px;align-items:start;border:1px solid var(--line);border-radius:18px;background:#fffdf7;padding:16px}.step:before{content:counter(item);width:42px;height:42px;border-radius:50%;display:grid;place-items:center;background:var(--nav);color:#f4d777;font-family:system-ui,-apple-system,"Segoe UI",Arial,sans-serif;font-weight:900}.step h3{margin:2px 0 6px;color:var(--ink);font-family:system-ui,-apple-system,"Segoe UI",Arial,sans-serif;font-size:16px;font-weight:900;letter-spacing:.02em}.step p{font-size:15.5px;line-height:1.62;margin:0}.bullets{display:grid;gap:10px;margin-top:18px}.bullet{position:relative;padding:14px 16px 14px 42px;border:1px solid var(--line);border-radius:16px;background:#fffdf7;color:var(--muted);font-size:17px;line-height:1.62}.bullet:before{content:"";position:absolute;left:17px;top:23px;width:8px;height:8px;border-radius:50%;background:var(--green2)}.legend{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:8px;margin:20px 0 0}.legend div{border-radius:16px;padding:14px 12px;text-align:center;font-size:12px;font-family:system-ui,-apple-system,"Segoe UI",Arial,sans-serif;font-weight:900;border:1px solid rgba(0,0,0,.09)}.lg1{background:#173d23;color:#d6f4dc}.lg2{background:#4f7b2d;color:#eef6df}.lg3{background:#d3bd58;color:#2d2712}.lg4{background:#df8840;color:#fff4e8}.lg5{background:#b94138;color:#fff}.table-wrap{overflow-x:auto;border:1px solid var(--line);border-radius:20px;background:#fffdf7;margin-top:16px}table{width:100%;border-collapse:collapse;min-width:680px}th,td{padding:14px 15px;border-bottom:1px solid rgba(33,42,31,.10);text-align:left;vertical-align:top}th{width:30%;background:#efe7d8;color:#6f4b00;font-family:system-ui,-apple-system,"Segoe UI",Arial,sans-serif;font-size:12px;letter-spacing:.13em;text-transform:uppercase}td{color:#2b352b;font-size:16px;line-height:1.5}tr:last-child th,tr:last-child td{border-bottom:0}.cta{margin-top:28px;border-radius:24px;background:linear-gradient(135deg,#102419,#213d26);color:#fff;padding:28px;border:1px solid rgba(255,255,255,.12);display:flex;align-items:center;justify-content:space-between;gap:18px}.cta h2{color:#fff;margin:0 0 8px;font-size:30px;font-weight:400}.cta p{color:rgba(255,255,255,.70);margin:0;font-size:15px}.btn{display:inline-flex;align-items:center;justify-content:center;white-space:nowrap;border-radius:999px;background:#f6dc76;color:#1e2517;padding:13px 18px;font-family:system-ui,-apple-system,"Segoe UI",Arial,sans-serif;font-weight:900;font-size:13px}.bottomnav{display:flex;justify-content:space-between;gap:18px;margin-top:30px;padding-top:24px;border-top:1px solid var(--line);font-family:system-ui,-apple-system,"Segoe UI",Arial,sans-serif;font-size:13px;font-weight:900;letter-spacing:.16em;text-transform:uppercase;color:#7a5514}.bottomnav a:hover{text-decoration:underline;text-underline-offset:4px}@media(max-width:980px){.report-grid{grid-template-columns:1fr}.stats-card{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}.stats-card h2{grid-column:1/-1}.stat{margin:0}.grid-2,.grid-3{grid-template-columns:1fr}.legend{grid-template-columns:repeat(2,1fr)}.section-title{display:block}.section-title p{margin-top:10px}.cta{display:block}.cta .btn{margin-top:16px}}@media(max-width:620px){:root{--wrap:min(100% - 24px,1180px)}.shell{padding-top:34px}.topnav-inner{min-height:52px}.topnav a{font-size:12px;padding:8px 12px}.intro-card,.section-card{padding:24px 18px}.stats-card{grid-template-columns:1fr}.section-card p{font-size:16.5px}.hero h1{font-size:clamp(34px,11vw,48px)}.system-visual{min-height:280px}.visual-text strong{font-size:21px}.sat{font-size:42px}.legend{grid-template-columns:1fr}}
+</style>
+<style id="rajac-static-news-menu-css">
+.rajac-news-menu{position:sticky;top:0;z-index:9999;background:#0d1b2a;border-bottom:1px solid rgba(255,255,255,.10);font-family:Georgia,"Times New Roman",serif;box-shadow:0 8px 26px rgba(0,0,0,.08)}
+.rajac-news-menu *{box-sizing:border-box}.rajac-news-menu-inner{max-width:1180px;margin:0 auto;padding:9px 18px;min-height:56px;display:flex;flex-wrap:wrap;align-items:center;gap:8px;overflow-x:visible;scrollbar-width:none}.rajac-news-menu-inner::-webkit-scrollbar{display:none}.rajac-news-menu a{display:inline-flex;align-items:center;gap:6px;min-height:38px;padding:0 13px;border-radius:999px;color:rgba(255,255,255,.74);text-decoration:none;font-size:13px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;white-space:nowrap}.rajac-news-menu a:hover{background:rgba(255,255,255,.06);color:#fff}.rajac-news-menu .home{color:#e0c678;border:1px solid rgba(224,198,120,.34);background:rgba(224,198,120,.06)}.rajac-news-menu a.active{color:#e0c678;background:rgba(224,198,120,.08);outline:1px solid rgba(224,198,120,.26)}.rajac-news-menu small,.rajac-news-menu .count{display:inline-flex;align-items:center;justify-content:center;min-width:20px;height:20px;padding:0 6px;border-radius:999px;background:rgba(255,255,255,.10);color:#e0c678;font-size:11px;letter-spacing:0}@media(max-width:720px){.rajac-news-menu-inner{padding:9px 10px}.rajac-news-menu a{font-size:12px;padding:0 10px}}
+</style>
+<style id="rajac-single-fix-css">.rajac-added-cover{width:min(1120px,calc(100% - 34px));margin:24px auto;border-radius:22px;overflow:hidden;border:1px solid rgba(30,40,30,.14);background:#fff;box-shadow:0 18px 55px rgba(35,42,31,.06)}.rajac-added-cover img{width:100%;max-height:420px;object-fit:cover;display:block}.rajac-added-cover figcaption{padding:10px 14px;color:#6c6f65;font:13px/1.45 Arial,sans-serif}</style>
+<style id="rajac-global-news-menu-style">
+.rajac-news-menu{position:sticky;top:0;z-index:9999;background:#0d1b2a;border-bottom:1px solid rgba(255,255,255,.10);font-family:Georgia,"Times New Roman",serif;box-shadow:0 8px 26px rgba(0,0,0,.08)}
+.rajac-news-menu *{box-sizing:border-box}.rajac-news-menu-inner{max-width:1180px;margin:0 auto;padding:9px 18px;min-height:56px;display:flex;flex-wrap:wrap;align-items:center;gap:8px;overflow-x:visible;scrollbar-width:none}.rajac-news-menu-inner::-webkit-scrollbar{display:none}
+.rajac-news-menu a{display:inline-flex;align-items:center;gap:6px;min-height:38px;padding:0 13px;border-radius:999px;color:rgba(255,255,255,.74);text-decoration:none;font-size:13px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;white-space:nowrap;line-height:1;font-family:Georgia,"Times New Roman",serif}
+.rajac-news-menu a:hover{background:rgba(255,255,255,.06);color:#fff}.rajac-news-menu .home{color:#e0c678;border:1px solid rgba(224,198,120,.34);background:rgba(224,198,120,.06)}
+.rajac-news-menu a.active{color:#e0c678!important;background:rgba(224,198,120,.08);outline:1px solid rgba(224,198,120,.26)}.rajac-news-menu small{display:inline-flex;align-items:center;justify-content:center;min-width:20px;height:20px;padding:0 6px;border-radius:999px;background:rgba(255,255,255,.10);color:#e0c678;font-size:11px;letter-spacing:0;font-family:Arial,sans-serif;font-weight:900}
+@media(max-width:650px){.rajac-news-menu-inner{padding:9px 10px}.rajac-news-menu a{font-size:12px;padding:0 10px}}
+</style>
+<style id="rajac-news-menu-one-row">
+/* Јединствен мени за све вести: један ред и исти sans-serif фонт као на осталим страницама сајта. */
+.rajac-news-menu{font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif!important}
+.rajac-news-menu-inner{width:min(100%,1600px)!important;max-width:1600px!important;margin:0 auto!important;padding:9px 14px!important;display:flex!important;flex-wrap:nowrap!important;align-items:center!important;justify-content:center!important;gap:4px!important;overflow-x:auto!important;overflow-y:hidden!important;scrollbar-width:none!important;-webkit-overflow-scrolling:touch}
+.rajac-news-menu-inner::-webkit-scrollbar{display:none!important}
+.rajac-news-menu a{flex:0 0 auto!important;min-height:38px!important;padding:0 10px!important;font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif!important;font-size:12px!important;font-weight:750!important;letter-spacing:.025em!important;line-height:1!important;text-transform:uppercase!important;white-space:nowrap!important}
+.rajac-news-menu small{font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif!important}
+@media(max-width:1050px){.rajac-news-menu-inner{justify-content:flex-start!important}.rajac-news-menu a{font-size:11px!important;padding:0 9px!important}}
+</style>
+<style id="rajac-unified-news-menu-v3">
+.rajac-news-menu{
+  position:sticky!important;top:0!important;z-index:9999!important;
+  width:100%!important;background:#0d1b2a!important;
+  border-bottom:1px solid rgba(255,255,255,.10)!important;
+  box-shadow:0 7px 22px rgba(0,0,0,.10)!important;
+  font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif!important;
+}
+.rajac-news-menu *{font-family:inherit!important;box-sizing:border-box!important}
+.rajac-news-menu-inner{
+  width:100%!important;max-width:1600px!important;margin:0 auto!important;
+  min-height:60px!important;padding:8px 14px!important;
+  display:flex!important;flex-direction:row!important;flex-wrap:nowrap!important;
+  align-items:center!important;justify-content:center!important;gap:6px!important;
+  overflow-x:auto!important;overflow-y:hidden!important;white-space:nowrap!important;
+  scrollbar-width:none!important;-webkit-overflow-scrolling:touch!important;
+}
+.rajac-news-menu-inner::-webkit-scrollbar{display:none!important}
+.rajac-news-menu a{
+  flex:0 0 auto!important;display:inline-flex!important;align-items:center!important;
+  justify-content:center!important;gap:6px!important;min-height:40px!important;
+  padding:0 12px!important;border-radius:999px!important;
+  color:rgba(255,255,255,.82)!important;background:transparent!important;
+  text-decoration:none!important;text-transform:uppercase!important;
+  white-space:nowrap!important;font-size:13px!important;line-height:1!important;
+  font-weight:750!important;letter-spacing:.025em!important;
+}
+.rajac-news-menu a:hover,.rajac-news-menu a:focus-visible{
+  color:#fff!important;background:rgba(255,255,255,.07)!important;
+}
+.rajac-news-menu a.home,.rajac-news-menu a.active{
+  color:#e4cb7e!important;background:rgba(228,203,126,.08)!important;
+  outline:1px solid rgba(228,203,126,.30)!important;
+}
+.rajac-news-menu small{
+  flex:0 0 auto!important;display:inline-flex!important;align-items:center!important;
+  justify-content:center!important;min-width:20px!important;height:20px!important;
+  padding:0 6px!important;border-radius:999px!important;
+  color:#e4cb7e!important;background:rgba(255,255,255,.10)!important;
+  font-size:11px!important;line-height:20px!important;font-weight:800!important;
+  letter-spacing:0!important;
+}
+@media(max-width:1180px){
+  .rajac-news-menu-inner{justify-content:flex-start!important;padding-inline:10px!important}
+  .rajac-news-menu a{font-size:12px!important;padding-inline:10px!important}
+}
+</style>
+<link href="https://piorajac.rs/rajac-vesti/assets/css/rajac-unified-menu.css" rel="stylesheet"/>
+<style id="pio-news-menu-one-row-final">
+
+/* === PIO RAJAC: JEDNOREDNI MENI NA SVIM STRANICAMA VESTI === */
+@media (min-width: 900px){
+  .rajac-news-menu{
+    width:100% !important;
+  }
+  .rajac-news-menu-inner{
+    width:100% !important;
+    max-width:1600px !important;
+    margin:0 auto !important;
+    padding:8px 12px !important;
+    display:flex !important;
+    flex-direction:row !important;
+    flex-wrap:nowrap !important;
+    align-items:center !important;
+    justify-content:center !important;
+    gap:clamp(3px,.55vw,9px) !important;
+    white-space:nowrap !important;
+    overflow-x:auto !important;
+    overflow-y:hidden !important;
+    scrollbar-width:none !important;
+  }
+  .rajac-news-menu-inner::-webkit-scrollbar{display:none !important;}
+  .rajac-news-menu a{
+    flex:0 0 auto !important;
+    white-space:nowrap !important;
+    padding-left:clamp(7px,.65vw,11px) !important;
+    padding-right:clamp(7px,.65vw,11px) !important;
+    font-size:clamp(11px,.86vw,14px) !important;
+  }
+}
+/* На ужим екранима мени остаје један ред и хоризонтално се помера, уместо да пада у други ред. */
+@media (max-width: 899px){
+  .rajac-news-menu-inner{
+    display:flex !important;
+    flex-wrap:nowrap !important;
+    justify-content:flex-start !important;
+    white-space:nowrap !important;
+    overflow-x:auto !important;
+    overflow-y:hidden !important;
+    scrollbar-width:none !important;
+    -webkit-overflow-scrolling:touch !important;
+  }
+  .rajac-news-menu-inner::-webkit-scrollbar{display:none !important;}
+  .rajac-news-menu a{flex:0 0 auto !important;white-space:nowrap !important;}
+}
+
+</style>
+</head>
+<body><nav aria-label="Мени вести" class="rajac-news-menu"><div class="rajac-news-menu-inner"><a class="home" href="https://piorajac.rs/">ПИО „РАЈАЦ“</a><a href="https://piorajac.rs/rajac-vesti/">СВЕ ВЕСТИ</a><a href="https://piorajac.rs/rajac-vesti/kategorije/aktuelno/">АКТУЕЛНО<small>7</small></a><a href="https://piorajac.rs/rajac-vesti/kategorije/vesti/">ВЕСТИ<small>3</small></a><a href="https://piorajac.rs/rajac-vesti/kategorije/izvestaji/">ИЗВЕШТАЈИ<small>8</small></a><a href="https://piorajac.rs/rajac-vesti/kategorije/istrazivanja/">ИСТРАЖИВАЊА<small>9</small></a><a href="https://piorajac.rs/rajac-vesti/kategorije/dogadjaji/">ДОГАЂАЈИ<small>5</small></a><a href="https://piorajac.rs/rajac-vesti/kategorije/u-fokusu/">У ФОКУСУ<small>4</small></a></div></nav>
+<main class="shell">
+<header class="hero">
+<p class="kicker">Истраживања · мај 2026.</p>
+<h1>Сателитски мониторинг светлосног загађења</h1>
+<p>Како аутоматизовани систем сваког месеца обрађује сателитске снимке ноћне Земље и преводи их у јавну карту стања тамног неба у границама ПИО „Рајац”.</p>
+</header>
+<figure class="figure rajac-added-cover"><img alt="Тамно небо Рајца" decoding="async" height="600" loading="eager" src="/wp-content/uploads/2026/03/vedronebo9.png" width="960"/><figcaption>Тамно небо Рајца и мониторинг светлосног загађења.</figcaption></figure>
+<section aria-label="Увод и кључне одлике система" class="report-grid">
+<article class="intro-card">
+<span class="label">ПИО „Рајац” · мониторинг тамног неба</span>
+<h2>Систем ради без ручне обраде</h2>
+<p>Ова страница не приказује резултате тренда, већ објашњава како је постављен систем за континуирано праћење светлосног загађења у ПИО „Рајац”. Њена улога је да посетиоцу, истраживачу и управљачу јасно покаже како подаци настају, како се обрађују и како завршавају на јавној карти.</p>
+</article>
+<aside aria-label="Кључне одлике" class="stats-card">
+<h2>Кључне одлике</h2>
+<div class="stat"><span>Сателитски извор</span><strong>VIIRS DNB</strong></div>
+<div class="stat"><span>Обрада</span><strong>Earth Engine</strong></div>
+<div class="stat"><span>Аутоматизација</span><strong>GitHub Actions</strong></div>
+<div class="stat"><span>Приказ</span><strong>јавна карта</strong></div>
+</aside>
+</section>
+<figure aria-label="Илустрација тока сателитског мониторинга светлосног загађења" class="system-visual">
+<div class="orbit"></div><div class="sat">🛰️</div><div class="beam"></div><div class="map-glow"></div>
+<figcaption class="visual-text"><strong>Сателитски подаци → јавна карта</strong><span>ноћна радијанса · граница ПИО · статистика · топлотни приказ</span></figcaption>
+</figure>
+<section class="section-card" id="sta-radi">
+<div class="section-title"><h2>Шта систем ради</h2><p>Месечни ток обраде претвара сателитске снимке у упоредиве податке за управљање простором.</p></div>
+<p>Аутоматизовани процес преузима сателитске снимке ноћне Земље, издваја подручје ПИО „Рајац”, маскира непоуздане пикселе, рачуна ноћну радијансу унутар границе заштићеног подручја и припрема месечне и годишње слојеве за приказ.</p>
+<p>Циљ није да се замене теренска мерења као што су SQM или LDS инструменти, већ да се добије сталан, упоредив и просторно потпун надзор. Теренска мерења остају важна за проверу и калибрацију, док сателитски мониторинг обезбеђује редовну слику ширег простора.</p>
+<div class="note"><p>Идеја је једноставна: када се месечни сателитски снимци редовно обрађују истом методологијом, могуће је уочити промене у ноћној радијанси пре него што постану очигледне голим оком.</p></div>
+</section>
+<section class="section-card" id="izvor">
+<div class="section-title"><h2>Извор података</h2><p>Основу чине сателитски производи намењени праћењу ноћне радијансе.</p></div>
+<p>Систем користи NOAA VIIRS DNB, односно Day/Night Band инструменте на сателитима Suomi NPP и JPSS-1. Ради се о сателитским производима који су намењени праћењу ноћне радијансе, односно светлости која се емитује или расипа са површине Земље.</p>
+<div class="grid-2">
+<article class="info-box"><span>01 · сензор</span><h3>VIIRS DNB</h3><p>Сателитски инструмент осетљив на ноћно светло, погодан за праћење шире просторне слике светлосног загађења.</p></article>
+<article class="info-box"><span>02 · композити</span><h3>Месечни производи</h3><p>Уместо појединачних ноћних сцена користе се композитни подаци, очишћени од облака и непоузданих очитавања.</p></article>
+<article class="info-box"><span>03 · резолуција</span><h3>Пикселска мрежа</h3><p>Подаци се приказују као мрежа пиксела. Сваки пиксел представља просторни узорак терена и има придружену вредност радијансе.</p></article>
+<article class="info-box"><span>04 · упоредивост</span><h3>Иста методологија</h3><p>Када се сви периоди обрађују истим поступком, добија се поуздана основа за месечно и годишње поређење.</p></article>
+</div>
+</section>
+<section class="section-card" id="obrada">
+<div class="section-title"><h2>Како се обрада дешава</h2><p>Процес је постављен као редован, понављив и проверљив ток.</p></div>
+<p>Обрада је постављена као аутоматизовани ток. Једном месечно покреће се скрипта која преко Google Earth Engine-а приступа сателитским подацима, користи GeoJSON границу ПИО „Рајац” и припрема резултате за јавни приказ.</p>
+<div class="steps">
+<article class="step"><div><h3>Покретање процеса</h3><p>GitHub Actions у задатом термину покреће Python процесор. Тако се избегава ручно преузимање и ручна обрада података.</p></div></article>
+<article class="step"><div><h3>Повезивање са Earth Engine-ом</h3><p>Скрипта приступа Google Earth Engine окружењу, где се налазе сателитски подаци и где се изводи просторна обрада.</p></div></article>
+<article class="step"><div><h3>Учитавање границе ПИО</h3><p>Граница заштићеног подручја учитава се из GeoJSON фајла и користи као просторни филтер за обрачун.</p></div></article>
+<article class="step"><div><h3>Маскирање непоузданих података</h3><p>Пиксели без поузданог очитавања, облачни делови и технички неисправне вредности избацују се из обраде.</p></div></article>
+<article class="step"><div><h3>Обрачун статистике</h3><p>За сваки период рачунају се основни показатељи: просек, медијана, горњи перцентил, максимум и просторни положај најсветлијих пиксела.</p></div></article>
+<article class="step"><div><h3>Објављивање резултата</h3><p>Обрађени подаци се чувају као JSON фајлови, а WordPress plugin их учитава и приказује као јавну интерактивну карту.</p></div></article>
+</div>
+</section>
+<section class="section-card" id="prikaz">
+<div class="section-title"><h2>Како се подаци приказују на сајту</h2><p>Јавни приказ је разумљив посетиоцима, али употребљив и за стручни рад.</p></div>
+<p>Јавни приказ је направљен тако да буде разумљив посетиоцима, али и употребљив за стручни рад. Због тога постоје два нивоа приказа: изглађена топлотна карта за брзо визуелно праћење и приказ сирових пиксела за техничку проверу.</p>
+<div class="bullets">
+<div class="bullet">Избор периода: последњи месец, претходни месеци или годишњи просек.</div>
+<div class="bullet">Изглађена топлотна карта за јавни приказ и лакше уочавање просторног обрасца.</div>
+<div class="bullet">Сирови пикселски приказ за стручну проверу, анализу вредности и поређење периода.</div>
+<div class="bullet">Могућност приказивања или скривања спољне границе ПИО „Рајац”.</div>
+<div class="bullet">Основна статистика за изабрани период и издвајање најсветлијих пиксела као потенцијалних жаришта.</div>
+</div>
+<h3 style="margin:28px 0 8px;color:var(--green);font-size:26px;font-weight:400">Класе приказа</h3>
+<p>Боје на карти нису декоративне, већ служе за брзо читање стања. Најтамнији тонови означавају најниже вредности радијансе, док топли тонови упућују на повишену или високу ноћну радијансу.</p>
+<div aria-label="Легенда класа ноћне радијансе" class="legend"><div class="lg1">врло ниско</div><div class="lg2">ниско</div><div class="lg3">умерено</div><div class="lg4">повишено</div><div class="lg5">високо</div></div>
+</section>
+<section class="section-card" id="zasto">
+<div class="section-title"><h2>Зашто је овај систем важан</h2><p>Светлосно загађење се преводи из општег утиска у мерљив управљачки показатељ.</p></div>
+<p>Светлосно загађење је просторни притисак који се често не прати систематски, иако може да утиче на ноћну фауну, инсекте, слепе мишеве, птице, биолошке ритмове и астрономски потенцијал подручја. Зато је важно да заштићено подручје има редован, документован и проверљив надзор.</p>
+<p>Сателитски систем омогућава управљачу да прати где се светлост повећава, да ли се јављају нова жаришта и да ли су потребне теренске провере. Такав приступ претвара светлосно загађење из општег утиска у мерљив управљачки показатељ.</p>
+</section>
+<section class="section-card" id="tehnicki">
+<div class="section-title"><h2>Технички детаљи</h2><p>Основни елементи система за аутоматску обраду и јавни приказ.</p></div>
+<div class="table-wrap"><table>
+<tr><th>Интерактивни приказ</th><td><a href="https://piorajac.rs/monitoring-svetlosno-zagadjenje/">piorajac.rs/monitoring-svetlosno-zagadjenje/</a></td></tr>
+<tr><th>Сателитски извор</th><td>NOAA Suomi NPP VIIRS / JPSS-1</td></tr>
+<tr><th>Датасет</th><td>NOAA/VIIRS/DNB/MONTHLY_V1/VCMSLCFG у Google Earth Engine окружењу</td></tr>
+<tr><th>Процесор</th><td>Google Earth Engine + Python скрипта</td></tr>
+<tr><th>Аутоматизација</th><td>GitHub Actions месечни cron процес</td></tr>
+<tr><th>Јавни приказ</th><td>WordPress plugin за учитавање JSON резултата и приказ топлотне карте</td></tr>
+<tr><th>Просторни обухват</th><td>Спољна граница ПИО „Рајац” из GeoJSON фајла</td></tr>
+</table></div>
+<div class="cta"><div><h2>Отвори интерактивну карту</h2><p>Погледај јавни приказ сателитског мониторинга светлосног загађења у границама ПИО „Рајац”.</p></div><a class="btn" href="https://piorajac.rs/monitoring-svetlosno-zagadjenje/">Интерактивни приказ →</a></div>
+</section>
+<nav class="bottomnav"><a href="https://piorajac.rs/rajac-vesti/posmatranje-dnevnih-leptira-na-rajcu/">← Претходна вест</a><a href="https://piorajac.rs/rajac-vesti/satelitski-monitoring-vegetacije-pio-rajac-2017-2025/">Следећа вест →</a></nav>
+<style id="rajac-nextvest-css">.rajac-next-vest{max-width:760px;margin:34px auto 44px;padding:0 18px;font-family:Georgia,"Times New Roman",serif}.rajac-next-vest a{display:flex;flex-direction:column;gap:5px;padding:16px 20px;border:1px solid rgba(70,56,28,.20);border-radius:16px;background:#fffaf2;text-decoration:none;color:#1e2c1c;box-shadow:0 8px 24px rgba(38,30,16,.05);transition:transform .2s,box-shadow .2s}.rajac-next-vest a:hover{transform:translateY(-2px);box-shadow:0 12px 30px rgba(38,30,16,.10)}.rajac-next-vest .rnv-k{font-size:12px;font-weight:900;letter-spacing:.14em;text-transform:uppercase;color:#9a7b32;font-family:Arial,sans-serif}.rajac-next-vest .rnv-title{font-size:17px;font-weight:800;line-height:1.32}</style><nav aria-label="Следећа вест" class="rajac-next-vest"><a href="https://piorajac.rs/rajac-vesti/hajduckatrava-rajac/"><span class="rnv-k">Следећа вест →</span><span class="rnv-title">Приноси и хемијски састав хајдучке траве са Рајца</span></a></nav></main>
+<style id="rajac-admin-edit-style">.rajac-admin-edit-button{position:fixed;right:16px;bottom:16px;z-index:99999;display:none;align-items:center;justify-content:center;min-height:42px;padding:0 16px;border-radius:999px;background:#0d1b2a;color:#e0c678!important;text-decoration:none!important;font:900 12px/1 Arial,sans-serif;letter-spacing:.10em;text-transform:uppercase;box-shadow:0 12px 30px rgba(0,0,0,.22);border:1px solid rgba(224,198,120,.42)}</style><script id="rajac-admin-edit-script">(function(){try{if(document.cookie.indexOf("rajac_vesti_admin=1")===-1)return;var p=location.pathname.split("/").filter(Boolean);var slug=p[p.length-1]||"";if(!slug||slug==="rajac-vesti")return;var a=document.createElement("a");a.className="rajac-admin-edit-button";a.href="https://piorajac.rs/rajac-vesti/admin-edit.php?slug="+encodeURIComponent(slug);a.textContent="EDIT";a.style.display="inline-flex";document.body.appendChild(a);}catch(e){}})();</script>
+<!-- SITE_EDITOR_ADMIN_BAR_START -->
+<script defer="" src="/admin-site-editor.php?admin_bar_js=1"></script>
+<!-- SITE_EDITOR_ADMIN_BAR_END -->
+<button aria-label="На врх стране" id="rajac-totop" title="На врх" type="button">↑</button><style id="rajac-totop-css">#rajac-totop{position:fixed;right:16px;bottom:16px;z-index:10000;width:46px;height:46px;border-radius:999px;border:1px solid rgba(255,255,255,.4);background:rgba(20,30,40,.30);-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);color:#fff;font-size:22px;line-height:1;cursor:pointer;display:flex;align-items:center;justify-content:center;opacity:0;visibility:hidden;transition:opacity .25s,visibility .25s,background .2s;box-shadow:0 6px 20px rgba(0,0,0,.25);-webkit-tap-highlight-color:transparent}#rajac-totop.show{opacity:1;visibility:visible}#rajac-totop:hover{background:rgba(20,30,40,.55)}@media(max-width:1024px){#rajac-totop{right:12px;bottom:12px;width:44px;height:44px}}</style><script>(function(){var b=document.getElementById("rajac-totop");if(!b)return;function o(){if((window.pageYOffset||document.documentElement.scrollTop)>320)b.classList.add("show");else b.classList.remove("show");}window.addEventListener("scroll",o,{passive:true});o();b.addEventListener("click",function(){window.scrollTo({top:0,behavior:"smooth"});});})();</script></body>
+</html>

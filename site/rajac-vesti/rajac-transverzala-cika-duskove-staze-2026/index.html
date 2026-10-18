@@ -1,0 +1,959 @@
+<!DOCTYPE html>
+
+<html lang="sr-Cyrl">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<title>Рајачка трансверзала — најава акције и интерактивни приказ стазе</title>
+<meta content="Догађај · 29. мај 2026. Најава планинарске акције Рајачка трансверзала, 30–31. мај 2026, са уграђеном GPX обрадом Чика Душкових стаза на Рајцу." name="description"/>
+<link href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" rel="stylesheet"/><style>
+    :root{
+      --rts-green:#0f3b21;--rts-green2:#1f7a3b;--rts-soft:#f4f7ef;--rts-soft2:#eef4e8;--rts-ink:#17261b;--rts-muted:#667366;--rts-line:#dfe6da;--rts-gold:#c9a24e;--rts-red:#d43d32;--rts-orange:#e38b33;--rts-blue:#2d7c9f;--rts-dark:#06150b;--rts-serif:Georgia,"Times New Roman",serif;--rts-sans:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;
+    }
+    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:#f7f8f4;color:var(--rts-ink);font-family:var(--rts-sans);line-height:1.65;-webkit-font-smoothing:antialiased}a{color:inherit;text-decoration:none}img,svg{max-width:100%;display:block}
+    .rts-page{max-width:1220px;margin:0 auto;padding:34px 22px 60px}
+    .rts-shell{background:#fff;border:1px solid rgba(15,59,33,.12);border-radius:24px;overflow:hidden;box-shadow:0 18px 54px rgba(10,30,14,.09)}
+    .rts-hero{position:relative;min-height:430px;display:flex;align-items:flex-end;padding:44px;background:radial-gradient(circle at 18% 22%,rgba(201,162,78,.24),transparent 34%),linear-gradient(135deg,rgba(6,21,11,.96),rgba(14,52,27,.90));color:#fff;overflow:hidden}
+    .rts-hero:before{content:"";position:absolute;inset:-20%;background:linear-gradient(115deg,transparent 0 35%,rgba(255,255,255,.08) 36%,transparent 38% 58%,rgba(255,255,255,.06) 59%,transparent 61%);opacity:.44;transform:rotate(-4deg)}
+    .rts-hero:after{content:"";position:absolute;left:0;right:0;bottom:0;height:46%;background:linear-gradient(0deg,rgba(0,0,0,.42),transparent)}
+    .rts-hero-inner{position:relative;z-index:1;max-width:920px}
+    .rts-kicker{display:inline-flex;align-items:center;gap:10px;margin-bottom:18px;padding:8px 14px;border-radius:999px;background:rgba(255,255,255,.10);border:1px solid rgba(255,255,255,.17);color:#d8f5df;font-size:11px;letter-spacing:2.2px;text-transform:uppercase;font-weight:850}
+    .rts-kicker:before{content:"";width:7px;height:7px;border-radius:50%;background:#86efac;box-shadow:0 0 0 5px rgba(134,239,172,.12)}
+    .rts-hero h1{margin:0;font-family:var(--rts-serif);font-size:clamp(40px,6vw,76px);line-height:.96;font-weight:400;letter-spacing:-1.9px}
+    .rts-hero h1 em{font-style:normal;color:#9ee6b0}
+    .rts-hero p{margin:18px 0 0;max-width:690px;color:rgba(255,255,255,.76);font-size:17px;line-height:1.65}
+    .rts-meta-grid{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:1px;background:rgba(15,59,33,.13);border-bottom:1px solid var(--rts-line)}
+    .rts-meta{min-height:106px;padding:17px 18px;background:#fff}.rts-meta span{display:block;margin-bottom:7px;color:var(--rts-green2);font-size:10px;font-weight:850;letter-spacing:1.9px;text-transform:uppercase}.rts-meta strong{display:block;font-family:var(--rts-serif);font-weight:400;font-size:25px;line-height:1.05;color:var(--rts-ink)}.rts-meta small{display:block;margin-top:6px;color:var(--rts-muted);font-size:12px;line-height:1.35}
+    .rts-body{display:grid;grid-template-columns:minmax(0,1fr) 340px;gap:36px;padding:44px}
+    .rts-section{margin-bottom:38px}.rts-section h2{margin:0 0 14px;font-family:var(--rts-serif);font-weight:400;font-size:38px;line-height:1.08;color:var(--rts-green);letter-spacing:-.6px}.rts-section h3{margin:28px 0 12px;font-family:var(--rts-serif);font-weight:400;font-size:27px;line-height:1.15;color:var(--rts-ink)}.rts-section p{margin:0 0 18px;color:#38463b;font-size:16px}.rts-lead{font-size:18px!important;line-height:1.78!important;color:#334136!important}
+    .rts-map-card{border-radius:20px;overflow:hidden;border:1px solid rgba(15,59,33,.14);background:#102316;box-shadow:0 14px 34px rgba(10,30,14,.11)}#rts-map{height:540px;width:100%;background:#102316}.rts-map-caption{padding:13px 16px;background:#fff;color:#526052;font-size:13px;line-height:1.45;border-top:1px solid rgba(15,59,33,.10)}.leaflet-container{font-family:var(--rts-sans)}.rts-divicon{display:flex;align-items:center;justify-content:center;width:28px;height:28px;border-radius:999px;background:var(--rts-red);color:#fff;border:2px solid #fff;box-shadow:0 4px 12px rgba(0,0,0,.28);font-size:11px;font-weight:900}.rts-divicon.start{background:var(--rts-green2)}.rts-divicon.poi{background:var(--rts-blue);font-size:10px}.leaflet-popup-content{font-size:13px;line-height:1.42}.leaflet-popup-content strong{color:var(--rts-green)}
+    .rts-profile{border:1px solid var(--rts-line);border-radius:20px;overflow:hidden;background:#fff;box-shadow:0 12px 28px rgba(10,30,14,.05)}.rts-profile-head{display:flex;justify-content:space-between;gap:20px;align-items:flex-start;padding:18px 20px;background:#f4f8f0;border-bottom:1px solid var(--rts-line)}.rts-profile-head strong{font-family:var(--rts-serif);font-weight:400;font-size:26px;line-height:1.1;color:var(--rts-green)}.rts-profile-head span{color:var(--rts-muted);font-size:13px}#rts-profile-svg{width:100%;height:auto;min-height:260px}.rts-profile-note{padding:12px 16px;background:#fafbf8;border-top:1px solid var(--rts-line);color:#5f6d60;font-size:13px}
+    .rts-table-wrap{border:1px solid var(--rts-line);border-radius:18px;overflow:auto;background:#fff}table.rts-table{width:100%;border-collapse:collapse;min-width:640px}.rts-table th{padding:12px 14px;text-align:left;background:#f4f8f0;color:var(--rts-green);font-size:10px;letter-spacing:1.8px;text-transform:uppercase}.rts-table td{padding:13px 14px;border-top:1px solid var(--rts-line);vertical-align:top;color:#334136;font-size:14px}.rts-table td:nth-child(1){width:82px;color:var(--rts-red)}.rts-table td:nth-child(3),.rts-table td:nth-child(4){white-space:nowrap;font-weight:700;color:var(--rts-green)}.rts-table small{display:block;margin-top:4px;color:var(--rts-muted);font-size:12px}
+    .rts-slope-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}.rts-slope-card{padding:14px 14px;border-radius:14px;background:#f8faf5;border:1px solid rgba(15,59,33,.10)}.rts-slope-card span{display:block;color:var(--rts-muted);font-size:10px;letter-spacing:1.5px;text-transform:uppercase;font-weight:850}.rts-slope-card strong{display:block;margin-top:5px;color:var(--rts-green);font-size:22px;line-height:1.05}.rts-slope-card em{display:block;margin-top:4px;font-style:normal;color:#7a877b;font-size:12px}
+    .rts-warning{padding:18px 20px;border-radius:18px;background:linear-gradient(135deg,#fff7df,#eef8e9);border:1px solid rgba(201,162,78,.35);margin:24px 0}.rts-warning strong{display:block;margin-bottom:7px;color:var(--rts-green);font-size:12px;letter-spacing:2px;text-transform:uppercase}.rts-warning p{margin:0;color:#334136}
+    .rts-side{align-self:start;position:sticky;top:22px}.rts-box{margin-bottom:14px;padding:20px;border-radius:19px;background:var(--rts-soft);border:1px solid rgba(15,59,33,.11)}.rts-box.dark{background:var(--rts-dark);color:#fff;border-color:rgba(255,255,255,.10)}.rts-box h3{margin:0 0 12px;font-family:var(--rts-serif);font-size:25px;line-height:1.12;font-weight:400}.rts-box p{margin:0 0 13px;color:#485248;font-size:14px;line-height:1.55}.rts-box.dark p{color:rgba(255,255,255,.70)}.rts-list{display:grid;gap:0;margin:0;padding:0;list-style:none}.rts-list li{padding:10px 0;border-bottom:1px solid rgba(15,59,33,.10);font-size:14px;line-height:1.45;color:#3b473d}.rts-list li:last-child{border-bottom:0}.rts-list strong{color:var(--rts-green)}.rts-box.dark .rts-list li{border-bottom-color:rgba(255,255,255,.12);color:rgba(255,255,255,.78)}.rts-box.dark .rts-list strong{color:#a7f3d0}
+    .rts-badges{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}.rts-badge{display:inline-flex;align-items:center;gap:7px;padding:8px 10px;border-radius:999px;background:#fff;border:1px solid rgba(15,59,33,.10);color:#344137;font-size:12px;font-weight:700}.rts-badge:before{content:"";width:6px;height:6px;border-radius:99px;background:var(--rts-green2)}.rts-btn{display:inline-flex;align-items:center;justify-content:center;margin-top:8px;padding:12px 17px;border-radius:999px;background:var(--rts-green);color:#fff;font-weight:750;font-size:13px;border:1px solid rgba(255,255,255,.12)}
+    .rts-footnote{margin-top:30px;padding-top:18px;border-top:1px solid var(--rts-line);color:var(--rts-muted);font-size:13px}
+    @media(max-width:1100px){.rts-meta-grid{grid-template-columns:repeat(3,minmax(0,1fr))}.rts-body{grid-template-columns:1fr}.rts-side{position:static}}
+    @media(max-width:720px){.rts-page{padding:18px 12px 42px}.rts-hero{min-height:380px;padding:30px 22px}.rts-hero p{font-size:15px}.rts-meta-grid{grid-template-columns:1fr 1fr}.rts-body{padding:24px 18px}#rts-map{height:420px}.rts-slope-grid{grid-template-columns:1fr 1fr}}
+    @media(max-width:520px){.rts-meta-grid{grid-template-columns:1fr}.rts-section h2{font-size:32px}.rts-slope-grid{grid-template-columns:1fr}#rts-map{height:360px}}
+  
+    .rp-track-embed{padding:0 44px 46px;background:#fff}
+    .rp-track-embed-title{margin:0 0 18px;font-family:var(--rp-serif);font-size:42px;line-height:1.08;font-weight:400;color:var(--rp-green);letter-spacing:-.7px}
+    .rp-track-embed-intro{margin:0 0 24px;max-width:820px;color:#3d4b40;font-size:17px;line-height:1.7}
+    .rp-track-embed .rts-shell{box-shadow:none;border-radius:18px}
+    .rp-track-embed .rts-body{padding:38px}
+    .rp-track-embed .rts-meta-grid{border-top:1px solid var(--rts-line)}
+    @media(max-width:980px){.rp-track-embed{padding:0 32px 38px}.rp-track-embed .rts-body{padding:28px}}
+    @media(max-width:640px){.rp-track-embed{padding:0 18px 32px}.rp-track-embed-title{font-size:34px}.rp-track-embed-intro{font-size:15px}.rp-track-embed .rts-body{padding:22px 16px}}
+    
+/* === FULL WIDTH FIX: висински профил, табела и доњи садржај === */
+@media (min-width: 981px){
+  .rp-track-embed .rts-body{
+    display:grid !important;
+    grid-template-columns:minmax(0,1fr) 340px !important;
+    gap:36px !important;
+    align-items:start !important;
+  }
+  .rp-track-embed .rts-main{
+    display:contents !important;
+  }
+  .rp-track-embed .rts-side{
+    grid-column:2 !important;
+    grid-row:1 / span 2 !important;
+    align-self:start !important;
+    position:sticky !important;
+    top:22px !important;
+  }
+  .rp-track-embed .rts-main > .rts-section:nth-of-type(1),
+  .rp-track-embed .rts-main > .rts-section:nth-of-type(2){
+    grid-column:1 !important;
+  }
+  .rp-track-embed .rts-main > .rts-section:nth-of-type(n+3){
+    grid-column:1 / -1 !important;
+    width:100% !important;
+  }
+  .rp-track-embed .rts-profile{
+    width:100% !important;
+  }
+  .rp-track-embed #rts-profile-svg{
+    width:100% !important;
+    min-height:360px !important;
+  }
+  .rp-track-embed .rts-table-wrap{
+    width:100% !important;
+  }
+  .rp-track-embed table.rts-table{
+    width:100% !important;
+  }
+}
+@media (max-width: 980px){
+  .rp-track-embed .rts-body{
+    display:block !important;
+  }
+  .rp-track-embed .rts-side{
+    position:static !important;
+  }
+  .rp-track-embed #rts-profile-svg{
+    min-height:280px !important;
+  }
+}
+
+
+.rajac-news-menu{position:sticky;top:0;z-index:9999;background:#0d1b2a;border-bottom:1px solid rgba(255,255,255,.10);font-family:Georgia,"Times New Roman",serif;box-shadow:0 8px 26px rgba(0,0,0,.08)}.rajac-news-menu *{box-sizing:border-box}.rajac-news-menu-inner{max-width:1180px;margin:0 auto;padding:9px 18px;min-height:56px;display:flex;flex-wrap:wrap;align-items:center;gap:8px;overflow-x:visible;scrollbar-width:none}.rajac-news-menu-inner::-webkit-scrollbar{display:none}.rajac-news-menu a{display:inline-flex;align-items:center;gap:6px;min-height:38px;padding:0 13px;border-radius:999px;color:rgba(255,255,255,.74);text-decoration:none;font-size:13px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;white-space:nowrap}.rajac-news-menu a:hover{background:rgba(255,255,255,.06);color:#fff}.rajac-news-menu .home{color:#e0c678;border:1px solid rgba(224,198,120,.34);background:rgba(224,198,120,.06)}.rajac-news-menu a.active{color:#e0c678;background:rgba(224,198,120,.08);outline:1px solid rgba(224,198,120,.26)}.rajac-news-menu small{display:inline-flex;align-items:center;justify-content:center;min-width:20px;height:20px;padding:0 6px;border-radius:999px;background:rgba(255,255,255,.10);color:#e0c678;font-size:11px;letter-spacing:0}
+
+
+/* Планинарска акција 30–31. мај 2026 — рад са ПРАВОМ GPX картом */
+.rts-action-days{
+  margin:0 0 30px;
+  border:1px solid rgba(15,59,33,.14);
+  border-radius:22px;
+  background:linear-gradient(135deg,#fffdf7,#f4f8ef);
+  box-shadow:0 14px 34px rgba(10,30,14,.08);
+  overflow:hidden;
+}
+.rts-action-head{
+  padding:22px 24px 18px;
+  border-bottom:1px solid rgba(15,59,33,.12);
+  background:radial-gradient(circle at 12% 20%,rgba(201,162,78,.16),transparent 34%),#fff;
+}
+.rts-action-head span{
+  display:block;
+  margin-bottom:8px;
+  color:var(--rts-green2);
+  font-size:10px;
+  font-weight:900;
+  letter-spacing:2.2px;
+  text-transform:uppercase;
+}
+.rts-action-head h2{
+  margin:0 0 10px!important;
+  color:var(--rts-green)!important;
+}
+.rts-action-head p{
+  margin:0!important;
+  max-width:900px;
+  color:#425142!important;
+}
+.rts-action-tabs{
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+  padding:16px 18px 0;
+}
+.rts-action-tab{
+  appearance:none;
+  border:1px solid rgba(15,59,33,.18);
+  border-radius:999px;
+  background:#fff;
+  color:var(--rts-green);
+  cursor:pointer;
+  min-height:42px;
+  padding:10px 18px;
+  font-weight:850;
+  letter-spacing:.02em;
+  font-family:var(--rts-sans);
+}
+.rts-action-tab.is-active{
+  background:var(--rts-green);
+  color:#fff;
+  border-color:var(--rts-green);
+}
+.rts-action-grid{
+  display:grid;
+  grid-template-columns:minmax(0,1fr) 290px;
+  gap:18px;
+  padding:18px;
+}
+.rts-action-route{
+  border:1px solid rgba(15,59,33,.12);
+  border-radius:18px;
+  background:#fff;
+  padding:18px 18px 16px;
+}
+.rts-action-route h3{
+  margin:0 0 10px!important;
+  font-family:var(--rts-serif);
+  font-size:28px!important;
+  font-weight:400!important;
+  color:var(--rts-green)!important;
+}
+.rts-action-route p{
+  margin:0 0 12px!important;
+  color:#38463b!important;
+}
+.rts-action-note{
+  margin-top:12px;
+  padding:12px 14px;
+  border-radius:14px;
+  background:#fff8e8;
+  border:1px solid rgba(201,162,78,.35);
+  color:#5e553e;
+  font-size:14px;
+  line-height:1.6;
+}
+.rts-action-stats{
+  display:grid;
+  gap:8px;
+}
+.rts-action-stat{
+  border:1px solid rgba(15,59,33,.12);
+  border-radius:14px;
+  background:#fff;
+  padding:11px 12px;
+}
+.rts-action-stat span{
+  display:block;
+  color:var(--rts-muted);
+  font-size:10px;
+  font-weight:900;
+  letter-spacing:1.5px;
+  text-transform:uppercase;
+}
+.rts-action-stat strong{
+  display:block;
+  margin-top:3px;
+  font-family:var(--rts-serif);
+  font-size:24px;
+  font-weight:400;
+  color:var(--rts-green);
+}
+.rts-map-card.is-day-highlighted{
+  box-shadow:0 18px 48px rgba(15,59,33,.16);
+}
+@media(max-width:760px){
+  .rts-action-grid{grid-template-columns:1fr}
+  .rts-action-tabs{gap:8px}
+  .rts-action-tab{width:100%;justify-content:center}
+}
+
+
+/* Layout fix 30.05: mapa preko cele širine; uklonjeni desni blokovi Procena vremena i Ključne tačke. */
+.rts-map-fullwidth{
+  grid-column:1 / -1 !important;
+  width:100% !important;
+}
+.rts-map-fullwidth .rts-map-card{
+  width:100% !important;
+}
+.rts-map-fullwidth #rts-map{
+  height:680px !important;
+}
+.rts-side-card.is-removed-time,
+.rts-side-card.is-removed-points{
+  display:none !important;
+}
+.rts-side-card.is-moved-pack{
+  margin-bottom:18px !important;
+}
+@media(max-width:760px){
+  .rts-map-fullwidth #rts-map{height:560px !important;}
+}
+@media(max-width:520px){
+  .rts-map-fullwidth #rts-map{height:470px !important;}
+}
+
+
+
+/* FINALNO 30.05 — prava GPX karta na dnu i preko pune širine sadržaja */
+.rp-track-embed .rts-body{
+  display:block!important;
+  grid-template-columns:none!important;
+  padding:38px!important;
+}
+.rp-track-embed .rts-main{
+  display:block!important;
+  width:100%!important;
+  max-width:none!important;
+}
+.rp-track-embed .rts-main > .rts-section,
+.rp-track-embed .rts-main > .rts-action-days{
+  width:100%!important;
+  max-width:none!important;
+}
+.rp-track-embed .rts-main > .rts-section.rts-map-fullwidth{
+  display:block!important;
+  grid-column:1 / -1!important;
+  width:100%!important;
+  max-width:none!important;
+  margin:46px 0 0!important;
+}
+.rp-track-embed .rts-map-fullwidth .rts-map-card{
+  display:block!important;
+  width:100%!important;
+  max-width:none!important;
+}
+.rp-track-embed .rts-map-fullwidth #rts-map{
+  display:block!important;
+  width:100%!important;
+  min-width:100%!important;
+  height:640px!important;
+}
+.rp-track-embed .rts-map-fullwidth .leaflet-container{
+  width:100%!important;
+}
+.rp-track-embed .rts-side{
+  display:grid!important;
+  grid-template-columns:repeat(auto-fit,minmax(280px,1fr))!important;
+  gap:18px!important;
+  margin:24px 0 0!important;
+  position:static!important;
+  top:auto!important;
+  grid-column:auto!important;
+  grid-row:auto!important;
+}
+.rp-track-embed .rts-side .rts-box.removed-rts-box{
+  display:none!important;
+}
+.rp-sidebar .rts-pack-box{
+  margin-top:16px!important;
+}
+@media(max-width:760px){
+  .rp-track-embed .rts-body{padding:24px 18px!important;}
+  .rp-track-embed .rts-map-fullwidth #rts-map{height:540px!important;}
+}
+@media(max-width:520px){
+  .rp-track-embed .rts-body{padding:20px 12px!important;}
+  .rp-track-embed .rts-map-fullwidth #rts-map{height:450px!important;}
+}
+
+
+/* FINAL 30.05 — prava GPX karta vraćena iznad profila, dani akcije na dnu */
+.rp-track-embed .rts-section.rts-map-fullwidth{
+  width:min(1320px, calc(100vw - 56px))!important;
+  max-width:none!important;
+  margin:34px 0 34px 50%!important;
+  transform:translateX(-50%)!important;
+}
+.rp-track-embed .rts-map-fullwidth .rts-map-card{
+  width:100%!important;
+  max-width:none!important;
+}
+.rp-track-embed .rts-map-fullwidth #rts-map,
+.rp-track-embed .rts-map-fullwidth .leaflet-container{
+  width:100%!important;
+  min-width:100%!important;
+}
+.rp-track-embed .rts-map-fullwidth #rts-map{
+  height:640px!important;
+}
+.rp-track-embed .rts-action-days.rts-action-bottom{
+  width:min(1320px, calc(100vw - 56px))!important;
+  max-width:none!important;
+  margin:44px 0 0 50%!important;
+  transform:translateX(-50%)!important;
+}
+.rp-track-embed .rts-side .rts-box.removed-rts-box{
+  display:none!important;
+}
+.rp-sidebar .rts-pack-box{
+  margin-top:16px!important;
+}
+@media(max-width:760px){
+  .rp-track-embed .rts-section.rts-map-fullwidth,
+  .rp-track-embed .rts-action-days.rts-action-bottom{
+    width:calc(100vw - 24px)!important;
+    margin-left:50%!important;
+  }
+  .rp-track-embed .rts-map-fullwidth #rts-map{height:540px!important;}
+}
+@media(max-width:520px){
+  .rp-track-embed .rts-map-fullwidth #rts-map{height:450px!important;}
+}
+
+
+/* 2026-05-29 — kraj vesti: bez ugrađene akcione mape; veliki link ka punoj mapi */
+.rp-action-map-embed.rp-action-map-cta-only{
+  max-width:1220px!important;
+  margin:46px auto 0!important;
+  padding:0 22px 58px!important;
+  border-top:0!important;
+  background:transparent!important;
+}
+.rp-action-map-cta-card{
+  border:1px solid rgba(15,59,33,.12)!important;
+  border-radius:24px!important;
+  padding:28px 30px!important;
+  background:linear-gradient(135deg,#fffdf7,#f4f7ef)!important;
+  box-shadow:0 18px 48px rgba(10,30,14,.10)!important;
+}
+.rp-action-map-kicker{
+  margin:0 0 8px!important;
+  color:#1f7a3b!important;
+  font-size:11px!important;
+  font-weight:850!important;
+  letter-spacing:1.9px!important;
+  text-transform:uppercase!important;
+}
+.rp-action-map-embed.rp-action-map-cta-only h2{
+  margin:0 0 12px!important;
+  font-family:var(--rp-serif,Georgia,'Times New Roman',serif)!important;
+  font-size:clamp(32px,4.2vw,46px)!important;
+  line-height:1.06!important;
+  font-weight:400!important;
+  color:var(--rp-green,#0f3b21)!important;
+  letter-spacing:-.7px!important;
+}
+.rp-action-map-embed.rp-action-map-cta-only p:not(.rp-action-map-kicker){
+  margin:0 0 22px!important;
+  max-width:980px!important;
+  color:#38463b!important;
+  font-size:17px!important;
+  line-height:1.7!important;
+}
+.rp-action-map-actions{display:flex!important;gap:12px!important;flex-wrap:wrap!important;margin-top:18px!important;}
+.rp-action-map-actions .rp-action-map-big-link{
+  display:inline-flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+  min-height:56px!important;
+  padding:14px 24px!important;
+  border-radius:999px!important;
+  background:var(--rp-green,#0f3b21)!important;
+  color:#fff!important;
+  font-weight:850!important;
+  font-size:16px!important;
+  border:1px solid rgba(255,255,255,.16)!important;
+  text-decoration:none!important;
+  box-shadow:0 12px 26px rgba(15,59,33,.18)!important;
+}
+.rp-action-map-actions .rp-action-map-big-link:hover{transform:translateY(-1px);}
+.rp-action-map-frame-wrap,.rp-action-map-frame{display:none!important;}
+@media(max-width:640px){
+  .rp-action-map-embed.rp-action-map-cta-only{padding:0 14px 42px!important;margin-top:34px!important;}
+  .rp-action-map-cta-card{padding:22px 18px!important;border-radius:20px!important;}
+  .rp-action-map-embed.rp-action-map-cta-only h2{font-size:clamp(29px,9vw,38px)!important;}
+  .rp-action-map-embed.rp-action-map-cta-only p:not(.rp-action-map-kicker){font-size:15.5px!important;line-height:1.65!important;}
+  .rp-action-map-actions .rp-action-map-big-link{width:100%!important;min-height:54px!important;font-size:15px!important;text-align:center!important;}
+}
+
+
+/* 2026-05-29 — svetlija pozadina za bočni blok praktičnih informacija; bez izmene sadržaja */
+.rp-box.dark{
+  background:linear-gradient(135deg,#f3f7ee,#edf5e7)!important;
+  color:#143c25!important;
+  border-color:#d7e5cf!important;
+  box-shadow:0 10px 26px rgba(15,59,33,.06)!important;
+}
+.rp-box.dark h3{color:#143c25!important;}
+.rp-box.dark p{color:#465448!important;}
+.rp-box.dark .rp-list li{
+  color:#334136!important;
+  border-bottom-color:rgba(15,59,33,.12)!important;
+}
+.rp-box.dark .rp-list strong{color:#1f6b3a!important;}
+</style><style>
+    :root{--rp-green:#0f3b21;--rp-green-2:#1f6b3a;--rp-ink:#18251b;--rp-muted:#647064;--rp-line:#dfe5dc;--rp-soft:#f5f1e8;--rp-gold:#c8a24a;--rp-dark:#06150b;--rp-serif:Georgia,"Times New Roman",serif;--rp-sans:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif}*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:#f7f8f4;color:var(--rp-ink);font-family:var(--rp-sans);-webkit-font-smoothing:antialiased;line-height:1.65}a{color:inherit;text-decoration:none}.rp-page{max-width:1180px;margin:0 auto;padding:34px 22px 56px}.rp-news-shell{background:#fff;border:1px solid rgba(15,59,33,.12);border-radius:22px;overflow:hidden;box-shadow:0 18px 48px rgba(12,28,16,.08)}.rp-hero{position:relative;min-height:430px;padding:42px 44px;display:flex;align-items:flex-end;overflow:hidden;background:radial-gradient(circle at 18% 18%,rgba(200,162,74,.22),transparent 34%),linear-gradient(135deg,rgba(6,21,11,.92),rgba(15,59,33,.88));color:#fff}.rp-hero:after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(0,0,0,.42),rgba(0,0,0,.08));pointer-events:none}.rp-hero-inner{position:relative;z-index:1;max-width:840px}.rp-kicker{display:inline-flex;align-items:center;gap:10px;margin:0 0 18px;padding:8px 13px;border-radius:999px;background:rgba(255,255,255,.10);border:1px solid rgba(255,255,255,.18);color:#d8f5df;font-size:11px;letter-spacing:2.2px;text-transform:uppercase;font-weight:800}.rp-kicker:before{content:"";width:7px;height:7px;border-radius:50%;background:#86efac;box-shadow:0 0 0 5px rgba(134,239,172,.12)}h1{margin:0;font-family:var(--rp-serif);font-weight:400;font-size:clamp(38px,6vw,70px);line-height:.98;letter-spacing:-1.8px;max-width:900px}.rp-hero-sub{margin:18px 0 0;max-width:680px;color:rgba(255,255,255,.78);font-size:17px;line-height:1.62}.rp-meta-strip{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:1px;background:rgba(15,59,33,.13);border-bottom:1px solid var(--rp-line)}.rp-meta{min-height:104px;padding:18px 20px;background:#fff}.rp-meta span{display:block;margin-bottom:7px;color:var(--rp-green-2);font-size:10px;font-weight:800;letter-spacing:2px;text-transform:uppercase}.rp-meta strong{display:block;font-family:var(--rp-serif);font-size:23px;font-weight:400;line-height:1.1;color:var(--rp-ink)}.rp-meta small{display:block;margin-top:6px;color:var(--rp-muted);font-size:12px;line-height:1.35}.rp-content{display:grid;grid-template-columns:minmax(0,1fr) 330px;gap:38px;padding:44px}.rp-article h2{margin:0 0 14px;font-family:var(--rp-serif);font-size:36px;line-height:1.08;font-weight:400;color:var(--rp-green);letter-spacing:-.5px}.rp-article h3{margin:30px 0 12px;font-family:var(--rp-serif);font-size:27px;line-height:1.15;font-weight:400;color:var(--rp-ink)}.rp-lead{margin:0 0 26px;font-size:18px;line-height:1.75;color:#334036}.rp-article p{margin:0 0 18px;color:#38463b;font-size:16px}.rp-highlight{margin:28px 0;padding:22px 24px;border-radius:16px;background:linear-gradient(135deg,#f8f1dd,#eef6e9);border:1px solid rgba(200,162,74,.35)}.rp-highlight strong{display:block;margin-bottom:7px;color:var(--rp-green);font-size:12px;letter-spacing:2px;text-transform:uppercase}.rp-highlight p{margin:0;color:#334036}.rp-day{margin:18px 0;border:1px solid var(--rp-line);border-radius:16px;overflow:hidden;background:#fff}.rp-day-head{display:flex;justify-content:space-between;gap:16px;padding:18px 20px;background:#f4f8f0;border-bottom:1px solid var(--rp-line)}.rp-day-head strong{font-family:var(--rp-serif);font-size:24px;font-weight:400;line-height:1.1;color:var(--rp-green)}.rp-day-head span{color:var(--rp-muted);font-size:13px;white-space:nowrap}.rp-route{padding:20px}.rp-route p{margin:0 0 14px}.rp-stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin-top:14px}.rp-stat{padding:12px 14px;border-radius:12px;background:#f8f9f4;border:1px solid rgba(15,59,33,.09)}.rp-stat span{display:block;color:var(--rp-muted);font-size:10px;letter-spacing:1.5px;text-transform:uppercase;font-weight:800}.rp-stat strong{display:block;margin-top:4px;color:var(--rp-green);font-size:19px;line-height:1.1}.rp-side{align-self:start;position:sticky;top:22px}.rp-box{margin-bottom:14px;padding:20px;border-radius:18px;background:var(--rp-soft);border:1px solid rgba(15,59,33,.11)}.rp-box.dark{background:var(--rp-dark);color:#fff;border-color:rgba(255,255,255,.10)}.rp-box h3{margin:0 0 12px;font-family:var(--rp-serif);font-size:25px;line-height:1.1;font-weight:400}.rp-box p{margin:0 0 12px;color:#485248;font-size:14px;line-height:1.55}.rp-box.dark p{color:rgba(255,255,255,.70)}.rp-list{display:grid;gap:9px;margin:0;padding:0;list-style:none}.rp-list li{padding:10px 0;border-bottom:1px solid rgba(15,59,33,.10);font-size:14px;line-height:1.45;color:#3b473d}.rp-list li:last-child{border-bottom:0}.rp-list strong{color:var(--rp-green)}.rp-box.dark .rp-list li{border-bottom-color:rgba(255,255,255,.12);color:rgba(255,255,255,.78)}.rp-box.dark .rp-list strong{color:#a7f3d0}.rp-btn{display:inline-flex;align-items:center;justify-content:center;margin-top:8px;padding:12px 17px;border-radius:999px;background:var(--rp-green);color:#fff;font-weight:750;font-size:13px;border:1px solid rgba(255,255,255,.12)}.rp-source{margin-top:30px;padding-top:18px;border-top:1px solid var(--rp-line);color:var(--rp-muted);font-size:13px}.rp-source a{color:var(--rp-green);font-weight:700;text-decoration:underline;text-underline-offset:3px}.rp-note{margin:18px 0 0;padding:14px 16px;border-radius:14px;background:#f8fbf6;border:1px solid rgba(15,59,33,.10);color:#425044;font-size:14px}@media(max-width:980px){.rp-meta-strip{grid-template-columns:repeat(2,minmax(0,1fr))}.rp-content{grid-template-columns:1fr;padding:32px}.rp-side{position:static}}@media(max-width:640px){.rp-page{padding:18px 12px 38px}.rp-hero{min-height:380px;padding:28px 22px}.rp-hero-sub{font-size:15px}.rp-content{padding:24px 18px}.rp-meta-strip{grid-template-columns:1fr}.rp-stats{grid-template-columns:1fr}.rp-day-head{display:block}.rp-day-head span{display:block;margin-top:6px}}
+  </style>
+<style id="final-gpx-top-startfix-bottom-css-3005">
+/* FINAL 30.05 — NE DIRATI: prava GPX karta gore full-width + START_FIX karta na dnu */
+.rp-track-embed .rts-body{
+  display:block!important;
+  grid-template-columns:none!important;
+  width:100%!important;
+  max-width:none!important;
+}
+.rp-track-embed .rts-main{
+  display:block!important;
+  width:100%!important;
+  max-width:none!important;
+}
+.rp-track-embed .rts-main > .rts-section{
+  width:100%!important;
+  max-width:none!important;
+}
+.rp-track-embed .rts-section.rts-map-fullwidth{
+  display:block!important;
+  grid-column:1 / -1!important;
+  width:100%!important;
+  max-width:none!important;
+  margin:34px 0 38px 0!important;
+  transform:none!important;
+}
+.rp-track-embed .rts-map-fullwidth .rts-map-card{
+  display:block!important;
+  width:100%!important;
+  max-width:none!important;
+}
+.rp-track-embed .rts-map-fullwidth #rts-map,
+.rp-track-embed .rts-map-fullwidth .leaflet-container{
+  display:block!important;
+  width:100%!important;
+  min-width:100%!important;
+  max-width:none!important;
+}
+.rp-track-embed .rts-map-fullwidth #rts-map{
+  height:640px!important;
+}
+.rp-track-embed .rts-side{
+  display:block!important;
+  position:static!important;
+  top:auto!important;
+  grid-column:auto!important;
+  grid-row:auto!important;
+  width:100%!important;
+  max-width:none!important;
+  margin-top:20px!important;
+}
+.rp-track-embed .rts-side .rts-box.removed-rts-box{
+  display:none!important;
+}
+.rp-sidebar .rts-pack-box{
+  margin-top:16px!important;
+}
+.rp-action-map-embed{
+  margin:52px 0 0!important;
+  padding-top:34px!important;
+  border-top:1px solid var(--rp-line,#dfe5dc)!important;
+  background:#fff!important;
+}
+.rp-action-map-embed h2{
+  margin:0 0 14px!important;
+  font-family:var(--rp-serif,Georgia,'Times New Roman',serif)!important;
+  font-size:38px!important;
+  line-height:1.08!important;
+  font-weight:400!important;
+  color:var(--rp-green,#0f3b21)!important;
+  letter-spacing:-.6px!important;
+}
+.rp-action-map-embed p{
+  margin:0 0 20px!important;
+  max-width:880px!important;
+  color:#38463b!important;
+  font-size:16px!important;
+  line-height:1.7!important;
+}
+.rp-action-map-frame-wrap{
+  height:980px!important;
+  border:1px solid rgba(15,59,33,.14)!important;
+  border-radius:20px!important;
+  overflow:hidden!important;
+  background:#f6f2e7!important;
+  box-shadow:0 14px 34px rgba(10,30,14,.08)!important;
+}
+.rp-action-map-frame{
+  display:block!important;
+  width:100%!important;
+  height:100%!important;
+  border:0!important;
+  background:#f6f2e7!important;
+}
+.rp-action-map-actions{
+  display:flex!important;
+  gap:10px!important;
+  flex-wrap:wrap!important;
+  margin-top:14px!important;
+}
+.rp-action-map-actions a{
+  display:inline-flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+  min-height:44px!important;
+  padding:11px 17px!important;
+  border-radius:999px!important;
+  background:var(--rp-green,#0f3b21)!important;
+  color:#fff!important;
+  font-weight:750!important;
+  font-size:13px!important;
+  border:1px solid rgba(255,255,255,.12)!important;
+  text-decoration:none!important;
+}
+@media(max-width:980px){
+  .rp-action-map-frame-wrap{height:920px!important;}
+}
+@media(max-width:760px){
+  .rp-track-embed .rts-body{padding:24px 18px!important;}
+  .rp-track-embed .rts-map-fullwidth #rts-map{height:540px!important;}
+}
+@media(max-width:640px){
+  .rp-action-map-embed h2{font-size:32px!important;}
+  .rp-action-map-frame-wrap{height:980px!important;}
+}
+@media(max-width:520px){
+  .rp-track-embed .rts-body{padding:20px 12px!important;}
+  .rp-track-embed .rts-map-fullwidth #rts-map{height:450px!important;}
+}
+</style>
+<style id="rp-hero-cream-soft-3005">
+/* 2026-05-29 — samo ublažavanje tamne zelene hero pozadine na strani vesti; bez promene karte/profila/sadržaja */
+.rp-hero{
+  background:linear-gradient(135deg,#fbfaf4 0%,#f7f3e7 55%,#f1ead8 100%)!important;
+  color:#143c25!important;
+  border-bottom:1px solid rgba(15,59,33,.10)!important;
+}
+.rp-hero:after{display:none!important;}
+.rp-hero h1{color:#143c25!important;}
+.rp-hero-sub{color:#40513f!important;}
+.rp-kicker{
+  background:rgba(255,255,255,.58)!important;
+  border:1px solid rgba(15,59,33,.13)!important;
+  color:#1f6b3a!important;
+}
+.rp-kicker:before{
+  background:#88b991!important;
+  box-shadow:0 0 0 5px rgba(31,107,58,.08)!important;
+}
+</style>
+<style id="rajac-global-news-menu-style">
+.rajac-news-menu{position:sticky;top:0;z-index:9999;background:#0d1b2a;border-bottom:1px solid rgba(255,255,255,.10);font-family:Georgia,"Times New Roman",serif;box-shadow:0 8px 26px rgba(0,0,0,.08)}
+.rajac-news-menu *{box-sizing:border-box}.rajac-news-menu-inner{max-width:1180px;margin:0 auto;padding:9px 18px;min-height:56px;display:flex;flex-wrap:wrap;align-items:center;gap:8px;overflow-x:visible;scrollbar-width:none}.rajac-news-menu-inner::-webkit-scrollbar{display:none}
+.rajac-news-menu a{display:inline-flex;align-items:center;gap:6px;min-height:38px;padding:0 13px;border-radius:999px;color:rgba(255,255,255,.74);text-decoration:none;font-size:13px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;white-space:nowrap;line-height:1;font-family:Georgia,"Times New Roman",serif}
+.rajac-news-menu a:hover{background:rgba(255,255,255,.06);color:#fff}.rajac-news-menu .home{color:#e0c678;border:1px solid rgba(224,198,120,.34);background:rgba(224,198,120,.06)}
+.rajac-news-menu a.active{color:#e0c678!important;background:rgba(224,198,120,.08);outline:1px solid rgba(224,198,120,.26)}.rajac-news-menu small{display:inline-flex;align-items:center;justify-content:center;min-width:20px;height:20px;padding:0 6px;border-radius:999px;background:rgba(255,255,255,.10);color:#e0c678;font-size:11px;letter-spacing:0;font-family:Arial,sans-serif;font-weight:900}
+@media(max-width:650px){.rajac-news-menu-inner{padding:9px 10px}.rajac-news-menu a{font-size:12px;padding:0 10px}}
+</style>
+<style id="rajac-news-menu-one-row">
+/* Јединствен мени за све вести: један ред и исти sans-serif фонт као на осталим страницама сајта. */
+.rajac-news-menu{font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif!important}
+.rajac-news-menu-inner{width:min(100%,1600px)!important;max-width:1600px!important;margin:0 auto!important;padding:9px 14px!important;display:flex!important;flex-wrap:nowrap!important;align-items:center!important;justify-content:center!important;gap:4px!important;overflow-x:auto!important;overflow-y:hidden!important;scrollbar-width:none!important;-webkit-overflow-scrolling:touch}
+.rajac-news-menu-inner::-webkit-scrollbar{display:none!important}
+.rajac-news-menu a{flex:0 0 auto!important;min-height:38px!important;padding:0 10px!important;font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif!important;font-size:12px!important;font-weight:750!important;letter-spacing:.025em!important;line-height:1!important;text-transform:uppercase!important;white-space:nowrap!important}
+.rajac-news-menu small{font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif!important}
+@media(max-width:1050px){.rajac-news-menu-inner{justify-content:flex-start!important}.rajac-news-menu a{font-size:11px!important;padding:0 9px!important}}
+</style>
+<style id="rajac-unified-news-menu-v3">
+.rajac-news-menu{
+  position:sticky!important;top:0!important;z-index:9999!important;
+  width:100%!important;background:#0d1b2a!important;
+  border-bottom:1px solid rgba(255,255,255,.10)!important;
+  box-shadow:0 7px 22px rgba(0,0,0,.10)!important;
+  font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif!important;
+}
+.rajac-news-menu *{font-family:inherit!important;box-sizing:border-box!important}
+.rajac-news-menu-inner{
+  width:100%!important;max-width:1600px!important;margin:0 auto!important;
+  min-height:60px!important;padding:8px 14px!important;
+  display:flex!important;flex-direction:row!important;flex-wrap:nowrap!important;
+  align-items:center!important;justify-content:center!important;gap:6px!important;
+  overflow-x:auto!important;overflow-y:hidden!important;white-space:nowrap!important;
+  scrollbar-width:none!important;-webkit-overflow-scrolling:touch!important;
+}
+.rajac-news-menu-inner::-webkit-scrollbar{display:none!important}
+.rajac-news-menu a{
+  flex:0 0 auto!important;display:inline-flex!important;align-items:center!important;
+  justify-content:center!important;gap:6px!important;min-height:40px!important;
+  padding:0 12px!important;border-radius:999px!important;
+  color:rgba(255,255,255,.82)!important;background:transparent!important;
+  text-decoration:none!important;text-transform:uppercase!important;
+  white-space:nowrap!important;font-size:13px!important;line-height:1!important;
+  font-weight:750!important;letter-spacing:.025em!important;
+}
+.rajac-news-menu a:hover,.rajac-news-menu a:focus-visible{
+  color:#fff!important;background:rgba(255,255,255,.07)!important;
+}
+.rajac-news-menu a.home,.rajac-news-menu a.active{
+  color:#e4cb7e!important;background:rgba(228,203,126,.08)!important;
+  outline:1px solid rgba(228,203,126,.30)!important;
+}
+.rajac-news-menu small{
+  flex:0 0 auto!important;display:inline-flex!important;align-items:center!important;
+  justify-content:center!important;min-width:20px!important;height:20px!important;
+  padding:0 6px!important;border-radius:999px!important;
+  color:#e4cb7e!important;background:rgba(255,255,255,.10)!important;
+  font-size:11px!important;line-height:20px!important;font-weight:800!important;
+  letter-spacing:0!important;
+}
+@media(max-width:1180px){
+  .rajac-news-menu-inner{justify-content:flex-start!important;padding-inline:10px!important}
+  .rajac-news-menu a{font-size:12px!important;padding-inline:10px!important}
+}
+</style>
+<link href="https://piorajac.rs/rajac-vesti/assets/css/rajac-unified-menu.css" rel="stylesheet"/>
+<style id="pio-news-menu-one-row-final">
+
+/* === PIO RAJAC: JEDNOREDNI MENI NA SVIM STRANICAMA VESTI === */
+@media (min-width: 900px){
+  .rajac-news-menu{
+    width:100% !important;
+  }
+  .rajac-news-menu-inner{
+    width:100% !important;
+    max-width:1600px !important;
+    margin:0 auto !important;
+    padding:8px 12px !important;
+    display:flex !important;
+    flex-direction:row !important;
+    flex-wrap:nowrap !important;
+    align-items:center !important;
+    justify-content:center !important;
+    gap:clamp(3px,.55vw,9px) !important;
+    white-space:nowrap !important;
+    overflow-x:auto !important;
+    overflow-y:hidden !important;
+    scrollbar-width:none !important;
+  }
+  .rajac-news-menu-inner::-webkit-scrollbar{display:none !important;}
+  .rajac-news-menu a{
+    flex:0 0 auto !important;
+    white-space:nowrap !important;
+    padding-left:clamp(7px,.65vw,11px) !important;
+    padding-right:clamp(7px,.65vw,11px) !important;
+    font-size:clamp(11px,.86vw,14px) !important;
+  }
+}
+/* На ужим екранима мени остаје један ред и хоризонтално се помера, уместо да пада у други ред. */
+@media (max-width: 899px){
+  .rajac-news-menu-inner{
+    display:flex !important;
+    flex-wrap:nowrap !important;
+    justify-content:flex-start !important;
+    white-space:nowrap !important;
+    overflow-x:auto !important;
+    overflow-y:hidden !important;
+    scrollbar-width:none !important;
+    -webkit-overflow-scrolling:touch !important;
+  }
+  .rajac-news-menu-inner::-webkit-scrollbar{display:none !important;}
+  .rajac-news-menu a{flex:0 0 auto !important;white-space:nowrap !important;}
+}
+
+</style>
+</head>
+<body><nav aria-label="Мени вести" class="rajac-news-menu"><div class="rajac-news-menu-inner"><a class="home" href="https://piorajac.rs/">ПИО „РАЈАЦ“</a><a href="https://piorajac.rs/rajac-vesti/">СВЕ ВЕСТИ</a><a href="https://piorajac.rs/rajac-vesti/kategorije/aktuelno/">АКТУЕЛНО<small>7</small></a><a href="https://piorajac.rs/rajac-vesti/kategorije/vesti/">ВЕСТИ<small>3</small></a><a href="https://piorajac.rs/rajac-vesti/kategorije/izvestaji/">ИЗВЕШТАЈИ<small>8</small></a><a href="https://piorajac.rs/rajac-vesti/kategorije/istrazivanja/">ИСТРАЖИВАЊА<small>9</small></a><a href="https://piorajac.rs/rajac-vesti/kategorije/dogadjaji/">ДОГАЂАЈИ<small>5</small></a><a href="https://piorajac.rs/rajac-vesti/kategorije/u-fokusu/">У ФОКУСУ<small>4</small></a></div></nav>
+<main class="rp-page">
+<article class="rp-news-shell">
+<header class="rp-hero">
+<div class="rp-hero-inner">
+<div class="rp-kicker">Догађај · 29. мај 2026.</div>
+<h1>Рајачка трансверзала поводом 125 година организованог планинарства у Србији</h1>
+<p class="rp-hero-sub">Рајац ће 30. и 31. маја 2026. бити домаћин дводневне планинарске акције посвећене традицији српског планинарства и обиласку „Чика Душкових Рајачких стаза”.</p>
+</div>
+</header>
+<section aria-label="Основне информације о догађају" class="rp-meta-strip">
+<div class="rp-meta"><span>Датум</span><strong>30–31. мај 2026.</strong><small>субота и недеља</small></div>
+<div class="rp-meta"><span>Место</span><strong>Рајац и Сувобор</strong><small>полазиште код Планинарског дома</small></div>
+<div class="rp-meta"><span>Стаза</span><strong>око 45 km</strong><small>дводневна трансверзала</small></div>
+<div class="rp-meta"><span>Контролне тачке</span><strong>14 КТ</strong><small>на траси Рајачке трансверзале</small></div>
+<div class="rp-meta"><span>Пријаве</span><strong>до 26. маја</strong><small>уз напомену о смештају</small></div>
+</section>
+<div class="rp-content">
+<section class="rp-article">
+<h2>Рајац као домаћин великог планинарског јубилеја</h2>
+<p class="rp-lead">Поводом 125 година од почетака организованог планинарства у Србији, на Рајцу се организује дводневна планинарска акција која повезује историју планинарског покрета, предеоне вредности Сувоборско-рајачког простора и савремену културу безбедног боравка у природи.</p>
+<p>Планиран је обилазак Рајачке трансверзале, линијске стазе у облику осмице, са укупно 14 контролних тачака. Најнижа тачка на траси је у селу Ба, на око 350 m надморске висине, док је највиша на врху Сувобора, на око 866 m. Укупан кумулативни успон на целој трансверзали прелази 2000 m, па је акција намењена планинарима који су спремни за дуже пешачење и целодневни боравак на терену.</p>
+<div class="rp-highlight"><strong>Зашто је ова акција важна за Рајац</strong><p>Окупљање планинара на Рајцу додатно истиче улогу овог простора као места где се сусрећу природне вредности, планинарска традиција, одговорно коришћење стаза и поштовање режима заштите предела.</p></div>
+<h3>Програм — субота, 30. мај</h3>
+<div class="rp-day"><div class="rp-day-head"><strong>Први дан трансверзале</strong><span>пешачење 10–11 сати</span></div><div class="rp-route"><p>После доласка на Рајац и отварања акције, полазак на пешачење планиран је у 08.00 часова. Траса води од Планинарског дома преко врха Рајца, Добре воде, Шиљка, Сувобора, Даниловог врха, Топлика, Горњих Бањана, Црвеног врела и Чанка, са повратком до Планинарског дома.</p><div class="rp-stats"><div class="rp-stat"><span>Дужина</span><strong>29 km</strong></div><div class="rp-stat"><span>Успон</span><strong>900 m</strong></div><div class="rp-stat"><span>Спуст</span><strong>900 m</strong></div></div><p class="rp-note">По повратку у дом планирано је дружење уз логорску ватру и музику. Учесници треба да понесу довољно воде; извор је наведен код КТ8.</p></div></div>
+<h3>Програм — недеља, 31. мај</h3>
+<div class="rp-day"><div class="rp-day-head"><strong>Други дан трансверзале</strong><span>основна варијанта око 5 сати</span></div><div class="rp-route"><p>Другог дана полазак је планиран у 08.00 часова. Основна траса води од Планинарског дома преко Слапа, Пурине цркве, Провалије, Којића кома и извора Љига до села Ба. У зависности од организације превоза, акција може бити завршена у селу Ба или продужена пешке до Добре воде и Планинарског дома.</p><div class="rp-stats"><div class="rp-stat"><span>Дужина</span><strong>13 km</strong></div><div class="rp-stat"><span>Успон</span><strong>550 m</strong></div><div class="rp-stat"><span>Спуст</span><strong>700 m</strong></div></div><p class="rp-note">Уколико се настави пешачење од села Ба до дома, стаза се продужава за око 7 km и додатних 2–3 сата хода. Организатор напомиње да приступ КТ5 Провалија може зависити од стања на терену.</p></div></div>
+<h3>Затварање акције</h3>
+<p>Додела трансверзалних значки и затварање акције планирани су у недељу, 31. маја, у периоду од 16.00 до 17.00 часова испред Планинарског дома на Рајцу.</p>
+<p class="rp-source">Извор података: <a href="https://www.pskpobeda.rs/view/akcije_detalji?id=10756" rel="noopener" target="_blank">ПСК „Победа” — званична најава акције</a>.</p>
+</section>
+<aside aria-label="Пријаве и практичне информације" class="rp-side">
+<div class="rp-box dark"><h3>Практичне информације</h3><ul class="rp-list"><li><strong>Врста акције:</strong> планинарска акција</li><li><strong>Исхрана:</strong> из ранца, уз могућност исхране у Планинарском дому</li><li><strong>Опрема:</strong> прилагођена временским условима и дугом пешачењу</li><li><strong>Смештај у дому:</strong> 1000 динара</li><li><strong>Превоз:</strong> 3500 динара</li></ul></div>
+<div class="rp-box"><h3>Пријаве</h3><p>Пријаве су отворене до уторка, 26. маја 2026. године. Приликом пријаве потребно је нагласити да ли је планиран смештај у шатору или у дому.</p><ul class="rp-list"><li><strong>Владислав Матковић</strong><br/>063 329 450</li><li><strong>Зоран Живановић</strong><br/>064 295 6469</li><li><strong>Момчило Краљ</strong><br/>069 633 442</li></ul><a class="rp-btn" href="https://www.pskpobeda.rs/view/akcije_detalji?id=10756" rel="noopener" target="_blank">Погледај најаву организатора</a></div>
+<div class="rp-box"><h3>За учеснике</h3><p>Стаза је дуга и физички захтевна. Пре поласка проверити временску прогнозу, понети довољно воде, заштиту од сунца и кише, основну личну прву помоћ и планинарску обућу погодну за целодневно кретање.</p></div><div class="rp-box rts-pack-box">
+<h3>Шта понети</h3>
+<ul class="rts-list">
+<li>учитан GPX траг и пуна батерија телефона/GPS уређаја</li>
+<li>довољно воде и хране за дугу туру</li>
+<li>планинарске ципеле и заштиту од кише/сунца</li>
+<li>прву помоћ и резервни слој одеће</li>
+</ul>
+</div>
+</aside>
+</div><section aria-label="Интерактивна карта и висински профил стазе Чика Душкове стазе" class="rp-track-embed">
+<article class="rts-shell">
+<div class="rts-body">
+<div class="rts-main">
+<section class="rts-section rts-map-fullwidth">
+<h2>Интерактивна карта стазе</h2>
+<div class="rts-map-card">
+<div aria-label="Интерактивна карта Чика Душкових стаза" id="rts-map"></div>
+<div class="rts-map-caption">Црвена линија приказује GPX траг Рајачке трансверзале. Контролне тачке су означене посебним маркерима, а додатни локалитети плавим маркерима.</div>
+</div>
+</section><section class="rts-section">
+<h2>Висински профил</h2>
+<div class="rts-profile">
+<div class="rts-profile-head"><strong>Профил кретања</strong><span>минимум 348 m на 38.32 km · максимум 849 m на 8.50 km</span></div>
+<svg aria-label="Висински профил стазе" id="rts-profile-svg" role="img" viewbox="0 0 980 320"></svg>
+<div class="rts-profile-note">Трајање није преузето из GPX-а, јер су временске ознаке у трагу техничке, а не стварно време кретања. Процене у овој страници су изведене из дужине, успона и тежине терена.</div>
+</div>
+</section>
+</div>
+</div>
+</article>
+</section>
+</article>
+<section aria-label="Интерактивне карте за оба дана" class="rp-action-map-embed rp-action-map-cta-only">
+<div class="rp-action-map-cta-card">
+<p class="rp-action-map-kicker">Интерактивна карта</p>
+<h2>Карта акције за суботу и недељу</h2>
+<p>За учеснике је припремљена посебна пуна страница са избором првог и другог дана, контролним тачкама, деоницама, висинским профилом, метео подацима и могућношћу укључивања личне локације на телефону.</p>
+<div class="rp-action-map-actions">
+<a class="rp-action-map-big-link" href="/akcija-planinara-30-31-maj-2026/mapa/" rel="noopener" target="_blank">Отвори интерактивне карте за оба дана →</a>
+</div>
+</div>
+</section>
+<style id="rajac-nextvest-css">.rajac-next-vest{max-width:760px;margin:34px auto 44px;padding:0 18px;font-family:Georgia,"Times New Roman",serif}.rajac-next-vest a{display:flex;flex-direction:column;gap:5px;padding:16px 20px;border:1px solid rgba(70,56,28,.20);border-radius:16px;background:#fffaf2;text-decoration:none;color:#1e2c1c;box-shadow:0 8px 24px rgba(38,30,16,.05);transition:transform .2s,box-shadow .2s}.rajac-next-vest a:hover{transform:translateY(-2px);box-shadow:0 12px 30px rgba(38,30,16,.10)}.rajac-next-vest .rnv-k{font-size:12px;font-weight:900;letter-spacing:.14em;text-transform:uppercase;color:#9a7b32;font-family:Arial,sans-serif}.rajac-next-vest .rnv-title{font-size:17px;font-weight:800;line-height:1.32}</style><nav aria-label="Следећа вест" class="rajac-next-vest"><a href="https://piorajac.rs/rajac-vesti/posmatranje-dnevnih-leptira-na-rajcu/"><span class="rnv-k">Следећа вест →</span><span class="rnv-title">Посматрање дневних лептира на Рајцу</span></a></nav></main>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script><script>
+    const ROUTE = [[44.141061,20.244568,648.0,0.0],[44.140549,20.243215,657.9,0.122],[44.139795,20.241874,670.4,0.258],[44.13935,20.240771,678.1,0.359],[44.139013,20.240445,681.1,0.405],[44.138717,20.240364,682.1,0.438],[44.1386,20.240408,682.5,0.452],[44.138752,20.239776,682.9,0.505],[44.13877,20.239519,683.9,0.525],[44.138761,20.235665,724.4,0.833],[44.138699,20.235082,732.0,0.88],[44.138519,20.234449,739.3,0.934],[44.13838,20.234155,743.5,0.962],[44.13824,20.233697,748.0,1.002],[44.138204,20.232488,754.4,1.099],[44.13824,20.231968,758.5,1.14],[44.138213,20.231435,762.2,1.183],[44.138092,20.230809,765.5,1.235],[44.13807,20.230515,766.5,1.258],[44.137993,20.230289,768.5,1.278],[44.137868,20.229669,775.3,1.33],[44.137567,20.228842,787.7,1.404],[44.137167,20.227501,809.2,1.52],[44.13683,20.226767,821.4,1.589],[44.136601,20.226573,825.8,1.619],[44.136511,20.226429,828.2,1.634],[44.136435,20.226191,831.3,1.655],[44.136237,20.225777,836.4,1.695],[44.136084,20.225539,838.2,1.72],[44.136071,20.225389,838.7,1.732],[44.13621,20.225145,839.4,1.757],[44.136264,20.224794,839.5,1.786],[44.136327,20.2248,839.5,1.793],[44.136353,20.224934,839.8,1.804],[44.136192,20.224355,838.5,1.853],[44.136203,20.224113,837.9,1.873],[44.136811,20.222917,837.0,1.99],[44.137042,20.222252,838.4,2.049],[44.137262,20.221748,840.9,2.096],[44.137739,20.221152,839.0,2.167],[44.138247,20.220755,836.2,2.232],[44.139079,20.219881,835.6,2.348],[44.139287,20.219146,835.5,2.411],[44.139429,20.218422,832.9,2.471],[44.139553,20.218229,831.9,2.491],[44.139972,20.2178,828.2,2.549],[44.140045,20.217252,822.3,2.593],[44.140715,20.215981,805.1,2.719],[44.140985,20.215353,799.3,2.778],[44.140238,20.213041,798.8,2.98],[44.139468,20.211362,797.8,3.139],[44.139368,20.210992,797.3,3.171],[44.139418,20.210075,796.3,3.244],[44.139664,20.20934,799.9,3.309],[44.139841,20.208557,805.3,3.374],[44.139837,20.208251,807.6,3.399],[44.13993,20.207725,810.5,3.442],[44.139857,20.206996,819.4,3.501],[44.139853,20.206604,824.1,3.532],[44.139899,20.206164,826.9,3.567],[44.140088,20.205553,828.0,3.62],[44.140246,20.204174,828.9,3.732],[44.140465,20.20316,820.6,3.816],[44.140534,20.202913,817.2,3.838],[44.140738,20.202634,813.0,3.869],[44.140823,20.201749,800.2,3.941],[44.140935,20.201492,796.4,3.965],[44.141073,20.200922,788.1,4.013],[44.141096,20.200194,781.6,4.071],[44.141012,20.199684,780.2,4.112],[44.140861,20.199459,781.7,4.137],[44.140696,20.198954,782.5,4.181],[44.139995,20.197404,788.4,4.328],[44.139876,20.196809,791.3,4.377],[44.139888,20.19653,792.8,4.399],[44.139988,20.196251,793.6,4.424],[44.140138,20.196015,792.9,4.449],[44.140265,20.195596,791.7,4.485],[44.140323,20.195108,790.3,4.525],[44.140307,20.194636,789.8,4.563],[44.140342,20.194362,788.8,4.585],[44.140346,20.193762,786.0,4.633],[44.140403,20.193231,784.0,4.676],[44.140584,20.192313,789.1,4.752],[44.140596,20.19212,788.9,4.767],[44.140557,20.191884,789.1,4.786],[44.140184,20.191594,792.0,4.834],[44.139949,20.191487,792.2,4.861],[44.139468,20.191407,787.9,4.915],[44.138848,20.191407,783.4,4.984],[44.138559,20.19124,781.4,5.019],[44.138247,20.191594,779.1,5.064],[44.137769,20.191983,774.9,5.125],[44.136992,20.192737,764.5,5.231],[44.1369,20.192844,763.1,5.244],[44.136873,20.193021,761.5,5.258],[44.136708,20.192954,761.4,5.277],[44.136388,20.192699,759.5,5.318],[44.135803,20.19234,754.0,5.389],[44.135656,20.192286,754.1,5.406],[44.135514,20.192329,753.0,5.423],[44.135402,20.192174,754.8,5.44],[44.135314,20.191825,759.9,5.47],[44.135202,20.191728,761.3,5.484],[44.135021,20.191444,765.8,5.515],[44.134856,20.190988,775.9,5.555],[44.134771,20.190838,779.8,5.571],[44.134682,20.190758,781.8,5.582],[44.134528,20.190361,786.0,5.618],[44.134267,20.18991,790.7,5.665],[44.13402,20.189304,790.7,5.72],[44.133697,20.18814,791.4,5.82],[44.133535,20.186997,784.8,5.913],[44.133466,20.186799,783.4,5.93],[44.133304,20.185967,776.2,5.999],[44.133212,20.18571,772.2,6.022],[44.132842,20.185216,764.0,6.079],[44.13265,20.184556,765.8,6.136],[44.132434,20.184052,772.1,6.183],[44.13233,20.183945,775.3,6.197],[44.132099,20.183896,781.9,6.223],[44.132003,20.183907,784.4,6.234],[44.131618,20.184197,791.0,6.282],[44.131537,20.184331,790.9,6.296],[44.131044,20.184857,792.7,6.366],[44.130801,20.185034,793.6,6.396],[44.130636,20.185125,793.6,6.416],[44.130216,20.185248,796.6,6.463],[44.130054,20.185377,796.1,6.484],[44.129642,20.185597,792.2,6.533],[44.129512,20.185629,791.7,6.548],[44.129442,20.185554,792.8,6.558],[44.129508,20.185377,795.4,6.574],[44.129639,20.185211,798.5,6.593],[44.129719,20.185039,802.0,6.61],[44.129808,20.18468,809.9,6.64],[44.130189,20.183601,829.9,6.736],[44.130157,20.18345,832.1,6.749],[44.130065,20.183345,834.2,6.762],[44.1297,20.183178,828.3,6.805],[44.129469,20.182909,823.3,6.838],[44.129327,20.18262,820.5,6.866],[44.129281,20.182427,818.7,6.882],[44.129311,20.181654,806.9,6.944],[44.129488,20.180436,803.3,7.043],[44.129196,20.178527,815.0,7.199],[44.128797,20.177178,817.1,7.315],[44.128568,20.17673,818.4,7.359],[44.128326,20.176472,816.3,7.393],[44.128164,20.17637,816.8,7.413],[44.127891,20.176011,817.2,7.455],[44.127455,20.175608,815.3,7.513],[44.127093,20.175426,813.1,7.556],[44.126909,20.175399,813.1,7.576],[44.12672,20.175437,814.2,7.597],[44.126212,20.1757,818.0,7.658],[44.126073,20.175726,818.2,7.673],[44.125904,20.175619,817.2,7.694],[44.1258,20.175823,819.4,7.714],[44.125118,20.176327,828.8,7.8],[44.12501,20.176483,830.3,7.817],[44.124887,20.17659,833.1,7.833],[44.124571,20.177357,837.3,7.904],[44.124471,20.177502,839.8,7.92],[44.124125,20.178242,841.8,7.99],[44.123628,20.178983,832.8,8.071],[44.123462,20.17931,832.2,8.103],[44.123154,20.180452,831.3,8.201],[44.122969,20.180581,832.0,8.224],[44.122677,20.180651,834.6,8.257],[44.122569,20.180748,835.9,8.271],[44.122292,20.180871,838.3,8.303],[44.122037,20.180908,840.2,8.332],[44.121844,20.180847,842.4,8.354],[44.121715,20.180889,843.4,8.368],[44.121575,20.181067,843.4,8.389],[44.121398,20.181482,844.6,8.428],[44.121298,20.1816,846.0,8.443],[44.121098,20.181735,848.2,8.467],[44.121055,20.181831,847.9,8.476],[44.121063,20.181724,848.7,8.485],[44.120986,20.1816,849.4,8.498],[44.120493,20.181252,838.4,8.559],[44.120201,20.18086,830.8,8.605],[44.120012,20.180458,822.3,8.643],[44.119962,20.180195,817.5,8.665],[44.118864,20.180238,798.7,8.787],[44.118672,20.180297,794.1,8.809],[44.118487,20.180469,790.2,8.833],[44.11821,20.181177,782.2,8.898],[44.118036,20.181381,777.8,8.923],[44.117836,20.181241,775.5,8.948],[44.117717,20.181187,773.7,8.962],[44.117601,20.181182,771.7,8.975],[44.116723,20.181536,758.3,9.076],[44.116469,20.18145,753.6,9.105],[44.116292,20.181128,747.4,9.138],[44.116215,20.181043,745.4,9.149],[44.116107,20.181032,743.8,9.161],[44.115699,20.181182,738.5,9.208],[44.115209,20.181284,727.5,9.263],[44.114928,20.181391,721.6,9.295],[44.114793,20.181391,718.3,9.31],[44.114643,20.181322,713.8,9.328],[44.113969,20.181563,703.8,9.405],[44.113811,20.181681,704.0,9.425],[44.113407,20.182158,700.7,9.484],[44.112617,20.183424,690.4,9.618],[44.111974,20.184154,688.1,9.71],[44.111551,20.184379,688.9,9.76],[44.110981,20.18454,691.3,9.825],[44.110441,20.184567,692.4,9.885],[44.110145,20.184658,693.4,9.919],[44.109698,20.185195,695.2,9.985],[44.10949,20.185356,694.7,10.011],[44.109243,20.185457,695.3,10.04],[44.108978,20.185479,694.9,10.069],[44.10803,20.185173,692.7,10.177],[44.107722,20.185254,696.1,10.212],[44.107579,20.185366,698.7,10.23],[44.107422,20.185565,702.0,10.254],[44.107121,20.186149,707.0,10.311],[44.106952,20.186284,708.9,10.333],[44.106647,20.18667,714.2,10.379],[44.106077,20.187855,720.2,10.493],[44.105942,20.18822,723.4,10.526],[44.105765,20.189223,728.3,10.608],[44.10565,20.189465,731.1,10.631],[44.105553,20.189792,733.9,10.66],[44.105472,20.190371,735.5,10.707],[44.105372,20.190516,736.8,10.723],[44.105264,20.19057,738.3,10.735],[44.105168,20.190393,739.7,10.753],[44.104821,20.189459,743.1,10.837],[44.104371,20.189701,749.6,10.891],[44.104151,20.190028,753.1,10.927],[44.103585,20.190699,759.4,11.009],[44.1034,20.19116,762.9,11.051],[44.103161,20.191943,766.0,11.119],[44.10298,20.192115,767.2,11.144],[44.102641,20.192308,769.9,11.184],[44.102487,20.192458,771.0,11.205],[44.102391,20.192683,770.4,11.226],[44.102206,20.192903,769.8,11.253],[44.101832,20.193483,770.2,11.315],[44.101378,20.193906,770.6,11.376],[44.10112,20.19448,771.6,11.43],[44.101123,20.194652,772.6,11.444],[44.101254,20.19499,774.5,11.475],[44.101982,20.195843,777.7,11.58],[44.102071,20.196009,776.6,11.597],[44.10216,20.196229,775.6,11.617],[44.102206,20.196599,775.5,11.647],[44.102364,20.197071,773.2,11.689],[44.102607,20.198198,768.5,11.783],[44.102695,20.198477,767.6,11.807],[44.103119,20.199282,771.3,11.887],[44.103154,20.19955,773.3,11.909],[44.10315,20.199941,775.9,11.94],[44.103053,20.200623,784.7,11.995],[44.102976,20.200805,787.2,12.012],[44.102976,20.201921,810.3,12.101],[44.102834,20.202436,821.9,12.145],[44.102815,20.202919,822.2,12.184],[44.102703,20.203117,821.9,12.204],[44.102737,20.203187,821.5,12.211],[44.10293,20.203332,821.0,12.235],[44.103111,20.203723,814.8,12.272],[44.103184,20.203981,811.0,12.294],[44.103342,20.204217,807.7,12.32],[44.103462,20.204319,803.4,12.336],[44.103593,20.204319,801.4,12.35],[44.103843,20.204222,799.8,12.379],[44.10392,20.204228,798.4,12.388],[44.103901,20.204319,796.6,12.395],[44.103824,20.204367,796.7,12.405],[44.103766,20.204528,793.8,12.419],[44.103385,20.20485,791.8,12.469],[44.103011,20.205231,782.0,12.52],[44.102229,20.205805,767.3,12.619],[44.102056,20.205901,764.2,12.639],[44.101909,20.205891,763.1,12.656],[44.101774,20.205848,762.7,12.671],[44.101462,20.205563,762.8,12.713],[44.101382,20.20559,761.5,12.722],[44.101081,20.205976,752.2,12.767],[44.101,20.206148,748.7,12.784],[44.101251,20.206733,743.9,12.838],[44.101347,20.207124,741.1,12.871],[44.10122,20.208074,732.4,12.948],[44.10112,20.208503,730.1,12.984],[44.10115,20.208691,729.0,13.0],[44.101293,20.209088,724.9,13.035],[44.101393,20.209131,723.2,13.047],[44.101563,20.209131,720.9,13.066],[44.101859,20.209029,717.3,13.099],[44.102029,20.209039,714.1,13.118],[44.102167,20.209136,710.4,13.136],[44.102314,20.209436,708.1,13.165],[44.102472,20.209549,706.2,13.184],[44.102711,20.209624,703.8,13.212],[44.103073,20.209415,696.6,13.255],[44.103173,20.209442,695.6,13.266],[44.103781,20.209442,691.3,13.334],[44.104236,20.209415,688.6,13.385],[44.104452,20.209367,686.0,13.409],[44.104787,20.209383,684.0,13.446],[44.104979,20.209216,679.2,13.471],[44.105107,20.209168,676.9,13.486],[44.105372,20.209174,674.1,13.516],[44.105576,20.209104,672.3,13.539],[44.106516,20.208991,658.0,13.644],[44.106774,20.208895,653.0,13.674],[44.107094,20.208707,646.7,13.712],[44.107529,20.208659,638.0,13.761],[44.108057,20.208718,629.2,13.82],[44.10835,20.208712,624.7,13.852],[44.1086,20.208594,625.1,13.882],[44.108735,20.208589,624.8,13.897],[44.109016,20.208707,621.1,13.929],[44.109575,20.209152,602.1,14.001],[44.109856,20.209549,595.1,14.045],[44.109906,20.209721,592.2,14.06],[44.10991,20.21008,590.5,14.089],[44.109975,20.210236,589.6,14.103],[44.110087,20.210391,590.0,14.121],[44.110218,20.21045,589.8,14.136],[44.110482,20.210707,586.3,14.172],[44.110585,20.211452,583.0,14.233],[44.110572,20.212091,581.9,14.284],[44.110715,20.212424,574.4,14.315],[44.11068,20.212693,574.0,14.336],[44.110607,20.212864,575.0,14.352],[44.110584,20.213186,572.3,14.378],[44.110518,20.213369,572.2,14.394],[44.11026,20.213519,576.0,14.426],[44.109871,20.214366,568.6,14.506],[44.10969,20.214608,569.5,14.534],[44.109559,20.214672,569.0,14.549],[44.108877,20.215445,570.8,14.647],[44.108384,20.215922,565.6,14.714],[44.107391,20.217086,560.0,14.858],[44.106882,20.21818,563.4,14.962],[44.106805,20.218427,562.0,14.984],[44.106747,20.21891,559.2,15.023],[44.106751,20.219216,557.9,15.047],[44.106936,20.220128,562.7,15.123],[44.107144,20.220348,568.1,15.152],[44.107144,20.220423,568.3,15.158],[44.106979,20.22053,564.4,15.178],[44.106909,20.220621,562.8,15.189],[44.106828,20.221115,565.1,15.229],[44.106948,20.221249,569.6,15.246],[44.107036,20.221297,572.1,15.257],[44.107106,20.221426,575.1,15.27],[44.107094,20.221694,578.0,15.291],[44.106925,20.222225,580.6,15.337],[44.106759,20.223373,583.9,15.431],[44.106674,20.223475,580.9,15.443],[44.10667,20.223625,580.4,15.455],[44.106593,20.223765,577.5,15.47],[44.106493,20.223824,573.9,15.482],[44.106443,20.223936,572.0,15.492],[44.106455,20.224044,572.1,15.501],[44.106378,20.224097,569.4,15.51],[44.106466,20.224392,570.3,15.536],[44.106474,20.224784,567.2,15.567],[44.106378,20.224891,563.9,15.581],[44.106243,20.224881,560.5,15.596],[44.106131,20.224913,557.5,15.609],[44.105954,20.225084,554.2,15.633],[44.105835,20.225363,555.7,15.658],[44.106072,20.224914,556.1,15.703],[44.106233,20.224801,560.8,15.723],[44.106422,20.224796,565.8,15.744],[44.106445,20.224308,570.4,15.783],[44.106422,20.224055,571.0,15.803],[44.106657,20.223583,580.1,15.849],[44.106788,20.223409,584.7,15.869],[44.106873,20.223377,587.5,15.879],[44.107043,20.223967,590.3,15.93],[44.107653,20.224972,596.7,16.035],[44.10766,20.225165,597.6,16.051],[44.107618,20.225251,596.7,16.059],[44.107252,20.225632,590.9,16.11],[44.107348,20.226452,601.6,16.176],[44.107337,20.227091,610.3,16.227],[44.107187,20.227423,614.7,16.258],[44.106809,20.227992,619.0,16.32],[44.106709,20.228255,620.7,16.344],[44.106393,20.228823,625.0,16.401],[44.10632,20.229017,626.6,16.419],[44.106166,20.229086,627.8,16.437],[44.105904,20.229317,628.9,16.471],[44.105673,20.229585,630.4,16.505],[44.105168,20.230288,637.1,16.584],[44.104529,20.231597,641.5,16.71],[44.104055,20.232471,644.0,16.798],[44.103912,20.232584,646.1,16.816],[44.103743,20.232868,648.7,16.846],[44.103496,20.233442,652.3,16.899],[44.103069,20.233598,657.1,16.948],[44.102903,20.234504,657.9,17.023],[44.102788,20.234907,659.5,17.057],[44.102422,20.235786,658.8,17.139],[44.102387,20.236017,656.5,17.157],[44.102437,20.236226,655.0,17.175],[44.102502,20.236339,654.7,17.187],[44.102522,20.236575,652.6,17.206],[44.102445,20.237176,645.9,17.254],[44.102268,20.23786,636.8,17.312],[44.102334,20.238079,637.9,17.331],[44.102534,20.238375,641.5,17.364],[44.102457,20.238777,640.2,17.397],[44.102099,20.239716,629.6,17.482],[44.102176,20.240306,627.0,17.53],[44.102199,20.241571,616.5,17.631],[44.102095,20.242274,613.8,17.688],[44.102383,20.242773,616.8,17.739],[44.102449,20.243014,617.4,17.76],[44.102491,20.243404,617.4,17.791],[44.10236,20.245104,595.8,17.928],[44.102363,20.245769,592.5,17.981],[44.102317,20.246386,586.5,18.031],[44.102256,20.246627,583.3,18.051],[44.102261,20.246906,580.9,18.073],[44.102321,20.247127,580.0,18.092],[44.102319,20.247642,575.5,18.133],[44.102496,20.248854,568.9,18.232],[44.102474,20.249202,564.7,18.26],[44.102362,20.24952,556.3,18.288],[44.102408,20.250341,541.7,18.354],[44.102451,20.25062,536.2,18.377],[44.102749,20.25115,514.8,18.43],[44.102745,20.251365,506.2,18.448],[44.102599,20.25144,501.7,18.465],[44.102456,20.251606,492.7,18.486],[44.102302,20.251907,487.9,18.515],[44.102368,20.252341,479.8,18.551],[44.10231,20.252507,477.6,18.565],[44.102194,20.252609,479.6,18.581],[44.102117,20.25277,482.3,18.596],[44.102229,20.25292,481.9,18.613],[44.102337,20.253543,484.0,18.664],[44.102252,20.2549,494.1,18.773],[44.102325,20.255533,488.6,18.824],[44.102576,20.255973,476.0,18.869],[44.102691,20.256295,474.7,18.898],[44.102826,20.256461,474.9,18.918],[44.103146,20.256703,477.6,18.958],[44.103281,20.256896,480.0,18.98],[44.1034,20.257261,485.9,19.012],[44.103404,20.257507,488.1,19.032],[44.103388,20.25791,490.2,19.064],[44.10313,20.258768,488.3,19.138],[44.102945,20.259717,489.9,19.217],[44.102903,20.260146,490.7,19.251],[44.102926,20.261096,493.4,19.327],[44.10303,20.262651,493.5,19.452],[44.102868,20.264041,477.8,19.564],[44.102949,20.26418,479.4,19.579],[44.103269,20.264486,481.9,19.622],[44.103866,20.264937,481.8,19.697],[44.104101,20.265173,484.8,19.729],[44.104059,20.265446,484.7,19.752],[44.104459,20.265597,487.8,19.798],[44.104914,20.265473,489.6,19.849],[44.105384,20.265205,490.2,19.906],[44.10558,20.265001,486.7,19.933],[44.105946,20.264706,489.7,19.98],[44.106227,20.264561,489.4,20.013],[44.106362,20.264406,488.2,20.033],[44.106466,20.264094,487.6,20.06],[44.106624,20.26396,487.8,20.081],[44.106875,20.26388,489.3,20.11],[44.108192,20.26315,499.5,20.267],[44.108384,20.263091,499.7,20.289],[44.10855,20.263086,499.8,20.308],[44.108827,20.262968,502.0,20.34],[44.10897,20.262973,501.6,20.356],[44.109078,20.263011,500.8,20.368],[44.10924,20.26322,497.5,20.393],[44.109421,20.263311,496.3,20.414],[44.110453,20.263081,500.0,20.53],[44.110645,20.262989,500.7,20.553],[44.110896,20.262807,501.2,20.584],[44.111158,20.262694,504.4,20.615],[44.111316,20.262523,503.3,20.637],[44.111516,20.262136,509.4,20.675],[44.111674,20.261965,512.1,20.697],[44.112082,20.261809,512.6,20.744],[44.112271,20.26167,511.4,20.768],[44.112413,20.261648,511.1,20.784],[44.112521,20.261697,510.7,20.797],[44.112575,20.261793,512.9,20.806],[44.112687,20.261879,516.3,20.821],[44.112798,20.261831,517.9,20.833],[44.113033,20.261573,520.7,20.867],[44.11316,20.261348,524.4,20.89],[44.113449,20.260661,534.1,20.953],[44.113553,20.260613,535.6,20.965],[44.11375,20.260586,535.9,20.987],[44.114116,20.260608,534.2,21.028],[44.114243,20.260559,535.5,21.043],[44.114351,20.26042,537.8,21.059],[44.114743,20.260227,537.7,21.105],[44.114863,20.260189,536.7,21.119],[44.115017,20.2602,536.2,21.136],[44.115745,20.259916,542.2,21.22],[44.116361,20.259733,550.6,21.29],[44.116981,20.259326,554.4,21.366],[44.117154,20.259111,554.7,21.392],[44.117547,20.258875,559.9,21.44],[44.117921,20.258065,555.6,21.517],[44.118059,20.258097,556.4,21.532],[44.118294,20.258237,558.3,21.561],[44.118629,20.25851,562.5,21.604],[44.119095,20.258741,568.1,21.659],[44.119731,20.25925,577.3,21.74],[44.119935,20.259315,577.6,21.764],[44.120089,20.259266,576.7,21.781],[44.120251,20.259326,579.2,21.8],[44.120462,20.259352,581.3,21.823],[44.120643,20.259326,581.9,21.844],[44.120797,20.259191,579.4,21.864],[44.121152,20.258977,583.1,21.907],[44.121236,20.258896,583.6,21.918],[44.121406,20.258526,581.6,21.953],[44.121868,20.258081,587.1,22.016],[44.122057,20.257657,585.6,22.056],[44.122396,20.257593,594.1,22.094],[44.122492,20.257266,593.4,22.122],[44.122838,20.257164,603.7,22.161],[44.122877,20.257056,604.3,22.171],[44.12285,20.256992,603.1,22.177],[44.122561,20.256584,592.2,22.223],[44.122473,20.256364,590.0,22.243],[44.122484,20.25615,590.8,22.26],[44.122892,20.25556,604.9,22.325],[44.12305,20.255125,608.8,22.364],[44.123216,20.254943,614.2,22.388],[44.123289,20.254803,619.1,22.401],[44.123054,20.254755,614.2,22.428],[44.122765,20.254803,605.7,22.46],[44.122646,20.254744,604.1,22.474],[44.12245,20.254288,610.2,22.517],[44.12228,20.253291,618.7,22.598],[44.122122,20.252851,616.6,22.638],[44.122157,20.252652,619.8,22.654],[44.122295,20.252534,626.1,22.672],[44.122357,20.2524,630.3,22.685],[44.122353,20.252298,631.8,22.693],[44.122334,20.252202,632.5,22.701],[44.122045,20.252008,623.0,22.737],[44.121964,20.251869,621.0,22.751],[44.122003,20.251043,636.0,22.817],[44.121699,20.250168,629.8,22.895],[44.121664,20.249771,631.4,22.926],[44.121568,20.249283,633.5,22.967],[44.121506,20.248479,630.6,23.031],[44.121545,20.248146,628.3,23.058],[44.121649,20.247797,624.6,23.088],[44.122118,20.247116,633.6,23.164],[44.122542,20.246639,628.7,23.224],[44.122908,20.246387,633.3,23.27],[44.12377,20.246097,638.0,23.368],[44.124179,20.246091,639.6,23.414],[44.124344,20.246049,640.2,23.433],[44.124602,20.245861,637.4,23.465],[44.124875,20.245925,641.7,23.496],[44.12534,20.245876,642.9,23.548],[44.125407,20.245973,645.9,23.558],[44.125761,20.24607,649.7,23.598],[44.125915,20.24615,651.8,23.617],[44.12605,20.246274,654.4,23.635],[44.126196,20.246328,655.1,23.651],[44.126381,20.246285,653.5,23.672],[44.126624,20.246309,653.1,23.699],[44.127477,20.246467,658.1,23.795],[44.127991,20.245963,654.4,23.865],[44.128206,20.245815,655.3,23.892],[44.128369,20.245788,657.5,23.91],[44.128465,20.245845,660.0,23.921],[44.128617,20.246181,665.6,23.953],[44.12868,20.246234,666.9,23.961],[44.129234,20.24614,675.1,24.023],[44.129712,20.246258,680.5,24.077],[44.129939,20.246419,682.1,24.106],[44.130232,20.246553,685.9,24.14],[44.130393,20.246767,688.6,24.165],[44.130613,20.246955,693.4,24.193],[44.130786,20.247223,697.3,24.222],[44.131048,20.247894,709.8,24.283],[44.13166,20.248811,726.3,24.383],[44.131683,20.249203,731.9,24.415],[44.132057,20.249428,739.8,24.46],[44.132419,20.250179,749.7,24.532],[44.132796,20.249889,751.8,24.58],[44.133262,20.249396,755.9,24.645],[44.133474,20.249273,757.1,24.671],[44.133901,20.249133,758.4,24.719],[44.134328,20.248854,758.4,24.772],[44.134582,20.248645,756.6,24.805],[44.135268,20.24821,752.1,24.888],[44.135476,20.248012,750.8,24.916],[44.135722,20.248505,752.3,24.964],[44.136045,20.249305,750.0,25.038],[44.136288,20.25034,738.9,25.124],[44.136436,20.252266,734.6,25.279],[44.136436,20.252287,734.1,25.281],[44.136522,20.252588,734.6,25.307],[44.136543,20.252845,734.1,25.327],[44.136565,20.253081,732.7,25.346],[44.136586,20.253103,732.7,25.349],[44.136608,20.253232,732.2,25.36],[44.136629,20.253317,731.7,25.367],[44.136651,20.253704,732.2,25.398],[44.136693,20.254068,729.8,25.427],[44.136693,20.254476,728.3,25.46],[44.136736,20.254862,729.8,25.491],[44.136865,20.255227,729.3,25.523],[44.136951,20.255613,728.8,25.556],[44.136887,20.256,728.8,25.587],[44.136844,20.256343,726.9,25.615],[44.136822,20.25645,726.9,25.624],[44.136779,20.256944,727.4,25.664],[44.136672,20.257308,727.4,25.695],[44.136565,20.25763,731.2,25.724],[44.136436,20.257952,729.3,25.753],[44.136157,20.258403,736.5,25.8],[44.136028,20.258682,737.0,25.827],[44.135985,20.258811,737.9,25.838],[44.135878,20.259218,742.3,25.873],[44.135792,20.259626,737.5,25.907],[44.135749,20.25984,738.4,25.925],[44.135685,20.260313,736.5,25.963],[44.135771,20.260677,738.4,25.994],[44.135921,20.261064,734.6,26.029],[44.136007,20.261407,734.1,26.058],[44.1362,20.261815,734.6,26.097],[44.13635,20.262287,737.0,26.138],[44.136565,20.262716,737.0,26.18],[44.136543,20.263531,735.1,26.245],[44.136736,20.264411,737.0,26.318],[44.13693,20.264904,737.0,26.363],[44.13708,20.265312,735.1,26.4],[44.137273,20.265419,738.9,26.423],[44.13753,20.265398,739.4,26.451],[44.137659,20.265377,738.9,26.466],[44.137723,20.265312,742.8,26.475],[44.137938,20.265291,744.7,26.498],[44.138238,20.265205,744.7,26.533],[44.138367,20.265119,743.2,26.548],[44.138517,20.264862,744.7,26.575],[44.138668,20.264733,743.2,26.595],[44.138689,20.264733,743.7,26.597],[44.138861,20.264561,739.4,26.62],[44.138861,20.264561,739.4,26.62],[44.138904,20.264432,738.9,26.632],[44.138947,20.264261,737.9,26.646],[44.138947,20.264304,736.0,26.65],[44.139075,20.264282,737.0,26.664],[44.139204,20.264218,734.6,26.679],[44.139311,20.264218,733.6,26.691],[44.139333,20.264132,732.7,26.698],[44.139419,20.264003,732.2,26.713],[44.139462,20.263832,731.2,26.727],[44.139676,20.26366,669.7,26.755],[44.139826,20.263596,673.1,26.772],[44.139934,20.26381,680.8,26.793],[44.139998,20.264003,681.2,26.81],[44.140148,20.26439,694.2,26.845],[44.140384,20.264561,703.3,26.875],[44.14062,20.264711,708.6,26.903],[44.140792,20.26469,711.0,26.923],[44.140706,20.26454,713.9,26.938],[44.140599,20.264304,717.3,26.96],[44.140599,20.264132,721.6,26.974],[44.140577,20.264239,724.5,26.983],[44.140577,20.264089,726.4,26.995],[44.140556,20.263917,727.9,27.009],[44.140534,20.263875,728.3,27.013],[44.140534,20.26366,730.3,27.03],[44.14047,20.263531,731.2,27.042],[44.14032,20.263317,730.3,27.066],[44.140234,20.263124,729.3,27.085],[44.140127,20.262952,728.3,27.103],[44.140062,20.262587,728.3,27.133],[44.139998,20.262222,728.3,27.163],[44.139934,20.261922,725.5,27.188],[44.139676,20.261557,724.5,27.228],[44.139676,20.261407,725.5,27.24],[44.139569,20.261064,730.7,27.27],[44.139483,20.260892,734.1,27.287],[44.13944,20.260484,736.0,27.32],[44.139333,20.260334,732.7,27.337],[44.139075,20.260077,731.2,27.372],[44.138925,20.259969,733.1,27.391],[44.138689,20.259883,729.3,27.418],[44.138474,20.259604,724.5,27.451],[44.13826,20.259261,725.0,27.487],[44.138174,20.259132,723.5,27.501],[44.138153,20.258939,723.0,27.517],[44.138045,20.258532,725.5,27.551],[44.138045,20.25851,725.5,27.553],[44.138045,20.258403,725.5,27.561],[44.138002,20.258081,726.4,27.588],[44.137938,20.257845,723.5,27.608],[44.137855,20.257536,718.2,27.634],[44.137856,20.257536,718.2,27.634],[44.13747,20.256726,720.0,27.712],[44.137131,20.255688,723.6,27.803],[44.136854,20.255206,724.8,27.852],[44.136692,20.254648,724.6,27.9],[44.136615,20.253435,721.5,27.997],[44.136496,20.252252,723.3,28.093],[44.136453,20.252207,724.2,28.099],[44.136731,20.2521,721.4,28.131],[44.136946,20.251917,720.9,28.159],[44.137123,20.251359,722.8,28.207],[44.13725,20.251107,723.4,28.232],[44.137347,20.250995,723.3,28.246],[44.137762,20.250936,719.9,28.292],[44.137993,20.25085,718.7,28.319],[44.138478,20.250539,717.3,28.378],[44.138944,20.250388,715.9,28.432],[44.139133,20.250238,714.8,28.456],[44.13931,20.250179,712.9,28.476],[44.139622,20.250136,709.7,28.511],[44.139703,20.250045,708.9,28.522],[44.139768,20.249895,706.5,28.536],[44.139734,20.24967,703.3,28.555],[44.139483,20.249197,699.5,28.602],[44.139337,20.248811,695.2,28.637],[44.139233,20.248275,688.5,28.681],[44.139075,20.247813,685.2,28.722],[44.139041,20.247486,681.8,28.748],[44.139087,20.247207,679.1,28.771],[44.139187,20.246944,675.4,28.795],[44.139864,20.246118,668.7,28.895],[44.139995,20.245834,668.1,28.922],[44.1405,20.24497,659.2,29.011],[44.140815,20.24467,652.8,29.053],[44.140946,20.244595,650.3,29.069],[44.141039,20.2446,648.4,29.079],[44.141173,20.244884,645.3,29.106],[44.141347,20.245024,641.5,29.129],[44.141543,20.245142,637.3,29.152],[44.142066,20.245292,632.9,29.212],[44.142251,20.245185,632.1,29.234],[44.142617,20.244665,628.0,29.292],[44.142732,20.244616,626.4,29.305],[44.14279,20.244954,627.6,29.333],[44.142848,20.24496,627.0,29.34],[44.142802,20.244461,624.7,29.38],[44.142902,20.244439,623.3,29.391],[44.143537,20.244482,615.6,29.462],[44.143776,20.24438,612.1,29.489],[44.14408,20.244096,607.0,29.53],[44.144434,20.243533,593.3,29.59],[44.144588,20.243452,589.6,29.608],[44.14475,20.243468,587.0,29.626],[44.144969,20.243585,584.9,29.652],[44.145392,20.243446,574.0,29.701],[44.145549,20.243432,570.4,29.718],[44.145693,20.24354,568.5,29.736],[44.146051,20.243672,561.3,29.778],[44.146166,20.243812,560.7,29.795],[44.146193,20.244198,565.9,29.825],[44.146084,20.244503,566.1,29.853],[44.146162,20.244518,564.7,29.861],[44.146234,20.244597,563.0,29.872],[44.146396,20.244935,558.5,29.904],[44.146695,20.245127,553.5,29.941],[44.146837,20.245277,551.6,29.96],[44.14695,20.245429,550.1,29.978],[44.147055,20.245692,548.5,30.002],[44.1471,20.245906,547.6,30.02],[44.147181,20.246072,546.2,30.036],[44.147178,20.246261,545.7,30.051],[44.147225,20.2464,544.7,30.063],[44.147132,20.246885,544.9,30.103],[44.147121,20.247315,544.3,30.137],[44.147363,20.248135,542.0,30.208],[44.147452,20.248264,541.3,30.222],[44.147713,20.248318,535.1,30.252],[44.14831,20.248586,518.1,30.322],[44.14858,20.248425,504.7,30.354],[44.148653,20.248463,500.7,30.363],[44.148745,20.248645,495.1,30.381],[44.148895,20.248747,486.7,30.399],[44.14923,20.24924,467.8,30.453],[44.149072,20.248484,478.3,30.516],[44.149018,20.248334,481.9,30.53],[44.148949,20.248259,486.4,30.539],[44.148969,20.248205,486.0,30.544],[44.148949,20.248259,486.4,30.549],[44.149018,20.248334,481.9,30.559],[44.149072,20.248484,478.3,30.572],[44.14923,20.24924,467.8,30.635],[44.148895,20.248747,486.7,30.689],[44.148745,20.248645,495.1,30.708],[44.148653,20.248463,500.7,30.725],[44.14858,20.248425,504.7,30.734],[44.14831,20.248586,518.1,30.767],[44.147713,20.248318,535.1,30.837],[44.147452,20.248264,541.3,30.866],[44.147363,20.248135,542.0,30.88],[44.147121,20.247315,544.3,30.951],[44.147132,20.246885,544.9,30.985],[44.147263,20.246247,544.6,31.038],[44.147171,20.246617,544.9,31.069],[44.147263,20.246206,544.8,31.104],[44.147095,20.245828,547.9,31.139],[44.147136,20.245237,548.1,31.187],[44.147183,20.245055,547.7,31.202],[44.147556,20.245033,542.7,31.244],[44.147933,20.2451,534.1,31.286],[44.148142,20.245072,529.4,31.309],[44.148262,20.245008,526.6,31.323],[44.148516,20.244954,518.2,31.352],[44.148762,20.244579,507.4,31.393],[44.148817,20.244434,519.7,31.406],[44.148817,20.24437,521.7,31.411],[44.148817,20.244219,518.8,31.423],[44.148774,20.244155,517.3,31.43],[44.148538,20.243983,521.2,31.459],[44.148431,20.243919,524.1,31.472],[44.148345,20.243876,524.5,31.483],[44.148238,20.243833,524.5,31.495],[44.148195,20.243812,525.5,31.5],[44.148109,20.243769,526.0,31.51],[44.148002,20.243704,526.9,31.523],[44.147959,20.24364,528.9,31.53],[44.147894,20.243597,528.4,31.538],[44.147851,20.243576,527.9,31.543],[44.147766,20.243511,528.4,31.554],[44.147723,20.243511,528.9,31.559],[44.14768,20.24349,528.9,31.564],[44.147637,20.243447,528.4,31.57],[44.147594,20.243404,528.4,31.576],[44.14753,20.243361,532.2,31.584],[44.147444,20.243297,532.2,31.594],[44.147401,20.243254,530.3,31.6],[44.147336,20.243189,532.2,31.609],[44.147336,20.243189,529.3,31.609],[44.147294,20.243189,528.4,31.614],[44.147272,20.243189,527.4,31.616],[44.147208,20.243232,525.0,31.624],[44.147143,20.243189,524.1,31.632],[44.147122,20.243168,524.5,31.635],[44.147058,20.243125,524.1,31.643],[44.147036,20.243039,526.0,31.65],[44.146972,20.242975,526.5,31.659],[44.14695,20.242932,525.5,31.663],[44.146907,20.242889,522.6,31.669],[44.146864,20.242867,520.7,31.674],[44.146843,20.242782,522.6,31.681],[44.146843,20.242782,517.8,31.681],[44.1468,20.24291,503.4,31.693],[44.146864,20.242803,511.1,31.704],[44.146886,20.242782,512.5,31.707],[44.146843,20.242696,505.3,31.715],[44.146779,20.24261,505.3,31.725],[44.146714,20.242567,503.4,31.733],[44.14665,20.242524,504.3,31.741],[44.146543,20.24246,502.9,31.754],[44.146457,20.242352,501.9,31.767],[44.146414,20.242331,499.5,31.772],[44.146349,20.242288,501.9,31.78],[44.146264,20.242224,501.5,31.791],[44.146221,20.242181,500.5,31.796],[44.146135,20.242074,501.0,31.809],[44.146006,20.241859,500.5,31.832],[44.145963,20.241816,501.5,31.837],[44.145963,20.241816,499.5,31.837],[44.145942,20.241816,500.5,31.84],[44.145877,20.241709,509.6,31.851],[44.145856,20.241623,514.0,31.858],[44.145834,20.241473,507.7,31.87],[44.145877,20.241365,507.7,31.88],[44.145899,20.24128,507.7,31.888],[44.14592,20.241151,507.7,31.898],[44.146156,20.240636,514.0,31.947],[44.146199,20.240636,513.0,31.952],[44.146349,20.240507,510.1,31.971],[44.146585,20.240228,511.1,32.006],[44.146607,20.240164,512.5,32.011],[44.146628,20.240099,513.5,32.017],[44.146671,20.240035,514.4,32.024],[44.146779,20.239928,515.9,32.039],[44.146821,20.239906,514.4,32.044],[44.146993,20.23982,518.3,32.064],[44.1471,20.239713,518.3,32.079],[44.147186,20.239606,519.2,32.092],[44.147251,20.239563,520.2,32.099],[44.147336,20.239477,522.1,32.111],[44.147315,20.23952,526.0,32.115],[44.147465,20.239348,532.7,32.137],[44.147508,20.239284,536.6,32.144],[44.147508,20.239263,543.3,32.146],[44.147487,20.23922,541.8,32.15],[44.147422,20.23922,539.4,32.157],[44.147315,20.239177,539.4,32.169],[44.147229,20.239091,540.4,32.181],[44.147015,20.239048,541.8,32.205],[44.146724,20.238876,559.7,32.24],[44.146536,20.238136,569.0,32.303],[44.146378,20.237782,574.5,32.336],[44.146189,20.237117,579.4,32.393],[44.146078,20.237219,585.2,32.408],[44.145997,20.237487,590.5,32.431],[44.145958,20.238297,596.1,32.496],[44.14592,20.238453,597.3,32.509],[44.145847,20.238538,599.9,32.52],[44.145766,20.238528,602.3,32.529],[44.145693,20.238404,605.3,32.542],[44.1457,20.238426,604.9,32.544],[44.145481,20.238388,611.2,32.568],[44.145381,20.23827,614.4,32.583],[44.145288,20.238039,617.0,32.604],[44.145165,20.237862,620.9,32.624],[44.145057,20.237449,624.7,32.659],[44.144757,20.23665,629.0,32.731],[44.144619,20.23614,632.2,32.774],[44.144368,20.235518,638.8,32.831],[44.143972,20.235132,648.5,32.885],[44.143722,20.235035,653.2,32.914],[44.143541,20.235062,656.9,32.934],[44.143418,20.235025,659.3,32.948],[44.143271,20.234869,659.3,32.968],[44.142451,20.234789,671.6,33.06],[44.14234,20.234714,672.9,33.073],[44.14229,20.234445,671.6,33.096],[44.142197,20.234322,672.8,33.11],[44.142116,20.234113,673.0,33.129],[44.142178,20.234043,670.3,33.138],[44.142224,20.233603,661.9,33.173],[44.142444,20.233292,646.1,33.208],[44.142548,20.233083,636.9,33.228],[44.142544,20.232632,628.6,33.264],[44.142432,20.231693,622.7,33.34],[44.142259,20.231162,631.5,33.387],[44.142174,20.230744,635.9,33.421],[44.142178,20.230406,638.7,33.448],[44.142232,20.230116,637.9,33.472],[44.142217,20.22965,642.4,33.51],[44.142271,20.22944,641.9,33.527],[44.142325,20.229189,636.6,33.548],[44.142249,20.228957,637.5,33.569],[44.142244,20.228945,637.5,33.57],[44.142051,20.228562,642.7,33.607],[44.141943,20.228312,642.9,33.63],[44.141809,20.228049,644.0,33.656],[44.141705,20.227831,644.8,33.677],[44.141554,20.226785,638.9,33.762],[44.141424,20.226383,655.2,33.797],[44.141947,20.226088,636.6,33.86],[44.142105,20.226066,631.2,33.878],[44.142394,20.225776,633.8,33.917],[44.142663,20.225685,627.7,33.948],[44.143002,20.225508,618.5,33.988],[44.143248,20.224596,643.8,34.066],[44.143356,20.224398,647.0,34.086],[44.143541,20.22429,646.3,34.108],[44.143691,20.224124,649.4,34.13],[44.143448,20.22399,663.2,34.159],[44.143375,20.223818,672.5,34.175],[44.143314,20.223287,696.2,34.217],[44.143375,20.223024,705.7,34.24],[44.143645,20.222998,700.2,34.27],[44.144418,20.223185,677.4,34.357],[44.144738,20.223244,675.0,34.393],[44.144873,20.223228,675.6,34.408],[44.144788,20.2231,679.7,34.422],[44.144688,20.222783,691.2,34.449],[44.144399,20.222316,710.3,34.499],[44.144161,20.222166,719.6,34.528],[44.143818,20.222021,732.9,34.567],[44.143164,20.221565,766.9,34.649],[44.142967,20.221399,773.7,34.674],[44.142729,20.220981,781.7,34.717],[44.142532,20.220863,788.9,34.741],[44.141789,20.220632,794.7,34.825],[44.14157,20.220653,796.0,34.85],[44.14145,20.220621,796.6,34.863],[44.141489,20.220187,798.1,34.898],[44.141462,20.218771,796.0,35.011],[44.141493,20.218465,793.4,35.036],[44.141604,20.218229,789.4,35.059],[44.141793,20.2181,783.7,35.082],[44.141959,20.217923,778.3,35.105],[44.142424,20.218014,764.7,35.157],[44.142621,20.2181,759.8,35.18],[44.143052,20.218647,752.8,35.245],[44.143267,20.218856,748.0,35.274],[44.143471,20.218942,743.0,35.298],[44.143856,20.218878,733.2,35.341],[44.144311,20.218511,719.3,35.4],[44.144472,20.218457,713.8,35.418],[44.144803,20.218586,704.1,35.456],[44.144946,20.21871,700.4,35.475],[44.145158,20.219123,692.9,35.515],[44.145196,20.219316,690.0,35.531],[44.145142,20.219546,691.4,35.551],[44.145,20.219723,698.0,35.572],[44.144834,20.220056,702.7,35.604],[44.144815,20.220314,701.6,35.625],[44.144857,20.22063,697.2,35.651],[44.144942,20.220941,691.9,35.677],[44.145088,20.221177,686.5,35.702],[44.145235,20.221317,680.7,35.722],[44.145566,20.221447,666.6,35.76],[44.145974,20.22149,648.7,35.806],[44.146355,20.22163,634.8,35.849],[44.146671,20.221914,625.3,35.891],[44.146979,20.222386,616.8,35.942],[44.147021,20.222257,612.6,35.953],[44.147029,20.222037,608.5,35.971],[44.14694,20.221689,607.6,36.0],[44.146659,20.220986,608.5,36.065],[44.146659,20.220729,607.0,36.085],[44.14676,20.22053,605.9,36.105],[44.146887,20.220444,602.3,36.12],[44.147382,20.22031,585.7,36.176],[44.148249,20.219683,553.1,36.285],[44.148442,20.219602,546.4,36.307],[44.148954,20.219479,531.6,36.365],[44.149585,20.219442,517.0,36.435],[44.149981,20.219361,509.4,36.48],[44.150273,20.219248,504.3,36.514],[44.150531,20.219066,498.4,36.546],[44.151389,20.218218,473.7,36.663],[44.151768,20.217575,465.7,36.729],[44.15191,20.217499,463.2,36.746],[44.152067,20.217518,460.7,36.764],[44.152074,20.217537,460.6,36.765],[44.152171,20.217628,458.8,36.778],[44.152259,20.217816,456.6,36.796],[44.152332,20.218062,453.9,36.817],[44.152436,20.218315,449.9,36.841],[44.152513,20.218449,446.4,36.854],[44.152586,20.218529,443.9,36.865],[44.152633,20.218438,443.8,36.874],[44.152698,20.218207,444.4,36.893],[44.15274,20.218062,444.6,36.906],[44.152787,20.217944,444.4,36.917],[44.152806,20.217832,444.9,36.926],[44.15294,20.217783,442.3,36.941],[44.153098,20.217816,438.5,36.959],[44.153248,20.21788,434.7,36.976],[44.153414,20.217955,431.3,36.996],[44.153552,20.218061,429.2,37.013],[44.153668,20.21812,427.8,37.027],[44.153616,20.217964,429.2,37.041],[44.153649,20.217774,429.9,37.056],[44.153714,20.217568,430.2,37.074],[44.153772,20.217347,430.3,37.093],[44.153775,20.21704,431.5,37.118],[44.153768,20.216728,432.9,37.143],[44.153747,20.216436,433.7,37.166],[44.153729,20.216018,434.2,37.199],[44.153711,20.215735,433.7,37.222],[44.153698,20.215497,432.0,37.241],[44.153636,20.215302,431.1,37.258],[44.153537,20.214965,429.5,37.287],[44.153494,20.214796,428.7,37.302],[44.153502,20.21472,428.0,37.308],[44.153568,20.21449,425.7,37.327],[44.153695,20.214238,422.9,37.352],[44.153753,20.214039,420.1,37.369],[44.15378,20.213953,418.7,37.377],[44.15366,20.213819,417.5,37.394],[44.153641,20.213685,415.6,37.405],[44.15371,20.213385,410.9,37.43],[44.153787,20.213175,408.2,37.449],[44.154068,20.212848,403.1,37.489],[44.154199,20.212532,398.4,37.518],[44.154392,20.211947,393.3,37.57],[44.154442,20.211459,390.2,37.609],[44.154488,20.211196,389.1,37.631],[44.154484,20.210853,387.7,37.658],[44.154507,20.210482,387.1,37.688],[44.154565,20.210241,386.8,37.708],[44.154642,20.21015,386.7,37.719],[44.154788,20.210182,386.9,37.736],[44.154942,20.210252,387.0,37.754],[44.155161,20.210292,385.4,37.778],[44.155288,20.210088,384.5,37.8],[44.155534,20.2096,381.8,37.847],[44.155757,20.209123,380.0,37.893],[44.155938,20.208758,376.5,37.928],[44.156092,20.208098,371.7,37.984],[44.156335,20.207422,368.6,38.044],[44.156562,20.206854,366.1,38.096],[44.156639,20.206532,363.5,38.123],[44.156639,20.206296,359.6,38.142],[44.156689,20.206135,356.9,38.156],[44.156816,20.206044,354.7,38.172],[44.157004,20.206028,353.5,38.192],[44.157081,20.205969,352.5,38.202],[44.157054,20.205802,350.5,38.216],[44.156927,20.20569,348.7,38.233],[44.156739,20.205711,349.5,38.254],[44.156535,20.2057,349.0,38.276],[44.156254,20.205711,348.2,38.308],[44.156115,20.205754,348.1,38.323],[44.155965,20.205915,348.9,38.344],[44.155711,20.206033,351.0,38.374],[44.1556,20.205893,350.9,38.391],[44.15558,20.205679,350.4,38.408],[44.155588,20.205475,349.9,38.424],[44.15563,20.205362,349.1,38.434],[44.15565,20.205266,348.6,38.442],[44.155573,20.205137,349.6,38.456],[44.155423,20.205014,351.9,38.475],[44.155138,20.204933,357.4,38.508],[44.154745,20.204829,366.2,38.552],[44.154534,20.204684,372.6,38.578],[44.15451,20.204571,374.5,38.588],[44.154626,20.2044,374.1,38.606],[44.154753,20.204298,372.4,38.623],[44.154784,20.20418,373.0,38.633],[44.154741,20.203895,378.7,38.656],[44.15473,20.203708,382.0,38.671],[44.154791,20.203541,383.5,38.686],[44.154988,20.203493,380.4,38.708],[44.155122,20.203552,377.6,38.724],[44.155292,20.203579,375.0,38.743],[44.155301,20.203587,374.7,38.744],[44.15527,20.203453,377.7,38.755],[44.155166,20.203394,380.1,38.768],[44.155028,20.203233,383.4,38.788],[44.154947,20.203121,385.5,38.8],[44.154947,20.203029,386.1,38.808],[44.15477,20.202917,389.9,38.829],[44.154778,20.202551,391.9,38.858],[44.15472,20.201951,387.1,38.907],[44.154667,20.201559,383.9,38.939],[44.15457,20.201237,382.4,38.966],[44.154409,20.200937,382.4,38.996],[44.154278,20.200669,381.8,39.022],[44.154197,20.200459,380.5,39.041],[44.154016,20.200314,381.6,39.064],[44.153916,20.2001,380.7,39.085],[44.153835,20.199848,382.1,39.107],[44.153843,20.199698,383.0,39.119],[44.154039,20.199601,380.2,39.142],[44.154393,20.199456,374.9,39.183],[44.154616,20.199333,371.6,39.21],[44.154897,20.199113,367.7,39.246],[44.155182,20.198893,364.5,39.282],[44.155475,20.198544,362.1,39.325],[44.155612,20.198198,361.8,39.356],[44.155719,20.197865,360.4,39.385],[44.155742,20.197442,360.7,39.419],[44.155727,20.197141,358.6,39.443],[44.155685,20.196626,355.3,39.485],[44.155511,20.196218,353.6,39.522],[44.155292,20.196015,355.1,39.552],[44.155146,20.195838,355.1,39.573],[44.15503,20.195623,355.4,39.595],[44.154842,20.1955,360.3,39.618],[44.154676,20.195274,362.9,39.643],[44.154507,20.194947,363.4,39.676],[44.154369,20.194648,366.4,39.704],[44.154376,20.194427,365.5,39.722],[44.154341,20.194228,365.9,39.738],[44.154295,20.193869,366.2,39.767],[44.154299,20.193584,365.1,39.79],[44.154122,20.193273,368.7,39.822],[44.153868,20.192967,372.6,39.859],[44.153672,20.192624,373.3,39.894],[44.153464,20.192157,369.0,39.938],[44.153318,20.191884,366.3,39.965],[44.153041,20.191599,365.0,40.003],[44.152695,20.191352,366.1,40.046],[44.152467,20.191116,364.6,40.078],[44.152086,20.19109,369.5,40.12],[44.151847,20.190983,370.6,40.148],[44.151751,20.190843,369.0,40.164],[44.15147,20.190656,370.3,40.198],[44.15117,20.190505,373.9,40.234],[44.150839,20.19021,372.4,40.277],[44.15055,20.190012,379.4,40.313],[44.150342,20.189829,385.4,40.341],[44.150167,20.189644,389.6,40.365],[44.149985,20.189539,395.6,40.387],[44.149762,20.189345,399.6,40.416],[44.149574,20.189076,401.9,40.446],[44.149542,20.189021,403.2,40.452],[44.149396,20.189041,408.9,40.468],[44.149218,20.188976,416.1,40.489],[44.149433,20.189029,407.4,40.513],[44.149523,20.189013,404.0,40.523],[44.149551,20.188971,402.9,40.528],[44.149565,20.188775,402.5,40.543],[44.149642,20.188499,399.2,40.567],[44.149665,20.188129,401.6,40.596],[44.149834,20.187405,407.5,40.657],[44.149996,20.187335,402.5,40.676],[44.150281,20.187346,400.7,40.708],[44.150727,20.187238,402.6,40.758],[44.151058,20.187442,390.9,40.798],[44.151351,20.187421,386.1,40.831],[44.151428,20.187335,387.3,40.842],[44.151493,20.186654,406.8,40.897],[44.151605,20.186525,410.9,40.913],[44.151928,20.186278,418.7,40.954],[44.15264,20.186112,414.5,41.034],[44.15281,20.185774,423.9,41.067],[44.15289,20.185683,425.6,41.079],[44.152964,20.185661,425.0,41.087],[44.153091,20.185688,421.7,41.101],[44.153214,20.185656,420.4,41.115],[44.153264,20.185457,425.3,41.132],[44.153322,20.185388,426.1,41.141],[44.15366,20.185157,420.7,41.182],[44.153783,20.184519,431.3,41.235],[44.153876,20.183462,456.5,41.32],[44.154049,20.183296,454.9,41.343],[44.154399,20.183135,452.2,41.384],[44.154773,20.183253,443.0,41.427],[44.154969,20.183237,440.4,41.449],[44.15505,20.183076,442.2,41.465],[44.155127,20.182078,456.3,41.545],[44.1552,20.181493,462.8,41.592],[44.155273,20.18122,466.6,41.615],[44.155369,20.181128,465.9,41.628],[44.155662,20.180967,461.2,41.663],[44.155816,20.180892,458.4,41.681],[44.155831,20.180914,457.6,41.684],[44.156085,20.180576,458.3,41.723],[44.156339,20.179557,465.4,41.809],[44.156316,20.178988,468.7,41.854],[44.156262,20.17873,469.1,41.876],[44.155885,20.177797,472.6,41.961],[44.155789,20.17747,472.9,41.989],[44.155296,20.176606,476.6,42.077],[44.154919,20.176118,479.5,42.135],[44.154642,20.175598,482.1,42.186],[44.154365,20.174932,484.5,42.248],[44.154284,20.1749,486.1,42.257],[44.154264,20.175002,486.9,42.266],[44.154357,20.175818,490.9,42.331],[44.154646,20.17674,493.9,42.412],[44.154988,20.177518,494.4,42.485],[44.155127,20.17799,493.1,42.525],[44.155192,20.178409,493.7,42.559],[44.155188,20.179009,497.9,42.607],[44.155073,20.179476,500.1,42.647],[44.154953,20.17976,503.1,42.673],[44.154661,20.180157,515.0,42.718],[44.154488,20.180334,520.7,42.742],[44.154272,20.180667,524.5,42.778],[44.153845,20.181466,523.2,42.857],[44.153602,20.181788,524.7,42.895],[44.153399,20.181971,527.7,42.922],[44.152444,20.182716,546.8,43.043],[44.152205,20.182947,546.5,43.076],[44.151978,20.183076,549.9,43.103],[44.151055,20.183387,568.9,43.209],[44.150115,20.183408,584.5,43.313],[44.149919,20.183365,588.8,43.335],[44.149053,20.183333,603.0,43.431],[44.148718,20.183376,610.1,43.469],[44.148503,20.18344,613.2,43.493],[44.148033,20.183714,621.4,43.55],[44.147794,20.183913,624.7,43.581],[44.147533,20.184208,625.3,43.618],[44.147255,20.18432,634.0,43.65],[44.146693,20.184851,649.0,43.726],[44.146547,20.184916,651.7,43.743],[44.14627,20.185136,655.3,43.778],[44.146143,20.185474,655.7,43.809],[44.145446,20.185801,673.2,43.891],[44.144861,20.186015,687.9,43.958],[44.144811,20.18609,689.1,43.966],[44.143999,20.188445,731.8,44.175],[44.143856,20.188998,736.6,44.221],[44.143806,20.18903,737.7,44.228],[44.143121,20.18888,750.8,44.305],[44.142817,20.189025,754.5,44.34],[44.142686,20.189213,755.1,44.361],[44.142267,20.189508,759.1,44.414],[44.141882,20.189636,764.9,44.458],[44.14145,20.189679,767.2,44.506],[44.141131,20.18998,764.7,44.549],[44.140584,20.191176,781.8,44.662],[44.13993,20.191203,788.5,44.734],[44.13901,20.191401,784.6,44.838],[44.138821,20.19138,783.2,44.859],[44.138636,20.191256,781.8,44.882],[44.138413,20.191412,780.2,44.91],[44.138117,20.191718,778.2,44.951],[44.13752,20.19226,771.6,45.03],[44.137312,20.192394,769.2,45.055],[44.136942,20.192764,764.0,45.106],[44.136892,20.192882,762.8,45.117],[44.136877,20.193075,761.0,45.132],[44.136808,20.193139,760.2,45.142],[44.136708,20.193134,759.8,45.153],[44.136534,20.192989,759.4,45.175],[44.13603,20.192415,756.1,45.248],[44.135926,20.192335,755.5,45.261],[44.13573,20.192265,754.7,45.283],[44.135637,20.192324,753.5,45.295],[44.135572,20.192276,754.0,45.303],[44.13546,20.192031,757.2,45.326],[44.135244,20.191853,759.4,45.354]];
+    const PROFILE = [[0.0,648.0],[0.122,657.9],[0.258,670.4],[0.359,678.1],[0.405,681.1],[0.438,682.1],[0.452,682.5],[0.505,682.9],[0.525,683.9],[0.833,724.4],[0.88,732.0],[0.934,739.3],[0.962,743.5],[1.002,748.0],[1.099,754.4],[1.14,758.5],[1.183,762.2],[1.235,765.5],[1.258,766.5],[1.278,768.5],[1.33,775.3],[1.404,787.7],[1.52,809.2],[1.589,821.4],[1.619,825.8],[1.634,828.2],[1.655,831.3],[1.695,836.4],[1.72,838.2],[1.732,838.7],[1.757,839.4],[1.786,839.5],[1.793,839.5],[1.804,839.8],[1.853,838.5],[1.873,837.9],[1.99,837.0],[2.049,838.4],[2.096,840.9],[2.167,839.0],[2.232,836.2],[2.348,835.6],[2.411,835.5],[2.471,832.9],[2.491,831.9],[2.549,828.2],[2.593,822.3],[2.719,805.1],[2.778,799.3],[2.98,798.8],[3.139,797.8],[3.171,797.3],[3.244,796.3],[3.309,799.9],[3.374,805.3],[3.399,807.6],[3.442,810.5],[3.501,819.4],[3.532,824.1],[3.567,826.9],[3.62,828.0],[3.732,828.9],[3.816,820.6],[3.838,817.2],[3.869,813.0],[3.941,800.2],[3.965,796.4],[4.013,788.1],[4.071,781.6],[4.112,780.2],[4.137,781.7],[4.181,782.5],[4.328,788.4],[4.377,791.3],[4.399,792.8],[4.424,793.6],[4.449,792.9],[4.485,791.7],[4.525,790.3],[4.563,789.8],[4.585,788.8],[4.633,786.0],[4.676,784.0],[4.752,789.1],[4.767,788.9],[4.786,789.1],[4.834,792.0],[4.861,792.2],[4.915,787.9],[4.984,783.4],[5.019,781.4],[5.064,779.1],[5.125,774.9],[5.231,764.5],[5.244,763.1],[5.258,761.5],[5.277,761.4],[5.318,759.5],[5.389,754.0],[5.406,754.1],[5.423,753.0],[5.44,754.8],[5.47,759.9],[5.484,761.3],[5.515,765.8],[5.555,775.9],[5.571,779.8],[5.582,781.8],[5.618,786.0],[5.665,790.7],[5.72,790.7],[5.82,791.4],[5.913,784.8],[5.93,783.4],[5.999,776.2],[6.022,772.2],[6.079,764.0],[6.136,765.8],[6.183,772.1],[6.197,775.3],[6.223,781.9],[6.234,784.4],[6.282,791.0],[6.296,790.9],[6.366,792.7],[6.396,793.6],[6.416,793.6],[6.463,796.6],[6.484,796.1],[6.533,792.2],[6.548,791.7],[6.558,792.8],[6.574,795.4],[6.593,798.5],[6.61,802.0],[6.64,809.9],[6.736,829.9],[6.749,832.1],[6.762,834.2],[6.805,828.3],[6.838,823.3],[6.866,820.5],[6.882,818.7],[6.944,806.9],[7.043,803.3],[7.199,815.0],[7.315,817.1],[7.359,818.4],[7.393,816.3],[7.413,816.8],[7.455,817.2],[7.513,815.3],[7.556,813.1],[7.576,813.1],[7.597,814.2],[7.658,818.0],[7.673,818.2],[7.694,817.2],[7.714,819.4],[7.8,828.8],[7.817,830.3],[7.833,833.1],[7.904,837.3],[7.92,839.8],[7.99,841.8],[8.071,832.8],[8.103,832.2],[8.201,831.3],[8.224,832.0],[8.257,834.6],[8.271,835.9],[8.303,838.3],[8.332,840.2],[8.354,842.4],[8.368,843.4],[8.389,843.4],[8.428,844.6],[8.443,846.0],[8.467,848.2],[8.476,847.9],[8.485,848.7],[8.498,849.4],[8.559,838.4],[8.605,830.8],[8.643,822.3],[8.665,817.5],[8.787,798.7],[8.809,794.1],[8.833,790.2],[8.898,782.2],[8.923,777.8],[8.948,775.5],[8.962,773.7],[8.975,771.7],[9.076,758.3],[9.105,753.6],[9.138,747.4],[9.149,745.4],[9.161,743.8],[9.208,738.5],[9.263,727.5],[9.295,721.6],[9.31,718.3],[9.328,713.8],[9.405,703.8],[9.425,704.0],[9.484,700.7],[9.618,690.4],[9.71,688.1],[9.76,688.9],[9.825,691.3],[9.885,692.4],[9.919,693.4],[9.985,695.2],[10.011,694.7],[10.04,695.3],[10.069,694.9],[10.177,692.7],[10.212,696.1],[10.23,698.7],[10.254,702.0],[10.311,707.0],[10.333,708.9],[10.379,714.2],[10.493,720.2],[10.526,723.4],[10.608,728.3],[10.631,731.1],[10.66,733.9],[10.707,735.5],[10.723,736.8],[10.735,738.3],[10.753,739.7],[10.837,743.1],[10.891,749.6],[10.927,753.1],[11.009,759.4],[11.051,762.9],[11.119,766.0],[11.144,767.2],[11.184,769.9],[11.205,771.0],[11.226,770.4],[11.253,769.8],[11.315,770.2],[11.376,770.6],[11.43,771.6],[11.444,772.6],[11.475,774.5],[11.58,777.7],[11.597,776.6],[11.617,775.6],[11.647,775.5],[11.689,773.2],[11.783,768.5],[11.807,767.6],[11.887,771.3],[11.909,773.3],[11.94,775.9],[11.995,784.7],[12.012,787.2],[12.101,810.3],[12.145,821.9],[12.184,822.2],[12.204,821.9],[12.211,821.5],[12.235,821.0],[12.272,814.8],[12.294,811.0],[12.32,807.7],[12.336,803.4],[12.35,801.4],[12.379,799.8],[12.388,798.4],[12.395,796.6],[12.405,796.7],[12.419,793.8],[12.469,791.8],[12.52,782.0],[12.619,767.3],[12.639,764.2],[12.656,763.1],[12.671,762.7],[12.713,762.8],[12.722,761.5],[12.767,752.2],[12.784,748.7],[12.838,743.9],[12.871,741.1],[12.948,732.4],[12.984,730.1],[13.0,729.0],[13.035,724.9],[13.047,723.2],[13.066,720.9],[13.099,717.3],[13.118,714.1],[13.136,710.4],[13.165,708.1],[13.184,706.2],[13.212,703.8],[13.255,696.6],[13.266,695.6],[13.334,691.3],[13.385,688.6],[13.409,686.0],[13.446,684.0],[13.471,679.2],[13.486,676.9],[13.516,674.1],[13.539,672.3],[13.644,658.0],[13.674,653.0],[13.712,646.7],[13.761,638.0],[13.82,629.2],[13.852,624.7],[13.882,625.1],[13.897,624.8],[13.929,621.1],[14.001,602.1],[14.045,595.1],[14.06,592.2],[14.089,590.5],[14.103,589.6],[14.121,590.0],[14.136,589.8],[14.172,586.3],[14.233,583.0],[14.284,581.9],[14.315,574.4],[14.336,574.0],[14.352,575.0],[14.378,572.3],[14.394,572.2],[14.426,576.0],[14.506,568.6],[14.534,569.5],[14.549,569.0],[14.647,570.8],[14.714,565.6],[14.858,560.0],[14.962,563.4],[14.984,562.0],[15.023,559.2],[15.047,557.9],[15.123,562.7],[15.152,568.1],[15.158,568.3],[15.178,564.4],[15.189,562.8],[15.229,565.1],[15.246,569.6],[15.257,572.1],[15.27,575.1],[15.291,578.0],[15.337,580.6],[15.431,583.9],[15.443,580.9],[15.455,580.4],[15.47,577.5],[15.482,573.9],[15.492,572.0],[15.501,572.1],[15.51,569.4],[15.536,570.3],[15.567,567.2],[15.581,563.9],[15.596,560.5],[15.609,557.5],[15.633,554.2],[15.658,555.7],[15.703,556.1],[15.723,560.8],[15.744,565.8],[15.783,570.4],[15.803,571.0],[15.849,580.1],[15.869,584.7],[15.879,587.5],[15.93,590.3],[16.035,596.7],[16.051,597.6],[16.059,596.7],[16.11,590.9],[16.176,601.6],[16.227,610.3],[16.258,614.7],[16.32,619.0],[16.344,620.7],[16.401,625.0],[16.419,626.6],[16.437,627.8],[16.471,628.9],[16.505,630.4],[16.584,637.1],[16.71,641.5],[16.798,644.0],[16.816,646.1],[16.846,648.7],[16.899,652.3],[16.948,657.1],[17.023,657.9],[17.057,659.5],[17.139,658.8],[17.157,656.5],[17.175,655.0],[17.187,654.7],[17.206,652.6],[17.254,645.9],[17.312,636.8],[17.331,637.9],[17.364,641.5],[17.397,640.2],[17.482,629.6],[17.53,627.0],[17.631,616.5],[17.688,613.8],[17.739,616.8],[17.76,617.4],[17.791,617.4],[17.928,595.8],[17.981,592.5],[18.031,586.5],[18.051,583.3],[18.073,580.9],[18.092,580.0],[18.133,575.5],[18.232,568.9],[18.26,564.7],[18.288,556.3],[18.354,541.7],[18.377,536.2],[18.43,514.8],[18.448,506.2],[18.465,501.7],[18.486,492.7],[18.515,487.9],[18.551,479.8],[18.565,477.6],[18.581,479.6],[18.596,482.3],[18.613,481.9],[18.664,484.0],[18.773,494.1],[18.824,488.6],[18.869,476.0],[18.898,474.7],[18.918,474.9],[18.958,477.6],[18.98,480.0],[19.012,485.9],[19.032,488.1],[19.064,490.2],[19.138,488.3],[19.217,489.9],[19.251,490.7],[19.327,493.4],[19.452,493.5],[19.564,477.8],[19.579,479.4],[19.622,481.9],[19.697,481.8],[19.729,484.8],[19.752,484.7],[19.798,487.8],[19.849,489.6],[19.906,490.2],[19.933,486.7],[19.98,489.7],[20.013,489.4],[20.033,488.2],[20.06,487.6],[20.081,487.8],[20.11,489.3],[20.267,499.5],[20.289,499.7],[20.308,499.8],[20.34,502.0],[20.356,501.6],[20.368,500.8],[20.393,497.5],[20.414,496.3],[20.53,500.0],[20.553,500.7],[20.584,501.2],[20.615,504.4],[20.637,503.3],[20.675,509.4],[20.697,512.1],[20.744,512.6],[20.768,511.4],[20.784,511.1],[20.797,510.7],[20.806,512.9],[20.821,516.3],[20.833,517.9],[20.867,520.7],[20.89,524.4],[20.953,534.1],[20.965,535.6],[20.987,535.9],[21.028,534.2],[21.043,535.5],[21.059,537.8],[21.105,537.7],[21.119,536.7],[21.136,536.2],[21.22,542.2],[21.29,550.6],[21.366,554.4],[21.392,554.7],[21.44,559.9],[21.517,555.6],[21.532,556.4],[21.561,558.3],[21.604,562.5],[21.659,568.1],[21.74,577.3],[21.764,577.6],[21.781,576.7],[21.8,579.2],[21.823,581.3],[21.844,581.9],[21.864,579.4],[21.907,583.1],[21.918,583.6],[21.953,581.6],[22.016,587.1],[22.056,585.6],[22.094,594.1],[22.122,593.4],[22.161,603.7],[22.171,604.3],[22.177,603.1],[22.223,592.2],[22.243,590.0],[22.26,590.8],[22.325,604.9],[22.364,608.8],[22.388,614.2],[22.401,619.1],[22.428,614.2],[22.46,605.7],[22.474,604.1],[22.517,610.2],[22.598,618.7],[22.638,616.6],[22.654,619.8],[22.672,626.1],[22.685,630.3],[22.693,631.8],[22.701,632.5],[22.737,623.0],[22.751,621.0],[22.817,636.0],[22.895,629.8],[22.926,631.4],[22.967,633.5],[23.031,630.6],[23.058,628.3],[23.088,624.6],[23.164,633.6],[23.224,628.7],[23.27,633.3],[23.368,638.0],[23.414,639.6],[23.433,640.2],[23.465,637.4],[23.496,641.7],[23.548,642.9],[23.558,645.9],[23.598,649.7],[23.617,651.8],[23.635,654.4],[23.651,655.1],[23.672,653.5],[23.699,653.1],[23.795,658.1],[23.865,654.4],[23.892,655.3],[23.91,657.5],[23.921,660.0],[23.953,665.6],[23.961,666.9],[24.023,675.1],[24.077,680.5],[24.106,682.1],[24.14,685.9],[24.165,688.6],[24.193,693.4],[24.222,697.3],[24.283,709.8],[24.383,726.3],[24.415,731.9],[24.46,739.8],[24.532,749.7],[24.58,751.8],[24.645,755.9],[24.671,757.1],[24.719,758.4],[24.772,758.4],[24.805,756.6],[24.888,752.1],[24.916,750.8],[24.964,752.3],[25.038,750.0],[25.124,738.9],[25.279,734.6],[25.281,734.1],[25.307,734.6],[25.327,734.1],[25.346,732.7],[25.349,732.7],[25.36,732.2],[25.367,731.7],[25.398,732.2],[25.427,729.8],[25.46,728.3],[25.491,729.8],[25.523,729.3],[25.556,728.8],[25.587,728.8],[25.615,726.9],[25.624,726.9],[25.664,727.4],[25.695,727.4],[25.724,731.2],[25.753,729.3],[25.8,736.5],[25.827,737.0],[25.838,737.9],[25.873,742.3],[25.907,737.5],[25.925,738.4],[25.963,736.5],[25.994,738.4],[26.029,734.6],[26.058,734.1],[26.097,734.6],[26.138,737.0],[26.18,737.0],[26.245,735.1],[26.318,737.0],[26.363,737.0],[26.4,735.1],[26.423,738.9],[26.451,739.4],[26.466,738.9],[26.475,742.8],[26.498,744.7],[26.533,744.7],[26.548,743.2],[26.575,744.7],[26.595,743.2],[26.597,743.7],[26.62,739.4],[26.62,739.4],[26.632,738.9],[26.646,737.9],[26.65,736.0],[26.664,737.0],[26.679,734.6],[26.691,733.6],[26.698,732.7],[26.713,732.2],[26.727,731.2],[26.755,669.7],[26.772,673.1],[26.793,680.8],[26.81,681.2],[26.845,694.2],[26.875,703.3],[26.903,708.6],[26.923,711.0],[26.938,713.9],[26.96,717.3],[26.974,721.6],[26.983,724.5],[26.995,726.4],[27.009,727.9],[27.013,728.3],[27.03,730.3],[27.042,731.2],[27.066,730.3],[27.085,729.3],[27.103,728.3],[27.133,728.3],[27.163,728.3],[27.188,725.5],[27.228,724.5],[27.24,725.5],[27.27,730.7],[27.287,734.1],[27.32,736.0],[27.337,732.7],[27.372,731.2],[27.391,733.1],[27.418,729.3],[27.451,724.5],[27.487,725.0],[27.501,723.5],[27.517,723.0],[27.551,725.5],[27.553,725.5],[27.561,725.5],[27.588,726.4],[27.608,723.5],[27.634,718.2],[27.634,718.2],[27.712,720.0],[27.803,723.6],[27.852,724.8],[27.9,724.6],[27.997,721.5],[28.093,723.3],[28.099,724.2],[28.131,721.4],[28.159,720.9],[28.207,722.8],[28.232,723.4],[28.246,723.3],[28.292,719.9],[28.319,718.7],[28.378,717.3],[28.432,715.9],[28.456,714.8],[28.476,712.9],[28.511,709.7],[28.522,708.9],[28.536,706.5],[28.555,703.3],[28.602,699.5],[28.637,695.2],[28.681,688.5],[28.722,685.2],[28.748,681.8],[28.771,679.1],[28.795,675.4],[28.895,668.7],[28.922,668.1],[29.011,659.2],[29.053,652.8],[29.069,650.3],[29.079,648.4],[29.106,645.3],[29.129,641.5],[29.152,637.3],[29.212,632.9],[29.234,632.1],[29.292,628.0],[29.305,626.4],[29.333,627.6],[29.34,627.0],[29.38,624.7],[29.391,623.3],[29.462,615.6],[29.489,612.1],[29.53,607.0],[29.59,593.3],[29.608,589.6],[29.626,587.0],[29.652,584.9],[29.701,574.0],[29.718,570.4],[29.736,568.5],[29.778,561.3],[29.795,560.7],[29.825,565.9],[29.853,566.1],[29.861,564.7],[29.872,563.0],[29.904,558.5],[29.941,553.5],[29.96,551.6],[29.978,550.1],[30.002,548.5],[30.02,547.6],[30.036,546.2],[30.051,545.7],[30.063,544.7],[30.103,544.9],[30.137,544.3],[30.208,542.0],[30.222,541.3],[30.252,535.1],[30.322,518.1],[30.354,504.7],[30.363,500.7],[30.381,495.1],[30.399,486.7],[30.453,467.8],[30.516,478.3],[30.53,481.9],[30.539,486.4],[30.544,486.0],[30.549,486.4],[30.559,481.9],[30.572,478.3],[30.635,467.8],[30.689,486.7],[30.708,495.1],[30.725,500.7],[30.734,504.7],[30.767,518.1],[30.837,535.1],[30.866,541.3],[30.88,542.0],[30.951,544.3],[30.985,544.9],[31.038,544.6],[31.069,544.9],[31.104,544.8],[31.139,547.9],[31.187,548.1],[31.202,547.7],[31.244,542.7],[31.286,534.1],[31.309,529.4],[31.323,526.6],[31.352,518.2],[31.393,507.4],[31.406,519.7],[31.411,521.7],[31.423,518.8],[31.43,517.3],[31.459,521.2],[31.472,524.1],[31.483,524.5],[31.495,524.5],[31.5,525.5],[31.51,526.0],[31.523,526.9],[31.53,528.9],[31.538,528.4],[31.543,527.9],[31.554,528.4],[31.559,528.9],[31.564,528.9],[31.57,528.4],[31.576,528.4],[31.584,532.2],[31.594,532.2],[31.6,530.3],[31.609,532.2],[31.609,529.3],[31.614,528.4],[31.616,527.4],[31.624,525.0],[31.632,524.1],[31.635,524.5],[31.643,524.1],[31.65,526.0],[31.659,526.5],[31.663,525.5],[31.669,522.6],[31.674,520.7],[31.681,522.6],[31.681,517.8],[31.693,503.4],[31.704,511.1],[31.707,512.5],[31.715,505.3],[31.725,505.3],[31.733,503.4],[31.741,504.3],[31.754,502.9],[31.767,501.9],[31.772,499.5],[31.78,501.9],[31.791,501.5],[31.796,500.5],[31.809,501.0],[31.832,500.5],[31.837,501.5],[31.837,499.5],[31.84,500.5],[31.851,509.6],[31.858,514.0],[31.87,507.7],[31.88,507.7],[31.888,507.7],[31.898,507.7],[31.947,514.0],[31.952,513.0],[31.971,510.1],[32.006,511.1],[32.011,512.5],[32.017,513.5],[32.024,514.4],[32.039,515.9],[32.044,514.4],[32.064,518.3],[32.079,518.3],[32.092,519.2],[32.099,520.2],[32.111,522.1],[32.115,526.0],[32.137,532.7],[32.144,536.6],[32.146,543.3],[32.15,541.8],[32.157,539.4],[32.169,539.4],[32.181,540.4],[32.205,541.8],[32.24,559.7],[32.303,569.0],[32.336,574.5],[32.393,579.4],[32.408,585.2],[32.431,590.5],[32.496,596.1],[32.509,597.3],[32.52,599.9],[32.529,602.3],[32.542,605.3],[32.544,604.9],[32.568,611.2],[32.583,614.4],[32.604,617.0],[32.624,620.9],[32.659,624.7],[32.731,629.0],[32.774,632.2],[32.831,638.8],[32.885,648.5],[32.914,653.2],[32.934,656.9],[32.948,659.3],[32.968,659.3],[33.06,671.6],[33.073,672.9],[33.096,671.6],[33.11,672.8],[33.129,673.0],[33.138,670.3],[33.173,661.9],[33.208,646.1],[33.228,636.9],[33.264,628.6],[33.34,622.7],[33.387,631.5],[33.421,635.9],[33.448,638.7],[33.472,637.9],[33.51,642.4],[33.527,641.9],[33.548,636.6],[33.569,637.5],[33.57,637.5],[33.607,642.7],[33.63,642.9],[33.656,644.0],[33.677,644.8],[33.762,638.9],[33.797,655.2],[33.86,636.6],[33.878,631.2],[33.917,633.8],[33.948,627.7],[33.988,618.5],[34.066,643.8],[34.086,647.0],[34.108,646.3],[34.13,649.4],[34.159,663.2],[34.175,672.5],[34.217,696.2],[34.24,705.7],[34.27,700.2],[34.357,677.4],[34.393,675.0],[34.408,675.6],[34.422,679.7],[34.449,691.2],[34.499,710.3],[34.528,719.6],[34.567,732.9],[34.649,766.9],[34.674,773.7],[34.717,781.7],[34.741,788.9],[34.825,794.7],[34.85,796.0],[34.863,796.6],[34.898,798.1],[35.011,796.0],[35.036,793.4],[35.059,789.4],[35.082,783.7],[35.105,778.3],[35.157,764.7],[35.18,759.8],[35.245,752.8],[35.274,748.0],[35.298,743.0],[35.341,733.2],[35.4,719.3],[35.418,713.8],[35.456,704.1],[35.475,700.4],[35.515,692.9],[35.531,690.0],[35.551,691.4],[35.572,698.0],[35.604,702.7],[35.625,701.6],[35.651,697.2],[35.677,691.9],[35.702,686.5],[35.722,680.7],[35.76,666.6],[35.806,648.7],[35.849,634.8],[35.891,625.3],[35.942,616.8],[35.953,612.6],[35.971,608.5],[36.0,607.6],[36.065,608.5],[36.085,607.0],[36.105,605.9],[36.12,602.3],[36.176,585.7],[36.285,553.1],[36.307,546.4],[36.365,531.6],[36.435,517.0],[36.48,509.4],[36.514,504.3],[36.546,498.4],[36.663,473.7],[36.729,465.7],[36.746,463.2],[36.764,460.7],[36.765,460.6],[36.778,458.8],[36.796,456.6],[36.817,453.9],[36.841,449.9],[36.854,446.4],[36.865,443.9],[36.874,443.8],[36.893,444.4],[36.906,444.6],[36.917,444.4],[36.926,444.9],[36.941,442.3],[36.959,438.5],[36.976,434.7],[36.996,431.3],[37.013,429.2],[37.027,427.8],[37.041,429.2],[37.056,429.9],[37.074,430.2],[37.093,430.3],[37.118,431.5],[37.143,432.9],[37.166,433.7],[37.199,434.2],[37.222,433.7],[37.241,432.0],[37.258,431.1],[37.287,429.5],[37.302,428.7],[37.308,428.0],[37.327,425.7],[37.352,422.9],[37.369,420.1],[37.377,418.7],[37.394,417.5],[37.405,415.6],[37.43,410.9],[37.449,408.2],[37.489,403.1],[37.518,398.4],[37.57,393.3],[37.609,390.2],[37.631,389.1],[37.658,387.7],[37.688,387.1],[37.708,386.8],[37.719,386.7],[37.736,386.9],[37.754,387.0],[37.778,385.4],[37.8,384.5],[37.847,381.8],[37.893,380.0],[37.928,376.5],[37.984,371.7],[38.044,368.6],[38.096,366.1],[38.123,363.5],[38.142,359.6],[38.156,356.9],[38.172,354.7],[38.192,353.5],[38.202,352.5],[38.216,350.5],[38.233,348.7],[38.254,349.5],[38.276,349.0],[38.308,348.2],[38.323,348.1],[38.344,348.9],[38.374,351.0],[38.391,350.9],[38.408,350.4],[38.424,349.9],[38.434,349.1],[38.442,348.6],[38.456,349.6],[38.475,351.9],[38.508,357.4],[38.552,366.2],[38.578,372.6],[38.588,374.5],[38.606,374.1],[38.623,372.4],[38.633,373.0],[38.656,378.7],[38.671,382.0],[38.686,383.5],[38.708,380.4],[38.724,377.6],[38.743,375.0],[38.744,374.7],[38.755,377.7],[38.768,380.1],[38.788,383.4],[38.8,385.5],[38.808,386.1],[38.829,389.9],[38.858,391.9],[38.907,387.1],[38.939,383.9],[38.966,382.4],[38.996,382.4],[39.022,381.8],[39.041,380.5],[39.064,381.6],[39.085,380.7],[39.107,382.1],[39.119,383.0],[39.142,380.2],[39.183,374.9],[39.21,371.6],[39.246,367.7],[39.282,364.5],[39.325,362.1],[39.356,361.8],[39.385,360.4],[39.419,360.7],[39.443,358.6],[39.485,355.3],[39.522,353.6],[39.552,355.1],[39.573,355.1],[39.595,355.4],[39.618,360.3],[39.643,362.9],[39.676,363.4],[39.704,366.4],[39.722,365.5],[39.738,365.9],[39.767,366.2],[39.79,365.1],[39.822,368.7],[39.859,372.6],[39.894,373.3],[39.938,369.0],[39.965,366.3],[40.003,365.0],[40.046,366.1],[40.078,364.6],[40.12,369.5],[40.148,370.6],[40.164,369.0],[40.198,370.3],[40.234,373.9],[40.277,372.4],[40.313,379.4],[40.341,385.4],[40.365,389.6],[40.387,395.6],[40.416,399.6],[40.446,401.9],[40.452,403.2],[40.468,408.9],[40.489,416.1],[40.513,407.4],[40.523,404.0],[40.528,402.9],[40.543,402.5],[40.567,399.2],[40.596,401.6],[40.657,407.5],[40.676,402.5],[40.708,400.7],[40.758,402.6],[40.798,390.9],[40.831,386.1],[40.842,387.3],[40.897,406.8],[40.913,410.9],[40.954,418.7],[41.034,414.5],[41.067,423.9],[41.079,425.6],[41.087,425.0],[41.101,421.7],[41.115,420.4],[41.132,425.3],[41.141,426.1],[41.182,420.7],[41.235,431.3],[41.32,456.5],[41.343,454.9],[41.384,452.2],[41.427,443.0],[41.449,440.4],[41.465,442.2],[41.545,456.3],[41.592,462.8],[41.615,466.6],[41.628,465.9],[41.663,461.2],[41.681,458.4],[41.684,457.6],[41.723,458.3],[41.809,465.4],[41.854,468.7],[41.876,469.1],[41.961,472.6],[41.989,472.9],[42.077,476.6],[42.135,479.5],[42.186,482.1],[42.248,484.5],[42.257,486.1],[42.266,486.9],[42.331,490.9],[42.412,493.9],[42.485,494.4],[42.525,493.1],[42.559,493.7],[42.607,497.9],[42.647,500.1],[42.673,503.1],[42.718,515.0],[42.742,520.7],[42.778,524.5],[42.857,523.2],[42.895,524.7],[42.922,527.7],[43.043,546.8],[43.076,546.5],[43.103,549.9],[43.209,568.9],[43.313,584.5],[43.335,588.8],[43.431,603.0],[43.469,610.1],[43.493,613.2],[43.55,621.4],[43.581,624.7],[43.618,625.3],[43.65,634.0],[43.726,649.0],[43.743,651.7],[43.778,655.3],[43.809,655.7],[43.891,673.2],[43.958,687.9],[43.966,689.1],[44.175,731.8],[44.221,736.6],[44.228,737.7],[44.305,750.8],[44.34,754.5],[44.361,755.1],[44.414,759.1],[44.458,764.9],[44.506,767.2],[44.549,764.7],[44.662,781.8],[44.734,788.5],[44.838,784.6],[44.859,783.2],[44.882,781.8],[44.91,780.2],[44.951,778.2],[45.03,771.6],[45.055,769.2],[45.106,764.0],[45.117,762.8],[45.132,761.0],[45.142,760.2],[45.153,759.8],[45.175,759.4],[45.248,756.1],[45.261,755.5],[45.283,754.7],[45.295,753.5],[45.303,754.0],[45.326,757.2],[45.354,759.4]];
+    const WAYPOINTS = [{"name":"Ba","desc":"Ba","sym":"City (Small)","lat":44.153666,"lon":20.190017,"ele":327.1,"km":40.0,"near_m":144.1,"track_ele":365.0},{"name":"Brajići","desc":"Brajitshi","sym":"City (Small)","lat":44.101074,"lon":20.207505,"ele":735.2,"km":12.87,"near_m":43.0,"track_ele":741.1},{"name":"Crkva Svetog Ilije","desc":"Crkva Svetog Ilije (Church, Place of Worship)","sym":"Church","lat":44.149868,"lon":20.188859,"ele":389.0,"km":40.54,"near_m":34.4,"track_ele":402.5},{"name":"Crvena kosa","desc":"mixed forest","sym":"Triangle, Green","lat":44.147916,"lon":20.185005,"ele":null,"km":43.62,"near_m":76.5,"track_ele":625.3},{"name":"Debelo brdo (745 m)","desc":"mixed forest","sym":"Waypoint","lat":44.138133,"lon":20.26217,"ele":null,"km":27.23,"near_m":178.4,"track_ele":724.5},{"name":"Dobro polje","desc":"Unknown Area","sym":"Triangle, Green","lat":44.136274,"lon":20.189029,"ele":null,"km":5.57,"near_m":220.8,"track_ele":779.8},{"name":"Gornji Banjani","desc":"Gornji Banjani","sym":"City (Small)","lat":44.102232,"lon":20.264904,"ele":466.8,"km":19.58,"near_m":98.5,"track_ele":479.4},{"name":"KT-1 Planinarski dom „Čika Duško Jovanović\" (640m)","desc":"Planinarski dom „Chika Dushko Jovanovitsh\" (640)","sym":"Lodging","lat":44.142702,"lon":20.245056,"ele":628.0,"km":29.33,"near_m":12.8,"track_ele":627.6},{"name":"KT-10 Suvobor (866 m)","desc":"Suvobor (866)","sym":"Summit","lat":44.121072,"lon":20.181885,"ele":846.0,"km":8.48,"near_m":4.7,"track_ele":847.9},{"name":"KT-11 Danilov vrh (842 m)","desc":"Danilov vrh (842)","sym":"Summit","lat":44.102855,"lon":20.202827,"ele":823.0,"km":12.18,"near_m":8.5,"track_ele":822.2},{"name":"KT-12 Toplike","desc":"broad-leaved forest","sym":"Scenic Area","lat":44.105814,"lon":20.225392,"ele":null,"km":15.66,"near_m":3.3,"track_ele":555.7},{"name":"KT-13 Crveno vrelo","desc":"[Unclassified Road]","sym":"Drinking Water","lat":44.128774,"lon":20.246211,"ele":669.0,"km":23.96,"near_m":10.6,"track_ele":666.9},{"name":"KT-14 Čanak","desc":"mixed forest","sym":"Drinking Water","lat":44.139521,"lon":20.263931,"ele":null,"km":26.73,"near_m":10.3,"track_ele":731.2},{"name":"KT-2 Rajac","desc":"Rajac, 847 m","sym":"Summit","lat":44.136329,"lon":20.224822,"ele":847.0,"km":1.79,"near_m":1.7,"track_ele":839.5},{"name":"KT-3 Vodopad Crkvine","desc":"Mixed forest","sym":"Flag, Blue","lat":44.148924,"lon":20.248221,"ele":487.8,"km":30.54,"near_m":4.1,"track_ele":486.4},{"name":"KT-4 Purina crkva","desc":"Mixed forest","sym":"Scenic Area","lat":44.146817,"lon":20.242937,"ele":null,"km":31.69,"near_m":2.9,"track_ele":503.4},{"name":"KT-5 Provalija","desc":"Mixed forest","sym":"Scenic Area","lat":44.143755,"lon":20.224157,"ele":644.0,"km":34.13,"near_m":7.6,"track_ele":649.4},{"name":"KT-6 Kojića kom","desc":"Land","sym":"Drinking Water","lat":44.141425,"lon":20.220674,"ele":796.0,"km":34.86,"near_m":5.0,"track_ele":796.6},{"name":"KT-7 izvor reke Ljig","desc":"Spring","sym":"Drinking Water","lat":44.149139,"lon":20.188865,"ele":null,"km":40.49,"near_m":12.4,"track_ele":416.1},{"name":"KT-8 Planinarska kuća „Dobra Voda“ (758m)","desc":"Planinarska kutsha „Dobra Voda“ (758)","sym":"Lodge","lat":44.135363,"lon":20.19182,"ele":761.0,"km":5.47,"near_m":5.5,"track_ele":759.9},{"name":"KT-9 Šiljak (848 m)","desc":"Veliki Shiljak (848)","sym":"Summit","lat":44.13017,"lon":20.183387,"ele":830.0,"km":6.75,"near_m":5.3,"track_ele":832.1},{"name":"Polom","desc":"Unknown Area","sym":"City (Small)","lat":44.106413,"lon":20.24774,"ele":null,"km":18.23,"near_m":444.6,"track_ele":568.9},{"name":"r. Velika Dičina","desc":"stream","sym":"Flag, Blue","lat":44.108265,"lon":20.215675,"ele":null,"km":14.71,"near_m":23.7,"track_ele":565.6},{"name":"Rajačka česma","desc":"Rajachka chesma (Drinking Water/Fountain)","sym":"Drinking Water","lat":44.141221,"lon":20.245013,"ele":643.0,"km":29.11,"near_m":11.6,"track_ele":645.3},{"name":"Rajačke strane","desc":"mixed forest","sym":"Triangle, Green","lat":44.148428,"lon":20.240707,"ele":null,"km":32.14,"near_m":152.3,"track_ele":532.7},{"name":"Ruda glava (582m)","desc":"Ruda glava (582)","sym":"Waypoint","lat":44.104486,"lon":20.260828,"ele":573.2,"km":19.33,"near_m":174.7,"track_ele":493.4},{"name":"Spomenik 1300 kaplara","desc":"Spomenik 1300 kaplara (Monument)","sym":"Scenic Area","lat":44.142766,"lon":20.244305,"ele":624.0,"km":29.38,"near_m":13.1,"track_ele":624.7},{"name":"Spomenik borcima Suvoborsko-Kolubarske bitke","desc":"Spomenik borcima Suvoborsko-Kolubarske bitke (Memorial)","sym":"Scenic Area","lat":44.121051,"lon":20.181992,"ele":845.0,"km":8.48,"near_m":12.9,"track_ele":847.9},{"name":"Točila","desc":"Unknown Area","sym":"Triangle, Green","lat":44.151959,"lon":20.200839,"ele":null,"km":39.11,"near_m":223.1,"track_ele":382.1},{"name":"Velika Provalija","desc":"mixed forest","sym":"Triangle, Green","lat":44.144277,"lon":20.228258,"ele":null,"km":33.55,"near_m":229.5,"track_ele":636.6},{"name":"Đurđevići","desc":"Unknown Area","sym":"City (Small)","lat":44.155112,"lon":20.175527,"ele":null,"km":42.13,"near_m":51.8,"track_ele":479.5},{"name":"Šiblje","desc":"mixed forest","sym":"Triangle, Green","lat":44.15026,"lon":20.248417,"ele":null,"km":30.45,"near_m":132.0,"track_ele":467.8}];
+    const CONTROL_SEQUENCE = [{"label":"Старт","name":"Рајачка чесма / простор Планинарског дома","km":0.0,"ele":648.0,"note":"почетак GPX трага"},{"label":"KT-2","name":"KT-2 Рајац","km":1.79,"ele":839.5,"note":""},{"label":"KT-8","name":"KT-8 Планинарска кућа „Добра вода”","km":5.47,"ele":759.9,"note":""},{"label":"KT-9","name":"KT-9 Шиљак","km":6.75,"ele":832.1,"note":""},{"label":"KT-10","name":"KT-10 Сувобор","km":8.48,"ele":847.9,"note":""},{"label":"KT-11","name":"KT-11 Данилов врх","km":12.18,"ele":822.2,"note":""},{"label":"KT-12","name":"KT-12 Топлике","km":15.66,"ele":555.7,"note":""},{"label":"KT-13","name":"KT-13 Црвено врело","km":23.96,"ele":666.9,"note":""},{"label":"KT-14","name":"KT-14 Чанак","km":26.73,"ele":731.2,"note":""},{"label":"KT-1","name":"KT-1 Планинарски дом „Чика Душко Јовановић”","km":29.33,"ele":627.6,"note":""},{"label":"KT-3","name":"KT-3 Водопад Црквине","km":30.54,"ele":486.4,"note":""},{"label":"KT-4","name":"KT-4 Пурина црква","km":31.69,"ele":503.4,"note":""},{"label":"KT-5","name":"KT-5 Провалија","km":34.13,"ele":649.4,"note":""},{"label":"KT-6","name":"KT-6 Којића ком","km":34.86,"ele":796.6,"note":""},{"label":"KT-7","name":"KT-7 Извор реке Љиг","km":40.49,"ele":416.1,"note":""},{"label":"Циљ","name":"Добра вода / завршетак GPX трага","km":45.35,"ele":759.4,"note":"поновни долазак у зону КТ-8"}];
+
+    function initMap() {
+      if (!window.L) return;
+      const isTouch = window.matchMedia('(pointer: coarse)').matches;
+      const map = window.rtsMap = L.map('rts-map', {
+        scrollWheelZoom: false,
+        dragging: !isTouch,
+        tap: false,
+        touchZoom: true,
+        doubleClickZoom: true,
+        zoomControl: true
+      });
+      L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        maxZoom: 18,
+        attribution: '&copy; OpenStreetMap contributors'
+      }).addTo(map);
+      const latlngs = ROUTE.map(p => [p[0], p[1]]); window.rtsRouteLatLngs = latlngs;
+      L.polyline(latlngs, {color:'#ffffff',weight:8,opacity:.86,lineJoin:'round',lineCap:'round'}).addTo(map);
+      L.polyline(latlngs, {color:'#d7191c',weight:4,opacity:.95,lineJoin:'round',lineCap:'round'}).addTo(map);
+      const startIcon = L.divIcon({className:'', html:'<div class="rts-divicon start">S</div>', iconSize:[28,28], iconAnchor:[14,14]});
+      const finishIcon = L.divIcon({className:'', html:'<div class="rts-divicon start">C</div>', iconSize:[28,28], iconAnchor:[14,14]});
+      L.marker([ROUTE[0][0],ROUTE[0][1]], {icon:startIcon}).bindPopup('<strong>Старт GPX трага</strong><br>Рајачка чесма / простор Планинарског дома<br>' + ROUTE[0][2] + ' m').addTo(map);
+      const last = ROUTE[ROUTE.length-1];
+      L.marker([last[0],last[1]], {icon:finishIcon}).bindPopup('<strong>Циљ GPX трага</strong><br>Добра вода / зона КТ-8<br>' + last[2] + ' m').addTo(map);
+      WAYPOINTS.forEach(w => {
+        const kt = /^KT-/.test(w.name);
+        let label = kt ? (w.name.match(/^KT-(\d+)/)||['',''])[1] : '•';
+        const cls = kt ? 'rts-divicon' : 'rts-divicon poi';
+        const icon = L.divIcon({className:'', html:'<div class="'+cls+'">'+label+'</div>', iconSize:[28,28], iconAnchor:[14,14]});
+        const txt = '<strong>'+escapeHtml(w.name)+'</strong><br>' +
+          (w.ele ? 'Висина тачке: '+w.ele+' m<br>' : '') +
+          'Најближе трагу: '+w.km+' km' + (w.near_m ? '<br>Одступање од трага: '+w.near_m+' m' : '');
+        L.marker([w.lat,w.lon], {icon}).bindPopup(txt).addTo(map);
+      });
+      map.fitBounds(L.latLngBounds(latlngs).pad(.08));
+      if (isTouch) {
+        const note = L.control({position:'bottomleft'});
+        note.onAdd = function() { const div = L.DomUtil.create('div'); div.style.cssText='padding:8px 10px;background:rgba(255,255,255,.92);border-radius:10px;border:1px solid rgba(0,0,0,.12);font-size:12px;color:#26352a;box-shadow:0 4px 12px rgba(0,0,0,.12)'; div.innerHTML='За зумирање користи два прста.'; return div; };
+        note.addTo(map);
+      }
+    }
+    function escapeHtml(s) { return String(s).replace(/[&<>"']/g, m => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'}[m])); }
+    function drawProfile() {
+      const svg = document.getElementById('rts-profile-svg'); if (!svg || !PROFILE.length) return;
+      const W=980,H=320, ml=54,mr=22,mt=30,mb=48;
+      const maxD = Math.max(...PROFILE.map(p=>p[0]));
+      const minE = Math.min(...PROFILE.map(p=>p[1]));
+      const maxE = Math.max(...PROFILE.map(p=>p[1]));
+      const padE = 35;
+      const yMin = Math.floor((minE-padE)/50)*50, yMax = Math.ceil((maxE+padE)/50)*50;
+      const x = d => ml + (d/maxD)*(W-ml-mr);
+      const y = e => mt + (yMax-e)/(yMax-yMin)*(H-mt-mb);
+      const pts = PROFILE.map(p => x(p[0]).toFixed(1)+','+y(p[1]).toFixed(1)).join(' ');
+      const area = ml+','+y(yMin)+' '+pts+' '+x(maxD)+','+y(yMin);
+      let g='';
+      for(let e=Math.ceil(yMin/100)*100; e<=yMax; e+=100){
+        g += `<line x1="${ml}" y1="${y(e).toFixed(1)}" x2="${W-mr}" y2="${y(e).toFixed(1)}" stroke="#e5ebdf" stroke-width="1"/>`;
+        g += `<text x="12" y="${(y(e)+4).toFixed(1)}" fill="#738074" font-size="12">${e} m</text>`;
+      }
+      for(let d=0; d<=maxD; d+=10){
+        g += `<line x1="${x(d).toFixed(1)}" y1="${mt}" x2="${x(d).toFixed(1)}" y2="${H-mb}" stroke="#edf2e9" stroke-width="1"/>`;
+        g += `<text x="${x(d).toFixed(1)}" y="${H-18}" fill="#667366" font-size="12" text-anchor="middle">${d} km</text>`;
+      }
+      const labelSet = CONTROL_SEQUENCE.filter(c => ['KT-2','KT-8','KT-10','KT-1','KT-7','Циљ'].includes(c.label));
+      labelSet.forEach(c => {
+        const xx=x(c.km);
+        g += `<line x1="${xx.toFixed(1)}" y1="${mt}" x2="${xx.toFixed(1)}" y2="${H-mb}" stroke="#c9a24e" stroke-width="1" stroke-dasharray="4 4" opacity=".72"/>`;
+        g += `<text x="${xx.toFixed(1)}" y="22" fill="#0f3b21" font-size="11" font-weight="700" text-anchor="middle">${c.label}</text>`;
+      });
+      svg.innerHTML = `<rect x="0" y="0" width="${W}" height="${H}" fill="#fff"/>${g}<polygon points="${area}" fill="rgba(31,122,59,.12)"/><polyline points="${pts}" fill="none" stroke="#1f7a3b" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/><line x1="${ml}" y1="${H-mb}" x2="${W-mr}" y2="${H-mb}" stroke="#bcc8b8"/><line x1="${ml}" y1="${mt}" x2="${ml}" y2="${H-mb}" stroke="#bcc8b8"/>`;
+    }
+    document.addEventListener('DOMContentLoaded', () => { initMap(); drawProfile(); setTimeout(() => { if(window.rtsSelectActionDay) window.rtsSelectActionDay('day1'); }, 350); });
+  </script>
+<script id="rts-action-days-js-3005">
+(function(){
+  const DAY_INFO = {
+    day1:{
+      title:'Први дан — Рајачка трансверзала',
+      text:'Планинарски дом – врх Рајца – Добра вода – Шиљак – Сувобор – Данилов врх – Топлике – Горњи Бањани – Црвено врело – Чанак – Планинарски дом.',
+      note:'Полазак је у 08.00. Укупна дужина је 29 km, са око 900 m успона и 900 m спуста. Планирано време кретања је 10–11 сати.',
+      distance:'29 km',
+      elev:'+900 / -900 m',
+      time:'10–11 h',
+      ranges:[[0,29.33,'#d7191c','Први дан']]
+    },
+    day2:{
+      title:'Други дан — ка извору Љига и селу Ба',
+      text:'Планинарски дом – Слап – Пурина црква – Провалија – Којића ком – извор Љига – село Ба. У зависности од превоза, акција се може завршити у селу Ба или продужити пешке ка Доброј води и дому.',
+      note:'Понети довољну количину воде. Постоји могућност да до KT-5 Провалија не може да се дође услед оборених стабала. На оригиналном GPX трагу истиче се део од KT-1 ка KT-7 и опционо продужавање ка Доброј води.',
+      distance:'13 km',
+      elev:'+550 / -700 m',
+      time:'око 5 h',
+      ranges:[[29.33,40.49,'#2d7c9f','Други дан — основна деоница'],[40.49,45.35,'#c9a24e','Опционо продужавање ка Доброј води']]
+    }
+  };
+  function esc(s){return String(s).replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'}[m]));}
+  function pointAtKm(km){
+    if(!window.ROUTE || !ROUTE.length) return null;
+    if(km<=ROUTE[0][3]) return ROUTE[0];
+    if(km>=ROUTE[ROUTE.length-1][3]) return ROUTE[ROUTE.length-1];
+    for(let i=1;i<ROUTE.length;i++){
+      const a=ROUTE[i-1], b=ROUTE[i];
+      if(b[3]>=km){
+        const t=(km-a[3])/((b[3]-a[3])||1);
+        return [
+          a[0]+(b[0]-a[0])*t,
+          a[1]+(b[1]-a[1])*t,
+          a[2]+(b[2]-a[2])*t,
+          km
+        ];
+      }
+    }
+    return ROUTE[ROUTE.length-1];
+  }
+  function segment(start,end){
+    const pts=[];
+    const first=pointAtKm(start); if(first) pts.push(first);
+    for(const p of ROUTE){ if(p[3]>start && p[3]<end) pts.push(p); }
+    const last=pointAtKm(end); if(last) pts.push(last);
+    return pts.map(p=>[p[0],p[1]]);
+  }
+  window.rtsSelectActionDay = function(day){
+    const info=DAY_INFO[day] || DAY_INFO.day1;
+    document.querySelectorAll('.rts-action-tab').forEach(btn=>btn.classList.toggle('is-active', btn.dataset.rtsDay===day));
+    const set=(id,val)=>{ const el=document.getElementById(id); if(el) el.textContent=val; };
+    set('rts-action-title',info.title);
+    set('rts-action-text',info.text);
+    set('rts-action-note',info.note);
+    set('rts-action-distance',info.distance);
+    set('rts-action-elev',info.elev);
+    set('rts-action-time',info.time);
+    if(!window.rtsMap || !window.L || !window.ROUTE) return;
+    if(window.rtsDayLayer){ window.rtsMap.removeLayer(window.rtsDayLayer); }
+    window.rtsDayLayer=L.layerGroup().addTo(window.rtsMap);
+    const all=[];
+    info.ranges.forEach((r,idx)=>{
+      const pts=segment(r[0],r[1]);
+      pts.forEach(p=>all.push(p));
+      L.polyline(pts,{color:'#ffffff',weight:12,opacity:.85,lineJoin:'round',lineCap:'round'}).addTo(window.rtsDayLayer);
+      L.polyline(pts,{color:r[2],weight:7,opacity:.98,lineJoin:'round',lineCap:'round',dashArray:idx===0?null:'10 10'}).addTo(window.rtsDayLayer);
+      const mid=pts[Math.floor(pts.length/2)];
+      if(mid){
+        L.marker(mid,{icon:L.divIcon({className:'',html:'<div class="rts-divicon poi">'+(idx+1)+'</div>',iconSize:[28,28],iconAnchor:[14,14]})})
+          .bindPopup('<strong>'+esc(r[3])+'</strong><br>'+r[0]+'–'+r[1]+' km').addTo(window.rtsDayLayer);
+      }
+    });
+    const card=document.querySelector('.rts-map-card'); if(card) card.classList.add('is-day-highlighted');
+    if(all.length){
+      window.rtsMap.fitBounds(L.latLngBounds(all).pad(.12));
+      setTimeout(()=>{ try{ window.rtsMap.invalidateSize(); }catch(e){} },150);
+    }
+  };
+  document.addEventListener('DOMContentLoaded',function(){
+    document.querySelectorAll('.rts-action-tab').forEach(btn=>{
+      btn.addEventListener('click',()=>window.rtsSelectActionDay(btn.dataset.rtsDay));
+    });
+  });
+})();
+</script>
+<style id="rajac-admin-edit-style">.rajac-admin-edit-button{position:fixed;right:16px;bottom:16px;z-index:99999;display:none;align-items:center;justify-content:center;min-height:42px;padding:0 16px;border-radius:999px;background:#0d1b2a;color:#e0c678!important;text-decoration:none!important;font:900 12px/1 Arial,sans-serif;letter-spacing:.10em;text-transform:uppercase;box-shadow:0 12px 30px rgba(0,0,0,.22);border:1px solid rgba(224,198,120,.42)}</style><script id="rajac-admin-edit-script">(function(){try{if(document.cookie.indexOf("rajac_vesti_admin=1")===-1)return;var p=location.pathname.split("/").filter(Boolean);var slug=p[p.length-1]||"";if(!slug||slug==="rajac-vesti")return;var a=document.createElement("a");a.className="rajac-admin-edit-button";a.href="https://piorajac.rs/rajac-vesti/admin-edit.php?slug="+encodeURIComponent(slug);a.textContent="EDIT";a.style.display="inline-flex";document.body.appendChild(a);}catch(e){}})();</script>
+<!-- SITE_EDITOR_ADMIN_BAR_START -->
+<script defer="" src="/admin-site-editor.php?admin_bar_js=1"></script>
+<!-- SITE_EDITOR_ADMIN_BAR_END -->
+<button aria-label="На врх стране" id="rajac-totop" title="На врх" type="button">↑</button><style id="rajac-totop-css">#rajac-totop{position:fixed;right:16px;bottom:16px;z-index:10000;width:46px;height:46px;border-radius:999px;border:1px solid rgba(255,255,255,.4);background:rgba(20,30,40,.30);-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);color:#fff;font-size:22px;line-height:1;cursor:pointer;display:flex;align-items:center;justify-content:center;opacity:0;visibility:hidden;transition:opacity .25s,visibility .25s,background .2s;box-shadow:0 6px 20px rgba(0,0,0,.25);-webkit-tap-highlight-color:transparent}#rajac-totop.show{opacity:1;visibility:visible}#rajac-totop:hover{background:rgba(20,30,40,.55)}@media(max-width:1024px){#rajac-totop{right:12px;bottom:12px;width:44px;height:44px}}</style><script>(function(){var b=document.getElementById("rajac-totop");if(!b)return;function o(){if((window.pageYOffset||document.documentElement.scrollTop)>320)b.classList.add("show");else b.classList.remove("show");}window.addEventListener("scroll",o,{passive:true});o();b.addEventListener("click",function(){window.scrollTo({top:0,behavior:"smooth"});});})();</script></body>
+</html>

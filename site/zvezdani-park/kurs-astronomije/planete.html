@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="sr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Посматрање планета — Курс аматерске астрономије — Звездани парк „Рајац“</title>
+<meta name="description" content="Шеста лекција курса аматерске астрономије: како пронаћи планете на небу, шта се види кроз телескоп на Венери, Марсу, Јупитеру и Сатурну, опозиције и конјункције и снимање планета.">
+<link rel="canonical" href="https://piorajac.rs/zvezdani-park/kurs-astronomije/planete.html">
+<meta property="og:type" content="article"><meta property="og:locale" content="sr_RS"><meta property="og:site_name" content="Звездани парк „Рајац“">
+<meta property="og:title" content="Посматрање планета — Курс аматерске астрономије">
+<meta property="og:description" content="Научи да пронађеш, посматраш и снимиш планете.">
+<meta property="og:url" content="https://piorajac.rs/zvezdani-park/kurs-astronomije/planete.html">
+<meta property="og:image" content="https://upload.wikimedia.org/wikipedia/commons/thumb/9/93/Saturn20131017.jpg/1920px-Saturn20131017.jpg">
+<meta name="theme-color" content="#050a14">
+<link rel="stylesheet" href="../assets/fonts.css?v=46">
+<link rel="stylesheet" href="assets/course.css?v=31">
+<style>
+/* Само за лекцију „Посматрање планета“ — блок „Актуелно“ */
+.page-planete .now-sky{margin-top:clamp(28px,4vw,44px);padding:clamp(18px,3vw,26px);border-radius:20px;background:rgba(214,180,106,.07);border:1px solid rgba(214,180,106,.35)}
+.page-planete .now-sky h3{margin:0 0 4px;font:600 clamp(22px,2.6vw,28px)/1.15 var(--serif);color:#fff}
+.page-planete .now-sky>p{margin:0 0 16px;font-size:14.5px;color:rgba(255,255,255,.66)}
+.page-planete .now-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px}
+.page-planete .now-grid div{padding:14px 16px;border-radius:14px;background:rgba(255,255,255,.04);border:1px solid var(--line-dark)}
+.page-planete .now-grid small{display:block;font:700 10.5px/1 var(--sans);letter-spacing:.18em;text-transform:uppercase;color:var(--gold)}
+.page-planete .now-grid strong{display:block;margin:8px 0 4px;font:600 21px/1.2 var(--serif);color:#fff}
+.page-planete .now-grid span{display:block;font-size:14px;line-height:1.5;color:rgba(255,255,255,.72)}
+.page-planete .now-grid .hot{border-color:rgba(214,180,106,.6);background:rgba(214,180,106,.12)}
+</style>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Course","name":"Посматрање планета — Курс аматерске астрономије","description":"Проналажење, посматрање и снимање планета малим телескопом.","inLanguage":"sr","url":"https://piorajac.rs/zvezdani-park/kurs-astronomije/planete.html","provider":{"@type":"Organization","name":"ПИО „Рајац“ — Звездани парк","url":"https://piorajac.rs/zvezdani-park/"},"isAccessibleForFree":true,"educationalLevel":"основна и средња школа, студенти, аматери"}
+</script>
+<style>
+/* Велики футер Звезданог парка (исти као на осталим странама секције; стил преузет из ../assets/site.css) */
+footer.zp-footer{position:relative;padding:0;background:var(--night);color:rgba(255,255,255,.62);font-size:.88rem;line-height:1.6;overflow:hidden}
+footer.zp-footer::before{content:"";position:absolute;inset:0;background:radial-gradient(ellipse at 15% 0%,rgba(214,180,106,.12),transparent 50%);pointer-events:none}
+footer.zp-footer .footer-in{position:relative;max-width:var(--max);margin:0 auto;padding:80px 28px 40px;display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:40px}
+footer.zp-footer h5{margin:0 0 16px;font:700 .68rem/1 var(--sans);letter-spacing:.22em;text-transform:uppercase;color:var(--gold)}
+footer.zp-footer ul{list-style:none;margin:0;padding:0}
+footer.zp-footer li{margin-bottom:9px}
+footer.zp-footer a{color:rgba(255,255,255,.75);text-decoration:none}
+footer.zp-footer a:hover{color:var(--gold-2)}
+footer.zp-footer .f-brand b{display:block;margin:14px 0 10px;font:500 1.9rem/1 var(--serif);color:#fff}
+footer.zp-footer .f-brand p{max-width:320px;margin:0}
+footer.zp-footer .footer-base{position:relative;max-width:var(--max);margin:0 auto;padding:22px 28px 34px;border-top:1px solid var(--line-dark);display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;font-size:.78rem;color:rgba(255,255,255,.45)}
+@media (max-width:900px){footer.zp-footer .footer-in{grid-template-columns:1fr 1fr}}
+@media (max-width:560px){footer.zp-footer .footer-in{grid-template-columns:1fr;padding:56px 20px 32px}footer.zp-footer .footer-base{padding:20px 20px 30px}}
+</style>
+<style>
+/* Литература: три колоне по пет једнаких картица */
+.ins .lib ul{grid-template-rows:repeat(5,1fr)}
+.ins .lib a{min-height:76px;height:100%;box-sizing:border-box}
+.ins .lib>div,.ins .lib ul,.ins .lib li,.ins .lib a>span{min-width:0}
+.ins .lib strong,.ins .lib small{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+</style>
+</head>
+<body class="page-planete lesson-v2" id="top" style="--hero-bg:url('https://upload.wikimedia.org/wikipedia/commons/thumb/9/93/Saturn20131017.jpg/1920px-Saturn20131017.jpg')">
+<a class="skip" href="#sadrzaj">Прескочи на садржај</a>
+<header class="zp-topbar">
+<div class="zp-topbar-in">
+<a aria-label="Звездани парк Рајац — почетна" class="zp-brand" href="../index.html">
+<svg aria-hidden="true" viewbox="0 0 40 40"><circle cx="20" cy="20" fill="none" r="19" stroke="rgba(241,220,166,.45)"></circle><path d="M20 6 22.2 17.8 34 20 22.2 22.2 20 34 17.8 22.2 6 20 17.8 17.8Z" fill="#f1dca6"></path><path d="M20 12.5 21 19 27.5 20 21 21 20 27.5 19 21 12.5 20 19 19Z" fill="#050a14" opacity=".35"></path></svg>
+<span><b>Звездани парк</b><small>РАЈАЦ</small></span>
+</a>
+<button aria-expanded="false" aria-label="Мени" class="zp-menu-btn" type="button"><span></span><span></span><span></span></button>
+<nav aria-label="Главна навигација" class="zp-nav">
+<a href="../index.html">Почетна</a>
+<a href="../lokacija.html">Локација</a>
+<div class="zp-dd"><button aria-expanded="false" class="zp-dd-btn" type="button">Истраживања</button><div class="zp-dd-menu"><a href="../01-uvod-i-rajac.html">Увод и истраживачки рад</a><a href="../02-svetlosno-zagadjenje.html">Светлосно загађење</a><a href="../03-predlog-i-merenja.html">Мерења и простор</a><a href="../04-znacaj-i-upravljanje.html">Значај и управљање</a></div></div>
+<a href="../05-programi-i-turizam.html">Програми</a>
+<a href="../07-opservatorija-i-oprema.html">Опсерваторија</a>
+<a href="../nebo.html">Небо</a>
+<a href="../sta-poneti.html">Шта понети</a>
+<a href="../prognoza.html">Прогноза</a>
+<div class="zp-dd"><button aria-expanded="false" class="zp-dd-btn active" type="button">Курс</button><div class="zp-dd-menu"><a href="astrognozija.html"><span class="n">1</span>Астрогнозија</a><a href="instrumenti.html"><span class="n">2</span>Инструменти за посматрање</a><a href="sunce.html"><span class="n">3</span>Посматрање Сунца</a><a href="meteori.html"><span class="n">4</span>Посматрање метеора</a><a href="komete.html"><span class="n">5</span>Посматрање комета</a><a aria-current="page" class="active" href="planete.html"><span class="n">6</span>Посматрање планета</a><a href="astrofotografija.html"><span class="n">7</span>Астрофотографија</a><a href="promenljive-zvezde.html"><span class="n">8</span>Посматрање променљивих звезда</a></div></div>
+<a class="zp-ext" href="https://piorajac.rs/">ПИО „РАЈАЦ“ ↗</a>
+</nav>
+</div>
+</header>
+<section class="hero hero-planete">
+<div class="wrap hero-in">
+<nav aria-label="Путања" class="crumbs"><a href="../index.html">Звездани парк</a><span aria-hidden="true">/</span><span>Курс аматерске астрономије</span><span aria-hidden="true">/</span><span>Лекција 6 од 8</span></nav>
+<span class="kicker">Курс аматерске астрономије · 06</span>
+<h1>Посматрање планета</h1>
+<p class="lede">Лутајуће звезде нашег неба. Научићеш да пронађеш планете, да на њима видиш мене, појасеве, прстенове и сателите, и да их снимиш мобилним телефоном или камером на телескопу.</p>
+</div>
+</section>
+
+<nav aria-label="Лекције курса" class="path">
+<div class="wrap"><ol>
+<li><a href="astrognozija.html"><span class="n">1</span>Астрогнозија</a></li>
+<li><a href="instrumenti.html"><span class="n">2</span>Инструменти</a></li>
+<li><a href="sunce.html"><span class="n">3</span>Сунце</a></li>
+<li><a href="meteori.html"><span class="n">4</span>Метеори</a></li>
+<li><a href="komete.html"><span class="n">5</span>Комете</a></li>
+<li><a aria-current="page" href="planete.html"><span class="n">6</span>Планете</a></li>
+<li><a href="astrofotografija.html"><span class="n">7</span>Астрофотографија</a></li>
+<li><a href="promenljive-zvezde.html"><span class="n">8</span>Променљиве звезде</a></li>
+</ol></div>
+</nav>
+
+<main id="sadrzaj" class="ins">
+
+<!-- 1. УВОД -->
+<section class="sec" id="uvod">
+<div class="wrap lead-grid">
+  <div>
+    <div class="sec-head"><span class="kicker">Шта су планете</span><h2>Лутајуће звезде</h2></div>
+    <div class="etym"><span>ἀστήρ πλανήτης — <em>лутајућа звезда</em></span></div>
+    <p class="big-q"><b>Планета</b> Сунчевог система је <a href="https://sr.wikipedia.org/sr-ec/Небеско_тело">небеско тело</a> које кружи око Сунца, довољно је масивно да под сопственом гравитацијом добије приближно округао облик и очистило је околину своје <a href="https://sr.wikipedia.org/sr-ec/Орбита">путање</a> од других тела.</p>
+    <p>Ову дефиницију усвојила је <a href="https://www.iau.org/IAU/IAU/Astronomy-FAQs/Pluto.aspx?hkey=c12789d9-1fd1-45db-9ca5-b7ad2bbdc2cd">Међународна астрономска унија</a> 2006. године. Тела која испуњавају прва два услова, али не и трећи, као Плутон, називају се патуљасте планете. Планете које круже око других <a href="https://sr.wikipedia.org/sr-ec/Звезда">звезда</a> зову се егзопланете.</p>
+    <p>За разлику од звезда, планете немају властити извор енергије, тј. у њиховој унутрашњости не долази до <a href="https://sr.wikipedia.org/wiki/Nuklearna_fuzija">нуклеарне фузије</a>. Сијају одбијеном Сунчевом светлошћу.</p>
+    <p>Око планета круже мања тела која називамо месецима, пратиоцима или <a href="https://sr.wikipedia.org/sr-ec/Природни_сателит">природним сателитима</a>.</p>
+  </div>
+  <ol class="rules" aria-label="Исходи учења">
+    <li><span class="ix">1</span><div><strong>Самостално посматрање и снимање</strong><span>Научићеш да пронађеш, посматраш и снимаш планете.</span></div></li>
+    <li><span class="ix">2</span><div><strong>Савремена фото-опрема</strong><span>Користићеш мобилни телефон и камеру на телескопу за снимање планета.</span></div></li>
+    <li><span class="ix">3</span><div><strong>Групна посматрања</strong><span>Учествоваћеш у групним посматрањима и снимањима планета.</span></div></li>
+  </ol>
+</div>
+</section>
+
+<!-- 2. КАКО ПРЕПОЗНАТИ ПЛАНЕТУ -->
+<section class="sec" id="prepoznaj" style="padding-top:0">
+<div class="wrap">
+  <div class="sec-head"><span class="kicker">Голим оком</span><h2>Како да препознаш планету</h2><p>Пет планета лако се види голим оком: Меркур, Венера, Марс, Јупитер и Сатурн. Ево по чему се разликују од звезда.</p></div>
+  <div class="sun-feat">
+    <figure class="sun-photo"><img src="assets/media/768x511-b1fcb1f9.jpg" alt="Две девојке посматрају небо са планетама" loading="lazy" decoding="async" width="768" height="511">
+      <figcaption>Небо препуно светова: пет планета видљиво је и без инструмента.</figcaption></figure>
+    <ul class="hops">
+      <li><strong>Трепери мање од звезда</strong><span>Звезде су тачке и светлуцају. Планете су сићушни дискови, па обично светле мирније, нарочито високо изнад хоризонта. Ниско над хоризонтом и планета може јасно да трепери.</span></li>
+      <li><strong>Креће се међу звездама</strong><span>Из недеље у недељу планета мења положај у односу на звезде, увек дуж <em>еклиптике</em>, кроз зодијачка сазвежђа.</span></li>
+      <li><strong>Сјајнија је од звезда</strong><span>Венера (до <em>−4,6</em>) и Јупитер (до <em>−2,9</em>) сјајнији су од свих звезда ноћног неба. Марс у најповољнијим опозицијама достиже око <em>−2,9</em>, колико и Јупитер, али Венеру никада.</span></li>
+      <li><strong>Меркур и Венера: само у сумрак</strong><span>Унутрашње планете никад се не удаљавају далеко од Сунца, па их тражиш на западу после заласка или на истоку пред излазак Сунца.</span></li>
+      <li><strong>Провери у програму</strong><span>Положај свих планета за данашњу ноћ показује <a href="https://stellarium-web.org">Stellarium Web</a>.</span></li>
+    </ul>
+  </div>
+</div>
+</section>
+
+<!-- 3. ШТА ВИДИШ -->
+<section class="sec dark" id="sta-vidis">
+<div class="wrap">
+  <div class="sec-head"><span class="kicker">Кроз телескоп</span><h2>Шта ћеш видети на планетама</h2><p>Планете су мале, па траже веће увећање и мирну атмосферу. Ово можеш да видиш телескопом од 70 до 150 mm.</p></div>
+  <div class="types">
+    <article class="type wide">
+      <figure><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2b/Venus_en_Cuarto_Menguante_-_12.01.2025.jpg/1280px-Venus_en_Cuarto_Menguante_-_12.01.2025.jpg" alt="Венера у мени, кроз телескоп" loading="lazy" decoding="async" width="1280" height="960">
+        <a class="credit" href="https://commons.wikimedia.org/wiki/File:Venus_en_Cuarto_Menguante_-_12.01.2025.jpg">© Fernando de Gorocica · CC BY-SA 4.0</a>
+        <div class="tag"><small>јутарња и вечерња звезда</small><strong>Венера</strong></div></figure>
+      <div class="body">
+        <p class="best"><b>Видиш:</b> мене као код Месеца, од пуног диска до танког српа. Галилеј је 1610. по менама Венере закључио да она кружи око Сунца. Облаци сакривају површину.</p>
+        <div class="pc"><div class="plus"><b>Најбоље</b>у сумрак, док небо још није потпуно тамно</div><div class="minus"><b>Увећање</b>50–100×; бљештави сјај ублажи филтером</div></div>
+      </div>
+    </article>
+    <article class="type wide">
+      <figure><img src="https://upload.wikimedia.org/wikipedia/commons/7/73/Solar_system_planet_Mars_from_August_19%2C_2020.jpg" alt="Марс са поларном капом, кроз телескоп" loading="lazy" decoding="async" width="992" height="992">
+        <a class="credit" href="https://commons.wikimedia.org/wiki/File:Solar_system_planet_Mars_from_August_19,_2020.jpg">© Astrobond · CC BY-SA 4.0</a>
+        <div class="tag"><small>црвена планета</small><strong>Марс</strong></div></figure>
+      <div class="body">
+        <p class="best"><b>Видиш:</b> поларну капу и тамне области на наранџастом диску. Марс је мали и детаљи се виде само око опозиције, која се понавља на око 26 месеци. Датум следеће види у блоку „Актуелно“ испод.</p>
+        <div class="pc"><div class="plus"><b>Најбоље</b>неколико недеља око опозиције</div><div class="minus"><b>Увећање</b>150× и више, уз мирну атмосферу</div></div>
+      </div>
+    </article>
+    <article class="type wide">
+      <figure><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/Jupiter_from_August_19%2C_2020.jpg/1280px-Jupiter_from_August_19%2C_2020.jpg" alt="Јупитер са појасевима и сателитима" loading="lazy" decoding="async" width="1280" height="1280">
+        <a class="credit" href="https://commons.wikimedia.org/wiki/File:Jupiter_from_August_19,_2020.jpg">© Astrobond · CC BY-SA 4.0</a>
+        <div class="tag"><small>џин са четири месеца</small><strong>Јупитер</strong></div></figure>
+      <div class="body">
+        <p class="best"><b>Видиш:</b> четири Галилејева сателита већ двогледом, а телескопом тамне појасеве облака и Велику црвену пегу. Јупитер се окрене за мање од десет сати, па се детаљи мењају пред очима.</p>
+        <div class="pc"><div class="plus"><b>Најбоље</b>око опозиције, која долази сваких 13 месеци</div><div class="minus"><b>Увећање</b>двоглед за сателите, 100–200× за појасеве</div></div>
+      </div>
+    </article>
+    <article class="type wide">
+      <figure class="sat-fig"><img src="assets/media/saturn-vidojevica-1024.jpg" alt="Сатурн са прстеновима, снимак са Видојевице" loading="lazy" decoding="async" width="1024" height="904">
+        <span class="credit">АО Видојевица · Марко Гроздановић</span>
+        <div class="tag"><small>господар прстенова</small><strong>Сатурн</strong></div></figure>
+      <div class="body">
+        <p class="best"><b>Видиш:</b> прстенове већ при увећању од 25 до 30 пута, а већим телескопом и Касинијеву пукотину и највећи сателит, Титан. Нагиб прстенова се мења у циклусу од око 15 година: 2025. смо их гледали „по ивици“, а наредних година се све више отварају.</p>
+        <div class="pc"><div class="plus"><b>Најбоље</b>неколико месеци око опозиције, која долази сваких 12,5 месеци</div><div class="minus"><b>Увећање</b>50–150×</div></div>
+      </div>
+    </article>
+  </div>
+  <p class="showers-foot">Уран и Нептун се виде двогледом као звездице, а телескопом као мали зеленкасти и плавичасти дискови. За њих је потребна звездана карта или програм.</p>
+  <div class="now-sky" id="aktuelno" aria-live="polite">
+    <h3>Актуелно: следеће прилике</h3>
+    <p id="nowDate">Датуми опозиција и највећих елонгација Венере, израчунати унапред до 2035. Страница сама приказује прве следеће.</p>
+    <div class="now-grid" id="nowGrid">
+      <div><small>Марс · опозиција</small><strong>19. фебруар 2027.</strong><span>сјај око −1,2</span></div>
+      <div><small>Јупитер · опозиција</small><strong>11. фебруар 2027.</strong><span>сјај око −2,6</span></div>
+      <div><small>Сатурн · опозиција</small><strong>18. октобар 2027.</strong><span>сјај око −0,1</span></div>
+      <div><small>Венера · највећа елонгација</small><strong>3. јануар 2027.</strong><span>јутарње небо, 47° од Сунца</span></div>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- 4. ОПОЗИЦИЈА И КОНЈУНКЦИЈА -->
+<section class="sec" id="polozaji">
+<div class="wrap">
+  <div class="sec-head"><span class="kicker">Календар неба</span><h2>Када је планета најлепша</h2><p>Положај планете у односу на Сунце и Земљу одређује колико је сјајна, колико велика и колико дуго је видиш.</p></div>
+  <div class="sun-feat">
+    <figure class="sun-photo"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/43/Jupiter_with_three_moons_and_Saturn_during_conjunction_in_2020.jpg/1280px-Jupiter_with_three_moons_and_Saturn_during_conjunction_in_2020.jpg" alt="Јупитер са три сателита и Сатурн у истом видном пољу телескопа" loading="lazy" decoding="async" width="1280" height="960">
+      <figcaption>Велика конјункција 21. децембра 2020: Јупитер са три сателита и Сатурн у истом видном пољу телескопа. · <a href="https://commons.wikimedia.org/wiki/File:Jupiter_with_three_moons_and_Saturn_during_conjunction_in_2020.jpg">© O'Dea · CC BY-SA 4.0</a></figcaption></figure>
+    <ul class="hops">
+      <li><strong>Опозиција</strong><span>Спољашња планета (Марс, Јупитер, Сатурн) налази се насупрот Сунцу и види се целе ноћи. Око опозиције је обично најближа Земљи и најсјајнија. Због елиптичних путања тренутак највеће близине може бити неколико дана пре или после опозиције.</span></li>
+      <li><strong>Највећа елонгација</strong><span>Меркур и Венера су најудаљенији од Сунца на небу: Меркур до око <em>28°</em>, Венера до око <em>47°</em>. То су најбоље прилике за њих.</span></li>
+      <li><strong>Конјункција са Сунцем</strong><span>Планета је иза Сунца или близу њега и не види се недељама.</span></li>
+      <li><strong>Конјункција две планете</strong><span>Две планете на небу пролазе једна поред друге. Јупитер и Сатурн су се 2020. приближили на мање од пречника Месеца, најближе од 1623. године.</span></li>
+    </ul>
+  </div>
+</div>
+</section>
+
+<!-- 4а. МИРНА АТМОСФЕРА -->
+<section class="sec" id="seeing" style="padding-top:0">
+<div class="wrap">
+  <div class="sec-head"><span class="kicker">Услови посматрања</span><h2>Мирна атмосфера је важнија од тамног неба</h2><p>За маглине и галаксије потребно је тамно небо. Планете су сјајне, па им светлосно загађење мало смета, али им смета немиран ваздух.</p></div>
+  <ul class="hops">
+    <li><strong>Мирноћа слике (<i>seeing</i>)</strong><span>Струјање ваздуха различите температуре „таласа“ слику, па планета подрхтава као да је гледаш кроз воду. Најмирније ноћи често су оне без ветра, понекад и уз благу измаглицу. Те исте ноћи могу бити лоше за галаксије, а одличне за планете.</span></li>
+    <li><strong>Што више изнад хоризонта</strong><span>Ниско над хоризонтом светлост пролази кроз много дебљи слој ваздуха. Посматрај планету кад је највише, око проласка кроз меридијан, или бар 30° изнад хоризонта.</span></li>
+    <li><strong>Атмосферска дисперзија</strong><span>Ниско над хоризонтом ваздух делује као призма: планета има плави руб с једне и црвени с друге стране. То није мана телескопа, већ разлог више да чекаш да се планета попне.</span></li>
+    <li><strong>Пусти телескоп да се охлади</strong><span>Телескоп изнет из топле собе ствара сопствена струјања у тубусу. Изнеси га пола сата до сат пре посматрања, а избегавај и посматрање преко кровова, асфалта и димњака.</span></li>
+  </ul>
+</div>
+</section>
+
+<!-- 5. СНИМАЊЕ -->
+<section class="sec dark" id="snimanje">
+<div class="wrap night">
+  <div>
+    <div class="sec-head"><span class="kicker">Фото-опрема</span><h2>Како се снимају планете</h2></div>
+    <ol class="steps steps-dark">
+      <li><strong>Почни мобилним телефоном</strong><span>Прислони камеру телефона на окулар, уз држач ако га имаш. Месец, Венера и Јупитерови сателити лако се снимају већ тако.</span></li>
+      <li><strong>Снимај видео, не слику</strong><span>Атмосфера стално „трепери“. Зато се снима видео од неколико хиљада кадрова, планетарном камером или телефоном.</span></li>
+      <li><strong>„Срећни“ кадрови</strong><span>Програм попут <a href="https://www.autostakkert.com/">AutoStakkert</a> бира најоштрије кадрове и слаже их у једну слику. Ова метода зове се <em>lucky imaging</em>.</span></li>
+      <li><strong>Изоштри и поравнај боје</strong><span>Сложену слику пажљиво изоштри и поравнај боје. Мање је више: превише изоштравања ствара лажне детаље.</span></li>
+      <li><strong>Сними кретање</strong><span>Time-lapse телефоном на стативу током неколико вечери показује како планета путује међу звездама.</span></li>
+    </ol>
+  </div>
+  <div class="duo">
+    <figure><img src="https://upload.wikimedia.org/wikipedia/commons/2/22/Jupiter_with_Lucky_Imaging.jpg" alt="Јупитер снимљен методом lucky imaging телескопом од 150 mm" loading="lazy" decoding="async" width="769" height="769"><figcaption>Јупитер, телескоп од 150 mm и метода lucky imaging. · <a href="https://commons.wikimedia.org/wiki/File:Jupiter_with_Lucky_Imaging.jpg">© Stub Mandrel · CC BY-SA 4.0</a></figcaption></figure>
+    <figure class="vid-fig"><video controls controlslist="nodownload" playsinline preload="metadata" src="assets/media/veneraijupiter-2b41e452.mp4"></video><figcaption>Венера и Јупитер на вечерњем небу.</figcaption></figure>
+  </div>
+</div>
+</section>
+
+<!-- 6. ЗАДАЦИ -->
+<section class="sec" id="zadaci" style="background:var(--paper-2)">
+<div class="wrap">
+<div class="sec-head"><span class="kicker">Вежба</span><h2>Практични задаци</h2><p>Свако посматрање запиши у посматрачки дневник: датум, време, инструмент и услове посматрања.</p></div>
+<div class="sun-feat">
+  <figure class="sun-photo notebook"><img src="assets/media/jupiter-c59ee2c2.jpg" alt="Страна посматрачког дневника из 1977: распоред Јупитерових сателита виђен двогледом 20×50" loading="lazy" decoding="async" width="1200" height="632">
+    <figcaption>Страна из посматрачког дневника, 24. новембар 1977: Јупитер и његови сателити кроз двоглед 20×50.</figcaption></figure>
+  <article class="task">
+    <span class="lvl">За све полазнике</span>
+    <h3>Задаци</h3>
+    <ol>
+      <li>Пронађи једну планету на небу помоћу програма <a href="https://stellarium-web.org">Stellarium Web</a>.</li>
+      <li>Посматрај визуелно планету помоћу двогледа, дурбина или телескопа. Ако посматраш Меркур или Венеру, нацртај на папиру како изгледа планета. Ако посматраш Јупитер, нацртај распоред сателита који се виде, као у дневнику на слици. Ако имаш велики телескоп, уцртај детаље са диска планете.</li>
+      <li>Сними кретање планете на небу помоћу мобилног телефона (time-lapse).</li>
+      <li>Распоред Јупитерових сателита са свог цртежа провери <a href="https://skyandtelescope.org/stargazing-and-observing/jupiters-moons-javascript-utility/">алатом Sky &amp; Telescope</a> и препознај сваки сателит по имену.</li>
+    </ol>
+  </article>
+</div>
+</div>
+</section>
+
+<!-- 7. ОРГАНИЗАЦИЈА -->
+<section class="sec" id="organizacija">
+<div class="wrap">
+  <div class="rajac" style="background-image:url('https://upload.wikimedia.org/wikipedia/commons/thumb/d/d2/Grand_Canyon_National_Park-_2019_Star_Party_-_South_Rim_-_3394_-_48147840617.jpg/1280px-Grand_Canyon_National_Park-_2019_Star_Party_-_South_Rim_-_3394_-_48147840617.jpg')">
+    <div class="in">
+      <span class="kicker">Организација</span>
+      <h2>Посматрај сам, али и са другима</h2>
+      <p>Планете можеш самостално да посматраш. Учлани се у неко астрономско удружење које посматра планете: тамо ћеш погледати кроз веће телескопе, а твоји цртежи и снимци добиће праву вредност.</p>
+      <div class="btns"><a class="btn btn-gold" href="../05-programi-i-turizam.html">Посматрања на Рајцу →</a><a class="btn btn-ghost" href="https://alpo-astronomy.org/">Удружење ALPO ↗</a></div>
+    </div>
+    <span class="credit">Фото: <a href="https://commons.wikimedia.org/wiki/File:Grand_Canyon_National_Park-_2019_Star_Party_-_South_Rim_-_3394_-_48147840617.jpg">Grand Canyon NPS</a> · CC BY 2.0</span>
+  </div>
+</div>
+</section>
+
+<!-- 8. ЛИТЕРАТУРА -->
+<section class="sec" id="literatura" style="background:var(--paper-2)">
+<div class="wrap">
+  <div class="sec-head"><span class="kicker">За даље учење</span><h2>Литература, опрема и софтвер</h2><p>Сви линкови су проверени у октобру 2026.</p></div>
+  <div class="lib">
+    <div><h3>Посматрање</h3><ul>
+      <li><a href="https://lovethenightsky.com/planet-observation-guides-2/"><span><strong>Водичи за планете<span class="lang">EN</span></strong><small>Love the Night Sky</small></span></a></li>
+      <li><a href="https://earthsky.org/astronomy-essentials/planet-observing-top-tips/"><span><strong>Савети за планете<span class="lang">EN</span></strong><small>EarthSky</small></span></a></li>
+      <li><a href="https://www.astronomy.com/science/how-to-observe-the-planets-with-a-telescope/"><span><strong>Планете кроз телескоп<span class="lang">EN</span></strong><small>Astronomy.com</small></span></a></li>
+      <li><a href="https://skyandtelescope.org/stargazing-and-observing/jupiters-moons-javascript-utility/"><span><strong>Где су Јупитерови сателити<span class="lang">EN</span></strong><small>Sky &amp; Telescope · интерактивни алат</small></span></a></li>
+      <li><a href="https://skyandtelescope.org/stargazing-and-observing/interactive-stargazing-tools/saturns-moons-javascript-utility/"><span><strong>Где су Сатурнови сателити<span class="lang">EN</span></strong><small>Sky &amp; Telescope · интерактивни алат</small></span></a></li>
+    </ul></div>
+    <div><h3>Опрема и снимање</h3><ul>
+      <li><a href="https://www.space.com/what-equipment-do-you-need-to-see-and-photograph-the-planets"><span><strong>Опрема за планете<span class="lang">EN</span></strong><small>Space.com</small></span></a></li>
+      <li><a href="https://www.autostakkert.com/"><span><strong>AutoStakkert<span class="lang">EN</span></strong><small>бесплатан програм за слагање кадрова</small></span></a></li>
+      <li><a href="http://www.firecapture.de/"><span><strong>FireCapture<span class="lang">EN</span></strong><small>бесплатан програм за снимање планета</small></span></a></li>
+      <li><a href="https://www.astronomie.be/registax/"><span><strong>RegiStax<span class="lang">EN</span></strong><small>бесплатан програм за слагање и изоштравање</small></span></a></li>
+      <li><a href="https://jupos.org/gh/download.htm"><span><strong>WinJUPOS<span class="lang">EN</span></strong><small>мерење положаја детаља на планетама</small></span></a></li>
+    </ul></div>
+    <div><h3>Удружења и корак даље</h3><ul>
+      <li><a href="https://alpo-astronomy.org/"><span><strong>Посматрачи Месеца и планета<span class="lang">EN</span></strong><small>ALPO</small></span></a></li>
+      <li><a href="https://britastro.org/sections/jupiter"><span><strong>Одсек за Јупитер<span class="lang">EN</span></strong><small>Британско астрономско удружење</small></span></a></li>
+      <li><a href="https://adrb.org/"><span><strong>АД „Руђер Бошковић“<span class="lang">SR</span></strong><small>посматрања на Народној опсерваторији</small></span></a></li>
+      <li><a href="https://science.nasa.gov/solar-system/planets/"><span><strong>Планете Сунчевог система<span class="lang">EN</span></strong><small>NASA Science</small></span></a></li>
+      <li><a href="https://www.esa.int/Enabling_Support/Operations/Amateur_astronomers_boost_ESA_s_asteroid_hunt"><span><strong>Лов на астероиде<span class="lang">EN</span></strong><small>аматери помажу ЕСА</small></span></a></li>
+    </ul></div>
+  </div>
+</div>
+</section>
+
+<section aria-label="Навигација кроз курс" class="next"><div class="wrap"><a href="astrofotografija.html"><span class="num">07</span><span><small>Следећа лекција</small><strong>Астрофотографија</strong></span><span aria-hidden="true" class="arr">→</span></a><div class="back"><a href="#top">↑ На врх стране</a><a href="komete.html">← Претходна: Посматрање комета</a><a href="../index.html">Назад на Звездани парк</a></div></div></section>
+</main>
+<footer class="footer zp-footer">
+<div class="footer-in">
+<div class="f-brand"><svg width="40" height="40" viewBox="0 0 40 40" aria-hidden="true"><circle cx="20" cy="20" r="19" fill="none" stroke="rgba(241,220,166,.45)"/><path d="M20 6 22.2 17.8 34 20 22.2 22.2 20 34 17.8 22.2 6 20 17.8 17.8Z" fill="#f1dca6"/><path d="M20 12.5 21 19 27.5 20 21 21 20 27.5 19 21 12.5 20 19 19Z" fill="#050a14" opacity=".35"/></svg><b>Звездани парк „Рајац“</b><p>Пројекат очувања природног ноћног неба у Пределу изузетних одлика „Рајац“ — истраживање, мерење, едукација и астрономски програми.</p></div>
+<div><h5>Пројекат</h5><ul>
+<li><a href="https://piorajac.rs/zvezdani-park/01-uvod-i-rajac.html">Истраживања</a></li>
+<li><a href="https://piorajac.rs/zvezdani-park/02-svetlosno-zagadjenje.html">Светлосно загађење</a></li>
+<li><a href="https://piorajac.rs/zvezdani-park/03-predlog-i-merenja.html">Мерења и простор</a></li>
+<li><a href="https://piorajac.rs/zvezdani-park/04-znacaj-i-upravljanje.html">Управљање</a></li>
+<li><a href="https://piorajac.rs/zvezdani-park/05-programi-i-turizam.html">Програми</a></li>
+<li><a href="https://piorajac.rs/zvezdani-park/07-opservatorija-i-oprema.html">Опсерваторија и опрема</a></li>
+</ul></div>
+<div><h5>Посета и небо</h5><ul>
+<li><a href="https://piorajac.rs/zvezdani-park/lokacija.html">Локација</a></li>
+<li><a href="https://piorajac.rs/zvezdani-park/sta-poneti.html">Шта понети</a></li>
+<li><a href="https://piorajac.rs/zvezdani-park/prognoza.html">Астрономска прогноза</a></li>
+<li><a href="https://piorajac.rs/zvezdani-park/nebo.html">Небо</a></li>
+<li><a href="https://piorajac.rs/zvezdani-park/zivo-nebo-rajac.html">Живо небо над Рајцем</a></li>
+<li><a href="https://piorajac.rs/zvezdani-park/nocno-nebo-rajac.html">Ноћно небо у 360°</a></li>
+</ul></div>
+<div><h5>Повезано</h5><ul>
+<li><a href="https://piorajac.rs/zvezdani-park/kurs-astronomije/">Курс астрономије</a></li>
+<li><a href="https://piorajac.rs/zvezdano-nebo/">All-sky снимак целог неба</a></li>
+<li><a href="https://piorajac.rs/amsrajac/">АМС Рајац</a></li>
+<li><a href="https://svetlo.piorajac.rs">Књига о светлосном загађењу</a></li>
+<li><a href="https://piorajac.rs/">ПИО „Рајац“</a></li>
+<li><a href="mailto:zvezdanipark@piorajac.rs">zvezdanipark@piorajac.rs</a></li>
+</ul></div>
+</div>
+<div class="footer-base"><span>© 2026 ПИО „Рајац“ · Љиг</span><span>Небо је део природе. Чувајмо мрак.</span></div>
+</footer>
+<script defer src="assets/course.js?v=4"></script>
+<script>
+/* „Актуелно“: прве следеће опозиције и највеће елонгације Венере (израчунато унапред, Astronomy Engine) */
+(function(){
+  var grid=document.getElementById('nowGrid');if(!grid)return;
+  var M=['јануар','фебруар','март','април','мај','јун','јул','август','септембар','октобар','новембар','децембар'];
+  var D={
+    'Марс · опозиција':[['2027-02-19','−1,2'],['2029-03-25','−1,3'],['2031-05-04','−1,8'],['2033-06-28','−2,5'],['2035-09-15','−2,8']],
+    'Јупитер · опозиција':[['2026-01-10','−2,7'],['2027-02-11','−2,6'],['2028-03-12','−2,5'],['2029-04-12','−2,5'],['2030-05-13','−2,5'],['2031-06-15','−2,6'],['2032-07-19','−2,8'],['2033-08-25','−2,9'],['2034-10-02','−2,9'],['2035-11-08','−2,9']],
+    'Сатурн · опозиција':[['2025-09-21','0,5'],['2026-10-04','0,2'],['2027-10-18','−0,1'],['2028-10-30','−0,3'],['2029-11-13','−0,4'],['2030-11-27','−0,6'],['2031-12-11','−0,6'],['2032-12-24','−0,6'],['2034-01-08','−0,6'],['2035-01-22','−0,4']],
+    'Венера · највећа елонгација':[['2026-08-15','в',46],['2027-01-03','ј',47],['2028-03-22','в',46],['2028-08-10','ј',46],['2029-10-27','в',47],['2030-03-17','ј',47],['2031-06-02','в',45],['2031-10-21','ј',46],['2033-01-07','в',47],['2033-05-29','ј',46],['2034-08-12','в',46],['2035-01-01','ј',47]]
+  };
+  var now=new Date(),day=864e5,html='';
+  function fmt(d){return d.getDate()+'. '+M[d.getMonth()]+' '+d.getFullYear()+'.';}
+  Object.keys(D).forEach(function(k){
+    var venus=k.indexOf('Венера')===0,win=venus?20:45,pick=null,cur=false;
+    for(var i=0;i<D[k].length;i++){var t=new Date(D[k][i][0]+'T12:00:00');var dd=(t-now)/day;if(dd>=-win){pick=D[k][i];cur=dd<=win;break;}}
+    if(!pick){html+='<div><small>'+k+'</small><strong>—</strong><span>погледај <a href="https://stellarium-web.org">Stellarium Web</a></span></div>';return;}
+    var t=new Date(pick[0]+'T12:00:00'),note;
+    if(venus)note=(pick[1]==='в'?'вечерње небо, на западу':'јутарње небо, на истоку')+', '+pick[2]+'° од Сунца';
+    else note='сјај око '+pick[1];
+    if(cur)note=(venus?'управо сада је најудаљенија од Сунца · ':'управо сада је најповољније време · ')+note;
+    html+='<div'+(cur?' class="hot"':'')+'><small>'+k+'</small><strong>'+fmt(t)+'</strong><span>'+note+'</span></div>';
+  });
+  grid.innerHTML=html;
+  var p=document.getElementById('nowDate');if(p)p.textContent='Стање на дан '+fmt(now)+' Датуми су израчунати унапред до 2035. године; планета је повољна за посматрање неколико недеља до месеци око наведеног датума.';
+})();
+</script>
+<!-- ZP-SUMRAK --><script src="https://piorajac.rs/zvezdani-park/assets/sumrak.js?v=7" defer></script>
+</body>
+</html>
