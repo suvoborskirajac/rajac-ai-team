@@ -1,0 +1,763 @@
+<!DOCTYPE html>
+
+<html lang="sr">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Дневни сателитски мониторинг пољопривредних парцела — ПИО „Рајац”</title>
+<meta content="Јавно доступна имплементација дневне Copernicus Sentinel-2 анализе пољопривредних култура на 10 m резолуцији у Републици Србији, са аутоматском детекцијом сушног стреса, кризних стања и опоравка вегетације." name="description"/>
+<style>
+    :root{
+      --bg:#f7f3ea;
+      --paper:#ffffff;
+      --paper-soft:#f3eee4;
+      --text:#1f2820;
+      --muted:#5f6c60;
+      --line:rgba(31,40,32,.10);
+      --accent:#315c39;
+      --accent-2:#4b7350;
+      --gold:#b8893f;
+      --gold-soft:#efe1c0;
+      --ok:#2f6c41;
+      --ok-soft:#e8f2ea;
+      --warn:#8b6627;
+      --warn-soft:#f4eddc;
+      --danger:#8f2e24;
+      --danger-soft:#f5e3dd;
+      --shadow:0 18px 44px rgba(20,28,22,.08);
+      --shadow-soft:0 10px 24px rgba(20,28,22,.06);
+      --wrap:1280px;
+    }
+
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+
+    body{
+      margin:0;
+      color:var(--text);
+      font-family:Georgia,"Times New Roman",serif;
+      background:linear-gradient(180deg,#f8f4ea 0%,#f2ecdf 100%);
+    }
+
+    img{display:block;width:100%;max-width:100%;height:auto;}
+    a{color:inherit;text-decoration:none}
+
+    .wrap{
+      width:min(var(--wrap), calc(100% - 34px));
+      margin:0 auto;
+    }
+
+    /* ── Top nav (same as biodiv page) ── */
+    .rajac-news-menu{position:sticky;top:0;z-index:9999;background:#0d1b2a;border-bottom:1px solid rgba(255,255,255,.10);font-family:Georgia,"Times New Roman",serif;box-shadow:0 8px 26px rgba(0,0,0,.08)}
+    .rajac-news-menu *{box-sizing:border-box}
+    .rajac-news-menu-inner{max-width:1180px;margin:0 auto;padding:9px 18px;min-height:56px;display:flex;flex-wrap:wrap;align-items:center;gap:8px;overflow-x:visible;scrollbar-width:none}
+    .rajac-news-menu-inner::-webkit-scrollbar{display:none}
+    .rajac-news-menu a{display:inline-flex;align-items:center;gap:6px;min-height:38px;padding:0 13px;border-radius:999px;color:rgba(255,255,255,.74);text-decoration:none;font-size:13px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;white-space:nowrap}
+    .rajac-news-menu a:hover{background:rgba(255,255,255,.06);color:#fff}
+    .rajac-news-menu .home{color:#e0c678;border:1px solid rgba(224,198,120,.34);background:rgba(224,198,120,.06)}
+    .rajac-news-menu a.active{color:#e0c678;background:rgba(224,198,120,.08);outline:1px solid rgba(224,198,120,.26)}
+    .rajac-news-menu small{display:inline-flex;align-items:center;justify-content:center;min-width:20px;height:20px;padding:0 6px;border-radius:999px;background:rgba(255,255,255,.10);color:#e0c678;font-size:11px;letter-spacing:0}
+
+    /* ── Hero ── */
+    .hero{padding:58px 0 34px;background:transparent;}
+    .hero-card{
+      position:relative;overflow:hidden;
+      border-radius:30px;border:1px solid rgba(31,40,32,.12);
+      background:rgba(255,255,255,.72);
+      box-shadow:0 18px 54px rgba(20,28,22,.08);
+    }
+    .hero-card::before{
+      content:"";position:absolute;inset:0;
+      background:radial-gradient(circle at 12% 0%,rgba(184,137,63,.13),transparent 28%),radial-gradient(circle at 90% 10%,rgba(49,92,57,.10),transparent 30%);
+      pointer-events:none;z-index:0;
+    }
+    .hero-inner{position:relative;z-index:1;padding:44px 42px;}
+    .hero-copy{max-width:1050px;color:var(--text);}
+
+    .eyebrow{
+      display:inline-flex;align-items:center;min-height:38px;padding:0 16px;
+      border-radius:999px;background:rgba(184,137,63,.12);border:1px solid rgba(184,137,63,.26);
+      color:#8b6627;font-size:.82rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase;
+      margin-bottom:18px;
+    }
+    .hero h1{
+      margin:0;max-width:980px;
+      font-size:clamp(2.4rem,4.6vw,4.8rem);line-height:1.04;letter-spacing:-.045em;
+      color:#172118;font-weight:400;
+    }
+    .lead{
+      margin:18px 0 0;max-width:920px;
+      font-size:1.16rem;line-height:1.72;color:#536053;
+    }
+    .hero-meta{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px;}
+    .hero-chip{
+      display:inline-flex;align-items:center;min-height:40px;padding:0 14px;
+      border-radius:999px;background:#fff;border:1px solid rgba(31,40,32,.14);
+      color:#315c39;font-size:.92rem;font-weight:700;
+      box-shadow:0 10px 20px rgba(20,28,22,.05);
+    }
+
+    /* ── Live CTA ── */
+    .live-cta{
+      display:flex;align-items:center;justify-content:space-between;gap:22px;flex-wrap:wrap;
+      margin-top:28px;padding:24px 28px;
+      border-radius:24px;
+      background:linear-gradient(135deg,#315c39 0%,#4b7350 100%);
+      box-shadow:0 18px 44px rgba(49,92,57,.30);
+      color:#fff;
+    }
+    .live-cta-text{flex:1;min-width:260px;}
+    .live-cta-text strong{
+      display:block;font-size:1.32rem;line-height:1.18;margin-bottom:6px;
+      color:#fff;letter-spacing:-.01em;
+    }
+    .live-cta-text span{
+      display:block;font-size:.98rem;line-height:1.55;color:rgba(255,255,255,.92);
+    }
+    .live-cta-btn{
+      display:inline-flex;align-items:center;gap:10px;
+      min-height:50px;padding:0 24px;
+      border-radius:999px;
+      background:#e0c678;color:#172118;font-weight:800;font-size:1.02rem;
+      letter-spacing:.02em;
+      box-shadow:0 12px 26px rgba(184,137,63,.40);
+      transition:transform .18s ease,box-shadow .18s ease;
+      white-space:nowrap;
+    }
+    .live-cta-btn:hover{transform:translateY(-2px);box-shadow:0 16px 34px rgba(184,137,63,.50);}
+    .live-cta-btn::after{content:"→";font-size:1.2rem;}
+
+    /* ── Stats ── */
+    .hero-stats{
+      display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;
+      margin-top:26px;
+    }
+    .stat{
+      min-height:140px;padding:20px 18px;border-radius:22px;
+      background:#fff;border:1px solid rgba(31,40,32,.11);
+    }
+    .stat strong{
+      display:block;font-size:1.22rem;line-height:1.10;margin-bottom:8px;
+      color:#315c39;font-family:Georgia,"Times New Roman",serif;
+    }
+    .stat span{
+      display:block;font-size:.94rem;line-height:1.55;color:#5f6c60;
+    }
+
+    /* ── Main ── */
+    main{padding:4px 0 56px;}
+    .section{margin-bottom:30px;}
+    .panel{background:var(--paper);border:1px solid var(--line);border-radius:28px;box-shadow:var(--shadow-soft);}
+    .intro,.text-box,.closing{padding:30px 28px;}
+
+    .section-tag{
+      display:inline-flex;align-items:center;min-height:34px;padding:0 12px;
+      border-radius:999px;background:rgba(184,137,63,.10);color:#8b6627;
+      font-size:.78rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;
+      margin-bottom:14px;
+    }
+    .section-title{
+      margin:0 0 12px;font-size:1.72rem;line-height:1.16;letter-spacing:-.02em;
+      color:var(--accent);font-family:Georgia,"Times New Roman",serif;font-weight:400;
+    }
+    .section-lead,.text-box p,.closing p,.ambro-copy p{
+      margin:0;font-size:1.03rem;line-height:1.82;color:var(--muted);
+    }
+    .text-box p,.closing p,.ambro-copy p{margin-bottom:14px;}
+    .text-box p:last-child,.closing p:last-child,.ambro-copy p:last-child{margin-bottom:0;}
+
+    /* ── Cards ── */
+    .cards{
+      display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px;
+      margin-top:18px;margin-bottom:20px;
+    }
+    .card{
+      overflow:hidden;background:var(--paper);border:1px solid var(--line);
+      border-radius:28px;box-shadow:var(--shadow-soft);
+      transition:transform .22s ease,box-shadow .22s ease;
+    }
+    .card:hover{transform:translateY(-4px);box-shadow:0 20px 42px rgba(20,28,22,.08);}
+    .card-photo{position:relative;aspect-ratio:16/10;overflow:hidden;background:#e7ece7;border-bottom:1px solid var(--line);max-height:260px;}
+    .card-photo img{width:100%;height:100%;object-fit:cover;transition:transform .45s ease;}
+    .card:hover .card-photo img{transform:scale(1.04);}
+    .card-body{padding:22px 22px 24px;}
+    .name{margin:0 0 6px;font-size:1.30rem;line-height:1.22;color:var(--accent);font-family:Georgia,"Times New Roman",serif;font-weight:400;}
+    .latin{display:block;margin-bottom:14px;font-style:italic;color:#6a766b;font-size:.96rem;}
+    .card-body p{margin:0;font-size:1rem;line-height:1.74;color:var(--muted);}
+    .badge-row{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px;}
+    .badge{display:inline-flex;align-items:center;min-height:32px;padding:0 10px;border-radius:999px;font-size:.84rem;font-weight:800;}
+    .badge-ok{background:var(--ok-soft);color:var(--ok);}
+    .badge-warn{background:var(--warn-soft);color:var(--warn);}
+    .badge-bad{background:var(--danger-soft);color:var(--danger);}
+
+    /* ── Indices grid ── */
+    .index-grid{
+      display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;
+      margin-top:18px;
+    }
+    .index-item{
+      padding:18px 18px 16px;border-radius:20px;
+      background:var(--paper-soft);border:1px solid rgba(31,40,32,.08);
+    }
+    .index-item h4{margin:0 0 4px;font-size:1.06rem;color:var(--text);font-family:Georgia,"Times New Roman",serif;font-weight:400;}
+    .index-item .formula{
+      display:block;font-family:"Courier New",monospace;font-size:.86rem;color:#6f7a70;
+      margin-bottom:10px;padding:4px 8px;background:#fff;border-radius:6px;border:1px solid var(--line);
+    }
+    .index-item p{margin:0;color:var(--muted);font-size:.94rem;line-height:1.62;}
+    .index-item .role{
+      display:inline-flex;align-items:center;min-height:28px;padding:0 9px;border-radius:999px;
+      font-size:.78rem;font-weight:800;margin-top:10px;background:var(--ok-soft);color:var(--ok);
+    }
+
+    /* ── Alarms grid ── */
+    .alarm-grid{
+      display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin-top:18px;
+    }
+    .alarm-item{
+      padding:18px 18px 16px;border-radius:20px;border:1px solid var(--line);
+      background:#fff;
+    }
+    .alarm-item.crit{border-color:#e8c8be;background:linear-gradient(180deg,#fff,#fcefe9 200%);}
+    .alarm-item.warn{border-color:#eadab4;background:linear-gradient(180deg,#fff,#fbf3e0 200%);}
+    .alarm-item.info{border-color:#d5e6d8;background:linear-gradient(180deg,#fff,#eaf3ec 200%);}
+    .alarm-icon{font-size:1.6rem;line-height:1;margin-bottom:10px;}
+    .alarm-item h4{margin:0 0 6px;font-size:1.08rem;color:var(--text);font-family:Georgia,"Times New Roman",serif;font-weight:400;}
+    .alarm-item .when{display:block;font-size:.86rem;color:#6f7a70;margin-bottom:8px;font-family:"Courier New",monospace;}
+    .alarm-item p{margin:0;color:var(--muted);font-size:.94rem;line-height:1.62;}
+
+    /* ── Sentinel-2 tech spec ── */
+    .tech-grid{
+      display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin-top:18px;
+    }
+    .tech-row{
+      display:flex;justify-content:space-between;align-items:baseline;gap:12px;
+      padding:10px 14px;border-radius:14px;background:var(--paper-soft);
+      border:1px solid rgba(31,40,32,.08);
+    }
+    .tech-row .k{color:var(--muted);font-size:.92rem;}
+    .tech-row .v{color:var(--accent);font-weight:700;font-size:.98rem;text-align:right;}
+
+    /* ── Closing/highlights ── */
+    .highlights{
+      display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin-top:18px;
+    }
+    .highlight{
+      min-height:98px;padding:16px 15px;border-radius:18px;
+      background:var(--ok-soft);border:1px solid #d5e6d8;
+    }
+    .highlight strong{display:block;font-size:1rem;line-height:1.2;color:var(--ok);margin-bottom:8px;}
+    .highlight span{display:block;font-size:.92rem;line-height:1.55;color:var(--muted);}
+
+    .note{
+      margin-top:16px;padding:14px 16px;border-radius:18px;
+      background:var(--warn-soft);border:1px solid #eadab4;color:#6e5425;
+      font-size:.94rem;line-height:1.65;
+    }
+
+    .footer-note{
+      text-align:center;margin-top:24px;color:#748174;font-size:.94rem;line-height:1.6;
+      padding-bottom:28px;
+    }
+
+    @media (max-width:1180px){
+      .hero-stats{grid-template-columns:repeat(2,minmax(0,1fr));}
+      .cards,.index-grid,.alarm-grid,.highlights,.tech-grid{grid-template-columns:1fr;}
+    }
+    @media (max-width:760px){
+      .wrap{width:min(100% - 22px, var(--wrap));}
+      .hero{padding-top:28px;}
+      .hero-inner{padding:28px 18px;}
+      .hero h1{font-size:clamp(2.0rem,9vw,3.0rem);}
+      .hero-stats{grid-template-columns:1fr;}
+      .live-cta{padding:20px 22px;}
+      .intro,.text-box,.closing,.card-body{padding-left:18px;padding-right:18px;}
+      .intro,.text-box,.closing{padding-top:22px;padding-bottom:22px;}
+    }
+  </style>
+<style id="rajac-global-news-menu-style">
+.rajac-news-menu{position:sticky;top:0;z-index:9999;background:#0d1b2a;border-bottom:1px solid rgba(255,255,255,.10);font-family:Georgia,"Times New Roman",serif;box-shadow:0 8px 26px rgba(0,0,0,.08)}
+.rajac-news-menu *{box-sizing:border-box}.rajac-news-menu-inner{max-width:1180px;margin:0 auto;padding:9px 18px;min-height:56px;display:flex;flex-wrap:wrap;align-items:center;gap:8px;overflow-x:visible;scrollbar-width:none}.rajac-news-menu-inner::-webkit-scrollbar{display:none}
+.rajac-news-menu a{display:inline-flex;align-items:center;gap:6px;min-height:38px;padding:0 13px;border-radius:999px;color:rgba(255,255,255,.74);text-decoration:none;font-size:13px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;white-space:nowrap;line-height:1;font-family:Georgia,"Times New Roman",serif}
+.rajac-news-menu a:hover{background:rgba(255,255,255,.06);color:#fff}.rajac-news-menu .home{color:#e0c678;border:1px solid rgba(224,198,120,.34);background:rgba(224,198,120,.06)}
+.rajac-news-menu a.active{color:#e0c678!important;background:rgba(224,198,120,.08);outline:1px solid rgba(224,198,120,.26)}.rajac-news-menu small{display:inline-flex;align-items:center;justify-content:center;min-width:20px;height:20px;padding:0 6px;border-radius:999px;background:rgba(255,255,255,.10);color:#e0c678;font-size:11px;letter-spacing:0;font-family:Arial,sans-serif;font-weight:900}
+@media(max-width:650px){.rajac-news-menu-inner{padding:9px 10px}.rajac-news-menu a{font-size:12px;padding:0 10px}}
+</style>
+<style id="rajac-news-menu-one-row">
+/* Јединствен мени за све вести: један ред и исти sans-serif фонт као на осталим страницама сајта. */
+.rajac-news-menu{font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif!important}
+.rajac-news-menu-inner{width:min(100%,1600px)!important;max-width:1600px!important;margin:0 auto!important;padding:9px 14px!important;display:flex!important;flex-wrap:nowrap!important;align-items:center!important;justify-content:center!important;gap:4px!important;overflow-x:auto!important;overflow-y:hidden!important;scrollbar-width:none!important;-webkit-overflow-scrolling:touch}
+.rajac-news-menu-inner::-webkit-scrollbar{display:none!important}
+.rajac-news-menu a{flex:0 0 auto!important;min-height:38px!important;padding:0 10px!important;font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif!important;font-size:12px!important;font-weight:750!important;letter-spacing:.025em!important;line-height:1!important;text-transform:uppercase!important;white-space:nowrap!important}
+.rajac-news-menu small{font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif!important}
+@media(max-width:1050px){.rajac-news-menu-inner{justify-content:flex-start!important}.rajac-news-menu a{font-size:11px!important;padding:0 9px!important}}
+</style>
+<style id="rajac-unified-news-menu-v3">
+.rajac-news-menu{
+  position:sticky!important;top:0!important;z-index:9999!important;
+  width:100%!important;background:#0d1b2a!important;
+  border-bottom:1px solid rgba(255,255,255,.10)!important;
+  box-shadow:0 7px 22px rgba(0,0,0,.10)!important;
+  font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif!important;
+}
+.rajac-news-menu *{font-family:inherit!important;box-sizing:border-box!important}
+.rajac-news-menu-inner{
+  width:100%!important;max-width:1600px!important;margin:0 auto!important;
+  min-height:60px!important;padding:8px 14px!important;
+  display:flex!important;flex-direction:row!important;flex-wrap:nowrap!important;
+  align-items:center!important;justify-content:center!important;gap:6px!important;
+  overflow-x:auto!important;overflow-y:hidden!important;white-space:nowrap!important;
+  scrollbar-width:none!important;-webkit-overflow-scrolling:touch!important;
+}
+.rajac-news-menu-inner::-webkit-scrollbar{display:none!important}
+.rajac-news-menu a{
+  flex:0 0 auto!important;display:inline-flex!important;align-items:center!important;
+  justify-content:center!important;gap:6px!important;min-height:40px!important;
+  padding:0 12px!important;border-radius:999px!important;
+  color:rgba(255,255,255,.82)!important;background:transparent!important;
+  text-decoration:none!important;text-transform:uppercase!important;
+  white-space:nowrap!important;font-size:13px!important;line-height:1!important;
+  font-weight:750!important;letter-spacing:.025em!important;
+}
+.rajac-news-menu a:hover,.rajac-news-menu a:focus-visible{
+  color:#fff!important;background:rgba(255,255,255,.07)!important;
+}
+.rajac-news-menu a.home,.rajac-news-menu a.active{
+  color:#e4cb7e!important;background:rgba(228,203,126,.08)!important;
+  outline:1px solid rgba(228,203,126,.30)!important;
+}
+.rajac-news-menu small{
+  flex:0 0 auto!important;display:inline-flex!important;align-items:center!important;
+  justify-content:center!important;min-width:20px!important;height:20px!important;
+  padding:0 6px!important;border-radius:999px!important;
+  color:#e4cb7e!important;background:rgba(255,255,255,.10)!important;
+  font-size:11px!important;line-height:20px!important;font-weight:800!important;
+  letter-spacing:0!important;
+}
+@media(max-width:1180px){
+  .rajac-news-menu-inner{justify-content:flex-start!important;padding-inline:10px!important}
+  .rajac-news-menu a{font-size:12px!important;padding-inline:10px!important}
+}
+</style>
+<link href="https://piorajac.rs/rajac-vesti/assets/css/rajac-unified-menu.css" rel="stylesheet"/>
+<style id="pio-news-menu-one-row-final">
+
+/* === PIO RAJAC: JEDNOREDNI MENI NA SVIM STRANICAMA VESTI === */
+@media (min-width: 900px){
+  .rajac-news-menu{
+    width:100% !important;
+  }
+  .rajac-news-menu-inner{
+    width:100% !important;
+    max-width:1600px !important;
+    margin:0 auto !important;
+    padding:8px 12px !important;
+    display:flex !important;
+    flex-direction:row !important;
+    flex-wrap:nowrap !important;
+    align-items:center !important;
+    justify-content:center !important;
+    gap:clamp(3px,.55vw,9px) !important;
+    white-space:nowrap !important;
+    overflow-x:auto !important;
+    overflow-y:hidden !important;
+    scrollbar-width:none !important;
+  }
+  .rajac-news-menu-inner::-webkit-scrollbar{display:none !important;}
+  .rajac-news-menu a{
+    flex:0 0 auto !important;
+    white-space:nowrap !important;
+    padding-left:clamp(7px,.65vw,11px) !important;
+    padding-right:clamp(7px,.65vw,11px) !important;
+    font-size:clamp(11px,.86vw,14px) !important;
+  }
+}
+/* На ужим екранима мени остаје један ред и хоризонтално се помера, уместо да пада у други ред. */
+@media (max-width: 899px){
+  .rajac-news-menu-inner{
+    display:flex !important;
+    flex-wrap:nowrap !important;
+    justify-content:flex-start !important;
+    white-space:nowrap !important;
+    overflow-x:auto !important;
+    overflow-y:hidden !important;
+    scrollbar-width:none !important;
+    -webkit-overflow-scrolling:touch !important;
+  }
+  .rajac-news-menu-inner::-webkit-scrollbar{display:none !important;}
+  .rajac-news-menu a{flex:0 0 auto !important;white-space:nowrap !important;}
+}
+
+</style>
+</head>
+<body><nav aria-label="Мени вести" class="rajac-news-menu"><div class="rajac-news-menu-inner"><a class="home" href="https://piorajac.rs/">ПИО „РАЈАЦ”</a><a href="https://piorajac.rs/rajac-vesti/">СВЕ ВЕСТИ</a><a href="https://piorajac.rs/rajac-vesti/kategorije/aktuelno/">АКТУЕЛНО<small>7</small></a><a href="https://piorajac.rs/rajac-vesti/kategorije/vesti/">ВЕСТИ<small>3</small></a><a href="https://piorajac.rs/rajac-vesti/kategorije/izvestaji/">ИЗВЕШТАЈИ<small>8</small></a><a href="https://piorajac.rs/rajac-vesti/kategorije/istrazivanja/">ИСТРАЖИВАЊА<small>9</small></a><a href="https://piorajac.rs/rajac-vesti/kategorije/dogadjaji/">ДОГАЂАЈИ<small>5</small></a><a href="https://piorajac.rs/rajac-vesti/kategorije/u-fokusu/">У ФОКУСУ<small>4</small></a></div></nav>
+<!-- Top nav -->
+<!-- HERO -->
+<header class="hero">
+<div class="wrap">
+<div class="hero-card">
+<div class="hero-inner">
+<div class="hero-copy">
+<span class="eyebrow">COPERNICUS · SENTINEL-2 · 10 m · 2026</span>
+<h1>Дневни сателитски мониторинг<br/>пољопривредних парцела</h1>
+<p class="lead">
+            Јавно доступна имплементација дневне Copernicus Sentinel-2 анализе пољопривредних култура на
+            10 m резолуцији у Републици Србији — са аутоматском детекцијом сушног стреса, кризних стања,
+            могућег пожара и опоравка вегетације. Подаци свежи сваког јутра, отворени за научну јавност и
+            пољопривреднике без лиценцних трошкова.
+          </p>
+<div class="hero-meta">
+<span class="hero-chip">7 парцела · 3,26 ha</span>
+<span class="hero-chip">7 спектралних индекса</span>
+<span class="hero-chip">6 типова аларма</span>
+<span class="hero-chip">~6 прелета месечно</span>
+</div>
+<!-- Prominent CTA -->
+<div class="live-cta">
+<div class="live-cta-text">
+<strong>Уживо приказ карата и трендова</strong>
+<span>Свакодневно ажурирана интерактивна карта свих 7 парцела, са топлотном мапом и трендовима по индексу.</span>
+</div>
+<a class="live-cta-btn" href="https://piorajac.rs/agro-kopernikus/">Отвори монитор</a>
+</div>
+<div class="hero-stats">
+<div class="stat">
+<strong>7 парцела</strong>
+<span>укупно 3,26 ha — пшеница, кромпир, пашњак, ливада</span>
+</div>
+<div class="stat">
+<strong>10 m резолуција</strong>
+<span>нативно за NDVI, EVI и NDWI — сваки пиксел као квадрат 10×10 m</span>
+</div>
+<div class="stat">
+<strong>5 дана ревизита</strong>
+<span>Sentinel-2A/2B/2C — потенцијално 6 снимака месечно по парцели</span>
+</div>
+<div class="stat">
+<strong>6 аларма</strong>
+<span>сушни стрес, кризни стрес, пожар, голо тло, пад виталности, опоравак</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</header>
+<main>
+<div class="wrap">
+<!-- INTRO -->
+<section class="section panel intro">
+<span class="section-tag">Зашто овај пројекат</span>
+<h2 class="section-title">Сателит као дневни сарадник пољопривредника</h2>
+<p class="section-lead">
+      Класичан пољопривредни мониторинг ослања се на теренску процену и периодичне извештаје. У периодима
+      интензивног стреса — летња суша, нагли пожар, плављење — закашњење од 7 до 10 дана значи неповратну
+      штету за усев. Сателитски мониторинг даје <strong>независну, објективну слику стања сваке парцеле сваких 5 дана</strong>,
+      са пуном историјском архивом од 2017. године.
+    </p>
+<p class="section-lead" style="margin-top:14px;">
+      Циљ овог пројекта је да та информација, до сада доступна углавном истраживачким институтима кроз
+      затворене платформе, буде <strong>отворено и бесплатно доступна управљачу заштићеног подручја</strong>,
+      локалним пољопривредницима и свим заинтересованим стручњацима — у реалном времену, са граничном јасном
+      визуелизацијом и аутоматским алармима.
+    </p>
+</section>
+<!-- SENTINEL-2 SECTION WITH CARDS -->
+<section class="section">
+<span class="section-tag">Извор података</span>
+<h2 class="section-title">Copernicus Sentinel-2 — европски стандард</h2>
+<p class="section-lead">
+      Copernicus је програм Европске уније за посматрање Земље којим управљају ЕСА и Европска комисија.
+      За пољопривредну анализу користи се дуо Sentinel-2A (2015) и Sentinel-2B (2017), уз нови Sentinel-2C (2024).
+    </p>
+<div class="cards">
+<article class="card">
+<div class="card-photo">
+<img alt="Sentinel-2 сателит" decoding="async" src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Sentinel-2.jpg"/>
+</div>
+<div class="card-body">
+<h3 class="name">Сентинел-2 мисија</h3>
+<span class="latin">Copernicus / ESA</span>
+<p>Хелиосинхрона орбита на 786 km. 13 спектралних канала од 443 nm до 2.190 nm. Календарски прелет изнад Србије око 10:30 локалног времена.</p>
+<div class="badge-row">
+<span class="badge badge-ok">ревизита 5 дана</span>
+<span class="badge badge-ok">12-bit радиометрија</span>
+</div>
+</div>
+</article>
+<article class="card">
+<div class="card-photo">
+<img alt="Пшенично поље" decoding="async" src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Wheat%20close-up.JPG"/>
+</div>
+<div class="card-body">
+<h3 class="name">Праћене културе</h3>
+<span class="latin">Triticum aestivum, Solanum tuberosum, ливаде, пашњаци</span>
+<p>На Рајцу се прате четири културе на укупно 7 парцела (3,26 ha): пшеница (1,27 ha), кромпир (0,94 ha), пашњак (0,54 ha) и ливада (0,51 ha).</p>
+<div class="badge-row">
+<span class="badge badge-ok">4 културе</span>
+<span class="badge badge-ok">пиксел по пиксел</span>
+</div>
+</div>
+</article>
+<article class="card">
+<div class="card-photo">
+<img alt="NDVI визуелизација" decoding="async" src="https://commons.wikimedia.org/wiki/Special:Redirect/file/NDVI_062003.png"/>
+</div>
+<div class="card-body">
+<h3 class="name">Топлотна мапа NDVI</h3>
+<span class="latin">Normalized Difference Vegetation Index</span>
+<p>Сваки пиксел добија боју по својој вредности — од смеђе (голо тло) преко окер (стрес) до тамно зелене (бујна вегетација). Управник види стање одмах.</p>
+<div class="badge-row">
+<span class="badge badge-ok">визуелна провера</span>
+<span class="badge badge-ok">10 m нативно</span>
+</div>
+</div>
+</article>
+</div>
+<!-- Tech specs -->
+<section class="panel text-box">
+<h3 class="section-title" style="font-size:1.36rem;">Технички подаци мисије</h3>
+<div class="tech-grid">
+<div class="tech-row"><span class="k">Висина орбите</span><span class="v">786 km, sun-synchronous</span></div>
+<div class="tech-row"><span class="k">Време прелета</span><span class="v">око 10:30 локалног времена</span></div>
+<div class="tech-row"><span class="k">Ревизита (2A+2B)</span><span class="v">5 дана</span></div>
+<div class="tech-row"><span class="k">Ширина снимљене траке</span><span class="v">290 km</span></div>
+<div class="tech-row"><span class="k">Спектралне траке</span><span class="v">13 канала (443–2.190 nm)</span></div>
+<div class="tech-row"><span class="k">Просторна резолуција</span><span class="v">10 m / 20 m / 60 m</span></div>
+<div class="tech-row"><span class="k">Радиометријска резолуција</span><span class="v">12-bit</span></div>
+<div class="tech-row"><span class="k">Производ</span><span class="v">COPERNICUS/S2_SR_HARMONIZED</span></div>
+</div>
+<p style="margin-top:18px;">
+        За Рајац то значи приближно <strong>6 прелета месечно</strong>, односно око 70–72 потенцијална мерења
+        годишње по парцели. Реално искористивих снимака (без облака) у нашем региону је око 40–50%, што и даље
+        даје ~35 чистих мерења годишње — несравнљиво више него што може било која теренска посета.
+      </p>
+</section>
+</section>
+<!-- INDICES SECTION -->
+<section class="section">
+<span class="section-tag">Индекси</span>
+<h2 class="section-title">Седам показатеља стања усева</h2>
+<p class="section-lead">
+      За свих 7 парцела сваке расположиве сцене рачуна се седам стандардних спектралних индекса, међусобно
+      комплементарних — сваки осветљава једну страну здравља биљке.
+    </p>
+<div class="index-grid">
+<div class="index-item">
+<h4>NDVI — Виталност културе</h4>
+<span class="formula">(B8 − B4) / (B8 + B4)</span>
+<p>Основни показатељ густине и виталности зелене биомасе. Опсег: −0,2 до +0,95.</p>
+<span class="role">основни</span>
+</div>
+<div class="index-item">
+<h4>EVI — Побољшани вегетациони</h4>
+<span class="formula">2,5 · (B8−B4)/(B8+6B4−7,5B2+1)</span>
+<p>Мање утицаја атмосфере и тла, бољи за зреле усеве са густим покривачем.</p>
+<span class="role">допуна NDVI</span>
+</div>
+<div class="index-item">
+<h4>NDRE — Хлорофил (Red Edge)</h4>
+<span class="formula">(B8 − B5) / (B8 + B5)</span>
+<p>Садржај хлорофила. Рани детектор стреса — реагује пре него NDVI постане видљив.</p>
+<span class="role">рани стрес</span>
+</div>
+<div class="index-item">
+<h4>NDMI — Влажност биомасе</h4>
+<span class="formula">(B8 − B11) / (B8 + B11)</span>
+<p>Садржај воде у лиснатој маси. Кључно за праћење наводњавања и сушног стреса.</p>
+<span class="role">влажност</span>
+</div>
+<div class="index-item">
+<h4>NDWI — Водене површине</h4>
+<span class="formula">(B3 − B8) / (B3 + B8)</span>
+<p>Стајаћа вода на површини. Детекција плављења и локви после кише.</p>
+<span class="role">плављење</span>
+</div>
+<div class="index-item">
+<h4>NBR — Опожарене површине</h4>
+<span class="formula">(B8 − B12) / (B8 + B12)</span>
+<p>Стање опожарених делова. Брза детекција пожара или хитне жетве.</p>
+<span class="role">пожар</span>
+</div>
+<div class="index-item">
+<h4>BSI — Голо тло</h4>
+<span class="formula">((B11+B4)−(B8+B2))/((B11+B4)+(B8+B2))</span>
+<p>Удео голог тла. Прати жетву, орање и опасност од ерозије.</p>
+<span class="role">ерозија</span>
+</div>
+</div>
+</section>
+<!-- METHODOLOGY -->
+<section class="section panel text-box">
+<span class="section-tag">Методологија</span>
+<h2 class="section-title">Како се подаци обрађују</h2>
+<p>
+<strong>Маскирање облака.</strong> Уз сваку Sentinel-2 сцену испоручује се Scene Classification Layer
+      (SCL) — пиксел-нивна класификација типа површине. Алгоритам аутоматски одбацује пикселе означене као
+      сатурирани/дефектни (класа 1), сенка облака (3), облаци различите дебљине (8–10) и снег/лед (11). Остају
+      само пиксели стварне површине тла или вегетације. Овим се избегава такозвани „cloud bias" — фалсификовано
+      просечно стање при облачним условима.
+    </p>
+<p>
+<strong>Дневни режим (од маја 2026).</strong> Свакодневно у 07:00 GitHub Actions крон активира Python
+      скрипту која: (1) скенира Sentinel-2 каталог за последњих 10 дана, (2) идентификује снимке који обухватају
+      Рајац, (3) за сваки дан рачуна индекс мапу, (4) примењује SCL маску, (5) по свакој парцели израчунава
+      статистику свих 7 индекса, (6) проверава да ли је сцена употребљива (мин. 60% парцела са ≥10 валидних
+      пиксела), (7) снима резултат у JSON, (8) ажурира тренд податке текућег месеца, (9) покреће алгоритам
+      за детекцију аларма. Цео процес траје 1–5 минута, у потпуности аутоматизован.
+    </p>
+<p>
+<strong>Месечни режим.</strong> Паралелно ради и месечни композит — 9. у сваком месецу скрипта прави
+      медијанску композицију свих расположивих снимака претходног месеца. Месечни мод је робуснији за
+      дугорочне трендове, а дневни мод за брзу реакцију.
+    </p>
+<div class="note">
+<strong>Обрада на Google Earth Engine:</strong> петабајти Sentinel-2 архиве остају у Google клауду —
+      Python скрипта шаље само упит, а назад добија сажете JSON статистике. Финални JSON фajлoви су свега
+      неколико KB по парцели, па се могу одмах послужити у браузеру без сервиса.
+    </div>
+</section>
+<!-- ALARMS -->
+<section class="section">
+<span class="section-tag">Аутоматски аларми</span>
+<h2 class="section-title">Шест типова раног упозорења</h2>
+<p class="section-lead">
+      Управник заштићеног подручја не мора свакодневно да гледа графике — систем сам шаље упозорења када
+      препозна одређени образац. Алгоритам поређује тренутну вредност индекса са базом 7 дана раније.
+    </p>
+<div class="alarm-grid">
+<div class="alarm-item warn">
+<div class="alarm-icon">💧</div>
+<h4>Сушни стрес</h4>
+<span class="when">NDMI ↓ 0,08 или NDRE ↓ 0,05 за 7 дана</span>
+<p>Пад влажности у биомaси или садржаја хлорофила — рани сигнал недостатка воде, 7–14 дана пре видљивих симптома.</p>
+</div>
+<div class="alarm-item warn">
+<div class="alarm-icon">🌿</div>
+<h4>Пад виталности</h4>
+<span class="when">NDVI ↓ 0,08 за 7 дана</span>
+<p>Општи пад виталности зелене биомасе. Може указивати на болест, штеточине или почетак сезонског старења.</p>
+</div>
+<div class="alarm-item crit">
+<div class="alarm-icon">🔥</div>
+<h4>Кризни стрес</h4>
+<span class="when">NDVI ↓ 0,15 И NDMI ↓ 0,10 за 7 дана</span>
+<p>Истовремен пад и виталности и влажности — тешка дегардација која захтева хитну управљачку реакцију.</p>
+</div>
+<div class="alarm-item crit">
+<div class="alarm-icon">🚒</div>
+<h4>Пожар или нагла жетва</h4>
+<span class="when">NBR ↓ 0,20 за 5 дана</span>
+<p>Нагли скок горућег индекса. Окидач реагује у року од 24 сата после прелета — кључно за брзу интервенцију.</p>
+</div>
+<div class="alarm-item warn">
+<div class="alarm-icon">🟫</div>
+<h4>Голо тло и ерозија</h4>
+<span class="when">BSI ≥ 0,20 или ↑ 0,15 за 7 дана</span>
+<p>После жетве остаје голо тло. На нагибима — опасност од водене ерозије после кише.</p>
+</div>
+<div class="alarm-item info">
+<div class="alarm-icon">🌱</div>
+<h4>Опоравак</h4>
+<span class="when">NDVI ↑ 0,05 за 7 дана</span>
+<p>Позитиван сигнал — мере дају резултат, или је повољно време вратило вегетацију у нормалу.</p>
+</div>
+</div>
+<div class="note" style="margin-top:18px;">
+      Сви прагови су конфигуративни у датотеци <code>alerts/thresholds.json</code> и могу се прилагодити локалним
+      условима и искуству. Систем подржава и имејл нотификације — управник добија поруку само када се појави
+      нов аларм, без дуплирања за исти случај.
+    </div>
+</section>
+<!-- INTERFACE -->
+<section class="section panel text-box">
+<span class="section-tag">Интерфејс</span>
+<h2 class="section-title">Два режима приказа на сајту</h2>
+<p>
+<strong>Месечни режим</strong> даје преглед свих месечних композита од јануара 2026 — за дугорочне трендове,
+      поређење сезона и годишње извештаје.
+    </p>
+<p>
+<strong>Дневни режим</strong> приказује сваки појединачни снимак у текућем месецу. Колона <strong>Δ 7d</strong>
+      показује промену у односу на стање пре 7 дана за сваку парцелу и сваки индекс. <strong>Sparkline графови</strong>
+      уз сваку парцелу су мини-визуелизација тренда. <strong>Аларм-банер</strong> на врху странице — када
+      активни аларми постоје, истичу се по нивоу (критично, упозорење, опоравак). <strong>Heat map преко
+      парцеле</strong> — сваки 10 m пиксел добија боју по својој вредности изабраног индекса.
+    </p>
+<p>
+      Палета боја прилагођава се изабраном индексу (зелено-смеђа за вегетацију, плава-смеђа за влажност,
+      црвена-зелена за пожар) тако да читалац интуитивно разуме шта је нормално а шта одступа.
+    </p>
+<div style="text-align:center;margin-top:24px;">
+<a class="live-cta-btn" href="https://piorajac.rs/agro-kopernikus/">Погледaj уживо на piorajac.rs/agro-kopernikus</a>
+</div>
+</section>
+<!-- OPENNESS / TECH STACK -->
+<section class="section panel text-box">
+<span class="section-tag">Отвореност</span>
+<h2 class="section-title">Сваки слој система је отворен</h2>
+<p>
+      Сви компонeнти овог система су отворени и без лиценцних трошкова: Copernicus Sentinel-2 је бесплатан
+      ЕУ програм, Google Earth Engine је бесплатан за истраживачке и нелекомерцијалне сврхе, скрипте су у
+      Python 3.11 уз opensource библиотеке (Apache 2.0), аутоматизација кроз GitHub Actions је бесплатна за
+      јавне репозиторијуме, веб приказ је WordPress plugin са vanilla JavaScript и SVG графиком.
+    </p>
+<p>
+      Сваки заинтересовани истраживач може: преузети све историјске JSON-е директно из репозиторијума
+      <a href="https://github.com/suvoborskirajac/rajac-agro-data" style="color:#8b6627;text-decoration:underline;">github.com/suvoborskirajac/rajac-agro-data</a>,
+      клонирати скрипту за свој локалитет (свака парцела се додаје уписом у GeoJSON), прилагодити прагове
+      аларма за своје културе, користити агрегиране податке у објавама без лиценцних ограничења.
+    </p>
+</section>
+<!-- CLOSING -->
+<section class="section panel closing">
+<span class="section-tag">Шта то значи за праксу</span>
+<h2 class="section-title">Зашто су ови подаци важни за управљање</h2>
+<p>
+      За управника ПИО „Рајац" и пољопривреднике, овај систем значи свакодневни увид без теренског обиласка,
+      рано упозорење на сушни стрес 7–14 дана пре видљивих симптома голим оком, брзу детекцију пожара у року
+      од 24 сата после прелета, и независни верификабилан запис стања парцеле сваког дана — доказни материјал
+      за случајеве спора о штети или субвенцији.
+    </p>
+<p>
+      За научну јавност у Србији, овај пројекат представља пример отворене инфраструктуре за прецизну пољопривреду
+      која може да се копира на друга заштићена подручја, шаблон за операционални Sentinel-2 пипелине који не
+      захтева скупе платформе, и стварну тестну област за алгоритме детекције аномалија.
+    </p>
+<p>
+      У периоду 2026–2030. прикупиће се око 180–200 снимака по парцели, статистички довољно за поуздану анализу
+      сушних година, утицаја различитих култура на здравље тла, и корелације падавина (ERA5-Land) са биомaсoм.
+    </p>
+<div class="highlights">
+<div class="highlight">
+<strong>Дневно</strong>
+<span>Аутоматски билд сваког јутра у 07:00, без људске интервенције</span>
+</div>
+<div class="highlight">
+<strong>Отворено</strong>
+<span>JSON архива јавно доступна на GitHub-у, лиценца Creative Commons</span>
+</div>
+<div class="highlight">
+<strong>Прецизно</strong>
+<span>10 m резолуција — сваки 10×10 m пиксел се види посебно</span>
+</div>
+<div class="highlight">
+<strong>Бесплатно</strong>
+<span>Без лиценцних трошкова — Copernicus је европско јавно добро</span>
+</div>
+</div>
+<div style="text-align:center;margin-top:28px;">
+<a class="live-cta-btn" href="https://piorajac.rs/agro-kopernikus/" style="font-size:1.08rem;padding:0 32px;min-height:56px;">Отвори агро монитор уживо</a>
+</div>
+</section>
+<div class="footer-note">
+    ПИО „Рајац" · Дневни Copernicus Sentinel-2 мониторинг · 2026.<br/>
+    Документ је јавно доступан под лиценцом Creative Commons BY-SA 4.0.
+  </div>
+</div>
+<style id="rajac-nextvest-css">.rajac-next-vest{max-width:760px;margin:34px auto 44px;padding:0 18px;font-family:Georgia,"Times New Roman",serif}.rajac-next-vest a{display:flex;flex-direction:column;gap:5px;padding:16px 20px;border:1px solid rgba(70,56,28,.20);border-radius:16px;background:#fffaf2;text-decoration:none;color:#1e2c1c;box-shadow:0 8px 24px rgba(38,30,16,.05);transition:transform .2s,box-shadow .2s}.rajac-next-vest a:hover{transform:translateY(-2px);box-shadow:0 12px 30px rgba(38,30,16,.10)}.rajac-next-vest .rnv-k{font-size:12px;font-weight:900;letter-spacing:.14em;text-transform:uppercase;color:#9a7b32;font-family:Arial,sans-serif}.rajac-next-vest .rnv-title{font-size:17px;font-weight:800;line-height:1.32}</style><nav aria-label="Све вести" class="rajac-next-vest"><a href="https://piorajac.rs/rajac-vesti/"><span class="rnv-k">Крај категорије</span><span class="rnv-title">Погледај све вести →</span></a></nav></main>
+<!-- SITE_EDITOR_ADMIN_BAR_START -->
+<script defer="" src="/admin-site-editor.php?admin_bar_js=1"></script>
+<!-- SITE_EDITOR_ADMIN_BAR_END -->
+<button aria-label="На врх стране" id="rajac-totop" title="На врх" type="button">↑</button><style id="rajac-totop-css">#rajac-totop{position:fixed;right:16px;bottom:16px;z-index:10000;width:46px;height:46px;border-radius:999px;border:1px solid rgba(255,255,255,.4);background:rgba(20,30,40,.30);-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);color:#fff;font-size:22px;line-height:1;cursor:pointer;display:flex;align-items:center;justify-content:center;opacity:0;visibility:hidden;transition:opacity .25s,visibility .25s,background .2s;box-shadow:0 6px 20px rgba(0,0,0,.25);-webkit-tap-highlight-color:transparent}#rajac-totop.show{opacity:1;visibility:visible}#rajac-totop:hover{background:rgba(20,30,40,.55)}@media(max-width:1024px){#rajac-totop{right:12px;bottom:12px;width:44px;height:44px}}</style><script>(function(){var b=document.getElementById("rajac-totop");if(!b)return;function o(){if((window.pageYOffset||document.documentElement.scrollTop)>320)b.classList.add("show");else b.classList.remove("show");}window.addEventListener("scroll",o,{passive:true});o();b.addEventListener("click",function(){window.scrollTo({top:0,behavior:"smooth"});});})();</script></body>
+</html>

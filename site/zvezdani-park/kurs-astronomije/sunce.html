@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="sr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Посматрање Сунца — Курс аматерске астрономије — Звездани парк „Рајац“</title>
+<meta name="description" content="Трећа лекција курса аматерске астрономије: како безбедно посматрати Сунце пројекцијом, филтером и H-алфа телескопом, како пребројати Сунчеве пеге и одредити Волфов број.">
+<link rel="canonical" href="https://piorajac.rs/zvezdani-park/kurs-astronomije/sunce.html">
+<meta property="og:type" content="article"><meta property="og:locale" content="sr_RS"><meta property="og:site_name" content="Звездани парк „Рајац“">
+<meta property="og:title" content="Посматрање Сунца — Курс аматерске астрономије">
+<meta property="og:description" content="Безбедно посматрање Сунца, Сунчеве пеге и факуле, Волфов број и циклус Сунчеве активности.">
+<meta property="og:url" content="https://piorajac.rs/zvezdani-park/kurs-astronomije/sunce.html">
+<meta property="og:image" content="https://upload.wikimedia.org/wikipedia/commons/thumb/8/80/The_Sun_with_prominences_in_the_H-alpha_line.jpg/1280px-The_Sun_with_prominences_in_the_H-alpha_line.jpg">
+<meta name="theme-color" content="#050a14">
+<link rel="stylesheet" href="../assets/fonts.css?v=46">
+<link rel="stylesheet" href="assets/course.css?v=31">
+<style>
+/* Само за лекцију „Посматрање Сунца“ — безбедносни блок и посматрачки лист */
+.page-sunce .sun-safety{margin:0 0 clamp(36px,5vw,56px);padding:clamp(20px,3vw,30px);border-radius:20px;background:#fff1ec;border:2px solid #e5603d;color:#4a1c10}
+.page-sunce .sun-safety .hd{display:flex;gap:14px;align-items:center;margin-bottom:14px}
+.page-sunce .sun-safety .ic{flex:0 0 auto;width:46px;height:46px;border-radius:50%;display:grid;place-items:center;background:#d9482a;color:#fff;font:800 24px/1 var(--sans)}
+.page-sunce .sun-safety h2{margin:0;font:600 clamp(24px,3vw,32px)/1.1 var(--serif);color:#8f2410}
+.page-sunce .sun-safety ul{margin:0;padding:0;list-style:none;display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:10px 22px}
+.page-sunce .sun-safety li{position:relative;padding-left:22px;font-size:15.5px;line-height:1.55}
+.page-sunce .sun-safety li::before{content:"✕";position:absolute;left:0;top:0;color:#d9482a;font-weight:800}
+.page-sunce .sun-safety li.ok::before{content:"✓";color:#2f7d3e}
+.page-sunce .sun-safety b{color:#6e1a0a}
+.page-sunce .sun-log{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:24px;align-items:start}
+.page-sunce .sun-log ol{margin:0;padding:0;list-style:none;display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:10px}
+.page-sunce .sun-log li{padding:14px 16px;border-radius:14px;background:var(--card);border:1px solid var(--line);font-size:15px;line-height:1.5;color:var(--ink-2)}
+.page-sunce .sun-log li b{display:block;color:var(--ink);font-size:15.5px}
+.page-sunce .sun-log aside{padding:22px;border-radius:18px;background:var(--card);border:1px solid var(--line);box-shadow:var(--shadow)}
+.page-sunce .sun-log aside h3{margin:0 0 8px;font:600 24px/1.15 var(--serif);color:var(--ink)}
+.page-sunce .sun-log aside p{margin:0 0 16px;font-size:15px;line-height:1.6;color:var(--ink-2)}
+@media (max-width:760px){.page-sunce .sun-log{grid-template-columns:1fr}}
+.page-sunce .res .lang{display:inline-block;margin-left:4px;padding:1px 6px;border-radius:6px;background:rgba(255,255,255,.1);font:700 10px/1.5 var(--sans);letter-spacing:.08em;vertical-align:1px}
+</style>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Course","name":"Посматрање Сунца — Курс аматерске астрономије","description":"Безбедно посматрање Сунца, бројање Сунчевих пега и факула, одређивање Волфовог броја и праћење циклуса Сунчеве активности.","inLanguage":"sr","url":"https://piorajac.rs/zvezdani-park/kurs-astronomije/sunce.html","provider":{"@type":"Organization","name":"ПИО „Рајац“ — Звездани парк","url":"https://piorajac.rs/zvezdani-park/"},"isAccessibleForFree":true,"educationalLevel":"основна и средња школа, студенти, аматери"}
+</script>
+<style>
+/* Велики футер Звезданог парка (исти као на осталим странама секције; стил преузет из ../assets/site.css) */
+footer.zp-footer{position:relative;padding:0;background:var(--night);color:rgba(255,255,255,.62);font-size:.88rem;line-height:1.6;overflow:hidden}
+footer.zp-footer::before{content:"";position:absolute;inset:0;background:radial-gradient(ellipse at 15% 0%,rgba(214,180,106,.12),transparent 50%);pointer-events:none}
+footer.zp-footer .footer-in{position:relative;max-width:var(--max);margin:0 auto;padding:80px 28px 40px;display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:40px}
+footer.zp-footer h5{margin:0 0 16px;font:700 .68rem/1 var(--sans);letter-spacing:.22em;text-transform:uppercase;color:var(--gold)}
+footer.zp-footer ul{list-style:none;margin:0;padding:0}
+footer.zp-footer li{margin-bottom:9px}
+footer.zp-footer a{color:rgba(255,255,255,.75);text-decoration:none}
+footer.zp-footer a:hover{color:var(--gold-2)}
+footer.zp-footer .f-brand b{display:block;margin:14px 0 10px;font:500 1.9rem/1 var(--serif);color:#fff}
+footer.zp-footer .f-brand p{max-width:320px;margin:0}
+footer.zp-footer .footer-base{position:relative;max-width:var(--max);margin:0 auto;padding:22px 28px 34px;border-top:1px solid var(--line-dark);display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;font-size:.78rem;color:rgba(255,255,255,.45)}
+@media (max-width:900px){footer.zp-footer .footer-in{grid-template-columns:1fr 1fr}}
+@media (max-width:560px){footer.zp-footer .footer-in{grid-template-columns:1fr;padding:56px 20px 32px}footer.zp-footer .footer-base{padding:20px 20px 30px}}
+</style>
+<style>
+/* Литература: три колоне по пет једнаких картица */
+.ins .lib ul{grid-template-rows:repeat(5,1fr)}
+.ins .lib a{min-height:76px;height:100%;box-sizing:border-box}
+.ins .lib>div,.ins .lib ul,.ins .lib li,.ins .lib a>span{min-width:0}
+.ins .lib strong,.ins .lib small{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+</style>
+</head>
+<body class="page-sunce lesson-v2" id="top" style="--hero-bg:url('https://upload.wikimedia.org/wikipedia/commons/thumb/8/80/The_Sun_with_prominences_in_the_H-alpha_line.jpg/1280px-The_Sun_with_prominences_in_the_H-alpha_line.jpg')">
+<a class="skip" href="#sadrzaj">Прескочи на садржај</a>
+<header class="zp-topbar">
+<div class="zp-topbar-in">
+<a aria-label="Звездани парк Рајац — почетна" class="zp-brand" href="../index.html">
+<svg aria-hidden="true" viewbox="0 0 40 40"><circle cx="20" cy="20" fill="none" r="19" stroke="rgba(241,220,166,.45)"></circle><path d="M20 6 22.2 17.8 34 20 22.2 22.2 20 34 17.8 22.2 6 20 17.8 17.8Z" fill="#f1dca6"></path><path d="M20 12.5 21 19 27.5 20 21 21 20 27.5 19 21 12.5 20 19 19Z" fill="#050a14" opacity=".35"></path></svg>
+<span><b>Звездани парк</b><small>РАЈАЦ</small></span>
+</a>
+<button aria-expanded="false" aria-label="Мени" class="zp-menu-btn" type="button"><span></span><span></span><span></span></button>
+<nav aria-label="Главна навигација" class="zp-nav">
+<a href="../index.html">Почетна</a>
+<a href="../lokacija.html">Локација</a>
+<div class="zp-dd"><button aria-expanded="false" class="zp-dd-btn" type="button">Истраживања</button><div class="zp-dd-menu"><a href="../01-uvod-i-rajac.html">Увод и истраживачки рад</a><a href="../02-svetlosno-zagadjenje.html">Светлосно загађење</a><a href="../03-predlog-i-merenja.html">Мерења и простор</a><a href="../04-znacaj-i-upravljanje.html">Значај и управљање</a></div></div>
+<a href="../05-programi-i-turizam.html">Програми</a>
+<a href="../07-opservatorija-i-oprema.html">Опсерваторија</a>
+<a href="../nebo.html">Небо</a>
+<a href="../sta-poneti.html">Шта понети</a>
+<a href="../prognoza.html">Прогноза</a>
+<div class="zp-dd"><button aria-expanded="false" class="zp-dd-btn active" type="button">Курс</button><div class="zp-dd-menu"><a href="astrognozija.html"><span class="n">1</span>Астрогнозија</a><a href="instrumenti.html"><span class="n">2</span>Инструменти за посматрање</a><a aria-current="page" class="active" href="sunce.html"><span class="n">3</span>Посматрање Сунца</a><a href="meteori.html"><span class="n">4</span>Посматрање метеора</a><a href="komete.html"><span class="n">5</span>Посматрање комета</a><a href="planete.html"><span class="n">6</span>Посматрање планета</a><a href="astrofotografija.html"><span class="n">7</span>Астрофотографија</a><a href="promenljive-zvezde.html"><span class="n">8</span>Посматрање променљивих звезда</a></div></div>
+<a class="zp-ext" href="https://piorajac.rs/">ПИО „Рајац“ ↗</a>
+</nav>
+</div>
+</header>
+<section class="hero hero-sunce">
+<div class="wrap hero-in">
+<nav aria-label="Путања" class="crumbs"><a href="../index.html">Звездани парк</a><span aria-hidden="true">/</span><span>Курс аматерске астрономије</span><span aria-hidden="true">/</span><span>Лекција 3 од 8</span></nav>
+<span class="kicker">Курс аматерске астрономије · 03</span>
+<h1>Посматрање Сунца</h1>
+<p class="lede">Звезда коју можеш да посматраш дању. Научићеш како да безбедно гледаш Сунце, да пребројиш пеге и факуле и да из својих посматрања пратиш како се мења Сунчева активност.</p>
+</div>
+</section>
+
+<nav aria-label="Лекције курса" class="path">
+<div class="wrap"><ol>
+<li><a href="astrognozija.html"><span class="n">1</span>Астрогнозија</a></li>
+<li><a href="instrumenti.html"><span class="n">2</span>Инструменти</a></li>
+<li><a aria-current="page" href="sunce.html"><span class="n">3</span>Сунце</a></li>
+<li><a href="meteori.html"><span class="n">4</span>Метеори</a></li>
+<li><a href="komete.html"><span class="n">5</span>Комете</a></li>
+<li><a href="planete.html"><span class="n">6</span>Планете</a></li>
+<li><a href="astrofotografija.html"><span class="n">7</span>Астрофотографија</a></li>
+<li><a href="promenljive-zvezde.html"><span class="n">8</span>Променљиве звезде</a></li>
+</ol></div>
+</nav>
+
+<main id="sadrzaj" class="ins">
+
+<!-- 1. УВОД -->
+<section class="sec" id="uvod">
+<div class="wrap">
+  <div class="sun-safety" role="note" aria-labelledby="bezbednost-t" id="bezbednost">
+    <div class="hd"><span class="ic" aria-hidden="true">!</span><h2 id="bezbednost-t">Пре свега: правила безбедности</h2></div>
+    <ul>
+      <li><b>Никада</b> не усмеравај двоглед, дурбин, телескоп или фото-апарат ка Сунцу без наменског соларног филтера постављеног <b>испред објектива</b>, преко целог отвора.</li>
+      <li><b>Окуларни соларни филтери</b> (са натписом „SUN“, који се шрафирају на окулар) <b>нису безбедни</b>: од концентрисане топлоте могу да пукну.</li>
+      <li><b>Тражило</b> (мали трагач на телескопу) скини или поклопи пре него што окренеш инструмент ка Сунцу.</li>
+      <li>Не гледај кроз чађаво стакло, фото-филм, CD, наочаре за сунце или „домаће“ филтере.</li>
+      <li>Филтер провери пре сваког посматрања и <b>причврсти га</b> тако да га ветар или случајан додир не могу скинути.</li>
+      <li><b>Пројекција</b> само малим рефрактором или дурбином. Њутнов рефлектор, Шмит-Касегрен и Максутов не користе се за пројекцију.</li>
+      <li>Не остављај инструмент усмерен ка Сунцу без надзора. Деца посматрају само уз одраслог.</li>
+      <li class="ok">Наочаре за помрачење (стандард ISO 12312-2) служе <b>само за гледање голим оком</b>, никада иза двогледа или телескопа.</li>
+    </ul>
+  </div>
+</div>
+<div class="wrap lead-grid">
+  <div>
+    <div class="sec-head"><span class="kicker">О лекцији</span><h2>Звезда коју видимо дању</h2></div>
+    <p class="big-q">Сунце је једина звезда на чијој површини аматер малим телескопом види <b>детаље</b>: пеге и факуле, а при мирној атмосфери и гранулацију. Ти детаљи се мењају из дана у дан.</p>
+    <p>Научићеш како да посматраш Сунчеве пеге и факуле и како да обрадиш посматрачки материјал. Твоја посматрања могу да постану део светске мреже која већ деценијама прати Сунчеву активност.</p>
+    <ol class="rules" aria-label="Исходи учења">
+      <li><span class="ix">1</span><div><strong>Самостално посматрање</strong><span>Сунце ћеш безбедно посматрати пројекцијом малим рефрактором или кроз соларни филтер постављен испред објектива.</span></div></li>
+      <li><span class="ix">2</span><div><strong>Волфов број и број факула</strong><span>Научићеш да бројиш групе пега и појединачне пеге и да из тога израчунаш Волфов број.</span></div></li>
+    </ol>
+  </div>
+  <figure class="sun-video">
+    <div class="video"><video controls playsinline preload="metadata" src="assets/media/media-86602884.mp4"></video></div>
+    <figcaption>Уводни видео лекције о посматрању Сунца</figcaption>
+  </figure>
+</div>
+</section>
+
+<!-- 2. МЕТОДЕ -->
+<section class="sec dark" id="metode">
+<div class="wrap">
+  <div class="sec-head"><span class="kicker">Безбедност пре свега</span><h2>Три начина да посматраш Сунце</h2><p>Сунце никада не гледај директно. Ни кроз двоглед или телескоп без филтера, ни кроз тамно стакло или фотографски филм. Безбедна су само ова три начина.</p></div>
+  <div class="types">
+    <article class="type">
+      <figure><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/The_Sun_being_projected_with_the_Mc-Math_Pierce_Solar_Telescope_%28noirlab2534f%29.jpg/1280px-The_Sun_being_projected_with_the_Mc-Math_Pierce_Solar_Telescope_%28noirlab2534f%29.jpg" alt="Посетиоци око пројектоване слике Сунца на столу" loading="lazy" decoding="async" width="1280" height="949">
+        <a class="credit" href="https://commons.wikimedia.org/wiki/File:The_Sun_being_projected_with_the_Mc-Math_Pierce_Solar_Telescope_(noirlab2534f).jpg">KPNO/NOIRLab/NSF/AURA/R. Sparks · CC BY 4.0</a>
+        <div class="tag"><small>01 · најјефтиније</small><strong>Пројекција</strong></div></figure>
+      <div class="body">
+        <p class="best"><b>Како:</b> мали <b>рефрактор</b> (отвора до 8–10 cm) или дурбин усмери ка Сунцу по сенци коју тубус баца на тло, а слику ухвати на бели картон 20 до 40 cm иза окулара. Око никада не стављај на окулар.</p>
+        <div class="pc"><div class="plus"><b>Предности</b>јефтино, више људи гледа одједном, пеге се лако прецртају</div><div class="minus"><b>Пази</b>покриј трагач; не користи Њутнов рефлектор, Шмит-Касегрен ни Максутов; узми једноставан окулар без лепљених сочива (Хајгенс, Рамсден); прави паузе да се инструмент не прегреје</div></div>
+      </div>
+    </article>
+    <article class="type">
+      <figure><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/The_Sun_in_white_light.jpg/1280px-The_Sun_in_white_light.jpg" alt="Сунце у белој светлости са две групе пега" loading="lazy" decoding="async" width="1280" height="1280">
+        <a class="credit" href="https://commons.wikimedia.org/wiki/File:The_Sun_in_white_light.jpg">© Matúš Motlo · CC BY-SA 4.0</a>
+        <div class="tag"><small>02 · бела светлост</small><strong>Соларни филтер</strong></div></figure>
+      <div class="body">
+        <p class="best"><b>Како:</b> филтер од соларне фолије или стакла поставља се <b>испред</b> објектива, преко целог отвора. Пропушта око стохиљадитог дела светлости.</p>
+        <div class="pc"><div class="plus"><b>Предности</b>оштре пеге и факуле, при мирној атмосфери и гранулација; погодно за фотографију</div><div class="minus"><b>Пази</b>филтер мора бити неоштећен и чврсто причвршћен; никад филтер „SUN“ на окулару</div></div>
+      </div>
+    </article>
+    <article class="type">
+      <figure><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Solar_telescope_in_use.jpg/1280px-Solar_telescope_in_use.jpg" alt="Ученици посматрају Сунце кроз соларни телескоп" loading="lazy" decoding="async" width="1280" height="960">
+        <a class="credit" href="https://commons.wikimedia.org/wiki/File:Solar_telescope_in_use.jpg">© Blue Plover · CC BY-SA 3.0</a>
+        <div class="tag"><small>03 · водоник, 656 nm</small><strong>H-алфа телескоп</strong></div></figure>
+      <div class="body">
+        <p class="best"><b>Како:</b> посебан соларни телескоп пропушта само уску црвену линију водоника. Открива протуберанце на рубу, филаменте и бакље.</p>
+        <div class="pc"><div class="plus"><b>Предности</b>најлепши призор Сунца, жива слика која се мења за неколико минута</div><div class="minus"><b>Мане</b>скуп; пеге и факуле се боље виде у белој светлости</div></div>
+      </div>
+    </article>
+  </div>
+  <div class="danger sun-danger" role="note"><span class="ic" aria-hidden="true">!</span><span><b>Један поглед кроз нефилтрирани инструмент може трајно да оштети вид.</b> Деца посматрају Сунце само уз одраслог. Пре сваког посматрања провери филтер према светлу: ако видиш и најмању рупицу, не користи га.</span></div>
+</div>
+</section>
+
+<!-- 3. ШТА ВИДИШ -->
+<section class="sec" id="sta-vidis">
+<div class="wrap">
+  <div class="sec-head"><span class="kicker">Фотосфера</span><h2>Шта ћеш видети на Сунцу</h2><p>Кроз филтер беле светлости или на пројекцији видиш фотосферу, видљиву „површину“ Сунца. Ево шта на њој тражиш.</p></div>
+  <div class="sun-feat">
+    <figure class="sun-photo"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/20/The_Largest_Sunspot_Group_%28noao0114%29.jpg/1280px-The_Largest_Sunspot_Group_%28noao0114%29.jpg" alt="Велика група Сунчевих пега" loading="lazy" decoding="async" width="1280" height="924">
+      <figcaption>Једна од највећих група пега у последњих неколико деценија, снимљена 2001. године. · <a href="https://commons.wikimedia.org/wiki/File:The_Largest_Sunspot_Group_(noao0114).jpg">NSO/AURA/NSF · CC BY 4.0</a></figcaption></figure>
+    <ul class="hops">
+      <li><strong>Пеге: умбра и пенумбра</strong><span>Тамно језгро (умбра) окружено је светлијим, влакнастим појасом (пенумбра). Пеге су хладније од околине: око <em>4000 K</em> према <em>5800 K</em> фотосфере.</span></li>
+      <li><strong>Групе пега</strong><span>Пеге се ретко јављају саме. Најчешће чине групе које се развијају и нестају за неколико дана или недеља.</span></li>
+      <li><strong>Факуле</strong><span>Светла, мрежаста поља, најбоље видљива близу руба Сунчевог диска. Повезане су са активним областима: могу се видети пре него што се у некој области појаве пеге, а остају и пошто пеге нестану.</span></li>
+      <li><strong>Затамњење ка рубу</strong><span>Диск је светлији у средини, а тамнији према ивици. Због тога се факуле на рубу лакше уочавају.</span></li>
+      <li><strong>Гранулација</strong><span>Ситна зрнаста структура целе фотосфере: врхови стубова врелог гаса, пречника око 1000 km, који трају десетак минута. Види се само при мирној атмосфери (добар <i>seeing</i>), телескопом отвора од око 10 cm и више, са филтером беле светлости.</span></li>
+      <li><strong>Ротација Сунца</strong><span>Посматрај исту групу неколико дана заредом: видећеш како се помера преко диска. Сунце се на екватору окрене за око 25 дана у односу на звезде, али пошто се и Земља за то време помери по путањи, ми са Земље видимо да се група пега врати на исто место после око <em>27 дана</em>. Ближе половима Сунце се окреће спорије.</span></li>
+    </ul>
+  </div>
+</div>
+</section>
+
+<!-- 4. ВОЛФОВ БРОЈ -->
+<section class="sec" id="volfov-broj" style="padding-top:0">
+<div class="wrap">
+  <div class="sec-head"><span class="kicker">Обрада посматрања</span><h2>Волфов број</h2><p>Од 1848. године астрономи активност Сунца изражавају једним бројем, који је увео Рудолф Волф. Израчунај га из свог посматрања.</p></div>
+  <div class="specs">
+    <div class="formula">
+      <div><code>g</code><span><b>Број група</b> пега на диску. И усамљена пега рачуна се као група.</span></div>
+      <div><code>f</code><span><b>Укупан број пега</b> у свим групама заједно.</span></div>
+      <div><code>R = k (10g + f)</code><span><b>Волфов број</b>. Групе се рачунају десет пута, јер боље показују активност од броја појединачних пега.</span></div>
+      <div><code>k</code><span><b>Лични коефицијент</b> посматрача. Зависи од инструмента, неба и искуства. За почетак узми 1, а мрежа посматрача га касније одређује поређењем.</span></div>
+      <div><code>R ≈ 0 – 300</code><span>Око минимума Волфов број пада и до нуле. У максимуму циклуса изглађене месечне вредности обично прелазе 100–150, а у најјачем забележеном, 19. циклусу (1958), достигле су око 285. Појединачне дневне вредности могу бити и веће.</span></div>
+    </div>
+    <aside class="calc" aria-labelledby="wolf-t">
+      <h3 id="wolf-t">Израчунај Волфов број</h3>
+      <p>Унеси шта си данас избројао или изабери пример.</p>
+      <div class="in">
+        <div><label for="wG">Групе g</label><input id="wG" type="number" inputmode="numeric" min="0" max="40" value="4"></div>
+        <div><label for="wF">Пеге f</label><input id="wF" type="number" inputmode="numeric" min="0" max="400" value="23"></div>
+        <div><label for="wK">Коефицијент k</label><input id="wK" type="number" inputmode="decimal" min="0.3" max="2" step="0.05" value="1"></div>
+      </div>
+      <div class="presets" aria-label="Примери">
+        <button type="button" data-p="0,0">Мирно Сунце</button>
+        <button type="button" data-p="2,6">Око минимума</button>
+        <button type="button" data-p="6,45">Средња активност</button>
+        <button type="button" data-p="12,110">Максимум</button>
+      </div>
+      <div class="out" aria-live="polite">
+        <div><small>Волфов број</small><strong id="wR">63</strong><em>k (10g + f)</em></div>
+        <div><small>Пега по групи</small><strong id="wA">5,8</strong><em>f / g</em></div>
+      </div>
+      <p class="verdict" id="wV">Умерена активност.</p>
+    </aside>
+  </div>
+</div>
+</section>
+
+<!-- 5. ЦИКЛУС -->
+<section class="sec dark" id="ciklus">
+<div class="wrap">
+  <div class="sec-head"><span class="kicker">Једанаест година</span><h2>Циклус Сунчеве активности</h2><p>Број пега расте и опада у циклусу од око 11 година. На почетку циклуса пеге се јављају далеко од екватора, на око 30° ширине, а како циклус одмиче приближавају се екватору. Тако настаје чувени „лептир дијаграм“.</p></div>
+  <div class="cycle">
+    <figure class="cyc-main"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/Sunspot_butterfly_with_graph.gif/1280px-Sunspot_butterfly_with_graph.gif" alt="Лептир дијаграм и графикон површине пега од 1874. године" loading="lazy" decoding="async" width="1280" height="800">
+      <figcaption>Горе: положај пега по ширини (лептир дијаграм). Доле: површина пега кроз циклусе од 1874. године. · <a href="https://commons.wikimedia.org/wiki/File:Sunspot_butterfly_with_graph.gif">NASA/MSFC, D. Hathaway · јавно власништво</a></figcaption></figure>
+    <figure class="cyc-side"><img src="assets/media/cikl21-e2738c7b.gif" alt="Месечни Волфов број током 21. циклуса, 1976–1986" loading="lazy" decoding="async" width="587" height="427">
+      <figcaption>Волфов број током 21. циклуса (1976–1986): црно месечне вредности, црвено изглађена крива. Овакав графикон можеш да нацрташ из својих посматрања.</figcaption></figure>
+  </div>
+  <div class="cyc-links">
+    <a href="https://www.sidc.be/SILSO/datafiles"><strong>SILSO</strong><span>Званични међународни Волфов број: дневни, месечни и годишњи подаци</span></a>
+    <a href="https://www.spaceweather.gov/products/solar-cycle-progression"><strong>NOAA</strong><span>Ток тренутног, 25. циклуса</span></a>
+    <a href="https://sdo.gsfc.nasa.gov/data/"><strong>NASA SDO</strong><span>Данашње Сунце, слике из свемира</span></a>
+  </div>
+</div>
+</section>
+
+<!-- 6. ЗАДАЦИ -->
+<section class="sec" id="zadaci" style="background:var(--paper-2)">
+<div class="wrap">
+<div class="sec-head"><span class="kicker">Вежба</span><h2>Практични задаци</h2><p>Посматрај Сунце сваког ведрог дана. Највредније су дуге, непрекидне серије посматрања.</p></div>
+<div class="tasks">
+<article class="task">
+<span class="lvl">Основна школа</span>
+<h3>Задаци за основце</h3>
+<figure class="task-photo"><img src="assets/media/media-b8186cdd.jpg" alt="Ученици пројектују слику Сунца на бели картон" loading="lazy" decoding="async" width="247" height="231"><figcaption>Пројекција Сунца на бели папир</figcaption></figure>
+<ol>
+<li>Пројектуј Сунце на бели папир, као на слици. Свакога дана преброј Сунчеве пеге и запиши у посматрачки дневник.</li>
+<li>Нацртај месечни и годишњи графикон броја пега. Да ли уочаваш промене броја пега по данима и месецима?</li>
+</ol>
+</article>
+<article class="task">
+<span class="lvl">Средња школа</span>
+<h3>Задаци за средњошколце</h3>
+<p class="task-lead">Посматрај Сунце сваког ведрог дана једном од метода описаних у <a href="https://istrazivac.rs/sunce">дигиталној књизи „Како посматрати Сунце“</a>. Изабери један од истраживачких пројеката.</p>
+<ol>
+<li><b>Одређивање Волфовог броја и броја факула.</b> Нацртај графикон са дневним подацима за годину дана. Уочи цикличну компоненту, тренд и флуктуације.</li>
+<li><b>Одређивање хелиографских координата Сунчевих пега и факула.</b> Нанеси координате сваке групе пега на „лептир дијаграм“. Уочи смањење ширине пега током циклуса Сунчеве активности.</li>
+</ol>
+</article>
+</div>
+</div>
+</section>
+
+<!-- 6а. ПОСМАТРАЧКИ ЛИСТ -->
+<section class="sec" id="posmatracki-list">
+<div class="wrap">
+<div class="sec-head"><span class="kicker">Теренски задатак</span><h2>Посматрачки лист</h2><p>Свако посматрање запиши на исти начин. Тек тада се посматрања из различитих дана, па и различитих посматрача, могу поредити.</p></div>
+<div class="sun-log">
+  <ol>
+    <li><b>Датум и време</b>почетак и крај посматрања, у светском времену (UT = наше зимско време − 1 h, летње − 2 h)</li>
+    <li><b>Инструмент и метода</b>отвор, жижна даљина, увећање; пројекција или филтер</li>
+    <li><b>Услови</b>мирноћа слике (<i>seeing</i>) од 1 (лоше) до 5 (одлично), облачност, прозирност</li>
+    <li><b>g и f</b>број група пега и укупан број пега</li>
+    <li><b>Волфов број</b>R = k (10g + f)</li>
+    <li><b>Факуле</b>број поља факула и где су на диску</li>
+    <li><b>Скица диска</b>положај сваке групе, са ознаком севера и запада</li>
+    <li><b>Напомене</b>нешто необично, промене у односу на претходни дан</li>
+  </ol>
+  <aside>
+    <h3>Лист за штампу</h3>
+    <p>Образац на једној А4 страни, са кругом за скицу Сунчевог диска. Одштампај неколико примерака и носи их на посматрање.</p>
+    <a class="btn btn-gold" href="sunce-posmatracki-list.html">Отвори лист за штампу ↗</a>
+  </aside>
+</div>
+</div>
+</section>
+
+<!-- 7. УПОЗНАЈ МЕТОДЕ -->
+<section class="sec dark" id="upoznaj">
+<div class="wrap">
+<div class="sec-head"><span class="kicker">Упознај методе посматрања</span><h2>Књига, заједница и видео</h2><p>Све методе посматрања детаљно су описане у дигиталној књизи, а заједница посматрача делује на Фејсбуку.</p></div>
+<div class="res">
+<a href="https://istrazivac.rs/sunce"><span class="ico"><svg fill="none" stroke="currentColor" stroke-width="1.6" viewBox="0 0 24 24"><path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H20v15H6.5A2.5 2.5 0 0 0 4 20.5z"/><path d="M4 20.5A2.5 2.5 0 0 0 6.5 23H20v-5"/></svg></span><strong>Дигитална књига</strong><span>„Како посматрати Сунце“, Истраживачка станица Петница.</span></a>
+<a href="https://www.facebook.com/posmatranjesunca/"><span class="ico"><svg fill="none" stroke="currentColor" stroke-width="1.6" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"></circle><path d="M13.5 8.5H15V6h-1.8C11.4 6 10.5 7.1 10.5 8.8V10H9v2.4h1.5V18h2.6v-5.6H15l.3-2.4h-2.2V9.2c0-.4.2-.7.4-.7z"></path></svg></span><strong>Фејсбук</strong><span>Страница „Како посматрати Сунце“.</span></a>
+<a href="https://www.youtube.com/watch?v=xFd9WikYIM8"><span class="ico"><svg fill="none" stroke="currentColor" stroke-width="1.6" viewBox="0 0 24 24"><rect height="13" rx="3.5" width="19" x="2.5" y="5.5"></rect><path d="M10 9.5v5l4.5-2.5z" fill="currentColor"></path></svg></span><strong>Јутјуб</strong><span>Посматрање Сунца у белој светлости. <span class="lang">EN</span></span></a>
+<a href="https://www.youtube.com/watch?v=dbuNafnI_hY"><span class="ico"><svg fill="none" stroke="currentColor" stroke-width="1.6" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.9 4.9l2.1 2.1M17 17l2.1 2.1M4.9 19.1 7 17M17 7l2.1-2.1"/></svg></span><strong>Соларни филтери</strong><span>Соларни телескопи и филтери, објашњење. <span class="lang">EN</span></span></a>
+</div>
+</div>
+</section>
+
+<!-- 8. ШКОЛСКА СЕКЦИЈА -->
+<section class="sec" id="organizacija">
+<div class="wrap">
+  <div class="rajac" style="background-image:url('https://upload.wikimedia.org/wikipedia/commons/thumb/f/fd/Solar_Outreach_Events_in_Schools_Kosovo-wide.jpg/1280px-Solar_Outreach_Events_in_Schools_Kosovo-wide.jpg')">
+    <div class="in">
+      <span class="kicker">Организација</span>
+      <h2>Посматрај са другима</h2>
+      <p>Сунце можеш да посматраш самостално и да пратиш његову активност. Убеди наставнике да оснујете школску секцију за посматрање Сунца и учлани се у неку од међународних мрежа посматрача.</p>
+      <div class="btns"><a class="btn btn-gold" href="https://www.aavso.org/solar">Соларни одсек AAVSO ↗</a><a class="btn btn-ghost" href="https://www.sidc.be/SILSO/home">SILSO мрежа ↗</a></div>
+    </div>
+    <span class="credit">Фото: <a href="https://commons.wikimedia.org/wiki/File:Solar_Outreach_Events_in_Schools_Kosovo-wide.jpg">SUHEJLO</a> · CC BY-SA 4.0</span>
+  </div>
+</div>
+</section>
+
+<!-- 9. ЛИТЕРАТУРА -->
+<section class="sec" id="literatura" style="background:var(--paper-2)">
+<div class="wrap">
+  <div class="sec-head"><span class="kicker">За даље учење</span><h2>Литература, инструменти и софтвер</h2><p>Сви линкови су проверени у октобру 2026.</p></div>
+  <div class="lib">
+    <div><h3>Књиге</h3><ul>
+      <li><a href="http://12apr.su/books/item/f00/s00/z0000021/index.shtml"><span><strong>Сунчева активност<span class="lang">RU</span></strong><small>Ј. В. Витински · онлајн</small></span></a></li>
+      <li><a href="https://www.amazon.com/Sun-Observe-Astronomers-Observing-Guides/dp/0387094970"><span><strong>Сунце и како га посматрати<span class="lang">EN</span></strong><small>J. L. Jenkins · Springer</small></span></a></li>
+      <li><a href="https://link.springer.com/book/10.1007/978-1-4614-8015-0"><span><strong>Посматрање Сунца<span class="lang">EN</span></strong><small>Springer</small></span></a></li>
+      <li><a href="https://solar-astronomy-book.com/"><span><strong>Соларна астрономија<span class="lang">EN</span></strong><small>посматрање, снимање и проучавање Сунца</small></span></a></li>
+      <li><a href="https://britastro.org/journal_book_review/solar-astronomy-observing-imaging-studying-the-sun"><span><strong>Приказ „Соларне астрономије“<span class="lang">EN</span></strong><small>Британско астрономско удружење</small></span></a></li>
+    </ul></div>
+    <div><h3>Безбедно посматрање</h3><ul>
+      <li><a href="https://lovethenightsky.com/look-at-the-sun-safely/"><span><strong>Како безбедно гледати Сунце<span class="lang">EN</span></strong><small>Love the Night Sky · четири методе</small></span></a></li>
+      <li><a href="https://solar-center.stanford.edu/observe/"><span><strong>Безбедно посматрање Сунца<span class="lang">EN</span></strong><small>Станфорд соларни центар</small></span></a></li>
+      <li><a href="https://aavso.org/wp-content/uploads/2026/07/Solar-Observing-English-2017.pdf"><span><strong>Водич за посматрање Сунца<span class="lang">EN</span></strong><small>PDF · AAVSO · пројекција, филтери, бројање пега</small></span></a></li>
+      <li><a href="https://www.celestron.com/blogs/knowledgebase/the-ultimate-guide-to-observing-the-sun"><span><strong>Велики водич Celestron<span class="lang">EN</span></strong><small>Celestron</small></span></a></li>
+      <li><a href="https://eclipse.aas.org/eye-safety/viewers-filters"><span><strong>Безбедни соларни филтери<span class="lang">EN</span></strong><small>Америчко астрономско друштво</small></span></a></li>
+    </ul></div>
+    <div><h3>Софтвер и подаци</h3><ul>
+      <li><a href="https://www.petermeadows.com/html/software.html"><span><strong>Хелиографске координате<span class="lang">EN</span></strong><small>Helio · бесплатан програм, P. Meadows</small></span></a></li>
+      <li><a href="https://www.jhelioviewer.org/"><span><strong>JHelioviewer<span class="lang">EN</span></strong><small>архива снимака Сунца из свемира</small></span></a></li>
+      <li><a href="https://www.esa.int/Science_Exploration/Space_Science/ESA_makes_the_Sun_available_to_everyone"><span><strong>Сунце за свакога · ЕСА<span class="lang">EN</span></strong><small>Европска свемирска агенција</small></span></a></li>
+      <li><a href="https://solar-center.stanford.edu/"><span><strong>Станфорд соларни центар<span class="lang">EN</span></strong><small>активности и материјали за школе</small></span></a></li>
+      <li><a href="https://www.aavso.org/solar"><span><strong>Соларни одсек AAVSO<span class="lang">EN</span></strong><small>пријава посматрања пега</small></span></a></li>
+    </ul></div>
+  </div>
+</div>
+</section>
+
+<!-- 10. КЊИГА -->
+<section class="sec dark" id="knjiga">
+<div class="wrap book book-straight">
+<a href="https://solar-astronomy-book.com/"><img alt="Корица књиге „Solar Astronomy“" height="300" loading="lazy" src="assets/media/solar-astronomy-240x336-1-q9qjx15ofgpnvbthrjc-5e549186.jpg" width="230"/></a>
+<div>
+<span class="kicker">Препорука за читање</span>
+<h3>Соларна астрономија</h3>
+<p>Обиман приручник на 480 страна о посматрању, снимању и проучавању Сунца, од беле светлости до H-алфа и радио посматрања. Уредио га је Кристијан Виладрих, а предговор је написао Џон Лајбахер, некадашњи директор америчке Националне соларне опсерваторије. Књига је на енглеском језику.</p>
+<a class="btn btn-ghost" href="https://solar-astronomy-book.com/">О књизи ↗</a>
+</div>
+</div>
+</section>
+
+<section aria-label="Навигација кроз курс" class="next"><div class="wrap"><a href="meteori.html"><span class="num">04</span><span><small>Следећа лекција</small><strong>Посматрање метеора</strong></span><span aria-hidden="true" class="arr">→</span></a><div class="back"><a href="#top">↑ На врх стране</a><a href="instrumenti.html">← Претходна: Инструменти за посматрање</a><a href="../index.html">Назад на Звездани парк</a></div></div></section>
+</main>
+<footer class="footer zp-footer">
+<div class="footer-in">
+<div class="f-brand"><svg width="40" height="40" viewBox="0 0 40 40" aria-hidden="true"><circle cx="20" cy="20" r="19" fill="none" stroke="rgba(241,220,166,.45)"/><path d="M20 6 22.2 17.8 34 20 22.2 22.2 20 34 17.8 22.2 6 20 17.8 17.8Z" fill="#f1dca6"/><path d="M20 12.5 21 19 27.5 20 21 21 20 27.5 19 21 12.5 20 19 19Z" fill="#050a14" opacity=".35"/></svg><b>Звездани парк „Рајац“</b><p>Пројекат очувања природног ноћног неба у Пределу изузетних одлика „Рајац“ — истраживање, мерење, едукација и астрономски програми.</p></div>
+<div><h5>Пројекат</h5><ul>
+<li><a href="https://piorajac.rs/zvezdani-park/01-uvod-i-rajac.html">Истраживања</a></li>
+<li><a href="https://piorajac.rs/zvezdani-park/02-svetlosno-zagadjenje.html">Светлосно загађење</a></li>
+<li><a href="https://piorajac.rs/zvezdani-park/03-predlog-i-merenja.html">Мерења и простор</a></li>
+<li><a href="https://piorajac.rs/zvezdani-park/04-znacaj-i-upravljanje.html">Управљање</a></li>
+<li><a href="https://piorajac.rs/zvezdani-park/05-programi-i-turizam.html">Програми</a></li>
+<li><a href="https://piorajac.rs/zvezdani-park/07-opservatorija-i-oprema.html">Опсерваторија и опрема</a></li>
+</ul></div>
+<div><h5>Посета и небо</h5><ul>
+<li><a href="https://piorajac.rs/zvezdani-park/lokacija.html">Локација</a></li>
+<li><a href="https://piorajac.rs/zvezdani-park/sta-poneti.html">Шта понети</a></li>
+<li><a href="https://piorajac.rs/zvezdani-park/prognoza.html">Астрономска прогноза</a></li>
+<li><a href="https://piorajac.rs/zvezdani-park/nebo.html">Небо</a></li>
+<li><a href="https://piorajac.rs/zvezdani-park/zivo-nebo-rajac.html">Живо небо над Рајцем</a></li>
+<li><a href="https://piorajac.rs/zvezdani-park/nocno-nebo-rajac.html">Ноћно небо у 360°</a></li>
+</ul></div>
+<div><h5>Повезано</h5><ul>
+<li><a href="https://piorajac.rs/zvezdani-park/kurs-astronomije/">Курс астрономије</a></li>
+<li><a href="https://piorajac.rs/zvezdano-nebo/">All-sky снимак целог неба</a></li>
+<li><a href="https://piorajac.rs/amsrajac/">АМС Рајац</a></li>
+<li><a href="https://svetlo.piorajac.rs">Књига о светлосном загађењу</a></li>
+<li><a href="https://piorajac.rs/">ПИО „Рајац“</a></li>
+<li><a href="mailto:zvezdanipark@piorajac.rs">zvezdanipark@piorajac.rs</a></li>
+</ul></div>
+</div>
+<div class="footer-base"><span>© 2026 ПИО „Рајац“ · Љиг</span><span>Небо је део природе. Чувајмо мрак.</span></div>
+</footer>
+<script defer src="assets/course.js?v=4"></script>
+<script>
+(function(){
+  var G=document.getElementById('wG'),F=document.getElementById('wF'),K=document.getElementById('wK');
+  if(!G)return;
+  function fx(n,d){return n.toFixed(d).replace('.',',');}
+  function calc(){
+    var g=Math.max(0,parseInt(G.value,10)||0),f=Math.max(0,parseInt(F.value,10)||0),k=parseFloat(String(K.value).replace(',','.'))||1;
+    var v=document.getElementById('wV'),w=false,t;
+    if(f<g){t='Број пега не може бити мањи од броја група: свака група има бар једну пегу.';w=true;}
+    var R=Math.round(k*(10*g+f));
+    document.getElementById('wR').textContent=R;
+    document.getElementById('wA').textContent=g?fx(f/g,1):'—';
+    if(!w){
+      if(R===0)t='На диску нема пега. Такви дани су чести око минимума циклуса.';
+      else if(R<30)t='Ниска активност, као око минимума циклуса.';
+      else if(R<80)t='Умерена активност.';
+      else if(R<150)t='Висока активност, као у години пре или после максимума.';
+      else t='Веома висока активност, као у максимуму циклуса.';
+    }
+    v.textContent=t;v.classList.toggle('warn',w);
+  }
+  [G,F,K].forEach(function(i){i.addEventListener('input',calc);});
+  document.querySelectorAll('#volfov-broj .presets button').forEach(function(b){b.addEventListener('click',function(){var p=b.dataset.p.split(',');G.value=p[0];F.value=p[1];calc();});});
+  calc();
+})();
+</script>
+<!-- ZP-SUMRAK --><script src="https://piorajac.rs/zvezdani-park/assets/sumrak.js?v=7" defer></script>
+</body>
+</html>

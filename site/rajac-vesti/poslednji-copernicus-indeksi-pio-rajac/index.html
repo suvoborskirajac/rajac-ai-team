@@ -1,0 +1,1156 @@
+<!DOCTYPE html>
+
+<html lang="sr-Cyrl">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>Последња Copernicus карта индекса вегетације за ПИО „Рајац”</title>
+<meta content="Последња сателитски обрађена Copernicus/Sentinel-2 карта за ПИО „Рајац” омогућава јавни увид у стање вегетације, влажности и промена у простору преко NDVI, NDMI и других индекса." name="description"/>
+<meta content="Последња Copernicus карта индекса вегетације за ПИО „Рајац”" property="og:title"/>
+<meta content="Јавни приказ последњих индекса вегетације за ПИО „Рајац” — корисно за праћење ливада, шума, опоравка вегетације, сушног стреса и промена на стаништима." property="og:description"/>
+<meta content="https://piorajac.rs/wp-content/uploads/2026/06/rajacrs3.png" property="og:image"/>
+<style>
+:root{
+  --bg:#f4efe3;
+  --paper:#fffdf7;
+  --ink:#121a22;
+  --muted:#61706d;
+  --line:rgba(25,35,31,.14);
+  --line2:rgba(25,35,31,.08);
+  --nav:#0d1b2a;
+  --gold:#d9bd6a;
+  --gold2:#9b6b12;
+  --green:#173e27;
+  --green2:#1d6b37;
+  --blue:#0f2436;
+  --radius:28px;
+  --shadow:0 22px 60px rgba(19,29,22,.10);
+  --wrap:min(1180px,calc(100% - 42px));
+}
+
+*{box-sizing:border-box}
+
+html{scroll-behavior:smooth}
+
+body{
+  margin:0;
+  color:var(--ink);
+  font-family:Georgia,"Times New Roman",serif;
+  background:
+    radial-gradient(circle at 12% 0%,rgba(217,189,106,.18),transparent 32%),
+    radial-gradient(circle at 88% 0%,rgba(29,107,55,.12),transparent 36%),
+    var(--bg);
+}
+
+a{
+  color:inherit;
+  text-decoration:none;
+}
+
+img{
+  display:block;
+  max-width:100%;
+}
+
+.rajac-news-menu{
+  position:sticky;
+  top:0;
+  z-index:30;
+  background:var(--nav);
+  border-bottom:1px solid rgba(255,255,255,.10);
+  box-shadow:0 8px 26px rgba(0,0,0,.08);
+}
+
+.rajac-news-menu-inner{flex-wrap:wrap;
+  max-width:1180px;
+  margin:0 auto;
+  padding:0 18px;
+  min-height:56px;
+  display:flex;
+  align-items:center;
+  gap:8px;
+  overflow-x:visible;
+  scrollbar-width:none;
+}
+
+.rajac-news-menu-inner::-webkit-scrollbar{display:none}
+
+.rajac-news-menu a{
+  display:inline-flex;
+  align-items:center;
+  gap:6px;
+  min-height:38px;
+  padding:0 13px;
+  border-radius:999px;
+  color:rgba(255,255,255,.74);
+  font-family:Arial,sans-serif;
+  font-size:13px;
+  font-weight:800;
+  letter-spacing:.06em;
+  text-transform:uppercase;
+  white-space:nowrap;
+  line-height:1;
+}
+
+.rajac-news-menu a:hover{
+  background:rgba(255,255,255,.06);
+  color:#fff;
+}
+
+.rajac-news-menu .home{
+  color:#e0c678;
+  border:1px solid rgba(224,198,120,.34);
+  background:rgba(224,198,120,.06);
+}
+
+.rajac-news-menu a.active{
+  color:#e0c678;
+  background:rgba(224,198,120,.08);
+  outline:1px solid rgba(224,198,120,.26);
+}
+
+.rajac-news-menu small{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  min-width:20px;
+  height:20px;
+  padding:0 6px;
+  border-radius:999px;
+  background:rgba(255,255,255,.10);
+  color:#e0c678;
+  font-size:11px;
+  letter-spacing:0;
+}
+
+.shell{
+  width:var(--wrap);
+  margin:0 auto;
+}
+
+.hero{
+  padding:72px 0 34px;
+  border-bottom:1px solid var(--line);
+}
+
+.kicker{
+  margin:0 0 16px;
+  color:var(--gold2);
+  font-family:Arial,sans-serif;
+  font-size:13px;
+  font-weight:900;
+  letter-spacing:.24em;
+  text-transform:uppercase;
+}
+
+.hero h1{
+  margin:0;
+  max-width:1040px;
+  font-size:clamp(34px,4.6vw,62px);
+  line-height:1.02;
+  font-weight:400;
+  letter-spacing:-.045em;
+}
+
+.subtitle{
+  max-width:930px;
+  margin:24px 0 0;
+  color:var(--muted);
+  font-size:clamp(19px,1.6vw,24px);
+  line-height:1.66;
+}
+
+.actions{
+  display:flex;
+  gap:12px;
+  flex-wrap:wrap;
+  margin-top:30px;
+}
+
+.btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  min-height:48px;
+  padding:0 18px;
+  border-radius:999px;
+  font-family:Arial,sans-serif;
+  font-size:13px;
+  font-weight:900;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  border:1px solid var(--line);
+  transition:.18s ease;
+  background:#fffdf7;
+  color:var(--green);
+}
+
+.btn.primary{
+  background:var(--green2);
+  color:white;
+  border-color:transparent;
+}
+
+.btn:hover{
+  transform:translateY(-2px);
+  box-shadow:0 12px 28px rgba(25,31,24,.12);
+}
+
+.highlight-link{
+  margin:30px 0 34px;
+  padding:30px;
+  border-radius:30px;
+  background:
+    linear-gradient(145deg,rgba(23,62,39,.96),rgba(29,107,55,.94)),
+    var(--green);
+  color:white;
+  box-shadow:0 24px 70px rgba(19,29,22,.18);
+  display:grid;
+  grid-template-columns:minmax(0,1fr) auto;
+  gap:24px;
+  align-items:center;
+}
+
+.highlight-link span{
+  display:block;
+  margin-bottom:8px;
+  color:#e8c978;
+  font-family:Arial,sans-serif;
+  font-size:13px;
+  font-weight:900;
+  letter-spacing:.18em;
+  text-transform:uppercase;
+}
+
+.highlight-link h2{
+  margin:0;
+  color:#fff;
+  font-size:clamp(30px,3.2vw,46px);
+  font-weight:400;
+  line-height:1.08;
+  letter-spacing:-.025em;
+}
+
+.highlight-link p{
+  margin:12px 0 0;
+  color:rgba(255,255,255,.82);
+  font-size:19px;
+  line-height:1.62;
+}
+
+.highlight-link a{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  min-height:54px;
+  padding:0 22px;
+  border-radius:999px;
+  background:#fff;
+  color:var(--green);
+  font-family:Arial,sans-serif;
+  font-size:13px;
+  font-weight:900;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  white-space:nowrap;
+}
+
+.layout{
+  display:grid;
+  grid-template-columns:minmax(0,1.05fr) minmax(310px,.45fr);
+  gap:24px;
+  margin:30px 0 64px;
+  align-items:start;
+}
+
+.card{
+  background:rgba(255,253,247,.90);
+  border:1px solid var(--line2);
+  border-radius:var(--radius);
+  box-shadow:var(--shadow);
+  padding:clamp(24px,3.2vw,42px);
+}
+
+.prose p{
+  font-size:20px;
+  line-height:1.8;
+  color:var(--muted);
+  margin:0 0 18px;
+}
+
+.prose .lead{
+  font-size:23px;
+  line-height:1.72;
+  color:#38423f;
+  margin-bottom:24px;
+}
+
+.prose h2{
+  margin:36px 0 14px;
+  color:var(--green);
+  font-size:clamp(30px,3.1vw,44px);
+  font-weight:400;
+  line-height:1.08;
+  letter-spacing:-.025em;
+}
+
+.prose h2:first-child{margin-top:0}
+
+.prose strong{color:#1b2824}
+
+.note-box{
+  margin:26px 0;
+  padding:22px;
+  border-radius:22px;
+  background:#f1ead8;
+  border:1px solid rgba(155,107,18,.18);
+}
+
+.note-box p{
+  margin:0;
+  color:#4e4a3e;
+  font-size:19px;
+  line-height:1.65;
+}
+
+.note-box strong{
+  color:#111;
+}
+
+.audience-box{
+  padding:24px;
+  border-radius:24px;
+  background:#fffaf2;
+  border:1px solid rgba(155,107,18,.20);
+  border-left:5px solid var(--gold2);
+  margin:24px 0 24px;
+}
+
+.audience-box h3{
+  margin:0 0 10px;
+  color:#1b2824;
+  font-size:25px;
+  font-weight:700;
+  line-height:1.2;
+}
+
+.audience-box p{
+  margin:0;
+  font-size:19px;
+  line-height:1.72;
+  color:#4e4a3e;
+}
+
+.grid-3{
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:16px;
+  margin:20px 0 28px;
+}
+
+.mini{
+  padding:20px;
+  border-radius:22px;
+  background:#fbf7ed;
+  border:1px solid var(--line);
+}
+
+.mini span{
+  display:inline-flex;
+  margin-bottom:10px;
+  color:var(--gold2);
+  font-family:Arial,sans-serif;
+  font-size:12px;
+  font-weight:900;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+}
+
+.mini h3{
+  margin:0 0 8px;
+  color:var(--green);
+  font-size:24px;
+  font-weight:400;
+  line-height:1.16;
+}
+
+.mini p{
+  margin:0;
+  font-size:18px;
+  line-height:1.58;
+  color:var(--muted);
+}
+
+.callout{
+  margin-top:28px;
+  padding:28px;
+  border-radius:26px;
+  background:linear-gradient(145deg,#173e27,#1d6b37);
+  color:white;
+  box-shadow:var(--shadow);
+}
+
+.callout h2{
+  margin:0 0 10px!important;
+  color:#fff!important;
+  font-size:34px!important;
+}
+
+.callout p{
+  margin:0;
+  color:rgba(255,255,255,.82);
+  font-size:19px;
+  line-height:1.65;
+}
+
+.facts-card{
+  background:linear-gradient(155deg,#081421,#102719);
+  color:white;
+  border-color:rgba(255,255,255,.10);
+}
+
+.facts-card h2{
+  margin:0 0 18px;
+  font-size:34px;
+  font-weight:400;
+  color:white;
+  line-height:1.12;
+}
+
+.facts{
+  display:grid;
+  gap:13px;
+}
+
+.fact{
+  padding:15px 16px;
+  border-radius:18px;
+  background:rgba(255,255,255,.07);
+  border:1px solid rgba(255,255,255,.12);
+}
+
+.fact span{
+  display:block;
+  margin-bottom:6px;
+  color:#e8c978;
+  font-family:Arial,sans-serif;
+  font-size:12px;
+  font-weight:900;
+  letter-spacing:.15em;
+  text-transform:uppercase;
+}
+
+.fact strong{
+  display:block;
+  font-size:22px;
+  font-weight:400;
+  line-height:1.22;
+  color:white;
+}
+
+.fact em{
+  display:block;
+  margin-top:5px;
+  color:rgba(255,255,255,.72);
+  font-style:normal;
+  font-size:15px;
+  line-height:1.45;
+}
+
+.mini-nav{
+  display:grid;
+  gap:10px;
+  margin-top:20px;
+  padding-top:20px;
+  border-top:1px solid rgba(255,255,255,.12);
+}
+
+.mini-nav a{
+  display:block;
+  padding:13px 14px;
+  border-radius:15px;
+  background:rgba(255,255,255,.07);
+  color:rgba(255,255,255,.86);
+  font-family:Arial,sans-serif;
+  font-size:13px;
+  font-weight:900;
+  letter-spacing:.06em;
+  text-transform:uppercase;
+}
+
+.mini-nav a:hover{
+  background:rgba(255,255,255,.12);
+  color:#fff;
+}
+
+@media(max-width:960px){
+  .layout{
+    grid-template-columns:1fr;
+  }
+
+  .grid-3{
+    grid-template-columns:1fr;
+  }
+
+  .highlight-link{
+    grid-template-columns:1fr;
+  }
+
+  .highlight-link a{
+    justify-self:start;
+  }
+}
+
+@media(max-width:650px){
+  :root{
+    --wrap:min(100% - 24px,1180px);
+  }
+
+  .hero{
+    padding-top:52px;
+  }
+
+  .hero h1{
+    font-size:42px;
+  }
+
+  .card{
+    padding:24px 18px;
+  }
+
+  .prose p,
+  .prose .lead{
+    font-size:18px;
+  }
+
+  .rajac-news-menu-inner{
+    padding:0 10px;
+  }
+
+  .rajac-news-menu a{
+    font-size:12px;
+    padding:0 10px;
+  }
+}
+</style>
+<style id="copernicus-news-layout-fix">
+.highlight-link{
+  margin:26px 0 30px;
+  padding:26px 28px;
+  border-radius:26px;
+}
+.highlight-link h2{
+  font-size:clamp(26px,2.8vw,40px);
+  line-height:1.12;
+}
+.highlight-link p{
+  font-size:18px;
+  line-height:1.66;
+  max-width:none;
+}
+.prose > .highlight-link{
+  width:100%;
+}
+</style>
+<style id="copernicus-patch-only-fixes">
+/* PATCH ONLY: ispravke bez pravljenja nove stranice */
+.hero h1{
+  font-size:clamp(34px,4.6vw,62px)!important;
+  line-height:1.04!important;
+}
+
+.copernicus-map-preview{
+  margin:34px 0 34px;
+  background:#fffdf7;
+  border:1px solid var(--line);
+  border-radius:30px;
+  box-shadow:var(--shadow);
+  overflow:hidden;
+}
+
+.copernicus-map-head{
+  padding:22px 28px 18px;
+  background:#fffaf2;
+  border-bottom:1px solid rgba(25,35,31,.10);
+}
+
+.copernicus-map-head span{
+  display:block;
+  margin-bottom:8px;
+  color:var(--gold2);
+  font-family:Arial,sans-serif;
+  font-size:12px;
+  font-weight:900;
+  letter-spacing:.18em;
+  text-transform:uppercase;
+}
+
+.copernicus-map-head h2{
+  margin:0;
+  color:var(--green);
+  font-size:clamp(28px,3vw,42px);
+  font-weight:400;
+  line-height:1.12;
+}
+
+.copernicus-map-preview iframe{
+  width:100%;
+  height:min(70vh,720px);
+  min-height:520px;
+  display:block;
+  border:0;
+  background:#f6f1e5;
+}
+
+.copernicus-map-preview figcaption{
+  padding:14px 20px 18px;
+  color:#61706d;
+  font:15px/1.55 Arial,sans-serif;
+  background:#fffdf7;
+  border-top:1px solid rgba(25,35,31,.08);
+}
+
+.copernicus-service-link{
+  margin:32px 0 34px;
+  padding:24px 26px;
+  border-radius:24px;
+  background:#fffaf2!important;
+  border:1px solid rgba(155,107,18,.22);
+  border-left:6px solid var(--gold2);
+  box-shadow:none!important;
+  color:var(--ink)!important;
+}
+
+.copernicus-service-link span{
+  display:block;
+  margin-bottom:10px;
+  color:var(--gold2);
+  font-family:Arial,sans-serif;
+  font-size:12px;
+  font-weight:900;
+  letter-spacing:.18em;
+  text-transform:uppercase;
+}
+
+.copernicus-service-link h2{
+  margin:0 0 12px!important;
+  color:var(--green)!important;
+  font-size:clamp(27px,2.8vw,40px)!important;
+  line-height:1.12!important;
+}
+
+.copernicus-service-link p{
+  margin:0 0 18px!important;
+  color:#4e4a3e!important;
+  font-size:19px!important;
+  line-height:1.66!important;
+}
+
+.copernicus-service-link a{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  min-height:46px;
+  padding:0 18px;
+  border-radius:999px;
+  background:#fff;
+  color:var(--green);
+  border:1px solid rgba(23,62,39,.30);
+  font-family:Arial,sans-serif;
+  font-size:13px;
+  font-weight:900;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+}
+
+/* crni vertikalni blok prebacen u svetli blok */
+.facts-card{
+  background:#fffdf7!important;
+  background-image:none!important;
+  color:var(--ink)!important;
+  border:1px solid var(--line)!important;
+  box-shadow:var(--shadow)!important;
+}
+
+.facts-card h2{
+  color:var(--green)!important;
+}
+
+.fact{
+  background:#fffaf2!important;
+  border:1px solid rgba(155,107,18,.16)!important;
+}
+
+.fact span{
+  color:var(--gold2)!important;
+}
+
+.fact strong{
+  color:#1b2824!important;
+}
+
+.fact em{
+  color:#61706d!important;
+}
+
+.mini-nav{
+  border-top:1px solid rgba(25,35,31,.12)!important;
+}
+
+/* ostaje samo jedan link ka datom servisu */
+.mini-nav a{
+  background:#fffaf2!important;
+  color:var(--green)!important;
+  border:1px solid rgba(155,107,18,.16)!important;
+}
+
+/* uklanjanje eventualnog velikog zelenog bloka */
+.highlight-link{
+  display:none!important;
+}
+
+@media(max-width:960px){
+  .copernicus-map-preview iframe{
+    height:min(68vh,620px);
+    min-height:420px;
+  }
+}
+</style>
+<style id="copernicus-final-patch-v4">
+/* PATCH v4: samo izmene postojeće vesti */
+.layout{
+  display:block!important;
+  margin:30px 0 64px!important;
+}
+
+.layout > .card.prose{
+  width:100%!important;
+  max-width:none!important;
+}
+
+.facts-card,
+.mini-nav,
+.copernicus-service-link,
+.index-link-box,
+.highlight-link{
+  display:none!important;
+}
+
+.copernicus-map-preview{
+  background:#fffdf7!important;
+  border:1px solid var(--line)!important;
+  border-radius:30px!important;
+  box-shadow:var(--shadow)!important;
+  overflow:hidden!important;
+}
+
+.copernicus-map-head{
+  background:#fffaf2!important;
+  border-bottom:1px solid rgba(25,35,31,.10)!important;
+}
+
+.copernicus-map-image-link{
+  display:block!important;
+  width:100%!important;
+  background:#f6f1e5!important;
+}
+
+.copernicus-map-image-link img{
+  display:block!important;
+  width:100%!important;
+  height:auto!important;
+  max-width:none!important;
+}
+
+.copernicus-map-preview figcaption{
+  padding:14px 20px 18px!important;
+  color:#61706d!important;
+  font:15px/1.55 Arial,sans-serif!important;
+  background:#fffdf7!important;
+  border-top:1px solid rgba(25,35,31,.08)!important;
+}
+
+.prose{
+  max-width:none!important;
+}
+
+.prose p{
+  max-width:none!important;
+}
+
+.prose h2{
+  max-width:none!important;
+}
+
+.card.prose{
+  padding:clamp(26px,3.2vw,44px)!important;
+}
+
+/* Donji tekst ide punom širinom glavnog stupca i lepše se čita */
+.prose h2:nth-of-type(n+3){
+  margin-top:42px!important;
+}
+
+.prose p strong{
+  color:#1b2824!important;
+}
+</style>
+<style id="copernicus-audience-redesign-v5">
+.audience-section{
+  display:grid;
+  grid-template-columns:1fr;
+  gap:22px;
+  margin:38px 0 42px;
+}
+
+.audience-card{
+  position:relative;
+  overflow:hidden;
+  padding:clamp(24px,3vw,36px);
+  border-radius:28px;
+  background:#fffaf2;
+  border:1px solid rgba(155,107,18,.18);
+  box-shadow:0 14px 40px rgba(19,29,22,.06);
+}
+
+.audience-card::before{
+  content:"";
+  position:absolute;
+  left:0;
+  top:0;
+  bottom:0;
+  width:6px;
+  background:#9b6b12;
+}
+
+.audience-card-research{
+  background:linear-gradient(180deg,#fffdf7 0%,#f7f1e4 100%);
+}
+
+.audience-kicker{
+  margin:0 0 12px;
+  color:#9b6b12;
+  font-family:Arial,sans-serif;
+  font-size:12px;
+  font-weight:900;
+  letter-spacing:.18em;
+  text-transform:uppercase;
+}
+
+.audience-card h2{
+  margin:0 0 10px!important;
+  color:#173e27!important;
+  font-size:clamp(30px,3.1vw,44px)!important;
+  line-height:1.08!important;
+}
+
+.audience-card h3{
+  margin:0 0 18px;
+  color:#1b2824;
+  font-size:clamp(21px,2vw,27px);
+  line-height:1.25;
+  font-weight:700;
+}
+
+.audience-card p{
+  margin:0 0 16px!important;
+  color:#4f5f5c!important;
+  font-size:20px!important;
+  line-height:1.82!important;
+}
+
+.audience-card p:last-child{
+  margin-bottom:0!important;
+}
+
+.audience-card strong{
+  color:#173e27!important;
+}
+
+@media(max-width:650px){
+  .audience-card{
+    padding:24px 18px 24px 22px;
+    border-radius:22px;
+  }
+
+  .audience-card p{
+    font-size:18px!important;
+  }
+}
+</style>
+<style id="copernicus-map-title-one-line-fix">
+/* Smanjen naslov iznad karte da stane u jedan red */
+.copernicus-map-head h2{
+  font-size:clamp(22px,2.35vw,30px)!important;
+  line-height:1.12!important;
+  letter-spacing:-.02em!important;
+  white-space:nowrap!important;
+}
+@media(max-width:900px){
+  .copernicus-map-head h2{
+    white-space:normal!important;
+    font-size:clamp(22px,3.2vw,28px)!important;
+  }
+}
+</style>
+<style id="parcel-ndvi-map-style">
+.parcel-ndvi-map{
+  margin:38px 0 42px;
+  border-radius:28px;
+  overflow:hidden;
+  background:#fffdf7;
+  border:1px solid var(--line);
+  box-shadow:0 18px 54px rgba(19,29,22,.10);
+}
+
+.parcel-ndvi-map img{
+  display:block;
+  width:100%;
+  height:auto;
+  max-width:none;
+}
+
+.parcel-ndvi-map figcaption{
+  padding:16px 20px 18px;
+  background:#fffaf2;
+  border-top:1px solid rgba(25,35,31,.08);
+  color:#4e5f5b;
+  font:16px/1.6 Arial,sans-serif;
+}
+
+@media(max-width:650px){
+  .parcel-ndvi-map{
+    margin:30px 0 34px;
+    border-radius:22px;
+  }
+  .parcel-ndvi-map figcaption{
+    font-size:14px;
+    padding:14px 16px 16px;
+  }
+}
+</style>
+<style id="rajac-news-menu-one-row">
+/* Јединствен мени за све вести: један ред и исти sans-serif фонт као на осталим страницама сајта. */
+.rajac-news-menu{font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif!important}
+.rajac-news-menu-inner{width:min(100%,1600px)!important;max-width:1600px!important;margin:0 auto!important;padding:9px 14px!important;display:flex!important;flex-wrap:nowrap!important;align-items:center!important;justify-content:center!important;gap:4px!important;overflow-x:auto!important;overflow-y:hidden!important;scrollbar-width:none!important;-webkit-overflow-scrolling:touch}
+.rajac-news-menu-inner::-webkit-scrollbar{display:none!important}
+.rajac-news-menu a{flex:0 0 auto!important;min-height:38px!important;padding:0 10px!important;font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif!important;font-size:12px!important;font-weight:750!important;letter-spacing:.025em!important;line-height:1!important;text-transform:uppercase!important;white-space:nowrap!important}
+.rajac-news-menu small{font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif!important}
+@media(max-width:1050px){.rajac-news-menu-inner{justify-content:flex-start!important}.rajac-news-menu a{font-size:11px!important;padding:0 9px!important}}
+</style>
+<style id="rajac-unified-news-menu-v3">
+.rajac-news-menu{
+  position:sticky!important;top:0!important;z-index:9999!important;
+  width:100%!important;background:#0d1b2a!important;
+  border-bottom:1px solid rgba(255,255,255,.10)!important;
+  box-shadow:0 7px 22px rgba(0,0,0,.10)!important;
+  font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif!important;
+}
+.rajac-news-menu *{font-family:inherit!important;box-sizing:border-box!important}
+.rajac-news-menu-inner{
+  width:100%!important;max-width:1600px!important;margin:0 auto!important;
+  min-height:60px!important;padding:8px 14px!important;
+  display:flex!important;flex-direction:row!important;flex-wrap:nowrap!important;
+  align-items:center!important;justify-content:center!important;gap:6px!important;
+  overflow-x:auto!important;overflow-y:hidden!important;white-space:nowrap!important;
+  scrollbar-width:none!important;-webkit-overflow-scrolling:touch!important;
+}
+.rajac-news-menu-inner::-webkit-scrollbar{display:none!important}
+.rajac-news-menu a{
+  flex:0 0 auto!important;display:inline-flex!important;align-items:center!important;
+  justify-content:center!important;gap:6px!important;min-height:40px!important;
+  padding:0 12px!important;border-radius:999px!important;
+  color:rgba(255,255,255,.82)!important;background:transparent!important;
+  text-decoration:none!important;text-transform:uppercase!important;
+  white-space:nowrap!important;font-size:13px!important;line-height:1!important;
+  font-weight:750!important;letter-spacing:.025em!important;
+}
+.rajac-news-menu a:hover,.rajac-news-menu a:focus-visible{
+  color:#fff!important;background:rgba(255,255,255,.07)!important;
+}
+.rajac-news-menu a.home,.rajac-news-menu a.active{
+  color:#e4cb7e!important;background:rgba(228,203,126,.08)!important;
+  outline:1px solid rgba(228,203,126,.30)!important;
+}
+.rajac-news-menu small{
+  flex:0 0 auto!important;display:inline-flex!important;align-items:center!important;
+  justify-content:center!important;min-width:20px!important;height:20px!important;
+  padding:0 6px!important;border-radius:999px!important;
+  color:#e4cb7e!important;background:rgba(255,255,255,.10)!important;
+  font-size:11px!important;line-height:20px!important;font-weight:800!important;
+  letter-spacing:0!important;
+}
+@media(max-width:1180px){
+  .rajac-news-menu-inner{justify-content:flex-start!important;padding-inline:10px!important}
+  .rajac-news-menu a{font-size:12px!important;padding-inline:10px!important}
+}
+</style>
+<link href="https://piorajac.rs/rajac-vesti/assets/css/rajac-unified-menu.css" rel="stylesheet"/>
+<style id="pio-news-menu-one-row-final">
+
+/* === PIO RAJAC: JEDNOREDNI MENI NA SVIM STRANICAMA VESTI === */
+@media (min-width: 900px){
+  .rajac-news-menu{
+    width:100% !important;
+  }
+  .rajac-news-menu-inner{
+    width:100% !important;
+    max-width:1600px !important;
+    margin:0 auto !important;
+    padding:8px 12px !important;
+    display:flex !important;
+    flex-direction:row !important;
+    flex-wrap:nowrap !important;
+    align-items:center !important;
+    justify-content:center !important;
+    gap:clamp(3px,.55vw,9px) !important;
+    white-space:nowrap !important;
+    overflow-x:auto !important;
+    overflow-y:hidden !important;
+    scrollbar-width:none !important;
+  }
+  .rajac-news-menu-inner::-webkit-scrollbar{display:none !important;}
+  .rajac-news-menu a{
+    flex:0 0 auto !important;
+    white-space:nowrap !important;
+    padding-left:clamp(7px,.65vw,11px) !important;
+    padding-right:clamp(7px,.65vw,11px) !important;
+    font-size:clamp(11px,.86vw,14px) !important;
+  }
+}
+/* На ужим екранима мени остаје један ред и хоризонтално се помера, уместо да пада у други ред. */
+@media (max-width: 899px){
+  .rajac-news-menu-inner{
+    display:flex !important;
+    flex-wrap:nowrap !important;
+    justify-content:flex-start !important;
+    white-space:nowrap !important;
+    overflow-x:auto !important;
+    overflow-y:hidden !important;
+    scrollbar-width:none !important;
+    -webkit-overflow-scrolling:touch !important;
+  }
+  .rajac-news-menu-inner::-webkit-scrollbar{display:none !important;}
+  .rajac-news-menu a{flex:0 0 auto !important;white-space:nowrap !important;}
+}
+
+</style>
+</head>
+<body>
+<nav aria-label="Мени вести" class="rajac-news-menu"><div class="rajac-news-menu-inner"><a class="home" href="https://piorajac.rs/">ПИО „РАЈАЦ”</a><a href="https://piorajac.rs/rajac-vesti/">СВЕ ВЕСТИ</a><a href="https://piorajac.rs/rajac-vesti/kategorije/aktuelno/">АКТУЕЛНО<small>7</small></a><a href="https://piorajac.rs/rajac-vesti/kategorije/vesti/">ВЕСТИ<small>3</small></a><a href="https://piorajac.rs/rajac-vesti/kategorije/izvestaji/">ИЗВЕШТАЈИ<small>8</small></a><a href="https://piorajac.rs/rajac-vesti/kategorije/istrazivanja/">ИСТРАЖИВАЊА<small>9</small></a><a href="https://piorajac.rs/rajac-vesti/kategorije/dogadjaji/">ДОГАЂАЈИ<small>5</small></a><a href="https://piorajac.rs/rajac-vesti/kategorije/u-fokusu/">У ФОКУСУ<small>4</small></a></div></nav>
+<main class="shell">
+<section class="hero">
+<p class="kicker">АКТУЕЛНО · 13.06.2026.</p>
+<h1>Последња сателитски обрађена слика ПИО „Рајац” доступна јавности</h1>
+<p class="subtitle">На сајту ПИО „Рајац” доступан је јавни приказ последњих Copernicus/Sentinel-2 индекса који показују стање вегетације, влажности и промена у простору заштићеног подручја.</p>
+</section>
+<figure class="copernicus-map-preview">
+<div class="copernicus-map-head">
+<span>последња карта</span>
+<h2>NDVI приказ последњих обрађених индекса за ПИО „Рајац”</h2>
+</div>
+<a aria-label="Отвори последње индексе за ПИО Рајац" class="copernicus-map-image-link" href="https://piorajac.rs/kopernikindeks/">
+<img alt="NDVI карта последњих обрађених индекса за ПИО Рајац" decoding="async" loading="eager" src="https://piorajac.rs/wp-content/uploads/2026/06/ndvi.jpg"/>
+</a>
+<figcaption>Карта је повезана са јавним приказом последњих индекса. Клик на слику отвара страницу са најновијом обрађеном картом за ПИО „Рајац”.</figcaption>
+</figure>
+<section class="layout">
+<article class="card prose">
+<p class="lead">Платформа ПИО „Рајац” добија све важнију улогу у праћењу промена у природи. Поред теренских података, фотографија и метеоролошких мерења, сада је посебно истакнут и приказ последњих сателитски обрађених индекса добијених на основу Copernicus/Sentinel-2 снимака.</p>
+<p>Сателитски индекси омогућавају да се простор не посматра само као фотографија, већ као низ мерљивих показатеља. Они помажу да се уоче разлике у стању вегетације, влажности, стресу биљака, опоравку после падавина, последицама суше, кошења, зарастања или промена у шумским и ливадским стаништима.</p>
+<div class="note-box">
+<p><strong>Јавни приказ последњих индекса доступан је на страници:</strong> <a href="https://piorajac.rs/kopernikindeks/" style="color:#173e27;font-weight:900;border-bottom:2px solid #1d6b37;">https://piorajac.rs/kopernikindeks/</a></p>
+</div>
+<h2>Шта се види на последњој карти</h2>
+<p>Последњи приказ индекса омогућава увид у тренутно стање вегетације на простору ПИО „Рајац”. На карти се могу издвојити делови са израженијом зеленом масом, површине које показују слабију виталност, влажније зоне, као и делови предела у којима је потребна додатна теренска провера.</p>
+<p>Ови подаци су нарочито корисни зато што се могу упоређивати са претходним датумима. Један сателитски снимак даје пресек стања у одређеном тренутку, али серија снимака кроз време омогућава да се препознају трендови: опоравак после кише, сушни стрес, сезонско јачање или слабљење вегетације, као и постепене промене на ливадама, пашњацима и шумским рубовима.</p>
+<div aria-label="Главни индекси" class="grid-3">
+<article class="mini">
+<span>NDVI</span>
+<h3>Зелена маса</h3>
+<p>Показује виталност и густину вегетације, што је важно за праћење ливада, пашњака, шума и зарастања.</p>
+</article>
+<article class="mini">
+<span>NDMI</span>
+<h3>Влажност</h3>
+<p>Помаже да се уоче разлике у водном стању биљака и могући сушни стрес у различитим деловима простора.</p>
+</article>
+<article class="mini">
+<span>RECI</span>
+<h3>Стање биљака</h3>
+<p>Корисно допуњује анализу вегетације, нарочито када се прате промене у развоју и физиолошком стању биљака.</p>
+</article>
+</div>
+<section aria-label="Примена података за власнике парцела и истраживаче" class="audience-section">
+<article class="audience-card audience-card-owner">
+<div class="audience-kicker">власници парцела</div>
+<h2>За власнике парцела на Рајцу</h2>
+<h3>Подаци за праћење сопствених ливада, шума и имања</h3>
+<p>За власнике парцела у ПИО „Рајац” ови подаци могу бити припремљени као преглед стања за конкретну парцелу или групу парцела. То значи да власник може добити увид у зелену масу, влажност, сушни стрес, зарастање, последице кошења, опоравак после падавина и сезонске промене на својој ливади, пашњаку, воћњаку или шумској површини.</p>
+<p>Овакви подаци не замењују теренски обилазак, али га чине боље усмереним. Ако сателитски индекс покаже да је један део парцеле сувљи, слабије развијен, зарастао или другачији од остатка површине, власник може лакше да одлучи где треба изаћи на терен, шта проверити и како планирати одржавање.</p>
+</article>
+<article class="audience-card audience-card-research">
+<div class="audience-kicker">истраживачи</div>
+<h2>За истраживаче</h2>
+<h3>Серије података, датуми снимања, GIS анализе и метеоролошки архив</h3>
+<p>За истраживаче се могу припремити обрађени подаци за више датума, упоредне серије индекса, анализе по зонама, стаништима или изабраним полигонима, као и материјал погодан за GIS анализу, мониторинг вегетације, процену сушног стреса, праћење опоравка после падавина и проучавање промена на стаништима.</p>
+<p>На годишњем нивоу истраживачима може бити на располагању око <strong>100 до 120 обрађених сателитских снимака</strong> за цело подручје ПИО „Рајац”, са три основна индекса: <strong>NDVI</strong>, <strong>NDMI</strong> и <strong>RECI</strong>. То омогућава праћење сезонске динамике, сушних периода, опоравка после падавина, промена у ливадским и шумским стаништима и упоређивање више година.</p>
+<p>На врху Рајца налази се аутоматска метеоролошка станица која прикупља и архивира податке на сваких <strong>пет минута</strong>. Ови подаци могу бити повезани са сателитским индексима, па истраживачи могу да анализирају како температура, падавине, ветар, влажност, соларно зрачење и други метеоролошки параметри утичу на стање вегетације и станишта.</p>
+<p>Истраживачка вредност ових података је у томе што омогућавају повезивање сателитске слике са теренским налазима. Када се индекси упореде са подацима о стаништима, врстама, метеоролошким условима и управљачким активностима, добија се много потпунија слика стања и динамике заштићеног подручја.</p>
+</article>
+</section>
+<figure class="parcel-ndvi-map">
+<img alt="Вишегодишње вредности NDVI индекса по парцелама на Рајцу" decoding="async" loading="lazy" src="https://piorajac.rs/wp-content/uploads/2026/06/ndviparcele.jpg"/>
+<figcaption>На карти је приказ вишегодишњих вредности NDVI индекса по парцелама. Овакав приказ помаже да се разлике у стању вегетације читају не само за цело подручје, већ и за појединачне просторне целине.</figcaption>
+</figure>
+<h2>Зашто је ово важно за управљање заштићеним подручјем</h2>
+<p>ПИО „Рајац” је простор у коме се природне вредности, традиционално коришћење земљишта, туризам, шуме, ливаде, извори и станишта морају посматрати заједно. Сателитски индекси помажу да се промене уоче раније и да се одлуке не доносе само на основу утиска, већ на основу упоредивих података.</p>
+<p>Посебна вредност је у томе што се подаци могу пратити кроз целу годину. Тако се добија сезонска слика Рајца: почетак вегетације, максимум развоја, сушни периоди, опоравак после кише, јесење слабљење вегетације и разлике између појединих година.</p>
+<h2>Јавни увид, стручна анализа и практична примена</h2>
+<p>Страница са последњим индексима је јавни улаз у сателитски мониторинг Рајца. Детаљније анализе, серије кроз време и подаци за конкретне парцеле или истраживачке теме могу се припремати посебно, у складу са потребама власника, истраживача и управљача.</p>
+</article>
+</section>
+<style id="rajac-nextvest-css">.rajac-next-vest{max-width:760px;margin:34px auto 44px;padding:0 18px;font-family:Georgia,"Times New Roman",serif}.rajac-next-vest a{display:flex;flex-direction:column;gap:5px;padding:16px 20px;border:1px solid rgba(70,56,28,.20);border-radius:16px;background:#fffaf2;text-decoration:none;color:#1e2c1c;box-shadow:0 8px 24px rgba(38,30,16,.05);transition:transform .2s,box-shadow .2s}.rajac-next-vest a:hover{transform:translateY(-2px);box-shadow:0 12px 30px rgba(38,30,16,.10)}.rajac-next-vest .rnv-k{font-size:12px;font-weight:900;letter-spacing:.14em;text-transform:uppercase;color:#9a7b32;font-family:Arial,sans-serif}.rajac-next-vest .rnv-title{font-size:17px;font-weight:800;line-height:1.32}</style><nav aria-label="Следећа вест" class="rajac-next-vest"><a href="https://piorajac.rs/rajac-vesti/pokrenut-inaturalist-monitoring-biodiverziteta-pio-rajac/"><span class="rnv-k">Следећа вест →</span><span class="rnv-title">Покренут iNaturalist мониторинг биодиверзитета ПИО „Рајац”</span></a></nav></main>
+<style id="rajac-admin-edit-style">
+.rajac-admin-edit-button{
+  position:fixed;
+  right:16px;
+  bottom:16px;
+  z-index:99999;
+  display:none;
+  align-items:center;
+  justify-content:center;
+  min-height:42px;
+  padding:0 16px;
+  border-radius:999px;
+  background:#0d1b2a;
+  color:#e0c678!important;
+  text-decoration:none!important;
+  font:900 12px/1 Arial,sans-serif;
+  letter-spacing:.10em;
+  text-transform:uppercase;
+  box-shadow:0 12px 30px rgba(0,0,0,.22);
+  border:1px solid rgba(224,198,120,.42);
+}
+</style>
+<script id="rajac-admin-edit-script">
+(function(){
+  try{
+    if(document.cookie.indexOf("rajac_vesti_admin=1")===-1)return;
+    var p=location.pathname.split("/").filter(Boolean);
+    var slug=p[p.length-1]||"";
+    if(!slug||slug==="rajac-vesti")return;
+    var a=document.createElement("a");
+    a.className="rajac-admin-edit-button";
+    a.href="https://piorajac.rs/rajac-vesti/admin-edit.php?slug="+encodeURIComponent(slug);
+    a.textContent="EDIT";
+    a.style.display="inline-flex";
+    document.body.appendChild(a);
+  }catch(e){}
+})();
+</script>
+<!-- SITE_EDITOR_ADMIN_BAR_START -->
+<script defer="" src="/admin-site-editor.php?admin_bar_js=1"></script>
+<!-- SITE_EDITOR_ADMIN_BAR_END -->
+<button aria-label="На врх стране" id="rajac-totop" title="На врх" type="button">↑</button><style id="rajac-totop-css">#rajac-totop{position:fixed;right:16px;bottom:16px;z-index:10000;width:46px;height:46px;border-radius:999px;border:1px solid rgba(255,255,255,.4);background:rgba(20,30,40,.30);-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);color:#fff;font-size:22px;line-height:1;cursor:pointer;display:flex;align-items:center;justify-content:center;opacity:0;visibility:hidden;transition:opacity .25s,visibility .25s,background .2s;box-shadow:0 6px 20px rgba(0,0,0,.25);-webkit-tap-highlight-color:transparent}#rajac-totop.show{opacity:1;visibility:visible}#rajac-totop:hover{background:rgba(20,30,40,.55)}@media(max-width:1024px){#rajac-totop{right:12px;bottom:12px;width:44px;height:44px}}</style><script>(function(){var b=document.getElementById("rajac-totop");if(!b)return;function o(){if((window.pageYOffset||document.documentElement.scrollTop)>320)b.classList.add("show");else b.classList.remove("show");}window.addEventListener("scroll",o,{passive:true});o();b.addEventListener("click",function(){window.scrollTo({top:0,behavior:"smooth"});});})();</script></body>
+</html>

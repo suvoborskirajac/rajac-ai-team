@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+
+<html lang="sr-RS">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>Сателитски мониторинг вегетације у ПИО „Рајац” 2017—2025</title>
+<meta content="Извештај о Sentinel-2 мониторингу вегетације у ПИО Рајац за период 2017—2025." name="description"/>
+<meta content="max-image-preview:large" name="robots"/>
+<style>
+    :root{
+      --bg:#f5f0e4;--paper:#fbfaf4;--ink:#172018;--muted:#566254;--line:rgba(31,40,32,.14);
+      --line2:rgba(31,40,32,.08);--green:#1f3b2a;--green2:#2f563b;--gold:#a87312;--gold2:#d3a240;
+      --soft:#eee6d6;--shadow:0 22px 70px rgba(35,42,31,.08);--radius:28px;--wrap:min(1180px,calc(100% - 38px));
+    }
+    *{box-sizing:border-box} html{scroll-behavior:smooth} body{margin:0;background:radial-gradient(circle at 12% -10%,rgba(180,123,18,.13),transparent 34%),radial-gradient(circle at 88% 0%,rgba(31,59,42,.10),transparent 32%),var(--bg);color:var(--ink);font-family:Georgia,"Times New Roman",serif} a{color:inherit;text-decoration:none} img{display:block;max-width:100%;height:auto}
+    .rn-top{position:sticky;top:0;z-index:20;background:#0f1d2d;color:#eef2ea;border-bottom:1px solid rgba(255,255,255,.10)}
+    .rn-top-inner{flex-wrap:wrap;width:var(--wrap);margin:0 auto;min-height:54px;display:flex;align-items:center;gap:18px;overflow-x:visible;scrollbar-width:none}.rn-top-inner::-webkit-scrollbar{display:none}
+    .rn-brand{display:inline-flex;align-items:center;justify-content:center;border:1px solid rgba(216,181,91,.55);border-radius:999px;padding:8px 18px;color:#e1bf62;font-size:15px;font-weight:800;white-space:nowrap;letter-spacing:.03em}
+    .rn-nav{display:flex;gap:10px;align-items:center;white-space:nowrap;color:rgba(255,255,255,.70);font-size:13px;font-weight:800;letter-spacing:.05em}.rn-nav a{display:inline-flex;align-items:center;gap:7px;border:1px solid rgba(255,255,255,.10);border-radius:999px;padding:7px 11px}.rn-nav a:hover,.rn-nav .active{color:#e1bf62;border-color:rgba(225,191,98,.45)}.rn-nav span{display:inline-flex;align-items:center;justify-content:center;min-width:19px;height:19px;border-radius:999px;background:rgba(255,255,255,.10);color:rgba(255,255,255,.82);font-size:11px;letter-spacing:0}.rn-nav .active span{background:rgba(225,191,98,.18);color:#e1bf62}
+    .rn-shell{width:var(--wrap);margin:0 auto;padding:48px 0 64px} .rn-hero{display:grid;grid-template-columns:minmax(0,1fr) 320px;gap:28px;align-items:stretch;margin-bottom:28px}
+    .rn-title-card{background:rgba(255,255,255,.66);border:1px solid var(--line2);border-radius:var(--radius);box-shadow:var(--shadow);padding:clamp(30px,5vw,58px)}
+    .rn-kicker{display:inline-flex;align-items:center;gap:12px;margin-bottom:18px;color:var(--gold);font-family:Arial,sans-serif;font-size:12px;line-height:1;font-weight:900;letter-spacing:.22em;text-transform:uppercase}.rn-kicker:before{content:"";width:34px;height:1px;background:currentColor;opacity:.72}
+    h1{margin:0;max-width:980px;color:var(--ink);font-size:clamp(40px,5.8vw,76px);line-height:.98;font-weight:400;letter-spacing:-.045em}
+    .rn-lead{max-width:850px;margin:24px 0 0;color:var(--muted);font-size:clamp(18px,1.45vw,22px);line-height:1.7}
+    .rn-meta{background:linear-gradient(180deg,#24472f,#132318);color:#fff;border-radius:var(--radius);padding:26px;box-shadow:var(--shadow);display:grid;gap:13px;align-content:start}
+    .rn-meta h2{margin:0 0 6px;color:#fff;font-size:30px;font-weight:400;line-height:1.1;letter-spacing:-.02em}
+    .rn-m{border:1px solid rgba(255,255,255,.18);background:rgba(255,255,255,.08);border-radius:16px;padding:14px 15px}.rn-m span{display:block;margin-bottom:7px;color:rgba(255,255,255,.68);font-family:Arial,sans-serif;font-size:11px;font-weight:900;letter-spacing:.15em;text-transform:uppercase}.rn-m strong{display:block;font-size:20px;font-weight:400;line-height:1.2}
+    .rn-card{background:rgba(255,255,255,.72);border:1px solid var(--line2);border-radius:var(--radius);box-shadow:var(--shadow);padding:clamp(24px,4vw,44px);overflow:hidden}
+    .rp-prose{max-width:100%;color:var(--muted)} .rp-prose p{font-size:19px;line-height:1.78;color:var(--muted);margin:0 0 18px} .rp-prose strong{color:var(--ink)} .rp-prose h2{margin:42px 0 18px;padding-top:6px;color:var(--ink);font-size:clamp(30px,3.1vw,46px);line-height:1.08;font-weight:400;letter-spacing:-.025em;border-top:1px solid var(--line)} .rp-prose h3{margin:28px 0 12px;color:var(--green);font-size:25px;line-height:1.16;font-weight:400}
+    .rp-report-lead{font-size:21px!important;line-height:1.72!important;background:#f7f2e8;border:1px solid var(--line);border-radius:20px;padding:22px;margin-bottom:22px!important;color:#49594b!important}
+    .rp-data-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;margin:22px 0} .rp-data-card{background:#fffdf7;border:1px solid var(--line);border-radius:18px;padding:18px;box-shadow:0 10px 28px rgba(35,42,31,.05)} .rp-data-lbl{color:var(--gold);font-family:Arial,sans-serif;font-size:12px;font-weight:900;letter-spacing:.15em;text-transform:uppercase;margin-bottom:8px} .rp-data-val{color:var(--ink);font-size:32px;line-height:1.05;font-weight:400} .rp-data-note{margin-top:7px;color:#6a7167;font-size:15px;line-height:1.35}
+    .rp-figure{margin:28px 0;border:1px solid var(--line);background:#fffdf7;border-radius:22px;overflow:hidden;box-shadow:0 12px 34px rgba(35,42,31,.06)} .rp-figure img{width:100%;height:auto;background:#e6eadf} .rp-figure figcaption{padding:13px 16px;color:#687064;font-size:14px;line-height:1.5;font-family:Arial,sans-serif;background:#fbf7ed;border-top:1px solid var(--line2)}
+    .rp-mini-nav{display:flex;flex-wrap:wrap;gap:10px;margin:24px 0 30px;padding:14px;border:1px solid var(--line);background:#f8f3e8;border-radius:18px} .rp-mini-nav a{display:inline-flex;min-height:36px;align-items:center;padding:0 13px;border-radius:999px;background:#fff;border:1px solid rgba(31,40,32,.10);color:#315c39;font-family:Arial,sans-serif;font-size:12px;font-weight:900;letter-spacing:.08em;text-transform:uppercase}
+    .rp-report-table{width:100%;border-collapse:separate;border-spacing:0;overflow:hidden;border:1px solid var(--line);border-radius:18px;background:#fffdf7;margin:14px 0 24px} .rp-report-table th,.rp-report-table td{padding:13px 14px;border-bottom:1px solid rgba(31,40,32,.10);text-align:left;vertical-align:top;font-size:16px;line-height:1.45;color:#344035} .rp-report-table th{background:#efe6d5;color:#6f4b00;font-family:Arial,sans-serif;font-size:12px;letter-spacing:.12em;text-transform:uppercase} .rp-report-table tr:last-child td{border-bottom:0}
+    .rp-phase{display:grid;grid-template-columns:150px minmax(0,1fr);gap:18px;margin:16px 0;padding:18px;border:1px solid var(--line);border-radius:18px;background:#faf6ee} .rp-phase-k{display:grid;place-items:center;text-align:center;color:#fff;background:#315c39;border-radius:14px;min-height:94px;font-family:Arial,sans-serif;font-weight:900;letter-spacing:.08em;text-transform:uppercase;font-size:12px;line-height:1.45}
+    .rp-note,.rp-warning,.rp-sources{border:1px solid var(--line);border-radius:18px;padding:18px 20px;margin:22px 0;background:#f8f3e8;color:#4d5b4e} .rp-warning{background:#fff5df;border-color:rgba(184,137,63,.28)} .rp-sources ul{margin:0;padding-left:20px;color:#566254;line-height:1.7} .rp-sources li{font-size:16px;margin:4px 0}
+    .rn-foot{margin-top:26px;display:flex;justify-content:space-between;gap:16px;align-items:center;border-top:1px solid var(--line);padding-top:18px;color:#6b6d63;font-family:Arial,sans-serif;font-size:13px;line-height:1.5} .rn-foot a{color:#0f1d2d;font-weight:900;letter-spacing:.06em;text-transform:uppercase}
+    @media(max-width:980px){.rn-hero{grid-template-columns:1fr}.rn-meta{grid-template-columns:repeat(2,1fr)}.rn-meta h2{grid-column:1/-1}.rp-data-grid{grid-template-columns:repeat(2,1fr)}}
+    @media(max-width:650px){:root{--wrap:min(100% - 24px,1180px)}.rn-shell{padding:24px 0 42px}.rn-title-card,.rn-card{padding:22px 18px}.rn-meta{grid-template-columns:1fr}.rp-data-grid{grid-template-columns:1fr}.rp-phase{grid-template-columns:1fr}.rp-prose p{font-size:17px}.rp-report-table{display:block;overflow-x:auto}.rn-nav{gap:12px;font-size:12px}}
+  </style>
+<style id="rajac-static-news-menu-css">
+.rajac-news-menu{position:sticky;top:0;z-index:9999;background:#0d1b2a;border-bottom:1px solid rgba(255,255,255,.10);font-family:Georgia,"Times New Roman",serif;box-shadow:0 8px 26px rgba(0,0,0,.08)}
+.rajac-news-menu *{box-sizing:border-box}.rajac-news-menu-inner{max-width:1180px;margin:0 auto;padding:9px 18px;min-height:56px;display:flex;flex-wrap:wrap;align-items:center;gap:8px;overflow-x:visible;scrollbar-width:none}.rajac-news-menu-inner::-webkit-scrollbar{display:none}.rajac-news-menu a{display:inline-flex;align-items:center;gap:6px;min-height:38px;padding:0 13px;border-radius:999px;color:rgba(255,255,255,.74);text-decoration:none;font-size:13px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;white-space:nowrap}.rajac-news-menu a:hover{background:rgba(255,255,255,.06);color:#fff}.rajac-news-menu .home{color:#e0c678;border:1px solid rgba(224,198,120,.34);background:rgba(224,198,120,.06)}.rajac-news-menu a.active{color:#e0c678;background:rgba(224,198,120,.08);outline:1px solid rgba(224,198,120,.26)}.rajac-news-menu small,.rajac-news-menu .count{display:inline-flex;align-items:center;justify-content:center;min-width:20px;height:20px;padding:0 6px;border-radius:999px;background:rgba(255,255,255,.10);color:#e0c678;font-size:11px;letter-spacing:0}@media(max-width:720px){.rajac-news-menu-inner{padding:9px 10px}.rajac-news-menu a{font-size:12px;padding:0 10px}}
+</style>
+<style id="rajac-single-fix-css">.rajac-added-cover{width:min(1120px,calc(100% - 34px));margin:24px auto;border-radius:22px;overflow:hidden;border:1px solid rgba(30,40,30,.14);background:#fff;box-shadow:0 18px 55px rgba(35,42,31,.06)}.rajac-added-cover img{width:100%;max-height:420px;object-fit:cover;display:block}.rajac-added-cover figcaption{padding:10px 14px;color:#6c6f65;font:13px/1.45 Arial,sans-serif}</style>
+<style id="rajac-global-news-menu-style">
+.rajac-news-menu{position:sticky;top:0;z-index:9999;background:#0d1b2a;border-bottom:1px solid rgba(255,255,255,.10);font-family:Georgia,"Times New Roman",serif;box-shadow:0 8px 26px rgba(0,0,0,.08)}
+.rajac-news-menu *{box-sizing:border-box}.rajac-news-menu-inner{max-width:1180px;margin:0 auto;padding:9px 18px;min-height:56px;display:flex;flex-wrap:wrap;align-items:center;gap:8px;overflow-x:visible;scrollbar-width:none}.rajac-news-menu-inner::-webkit-scrollbar{display:none}
+.rajac-news-menu a{display:inline-flex;align-items:center;gap:6px;min-height:38px;padding:0 13px;border-radius:999px;color:rgba(255,255,255,.74);text-decoration:none;font-size:13px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;white-space:nowrap;line-height:1;font-family:Georgia,"Times New Roman",serif}
+.rajac-news-menu a:hover{background:rgba(255,255,255,.06);color:#fff}.rajac-news-menu .home{color:#e0c678;border:1px solid rgba(224,198,120,.34);background:rgba(224,198,120,.06)}
+.rajac-news-menu a.active{color:#e0c678!important;background:rgba(224,198,120,.08);outline:1px solid rgba(224,198,120,.26)}.rajac-news-menu small{display:inline-flex;align-items:center;justify-content:center;min-width:20px;height:20px;padding:0 6px;border-radius:999px;background:rgba(255,255,255,.10);color:#e0c678;font-size:11px;letter-spacing:0;font-family:Arial,sans-serif;font-weight:900}
+@media(max-width:650px){.rajac-news-menu-inner{padding:9px 10px}.rajac-news-menu a{font-size:12px;padding:0 10px}}
+</style>
+<style id="rajac-news-menu-one-row">
+/* Јединствен мени за све вести: један ред и исти sans-serif фонт као на осталим страницама сајта. */
+.rajac-news-menu{font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif!important}
+.rajac-news-menu-inner{width:min(100%,1600px)!important;max-width:1600px!important;margin:0 auto!important;padding:9px 14px!important;display:flex!important;flex-wrap:nowrap!important;align-items:center!important;justify-content:center!important;gap:4px!important;overflow-x:auto!important;overflow-y:hidden!important;scrollbar-width:none!important;-webkit-overflow-scrolling:touch}
+.rajac-news-menu-inner::-webkit-scrollbar{display:none!important}
+.rajac-news-menu a{flex:0 0 auto!important;min-height:38px!important;padding:0 10px!important;font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif!important;font-size:12px!important;font-weight:750!important;letter-spacing:.025em!important;line-height:1!important;text-transform:uppercase!important;white-space:nowrap!important}
+.rajac-news-menu small{font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif!important}
+@media(max-width:1050px){.rajac-news-menu-inner{justify-content:flex-start!important}.rajac-news-menu a{font-size:11px!important;padding:0 9px!important}}
+</style>
+<style id="rajac-unified-news-menu-v3">
+.rajac-news-menu{
+  position:sticky!important;top:0!important;z-index:9999!important;
+  width:100%!important;background:#0d1b2a!important;
+  border-bottom:1px solid rgba(255,255,255,.10)!important;
+  box-shadow:0 7px 22px rgba(0,0,0,.10)!important;
+  font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif!important;
+}
+.rajac-news-menu *{font-family:inherit!important;box-sizing:border-box!important}
+.rajac-news-menu-inner{
+  width:100%!important;max-width:1600px!important;margin:0 auto!important;
+  min-height:60px!important;padding:8px 14px!important;
+  display:flex!important;flex-direction:row!important;flex-wrap:nowrap!important;
+  align-items:center!important;justify-content:center!important;gap:6px!important;
+  overflow-x:auto!important;overflow-y:hidden!important;white-space:nowrap!important;
+  scrollbar-width:none!important;-webkit-overflow-scrolling:touch!important;
+}
+.rajac-news-menu-inner::-webkit-scrollbar{display:none!important}
+.rajac-news-menu a{
+  flex:0 0 auto!important;display:inline-flex!important;align-items:center!important;
+  justify-content:center!important;gap:6px!important;min-height:40px!important;
+  padding:0 12px!important;border-radius:999px!important;
+  color:rgba(255,255,255,.82)!important;background:transparent!important;
+  text-decoration:none!important;text-transform:uppercase!important;
+  white-space:nowrap!important;font-size:13px!important;line-height:1!important;
+  font-weight:750!important;letter-spacing:.025em!important;
+}
+.rajac-news-menu a:hover,.rajac-news-menu a:focus-visible{
+  color:#fff!important;background:rgba(255,255,255,.07)!important;
+}
+.rajac-news-menu a.home,.rajac-news-menu a.active{
+  color:#e4cb7e!important;background:rgba(228,203,126,.08)!important;
+  outline:1px solid rgba(228,203,126,.30)!important;
+}
+.rajac-news-menu small{
+  flex:0 0 auto!important;display:inline-flex!important;align-items:center!important;
+  justify-content:center!important;min-width:20px!important;height:20px!important;
+  padding:0 6px!important;border-radius:999px!important;
+  color:#e4cb7e!important;background:rgba(255,255,255,.10)!important;
+  font-size:11px!important;line-height:20px!important;font-weight:800!important;
+  letter-spacing:0!important;
+}
+@media(max-width:1180px){
+  .rajac-news-menu-inner{justify-content:flex-start!important;padding-inline:10px!important}
+  .rajac-news-menu a{font-size:12px!important;padding-inline:10px!important}
+}
+</style>
+<link href="https://piorajac.rs/rajac-vesti/assets/css/rajac-unified-menu.css" rel="stylesheet"/>
+<style id="pio-news-menu-one-row-final">
+
+/* === PIO RAJAC: JEDNOREDNI MENI NA SVIM STRANICAMA VESTI === */
+@media (min-width: 900px){
+  .rajac-news-menu{
+    width:100% !important;
+  }
+  .rajac-news-menu-inner{
+    width:100% !important;
+    max-width:1600px !important;
+    margin:0 auto !important;
+    padding:8px 12px !important;
+    display:flex !important;
+    flex-direction:row !important;
+    flex-wrap:nowrap !important;
+    align-items:center !important;
+    justify-content:center !important;
+    gap:clamp(3px,.55vw,9px) !important;
+    white-space:nowrap !important;
+    overflow-x:auto !important;
+    overflow-y:hidden !important;
+    scrollbar-width:none !important;
+  }
+  .rajac-news-menu-inner::-webkit-scrollbar{display:none !important;}
+  .rajac-news-menu a{
+    flex:0 0 auto !important;
+    white-space:nowrap !important;
+    padding-left:clamp(7px,.65vw,11px) !important;
+    padding-right:clamp(7px,.65vw,11px) !important;
+    font-size:clamp(11px,.86vw,14px) !important;
+  }
+}
+/* На ужим екранима мени остаје један ред и хоризонтално се помера, уместо да пада у други ред. */
+@media (max-width: 899px){
+  .rajac-news-menu-inner{
+    display:flex !important;
+    flex-wrap:nowrap !important;
+    justify-content:flex-start !important;
+    white-space:nowrap !important;
+    overflow-x:auto !important;
+    overflow-y:hidden !important;
+    scrollbar-width:none !important;
+    -webkit-overflow-scrolling:touch !important;
+  }
+  .rajac-news-menu-inner::-webkit-scrollbar{display:none !important;}
+  .rajac-news-menu a{flex:0 0 auto !important;white-space:nowrap !important;}
+}
+
+</style>
+</head>
+<body><nav aria-label="Мени вести" class="rajac-news-menu"><div class="rajac-news-menu-inner"><a class="home" href="https://piorajac.rs/">ПИО „РАЈАЦ”</a><a href="https://piorajac.rs/rajac-vesti/">СВЕ ВЕСТИ</a><a href="https://piorajac.rs/rajac-vesti/kategorije/aktuelno/">АКТУЕЛНО<small>7</small></a><a href="https://piorajac.rs/rajac-vesti/kategorije/vesti/">ВЕСТИ<small>3</small></a><a href="https://piorajac.rs/rajac-vesti/kategorije/izvestaji/">ИЗВЕШТАЈИ<small>8</small></a><a href="https://piorajac.rs/rajac-vesti/kategorije/istrazivanja/">ИСТРАЖИВАЊА<small>9</small></a><a href="https://piorajac.rs/rajac-vesti/kategorije/dogadjaji/">ДОГАЂАЈИ<small>5</small></a><a href="https://piorajac.rs/rajac-vesti/kategorije/u-fokusu/">У ФОКУСУ<small>4</small></a></div></nav>
+<main class="rn-shell">
+<section aria-label="Увод у извештај" class="rn-hero">
+<article class="rn-title-card">
+<div class="rn-kicker">Извештаји · 18. мај 2026.</div>
+<h1>Сателитски мониторинг вегетације у ПИО „Рајац” 2017—2025</h1>
+<p class="rn-lead">Анализа Sentinel-2 података за период 2017—2025: NDVI, NDMI, сезонска динамика и просторни прикази виталности вегетације.</p>
+</article>
+<aside aria-label="Основни подаци" class="rn-meta">
+<h2>Подаци странице</h2>
+<div class="rn-m"><span>Категорија</span><strong>Извештаји</strong></div>
+<div class="rn-m"><span>Период</span><strong>2017—2025</strong></div>
+<div class="rn-m"><span>Сензор</span><strong>Sentinel-2 L2A</strong></div>
+<div class="rn-m"><span>Тип странице</span><strong>Извештај</strong></div>
+</aside>
+</section>
+<article class="rn-card">
+<div class="rp-prose">
+<p class="rp-report-lead"><strong>Сажетак.</strong> Деветогодишњи низ Sentinel-2 снимака показује да је вегетациона виталност ПИО „Рајац” у благом, али стабилном порасту. Просечни NDVI растао је са <strong>0,71</strong> у 2017. на <strong>0,76</strong> у 2025. години, док параметри влажности и хлорофила указују на добру хидрацију и очувану фотосинтетичку активност.</p>
+<div aria-label="Кључни показатељи" class="rp-data-grid">
+<div class="rp-data-card"><div class="rp-data-lbl">NDVI 2017</div><div class="rp-data-val">0,71</div><div class="rp-data-note">основна линија</div></div>
+<div class="rp-data-card"><div class="rp-data-lbl">NDVI 2025</div><div class="rp-data-val">0,76</div><div class="rp-data-note">висока виталност</div></div>
+<div class="rp-data-card"><div class="rp-data-lbl">NDMI</div><div class="rp-data-val">+31%</div><div class="rp-data-note">раст влажности</div></div>
+<div class="rp-data-card"><div class="rp-data-lbl">Пиксели</div><div class="rp-data-val">~3.300</div><div class="rp-data-note">100 m унутар ПИО</div></div>
+</div>
+<figure class="rp-figure"><img alt="Тренд вегетационих индекса у ПИО Рајац 2017—2025" decoding="async" height="1008" loading="eager" src="/rajac-vesti/assets/img/reports/vegetacija-trend-2017-2025.png" width="1760"/><figcaption>Слика 1. Тренд четири кључна индекса кроз девет година — NDVI, EVI, NDMI и NBR.</figcaption></figure>
+<div class="rp-mini-nav">
+<a href="#metodika">Како је мерено</a>
+<a href="#indeksi">Индекси</a>
+<a href="#brojevi">Кључни бројеви</a>
+<a href="#sezona">Сезонска динамика</a>
+<a href="#prostor">Просторни приказ</a>
+<a href="#preporuke">Препоруке</a>
+</div>
+<h2 id="metodika">Како је мерено</h2>
+<table class="rp-report-table"><thead><tr><th>Параметар</th><th>Опис</th></tr></thead><tbody>
+<tr><td>Извор података</td><td>Copernicus Sentinel-2 L2A, Surface Reflectance Harmonized.</td></tr>
+<tr><td>Резолуција</td><td>100 m по пикселу, приближно 3.300 пиксела унутар ПИО „Рајац”.</td></tr>
+<tr><td>Период обраде</td><td>Јануар 2017 — април 2026, девет пуних година и 12 месечних композита.</td></tr>
+<tr><td>Маскирање облака</td><td>Scene Classification Layer — облаци, сенке, снег и сатурисани пиксели.</td></tr>
+<tr><td>Композити</td><td>Месечни median и годишњи median кроз облачно-чисте снимке.</td></tr>
+<tr><td>Аутоматизација</td><td>GitHub Actions + Earth Engine, ажурирање 8. у месецу.</td></tr>
+<tr><td>Платформа</td><td><a href="https://piorajac.rs/vegetacija-kopernikus/" rel="noopener" target="_blank">piorajac.rs/vegetacija-kopernikus/</a></td></tr>
+</tbody></table>
+<h2 id="indeksi">Седам вегетационих индекса</h2>
+<table class="rp-report-table"><thead><tr><th>Индекс</th><th>Назив</th><th>Шта мери</th></tr></thead><tbody>
+<tr><td>NDVI</td><td>Normalized Difference Vegetation Index</td><td>Општа виталност вегетације.</td></tr>
+<tr><td>EVI</td><td>Enhanced Vegetation Index</td><td>Густи покривачи, отпорнији на засићење.</td></tr>
+<tr><td>NDRE</td><td>Red Edge Chlorophyll</td><td>Концентрација хлорофила.</td></tr>
+<tr><td>NDMI</td><td>Normalized Difference Moisture Index</td><td>Садржај воде у листу и стрес од суше.</td></tr>
+<tr><td>NDWI</td><td>Normalized Difference Water Index</td><td>Отворене водене површине.</td></tr>
+<tr><td>NBR</td><td>Normalized Burn Ratio</td><td>Опожарена подручја.</td></tr>
+<tr><td>BSI</td><td>Bare Soil Index</td><td>Голо тло, ерозија и крчење.</td></tr>
+</tbody></table>
+<h2 id="brojevi">Кључни бројеви</h2>
+<h3>NDVI — главни показатељ виталности</h3>
+<table class="rp-report-table"><thead><tr><th>Година</th><th>Просек</th><th>P10</th><th>P90</th><th>Максимум</th></tr></thead><tbody>
+<tr><td>2017</td><td>0,71</td><td>0,46</td><td>0,87</td><td>0,91</td></tr><tr><td>2020</td><td>0,71</td><td>0,60</td><td>0,80</td><td>0,85</td></tr><tr><td>2022</td><td>0,77</td><td>0,66</td><td>0,84</td><td>0,88</td></tr><tr><td>2025</td><td>0,76</td><td>0,58</td><td>0,87</td><td>0,91</td></tr>
+</tbody></table>
+<p>NDVI 0,76 у 2025. години представља високу класу виталности за листопадне шуме умереног појаса.</p>
+<h3>NDMI — влажност вегетације</h3>
+<table class="rp-report-table"><thead><tr><th>Година</th><th>Просек NDMI</th><th>Промена од 2017.</th></tr></thead><tbody>
+<tr><td>2017</td><td>0,18</td><td>—</td></tr><tr><td>2020</td><td>0,20</td><td>+11%</td></tr><tr><td>2022</td><td>0,24</td><td>+35%</td></tr><tr><td>2025</td><td>0,23</td><td>+31%</td></tr>
+</tbody></table>
+<h2 id="sezona">Сезонска динамика</h2>
+<figure class="rp-figure"><img alt="Сезонска динамика NDVI EVI NDMI у ПИО Рајац" decoding="async" height="960" loading="lazy" src="/rajac-vesti/assets/img/reports/vegetacija-sezona-2025-2026.png" width="1760"/><figcaption>Слика 2. Сезонски ритам NDVI, EVI и NDMI кроз годину 2025/2026.</figcaption></figure>
+<table class="rp-report-table"><thead><tr><th>Месец</th><th>NDVI</th><th>NDMI</th><th>Тумачење</th></tr></thead><tbody>
+<tr><td>Јун 2025</td><td>0,82</td><td>0,32</td><td>Врхунац пролећно-летње вегетације.</td></tr><tr><td>Август 2025</td><td>0,72</td><td>0,18</td><td>Касно лето — почетак стреса.</td></tr><tr><td>Децембар 2025</td><td>0,47</td><td>0,06</td><td>Зима — голо дрвеће.</td></tr><tr><td>Јануар 2026</td><td>0,20</td><td>0,07</td><td>Минимум — мало снимака.</td></tr><tr><td>Април 2026</td><td>0,62</td><td>0,10</td><td>Рано пролеће — листање.</td></tr>
+</tbody></table>
+<h2 id="prostor">Просторни приказ</h2>
+<figure class="rp-figure"><img alt="NDVI топлотна карта ПИО Рајац 2025" decoding="async" height="1040" loading="lazy" src="/rajac-vesti/assets/img/reports/vegetacija-ndvi-2025.png" width="2080"/><figcaption>Слика 3. Топлотна карта виталности за 2025. годину. Тамно зелено означава најздравију вегетацију.</figcaption></figure>
+<p>Жариште највише виталности налази се у источном и централном делу ПИО „Рајац”, у пределу буковог појаса, приближно у опсегу <strong>лон 20,200—20,260°</strong> и <strong>лат 44,135—44,160°</strong>.</p>
+<figure class="rp-figure"><img alt="NDMI топлотна карта ПИО Рајац 2025" decoding="async" height="1040" loading="lazy" src="/rajac-vesti/assets/img/reports/vegetacija-ndmi-2025.png" width="2080"/><figcaption>Слика 4. Топлотна карта влажности за 2025. годину.</figcaption></figure>
+<p>NDMI карта открива потоке, влажне делове шуме и зоне отпорније на сушу. Висок NDMI корелира са дугорочним приступом подземним водама.</p>
+<figure class="rp-figure"><img alt="Поређење вегетације 2017 и 2025 у ПИО Рајац" decoding="async" height="880" loading="lazy" src="/rajac-vesti/assets/img/reports/vegetacija-2017-2025-poredjenje.png" width="2400"/><figcaption>Слика 5. Просторно поређење 2017. и 2025. године.</figcaption></figure>
+<h2>Тренд по фазама</h2>
+<div class="rp-phase"><div class="rp-phase-k">Фаза 1<br/>2017—2020</div><div><h3>Основна линија</h3><p>NDVI око 0,71 — карактеристичан за здраву мешану шуму без посебних аномалија.</p></div></div>
+<div class="rp-phase"><div class="rp-phase-k">Фаза 2<br/>2021—2023</div><div><h3>Позитиван скок</h3><p>Раст свих индекса виталности и влажности. Могући фактори су влажније године, затварање вегетационог покривача и зрелост листопадних састојина.</p></div></div>
+<div class="rp-phase"><div class="rp-phase-k">Фаза 3<br/>2024—2025</div><div><h3>Стабилизација</h3><p>NDVI остаје на 0,75–0,76, благо испод врхунца 2022, али изнад почетне линије 2017.</p></div></div>
+<h2>Шта то значи за заштићено подручје</h2>
+<ol class="rp-cleanlist">
+<li>Вегетациони покривач је здрав и стабилан, без знакова шире деградације, крчења или великих опожарених површина.</li>
+<li>Хидрација вегетације расте, што указује на отпорност екосистема упркос регионалним климатским притисцима.</li>
+<li>Сезонски сигнал показује мешавину листопадних шума, ливада и стенских станишта.</li>
+<li>Смањење BSI показује мање голог тла и повољније стање покривача.</li>
+<li>NBR остаје у позитивној зони, без сигнала великих пожара.</li>
+</ol>
+<h2 id="preporuke">Препоруке</h2>
+<ol class="rp-cleanlist">
+<li>Наставити континуирано праћење аутоматизованим месечним обрадама.</li>
+<li>Увести аларм на пад NDVI већи од 10% у било ком месечном композиту, ван сезонски очекиваног опсега.</li>
+<li>Користити hi-res снимке за 2026. годину ради увида у појединачне парцеле.</li>
+<li>Припремити стручни рад о ефикасности заштићених подручја II категорије у Србији.</li>
+<li>Упоредити ПИО „Рајац” са околним нерезерватним шумским подручјима.</li>
+</ol>
+<h2>Технички додатак</h2>
+<ul class="rp-link-list">
+<li>Дата извор: Copernicus Sentinel-2 SR Harmonized.</li>
+<li>Интерактивни приказ: <a href="https://piorajac.rs/vegetacija-kopernikus/" rel="noopener" target="_blank">piorajac.rs/vegetacija-kopernikus/</a></li>
+<li>Период обраде: јануар 2017 — април 2026.</li>
+<li>Број композита анализирано: приближно 140 годишњих и 12 месечних.</li>
+</ul>
+<p>Сви резултати су репродуцибилни на основу јавно доступних података и open-source кода.</p>
+</div>
+<div class="rn-foot">
+<span>ПИО „Рајац” · Дневник заштићеног подручја</span>
+<a href="https://piorajac.rs/rajac-vesti/">Све вести →</a>
+</div>
+</article>
+<style id="rajac-nextvest-css">.rajac-next-vest{max-width:760px;margin:34px auto 44px;padding:0 18px;font-family:Georgia,"Times New Roman",serif}.rajac-next-vest a{display:flex;flex-direction:column;gap:5px;padding:16px 20px;border:1px solid rgba(70,56,28,.20);border-radius:16px;background:#fffaf2;text-decoration:none;color:#1e2c1c;box-shadow:0 8px 24px rgba(38,30,16,.05);transition:transform .2s,box-shadow .2s}.rajac-next-vest a:hover{transform:translateY(-2px);box-shadow:0 12px 30px rgba(38,30,16,.10)}.rajac-next-vest .rnv-k{font-size:12px;font-weight:900;letter-spacing:.14em;text-transform:uppercase;color:#9a7b32;font-family:Arial,sans-serif}.rajac-next-vest .rnv-title{font-size:17px;font-weight:800;line-height:1.32}</style><nav aria-label="Следећа вест" class="rajac-next-vest"><a href="https://piorajac.rs/rajac-vesti/svetlosno-zagadjenje-pio-rajac-2014-2025/"><span class="rnv-k">Следећа вест →</span><span class="rnv-title">Светлосно загађење у ПИО „Рајац” 2014—2025</span></a></nav></main>
+<style id="rajac-admin-edit-style">.rajac-admin-edit-button{position:fixed;right:16px;bottom:16px;z-index:99999;display:none;align-items:center;justify-content:center;min-height:42px;padding:0 16px;border-radius:999px;background:#0d1b2a;color:#e0c678!important;text-decoration:none!important;font:900 12px/1 Arial,sans-serif;letter-spacing:.10em;text-transform:uppercase;box-shadow:0 12px 30px rgba(0,0,0,.22);border:1px solid rgba(224,198,120,.42)}</style><script id="rajac-admin-edit-script">(function(){try{if(document.cookie.indexOf("rajac_vesti_admin=1")===-1)return;var p=location.pathname.split("/").filter(Boolean);var slug=p[p.length-1]||"";if(!slug||slug==="rajac-vesti")return;var a=document.createElement("a");a.className="rajac-admin-edit-button";a.href="https://piorajac.rs/rajac-vesti/admin-edit.php?slug="+encodeURIComponent(slug);a.textContent="EDIT";a.style.display="inline-flex";document.body.appendChild(a);}catch(e){}})();</script>
+<!-- SITE_EDITOR_ADMIN_BAR_START -->
+<script defer="" src="/admin-site-editor.php?admin_bar_js=1"></script>
+<!-- SITE_EDITOR_ADMIN_BAR_END -->
+<button aria-label="На врх стране" id="rajac-totop" title="На врх" type="button">↑</button><style id="rajac-totop-css">#rajac-totop{position:fixed;right:16px;bottom:16px;z-index:10000;width:46px;height:46px;border-radius:999px;border:1px solid rgba(255,255,255,.4);background:rgba(20,30,40,.30);-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);color:#fff;font-size:22px;line-height:1;cursor:pointer;display:flex;align-items:center;justify-content:center;opacity:0;visibility:hidden;transition:opacity .25s,visibility .25s,background .2s;box-shadow:0 6px 20px rgba(0,0,0,.25);-webkit-tap-highlight-color:transparent}#rajac-totop.show{opacity:1;visibility:visible}#rajac-totop:hover{background:rgba(20,30,40,.55)}@media(max-width:1024px){#rajac-totop{right:12px;bottom:12px;width:44px;height:44px}}</style><script>(function(){var b=document.getElementById("rajac-totop");if(!b)return;function o(){if((window.pageYOffset||document.documentElement.scrollTop)>320)b.classList.add("show");else b.classList.remove("show");}window.addEventListener("scroll",o,{passive:true});o();b.addEventListener("click",function(){window.scrollTo({top:0,behavior:"smooth"});});})();</script></body>
+</html>

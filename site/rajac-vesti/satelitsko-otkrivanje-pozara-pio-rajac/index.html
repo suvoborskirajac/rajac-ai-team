@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+
+<html lang="sr-Cyrl">
+<head>
+<meta charset="utf-8"/><meta content="width=device-width,initial-scale=1" name="viewport"/>
+<title>Сателитски систем раног откривања пожара за ПИО „Рајац”</title>
+<meta content="ПИО Рајац користи локализовани систем раног упозоравања који повезује NASA FIRMS/VIIRS детекције, локални FWI, метеоролошка мерења и GIS анализу удаљености од границе заштићеног подручја." name="description"/>
+<style>
+:root{
+  --bg:#f4efe3;
+  --paper:#fffdf7;
+  --ink:#121a22;
+  --muted:#61706d;
+  --line:rgba(25,35,31,.14);
+  --line2:rgba(25,35,31,.08);
+  --nav:#0d1b2a;
+  --gold:#d9bd6a;
+  --gold2:#9b6b12;
+  --green:#173e27;
+  --green2:#1d6b37;
+  --blue:#0f2436;
+  --radius:28px;
+  --shadow:0 22px 60px rgba(19,29,22,.10);
+  --wrap:min(1180px,calc(100% - 42px));
+}
+
+*{box-sizing:border-box}
+
+html{scroll-behavior:smooth}
+
+body{
+  margin:0;
+  color:var(--ink);
+  font-family:Georgia,"Times New Roman",serif;
+  background:
+    radial-gradient(circle at 12% 0%,rgba(217,189,106,.18),transparent 32%),
+    radial-gradient(circle at 88% 0%,rgba(29,107,55,.12),transparent 36%),
+    var(--bg);
+}
+
+a{
+  color:inherit;
+  text-decoration:none;
+}
+
+img{
+  display:block;
+  max-width:100%;
+}
+
+.rajac-news-menu{
+  position:sticky;
+  top:0;
+  z-index:30;
+  background:var(--nav);
+  border-bottom:1px solid rgba(255,255,255,.10);
+  box-shadow:0 8px 26px rgba(0,0,0,.08);
+}
+
+.rajac-news-menu-inner{flex-wrap:wrap;
+  max-width:1180px;
+  margin:0 auto;
+  padding:0 18px;
+  min-height:56px;
+  display:flex;
+  align-items:center;
+  gap:8px;
+  overflow-x:visible;
+  scrollbar-width:none;
+}
+
+.rajac-news-menu-inner::-webkit-scrollbar{display:none}
+
+.rajac-news-menu a{
+  display:inline-flex;
+  align-items:center;
+  gap:6px;
+  min-height:38px;
+  padding:0 13px;
+  border-radius:999px;
+  color:rgba(255,255,255,.74);
+  font-family:Arial,sans-serif;
+  font-size:13px;
+  font-weight:800;
+  letter-spacing:.06em;
+  text-transform:uppercase;
+  white-space:nowrap;
+  line-height:1;
+}
+
+.rajac-news-menu a:hover{
+  background:rgba(255,255,255,.06);
+  color:#fff;
+}
+
+.rajac-news-menu .home{
+  color:#e0c678;
+  border:1px solid rgba(224,198,120,.34);
+  background:rgba(224,198,120,.06);
+}
+
+.rajac-news-menu a.active{
+  color:#e0c678;
+  background:rgba(224,198,120,.08);
+  outline:1px solid rgba(224,198,120,.26);
+}
+
+.rajac-news-menu small{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  min-width:20px;
+  height:20px;
+  padding:0 6px;
+  border-radius:999px;
+  background:rgba(255,255,255,.10);
+  color:#e0c678;
+  font-size:11px;
+  letter-spacing:0;
+}
+
+.shell{
+  width:var(--wrap);
+  margin:0 auto;
+}
+
+.hero{
+  padding:72px 0 34px;
+  border-bottom:1px solid var(--line);
+}
+
+.kicker{
+  margin:0 0 16px;
+  color:var(--gold2);
+  font-family:Arial,sans-serif;
+  font-size:13px;
+  font-weight:900;
+  letter-spacing:.24em;
+  text-transform:uppercase;
+}
+
+.hero h1{
+  margin:0;
+  max-width:1040px;
+  font-size:clamp(34px,4.6vw,62px);
+  line-height:1.02;
+  font-weight:400;
+  letter-spacing:-.045em;
+}
+
+.subtitle{
+  max-width:930px;
+  margin:24px 0 0;
+  color:var(--muted);
+  font-size:clamp(19px,1.6vw,24px);
+  line-height:1.66;
+}
+
+.actions{
+  display:flex;
+  gap:12px;
+  flex-wrap:wrap;
+  margin-top:30px;
+}
+
+.btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  min-height:48px;
+  padding:0 18px;
+  border-radius:999px;
+  font-family:Arial,sans-serif;
+  font-size:13px;
+  font-weight:900;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  border:1px solid var(--line);
+  transition:.18s ease;
+  background:#fffdf7;
+  color:var(--green);
+}
+
+.btn.primary{
+  background:var(--green2);
+  color:white;
+  border-color:transparent;
+}
+
+.btn:hover{
+  transform:translateY(-2px);
+  box-shadow:0 12px 28px rgba(25,31,24,.12);
+}
+
+.highlight-link{
+  margin:30px 0 34px;
+  padding:30px;
+  border-radius:30px;
+  background:
+    linear-gradient(145deg,rgba(23,62,39,.96),rgba(29,107,55,.94)),
+    var(--green);
+  color:white;
+  box-shadow:0 24px 70px rgba(19,29,22,.18);
+  display:grid;
+  grid-template-columns:minmax(0,1fr) auto;
+  gap:24px;
+  align-items:center;
+}
+
+.highlight-link span{
+  display:block;
+  margin-bottom:8px;
+  color:#e8c978;
+  font-family:Arial,sans-serif;
+  font-size:13px;
+  font-weight:900;
+  letter-spacing:.18em;
+  text-transform:uppercase;
+}
+
+.highlight-link h2{
+  margin:0;
+  color:#fff;
+  font-size:clamp(30px,3.2vw,46px);
+  font-weight:400;
+  line-height:1.08;
+  letter-spacing:-.025em;
+}
+
+.highlight-link p{
+  margin:12px 0 0;
+  color:rgba(255,255,255,.82);
+  font-size:19px;
+  line-height:1.62;
+}
+
+.highlight-link a{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  min-height:54px;
+  padding:0 22px;
+  border-radius:999px;
+  background:#fff;
+  color:var(--green);
+  font-family:Arial,sans-serif;
+  font-size:13px;
+  font-weight:900;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  white-space:nowrap;
+}
+
+.layout{
+  display:grid;
+  grid-template-columns:minmax(0,1.05fr) minmax(310px,.45fr);
+  gap:24px;
+  margin:30px 0 64px;
+  align-items:start;
+}
+
+.card{
+  background:rgba(255,253,247,.90);
+  border:1px solid var(--line2);
+  border-radius:var(--radius);
+  box-shadow:var(--shadow);
+  padding:clamp(24px,3.2vw,42px);
+}
+
+.prose p{
+  font-size:20px;
+  line-height:1.8;
+  color:var(--muted);
+  margin:0 0 18px;
+}
+
+.prose .lead{
+  font-size:23px;
+  line-height:1.72;
+  color:#38423f;
+  margin-bottom:24px;
+}
+
+.prose h2{
+  margin:36px 0 14px;
+  color:var(--green);
+  font-size:clamp(30px,3.1vw,44px);
+  font-weight:400;
+  line-height:1.08;
+  letter-spacing:-.025em;
+}
+
+.prose h2:first-child{margin-top:0}
+
+.prose strong{color:#1b2824}
+
+.note-box{
+  margin:26px 0;
+  padding:22px;
+  border-radius:22px;
+  background:#f1ead8;
+  border:1px solid rgba(155,107,18,.18);
+}
+
+.note-box p{
+  margin:0;
+  color:#4e4a3e;
+  font-size:19px;
+  line-height:1.65;
+}
+
+.note-box strong{
+  color:#111;
+}
+
+.audience-box{
+  padding:24px;
+  border-radius:24px;
+  background:#fffaf2;
+  border:1px solid rgba(155,107,18,.20);
+  border-left:5px solid var(--gold2);
+  margin:24px 0 24px;
+}
+
+.audience-box h3{
+  margin:0 0 10px;
+  color:#1b2824;
+  font-size:25px;
+  font-weight:700;
+  line-height:1.2;
+}
+
+.audience-box p{
+  margin:0;
+  font-size:19px;
+  line-height:1.72;
+  color:#4e4a3e;
+}
+
+.grid-3{
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:16px;
+  margin:20px 0 28px;
+}
+
+.mini{
+  padding:20px;
+  border-radius:22px;
+  background:#fbf7ed;
+  border:1px solid var(--line);
+}
+
+.mini span{
+  display:inline-flex;
+  margin-bottom:10px;
+  color:var(--gold2);
+  font-family:Arial,sans-serif;
+  font-size:12px;
+  font-weight:900;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+}
+
+.mini h3{
+  margin:0 0 8px;
+  color:var(--green);
+  font-size:24px;
+  font-weight:400;
+  line-height:1.16;
+}
+
+.mini p{
+  margin:0;
+  font-size:18px;
+  line-height:1.58;
+  color:var(--muted);
+}
+
+.callout{
+  margin-top:28px;
+  padding:28px;
+  border-radius:26px;
+  background:linear-gradient(145deg,#173e27,#1d6b37);
+  color:white;
+  box-shadow:var(--shadow);
+}
+
+.callout h2{
+  margin:0 0 10px!important;
+  color:#fff!important;
+  font-size:34px!important;
+}
+
+.callout p{
+  margin:0;
+  color:rgba(255,255,255,.82);
+  font-size:19px;
+  line-height:1.65;
+}
+
+.facts-card{
+  background:linear-gradient(155deg,#081421,#102719);
+  color:white;
+  border-color:rgba(255,255,255,.10);
+}
+
+.facts-card h2{
+  margin:0 0 18px;
+  font-size:34px;
+  font-weight:400;
+  color:white;
+  line-height:1.12;
+}
+
+.facts{
+  display:grid;
+  gap:13px;
+}
+
+.fact{
+  padding:15px 16px;
+  border-radius:18px;
+  background:rgba(255,255,255,.07);
+  border:1px solid rgba(255,255,255,.12);
+}
+
+.fact span{
+  display:block;
+  margin-bottom:6px;
+  color:#e8c978;
+  font-family:Arial,sans-serif;
+  font-size:12px;
+  font-weight:900;
+  letter-spacing:.15em;
+  text-transform:uppercase;
+}
+
+.fact strong{
+  display:block;
+  font-size:22px;
+  font-weight:400;
+  line-height:1.22;
+  color:white;
+}
+
+.fact em{
+  display:block;
+  margin-top:5px;
+  color:rgba(255,255,255,.72);
+  font-style:normal;
+  font-size:15px;
+  line-height:1.45;
+}
+
+.mini-nav{
+  display:grid;
+  gap:10px;
+  margin-top:20px;
+  padding-top:20px;
+  border-top:1px solid rgba(255,255,255,.12);
+}
+
+.mini-nav a{
+  display:block;
+  padding:13px 14px;
+  border-radius:15px;
+  background:rgba(255,255,255,.07);
+  color:rgba(255,255,255,.86);
+  font-family:Arial,sans-serif;
+  font-size:13px;
+  font-weight:900;
+  letter-spacing:.06em;
+  text-transform:uppercase;
+}
+
+.mini-nav a:hover{
+  background:rgba(255,255,255,.12);
+  color:#fff;
+}
+
+@media(max-width:960px){
+  .layout{
+    grid-template-columns:1fr;
+  }
+
+  .grid-3{
+    grid-template-columns:1fr;
+  }
+
+  .highlight-link{
+    grid-template-columns:1fr;
+  }
+
+  .highlight-link a{
+    justify-self:start;
+  }
+}
+
+@media(max-width:650px){
+  :root{
+    --wrap:min(100% - 24px,1180px);
+  }
+
+  .hero{
+    padding-top:52px;
+  }
+
+  .hero h1{
+    font-size:42px;
+  }
+
+  .card{
+    padding:24px 18px;
+  }
+
+  .prose p,
+  .prose .lead{
+    font-size:18px;
+  }
+
+  .rajac-news-menu-inner{
+    padding:0 10px;
+  }
+
+  .rajac-news-menu a{
+    font-size:12px;
+    padding:0 10px;
+  }
+}
+</style><style>
+.fire-figure{margin:34px 0;background:#fffdf7;border:1px solid var(--line);border-radius:30px;box-shadow:var(--shadow);overflow:hidden}.fire-figure img{width:100%;height:auto}.fire-figure figcaption{padding:16px 22px 20px;color:#52615e;font:16px/1.65 Arial,sans-serif;background:#fffaf2}.layout{display:block}.prose{max-width:none}.prose p{max-width:none}.manager{margin:30px 0;padding:30px;border-radius:26px;background:linear-gradient(145deg,#173e27,#1d6b37);color:#fff}.manager h2{color:#fff!important;margin:0 0 14px!important}.manager p{color:rgba(255,255,255,.88)!important}.flow{display:grid;grid-template-columns:repeat(7,1fr);gap:8px;margin:24px 0}.flow div{padding:14px 8px;border-radius:16px;background:#f1ead8;text-align:center;font:800 13px/1.35 Arial,sans-serif;color:#173e27}.night{padding:26px;border-radius:24px;background:#0d1b2a;color:#fff;margin:28px 0}.night h2{color:#e8c978!important;margin-top:0!important}.night p{color:rgba(255,255,255,.84)!important}.source-note{font-size:16px!important}.source-note a{color:#173e27;font-weight:800;border-bottom:1px solid #173e27}@media(max-width:900px){.flow{grid-template-columns:1fr 1fr}.flow div:last-child{grid-column:1/-1}}@media(max-width:650px){.fire-figure{border-radius:20px}.manager,.night{padding:22px 18px}.flow{grid-template-columns:1fr}}
+</style>
+<style>
+.manager strong { color:#fff !important; font-weight:800; }
+.manager p { color:#fff !important; }
+.single-card { grid-template-columns:minmax(0,1fr) !important; width:100%; max-width:none; }
+.single-card .mini { width:100%; box-sizing:border-box; }
+</style>
+</head><body>
+<nav aria-label="Мени вести" class="rajac-news-menu"><div class="rajac-news-menu-inner"><a class="home" href="https://piorajac.rs/">ПИО „РАЈАЦ”</a><a href="https://piorajac.rs/rajac-vesti/">СВЕ ВЕСТИ</a><a href="https://piorajac.rs/rajac-vesti/kategorije/aktuelno/">АКТУЕЛНО<small>7</small></a><a href="https://piorajac.rs/rajac-vesti/kategorije/vesti/">ВЕСТИ<small>3</small></a><a href="https://piorajac.rs/rajac-vesti/kategorije/izvestaji/">ИЗВЕШТАЈИ<small>8</small></a><a href="https://piorajac.rs/rajac-vesti/kategorije/istrazivanja/">ИСТРАЖИВАЊА<small>9</small></a><a href="https://piorajac.rs/rajac-vesti/kategorije/dogadjaji/">ДОГАЂАЈИ<small>5</small></a><a href="https://piorajac.rs/rajac-vesti/kategorije/u-fokusu/">У ФОКУСУ<small>4</small></a></div></nav>
+<main class="shell">
+<section class="hero"><p class="kicker">АКТУЕЛНО · 01.09.2026.</p><h1>Сателити над Рајцем: систем раног откривања пожара ради 24 часа</h1><p class="subtitle">ПИО „Рајац” користи сопствени локализовани сервис који повезује NASA FIRMS сателитске детекције, локалне метеоролошке податке, Canadian FWI и GIS анализу удаљености пожара од границе заштићеног подручја.</p></section>
+<figure class="fire-figure"><img alt="Сателитски детектован пожар у близини ПИО Рајац, приказ NASA FIRMS VIIRS детекције и локалног пожарног ризика" src="assets/pozar-firms-pio-rajac-2026-08-31.png"/><figcaption><strong>Стварни пример рада система:</strong> сателитска детекција активног пожара/термалне аномалије у близини ПИО „Рајац”. На приказу је најближа детекција била око <strong>4,1 km од границе</strong> заштићеног подручја, уз две VIIRS детекције у кругу од 50 km током 24 часа. Сервис истовремено приказује локалне FWI компоненте, нагиб, експозицију, NDMI и просторне зоне за процену значаја догађаја.</figcaption></figure>
+<section class="layout"><article class="card prose">
+<p class="lead">Пожар у заштићеном подручју не мора прво да види човек. Термални сензори на поларним сателитима могу да региструју активан пожар или изражену топлотну аномалију, а сервис ПИО „Рајац” те податке аутоматски претвара у локално, оперативно упозорење за Управљача.</p>
+<div class="manager"><h2>Зашто је овај сервис посебно важан за Управљача</h2><p>За Управљача највећа вредност није сама црвена тачка на карти, већ <strong>време добијено раним откривањем</strong>. Пожар који настане ван насеља, на шумском рубу или током ноћи може дуже остати непримећен са земље. Сервис аутоматски прати и околину ПИО, мери удаљеност детекције од стварне границе заштићеног подручја и повезује је са локалним условима за ширење пожара. Тако Управљач добија основу да брзо одлучи да ли је потребна теренска провера и обавештавање надлежних служби.</p></div>
+<h2>Од сателита до аларма</h2><div class="flow"><div>VIIRS / MODIS</div><div>NASA FIRMS</div><div>сервер ПИО</div><div>GIS удаљеност</div><div>FWI + АМС</div><div>процена ризика</div><div>мејл аларм</div></div>
+<p>Основни извор активних пожарних детекција је <strong>NASA FIRMS</strong> (Fire Information for Resource Management System). Сервис користи податке термалних сензора који препознају необично високу температуру површине. За локални надзор су нарочито значајне VIIRS детекције са сателита <strong>Suomi NPP, NOAA-20 и NOAA-21</strong>. Додатни извор су MODIS детекције са сателита <strong>Terra и Aqua</strong>.</p>
+<div class="grid-3 single-card"><article class="mini"><span>VIIRS</span><h3>≈ 375 m</h3><p>Боља просторна резолуција и способност откривања мањих активних пожара чине VIIRS главним извором за локално рано упозоравање.</p></article></div>
+<h2>Локални FWI: није довољно знати само где гори</h2><p>Сервис повезује сателитску детекцију са подацима <strong>Аутоматске метеоролошке станице Рајац</strong> и канадским системом <strong>Fire Weather Index (FWI)</strong>. Приказују се компоненте FFMC, DMC, DC, ISI и BUI, као и коначни FWI. На тај начин се не процењује само постојање пожара већ и метеоролошки контекст у коме би се он могао развијати.</p><p>Иста детекција на 4 km од ПИО нема исти значај после обилне кише и при високој влажности као после дугог сушног периода, уз суво гориво и ветар. Управо зато локална метеоролошка мерења претварају глобални сателитски сигнал у информацију прилагођену Рајцу.</p>
+<h2>Терен, нагиб, експозиција и влажност вегетације</h2><p>Сервис укључује и <strong>Copernicus DEM</strong> за анализу нагиба и експозиције терена, као и <strong>NDMI</strong> за просторни увид у влажност вегетације. Нагиб је важан јер се пожар на стрмим падинама може ширити брже, док експозиција утиче на осунчаност и исушивање горивог материјала. NDMI допуњује процену показујући где је вегетација релативно сувља или влажнија.</p>
+<div class="night"><h2>Посебан значај током ноћи</h2><p>Систем је нарочито вредан ноћу, када је визуелно осматрање терена ограничено и када удаљен пожар може дуго остати непримећен. VIIRS има веома добре могућности ноћне термалне детекције, а хладнија позадина често повећава контраст између активног пожара и околне површине. Сателит зато представља додатни слој „термалне страже” у времену када је класичан надзор најтежи.</p><p>Ипак, сателити нису геостационарне камере које непрекидно гледају Рајац. Детекција зависи од времена прелета, облачности, јачине и трајања пожара. Зато је највећа вредност у комбиновању више сателитских платформи и аутоматској обради сваког новог пролаза.</p></div>
+<h2>Аутоматско обавештавање мејлом</h2><p>Систем је пројектован тако да Управљач не мора непрекидно да посматра карту. Када се појави релевантна нова детекција у дефинисаној зони, сервис може да пошаље <strong>мејл упозорење</strong>. У оперативној поруци најважнији су време детекције, сателит/сензор, координате, удаљеност од границе ПИО, локални пожарни ризик и директан приступ карти.</p><p>То мења природу сервиса: он није пасивна веб-карта, већ <strong>активан систем раног упозоравања</strong>. Посебно је значајно да аларм може стићи и ноћу, викендом или у тренутку када нико не прати страницу.</p>
+<h2>Шта следи после сателитског аларма?</h2><p>Најбољи оперативни поступак је: <strong>детекција → просторна провера → анализа FWI, ветра и терена → провера додатних детекција → визуелна или теренска верификација → по потреби обавештавање надлежних служби</strong>. Више узастопних детекција на истој локацији додатно повећава значај догађаја.</p>
+<h2>Заштита природе почиње раним сазнањем</h2><p>Пожар у околини Рајца може угрозити шуме, ливаде, станишта заштићених врста, земљиште, пејзажне вредности и инфраструктуру. При томе пожар не познаје административну границу заштићеног подручја. Зато систем прати и шири регион и издваја детекције које могу бити релевантне за ПИО.</p><p><strong>Кључни значај за Управљача је у томе што се потенцијално опасан догађај може уочити пре него што постане видљив из насеља или пре него што неко са терена стигне да га пријави.</strong> Комбинација NASA сателитских података, локалне метеоролошке станице, FWI прорачуна и GIS анализе ствара независан, аутоматизован слој надзора над ПИО „Рајац” и његовом околином.</p>
+<div class="callout"><h2>Сателит није замена за човека — он му даје драгоцено време</h2><p>Сервис не замењује ватрогасне службе, теренски надзор или стручну процену. Његова улога је да што раније препозна потенцијално опасан догађај, одреди његов просторни значај за ПИО и информацију достави Управљачу док још постоји време за брзу проверу и реакцију.</p></div>
+<p class="source-note"><strong>Извори и методолошка основа:</strong> NASA FIRMS / VIIRS Active Fire, NASA MODIS Active Fire, Copernicus DEM, Copernicus Sentinel-2 NDMI и Canadian Forest Fire Weather Index System. Сателитске детекције треба тумачити као near-real-time термалне аномалије које захтевају оперативну процену.</p>
+</article></section></main></body></html>

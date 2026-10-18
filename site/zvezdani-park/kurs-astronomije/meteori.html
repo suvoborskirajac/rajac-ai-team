@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="sr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Посматрање метеора — Курс аматерске астрономије — Звездани парк „Рајац“</title>
+<meta name="description" content="Четврта лекција курса аматерске астрономије: шта су метеори и метеорски ројеви, календар главних ројева, како посматрати, бројати и снимати метеоре.">
+<link rel="canonical" href="https://piorajac.rs/zvezdani-park/kurs-astronomije/meteori.html">
+<meta property="og:type" content="article"><meta property="og:locale" content="sr_RS"><meta property="og:site_name" content="Звездани парк „Рајац“">
+<meta property="og:title" content="Посматрање метеора — Курс аматерске астрономије">
+<meta property="og:description" content="Метеорски ројеви, радијант, визуелно посматрање, фотографија и видео камере за метеоре.">
+<meta property="og:url" content="https://piorajac.rs/zvezdani-park/kurs-astronomije/meteori.html">
+<meta property="og:image" content="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b3/Perseid_Meteor_Shower_above_a_Joshua_tree_%2853433001697%29.jpg/1280px-Perseid_Meteor_Shower_above_a_Joshua_tree_%2853433001697%29.jpg">
+<meta name="theme-color" content="#050a14">
+<link rel="stylesheet" href="../assets/fonts.css?v=46">
+<link rel="stylesheet" href="assets/course.css?v=31">
+<style>
+/* Само за лекцију „Посматрање метеора“ */
+.page-meteori .mmm{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin:18px 0 20px}
+.page-meteori .mmm div{padding:14px 16px;border-radius:14px;background:var(--card);border:1px solid var(--line)}
+.page-meteori .mmm small{display:block;font:700 10.5px/1 var(--sans);letter-spacing:.16em;text-transform:uppercase;color:var(--gold-ink)}
+.page-meteori .mmm strong{display:block;margin:6px 0 2px;font:600 20px/1.15 var(--serif);color:var(--ink)}
+.page-meteori .mmm span{display:block;font-size:14px;line-height:1.5;color:var(--ink-2)}
+.page-meteori .log-cta{margin-top:6px}
+@media (max-width:640px){.page-meteori .mmm{grid-template-columns:1fr}}
+</style>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Course","name":"Посматрање метеора — Курс аматерске астрономије","description":"Метеори и метеорски ројеви, радијант, визуелно, фотографско и видео посматрање метеора.","inLanguage":"sr","url":"https://piorajac.rs/zvezdani-park/kurs-astronomije/meteori.html","provider":{"@type":"Organization","name":"ПИО „Рајац“ — Звездани парк","url":"https://piorajac.rs/zvezdani-park/"},"isAccessibleForFree":true,"educationalLevel":"основна и средња школа, студенти, аматери"}
+</script>
+<style>
+/* Велики футер Звезданог парка (исти као на осталим странама секције; стил преузет из ../assets/site.css) */
+footer.zp-footer{position:relative;padding:0;background:var(--night);color:rgba(255,255,255,.62);font-size:.88rem;line-height:1.6;overflow:hidden}
+footer.zp-footer::before{content:"";position:absolute;inset:0;background:radial-gradient(ellipse at 15% 0%,rgba(214,180,106,.12),transparent 50%);pointer-events:none}
+footer.zp-footer .footer-in{position:relative;max-width:var(--max);margin:0 auto;padding:80px 28px 40px;display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:40px}
+footer.zp-footer h5{margin:0 0 16px;font:700 .68rem/1 var(--sans);letter-spacing:.22em;text-transform:uppercase;color:var(--gold)}
+footer.zp-footer ul{list-style:none;margin:0;padding:0}
+footer.zp-footer li{margin-bottom:9px}
+footer.zp-footer a{color:rgba(255,255,255,.75);text-decoration:none}
+footer.zp-footer a:hover{color:var(--gold-2)}
+footer.zp-footer .f-brand b{display:block;margin:14px 0 10px;font:500 1.9rem/1 var(--serif);color:#fff}
+footer.zp-footer .f-brand p{max-width:320px;margin:0}
+footer.zp-footer .footer-base{position:relative;max-width:var(--max);margin:0 auto;padding:22px 28px 34px;border-top:1px solid var(--line-dark);display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;font-size:.78rem;color:rgba(255,255,255,.45)}
+@media (max-width:900px){footer.zp-footer .footer-in{grid-template-columns:1fr 1fr}}
+@media (max-width:560px){footer.zp-footer .footer-in{grid-template-columns:1fr;padding:56px 20px 32px}footer.zp-footer .footer-base{padding:20px 20px 30px}}
+</style>
+<style>
+/* Литература: три колоне по пет једнаких картица */
+.ins .lib ul{grid-template-rows:repeat(5,1fr)}
+.ins .lib a{min-height:76px;height:100%;box-sizing:border-box}
+.ins .lib>div,.ins .lib ul,.ins .lib li,.ins .lib a>span{min-width:0}
+.ins .lib strong,.ins .lib small{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+</style>
+<style>
+/* Само позиција HERO фотографије на страници „Посматрање метеора“ */
+.page-meteori .hero-meteori{
+  background-position:55% 62% !important;
+}
+.page-meteori .hero-meteori::before,
+.page-meteori .hero-meteori::after{
+  background-position:55% 62% !important;
+}
+</style>
+</head>
+<body class="page-meteori lesson-v2" id="top" style="--hero-bg:url('https://upload.wikimedia.org/wikipedia/commons/thumb/b/b3/Perseid_Meteor_Shower_above_a_Joshua_tree_%2853433001697%29.jpg/1280px-Perseid_Meteor_Shower_above_a_Joshua_tree_%2853433001697%29.jpg')">
+<a class="skip" href="#sadrzaj">Прескочи на садржај</a>
+<header class="zp-topbar">
+<div class="zp-topbar-in">
+<a aria-label="Звездани парк Рајац — почетна" class="zp-brand" href="../index.html">
+<svg aria-hidden="true" viewbox="0 0 40 40"><circle cx="20" cy="20" fill="none" r="19" stroke="rgba(241,220,166,.45)"></circle><path d="M20 6 22.2 17.8 34 20 22.2 22.2 20 34 17.8 22.2 6 20 17.8 17.8Z" fill="#f1dca6"></path><path d="M20 12.5 21 19 27.5 20 21 21 20 27.5 19 21 12.5 20 19 19Z" fill="#050a14" opacity=".35"></path></svg>
+<span><b>Звездани парк</b><small>РАЈАЦ</small></span>
+</a>
+<button aria-expanded="false" aria-label="Мени" class="zp-menu-btn" type="button"><span></span><span></span><span></span></button>
+<nav aria-label="Главна навигација" class="zp-nav">
+<a href="../index.html">Почетна</a>
+<a href="../lokacija.html">Локација</a>
+<div class="zp-dd"><button aria-expanded="false" class="zp-dd-btn" type="button">Истраживања</button><div class="zp-dd-menu"><a href="../01-uvod-i-rajac.html">Увод и истраживачки рад</a><a href="../02-svetlosno-zagadjenje.html">Светлосно загађење</a><a href="../03-predlog-i-merenja.html">Мерења и простор</a><a href="../04-znacaj-i-upravljanje.html">Значај и управљање</a></div></div>
+<a href="../05-programi-i-turizam.html">Програми</a>
+<a href="../07-opservatorija-i-oprema.html">Опсерваторија</a>
+<a href="../nebo.html">Небо</a>
+<a href="../sta-poneti.html">Шта понети</a>
+<a href="../prognoza.html">Прогноза</a>
+<div class="zp-dd"><button aria-expanded="false" class="zp-dd-btn active" type="button">Курс</button><div class="zp-dd-menu"><a href="astrognozija.html"><span class="n">1</span>Астрогнозија</a><a href="instrumenti.html"><span class="n">2</span>Инструменти за посматрање</a><a href="sunce.html"><span class="n">3</span>Посматрање Сунца</a><a aria-current="page" class="active" href="meteori.html"><span class="n">4</span>Посматрање метеора</a><a href="komete.html"><span class="n">5</span>Посматрање комета</a><a href="planete.html"><span class="n">6</span>Посматрање планета</a><a href="astrofotografija.html"><span class="n">7</span>Астрофотографија</a><a href="promenljive-zvezde.html"><span class="n">8</span>Посматрање променљивих звезда</a></div></div>
+<a class="zp-ext" href="https://piorajac.rs/">ПИО „Рајац“ ↗</a>
+</nav>
+</div>
+</header>
+<section class="hero hero-meteori">
+<div class="wrap hero-in">
+<nav aria-label="Путања" class="crumbs"><a href="../index.html">Звездани парк</a><span aria-hidden="true">/</span><span>Курс аматерске астрономије</span><span aria-hidden="true">/</span><span>Лекција 4 од 8</span></nav>
+<span class="kicker">Курс аматерске астрономије · 04</span>
+<h1>Посматрање метеора</h1>
+<p class="lede">Звезде падалице су зрнца прашине која сагоревају у атмосфери. Научићеш када и где да их тражиш, како да их бројиш као прави посматрач и како да их снимиш фото-апаратом или камером.</p>
+</div>
+</section>
+
+<nav aria-label="Лекције курса" class="path">
+<div class="wrap"><ol>
+<li><a href="astrognozija.html"><span class="n">1</span>Астрогнозија</a></li>
+<li><a href="instrumenti.html"><span class="n">2</span>Инструменти</a></li>
+<li><a href="sunce.html"><span class="n">3</span>Сунце</a></li>
+<li><a aria-current="page" href="meteori.html"><span class="n">4</span>Метеори</a></li>
+<li><a href="komete.html"><span class="n">5</span>Комете</a></li>
+<li><a href="planete.html"><span class="n">6</span>Планете</a></li>
+<li><a href="astrofotografija.html"><span class="n">7</span>Астрофотографија</a></li>
+<li><a href="promenljive-zvezde.html"><span class="n">8</span>Променљиве звезде</a></li>
+</ol></div>
+</nav>
+
+<main id="sadrzaj" class="ins">
+
+<!-- 1. УВОД -->
+<section class="sec" id="uvod">
+<div class="wrap lead-grid">
+  <div>
+    <div class="sec-head"><span class="kicker">Шта су метеори</span><h2>Звезде падалице</h2></div>
+    <div class="etym"><span>μετέωρον — <em>атмосферски феномен</em></span></div>
+    <p class="big-q"><a href="https://sr.wikipedia.org/sr-ec/Метеор"><b>Метеор</b></a> је видљива светлосна појава која настаје када <a href="https://sr.wikipedia.org/wiki/Meteoroid">метеороид</a> великом брзином улети у Земљину атмосферу.</p>
+    <p>Сударима са молекулима ваздуха метеороид се загрева и испарава, а гас око његове путање се побуђује и јонизује и зато светли. Већина метеора засветли на висинама од око 120 до 80 km.</p>
+    <div class="mmm" aria-label="Метеороид, метеор, метеорит">
+      <div><small>у свемиру</small><strong>Метеороид</strong><span>честица прашине или комадић стене који кружи око Сунца</span></div>
+      <div><small>у атмосфери</small><strong>Метеор</strong><span>светли траг на небу, „звезда падалица“</span></div>
+      <div><small>на Земљи</small><strong>Метеорит</strong><span>остатак који преживи пролазак кроз атмосферу и падне на тло</span></div>
+    </div>
+    <p>Сјајни метеори се називају <a href="https://sr.wikipedia.org/sr-ec/Болид_(метеор)">болиди</a>. Метеороиди који потичу од истог објекта, <a href="https://sr.wikipedia.org/sr-ec/Комета">комете</a> или <a href="https://sr.wikipedia.org/sr-ec/Астероид">астероида</a>, имају паралелне путање, па метеори који од њих настају изгледају као да потичу из истог дела неба, <a href="https://sr.wikipedia.org/sr-ec/Радијант_(метеорски_рој)">радијанта</a>. Тада говоримо о <a href="https://sr.wikipedia.org/sr-ec/Метеорски_рој">метеорском роју</a>.</p>
+    <p>Током године постоји <a href="https://sr.wikipedia.org/wiki/Spisak_meteorskih_rojeva">више од 50 метеорских ројева</a>. Метеороиди који не припадају ниједном роју су <a href="https://sr.wikipedia.org/sr-ec/Спорадици">спорадици</a>.</p>
+  </div>
+  <ol class="rules" aria-label="Исходи учења">
+    <li><span class="ix">1</span><div><strong>Самостално посматрање и снимање</strong><span>Научићеш да посматраш и снимаш метеоре са неколико различитих метода.</span></div></li>
+    <li><span class="ix">2</span><div><strong>Савремена фото-опрема</strong><span>Користићеш фото-апарат и видео камеру за снимање метеора и болида.</span></div></li>
+    <li><span class="ix">3</span><div><strong>Групна посматрања</strong><span>Учествоваћеш у групним посматрањима и снимањима објеката и појава на небу.</span></div></li>
+  </ol>
+</div>
+</section>
+
+<!-- 2. КАЛЕНДАР РОЈЕВА -->
+<section class="sec dark" id="rojevi">
+<div class="wrap">
+  <div class="sec-head"><span class="kicker">Календар</span><h2>Главни метеорски ројеви</h2><p>Осам ројева које вреди посматрати сваке године. ЗЧБ (зенитни часовни број) је број метеора који би један посматрач видео за сат под идеално тамним небом, са радијантом у темену. Датуми максимума се из године у годину мењају за дан-два.</p></div>
+  <div class="showers" id="showers">
+    <article class="shower" data-m="1" data-d="3"><span class="when">3–4. јануар</span><h3>Квадрантиди</h3><div class="zhr"><b>80</b><i style="--z:53%"></i></div><dl><dt>Радијант</dt><dd>Волар</dd><dt>Порекло</dt><dd>астероид 2003 EH1</dd><dt>Брзина</dt><dd>41 km/s</dd></dl></article>
+    <article class="shower" data-m="4" data-d="22"><span class="when">22. април</span><h3>Лириди</h3><div class="zhr"><b>18</b><i style="--z:12%"></i></div><dl><dt>Радијант</dt><dd>Лира</dd><dt>Порекло</dt><dd>комета Тачер</dd><dt>Брзина</dt><dd>49 km/s</dd></dl></article>
+    <article class="shower" data-m="5" data-d="6"><span class="when">6. мај</span><h3>Ета Аквариди</h3><div class="zhr"><b>50</b><i style="--z:33%"></i></div><dl><dt>Радијант</dt><dd>Водолија, ниско пред зору</dd><dt>Порекло</dt><dd>Халејева комета</dd><dt>Брзина</dt><dd>66 km/s</dd></dl></article>
+    <article class="shower" data-m="8" data-d="12"><span class="when">12–13. август</span><h3>Персеиди</h3><div class="zhr"><b>100</b><i style="--z:67%"></i></div><dl><dt>Радијант</dt><dd>Персеј</dd><dt>Порекло</dt><dd>комета Свифт–Татл</dd><dt>Брзина</dt><dd>59 km/s</dd></dl></article>
+    <article class="shower" data-m="10" data-d="21"><span class="when">21. октобар</span><h3>Ориониди</h3><div class="zhr"><b>20</b><i style="--z:13%"></i></div><dl><dt>Радијант</dt><dd>Орион</dd><dt>Порекло</dt><dd>Халејева комета</dd><dt>Брзина</dt><dd>66 km/s</dd></dl></article>
+    <article class="shower" data-m="11" data-d="17"><span class="when">17. новембар</span><h3>Леониди</h3><div class="zhr"><b>15</b><i style="--z:10%"></i></div><dl><dt>Радијант</dt><dd>Лав</dd><dt>Порекло</dt><dd>комета Темпел–Татл</dd><dt>Брзина</dt><dd>71 km/s</dd></dl></article>
+    <article class="shower" data-m="12" data-d="14"><span class="when">13–14. децембар</span><h3>Геминиди</h3><div class="zhr"><b>150</b><i style="--z:100%"></i></div><dl><dt>Радијант</dt><dd>Близанци</dd><dt>Порекло</dt><dd>астероид Фаетон</dd><dt>Брзина</dt><dd>35 km/s</dd></dl></article>
+    <article class="shower" data-m="12" data-d="22"><span class="when">22. децембар</span><h3>Урсиди</h3><div class="zhr"><b>10</b><i style="--z:7%"></i></div><dl><dt>Радијант</dt><dd>Мали медвед</dd><dt>Порекло</dt><dd>комета Татл</dd><dt>Брзина</dt><dd>33 km/s</dd></dl></article>
+  </div>
+  <p class="showers-foot">Подаци: Међународна метеорска организација. Тачне датуме за текућу годину провери у <a href="https://www.imo.net/resources/calendar/">календару IMO</a> или у <a href="https://www.amsmeteors.org/meteor-showers/meteor-shower-calendar/">календару Америчког метеорског друштва</a>.</p>
+</div>
+</section>
+
+<!-- 3. РАДИЈАНТ -->
+<section class="sec" id="radijant">
+<div class="wrap">
+  <div class="sec-head"><span class="kicker">Перспектива</span><h2>Радијант: одакле „падају“</h2><p>Метеори једног роја лете паралелно, као шине које се у даљини спајају у тачку. Зато изгледају као да излећу из исте тачке на небу. По сазвежђу у ком је та тачка рој добија име.</p></div>
+  <div class="sun-feat">
+    <figure class="sun-photo"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1c/Perseid_Meteor_Shower_Composite_%2850224080782%29.jpg/1280px-Perseid_Meteor_Shower_Composite_%2850224080782%29.jpg" alt="Двадесет пет Персеида на једној слици, сви излећу из истог дела неба" loading="lazy" decoding="async" width="1280" height="852">
+      <figcaption>25 Персеида из једне ноћи, спојених у једну слику: сви трагови воде назад ка радијанту у Персеју. · <a href="https://commons.wikimedia.org/wiki/File:Perseid_Meteor_Shower_Composite_(50224080782).jpg">© Jim Vajda · CC BY 2.0</a></figcaption></figure>
+    <ul class="hops">
+      <li><strong>Не гледај у радијант</strong><span>Метеори близу радијанта имају кратке трагове. Гледај <em>40–50°</em> од њега и око <em>50°</em> изнад хоризонта, где су трагови дужи и лепши.</span></li>
+      <li><strong>После поноћи их је обично више</strong><span>После поноћи наша страна Земље гледа у правцу њеног кретања, па метеоре „сакупља“ као ветробран кишне капи. Код спорадика и многих ројева зато је повољнија друга половина ноћи. За конкретан рој ипак одлучују висина радијанта и време максимума: радијант Геминида, на пример, високо је већ око поноћи.</span></li>
+      <li><strong>Месец је највећа сметња</strong><span>Пун Месец „брише“ слабе метеоре као светлосно загађење. Најбоље године за неки рој су оне када је у његовом максимуму Месец млад.</span></li>
+      <li><strong>Спорадици су увек ту</strong><span>И без роја, сваке ведре ноћи под тамним небом видиш неколико спорадичних метеора на сат.</span></li>
+    </ul>
+  </div>
+</div>
+</section>
+
+<!-- 4. КОЛИКО ЋЕШ ВИДЕТИ -->
+<section class="sec" id="koliko" style="padding-top:0">
+<div class="wrap">
+  <div class="sec-head"><span class="kicker">Право очекивање</span><h2>Колико ћеш их видети?</h2><p>Зенитни часовни број важи за идеалне услове. Колико ћеш стварно видети зависи од висине радијанта и од тога колико је небо тамно.</p></div>
+  <div class="specs">
+    <div class="formula">
+      <div><code>ЗЧБ</code><span><b>Зенитни часовни број</b> из календара ројева, на пример 100 за Персеиде.</span></div>
+      <div><code>h</code><span><b>Висина радијанта</b> изнад хоризонта у степенима. Што је радијант нижи, метеора је мање.</span></div>
+      <div><code>m</code><span><b>Гранична величина</b>: најслабија звезда коју видиш голим оком. У граду 3–4, на Рајцу 6 и више.</span></div>
+      <div><code>r</code><span><b>Индекс популације</b> роја, обично између 2 и 3. Показује колико има слабих метеора у односу на сјајне.</span></div>
+      <div><code>N</code><span><b>Очекиван број</b> метеора на сат за једног посматрача: <b>N = ЗЧБ · sin h / r<sup>6,5 − m</sup></b></span></div>
+    </div>
+    <aside class="calc" aria-labelledby="zhr-t">
+      <h3 id="zhr-t">Колико метеора на сат?</h3>
+      <p>Изабери рој и унеси услове посматрања.</p>
+      <div class="presets" aria-label="Ројеви">
+        <button type="button" data-p="80,2.1">Квадрантиди</button>
+        <button type="button" data-p="100,2.2">Персеиди</button>
+        <button type="button" data-p="20,2.5">Ориониди</button>
+        <button type="button" data-p="150,2.6">Геминиди</button>
+      </div>
+      <div class="in">
+        <div><label for="mZ">ЗЧБ</label><input id="mZ" type="number" inputmode="numeric" min="1" max="2000" value="100"></div>
+        <div><label for="mH">Радијант h°</label><input id="mH" type="number" inputmode="numeric" min="0" max="90" value="50"></div>
+        <div><label for="mL">Гранична m</label><input id="mL" type="number" inputmode="decimal" min="2" max="7.5" step="0.1" value="6.2"></div>
+      </div>
+      <input id="mR" type="hidden" value="2.2">
+      <div class="out" aria-live="polite">
+        <div><small>На Рајцу</small><strong id="mN">—</strong><em>метеора на сат, твоји услови</em></div>
+        <div><small>У граду</small><strong id="mC">—</strong><em>исти рој, гранична величина 3,5</em></div>
+      </div>
+      <p class="verdict" id="mV">—</p>
+    </aside>
+  </div>
+</div>
+</section>
+
+<!-- 5. МЕТОДЕ -->
+<section class="sec dark" id="metode">
+<div class="wrap">
+  <div class="sec-head"><span class="kicker">Три методе</span><h2>Како се посматрају метеори</h2><p>Свака метода даје другу врсту података. Почиње се голим оком, а камера и фото-апарат додају тачне путање и снимке.</p></div>
+  <div class="types">
+    <article class="type">
+      <figure><img src="assets/media/2-768x378-ec306c8c.jpg" alt="Посматрачи леже на ливади док небом пролеће метеор" loading="lazy" decoding="async" width="768" height="378">
+        <div class="tag"><small>01 · голим оком</small><strong>Визуелно</strong></div></figure>
+      <div class="body">
+        <p class="best"><b>Како:</b> лежиш, гледаш у један део неба и за сваки метеор бележиш време, сјај и да ли припада роју. На крају записујеш граничну величину и облачност.</p>
+        <div class="pc"><div class="plus"><b>Предности</b>не треба никаква опрема; подаци су корисни науци</div><div class="minus"><b>Тражи</b>стрпљење, тамно небо и бар сат посматрања</div></div>
+      </div>
+    </article>
+    <article class="type">
+      <figure><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/48/Geminids_Over_Kitt_Peak_National_Observatory_%28iotw2352a%29.jpg/1280px-Geminids_Over_Kitt_Peak_National_Observatory_%28iotw2352a%29.jpg" alt="Геминиди изнад куполе телескопа на Кит Пику" loading="lazy" decoding="async" width="1280" height="853">
+        <a class="credit" href="https://commons.wikimedia.org/wiki/File:Geminids_Over_Kitt_Peak_National_Observatory_(iotw2352a).jpg">KPNO/NOIRLab/NSF/AURA/R. Sparks · CC BY 4.0</a>
+        <div class="tag"><small>02 · фото-апарат</small><strong>Фотографско</strong></div></figure>
+      <div class="body">
+        <p class="best"><b>Како:</b> фото-апарат на стативу, широкоугаони објектив, отвор f/2,8 или светлоснији (мањи f-број), ISO 1600–3200 и експозиције од 15 до 30 секунди, једна за другом целе ноћи.</p>
+        <div class="pc"><div class="plus"><b>Предности</b>трајан запис, лепе композиције са пејзажем</div><div class="minus"><b>Мане</b>хвата само сјајније метеоре; много снимака за преглед</div></div>
+      </div>
+    </article>
+    <article class="type">
+      <figure><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7d/Fireball_over_KPNO_%28iotw2039a%29.jpg/1280px-Fireball_over_KPNO_%28iotw2039a%29.jpg" alt="Болид снимљен аутоматском камером изнад опсерваторије" loading="lazy" decoding="async" width="1280" height="1280">
+        <a class="credit" href="https://commons.wikimedia.org/wiki/File:Fireball_over_KPNO_(iotw2039a).jpg">Spacewatch/KPNO/NOIRLab · CC BY 4.0</a>
+        <div class="tag"><small>03 · аутоматски</small><strong>Видео камера</strong></div></figure>
+      <div class="body">
+        <p class="best"><b>Како:</b> осетљива камера сваке ноћи сама снима небо, а софтвер издваја метеоре. Кад исти метеор сниме две камере, израчунава се његова путања.</p>
+        <div class="pc"><div class="plus"><b>Предности</b>ради сваке ноћи; тачне путање и орбите</div><div class="minus"><b>Тражи</b>рачунар, мало знања и сарадњу са мрежом камера</div></div>
+      </div>
+    </article>
+  </div>
+</div>
+</section>
+
+<!-- 6. НОЋ ПОСМАТРАЊА -->
+<section class="sec" id="noc">
+<div class="wrap night">
+  <div>
+    <div class="sec-head"><span class="kicker">Пракса</span><h2>Ноћ посматрања метеора</h2></div>
+    <ol class="steps">
+      <li><strong>Изабери ноћ и место</strong><span>Провери када је максимум роја и где је Месец. Иди далеко од градских светала, на пример на Рајац.</span></li>
+      <li><strong>Понеси лежаљку и топлу одећу</strong><span>Метеори се посматрају лежећи. И у августу ноћ на планини уме да буде хладна, а у децембру треба зимска опрема.</span></li>
+      <li><strong>Дај очима пола сата</strong><span>Око се на мрак прилагођава 20 до 30 минута. Користи само црвену лампу и не гледај у екран телефона.</span></li>
+      <li><strong>Бележи сваки метеор</strong><span>Време, сјај у поређењу са звездама, боју, да ли оставља траг и да ли је из роја или спорадик. Диктафон је згодан, јер не мораш да скидаш поглед са неба. Податке после препиши у <a href="meteori-posmatracki-list.html">посматрачки лист за штампу</a>.</span></li>
+      <li><strong>Пријави болид</strong><span>Ако видиш изузетно сјајан метеор, запиши тачно време и правац и <a href="https://fireball.imo.net/">пријави га Међународној метеорској организацији</a>.</span></li>
+    </ol>
+  </div>
+  <div class="duo">
+    <figure><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e6/A_bolide_flying_over_a_cliff.jpg/1280px-A_bolide_flying_over_a_cliff.jpg" alt="Сјајан болид изнад стена и Млечног пута" loading="lazy" decoding="async" width="1280" height="1280"><figcaption>Болид изнад кањона у Казахстану. · <a href="https://commons.wikimedia.org/wiki/File:A_bolide_flying_over_a_cliff.jpg">© Astrobond · CC BY-SA 4.0</a></figcaption></figure>
+    <figure><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2b/Four_views_of_the_Leonid_meteor_shower_of_1966_Noao-4127A.jpg/1280px-Four_views_of_the_Leonid_meteor_shower_of_1966_Noao-4127A.jpg" alt="Четири снимка метеорске кише Леонида 1966. године" loading="lazy" decoding="async" width="1280" height="1131"><figcaption>Метеорска киша Леонида 1966: на врхунцу и до неколико десетина метеора у секунди. · <a href="https://commons.wikimedia.org/wiki/File:Four_views_of_the_Leonid_meteor_shower_of_1966_Noao-4127A.jpg">NOIRLab/NSF/AURA · CC BY 4.0</a></figcaption></figure>
+  </div>
+</div>
+</section>
+
+<!-- 7. ВИДЕО -->
+<section class="sec dark" id="video">
+<div class="wrap lead-grid">
+  <div>
+    <div class="sec-head"><span class="kicker">Видео материјал</span><h2>300 Геминида за пет сати</h2></div>
+    <p class="vid-p">Овај видео приказује 300 метеора из метеорског роја Геминида у Јужној Кореји 2022. Снимано је укупно 5 сати, од 18:30 до 23:30 по локалном времену, 14. децембра.</p>
+    <p class="vid-p">Обрати пажњу: скоро сви метеори излећу из истог дела неба, из радијанта у Близанцима.</p>
+  </div>
+  <div class="video"><button aria-label="Пусти YouTube видео" class="yt" data-start="18" data-yt="T_vaPLs_M5Y" style="background-image:url('https://i.ytimg.com/vi/T_vaPLs_M5Y/hqdefault.jpg')" type="button"><span class="play"></span><span class="cap">Геминиди 2022, Јужна Кореја</span></button></div>
+</div>
+</section>
+
+<!-- 8. ЗАДАЦИ -->
+<section class="sec" id="zadaci" style="background:var(--paper-2)">
+<div class="wrap">
+<div class="sec-head"><span class="kicker">Вежба</span><h2>Практични задаци</h2><p>Најбоље прилике су Персеиди у августу и Геминиди у децембру.</p></div>
+<div class="tasks">
+<article class="task">
+<span class="lvl">Основна школа</span>
+<h3>Задаци за основце</h3>
+<ol>
+<li>У ноћи максимума Персеида или Геминида посматрај небо бар један сат и преброј метеоре.</li>
+<li>За сваки метеор запиши време и да ли је дошао из правца радијанта. Користи <a href="meteori-posmatracki-list.html">посматрачки лист</a>.</li>
+<li>Упореди колико си метеора видео пре и после поноћи.</li>
+</ol>
+</article>
+<article class="task">
+<span class="lvl">Средња школа</span>
+<h3>Задаци за средњошколце</h3>
+<ol>
+<li>Посматрај рој по правилима <a href="https://www.popastro.com/meteor/visual-meteor-observing/">визуелног посматрања</a>: бележи време, сјај, припадност роју и граничну величину на почетку и крају сваког сата.</li>
+<li>Из својих података и формуле изнад израчунај ЗЧБ и упореди га са вредношћу из календара.</li>
+<li>Сними метеоре фото-апаратом са статива и састави слику на којој се види радијант.</li>
+<li>Распитај се о мрежи камера <a href="https://globalmeteornetwork.org/">Global Meteor Network</a> и о томе како да постанеш део ње.</li>
+</ol>
+</article>
+</div>
+</div>
+</section>
+
+<!-- 9. ОРГАНИЗАЦИЈА -->
+<section class="sec" id="organizacija">
+<div class="wrap">
+  <div class="rajac" style="background-image:url('https://upload.wikimedia.org/wikipedia/commons/thumb/b/b3/Perseid_Meteor_Shower_above_a_Joshua_tree_%2853433001697%29.jpg/1280px-Perseid_Meteor_Shower_above_a_Joshua_tree_%2853433001697%29.jpg')">
+    <div class="in">
+      <span class="kicker">Организација</span>
+      <h2>Посматрај у групи, под тамним небом</h2>
+      <p>Учлани се у неко астрономско удружење које посматра метеоре. Ако живиш у граду са великим светлосним загађењем, организуј групни одлазак у околину где нема јавне расвете или на најближу планину где се виде звезде најслабијег сјаја.</p>
+      <div class="btns"><a class="btn btn-gold" href="http://www.meteori.rs/wordpress/">Архива Петничке метеорске групе ↗</a><a class="btn btn-ghost" href="../05-programi-i-turizam.html">Посматрања на Рајцу</a></div>
+    </div>
+    <span class="credit">Фото: <a href="https://commons.wikimedia.org/wiki/File:Perseid_Meteor_Shower_above_a_Joshua_tree_(53433001697).jpg">NPS / Anna Cirimele</a> · јавно власништво</span>
+  </div>
+</div>
+</section>
+
+<!-- 10. ЛИТЕРАТУРА -->
+<section class="sec" id="literatura" style="background:var(--paper-2)">
+<div class="wrap">
+  <div class="sec-head"><span class="kicker">За даље учење</span><h2>Литература, опрема и софтвер</h2><p>Сви линкови су проверени у октобру 2026.</p></div>
+  <div class="lib">
+    <div><h3>Основе</h3><ul>
+      <li><a href="https://sr.wikipedia.org/sr-ec/Метеор"><span><strong>Шта су метеори?<span class="lang">SR</span></strong><small>Википедија</small></span></a></li>
+      <li><a href="https://sr.wikipedia.org/wiki/Spisak_meteorskih_rojeva"><span><strong>Списак метеорских ројева<span class="lang">SR</span></strong><small>Википедија</small></span></a></li>
+      <li><a href="http://www.meteori.rs/wordpress/meteori-i-meteorski-rojevi/"><span><strong>Метеори и ројеви<span class="lang">SR</span></strong><small>архива Петничке метеорске групе</small></span></a></li>
+      <li><a href="http://www.meteori.rs/wordpress/"><span><strong>Петничка метеорска група<span class="lang">SR</span></strong><small>архива сајта, до 2018.</small></span></a></li>
+      <li><a href="https://science.nasa.gov/solar-system/meteors-meteorites/"><span><strong>Метеори и метеорити<span class="lang">EN</span></strong><small>NASA Science</small></span></a></li>
+    </ul></div>
+    <div><h3>Посматрање</h3><ul>
+      <li><a href="https://www.popastro.com/meteor/visual-meteor-observing/"><span><strong>Визуелно посматрање<span class="lang">EN</span></strong><small>Society for Popular Astronomy</small></span></a></li>
+      <li><a href="https://www.popastro.com/meteor/telescopic-meteor-observing/"><span><strong>Телескопско посматрање<span class="lang">EN</span></strong><small>Society for Popular Astronomy</small></span></a></li>
+      <li><a href="https://www.popastro.com/meteor/meteor-imaging-with-dslr-cameras/"><span><strong>Снимање метеора<span class="lang">EN</span></strong><small>Society for Popular Astronomy</small></span></a></li>
+      <li><a href="https://www.imo.net/resources/calendar/"><span><strong>Календар ројева · IMO<span class="lang">EN</span></strong><small>PDF за текућу годину</small></span></a></li>
+      <li><a href="https://www.amsmeteors.org/meteor-showers/meteor-shower-calendar/"><span><strong>Календар ројева · AMS<span class="lang">EN</span></strong><small>Америчко метеорско друштво</small></span></a></li>
+    </ul></div>
+    <div><h3>Опрема и мреже камера</h3><ul>
+      <li><a href="https://www.instructables.com/Raspberry-Pi-Meteor-Station/"><span><strong>Камера за метеоре<span class="lang">EN</span></strong><small>Raspberry Pi станица · Instructables</small></span></a></li>
+      <li><a href="https://globalmeteornetwork.org/"><span><strong>Global Meteor Network<span class="lang">EN</span></strong><small>светска мрежа аматерских камера</small></span></a></li>
+      <li><a href="https://www.imo.net/"><span><strong>Међународна метеорска организација<span class="lang">EN</span></strong><small>IMO · подаци и пријава посматрања</small></span></a></li>
+      <li><a href="https://fireball.imo.net/"><span><strong>Пријави болид<span class="lang">EN</span></strong><small>Међународна метеорска организација</small></span></a></li>
+      <li><a href="https://www.amsmeteors.org/"><span><strong>Америчко метеорско друштво<span class="lang">EN</span></strong><small>вести, ројеви, пријаве болида</small></span></a></li>
+    </ul></div>
+  </div>
+</div>
+</section>
+
+<section aria-label="Навигација кроз курс" class="next"><div class="wrap"><a href="komete.html"><span class="num">05</span><span><small>Следећа лекција</small><strong>Посматрање комета</strong></span><span aria-hidden="true" class="arr">→</span></a><div class="back"><a href="#top">↑ На врх стране</a><a href="sunce.html">← Претходна: Посматрање Сунца</a><a href="../index.html">Назад на Звездани парк</a></div></div></section>
+</main>
+<footer class="footer zp-footer">
+<div class="footer-in">
+<div class="f-brand"><svg width="40" height="40" viewBox="0 0 40 40" aria-hidden="true"><circle cx="20" cy="20" r="19" fill="none" stroke="rgba(241,220,166,.45)"/><path d="M20 6 22.2 17.8 34 20 22.2 22.2 20 34 17.8 22.2 6 20 17.8 17.8Z" fill="#f1dca6"/><path d="M20 12.5 21 19 27.5 20 21 21 20 27.5 19 21 12.5 20 19 19Z" fill="#050a14" opacity=".35"/></svg><b>Звездани парк „Рајац“</b><p>Пројекат очувања природног ноћног неба у Пределу изузетних одлика „Рајац“ — истраживање, мерење, едукација и астрономски програми.</p></div>
+<div><h5>Пројекат</h5><ul>
+<li><a href="https://piorajac.rs/zvezdani-park/01-uvod-i-rajac.html">Истраживања</a></li>
+<li><a href="https://piorajac.rs/zvezdani-park/02-svetlosno-zagadjenje.html">Светлосно загађење</a></li>
+<li><a href="https://piorajac.rs/zvezdani-park/03-predlog-i-merenja.html">Мерења и простор</a></li>
+<li><a href="https://piorajac.rs/zvezdani-park/04-znacaj-i-upravljanje.html">Управљање</a></li>
+<li><a href="https://piorajac.rs/zvezdani-park/05-programi-i-turizam.html">Програми</a></li>
+<li><a href="https://piorajac.rs/zvezdani-park/07-opservatorija-i-oprema.html">Опсерваторија и опрема</a></li>
+</ul></div>
+<div><h5>Посета и небо</h5><ul>
+<li><a href="https://piorajac.rs/zvezdani-park/lokacija.html">Локација</a></li>
+<li><a href="https://piorajac.rs/zvezdani-park/sta-poneti.html">Шта понети</a></li>
+<li><a href="https://piorajac.rs/zvezdani-park/prognoza.html">Астрономска прогноза</a></li>
+<li><a href="https://piorajac.rs/zvezdani-park/nebo.html">Небо</a></li>
+<li><a href="https://piorajac.rs/zvezdani-park/zivo-nebo-rajac.html">Живо небо над Рајцем</a></li>
+<li><a href="https://piorajac.rs/zvezdani-park/nocno-nebo-rajac.html">Ноћно небо у 360°</a></li>
+</ul></div>
+<div><h5>Повезано</h5><ul>
+<li><a href="https://piorajac.rs/zvezdani-park/kurs-astronomije/">Курс астрономије</a></li>
+<li><a href="https://piorajac.rs/zvezdano-nebo/">All-sky снимак целог неба</a></li>
+<li><a href="https://piorajac.rs/amsrajac/">АМС Рајац</a></li>
+<li><a href="https://svetlo.piorajac.rs">Књига о светлосном загађењу</a></li>
+<li><a href="https://piorajac.rs/">ПИО „Рајац“</a></li>
+<li><a href="mailto:zvezdanipark@piorajac.rs">zvezdanipark@piorajac.rs</a></li>
+</ul></div>
+</div>
+<div class="footer-base"><span>© 2026 ПИО „Рајац“ · Љиг</span><span>Небо је део природе. Чувајмо мрак.</span></div>
+</footer>
+<script defer src="assets/course.js?v=4"></script>
+<script>
+(function(){
+  /* следећи рој: рачуна се у прегледачу посетиоца, по датуму на његовом уређају */
+  var list=[].slice.call(document.querySelectorAll('#showers .shower'));
+  if(list.length){
+    var now=new Date(),today=new Date(now.getFullYear(),now.getMonth(),now.getDate()),best=null,bd=1e9;
+    list.forEach(function(el){
+      var m=+el.dataset.m-1,dd=+el.dataset.d,y=today.getFullYear();
+      var peak=new Date(y,m,dd);
+      /* ноћ максимума траје до 6 ујутру следећег дана */
+      if(now>new Date(y,m,dd+1,6))peak=new Date(y+1,m,dd);
+      var days=Math.round((peak-today)/864e5);
+      if(days<bd){bd=days;best=el;}
+    });
+    if(best){
+      var b=document.createElement('span');b.className='badge';
+      b.textContent=bd<=0?'Максимум је ове ноћи':bd===1?'Максимум сутра увече':'Следећи · за '+bd+' '+(bd%10===1&&bd%100!==11?'дан':'дана');
+      best.classList.add('next');best.insertBefore(b,best.firstChild);
+    }
+  }
+  /* калкулатор */
+  var Z=document.getElementById('mZ'),H=document.getElementById('mH'),L=document.getElementById('mL'),R=document.getElementById('mR');
+  if(!Z)return;
+  function fx(n){return n<10?n.toFixed(1).replace('.',','):String(Math.round(n));}
+  function calc(){
+    var z=parseFloat(Z.value)||0,h=Math.min(90,Math.max(0,parseFloat(H.value)||0)),lm=parseFloat(String(L.value).replace(',','.'))||6,r=parseFloat(R.value)||2.2;
+    var s=Math.sin(h*Math.PI/180),n=z*s/Math.pow(r,6.5-lm),c=z*s/Math.pow(r,6.5-3.5);
+    document.getElementById('mN').textContent=fx(n);document.getElementById('mC').textContent=fx(c);
+    var v=document.getElementById('mV'),t;
+    if(h<10)t='Радијант је сасвим ниско: сачекај да се попне, после поноћи ће их бити више.';
+    else if(n>=60)t='Одлична ноћ: у просеку више од једног метеора у минуту.';
+    else if(n>=20)t='Добра ноћ: метеор на свака два-три минута.';
+    else if(n>=6)t='Скромно, али вредно: понеси стрпљења и топлу одећу.';
+    else t='Мало метеора: овај рој је слаб или је небо светло.';
+    v.textContent=t+' Тамно небо доноси '+(c>0?fx(n/c):'—')+' пута више метеора него град.';
+  }
+  [Z,H,L].forEach(function(i){i.addEventListener('input',calc);});
+  document.querySelectorAll('#koliko .presets button').forEach(function(b){b.addEventListener('click',function(){var p=b.dataset.p.split(',');Z.value=p[0];R.value=p[1];calc();});});
+  calc();
+})();
+</script>
+<!-- ZP-SUMRAK --><script src="https://piorajac.rs/zvezdani-park/assets/sumrak.js?v=7" defer></script>
+</body>
+</html>

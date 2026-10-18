@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+
+<!-- saved from url=(0085)https://piorajac.rs/monitoring-izvestaji/copernicus/celo-pio/godisnji/2025/index.html -->
+<html lang="sr"><head><meta content="text/html; charset=utf-8" http-equiv="Content-Type"/><meta content="width=device-width,initial-scale=1" name="viewport"/><title>Годишњи Copernicus извештај о стању вегетације ПИО „Рајац” 2025.</title><style>
+body{margin:0;background:#eef5fb;font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;color:#122033;line-height:1.55}.wrap{max-width:1180px;margin:0 auto;padding:28px 18px 48px}.hero,.section,.card{background:#fff;border:1px solid #dbe6f2;box-shadow:0 10px 30px rgba(15,40,70,.06)}.hero{border-radius:26px;padding:28px;margin-bottom:18px}.kicker{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:#41658d;font-weight:800}h1{font-size:clamp(30px,4vw,52px);line-height:1.05}.muted{color:#607999}.grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}.card{border-radius:20px;padding:18px}.card b{display:block;font-size:12px;color:#55708f;text-transform:uppercase;letter-spacing:.08em}.big{font-size:30px;font-weight:850}.section{border-radius:22px;padding:22px;margin:18px 0}.table{width:100%;border-collapse:collapse}.table th,.table td{padding:10px;border-bottom:1px solid #dbe6f2;text-align:left}.bars{display:grid;gap:8px}.barrow{display:grid;grid-template-columns:95px 1fr 75px;gap:10px;align-items:center}.bar{height:14px;background:#edf2f7;border-radius:999px;overflow:hidden}.bar>span{display:block;height:100%;background:linear-gradient(90deg,#6fcf97,#2f80ed)}.links a{display:inline-block;margin:6px 8px 0 0;padding:8px 12px;border-radius:999px;background:#eef5ff;color:#174b85;text-decoration:none;font-weight:700}@media(max-width:850px){.grid{grid-template-columns:repeat(2,1fr)}}@media(max-width:560px){.grid{grid-template-columns:1fr}}
+
+
+/* --- animated three-index yearly chart --- */
+.tri-anim-section{position:relative;overflow:hidden}
+.tri-head{display:flex;align-items:flex-start;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-bottom:14px}
+.tri-head h2{margin:0;font-size:clamp(24px,3vw,34px)}
+.tri-month-pill{border:1px solid #bcd0e6;background:#f4f9ff;border-radius:999px;padding:9px 14px;font-weight:850;color:#174b85;white-space:nowrap}
+.tri-note{margin:4px 0 14px;color:#607999;max-width:980px}
+.tri-toolbar{display:flex;gap:10px;flex-wrap:wrap;margin:12px 0 6px}
+.tri-btn{border:0;border-radius:999px;padding:9px 13px;background:#174b85;color:white;font-weight:800;cursor:pointer}
+.tri-btn.secondary{background:#e9f2fb;color:#174b85;border:1px solid #bcd0e6}
+.tri-progress{height:9px;border-radius:999px;background:#e7eef7;overflow:hidden;margin:12px 0 18px}
+.tri-progress span{display:block;width:0;height:100%;background:linear-gradient(90deg,#29b84a,#2f80ed,#e89a34)}
+.tri-values{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin:12px 0 16px}
+.tri-value-card{border:1px solid #dbe6f2;border-radius:18px;padding:14px;background:#fbfdff}
+.tri-value-card b{display:flex;align-items:center;gap:8px;font-size:12px;text-transform:uppercase;letter-spacing:.08em;color:#55708f}
+.tri-dot{width:11px;height:11px;border-radius:50%;display:inline-block}
+.tri-current-val{font-size:30px;font-weight:900;line-height:1.1;margin-top:8px;color:#122033}
+.tri-count{font-size:13px;color:#607999;margin-top:4px}
+.tri-chart-wrap{background:linear-gradient(180deg,#ffffff,#f7fbff);border:1px solid #dbe6f2;border-radius:22px;padding:12px;overflow:hidden}
+.tri-chart{width:100%;height:auto;display:block}
+.tri-grid{stroke:#d8e5f1;stroke-width:1}
+.tri-axis{stroke:#9fb4cc;stroke-width:1.2}
+.tri-xlabel{fill:#607999;font-size:13px;font-weight:700}
+.tri-ylabel{fill:#8aa3bd;font-size:12px}
+.tri-line{fill:none;stroke-width:4;stroke-linecap:round;stroke-linejoin:round;opacity:.92;filter:drop-shadow(0 2px 4px rgba(0,0,0,.10))}
+.tri-ndvi{stroke:#29b84a}
+.tri-ndmi{stroke:#2f80ed}
+.tri-reci{stroke:#e89a34}
+.tri-line-soft{fill:none;stroke:#c8d8ea;stroke-width:10;stroke-linecap:round;stroke-linejoin:round;opacity:.32}
+.tri-marker{stroke:#fff;stroke-width:3;filter:drop-shadow(0 2px 5px rgba(0,0,0,.25))}
+.tri-playhead{stroke:#122033;stroke-width:1.4;stroke-dasharray:5 7;opacity:.35}
+.tri-legend{display:flex;gap:12px;flex-wrap:wrap;margin:12px 0 0;color:#607999;font-size:13px}
+.tri-legend span{display:inline-flex;align-items:center;gap:7px}
+@media(max-width:850px){
+  .tri-values{grid-template-columns:1fr}
+  .tri-current-val{font-size:26px}
+  .tri-head{display:block}
+  .tri-month-pill{display:inline-block;margin-top:10px}
+}
+</style><style id="_goober"> .go1475592160{height:0;}.go1671063245{height:auto;}.go1888806478{display:flex;flex-wrap:wrap;flex-grow:1;}@media (min-width:600px){.go1888806478{flex-grow:initial;min-width:288px;}}.go167266335{background-color:#313131;font-size:0.875rem;line-height:1.43;letter-spacing:0.01071em;color:#fff;align-items:center;padding:6px 16px;border-radius:4px;box-shadow:0px 3px 5px -1px rgba(0,0,0,0.2),0px 6px 10px 0px rgba(0,0,0,0.14),0px 1px 18px 0px rgba(0,0,0,0.12);}.go3162094071{padding-left:20px;}.go3844575157{background-color:#313131;}.go1725278324{background-color:#43a047;}.go3651055292{background-color:#d32f2f;}.go4215275574{background-color:#ff9800;}.go1930647212{background-color:#2196f3;}.go946087465{display:flex;align-items:center;padding:8px 0;}.go703367398{display:flex;align-items:center;margin-left:auto;padding-left:16px;margin-right:-8px;}.go3963613292{width:100%;position:relative;transform:translateX(0);top:0;right:0;bottom:0;left:0;min-width:288px;}.go1141946668{box-sizing:border-box;display:flex;max-height:100%;position:fixed;z-index:1400;height:auto;width:auto;transition:top 300ms ease 0ms,right 300ms ease 0ms,bottom 300ms ease 0ms,left 300ms ease 0ms,max-width 300ms ease 0ms;pointer-events:none;max-width:calc(100% - 40px);}.go1141946668 .notistack-CollapseWrapper{padding:6px 0px;transition:padding 300ms ease 0ms;}@media (max-width:599.95px){.go1141946668{width:100%;max-width:calc(100% - 32px);}}.go3868796639 .notistack-CollapseWrapper{padding:2px 0px;}.go3118922589{top:14px;flex-direction:column;}.go1453831412{bottom:14px;flex-direction:column-reverse;}.go4027089540{left:20px;}@media (min-width:600px){.go4027089540{align-items:flex-start;}}@media (max-width:599.95px){.go4027089540{left:16px;}}.go2989568495{right:20px;}@media (min-width:600px){.go2989568495{align-items:flex-end;}}@media (max-width:599.95px){.go2989568495{right:16px;}}.go4034260886{left:50%;transform:translateX(-50%);}@media (min-width:600px){.go4034260886{align-items:center;}}</style><meta content="injectDocumentStart-2026-06-05T00:13:57.692Z" name="maxai-mui-classname-prefix"/><style type="text/css">.transform-component-module_wrapper__SPB86 {
+  position: relative;
+  width: -moz-fit-content;
+  width: fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  overflow: hidden;
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Safari */
+  -khtml-user-select: none; /* Konqueror HTML */
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+  user-select: none;
+  margin: 0;
+  padding: 0;
+}
+.transform-component-module_content__FBWxo {
+  display: flex;
+  flex-wrap: wrap;
+  width: -moz-fit-content;
+  width: fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  margin: 0;
+  padding: 0;
+  transform-origin: 0% 0%;
+}
+.transform-component-module_content__FBWxo img {
+  pointer-events: none;
+}
+</style><link href="./Copernicus годишњи извештај — цело подручје ПИО „Рајац” — 2025._files/css2" rel="stylesheet"/><style>
+/* --- collapsible report text sections --- */
+details.section.accordion{
+  padding:0;
+  overflow:hidden;
+}
+details.section.accordion > summary{
+  list-style:none;
+  cursor:pointer;
+  padding:18px 22px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:14px;
+  user-select:none;
+}
+details.section.accordion > summary::-webkit-details-marker{display:none}
+details.section.accordion > summary h2{
+  margin:0;
+  font-size:clamp(22px,2.4vw,30px);
+}
+details.section.accordion > summary::after{
+  content:"＋";
+  width:34px;
+  height:34px;
+  border-radius:999px;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  background:#eef5ff;
+  color:#174b85;
+  font-weight:900;
+  flex:0 0 auto;
+}
+details.section.accordion[open] > summary::after{
+  content:"−";
+}
+.accordion-body{
+  padding:0 22px 22px;
+  border-top:1px solid #dbe6f2;
+}
+.accordion-body p:first-child,
+.accordion-body table:first-child{
+  margin-top:18px;
+}
+details.section.accordion:not([open]){
+  margin:12px 0;
+}
+details.section.accordion[open]{
+  margin:18px 0;
+}
+.accordion-help{
+  margin:8px 0 0;
+  color:#607999;
+  font-size:14px;
+}
+</style><style>
+/* --- fix for source/stat card overflow --- */
+.kpi, .stat, .card, .metric, .summary-card, .source-card{
+  min-width:0;
+}
+.kpi *,
+.stat *,
+.card *,
+.metric *,
+.summary-card *,
+.source-card *{
+  max-width:100%;
+  box-sizing:border-box;
+}
+.kpi strong,
+.kpi b,
+.stat strong,
+.stat b,
+.card strong,
+.card b,
+.metric strong,
+.metric b,
+.summary-card strong,
+.summary-card b,
+.source-card strong,
+.source-card b{
+  overflow-wrap:anywhere;
+  word-break:break-word;
+  hyphens:auto;
+  line-height:1.05;
+}
+.kpi .value,
+.stat .value,
+.metric .value,
+.summary-card .value,
+.source-card .value,
+.kpi div,
+.stat div,
+.metric div,
+.summary-card div,
+.source-card div{
+  overflow-wrap:anywhere;
+  word-break:break-word;
+}
+@media (max-width: 1200px){
+  .kpi strong,
+  .kpi b,
+  .stat strong,
+  .stat b,
+  .card strong,
+  .card b,
+  .metric strong,
+  .metric b,
+  .summary-card strong,
+  .summary-card b,
+  .source-card strong,
+  .source-card b{
+    font-size:clamp(22px,2.5vw,30px)!important;
+  }
+}
+</style><style>
+.rajac-news-backlink{max-width:1180px;margin:18px auto 0;padding:0 18px;display:flex;gap:10px;flex-wrap:wrap}
+.rajac-news-backlink a{display:inline-flex;align-items:center;min-height:36px;padding:0 13px;border-radius:999px;background:#174b85;color:#fff;text-decoration:none;font-weight:800;font-size:13px}
+.rajac-news-backlink a+ a{background:#eef5ff;color:#174b85;border:1px solid #bcd0e6}
+</style><meta content="Годишњи Copernicus извештај за цело подручје ПИО „Рајац” приказује стање вегетације 2025. године кроз NDVI, NDMI и RECI индексе." name="description"/>
+<style id="rajac-global-news-menu-style">
+.rajac-news-menu{position:sticky;top:0;z-index:9999;background:#0d1b2a;border-bottom:1px solid rgba(255,255,255,.10);font-family:Georgia,"Times New Roman",serif;box-shadow:0 8px 26px rgba(0,0,0,.08)}
+.rajac-news-menu *{box-sizing:border-box}.rajac-news-menu-inner{max-width:1180px;margin:0 auto;padding:9px 18px;min-height:56px;display:flex;flex-wrap:wrap;align-items:center;gap:8px;overflow-x:visible;scrollbar-width:none}.rajac-news-menu-inner::-webkit-scrollbar{display:none}
+.rajac-news-menu a{display:inline-flex;align-items:center;gap:6px;min-height:38px;padding:0 13px;border-radius:999px;color:rgba(255,255,255,.74);text-decoration:none;font-size:13px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;white-space:nowrap;line-height:1;font-family:Georgia,"Times New Roman",serif}
+.rajac-news-menu a:hover{background:rgba(255,255,255,.06);color:#fff}.rajac-news-menu .home{color:#e0c678;border:1px solid rgba(224,198,120,.34);background:rgba(224,198,120,.06)}
+.rajac-news-menu a.active{color:#e0c678!important;background:rgba(224,198,120,.08);outline:1px solid rgba(224,198,120,.26)}.rajac-news-menu small{display:inline-flex;align-items:center;justify-content:center;min-width:20px;height:20px;padding:0 6px;border-radius:999px;background:rgba(255,255,255,.10);color:#e0c678;font-size:11px;letter-spacing:0;font-family:Arial,sans-serif;font-weight:900}
+@media(max-width:650px){.rajac-news-menu-inner{padding:9px 10px}.rajac-news-menu a{font-size:12px;padding:0 10px}}
+</style>
+<style id="rajac-news-menu-one-row">
+/* Јединствен мени за све вести: један ред и исти sans-serif фонт као на осталим страницама сајта. */
+.rajac-news-menu{font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif!important}
+.rajac-news-menu-inner{width:min(100%,1600px)!important;max-width:1600px!important;margin:0 auto!important;padding:9px 14px!important;display:flex!important;flex-wrap:nowrap!important;align-items:center!important;justify-content:center!important;gap:4px!important;overflow-x:auto!important;overflow-y:hidden!important;scrollbar-width:none!important;-webkit-overflow-scrolling:touch}
+.rajac-news-menu-inner::-webkit-scrollbar{display:none!important}
+.rajac-news-menu a{flex:0 0 auto!important;min-height:38px!important;padding:0 10px!important;font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif!important;font-size:12px!important;font-weight:750!important;letter-spacing:.025em!important;line-height:1!important;text-transform:uppercase!important;white-space:nowrap!important}
+.rajac-news-menu small{font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif!important}
+@media(max-width:1050px){.rajac-news-menu-inner{justify-content:flex-start!important}.rajac-news-menu a{font-size:11px!important;padding:0 9px!important}}
+</style>
+<style id="rajac-unified-news-menu-v3">
+.rajac-news-menu{
+  position:sticky!important;top:0!important;z-index:9999!important;
+  width:100%!important;background:#0d1b2a!important;
+  border-bottom:1px solid rgba(255,255,255,.10)!important;
+  box-shadow:0 7px 22px rgba(0,0,0,.10)!important;
+  font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif!important;
+}
+.rajac-news-menu *{font-family:inherit!important;box-sizing:border-box!important}
+.rajac-news-menu-inner{
+  width:100%!important;max-width:1600px!important;margin:0 auto!important;
+  min-height:60px!important;padding:8px 14px!important;
+  display:flex!important;flex-direction:row!important;flex-wrap:nowrap!important;
+  align-items:center!important;justify-content:center!important;gap:6px!important;
+  overflow-x:auto!important;overflow-y:hidden!important;white-space:nowrap!important;
+  scrollbar-width:none!important;-webkit-overflow-scrolling:touch!important;
+}
+.rajac-news-menu-inner::-webkit-scrollbar{display:none!important}
+.rajac-news-menu a{
+  flex:0 0 auto!important;display:inline-flex!important;align-items:center!important;
+  justify-content:center!important;gap:6px!important;min-height:40px!important;
+  padding:0 12px!important;border-radius:999px!important;
+  color:rgba(255,255,255,.82)!important;background:transparent!important;
+  text-decoration:none!important;text-transform:uppercase!important;
+  white-space:nowrap!important;font-size:13px!important;line-height:1!important;
+  font-weight:750!important;letter-spacing:.025em!important;
+}
+.rajac-news-menu a:hover,.rajac-news-menu a:focus-visible{
+  color:#fff!important;background:rgba(255,255,255,.07)!important;
+}
+.rajac-news-menu a.home,.rajac-news-menu a.active{
+  color:#e4cb7e!important;background:rgba(228,203,126,.08)!important;
+  outline:1px solid rgba(228,203,126,.30)!important;
+}
+.rajac-news-menu small{
+  flex:0 0 auto!important;display:inline-flex!important;align-items:center!important;
+  justify-content:center!important;min-width:20px!important;height:20px!important;
+  padding:0 6px!important;border-radius:999px!important;
+  color:#e4cb7e!important;background:rgba(255,255,255,.10)!important;
+  font-size:11px!important;line-height:20px!important;font-weight:800!important;
+  letter-spacing:0!important;
+}
+@media(max-width:1180px){
+  .rajac-news-menu-inner{justify-content:flex-start!important;padding-inline:10px!important}
+  .rajac-news-menu a{font-size:12px!important;padding-inline:10px!important}
+}
+</style>
+<link href="https://piorajac.rs/rajac-vesti/assets/css/rajac-unified-menu.css" rel="stylesheet"/>
+<style id="pio-news-menu-one-row-final">
+
+/* === PIO RAJAC: JEDNOREDNI MENI NA SVIM STRANICAMA VESTI === */
+@media (min-width: 900px){
+  .rajac-news-menu{
+    width:100% !important;
+  }
+  .rajac-news-menu-inner{
+    width:100% !important;
+    max-width:1600px !important;
+    margin:0 auto !important;
+    padding:8px 12px !important;
+    display:flex !important;
+    flex-direction:row !important;
+    flex-wrap:nowrap !important;
+    align-items:center !important;
+    justify-content:center !important;
+    gap:clamp(3px,.55vw,9px) !important;
+    white-space:nowrap !important;
+    overflow-x:auto !important;
+    overflow-y:hidden !important;
+    scrollbar-width:none !important;
+  }
+  .rajac-news-menu-inner::-webkit-scrollbar{display:none !important;}
+  .rajac-news-menu a{
+    flex:0 0 auto !important;
+    white-space:nowrap !important;
+    padding-left:clamp(7px,.65vw,11px) !important;
+    padding-right:clamp(7px,.65vw,11px) !important;
+    font-size:clamp(11px,.86vw,14px) !important;
+  }
+}
+/* На ужим екранима мени остаје један ред и хоризонтално се помера, уместо да пада у други ред. */
+@media (max-width: 899px){
+  .rajac-news-menu-inner{
+    display:flex !important;
+    flex-wrap:nowrap !important;
+    justify-content:flex-start !important;
+    white-space:nowrap !important;
+    overflow-x:auto !important;
+    overflow-y:hidden !important;
+    scrollbar-width:none !important;
+    -webkit-overflow-scrolling:touch !important;
+  }
+  .rajac-news-menu-inner::-webkit-scrollbar{display:none !important;}
+  .rajac-news-menu a{flex:0 0 auto !important;white-space:nowrap !important;}
+}
+
+</style>
+</head><body><nav aria-label="Мени вести" class="rajac-news-menu"><div class="rajac-news-menu-inner"><a class="home" href="https://piorajac.rs/">ПИО „РАЈАЦ”</a><a href="https://piorajac.rs/rajac-vesti/">СВЕ ВЕСТИ</a><a href="https://piorajac.rs/rajac-vesti/kategorije/aktuelno/">АКТУЕЛНО<small>7</small></a><a href="https://piorajac.rs/rajac-vesti/kategorije/vesti/">ВЕСТИ<small>3</small></a><a href="https://piorajac.rs/rajac-vesti/kategorije/izvestaji/">ИЗВЕШТАЈИ<small>8</small></a><a href="https://piorajac.rs/rajac-vesti/kategorije/istrazivanja/">ИСТРАЖИВАЊА<small>9</small></a><a href="https://piorajac.rs/rajac-vesti/kategorije/dogadjaji/">ДОГАЂАЈИ<small>5</small></a><a href="https://piorajac.rs/rajac-vesti/kategorije/u-fokusu/">У ФОКУСУ<small>4</small></a></div></nav>
+<main class="wrap source-card"><section class="hero"><div class="kicker">ИЗВЕШТАЈИ · 5. јун 2026.</div><h1>Copernicus годишњи извештај — цело подручје ПИО „Рајац” — 2025.</h1><p class="muted">Генерисано: 05.06.2026. 02:13</p></section><div class="grid source-card"><div class="card"><b>NDVI</b><div class="big">0,590</div><div class="muted">месеци са подацима: 12/12</div></div><div class="card"><b>NDMI</b><div class="big">0,175</div><div class="muted">месеци са подацима: 12/12</div></div><div class="card"><b>RECI</b><div class="big">1,604</div><div class="muted">месеци са подацима: 12/12</div></div><div class="card source-card"><b>Извор</b><div class="big source-card">statistical_<wbr/>histogram</div><div class="muted">без Copernicus API обраде</div></div></div><div class="section source-card">
+<h2>Методологија обраде података</h2>
+<p class="source-card">
+    Годишњи Copernicus извештај за цело подручје ПИО „Рајац” припремљен је на основу
+    сателитског мониторинга. У анализи су коришћени месечни подаци за три индекса: NDVI, NDMI и RECI.
+    Сваки од ових индекса описује други аспект стања вегетације: NDVI приказује интензитет зелене масе,
+    NDMI указује на влажносни сигнал биомасе, док RECI прати хлорофилни и физиолошки одговор биљног покривача.
+  </p>
+<p>
+    Обрада је заснована на упоредном читању месечних вредности по индексима. За сваки месец издвојене су
+    средње оперативне вредности индекса и број употребљивих записа, а затим су вредности поређене кроз
+    целу годину како би се уочио сезонски ток вегетације. На тај начин је издвојен период пролећног
+    озелењавања, максимум вегетационе активности, летње задржавање зелене масе и постепено јесење и
+    зимско слабљење физиолошког сигнала.
+  </p>
+<p>
+    Текст извештаја написан је на основу заједничког тумачења сва три индекса, без ослањања на један
+    показатељ као довољан сам за себе. Посебно су посматрани месеци у којима се висока зелена активност
+    поклапа са добрим влажносним и хлорофилним сигналом, јер такав однос указује на стабилније и
+    физиолошки повољније стање биљног покривача. Месеци са нижим NDMI вредностима издвојени су као
+    периоди у којима је потребна пажљивија теренска провера, нарочито на ливадама, пашњацима и
+    отвореним стаништима.
+  </p>
+</div><p class="muted">Текстуални делови извештаја су сакупљени у падајуће блокове: клик на наслов отвара или затвара садржај.</p><details class="section accordion source-card"><summary><h2>Годишњи коментар стања вегетације</h2><span class="accordion-help">кликни за приказ / сакривање</span></summary><div class="accordion-body source-card"><p class="source-card">Годишњи извештај за цело подручје ПИО „Рајац” заснован је на Sentinel‑2/Copernicus индексима који су већ припремљени у систему као <code class="source-card">statistical_<wbr/>histogram</code> JSON извештаји. Анализа обухвата 12 месеци са најмање једним употребљивим индексом.</p><p>Покривеност је довољна за основно сагледавање сезонског тока. <strong>Вредности треба тумачити заједно: NDVI описује зелену масу, NDMI влажност биомасе, а RECI физиолошку активност и хлорофилни сигнал.</strong></p><p>NDVI има годишњу оперативну средњу вредност 0,590, што указује на умерена зелена активност. Највиша средња месечна вредност је у месецу мај (0,817), а најнижа у месецу јануар (0,314). Покривеност од 12 месеци омогућава основно годишње поређење сезонског тока.</p><p>NDMI има годишњу оперативну средњу вредност 0,175, што указује на умерена влажност биомасе. Највиша средња месечна вредност је у месецу мај (0,354), а најнижа у месецу март (-0,024). Покривеност од 12 месеци омогућава основно годишње поређење сезонског тока.</p><p>RECI има годишњу оперативну средњу вредност 1,604, што указује на добар хлорофилни/физиолошки сигнал. Највиша средња месечна вредност је у месецу јун (3,032), а најнижа у месецу децембар (0,453). Покривеност од 12 месеци омогућава основно годишње поређење сезонског тока.</p><p><strong>Закључак: Према три анализирана индекса, 2025. година је на нивоу целог ПИО „Рајац” била година са јасно развијеним пролећно-летњим максимумом вегетације, умереном годишњом зеленом активношћу, умереним влажносним сигналом биомасе и добрим хлорофилним/физиолошким одговором. Најповољније стање забележено је у мају и јуну, када се висока зелена маса поклапа са добром влажношћу биомасе и најјачим RECI сигналом, док зимски месеци и март показују слабију активност или нижи влажносни сигнал. Такав сезонски образац указује на очуван и функционалан вегетациони покривач у главном делу вегетационе сезоне, али и на потребу да се потенцијални стресови прате по стаништима, посебно за ливаде, пашњаке и шумске целине.</strong></p><p><strong>Подударање повољног NDVI и доброг RECI сигнала указује да је зелена маса праћена и добром физиолошком активношћу биљног покривача.</strong></p><p>Управљачки, овакав извештај је користан за избор периода теренских провера, издвајање месеци са могућим стресом, праћење бујности травњака и шумске вегетације, као и за планирање посебних анализа по стаништима: шуме, ливаде, пашњаци и пољопривредне површине.</p></div></details><details class="section accordion"><summary><h2>Анализа по индексима</h2><span class="accordion-help">кликни за приказ / сакривање</span></summary><div class="accordion-body"><p><strong>NDVI.</strong> NDVI има годишњу оперативну средњу вредност 0,590, што указује на умерена зелена активност. Највиша средња месечна вредност је у месецу мај (0,817), а најнижа у месецу јануар (0,314). Покривеност од 12 месеци омогућава основно годишње поређење сезонског тока.</p><p><strong>NDMI.</strong> NDMI има годишњу оперативну средњу вредност 0,175, што указује на умерена влажност биомасе. Највиша средња месечна вредност је у месецу мај (0,354), а најнижа у месецу март (-0,024). Покривеност од 12 месеци омогућава основно годишње поређење сезонског тока.</p><p><strong>RECI.</strong> RECI има годишњу оперативну средњу вредност 1,604, што указује на добар хлорофилни/физиолошки сигнал. Највиша средња месечна вредност је у месецу јун (3,032), а најнижа у месецу децембар (0,453). Покривеност од 12 месеци омогућава основно годишње поређење сезонског тока.</p></div></details><details class="section accordion"><summary><h2>Месечна анализа</h2><span class="accordion-help">кликни за приказ / сакривање</span></summary><div class="accordion-body"><p>У месецу јануар забележено је: NDVI 0,314 (ниска до умерена зелена активност); NDMI 0,121 (умерена влажност биомасе); RECI 0,488 (слабији хлорофилни/физиолошки сигнал).</p><p>У месецу фебруар забележено је: NDVI 0,426 (умерена зелена активност); NDMI 0,163 (умерена влажност биомасе); RECI 0,758 (умерен хлорофилни/физиолошки сигнал).</p><p>У месецу март забележено је: NDVI 0,463 (умерена зелена активност); NDMI -0,024 (нижа до гранична влажност биомасе); RECI 0,878 (умерен хлорофилни/физиолошки сигнал).</p><p>У месецу април забележено је: NDVI 0,634 (добра зелена активност); NDMI 0,166 (умерена влажност биомасе); RECI 1,327 (умерен хлорофилни/физиолошки сигнал).</p><p>У месецу мај забележено је: NDVI 0,817 (веома изражена зелена активност); NDMI 0,354 (добра влажност биомасе); RECI 2,780 (добар хлорофилни/физиолошки сигнал). Истовремено повољни NDVI и NDMI указују на добру зелену активност уз релативно стабилан влажносни сигнал.</p><p>У месецу јун забележено је: NDVI 0,804 (веома изражена зелена активност); NDMI 0,310 (добра влажност биомасе); RECI 3,032 (веома изражен хлорофилни/физиолошки сигнал). Истовремено повољни NDVI и NDMI указују на добру зелену активност уз релативно стабилан влажносни сигнал.</p><p>У месецу јул забележено је: NDVI 0,695 (добра зелена активност); NDMI 0,205 (умерена влажност биомасе); RECI 2,552 (добар хлорофилни/физиолошки сигнал). Истовремено повољни NDVI и NDMI указују на добру зелену активност уз релативно стабилан влажносни сигнал.</p><p>У месецу август забележено је: NDVI 0,673 (добра зелена активност); NDMI 0,200 (умерена влажност биомасе); RECI 2,259 (добар хлорофилни/физиолошки сигнал).</p><p>У месецу септембар забележено је: NDVI 0,734 (добра зелена активност); NDMI 0,209 (умерена влажност биомасе); RECI 2,338 (добар хлорофилни/физиолошки сигнал). Истовремено повољни NDVI и NDMI указују на добру зелену активност уз релативно стабилан влажносни сигнал.</p><p>У месецу октобар забележено је: NDVI 0,691 (добра зелена активност); NDMI 0,172 (умерена влажност биомасе); RECI 1,491 (умерен хлорофилни/физиолошки сигнал).</p><p>У месецу новембар забележено је: NDVI 0,457 (умерена зелена активност); NDMI 0,104 (умерена влажност биомасе); RECI 0,885 (умерен хлорофилни/физиолошки сигнал).</p><p>У месецу децембар забележено је: NDVI 0,369 (ниска до умерена зелена активност); NDMI 0,116 (умерена влажност биомасе); RECI 0,453 (слабији хлорофилни/физиолошки сигнал).</p></div></details><details class="section accordion"><summary><h2>Месечни преглед индекса</h2><span class="accordion-help">кликни за приказ / сакривање</span></summary><div class="accordion-body"><table class="table"><thead><tr><th>Месец</th><th>NDVI</th><th>n</th><th>NDMI</th><th>n</th><th>RECI</th><th>n</th></tr></thead><tbody><tr><td>јануар</td><td>0,314</td><td>6</td><td>0,121</td><td>6</td><td>0,488</td><td>5</td></tr><tr><td>фебруар</td><td>0,426</td><td>5</td><td>0,163</td><td>5</td><td>0,758</td><td>3</td></tr><tr><td>март</td><td>0,463</td><td>5</td><td>-0,024</td><td>5</td><td>0,878</td><td>5</td></tr><tr><td>април</td><td>0,634</td><td>10</td><td>0,166</td><td>10</td><td>1,327</td><td>10</td></tr><tr><td>мај</td><td>0,817</td><td>13</td><td>0,354</td><td>13</td><td>2,780</td><td>13</td></tr><tr><td>јун</td><td>0,804</td><td>15</td><td>0,310</td><td>15</td><td>3,032</td><td>15</td></tr><tr><td>јул</td><td>0,695</td><td>13</td><td>0,205</td><td>13</td><td>2,552</td><td>13</td></tr><tr><td>август</td><td>0,673</td><td>13</td><td>0,200</td><td>13</td><td>2,259</td><td>13</td></tr><tr><td>септембар</td><td>0,734</td><td>12</td><td>0,209</td><td>12</td><td>2,338</td><td>12</td></tr><tr><td>октобар</td><td>0,691</td><td>8</td><td>0,172</td><td>8</td><td>1,491</td><td>7</td></tr><tr><td>новембар</td><td>0,457</td><td>6</td><td>0,104</td><td>6</td><td>0,885</td><td>5</td></tr><tr><td>децембар</td><td>0,369</td><td>5</td><td>0,116</td><td>5</td><td>0,453</td><td>3</td></tr></tbody></table></div></details>
+<div class="section tri-anim-section" id="sezonska-dinamika-indeksa">
+<div class="tri-head">
+<div>
+<h2>Упоредна сезонска динамика NDVI, NDMI и RECI индекса</h2>
+<p class="tri-note">Један анимирани графикон обједињује сезонски ток сва три индекса. Линије су нормализоване по сопственом годишњем распону да би се кретање NDVI, NDMI и RECI могло читати заједно, док су стварне месечне вредности приказане у картицама испод.</p>
+</div>
+<div class="tri-month-pill" id="triMonth">јануар 2025</div>
+</div>
+<div class="tri-toolbar">
+<button class="tri-btn" id="triRestart">Почни од јануара</button>
+<button class="tri-btn secondary" id="triPause">Пауза</button>
+</div>
+<div class="tri-progress"><span id="triProgressBar"></span></div>
+<div class="tri-values">
+<div class="tri-value-card"><b><span class="tri-dot" style="background:#29b84a"></span>NDVI — зелена маса</b><div class="tri-current-val" id="triValNDVI">0,314</div><div class="tri-count" id="triCountNDVI">n: 6 · јануар</div></div>
+<div class="tri-value-card"><b><span class="tri-dot" style="background:#2f80ed"></span>NDMI — влажност биомасе</b><div class="tri-current-val" id="triValNDMI">0,121</div><div class="tri-count" id="triCountNDMI">n: 6 · јануар</div></div>
+<div class="tri-value-card"><b><span class="tri-dot" style="background:#e89a34"></span>RECI — хлорофилни сигнал</b><div class="tri-current-val" id="triValRECI">0,488</div><div class="tri-count" id="triCountRECI">n: 5 · јануар</div></div>
+</div>
+<div class="tri-chart-wrap">
+<svg aria-label="Анимирани графикон сезонског тока NDVI, NDMI и RECI индекса" class="tri-chart" role="img" viewbox="0 0 1000 390">
+<line class="tri-grid" x1="70" x2="968" y1="32.0" y2="32.0"></line><line class="tri-grid" x1="70" x2="968" y1="108.0" y2="108.0"></line><line class="tri-grid" x1="70" x2="968" y1="184.0" y2="184.0"></line><line class="tri-grid" x1="70" x2="968" y1="260.0" y2="260.0"></line><line class="tri-grid" x1="70" x2="968" y1="336.0" y2="336.0"></line>
+<line class="tri-axis" x1="70" x2="70" y1="32" y2="336"></line>
+<line class="tri-axis" x1="70" x2="968" y1="336" y2="336"></line>
+<text class="tri-ylabel" text-anchor="end" x="56" y="36">високо</text>
+<text class="tri-ylabel" text-anchor="end" x="56" y="336">ниско</text>
+<text class="tri-xlabel" text-anchor="middle" x="70.0" y="372">јан</text><text class="tri-xlabel" text-anchor="middle" x="233.3" y="372">мар</text><text class="tri-xlabel" text-anchor="middle" x="396.5" y="372">мај</text><text class="tri-xlabel" text-anchor="middle" x="559.8" y="372">јул</text><text class="tri-xlabel" text-anchor="middle" x="723.1" y="372">сеп</text><text class="tri-xlabel" text-anchor="middle" x="886.4" y="372">нов</text><text class="tri-xlabel" text-anchor="middle" x="968.0" y="372">дец</text>
+<path class="tri-line-soft" d="M 70.0 336.0 L 151.64 268.31 L 233.27 245.95 L 314.91 142.6 L 396.55 32.0 L 478.18 39.86 L 559.82 105.73 L 641.45 119.03 L 723.09 82.16 L 804.73 108.15 L 886.36 249.57 L 968.0 302.76"></path>
+<path class="tri-line-soft" d="M 70.0 219.39 L 151.64 185.61 L 233.27 336.0 L 314.91 183.2 L 396.55 32.0 L 478.18 67.39 L 559.82 151.83 L 641.45 155.85 L 723.09 148.61 L 804.73 178.37 L 886.36 233.06 L 968.0 223.41"></path>
+<path class="tri-line-soft" d="M 70.0 331.87 L 151.64 300.05 L 233.27 285.9 L 314.91 232.98 L 396.55 61.7 L 478.18 32.0 L 559.82 88.58 L 641.45 123.12 L 723.09 113.81 L 804.73 213.65 L 886.36 285.08 L 968.0 336.0"></path>
+<path class="tri-line tri-ndvi" d="M 70.0 336.0 L 151.64 268.31 L 233.27 245.95 L 314.91 142.6 L 396.55 32.0 L 478.18 39.86 L 559.82 105.73 L 641.45 119.03 L 723.09 82.16 L 804.73 108.15 L 886.36 249.57 L 968.0 302.76" id="triLineNDVI" pathlength="1000"></path>
+<path class="tri-line tri-ndmi" d="M 70.0 219.39 L 151.64 185.61 L 233.27 336.0 L 314.91 183.2 L 396.55 32.0 L 478.18 67.39 L 559.82 151.83 L 641.45 155.85 L 723.09 148.61 L 804.73 178.37 L 886.36 233.06 L 968.0 223.41" id="triLineNDMI" pathlength="1000"></path>
+<path class="tri-line tri-reci" d="M 70.0 331.87 L 151.64 300.05 L 233.27 285.9 L 314.91 232.98 L 396.55 61.7 L 478.18 32.0 L 559.82 88.58 L 641.45 123.12 L 723.09 113.81 L 804.73 213.65 L 886.36 285.08 L 968.0 336.0" id="triLineRECI" pathlength="1000"></path>
+<line class="tri-playhead" id="triPlayhead" x1="70" x2="70" y1="32" y2="336"></line>
+<circle class="tri-marker" cx="70" cy="32" fill="#29b84a" id="triMarkerNDVI" r="8"></circle>
+<circle class="tri-marker" cx="70" cy="32" fill="#2f80ed" id="triMarkerNDMI" r="8"></circle>
+<circle class="tri-marker" cx="70" cy="32" fill="#e89a34" id="triMarkerRECI" r="8"></circle>
+</svg>
+</div>
+<div class="tri-legend">
+<span><i class="tri-dot" style="background:#29b84a"></i>NDVI</span>
+<span><i class="tri-dot" style="background:#2f80ed"></i>NDMI</span>
+<span><i class="tri-dot" style="background:#e89a34"></i>RECI</span>
+</div>
+</div>
+<div class="section"><h2>Управљачки закључак</h2><p>За потребе управљања ПИО „Рајац”, овај годишњи извештај треба користити као оперативну основу за планирање теренских провера, издвајање месеци са могућим сушним стресом и припрему наредних тематских анализа. Следећи развојни корак је одвајање извештаја за шуме, ливаде и пашњаке на основу посебних маски станишта, како би се избегло мешање различитих типова вегетације у један просек.</p></div><p class="muted">Систем за аутоматску израду извештаја о мониторингу ПИО „Рајац”.</p><style id="rajac-nextvest-css">.rajac-next-vest{max-width:760px;margin:34px auto 44px;padding:0 18px;font-family:Georgia,"Times New Roman",serif}.rajac-next-vest a{display:flex;flex-direction:column;gap:5px;padding:16px 20px;border:1px solid rgba(70,56,28,.20);border-radius:16px;background:#fffaf2;text-decoration:none;color:#1e2c1c;box-shadow:0 8px 24px rgba(38,30,16,.05);transition:transform .2s,box-shadow .2s}.rajac-next-vest a:hover{transform:translateY(-2px);box-shadow:0 12px 30px rgba(38,30,16,.10)}.rajac-next-vest .rnv-k{font-size:12px;font-weight:900;letter-spacing:.14em;text-transform:uppercase;color:#9a7b32;font-family:Arial,sans-serif}.rajac-next-vest .rnv-title{font-size:17px;font-weight:800;line-height:1.32}</style><nav aria-label="Следећа вест" class="rajac-next-vest"><a href="https://piorajac.rs/rajac-vesti/monitoring2025/"><span class="rnv-k">Следећа вест →</span><span class="rnv-title">Мониторинг вегетације и птица 2025. године</span></a></nav></main>
+<script>
+(function(){
+  const months = ["јануар", "фебруар", "март", "април", "мај", "јун", "јул", "август", "септембар", "октобар", "новембар", "децембар"];
+  const data = {"NDVI": [0.314, 0.426, 0.463, 0.634, 0.817, 0.804, 0.695, 0.673, 0.734, 0.691, 0.457, 0.369], "NDMI": [0.121, 0.163, -0.024, 0.166, 0.354, 0.31, 0.205, 0.2, 0.209, 0.172, 0.104, 0.116], "RECI": [0.488, 0.758, 0.878, 1.327, 2.78, 3.032, 2.552, 2.259, 2.338, 1.491, 0.885, 0.453]};
+  const counts = {"NDVI": [6, 5, 5, 10, 13, 15, 13, 13, 12, 8, 6, 5], "NDMI": [6, 5, 5, 10, 13, 15, 13, 13, 12, 8, 6, 5], "RECI": [5, 3, 5, 10, 13, 15, 13, 13, 12, 7, 5, 3]};
+  const points = {
+    NDVI: [[70.0, 336.0], [151.64, 268.31], [233.27, 245.95], [314.91, 142.6], [396.55, 32.0], [478.18, 39.86], [559.82, 105.73], [641.45, 119.03], [723.09, 82.16], [804.73, 108.15], [886.36, 249.57], [968.0, 302.76]],
+    NDMI: [[70.0, 219.39], [151.64, 185.61], [233.27, 336.0], [314.91, 183.2], [396.55, 32.0], [478.18, 67.39], [559.82, 151.83], [641.45, 155.85], [723.09, 148.61], [804.73, 178.37], [886.36, 233.06], [968.0, 223.41]],
+    RECI: [[70.0, 331.87], [151.64, 300.05], [233.27, 285.9], [314.91, 232.98], [396.55, 61.7], [478.18, 32.0], [559.82, 88.58], [641.45, 123.12], [723.09, 113.81], [804.73, 213.65], [886.36, 285.08], [968.0, 336.0]]
+  };
+  const duration = 12000;
+  let running = true;
+  let startTime = performance.now();
+  let raf = null;
+
+  const monthEl = document.getElementById('triMonth');
+  const progressEl = document.getElementById('triProgressBar');
+  const playhead = document.getElementById('triPlayhead');
+  const markers = {
+    NDVI: document.getElementById('triMarkerNDVI'),
+    NDMI: document.getElementById('triMarkerNDMI'),
+    RECI: document.getElementById('triMarkerRECI')
+  };
+  const valueEls = {
+    NDVI: document.getElementById('triValNDVI'),
+    NDMI: document.getElementById('triValNDMI'),
+    RECI: document.getElementById('triValRECI')
+  };
+  const countEls = {
+    NDVI: document.getElementById('triCountNDVI'),
+    NDMI: document.getElementById('triCountNDMI'),
+    RECI: document.getElementById('triCountRECI')
+  };
+
+  function fmt(v) {
+    return Number(v).toLocaleString('sr-RS', {minimumFractionDigits:3, maximumFractionDigits:3});
+  }
+  function lerp(a,b,t) { return a + (b-a)*t; }
+  function smooth(t) { return t*t*(3 - 2*t); }
+
+  function interpPoint(arr, pos) {
+    const max = arr.length - 1;
+    const p = Math.max(0, Math.min(max, pos));
+    const i = Math.floor(p);
+    const j = Math.min(max, i + 1);
+    const t = smooth(p - i);
+    return [lerp(arr[i][0], arr[j][0], t), lerp(arr[i][1], arr[j][1], t), i, j, t];
+  }
+  function interpValue(vals, pos) {
+    const max = vals.length - 1;
+    const p = Math.max(0, Math.min(max, pos));
+    const i = Math.floor(p);
+    const j = Math.min(max, i + 1);
+    const t = smooth(p - i);
+    return lerp(vals[i], vals[j], t);
+  }
+
+  function render(now) {
+    if (!running) return;
+    const elapsed = (now - startTime) % duration;
+    const frac = elapsed / duration;
+    const pos = frac * (months.length - 1);
+    const currentMonth = Math.min(months.length - 1, Math.floor(pos + 0.5));
+
+    monthEl.textContent = months[currentMonth] + ' 2025';
+    progressEl.style.width = (frac * 100).toFixed(2) + '%';
+
+    const p0 = interpPoint(points.NDVI, pos);
+    playhead.setAttribute('x1', p0[0]);
+    playhead.setAttribute('x2', p0[0]);
+
+    ['NDVI','NDMI','RECI'].forEach(idx => {
+      const p = interpPoint(points[idx], pos);
+      markers[idx].setAttribute('cx', p[0]);
+      markers[idx].setAttribute('cy', p[1]);
+      valueEls[idx].textContent = fmt(interpValue(data[idx], pos));
+      countEls[idx].textContent = 'n: ' + counts[idx][currentMonth] + ' · ' + months[currentMonth];
+    });
+
+    raf = requestAnimationFrame(render);
+  }
+
+  document.getElementById('triPause').addEventListener('click', function(){
+    running = !running;
+    this.textContent = running ? 'Пауза' : 'Пусти';
+    if (running) {
+      startTime = performance.now();
+      raf = requestAnimationFrame(render);
+    } else if (raf) {
+      cancelAnimationFrame(raf);
+    }
+  });
+  document.getElementById('triRestart').addEventListener('click', function(){
+    startTime = performance.now();
+    running = true;
+    document.getElementById('triPause').textContent = 'Пауза';
+    if (raf) cancelAnimationFrame(raf);
+    raf = requestAnimationFrame(render);
+  });
+
+  raf = requestAnimationFrame(render);
+})();
+</script>
+<style id="rajac-admin-edit-style">.rajac-admin-edit-button{position:fixed;right:16px;bottom:16px;z-index:99999;display:none;align-items:center;justify-content:center;min-height:42px;padding:0 16px;border-radius:999px;background:#0d1b2a;color:#e0c678!important;text-decoration:none!important;font:900 12px/1 Arial,sans-serif;letter-spacing:.10em;text-transform:uppercase;box-shadow:0 12px 30px rgba(0,0,0,.22);border:1px solid rgba(224,198,120,.42)}</style><script id="rajac-admin-edit-script">(function(){try{if(document.cookie.indexOf("rajac_vesti_admin=1")===-1)return;var p=location.pathname.split("/").filter(Boolean);var slug=p[p.length-1]||"";if(!slug||slug==="rajac-vesti")return;var a=document.createElement("a");a.className="rajac-admin-edit-button";a.href="https://piorajac.rs/rajac-vesti/admin-edit.php?slug="+encodeURIComponent(slug);a.textContent="EDIT";a.style.display="inline-flex";document.body.appendChild(a);}catch(e){}})();</script>
+<!-- SITE_EDITOR_ADMIN_BAR_START -->
+<script defer="" src="/admin-site-editor.php?admin_bar_js=1"></script>
+<!-- SITE_EDITOR_ADMIN_BAR_END -->
+<button aria-label="На врх стране" id="rajac-totop" title="На врх" type="button">↑</button><style id="rajac-totop-css">#rajac-totop{position:fixed;right:16px;bottom:16px;z-index:10000;width:46px;height:46px;border-radius:999px;border:1px solid rgba(255,255,255,.4);background:rgba(20,30,40,.30);-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);color:#fff;font-size:22px;line-height:1;cursor:pointer;display:flex;align-items:center;justify-content:center;opacity:0;visibility:hidden;transition:opacity .25s,visibility .25s,background .2s;box-shadow:0 6px 20px rgba(0,0,0,.25);-webkit-tap-highlight-color:transparent}#rajac-totop.show{opacity:1;visibility:visible}#rajac-totop:hover{background:rgba(20,30,40,.55)}@media(max-width:1024px){#rajac-totop{right:12px;bottom:12px;width:44px;height:44px}}</style><script>(function(){var b=document.getElementById("rajac-totop");if(!b)return;function o(){if((window.pageYOffset||document.documentElement.scrollTop)>320)b.classList.add("show");else b.classList.remove("show");}window.addEventListener("scroll",o,{passive:true});o();b.addEventListener("click",function(){window.scrollTo({top:0,behavior:"smooth"});});})();</script></body></html>

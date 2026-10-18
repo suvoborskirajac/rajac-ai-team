@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+
+<html lang="sr-RS">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<title>NDVI месечна анимација вегетације ПИО „Рајац” за 2025. годину</title>
+<meta content="Нова интерактивна вест приказује месечне Copernicus NDVI композите за 2025. годину и анимирани histogram NDVI класа за цело подручје ПИО „Рајац”." name="description"/>
+<meta content="NDVI месечна анимација вегетације ПИО „Рајац” за 2025. годину" property="og:title"/>
+<meta content="Нова интерактивна вест приказује месечне Copernicus NDVI композите за 2025. годину и анимирани histogram NDVI класа за цело подручје ПИО „Рајац”." property="og:description"/>
+<meta content="/rajac-vesti/assets/img/reports/ndvi-animation-preview.webp" property="og:image"/>
+<style>
+:root{--bg:#f7f2e8;--paper:#fffdf7;--ink:#172018;--muted:#5d695c;--green:#243d2b;--gold:#b9872d;--nav:#0d1b2a;--line:rgba(30,40,30,.14);--wrap:min(1120px,calc(100% - 34px));}*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:radial-gradient(circle at 12% -10%,rgba(185,135,45,.14),transparent 30%),linear-gradient(180deg,#f9f4ea,#f5efe2);color:var(--ink);font-family:Georgia,'Times New Roman',serif}a{color:inherit;text-decoration:none}img{max-width:100%;display:block}.topnav{position:sticky;top:0;z-index:50;background:#0d1b2a;color:#f4ecd7;border-bottom:1px solid rgba(255,255,255,.12)}.topnav-in{flex-wrap:wrap;width:var(--wrap);margin:0 auto;min-height:58px;display:flex;align-items:center;gap:12px;overflow-x:visible;scrollbar-width:none}.topnav a{display:inline-flex;align-items:center;gap:6px;min-height:38px;padding:0 13px;border-radius:999px;color:rgba(255,255,255,.76);font:800 12px/1 Arial,sans-serif;letter-spacing:.10em;text-transform:uppercase;white-space:nowrap}.topnav a:hover,.topnav .active{background:rgba(255,255,255,.06);color:#e0c678;outline:1px solid rgba(224,198,120,.30)}.topnav .home{color:#e0c678;border:1px solid rgba(224,198,120,.34);background:rgba(224,198,120,.06)}.hero{width:var(--wrap);margin:42px auto 24px;background:rgba(255,255,255,.72);border:1px solid var(--line);border-radius:30px;box-shadow:0 24px 70px rgba(35,42,31,.08);overflow:hidden}.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:0;align-items:stretch}.hero-copy{padding:clamp(28px,5vw,62px)}.kicker{display:inline-flex;gap:12px;align-items:center;color:var(--gold);font:900 12px/1 Arial,sans-serif;letter-spacing:.22em;text-transform:uppercase;margin-bottom:20px}.kicker:before{content:'';width:34px;height:1px;background:currentColor}h1{margin:0;font-size:clamp(38px,6vw,72px);font-weight:400;line-height:1.02;letter-spacing:-.035em;max-width:980px}.lead{font-size:clamp(18px,1.55vw,22px);line-height:1.72;color:var(--muted);max-width:850px;margin:24px 0 0}.hero-media{min-height:430px;background:#13243a;display:flex;align-items:center;justify-content:center;border-left:1px solid var(--line)}.hero-media img{width:100%;height:100%;object-fit:cover}.meta{width:var(--wrap);margin:0 auto 26px;display:grid;grid-template-columns:repeat(4,1fr);gap:12px}.meta div{background:#fffdf7;border:1px solid var(--line);border-radius:18px;padding:16px 18px;min-height:86px}.meta span{display:block;color:var(--gold);font:900 11px/1 Arial,sans-serif;letter-spacing:.17em;text-transform:uppercase;margin-bottom:10px}.meta b{font-size:18px;font-weight:400;line-height:1.25}.article{width:var(--wrap);margin:0 auto 58px;display:grid;grid-template-columns:minmax(0,1fr) 320px;gap:26px;align-items:start}.article.article-wide{grid-template-columns:minmax(0,1fr)}.article.article-wide .side{grid-template-columns:repeat(3,minmax(0,1fr));align-items:start}.content{background:#fffdf7;border:1px solid var(--line);border-radius:26px;padding:clamp(24px,4vw,46px);box-shadow:0 18px 50px rgba(32,40,30,.06);min-width:0;overflow:visible}.content p{font-size:19px;line-height:1.82;color:#253128;margin:0 0 20px}.content h2{font-size:clamp(28px,3vw,42px);line-height:1.08;font-weight:400;letter-spacing:-.02em;margin:38px 0 18px;color:#172018}.notice{border-left:5px solid var(--gold);background:#faf3e2;border-radius:18px;padding:20px 22px;margin:28px 0;color:#3b3326}.notice p{margin:0;color:#3b3326}.actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}.btn{display:inline-flex;align-items:center;justify-content:center;min-height:46px;padding:0 20px;border-radius:999px;background:#17261c;color:#f8f0da;font:900 12px/1 Arial,sans-serif;letter-spacing:.12em;text-transform:uppercase;border:1px solid rgba(23,38,28,.12)}.btn.secondary{background:#fff;color:#17261c;border-color:#d3b46b}.side{display:grid;gap:14px}.box{background:#fffdf7;border:1px solid var(--line);border-radius:22px;padding:22px;box-shadow:0 10px 34px rgba(32,40,30,.05)}.box h3{margin:0 0 12px;font-size:22px;font-weight:400}.box p,.box li{font-size:16px;line-height:1.62;color:var(--muted)}.box ul{padding-left:1.1rem;margin:0}.tag{display:inline-flex;margin:0 6px 8px 0;padding:7px 10px;border-radius:999px;background:#f1e2be;border:1px solid rgba(184,138,59,.22);color:#694e14;font:800 11px/1 Arial,sans-serif;letter-spacing:.08em;text-transform:uppercase}.foot{width:var(--wrap);margin:0 auto 36px;color:#697268;font-size:14px;line-height:1.6;text-align:center}
+.ndvi-embed-section{position:relative;left:50%;transform:translateX(-50%);width:min(1380px,calc(100vw - 56px));max-width:none;margin:30px 0;background:#0d1722;border:1px solid #29435d;border-radius:24px;padding:18px;box-shadow:0 18px 60px rgba(0,0,0,.16);overflow:hidden}.article.article-wide .ndvi-embed-section{width:min(1480px,calc(100vw - 48px))}
+.ndvi-embed-head{display:flex;align-items:flex-start;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-bottom:14px;color:#eef7ff}
+.ndvi-embed-kicker{font:900 11px/1 Arial,sans-serif;letter-spacing:.16em;text-transform:uppercase;color:#8cc6ff;margin:0 0 8px!important}.ndvi-embed-head h2{color:#fff!important;margin:0 0 8px!important;font-size:clamp(26px,3.2vw,40px)!important;line-height:1.08!important}.ndvi-embed-head p{color:#bdd3ea!important;margin:0!important;font-size:16px!important;line-height:1.55!important;max-width:760px}.ndvi-open-full{display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:0 16px;border-radius:999px;background:#65a8ff;color:#08111b!important;text-decoration:none!important;font:900 12px/1 Arial,sans-serif;letter-spacing:.08em;text-transform:uppercase;white-space:nowrap}.ndvi-widget-frame{width:100%;height:min(920px,92vh);border:1px solid #29435d;border-radius:18px;background:#09111a;display:block}
+@media(max-width:760px){.article.article-wide .side{grid-template-columns:1fr}.ndvi-embed-section,.article.article-wide .ndvi-embed-section{left:auto;transform:none;width:100%;margin:24px 0;padding:12px;border-radius:18px}.ndvi-open-full{width:100%}.ndvi-widget-frame{height:880px}}
+@media(max-width:1100px){.article.article-wide .side{grid-template-columns:repeat(2,minmax(0,1fr))}}@media(max-width:900px){.hero-grid,.article,.article.article-wide{grid-template-columns:1fr}.article.article-wide .side{grid-template-columns:1fr}.hero-media{min-height:260px;border-left:0;border-top:1px solid var(--line)}.meta{grid-template-columns:repeat(2,1fr)}}@media(max-width:560px){:root{--wrap:min(100% - 24px,1120px)}.hero{margin-top:22px;border-radius:22px}.hero-copy{padding:28px 22px}.meta{grid-template-columns:1fr}.content{padding:24px 20px;border-radius:22px}.content p{font-size:17px}.topnav-in{padding:0 4px}}
+.lead-figure img{width:100%;height:auto;display:block;background:#eef3f7}
+.lead-figure figcaption{padding:14px 18px;font-size:15px;line-height:1.6;color:var(--muted);background:#fbf8f1;border-top:1px solid rgba(30,40,30,.08)}
+
+
+.story-figure{margin:30px auto 32px;background:#fff;border:1px solid var(--line);border-radius:24px;overflow:hidden;box-shadow:0 16px 42px rgba(35,42,31,.08);max-width:100%}
+.story-figure img{width:100%;height:auto;display:block;background:#eef3f7}
+.story-figure figcaption{padding:14px 18px;font-size:15px;line-height:1.6;color:var(--muted);background:#fbf8f1;border-top:1px solid rgba(30,40,30,.08)}
+
+
+/* исправка распореда за вести са уграђеним системима мониторинга */
+.article.article-wide{grid-template-columns:minmax(0,1fr)!important}
+.article.article-wide .content{max-width:none!important;overflow:visible}
+.article.article-wide .side{display:grid!important;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin-top:0}
+.story-figure{position:relative;left:50%;transform:translateX(-50%);width:min(1180px,calc(100vw - 64px));max-width:none;margin:34px 0 36px;background:#fff;border:1px solid var(--line);border-radius:24px;overflow:hidden;box-shadow:0 16px 42px rgba(35,42,31,.08)}
+.story-figure img{width:100%;height:auto;display:block;background:#eef3f7}
+.story-figure figcaption{padding:14px 18px;font-size:15px;line-height:1.6;color:var(--muted);background:#fbf8f1;border-top:1px solid rgba(30,40,30,.08)}
+@media(max-width:900px){.article.article-wide .side{grid-template-columns:1fr}.story-figure{left:auto;transform:none;width:100%;margin:28px 0 30px}}
+
+</style>
+<style id="rajac-global-news-menu-style">
+.rajac-news-menu{position:sticky;top:0;z-index:9999;background:#0d1b2a;border-bottom:1px solid rgba(255,255,255,.10);font-family:Georgia,"Times New Roman",serif;box-shadow:0 8px 26px rgba(0,0,0,.08)}
+.rajac-news-menu *{box-sizing:border-box}.rajac-news-menu-inner{max-width:1180px;margin:0 auto;padding:9px 18px;min-height:56px;display:flex;flex-wrap:wrap;align-items:center;gap:8px;overflow-x:visible;scrollbar-width:none}.rajac-news-menu-inner::-webkit-scrollbar{display:none}
+.rajac-news-menu a{display:inline-flex;align-items:center;gap:6px;min-height:38px;padding:0 13px;border-radius:999px;color:rgba(255,255,255,.74);text-decoration:none;font-size:13px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;white-space:nowrap;line-height:1;font-family:Georgia,"Times New Roman",serif}
+.rajac-news-menu a:hover{background:rgba(255,255,255,.06);color:#fff}.rajac-news-menu .home{color:#e0c678;border:1px solid rgba(224,198,120,.34);background:rgba(224,198,120,.06)}
+.rajac-news-menu a.active{color:#e0c678!important;background:rgba(224,198,120,.08);outline:1px solid rgba(224,198,120,.26)}.rajac-news-menu small{display:inline-flex;align-items:center;justify-content:center;min-width:20px;height:20px;padding:0 6px;border-radius:999px;background:rgba(255,255,255,.10);color:#e0c678;font-size:11px;letter-spacing:0;font-family:Arial,sans-serif;font-weight:900}
+@media(max-width:650px){.rajac-news-menu-inner{padding:9px 10px}.rajac-news-menu a{font-size:12px;padding:0 10px}}
+</style>
+<style id="rajac-news-menu-one-row">
+/* Јединствен мени за све вести: један ред и исти sans-serif фонт као на осталим страницама сајта. */
+.rajac-news-menu{font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif!important}
+.rajac-news-menu-inner{width:min(100%,1600px)!important;max-width:1600px!important;margin:0 auto!important;padding:9px 14px!important;display:flex!important;flex-wrap:nowrap!important;align-items:center!important;justify-content:center!important;gap:4px!important;overflow-x:auto!important;overflow-y:hidden!important;scrollbar-width:none!important;-webkit-overflow-scrolling:touch}
+.rajac-news-menu-inner::-webkit-scrollbar{display:none!important}
+.rajac-news-menu a{flex:0 0 auto!important;min-height:38px!important;padding:0 10px!important;font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif!important;font-size:12px!important;font-weight:750!important;letter-spacing:.025em!important;line-height:1!important;text-transform:uppercase!important;white-space:nowrap!important}
+.rajac-news-menu small{font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif!important}
+@media(max-width:1050px){.rajac-news-menu-inner{justify-content:flex-start!important}.rajac-news-menu a{font-size:11px!important;padding:0 9px!important}}
+</style>
+<style id="rajac-unified-news-menu-v3">
+.rajac-news-menu{
+  position:sticky!important;top:0!important;z-index:9999!important;
+  width:100%!important;background:#0d1b2a!important;
+  border-bottom:1px solid rgba(255,255,255,.10)!important;
+  box-shadow:0 7px 22px rgba(0,0,0,.10)!important;
+  font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif!important;
+}
+.rajac-news-menu *{font-family:inherit!important;box-sizing:border-box!important}
+.rajac-news-menu-inner{
+  width:100%!important;max-width:1600px!important;margin:0 auto!important;
+  min-height:60px!important;padding:8px 14px!important;
+  display:flex!important;flex-direction:row!important;flex-wrap:nowrap!important;
+  align-items:center!important;justify-content:center!important;gap:6px!important;
+  overflow-x:auto!important;overflow-y:hidden!important;white-space:nowrap!important;
+  scrollbar-width:none!important;-webkit-overflow-scrolling:touch!important;
+}
+.rajac-news-menu-inner::-webkit-scrollbar{display:none!important}
+.rajac-news-menu a{
+  flex:0 0 auto!important;display:inline-flex!important;align-items:center!important;
+  justify-content:center!important;gap:6px!important;min-height:40px!important;
+  padding:0 12px!important;border-radius:999px!important;
+  color:rgba(255,255,255,.82)!important;background:transparent!important;
+  text-decoration:none!important;text-transform:uppercase!important;
+  white-space:nowrap!important;font-size:13px!important;line-height:1!important;
+  font-weight:750!important;letter-spacing:.025em!important;
+}
+.rajac-news-menu a:hover,.rajac-news-menu a:focus-visible{
+  color:#fff!important;background:rgba(255,255,255,.07)!important;
+}
+.rajac-news-menu a.home,.rajac-news-menu a.active{
+  color:#e4cb7e!important;background:rgba(228,203,126,.08)!important;
+  outline:1px solid rgba(228,203,126,.30)!important;
+}
+.rajac-news-menu small{
+  flex:0 0 auto!important;display:inline-flex!important;align-items:center!important;
+  justify-content:center!important;min-width:20px!important;height:20px!important;
+  padding:0 6px!important;border-radius:999px!important;
+  color:#e4cb7e!important;background:rgba(255,255,255,.10)!important;
+  font-size:11px!important;line-height:20px!important;font-weight:800!important;
+  letter-spacing:0!important;
+}
+@media(max-width:1180px){
+  .rajac-news-menu-inner{justify-content:flex-start!important;padding-inline:10px!important}
+  .rajac-news-menu a{font-size:12px!important;padding-inline:10px!important}
+}
+</style>
+<link href="https://piorajac.rs/rajac-vesti/assets/css/rajac-unified-menu.css" rel="stylesheet"/>
+<style id="pio-news-menu-one-row-final">
+
+/* === PIO RAJAC: JEDNOREDNI MENI NA SVIM STRANICAMA VESTI === */
+@media (min-width: 900px){
+  .rajac-news-menu{
+    width:100% !important;
+  }
+  .rajac-news-menu-inner{
+    width:100% !important;
+    max-width:1600px !important;
+    margin:0 auto !important;
+    padding:8px 12px !important;
+    display:flex !important;
+    flex-direction:row !important;
+    flex-wrap:nowrap !important;
+    align-items:center !important;
+    justify-content:center !important;
+    gap:clamp(3px,.55vw,9px) !important;
+    white-space:nowrap !important;
+    overflow-x:auto !important;
+    overflow-y:hidden !important;
+    scrollbar-width:none !important;
+  }
+  .rajac-news-menu-inner::-webkit-scrollbar{display:none !important;}
+  .rajac-news-menu a{
+    flex:0 0 auto !important;
+    white-space:nowrap !important;
+    padding-left:clamp(7px,.65vw,11px) !important;
+    padding-right:clamp(7px,.65vw,11px) !important;
+    font-size:clamp(11px,.86vw,14px) !important;
+  }
+}
+/* На ужим екранима мени остаје један ред и хоризонтално се помера, уместо да пада у други ред. */
+@media (max-width: 899px){
+  .rajac-news-menu-inner{
+    display:flex !important;
+    flex-wrap:nowrap !important;
+    justify-content:flex-start !important;
+    white-space:nowrap !important;
+    overflow-x:auto !important;
+    overflow-y:hidden !important;
+    scrollbar-width:none !important;
+    -webkit-overflow-scrolling:touch !important;
+  }
+  .rajac-news-menu-inner::-webkit-scrollbar{display:none !important;}
+  .rajac-news-menu a{flex:0 0 auto !important;white-space:nowrap !important;}
+}
+
+</style>
+</head>
+<body><nav aria-label="Мени вести" class="rajac-news-menu"><div class="rajac-news-menu-inner"><a class="home" href="https://piorajac.rs/">ПИО „РАЈАЦ”</a><a href="https://piorajac.rs/rajac-vesti/">СВЕ ВЕСТИ</a><a href="https://piorajac.rs/rajac-vesti/kategorije/aktuelno/">АКТУЕЛНО<small>7</small></a><a href="https://piorajac.rs/rajac-vesti/kategorije/vesti/">ВЕСТИ<small>3</small></a><a href="https://piorajac.rs/rajac-vesti/kategorije/izvestaji/">ИЗВЕШТАЈИ<small>8</small></a><a href="https://piorajac.rs/rajac-vesti/kategorije/istrazivanja/">ИСТРАЖИВАЊА<small>9</small></a><a href="https://piorajac.rs/rajac-vesti/kategorije/dogadjaji/">ДОГАЂАЈИ<small>5</small></a><a href="https://piorajac.rs/rajac-vesti/kategorije/u-fokusu/">У ФОКУСУ<small>4</small></a></div></nav>
+<header class="hero">
+<div class="hero-copy">
+<div class="kicker">ИЗВЕШТАЈИ · 6. јун 2026.</div>
+<h1>NDVI месечна анимација вегетације ПИО „Рајац” за 2025. годину</h1>
+<p class="lead">Нова интерактивна вест приказује месечне Copernicus NDVI композите за 2025. годину и анимирани histogram NDVI класа за цело подручје ПИО „Рајац”.</p>
+<div class="actions"><a class="btn" href="https://piorajac.rs/rajac-vesti/copernicus-ndvi-mesecna-animacija-pio-rajac-2025/prikaz/">Отвори пуну страницу</a><a class="btn secondary" href="https://piorajac.rs/rajac-vesti/">Назад на вести</a></div>
+</div>
+</header>
+<section aria-label="Основни подаци" class="meta"><div><span>индекс</span><b>NDVI</b></div><div><span>период</span><b>2025. година</b></div><div><span>простор</span><b>цело подручје ПИО „Рајац”</b></div><div><span>приказ</span><b>месечна анимација и histogram</b></div></section>
+<main class="article article-wide"><article class="content"><p>На страници вести сада је доступан интерактивни Copernicus приказ који прати месечне промене NDVI индекса за 2025. годину на целом подручју ПИО „Рајац”. Приказ је направљен као визуелна анимација месечних композита и допуњен је histogram-ом NDVI класа.</p><p>NDVI је један од најважнијих сателитских индекса за праћење стања вегетације. Више вредности указују на јачи сигнал зелене масе, док ниже вредности могу да означе голо земљиште, путеве, објекте, сенке, покошене површине или слабију вегетациону активност.</p><div class="notice"><p>🟢 У средини ове вести налази се цео интерактивни приказ. За шири приказ отвори: <a href="https://piorajac.rs/rajac-vesti/copernicus-ndvi-mesecna-animacija-pio-rajac-2025/prikaz/" rel="noopener" style="font-weight:900;text-decoration:underline;color:#17261c" target="_blank">NDVI месечна анимација преко целе странице</a>.</p></div>
+<section class="ndvi-embed-section" id="ndvi-mesecna-animacija-2025">
+<div class="ndvi-embed-head">
+<div>
+<p class="ndvi-embed-kicker">Интерактивни Copernicus приказ</p>
+<h2>NDVI месечна анимација — 2025.</h2>
+<p>У наставку је директно уграђен цео интерактивни приказ месечних NDVI композита и histogram-а NDVI класа за 2025. годину.</p>
+</div>
+<a class="ndvi-open-full" href="https://piorajac.rs/rajac-vesti/copernicus-ndvi-mesecna-animacija-pio-rajac-2025/prikaz/" rel="noopener" target="_blank">Отвори приказ преко целе странице</a>
+</div>
+<template id="ndvi-standalone-embed-template">
+<!DOCTYPE html>
+
+<html lang="sr">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<title>Copernicus месечни композити NDVI — 2025</title>
+<style>
+:root{--bg:#0d1722;--card:#142231;--text:#eef7ff;--muted:#9ab4d2;--line:#29435d;--accent:#65a8ff}
+*{box-sizing:border-box}
+body{margin:0;background:radial-gradient(circle at top,#1d3348,#09111a 70%);font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;color:var(--text);line-height:1.55}
+.wrap{max-width:1180px;margin:0 auto;padding:28px 18px 50px}
+.hero{background:rgba(20,34,49,.88);border:1px solid var(--line);border-radius:26px;padding:26px;margin-bottom:18px;box-shadow:0 18px 60px rgba(0,0,0,.28)}
+.kicker{font-size:12px;text-transform:uppercase;letter-spacing:.16em;color:#8cc6ff;font-weight:900}
+h1{font-size:clamp(30px,5vw,58px);line-height:1.05;margin:.35em 0}.muted{color:var(--muted)}
+.stage{position:relative;border:1px solid var(--line);border-radius:24px;overflow:hidden;background:#09111a;box-shadow:0 18px 70px rgba(0,0,0,.38);aspect-ratio:3/1}
+.stage img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;opacity:0;transition:opacity 900ms ease-in-out}
+.stage img.active{opacity:1}.stage img.next{opacity:0}
+.caption{position:absolute;left:18px;top:18px;z-index:5;background:rgba(5,12,19,.78);backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,.12);border-radius:999px;padding:10px 14px;display:flex;gap:12px;align-items:center}
+.caption strong{font-weight:900}.caption span{color:#b8d4f2;font-size:13px}
+.controls{display:flex;flex-wrap:wrap;gap:10px;margin:16px 0}
+button{border:0;border-radius:999px;padding:11px 16px;font-weight:900;cursor:pointer;background:#65a8ff;color:#08111b}
+button.secondary{background:#243c56;color:#eaf5ff;border:1px solid #3c5c7a}
+.progress{height:10px;border-radius:999px;background:#182a3d;overflow:hidden;margin-top:10px}.progress span{display:block;height:100%;width:0%;background:linear-gradient(90deg,#65a8ff,#7ee39a)}
+.grid{display:grid;grid-template-columns:1.2fr .8fr;gap:18px;margin-top:18px}
+.card{background:rgba(20,34,49,.88);border:1px solid var(--line);border-radius:22px;padding:20px}
+.months{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;list-style:none;padding:0;margin:0}
+.months li{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:14px;padding:10px;cursor:pointer}.months li.active{outline:2px solid #65a8ff;background:rgba(101,168,255,.16)}
+.months span{display:block;font-weight:900}.months em{font-style:normal;color:var(--muted);font-size:13px}
+.note{background:rgba(255,211,105,.1);border:1px solid rgba(255,211,105,.28);border-radius:18px;padding:15px}
+.compactInfo{margin-top:12px;background:rgba(20,34,49,.88);border:1px solid var(--line);border-radius:14px;padding:7px 12px;min-height:38px;display:flex;align-items:center;color:#c8d9ec;font-size:12px;line-height:1.25}
+.compactInfo p{margin:0}.compactInfo strong{color:#eef7ff}
+.histEmbed{margin-top:14px;background:rgba(20,34,49,.88);border:1px solid var(--line);border-radius:22px;overflow:hidden;box-shadow:0 18px 60px rgba(0,0,0,.25)}
+.histEmbedHead{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:10px;padding:14px 16px;border-bottom:1px solid var(--line)}
+.histEmbedHead h2{font-size:20px;margin:0}
+.histEmbedHead a{color:#9bc9ff;font-weight:900;text-decoration:none}
+.histMonth{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:16px 18px 4px}
+.histMonth h3{font-size:30px;line-height:1.05;margin:0}.histPill{border:1px solid #3b5978;background:rgba(255,255,255,.04);border-radius:999px;padding:7px 11px;color:#c6d8ec;font-weight:800}
+.histStat{max-width:360px;margin:12px 18px;background:rgba(19,39,61,.98);border:1px solid #35516f;border-radius:16px;padding:13px}.histStat .label{color:#b8cee8;font-size:12px}.histStat .value{font-size:34px;line-height:1;font-weight:900;margin-top:6px}.histStat .unit{font-size:15px;color:#b8cee8;margin-left:4px}
+.histTable{padding:0 18px 18px}.histHead,.histRow{display:grid;grid-template-columns:1.6fr .42fr .25fr .7fr;gap:18px;align-items:center}.histHead{padding:0 12px 12px;border-bottom:1px solid #24415d;color:#b9cce0;font-size:12px;font-weight:800;text-transform:uppercase;letter-spacing:.08em}.histRow{padding:13px 12px;border-bottom:1px solid #1e3550}.histCls{display:flex;gap:10px;align-items:flex-start}.histDot{width:14px;height:14px;border-radius:4px;flex:0 0 14px;margin-top:3px}.histLabel{font-weight:800}.histRange{color:#b8cee8;font-size:12px;margin-top:3px}.histNum,.histPct{font-weight:800}.histTrack{height:18px;border-radius:999px;background:#2a415c;overflow:hidden}.histFill{height:100%;width:0%;border-radius:999px;transition:width 900ms ease-in-out, background-color 900ms ease-in-out}.histSource{padding:0 18px 14px;color:#94aecb;font-size:12px}.histMissing{margin:16px 18px;padding:14px;border-radius:14px;background:rgba(255,211,105,.08);border:1px solid rgba(255,211,105,.22);color:#d9e7f6}
+@media(max-width:900px){.histHead,.histRow{grid-template-columns:1fr}.histHead{display:none}.histRow{gap:8px}.histMonth{display:block}.histStat .value{font-size:30px}}
+@media(max-width:820px){.grid{grid-template-columns:1fr}.months{grid-template-columns:repeat(2,1fr)}.stage{aspect-ratio:16/9}.caption{left:10px;right:10px;top:10px;border-radius:16px;flex-direction:column;align-items:flex-start;gap:2px}}
+
+.finalVisitorText{margin-top:10px;background:rgba(20,34,49,.88);border:1px solid var(--line);border-radius:14px;padding:6px 12px;min-height:32px;max-height:58px;overflow:hidden;display:flex;align-items:center;color:#c8d9ec;font-size:12px;line-height:1.25}
+.finalVisitorText p{margin:0}.finalVisitorText strong{color:#eef7ff}
+.histEmbed{margin-top:12px}
+.histEmbedHead{padding:11px 16px}
+.histEmbedHead h2{font-size:20px;margin:0}
+.histHeaderRight{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.histCurrentBadge{border:1px solid #3b5978;background:rgba(255,255,255,.04);border-radius:999px;padding:6px 10px;color:#dbeaff;font-weight:900;font-size:13px}
+.histMonth,.histStat,.histSource{display:none!important}
+.histTable{padding:14px 18px 18px}
+.histRow{padding:12px 12px}
+.histFill{transition:width 950ms ease-in-out, background-color 950ms ease-in-out}
+@media(max-width:900px){.finalVisitorText{max-height:none}.histHeaderRight{align-items:flex-start}.histCurrentBadge{font-size:12px}}
+
+
+/* final compact header */
+.hero{padding:16px 22px!important;border-radius:20px!important}
+h1{font-size:clamp(26px,4.2vw,44px)!important;line-height:1.05!important;margin:.22em 0!important}
+.hero .muted{font-size:14px!important;line-height:1.45!important;max-width:980px!important}
+.kicker{font-size:11px!important}
+
+
+/* final placement: month badge between map and histogram, right of refresh button */
+.caption{display:none!important}
+.controls{align-items:center}
+.mapMonthBadge{display:inline-flex;align-items:center;gap:10px;border:1px solid rgba(255,255,255,.13);background:rgba(5,12,19,.72);border-radius:999px;padding:10px 14px;color:#d9ecff;font-size:13px;font-weight:800;min-height:42px}
+.mapMonthBadge strong{color:#fff;font-weight:950}
+.mapMonthBadge span{color:#c5d9ec;font-weight:800}
+
+/* compact histogram rows: range goes to the right of the class label */
+.histTable{padding:10px 18px 14px!important}
+.histHead,.histRow{grid-template-columns:1.45fr .40fr .24fr .72fr!important;gap:14px!important}
+.histHead{padding:0 10px 9px!important}
+.histRow{padding:8px 10px!important;min-height:48px!important}
+.histCls{align-items:center!important;width:100%}
+.histText{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:10px;align-items:center;width:100%}
+.histLabel{font-size:14px;line-height:1.2}
+.histRange{font-size:11px!important;margin-top:0!important;color:#b8cee8;white-space:nowrap;text-align:right}
+.histNum,.histPct{font-size:14px}
+.histTrack{height:16px!important}
+.histEmbedHead{padding:10px 16px!important}
+.histEmbedHead h2{font-size:19px!important}
+@media(max-width:900px){
+  .mapMonthBadge{width:100%;justify-content:center;border-radius:16px}
+  .histText{grid-template-columns:1fr}
+  .histRange{text-align:left;white-space:normal}
+  .histRow{padding:10px!important}
+}
+
+
+/* HARD FIX: title block reduced to about 1 cm */
+.hero{
+  padding:4px 14px!important;
+  min-height:0!important;
+  border-radius:12px!important;
+  margin-bottom:10px!important;
+}
+.hero .kicker,
+.hero .muted{
+  display:none!important;
+}
+.hero h1,
+h1{
+  font-size:18px!important;
+  line-height:1!important;
+  margin:0!important;
+  padding:0!important;
+  letter-spacing:0!important;
+}
+
+</style>
+</head>
+<body>
+<main class="wrap">
+<section class="hero">
+<div class="kicker">ПИО „Рајац” · Copernicus месечни композити</div>
+<h1>NDVI месечна анимација — 2025.</h1>
+<p class="muted">Анимација траје 12 секунди и приказује месечне композите направљене од најчистијих доступних снимака. Испод карте је додат анимирани histogram NDVI класа за исту годину. Ако такав снимак не постоји за месец, узимају се најбољи доступни кадрови са најмањом облачношћу.</p>
+</section>
+<section class="stage" id="stage">
+<img alt="" class="active" id="imgA" src=""/>
+<img alt="" id="imgB" src=""/>
+</section>
+<div class="controls">
+<button id="restartBtn">Почни од јануара</button>
+<button class="secondary" id="pauseBtn">Пауза</button>
+<button class="secondary" id="refreshBtn">Освежи карту</button>
+<div class="mapMonthBadge"><strong id="capMonth">јануар __YEAR__</strong><span id="capInfo">NDVI</span></div>
+</div>
+<div class="progress"><span id="progressBar"></span></div>
+<section class="finalVisitorText">
+<p><strong>Ова анимација приказује месечне промене стања вегетације у ПИО „Рајац”.</strong> Траке у дијаграму показују повећање или смањење површина по NDVI класама током године.</p>
+</section>
+<section class="histEmbed">
+<div class="histEmbedHead">
+<h2>Анимирани histogram NDVI класа</h2>
+<div class="histHeaderRight"><span class="histCurrentBadge" id="histCurrentBadge">—</span><a href="/monitoring-izvestaji/copernicus/celo-pio/histogram-animacija/2025/ndvi/index.html" rel="noopener" target="_blank">Отвори histogram у новој страници</a></div>
+</div>
+<div class="histMissing" id="histMissing" style="display:none">Histogram подаци нису пронађени. Прво направи histogram анимацију у посебном admin модулу.</div>
+<div id="histContent">
+<div class="histMonth"><h3 id="histMonthName">—</h3><div class="histPill" id="histReportCount">—</div></div>
+<div class="histStat"><div class="label">Валидна обрачуната површина</div><div class="value" id="histValidArea">— <span class="unit">ha</span></div></div>
+<div class="histTable">
+<div class="histHead"><div>Класа</div><div>Површина</div><div>Удео</div><div>Дијаграм</div></div>
+<div id="histRows"></div>
+</div>
+<div class="histSource" id="histSource">Извор: —</div>
+</div>
+</section>
+<style id="rajac-nextvest-css">.rajac-next-vest{max-width:760px;margin:34px auto 44px;padding:0 18px;font-family:Georgia,"Times New Roman",serif}.rajac-next-vest a{display:flex;flex-direction:column;gap:5px;padding:16px 20px;border:1px solid rgba(70,56,28,.20);border-radius:16px;background:#fffaf2;text-decoration:none;color:#1e2c1c;box-shadow:0 8px 24px rgba(38,30,16,.05);transition:transform .2s,box-shadow .2s}.rajac-next-vest a:hover{transform:translateY(-2px);box-shadow:0 12px 30px rgba(38,30,16,.10)}.rajac-next-vest .rnv-k{font-size:12px;font-weight:900;letter-spacing:.14em;text-transform:uppercase;color:#9a7b32;font-family:Arial,sans-serif}.rajac-next-vest .rnv-title{font-size:17px;font-weight:800;line-height:1.32}</style><nav aria-label="Следећа вест" class="rajac-next-vest"><a href="https://piorajac.rs/rajac-vesti/godisnji-copernicus-izvestaj-vegetacija-pio-rajac-2025/"><span class="rnv-k">Следећа вест →</span><span class="rnv-title">Годишњи Copernicus извештај о стању вегетације ПИО „Рајац” 2025.</span></a></nav></main>
+<script>
+const slides = [{"month":1,"label":"јануар","src":"/monitoring-izvestaji/copernicus/celo-pio/mesecni-kompoziti/2025/ndvi/2025-01-ndvi-mean-visual.png","frames_used":3,"avg_cloud":0},{"month":2,"label":"фебруар","src":"/monitoring-izvestaji/copernicus/celo-pio/mesecni-kompoziti/2025/ndvi/2025-02-ndvi-mean-visual.png","frames_used":2,"avg_cloud":0},{"month":3,"label":"март","src":"/monitoring-izvestaji/copernicus/celo-pio/mesecni-kompoziti/2025/ndvi/2025-03-ndvi-mean-visual.png","frames_used":3,"avg_cloud":0},{"month":4,"label":"април","src":"/monitoring-izvestaji/copernicus/celo-pio/mesecni-kompoziti/2025/ndvi/2025-04-ndvi-mean-visual.png","frames_used":2,"avg_cloud":0},{"month":5,"label":"мај","src":"/monitoring-izvestaji/copernicus/celo-pio/mesecni-kompoziti/2025/ndvi/2025-05-ndvi-mean-visual.png","frames_used":1,"avg_cloud":0},{"month":6,"label":"јун","src":"/monitoring-izvestaji/copernicus/celo-pio/mesecni-kompoziti/2025/ndvi/2025-06-ndvi-mean-visual.png","frames_used":10,"avg_cloud":0},{"month":7,"label":"јул","src":"/monitoring-izvestaji/copernicus/celo-pio/mesecni-kompoziti/2025/ndvi/2025-07-ndvi-mean-visual.png","frames_used":8,"avg_cloud":0},{"month":8,"label":"август","src":"/monitoring-izvestaji/copernicus/celo-pio/mesecni-kompoziti/2025/ndvi/2025-08-ndvi-mean-visual.png","frames_used":7,"avg_cloud":0},{"month":9,"label":"септембар","src":"/monitoring-izvestaji/copernicus/celo-pio/mesecni-kompoziti/2025/ndvi/2025-09-ndvi-mean-visual.png","frames_used":7,"avg_cloud":0},{"month":10,"label":"октобар","src":"/monitoring-izvestaji/copernicus/celo-pio/mesecni-kompoziti/2025/ndvi/2025-10-ndvi-mean-visual.png","frames_used":3,"avg_cloud":0},{"month":11,"label":"новембар","src":"/monitoring-izvestaji/copernicus/celo-pio/mesecni-kompoziti/2025/ndvi/2025-11-ndvi-mean-visual.png","frames_used":3,"avg_cloud":0},{"month":12,"label":"децембар","src":"/monitoring-izvestaji/copernicus/celo-pio/mesecni-kompoziti/2025/ndvi/2025-12-ndvi-mean-visual.png","frames_used":3,"avg_cloud":0}];
+const histograms = {"1":{"ok":true,"month":1,"month_label":"јануар","reports":6,"valid_area_ha":371.2683333333334,"classes":[{"label":"строго голо земљиште / пут / објекат / сенка","range":"-1,00 до 0,15","area_ha":50.809999999999995,"share":30.347395389919424,"color":"#c77c2a"},{"label":"ниска вегетација / могућа ораница / покошена површина","range":"0,15 до 0,30","area_ha":24.67333333333333,"share":13.501239167955452,"color":"#c5e96b"},{"label":"умерена зелена маса","range":"0,30 до 0,50","area_ha":178.66833333333332,"share":34.713577379917545,"color":"#78d96b"},{"label":"висока зелена маса","range":"0,50 до 0,70","area_ha":102.31333333333329,"share":19.499308564435747,"color":"#28ad43"},{"label":"веома висока вегетациона активност / густа вегетација","range":"0,70 до 1,00","area_ha":14.803333333333356,"share":1.9384794977718374,"color":"#006d22"}],"source":"просек 6 statistical_histogram извештаја"},"2":{"ok":true,"month":2,"month_label":"фебруар","reports":6,"valid_area_ha":899.158,"classes":[{"label":"строго голо земљиште / пут / објекат / сенка","range":"-1,00 до 0,15","area_ha":8.208333333333316,"share":3.6963148008626314,"color":"#c77c2a"},{"label":"ниска вегетација / могућа ораница / покошена површина","range":"0,15 до 0,30","area_ha":72.52833333333332,"share":21.990150507548954,"color":"#c5e96b"},{"label":"умерена зелена маса","range":"0,30 до 0,50","area_ha":400.8016666666667,"share":41.144988146521825,"color":"#78d96b"},{"label":"висока зелена маса","range":"0,50 до 0,70","area_ha":229.8566666666666,"share":29.156490736809086,"color":"#28ad43"},{"label":"веома висока вегетациона активност / густа вегетација","range":"0,70 до 1,00","area_ha":37.903333333333386,"share":4.012055808257503,"color":"#006d22"}],"source":"просек 6 statistical_histogram извештаја"},"3":{"ok":true,"month":3,"month_label":"март","reports":6,"valid_area_ha":1490.4879999999998,"classes":[{"label":"строго голо земљиште / пут / објекат / сенка","range":"-1,00 до 0,15","area_ha":1.978333333333328,"share":0.2345002434796974,"color":"#c77c2a"},{"label":"ниска вегетација / могућа ораница / покошена површина","range":"0,15 до 0,30","area_ha":67.63833333333329,"share":6.902507397618322,"color":"#c5e96b"},{"label":"умерена зелена маса","range":"0,30 до 0,50","area_ha":747.5716666666667,"share":58.86202407029608,"color":"#78d96b"},{"label":"висока зелена маса","range":"0,50 до 0,70","area_ha":388.5033333333333,"share":30.979935732272402,"color":"#28ad43"},{"label":"веома висока вегетациона активност / густа вегетација","range":"0,70 до 1,00","area_ha":36.38166666666674,"share":3.0210325563334925,"color":"#006d22"}],"source":"просек 6 statistical_histogram извештаја"},"4":{"ok":true,"month":4,"month_label":"април","reports":10,"valid_area_ha":918.8529999999998,"classes":[{"label":"строго голо земљиште / пут / објекат / сенка","range":"-1,00 до 0,15","area_ha":0.8639999999999975,"share":0.5624998265575696,"color":"#c77c2a"},{"label":"ниска вегетација / могућа ораница / покошена површина","range":"0,15 до 0,30","area_ha":10.557999999999996,"share":4.809047858189288,"color":"#c5e96b"},{"label":"умерена зелена маса","range":"0,30 до 0,50","area_ha":59.148,"share":16.601785441570804,"color":"#78d96b"},{"label":"висока зелена маса","range":"0,50 до 0,70","area_ha":282.66099999999943,"share":34.66156644082389,"color":"#28ad43"},{"label":"веома висока вегетациона активност / густа вегетација","range":"0,70 до 1,00","area_ha":565.6220000000006,"share":43.36510043285845,"color":"#006d22"}],"source":"просек 10 statistical_histogram извештаја"},"5":{"ok":true,"month":5,"month_label":"мај","reports":14,"valid_area_ha":1012.0023076923078,"classes":[{"label":"строго голо земљиште / пут / објекат / сенка","range":"-1,00 до 0,15","area_ha":0.5428571428571403,"share":0.04671865066999545,"color":"#c77c2a"},{"label":"ниска вегетација / могућа ораница / покошена површина","range":"0,15 до 0,30","area_ha":7.024285714285717,"share":0.6637687671618866,"color":"#c5e96b"},{"label":"умерена зелена маса","range":"0,30 до 0,50","area_ha":12.39571428571429,"share":2.1832295580810697,"color":"#78d96b"},{"label":"висока зелена маса","range":"0,50 до 0,70","area_ha":55.81428571428559,"share":7.562804496872309,"color":"#28ad43"},{"label":"веома висока вегетациона активност / густа вегетација","range":"0,70 до 1,00","area_ha":863.9392857142859,"share":89.54347852721472,"color":"#006d22"}],"source":"просек 14 statistical_histogram извештаја"},"6":{"ok":true,"month":6,"month_label":"јун","reports":15,"valid_area_ha":1576.329333333333,"classes":[{"label":"строго голо земљиште / пут / објекат / сенка","range":"-1,00 до 0,15","area_ha":0.8419999999999984,"share":0.058459104879079266,"color":"#c77c2a"},{"label":"ниска вегетација / могућа ораница / покошена површина","range":"0,15 до 0,30","area_ha":17.761333333333322,"share":1.231156064009052,"color":"#c5e96b"},{"label":"умерена зелена маса","range":"0,30 до 0,50","area_ha":71.7,"share":4.742560242789951,"color":"#78d96b"},{"label":"висока зелена маса","range":"0,50 до 0,70","area_ha":162.54399999999976,"share":10.038105274728922,"color":"#28ad43"},{"label":"веома висока вегетациона активност / густа вегетација","range":"0,70 до 1,00","area_ha":1323.4820000000004,"share":83.92971931359301,"color":"#006d22"}],"source":"просек 15 statistical_histogram извештаја"},"7":{"ok":true,"month":7,"month_label":"јул","reports":13,"valid_area_ha":1497.2646153846154,"classes":[{"label":"строго голо земљиште / пут / објекат / сенка","range":"-1,00 до 0,15","area_ha":0.5976923076923053,"share":0.058680829307626844,"color":"#c77c2a"},{"label":"ниска вегетација / могућа ораница / покошена површина","range":"0,15 до 0,30","area_ha":160.24769230769223,"share":11.036122500890844,"color":"#c5e96b"},{"label":"умерена зелена маса","range":"0,30 до 0,50","area_ha":229.64153846153857,"share":15.383685131215971,"color":"#78d96b"},{"label":"висока зелена маса","range":"0,50 до 0,70","area_ha":154.23692307692292,"share":10.4222852021861,"color":"#28ad43"},{"label":"веома висока вегетациона активност / густа вегетација","range":"0,70 до 1,00","area_ha":952.5407692307692,"share":63.09922633639945,"color":"#006d22"}],"source":"просек 13 statistical_histogram извештаја"},"8":{"ok":true,"month":8,"month_label":"август","reports":13,"valid_area_ha":1184.6815384615384,"classes":[{"label":"строго голо земљиште / пут / објекат / сенка","range":"-1,00 до 0,15","area_ha":0.24538461538461487,"share":0.9807302002885696,"color":"#c77c2a"},{"label":"ниска вегетација / могућа ораница / покошена површина","range":"0,15 до 0,30","area_ha":23.252307692307674,"share":5.108043861860208,"color":"#c5e96b"},{"label":"умерена зелена маса","range":"0,30 до 0,50","area_ha":268.8261538461539,"share":22.30176391010898,"color":"#78d96b"},{"label":"висока зелена маса","range":"0,50 до 0,70","area_ha":146.4284615384614,"share":14.198191646241098,"color":"#28ad43"},{"label":"веома висока вегетациона активност / густа вегетација","range":"0,70 до 1,00","area_ha":745.929230769231,"share":57.411270381501154,"color":"#006d22"}],"source":"просек 13 statistical_histogram извештаја"},"9":{"ok":true,"month":9,"month_label":"септембар","reports":12,"valid_area_ha":1374.805833333333,"classes":[{"label":"строго голо земљиште / пут / објекат / сенка","range":"-1,00 до 0,15","area_ha":0.5691666666666652,"share":0.05791788445497997,"color":"#c77c2a"},{"label":"ниска вегетација / могућа ораница / покошена површина","range":"0,15 до 0,30","area_ha":8.993333333333327,"share":1.1807855705767973,"color":"#c5e96b"},{"label":"умерена зелена маса","range":"0,30 до 0,50","area_ha":131.7966666666667,"share":11.623840279179575,"color":"#78d96b"},{"label":"висока зелена маса","range":"0,50 до 0,70","area_ha":299.8766666666663,"share":23.366140766658443,"color":"#28ad43"},{"label":"веома висока вегетациона активност / густа вегетација","range":"0,70 до 1,00","area_ha":933.5700000000005,"share":63.7713154991302,"color":"#006d22"}],"source":"просек 12 statistical_histogram извештаја"},"10":{"ok":true,"month":10,"month_label":"октобар","reports":8,"valid_area_ha":1433.01875,"classes":[{"label":"строго голо земљиште / пут / објекат / сенка","range":"-1,00 до 0,15","area_ha":0.03124999999999992,"share":0.00266185108561459,"color":"#c77c2a"},{"label":"ниска вегетација / могућа ораница / покошена површина","range":"0,15 до 0,30","area_ha":7.483749999999996,"share":0.5235408407501421,"color":"#c5e96b"},{"label":"умерена зелена маса","range":"0,30 до 0,50","area_ha":47.04625,"share":3.586558381340027,"color":"#78d96b"},{"label":"висока зелена маса","range":"0,50 до 0,70","area_ha":659.998749999999,"share":49.67857202061348,"color":"#28ad43"},{"label":"веома висока вегетациона активност / густа вегетација","range":"0,70 до 1,00","area_ha":718.458750000001,"share":46.20866690621074,"color":"#006d22"}],"source":"просек 8 statistical_histogram извештаја"},"11":{"ok":true,"month":11,"month_label":"новембар","reports":6,"valid_area_ha":1269.9583333333333,"classes":[{"label":"строго голо земљиште / пут / објекат / сенка","range":"-1,00 до 0,15","area_ha":42.978333333333296,"share":16.461637776817152,"color":"#c77c2a"},{"label":"ниска вегетација / могућа ораница / покошена површина","range":"0,15 до 0,30","area_ha":73.73166666666667,"share":7.110452884922142,"color":"#c5e96b"},{"label":"умерена зелена маса","range":"0,30 до 0,50","area_ha":267.63500000000005,"share":20.733097832844564,"color":"#78d96b"},{"label":"висока зелена маса","range":"0,50 до 0,70","area_ha":721.1899999999995,"share":45.543139859781945,"color":"#28ad43"},{"label":"веома висока вегетациона активност / густа вегетација","range":"0,70 до 1,00","area_ha":164.42333333333394,"share":10.151671645634194,"color":"#006d22"}],"source":"просек 6 statistical_histogram извештаја"},"12":{"ok":true,"month":12,"month_label":"децембар","reports":7,"valid_area_ha":924.508,"classes":[{"label":"строго голо земљиште / пут / објекат / сенка","range":"-1,00 до 0,15","area_ha":53.70857142857136,"share":18.460888319704203,"color":"#c77c2a"},{"label":"ниска вегетација / могућа ораница / покошена површина","range":"0,15 до 0,30","area_ha":104.66285714285716,"share":22.70394995380967,"color":"#c5e96b"},{"label":"умерена зелена маса","range":"0,30 до 0,50","area_ha":219.23857142857148,"share":29.837060270032055,"color":"#78d96b"},{"label":"висока зелена маса","range":"0,50 до 0,70","area_ha":225.36285714285705,"share":23.22112515177529,"color":"#28ad43"},{"label":"веома висока вегетациона активност / густа вегетација","range":"0,70 до 1,00","area_ha":57.390000000000065,"share":5.7769763046787785,"color":"#006d22"}],"source":"просек 7 statistical_histogram извештаја"}};
+const histSourceFile = "monitoring-izvestaji/copernicus/celo-pio/histogram-animacija/2025/ndvi/histogram-data.json";
+const year = "2025";
+const indexName = "NDVI";
+const totalDuration = 12000;
+const fadeMs = 900;
+let current = 0;
+let active = "A";
+let playing = true;
+let timer = null;
+let startedAt = Date.now();
+let currentCycleStart = Date.now();
+
+const imgA = document.getElementById("imgA");
+const imgB = document.getElementById("imgB");
+const capMonth = document.getElementById("capMonth");
+const capInfo = document.getElementById("capInfo");
+const pauseBtn = document.getElementById("pauseBtn");
+const progressBar = document.getElementById("progressBar");
+const monthItems = [];
+
+const stepMs = totalDuration / Math.max(1, slides.length);
+
+function setMonthListActive(month){
+  monthItems.forEach(li => li.classList.toggle("active", Number(li.dataset.jump) === Number(month)));
+}
+
+
+
+
+function fmtHa(n){
+  if(n === null || n === undefined || isNaN(Number(n))) return "—";
+  return Number(n).toLocaleString("sr-RS", {minimumFractionDigits: 3, maximumFractionDigits: 3}) + " ha";
+}
+function fmtAreaBox(n){
+  if(n === null || n === undefined || isNaN(Number(n))) return "— <span class=\"unit\">ha</span>";
+  return Number(n).toLocaleString("sr-RS", {minimumFractionDigits: 2, maximumFractionDigits: 2}) + " <span class=\"unit\">ha</span>";
+}
+function fmtPct(n){
+  if(n === null || n === undefined || isNaN(Number(n))) return "—";
+  return Number(n).toLocaleString("sr-RS", {minimumFractionDigits: 2, maximumFractionDigits: 2}) + "%";
+}
+function escHtml(s){
+  return String(s ?? "").replace(/[&<>"\x27]/g, function(m){
+    if(m === "&") return "&amp;";
+    if(m === "<") return "&lt;";
+    if(m === ">") return "&gt;";
+    if(m === String.fromCharCode(34)) return "&quot;";
+    return "&#039;";
+  });
+}
+function histNumber(v){
+  return (v === null || v === undefined || isNaN(Number(v))) ? 0 : Number(v);
+}
+
+let histInitialized = false;
+let histRowsBuilt = false;
+let histState = [];
+
+function histTemplateClasses(){
+  let best = [];
+  Object.keys(histograms || {}).forEach(function(k){
+    const row = histograms[k];
+    if(row && row.ok && row.classes && row.classes.length > best.length) best = row.classes;
+  });
+  return best;
+}
+
+function buildHistogramRowsOnce(){
+  if(histRowsBuilt) return;
+  const rowsEl = document.getElementById("histRows");
+  if(!rowsEl) return;
+
+  const tpl = histTemplateClasses();
+  rowsEl.innerHTML = tpl.map(function(c, i){
+    const color = c.color || "#65a8ff";
+    return `<div class="histRow" data-row="${i}">
+      <div><div class="histCls"><span class="histDot" style="background:${escHtml(color)}"></span><div class="histText"><div class="histLabel">${escHtml(c.label || ("Класа " + (i + 1)))}</div><div class="histRange">${escHtml(c.range || "")}</div></div></div></div>
+      <div class="histNum">—</div>
+      <div class="histPct">—</div>
+      <div><div class="histTrack"><div class="histFill" style="background:${escHtml(color)};width:0%"></div></div></div>
+    </div>`;
+  }).join("");
+
+  histState = tpl.map(function(){ return {area:0, share:0}; });
+  histRowsBuilt = true;
+}
+
+function animateTextNumber(el, from, to, formatter, duration){
+  const start = performance.now();
+  const diff = to - from;
+  function step(now){
+    const p = Math.min(1, (now - start) / duration);
+    const e = 1 - Math.pow(1 - p, 3);
+    el.innerHTML = formatter(from + diff * e);
+    if(p < 1) requestAnimationFrame(step);
+  }
+  requestAnimationFrame(step);
+}
+
+function renderHistogramForMonth(month, instant){
+  buildHistogramRowsOnce();
+
+  const missing = document.getElementById("histMissing");
+  const content = document.getElementById("histContent");
+  const rowsEl = document.getElementById("histRows");
+  const badge = document.getElementById("histCurrentBadge");
+  const data = histograms[String(month)] || histograms[month] || null;
+
+  if(!data || !data.ok || !data.classes || !data.classes.length){
+    if(missing) missing.style.display = "block";
+    if(content) content.style.display = "none";
+    if(badge) badge.textContent = "Histogram није доступан";
+    return;
+  }
+
+  if(missing) missing.style.display = "none";
+  if(content) content.style.display = "block";
+  if(badge) badge.textContent = (data.month_label || "") + " " + year + " · " + (data.reports ?? "—") + " извештаја";
+
+  const monthNameEl = document.getElementById("histMonthName");
+  const reportCountEl = document.getElementById("histReportCount");
+  const validAreaEl = document.getElementById("histValidArea");
+  const sourceEl = document.getElementById("histSource");
+
+  if(monthNameEl) monthNameEl.textContent = (data.month_label || "") + " " + year;
+  if(reportCountEl) reportCountEl.textContent = (data.reports ?? "—") + " извештаја";
+  if(sourceEl) sourceEl.textContent = data.source ? ("Извор: " + data.source) : (histSourceFile ? ("Извор: " + histSourceFile) : "Извор: —");
+
+  const nextValid = histNumber(data.valid_area_ha);
+  const prevValid = histNumber(validAreaEl ? validAreaEl.dataset.value : 0);
+  if(validAreaEl){
+    validAreaEl.dataset.value = String(nextValid);
+    if(instant || !histInitialized) validAreaEl.innerHTML = fmtAreaBox(nextValid);
+    else animateTextNumber(validAreaEl, prevValid, nextValid, fmtAreaBox, 900);
+  }
+
+  const rowEls = Array.from(rowsEl.querySelectorAll(".histRow"));
+  rowEls.forEach(function(rowEl, i){
+    const c = data.classes[i] || {};
+    const color = c.color || "#65a8ff";
+    const nextArea = histNumber(c.area_ha);
+    const nextShare = Math.max(0, Math.min(100, histNumber(c.share)));
+    const prev = histState[i] || {area:0, share:0};
+
+    const labelEl = rowEl.querySelector(".histLabel");
+    const rangeEl = rowEl.querySelector(".histRange");
+    const dotEl = rowEl.querySelector(".histDot");
+    const numEl = rowEl.querySelector(".histNum");
+    const pctEl = rowEl.querySelector(".histPct");
+    const fillEl = rowEl.querySelector(".histFill");
+
+    if(labelEl) labelEl.textContent = c.label || ("Класа " + (i + 1));
+    if(rangeEl) rangeEl.textContent = c.range || "";
+    if(dotEl) dotEl.style.background = color;
+    if(fillEl) fillEl.style.background = color;
+
+    if(instant || !histInitialized){
+      if(numEl) numEl.textContent = fmtHa(nextArea);
+      if(pctEl) pctEl.textContent = fmtPct(nextShare);
+      if(fillEl) fillEl.style.width = nextShare + "%";
+    } else {
+      if(numEl) animateTextNumber(numEl, prev.area, nextArea, fmtHa, 900);
+      if(pctEl) animateTextNumber(pctEl, prev.share, nextShare, fmtPct, 900);
+      if(fillEl) requestAnimationFrame(function(){ fillEl.style.width = nextShare + "%"; });
+    }
+
+    histState[i] = {area:nextArea, share:nextShare};
+  });
+
+  histInitialized = true;
+}
+
+
+function showSlide(i, instant=false){
+  if(!slides.length) return;
+  i = ((i % slides.length) + slides.length) % slides.length;
+  const slide = slides[i];
+  const incoming = active === "A" ? imgB : imgA;
+  const outgoing = active === "A" ? imgA : imgB;
+
+  incoming.src = slide.src + "?v=" + Date.now();
+  incoming.alt = indexName + " " + year + " " + slide.label;
+
+  capMonth.textContent = slide.label + " " + year;
+  capInfo.textContent = indexName + " · " + slide.frames_used + " снимака" + (slide.avg_cloud !== null ? " · прос. облачност " + Number(slide.avg_cloud).toLocaleString("sr-RS",{maximumFractionDigits:1}) + "%" : "");
+  setMonthListActive(slide.month);
+  renderHistogramForMonth(slide.month, instant);
+
+  if(instant){
+    outgoing.classList.remove("active");
+    incoming.classList.add("active");
+  } else {
+    requestAnimationFrame(() => {
+      outgoing.classList.remove("active");
+      incoming.classList.add("active");
+    });
+  }
+
+  active = active === "A" ? "B" : "A";
+  current = i;
+}
+
+function tick(){
+  if(!playing) return;
+  const elapsed = Date.now() - currentCycleStart;
+  const progress = Math.min(100, (elapsed / totalDuration) * 100);
+  progressBar.style.width = progress + "%";
+
+  const nextIndex = Math.floor(elapsed / stepMs) % slides.length;
+  if(nextIndex !== current){
+    showSlide(nextIndex, false);
+  }
+
+  if(elapsed >= totalDuration){
+    currentCycleStart = Date.now();
+    progressBar.style.width = "0%";
+    showSlide(0, false);
+  }
+
+  timer = requestAnimationFrame(tick);
+}
+
+function restart(){
+  playing = true;
+  pauseBtn.textContent = "Пауза";
+  currentCycleStart = Date.now();
+  progressBar.style.width = "0%";
+  showSlide(0, true);
+  if(timer) cancelAnimationFrame(timer);
+  timer = requestAnimationFrame(tick);
+}
+
+function togglePause(){
+  playing = !playing;
+  pauseBtn.textContent = playing ? "Пауза" : "Пусти";
+  if(playing){
+    currentCycleStart = Date.now() - (current * stepMs);
+    timer = requestAnimationFrame(tick);
+  } else if(timer){
+    cancelAnimationFrame(timer);
+    timer = null;
+  }
+}
+
+function refreshCurrent(){
+  showSlide(current, true);
+}
+
+document.getElementById("restartBtn").addEventListener("click", restart);
+pauseBtn.addEventListener("click", togglePause);
+document.getElementById("refreshBtn").addEventListener("click", refreshCurrent);
+
+monthItems.forEach(li => {
+  li.addEventListener("click", () => {
+    const month = Number(li.dataset.jump);
+    const idx = slides.findIndex(s => Number(s.month) === month);
+    if(idx >= 0){
+      currentCycleStart = Date.now() - (idx * stepMs);
+      showSlide(idx, true);
+    }
+  });
+});
+
+if(slides.length){
+  imgA.src = slides[0].src + "?v=" + Date.now();
+  imgA.alt = indexName + " " + year + " " + slides[0].label;
+  capMonth.textContent = slides[0].label + " " + year;
+  capInfo.textContent = indexName + " · " + slides[0].frames_used + " снимака";
+  setMonthListActive(slides[0].month);
+  renderHistogramForMonth(slides[0].month, true);
+  timer = requestAnimationFrame(tick);
+}
+</script>
+<style id="rajac-admin-edit-style">.rajac-admin-edit-button{position:fixed;right:16px;bottom:16px;z-index:99999;display:none;align-items:center;justify-content:center;min-height:42px;padding:0 16px;border-radius:999px;background:#0d1b2a;color:#e0c678!important;text-decoration:none!important;font:900 12px/1 Arial,sans-serif;letter-spacing:.10em;text-transform:uppercase;box-shadow:0 12px 30px rgba(0,0,0,.22);border:1px solid rgba(224,198,120,.42)}</style><script id="rajac-admin-edit-script">(function(){try{if(document.cookie.indexOf("rajac_vesti_admin=1")===-1)return;var p=location.pathname.split("/").filter(Boolean);var slug=p[p.length-1]||"";if(!slug||slug==="rajac-vesti")return;var a=document.createElement("a");a.className="rajac-admin-edit-button";a.href="https://piorajac.rs/rajac-vesti/admin-edit.php?slug="+encodeURIComponent(slug);a.textContent="EDIT";a.style.display="inline-flex";document.body.appendChild(a);}catch(e){}})();</script>
+<!-- SITE_EDITOR_ADMIN_BAR_START -->
+<script defer="" src="/admin-site-editor.php?admin_bar_js=1"></script>
+<!-- SITE_EDITOR_ADMIN_BAR_END -->
+<button aria-label="На врх стране" id="rajac-totop" title="На врх" type="button">↑</button><style id="rajac-totop-css">#rajac-totop{position:fixed;right:16px;bottom:16px;z-index:10000;width:46px;height:46px;border-radius:999px;border:1px solid rgba(255,255,255,.4);background:rgba(20,30,40,.30);-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);color:#fff;font-size:22px;line-height:1;cursor:pointer;display:flex;align-items:center;justify-content:center;opacity:0;visibility:hidden;transition:opacity .25s,visibility .25s,background .2s;box-shadow:0 6px 20px rgba(0,0,0,.25);-webkit-tap-highlight-color:transparent}#rajac-totop.show{opacity:1;visibility:visible}#rajac-totop:hover{background:rgba(20,30,40,.55)}@media(max-width:1024px){#rajac-totop{right:12px;bottom:12px;width:44px;height:44px}}</style><script>(function(){var b=document.getElementById("rajac-totop");if(!b)return;function o(){if((window.pageYOffset||document.documentElement.scrollTop)>320)b.classList.add("show");else b.classList.remove("show");}window.addEventListener("scroll",o,{passive:true});o();b.addEventListener("click",function(){window.scrollTo({top:0,behavior:"smooth"});});})();</script></body>
+</html>
+</template>
+<iframe class="ndvi-widget-frame" id="ndvi-standalone-embed-frame" loading="lazy" sandbox="allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox" title="NDVI месечна анимација 2025"></iframe>
+<script>(function(){var t=document.getElementById('ndvi-standalone-embed-template');var f=document.getElementById('ndvi-standalone-embed-frame');if(t&&f){f.srcdoc=t.innerHTML;}})();</script>
+</section><h2>Шта се чита из анимације</h2><p>Анимација омогућава да се током године јасно види прелаз од зимског и раног пролећног стања ка периоду најјаче зелене масе. Посебно је корисна за брзо уочавање месеци у којима је вегетација интензивно развијена, као и месеци у којима се зелени сигнал смањује.</p><p>Histogram испод карте показује како се површине распоређују по NDVI класама. На тај начин се не гледа само просечна вредност, већ и структура простора: колико површине припада ниским, умереним, високим и веома високим вредностима NDVI индекса.</p><h2>Значај за управљање</h2><p>Овакав приказ је користан за планирање теренских провера, анализу сезонске динамике ливада, пашњака и шумских целина, као и за лакше објашњење сателитских података посетиоцима и сарадницима. Он представља мост између стручне обраде Copernicus података и јавног, разумљивог приказа стања вегетације.</p><div class="actions"><a class="btn" href="https://piorajac.rs/rajac-vesti/copernicus-ndvi-mesecna-animacija-pio-rajac-2025/prikaz/" rel="noopener" target="_blank">Отвори интерактивну страницу</a><a class="btn secondary" href="https://piorajac.rs/rajac-vesti/godisnji-copernicus-izvestaj-vegetacija-pio-rajac-2025/">Годишњи Copernicus извештај</a></div></article><aside class="side"><section class="box"><h3>Шта је у блоку</h3><ul><li>12 месечних NDVI композита;</li><li>аутоматско смењивање месеци;</li><li>контроле за паузу и поновно покретање;</li><li>анимирани histogram NDVI класа;</li><li>линк ка пуној страници приказа.</li></ul></section><section class="box"><h3>Кључне ознаке</h3><span class="tag">Copernicus</span><span class="tag">NDVI</span><span class="tag">вегетација</span><span class="tag">2025</span><span class="tag">Рајац</span></section><section class="box"><h3>Напомена</h3><p>Приказ је у вести уграђен као изоловани интерактивни блок, да не би реметио дизајн остатка плагина вести.</p></section></aside></main><div class="foot">ПИО „Рајац” · дневник вести, извештаја, теренских налаза и јавних програма.</div><style id="rajac-admin-edit-style">.rajac-admin-edit-button{position:fixed;right:16px;bottom:16px;z-index:99999;display:none;align-items:center;justify-content:center;min-height:42px;padding:0 16px;border-radius:999px;background:#0d1b2a;color:#e0c678!important;text-decoration:none!important;font:900 12px/1 Arial,sans-serif;letter-spacing:.10em;text-transform:uppercase;box-shadow:0 12px 30px rgba(0,0,0,.22);border:1px solid rgba(224,198,120,.42)}</style><script id="rajac-admin-edit-script">(function(){try{if(document.cookie.indexOf("rajac_vesti_admin=1")===-1)return;var p=location.pathname.split("/").filter(Boolean);var slug=p[p.length-1]||"";if(!slug||slug==="rajac-vesti")return;var a=document.createElement("a");a.className="rajac-admin-edit-button";a.href="https://piorajac.rs/rajac-vesti/admin-edit.php?slug="+encodeURIComponent(slug);a.textContent="EDIT";a.style.display="inline-flex";document.body.appendChild(a);}catch(e){}})();</script></body></html>

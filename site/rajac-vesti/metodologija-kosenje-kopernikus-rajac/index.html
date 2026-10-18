@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+
+<html lang="sr-Cyrl">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<title>Како се на Рајцу прати кошење ливада помоћу Copernicus сателита</title>
+<meta content="Методологија праћења кошења ливада у ПИО Рајац помоћу Sentinel-2/Copernicus снимака, NDVI индекса и статистике површина за 17. и 27. јун 2026." name="description"/>
+<style>
+:root{--bg:#f5f0e7;--paper:#fffaf1;--ink:#172015;--muted:#5d6958;--green:#234f2b;--green2:#2f6a39;--line:#d4c6ae;--yellow:#f0c400;--orange:#d98b2b;--lime:#c8f565;--lg:#72df62;--hg:#2bbd4f;--vg:#007e28;--shadow:0 18px 48px rgba(39,32,20,.14);--r:22px}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;color:var(--ink);background:radial-gradient(circle at 0% 0%,rgba(240,196,0,.20),transparent 32%),radial-gradient(circle at 100% 16%,rgba(35,79,43,.15),transparent 34%),var(--bg);font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;font-size:18px;line-height:1.72}
+.wrap{max-width:1180px;margin:auto;padding:22px}.top{display:flex;align-items:center;justify-content:space-between;gap:14px;color:var(--green);font-size:15px;font-weight:900;margin-bottom:14px}.top span:last-child{color:var(--muted);font-weight:800}
+.hero{border:1px solid var(--line);border-radius:32px;padding:34px;background:linear-gradient(135deg,rgba(255,250,241,.97),rgba(236,226,207,.92));box-shadow:var(--shadow)}
+.kicker{display:inline-flex;gap:8px;align-items:center;border:1px solid rgba(35,79,43,.20);background:rgba(35,79,43,.08);border-radius:999px;color:var(--green);padding:7px 13px;text-transform:uppercase;letter-spacing:.05em;font-size:14px;font-weight:900}
+h1{margin:17px 0 12px;color:var(--green);font-size:clamp(32px,5vw,56px);line-height:1.08;letter-spacing:-.035em;max-width:1000px}.lead{margin:0;max-width:1000px;color:#243021;font-size:clamp(19px,2.2vw,24px);line-height:1.55}
+.pills{display:flex;gap:10px;flex-wrap:wrap;margin-top:22px}.pill{display:inline-flex;align-items:center;gap:8px;border:1px solid var(--line);background:rgba(255,255,255,.55);border-radius:999px;padding:8px 12px;color:var(--muted);font-weight:850;font-size:14px}
+.grid{display:grid;grid-template-columns:1.05fr .95fr;gap:22px;margin-top:22px}.card{background:rgba(255,250,241,.95);border:1px solid var(--line);border-radius:var(--r);padding:24px;box-shadow:0 10px 32px rgba(41,34,21,.08)}
+.card h2,.card h3{margin:0 0 12px;color:var(--green);line-height:1.22}.card h2{font-size:30px}.card h3{font-size:22px}.card p{margin:0 0 13px}
+.figure{margin:0;background:#10160f;border:1px solid rgba(25,34,23,.25);border-radius:var(--r);overflow:hidden;box-shadow:var(--shadow)}.figure img{display:block;width:100%;height:auto}figcaption{background:#142015;color:#efe8d8;padding:13px 16px;line-height:1.45;font-size:14px}
+.dark-table{background:#0f1b27;color:#eaf3ff;border-radius:24px;border:1px solid #29425b;padding:20px;box-shadow:0 16px 44px rgba(0,0,0,.22)}.dark-table h2{color:#fff;margin:0 0 8px}.dark-table p{color:#c5d1df;font-size:15px;margin:0 0 14px}
+table{width:100%;border-collapse:collapse;font-size:15px}th{text-align:left;color:#bcd8ff;font-size:12px;letter-spacing:.08em;text-transform:uppercase;padding:10px 8px;border-bottom:1px solid #29425b}td{padding:12px 8px;border-bottom:1px solid #233649;vertical-align:middle}td.num{font-weight:900;color:#fff;white-space:nowrap}.dot{display:inline-block;width:13px;height:13px;border-radius:4px;margin-right:8px;vertical-align:-1px}.bar{height:16px;background:#31445a;border-radius:999px;overflow:hidden;min-width:120px}.fill{height:100%;border-radius:999px}.small{font-size:13px;color:#c5d1df}
+.columns{display:grid;grid-template-columns:1fr 1fr;gap:18px}.steps{counter-reset:s;display:grid;gap:12px}.step{counter-increment:s;border:1px solid var(--line);border-radius:18px;padding:15px 16px 15px 58px;background:rgba(255,255,255,.52);position:relative}.step:before{content:counter(s);position:absolute;left:16px;top:16px;width:30px;height:30px;border-radius:50%;display:grid;place-items:center;background:var(--green);color:white;font-weight:900}.step b{color:var(--green)}
+.compare{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}.kpi{border:1px solid var(--line);border-radius:18px;background:rgba(255,255,255,.55);padding:16px}.kpi strong{display:block;color:var(--green);font-size:28px;line-height:1.05}.kpi span{display:block;color:var(--muted);font-size:14px;font-weight:800;margin-top:6px}
+.warn{border-left:7px solid #b8462d;background:rgba(184,70,45,.08)}.good{border-left:7px solid var(--green2);background:rgba(47,106,57,.08)}
+.note{background:linear-gradient(135deg,rgba(35,79,43,.95),rgba(18,46,26,.95));color:#fffaf1;border-radius:28px;padding:28px;margin-top:22px;box-shadow:var(--shadow)}.note h2{margin:0 0 10px;color:#fff}.note p{margin:0 0 10px;color:#f2ead8}.footer{color:var(--muted);font-size:14px;margin:20px 0 0;padding-bottom:20px}
+@media(max-width:930px){.grid,.columns,.compare{grid-template-columns:1fr}.hero{padding:24px}body{font-size:17px}.dark-table{padding:15px;overflow:auto}}
+</style>
+<style id="rajac-news-menu-one-row">
+/* Јединствен мени за све вести: један ред и исти sans-serif фонт као на осталим страницама сајта. */
+.rajac-news-menu{font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif!important}
+.rajac-news-menu-inner{width:min(100%,1600px)!important;max-width:1600px!important;margin:0 auto!important;padding:9px 14px!important;display:flex!important;flex-wrap:nowrap!important;align-items:center!important;justify-content:center!important;gap:4px!important;overflow-x:auto!important;overflow-y:hidden!important;scrollbar-width:none!important;-webkit-overflow-scrolling:touch}
+.rajac-news-menu-inner::-webkit-scrollbar{display:none!important}
+.rajac-news-menu a{flex:0 0 auto!important;min-height:38px!important;padding:0 10px!important;font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif!important;font-size:12px!important;font-weight:750!important;letter-spacing:.025em!important;line-height:1!important;text-transform:uppercase!important;white-space:nowrap!important}
+.rajac-news-menu small{font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif!important}
+@media(max-width:1050px){.rajac-news-menu-inner{justify-content:flex-start!important}.rajac-news-menu a{font-size:11px!important;padding:0 9px!important}}
+</style>
+<style id="rajac-unified-news-menu-v3">
+.rajac-news-menu{
+  position:sticky!important;top:0!important;z-index:9999!important;
+  width:100%!important;background:#0d1b2a!important;
+  border-bottom:1px solid rgba(255,255,255,.10)!important;
+  box-shadow:0 7px 22px rgba(0,0,0,.10)!important;
+  font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif!important;
+}
+.rajac-news-menu *{font-family:inherit!important;box-sizing:border-box!important}
+.rajac-news-menu-inner{
+  width:100%!important;max-width:1600px!important;margin:0 auto!important;
+  min-height:60px!important;padding:8px 14px!important;
+  display:flex!important;flex-direction:row!important;flex-wrap:nowrap!important;
+  align-items:center!important;justify-content:center!important;gap:6px!important;
+  overflow-x:auto!important;overflow-y:hidden!important;white-space:nowrap!important;
+  scrollbar-width:none!important;-webkit-overflow-scrolling:touch!important;
+}
+.rajac-news-menu-inner::-webkit-scrollbar{display:none!important}
+.rajac-news-menu a{
+  flex:0 0 auto!important;display:inline-flex!important;align-items:center!important;
+  justify-content:center!important;gap:6px!important;min-height:40px!important;
+  padding:0 12px!important;border-radius:999px!important;
+  color:rgba(255,255,255,.82)!important;background:transparent!important;
+  text-decoration:none!important;text-transform:uppercase!important;
+  white-space:nowrap!important;font-size:13px!important;line-height:1!important;
+  font-weight:750!important;letter-spacing:.025em!important;
+}
+.rajac-news-menu a:hover,.rajac-news-menu a:focus-visible{
+  color:#fff!important;background:rgba(255,255,255,.07)!important;
+}
+.rajac-news-menu a.home,.rajac-news-menu a.active{
+  color:#e4cb7e!important;background:rgba(228,203,126,.08)!important;
+  outline:1px solid rgba(228,203,126,.30)!important;
+}
+.rajac-news-menu small{
+  flex:0 0 auto!important;display:inline-flex!important;align-items:center!important;
+  justify-content:center!important;min-width:20px!important;height:20px!important;
+  padding:0 6px!important;border-radius:999px!important;
+  color:#e4cb7e!important;background:rgba(255,255,255,.10)!important;
+  font-size:11px!important;line-height:20px!important;font-weight:800!important;
+  letter-spacing:0!important;
+}
+@media(max-width:1180px){
+  .rajac-news-menu-inner{justify-content:flex-start!important;padding-inline:10px!important}
+  .rajac-news-menu a{font-size:12px!important;padding-inline:10px!important}
+}
+</style>
+<link href="https://piorajac.rs/rajac-vesti/assets/css/rajac-unified-menu.css" rel="stylesheet"/>
+<style id="pio-news-menu-one-row-final">
+
+/* === PIO RAJAC: JEDNOREDNI MENI NA SVIM STRANICAMA VESTI === */
+@media (min-width: 900px){
+  .rajac-news-menu{
+    width:100% !important;
+  }
+  .rajac-news-menu-inner{
+    width:100% !important;
+    max-width:1600px !important;
+    margin:0 auto !important;
+    padding:8px 12px !important;
+    display:flex !important;
+    flex-direction:row !important;
+    flex-wrap:nowrap !important;
+    align-items:center !important;
+    justify-content:center !important;
+    gap:clamp(3px,.55vw,9px) !important;
+    white-space:nowrap !important;
+    overflow-x:auto !important;
+    overflow-y:hidden !important;
+    scrollbar-width:none !important;
+  }
+  .rajac-news-menu-inner::-webkit-scrollbar{display:none !important;}
+  .rajac-news-menu a{
+    flex:0 0 auto !important;
+    white-space:nowrap !important;
+    padding-left:clamp(7px,.65vw,11px) !important;
+    padding-right:clamp(7px,.65vw,11px) !important;
+    font-size:clamp(11px,.86vw,14px) !important;
+  }
+}
+/* На ужим екранима мени остаје један ред и хоризонтално се помера, уместо да пада у други ред. */
+@media (max-width: 899px){
+  .rajac-news-menu-inner{
+    display:flex !important;
+    flex-wrap:nowrap !important;
+    justify-content:flex-start !important;
+    white-space:nowrap !important;
+    overflow-x:auto !important;
+    overflow-y:hidden !important;
+    scrollbar-width:none !important;
+    -webkit-overflow-scrolling:touch !important;
+  }
+  .rajac-news-menu-inner::-webkit-scrollbar{display:none !important;}
+  .rajac-news-menu a{flex:0 0 auto !important;white-space:nowrap !important;}
+}
+
+</style>
+</head>
+<body><style id="rajac-menu-css">.rajac-news-menu{position:sticky;top:0;z-index:9999;background:#0d1b2a;border-bottom:1px solid rgba(255,255,255,.10);font-family:Georgia,"Times New Roman",serif;box-shadow:0 8px 26px rgba(0,0,0,.08)}.rajac-news-menu *{box-sizing:border-box}.rajac-news-menu-inner{max-width:1180px;margin:0 auto;padding:9px 18px;min-height:56px;display:flex;flex-wrap:wrap;align-items:center;gap:8px;overflow-x:visible}.rajac-news-menu a{display:inline-flex;align-items:center;gap:6px;min-height:38px;padding:0 13px;border-radius:999px;color:rgba(255,255,255,.74);text-decoration:none;font-size:13px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;white-space:nowrap;line-height:1;font-family:Georgia,"Times New Roman",serif}.rajac-news-menu a:hover{background:rgba(255,255,255,.06);color:#fff}.rajac-news-menu .home{color:#e0c678;border:1px solid rgba(224,198,120,.34);background:rgba(224,198,120,.06)}.rajac-news-menu a.active{color:#e0c678!important;background:rgba(224,198,120,.08);outline:1px solid rgba(224,198,120,.26)}.rajac-news-menu small{display:inline-flex;align-items:center;justify-content:center;min-width:20px;height:20px;padding:0 6px;border-radius:999px;background:rgba(255,255,255,.10);color:#e0c678;font-size:11px;font-family:Arial,sans-serif;font-weight:900}@media(max-width:1024px){.rajac-news-menu-inner{padding:9px 10px}.rajac-news-menu a{font-size:12px;padding:0 10px}}</style><nav aria-label="Мени вести" class="rajac-news-menu"><div class="rajac-news-menu-inner"><a class="home" href="https://piorajac.rs/">ПИО „РАЈАЦ”</a><a href="https://piorajac.rs/rajac-vesti/">СВЕ ВЕСТИ</a><a href="https://piorajac.rs/rajac-vesti/kategorije/aktuelno/">АКТУЕЛНО<small>7</small></a><a href="https://piorajac.rs/rajac-vesti/kategorije/vesti/">ВЕСТИ<small>3</small></a><a href="https://piorajac.rs/rajac-vesti/kategorije/izvestaji/">ИЗВЕШТАЈИ<small>8</small></a><a href="https://piorajac.rs/rajac-vesti/kategorije/istrazivanja/">ИСТРАЖИВАЊА<small>9</small></a><a href="https://piorajac.rs/rajac-vesti/kategorije/dogadjaji/">ДОГАЂАЈИ<small>5</small></a><a href="https://piorajac.rs/rajac-vesti/kategorije/u-fokusu/">У ФОКУСУ<small>4</small></a></div></nav>
+<div class="wrap">
+<div class="top"><span>ПИО „Рајац“ · Copernicus мониторинг</span><span>Методологија праћења кошења ливада</span></div>
+<section class="hero">
+<span class="kicker">Методологија · NDVI · NDMI · RECI · Sentinel-2</span>
+<h1>Како се на Рајцу прати кошење ливада помоћу Copernicus сателита</h1>
+<p class="lead">У ПИО „Рајац“ кошење ливада се може пратити поређењем сателитских снимака пре и после кошења. Основни показатељ је NDVI индекс, који показује количину и активност зелене биомасе, али се ради поузданијег тумачења истовремено прате и NDMI и RECI. Упоређени су снимци од 17. и 27. јуна 2026. године, а промена у структури NDVI класа указује на нове покошене или значајно промењене травне површине.</p>
+<div class="pills"><span class="pill">🛰 Извор: Copernicus / Sentinel-2</span><span class="pill">🌿 Индекси: NDVI · NDMI · RECI</span><span class="pill">🟨 Жута линија: граница ПИО „Рајац“</span><span class="pill">📊 Поређење: 17. и 27. јун 2026.</span></div>
+</section>
+<div class="grid" style="grid-template-columns:1fr">
+<figure class="figure">
+<img alt="Анимирана NDVI карта ПИО Рајац за 17. и 27. јун 2026. са жутом границом заштићеног подручја" src="ndvi_pio_17_27_animacija.gif"/>
+<figcaption>Анимирани приказ смењује NDVI стање 17. и 27. јуна на истом просторном обухвату, тако да се обе карте поклапају пиксел у пиксел. Светлије зелене, жућкасте и оголеле зоне на другом снимку указују на површине са падом зелене масе. У контексту ливада крајем јуна, таква промена се најчешће тумачи као кошење или јак механички захват на травној вегетацији.</figcaption>
+</figure>
+<section class="card">
+<h2>Шта софтвер ради?</h2>
+<p>Софтвер аутоматски учитава обрађене Copernicus/Sentinel-2 снимке, издваја подручје ПИО „Рајац“ и истовремено прати три индекса: NDVI, NDMI и RECI. NDVI се користи као основни показатељ зелене масе, NDMI показује промене у водном садржају и влажности вегетације, а RECI помаже у процени стања хлорофила и физиолошке активности биљака. На основу NDVI вредности пиксели се разврставају у класе од голог земљишта и ниске вегетације до густе, веома активне зелене масе.</p>
+<p>За сваки датум рачуна се површина сваке NDVI класе у хектарима и њен удео у укупно валидној површини снимка. Када се два датума упореде, повећање класа „ниска вегетација / могућа ораница / покошена површина“ и „умерена зелена маса“, уз пад класе „веома висока вегетациона активност“, указује на промену стања ливада. Закључак је поузданији када се исти простор истовремено поклопи и са падом NDMI вредности, односно са смањењем водног садржаја, као и са променом RECI индекса који указује на смањење хлорофилске активности.</p>
+<p>Резултат није замена за теренску проверу, али је користан као систем раног упозорења: показује где је дошло до нагле промене и где треба усмерити обилазак.</p>
+</section>
+</div>
+<section class="card" style="margin-top:22px">
+<h2>Основни принцип методологије</h2>
+<div class="steps">
+<div class="step"><b>Преузимање снимака.</b> За изабране датуме користе се Sentinel-2 сателитски снимци из Copernicus програма, уз контролу облачности и валидности пиксела.</div>
+<div class="step"><b>Издвајање границе ПИО.</b> Снимак се сече или маскира на границу ПИО „Рајац“, како би статистика обухватила само заштићено подручје.</div>
+<div class="step"><b>Израчунавање NDVI индекса.</b> NDVI показује однос блиско-инфрацрвеног и црвеног канала, односно количину и активност зелене биомасе.</div>
+<div class="step"><b>Класификација вредности.</b> Пиксели се сврставају у класе: голо земљиште, ниска вегетација, умерена зелена маса, висока зелена маса и веома висока вегетациона активност.</div>
+<div class="step"><b>Поређење датума.</b> Промена између два прелета показује где је зелена маса смањена. На ливадама у јуну то најчешће указује на кошење.</div><div class="step"><b>Провера са NDMI и RECI.</b> Исте зоне се проверавају и на индексима влажности и хлорофила. Ако се промена поклапа на сва три индекса, закључак је знатно поузданији.</div>
+<div class="step"><b>Теренска провера.</b> Карта служи да управљач брзо усмери контролу на површине са највећом променом и да раздвоји кошење од других могућих узрока.</div>
+</div>
+</section>
+<section class="card good" style="margin-top:22px">
+<h2>Зашто се поред NDVI прате и NDMI и RECI?</h2>
+<p>
+      Сам NDVI је добар показатељ количине зелене масе, али није увек довољан да се са великом сигурношћу раздвоји кошење од других узрока промене,
+      као што су сенка, сушни стрес, разлика у влажности земљишта, облачност или природно старење траве. Зато се у систему за Рајац истовремено прате још два индекса:
+      <b>NDMI</b> и <b>RECI</b>.
+    </p>
+<p>
+<b>NDMI</b> прати водни садржај и влажност вегетације. После кошења се обично смањује количина зелене биомасе и воде у биљном покривачу,
+      па пад NDMI вредности на истим површинама где пада и NDVI појачава вероватноћу да је реч о стварној промени травног покривача.
+    </p>
+<p>
+<b>RECI</b> је осетљив на хлорофилску активност. Ако се, поред пада NDVI и NDMI, уочи и промена RECI индекса,
+      то значи да се не мења само боја приказа на једном индексу, већ да је дошло до шире физиолошке промене у биљном покривачу.
+    </p>
+<p>
+      Најпоузданији закључак о могућем кошењу добија се када се на истој површини поклопе три сигнала:
+      <b>смањење зелене масе</b> на NDVI, <b>смањење влажности биомасе</b> на NDMI и <b>промена хлорофилске активности</b> на RECI.
+      Таква трострука провера смањује ризик да се као кошење погрешно означи сенка, облак, влажна депресија, пут или природна фенолошка промена.
+    </p>
+</section>
+<section class="columns" style="margin-top:22px">
+<div class="dark-table">
+<h2>NDVI статистика — 17. јун 2026.</h2>
+<p>На снимку од 17. јуна доминирала је класа веома високе вегетационе активности.</p>
+<table><thead><tr><th>Класа</th><th>Површина</th><th>Удео</th><th>Дијаграм</th></tr></thead><tbody>
+<tr><td><span class="dot" style="background:#d98b2b"></span>строго голо земљиште / пут / објекат / сенка<br/><span class="small">-1,00 до 0,15</span></td><td class="num">0,020 ha</td><td>0,00%</td><td><div class="bar"><div class="fill" style="width:.02%;background:#d98b2b"></div></div></td></tr>
+<tr><td><span class="dot" style="background:#c8f565"></span>ниска вегетација / могућа ораница / покошена површина<br/><span class="small">0,15 до 0,30</span></td><td class="num">3,330 ha</td><td>0,19%</td><td><div class="bar"><div class="fill" style="width:.19%;background:#c8f565"></div></div></td></tr>
+<tr><td><span class="dot" style="background:#72df62"></span>умерена зелена маса<br/><span class="small">0,30 до 0,50</span></td><td class="num">16,280 ha</td><td>0,91%</td><td><div class="bar"><div class="fill" style="width:.91%;background:#72df62"></div></div></td></tr>
+<tr><td><span class="dot" style="background:#2bbd4f"></span>висока зелена маса<br/><span class="small">0,50 до 0,70</span></td><td class="num">73,270 ha</td><td>4,10%</td><td><div class="bar"><div class="fill" style="width:4.10%;background:#2bbd4f"></div></div></td></tr>
+<tr><td><span class="dot" style="background:#007e28"></span>веома висока вегетациона активност / густа вегетација<br/><span class="small">0,70 до 1,00</span></td><td class="num">1.695,770 ha</td><td>94,81%</td><td><div class="bar"><div class="fill" style="width:94.81%;background:#007e28"></div></div></td></tr>
+</tbody></table>
+</div>
+<div class="dark-table">
+<h2>NDVI статистика — 27. јун 2026.</h2>
+<p>До 27. јуна повећан је удео нижих и средњих NDVI класа, док је удео густе вегетације смањен.</p>
+<table><thead><tr><th>Класа</th><th>Површина</th><th>Удео</th><th>Дијаграм</th></tr></thead><tbody>
+<tr><td><span class="dot" style="background:#d98b2b"></span>строго голо земљиште / пут / објекат / сенка<br/><span class="small">-1,00 до 0,15</span></td><td class="num">2,010 ha</td><td>0,13%</td><td><div class="bar"><div class="fill" style="width:.13%;background:#d98b2b"></div></div></td></tr>
+<tr><td><span class="dot" style="background:#c8f565"></span>ниска вегетација / могућа ораница / покошена површина<br/><span class="small">0,15 до 0,30</span></td><td class="num">21,020 ha</td><td>1,37%</td><td><div class="bar"><div class="fill" style="width:1.37%;background:#c8f565"></div></div></td></tr>
+<tr><td><span class="dot" style="background:#72df62"></span>умерена зелена маса<br/><span class="small">0,30 до 0,50</span></td><td class="num">66,150 ha</td><td>4,32%</td><td><div class="bar"><div class="fill" style="width:4.32%;background:#72df62"></div></div></td></tr>
+<tr><td><span class="dot" style="background:#2bbd4f"></span>висока зелена маса<br/><span class="small">0,50 до 0,70</span></td><td class="num">179,890 ha</td><td>11,76%</td><td><div class="bar"><div class="fill" style="width:11.76%;background:#2bbd4f"></div></div></td></tr>
+<tr><td><span class="dot" style="background:#007e28"></span>веома висока вегетациона активност / густа вегетација<br/><span class="small">0,70 до 1,00</span></td><td class="num">1.261,080 ha</td><td>82,42%</td><td><div class="bar"><div class="fill" style="width:82.42%;background:#007e28"></div></div></td></tr>
+</tbody></table>
+</div>
+</section>
+<section class="card warn" style="margin-top:22px">
+<h2>Шта показује поређење 17. и 27. јуна?</h2>
+<p>На снимку од 17. јуна класа „веома висока вегетациона активност / густа вегетација“ обухватала је 1.695,770 ha, односно 94,81% валидне површине. На снимку од 27. јуна ова класа износи 1.261,080 ha, односно 82,42% валидне површине.</p>
+<p>Истовремено, класа „ниска вегетација / могућа ораница / покошена површина“ повећана је са 3,330 ha на 21,020 ha, а класа „умерена зелена маса“ са 16,280 ha на 66,150 ha. То показује да је део површина прешао из густе, активне зелене масе у ниже NDVI класе.</p>
+<div class="compare"><div class="kpi"><strong>+17,690 ha</strong><span>повећање ниске вегетације / могућих покошених површина</span></div><div class="kpi"><strong>+49,870 ha</strong><span>повећање умерене зелене масе</span></div><div class="kpi"><strong>-12,39 п.п.</strong><span>пад удела веома високе вегетационе активности</span></div><div class="kpi"><strong>17–27. јун</strong><span>период у ком је промена уочена</span></div></div>
+</section>
+<section class="card good" style="margin-top:22px">
+<h2>Како се тумачи резултат?</h2>
+<p>Када се ливада покоси, сателит региструје нагли пад зелене масе и промену структуре површине. Зато пиксели који су пре кошења били у класи високе или веома високе вегетационе активности прелазе у ниже класе. У јунском периоду на Рајцу таква промена, ако се јавља у правилним или ливадским површинама, представља јак индикатор кошења.</p>
+<p>Ипак, софтвер резултат означава као <b>вероватно кошење</b>, а не као апсолутну чињеницу. На NDVI могу утицати и сенке, облачност, влажност земљишта, фенолошко старење траве, голо земљиште, путеви или локалне промене у усевима. Зато је најбоља пракса да се сателитска детекција потврди теренском фотографијом, обиласком или подацима управљача.</p>
+</section>
+<section class="card warn" style="margin-top:22px">
+<h2>Значај сателитског праћења за заштиту врста</h2>
+<p>
+      Сателитско праћење кошења има посебан значај зато што омогућава да се на време уоче површине на којима је дошло до наглог уклањања травне и цветне вегетације,
+      без ослањања само на случајне теренске обиласке. То је важно за врсте које су најосетљивије управо у другој половини пролећа и почетком лета:
+      птице које се гнезде на тлу, као што су прдавац, препелица и пољска шева; врсте којима је потребан мозаик виших трава, жбуња и живица, као што је виноградска стрнадица;
+      дневне лептире, осолике муве и друге опрашиваче који зависе од нектара, полена и биљака хранитељки; као и ливадске орхидеје и друге биљке које морају да заврше цветање,
+      плодоношење и сазревање семена. Када се карте NDVI, NDMI и RECI индекса користе заједно, управљач може брже да издвоји критичне зоне,
+      да провери да ли се промена поклапа са падом зелене масе, влаге и хлорофилске активности, и да на основу тога планира теренску контролу,
+      одлагање кошења или остављање непокошених појасева као уточишта за биљке и животиње.
+    </p>
+</section>
+<section class="note">
+<h2>Закључак за јавност</h2>
+<p>Copernicus мониторинг омогућава да се кошење ливада у ПИО „Рајац“ прати брзо, просторно прецизно и упоредиво из недеље у недељу. Упоредни снимци од 17. и 27. јуна показују да је дошло до смањења дела густе зелене вегетације и повећања нижих NDVI класа, што указује на нове покошене или значајно промењене травне површине. Праћење NDMI и RECI индекса омогућава да се овај закључак додатно провери кроз промене влажности биомасе и хлорофилске активности.</p>
+<p>Овакав систем је важан за управљање заштићеним подручјем јер омогућава да се рано уоче промене које могу утицати на птице које се гнезде на тлу, ливадске лептире, опрашиваче, орхидеје и друге врсте зависне од очуваних травних станишта.</p>
+</section>
+</div>
+<button aria-label="На врх стране" id="rajac-totop" title="На врх" type="button">↑</button><style id="rajac-totop-css">#rajac-totop{position:fixed;right:16px;bottom:16px;z-index:10000;width:46px;height:46px;border-radius:999px;border:1px solid rgba(255,255,255,.4);background:rgba(20,30,40,.30);-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);color:#fff;font-size:22px;line-height:1;cursor:pointer;display:flex;align-items:center;justify-content:center;opacity:0;visibility:hidden;transition:opacity .25s,visibility .25s,background .2s;box-shadow:0 6px 20px rgba(0,0,0,.25);-webkit-tap-highlight-color:transparent}#rajac-totop.show{opacity:1;visibility:visible}#rajac-totop:hover{background:rgba(20,30,40,.55)}@media(max-width:1024px){#rajac-totop{right:12px;bottom:12px;width:44px;height:44px}}</style><script>(function(){var b=document.getElementById("rajac-totop");if(!b)return;function o(){if((window.pageYOffset||document.documentElement.scrollTop)>320)b.classList.add("show");else b.classList.remove("show");}window.addEventListener("scroll",o,{passive:true});o();b.addEventListener("click",function(){window.scrollTo({top:0,behavior:"smooth"});});})();</script><style id="rajac-nextvest-css">.rajac-next-vest{max-width:760px;margin:34px auto 44px;padding:0 18px;font-family:Georgia,"Times New Roman",serif}.rajac-next-vest a{display:flex;flex-direction:column;gap:5px;padding:16px 20px;border:1px solid rgba(70,56,28,.20);border-radius:16px;background:#fffaf2;text-decoration:none;color:#1e2c1c;box-shadow:0 8px 24px rgba(38,30,16,.05);transition:transform .2s,box-shadow .2s}.rajac-next-vest a:hover{transform:translateY(-2px);box-shadow:0 12px 30px rgba(38,30,16,.10)}.rajac-next-vest .rnv-k{font-size:12px;font-weight:900;letter-spacing:.14em;text-transform:uppercase;color:#9a7b32;font-family:Arial,sans-serif}.rajac-next-vest .rnv-title{font-size:17px;font-weight:800;line-height:1.32}</style><nav aria-label="Следећа вест" class="rajac-next-vest"><a href="https://piorajac.rs/rajac-vesti/prvi-istrazivacki-rad-svetlosna-zagadjenost-pio-rajac/"><span class="rnv-k">Следећа вест →</span><span class="rnv-title">Први истраживачки рад о светлосној загађености ПИО „Рајац”</span></a></nav></body>
+</html>

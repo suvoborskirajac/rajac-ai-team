@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+
+<html data-theme="light" lang="sr-Cyrl">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<meta content="Шта понети на Рајац: опрема по активностима, климатске препоруке и прогноза." name="description"/>
+<title>Рајац – Прогноза и препоруке</title>
+<link href="assets/style.css" rel="stylesheet"/>
+</head>
+<body>
+<header class="site-header">
+<div class="container header-row">
+<a aria-label="ПИО Рајац - почетна страница сајта" class="brand" href="https://piorajac.rs/">
+<span class="brand-mark">ПИО РАЈАЦ</span>
+</a>
+<button aria-controls="mainNav" aria-expanded="false" aria-label="Отвори мени" class="menu-toggle" id="menuToggle" type="button">
+<span></span><span></span><span></span>
+</button>
+<nav aria-label="Навигација странице Шта понети" class="nav" id="mainNav">
+<a class="" href="index.html">Шта понети</a>
+<a class="" href="oprema.html">Опрема</a>
+<a class="" href="sport.html">Спорт</a>
+<a class="" href="orijentiring.html">Оријентиринг</a>
+<a class="" href="fotografija.html">Фото</a>
+<a class="" href="astronomija.html">Астрономија</a>
+<a class="" href="bilje_gljive.html">Биље/гљиве</a>
+<a class="" href="istrazivanja.html">Истраживања</a>
+<a class="" href="klima.html">Клима</a>
+<a class="active" href="prognoza.html">Прогноза</a>
+</nav>
+</div>
+</header>
+<main class="container">
+<section class="hero">
+<div class="hero-grid">
+<div>
+<h1>Прогноза (Windy приказ + читљиви подаци)</h1>
+<p class="lead">
+Windy је одличан за мапу и слојеве, али за аутоматско читање података користимо прогнозни извор, док Windy остаје за брзу визуелну проверу.
+</p>
+<div class="kv">
+<a class="btn primary" href="#" id="refreshBtn">🔄 Освежи прогнозу</a>
+<a class="btn" href="https://www.windy.com/?44.134,20.225,16" rel="noopener" target="_blank">🌍 Отвори Windy</a>
+<a class="btn" href="oprema.html">✅ Отвори контролну листу</a>
+</div>
+<div class="note"><strong>Ажурирано:</strong> Прогнозни подаци се учитавају уживо (7 дана), а тренутно стање се освежава на 60 секунди.</div>
+</div>
+<div class="card">
+<div class="pad">
+<h2>Шта читамо (сатно)</h2>
+<ul class="list">
+<li><strong>Температура (°C)</strong></li>
+<li><strong>Падавине (mm/h)</strong> (укупно: киша + снег)</li>
+<li><strong>Притисак (hPa)</strong> (површински притисак)</li>
+<li><strong>Ветар (m/s)</strong> + <strong>удари ветра (m/s)</strong> + <strong>правац (°)</strong></li>
+</ul>
+<div class="note" style="margin-top:10px">
+<strong>Правило:</strong> ако је падавина &gt; 0 mm/h у било ком сату тог дана → додај кишну заштиту + суве чарапе.
+</div>
+<div class="note" style="margin-top:10px">
+<strong>Ветар (планина):</strong> ако је <strong>макс ветар ≥ 8 m/s</strong> или <strong>удари ≥ 12 m/s</strong> → додај ветро-заштиту (ветровка/софтшел), капу/баф и рукавице.
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="section">
+<div class="section-head">
+<h2>Тренутно стање</h2>
+<p>Приказујемо стварне вредности са метео станице кад су доступне. Ако их тренутно није могуће прочитати, користи се резервни тренутни извор.</p>
+</div>
+<div class="card"><div class="pad">
+<div class="source-pill" id="currentSource">Проверавам извор за тренутно стање…</div>
+<div class="current-grid" id="currentGrid">
+<div class="metric-card">
+<div class="metric-label">Температура</div>
+<div class="metric-value" id="curTemp">—</div>
+<div class="metric-sub" id="curFeels">Осет: —</div>
+</div>
+<div class="metric-card">
+<div class="metric-label">Влажност</div>
+<div class="metric-value" id="curHumidity">—</div>
+<div class="metric-sub">Релативна влажност</div>
+</div>
+<div class="metric-card">
+<div class="metric-label">Притисак</div>
+<div class="metric-value" id="curPressure">—</div>
+<div class="metric-sub">Површински притисак</div>
+</div>
+<div class="metric-card">
+<div class="metric-label">Ветар</div>
+<div class="metric-value" id="curWind">—</div>
+<div class="metric-sub" id="curWindDir">Правац: —</div>
+</div>
+</div>
+<div class="note" style="margin-top:12px">
+<strong>Последње ажурирање:</strong> <span id="currentUpdated">—</span>
+</div>
+</div></div>
+</section>
+<section class="section">
+<div class="section-head">
+<h2>Windy мапа (визуелна провера)</h2>
+<p>Брзо пребацивање између слојева: <strong>ветар</strong> и <strong>удари</strong>. Подаци у табелама испод су и даље из Open-Meteo (за аутоматско читање), а блок „Тренутно стање“ покушава да чита твоју метео станицу.</p>
+</div>
+<div class="card"><div class="pad">
+<div class="kv" style="flex-wrap:wrap">
+<button class="btn" id="windLayer" type="button">🌬 Ветар</button>
+<button class="btn" id="gustLayer" type="button">💨 Удари</button>
+<a class="btn" href="https://www.windy.com/?44.134,20.225,16" rel="noopener" target="_blank">Отвори у Windy апликацији</a>
+</div>
+<div style="margin-top:12px; border:1px solid var(--border); border-radius:16px; overflow:hidden; background:var(--panel2)">
+<iframe id="windyFrame" loading="lazy" referrerpolicy="no-referrer" src="https://embed.windy.com/embed2.html?lat=44.134&amp;lon=20.225&amp;detailLat=44.134&amp;detailLon=20.225&amp;width=650&amp;height=420&amp;zoom=11&amp;level=surface&amp;overlay=wind&amp;product=ecmwf&amp;menu=&amp;message=true&amp;marker=true&amp;calendar=now&amp;pressure=&amp;type=map&amp;location=coordinates&amp;detail=true&amp;metricWind=m%2Fs&amp;metricTemp=%C2%B0C" style="width:100%; height:420px; border:0" title="Windy мапа Рајац"></iframe>
+</div>
+<div class="note" style="margin-top:10px">
+Напомена: ембед приказује Windy слојеве, док се препоруке рачунају из Open-Meteo сатних података (7 дана) да бисмо могли аутоматски да извучемо мин/макс и прагове.
+</div>
+</div></div>
+</section>
+<section class="section">
+<div class="section-head">
+<h2>7 дана – дневни сажетак + препорука шта додати</h2>
+<p>Из сатних података израчунавамо: мин/макс температуру, укупне падавине и минимум притиска.</p>
+</div>
+<div class="card"><div class="pad">
+<div class="lead" id="status" style="font-size:15px">Учитавам…</div>
+<div style="overflow:auto">
+<table id="dailyTable" style="width:100%; border-collapse:separate; border-spacing:0 10px; min-width:860px"></table>
+</div>
+</div></div>
+</section>
+<section class="section">
+<div class="section-head">
+<h2>Следећа 72 h – сатни детаљи</h2>
+<p>Приказ по сатима: температура, падавине, притисак, ветар и удари.</p>
+</div>
+<div class="card"><div class="pad">
+<div style="overflow:auto">
+<table id="hourlyTable" style="width:100%; border-collapse:collapse; min-width:860px"></table>
+</div>
+</div></div>
+</section>
+</main>
+<footer class="site-footer">
+<div class="container footer-grid">
+<div>
+<strong>Шта понети на Рајац</strong>
+<p>Практичан списак за безбедан и одговоран боравак у пределу Рајца.</p>
+</div>
+<div class="footer-links">
+<a href="https://piorajac.rs/">ПИО Рајац</a> · <a href="index.html">Шта понети</a> · <a href="oprema.html">Опрема</a> · <a href="klima.html">Клима</a> · <a href="prognoza.html">Прогноза</a>
+</div>
+</div>
+</footer>
+<script src="assets/station-config.js"></script>
+<script src="assets/app.js"></script>
+<script>
+(function() {
+  const LAT = 44.134;
+  const LON = 20.225;
+  const TZ = "Europe/Belgrade";
+
+  const statusEl = document.getElementById('status');
+  const dailyTable = document.getElementById('dailyTable');
+  const hourlyTable = document.getElementById('hourlyTable');
+  const refreshBtn = document.getElementById('refreshBtn');
+
+  const currentSource = document.getElementById('currentSource');
+  const curTemp = document.getElementById('curTemp');
+  const curFeels = document.getElementById('curFeels');
+  const curHumidity = document.getElementById('curHumidity');
+  const curPressure = document.getElementById('curPressure');
+  const curWind = document.getElementById('curWind');
+  const curWindDir = document.getElementById('curWindDir');
+  const currentUpdated = document.getElementById('currentUpdated');
+
+  function fmt(n, d=0) {
+    if (n === null || n === undefined || Number.isNaN(Number(n))) return "—";
+    return Number(n).toFixed(d);
+  }
+
+  function chip(text) {
+    return `<span class="chip" style="padding:6px 10px">${text}</span>`;
+  }
+
+  function directionLabel(deg){
+    const d = Number(deg);
+    if (!Number.isFinite(d)) return '—';
+    const dirs = ['С', 'СИ', 'И', 'ЈИ', 'Ј', 'ЈЗ', 'З', 'СЗ'];
+    return dirs[Math.round(d / 45) % 8];
+  }
+
+  function recommendation(daySum) {
+    const add = [];
+    if (daySum.precip_sum > 0.2) {
+      add.push("кишна јакна", "навлака за ранац", "резервне чарапе (суво)");
+    }
+    if (daySum.tmin <= 5) {
+      add.push("топлији слој", "танке рукавице", "баф/капа");
+    }
+    const w = (daySum.wmax || 0);
+    const g = (daySum.gmax || 0);
+    if (w >= 6 || g >= 10) {
+      add.push("баф/капа (ветар)");
+    }
+    if (w >= 8 || g >= 12) {
+      add.push("ветровка/софтшел", "рукавице (танке)");
+    }
+    if (g >= 15) {
+      add.push("учврсти опрему у ранцу", "заштита за технику");
+    }
+    if (add.length === 0) add.push("стандардни сет (без посебних додатака)");
+    return [...new Set(add)].join(", ");
+  }
+
+  function candidateStationUrls(){
+    const cfg = window.RAJAC_STATION_CONFIG || {};
+    const list = [];
+    if (cfg.endpoint) list.push(cfg.endpoint);
+    if (Array.isArray(cfg.candidates)) list.push(...cfg.candidates);
+    return [...new Set(list.filter(Boolean))];
+  }
+
+  function flatten(input, prefix = '', out = {}) {
+    if (input === null || input === undefined) return out;
+    if (Array.isArray(input)) return out;
+    Object.entries(input).forEach(([key, value]) => {
+      const k = prefix ? `${prefix}.${key}` : key;
+      out[k] = value;
+      if (value && typeof value === 'object' && !Array.isArray(value)) flatten(value, k, out);
+    });
+    return out;
+  }
+
+  function pick(flat, keys) {
+    for (const key of keys) {
+      if (flat[key] !== undefined && flat[key] !== null && flat[key] !== '') return flat[key];
+    }
+    const normalized = Object.keys(flat).reduce((acc, key) => {
+      acc[key.toLowerCase().replace(/[^a-z0-9]+/g,'')] = flat[key];
+      return acc;
+    }, {});
+    for (const key of keys) {
+      const nk = key.toLowerCase().replace(/[^a-z0-9]+/g,'');
+      if (normalized[nk] !== undefined && normalized[nk] !== null && normalized[nk] !== '') return normalized[nk];
+    }
+    return null;
+  }
+
+  function normalizeStationPayload(payload) {
+    const flat = flatten(payload);
+
+    const updatedRaw = pick(flat, [
+      'updated_epoch',
+      'updated',
+      'updated_at',
+      'observation_time',
+      'time',
+      'timestamp',
+      'current.time'
+    ]);
+
+    const updated = typeof updatedRaw === 'number'
+      ? new Date(updatedRaw * (updatedRaw > 1e12 ? 1 : 1000)).toLocaleString('sr-RS')
+      : (updatedRaw ? new Date(updatedRaw).toLocaleString('sr-RS') : null);
+
+    return {
+      source: pick(flat, ['station_name','station.name','source']) || 'Метео станица',
+      updated,
+      temperature: Number(pick(flat, ['temperature','temp','temp_c','current.temperature','current.temp_c','outTemp','outside_temperature'])),
+      humidity: Number(pick(flat, ['humidity','relative_humidity','rh','current.humidity','humidity_pct'])),
+      pressure: Number(pick(flat, ['pressure','pressure_hpa','surface_pressure','barom','station_pressure','current.pressure'])),
+      wind: Number(pick(flat, ['wind_speed','wind_avg','wind','windspeed','wind_speed_ms','current.wind_speed'])),
+      gust: Number(pick(flat, ['wind_gust','gust','wind_gust_ms','current.wind_gust'])),
+      direction: Number(pick(flat, ['wind_direction','wind_dir','winddir','current.wind_direction'])),
+      rain: Number(pick(flat, ['rain_rate','rainfall_rate','precipitation','rain','current.precipitation'])),
+      feels: Number(pick(flat, ['apparent_temperature','feels_like','current.apparent_temperature']))
+    };
+  }
+
+  function renderCurrent(data, label) {
+    curTemp.textContent = Number.isFinite(data.temperature) ? `${fmt(data.temperature,1)}°C` : '—';
+    curFeels.textContent = Number.isFinite(data.feels)
+      ? `Осет: ${fmt(data.feels,1)}°C`
+      : (Number.isFinite(data.rain) ? `Падавине: ${fmt(data.rain,1)} mm/h` : 'Осет: —');
+
+    curHumidity.textContent = Number.isFinite(data.humidity) ? `${fmt(data.humidity,0)}%` : '—';
+    curPressure.textContent = Number.isFinite(data.pressure) ? `${fmt(data.pressure,0)} hPa` : '—';
+
+    const windText = Number.isFinite(data.wind) ? `${fmt(data.wind,1)} m/s` : '—';
+    const gustText = Number.isFinite(data.gust) ? ` · удари ${fmt(data.gust,1)} m/s` : '';
+    curWind.textContent = `${windText}${gustText}`;
+
+    curWindDir.textContent = Number.isFinite(data.direction)
+      ? `Правац: ${directionLabel(data.direction)} (${fmt(data.direction,0)}°)`
+      : 'Правац: —';
+
+    currentUpdated.textContent = data.updated || 'без временске ознаке';
+    currentSource.textContent = label;
+  }
+
+  async function loadStationCurrent() {
+    const urls = candidateStationUrls();
+    for (const url of urls) {
+      try {
+        const res = await fetch(url, { cache: 'no-store' });
+        if (!res.ok) continue;
+        const json = await res.json();
+        const normalized = normalizeStationPayload(json);
+
+        if (
+          Number.isFinite(normalized.temperature) ||
+          Number.isFinite(normalized.wind) ||
+          Number.isFinite(normalized.pressure)
+        ) {
+          renderCurrent(normalized, `Тренутно стање: метео станица (${normalized.source})`);
+          return true;
+        }
+      } catch (e) {}
+    }
+    return false;
+  }
+
+  async function loadFallbackCurrent() {
+    try {
+      const url = `https://api.open-meteo.com/v1/forecast?latitude=${LAT}&longitude=${LON}&current=temperature_2m,relative_humidity_2m,apparent_temperature,surface_pressure,wind_speed_10m,wind_gusts_10m,wind_direction_10m,precipitation&timezone=${encodeURIComponent(TZ)}`;
+      const res = await fetch(url, { cache: 'no-store' });
+      if (!res.ok) throw new Error('fallback');
+
+      const data = await res.json();
+      const cur = data.current || {};
+
+      renderCurrent({
+        source: 'Резервни тренутни извор',
+        updated: cur.time ? new Date(cur.time).toLocaleString('sr-RS') : null,
+        temperature: cur.temperature_2m,
+        humidity: cur.relative_humidity_2m,
+        pressure: cur.surface_pressure,
+        wind: cur.wind_speed_10m,
+        gust: cur.wind_gusts_10m,
+        direction: cur.wind_direction_10m,
+        rain: cur.precipitation,
+        feels: cur.apparent_temperature
+      }, 'Тренутно стање: резервни тренутни извор');
+    } catch (e) {
+      currentSource.textContent = 'Тренутно стање тренутно није доступно.';
+      currentUpdated.textContent = '—';
+    }
+  }
+
+  async function loadCurrent(){
+    currentSource.textContent = 'Проверавам метео станицу…';
+    const ok = await loadStationCurrent();
+    if (!ok) await loadFallbackCurrent();
+  }
+
+  async function load() {
+    statusEl.textContent = 'Учитавам податке…';
+    dailyTable.innerHTML = '';
+    hourlyTable.innerHTML = '';
+
+    const url = `https://api.open-meteo.com/v1/forecast?latitude=${LAT}&longitude=${LON}&hourly=temperature_2m,precipitation,surface_pressure,wind_speed_10m,wind_gusts_10m,wind_direction_10m&forecast_days=7&timezone=${encodeURIComponent(TZ)}`;
+    const res = await fetch(url, { cache: 'no-store' });
+    if (!res.ok) {
+      statusEl.textContent = 'Грешка при учитавању прогнозе.';
+      return;
+    }
+
+    const data = await res.json();
+    const t = data.hourly.time;
+    const temp = data.hourly.temperature_2m;
+    const pr = data.hourly.precipitation;
+    const pres = data.hourly.surface_pressure;
+    const wind = data.hourly.wind_speed_10m;
+    const gust = data.hourly.wind_gusts_10m;
+    const wdir = data.hourly.wind_direction_10m;
+
+    const byDay = {};
+    for (let i = 0; i < t.length; i++) {
+      const day = t[i].slice(0,10);
+      byDay[day] = byDay[day] || {tmin: Infinity, tmax: -Infinity, precip_sum: 0, pmin: Infinity, wmax: 0, gmax: 0};
+      byDay[day].tmin = Math.min(byDay[day].tmin, temp[i]);
+      byDay[day].tmax = Math.max(byDay[day].tmax, temp[i]);
+      byDay[day].precip_sum += pr[i] || 0;
+      byDay[day].pmin = Math.min(byDay[day].pmin, pres[i]);
+      byDay[day].wmax = Math.max(byDay[day].wmax, wind[i] || 0);
+      byDay[day].gmax = Math.max(byDay[day].gmax, gust[i] || 0);
+    }
+
+    const days = Object.keys(byDay).sort();
+    statusEl.textContent = `Учитано ${days.length} дана. Дневни сажетак је израчунат из сатних прогнозних вредности.`;
+
+    dailyTable.innerHTML = `
+      <thead>
+        <tr>
+          <th style="text-align:left; padding:10px 12px; color:var(--muted)">Датум</th>
+          <th style="text-align:left; padding:10px 12px; color:var(--muted)">Темп. мин/макс</th>
+          <th style="text-align:left; padding:10px 12px; color:var(--muted)">Падавине (збир)</th>
+          <th style="text-align:left; padding:10px 12px; color:var(--muted)">Притисак (мин)</th>
+          <th style="text-align:left; padding:10px 12px; color:var(--muted)">Ветар (макс / удари)</th>
+          <th style="text-align:left; padding:10px 12px; color:var(--muted)">Шта додати у ранац</th>
+        </tr>
+      </thead>
+      <tbody>
+        ${days.map(d => {
+          const s = byDay[d];
+          const rec = recommendation(s);
+          const wet = s.precip_sum > 0.2 ? chip('🌧 мокро') : chip('🌤 суво');
+          return `
+            <tr>
+              <td style="padding:12px; border:1px solid var(--border); border-right:none; border-radius:16px 0 0 16px; background:var(--panel2)">
+                <strong>${d}</strong><div style="margin-top:6px">${wet}</div>
+              </td>
+              <td style="padding:12px; border-top:1px solid var(--border); border-bottom:1px solid var(--border); background:var(--panel2)">${fmt(s.tmin,0)}°C / ${fmt(s.tmax,0)}°C</td>
+              <td style="padding:12px; border-top:1px solid var(--border); border-bottom:1px solid var(--border); background:var(--panel2)">${fmt(s.precip_sum,1)} mm</td>
+              <td style="padding:12px; border-top:1px solid var(--border); border-bottom:1px solid var(--border); background:var(--panel2)">${fmt(s.pmin,0)} hPa</td>
+              <td style="padding:12px; border-top:1px solid var(--border); border-bottom:1px solid var(--border); background:var(--panel2)">${fmt(s.wmax,1)} m/s <span style="color:var(--muted)">/</span> ${fmt(s.gmax,1)} m/s</td>
+              <td style="padding:12px; border:1px solid var(--border); border-left:none; border-radius:0 16px 16px 0; background:var(--panel2)">${rec}</td>
+            </tr>`;
+        }).join('')}
+      </tbody>`;
+
+    const now = new Date();
+    const rows = [];
+    for (let i = 0; i < t.length && rows.length < 72; i++) {
+      const dt = new Date(t[i]);
+      if (dt >= now) rows.push({time:t[i], temp:temp[i], pr:pr[i], p:pres[i], w:wind[i], g:gust[i], dir:wdir[i]});
+    }
+
+    hourlyTable.innerHTML = `
+      <thead>
+        <tr>
+          <th style="text-align:left; padding:10px 12px; border-bottom:1px solid var(--border); color:var(--muted)">Време</th>
+          <th style="text-align:left; padding:10px 12px; border-bottom:1px solid var(--border); color:var(--muted)">Темп.</th>
+          <th style="text-align:left; padding:10px 12px; border-bottom:1px solid var(--border); color:var(--muted)">Падавине</th>
+          <th style="text-align:left; padding:10px 12px; border-bottom:1px solid var(--border); color:var(--muted)">Притисак</th>
+          <th style="text-align:left; padding:10px 12px; border-bottom:1px solid var(--border); color:var(--muted)">Ветар</th>
+          <th style="text-align:left; padding:10px 12px; border-bottom:1px solid var(--border); color:var(--muted)">Удари</th>
+        </tr>
+      </thead>
+      <tbody>
+        ${rows.map(r => {
+          const wet = (r.pr || 0) > 0 ? '🌧' : '—';
+          return `
+            <tr>
+              <td style="padding:10px 12px; border-bottom:1px solid rgba(255,255,255,.08)">${r.time.replace('T',' ')}</td>
+              <td style="padding:10px 12px; border-bottom:1px solid rgba(255,255,255,.08)">${fmt(r.temp,0)}°C</td>
+              <td style="padding:10px 12px; border-bottom:1px solid rgba(255,255,255,.08)">${wet} ${fmt(r.pr,1)} mm</td>
+              <td style="padding:10px 12px; border-bottom:1px solid rgba(255,255,255,.08)">${fmt(r.p,0)} hPa</td>
+              <td style="padding:10px 12px; border-bottom:1px solid rgba(255,255,255,.08)">${fmt(r.w,1)} m/s <span style="color:var(--muted)">(${fmt(r.dir,0)}°)</span></td>
+              <td style="padding:10px 12px; border-bottom:1px solid rgba(255,255,255,.08)">${fmt(r.g,1)} m/s</td>
+            </tr>`;
+        }).join('')}
+      </tbody>`;
+  }
+
+  refreshBtn.addEventListener('click', (e) => {
+    e.preventDefault();
+    load();
+    loadCurrent();
+  });
+
+  const windyFrame = document.getElementById('windyFrame');
+  const windBtn = document.getElementById('windLayer');
+  const gustBtn = document.getElementById('gustLayer');
+
+  const setOverlay = (overlay) => {
+    if (!windyFrame) return;
+    const base = `https://embed.windy.com/embed2.html?lat=${LAT}&lon=${LON}&detailLat=${LAT}&detailLon=${LON}&width=650&height=420&zoom=11&level=surface&overlay=${overlay}&product=ecmwf&menu=&message=true&marker=true&calendar=now&pressure=&type=map&location=coordinates&detail=true&metricWind=m%2Fs&metricTemp=%C2%B0C`;
+    windyFrame.src = base;
+    if (windBtn) windBtn.classList.toggle('primary', overlay === 'wind');
+    if (gustBtn) gustBtn.classList.toggle('primary', overlay === 'gust');
+  };
+
+  if (windBtn) windBtn.addEventListener('click', () => setOverlay('wind'));
+  if (gustBtn) gustBtn.addEventListener('click', () => setOverlay('gust'));
+
+  setOverlay('wind');
+  load();
+  loadCurrent();
+
+  const cfg = window.RAJAC_STATION_CONFIG || {};
+  const refreshMs = Number(cfg.refreshMs || 60000);
+  if (refreshMs >= 15000) {
+    setInterval(loadCurrent, refreshMs);
+  }
+})();
+</script>
+</body>
+</html>

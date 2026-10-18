@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+
+<html lang="sr">
+<head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><title>ВИ и иновације — извештај 2025. године · ПИО „Рајац”</title><meta content="Годишњи извештај о примени вештачке интелигенције, SMART платформе и теренских апликација у управљању ПИО „Рајац” 2025. године." name="description"/><style id="rajac-static-news-menu-css">
+.rajac-news-menu{position:sticky;top:0;z-index:9999;background:#0d1b2a;border-bottom:1px solid rgba(255,255,255,.10);font-family:Georgia,"Times New Roman",serif;box-shadow:0 8px 26px rgba(0,0,0,.08)}
+.rajac-news-menu *{box-sizing:border-box}.rajac-news-menu-inner{max-width:1180px;margin:0 auto;padding:9px 18px;min-height:56px;display:flex;flex-wrap:wrap;align-items:center;gap:8px;overflow-x:visible;scrollbar-width:none}.rajac-news-menu-inner::-webkit-scrollbar{display:none}.rajac-news-menu a{display:inline-flex;align-items:center;gap:6px;min-height:38px;padding:0 13px;border-radius:999px;color:rgba(255,255,255,.74);text-decoration:none;font-size:13px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;white-space:nowrap}.rajac-news-menu a:hover{background:rgba(255,255,255,.06);color:#fff}.rajac-news-menu .home{color:#e0c678;border:1px solid rgba(224,198,120,.34);background:rgba(224,198,120,.06)}.rajac-news-menu a.active{color:#e0c678;background:rgba(224,198,120,.08);outline:1px solid rgba(224,198,120,.26)}.rajac-news-menu small,.rajac-news-menu .count{display:inline-flex;align-items:center;justify-content:center;min-width:20px;height:20px;padding:0 6px;border-radius:999px;background:rgba(255,255,255,.10);color:#e0c678;font-size:11px;letter-spacing:0}@media(max-width:720px){.rajac-news-menu-inner{padding:9px 10px}.rajac-news-menu a{font-size:12px;padding:0 10px}}
+</style>
+<style>
+  :root{
+    --gold:#9a6a1c;
+    --gold-light:#c79a46;
+    --emerald:#2f6442;
+    --emerald-light:#3f7c55;
+    --night:#f6f1e8;
+    --night-mid:#eee5d5;
+    --night-card:#fffdf8;
+    --night-border:rgba(34,45,31,.14);
+    --text:#1f271d;
+    --text-dim:#586457;
+    --accent-blue:#416b8e;
+    --paper:#fffaf0;
+    --shadow:0 18px 55px rgba(35,42,31,.08);
+    --shadow-soft:0 8px 28px rgba(35,42,31,.07);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth;background:var(--night)}
+  body{
+    font-family:Georgia,"Times New Roman",serif;
+    background:
+      radial-gradient(circle at 12% -10%, rgba(154,106,28,.13), transparent 32%),
+      radial-gradient(circle at 88% 0%, rgba(47,100,66,.11), transparent 30%),
+      linear-gradient(180deg,#f8f3e9 0%,#f4eddf 44%,#f7f2e8 100%);
+    color:var(--text);
+    overflow-x:hidden;
+  }
+  a{color:inherit;text-decoration:none}
+  strong{color:inherit}
+  .top-nav{
+    position:sticky;top:0;z-index:1000;
+    min-height:58px;padding:0 34px;
+    display:flex;align-items:center;justify-content:space-between;gap:22px;
+    background:rgba(23,38,28,.96);color:#f7eedc;
+    border-bottom:1px solid rgba(255,255,255,.10);
+    box-shadow:0 10px 28px rgba(26,34,24,.12);
+  }
+  .nav-brand{font-size:1.04rem;font-weight:600;color:#d8bd76;letter-spacing:.04em;white-space:nowrap}
+  .nav-brand span{color:rgba(255,255,255,.78);font-weight:300}
+  .nav-links{flex-wrap:wrap;display:flex;align-items:center;gap:18px;list-style:none;overflow-x:visible;scrollbar-width:none;white-space:nowrap}
+  .nav-links::-webkit-scrollbar{display:none}
+  .nav-links a{display:flex;align-items:center;min-height:58px;color:rgba(255,255,255,.74);font-size:.78rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;border-bottom:2px solid transparent;transition:.2s ease}
+  .nav-links a:hover,.nav-links a.active{color:#d8bd76;border-bottom-color:#d8bd76}
+  .page-header{position:relative;max-width:1180px;margin:0 auto;padding:72px 28px 46px}
+  .breadcrumb{font-size:.86rem;color:#647063;margin-bottom:20px;letter-spacing:.02em}
+  .breadcrumb a{color:var(--gold);font-weight:700}
+  .page-header h1{font-size:clamp(2.8rem,6.5vw,5.6rem);font-weight:300;line-height:1.02;letter-spacing:-.045em;max-width:960px;color:#172116}
+  .page-header h1 strong{display:block;color:var(--emerald);font-weight:300;font-style:italic}
+  .header-line{width:88px;height:2px;background:linear-gradient(90deg,var(--gold),transparent);margin:28px 0}
+  .lead{font-size:clamp(1.15rem,1.6vw,1.35rem);line-height:1.75;color:#536150;max-width:850px}
+  .news-date{display:inline-flex;margin-top:18px;padding:8px 13px;border-radius:999px;background:rgba(154,106,28,.10);border:1px solid rgba(154,106,28,.22);color:#795018;font-size:.92rem;font-weight:700}
+  .content{position:relative;max-width:1180px;margin:0 auto;padding:0 28px 72px}
+  .big-feature,.smart-box,.info-card,.visual-box,.quote-box{
+    background:rgba(255,253,248,.82);border:1px solid var(--night-border);border-radius:26px;box-shadow:var(--shadow);
+  }
+  .big-feature{padding:clamp(28px,4.2vw,54px);display:grid;grid-template-columns:minmax(0,1.05fr) minmax(320px,.95fr);gap:34px;align-items:start;margin-bottom:42px}
+  .feature-label,.section-tag{display:inline-flex;align-items:center;gap:10px;font-size:.78rem;font-weight:800;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);margin-bottom:14px}
+  .feature-label:before,.section-tag:before{content:"";width:28px;height:1px;background:currentColor;opacity:.75}
+  h2,.s-title{font-size:clamp(1.85rem,3vw,3rem);line-height:1.12;font-weight:300;letter-spacing:-.025em;color:#172116;margin:0 0 24px}
+  h2 strong,.s-title strong{color:var(--emerald);font-weight:300;font-style:italic}
+  h3{font-size:clamp(1.35rem,2vw,1.75rem);line-height:1.18;font-weight:400;color:#22311f;margin-bottom:13px}
+  p{font-size:1.05rem;line-height:1.78;color:var(--text-dim);margin:0 0 14px}
+  .visual-box{padding:28px;box-shadow:var(--shadow-soft);background:linear-gradient(180deg,#fffaf0,#f5eddf)}
+  .visual-box-title{font-size:1rem;color:var(--emerald);font-weight:700;margin-bottom:16px;letter-spacing:.03em}
+  .doc-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+  .doc-item{display:flex;gap:8px;align-items:flex-start;font-size:.96rem;line-height:1.42;color:#50604f;padding:8px 0;border-bottom:1px solid rgba(34,45,31,.07)}
+  .doc-item:before{content:"→";color:var(--gold);font-weight:900;flex:0 0 auto}
+  .stat-chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:20px}
+  .chip{display:inline-flex;align-items:center;min-height:32px;padding:5px 13px;border-radius:999px;border:1px solid rgba(154,106,28,.22);background:rgba(154,106,28,.08);color:#795018;font-size:.86rem;font-weight:700;line-height:1.25}
+  .chip.green{border-color:rgba(47,100,66,.22);background:rgba(47,100,66,.08);color:var(--emerald)}
+  .two-col{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;margin:18px 0 42px}
+  .info-card{padding:30px;box-shadow:var(--shadow-soft);transition:transform .18s ease,border-color .18s ease}
+  .info-card:hover{transform:translateY(-2px);border-color:rgba(154,106,28,.28)}
+  .info-card-icon{display:block;font-size:2rem;margin-bottom:15px}
+  .info-card ul{list-style:none;margin-top:14px}
+  .info-card li{position:relative;padding:9px 0 9px 20px;border-bottom:1px solid rgba(34,45,31,.08);font-size:.98rem;line-height:1.52;color:#586457}
+  .info-card li:before{content:"✦";position:absolute;left:0;top:10px;color:var(--gold);font-size:.66rem}
+  .s-div{border:0;border-top:1px solid rgba(34,45,31,.14);margin:46px 0 42px}
+  .smart-box{display:grid;grid-template-columns:minmax(0,1fr) minmax(360px,.95fr);gap:34px;padding:clamp(28px,4vw,52px);background:linear-gradient(135deg,#fffaf0,#eef6ed);overflow:hidden;position:relative;margin-bottom:34px}
+  .smart-box:after{content:"SMART";position:absolute;right:24px;bottom:-8px;font-size:6.6rem;line-height:1;font-weight:800;color:rgba(47,100,66,.05);letter-spacing:.04em;pointer-events:none}
+  .smart-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(47,100,66,.09);border:1px solid rgba(47,100,66,.20);border-radius:999px;padding:7px 14px;color:var(--emerald);font-size:.78rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;margin-bottom:16px}
+  .flow{display:flex;align-items:stretch;gap:10px;flex-wrap:wrap;margin-top:10px}
+  .flow-step{flex:1 1 120px;min-width:118px;padding:13px 12px;border:1px solid rgba(47,100,66,.18);border-radius:16px;background:#fffdf8;color:#22311f;text-align:center;font-weight:700;line-height:1.25;font-size:.96rem;box-shadow:0 5px 18px rgba(35,42,31,.04)}
+  .flow-step small{font-size:.78rem;color:#647063;font-weight:500}
+  .flow-arrow{align-self:center;color:var(--gold);font-weight:900}
+  .quote-box{padding:32px 36px;margin:32px 0;background:#fbf4e6;border-left:4px solid var(--gold)}
+  .quote-box blockquote{font-size:clamp(1.25rem,2vw,1.65rem);line-height:1.55;color:#263422;font-style:italic;font-weight:300}
+  .quote-box cite{display:block;margin-top:14px;color:var(--gold);font-size:.95rem;font-style:normal;font-weight:700}
+  .footer-inner{max-width:1180px;margin:0 auto;padding:34px 28px 38px;display:flex;align-items:center;justify-content:space-between;gap:18px;flex-wrap:wrap;border-top:1px solid rgba(34,45,31,.14);color:#657063}
+  .footer-brand{color:var(--emerald);font-size:1.28rem;font-weight:700}.footer-brand span{display:block;color:#657063;font-size:.92rem;font-weight:400;margin-top:3px}
+  .footer-links{display:flex;gap:16px;flex-wrap:wrap}.footer-links a{font-size:.9rem;color:#59655a;font-weight:700}.footer-links a:hover{color:var(--gold)}.footer-copy{width:100%;font-size:.85rem;color:#77796f;margin:0}
+  [style*="var(--text-dim)"]{color:var(--text-dim)!important}
+  [style*="var(--gold)"]{color:var(--gold)!important}
+  [style*="var(--emerald-light)"]{color:var(--emerald)!important}
+  [style*="background:rgba(0,0,0,0.2)"]{background:#fffdf8!important}
+  @media(max-width:900px){.top-nav{align-items:flex-start;flex-direction:column;padding:12px 18px}.nav-links{width:100%;gap:14px}.nav-links a{min-height:34px}.big-feature,.smart-box,.two-col{grid-template-columns:1fr}.doc-list{grid-template-columns:1fr}.page-header{padding-top:42px}.content{padding-bottom:48px}}
+  @media(max-width:620px){.page-header,.content{padding-left:18px;padding-right:18px}.page-header h1{font-size:2.55rem}.big-feature,.smart-box,.info-card,.visual-box,.quote-box{border-radius:20px}.big-feature,.smart-box{padding:22px}.info-card,.visual-box{padding:22px}.flow-arrow{display:none}.footer-inner{padding-left:18px;padding-right:18px}}
+</style><style id="rajac-single-fix-css">.rajac-added-cover{width:min(1120px,calc(100% - 34px));margin:24px auto;border-radius:22px;overflow:hidden;border:1px solid rgba(30,40,30,.14);background:#fff;box-shadow:0 18px 55px rgba(35,42,31,.06)}.rajac-added-cover img{width:100%;max-height:420px;object-fit:cover;display:block}.rajac-added-cover figcaption{padding:10px 14px;color:#6c6f65;font:13px/1.45 Arial,sans-serif}</style>
+<style id="rajac-global-news-menu-style">
+.rajac-news-menu{position:sticky;top:0;z-index:9999;background:#0d1b2a;border-bottom:1px solid rgba(255,255,255,.10);font-family:Georgia,"Times New Roman",serif;box-shadow:0 8px 26px rgba(0,0,0,.08)}
+.rajac-news-menu *{box-sizing:border-box}.rajac-news-menu-inner{max-width:1180px;margin:0 auto;padding:9px 18px;min-height:56px;display:flex;flex-wrap:wrap;align-items:center;gap:8px;overflow-x:visible;scrollbar-width:none}.rajac-news-menu-inner::-webkit-scrollbar{display:none}
+.rajac-news-menu a{display:inline-flex;align-items:center;gap:6px;min-height:38px;padding:0 13px;border-radius:999px;color:rgba(255,255,255,.74);text-decoration:none;font-size:13px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;white-space:nowrap;line-height:1;font-family:Georgia,"Times New Roman",serif}
+.rajac-news-menu a:hover{background:rgba(255,255,255,.06);color:#fff}.rajac-news-menu .home{color:#e0c678;border:1px solid rgba(224,198,120,.34);background:rgba(224,198,120,.06)}
+.rajac-news-menu a.active{color:#e0c678!important;background:rgba(224,198,120,.08);outline:1px solid rgba(224,198,120,.26)}.rajac-news-menu small{display:inline-flex;align-items:center;justify-content:center;min-width:20px;height:20px;padding:0 6px;border-radius:999px;background:rgba(255,255,255,.10);color:#e0c678;font-size:11px;letter-spacing:0;font-family:Arial,sans-serif;font-weight:900}
+@media(max-width:650px){.rajac-news-menu-inner{padding:9px 10px}.rajac-news-menu a{font-size:12px;padding:0 10px}}
+</style>
+<style id="rajac-news-menu-one-row">
+/* Јединствен мени за све вести: један ред и исти sans-serif фонт као на осталим страницама сајта. */
+.rajac-news-menu{font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif!important}
+.rajac-news-menu-inner{width:min(100%,1600px)!important;max-width:1600px!important;margin:0 auto!important;padding:9px 14px!important;display:flex!important;flex-wrap:nowrap!important;align-items:center!important;justify-content:center!important;gap:4px!important;overflow-x:auto!important;overflow-y:hidden!important;scrollbar-width:none!important;-webkit-overflow-scrolling:touch}
+.rajac-news-menu-inner::-webkit-scrollbar{display:none!important}
+.rajac-news-menu a{flex:0 0 auto!important;min-height:38px!important;padding:0 10px!important;font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif!important;font-size:12px!important;font-weight:750!important;letter-spacing:.025em!important;line-height:1!important;text-transform:uppercase!important;white-space:nowrap!important}
+.rajac-news-menu small{font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif!important}
+@media(max-width:1050px){.rajac-news-menu-inner{justify-content:flex-start!important}.rajac-news-menu a{font-size:11px!important;padding:0 9px!important}}
+</style>
+<style id="rajac-unified-news-menu-v3">
+.rajac-news-menu{
+  position:sticky!important;top:0!important;z-index:9999!important;
+  width:100%!important;background:#0d1b2a!important;
+  border-bottom:1px solid rgba(255,255,255,.10)!important;
+  box-shadow:0 7px 22px rgba(0,0,0,.10)!important;
+  font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif!important;
+}
+.rajac-news-menu *{font-family:inherit!important;box-sizing:border-box!important}
+.rajac-news-menu-inner{
+  width:100%!important;max-width:1600px!important;margin:0 auto!important;
+  min-height:60px!important;padding:8px 14px!important;
+  display:flex!important;flex-direction:row!important;flex-wrap:nowrap!important;
+  align-items:center!important;justify-content:center!important;gap:6px!important;
+  overflow-x:auto!important;overflow-y:hidden!important;white-space:nowrap!important;
+  scrollbar-width:none!important;-webkit-overflow-scrolling:touch!important;
+}
+.rajac-news-menu-inner::-webkit-scrollbar{display:none!important}
+.rajac-news-menu a{
+  flex:0 0 auto!important;display:inline-flex!important;align-items:center!important;
+  justify-content:center!important;gap:6px!important;min-height:40px!important;
+  padding:0 12px!important;border-radius:999px!important;
+  color:rgba(255,255,255,.82)!important;background:transparent!important;
+  text-decoration:none!important;text-transform:uppercase!important;
+  white-space:nowrap!important;font-size:13px!important;line-height:1!important;
+  font-weight:750!important;letter-spacing:.025em!important;
+}
+.rajac-news-menu a:hover,.rajac-news-menu a:focus-visible{
+  color:#fff!important;background:rgba(255,255,255,.07)!important;
+}
+.rajac-news-menu a.home,.rajac-news-menu a.active{
+  color:#e4cb7e!important;background:rgba(228,203,126,.08)!important;
+  outline:1px solid rgba(228,203,126,.30)!important;
+}
+.rajac-news-menu small{
+  flex:0 0 auto!important;display:inline-flex!important;align-items:center!important;
+  justify-content:center!important;min-width:20px!important;height:20px!important;
+  padding:0 6px!important;border-radius:999px!important;
+  color:#e4cb7e!important;background:rgba(255,255,255,.10)!important;
+  font-size:11px!important;line-height:20px!important;font-weight:800!important;
+  letter-spacing:0!important;
+}
+@media(max-width:1180px){
+  .rajac-news-menu-inner{justify-content:flex-start!important;padding-inline:10px!important}
+  .rajac-news-menu a{font-size:12px!important;padding-inline:10px!important}
+}
+</style>
+<link href="https://piorajac.rs/rajac-vesti/assets/css/rajac-unified-menu.css" rel="stylesheet"/>
+<style id="pio-news-menu-one-row-final">
+
+/* === PIO RAJAC: JEDNOREDNI MENI NA SVIM STRANICAMA VESTI === */
+@media (min-width: 900px){
+  .rajac-news-menu{
+    width:100% !important;
+  }
+  .rajac-news-menu-inner{
+    width:100% !important;
+    max-width:1600px !important;
+    margin:0 auto !important;
+    padding:8px 12px !important;
+    display:flex !important;
+    flex-direction:row !important;
+    flex-wrap:nowrap !important;
+    align-items:center !important;
+    justify-content:center !important;
+    gap:clamp(3px,.55vw,9px) !important;
+    white-space:nowrap !important;
+    overflow-x:auto !important;
+    overflow-y:hidden !important;
+    scrollbar-width:none !important;
+  }
+  .rajac-news-menu-inner::-webkit-scrollbar{display:none !important;}
+  .rajac-news-menu a{
+    flex:0 0 auto !important;
+    white-space:nowrap !important;
+    padding-left:clamp(7px,.65vw,11px) !important;
+    padding-right:clamp(7px,.65vw,11px) !important;
+    font-size:clamp(11px,.86vw,14px) !important;
+  }
+}
+/* На ужим екранима мени остаје један ред и хоризонтално се помера, уместо да пада у други ред. */
+@media (max-width: 899px){
+  .rajac-news-menu-inner{
+    display:flex !important;
+    flex-wrap:nowrap !important;
+    justify-content:flex-start !important;
+    white-space:nowrap !important;
+    overflow-x:auto !important;
+    overflow-y:hidden !important;
+    scrollbar-width:none !important;
+    -webkit-overflow-scrolling:touch !important;
+  }
+  .rajac-news-menu-inner::-webkit-scrollbar{display:none !important;}
+  .rajac-news-menu a{flex:0 0 auto !important;white-space:nowrap !important;}
+}
+
+</style>
+</head>
+<body><nav aria-label="Мени вести" class="rajac-news-menu"><div class="rajac-news-menu-inner"><a class="home" href="https://piorajac.rs/">ПИО „РАЈАЦ”</a><a href="https://piorajac.rs/rajac-vesti/">СВЕ ВЕСТИ</a><a href="https://piorajac.rs/rajac-vesti/kategorije/aktuelno/">АКТУЕЛНО<small>7</small></a><a href="https://piorajac.rs/rajac-vesti/kategorije/vesti/">ВЕСТИ<small>3</small></a><a href="https://piorajac.rs/rajac-vesti/kategorije/izvestaji/">ИЗВЕШТАЈИ<small>8</small></a><a href="https://piorajac.rs/rajac-vesti/kategorije/istrazivanja/">ИСТРАЖИВАЊА<small>9</small></a><a href="https://piorajac.rs/rajac-vesti/kategorije/dogadjaji/">ДОГАЂАЈИ<small>5</small></a><a href="https://piorajac.rs/rajac-vesti/kategorije/u-fokusu/">У ФОКУСУ<small>4</small></a></div></nav>
+<figure class="figure rajac-added-cover"><img alt="Вештачка интелигенција и дигитални алати" decoding="async" height="600" loading="eager" src="/izvestaj-2025/assets/vi-inovacije-ai-hero.webp" width="960"/><figcaption>Вештачка интелигенција, дигитални алати и аналитика у систему управљања ПИО „Рајац”.</figcaption></figure>
+<div class="page-header">
+<div class="breadcrumb"><a href="https://piorajac.rs/rajac-vesti/">← Вести</a> / Извештаји / ВИ и иновације</div>
+<h1>Вештачка интелигенција<strong>у служби природе</strong></h1>
+<div class="header-line"></div>
+<p class="lead">ПИО „Рајац" је прво заштићено подручје у Србији где је ВИ постала оперативни партнер управљача — не алат, већ ко-аутор стручних одлука и докумената.</p>
+<p class="news-date">Објављено: 15.03.2026. · Извештаји</p>
+</div>
+<div class="content">
+<!-- BIG FEATURE: AI -->
+<div class="big-feature">
+<div>
+<div class="feature-label">Главна иновација</div>
+<h2>19 докумената. 1300+ страна.<br/>Један паметан систем.</h2>
+<p>Уместо употребе опште намене, ВИ је наоружана специфичним корпусом знања о Рајцу: нацртом плана управљања, студијама заштите, протоколима мониторинга, климатским анализама и стручним водичима.</p>
+<p>Резултат: одговори строго усклађени са режимима заштите (зоне I–III), реалним стањем екосистема и правним оквиром. Без генеричких препорука, без халуцинација.</p>
+<div class="stat-chips">
+<span class="chip">19 примарних докумената</span>
+<span class="chip">1300+ А4 страна</span>
+<span class="chip green">ChatGPT GPT-5 Thinking</span>
+<span class="chip green">Терминолошка доследност</span>
+</div>
+</div>
+<div class="visual-box">
+<div class="visual-box-title">📚 Локална база знања — "Core Corpus"</div>
+<div class="doc-list">
+<div class="doc-item">Нацрт плана управљања</div>
+<div class="doc-item">Студија заштите ПИО „Рајац"</div>
+<div class="doc-item">Акустични мониторинг</div>
+<div class="doc-item">Студија флоре и фауне</div>
+<div class="doc-item">Анализа климатских података</div>
+<div class="doc-item">Студија фауне инсеката</div>
+<div class="doc-item">Биљке у ПИО „Рајац"</div>
+<div class="doc-item">Мониторинг по месецима</div>
+<div class="doc-item">Стручни водич за сисаре</div>
+<div class="doc-item">Екосистемска анализа</div>
+<div class="doc-item">Извештај о птицама</div>
+<div class="doc-item">Методологија астроклиме</div>
+<div class="doc-item">Светлосно загађење</div>
+<div class="doc-item">Утицај буке</div>
+<div class="doc-item">Фенолошке фазе биљака</div>
+<div class="doc-item">Паметни биомониторинг</div>
+<div class="doc-item">Детаљан водич за птице</div>
+<div class="doc-item">Методологија истраживања</div>
+<div class="doc-item">Утицај светла на фауну</div>
+</div>
+</div>
+</div>
+<!-- FOUR DOMAINS -->
+<div class="section-tag">Примена ВИ по областима</div>
+<h2 class="s-title">Четири домена <strong>деловања</strong></h2>
+<div class="two-col">
+<div class="info-card">
+<span class="info-card-icon">📋</span>
+<h3>Стратешко планирање и документи</h3>
+<p>ВИ је помогла у изради службених текстова, протокола, шаблона за извештаје и плановима управљања.</p>
+<ul>
+<li>Аутоматизовани темплејти за оперативне извештаје</li>
+<li>.docx извоз у службеним форматима</li>
+<li>Писање поглавља књиге о светлосном загађењу</li>
+<li>Израда протокола мониторинга (птице, слепи мишеви, биљке)</li>
+<li>Статистичка обрада климатских и биолошких података</li>
+</ul>
+</div>
+<div class="info-card">
+<span class="info-card-icon">🗺️</span>
+<h3>ГИС, ИТ и дигитална инфраструктура</h3>
+<p>Од интерактивних карата до WordPress страница — ВИ је конфигурисала и развијала дигиталне алате.</p>
+<ul>
+<li>Интерактивне Leaflet/GIS мапе са зонама заштите</li>
+<li>QField/SMART обрасци за теренски унос</li>
+<li>Четбот/офлајн база знања за управљача</li>
+<li>WordPress Elementor секције и едукативне странице</li>
+<li>Систем видео-надзора — технички предлози и процедуре</li>
+</ul>
+</div>
+<div class="info-card">
+<span class="info-card-icon">📡</span>
+<h3>Мониторинг и теренска аналитика</h3>
+<p>Протоколи за акустику, фенологију и климу уграђени у SMART систем управљања.</p>
+<ul>
+<li>Акустички мониторинг птица и слепих мишева</li>
+<li>Фотомониторинг и фенолошко праћење биљака</li>
+<li>Оперативни to-do спискови по месецима</li>
+<li>Протоколи SQM за светлосно загађење</li>
+<li>Климатске анализе са статистичком провером</li>
+</ul>
+</div>
+<div class="info-card">
+<span class="info-card-icon">🎓</span>
+<h3>Јавне комуникације и едукација</h3>
+<p>Образовни материјали прилагођени посетиоцима, школама и научним институцијама.</p>
+<ul>
+<li>Едукативне web странице са интерактивним картама</li>
+<li>Идентификација снимљене флоре и фауне</li>
+<li>Стандарди метаподатака за дигиталну евиденцију</li>
+<li>Стратегија комуникације са локалном заједницом</li>
+<li>Водичи за посетиоце прилагођени зонама заштите</li>
+</ul>
+</div>
+</div>
+<hr class="s-div"/>
+<!-- SMART SECTION -->
+<div class="smart-box">
+<div>
+<div class="smart-badge">🌍 Светска иновација</div>
+<div class="section-tag">SMART платформа</div>
+<h2 class="s-title">Прва потпуна <strong>српска верзија</strong> у свету</h2>
+<p style="font-size:0.92rem; color:var(--text-dim); line-height:1.85; font-weight:300; margin-bottom:14px;">
+        SMART (Spatial Monitoring and Reporting Tool) је водећа светска платформа за управљање заштићеним подручјима. Туристичка организација Љиг је 2025. године превела цео мени и интерфејс на српски језик.
+      </p>
+<p style="font-size:0.92rem; color:var(--text-dim); line-height:1.85; font-weight:300; margin-bottom:24px;">
+        Преко <strong style="color:var(--gold)">7.000 програмских линија</strong> превода. Након прихватања у званични репозиторијум, српска верзија ће бити доступна свим корисницима у свету у оквиру издања SMART 8.0.
+      </p>
+<div style="display:flex; gap:10px; flex-wrap:wrap;">
+<span class="chip green">SMART 7 → 8.0</span>
+<span class="chip">7.000+ линија кода</span>
+<span class="chip green">Глобална доступност</span>
+</div>
+</div>
+<div>
+<div class="visual-box-title" style="color:var(--emerald-light); font-family:'Jost',sans-serif; font-size:0.75rem; font-weight:600; letter-spacing:0.15em; text-transform:uppercase; margin-bottom:20px;">Компоненте SMART система на Рајацу</div>
+<div class="flow">
+<div class="flow-step">Теренски тим<br/><small style="color:var(--text-dim)">патроле</small></div>
+<span class="flow-arrow">→</span>
+<div class="flow-step">SMART Mobile<br/><small style="color:var(--text-dim)">офлајн унос</small></div>
+<span class="flow-arrow">→</span>
+<div class="flow-step">SMART Connect<br/><small style="color:var(--text-dim)">синхронизација</small></div>
+<span class="flow-arrow">→</span>
+<div class="flow-step">Desktop анализа<br/><small style="color:var(--text-dim)">извештаји</small></div>
+</div>
+<div style="margin-top:24px;">
+<ul class="info-card" style="padding:24px; background:rgba(0,0,0,0.2); border-color:rgba(82,183,136,0.15);">
+<li>Централни чвор за патроле, биолошка запажања, инциденте</li>
+<li>Интеграција са QGIS-ом и сателитским сензорима (VIIRS/SQM-LE)</li>
+<li>SMART Collect за грађанску науку — пријаве посетилаца</li>
+<li>Рад без сигнала — синхронизација по повратку</li>
+<li>Оперативни аларми: пожар, криволов, неовлашћен улазак</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="quote-box">
+<blockquote>„ВИ у ПИО Рајац постала је оперативни ко-аутор управљачких процеса: од читања локалног корпуса и синтезе протокола, до креирања апликација, мапа и службених текстова."</blockquote>
+<cite>— Из закључка извештаја о примени ВИ, ПИО „Рајац" 2025.</cite>
+</div>
+<!-- APP SECTION -->
+<hr class="s-div"/>
+<div class="section-tag">Теренске апликације</div>
+<h2 class="s-title">Паметне апликације за <strong>офлајн рад</strong></h2>
+<div class="two-col">
+<div class="info-card" style="border-color: rgba(200,169,110,0.2);">
+<span class="info-card-icon">📱</span>
+<h3>Апликација за прикупљање података</h3>
+<p>Намењена директном уносу структурираних теренских података (текст, бројеви, чеклисте) чак и ван мреже. Подаци се трајно чувају у локалној бази и аутоматски синхронизују чим се уређај повеже.</p>
+<div class="stat-chips" style="margin-top:16px;">
+<span class="chip">Офлајн прво</span>
+<span class="chip green">Аутосинхронизација</span>
+</div>
+</div>
+<div class="info-card" style="border-color: rgba(82,183,136,0.2);">
+<span class="info-card-icon">📍</span>
+<h3>GPS апликација са гласовним водичем</h3>
+<p>Употребом GPS функције телефона, апликација аутоматски генерише <strong style="color:var(--gold)">звучна и текстуална обавештења</strong> приликом приласка одређеним зонама, објектима или контролним тачкама.</p>
+<p>Без интернета. Без учитавања карата. Само прецизна навигација.</p>
+<div class="stat-chips" style="margin-top:16px;">
+<span class="chip green">Локацијски окидач</span>
+<span class="chip">Звучно обавештење</span>
+</div>
+</div>
+</div>
+</div>
+<footer>
+<div class="footer-inner">
+<div class="footer-brand">ПИО „Рајац"<span>Туристичка организација општине Љиг</span></div>
+<nav class="footer-links">
+<a href="/izvestaj-2025/index.html">Почетна</a>
+<a href="/izvestaj-2025/vi-inovacije.html">ВИ и Иновације</a>
+<a href="/izvestaj-2025/monitoring.html">Биодиверзитет</a>
+<a href="/izvestaj-2025/infrastruktura.html">Инфраструктура</a>
+<a href="/izvestaj-2025/astro.html">Звездани Парк</a>
+</nav>
+<p class="footer-copy">© 2025 ПИО „Рајац" — Годишњи извештај</p>
+</div>
+</footer>
+<style id="rajac-admin-edit-style">.rajac-admin-edit-button{position:fixed;right:16px;bottom:16px;z-index:99999;display:none;align-items:center;justify-content:center;min-height:42px;padding:0 16px;border-radius:999px;background:#0d1b2a;color:#e0c678!important;text-decoration:none!important;font:900 12px/1 Arial,sans-serif;letter-spacing:.10em;text-transform:uppercase;box-shadow:0 12px 30px rgba(0,0,0,.22);border:1px solid rgba(224,198,120,.42)}</style><script id="rajac-admin-edit-script">(function(){try{if(document.cookie.indexOf("rajac_vesti_admin=1")===-1)return;var p=location.pathname.split("/").filter(Boolean);var slug=p[p.length-1]||"";if(!slug||slug==="rajac-vesti")return;var a=document.createElement("a");a.className="rajac-admin-edit-button";a.href="https://piorajac.rs/rajac-vesti/admin-edit.php?slug="+encodeURIComponent(slug);a.textContent="EDIT";a.style.display="inline-flex";document.body.appendChild(a);}catch(e){}})();</script>
+<!-- SITE_EDITOR_ADMIN_BAR_START -->
+<script defer="" src="/admin-site-editor.php?admin_bar_js=1"></script>
+<!-- SITE_EDITOR_ADMIN_BAR_END -->
+<button aria-label="На врх стране" id="rajac-totop" title="На врх" type="button">↑</button><style id="rajac-totop-css">#rajac-totop{position:fixed;right:16px;bottom:16px;z-index:10000;width:46px;height:46px;border-radius:999px;border:1px solid rgba(255,255,255,.4);background:rgba(20,30,40,.30);-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);color:#fff;font-size:22px;line-height:1;cursor:pointer;display:flex;align-items:center;justify-content:center;opacity:0;visibility:hidden;transition:opacity .25s,visibility .25s,background .2s;box-shadow:0 6px 20px rgba(0,0,0,.25);-webkit-tap-highlight-color:transparent}#rajac-totop.show{opacity:1;visibility:visible}#rajac-totop:hover{background:rgba(20,30,40,.55)}@media(max-width:1024px){#rajac-totop{right:12px;bottom:12px;width:44px;height:44px}}</style><script>(function(){var b=document.getElementById("rajac-totop");if(!b)return;function o(){if((window.pageYOffset||document.documentElement.scrollTop)>320)b.classList.add("show");else b.classList.remove("show");}window.addEventListener("scroll",o,{passive:true});o();b.addEventListener("click",function(){window.scrollTo({top:0,behavior:"smooth"});});})();</script><style id="rajac-nextvest-css">.rajac-next-vest{max-width:760px;margin:34px auto 44px;padding:0 18px;font-family:Georgia,"Times New Roman",serif}.rajac-next-vest a{display:flex;flex-direction:column;gap:5px;padding:16px 20px;border:1px solid rgba(70,56,28,.20);border-radius:16px;background:#fffaf2;text-decoration:none;color:#1e2c1c;box-shadow:0 8px 24px rgba(38,30,16,.05);transition:transform .2s,box-shadow .2s}.rajac-next-vest a:hover{transform:translateY(-2px);box-shadow:0 12px 30px rgba(38,30,16,.10)}.rajac-next-vest .rnv-k{font-size:12px;font-weight:900;letter-spacing:.14em;text-transform:uppercase;color:#9a7b32;font-family:Arial,sans-serif}.rajac-next-vest .rnv-title{font-size:17px;font-weight:800;line-height:1.32}</style><nav aria-label="Следећа вест" class="rajac-next-vest"><a href="https://piorajac.rs/rajac-vesti/montaza-meteo-stanice/"><span class="rnv-k">Следећа вест →</span><span class="rnv-title">Монтажа аутоматске метеоролошке станице на Рајцу</span></a></nav></body>
+</html>
