@@ -1,0 +1,1117 @@
+<!DOCTYPE html>
+
+<html lang="sr-RS">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<title>Понашање према сисарима — ПИО Рајац</title>
+<meta content="Практични водич за посетиоце ПИО Рајац: како посматрати, фотографисати и снимати сисаре без узнемиравања, правила прихрањивања, постављање камера-замки и понашање током сезоне." name="description"/>
+<meta content="no-referrer" name="referrer"/>
+<style>
+:root{
+  --sky:#0b2744;--sky2:#163a58;--green:#2d5a27;--green-soft:#eef5ef;--gold:#c8a84b;--gold2:#e8cc7a;--cream:#f8f4ed;--paper:#fffdf8;--text:#1a1a2e;--muted:#687386;--line:#e0dbd3;--warn:#b56a1f;--red:#9a2d2d;--radius:14px;--serif:"Cormorant Garamond","EB Garamond",Garamond,"Palatino Linotype","Book Antiqua",Georgia,"Times New Roman",serif;--shadow:0 18px 42px rgba(18,28,22,.08);--soft-shadow:0 8px 20px rgba(18,28,22,.06);
+}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:linear-gradient(180deg,#f8f4ed 0%,#f4eddf 52%,#eef4ed 100%);color:var(--text);font-family:var(--serif);font-size:22px;line-height:1.58}a{color:inherit;text-decoration:none}img{display:block;max-width:100%}.wrap{max-width:1180px;margin:0 auto;padding:0 22px}
+
+.rajac-ds-nav{background:#0d1b2a;position:sticky;top:0;z-index:50;border-bottom:1px solid rgba(255,255,255,.08)}.rajac-ds-nav-inner{max-width:1180px;margin:auto;display:flex;align-items:stretch;min-height:58px;padding:0 18px;gap:0;overflow-x:auto;scrollbar-width:none}.rajac-ds-nav-inner::-webkit-scrollbar{display:none}.rajac-ds-home{display:flex;align-items:center;gap:9px;padding-right:20px;margin-right:8px;border-right:1px solid rgba(255,255,255,.12);color:#d8b55b!important;font-weight:600;font-size:18px;white-space:nowrap}.rajac-ds-nav-item{position:relative;display:flex;align-items:center;gap:7px;padding:0 15px;color:rgba(255,255,255,.72);font-size:16px;font-weight:600;letter-spacing:.045em;text-transform:uppercase;white-space:nowrap}.rajac-ds-nav-item:hover{color:#fff;background:rgba(255,255,255,.035)}.rajac-ds-nav-item.rajac-ds-active{color:#d8b55b}.rajac-ds-nav-item.rajac-ds-active:after{content:"";position:absolute;left:15px;right:15px;bottom:8px;height:2px;border-radius:2px;background:#d8b55b}.rajac-ds-icon{font-size:15px}
+
+.hero{position:relative;color:#fff;overflow:hidden;
+  background:radial-gradient(circle at 16% 18%,rgba(232,204,122,.20),transparent 28%),
+  linear-gradient(132deg,#07131f 0%,#10233a 48%,#1b3a2c 100%);
+}
+.hero:after{content:"";position:absolute;left:0;right:0;bottom:-1px;height:120px;background:linear-gradient(0deg,var(--cream),rgba(248,244,237,0));pointer-events:none}
+.topline{display:flex;align-items:center;justify-content:space-between;gap:18px;padding:22px 0 8px;color:rgba(255,255,255,.76);font-size:15px;letter-spacing:.08em;text-transform:uppercase;font-weight:600}.topline a:hover{color:var(--gold2)}
+.hero-grid{position:relative;z-index:2;display:grid;grid-template-columns:minmax(0,0.92fr) minmax(420px,1.08fr);gap:46px;align-items:end;padding:40px 0 104px}
+.badge{display:inline-flex;align-items:center;gap:10px;width:max-content;padding:8px 14px;border-radius:999px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.18);color:var(--gold2);font-size:15px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;margin-bottom:22px}
+h1{font-weight:300;letter-spacing:-.03em;line-height:.96;font-size:clamp(2.15rem,3.75vw,3.55rem);max-width:700px;margin:0 0 22px}
+.hero-lead{max-width:720px;color:rgba(255,255,255,.82);font-size:clamp(1.12rem,1.55vw,1.34rem);line-height:1.48;margin:0}
+.hero-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:30px;max-width:720px}.stat{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);border-radius:18px;padding:15px 14px;backdrop-filter:blur(12px)}.stat b{display:block;font-size:34px;line-height:1;color:var(--gold2);font-weight:300}.stat span{display:block;color:rgba(255,255,255,.76);font-size:16px;line-height:1.35;margin-top:6px}
+
+.hero-visual{position:relative;min-height:430px;border-radius:30px;overflow:hidden;border:1px solid rgba(255,255,255,.18);box-shadow:0 34px 90px rgba(0,0,0,.38);background:#14271f;isolation:isolate;align-self:end}
+.hero-visual img{width:100%;height:100%;min-height:430px;object-fit:cover;object-position:center center;transform:scale(1.012);filter:saturate(1.05) contrast(1.02)}
+.hero-visual:before{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(90deg,rgba(7,19,31,.20),transparent 38%),linear-gradient(0deg,rgba(7,19,31,.42),transparent 50%),radial-gradient(circle at 16% 18%,rgba(232,204,122,.18),transparent 32%);pointer-events:none}
+.hero-visual-badge{position:absolute;left:22px;bottom:22px;z-index:2;max-width:min(430px,calc(100% - 44px));padding:15px 17px;border-radius:18px;background:rgba(8,18,18,.54);border:1px solid rgba(255,255,255,.18);backdrop-filter:blur(14px);box-shadow:0 18px 48px rgba(0,0,0,.24)}
+.hero-visual-badge strong{display:block;color:#f2d785;font-size:18px;line-height:1.2;font-weight:700;letter-spacing:.04em;text-transform:uppercase}
+.hero-visual-badge span{display:block;margin-top:5px;color:rgba(255,255,255,.84);font-size:17px;line-height:1.35}
+
+.quick-nav{position:relative;z-index:3;margin-top:-56px;margin-bottom:44px}.quick-nav-inner{background:rgba(255,255,255,.90);border:1px solid rgba(224,219,211,.95);border-radius:20px;padding:14px;box-shadow:var(--shadow);display:grid;grid-template-columns:repeat(6,1fr);gap:10px;backdrop-filter:blur(14px)}.quick-nav a{border-radius:13px;padding:11px 10px;background:#fffaf1;border:1px solid #eadfce;text-align:center;font-size:17px;font-weight:700;color:#1b3043}.quick-nav a:hover{background:#eef5ef;border-color:#cbd9c9;color:#2d5a27}
+
+.section{padding:34px 0}.section-head{margin-bottom:20px}.kicker{display:inline-flex;gap:9px;align-items:center;color:#8a6a34;font-size:15px;font-weight:700;letter-spacing:.13em;text-transform:uppercase;margin-bottom:9px}h2{font-weight:300;font-size:clamp(2.2rem,4.5vw,3.8rem);line-height:1.02;letter-spacing:-.025em;color:#10213a;margin:0}.section-intro{max-width:880px;color:#4f5f72;font-size:23px;line-height:1.52;margin:12px 0 0}
+.card{background:rgba(255,255,255,.86);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--soft-shadow)}.grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.grid-2{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+.rule-card{padding:24px;min-height:235px;position:relative;overflow:hidden}.rule-card:before{content:"";position:absolute;right:-45px;top:-45px;width:120px;height:120px;border-radius:50%;background:rgba(200,168,75,.12)}.rule-icon{font-size:34px;margin-bottom:12px}.rule-card h3{font-weight:400;font-size:1.55rem;line-height:1.15;margin:0 0 10px;color:#10213a}.rule-card p{color:#3f4d5f;font-size:21px;line-height:1.45;margin:0}
+.highlight{margin:26px 0;padding:20px 22px;border-radius:18px;background:linear-gradient(135deg,#0d1b2a,#163a58);color:#fff;box-shadow:var(--soft-shadow)}.highlight strong{color:var(--gold2)}
+
+.signal-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:18px;align-items:stretch}
+.signal-list,.decision{padding:23px}
+.signal-list ul{list-style:none;margin:0;padding:0;display:grid;gap:10px}.signal-list li{display:flex;gap:11px;align-items:flex-start;padding:12px;border-radius:14px;background:#fffaf1;border:1px solid #eadfce;color:#3f4d5f;font-size:20px;line-height:1.42}.signal-list li span:first-child{font-size:24px;line-height:1}.signal-list b{color:#10213a}
+.decision{background:linear-gradient(135deg,#fffdf8,#eef5ef)}.decision-step{display:grid;grid-template-columns:42px 1fr;gap:12px;align-items:start;border:1px solid var(--line);background:#fff;border-radius:14px;padding:13px;margin-bottom:10px}.decision-step b:first-child{width:42px;height:42px;border-radius:50%;display:grid;place-items:center;background:#0d1b2a;color:#fff;font-weight:600}.decision-step strong{display:block;color:#10213a;font-weight:600;margin-bottom:3px}.decision-step span{font-size:19px;color:#4f5f72;line-height:1.42}
+
+.season-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}.season{padding:20px;background:#fff;border:1px solid var(--line);border-radius:16px;box-shadow:var(--soft-shadow)}.season .month{display:inline-flex;border-radius:999px;padding:6px 11px;background:#fffaf1;border:1px solid #eadfce;font-weight:700;color:#8a6a34;font-size:15px;margin-bottom:12px}.season h3{font-weight:400;font-size:1.45rem;line-height:1.12;color:#10213a;margin:0 0 9px}.season p{font-size:20px;color:#3f4d5f;line-height:1.45;margin:0}.risk{display:flex;gap:7px;margin-top:13px}.risk i{height:8px;flex:1;border-radius:999px;background:#e0dbd3}.risk.low i:nth-child(-n+1){background:#86a866}.risk.mid i:nth-child(-n+2){background:#d8b55b}.risk.high i:nth-child(-n+3),.risk.max i{background:#b85d4d}
+
+.workflow{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;counter-reset:step}.step{position:relative;padding:18px 15px;background:#fff;border:1px solid var(--line);border-radius:16px;box-shadow:var(--soft-shadow);min-height:185px}.step:before{counter-increment:step;content:counter(step);display:grid;place-items:center;width:34px;height:34px;border-radius:50%;background:#0d1b2a;color:#fff;font-weight:700;margin-bottom:13px}.step h3{font-weight:400;font-size:1.25rem;color:#10213a;margin:0 0 8px}.step p{font-size:19px;color:#4f5f72;line-height:1.42;margin:0}
+
+.nestbox{display:grid;grid-template-columns:.95fr 1.05fr;gap:18px;align-items:stretch}
+.permit{padding:23px;background:linear-gradient(135deg,#0d1b2a,#163a58);color:#fff;border-radius:18px;box-shadow:var(--soft-shadow)}.permit h3{font-weight:400;font-size:2rem;line-height:1.05;margin:0 0 10px}.permit p{color:rgba(255,255,255,.80);font-size:21px;line-height:1.46;margin:0}.permit-list{margin-top:16px;display:grid;gap:10px}.permit-list div{display:flex;gap:10px;align-items:flex-start;background:rgba(255,255,255,.09);border:1px solid rgba(255,255,255,.14);border-radius:14px;padding:11px;font-size:19px;color:rgba(255,255,255,.84);line-height:1.35}.permit-list b{color:var(--gold2)}
+.box-rules{padding:23px;background:#fff}.box-rules ul{list-style:none;display:grid;gap:10px;margin:0;padding:0}.box-rules li{padding:12px 13px;border:1px solid #eadfce;background:#fffaf1;border-radius:14px;color:#4f5f72;font-size:20px;line-height:1.42}.box-rules li strong{color:#10213a}
+
+.ethics-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.ethics-card{padding:21px;border-radius:16px;border:1px solid var(--line);box-shadow:var(--soft-shadow)}.ethics-card.green{background:#eef5ef}.ethics-card.orange{background:#fff8eb}.ethics-card.red{background:#fff1ef}.ethics-card h3{display:flex;align-items:center;gap:9px;font-weight:400;font-size:1.5rem;margin:0 0 12px;color:#10213a}.ethics-card ul{list-style:none;display:grid;gap:9px;margin:0;padding:0}.ethics-card li{font-size:20px;color:#3f4d5f;line-height:1.42;padding-left:20px;position:relative}.ethics-card li:before{content:"•";position:absolute;left:4px;color:#8a6a34;font-weight:700}
+
+.record-preview{padding:23px;background:linear-gradient(135deg,#fff,#f8f2e8);border:1px solid var(--line);border-radius:18px;box-shadow:var(--soft-shadow)}.record-preview h3{font-weight:400;color:#10213a;font-size:1.7rem;margin:0 0 14px}.record-preview label{display:block;font-size:15px;color:#8a6a34;font-weight:700;text-transform:uppercase;letter-spacing:.1em;margin-top:10px}.record-preview .value{background:#fff;border:1px solid #eadfce;border-radius:12px;padding:10px 12px;color:#354050;font-size:20px;margin-top:4px}
+
+.school{background:linear-gradient(135deg,#0d1b2a,#163a58);color:#fff;border-radius:24px;padding:31px;box-shadow:var(--shadow);position:relative;overflow:hidden}.school:before{content:"";position:absolute;right:-80px;top:-80px;width:240px;height:240px;border-radius:50%;background:rgba(232,204,122,.12)}.school h2{color:#fff;margin-bottom:10px}.school p{color:rgba(255,255,255,.80);max-width:930px;margin:0;font-size:22px}.project-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:22px}.project{background:rgba(255,255,255,.09);border:1px solid rgba(255,255,255,.14);border-radius:16px;padding:17px}.project strong{display:block;color:var(--gold2);font-weight:600;font-size:21px;margin-bottom:7px}.project span{font-size:19px;color:rgba(255,255,255,.78);line-height:1.42}
+
+.photo-gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.photo-card{overflow:hidden;background:#fff;border:1px solid var(--line);border-radius:16px;box-shadow:var(--soft-shadow);cursor:pointer}.photo-card figure{height:230px;background:#2a3f30;position:relative;overflow:hidden;margin:0}.photo-card figure:after{content:"клик за приказ";position:absolute;right:10px;bottom:10px;background:rgba(13,27,42,.88);color:#fff;border-radius:999px;padding:5px 10px;font-size:14px;font-weight:600}.photo-card img{width:100%;height:100%;object-fit:cover;transition:transform .25s ease,filter .25s ease}.photo-card:hover img{transform:scale(1.05);filter:saturate(1.12)}.photo-body{padding:16px 17px 18px}.photo-body strong{display:block;color:#10213a;font-size:24px;font-weight:400;line-height:1.1}.photo-body em{display:block;color:#687386;font-size:18px;margin:3px 0 9px}.photo-body p{font-size:19px;color:#4f5f72;line-height:1.42;margin:0}.good{display:inline-flex;margin-top:10px;border-radius:999px;padding:5px 10px;background:#eef5ef;color:#2d5a27;font-size:14px;font-weight:700;text-transform:uppercase;letter-spacing:.05em}.warn-tag{display:inline-flex;margin-top:10px;border-radius:999px;padding:5px 10px;background:#fff8eb;color:#8a5a00;font-size:14px;font-weight:700;text-transform:uppercase;letter-spacing:.05em}.danger-tag{display:inline-flex;margin-top:10px;border-radius:999px;padding:5px 10px;background:#fff1ef;color:#9a2d2d;font-size:14px;font-weight:700;text-transform:uppercase;letter-spacing:.05em}
+
+.lightbox{position:fixed;inset:0;background:rgba(8,18,18,.88);z-index:9999;display:none;align-items:center;justify-content:center;padding:28px}.lightbox.active{display:flex}.lightbox figure{max-width:min(1000px,96vw);max-height:92vh;background:#fffaf1;border:1px solid rgba(255,255,255,.2);border-radius:18px;overflow:hidden;box-shadow:0 30px 90px rgba(0,0,0,.45);margin:0}.lightbox img{max-height:76vh;width:100%;object-fit:contain;background:#111}.lightbox figcaption{padding:13px 16px;color:#10213a;font-weight:600}.lightbox button{position:absolute;right:22px;top:18px;border:0;background:#fff;color:#10213a;border-radius:999px;width:44px;height:44px;font-weight:700;cursor:pointer;font-size:22px}
+
+.footer-nav{padding:42px 0 54px}.footer-box{display:flex;justify-content:space-between;align-items:center;gap:18px;background:#fff;border:1px solid var(--line);border-radius:20px;padding:18px;box-shadow:var(--soft-shadow)}.footer-box a{border-radius:999px;padding:12px 16px;font-weight:700;background:#fffaf1;border:1px solid #eadfce;color:#10213a;font-size:18px}.footer-box a.primary{background:#0d1b2a;color:#fff;border-color:#0d1b2a}.small-note{font-size:16px;color:#7b7268;text-align:center;margin-top:18px}
+
+@media(max-width:1040px){
+  .hero-grid{grid-template-columns:1fr;gap:30px;padding-bottom:100px}
+  .hero-visual{min-height:390px;max-width:760px}
+  .hero-visual img{min-height:390px}
+  .quick-nav-inner{grid-template-columns:repeat(3,1fr)}
+  .grid-3{grid-template-columns:repeat(2,1fr)}
+  .workflow{grid-template-columns:repeat(3,1fr)}
+  .project-grid,.season-grid{grid-template-columns:repeat(2,1fr)}
+  .signal-grid,.nestbox{grid-template-columns:1fr}
+}
+@media(max-width:760px){
+  body{font-size:20px}.wrap{padding:0 16px}
+  .hero-grid{padding-top:28px;padding-bottom:76px}
+  .hero h1,h1{font-size:clamp(2.05rem,10vw,3.05rem)}
+  .hero-visual{min-height:300px;border-radius:22px}
+  .hero-visual img{min-height:300px;object-position:center center}
+  .hero-visual-badge{left:14px;right:14px;bottom:14px;padding:12px 13px}
+  .hero-visual-badge strong{font-size:14px}
+  .hero-visual-badge span{font-size:15px}
+  .hero-stats,.grid-3,.grid-2,.ethics-grid,.season-grid{grid-template-columns:1fr}
+  .quick-nav{margin-top:-34px}
+  .quick-nav-inner{grid-template-columns:repeat(2,1fr);border-radius:18px}
+  .workflow{grid-template-columns:1fr}
+  .project-grid{grid-template-columns:1fr}
+  .footer-box{flex-direction:column;align-items:stretch}
+  .footer-box a{text-align:center}
+  .rajac-ds-nav-item{font-size:14px;padding:0 12px}
+  .rajac-ds-home{font-size:15px}
+}
+
+/* === SISARI STATUS V4: uredjeni IUCN / nacionalni status === */
+.status-clarification-box{margin:14px 0 18px;padding:12px 14px;border:1px solid #d9c9a3;background:#fffaf0;border-radius:12px;color:#3f3421;font-size:15px;line-height:1.55}
+.status-clarification-box strong{font-weight:800;color:#3b2c12}
+.status-clarification-box .status-row{display:block;margin:4px 0}
+.badge-iucn-lc,.badge-iucn-nt,.badge-iucn-vu,.badge-iucn-dd,.badge-iucn-ne{font-weight:800}
+.badge-national,.badge-serbia-status{background:#f3efe3;border:1px solid #d6c7a2;color:#42351e}
+
+/* Строга јавна фото-провера: не приказуј фотографије без провереног извора */
+.rajac-photo-placeholder{
+  width:100%; min-height:220px; border:1px dashed rgba(80,80,80,.35); border-radius:10px;
+  background:linear-gradient(135deg,#f7f4ef,#ffffff); color:#5a5147;
+  display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center;
+  padding:18px; font-size:15px; line-height:1.45; box-shadow:inset 0 0 0 1px rgba(255,255,255,.7);
+}
+.rajac-photo-placeholder strong{font-family:var(--font-serif, Georgia, serif); font-size:1.1rem; color:#3a332b; font-weight:500;}
+.rajac-photo-placeholder small{display:block; margin-top:6px; color:#7a7065; font-size:13px;}
+.species-thumb .rajac-photo-placeholder,.card-image .rajac-photo-placeholder,.species-card .rajac-photo-placeholder{min-height:160px; border-radius:8px; font-size:13px;}
+.page-hero .rajac-photo-placeholder{display:none;}
+
+
+/* SISARI v12 — ujednačen sitan potpis ispod fotografije */
+.img-caption,
+figure figcaption,
+.inline-img figcaption{
+  font-family: Georgia, "Times New Roman", serif !important;
+  font-size: 12px !important;
+  line-height: 1.35 !important;
+  color: #5f5a52 !important;
+  text-align: left !important;
+  font-style: italic !important;
+  font-weight: 400 !important;
+  letter-spacing: 0 !important;
+  margin: 6px auto 26px !important;
+  padding: 0 4px !important;
+  max-width: 900px !important;
+}
+.img-caption em,
+figure figcaption em,
+.inline-img figcaption em{
+  font-size: inherit !important;
+  line-height: inherit !important;
+  color: inherit !important;
+  font-style: italic !important;
+  font-weight: inherit !important;
+}
+.hero-image-wrap img{
+  object-fit: contain !important;
+  object-position: center center !important;
+  background: #f7f4ef !important;
+  transform: none !important;
+}
+.hero-image-wrap:hover img{
+  transform: none !important;
+}
+
+</style>
+<style id="rajac-sisari-design-only-override">
+/* Усклађивање са страницом Дивља свиња — без скраћивања садржаја */
+:root{
+  --rajac-font-primary:"Cormorant Garamond","EB Garamond",Garamond,"Palatino Linotype","Book Antiqua",Georgia,"Times New Roman",serif;
+  --forest:#2d5a27;
+  --forest-dark:#1a3a15;
+  --forest-light:#4a7c43;
+  --cream:#f7f4ef;
+  --warm-white:#fdfcfa;
+  --text:#2a2a2a;
+  --text-muted:#5a5a5a;
+  --border:#d8d0c4;
+  --accent:#8b6914;
+  --tag-bg:#e8f0e6;
+  --tag-border:#a8c4a4;
+  --section-bg:#f2f0eb;
+  --shadow:0 2px 12px rgba(0,0,0,.08);
+  --shadow-hover:0 6px 24px rgba(0,0,0,.14);
+  --radius:10px;
+}
+html body{
+  font-family:var(--rajac-font-primary)!important;
+  color:var(--text)!important;
+  background:var(--warm-white)!important;
+  font-size:16px!important;
+  line-height:1.75!important;
+}
+body h1,body h2,body h3,body h4,body h5,body h6,
+body .common-name,body .latin-name,body .hero h1,body .section-title,body .section-head h2,
+body .card h3,body .photo-body strong,body .step h3,body .oprema-card h3,body .permit h3{
+  font-family:var(--rajac-font-primary)!important;
+  letter-spacing:0!important;
+}
+body h1,body .hero h1{font-weight:300!important}
+body h2,body h3,body .section-title{font-weight:700!important}
+body p,body li,body figcaption,body label,body input,body textarea,body select,body button,body span,body a{
+  font-family:var(--rajac-font-primary)!important;
+}
+.rajac-ds-nav{
+  background:#0d1b2a!important;
+  position:sticky!important;
+  top:0!important;
+  z-index:5000!important;
+  border-bottom:1px solid rgba(255,255,255,.08)!important;
+}
+.rajac-ds-nav-inner{
+  max-width:1180px!important;
+  margin:auto!important;
+  display:flex!important;
+  align-items:stretch!important;
+  min-height:58px!important;
+  padding:0 18px!important;
+  gap:0!important;
+  overflow-x:auto!important;
+  scrollbar-width:none!important;
+}
+.rajac-ds-nav-inner::-webkit-scrollbar{display:none!important}
+.rajac-ds-home{
+  display:flex!important;
+  align-items:center!important;
+  gap:9px!important;
+  padding-right:20px!important;
+  margin-right:8px!important;
+  border-right:1px solid rgba(255,255,255,.12)!important;
+  color:#d8b55b!important;
+  font-weight:600!important;
+  font-size:18px!important;
+  white-space:nowrap!important;
+  text-decoration:none!important;
+}
+.rajac-ds-nav-item{
+  position:relative!important;
+  display:flex!important;
+  align-items:center!important;
+  gap:7px!important;
+  padding:0 15px!important;
+  color:rgba(255,255,255,.72)!important;
+  font-size:16px!important;
+  font-weight:600!important;
+  letter-spacing:.045em!important;
+  text-transform:uppercase!important;
+  white-space:nowrap!important;
+  text-decoration:none!important;
+}
+.rajac-ds-nav-item:hover{color:#fff!important;background:rgba(255,255,255,.035)!important}
+.rajac-ds-nav-item.rajac-ds-active{color:#d8b55b!important}
+.rajac-ds-nav-item.rajac-ds-active:after{
+  content:""!important;
+  position:absolute!important;
+  left:15px!important;
+  right:15px!important;
+  bottom:8px!important;
+  height:2px!important;
+  border-radius:2px!important;
+  background:#d8b55b!important;
+}
+.rajac-ds-icon{font-size:15px!important}
+.rajac-ds-current{text-transform:none!important;letter-spacing:.02em!important;font-size:14px!important}
+
+/* Смањење драматичног изгледа водича да буде ближе страници врсте */
+.hero{
+  background:var(--warm-white)!important;
+  color:var(--text)!important;
+  border-bottom:1px solid var(--border)!important;
+}
+.hero:after{display:none!important}
+.hero .topline{color:var(--text-muted)!important}
+.hero .topline a{color:var(--forest)!important}
+.hero .badge,.badge{
+  background:var(--tag-bg)!important;
+  border:1px solid var(--tag-border)!important;
+  color:var(--forest)!important;
+  border-radius:20px!important;
+}
+.hero h1{
+  color:var(--forest-dark)!important;
+  font-size:clamp(2rem,3.4vw,3.2rem)!important;
+}
+.hero-lead,.section-intro{
+  color:var(--text-muted)!important;
+  font-size:20px!important;
+}
+.hero-stats .stat{
+  background:var(--section-bg)!important;
+  border:1px solid var(--border)!important;
+  border-radius:var(--radius)!important;
+  backdrop-filter:none!important;
+}
+.hero-stats .stat b{color:var(--forest)!important}
+.hero-stats .stat span{color:var(--text-muted)!important}
+.hero-visual{
+  border-radius:var(--radius)!important;
+  border:1px solid var(--border)!important;
+  box-shadow:var(--shadow)!important;
+}
+.hero-visual-badge{
+  background:rgba(26,58,21,.82)!important;
+  border:1px solid rgba(255,255,255,.22)!important;
+}
+.quick-nav-inner{
+  border-radius:var(--radius)!important;
+  border:1px solid var(--border)!important;
+  box-shadow:var(--shadow)!important;
+}
+.quick-nav a{
+  border-radius:8px!important;
+  border:1px solid var(--border)!important;
+  background:#fff!important;
+  color:var(--forest)!important;
+}
+.section{padding:32px 0!important}
+.section-head .kicker,.kicker{
+  color:var(--accent)!important;
+}
+.section h2,.section-head h2{
+  color:var(--forest-dark)!important;
+  font-size:clamp(1.9rem,3.8vw,3.2rem)!important;
+}
+.card,.rule-card,.photo-card,.step,.oprema-card,.record-preview,.ethics-card,.decision,.signal-list,.box-rules,.permit,.school,.season{
+  border-radius:var(--radius)!important;
+  box-shadow:var(--shadow)!important;
+  border-color:var(--border)!important;
+}
+.highlight,.permit,.school{
+  background:linear-gradient(135deg,var(--forest-dark),#163a58)!important;
+  border-radius:var(--radius)!important;
+}
+.footer-nav .footer-box,.footer-box{
+  border-radius:var(--radius)!important;
+  border:1px solid var(--border)!important;
+  box-shadow:var(--shadow)!important;
+}
+.site-footer{
+  background:var(--forest-dark)!important;
+  color:rgba(255,255,255,.72)!important;
+}
+@media(max-width:760px){
+  .rajac-ds-nav-item{font-size:14px!important;padding:0 12px!important}
+  .rajac-ds-home{font-size:15px!important}
+  .hero h1{font-size:clamp(1.9rem,9vw,2.8rem)!important}
+}
+</style>
+<style id="rajac-unified-footer-nav-v3">
+  .footer-nav{
+    padding:34px 0 54px!important;
+    margin:0!important;
+  }
+  .footer-nav .wrap{
+    max-width:1180px!important;
+    margin:0 auto!important;
+    padding:0 22px!important;
+  }
+  .footer-box,
+  nav.species-nav{
+    display:grid!important;
+    grid-template-columns:1fr auto 1fr!important;
+    align-items:center!important;
+    gap:18px!important;
+    width:100%!important;
+    margin:0!important;
+    padding:18px!important;
+    border:1px solid var(--border,#d8d0c4)!important;
+    border-radius:10px!important;
+    background:#fffdf8!important;
+    box-shadow:0 2px 12px rgba(0,0,0,.08)!important;
+  }
+  .footer-box a,
+  nav.species-nav a{
+    display:inline-flex!important;
+    align-items:center!important;
+    justify-content:center!important;
+    min-height:58px!important;
+    padding:13px 22px!important;
+    border:1.5px solid var(--forest,#2d5a27)!important;
+    border-radius:999px!important;
+    background:#fffaf1!important;
+    color:var(--forest-dark,#1a3a15)!important;
+    font-family:var(--font-serif,Georgia,serif)!important;
+    font-size:18px!important;
+    line-height:1.15!important;
+    font-weight:700!important;
+    text-decoration:none!important;
+    box-shadow:none!important;
+    transition:background .18s ease,color .18s ease,border-color .18s ease!important;
+  }
+  .footer-box a:hover,
+  nav.species-nav a:hover{
+    background:#e8f0e6!important;
+    color:var(--forest-dark,#1a3a15)!important;
+  }
+  .footer-box a.primary,
+  nav.species-nav a.center-link{
+    justify-self:center!important;
+    min-width:190px!important;
+    background:#0d1b2a!important;
+    border-color:#0d1b2a!important;
+    color:#fffdf8!important;
+  }
+  .footer-box a.primary:hover,
+  nav.species-nav a.center-link:hover{
+    background:#14283d!important;
+    border-color:#14283d!important;
+    color:#fffdf8!important;
+  }
+  .footer-box a:first-child,
+  nav.species-nav a:first-child{justify-self:start!important;}
+  .footer-box a:last-child,
+  nav.species-nav a:last-child{justify-self:end!important;}
+  .small-note{display:none!important;}
+  @media(max-width:760px){
+    .footer-box,
+    nav.species-nav{grid-template-columns:1fr!important;gap:10px!important;}
+    .footer-box a,
+    nav.species-nav a,
+    .footer-box a.primary,
+    nav.species-nav a.center-link{
+      width:100%!important;
+      justify-self:stretch!important;
+      min-width:0!important;
+    }
+  }
+</style>
+<style id="rajac-ds-menu-static-css">
+:root{--rajac-nav:#0d1b2a;--rajac-gold:#d8b55b;--rajac-nav-text:rgba(255,255,255,.72);--rajac-font-primary:"Cormorant Garamond","EB Garamond",Garamond,"Palatino Linotype","Book Antiqua",Georgia,"Times New Roman",serif;}
+body .sisari-topnav-wrap,body nav.rfx-chapter-nav,body .rfx-chapter-nav,body .rfw-edit-bar{display:none!important;height:0!important;min-height:0!important;max-height:0!important;overflow:hidden!important;visibility:hidden!important;}
+.rajac-ds-nav{background:var(--rajac-nav);position:sticky;top:0;z-index:999999;border-bottom:1px solid rgba(255,255,255,.08);font-family:var(--rajac-font-primary)!important;box-shadow:none!important;}
+.rajac-ds-nav *{box-sizing:border-box;}
+.rajac-ds-nav-inner{max-width:1180px;margin:0 auto;padding:0 18px;display:flex;align-items:stretch;min-height:56px;gap:0;overflow-x:auto;scrollbar-width:none;}
+.rajac-ds-nav-inner::-webkit-scrollbar{display:none;}
+.rajac-ds-home{display:flex;align-items:center;gap:9px;padding:0 20px 0 0;margin:0 8px 0 0;border-right:1px solid rgba(255,255,255,.12);flex-shrink:0;color:var(--rajac-gold)!important;text-decoration:none!important;font-weight:600;font-size:16px;letter-spacing:.03em;white-space:nowrap;line-height:1;}
+.rajac-ds-home-mark{width:18px;height:18px;display:inline-grid;place-items:center;color:var(--rajac-gold);}
+.rajac-ds-nav-item{position:relative;display:flex;align-items:center;gap:7px;padding:0 15px;color:var(--rajac-nav-text)!important;font-size:15px;font-weight:600;letter-spacing:.045em;text-transform:uppercase;white-space:nowrap;text-decoration:none!important;line-height:1;}
+.rajac-ds-nav-item:hover{color:rgba(255,255,255,.94)!important;background:rgba(255,255,255,.035);}
+.rajac-ds-icon{font-size:15px;line-height:1;}
+.rajac-ds-nav-item.rajac-ds-active{color:var(--rajac-gold)!important;}
+.rajac-ds-nav-item.rajac-ds-active:after{content:"";position:absolute;left:15px;right:15px;bottom:8px;height:2px;border-radius:2px;background:var(--rajac-gold);display:block;}
+.rajac-ds-nav-trofo{color:#c8a24e!important;}
+.rajac-ds-nav-trofo:hover{color:#f0cb78!important;}
+@media(max-width:720px){.rajac-ds-nav-inner{padding:0 12px}.rajac-ds-home{padding-right:14px}.rajac-ds-nav-item{font-size:13px;padding:0 12px}.rajac-ds-nav-item.rajac-ds-active:after{left:12px;right:12px}}
+.rajac-photo-credit-link{max-width:1180px;margin:24px auto 0;padding:0 18px 18px;text-align:center;font-family:var(--rajac-font-primary);font-size:15px;line-height:1.5;color:#6b7280;}
+.rajac-photo-credit-link a{color:#6b4b13;text-decoration:underline;}
+</style>
+<style id="rajac-sisari-photo-source-hover">
+/* Rajac SISARI: izvor fotografije na prelazak mišem / fokus */
+.rajac-photo-source-wrap{
+  position:relative!important;
+  display:block!important;
+  overflow:hidden!important;
+  line-height:0!important;
+}
+.rajac-photo-source-wrap>img{
+  display:block!important;
+}
+.hero-image-wrap>.rajac-photo-source-wrap,
+.card-img-wrap>.rajac-photo-source-wrap,
+.hero-visual>.rajac-photo-source-wrap{
+  width:100%!important;
+  height:100%!important;
+}
+.hero-image-wrap>.rajac-photo-source-wrap>img,
+.card-img-wrap>.rajac-photo-source-wrap>img,
+.hero-visual>.rajac-photo-source-wrap>img{
+  width:100%!important;
+  height:100%!important;
+  object-fit:cover!important;
+}
+.rajac-photo-source-wrap::after,
+.page-hero.rajac-photo-source-hero::after{
+  content:attr(data-photo-source);
+  position:absolute;
+  left:10px;
+  right:10px;
+  bottom:10px;
+  z-index:20;
+  padding:7px 10px;
+  border-radius:8px;
+  background:rgba(0,0,0,.74);
+  color:#fff;
+  font-size:12px;
+  line-height:1.35;
+  letter-spacing:.01em;
+  text-align:left;
+  white-space:normal;
+  opacity:0;
+  transform:translateY(6px);
+  transition:opacity .18s ease, transform .18s ease;
+  pointer-events:none;
+  box-shadow:0 3px 12px rgba(0,0,0,.25);
+}
+.rajac-photo-source-wrap:hover::after,
+.rajac-photo-source-wrap:focus::after,
+.rajac-photo-source-wrap:focus-within::after,
+.page-hero.rajac-photo-source-hero:hover::after,
+.page-hero.rajac-photo-source-hero:focus-within::after{
+  opacity:1;
+  transform:translateY(0);
+}
+.rajac-photo-source-wrap[data-photo-source*="допунити"]::after,
+.page-hero.rajac-photo-source-hero[data-photo-source*="допунити"]::after{
+  background:rgba(95,55,0,.86);
+}
+@media (hover:none){
+  .rajac-photo-source-wrap::after,
+  .page-hero.rajac-photo-source-hero::after{
+    opacity:.92;
+    transform:none;
+    font-size:11px;
+    bottom:8px;
+  }
+}
+</style>
+<style id="rajac-sisari-full-photo-contain-v2">
+/* V2: фотографије се више не секу у оквирима; приказује се цела фотографија/врста. */
+.hero-image-wrap,
+.inline-img,
+.track-photo-wrap,
+.house-photo,
+.photo-card figure,
+.card-img-wrap,
+.hero-visual,
+.rajac-photo-source-wrap{
+  background:#f7f4ef!important;
+}
+.hero-image-wrap img,
+.inline-img img,
+.track-photo-wrap img,
+.house-photo img,
+.photo-card figure img,
+.card-img-wrap img,
+.hero-visual img,
+.rajac-photo-source-wrap>img{
+  object-fit:contain!important;
+  object-position:center center!important;
+  background:#f7f4ef!important;
+}
+.hero-image-wrap>.rajac-photo-source-wrap,
+.card-img-wrap>.rajac-photo-source-wrap,
+.hero-visual>.rajac-photo-source-wrap{
+  width:100%!important;
+  height:100%!important;
+  display:block!important;
+}
+.hero-image-wrap>.rajac-photo-source-wrap>img,
+.card-img-wrap>.rajac-photo-source-wrap>img,
+.hero-visual>.rajac-photo-source-wrap>img{
+  width:100%!important;
+  height:100%!important;
+  display:block!important;
+}
+.inline-img img{
+  height:220px!important;
+  max-height:220px!important;
+}
+.track-photo-wrap img,
+.house-photo img,
+.photo-card figure img{
+  max-height:360px!important;
+}
+@media(max-width:820px){
+  .inline-img img{height:auto!important;max-height:340px!important;}
+  .hero-image-wrap{aspect-ratio:4/3!important;}
+}
+</style>
+<style id="sisari-v8-one-photo-standard">
+/* SISARI v8: једна главна фотографија по врсти, са извором на hover. */
+.hero-image-wrap{aspect-ratio:16/9!important;background:#f7f4ef!important}
+.hero-image-wrap img,.card-img-wrap img{object-fit:contain!important;object-position:center center!important;background:#f7f4ef!important}
+.card-img-wrap .rajac-photo-source-wrap{width:100%!important;height:100%!important}
+.card-img-wrap .rajac-photo-source-wrap img{width:100%!important;height:100%!important;display:block!important}
+</style>
+<style>
+/* v14: исправна атрибуција фотографија — без browser title tooltip-а */
+.rajac-photo-source-wrap>img,.hero-image-wrap img,.card-img-wrap img{object-fit:contain!important;object-position:center center!important;background:#f7f4ef!important;}
+@media (min-width:980px){.species-grid{grid-template-columns:repeat(3,minmax(0,1fr))!important;}}
+.filter-bar,.filter-controls{display:flex!important;flex-wrap:nowrap!important;gap:10px;justify-content:center;align-items:center;}
+.filter-btn{white-space:nowrap;}
+</style>
+<style id="sisari-v16-final-photo-layout-fix">
+/* SISARI v16 — završna zaštita: dugmad jedan red, vrste tri kolone, sitan potpis i lokalne fotografije gde postoje */
+@media (min-width: 981px){
+  body .filter-bar.filter-bar-v15{
+    display:grid!important;
+    grid-template-columns:repeat(7,minmax(0,1fr))!important;
+    gap:10px!important;
+    flex-wrap:nowrap!important;
+    max-width:1180px!important;
+    width:100%!important;
+    margin-left:auto!important;
+    margin-right:auto!important;
+  }
+  body .filter-bar.filter-bar-v15 .filter-btn{
+    width:100%!important;
+    min-width:0!important;
+    max-width:none!important;
+    height:44px!important;
+    padding:0 8px!important;
+    font-size:11.5px!important;
+    line-height:1!important;
+    white-space:nowrap!important;
+  }
+  body .species-grid-main.species-grid-v15{
+    display:grid!important;
+    grid-template-columns:repeat(3,minmax(0,1fr))!important;
+    gap:26px!important;
+    max-width:1180px!important;
+    width:100%!important;
+    margin:0 auto!important;
+  }
+}
+@media (max-width:980px){
+  body .filter-bar.filter-bar-v15{
+    display:flex!important;
+    flex-wrap:nowrap!important;
+    overflow-x:auto!important;
+    justify-content:flex-start!important;
+    gap:10px!important;
+    padding-bottom:12px!important;
+  }
+  body .filter-bar.filter-bar-v15 .filter-btn{flex:0 0 auto!important;}
+}
+body .hero-image-wrap{
+  width:100%!important;
+  max-width:900px!important;
+  margin-left:auto!important;
+  margin-right:auto!important;
+  aspect-ratio:16/9!important;
+  background:#f7f4ef!important;
+  overflow:hidden!important;
+}
+body .hero-image-wrap .rajac-photo-source-wrap{
+  display:block!important;
+  width:100%!important;
+  height:100%!important;
+}
+body .hero-image-wrap img,
+body .card-img-wrap img,
+body .rajac-photo-source-wrap>img{
+  width:100%!important;
+  height:100%!important;
+  object-fit:contain!important;
+  object-position:center center!important;
+  background:#f7f4ef!important;
+  transform:none!important;
+}
+body .species-card:hover .card-img-wrap img,
+body .hero-image-wrap:hover img{transform:none!important;}
+body p.img-caption,
+body .img-caption,
+body figure figcaption,
+body .caption{
+  font-family:Georgia,"Times New Roman",serif!important;
+  font-size:12px!important;
+  line-height:1.35!important;
+  color:#5f5a52!important;
+  text-align:left!important;
+  font-style:italic!important;
+  font-weight:400!important;
+  letter-spacing:0!important;
+  margin:7px auto 24px!important;
+  padding:0 4px!important;
+  max-width:900px!important;
+}
+body .img-caption em,
+body figure figcaption em,
+body .caption em{
+  font-size:inherit!important;
+  line-height:inherit!important;
+  color:inherit!important;
+  font-style:italic!important;
+  font-weight:inherit!important;
+}
+</style>
+<link rel="stylesheet" href="/sisari/assets/mobile/sisari-mobile.css?v=20260716f"/>
+<script defer src="/sisari/assets/mobile/sisari-mobile.js?v=20260716f"></script>
+
+<link rel="stylesheet" href="/sisari/assets/sisari-photo-credits-v2.css?v=20260817">
+</head>
+<body>
+<nav aria-label="Главни мени ПИО Рајац" class="rajac-ds-nav"><div class="rajac-ds-nav-inner"><a class="rajac-ds-home" href="https://piorajac.rs/"><span aria-hidden="true" class="rajac-ds-home-mark">⊙</span><span>ПИО Рајац</span></a><a class="rajac-ds-nav-item" href="https://piorajac.rs/biljke/"><span aria-hidden="true" class="rajac-ds-icon">🌿</span><span>БИЉКЕ</span></a><a class="rajac-ds-nav-item" href="https://piorajac.rs/ptice/"><span aria-hidden="true" class="rajac-ds-icon">🦉</span><span>ПТИЦЕ</span></a><a class="rajac-ds-nav-item" href="https://piorajac.rs/insekti/"><span aria-hidden="true" class="rajac-ds-icon">🦋</span><span>ИНСЕКТИ</span></a><a class="rajac-ds-nav-item rajac-ds-active" href="https://piorajac.rs/sisari/"><span aria-hidden="true" class="rajac-ds-icon">🐾</span><span>СИСАРИ</span></a><a class="rajac-ds-nav-item" href="https://piorajac.rs/gljive/"><span aria-hidden="true" class="rajac-ds-icon">🍄</span><span>ГЉИВЕ</span></a><a class="rajac-ds-nav-item rajac-ds-nav-trofo" href="https://piorajac.rs/trofodinamika/"><span aria-hidden="true" class="rajac-ds-icon">🔗</span><span>ТРОФОДИНАМИКА</span></a></div></nav>
+<header class="hero">
+<div class="wrap">
+<div class="topline">
+<span>ПИО Рајац · Водич за посетиоце</span>
+<a href="https://piorajac.rs/sisari/">← Сви сисари Рајца</a>
+</div>
+<div class="hero-grid">
+<div>
+<div class="badge">🐾 Сисари Рајца</div>
+<h1>Сисар, станиште и мир шуме увек имају предност</h1>
+<p class="hero-lead">Рајац је дом за преко 38 врста сисара — од ситних ровчица до вука и медведа. Свако сусретање у природи је привилегија коју чувамо тихим присуством, поштовањем дистанце и одсуством узнемиравања.</p>
+<div class="hero-stats">
+<div class="stat"><b>38+</b><span>врста сисара на Рајцу</span></div>
+<div class="stat"><b>🌙</b><span>Већина активна у сумрак и ноћу</span></div>
+<div class="stat"><b>⚠️</b><span>Хибернација јеж, пух — јесен до пролећа</span></div>
+</div>
+</div>
+<div class="hero-visual">
+<span class="rajac-photo-source-wrap" data-photo-source="Фото: Ken Billington / Wikimedia Commons, CC BY-SA 3.0 — оригинал" data-source-page="https://commons.wikimedia.org/wiki/File:Roe_Deer_(Capreolus_capreolus)_(1).jpg" tabindex="0"><img alt="Срна на Рајцу — Capreolus capreolus" data-credit="Фото: Ken Billington / Wikimedia Commons, CC BY-SA 3.0 — оригинал" decoding="async" height="600" loading="eager" referrerpolicy="no-referrer" src="https://commons.wikimedia.org/wiki/Special:FilePath/Roe%20Deer%20(Capreolus%20capreolus)%20(1).jpg?width=1400" width="750"/></span>
+<div class="hero-visual-badge">
+<strong>Срна · Capreolus capreolus</strong>
+<span>Најчешћи крупни сисар Рајца — активна у зору и сумрак, веома осетљива на прилаз.</span>
+</div>
+</div>
+</div>
+</div>
+</header>
+<nav aria-label="Брза навигација" class="quick-nav">
+<div class="wrap">
+<div class="quick-nav-inner">
+<a href="#pravila">Основна правила</a>
+<a href="#znaci">Знаци стреса</a>
+<a href="#godina">Током године</a>
+<a href="#foto">Фотографисање</a>
+<a href="#hrana">Исхрана</a>
+<a href="#skole">Школске групе</a>
+</div>
+</div>
+</nav>
+<section class="section" id="pravila">
+<div class="wrap">
+<div class="section-head">
+<div class="kicker">🟢 основни кодекс</div>
+<h2>Сисар, станиште и мир шуме увек имају предност</h2>
+<p class="section-intro">Сисари су знатно опрезнији и плашљивији од птица — већина их је никада нећете видети ако се не понашате тихо. Свако узнемиравање оставља трагове у понашању животиње и дугорочно штети популацији.</p>
+</div>
+<div class="grid-3">
+<article class="card rule-card">
+<div class="rule-icon">🦌</div>
+<h3>Сисар увек има предност</h3>
+<p>Ако се животиња укочи, подигне главу, почне да се удаљава или показује знаке напетости — одмах стани и тихо се повуци уназад.</p>
+</article>
+<article class="card rule-card">
+<div class="rule-icon">🚶</div>
+<h3>Остани на стази</h3>
+<p>Скретање с обележених стаза разбија рупе, гнезда у земљи, пролазе и мирне коридоре које сисари свакодневно користе.</p>
+</article>
+<article class="card rule-card">
+<div class="rule-icon">🔕</div>
+<h3>Тишина и спор ход</h3>
+<p>Гласан разговор, трчање и нагли покрети плаше сисаре пре него их видимо. Сваки корак нижим гласом повећава шансу за сусрет.</p>
+</article>
+<article class="card rule-card">
+<div class="rule-icon">🍞</div>
+<h3>Строга забрана прихрањивања</h3>
+<p>Нехрањење дивљих животиња је правило без изузетка. Храна из руке ствара навику, губи природни страх и доводи до опасних сусрета.</p>
+</article>
+<article class="card rule-card">
+<div class="rule-icon">🐕</div>
+<h3>Пси под стриктном контролом</h3>
+<p>Пас без поводника у шуми делује као предатор. Срне, зечеви и дивље свиње с прасадима могу бити у животној опасности.</p>
+</article>
+<article class="card rule-card">
+<div class="rule-icon">📍</div>
+<h3>Локације скровишта — не јавно</h3>
+<p>Јазбине, брлоге, гнезда и ноћишта не објављују се јавно. Подаци о ретким врстама достављају се искључиво управљачу.</p>
+</article>
+</div>
+<div class="highlight">
+<strong>Кратко правило за посетиоце:</strong> ако је сисар зауставио покрет, усмерио уши или очи ка нама — пришли смо превише близу. Повуци се тихо, без нагле покрете.
+    </div>
+</div>
+</section>
+<section class="section" id="znaci">
+<div class="wrap">
+<div class="section-head">
+<div class="kicker">🟡 графички прилог</div>
+<h2>Како препознати да је сисар узнемирен</h2>
+<p class="section-intro">Сисари своју напетост показују телом, а не гласом. Многи знаци су суптилни — животиња стоји укочено или пажљиво гледа у посетиоца пре него крене у бег.</p>
+</div>
+<div class="signal-grid">
+<div class="card signal-list">
+<ul>
+<li>
+<span>🫏</span>
+<span><b>Укочи се и усмери уши</b> — животиња стаје, диже главу и оштро усмерава уши ка звуку или мирису.</span>
+</li>
+<li>
+<span>👁️</span>
+<span><b>Дуго фиксира погледом</b> — срна или зец гледе у посетиоца неколико секунди непрекидно.</span>
+</li>
+<li>
+<span>🦌</span>
+<span><b>Лупање ногом о земљу</b> — срна и јелен тупају предњом ногом и режу кад процене претњу.</span>
+</li>
+<li>
+<span>🐗</span>
+<span><b>Дивља свиња хркће и повлачи прасад</b> — крмача с прасадима је изузетно непредвидива ако осети да јој је угрожено младунче.</span>
+</li>
+<li>
+<span>🐺</span>
+<span><b>Нагли бег</b> — лисица, куна или ласица неће сигнализирати — само нестану. Ако смо их видели свега неколико секунди, пришли смо превише.</span>
+</li>
+</ul>
+</div>
+<div class="card decision">
+<div class="decision-step">
+<b>1</b>
+<div>
+<strong>Замрзни покрет</strong>
+<span>Стани тренутно. Не прилазити даље, не подизати глас, не махати рукама.</span>
+</div>
+</div>
+<div class="decision-step">
+<b>2</b>
+<div>
+<strong>Направи један тих снимак</strong>
+<span>Ако је потребно, направи кратак снимак са дистанце. Без блица, без гестова.</span>
+</div>
+</div>
+<div class="decision-step">
+<b>3</b>
+<div>
+<strong>Тихо се повуци уназад</strong>
+<span>Удаљавање полако, уназад, без окретања леђа великим животињама.</span>
+</div>
+</div>
+<div class="decision-step">
+<b>4</b>
+<div>
+<strong>Не доводи групу на то место</strong>
+<span>Не показивати осетљиво место другим посетиоцима. Локацију пријави управљачу.</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="section" id="godina">
+<div class="wrap">
+<div class="section-head">
+<div class="kicker">📅 годишњи ритам</div>
+<h2>Како се понашати током године</h2>
+<p class="section-intro">Осетљивост сисара не зависи само од врсте него и од годишњег доба. Исти шумски пут у априлу и у децембру носи потпуно другачије обавезе за посетиоца.</p>
+</div>
+<div class="season-grid">
+<article class="season">
+<span class="month">март–мај</span>
+<h3>Пролеће</h3>
+<p>Парење срне, прашење дивљих свиња и рађање младих. Крмача с прасадима може бити агресивна. Стриктно остати на стази.</p>
+<div class="risk max"><i></i><i></i><i></i></div>
+</article>
+<article class="season">
+<span class="month">јун–август</span>
+<h3>Лето</h3>
+<p>Млади сисари сами истражују — зечићи и прасад изгледају напуштено иако нису. Не хватати, не носити кући — родитељи су у близини.</p>
+<div class="risk high"><i></i><i></i><i></i></div>
+</article>
+<article class="season">
+<span class="month">септембар–новембар</span>
+<h3>Јесен</h3>
+<p>Жирење дивљих свиња; медвед и јазавац прикупљају резерве. Јеж и пух улазе у хибернацију — не сметати им у листопаду.</p>
+<div class="risk mid"><i></i><i></i><i></i></div>
+</article>
+<article class="season">
+<span class="month">децембар–фебруар</span>
+<h3>Зима</h3>
+<p>Вук и лисица су активнији, а трагови у снегу не указују на место брлога — не пратити траг до јазбине или скровишта.</p>
+<div class="risk mid"><i></i><i></i><i></i></div>
+</article>
+</div>
+</div>
+</section>
+<section class="section" id="foto">
+<div class="wrap">
+<div class="section-head">
+<div class="kicker">📷 фотографисање и снимање</div>
+<h2>Фотографија је корисна само ако не ремети сисара</h2>
+<p class="section-intro">Добар снимак сисара не мора бити крупан портрет из непосредне близине. Вредан је сваки снимак с дистанце који показује животињу у природном понашању — мирну, нехраниву и свесну свог окружења.</p>
+</div>
+<div class="workflow">
+<article class="step">
+<h3>Лоцирај без приласка</h3>
+<p>Прво двогледом утврди да ли је животиња мирна. Тек онда процени да ли је снимање уопште могуће без узнемиравања.</p>
+</article>
+<article class="step">
+<h3>Телеобјектив, не корак</h3>
+<p>Дужи објектив (200–400 mm) замењује приближавање. Ниједан снимак не вреди колики узнемиравање кроз приближавање.</p>
+</article>
+<article class="step">
+<h3>Забележи понашање</h3>
+<p>Датум, доба дана, станиште, понашање и приближан број јединки — то је вредан налаз за управљача.</p>
+</article>
+<article class="step">
+<h3>Камера-замка — уз сагласност</h3>
+<p>Аутоматска камера постављена уз писану сагласност управљача снима без присуства и стреса — идеалан компромис.</p>
+</article>
+<article class="step">
+<h3>Достави налаз</h3>
+<p>Снимци ретких врста, медведа, вука и крупних папкара достављају се управљачу — не постављају прво на друштвене мреже.</p>
+</article>
+</div>
+<div class="photo-gallery" style="margin-top:28px">
+<article class="photo-card js-lightbox">
+<figure>
+<span class="rajac-photo-source-wrap" data-photo-source="Фото: BadgerHero / Wikimedia Commons, CC BY-SA 3.0 — оригинал" data-source-page="https://commons.wikimedia.org/wiki/File:Badger-badger.jpg" tabindex="0"><img alt="Јазавац — снимање у сумрак" data-credit="Фото: BadgerHero / Wikimedia Commons, CC BY-SA 3.0 — оригинал" decoding="async" height="600" loading="lazy" referrerpolicy="no-referrer" src="https://commons.wikimedia.org/wiki/Special:FilePath/Badger-badger.jpg?width=1400" width="750"/></span>
+</figure>
+<div class="photo-body">
+<strong>Јазавац у сумрак</strong>
+<em>Meles meles</em>
+<p>Јазавац излази из јазбине тек кад потпуно смркне. Камера-замка постављена на 5–10 м од улаза (уз сагласност) даје изузетне снимке без ичијег присуства.</p>
+<span class="good">✓ камера-замка · без ИР блица</span>
+</div>
+</article>
+<article class="photo-card js-lightbox">
+<figure>
+<span class="rajac-photo-source-wrap" data-photo-source="Фото: Charles J. Sharp / Wikimedia Commons, CC BY-SA 4.0 — оригинал" data-source-page="https://commons.wikimedia.org/wiki/File:Red_fox_(Vulpes_vulpes_crucigera)_Skalnate_Pleso.jpg" tabindex="0"><img alt="Лисица — опортунистичко сусретање" data-credit="Фото: Charles J. Sharp / Wikimedia Commons, CC BY-SA 4.0 — оригинал" decoding="async" height="600" loading="lazy" referrerpolicy="no-referrer" src="https://commons.wikimedia.org/wiki/Special:FilePath/Red%20fox%20(Vulpes%20vulpes%20crucigera)%20Skalnate%20Pleso.jpg?width=1400" width="750"/></span>
+</figure>
+<div class="photo-body">
+<strong>Лисица — опортунистички сусрет</strong>
+<em>Vulpes vulpes</em>
+<p>Лисица је активна и дању, нарочито у рубним зонама шуме. При сусрету — замрзни покрет, не прилази, не вичи. Лисица ће сама одлучити да ли остаје.</p>
+<span class="good">✓ мировање · природно светло · без блица</span>
+</div>
+</article>
+<article class="photo-card js-lightbox">
+<figure>
+<span class="rajac-photo-source-wrap" data-photo-source="Фото: Diego Delso / Wikimedia Commons, CC BY-SA 4.0 — оригинал" data-source-page="https://commons.wikimedia.org/wiki/File:Jabal%C3%AD_(Sus_scrofa),_monte_Pf%C3%A4nder,_Bregenz,_Austria,_2022-10-23,_DD_12.jpg" tabindex="0"><img alt="Дивља свиња с прасадима — велика дистанца обавезна" data-credit="Фото: Diego Delso / Wikimedia Commons, CC BY-SA 4.0 — оригинал" decoding="async" height="600" loading="lazy" referrerpolicy="no-referrer" src="https://commons.wikimedia.org/wiki/Special:FilePath/Jabal%C3%AD%20(Sus%20scrofa),%20monte%20Pf%C3%A4nder,%20Bregenz,%20Austria,%202022-10-23,%20DD%2012.jpg?width=1400" width="750"/></span>
+</figure>
+<div class="photo-body">
+<strong>Дивља свиња с прасадима</strong>
+<em>Sus scrofa</em>
+<p>Крмача с прасадима је најнепредвидивији сисар Рајца. Минимална дистанца за снимање је 50 м. Ако хркне или закрочи ка теби — одмах се тихо повуци.</p>
+<span class="danger-tag">⚠ минимум 50 м · изаћи ако хркне</span>
+</div>
+</article>
+<article class="photo-card js-lightbox">
+<figure>
+<span class="rajac-photo-source-wrap" data-photo-source="Фото: Christian Fischer / Wikimedia Commons, CC BY-SA 4.0 — оригинал" data-source-page="https://commons.wikimedia.org/wiki/File:MartesMartes.jpg" tabindex="0"><img alt="Куна — брза и опрезна" data-credit="Фото: Christian Fischer / Wikimedia Commons, CC BY-SA 4.0 — оригинал" decoding="async" height="600" loading="lazy" referrerpolicy="no-referrer" src="https://commons.wikimedia.org/wiki/Special:FilePath/MartesMartes.jpg?width=1400" width="750"/></span>
+</figure>
+<div class="photo-body">
+<strong>Куна — случајни сусрет</strong>
+<em>Martes martes / M. foina</em>
+<p>Куне су брзе и опрезне — при сваком звуку нестају. Ако је видиш, имаш само неколико секунди. Камера-замка на шумском пролазу је поузданији начин.</p>
+<span class="warn-tag">⏱ неколико секунди · камера-замка боља</span>
+</div>
+</article>
+<article class="photo-card js-lightbox">
+<figure>
+<span class="rajac-photo-source-wrap" data-photo-source="Фото: Charles J. Sharp / Wikimedia Commons, CC BY-SA 4.0 — оригинал" data-source-page="https://commons.wikimedia.org/wiki/File:Eurasian_brown_bear_(Ursus_arctos_arctos)_female_5.jpg" tabindex="0"><img alt="Медвед — крупни предатор, посебна правила" data-credit="Фото: Charles J. Sharp / Wikimedia Commons, CC BY-SA 4.0 — оригинал" decoding="async" height="600" loading="lazy" referrerpolicy="no-referrer" src="https://commons.wikimedia.org/wiki/Special:FilePath/Eurasian%20brown%20bear%20(Ursus%20arctos%20arctos)%20female%205.jpg?width=1400" width="750"/></span>
+</figure>
+<div class="photo-body">
+<strong>Медвед и вук — посебна правила</strong>
+<em>Ursus arctos · Canis lupus</em>
+<p>При сусрету с медведом: не бежи, не виричи, говори мирно и тихо се повуци. Снимање је секундарно. Налаз одмах пријави управљачу — свако виђење је вредан податак.</p>
+<span class="danger-tag">⚠ налаз пријавити одмах · не пратити траг</span>
+</div>
+</article>
+</div>
+<div class="grid-2" style="margin-top:24px">
+<div class="record-preview">
+<h3>Пример теренског записа</h3>
+<label>врста</label>
+<div class="value">Срна · Capreolus capreolus</div>
+<label>датум и време</label>
+<div class="value">14. мај, 05:48</div>
+<label>станиште</label>
+<div class="value">рубна зона шуме и ливаде, травнати коридор</div>
+<label>понашање</label>
+<div class="value">мирно пасење, без знакова узнемирења, 2 јединке</div>
+</div>
+<div class="record-preview">
+<h3>Шта се не објављује јавно</h3>
+<label>осетљива места</label>
+<div class="value">јазбине, брлоге, ваљалишта, места с прасадима или младима</div>
+<label>локација</label>
+<div class="value">користити шири опис локалитета; тачне координате само управљачу</div>
+<label>фотографија</label>
+<div class="value">не постављати снимке који откривају скровишта или мамце публику на место</div>
+</div>
+</div>
+<div class="highlight" style="margin-top:24px">
+<strong>Апсолутне забране при снимању:</strong> блиц у ноћном снимању · дрон изнад станишта · намерно терање животиње ради бољег кадра · постављање камера без сагласности · јавно откривање тачне локације осетљивих врста.
+    </div>
+</div>
+</section>
+<section class="section" id="hrana">
+<div class="wrap">
+<div class="section-head">
+<div class="kicker">🍂 прихрањивање дивљачи</div>
+<h2>Зашто се дивље животиње никада не хране са руке</h2>
+<p class="section-intro">Прихрањивање дивљих сисара — чак и кад делује безопасно — трајно мења њихово понашање и може угрозити и животињу и посетиоца.</p>
+</div>
+<div class="nestbox">
+<div class="permit">
+<h3>Забрана прихрањивања је апсолутна</h3>
+<p>Ниједна врста сисара на Рајцу не треба храну коју доносе посетиоци — ни у зиму, ни у сушу, ни кад младунче изгледа напуштено.</p>
+<div class="permit-list">
+<div><b>⚠️</b><span>Дивља свиња навикнута на храну постаје агресивна и непредвидива</span></div>
+<div><b>⚠️</b><span>Медвед са навиком хране из руке мора бити одстрељен ради безбедности</span></div>
+<div><b>⚠️</b><span>Лисица и куна које губе страх улазе у насеља и угрожавају живину</span></div>
+<div><b>⚠️</b><span>Птићи и младунци „нађени" у природи нису напуштени — родитељ је у близини</span></div>
+</div>
+</div>
+<div class="card box-rules">
+<ul>
+<li><strong>Никада не остављати храну:</strong> остаци хране мамце привлаче сисаре на места где им прети опасност од саобраћаја, паса или краткотрајних „хранитеља".</li>
+<li><strong>Никада не прилазити младунцима:</strong> задах људи може довести до тога да мајка одбаци младунче или не врати се на место.</li>
+<li><strong>Никада не „спасавати" здраве животиње:</strong> зечић или прасе само у жбуњу нису рањени — сачекати и не дирати их.</li>
+<li><strong>Ако је животиња повређена:</strong> позвати управљача ПИО „Рајац" или најближу ветеринарску станицу — не покушавати самостално збрињавање.</li>
+<li><strong>Организовано зимско прихрањивање:</strong> једино управљач одлучује где, када и чиме се крупна дивљач прихрањује у зиму — то није задатак посетилаца.</li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+<section class="section" id="etika">
+<div class="wrap">
+<div class="section-head">
+<div class="kicker">⚖️ кратак кодекс</div>
+<h2>Шта је добра пракса, шта је опрез, шта није прихватљиво</h2>
+</div>
+<div class="ethics-grid">
+<article class="ethics-card green">
+<h3>🟢 Добра пракса</h3>
+<ul>
+<li>посматрање с обележене стазе или природног заклона</li>
+<li>тих ход, спор покрет, без нагле жестикулације</li>
+<li>камера-замка уз сагласност управљача</li>
+<li>бележење врсте, места, понашања и достављање налаза</li>
+<li>пас на поводнику у свако доба</li>
+</ul>
+</article>
+<article class="ethics-card orange">
+<h3>🟡 Опрез</h3>
+<ul>
+<li>бројнија група посетилаца у шуми</li>
+<li>посматрање у сумрак и ноћу без осветљења</li>
+<li>праћење трага животиње у снегу или блату</li>
+<li>снимање на дужи временски период са исте позиције</li>
+<li>пријављивање у реалном времену са тачном локацијом</li>
+</ul>
+</article>
+<article class="ethics-card red">
+<h3>🔴 Не радити</h3>
+<ul>
+<li>прилазак јазбини, брлогу или месту с младима</li>
+<li>храњење или намамљивање храном</li>
+<li>покретање дрона у природним стаништима</li>
+<li>узнемиравање животиња ради бољег кадра</li>
+<li>хватање, „збрињавање" или ношење кући здравих животиња</li>
+</ul>
+</article>
+</div>
+</div>
+</section>
+<section class="section" id="skole">
+<div class="wrap">
+<div class="school">
+<div class="kicker">🎒 школске групе и волонтери</div>
+<h2>Мини-пројекат: Трагови сисара Рајца</h2>
+<p>Група ученика може током једне посете да начини мали истраживачки дневник без ичијег узнемиравања. Циљ није видети или ухватити животињу, него научити посматрање трагова, бележење и поштовање заштићеног простора.</p>
+<div class="project-grid">
+<div class="project">
+<strong>1. Тим за трагове</strong>
+<span>проналази и фотографише отиске шапа, рупе, пролазе и ваљалишта</span>
+</div>
+<div class="project">
+<strong>2. Тим за снимање</strong>
+<span>прати природне стазе и снима станишта на дистанци, без приласка</span>
+</div>
+<div class="project">
+<strong>3. Тим за податке</strong>
+<span>уписује датум, локацију, врсту трага и процењује ко је животиња оставила</span>
+</div>
+<div class="project">
+<strong>4. Тим за закључак</strong>
+<span>бира 5 занимљивих налаза, ставља на карту и представља групи</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<div class="footer-nav">
+<div class="wrap">
+<div class="footer-box">
+<a href="https://piorajac.rs/sisari/fotografisanje-sisara-rajac/">← Фотографисање сисара</a>
+<a class="primary" href="https://piorajac.rs/sisari/">Сви сисари Рајца →</a>
+<a href="https://piorajac.rs/sisari/alati-za-posetioce-sisari-rajca/">Алати за посетиоце →</a>
+</div>
+</div>
+</div>
+<div aria-hidden="true" class="lightbox" id="lightbox">
+<button aria-label="Затвори" type="button">×</button>
+<figure>
+<img alt="" decoding="async" height="720" id="lightbox-img" referrerpolicy="no-referrer" src="" width="900"/>
+<figcaption id="lightbox-cap"></figcaption>
+</figure>
+</div>
+<script>
+(function(){
+  var lb=document.getElementById('lightbox');
+  var lbImg=document.getElementById('lightbox-img');
+  var lbCap=document.getElementById('lightbox-cap');
+  document.querySelectorAll('.js-lightbox').forEach(function(card){
+    card.addEventListener('click',function(){
+      var img=card.querySelector('img');
+      var cap=card.querySelector('.photo-body strong');
+      lbImg.src=img?img.src:'';
+      lbImg.alt=img?img.alt:'';
+      lbCap.textContent=cap?cap.textContent:'';
+      lb.classList.add('active');
+      lb.removeAttribute('aria-hidden');
+    });
+  });
+  lb.querySelector('button').addEventListener('click',function(){
+    lb.classList.remove('active');
+    lb.setAttribute('aria-hidden','true');
+  });
+  lb.addEventListener('click',function(e){
+    if(e.target===lb){lb.classList.remove('active');lb.setAttribute('aria-hidden','true');}
+  });
+  document.addEventListener('keydown',function(e){
+    if(e.key==='Escape')lb.classList.remove('active');
+  });
+})();
+</script>
+<!-- SITE_EDITOR_ADMIN_BAR_START -->
+<script defer="" src="/admin-site-editor.php?admin_bar_js=1"></script>
+<!-- SITE_EDITOR_ADMIN_BAR_END -->
+
+<script defer src="/sisari/assets/sisari-photo-credits-v2.js?v=20260817"></script>
+</body>
+</html>
