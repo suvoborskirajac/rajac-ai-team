@@ -107,6 +107,19 @@ $ARHIVE = [
 ];
 /* Радне копије, тестови, закрпе, покварена кодировка. */
 $CISTI = '~(test|backup|prototype|provera_|restore|probni|patch|thumbcards-2105/|vesti1007-rad/|/public_html/|radni-fajlovi/|rajac-home|#U|╨|тХ|-род/|^ptice/ptice/|-fix\.html|fixed|_stable\.html|kumulativni)~iu';
+/* Адресе које сервер преусмерава (.htaccess у корену и у фасциклама) — датотеке постоје, али их нико не види. */
+$HTREDIR = [];
+foreach (array_merge([$ROOT . '/.htaccess'], glob($ROOT . '/*/.htaccess') ?: []) as $ht) {
+    $base = trim(substr(dirname($ht), strlen($ROOT)), '/');
+    foreach (preg_split('/\R/', (string)@file_get_contents($ht)) as $ln) {
+        if (preg_match('~^\s*Redirect(?:Permanent|\s+30[12])?\s+(/\S*)\s+\S+~i', $ln, $m)) $HTREDIR[trim($m[1], '/')] = true;
+        elseif (preg_match('~^\s*RewriteRule\s+\^/?([A-Za-z0-9._/-]+?)/?\??\$?\s+\S+\s+\[[^]]*R(=30[12])?~i', $ln, $m)) $HTREDIR[trim(($base !== '' ? $base . '/' : '') . $m[1], '/')] = true;
+    }
+}
+function ht_preusmereno(string $rel, array $HT): bool {
+    $p = trim(preg_replace('~(^|/)index\.(html|php)$~', '', $rel), '/');
+    return $p !== '' && isset($HT[$p]);
+}
 function preusmerenje(string $f): bool {
     if (@filesize($f) > 6000) return false;
     $s = (string)@file_get_contents($f);
@@ -123,8 +136,9 @@ foreach ($strane as $s) {
         }
     }
     $s['naslov'] = naslov($s['f']) ?: $s['rel'];
-    if (preg_match($CISTI, $s['rel']) || preusmerenje($s['f'])) {
-        $s['naziv'] = null; $s['vrsta'] = preusmerenje($s['f']) ? 'преусмерење' : 'копија';
+    $htr = ht_preusmereno($s['rel'], $HTREDIR);
+    if ($htr || preg_match($CISTI, $s['rel']) || preusmerenje($s['f'])) {
+        $s['naziv'] = null; $s['vrsta'] = ($htr || preusmerenje($s['f'])) ? 'преусмерење' : 'копија';
         $cist[] = $s; continue;
     }
     [$ik, $ime] = $OBLASTI[$s['top']] ?? ['📁', 'Остале фасцикле'];
