@@ -1,0 +1,936 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+
+<!DOCTYPE html>
+
+<html lang="sr-Cyrl"><head><meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>О платформи | ПИО Рајац</title>
+<meta content="ПИО Рајац као дигитална платформа за мониторинг природе, учење, учешће посетилаца и савремено управљање заштићеним пределом." name="description"/>
+<style>
+    :root{
+      --rp-bg:#f3f7ef;
+      --rp-paper:#fbfff7;
+      --rp-dark:#07140c;
+      --rp-deep:#0d2315;
+      --rp-ink:#1f2b21;
+      --rp-muted:#5d6b5d;
+      --rp-soft:#dfe9d6;
+      --rp-line:rgba(13,35,21,.14);
+      --rp-green:#7fc64f;
+      --rp-green-2:#a6dd6a;
+      --rp-gold:#d9b45f;
+      --rp-radius:28px;
+      --rp-shadow:0 24px 80px rgba(7,20,12,.14);
+      --rp-serif: Georgia, "Times New Roman", serif;
+      --rp-sans: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      --rp-mono:"Courier New", monospace;
+    }
+
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      background:var(--rp-bg);
+      color:var(--rp-ink);
+      font-family:var(--rp-sans);
+      font-size:18px;
+      line-height:1.75;
+    }
+
+    a{color:inherit;text-decoration:none}
+    img{max-width:100%;display:block}
+
+    .rp-page{
+      overflow:hidden;
+      background:
+        radial-gradient(circle at 12% 0%, rgba(127,198,79,.22), transparent 34%),
+        radial-gradient(circle at 88% 12%, rgba(217,180,95,.16), transparent 30%),
+        var(--rp-bg);
+    }
+
+    .rp-hero{
+      position:relative;
+      min-height:78vh;
+      display:flex;
+      align-items:flex-end;
+      color:#fff;
+      background:
+        linear-gradient(90deg, rgba(3,10,6,.82) 0%, rgba(3,10,6,.62) 44%, rgba(3,10,6,.34) 100%),
+        linear-gradient(0deg, rgba(3,10,6,.76) 0%, rgba(3,10,6,.15) 52%, rgba(3,10,6,.32) 100%),
+        url('/wp-content/uploads/2026/05/rajac-platforma-hero.webp') center center / cover no-repeat;
+      isolation:isolate;
+    }
+
+    .rp-hero::after{
+      content:"";
+      position:absolute;
+      inset:auto 0 0 0;
+      height:180px;
+      background:linear-gradient(0deg, var(--rp-bg), transparent);
+      z-index:-1;
+    }
+
+    .rp-hero-inner{
+      width:min(1280px, calc(100% - 48px));
+      margin:0 auto;
+      padding:110px 0 120px;
+    }
+
+    .rp-kicker{
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      margin:0 0 24px;
+      padding:8px 14px;
+      border:1px solid rgba(255,255,255,.22);
+      border-radius:999px;
+      background:rgba(3,10,6,.38);
+      backdrop-filter:blur(12px);
+      color:rgba(255,255,255,.86);
+      font-family:var(--rp-mono);
+      font-size:12px;
+      letter-spacing:.18em;
+      text-transform:uppercase;
+    }
+
+    .rp-kicker::before{
+      content:"";
+      width:8px;
+      height:8px;
+      border-radius:50%;
+      background:var(--rp-green);
+      box-shadow:0 0 0 6px rgba(127,198,79,.14);
+    }
+
+    .rp-hero h1{
+      max-width:980px;
+      margin:0;
+      font-family:var(--rp-serif);
+      font-weight:300;
+      font-size:clamp(58px, 7vw, 118px);
+      line-height:.98;
+      letter-spacing:-.055em;
+    }
+
+    .rp-hero h1 em{
+      color:var(--rp-green-2);
+      font-style:italic;
+      font-weight:300;
+    }
+
+    .rp-hero-lead{
+      max-width:780px;
+      margin:30px 0 0;
+      color:rgba(255,255,255,.82);
+      font-size:clamp(19px, 1.6vw, 25px);
+      line-height:1.55;
+    }
+
+    .rp-hero-actions{
+      display:flex;
+      flex-wrap:wrap;
+      gap:14px;
+      margin-top:36px;
+    }
+
+    .rp-btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:10px;
+      min-height:48px;
+      padding:13px 20px;
+      border-radius:999px;
+      border:1px solid rgba(255,255,255,.24);
+      background:rgba(255,255,255,.10);
+      color:#fff;
+      font-size:15px;
+      font-weight:650;
+      backdrop-filter:blur(12px);
+      transition:.2s ease;
+    }
+
+    .rp-btn:hover{transform:translateY(-2px);background:rgba(255,255,255,.16)}
+    .rp-btn-primary{background:var(--rp-green);border-color:var(--rp-green);color:#07140c}
+    .rp-btn-primary:hover{background:var(--rp-green-2)}
+
+    .rp-strip{
+      position:relative;
+      z-index:2;
+      margin:-66px auto 0;
+      width:min(1280px, calc(100% - 48px));
+      display:grid;
+      grid-template-columns:repeat(4, minmax(0,1fr));
+      background:rgba(5,18,10,.92);
+      color:#fff;
+      border:1px solid rgba(255,255,255,.12);
+      border-radius:26px;
+      box-shadow:var(--rp-shadow);
+      overflow:hidden;
+    }
+
+    .rp-strip-item{
+      padding:24px 26px;
+      border-right:1px solid rgba(255,255,255,.10);
+    }
+
+    .rp-strip-item:last-child{border-right:0}
+    .rp-strip-label{
+      display:block;
+      margin-bottom:6px;
+      color:rgba(255,255,255,.55);
+      font-family:var(--rp-mono);
+      font-size:12px;
+      letter-spacing:.14em;
+      text-transform:uppercase;
+    }
+    .rp-strip strong{
+      display:block;
+      font-size:18px;
+      line-height:1.35;
+      font-weight:650;
+    }
+
+    .rp-main{
+      width:min(1180px, calc(100% - 48px));
+      margin:90px auto 0;
+      padding-bottom:100px;
+    }
+
+    .rp-intro{
+      display:grid;
+      grid-template-columns:minmax(0, .95fr) minmax(0, 1.35fr);
+      gap:54px;
+      align-items:start;
+      margin-bottom:74px;
+    }
+
+    .rp-eyebrow{
+      margin:0 0 16px;
+      color:var(--rp-muted);
+      font-family:var(--rp-mono);
+      font-size:12px;
+      letter-spacing:.18em;
+      text-transform:uppercase;
+    }
+
+    .rp-intro h2,
+    .rp-section h2,
+    .rp-final h2{
+      margin:0;
+      font-family:var(--rp-serif);
+      font-weight:300;
+      font-size:clamp(42px, 4.8vw, 76px);
+      line-height:1.03;
+      letter-spacing:-.045em;
+      color:var(--rp-deep);
+    }
+
+    .rp-intro-card{
+      padding:34px;
+      border-radius:var(--rp-radius);
+      background:rgba(255,255,255,.58);
+      border:1px solid var(--rp-line);
+      box-shadow:0 16px 52px rgba(7,20,12,.08);
+    }
+
+    .rp-intro-card p{
+      margin:0;
+      font-size:21px;
+      line-height:1.75;
+      color:#263428;
+    }
+
+    .rp-grid{
+      display:grid;
+      grid-template-columns:repeat(3, minmax(0,1fr));
+      gap:22px;
+      margin:0 0 82px;
+    }
+
+    .rp-card{
+      min-height:260px;
+      padding:30px;
+      border-radius:var(--rp-radius);
+      border:1px solid var(--rp-line);
+      background:var(--rp-paper);
+      box-shadow:0 18px 58px rgba(7,20,12,.08);
+    }
+
+    .rp-card-icon{
+      width:48px;
+      height:48px;
+      display:grid;
+      place-items:center;
+      margin-bottom:24px;
+      border-radius:18px;
+      background:linear-gradient(135deg, rgba(127,198,79,.26), rgba(217,180,95,.22));
+      color:var(--rp-deep);
+      font-size:24px;
+    }
+
+    .rp-card h3{
+      margin:0 0 12px;
+      font-family:var(--rp-serif);
+      font-weight:300;
+      font-size:32px;
+      line-height:1.08;
+      letter-spacing:-.03em;
+      color:var(--rp-deep);
+    }
+
+    .rp-card p{margin:0;color:var(--rp-muted);font-size:16.5px;line-height:1.72}
+
+    .rp-section{
+      display:grid;
+      grid-template-columns:minmax(260px,.75fr) minmax(0,1.25fr);
+      gap:56px;
+      padding:62px 0;
+      border-top:1px solid var(--rp-line);
+    }
+
+    .rp-section:first-of-type{border-top:0}
+    .rp-section-text p{
+      margin:0 0 22px;
+      color:#314033;
+      font-size:18.5px;
+      line-height:1.82;
+    }
+    .rp-section-text p:last-child{margin-bottom:0}
+
+    .rp-note{
+      margin-top:28px;
+      padding:24px 26px;
+      border-radius:24px;
+      background:#102317;
+      color:rgba(255,255,255,.84);
+      border:1px solid rgba(255,255,255,.12);
+      box-shadow:0 16px 48px rgba(7,20,12,.14);
+    }
+    .rp-note strong{color:#fff}
+
+    .rp-feature{
+      margin:24px 0 0;
+      display:grid;
+      gap:12px;
+    }
+
+    .rp-feature-row{
+      display:grid;
+      grid-template-columns:36px 1fr;
+      gap:14px;
+      align-items:start;
+      padding:17px 18px;
+      border-radius:20px;
+      background:rgba(255,255,255,.62);
+      border:1px solid var(--rp-line);
+    }
+
+    .rp-feature-row span{
+      width:36px;
+      height:36px;
+      display:grid;
+      place-items:center;
+      border-radius:14px;
+      background:rgba(127,198,79,.20);
+      color:var(--rp-deep);
+      font-size:18px;
+    }
+    .rp-feature-row p{margin:0;color:#344336;font-size:16.5px;line-height:1.62}
+
+    .rp-wide{
+      margin:74px 0;
+      padding:46px;
+      border-radius:34px;
+      background:
+        linear-gradient(135deg, rgba(7,20,12,.94), rgba(18,54,29,.92)),
+        url('/wp-content/uploads/2026/05/rajac-night-sky.webp') center center / cover no-repeat;
+      color:#fff;
+      box-shadow:var(--rp-shadow);
+    }
+
+    .rp-wide h2{
+      margin:0 0 20px;
+      max-width:900px;
+      font-family:var(--rp-serif);
+      font-size:clamp(42px, 5vw, 78px);
+      font-weight:300;
+      line-height:1.02;
+      letter-spacing:-.045em;
+    }
+
+    .rp-wide p{
+      max-width:920px;
+      margin:0;
+      color:rgba(255,255,255,.82);
+      font-size:20px;
+      line-height:1.7;
+    }
+
+    .rp-pill-grid{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      margin-top:30px;
+    }
+
+    .rp-pill{
+      padding:9px 13px;
+      border-radius:999px;
+      background:rgba(255,255,255,.10);
+      border:1px solid rgba(255,255,255,.15);
+      color:rgba(255,255,255,.82);
+      font-size:14px;
+      line-height:1.2;
+    }
+
+    .rp-final{
+      margin-top:74px;
+      padding:52px;
+      border-radius:38px;
+      background:var(--rp-paper);
+      border:1px solid var(--rp-line);
+      box-shadow:var(--rp-shadow);
+      text-align:center;
+    }
+
+    .rp-final h2{max-width:900px;margin:0 auto 22px}
+    .rp-final p{
+      max-width:900px;
+      margin:0 auto 30px;
+      color:#354337;
+      font-size:20px;
+      line-height:1.75;
+    }
+
+    .rp-final-actions{
+      display:flex;
+      flex-wrap:wrap;
+      justify-content:center;
+      gap:12px;
+    }
+
+    .rp-final .rp-btn{
+      background:#102317;
+      color:#fff;
+      border-color:#102317;
+      backdrop-filter:none;
+    }
+    .rp-final .rp-btn-primary{
+      background:var(--rp-green);
+      color:#07140c;
+      border-color:var(--rp-green);
+    }
+
+    .rp-bottom-line{
+      margin-top:34px;
+      padding-top:24px;
+      border-top:1px solid var(--rp-line);
+      color:var(--rp-muted);
+      font-size:15px;
+    }
+
+    @media (max-width: 1020px){
+      body{font-size:17px}
+      .rp-strip{grid-template-columns:repeat(2, minmax(0,1fr))}
+      .rp-strip-item:nth-child(2){border-right:0}
+      .rp-strip-item:nth-child(1), .rp-strip-item:nth-child(2){border-bottom:1px solid rgba(255,255,255,.10)}
+      .rp-intro,
+      .rp-section{grid-template-columns:1fr;gap:28px}
+      .rp-grid{grid-template-columns:1fr 1fr}
+    }
+
+    @media (max-width: 720px){
+      .rp-hero{min-height:82vh}
+      .rp-hero-inner,
+      .rp-main,
+      .rp-strip{width:min(100% - 28px, 1180px)}
+      .rp-hero-inner{padding:90px 0 100px}
+      .rp-hero h1{font-size:clamp(48px, 16vw, 76px)}
+      .rp-hero-lead{font-size:18px}
+      .rp-strip{margin-top:-52px;grid-template-columns:1fr;border-radius:22px}
+      .rp-strip-item{border-right:0;border-bottom:1px solid rgba(255,255,255,.10);padding:20px}
+      .rp-strip-item:last-child{border-bottom:0}
+      .rp-main{margin-top:62px;padding-bottom:70px}
+      .rp-grid{grid-template-columns:1fr;margin-bottom:48px}
+      .rp-card{min-height:auto;padding:24px}
+      .rp-intro{margin-bottom:46px}
+      .rp-intro-card{padding:24px}
+      .rp-intro-card p{font-size:18px}
+      .rp-section{padding:44px 0}
+      .rp-section-text p{font-size:17px}
+      .rp-wide{margin:50px 0;padding:30px 24px;border-radius:28px}
+      .rp-wide p{font-size:17px}
+      .rp-final{padding:32px 22px;border-radius:30px}
+      .rp-final p{font-size:17px}
+      .rp-btn{width:100%}
+    }
+  </style>
+<style id="rajac-static-common-menu-inline">
+/* RAJAC_STATIC_COMMON_MENU_INLINE: self-contained menu style for static directory pages */
+.rajac-static-common-menu{position:sticky;top:0;z-index:9999;background:rgba(14,22,15,.96);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid rgba(201,168,76,.16);font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;}
+.rajac-static-common-menu *{box-sizing:border-box;}
+.rajac-static-common-menu__inner{width:min(1180px,calc(100% - 44px));margin:0 auto;display:flex;align-items:center;min-height:58px;overflow-x:auto;scrollbar-width:none;}
+.rajac-static-common-menu__inner::-webkit-scrollbar{display:none;}
+.rajac-static-common-menu__logo{flex:0 0 auto;min-height:58px;display:flex;align-items:center;padding-right:26px;margin-right:14px;border-right:1px solid rgba(255,255,255,.08);color:rgba(245,240,228,.98);font-size:.88rem;font-weight:650;letter-spacing:.06em;white-space:nowrap;text-decoration:none;}
+.rajac-static-common-menu__links{display:flex;align-items:stretch;gap:0;}
+.rajac-static-common-menu__link{position:relative;display:flex;align-items:center;height:58px;padding:0 13px;color:rgba(245,240,228,.82);text-transform:uppercase;letter-spacing:.15em;font-size:.68rem;font-weight:450;white-space:nowrap;border-bottom:2px solid transparent;transition:color .18s ease,background .18s ease,border-color .18s ease;text-decoration:none;}
+.rajac-static-common-menu__link:hover{color:rgba(245,240,228,.98);background:rgba(255,255,255,.04);}
+.rajac-static-common-menu__link.is-active{color:#e1c978;border-bottom-color:#e1c978;}
+@media(max-width:720px){.rajac-static-common-menu__inner{width:calc(100% - 24px);}.rajac-static-common-menu__logo{padding-right:18px;margin-right:8px;font-size:.8rem}.rajac-static-common-menu__link{font-size:.62rem;padding:0 10px;letter-spacing:.12em;}}
+</style><style id="rajac-o-platformi-bez-hero-final">
+/* FINAL FIX 2026-05-29: O platformi bez gornjeg HERO-a i bez stare hero trake */
+.rp-hero,.rp-strip{display:none!important;height:0!important;min-height:0!important;max-height:0!important;padding:0!important;margin:0!important;overflow:hidden!important;border:0!important;}
+.rp-hero::before,.rp-hero::after{display:none!important;content:none!important;}
+.rp-main{margin:0 auto 0!important;padding-top:clamp(48px,7vw,88px)!important;}
+.rp-intro{margin-bottom:64px!important;}
+@media(max-width:720px){.rp-main{margin-top:0!important;padding-top:42px!important;}.rp-intro{margin-bottom:42px!important;}}
+</style><style id="rajac-unified-white-v4">
+/* RAJAC_UNIFIED_WHITE_V4
+   Беле позадине, уједначена типографија и мањи наслови за пет статичких страница. */
+:root{
+  --rajac-u-bg:#ffffff;
+  --rajac-u-paper:#ffffff;
+  --rajac-u-ink:#152015;
+  --rajac-u-text:#253126;
+  --rajac-u-muted:#586357;
+  --rajac-u-line:rgba(21,32,21,.14);
+  --rajac-u-soft:#f7f8f5;
+  --rajac-u-accent:#6f7f47;
+  --rajac-u-gold:#b99a45;
+  --rajac-u-serif:Georgia,"Times New Roman",serif;
+  --rajac-u-sans:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;
+}
+html,body,
+body.rajac-static-output{
+  background:#fff!important;
+  color:var(--rajac-u-text)!important;
+  font-family:var(--rajac-u-sans)!important;
+  font-size:17px!important;
+  line-height:1.72!important;
+}
+body.rajac-static-output{
+  margin:0!important;
+}
+.rajac-static-common-menu{
+  background:#0d1b12!important;
+  border-bottom:1px solid rgba(255,255,255,.12)!important;
+  box-shadow:none!important;
+  font-family:var(--rajac-u-sans)!important;
+}
+.rajac-static-common-menu__logo,
+.rajac-static-common-menu__link{
+  font-family:var(--rajac-u-sans)!important;
+}
+.rajac-static-common-menu__link{
+  font-size:.68rem!important;
+  letter-spacing:.13em!important;
+  font-weight:500!important;
+}
+.rajac-static-common-menu__link.is-active{
+  color:#d7c06c!important;
+  border-bottom-color:#d7c06c!important;
+}
+.rinfo,
+.rp-page,
+.rir-page{
+  background:#fff!important;
+  background-image:none!important;
+  color:var(--rajac-u-text)!important;
+  font-family:var(--rajac-u-sans)!important;
+  --pbg:#fff!important;
+  --bg2:#fff!important;
+  --ptext:var(--rajac-u-ink)!important;
+  --pmuted:var(--rajac-u-muted)!important;
+  --pline:var(--rajac-u-line)!important;
+  --pacc:var(--rajac-u-accent)!important;
+  --serif:var(--rajac-u-serif)!important;
+  --sans:var(--rajac-u-sans)!important;
+  --rp-bg:#fff!important;
+  --rp-paper:#fff!important;
+  --rp-ink:var(--rajac-u-ink)!important;
+  --rp-muted:var(--rajac-u-muted)!important;
+  --rp-line:var(--rajac-u-line)!important;
+  --rp-serif:var(--rajac-u-serif)!important;
+  --rp-sans:var(--rajac-u-sans)!important;
+  --rir-bg:#fff!important;
+  --rir-paper:#fff!important;
+  --rir-soft:#fff!important;
+  --rir-ink:var(--rajac-u-ink)!important;
+  --rir-text:var(--rajac-u-text)!important;
+  --rir-muted:var(--rajac-u-muted)!important;
+  --rir-line:var(--rajac-u-line)!important;
+  --rir-serif:var(--rajac-u-serif)!important;
+  --rir-sans:var(--rajac-u-sans)!important;
+}
+.rinfo-wrap,
+.rp-main,
+.rir-wrap{
+  width:min(1180px,calc(100% - 48px))!important;
+  margin-left:auto!important;
+  margin-right:auto!important;
+}
+.rp-main{
+  margin-top:clamp(44px,5vw,68px)!important;
+  padding-bottom:clamp(70px,7vw,100px)!important;
+}
+.rinfo-section,
+.rir-section{
+  background:#fff!important;
+  background-image:none!important;
+  padding:clamp(46px,5.8vw,76px) 0!important;
+  border-bottom:1px solid var(--rajac-u-line)!important;
+}
+.rp-section{
+  background:#fff!important;
+  background-image:none!important;
+  padding:clamp(48px,5.8vw,76px) 0!important;
+  border-top:1px solid var(--rajac-u-line)!important;
+}
+.rp-intro{
+  margin-bottom:clamp(42px,5vw,64px)!important;
+}
+.rp-grid,
+.rinfo-grid,
+.rir-cards,
+.rir-disciplines,
+.rinfo-band-grid{
+  margin-top:28px!important;
+}
+.rp-intro h2,
+.rp-section h2,
+.rp-final h2,
+.rp-wide h2,
+.rinfo-h2,
+.rir-title{
+  font-family:var(--rajac-u-serif)!important;
+  color:var(--rajac-u-ink)!important;
+  font-weight:400!important;
+  font-size:clamp(2.05rem,3.1vw,3.15rem)!important;
+  line-height:1.08!important;
+  letter-spacing:-.028em!important;
+  text-shadow:none!important;
+}
+.rp-card h3,
+.rp-note h3,
+.rinfo-h3,
+.rir-card h3,
+.rir-note h3,
+.rir-data-item b{
+  font-family:var(--rajac-u-serif)!important;
+  color:var(--rajac-u-ink)!important;
+  font-weight:400!important;
+  font-size:clamp(1.35rem,2vw,1.9rem)!important;
+  line-height:1.14!important;
+  letter-spacing:-.018em!important;
+}
+.rp-eyebrow,
+.rinfo-label,
+.rir-label,
+.rinfo-card-tag,
+.rinfo-num,
+.rir-card small,
+.rir-principle b,
+.rp-strip-label{
+  font-family:var(--rajac-u-sans)!important;
+  color:var(--rajac-u-accent)!important;
+  font-size:.72rem!important;
+  letter-spacing:.14em!important;
+  font-weight:650!important;
+}
+.rp-intro-card,
+.rp-card,
+.rp-note,
+.rp-feature-row,
+.rp-final,
+.rp-wide,
+.rinfo-card,
+.rinfo-soft,
+.rinfo-cta,
+.rinfo-band-card,
+.rinfo-feature-side,
+.rinfo-mini,
+.rir-card,
+.rir-note,
+.rir-data-list,
+.rir-data-item,
+.rir-principle,
+.rir-cta-box,
+.rir-application,
+.rir-form-wrap,
+.rir-summary,
+.rir-field,
+.rir-wide,
+.rir-pill,
+.rinfo-pill,
+.rp-pill{
+  background:#fff!important;
+  background-image:none!important;
+  color:var(--rajac-u-text)!important;
+  border-color:var(--rajac-u-line)!important;
+  box-shadow:none!important;
+}
+.rp-card,
+.rinfo-card,
+.rir-card,
+.rp-intro-card,
+.rp-note,
+.rp-feature-row,
+.rp-final,
+.rinfo-soft,
+.rinfo-cta,
+.rir-note,
+.rir-cta-box,
+.rir-form-wrap,
+.rir-summary{
+  border:1px solid var(--rajac-u-line)!important;
+  border-radius:22px!important;
+}
+.rp-card,
+.rinfo-card,
+.rir-card{
+  min-height:auto!important;
+}
+.rp-card:hover,
+.rinfo-card:hover,
+.rir-card:hover{
+  background:#fff!important;
+  transform:none!important;
+}
+.rinfo-card::before,
+.rir-card::before{
+  background:var(--rajac-u-accent)!important;
+}
+.rp-card-icon,
+.rp-feature-row span,
+.rir-summary-icon{
+  background:#f2f5ef!important;
+  color:var(--rajac-u-ink)!important;
+}
+.rinfo-band,
+.rir-dark,
+.rir-cta,
+.rp-wide{
+  background:#fff!important;
+  background-image:none!important;
+  color:var(--rajac-u-text)!important;
+  border-top:1px solid var(--rajac-u-line)!important;
+  border-bottom:1px solid var(--rajac-u-line)!important;
+  box-shadow:none!important;
+}
+.rinfo-band .rinfo-h2,
+.rir-dark .rir-title,
+.rp-wide h2{
+  color:var(--rajac-u-ink)!important;
+}
+.rinfo-band p,
+.rinfo-band-card span,
+.rir-dark .rir-lead,
+.rir-dark .rir-text,
+.rir-data-item span,
+.rp-wide p,
+.rp-card p,
+.rp-intro-card p,
+.rp-section-text p,
+.rp-feature-row p,
+.rp-final p,
+.rinfo-lead,
+.rinfo-body,
+.rinfo-card p,
+.rinfo-flow-item p,
+.rinfo-soft p,
+.rinfo-cta p,
+.rir-lead,
+.rir-text,
+.rir-note p,
+.rir-card p,
+.rir-principle p{
+  color:var(--rajac-u-muted)!important;
+  font-family:var(--rajac-u-sans)!important;
+  font-weight:400!important;
+}
+.rp-btn,
+.rinfo-btn,
+.rir-actions a,
+.rir-submit{
+  font-family:var(--rajac-u-sans)!important;
+  border-radius:999px!important;
+  box-shadow:none!important;
+}
+.rp-btn,
+.rinfo-btn,
+.rir-actions a{
+  background:#fff!important;
+  color:var(--rajac-u-ink)!important;
+  border:1px solid var(--rajac-u-line)!important;
+}
+.rp-btn-primary,
+.rinfo-btn-primary,
+.rir-submit{
+  background:#102317!important;
+  color:#fff!important;
+  border-color:#102317!important;
+}
+.rp-final .rp-btn,
+.rinfo-cta .rinfo-btn{
+  background:#fff!important;
+  color:var(--rajac-u-ink)!important;
+  border:1px solid var(--rajac-u-line)!important;
+}
+.rp-final .rp-btn-primary,
+.rinfo-cta .rinfo-btn-primary{
+  background:#102317!important;
+  color:#fff!important;
+  border-color:#102317!important;
+}
+.rp-pill,
+.rinfo-pill,
+.rir-pill{
+  border-radius:999px!important;
+  color:var(--rajac-u-muted)!important;
+}
+.rinfo-2col,
+.rir-intro-grid,
+.rir-dark-grid,
+.rp-intro,
+.rp-section,
+.rinfo-cta,
+.rir-cta-box{
+  gap:clamp(28px,4vw,48px)!important;
+}
+@media(max-width:980px){
+  .rp-grid,.rinfo-grid,.rir-cards,.rir-disciplines,.rinfo-band-grid{grid-template-columns:1fr 1fr!important;}
+}
+@media(max-width:720px){
+  html,body,body.rajac-static-output{font-size:16px!important;}
+  .rinfo-wrap,.rp-main,.rir-wrap{width:min(100% - 28px,1180px)!important;}
+  .rp-intro h2,.rp-section h2,.rp-final h2,.rp-wide h2,.rinfo-h2,.rir-title{
+    font-size:clamp(1.85rem,9vw,2.55rem)!important;
+    line-height:1.1!important;
+  }
+  .rp-grid,.rinfo-grid,.rir-cards,.rir-disciplines,.rinfo-band-grid{grid-template-columns:1fr!important;}
+}
+</style></head>
+<body class="rajac-static-output"><nav aria-label="Странице ПИО Рајац" class="rajac-static-common-menu"><div class="rajac-static-common-menu__inner"><a class="rajac-static-common-menu__logo" href="https://piorajac.rs/">ПИО „РАЈАЦ“</a><div class="rajac-static-common-menu__links"><a class="rajac-static-common-menu__link is-active" href="/o-platformi/">О платформи</a><a class="rajac-static-common-menu__link" href="/za-posetioce/">За посетиоце</a><a class="rajac-static-common-menu__link" href="/za-istrazivace/">За истраживаче</a><a class="rajac-static-common-menu__link" href="/za-vlasnike/">За власнике</a><a class="rajac-static-common-menu__link" href="/aplikacije/">Апликације</a></div></div></nav>
+<main class="rp-page">
+<div class="rp-main">
+<section class="rp-intro" id="sta-je-platforma">
+<div>
+<p class="rp-eyebrow">О платформи</p>
+<h2>Нови начин представљања заштићеног предела.</h2>
+</div>
+<div class="rp-intro-card">
+<p>Платформа ПИО „Рајац“ повезује природу, науку, посетиоце и управљање заштићеним подручјем. Она није замишљена као обичан сајт са основним информацијама, већ као живи дигитални систем који се допуњује новим подацима, фотографијама, мапама, налазима врста, метеоролошким мерењима и едукативним садржајима.</p>
+</div>
+</section>
+<section aria-label="Три главне функције" class="rp-grid">
+<article class="rp-card">
+<div class="rp-card-icon">↗</div>
+<h3>Информисање</h3>
+<p>Посетиоци добијају јасне информације о простору, стазама, природним вредностима, режимима заштите, правилима понашања и начинима безбедног боравка у природи.</p>
+</article>
+<article class="rp-card">
+<div class="rp-card-icon">◎</div>
+<h3>Учење</h3>
+<p>Рајац се представља као отворена учионица за географију, биологију, екологију, астрономију, картографију, климатологију и дигитално истраживање природе.</p>
+</article>
+<article class="rp-card">
+<div class="rp-card-icon">◆</div>
+<h3>Управљање</h3>
+<p>Теренски налази, мапе, мониторинг и јавна запажања помажу да се простор прати систематичније и да се мере заштите планирају на основу података.</p>
+</article>
+</section>
+<section class="rp-section">
+<div>
+<p class="rp-eyebrow">Зашто није само сајт</p>
+<h2>Од статичне презентације до живог система.</h2>
+</div>
+<div class="rp-section-text">
+<p>Класичан сајт најчешће приказује опис места, неколико фотографија, мапу и контакт. Платформа за ПИО „Рајац“ иде даље од тога. Она се развија као систем који може да прикупља, повезује и приказује стварне податке о природи, посетама, временским условима, стању станишта и променама у простору.</p>
+<p>Рајац је предео у коме се на малом простору сусрећу шуме, ливаде, пашњаци, крашки облици, извори, пећине, видиковци, традиционални предели и тамно ноћно небо. Та разноврсност тражи шири приступ: да се природа не приказује само као лепа слика, већ као осетљив систем који има своју динамику, вредности, притиске и потребу за сталним праћењем.</p>
+<div class="rp-note"><strong>Суштина платформе:</strong> Рајац се овде не представља као готова и затворена прича, већ као простор који се сваке године боље познаје, прецизније прати и одговорније чува.</div>
+</div>
+</section>
+<section class="rp-section" id="monitoring">
+<div>
+<p class="rp-eyebrow">Мониторинг природе</p>
+<h2>Податак као основа за очување.</h2>
+</div>
+<div class="rp-section-text">
+<p>Добро управљање заштићеним подручјем не може да се ослања само на утиске. Потребни су подаци, континуитет, упоредиви налази, фотографије, мапе и јасна слика о томе где су природне вредности, где се јављају притисци и шта се у простору мења.</p>
+<p>Зато платформа обједињује више типова праћења: метеоролошке податке, сателитске индексе вегетације, теренске фотографије, налазе биљака и животиња, акустичко праћење птица, приказ стаза, географске слојеве, податке о светлосном загађењу и услове за посматрање ноћног неба.</p>
+<div class="rp-feature">
+<div class="rp-feature-row"><span>1</span><p>Сваки теренски налаз може постати део шире слике о стању живог света и станишта на Рајцу.</p></div>
+<div class="rp-feature-row"><span>2</span><p>Свака мапа помаже да се природне вредности, стазе, зоне заштите и осетљиви простори боље разумеју.</p></div>
+<div class="rp-feature-row"><span>3</span><p>Свака серија мерења омогућава да се промене прате кроз време, а не само кроз појединачне утиске.</p></div>
+</div>
+</div>
+</section>
+<section class="rp-wide">
+<h2>Рајац као дигитална учионица под отвореним небом.</h2>
+<p>Платформа помаже да посетилац разуме где се налази, шта посматра и како његово понашање утиче на природу. На Рајцу се могу учити географија, биологија, екологија, астрономија, климатологија, фотографија, картографија и заштита природе — не као одвојене теме, већ као делови истог предела.</p>
+<div aria-label="Тематске целине" class="rp-pill-grid">
+<span class="rp-pill">биљке и станишта</span>
+<span class="rp-pill">птице и акустика</span>
+<span class="rp-pill">инсекти и опрашивачи</span>
+<span class="rp-pill">сисари и трагови</span>
+<span class="rp-pill">гљиве и шумски системи</span>
+<span class="rp-pill">метео-подаци</span>
+<span class="rp-pill">сателитско праћење</span>
+<span class="rp-pill">тамно небо</span>
+</div>
+</section>
+<section class="rp-section" id="ucesce">
+<div>
+<p class="rp-eyebrow">Учешће посетилаца</p>
+<h2>Посетилац као сарадник у очувању.</h2>
+</div>
+<div class="rp-section-text">
+<p>Платформа је отворена за сарадњу са истраживачима, школама, планинарима, фотографима, локалним становништвом и свим посетиоцима који желе да допринесу бољем познавању Рајца. Посебно су значајне проверене фотографије врста, подаци о датуму и месту налаза, запажања о стању стаза, отпаду, оштећењима, узнемиравању животиња или појави непожељне расвете.</p>
+<p>На тај начин посетилац не остаје само корисник информација. Он може постати део мреже која помаже да се заштићени предео прати, разуме и чува. То је један од најважнијих помака у односу на класичну промоцију природних добара.</p>
+<div class="rp-note"><strong>Отворена сарадња:</strong> добар податак са терена, добро документована фотографија или корисна исправка могу имати стварну вредност за будуће управљање простором.</div>
+</div>
+</section>
+<section class="rp-section">
+<div>
+<p class="rp-eyebrow">Домаћа пракса</p>
+<h2>Модел који спаја промоцију, науку и управљање.</h2>
+</div>
+<div class="rp-section-text">
+<p>У домаћој пракси заштићена подручја се често представљају кроз основне описе, планове управљања и повремене извештаје. Овде се развија другачији модел: да се стручне студије, ГИС мапе, теренски налази, фотографије, едукативни садржаји и препоруке за посетиоце повежу у један јаван и разумљив систем.</p>
+<p>Посебна вредност овог приступа је у томе што платформа није само промотивна. Она не служи само да прикаже лепоту Рајца, већ да помогне његовом очувању. Природа се приказује као вредност коју треба разумети, а не само као простор који треба посетити.</p>
+<p>Тако ПИО „Рајац“ добија дигитални слој који може да користи управљачу, локалној заједници, школама, туристима, стручњацима и свима који желе да се простор развија без губитка својих основних природних вредности.</p>
+</div>
+</section>
+<section class="rp-section">
+<div>
+<p class="rp-eyebrow">Подршка управљачу</p>
+<h2>Јасније одлуке на основу проверљивих података.</h2>
+</div>
+<div class="rp-section-text">
+<p>Платформа може да помогне у планирању активности, праћењу стања, припреми извештаја, едукацији посетилаца, промоцији природних вредности и повезивању са локалном заједницом. Она омогућава да се управљање све више ослања на систематизоване податке, а све мање на неповезане и повремене информације.</p>
+<p>То је посебно важно за простор као што је Рајац, где се преплићу заштита природе, туризам, планинарење, пољопривреда, шумарство, локални живот, научно истраживање и потреба да се очува мир планинског предела.</p>
+</div>
+</section>
+<section class="rp-final">
+<h2>Рајац се овде не само посећује, већ се прати, учи, истражује и чува.</h2>
+<p>Ова платформа не замењује боравак у природи. Њена сврха је да помогне да се природа боље види, разуме и поштује када се у њу дође. Зато је ово више од сајта: ово је дигитална основа за савременије, отвореније и одговорније управљање заштићеним пределом.</p>
+<div class="rp-final-actions">
+<a class="rp-btn rp-btn-primary" href="https://piorajac.rs/prva/#stanista">Истражи природу</a>
+<a class="rp-btn" href="https://piorajac.rs/prva/#monitoring">Погледај мониторинг</a>
+<a class="rp-btn" href="https://piorajac.rs/kodeks/">Правила понашања</a>
+</div>
+<div class="rp-bottom-line">ПИО „Рајац“ · платформа за мониторинг, учење и управљање заштићеним пределом</div>
+</section>
+</div>
+</main>
+
+
+<!--
+<!-- RAJAC_STATIC_WHITE_UNIFIED_V4 -->
+-->
+<!-- SITE_EDITOR_ADMIN_BAR_START -->
+<script src="/admin-site-editor.php?admin_bar_js=1" defer></script>
+<!-- SITE_EDITOR_ADMIN_BAR_END -->
+</body></html>

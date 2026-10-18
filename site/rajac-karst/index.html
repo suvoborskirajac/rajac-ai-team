@@ -1,0 +1,1358 @@
+<!DOCTYPE html>
+<html lang="sr"><head>
+<!-- RAJAC_RESEARCH_PARK_STATIC_FAST=1.0 --><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Истраживање крашких облика рељефа на Рајцу — едукативна страница</title>
+  <meta name="description" content="Едукативна страница за обуку посетилаца Рајца: препознавање крашких облика, безбедно посматрање са површине, фотографисање, бележење налаза, видео материјал и поуздани спољни извори.">
+<style>
+    :root{
+      --bg:#f7f5f0;
+      --card:#ffffff;
+      --soft:#f0ece4;
+      --line:#ddd3c4;
+      --text:#221c16;
+      --muted:#6b6257;
+      --earth:#5d4633;
+      --earth-2:#8b6a4f;
+      --stone:#7f857a;
+      --amber:#c88d45;
+      --amber-2:#e7b16d;
+      --green:#3d5e46;
+      --shadow:0 18px 48px rgba(49,33,20,.10);
+      --radius:24px;
+      --radius-sm:18px;
+      --wrap:min(1240px, calc(100% - 32px));
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family:"Inter",system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+      color:var(--text);
+      line-height:1.68;
+      background:
+        radial-gradient(circle at top left, rgba(200,141,69,.10), transparent 26%),
+        radial-gradient(circle at top right, rgba(93,70,51,.08), transparent 20%),
+        var(--bg);
+    }
+    a{color:var(--earth); text-decoration:none}
+    a:hover{text-decoration:underline}
+    img{max-width:100%; display:block}
+    .wrap{width:var(--wrap); margin:0 auto}
+
+    .topbar{
+      position:sticky; top:0; z-index:80;
+      background:rgba(247,245,240,.88);
+      backdrop-filter:blur(14px);
+      border-bottom:1px solid rgba(93,70,51,.08);
+    }
+    .topbar-inner{
+      width:var(--wrap); margin:0 auto; padding:12px 0;
+      display:flex; align-items:center; justify-content:space-between; gap:16px;
+    }
+    .brand{
+      display:flex; align-items:center; gap:12px;
+      font-weight:800; color:var(--earth); letter-spacing:.02em;
+    }
+    .brand-mark{
+      width:42px; height:42px; border-radius:50%;
+      display:grid; place-items:center;
+      color:#fff;
+      background:linear-gradient(135deg,var(--earth),#3e2d21);
+      box-shadow:var(--shadow);
+      font-size:1.05rem;
+    }
+    .topnav{display:flex; gap:10px; flex-wrap:wrap; justify-content:flex-end}
+    .topnav a{
+      padding:10px 14px; border-radius:999px;
+      background:#fff; border:1px solid rgba(93,70,51,.10);
+      font-size:.94rem; font-weight:600; color:var(--earth);
+    }
+
+    .hero{
+      position:relative;
+      min-height:88vh;
+      display:flex; align-items:flex-end;
+      background:
+        linear-gradient(180deg, rgba(30,22,17,.12) 0%, rgba(30,22,17,.30) 36%, rgba(30,22,17,.76) 100%),
+        url('https://commons.wikimedia.org/wiki/Special:FilePath/Sinkhole%20in%20Tuhala%20karst%20area.jpg') center/cover no-repeat;
+      color:#fff;
+      overflow:hidden;
+    }
+    .hero::before{
+      content:"";
+      position:absolute; inset:auto -10% -120px auto;
+      width:520px; height:520px;
+      background:radial-gradient(circle, rgba(231,177,109,.28), transparent 70%);
+      pointer-events:none;
+    }
+    .hero-inner{
+      position:relative; z-index:1;
+      width:var(--wrap); margin:0 auto; padding:90px 0 52px;
+      display:grid; grid-template-columns:1.15fr .85fr; gap:28px; align-items:end;
+    }
+    .eyebrow{
+      display:inline-flex; align-items:center; gap:8px;
+      padding:8px 14px; border-radius:999px;
+      border:1px solid rgba(255,255,255,.18);
+      background:rgba(255,255,255,.10);
+      color:#fff; font-size:.88rem; font-weight:700; letter-spacing:.08em; text-transform:uppercase;
+      margin-bottom:18px;
+    }
+    .hero h1{
+      margin:0 0 16px;
+      font-family:"Marcellus", Georgia, serif;
+      font-size:clamp(2.4rem, 5vw, 4.8rem);
+      line-height:1.08;
+      letter-spacing:.01em;
+      max-width:920px;
+    }
+    .hero p{
+      margin:0; max-width:820px; font-size:1.1rem; color:rgba(255,255,255,.90);
+    }
+    .hero-panel{
+      background:rgba(255,255,255,.12);
+      border:1px solid rgba(255,255,255,.16);
+      border-radius:var(--radius);
+      padding:20px 20px 18px;
+      backdrop-filter:blur(8px);
+      box-shadow:var(--shadow);
+    }
+    .hero-panel h3{margin:0 0 12px; font-size:1rem; letter-spacing:.04em; text-transform:uppercase}
+    .hero-panel ul{margin:0; padding-left:18px; color:rgba(255,255,255,.92)}
+    .hero-panel li+li{margin-top:8px}
+    .hero-cta{
+      margin-top:22px; display:flex; gap:12px; flex-wrap:wrap;
+    }
+    .btn{
+      display:inline-flex; align-items:center; justify-content:center; gap:10px;
+      padding:14px 18px; border-radius:999px; font-weight:800; transition:.2s ease;
+      border:1px solid transparent;
+    }
+    .btn-primary{background:linear-gradient(135deg,var(--amber),var(--amber-2)); color:#25190f}
+    .btn-secondary{background:rgba(255,255,255,.10); border-color:rgba(255,255,255,.18); color:#fff}
+    .btn:hover{text-decoration:none; transform:translateY(-1px)}
+
+    section{padding:82px 0}
+    .section-head{margin-bottom:26px}
+    .section-head .kicker{
+      color:var(--earth-2); font-weight:800; letter-spacing:.10em; text-transform:uppercase; font-size:.82rem; margin-bottom:10px;
+    }
+    .section-head h2{
+      margin:0 0 10px;
+      font-family:"Marcellus", Georgia, serif;
+      font-size:clamp(1.9rem, 3vw, 3.15rem);
+      line-height:1.15;
+      color:#231810;
+    }
+    .section-head p{margin:0; max-width:860px; color:var(--muted); font-size:1.02rem}
+
+    .intro-grid,
+    .feature-grid,
+    .protocol-grid,
+    .sources-grid,
+    .media-grid,
+    .gallery-grid,
+    .note-grid{display:grid; gap:18px}
+
+    .intro-grid{grid-template-columns:1.15fr .85fr}
+    .feature-grid{grid-template-columns:repeat(4,1fr)}
+    .protocol-grid{grid-template-columns:repeat(3,1fr)}
+    .sources-grid{grid-template-columns:repeat(3,1fr)}
+    .media-grid{grid-template-columns:repeat(2,1fr)}
+    .gallery-grid{grid-template-columns:repeat(4,1fr)}
+    .note-grid{grid-template-columns:repeat(2,1fr)}
+
+    .card{
+      background:var(--card);
+      border:1px solid rgba(93,70,51,.10);
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
+      overflow:hidden;
+    }
+    .card.pad{padding:24px}
+    .card h3,.card h4{margin:0 0 10px; color:#231810}
+    .card p{margin:0; color:var(--muted)}
+    .card p + p{margin-top:12px}
+
+    .highlight{
+      display:grid; grid-template-columns:88px 1fr; gap:18px; align-items:start;
+      padding:22px;
+    }
+    .icon-badge{
+      width:88px; height:88px; border-radius:24px; display:grid; place-items:center;
+      background:linear-gradient(135deg, rgba(200,141,69,.18), rgba(93,70,51,.10));
+      border:1px solid rgba(93,70,51,.10);
+    }
+    .icon-badge svg{width:56px; height:56px}
+
+    .facts{
+      display:grid; grid-template-columns:repeat(2,1fr); gap:14px;
+      margin-top:18px;
+    }
+    .fact{
+      background:var(--soft);
+      border:1px solid rgba(93,70,51,.08);
+      border-radius:18px;
+      padding:14px 16px;
+    }
+    .fact strong{display:block; color:var(--earth); margin-bottom:6px}
+    .fact span{display:block; color:var(--muted); font-size:.95rem}
+
+    .mini-card{
+      background:#fff;
+      border:1px solid rgba(93,70,51,.10);
+      border-radius:22px;
+      padding:22px;
+      box-shadow:var(--shadow);
+    }
+    .mini-card .num{
+      width:42px; height:42px; border-radius:50%; display:grid; place-items:center;
+      background:linear-gradient(135deg,var(--earth),var(--earth-2)); color:#fff; font-weight:800; margin-bottom:14px;
+    }
+    .mini-card h3{font-size:1.1rem; margin-bottom:10px}
+
+    .danger-band{
+      background:linear-gradient(135deg, #2d241d, #473426);
+      color:#fff;
+    }
+    .danger-band .section-head h2,
+    .danger-band .section-head p,
+    .danger-band .section-head .kicker{color:#fff}
+    .warning-grid{display:grid; grid-template-columns:repeat(2,1fr); gap:18px}
+    .warning{
+      background:rgba(255,255,255,.08);
+      border:1px solid rgba(255,255,255,.14);
+      border-radius:var(--radius);
+      padding:22px;
+    }
+    .warning strong{display:block; margin-bottom:8px; font-size:1.02rem}
+    .warning p{margin:0; color:rgba(255,255,255,.88)}
+
+    .figure-card{padding:0; overflow:hidden}
+    .figure-media{aspect-ratio:16/10; background:#efe7da}
+    .figure-media svg{width:100%; height:100%; display:block}
+    .figure-body{padding:18px 18px 20px}
+    .figure-body h3{margin-bottom:8px; font-size:1.06rem}
+
+    .source-card{
+      display:flex; flex-direction:column; gap:10px;
+      padding:22px;
+      background:#fff;
+      border-radius:22px;
+      border:1px solid rgba(93,70,51,.10);
+      box-shadow:var(--shadow);
+    }
+    .source-card .tag{
+      display:inline-flex; width:max-content;
+      padding:7px 11px; border-radius:999px;
+      background:rgba(200,141,69,.15); color:var(--earth); font-weight:800; font-size:.78rem; letter-spacing:.04em; text-transform:uppercase;
+    }
+    .source-card h3{margin:0; font-size:1.08rem}
+    .source-card p{margin:0; color:var(--muted); flex:1}
+    .source-card a.more{font-weight:800}
+
+    .video-card{overflow:hidden}
+    .video-card iframe,
+    .video-card video{width:100%; aspect-ratio:16/9; border:0; display:block; background:#000}
+    .video-caption{padding:16px 18px 18px; color:var(--muted)}
+    .video-caption strong{display:block; margin-bottom:6px; color:#231810}
+
+    .photo-link{
+      display:flex; flex-direction:column; gap:12px;
+      height:100%;
+      padding:20px;
+      background:#fff;
+      border:1px solid rgba(93,70,51,.10);
+      border-radius:22px;
+      box-shadow:var(--shadow);
+    }
+    .photo-link .thumb{
+      aspect-ratio:4/3; border-radius:18px; overflow:hidden; background:#e9e0d2;
+    }
+    .photo-link .thumb img{width:100%; height:100%; object-fit:cover}
+    .photo-link h3{margin:0; font-size:1rem}
+    .photo-link p{margin:0; color:var(--muted); font-size:.94rem}
+    .photo-link span{font-weight:800; color:var(--earth)}
+
+    .checklist{
+      background:#fff;
+      border:1px solid rgba(93,70,51,.10);
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
+      padding:22px 24px;
+    }
+    .checklist ul{margin:0; padding-left:18px}
+    .checklist li+li{margin-top:10px}
+
+    .footer{
+      padding:30px 0 44px;
+      color:var(--muted);
+      border-top:1px solid rgba(93,70,51,.08);
+    }
+    .footer-inner{
+      width:var(--wrap); margin:0 auto;
+      display:flex; align-items:center; justify-content:space-between; gap:20px; flex-wrap:wrap;
+    }
+    .footer small{font-size:.92rem}
+
+    @media (max-width:1100px){
+      .hero-inner,
+      .intro-grid,
+      .feature-grid,
+      .protocol-grid,
+      .sources-grid,
+      .gallery-grid,
+      .warning-grid,
+      .note-grid{grid-template-columns:1fr 1fr}
+      .media-grid{grid-template-columns:1fr}
+      .hero-inner{align-items:end}
+    }
+    @media (max-width:760px){
+      .topbar-inner,
+      .hero-inner,
+      .intro-grid,
+      .feature-grid,
+      .protocol-grid,
+      .sources-grid,
+      .gallery-grid,
+      .warning-grid,
+      .note-grid{grid-template-columns:1fr}
+      .hero{min-height:auto}
+      .hero-inner{padding:88px 0 34px}
+      .highlight{grid-template-columns:1fr}
+      .icon-badge{width:72px; height:72px; border-radius:20px}
+      .icon-badge svg{width:46px; height:46px}
+      .facts{grid-template-columns:1fr}
+      .topnav{display:none}
+      section{padding:62px 0}
+    }
+  
+
+/* v2.2.0 contrast cleanup */
+.hero-panel{
+  background:rgba(255,255,255,.82) !important;
+  border:1px solid rgba(255,255,255,.58) !important;
+  box-shadow:0 18px 40px rgba(20,28,22,.12) !important;
+  color:var(--text) !important;
+}
+.hero-panel h3{color:#231810 !important;}
+.hero-panel ul, .hero-panel li{color:#4d4136 !important;}
+.card, .card p, .card li, .card span, .card h3, .card h4,
+.checklist, .checklist p, .checklist li, .checklist span{
+  color:inherit;
+}
+.card, .checklist{color:var(--text) !important;}
+.card p, .card li, .card span, .checklist p, .checklist li, .checklist span{color:var(--muted) !important;}
+.card h2, .card h3, .card h4{color:#231810 !important;}
+
+
+
+/* Clean hero update for Research Park preview pages. */
+.rp-global-nav a.is-active,
+.rp-global-nav__menu a.is-active {
+  color: #f0cd69 !important;
+}
+.rp-clean-hero {
+  min-height: 86vh;
+  position: relative;
+  isolation: isolate;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding: clamp(96px, 14vh, 150px) 24px clamp(64px, 12vh, 112px);
+  overflow: hidden;
+  background-image:
+    linear-gradient(180deg, rgba(8, 14, 22, .10) 0%, rgba(8, 14, 22, .18) 42%, rgba(8, 14, 22, .62) 100%),
+    var(--rp-clean-hero-bg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.rp-clean-hero__title {
+  margin: 0;
+  max-width: 1180px;
+  text-align: center;
+  color: #fff;
+  font-family: Georgia, 'Times New Roman', serif;
+  font-weight: 400;
+  line-height: .98;
+  letter-spacing: 0;
+  font-size: clamp(44px, 8vw, 104px);
+  text-shadow: 0 6px 26px rgba(0, 0, 0, .42);
+}
+.rp-hero-summary {
+  background: #f4efe7;
+  padding: clamp(34px, 5vw, 62px) 22px;
+}
+.rp-hero-summary__inner {
+  max-width: 1120px;
+  margin: 0 auto;
+  background: rgba(255, 255, 255, .94);
+  border: 1px solid rgba(37, 42, 47, .14);
+  border-radius: 10px;
+  box-shadow: 0 18px 48px rgba(18, 24, 32, .08);
+  padding: clamp(24px, 4vw, 42px);
+}
+.rp-hero-summary__eyebrow {
+  margin: 0 0 10px;
+  color: #9b7725;
+  font: 800 12px/1.35 Arial, sans-serif;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+}
+.rp-hero-summary h2 {
+  margin: 0 0 16px;
+  color: #111a2b;
+  font-family: Georgia, 'Times New Roman', serif;
+  font-weight: 400;
+  line-height: 1.1;
+  font-size: clamp(28px, 4vw, 44px);
+}
+.rp-hero-summary p {
+  margin: 0 0 14px;
+  max-width: 980px;
+  color: #17243b;
+  font-size: clamp(17px, 1.45vw, 20px);
+  line-height: 1.72;
+}
+.rp-hero-summary__meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 20px;
+}
+.rp-hero-summary__chip {
+  display: inline-flex;
+  align-items: center;
+  border: 1px solid rgba(33, 48, 64, .16);
+  border-radius: 999px;
+  padding: 8px 12px;
+  background: #fbf8f2;
+  color: #213040;
+  font: 800 12px/1.2 Arial, sans-serif;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+}
+@media (max-width: 760px) {
+  .rp-clean-hero {
+    min-height: 76vh;
+    padding-left: 18px;
+    padding-right: 18px;
+  }
+  .rp-clean-hero__title {
+    font-size: clamp(40px, 14vw, 68px);
+  }
+}
+
+
+/* Shared Research Park navigation override. */
+.rp-global-nav {
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  z-index: 9000 !important;
+  background: rgba(255, 255, 255, .94) !important;
+  border-bottom: 1px solid rgba(37, 42, 47, .12) !important;
+  box-shadow: 0 8px 28px rgba(18, 24, 32, .06) !important;
+  backdrop-filter: blur(18px) saturate(180%) !important;
+  -webkit-backdrop-filter: blur(18px) saturate(180%) !important;
+}
+.rp-global-nav__inner {
+  max-width: 1400px !important;
+  margin: 0 auto !important;
+}
+.rp-global-nav a,
+.rp-global-nav__menu a {
+  color: #263241 !important;
+  background: transparent !important;
+  text-decoration: none !important;
+}
+.rp-global-nav a:hover,
+.rp-global-nav__menu a:hover {
+  color: #111a2b !important;
+  background: rgba(24, 60, 34, .07) !important;
+}
+.rp-global-nav a.is-active,
+.rp-global-nav__menu a.is-active {
+  color: #d39a16 !important;
+  background: transparent !important;
+}
+.rp-global-nav__mark {
+  background: #183c22 !important;
+  color: #fff !important;
+}
+.rp-global-nav-spacer {
+  min-height: 68px !important;
+}
+.rp-global-nav, .rp-global-nav * { text-shadow: none !important; }
+.rp-hero-summary, .rp-hero-summary * { text-shadow: none !important; }
+.rp-hero-summary h2 { color: #111a2b !important; }
+.rp-hero-summary p { color: #17243b !important; }
+/* Strong top menu and contrast fixes. */
+.rp-global-nav {
+  display: flex !important;
+  align-items: center !important;
+  min-height: 68px !important;
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  z-index: 99999 !important;
+  background: #ffffff !important;
+  border-bottom: 1px solid rgba(13,18,8,.14) !important;
+  box-shadow: 0 10px 28px rgba(13,18,8,.12) !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  transform: none !important;
+}
+.rp-global-nav__inner {
+  width: 100% !important;
+  max-width: 1400px !important;
+  margin: 0 auto !important;
+  padding: 0 clamp(18px, 4vw, 56px) !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  gap: 22px !important;
+}
+.rp-global-nav__menu {
+  display: flex !important;
+  align-items: center !important;
+  gap: 4px !important;
+  list-style: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+.rp-global-nav__scroller { overflow-x: auto !important; }
+.rp-global-nav a,
+.rp-global-nav__menu a {
+  display: inline-flex !important;
+  align-items: center !important;
+  min-height: 38px !important;
+  padding: 8px 13px !important;
+  border-radius: 8px !important;
+  color: #243044 !important;
+  background: transparent !important;
+  text-decoration: none !important;
+  font-weight: 700 !important;
+  text-shadow: none !important;
+  white-space: nowrap !important;
+}
+.rp-global-nav a:hover,
+.rp-global-nav__menu a:hover {
+  color: #0d1208 !important;
+  background: #f2efe8 !important;
+}
+.rp-global-nav a.is-active,
+.rp-global-nav__menu a.is-active {
+  color: #c08000 !important;
+  background: #fff7df !important;
+}
+.rp-global-nav__mark {
+  background: #183c22 !important;
+  color: #ffffff !important;
+}
+.rp-global-nav-spacer { min-height: 68px !important; }
+.rp-hero-summary, .rp-hero-summary * { text-shadow: none !important; }
+.rp-hero-summary h2 { color: #111a2b !important; }
+.rp-hero-summary p { color: #17243b !important; }
+
+/* FINAL exact top menu from the Research School page. */
+.rp-global-nav {
+  display: flex !important;
+  align-items: center !important;
+  min-height: 68px !important;
+  height: 68px !important;
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  z-index: 999999 !important;
+  background: rgba(43, 55, 67, .78) !important;
+  border-bottom: 1px solid rgba(255,255,255,.28) !important;
+  box-shadow: none !important;
+  backdrop-filter: blur(12px) saturate(145%) !important;
+  -webkit-backdrop-filter: blur(12px) saturate(145%) !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  transform: none !important;
+}
+.rp-global-nav__inner {
+  width: 100% !important;
+  max-width: 1160px !important;
+  margin: 0 auto !important;
+  padding: 0 18px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: flex-start !important;
+  gap: 22px !important;
+}
+.rp-global-nav__inner > a:first-child {
+  height: 50px !important;
+  padding: 0 20px !important;
+  border-radius: 7px !important;
+  background: rgba(255, 255, 255, .82) !important;
+  color: #ffffff !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 11px !important;
+  text-decoration: none !important;
+  box-shadow: none !important;
+}
+.rp-global-nav__mark {
+  width: 28px !important;
+  height: 28px !important;
+  border-radius: 999px !important;
+  background: rgba(255,255,255,.18) !important;
+  color: #ffffff !important;
+  display: grid !important;
+  place-items: center !important;
+  font-weight: 700 !important;
+}
+.rp-global-nav__brand-text {
+  color: #ffffff !important;
+  font-size: 12px !important;
+  font-weight: 800 !important;
+  letter-spacing: .16em !important;
+  text-transform: uppercase !important;
+  text-shadow: none !important;
+}
+.rp-global-nav__scroller {
+  overflow-x: auto !important;
+  overflow-y: hidden !important;
+  flex: 1 1 auto !important;
+}
+.rp-global-nav__menu {
+  display: flex !important;
+  align-items: center !important;
+  gap: 12px !important;
+  list-style: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  white-space: nowrap !important;
+}
+.rp-global-nav__menu li { margin: 0 !important; padding: 0 !important; }
+.rp-global-nav__menu a {
+  min-height: 44px !important;
+  padding: 0 16px !important;
+  border-radius: 7px !important;
+  background: transparent !important;
+  color: #ffffff !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  text-decoration: none !important;
+  font-size: 12px !important;
+  font-weight: 900 !important;
+  letter-spacing: .12em !important;
+  text-transform: uppercase !important;
+  text-shadow: none !important;
+}
+.rp-global-nav__menu a:hover {
+  background: rgba(255,255,255,.14) !important;
+  color: #ffffff !important;
+}
+.rp-global-nav__menu a.is-active {
+  background: #fff3d7 !important;
+  color: #d3a337 !important;
+  box-shadow: none !important;
+}
+.rp-global-nav-spacer {
+  min-height: 0 !important;
+  height: 0 !important;
+}
+
+/* FINAL stronger menu contrast. */
+.rp-global-nav {
+  background: rgba(24, 34, 43, .90) !important;
+  border-bottom-color: rgba(255,255,255,.38) !important;
+}
+.rp-global-nav__menu a,
+.rp-global-nav__menu a:link,
+.rp-global-nav__menu a:visited,
+.rp-global-nav__menu a:not(.is-active) {
+  color: #ffffff !important;
+  opacity: 1 !important;
+  font-weight: 950 !important;
+  text-shadow: 0 1px 3px rgba(0,0,0,.65) !important;
+}
+.rp-global-nav__menu a:hover,
+.rp-global-nav__menu a:not(.is-active):hover {
+  color: #ffffff !important;
+  background: rgba(255,255,255,.20) !important;
+}
+.rp-global-nav__menu a.is-active,
+.rp-global-nav__menu a.is-active:link,
+.rp-global-nav__menu a.is-active:visited {
+  background: #fff1cf !important;
+  color: #9b5f00 !important;
+  text-shadow: none !important;
+  border-bottom: 3px solid #b56f00 !important;
+}
+.rp-global-nav__inner > a:first-child,
+.rp-global-nav__inner > a:first-child:link,
+.rp-global-nav__inner > a:first-child:visited {
+  background: rgba(255,255,255,.92) !important;
+  color: #ffffff !important;
+}
+.rp-global-nav__brand-text {
+  color: #ffffff !important;
+  opacity: 1 !important;
+  text-shadow: 0 1px 3px rgba(0,0,0,.42) !important;
+}
+
+/* FINAL brand contrast and cleanup. */
+.rp-global-nav__inner > a:first-child,
+.rp-global-nav__inner > a:first-child:link,
+.rp-global-nav__inner > a:first-child:visited {
+  background: rgba(255,255,255,.94) !important;
+  color: #223041 !important;
+}
+.rp-global-nav__mark {
+  background: rgba(34,48,65,.10) !important;
+  color: #223041 !important;
+  text-shadow: none !important;
+}
+.rp-global-nav__brand-text {
+  color: #223041 !important;
+  opacity: 1 !important;
+  text-shadow: none !important;
+}
+.rp-admin-bar,
+.rp-admin-spacer,
+.topbar,
+.quicknav,
+.local-nav,
+.subnav,
+.page-nav {
+  display: none !important;
+}
+
+/* FINAL title sizing and tighter post-hero spacing. */
+.rp-clean-hero + section,
+.rp-clean-hero + .section,
+.rp-clean-hero + div,
+.rp-clean-hero + main {
+  margin-top: 0 !important;
+  padding-top: clamp(18px, 2.4vw, 32px) !important;
+}
+.rp-clean-hero + section .wrap,
+.rp-clean-hero + .section .wrap,
+.rp-clean-hero + section .section-head,
+.rp-clean-hero + .section .section-head,
+.rp-clean-hero + section .section-header,
+.rp-clean-hero + .section .section-header {
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+}
+.rp-clean-hero + section .label,
+.rp-clean-hero + section .kicker,
+.rp-clean-hero + section .section-label,
+.rp-clean-hero + section .section-head > p,
+.rp-clean-hero + section .section-header > p,
+.rp-clean-hero + section .section-lead,
+.rp-clean-hero + .section .label,
+.rp-clean-hero + .section .kicker,
+.rp-clean-hero + .section .section-label,
+.rp-clean-hero + .section .section-head > p,
+.rp-clean-hero + .section .section-header > p,
+.rp-clean-hero + .section .section-lead {
+  display: none !important;
+}
+.rp-clean-hero + section h2,
+.rp-clean-hero + .section h2,
+.rp-clean-hero + section .section-title,
+.rp-clean-hero + .section .section-title {
+  max-width: none !important;
+  white-space: nowrap !important;
+  font-size: clamp(30px, 4.2vw, 54px) !important;
+  line-height: 1.05 !important;
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+}
+@media (max-width: 760px) {
+  .rp-clean-hero + section h2,
+  .rp-clean-hero + .section h2,
+  .rp-clean-hero + section .section-title,
+  .rp-clean-hero + .section .section-title {
+    white-space: normal !important;
+    font-size: clamp(27px, 8vw, 40px) !important;
+  }
+}
+
+/* ABSOLUTE FINAL nav contrast: keep PIO Rajac readable. */
+.rp-global-nav__inner > a:first-child,
+.rp-global-nav__inner > a:first-child:link,
+.rp-global-nav__inner > a:first-child:visited,
+.rp-global-nav__inner > a:first-child:hover {
+  background: rgba(255,255,255,.96) !important;
+  color: #172033 !important;
+  text-shadow: none !important;
+}
+.rp-global-nav__inner > a:first-child *,
+.rp-global-nav__brand-text,
+.rp-global-nav__mark {
+  color: #172033 !important;
+  text-shadow: none !important;
+  opacity: 1 !important;
+}
+.rp-global-nav__mark {
+  background: rgba(23,32,51,.10) !important;
+}
+/* ABSOLUTE FINAL course first title: one line, tight to hero. */
+body.rp-flora-course .rp-clean-hero {
+  margin-bottom: 0 !important;
+}
+body.rp-flora-course .rp-clean-hero + section,
+body.rp-flora-course .rp-clean-hero + .section,
+body.rp-flora-course .rp-clean-hero + div,
+body.rp-flora-course .rp-clean-hero + main {
+  margin-top: 0 !important;
+  padding-top: 8px !important;
+}
+body.rp-flora-course .rp-clean-hero + section .wrap,
+body.rp-flora-course .rp-clean-hero + .section .wrap,
+body.rp-flora-course .rp-clean-hero + section .section-head,
+body.rp-flora-course .rp-clean-hero + .section .section-head,
+body.rp-flora-course .rp-clean-hero + section .section-header,
+body.rp-flora-course .rp-clean-hero + .section .section-header {
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+}
+body.rp-flora-course .rp-clean-hero + section .label,
+body.rp-flora-course .rp-clean-hero + section .kicker,
+body.rp-flora-course .rp-clean-hero + section .section-label,
+body.rp-flora-course .rp-clean-hero + section .section-head > p,
+body.rp-flora-course .rp-clean-hero + section .section-header > p,
+body.rp-flora-course .rp-clean-hero + section .section-lead,
+body.rp-flora-course .rp-clean-hero + .section .label,
+body.rp-flora-course .rp-clean-hero + .section .kicker,
+body.rp-flora-course .rp-clean-hero + .section .section-label,
+body.rp-flora-course .rp-clean-hero + .section .section-head > p,
+body.rp-flora-course .rp-clean-hero + .section .section-header > p,
+body.rp-flora-course .rp-clean-hero + .section .section-lead {
+  display: none !important;
+}
+body.rp-flora-course .rp-clean-hero + section h2,
+body.rp-flora-course .rp-clean-hero + .section h2,
+body.rp-flora-course .rp-clean-hero + section .section-title,
+body.rp-flora-course .rp-clean-hero + .section .section-title {
+  display: block !important;
+  max-width: 100% !important;
+  width: 100% !important;
+  white-space: nowrap !important;
+  overflow: visible !important;
+  font-size: clamp(24px, 3.2vw, 42px) !important;
+  line-height: 1 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  letter-spacing: 0 !important;
+}
+@media (max-width: 760px) {
+  body.rp-flora-course .rp-clean-hero + section h2,
+  body.rp-flora-course .rp-clean-hero + .section h2,
+  body.rp-flora-course .rp-clean-hero + section .section-title,
+  body.rp-flora-course .rp-clean-hero + .section .section-title {
+    white-space: normal !important;
+    font-size: clamp(24px, 7vw, 36px) !important;
+  }
+}
+</style>
+<link rel="stylesheet" href="/rajac-design/rajac-global.css?v=1.0">
+<link rel="preload" as="image" href="/rajac-park-static/assets/karst.webp" fetchpriority="high">
+
+<style id="rajac-park-fast-static-patch">
+html{scroll-behavior:smooth}
+body{font-display:swap}
+.rp-global-nav a:first-child,.nav__brand{cursor:pointer}
+.rp-clean-hero,.hero{background-image:var(--rp-clean-hero-bg, url('/rajac-park-static/assets/karst.webp'))!important;background-size:cover!important;background-position:center!important;min-height:min(58vh,560px)}
+.rp-global-nav a[href="/"], .nav__brand[href="/"]{text-decoration:none!important}
+img{max-width:100%;height:auto}
+</style>
+
+
+<style id="rajac-static-layout-repair-v2">
+/* поправка статичких страница Истраживачког парка: контраст, слике, картице и видео */
+:root{--rp-deep:#102338;--rp-cream:#f4efe3;--rp-ink:#17251b;--rp-muted:#526055;--rp-gold:#efbf65;}
+body{overflow-x:hidden;}
+.wrap{max-width:1240px!important;margin-inline:auto!important;}
+.card,.media-card,.gallery-tile,.photo-link,.quote-band,.final-cta{box-sizing:border-box;}
+.card img,.media-card img,.gallery-tile img,.photo-link img,.figure-card img{display:block!important;width:100%!important;max-width:100%!important;object-fit:cover!important;object-position:center!important;}
+.media-card{overflow:hidden!important;border-radius:22px!important;}
+.media-card img{height:240px!important;}
+.grid-2 .media-card img,.grid-2 .card img{height:320px!important;}
+.grid-3 .media-card img,.grid-3 .card img{height:240px!important;}
+.gallery-grid{align-items:stretch!important;}
+.gallery-tile{height:260px!important;min-height:260px!important;overflow:hidden!important;}
+.gallery-tile img{height:100%!important;}
+.gallery-caption{z-index:2!important;color:#fff!important;text-shadow:0 1px 2px rgba(0,0,0,.45)!important;}
+.photo-link{display:flex!important;flex-direction:column!important;gap:12px!important;min-height:0!important;height:auto!important;overflow:hidden!important;padding:16px!important;border-radius:22px!important;background:#fff!important;}
+.photo-link .thumb{height:170px!important;min-height:170px!important;width:100%!important;overflow:hidden!important;border-radius:14px!important;background:#e8e4da!important;}
+.photo-link .thumb img{height:100%!important;}
+.photo-link h3,.photo-link p,.photo-link span{position:relative!important;z-index:2!important;}
+.quote-band,.final-cta,.cta-band,.closing,.proposal,.proposal-box{background:linear-gradient(135deg,#1f5a38,#102e20)!important;color:#fff!important;}
+.quote-band *,.final-cta *,.cta-band *,.closing *,.proposal *,.proposal-box *{color:#fff!important;opacity:1!important;}
+.quote-band a,.final-cta a,.cta-band a,.closing a,.proposal a,.proposal-box a{background:rgba(255,255,255,.15)!important;border-color:rgba(255,255,255,.28)!important;color:#fff!important;}
+.section-head p,.lead,.intro p{color:var(--rp-muted)!important;opacity:1!important;}
+section.dark,.dark,.night-section{color:#fff!important;}
+section.dark *,.dark *,.night-section *{color:inherit;}
+.video-card iframe,.video-card video,.media-card iframe,.media-card video{width:100%!important;aspect-ratio:16/9!important;height:auto!important;min-height:260px!important;background:#252525!important;border:0!important;display:block!important;}
+.g2{display:grid!important;grid-template-columns:repeat(auto-fit,minmax(320px,1fr))!important;gap:22px!important;align-items:start!important;}
+@media(max-width:780px){.media-card img,.grid-2 .media-card img,.grid-2 .card img,.grid-3 .media-card img,.grid-3 .card img{height:220px!important}.gallery-grid{grid-template-columns:1fr!important}.gallery-tile{height:240px!important}.photo-link .thumb{height:160px!important}.video-card iframe,.video-card video,.media-card iframe,.media-card video{min-height:210px!important}}
+</style>
+
+<link rel="stylesheet" href="/rajac-design/rajac-park-responsive.css">
+<script src="/rajac-design/rajac-park-responsive.js" defer></script>
+</head>
+<body class="rp-flora-course" data-rp-course="karst"><nav class="rp-global-nav" id="mainNav" aria-label="Главна навигација курса">
+  <div class="rp-global-nav__inner">
+    <a class="" href="/">
+      <span class="rp-global-nav__mark">Р</span>
+      <span class="rp-global-nav__brand-text">ПИО „РАЈАЦ“</span>
+    </a>
+    <div class="rp-global-nav__scroller">
+      <ul class="rp-global-nav__menu">
+              <li><a class="" href="/istrazivacki-park-rajac/">Курсеви</a></li>
+              <li><a class="" href="/rajac-astronomija/">Астрономија</a></li>
+              <li><a class="" href="/rajac-leptiri/">Лептири</a></li>
+              <li><a class="" href="/rajac-ptice/">Птице</a></li>
+              <li><a class="" href="/rajac-vegetacija/">Вегетација</a></li>
+              <li><a class="is-active" href="/rajac-karst/">Карст</a></li>
+              <li><a class="" href="/rajac-oblaci/">Облаци</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<div class="rp-global-nav-spacer" aria-hidden="true"></div>
+
+  <header class="rp-clean-hero" style="--rp-clean-hero-bg:url('/rajac-park-static/assets/karst.webp');">
+</header>
+
+  <section>
+    <div class="wrap">
+      <div class="section-head">
+        <div class="kicker">Теренска оријентација</div>
+        <h2>Шта посетилац на Рајцу овде учи</h2>
+        <p>Циљ није опасно „освајање“ пећина, већ разумевање крашког предела, поштовање његове осетљивости и прикупљање корисних података који могу помоћи тумачењу простора, едукацији и заштити природе.</p>
+      </div>
+      <div class="intro-grid">
+        <article class="card highlight">
+          <div class="icon-badge" aria-hidden="true">
+            <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M8 48C16 27 23 18 31 18C40 18 49 29 56 48" stroke="#5d4633" stroke-width="3.2" stroke-linecap="round"></path>
+              <path d="M16 46C19 35 25 28 32 28C39 28 45 35 48 46" stroke="#c88d45" stroke-width="3.2" stroke-linecap="round"></path>
+              <circle cx="32" cy="22" r="3.5" fill="#3d5e46"></circle>
+              <path d="M24 48V53H40V48" stroke="#7f857a" stroke-width="3" stroke-linecap="round"></path>
+            </svg>
+          </div>
+          <div>
+            <h3>Краш је и на површини и испод ње</h3>
+            <p>Посматрач на Рајцу пре свега ради на површини: чита облике терена, проналази удубљења и понирања воде, бележи кречњачке стене, прави фотографије из више углова и повезује геоморфологију са водом, вегетацијом и стаништима.</p>
+            <div class="facts">
+              <div class="fact">
+                <strong>Посматрање</strong>
+                <span>вртаче, скрашћене долине, контакт стене, извори, понори, карстне ивице</span>
+              </div>
+              <div class="fact">
+                <strong>Документација</strong>
+                <span>широки кадар, детаљ, размера, координата, датум, стање времена</span>
+              </div>
+              <div class="fact">
+                <strong>Тумачење</strong>
+                <span>како вода обликује терен и зашто су крашка подручја осетљива</span>
+              </div>
+              <div class="fact">
+                <strong>Заштита</strong>
+                <span>без уласка у опасне отворе, без ремећења пећинске фауне и седимената</span>
+              </div>
+            </div>
+          </div>
+        </article>
+        <div class="mini-card">
+          <div class="num">1</div>
+          <h3>За кога је страница</h3>
+          <p>За посетиоце Рајца, наставнике, школске групе, волонтере, љубитеље географије, планинаре и све који желе да разумеју крашке појаве без уласка у ризичне подземне објекте.</p>
+        </div>
+        <div class="mini-card">
+          <div class="num">2</div>
+          <h3>Шта се бележи</h3>
+          <p>Облик појаве, приближне димензије, однос према околном рељефу, вода, стене, вегетација, траг ерозије и стање очуваности.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="sta-je-kras">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="kicker">Основни појмови</div>
+        <h2>Крашки облици које треба препознати</h2>
+        <p>На Рајцу је најважније научити како се крашке појаве читају у простору: по облику терена, односу према падини, путу воде и изгледу стена.</p>
+      </div>
+      <div class="feature-grid">
+        <article class="card figure-card">
+          <div class="figure-media">
+            <svg viewBox="0 0 800 500" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <lineargradient id="sky1" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0%" stop-color="#dfeadf"></stop>
+                  <stop offset="100%" stop-color="#f4f1e8"></stop>
+                </lineargradient>
+              </defs>
+              <rect width="800" height="500" fill="url(#sky1)"></rect>
+              <path d="M0 280C90 250 160 220 240 222C330 225 350 310 404 312C470 315 481 220 575 220C660 220 739 255 800 284V500H0V280Z" fill="#b79a77"></path>
+              <path d="M250 240C300 214 345 214 390 244C432 273 433 330 394 353C343 382 278 375 236 335C202 303 210 259 250 240Z" fill="#7f5a3e"></path>
+              <ellipse cx="318" cy="292" rx="88" ry="56" fill="#5d4633" opacity="0.35"></ellipse>
+              <circle cx="300" cy="290" r="4" fill="#fff"></circle>
+            </svg>
+          </div>
+          <div class="figure-body">
+            <h3>Вртача</h3>
+            <p>Затворено удубљење различите дубине и пречника. На терену обрати пажњу на кружан или левкаст облик, влажније дно, ситнији седимент и другачију вегетацију.</p>
+          </div>
+        </article>
+        <article class="card figure-card">
+          <div class="figure-media">
+            <svg viewBox="0 0 800 500" xmlns="http://www.w3.org/2000/svg">
+              <rect width="800" height="500" fill="#f4f1e8"></rect>
+              <path d="M0 240C111 210 190 215 260 245C328 275 406 284 492 250C566 221 658 208 800 242V500H0V240Z" fill="#b89c7b"></path>
+              <path d="M28 258C177 282 283 287 378 279C489 270 579 254 768 267" stroke="#4f6b7c" stroke-width="14" stroke-linecap="round"></path>
+              <path d="M600 255C640 255 675 274 688 307C698 334 682 350 654 353" stroke="#5d4633" stroke-width="9" stroke-linecap="round"></path>
+              <circle cx="655" cy="353" r="8" fill="#3d5e46"></circle>
+            </svg>
+          </div>
+          <div class="figure-body">
+            <h3>Скрашћена долина</h3>
+            <p>Долина у којој се површински ток прекида и вода постепено нестаје у подземљу. Најбоље се чита праћењем корита, падине и места где ток „нестаје“ или слаби.</p>
+          </div>
+        </article>
+        <article class="card figure-card">
+          <div class="figure-media">
+            <svg viewBox="0 0 800 500" xmlns="http://www.w3.org/2000/svg">
+              <rect width="800" height="500" fill="#f6f2ea"></rect>
+              <path d="M0 230C120 250 225 252 338 232C445 213 579 206 800 240V500H0V230Z" fill="#b59a7b"></path>
+              <path d="M40 260C160 274 250 281 329 280C394 279 462 272 533 258" stroke="#4b6e86" stroke-width="12" stroke-linecap="round"></path>
+              <path d="M530 258C548 258 561 268 566 283C571 300 563 316 548 324L528 334L540 356" stroke="#2d2a28" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"></path>
+              <ellipse cx="546" cy="337" rx="26" ry="18" fill="#161616"></ellipse>
+            </svg>
+          </div>
+          <div class="figure-body">
+            <h3>Понор</h3>
+            <p>Место где се вода губи у подземљу. Фотографиши из безбедне дистанце, без приближавања ивици, а белешком опиши да ли је активан, повремен или затрпан.</p>
+          </div>
+        </article>
+        <article class="card figure-card">
+          <div class="figure-media">
+            <svg viewBox="0 0 800 500" xmlns="http://www.w3.org/2000/svg">
+              <rect width="800" height="500" fill="#f2eee7"></rect>
+              <path d="M0 200C114 238 186 248 270 221C370 189 444 193 533 226C613 255 700 255 800 222V500H0V200Z" fill="#a88463"></path>
+              <path d="M180 140C243 120 307 140 356 180C389 208 420 247 472 254C523 261 586 234 633 205C652 193 672 189 695 192C651 261 610 320 551 355C484 395 403 398 313 368C242 345 199 297 170 226C160 201 162 168 180 140Z" fill="#5b4a3e"></path>
+              <path d="M286 236C323 219 363 228 391 248C420 270 446 304 488 306C438 340 389 346 335 324C295 307 270 274 286 236Z" fill="#1f1a17"></path>
+            </svg>
+          </div>
+          <div class="figure-body">
+            <h3>Пећински улаз и крашка ивица</h3>
+            <p>Овакве појаве се посматрају и тумаче споља. За посетиоце су важни облик отвора, слојевитост стене, влажност, хладни ваздух и положај у односу на падину.</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="bezbednost" class="danger-band">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="kicker">Прво правило</div>
+        <h2>Безбедност и заштита природе су важнији од сваке фотографије</h2>
+        <p>Крашки терен уме да буде варљив: клизав, поткопан, нестабилан и осетљив. Посматрање на Рајцу мора да буде површинско, опрезно и без самосталног уласка у подземне просторе.</p>
+      </div>
+      <div class="warning-grid">
+        <article class="warning">
+          <strong>🟡 Не улазити самостално у пећине, јаме, поноре и нестабилне отворе</strong>
+          <p>Улазак у такве објекте није део посете и није део ове обуке. За сваки подземни рад неопходни су обучен спелеолошки тим, одговарајућа опрема, процена ризика и услови које одређују надлежни управљачи и стручне службе.</p>
+        </article>
+        <article class="warning">
+          <strong>🟡 Не стајати на ивицама вртача и урушавања</strong>
+          <p>Ивица може изгледати чврсто, а да буде подлокана или растресита. Фотографије се праве из стабилне зоне, без ослањања на руб и без груписања више људи на једном месту.</p>
+        </article>
+        <article class="warning">
+          <strong>🟡 Не узнемиравати слепе мишеве и другу пећинску фауну</strong>
+          <p>Подземни отвори и сеновити стенски делови могу бити станишта осетљивих врста. Не осветљавај дуго унутрашњост, не вичи, не убацуј камење, не дирај наслаге и не померај материјал.</p>
+        </article>
+        <article class="warning">
+          <strong>🟡 После јаке кише и по магли терен се не тумачи на истом нивоу сигурности</strong>
+          <p>Тада су клизавост, замућење, привремени токови и урушавање израженији. У таквим условима посматрање се скраћује, а тежиште се пребацује на сигурне видиковце и већ познате стазе.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="metodologija">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="kicker">Теренски протокол</div>
+        <h2>Методологија за посматрање и бележење са површине</h2>
+        <p>Ова методологија је намењена посетиоцима и едукативним групама. Она не укључује технике подземног истраживања, већ безбедно посматрање, описивање и документовање појава које су видљиве на терену.</p>
+      </div>
+      <div class="protocol-grid">
+        <article class="mini-card">
+          <div class="num">1</div>
+          <h3>Припрема пре поласка</h3>
+          <p>Провери прогнозу, планирај трасу по обележеним стазама, понеси воду, чврсту обућу, резервну батерију, мобилни телефон са укљученом локацијом, свеску или апликацију за белешке и бар један предмет који може послужити као размера на фотографији.</p>
+        </article>
+        <article class="mini-card">
+          <div class="num">2</div>
+          <h3>Посматрање у простору</h3>
+          <p>На свакој тачки најпре погледај цео однос облика и околине: да ли је појава на падини, у дну увале, уз шумски руб, у близини корита или на прелазу између стеновитог и земљишног дела.</p>
+        </article>
+        <article class="mini-card">
+          <div class="num">3</div>
+          <h3>Белешка о води</h3>
+          <p>Забележи да ли је вода присутна, да ли понире, стагнира или само оставља трагове влажења. Код краша је однос воде и стене често кључ за разумевање настанка појаве.</p>
+        </article>
+        <article class="mini-card">
+          <div class="num">4</div>
+          <h3>Приближне димензије</h3>
+          <p>Без ризичног силаска процени пречник, дубину и нагиб. Није потребна геодетска прецизност да би се добила корисна едукативна и управљачка информација; важно је да процена буде доследна и упоредива.</p>
+        </article>
+        <article class="mini-card">
+          <div class="num">5</div>
+          <h3>Стене, земљиште, вегетација</h3>
+          <p>Запиши да ли се виде слојеви кречњака, пукотине, сипар, фина земља на дну, трагови ерозије, маховине, другачија влага или специфична вегетација унутар удубљења.</p>
+        </article>
+        <article class="mini-card">
+          <div class="num">6</div>
+          <h3>Координата и назив тачке</h3>
+          <p>За сваку појаву забележи бар приближну GPS тачку, датум, време и кратак назив локалитета. То омогућава да се снимак касније повеже са картом, извештајем или теренским дневником.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="fotografije">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="kicker">Фото-документација</div>
+        <h2>Како фотографисати крашке појаве да фотографија буде корисна</h2>
+        <p>Добра геоморфолошка фотографија није само леп призор. Она треба да покаже где се појава налази, колика је, како изгледа у односу на околину и који је детаљ важан за тумачење.</p>
+      </div>
+      <div class="note-grid">
+        <article class="card pad">
+          <h3>1. Широки контекст</h3>
+          <p>Прво сними општи кадар који приказује целу појаву и њен однос са падином, стазом, шумом, долином или стенском масом. То је фотографија која најбоље објашњава положај у пејзажу.</p>
+          <p>Кад год је могуће, бирај бочну или косу перспективу, јер се дубина и нагиб најбоље читају када се облик не снима фронтално.</p>
+        </article>
+        <article class="card pad">
+          <h3>2. Средњи кадар са размером</h3>
+          <p>После општег кадра сними средњи план и уведи предмет за размеру: човека на безбедној позицији, планинарски штап, ранац или мерну летву. Без размере је тешко тумачити димензије.</p>
+          <p>Важно је да размеру не постављаш на опасну ивицу нити у зону урушавања.</p>
+        </article>
+        <article class="card pad">
+          <h3>3. Детаљ који објашњава</h3>
+          <p>Трећа фотографија треба да покаже детаљ: слојевитост стене, пукотину, понорски отвор, нанос, трагове воде, контакте тла и стене или посебну биљну заједницу.</p>
+          <p>Управо овај снимак касније често буде највреднији за едукативни текст, таблу или извештај.</p>
+        </article>
+        <article class="card pad">
+          <h3>4. Дрон и напредно снимање</h3>
+          <p>Снимци из ваздуха могу бити веома корисни за вртаче и сложене крашке облике, али дрон није део основне обуке посетилаца. Његова употреба мора бити усклађена са прописима, дозволама, временским условима и обученим оператором.</p>
+          <p>За стручни рад дронови и LiDAR могу знатно побољшати морфометријску анализу долина и вртача, посебно у сложеном и делимично зашумљеном терену.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="section-head">
+        <div class="kicker">Теренски образац</div>
+        <h2>Мини образац за један налаз</h2>
+        <p>Овако записан налаз је довољно једноставан за посетиоце, а ипак употребљив касније за едукацију, интерпретацију на сајту, GIS бележење и разговор са стручњацима.</p>
+      </div>
+      <div class="checklist">
+        <ul>
+          <li><strong>Назив тачке:</strong> нпр. „вртача уз шумску стазу“</li>
+          <li><strong>Датум и време:</strong> када је појава посматрана</li>
+          <li><strong>Координата:</strong> GPS са телефона или мапе</li>
+          <li><strong>Тип појаве:</strong> вртача, понор, скрашћена долина, стенска ивица, извор</li>
+          <li><strong>Опис:</strong> облик, дубина/ширина по процени, влажност, вода, стене, вегетација</li>
+          <li><strong>Стање очуваности:</strong> природно, делимично нарушено, отпад, ерозија, трагови људског утицаја</li>
+          <li><strong>Фото сет:</strong> општи кадар, размерa, детаљ</li>
+          <li><strong>Напомена:</strong> да ли је потребно обавестити управљача или стручну службу</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="izvori">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="kicker">Поуздани спољни извори</div>
+        <h2>Организације, приручници и научни извори</h2>
+        <p>Ови извори су добри за даље учење, израду наставе, тумачење геоморфологије, заштиту краша и разумевање како професионалци приступају мапирању, конзервацији и анализи ризика.</p>
+      </div>
+      <div class="sources-grid">
+        <article class="source-card">
+          <span class="tag">Међународно</span>
+          <h3>UIS / IUCN</h3>
+          <p>Међународне смернице за заштиту пећина и краша. Корисно за разумевање зашто се краш посматра као осетљив систем у коме површинске активности утичу и на подземље.</p>
+          <a class="more" href="https://uis-speleo.org/index.php/guidelines-for-cave-and-karst-protection/" target="_blank" rel="noopener">Отвори смернице</a>
+        </article>
+        <article class="source-card">
+          <span class="tag">Истраживање</span>
+          <h3>National Cave and Karst Research Institute</h3>
+          <p>Једна од најпознатијих институција за истраживање, управљање и образовање у области краша и пећина, са порталима, теренским водичима и публикацијама.</p>
+          <a class="more" href="https://nckri.org/about/" target="_blank" rel="noopener">Отвори NCKRI</a>
+        </article>
+        <article class="source-card">
+          <span class="tag">Геонаука</span>
+          <h3>USGS</h3>
+          <p>Јасан увод у карст, поноре, подземне воде и ризике. Посебно користан када се објашњава веза између краша, извора, подземне дренаже и осетљивости на загађење.</p>
+          <a class="more" href="https://www.usgs.gov/mission-areas/water-resources/science/science-topics/karst-sinkholes-and-land-subsidence" target="_blank" rel="noopener">Отвори USGS</a>
+        </article>
+        <article class="source-card">
+          <span class="tag">Едукација</span>
+          <h3>National Park Service</h3>
+          <p>Добар извор за основна тумачења: шта је краш, како вода обликује терен и зашто су пећине и понори значајни за хидрологију и заштиту природе.</p>
+          <a class="more" href="https://www.nps.gov/subjects/caves/karst-landscapes.htm" target="_blank" rel="noopener">Отвори NPS</a>
+        </article>
+        <article class="source-card">
+          <span class="tag">Конзервација</span>
+          <h3>National Speleological Society</h3>
+          <p>Политике очувања и приступи минималном утицају. Важно за разумевање да пећински ресурси, хидролошки системи и подземна станишта морају да остану што мање узнемирени.</p>
+          <a class="more" href="https://caves.org/conservation/conservation-and-preservation-policies/" target="_blank" rel="noopener">Отвори NSS</a>
+        </article>
+        <article class="source-card">
+          <span class="tag">Ризици</span>
+          <h3>British Geological Survey</h3>
+          <p>Добар преглед проблема sinkhole/ponor ризика и шири приступ разумевању крашких колапса и нестабилности терена.</p>
+          <a class="more" href="https://www.bgs.ac.uk/geology-projects/sinkholes-research/" target="_blank" rel="noopener">Отвори BGS</a>
+        </article>
+        <article class="source-card">
+          <span class="tag">Картографија</span>
+          <h3>British Caving Association / BCRA</h3>
+          <p>Овде се види колико су обучавање, мапирање, фотографија, архива и научни рад повезани у модерној спелеологији. Корисно за разумевање професионалних стандарда.</p>
+          <a class="more" href="https://british-caving.org.uk/our-work/science/" target="_blank" rel="noopener">Отвори BCA/BCRA</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="video">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="kicker">Видео материјал</div>
+        <h2>Видео за Рајац и додатни едукативни видео извори</h2>
+        <p>Испод су локални снимци са Рајца и неколико поузданих спољних видео извора који помажу да се краш разуме визуелно, без потребе за ризичним приближавањем осетљивим местима.</p>
+      </div>
+      <div class="media-grid">
+        <article class="card video-card">
+          <video controls="" preload="metadata" controlslist="nodownload">
+            <source src="https://rajac.rs/wp-content/uploads/2025/02/lv_0_20250215121605.mp4" type="video/mp4">
+          </video>
+          <div class="video-caption">
+            <strong>Рајац — скрашћена долина</strong>
+            Локални теренски снимак погодан за објашњење односа долине, корита и места где вода губи површински ток.
+          </div>
+        </article>
+        <article class="card video-card">
+          <video controls="" preload="metadata" controlslist="nodownload">
+            <source src="https://rajac.rs/wp-content/uploads/2025/02/VID_20250206_140157.mp4" type="video/mp4">
+          </video>
+          <div class="video-caption">
+            <strong>Рајац — вртаче на дну скрашћене долине</strong>
+            Локални снимак који помаже да се чита микрорељеф и распоред мањих крашких удубљења унутар шире крашке форме.
+          </div>
+        </article>
+        <article class="card video-card">
+          <iframe src="https://www.youtube-nocookie.com/embed/6-ylDYpPfjQ" title="International Year of Caves and Karst" allowfullscreen="" loading="lazy"></iframe>
+          <div class="video-caption">
+            <strong>International Year of Caves and Karst</strong>
+            Уводни међународни видео о значају краша и пећина, са нагласком на образовању и заштити.
+          </div>
+        </article>
+        <article class="card video-card">
+          <iframe src="https://www.youtube-nocookie.com/embed/tXlDczlojk4" title="USGS Karst Hazards Research" allowfullscreen="" loading="lazy"></iframe>
+          <div class="video-caption">
+            <strong>USGS — karst hazards research</strong>
+            Корисно за разумевање како се савремена геонаука бави понорима, колапсима и мапирањем крашких ризика.
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="section-head">
+        <div class="kicker">Фотографије и галерије</div>
+        <h2>Спољни фото извори за учење и поређење</h2>
+        <p>Ове фотографије не представљају Рајац, већ помажу посетиоцима да упореде облике и да лакше препознају основне типове крашких појава на терену.</p>
+      </div>
+      <div class="gallery-grid">
+        <a class="photo-link" href="https://commons.wikimedia.org/wiki/File:Sinkhole_in_Tuhala_karst_area.jpg" target="_blank" rel="noopener">
+          <div class="thumb"><img src="/rajac-park-static/assets/karst-gallery-1.webp" alt="Пример велике вртаче" loading="lazy" decoding="async"></div>
+          <h3>Пример велике вртаче</h3>
+          <p>Визуелно корисно за разумевање дубине, ивице и односа човек–размера.</p>
+          <span>Отвори фотографију</span>
+        </a>
+        <a class="photo-link" href="https://commons.wikimedia.org/wiki/File:Hidden_River_Cave_(Horse_Cave,_Kentucky,_USA)_2.jpg" target="_blank" rel="noopener">
+          <div class="thumb"><img src="/rajac-park-static/assets/karst-gallery-2.webp" alt="Пример пећинског отвора и sinkhole-а" loading="lazy" decoding="async"></div>
+          <h3>Пећински отвор и sinkhole</h3>
+          <p>Добар пример како површинско удубљење може бити повезано са подземним простором.</p>
+          <span>Отвори фотографију</span>
+        </a>
+        <a class="photo-link" href="https://commons.wikimedia.org/wiki/Category:Karst" target="_blank" rel="noopener">
+          <div class="thumb"><img src="/rajac-park-static/assets/karst-gallery-3.webp" alt="Пример мање крашке вртаче" loading="lazy" decoding="async"></div>
+          <h3>Мања крашка вртача</h3>
+          <p>Корисно за поређење са мањим удубљењима која посетилац може видети на терену.</p>
+          <span>Отвори галерију краша</span>
+        </a>
+        <a class="photo-link" href="https://commons.wikimedia.org/wiki/Category:Sinkholes" target="_blank" rel="noopener">
+          <div class="thumb"><img src="/rajac-park-static/assets/karst-gallery-4.webp" alt="Пример вртаче са задржавањем влаге" loading="lazy" decoding="async"></div>
+          <h3>Вртача и микроклима</h3>
+          <p>Добар визуелни пример како дно вртаче уме да задржава влагу и да има другачије услове од околине.</p>
+          <span>Отвори фото категорију</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="section-head">
+        <div class="kicker">Практична примена</div>
+        <h2>Како ова страница може да се користи на Рајцу</h2>
+        <p>Садржај је погодан за шетњу са тумачем, школску наставу у природи, волонтерске акције, сајт, QR код на терену, као и за прве кораке ка систематичнијем геонаслеђном мониторингу.</p>
+      </div>
+      <div class="note-grid">
+        <article class="card pad">
+          <h3>Теренска настава</h3>
+          <p>Наставник може да подели групу у мање тимове: једни читају рељеф, други фотографишу, трећи бележе воду и вегетацију, а затим се налази упоређују на једној заједничкој карти.</p>
+        </article>
+        <article class="card pad">
+          <h3>Интерпретација за посетиоце</h3>
+          <p>Страница може да стоји уз QR код на стази или видиковцу и да посетиоца води од општег разумевања краша ка конкретном локалном примеру, без преоптерећења сувом теоријом.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  
+
+
+
+
+<!-- SITE_EDITOR_ADMIN_BAR_START -->
+<script src="/admin-site-editor.php?admin_bar_js=1" defer></script>
+<!-- SITE_EDITOR_ADMIN_BAR_END -->
+</body></html>
+
+
+
+
+
+
+

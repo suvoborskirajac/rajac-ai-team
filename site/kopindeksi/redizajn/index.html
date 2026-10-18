@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="sr-Cyrl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="light">
+<title>Рајац — агроклима, Copernicus и парцеле</title>
+<meta name="description" content="Улазна контролна табла за агроклиму, Copernicus сателитски мониторинг, парцеле и извештаје ПИО Рајац.">
+<style>
+:root{
+  --bg:#f4f6f8;
+  --paper:#ffffff;
+  --ink:#17212b;
+  --muted:#64717d;
+  --line:#dce3e8;
+  --soft:#eef2f5;
+  --blue:#1769aa;
+  --blue-soft:#eaf4fb;
+  --ochre:#9a6518;
+  --ochre-soft:#fff5e5;
+  --earth:#72533b;
+  --earth-soft:#f5eee8;
+  --navy:#263b55;
+  --navy-soft:#edf2f7;
+  --ok:#287a4b;
+  --warn:#a45c13;
+  --bad:#a33434;
+  --shadow:0 12px 32px rgba(31,49,66,.08);
+  --radius:16px;
+  --font:"Segoe UI",Roboto,Arial,sans-serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--font);line-height:1.55}
+a{color:inherit;text-decoration:none}
+button{font:inherit}
+.shell{width:min(1480px,calc(100% - 32px));margin:0 auto}
+.site-head{
+  position:sticky;top:0;z-index:30;background:rgba(255,255,255,.96);
+  border-bottom:1px solid var(--line)
+}
+.head-row{min-height:68px;display:flex;align-items:center;gap:18px}
+.brand{display:flex;align-items:center;gap:12px;margin-right:auto;min-width:0}
+.brand-mark{
+  width:42px;height:42px;border:1px solid var(--line);border-radius:12px;
+  display:grid;place-items:center;background:#fff;font-weight:800;color:var(--navy)
+}
+.brand-text{min-width:0}
+.brand-text b{display:block;font-size:16px;line-height:1.2}
+.brand-text small{display:block;color:var(--muted);font-size:12px;margin-top:3px}
+.top-nav{display:flex;align-items:center;gap:6px}
+.top-nav a{
+  min-height:40px;display:inline-flex;align-items:center;padding:0 13px;
+  border:1px solid transparent;border-radius:10px;font-size:13px;font-weight:700;color:#44515d
+}
+.top-nav a:hover{background:var(--soft);border-color:var(--line)}
+.hero{padding:48px 0 28px}
+.eyebrow{font-size:12px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--blue)}
+.hero-grid{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(320px,.7fr);gap:24px;align-items:stretch}
+.hero-main,.status-panel{background:var(--paper);border:1px solid var(--line);border-radius:20px;box-shadow:var(--shadow)}
+.hero-main{padding:34px}
+.hero h1{font-size:clamp(32px,5vw,58px);line-height:1.04;letter-spacing:-.04em;margin:12px 0 18px;max-width:920px}
+.hero p{margin:0;color:var(--muted);font-size:17px;max-width:900px}
+.hero-actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:26px}
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:0 16px;
+  border-radius:11px;border:1px solid var(--line);background:#fff;font-weight:800;font-size:13px
+}
+.btn.primary{background:var(--navy);color:#fff;border-color:var(--navy)}
+.btn:hover{filter:brightness(.98)}
+.status-panel{padding:22px}
+.status-panel h2{font-size:15px;margin:0 0 14px}
+.status-list{display:grid;gap:10px}
+.status-row{
+  display:grid;grid-template-columns:12px minmax(0,1fr) auto;align-items:center;gap:10px;
+  padding:12px;border:1px solid var(--line);border-radius:12px;background:#fff
+}
+.dot{width:9px;height:9px;border-radius:50%;background:#9aa6b1}
+.dot.ok{background:var(--ok)}.dot.warn{background:var(--warn)}.dot.bad{background:var(--bad)}
+.status-row b{display:block;font-size:13px}.status-row small{display:block;color:var(--muted);font-size:11px}
+.status-row strong{font-size:13px;white-space:nowrap}
+.section{padding:20px 0}
+.section-head{display:flex;align-items:flex-end;gap:18px;margin-bottom:16px}
+.section-head h2{font-size:26px;line-height:1.15;margin:0}
+.section-head p{margin:0;color:var(--muted);font-size:13px}
+.modules{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}
+.module{
+  display:flex;flex-direction:column;min-height:310px;background:#fff;border:1px solid var(--line);
+  border-radius:var(--radius);overflow:hidden;box-shadow:0 8px 22px rgba(31,49,66,.05)
+}
+.module-top{height:7px;background:var(--navy)}
+.module.agro .module-top{background:var(--ochre)}
+.module.cop .module-top{background:var(--blue)}
+.module.parcels .module-top{background:var(--earth)}
+.module.reports .module-top{background:var(--navy)}
+.module-body{padding:22px;display:flex;flex-direction:column;flex:1}
+.module-icon{
+  width:46px;height:46px;border-radius:13px;display:grid;place-items:center;font-size:23px;
+  border:1px solid var(--line);background:var(--soft)
+}
+.module.agro .module-icon{background:var(--ochre-soft)}
+.module.cop .module-icon{background:var(--blue-soft)}
+.module.parcels .module-icon{background:var(--earth-soft)}
+.module.reports .module-icon{background:var(--navy-soft)}
+.module h3{font-size:22px;margin:18px 0 8px}
+.module p{color:var(--muted);font-size:13px;margin:0 0 16px}
+.module ul{margin:0;padding-left:18px;color:#47535e;font-size:12.5px}
+.module li+li{margin-top:6px}
+.module-actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:auto;padding-top:20px}
+.module-actions a{
+  min-height:40px;display:inline-flex;align-items:center;padding:0 12px;border-radius:9px;
+  border:1px solid var(--line);font-size:12px;font-weight:800;background:#fff
+}
+.module-actions a.main{background:var(--ink);border-color:var(--ink);color:#fff}
+.snapshot{
+  display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:12px
+}
+.metric{background:#fff;border:1px solid var(--line);border-radius:14px;padding:17px}
+.metric span{display:block;color:var(--muted);font-size:11px;text-transform:uppercase;letter-spacing:.06em;font-weight:800}
+.metric strong{display:block;font-size:23px;margin-top:6px;line-height:1.1}
+.metric small{display:block;color:var(--muted);font-size:11px;margin-top:6px}
+.quick-links{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.quick-link{
+  display:flex;align-items:center;gap:12px;padding:16px;background:#fff;border:1px solid var(--line);
+  border-radius:13px
+}
+.quick-link:hover{border-color:#aebbc5}
+.quick-link b{display:block;font-size:13px}
+.quick-link small{display:block;color:var(--muted);font-size:11px;margin-top:2px}
+.ql-icon{width:38px;height:38px;display:grid;place-items:center;border-radius:10px;background:var(--soft)}
+.notice{
+  margin:26px 0 42px;padding:16px 18px;border:1px solid #ead9b9;border-left:4px solid var(--ochre);
+  border-radius:12px;background:#fffaf1;color:#5d513e;font-size:12.5px
+}
+footer{border-top:1px solid var(--line);background:#fff}
+.foot{min-height:76px;display:flex;align-items:center;gap:18px;color:var(--muted);font-size:12px}
+.foot a{margin-left:auto;color:var(--navy);font-weight:800}
+@media(max-width:1100px){
+  .hero-grid{grid-template-columns:1fr}
+  .modules{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .snapshot{grid-template-columns:repeat(3,minmax(0,1fr))}
+}
+@media(max-width:760px){
+  .shell{width:min(100% - 20px,1480px)}
+  .head-row{min-height:62px}.top-nav{display:none}
+  .hero{padding-top:24px}.hero-main{padding:24px}
+  .modules,.snapshot,.quick-links{grid-template-columns:1fr}
+  .section-head{display:block}.section-head p{margin-top:6px}
+  .foot{align-items:flex-start;flex-direction:column;padding:18px 0}.foot a{margin-left:0}
+}
+</style>
+</head>
+<body>
+<header class="site-head">
+  <div class="shell head-row">
+    <a class="brand" href="/kopindeksi/">
+      <span class="brand-mark">Р</span>
+      <span class="brand-text"><b>Рајац — просторни мониторинг</b><small>Агроклима · Copernicus · парцеле · извештаји</small></span>
+    </a>
+    <nav class="top-nav" aria-label="Главна навигација">
+      <a href="#moduli">Модули</a>
+      <a href="/kopindeksi/copernicus/">Copernicus</a>
+      <a href="/amsrajac/">Агроклима</a>
+      <a href="/kopindeksi/parcele/">Парцеле</a>
+      <a href="#izvestaji">Извештаји</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+<section class="hero">
+  <div class="shell hero-grid">
+    <article class="hero-main">
+      <div class="eyebrow">ПИО „Рајац“ · сателитски и агрометеоролошки мониторинг</div>
+      <h1>Интегрисани систем сателитског и агрометеоролошког мониторинга ПИО „Рајац“</h1>
+      <p>Јединствени портал обједињује АМС Рајац, Copernicus/Sentinel‑2 мониторинг, катастарске парцеле, дугорочне анализе вегетационих индекса и аутоматске извештаје. Сваки модул остаје самосталан, а заједно чине интегрисани систем за континуирано праћење стања простора ПИО „Рајац“.</p>
+      <div class="hero-actions">
+        <a class="btn primary" href="/kopindeksi/copernicus/">Отвори Copernicus сервис</a>
+        <a class="btn" href="/amsrajac/">Отвори АМС Рајац</a>
+        <a class="btn" href="/agro-kopernikus/">Отвори Agro Copernicus</a>
+      </div>
+    </article>
+    <aside class="status-panel" aria-label="Тренутни статус система">
+      <h2>Тренутни статус</h2>
+      <div class="status-list">
+        <div class="status-row"><i class="dot" id="ams-dot"></i><div><b>АМС Рајац</b><small id="ams-sub">Провера LIVE извора…</small></div><strong id="ams-value">—</strong></div>
+        <div class="status-row"><i class="dot" id="cop-dot"></i><div><b>Copernicus каталог</b><small id="cop-sub">Учитавање година и датума…</small></div><strong id="cop-value">—</strong></div>
+        <div class="status-row"><i class="dot ok"></i><div><b>Катастарске парцеле</b><small>Насеље Ба · општина Љиг</small></div><strong>1.211</strong></div>
+        <div class="status-row"><i class="dot ok"></i><div><b>Локална обрада</b><small>Статичке странице и серверски API</small></div><strong>активна</strong></div>
+      </div>
+    </aside>
+  </div>
+</section>
+
+<section class="section" id="moduli">
+  <div class="shell">
+    <div class="section-head"><h2>Главни модули</h2><p>Сваки модул отвара постојећи радни сервис, без отварања новог прозора.</p></div>
+    <div class="modules">
+      <article class="module agro">
+        <div class="module-top"></div><div class="module-body">
+          <div class="module-icon">🌦️</div><h3>Агроклима</h3>
+          <p>Мерења са АМС Рајац и процене услова за пољопривреду, теренски рад и боравак на планини.</p>
+          <ul><li>температура, влага, ветар и падавине</li><li>мраз, кошење и ризик од болести</li><li>прогноза, аларми и дневни извештаји</li></ul>
+          <div class="module-actions"><a class="main" href="/amsrajac/">Отвори АМС</a><a href="/kopindeksi/agro.html">Постојећа агро страница</a></div>
+        </div>
+      </article>
+
+      <article class="module cop">
+        <div class="module-top"></div><div class="module-body">
+          <div class="module-icon">🛰️</div><h3>Copernicus</h3>
+          <p>Посебан сервис за Sentinel‑2 архиву, RGB/FCI снимке и индексе стања вегетације.</p>
+          <ul><li>NDVI, NDMI, RECI, RGB и FCI</li><li>избор године и датума</li><li>архива, поређење и стручна тумачења</li></ul>
+          <div class="module-actions"><a class="main" href="/kopindeksi/copernicus/">Отвори сервис</a><a href="/kopernikindeks/">Последњи индекс</a></div>
+        </div>
+      </article>
+
+      <article class="module parcels">
+        <div class="module-top"></div><div class="module-body">
+          <div class="module-icon">🗺️</div><h3>Парцеле</h3>
+          <p>Катастарске и анализиране пољопривредне парцеле, стање индекса и праћење по изабраној површини.</p>
+          <ul><li>1.211 катастарских парцела насеља Ба</li><li>аналитика NDVI/NDMI/RECI по парцели</li><li>VCI, статистика и претплате</li></ul>
+          <div class="module-actions"><a class="main" href="/kopindeksi/parcele/">Катастарске парцеле</a><a href="/agro-kopernikus/">Agro Copernicus</a></div>
+        </div>
+      </article>
+
+      <article class="module reports" id="izvestaji">
+        <div class="module-top"></div><div class="module-body">
+          <div class="module-icon">📄</div><h3>Извештаји и анализе</h3>
+          <p>Аутоматски дневни и периодични резултати који повезују сателитске индексе са условима на Рајцу.</p>
+          <ul><li>AMS × Copernicus извештај</li><li>хистограми и дугорочне серије</li><li>дневни, месечни и тематски прегледи</li></ul>
+          <div class="module-actions"><a class="main" href="/kopindeksi/ams-copernicus-agent/output/latest_block.html">Најновији извештај</a><a href="/monitoring-izvestaji/">Архива извештаја</a></div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="shell">
+    <div class="section-head"><h2>Сажетак система</h2><p>Вредности Copernicus каталога учитавају се директно са сервера.</p></div>
+    <div class="snapshot">
+      <div class="metric"><span>Период архиве</span><strong id="range-value">—</strong><small id="range-note">Учитавање catalog.json</small></div>
+      <div class="metric"><span>Године</span><strong id="years-value">—</strong><small>године које каталог тренутно види</small></div>
+      <div class="metric"><span>Датуми</span><strong id="dates-value">—</strong><small>јединствени Sentinel‑2 датуми</small></div>
+      <div class="metric"><span>Просторна резолуција</span><strong>10 m</strong><small>основни Sentinel‑2 индексни слојеви</small></div>
+      <div class="metric"><span>Катастарске парцеле</span><strong>1.211</strong><small>насеље Ба · 758 ha</small></div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="shell">
+    <div class="section-head"><h2>Брзи приступ</h2><p>Постојећи радни сервиси остају активни и повезани.</p></div>
+    <div class="quick-links">
+      <a class="quick-link" href="/kopindeksi/indeksi/"><span class="ql-icon">🌿</span><span><b>Постојећи Copernicus индекс</b><small>NDVI, NDMI, RECI и архива у садашњој страници</small></span></a>
+      <a class="quick-link" href="/kopindeksi/parcel_analytics.html"><span class="ql-icon">📈</span><span><b>Аналитика парцела</b><small>Вредности индекса по изабраној парцели</small></span></a>
+      <a class="quick-link" href="/kopindeksi/parcel_longterm_analytics.html"><span class="ql-icon">📉</span><span><b>Дугорочна анализа парцела</b><small>Трендови, месечни просеци, VCI контекст и аномалије</small></span></a>
+      <a class="quick-link" href="/kopernikindeks/"><span class="ql-icon">🛰️</span><span><b>Последњи сателитски индекс</b><small>Најновије NDVI, NDMI и RECI карте за ПИО „Рајац“</small></span></a>
+      <a class="quick-link" href="/vegetacija-kopernikus/"><span class="ql-icon">🌳</span><span><b>Вегетација ПИО</b><small>Тематски преглед стања вегетације целог подручја</small></span></a>
+      <a class="quick-link" href="/agro-kopernikus/"><span class="ql-icon">🌾</span><span><b>Agro Copernicus</b><small>Изабране пољопривредне парцеле и метео контекст</small></span></a>
+    </div>
+    <div class="notice"><strong>Централни портал:</strong> Агроклима, Copernicus, парцеле и извештаји обједињени су на једном месту. Постојећа агрометеоролошка апликација остаје доступна преко линка „Постојећа агро страница“.</div>
+  </div>
+</section>
+</main>
+
+<footer><div class="shell foot"><span>ПИО „Рајац“ · интегрисани просторни мониторинг</span><span id="updated">Последња провера: —</span><a href="https://piorajac.rs/">Почетна страна ПИО „РАЈАЦ“</a></div></footer>
+
+<script>
+(function(){
+  "use strict";
+  var catalogUrl="/kopindeksi/copernicus_data/catalog.json?nocache="+Date.now();
+  var amsUrl="/amsrajac/api.php?nocache="+Date.now();
+
+  function setDot(id,state){
+    var el=document.getElementById(id); if(!el)return;
+    el.className="dot"+(state?" "+state:"");
+  }
+  function walkNumbers(obj, keys){
+    var found=[];
+    function walk(v,path,depth){
+      if(depth>8 || v===null || v===undefined)return;
+      if(typeof v==="number" && isFinite(v)){
+        var p=path.toLowerCase();
+        if(keys.some(function(k){return p.indexOf(k)>=0;})) found.push(v);
+      }else if(typeof v==="string"){
+        var n=Number(String(v).replace(",","."));
+        if(isFinite(n)){
+          var ps=path.toLowerCase();
+          if(keys.some(function(k){return ps.indexOf(k)>=0;})) found.push(n);
+        }
+      }else if(Array.isArray(v)){
+        v.slice(0,200).forEach(function(x,i){walk(x,path+"."+i,depth+1);});
+      }else if(typeof v==="object"){
+        Object.keys(v).slice(0,300).forEach(function(k){walk(v[k],path+"."+k,depth+1);});
+      }
+    }
+    walk(obj,"",0); return found;
+  }
+  function collectCatalog(obj){
+    var dates=new Set(), years=new Set();
+    function walk(v,depth){
+      if(depth>12 || v===null || v===undefined)return;
+      if(typeof v==="string"){
+        var matches=v.match(/\b(20\d{2})-(\d{2})-(\d{2})\b/g)||[];
+        matches.forEach(function(d){dates.add(d);years.add(d.slice(0,4));});
+        var ym=v.match(/\b(20\d{2})\b/g)||[];
+        ym.forEach(function(y){years.add(y);});
+      }else if(Array.isArray(v)){
+        v.forEach(function(x){walk(x,depth+1);});
+      }else if(typeof v==="object"){
+        Object.keys(v).forEach(function(k){
+          if(/^20\d{2}$/.test(k))years.add(k);
+          var dm=k.match(/\b(20\d{2}-\d{2}-\d{2})\b/);
+          if(dm){dates.add(dm[1]);years.add(dm[1].slice(0,4));}
+          walk(v[k],depth+1);
+        });
+      }
+    }
+    walk(obj,0);
+    var d=Array.from(dates).sort(), y=Array.from(years).sort();
+    return {dates:d,years:y,first:d[0]||"",last:d[d.length-1]||""};
+  }
+  fetch(catalogUrl,{cache:"no-store"})
+    .then(function(r){if(!r.ok)throw new Error("HTTP "+r.status);return r.json();})
+    .then(function(data){
+      var c=collectCatalog(data);
+      setDot("cop-dot","ok");
+      document.getElementById("cop-value").textContent=c.last||"активан";
+      document.getElementById("cop-sub").textContent=c.dates.length+" датума · "+c.years.length+" година";
+      document.getElementById("years-value").textContent=c.years.length||"—";
+      document.getElementById("dates-value").textContent=c.dates.length||"—";
+      document.getElementById("range-value").textContent=(c.first&&c.last)?c.first.slice(0,4)+"–"+c.last.slice(0,4):"—";
+      document.getElementById("range-note").textContent=(c.first&&c.last)?c.first+" → "+c.last:"Каталог не садржи читљиве датуме";
+    })
+    .catch(function(){
+      setDot("cop-dot","warn");
+      document.getElementById("cop-value").textContent="провери";
+      document.getElementById("cop-sub").textContent="catalog.json није учитан";
+    });
+
+  fetch(amsUrl,{cache:"no-store"})
+    .then(function(r){if(!r.ok)throw new Error("HTTP "+r.status);return r.json();})
+    .then(function(data){
+      var vals=walkNumbers(data,["temp","temperature","outtemp","air_temperature"]);
+      var temp=vals.find(function(v){return v>-50&&v<60;});
+      setDot("ams-dot","ok");
+      document.getElementById("ams-value").textContent=(temp!==undefined?temp.toFixed(1)+" °C":"LIVE");
+      document.getElementById("ams-sub").textContent="API одговор је доступан";
+    })
+    .catch(function(){
+      setDot("ams-dot","warn");
+      document.getElementById("ams-value").textContent="провери";
+      document.getElementById("ams-sub").textContent="LIVE API тренутно није учитан";
+    });
+
+  document.getElementById("updated").textContent="Последња провера: "+new Date().toLocaleString("sr-RS");
+})();
+</script>
+</body>
+</html>

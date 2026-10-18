@@ -1,0 +1,495 @@
+<!doctype html>
+<html lang="sr-Cyrl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Звездано небо изнад Рајца</title>
+  <meta name="description" content="Интерактивни all-sky снимак звезданог неба изнад Рајца, са описом услова снимања, зумирањем, померањем и окретањем неба.">
+  <style>
+    :root{
+      --bg:#000;
+      --panel:rgba(3,6,8,.72);
+      --line:rgba(255,255,255,.16);
+      --text:#f4f7f8;
+      --muted:#aeb8bd;
+      --accent:#d7e7ef;
+      /* Стварни центар all-sky круга унутар PNG/JPG фајла 8000 × 8000.
+         Није географски север, већ само механички центар ротације снимка. */
+      --sky-cx:50.05%;
+      --sky-cy:54.65%;
+      --sky-size:min(147vmin, 2500px);
+    }
+    *{box-sizing:border-box}
+    html,body{min-height:100%}
+    body{
+      margin:0;
+      background:#000;
+      color:var(--text);
+      font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Noto Sans",Arial,sans-serif;
+      overflow:auto;
+    }
+    .page{min-height:100vh; display:block; background:#000;}
+    header{
+      position:relative;
+      z-index:8;
+      padding:22px 28px 14px;
+      background:linear-gradient(180deg, rgba(0,0,0,.88), rgba(0,0,0,.30) 78%, rgba(0,0,0,0));
+    }
+    .title-block{
+      width:min(980px, 100%);
+      margin:0 auto;
+      text-align:center;
+      padding:0 120px;
+    }
+    h1{
+      margin:0;
+      font-size:clamp(26px, 3.7vw, 52px);
+      line-height:1;
+      letter-spacing:-.055em;
+      font-weight:230;
+      text-shadow:0 2px 22px rgba(0,0,0,.92);
+    }
+    .sub{
+      max-width:900px;
+      margin:9px auto 0;
+      color:var(--muted);
+      font-size:clamp(14px, 1.18vw, 16px);
+      font-weight:350;
+      text-shadow:0 2px 12px rgba(0,0,0,.95);
+    }
+    .site-home{
+      position:absolute;
+      left:28px;
+      top:17px;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      min-height:36px;
+      padding:8px 14px;
+      border:1px solid rgba(255,255,255,.20);
+      border-radius:999px;
+      background:rgba(255,255,255,.08);
+      color:#fff;
+      text-decoration:none;
+      font-size:13px;
+      font-weight:650;
+      letter-spacing:.02em;
+      line-height:1;
+      backdrop-filter:blur(12px);
+      box-shadow:0 10px 28px rgba(0,0,0,.28);
+      white-space:nowrap;
+    }
+    .site-home:hover{background:rgba(255,255,255,.15);}
+    .viewer{
+      position:relative;
+      height:calc(100vh - 132px);
+      min-height:540px;
+      overflow:hidden;
+      cursor:grab;
+      touch-action:none;
+      user-select:none;
+      background:#000;
+      isolation:isolate;
+    }
+    .viewer.dragging{cursor:grabbing}
+    .sky-layer{
+      position:absolute;
+      left:50%;
+      top:50%;
+      width:var(--sky-size);
+      height:var(--sky-size);
+      transform-origin:0 0;
+      will-change:transform;
+      pointer-events:none;
+    }
+    .sky{
+      position:absolute;
+      left:calc(-1 * var(--sky-cx));
+      top:calc(-1 * var(--sky-cy));
+      width:100%;
+      height:100%;
+      max-width:none;
+      image-rendering:auto;
+      -webkit-user-drag:none;
+      user-drag:none;
+      pointer-events:none;
+      backface-visibility:hidden;
+    }
+    .info-tab{
+      position:fixed;
+      left:22px;
+      bottom:22px;
+      z-index:60;
+      appearance:none;
+      border:1px solid rgba(255,255,255,.24);
+      border-radius:999px;
+      background:rgba(3,6,8,.82);
+      color:#fff;
+      min-height:48px;
+      padding:0 18px 0 22px;
+      display:inline-flex;
+      align-items:center;
+      gap:14px;
+      font-size:16px;
+      font-weight:720;
+      letter-spacing:.01em;
+      cursor:pointer;
+      backdrop-filter:blur(14px);
+      box-shadow:0 14px 38px rgba(0,0,0,.50);
+      white-space:nowrap;
+    }
+    .info-tab:hover{background:rgba(255,255,255,.12);}
+    .info-tab .plus{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      width:24px;
+      height:24px;
+      border-radius:999px;
+      border:1px solid rgba(255,255,255,.18);
+      color:rgba(255,255,255,.92);
+      font-size:20px;
+      line-height:1;
+      font-weight:420;
+      transform:translateY(-1px);
+    }
+    .info-tab.is-open .plus{font-size:22px;}
+    .controls{
+      position:absolute;
+      left:50%;
+      bottom:24px;
+      transform:translateX(-50%);
+      display:flex;
+      align-items:center;
+      gap:8px;
+      width:min(760px, calc(100vw - 28px));
+      padding:8px 10px;
+      background:var(--panel);
+      border:1px solid var(--line);
+      border-radius:999px;
+      backdrop-filter:blur(12px);
+      box-shadow:0 10px 34px rgba(0,0,0,.42);
+      z-index:6;
+      touch-action:pan-x;
+      overflow-x:auto;
+      overscroll-behavior:contain;
+      scrollbar-width:thin;
+    }
+    .controls::-webkit-scrollbar{height:5px}
+    .controls::-webkit-scrollbar-thumb{background:rgba(255,255,255,.22);border-radius:999px}
+    .controls button{
+      appearance:none;
+      border:1px solid var(--line);
+      background:rgba(255,255,255,.08);
+      color:var(--text);
+      border-radius:999px;
+      min-width:38px;
+      height:38px;
+      padding:0 12px;
+      font-weight:750;
+      cursor:pointer;
+      transition:background .15s ease, transform .15s ease;
+      white-space:nowrap;
+    }
+    .controls button:hover{background:rgba(255,255,255,.15)}
+    .controls button:active{transform:scale(.96)}
+    .controls .reset,.controls .switch{font-size:13px;}
+    input[type="range"]{
+      flex:1 1 auto;
+      min-width:220px;
+      accent-color:var(--accent);
+      cursor:pointer;
+      touch-action:pan-x;
+    }
+    .loading{
+      position:absolute;
+      inset:0;
+      display:grid;
+      place-items:center;
+      color:var(--muted);
+      background:#000;
+      z-index:3;
+      transition:opacity .25s ease, visibility .25s ease;
+      font-size:14px;
+    }
+    .loading.hide{opacity:0; visibility:hidden}
+
+    .info-section{
+      display:none;
+      padding:22px 18px 56px;
+      background:linear-gradient(180deg, #000 0%, #050809 70%, #070d0f 100%);
+      border-top:1px solid rgba(255,255,255,.10);
+      scroll-margin-top:18px;
+    }
+    .info-section.is-open{display:block;}
+    .info-card{
+      max-width:980px;
+      margin:0 auto;
+      padding:24px 26px;
+      border:1px solid rgba(255,255,255,.14);
+      border-radius:22px;
+      background:rgba(8,13,15,.82);
+      box-shadow:0 18px 50px rgba(0,0,0,.34);
+      color:rgba(255,255,255,.88);
+      line-height:1.72;
+      font-size:clamp(15px, 1.15vw, 17px);
+      overflow:hidden;
+    }
+    .info-card p{margin:0 0 15px;}
+    .info-card p:last-child{margin-bottom:0;}
+    .info-card strong{color:#fff; font-weight:800;}
+    .lead-note{
+      padding:14px 16px;
+      margin-bottom:18px;
+      border-left:4px solid rgba(215,231,239,.72);
+      background:rgba(255,255,255,.055);
+      border-radius:14px;
+    }
+
+    @media (max-width:760px){
+      :root{--sky-size:156vmin;}
+      header{padding:58px 12px 10px;}
+      .title-block{padding:0; width:100%;}
+      h1{font-size:clamp(26px, 9.4vw, 38px); letter-spacing:-.06em;}
+      .sub{display:none}
+      .site-home{left:12px; top:14px; min-height:32px; padding:7px 10px; font-size:12px}
+      .controls{bottom:18px; gap:6px; padding:7px 8px; justify-content:flex-start}
+      .info-tab{left:12px; bottom:12px; min-height:44px; padding:0 14px 0 18px; font-size:15px}
+      .info-tab .plus{width:22px;height:22px;font-size:18px}
+      .controls button{height:35px; min-width:35px; padding:0 9px; font-size:13px}
+      .controls .reset{font-size:12px}
+      input[type="range"]{min-width:190px;}
+      .viewer{height:calc(100vh - 132px); min-height:400px;}
+      .info-section{padding:18px 12px 40px;}
+      .info-card{padding:18px 16px; border-radius:18px;}
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <header>
+      <a class="site-home" href="https://piorajac.rs/" aria-label="Повратак на почетну страницу ПИО Рајац">ПИО „РАЈАЦ“</a>
+      <div class="title-block">
+        <h1>Звездано небо изнад Рајца</h1>
+        <div class="sub">Интерактивни all-sky снимак: зумирање точкићем миша, померање превлачењем и окретање неба хоризонталним клизачем.</div>
+      </div>
+    </header>
+    <button type="button" class="info-tab" id="infoTab" aria-controls="o-snimku" aria-expanded="false">
+      <span>О снимку</span><span class="plus" aria-hidden="true">+</span>
+    </button>
+
+    <section class="viewer" id="viewer" aria-label="Интерактивни приказ звезданог неба изнад Рајца">
+      <div class="loading" id="loading">Учитавање снимка 8000 × 8000 px…</div>
+      <div class="sky-layer" id="skyLayer">
+        <img
+          id="sky"
+          class="sky"
+          src="rajac_allsky_8000_web_enhanced_dark.jpg"
+          data-enhanced="rajac_allsky_8000_web_enhanced_dark.jpg"
+          data-original="rajac_allsky_8000.png"
+          alt="Звездано небо изнад Рајца — all-sky снимак">
+      </div>
+
+      <div class="controls" role="group" aria-label="Контроле приказа неба">
+        <button type="button" id="rotLeft" title="Окрени небо улево">↺</button>
+        <input id="rotate" type="range" min="0" max="360" value="120" step="1" aria-label="Окретање неба">
+        <button type="button" id="rotRight" title="Окрени небо удесно">↻</button>
+        <button type="button" id="switchImage" class="switch" title="Промени приказ">Оригинал</button>
+        <button type="button" id="reset" class="reset">Почетни приказ</button>
+      </div>
+    </section>
+
+    <section class="info-section" id="o-snimku" aria-label="Опис снимка звезданог неба изнад Рајца">
+      <article class="info-card" id="infoDetails">
+        <p>Снимак звезданог неба изнад Рајца настао је <strong>8. јуна 2026. године, око 23:30 часова</strong>, са врха Рајца. Снимано је фото-апаратом <strong>Nikon Z6</strong>, широкоугаоним објективом <strong>16 mm</strong>. Панораму чине <strong>23 појединачне фотографије</strong>, при чему је свака фотографија снимљена експозицијом од <strong>15 секунди</strong>, са отвором бленде <strong>f/2.8</strong> и осетљивошћу <strong>ISO 1000</strong>.</p>
+        <p>У тренутку снимања небо је било <strong>без Месеца и без облака</strong>, уз веома чисту и стабилну атмосферу. Квалитет ноћног неба био је изузетно добар, са вредностима већим од <strong>21,00 mag/arcsec²</strong>, што указује на тамно небо погодно за посматрање звезда, Млечног пута и слабијих објеката дубоког неба.</p>
+        <p>Ово није један класичан снимак, већ сложена панорамска обрада целог видљивог неба. Појединачне фотографије су софтверски поравнате и спојене у јединствену небеску панораму, а затим пројектоване у кружни приказ типа „рибље око”, тако да се истовремено виде зенит, хоризонт и светлосни извори у околини.</p>
+        <p>Током обраде задржан је природан однос између тамног неба, звезда, хоризонта и светлосног загађења, како би снимак имао и естетску и документациону вредност за праћење квалитета ноћног неба на Рајцу.</p>
+        <p class="lead-note">Снимак показује да је звездано небо изнад Рајца још увек очувано, и поред светлосних извора из удаљених насеља. Такви услови чине Рајац погодним за астрономска посматрања и астрофотографију. Снимање се спроводи у оквиру целогодишњег мониторинга ноћног неба и пројекта <strong>„Звездани парк Рајац”</strong>.</p>
+      </article>
+    </section>
+  </main>
+
+  <script>
+    (() => {
+      const viewer = document.getElementById('viewer');
+      const layer = document.getElementById('skyLayer');
+      const sky = document.getElementById('sky');
+      const loading = document.getElementById('loading');
+      const rotateInput = document.getElementById('rotate');
+      const resetBtn = document.getElementById('reset');
+      const rotLeft = document.getElementById('rotLeft');
+      const rotRight = document.getElementById('rotRight');
+      const switchBtn = document.getElementById('switchImage');
+      const controls = document.querySelector('.controls');
+      const infoTab = document.getElementById('infoTab');
+      const infoSection = document.getElementById('o-snimku');
+      const infoPlus = infoTab ? infoTab.querySelector('.plus') : null;
+
+      // Почетни положај снимка: усаглашен са исправљеном оријентацијом / правим севером.
+      const START_ROTATION = 120;
+      const START_X = 0;
+      const START_Y = -48;
+
+      const state = {
+        scale: 1,
+        minScale: 0.62,
+        maxScale: 14,
+        x: START_X,
+        y: START_Y,
+        rotation: START_ROTATION,
+        dragging: false,
+        lastX: 0,
+        lastY: 0,
+        usingOriginal: false,
+        pointers: new Map(),
+        pinchStartDist: 0,
+        pinchStartScale: 1,
+        pinchCenter: {x:0, y:0}
+      };
+
+      function clamp(v, min, max){ return Math.max(min, Math.min(max, v)); }
+      function normDeg(v){ return ((v % 360) + 360) % 360; }
+
+      function apply(){
+        layer.style.transform = `translate(${state.x}px, ${state.y}px) rotate(${state.rotation}deg) scale(${state.scale})`;
+        rotateInput.value = Math.round(normDeg(state.rotation));
+      }
+      function centerRelative(clientX, clientY){
+        const r = viewer.getBoundingClientRect();
+        return {x: clientX - r.left - r.width / 2, y: clientY - r.top - r.height / 2};
+      }
+      function zoomAt(clientX, clientY, nextScale){
+        nextScale = clamp(nextScale, state.minScale, state.maxScale);
+        const p = centerRelative(clientX, clientY);
+        const rad = state.rotation * Math.PI / 180;
+        const c = Math.cos(rad), s = Math.sin(rad);
+        const dx = p.x - state.x;
+        const dy = p.y - state.y;
+        const localX = ( c * dx + s * dy) / state.scale;
+        const localY = (-s * dx + c * dy) / state.scale;
+        state.x = p.x - nextScale * (c * localX - s * localY);
+        state.y = p.y - nextScale * (s * localX + c * localY);
+        state.scale = nextScale;
+        apply();
+      }
+      function resetView(){
+        state.scale = 1;
+        state.x = START_X;
+        state.y = START_Y;
+        state.rotation = START_ROTATION;
+        apply();
+      }
+      function rotateBy(delta){
+        state.rotation = normDeg(state.rotation + delta);
+        apply();
+      }
+
+      // Контроле су унутар интерактивног приказа, па заустављамо
+      // превлачење снимка док посетилац користи дугмад или хоризонтални клизач.
+      ['pointerdown','pointermove','pointerup','pointercancel','click','dblclick'].forEach(type => {
+        controls.addEventListener(type, (e) => e.stopPropagation());
+      });
+      controls.addEventListener('wheel', (e) => e.stopPropagation(), {passive:true});
+      function setInfoOpen(open){
+        infoSection.classList.toggle('is-open', open);
+        infoTab.classList.toggle('is-open', open);
+        infoTab.setAttribute('aria-expanded', open ? 'true' : 'false');
+        if(infoPlus) infoPlus.textContent = open ? '−' : '+';
+        if(open){
+          window.setTimeout(() => {
+            infoSection.scrollIntoView({behavior:'smooth', block:'start'});
+          }, 40);
+        }
+      }
+      infoTab.addEventListener('click', () => {
+        setInfoOpen(!infoSection.classList.contains('is-open'));
+      });
+
+      sky.addEventListener('load', () => loading.classList.add('hide'));
+      sky.addEventListener('error', () => {
+        if(!state.usingOriginal){
+          state.usingOriginal = true;
+          sky.src = sky.dataset.original;
+          switchBtn.textContent = 'Тамни приказ';
+        } else {
+          loading.textContent = 'Снимак није пронађен. Проверити да ли су HTML и слике у истом фолдеру.';
+        }
+      });
+      viewer.addEventListener('wheel', (e) => {
+        e.preventDefault();
+        const factor = e.deltaY < 0 ? 1.14 : 1 / 1.14;
+        zoomAt(e.clientX, e.clientY, state.scale * factor);
+      }, {passive:false});
+      viewer.addEventListener('dblclick', resetView);
+      viewer.addEventListener('pointerdown', (e) => {
+        viewer.setPointerCapture(e.pointerId);
+        state.pointers.set(e.pointerId, {x:e.clientX, y:e.clientY});
+        if(state.pointers.size === 1){
+          state.dragging = true;
+          state.lastX = e.clientX;
+          state.lastY = e.clientY;
+          viewer.classList.add('dragging');
+        }
+        if(state.pointers.size === 2){
+          const pts = [...state.pointers.values()];
+          const dx = pts[0].x - pts[1].x;
+          const dy = pts[0].y - pts[1].y;
+          state.pinchStartDist = Math.hypot(dx, dy);
+          state.pinchStartScale = state.scale;
+          state.pinchCenter = {x:(pts[0].x+pts[1].x)/2, y:(pts[0].y+pts[1].y)/2};
+        }
+      });
+      viewer.addEventListener('pointermove', (e) => {
+        if(!state.pointers.has(e.pointerId)) return;
+        state.pointers.set(e.pointerId, {x:e.clientX, y:e.clientY});
+        if(state.pointers.size === 2){
+          const pts = [...state.pointers.values()];
+          const dx = pts[0].x - pts[1].x;
+          const dy = pts[0].y - pts[1].y;
+          const dist = Math.max(1, Math.hypot(dx, dy));
+          const nextScale = state.pinchStartScale * (dist / Math.max(1, state.pinchStartDist));
+          zoomAt(state.pinchCenter.x, state.pinchCenter.y, nextScale);
+          return;
+        }
+        if(state.dragging){
+          state.x += e.clientX - state.lastX;
+          state.y += e.clientY - state.lastY;
+          state.lastX = e.clientX;
+          state.lastY = e.clientY;
+          apply();
+        }
+      });
+      function endPointer(e){
+        state.pointers.delete(e.pointerId);
+        if(state.pointers.size === 0){
+          state.dragging = false;
+          viewer.classList.remove('dragging');
+        }
+      }
+      viewer.addEventListener('pointerup', endPointer);
+      viewer.addEventListener('pointercancel', endPointer);
+      rotateInput.addEventListener('input', () => { state.rotation = Number(rotateInput.value); apply(); });
+      rotLeft.addEventListener('click', () => rotateBy(-10));
+      rotRight.addEventListener('click', () => rotateBy(10));
+      resetBtn.addEventListener('click', resetView);
+      switchBtn.addEventListener('click', () => {
+        state.usingOriginal = !state.usingOriginal;
+        loading.classList.remove('hide');
+        sky.src = state.usingOriginal ? sky.dataset.original : sky.dataset.enhanced;
+        switchBtn.textContent = state.usingOriginal ? 'Тамни приказ' : 'Оригинал';
+      });
+      window.addEventListener('keydown', (e) => {
+        if(e.key === '0') resetView();
+        if(e.key === '+' || e.key === '=') zoomAt(window.innerWidth/2, window.innerHeight/2, state.scale * 1.15);
+        if(e.key === '-') zoomAt(window.innerWidth/2, window.innerHeight/2, state.scale / 1.15);
+        if(e.key === 'ArrowLeft') rotateBy(-2);
+        if(e.key === 'ArrowRight') rotateBy(2);
+      });
+      apply();
+    })();
+  </script>
+
+<script defer src="/rajac-design/rajac-vrh-button.js?v=20260707-v6-round-no-home"></script>
+</body>
+</html>

@@ -1,0 +1,1218 @@
+<!DOCTYPE html>
+<html lang="sr"><head>
+<!-- RAJAC_RESEARCH_PARK_STATIC_FAST=1.0 --><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Картирање вегетације на Рајцу — обука посетилаца и практични водич</title>
+  <meta name="description" content="Едукативна страница за обуку посетилаца Рајца: како се посматра и картирa вегетација, како се фотографишу биљке, како се бележе GPS тачке, користе iNaturalist, Pl@ntNet, Copernicus Browser и QGIS, и како се праве карте и теренске белешке без нарушавања природе.">
+<style>
+    :root{
+      --bg:#f7f7f2;
+      --card:#ffffff;
+      --soft:#f1f6ee;
+      --soft-2:#e7efe1;
+      --line:#d7e1d0;
+      --text:#1d281f;
+      --muted:#607064;
+      --green:#214732;
+      --green-2:#2b6a47;
+      --amber:#c98d3d;
+      --amber-2:#e2aa61;
+      --olive:#7c8f58;
+      --shadow:0 18px 44px rgba(22,37,25,.08);
+      --radius:24px;
+      --radius-sm:18px;
+      --wrap:min(1240px, calc(100% - 32px));
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      color:var(--text);
+      background:
+        radial-gradient(circle at top right, rgba(201,141,61,.10), transparent 25%),
+        radial-gradient(circle at top left, rgba(33,71,50,.09), transparent 26%),
+        var(--bg);
+      font-family:"Inter", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      line-height:1.7;
+    }
+    a{color:var(--green-2); text-decoration:none}
+    a:hover{text-decoration:underline}
+    img{max-width:100%; display:block}
+    .wrap{width:var(--wrap); margin:0 auto}
+
+    .hero{
+      position:relative;
+      isolation:isolate;
+      overflow:hidden;
+      color:#fff;
+      background:
+        linear-gradient(120deg, rgba(13,31,21,.86), rgba(23,67,41,.62)),
+        url('https://commons.wikimedia.org/wiki/Special:FilePath/Meadow%20Landscape%20Field.jpg') center/cover no-repeat;
+      min-height:76vh;
+      display:flex;
+      align-items:center;
+    }
+    .hero::after{
+      content:"";
+      position:absolute; inset:auto 0 0 0; height:150px;
+      background:linear-gradient(to bottom, rgba(247,247,242,0), rgba(247,247,242,1));
+      z-index:-1;
+    }
+    .hero-inner{padding:84px 0 120px}
+    .eyebrow{
+      display:inline-flex; align-items:center; gap:10px;
+      padding:10px 14px; border-radius:999px;
+      background:rgba(255,255,255,.12); border:1px solid rgba(255,255,255,.18);
+      font-size:.88rem; font-weight:700; letter-spacing:.08em; text-transform:uppercase;
+      backdrop-filter:blur(8px);
+    }
+    .hero h1{
+      margin:20px 0 14px;
+      font-family:"Marcellus", Georgia, serif;
+      font-size:clamp(2.2rem, 6vw, 4.7rem);
+      line-height:1.08;
+      max-width:920px;
+      letter-spacing:.02em;
+    }
+    .hero p{
+      max-width:860px;
+      font-size:clamp(1rem, 2vw, 1.22rem);
+      color:rgba(255,255,255,.92);
+      margin:0 0 28px;
+    }
+    .hero-actions{display:flex; flex-wrap:wrap; gap:14px; margin:26px 0 30px}
+    .btn{
+      display:inline-flex; align-items:center; justify-content:center;
+      min-height:52px; padding:0 18px; border-radius:14px; font-weight:700;
+      transition:.2s ease; border:1px solid transparent;
+    }
+    .btn-primary{background:#fff; color:#173d29}
+    .btn-primary:hover{transform:translateY(-1px); text-decoration:none}
+    .btn-ghost{background:rgba(255,255,255,.10); color:#fff; border-color:rgba(255,255,255,.18)}
+    .btn-ghost:hover{background:rgba(255,255,255,.16); text-decoration:none}
+
+    .hero-grid{
+      display:grid; grid-template-columns:1.2fr .8fr; gap:22px; align-items:end; margin-top:32px;
+    }
+    .hero-card, .hero-note{
+      background:rgba(255,255,255,.12); border:1px solid rgba(255,255,255,.16);
+      border-radius:22px; padding:22px; backdrop-filter:blur(10px);
+    }
+    .hero-card h3, .hero-note h3{margin:0 0 10px; font-size:1.05rem}
+    .hero-list{display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:12px 18px; margin:0; padding:0; list-style:none}
+    .hero-list li{font-size:.98rem; color:rgba(255,255,255,.92)}
+
+    .quicknav{
+      margin-top:-56px; position:relative; z-index:3;
+    }
+    .quicknav .panel{
+      background:rgba(255,255,255,.92);
+      border:1px solid rgba(215,225,208,.95);
+      box-shadow:var(--shadow);
+      border-radius:26px;
+      padding:16px;
+      backdrop-filter:blur(8px);
+    }
+    .chips{display:flex; flex-wrap:wrap; gap:12px}
+    .chip{
+      display:inline-flex; align-items:center; gap:8px;
+      padding:11px 14px; border-radius:999px;
+      background:var(--soft); color:var(--green); border:1px solid var(--line);
+      font-weight:700; font-size:.94rem;
+    }
+    .chip:hover{text-decoration:none; background:#edf5e7}
+
+    section{padding:58px 0}
+    .section-title{margin:0 0 10px; font-family:"Marcellus", Georgia, serif; font-size:clamp(1.9rem, 4vw, 3rem); line-height:1.15; color:var(--green)}
+    .section-lead{max-width:840px; margin:0; color:var(--muted); font-size:1.04rem}
+
+    .grid-2{display:grid; grid-template-columns:1.06fr .94fr; gap:26px; align-items:start; margin-top:26px}
+    .grid-3{display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:22px; margin-top:26px}
+    .grid-4{display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:18px; margin-top:24px}
+
+    .card{
+      background:var(--card); border:1px solid var(--line); border-radius:var(--radius);
+      box-shadow:var(--shadow); padding:24px;
+    }
+    .card.soft{background:linear-gradient(180deg,#fff, #f8fbf6)}
+    .card h3{margin:0 0 12px; color:var(--green); font-size:1.18rem}
+    .card p{margin:0; color:#314036}
+    .card + .card{margin-top:18px}
+    .kpi{
+      padding:18px; border-radius:20px; background:var(--soft); border:1px solid var(--line);
+    }
+    .kpi strong{display:block; font-size:1.7rem; color:var(--green); line-height:1.1; margin-bottom:6px}
+    .muted{color:var(--muted)}
+    .mini{font-size:.95rem}
+
+    .steps{display:grid; gap:16px; margin-top:20px}
+    .step{
+      display:grid; grid-template-columns:56px 1fr; gap:16px; align-items:start;
+      padding:18px; border-radius:20px; background:var(--soft); border:1px solid var(--line);
+    }
+    .step-num{
+      width:56px; height:56px; border-radius:18px; display:grid; place-items:center;
+      background:linear-gradient(135deg,var(--green), var(--green-2)); color:#fff; font-weight:800; font-size:1.15rem;
+      box-shadow:0 10px 22px rgba(33,71,50,.18);
+    }
+    .step h4{margin:0 0 6px; color:var(--green); font-size:1.08rem}
+    .step p{margin:0; color:#36463b}
+
+    .method{
+      background:linear-gradient(180deg, rgba(255,255,255,1), rgba(242,246,238,.75));
+      border:1px solid var(--line); border-radius:26px; padding:24px;
+      box-shadow:var(--shadow);
+    }
+    .method h3{margin:0 0 8px; color:var(--green)}
+    .method .tag{
+      display:inline-flex; padding:7px 10px; border-radius:999px; background:#eef5e8; color:var(--green); border:1px solid var(--line); font-weight:700; font-size:.8rem; margin-bottom:12px;
+    }
+
+    .gallery{display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:18px; margin-top:24px}
+    .gallery figure{
+      margin:0; border-radius:22px; overflow:hidden; background:#fff; border:1px solid var(--line); box-shadow:var(--shadow);
+    }
+    .gallery img{height:250px; width:100%; object-fit:cover}
+    .gallery figcaption{padding:14px 16px; color:#3d4b40; font-size:.95rem}
+
+    .resource-card{
+      background:#fff; border:1px solid var(--line); border-radius:22px; padding:20px; box-shadow:var(--shadow);
+      display:flex; flex-direction:column; gap:12px;
+    }
+    .resource-card h3{margin:0; color:var(--green); font-size:1.06rem}
+    .resource-card p{margin:0; color:#3a493f; font-size:.96rem}
+    .resource-card .links{display:flex; flex-wrap:wrap; gap:10px}
+    .resource-card .links a{font-weight:700}
+
+    .video-grid{display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:18px; margin-top:24px}
+    .video-card{
+      background:#fff; border:1px solid var(--line); border-radius:24px; overflow:hidden; box-shadow:var(--shadow);
+    }
+    .video-frame{aspect-ratio:16/9; background:#dde7d8}
+    .video-frame iframe{width:100%; height:100%; border:0}
+    .video-body{padding:18px}
+    .video-body h3{margin:0 0 8px; color:var(--green); font-size:1.02rem}
+    .video-body p{margin:0; color:#425146; font-size:.95rem}
+
+    .checklist{display:grid; gap:12px; margin-top:20px}
+    .check-item{
+      display:flex; gap:12px; align-items:flex-start; padding:14px 16px; border-radius:18px;
+      background:#fff; border:1px solid var(--line);
+    }
+    .check-icon{
+      flex:0 0 30px; width:30px; height:30px; border-radius:10px; display:grid; place-items:center;
+      background:#edf5e8; color:var(--green); font-weight:800;
+    }
+
+    .alert{
+      margin-top:22px; padding:18px 20px; border-radius:20px;
+      background:linear-gradient(180deg,#fff7e8,#fffdf8);
+      border:1px solid rgba(201,141,61,.28);
+      color:#55442b;
+    }
+
+    .footer{padding:60px 0 80px}
+    .footer-box{
+      background:linear-gradient(135deg, #173c2a, #214d35);
+      border-radius:28px; padding:28px; color:#fff; box-shadow:var(--shadow);
+    }
+    .footer-box h2{margin:0 0 10px; font-family:"Marcellus", Georgia, serif; font-size:2rem}
+    .footer-box p{margin:0; color:rgba(255,255,255,.88)}
+    .footer-links{display:flex; flex-wrap:wrap; gap:12px; margin-top:20px}
+    .footer-links a{
+      color:#fff; font-weight:700; display:inline-flex; align-items:center; justify-content:center;
+      min-height:48px; padding:0 16px; border-radius:14px;
+      background:rgba(255,255,255,.10); border:1px solid rgba(255,255,255,.15);
+    }
+    .footer-links a:hover{text-decoration:none; background:rgba(255,255,255,.16)}
+
+    @media (max-width: 1080px){
+      .hero-grid, .grid-2, .grid-3, .video-grid, .gallery{grid-template-columns:1fr}
+      .grid-4{grid-template-columns:repeat(2,minmax(0,1fr))}
+    }
+    @media (max-width: 760px){
+      .hero{min-height:auto}
+      .hero-inner{padding:72px 0 108px}
+      .hero-list, .grid-4{grid-template-columns:1fr}
+      .step{grid-template-columns:1fr}
+      .step-num{width:50px; height:50px}
+    }
+  
+
+/* v2.2.0 contrast cleanup */
+.hero-card, .hero-note{
+  background:rgba(255,255,255,.80) !important;
+  border:1px solid rgba(255,255,255,.56) !important;
+  box-shadow:0 18px 40px rgba(20,28,22,.12) !important;
+}
+.hero-card h3, .hero-note h3{color:var(--green) !important;}
+.hero-card p, .hero-note p, .hero-card li, .hero-note li, .hero-list li{color:#445447 !important;}
+.panel, .panel p, .panel li, .panel span, .panel a,
+.card, .card p, .card li, .card span,
+.kpi, .kpi p, .kpi li, .kpi span,
+.step, .step p, .step li,
+.check-item, .check-item p, .check-item li, .check-item span,
+.alert, .alert p, .alert li{
+  color:inherit;
+}
+.panel, .card, .kpi, .step, .check-item{color:var(--text) !important;}
+.panel p, .panel li, .panel span,
+.card p, .card li, .card span,
+.kpi p, .kpi li, .kpi span,
+.step p, .step li,
+.check-item p, .check-item li, .check-item span{
+  color:var(--muted) !important;
+}
+.card h2, .card h3, .card h4, .step h4, .panel strong, .check-item strong, .kpi strong{color:var(--green) !important;}
+
+
+
+/* Clean hero update for Research Park preview pages. */
+.rp-global-nav a.is-active,
+.rp-global-nav__menu a.is-active {
+  color: #f0cd69 !important;
+}
+.rp-clean-hero {
+  min-height: 86vh;
+  position: relative;
+  isolation: isolate;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding: clamp(96px, 14vh, 150px) 24px clamp(64px, 12vh, 112px);
+  overflow: hidden;
+  background-image:
+    linear-gradient(180deg, rgba(8, 14, 22, .10) 0%, rgba(8, 14, 22, .18) 42%, rgba(8, 14, 22, .62) 100%),
+    var(--rp-clean-hero-bg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.rp-clean-hero__title {
+  margin: 0;
+  max-width: 1180px;
+  text-align: center;
+  color: #fff;
+  font-family: Georgia, 'Times New Roman', serif;
+  font-weight: 400;
+  line-height: .98;
+  letter-spacing: 0;
+  font-size: clamp(44px, 8vw, 104px);
+  text-shadow: 0 6px 26px rgba(0, 0, 0, .42);
+}
+.rp-hero-summary {
+  background: #f4efe7;
+  padding: clamp(34px, 5vw, 62px) 22px;
+}
+.rp-hero-summary__inner {
+  max-width: 1120px;
+  margin: 0 auto;
+  background: rgba(255, 255, 255, .94);
+  border: 1px solid rgba(37, 42, 47, .14);
+  border-radius: 10px;
+  box-shadow: 0 18px 48px rgba(18, 24, 32, .08);
+  padding: clamp(24px, 4vw, 42px);
+}
+.rp-hero-summary__eyebrow {
+  margin: 0 0 10px;
+  color: #9b7725;
+  font: 800 12px/1.35 Arial, sans-serif;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+}
+.rp-hero-summary h2 {
+  margin: 0 0 16px;
+  color: #111a2b;
+  font-family: Georgia, 'Times New Roman', serif;
+  font-weight: 400;
+  line-height: 1.1;
+  font-size: clamp(28px, 4vw, 44px);
+}
+.rp-hero-summary p {
+  margin: 0 0 14px;
+  max-width: 980px;
+  color: #17243b;
+  font-size: clamp(17px, 1.45vw, 20px);
+  line-height: 1.72;
+}
+.rp-hero-summary__meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 20px;
+}
+.rp-hero-summary__chip {
+  display: inline-flex;
+  align-items: center;
+  border: 1px solid rgba(33, 48, 64, .16);
+  border-radius: 999px;
+  padding: 8px 12px;
+  background: #fbf8f2;
+  color: #213040;
+  font: 800 12px/1.2 Arial, sans-serif;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+}
+@media (max-width: 760px) {
+  .rp-clean-hero {
+    min-height: 76vh;
+    padding-left: 18px;
+    padding-right: 18px;
+  }
+  .rp-clean-hero__title {
+    font-size: clamp(40px, 14vw, 68px);
+  }
+}
+
+
+/* Shared Research Park navigation override. */
+.rp-global-nav {
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  z-index: 9000 !important;
+  background: rgba(255, 255, 255, .94) !important;
+  border-bottom: 1px solid rgba(37, 42, 47, .12) !important;
+  box-shadow: 0 8px 28px rgba(18, 24, 32, .06) !important;
+  backdrop-filter: blur(18px) saturate(180%) !important;
+  -webkit-backdrop-filter: blur(18px) saturate(180%) !important;
+}
+.rp-global-nav__inner {
+  max-width: 1400px !important;
+  margin: 0 auto !important;
+}
+.rp-global-nav a,
+.rp-global-nav__menu a {
+  color: #263241 !important;
+  background: transparent !important;
+  text-decoration: none !important;
+}
+.rp-global-nav a:hover,
+.rp-global-nav__menu a:hover {
+  color: #111a2b !important;
+  background: rgba(24, 60, 34, .07) !important;
+}
+.rp-global-nav a.is-active,
+.rp-global-nav__menu a.is-active {
+  color: #d39a16 !important;
+  background: transparent !important;
+}
+.rp-global-nav__mark {
+  background: #183c22 !important;
+  color: #fff !important;
+}
+.rp-global-nav-spacer {
+  min-height: 68px !important;
+}
+.rp-global-nav, .rp-global-nav * { text-shadow: none !important; }
+.rp-hero-summary, .rp-hero-summary * { text-shadow: none !important; }
+.rp-hero-summary h2 { color: #111a2b !important; }
+.rp-hero-summary p { color: #17243b !important; }
+/* Strong top menu and contrast fixes. */
+.rp-global-nav {
+  display: flex !important;
+  align-items: center !important;
+  min-height: 68px !important;
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  z-index: 99999 !important;
+  background: #ffffff !important;
+  border-bottom: 1px solid rgba(13,18,8,.14) !important;
+  box-shadow: 0 10px 28px rgba(13,18,8,.12) !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  transform: none !important;
+}
+.rp-global-nav__inner {
+  width: 100% !important;
+  max-width: 1400px !important;
+  margin: 0 auto !important;
+  padding: 0 clamp(18px, 4vw, 56px) !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  gap: 22px !important;
+}
+.rp-global-nav__menu {
+  display: flex !important;
+  align-items: center !important;
+  gap: 4px !important;
+  list-style: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+.rp-global-nav__scroller { overflow-x: auto !important; }
+.rp-global-nav a,
+.rp-global-nav__menu a {
+  display: inline-flex !important;
+  align-items: center !important;
+  min-height: 38px !important;
+  padding: 8px 13px !important;
+  border-radius: 8px !important;
+  color: #243044 !important;
+  background: transparent !important;
+  text-decoration: none !important;
+  font-weight: 700 !important;
+  text-shadow: none !important;
+  white-space: nowrap !important;
+}
+.rp-global-nav a:hover,
+.rp-global-nav__menu a:hover {
+  color: #0d1208 !important;
+  background: #f2efe8 !important;
+}
+.rp-global-nav a.is-active,
+.rp-global-nav__menu a.is-active {
+  color: #c08000 !important;
+  background: #fff7df !important;
+}
+.rp-global-nav__mark {
+  background: #183c22 !important;
+  color: #ffffff !important;
+}
+.rp-global-nav-spacer { min-height: 68px !important; }
+.rp-hero-summary, .rp-hero-summary * { text-shadow: none !important; }
+.rp-hero-summary h2 { color: #111a2b !important; }
+.rp-hero-summary p { color: #17243b !important; }
+
+/* FINAL exact top menu from the Research School page. */
+.rp-global-nav {
+  display: flex !important;
+  align-items: center !important;
+  min-height: 68px !important;
+  height: 68px !important;
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  z-index: 999999 !important;
+  background: rgba(43, 55, 67, .78) !important;
+  border-bottom: 1px solid rgba(255,255,255,.28) !important;
+  box-shadow: none !important;
+  backdrop-filter: blur(12px) saturate(145%) !important;
+  -webkit-backdrop-filter: blur(12px) saturate(145%) !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  transform: none !important;
+}
+.rp-global-nav__inner {
+  width: 100% !important;
+  max-width: 1160px !important;
+  margin: 0 auto !important;
+  padding: 0 18px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: flex-start !important;
+  gap: 22px !important;
+}
+.rp-global-nav__inner > a:first-child {
+  height: 50px !important;
+  padding: 0 20px !important;
+  border-radius: 7px !important;
+  background: rgba(255, 255, 255, .82) !important;
+  color: #ffffff !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 11px !important;
+  text-decoration: none !important;
+  box-shadow: none !important;
+}
+.rp-global-nav__mark {
+  width: 28px !important;
+  height: 28px !important;
+  border-radius: 999px !important;
+  background: rgba(255,255,255,.18) !important;
+  color: #ffffff !important;
+  display: grid !important;
+  place-items: center !important;
+  font-weight: 700 !important;
+}
+.rp-global-nav__brand-text {
+  color: #ffffff !important;
+  font-size: 12px !important;
+  font-weight: 800 !important;
+  letter-spacing: .16em !important;
+  text-transform: uppercase !important;
+  text-shadow: none !important;
+}
+.rp-global-nav__scroller {
+  overflow-x: auto !important;
+  overflow-y: hidden !important;
+  flex: 1 1 auto !important;
+}
+.rp-global-nav__menu {
+  display: flex !important;
+  align-items: center !important;
+  gap: 12px !important;
+  list-style: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  white-space: nowrap !important;
+}
+.rp-global-nav__menu li { margin: 0 !important; padding: 0 !important; }
+.rp-global-nav__menu a {
+  min-height: 44px !important;
+  padding: 0 16px !important;
+  border-radius: 7px !important;
+  background: transparent !important;
+  color: #ffffff !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  text-decoration: none !important;
+  font-size: 12px !important;
+  font-weight: 900 !important;
+  letter-spacing: .12em !important;
+  text-transform: uppercase !important;
+  text-shadow: none !important;
+}
+.rp-global-nav__menu a:hover {
+  background: rgba(255,255,255,.14) !important;
+  color: #ffffff !important;
+}
+.rp-global-nav__menu a.is-active {
+  background: #fff3d7 !important;
+  color: #d3a337 !important;
+  box-shadow: none !important;
+}
+.rp-global-nav-spacer {
+  min-height: 0 !important;
+  height: 0 !important;
+}
+
+/* FINAL stronger menu contrast. */
+.rp-global-nav {
+  background: rgba(24, 34, 43, .90) !important;
+  border-bottom-color: rgba(255,255,255,.38) !important;
+}
+.rp-global-nav__menu a,
+.rp-global-nav__menu a:link,
+.rp-global-nav__menu a:visited,
+.rp-global-nav__menu a:not(.is-active) {
+  color: #ffffff !important;
+  opacity: 1 !important;
+  font-weight: 950 !important;
+  text-shadow: 0 1px 3px rgba(0,0,0,.65) !important;
+}
+.rp-global-nav__menu a:hover,
+.rp-global-nav__menu a:not(.is-active):hover {
+  color: #ffffff !important;
+  background: rgba(255,255,255,.20) !important;
+}
+.rp-global-nav__menu a.is-active,
+.rp-global-nav__menu a.is-active:link,
+.rp-global-nav__menu a.is-active:visited {
+  background: #fff1cf !important;
+  color: #9b5f00 !important;
+  text-shadow: none !important;
+  border-bottom: 3px solid #b56f00 !important;
+}
+.rp-global-nav__inner > a:first-child,
+.rp-global-nav__inner > a:first-child:link,
+.rp-global-nav__inner > a:first-child:visited {
+  background: rgba(255,255,255,.92) !important;
+  color: #ffffff !important;
+}
+.rp-global-nav__brand-text {
+  color: #ffffff !important;
+  opacity: 1 !important;
+  text-shadow: 0 1px 3px rgba(0,0,0,.42) !important;
+}
+
+/* FINAL brand contrast and cleanup. */
+.rp-global-nav__inner > a:first-child,
+.rp-global-nav__inner > a:first-child:link,
+.rp-global-nav__inner > a:first-child:visited {
+  background: rgba(255,255,255,.94) !important;
+  color: #223041 !important;
+}
+.rp-global-nav__mark {
+  background: rgba(34,48,65,.10) !important;
+  color: #223041 !important;
+  text-shadow: none !important;
+}
+.rp-global-nav__brand-text {
+  color: #223041 !important;
+  opacity: 1 !important;
+  text-shadow: none !important;
+}
+.rp-admin-bar,
+.rp-admin-spacer,
+.topbar,
+.quicknav,
+.local-nav,
+.subnav,
+.page-nav {
+  display: none !important;
+}
+
+/* FINAL title sizing and tighter post-hero spacing. */
+.rp-clean-hero + section,
+.rp-clean-hero + .section,
+.rp-clean-hero + div,
+.rp-clean-hero + main {
+  margin-top: 0 !important;
+  padding-top: clamp(18px, 2.4vw, 32px) !important;
+}
+.rp-clean-hero + section .wrap,
+.rp-clean-hero + .section .wrap,
+.rp-clean-hero + section .section-head,
+.rp-clean-hero + .section .section-head,
+.rp-clean-hero + section .section-header,
+.rp-clean-hero + .section .section-header {
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+}
+.rp-clean-hero + section .label,
+.rp-clean-hero + section .kicker,
+.rp-clean-hero + section .section-label,
+.rp-clean-hero + section .section-head > p,
+.rp-clean-hero + section .section-header > p,
+.rp-clean-hero + section .section-lead,
+.rp-clean-hero + .section .label,
+.rp-clean-hero + .section .kicker,
+.rp-clean-hero + .section .section-label,
+.rp-clean-hero + .section .section-head > p,
+.rp-clean-hero + .section .section-header > p,
+.rp-clean-hero + .section .section-lead {
+  display: none !important;
+}
+.rp-clean-hero + section h2,
+.rp-clean-hero + .section h2,
+.rp-clean-hero + section .section-title,
+.rp-clean-hero + .section .section-title {
+  max-width: none !important;
+  white-space: nowrap !important;
+  font-size: clamp(30px, 4.2vw, 54px) !important;
+  line-height: 1.05 !important;
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+}
+@media (max-width: 760px) {
+  .rp-clean-hero + section h2,
+  .rp-clean-hero + .section h2,
+  .rp-clean-hero + section .section-title,
+  .rp-clean-hero + .section .section-title {
+    white-space: normal !important;
+    font-size: clamp(27px, 8vw, 40px) !important;
+  }
+}
+
+/* ABSOLUTE FINAL nav contrast: keep PIO Rajac readable. */
+.rp-global-nav__inner > a:first-child,
+.rp-global-nav__inner > a:first-child:link,
+.rp-global-nav__inner > a:first-child:visited,
+.rp-global-nav__inner > a:first-child:hover {
+  background: rgba(255,255,255,.96) !important;
+  color: #172033 !important;
+  text-shadow: none !important;
+}
+.rp-global-nav__inner > a:first-child *,
+.rp-global-nav__brand-text,
+.rp-global-nav__mark {
+  color: #172033 !important;
+  text-shadow: none !important;
+  opacity: 1 !important;
+}
+.rp-global-nav__mark {
+  background: rgba(23,32,51,.10) !important;
+}
+/* ABSOLUTE FINAL course first title: one line, tight to hero. */
+body.rp-flora-course .rp-clean-hero {
+  margin-bottom: 0 !important;
+}
+body.rp-flora-course .rp-clean-hero + section,
+body.rp-flora-course .rp-clean-hero + .section,
+body.rp-flora-course .rp-clean-hero + div,
+body.rp-flora-course .rp-clean-hero + main {
+  margin-top: 0 !important;
+  padding-top: 8px !important;
+}
+body.rp-flora-course .rp-clean-hero + section .wrap,
+body.rp-flora-course .rp-clean-hero + .section .wrap,
+body.rp-flora-course .rp-clean-hero + section .section-head,
+body.rp-flora-course .rp-clean-hero + .section .section-head,
+body.rp-flora-course .rp-clean-hero + section .section-header,
+body.rp-flora-course .rp-clean-hero + .section .section-header {
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+}
+body.rp-flora-course .rp-clean-hero + section .label,
+body.rp-flora-course .rp-clean-hero + section .kicker,
+body.rp-flora-course .rp-clean-hero + section .section-label,
+body.rp-flora-course .rp-clean-hero + section .section-head > p,
+body.rp-flora-course .rp-clean-hero + section .section-header > p,
+body.rp-flora-course .rp-clean-hero + section .section-lead,
+body.rp-flora-course .rp-clean-hero + .section .label,
+body.rp-flora-course .rp-clean-hero + .section .kicker,
+body.rp-flora-course .rp-clean-hero + .section .section-label,
+body.rp-flora-course .rp-clean-hero + .section .section-head > p,
+body.rp-flora-course .rp-clean-hero + .section .section-header > p,
+body.rp-flora-course .rp-clean-hero + .section .section-lead {
+  display: none !important;
+}
+body.rp-flora-course .rp-clean-hero + section h2,
+body.rp-flora-course .rp-clean-hero + .section h2,
+body.rp-flora-course .rp-clean-hero + section .section-title,
+body.rp-flora-course .rp-clean-hero + .section .section-title {
+  display: block !important;
+  max-width: 100% !important;
+  width: 100% !important;
+  white-space: nowrap !important;
+  overflow: visible !important;
+  font-size: clamp(24px, 3.2vw, 42px) !important;
+  line-height: 1 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  letter-spacing: 0 !important;
+}
+@media (max-width: 760px) {
+  body.rp-flora-course .rp-clean-hero + section h2,
+  body.rp-flora-course .rp-clean-hero + .section h2,
+  body.rp-flora-course .rp-clean-hero + section .section-title,
+  body.rp-flora-course .rp-clean-hero + .section .section-title {
+    white-space: normal !important;
+    font-size: clamp(24px, 7vw, 36px) !important;
+  }
+}
+</style>
+<link rel="stylesheet" href="/rajac-design/rajac-global.css?v=1.0">
+<link rel="preload" as="image" href="/rajac-park-static/assets/vegetacija.webp" fetchpriority="high">
+
+<style id="rajac-park-fast-static-patch">
+html{scroll-behavior:smooth}
+body{font-display:swap}
+.rp-global-nav a:first-child,.nav__brand{cursor:pointer}
+.rp-clean-hero,.hero{background-image:var(--rp-clean-hero-bg, url('/rajac-park-static/assets/vegetacija.webp'))!important;background-size:cover!important;background-position:center!important;min-height:min(58vh,560px)}
+.rp-global-nav a[href="/"], .nav__brand[href="/"]{text-decoration:none!important}
+img{max-width:100%;height:auto}
+</style>
+
+
+<style id="rajac-static-layout-repair-v2">
+/* поправка статичких страница Истраживачког парка: контраст, слике, картице и видео */
+:root{--rp-deep:#102338;--rp-cream:#f4efe3;--rp-ink:#17251b;--rp-muted:#526055;--rp-gold:#efbf65;}
+body{overflow-x:hidden;}
+.wrap{max-width:1240px!important;margin-inline:auto!important;}
+.card,.media-card,.gallery-tile,.photo-link,.quote-band,.final-cta{box-sizing:border-box;}
+.card img,.media-card img,.gallery-tile img,.photo-link img,.figure-card img{display:block!important;width:100%!important;max-width:100%!important;object-fit:cover!important;object-position:center!important;}
+.media-card{overflow:hidden!important;border-radius:22px!important;}
+.media-card img{height:240px!important;}
+.grid-2 .media-card img,.grid-2 .card img{height:320px!important;}
+.grid-3 .media-card img,.grid-3 .card img{height:240px!important;}
+.gallery-grid{align-items:stretch!important;}
+.gallery-tile{height:260px!important;min-height:260px!important;overflow:hidden!important;}
+.gallery-tile img{height:100%!important;}
+.gallery-caption{z-index:2!important;color:#fff!important;text-shadow:0 1px 2px rgba(0,0,0,.45)!important;}
+.photo-link{display:flex!important;flex-direction:column!important;gap:12px!important;min-height:0!important;height:auto!important;overflow:hidden!important;padding:16px!important;border-radius:22px!important;background:#fff!important;}
+.photo-link .thumb{height:170px!important;min-height:170px!important;width:100%!important;overflow:hidden!important;border-radius:14px!important;background:#e8e4da!important;}
+.photo-link .thumb img{height:100%!important;}
+.photo-link h3,.photo-link p,.photo-link span{position:relative!important;z-index:2!important;}
+.quote-band,.final-cta,.cta-band,.closing,.proposal,.proposal-box{background:linear-gradient(135deg,#1f5a38,#102e20)!important;color:#fff!important;}
+.quote-band *,.final-cta *,.cta-band *,.closing *,.proposal *,.proposal-box *{color:#fff!important;opacity:1!important;}
+.quote-band a,.final-cta a,.cta-band a,.closing a,.proposal a,.proposal-box a{background:rgba(255,255,255,.15)!important;border-color:rgba(255,255,255,.28)!important;color:#fff!important;}
+.section-head p,.lead,.intro p{color:var(--rp-muted)!important;opacity:1!important;}
+section.dark,.dark,.night-section{color:#fff!important;}
+section.dark *,.dark *,.night-section *{color:inherit;}
+.video-card iframe,.video-card video,.media-card iframe,.media-card video{width:100%!important;aspect-ratio:16/9!important;height:auto!important;min-height:260px!important;background:#252525!important;border:0!important;display:block!important;}
+.g2{display:grid!important;grid-template-columns:repeat(auto-fit,minmax(320px,1fr))!important;gap:22px!important;align-items:start!important;}
+@media(max-width:780px){.media-card img,.grid-2 .media-card img,.grid-2 .card img,.grid-3 .media-card img,.grid-3 .card img{height:220px!important}.gallery-grid{grid-template-columns:1fr!important}.gallery-tile{height:240px!important}.photo-link .thumb{height:160px!important}.video-card iframe,.video-card video,.media-card iframe,.media-card video{min-height:210px!important}}
+</style>
+
+<link rel="stylesheet" href="/rajac-design/rajac-park-responsive.css">
+<script src="/rajac-design/rajac-park-responsive.js" defer></script>
+</head>
+<body class="rp-flora-course" data-rp-course="vegetacija"><nav class="rp-global-nav" id="mainNav" aria-label="Главна навигација курса">
+  <div class="rp-global-nav__inner">
+    <a class="" href="/">
+      <span class="rp-global-nav__mark">Р</span>
+      <span class="rp-global-nav__brand-text">ПИО „РАЈАЦ“</span>
+    </a>
+    <div class="rp-global-nav__scroller">
+      <ul class="rp-global-nav__menu">
+              <li><a class="" href="/istrazivacki-park-rajac/">Курсеви</a></li>
+              <li><a class="" href="/rajac-astronomija/">Астрономија</a></li>
+              <li><a class="" href="/rajac-leptiri/">Лептири</a></li>
+              <li><a class="" href="/rajac-ptice/">Птице</a></li>
+              <li><a class="is-active" href="/rajac-vegetacija/">Вегетација</a></li>
+              <li><a class="" href="/rajac-karst/">Карст</a></li>
+              <li><a class="" href="/rajac-oblaci/">Облаци</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<div class="rp-global-nav-spacer" aria-hidden="true"></div>
+  <header class="rp-clean-hero" style="--rp-clean-hero-bg:url('/rajac-park-static/assets/vegetacija.webp');">
+</header>
+
+  <section id="zasto">
+    <div class="wrap">
+      <h2 class="section-title">Зашто је картирaње вегетације важно на Рајцу</h2>
+      <p class="section-lead">
+        На простору као што је Рајац, карта вегетације није само „лепа карта биљака“. Она помаже да се разуме где су ливаде, шуме,
+        рубови станишта, влажни делови, осетљиве површине и места где се кроз време дешавају промене услед климе, кошења, зарастања,
+        гажења или других притисака.
+      </p>
+      <div class="grid-2">
+        <div class="card soft">
+          <h3>Практична вредност за посетиоце и управљање</h3>
+          <p>
+            Добро бележење биљака омогућава да се препознају вредна и осетљива станишта, прати сезонска динамика, уочи ширење појединих врста,
+            направе образовне мапе и допуни знање о биодиверзитету подручја. Посетилац тако не постаје само посматрач него и користан сарадник у очувању природе.
+          </p>
+          <div class="grid-4">
+            <div class="kpi"><strong>1</strong><span class="mini muted">врста по посматрању је најбоља пракса за унос</span></div>
+            <div class="kpi"><strong>GPS</strong><span class="mini muted">локација претвара фотографију у просторни податак</span></div>
+            <div class="kpi"><strong>NDVI</strong><span class="mini muted">помаже да се виде просторне разлике у „зеленилу“</span></div>
+            <div class="kpi"><strong>QGIS</strong><span class="mini muted">омогућава преглед, уређивање и анализу података</span></div>
+          </div>
+        </div>
+        <div class="card">
+          <h3>Шта је већ било на постојећој страници</h3>
+          <p>
+            Полазна страница је већ обухватала разлоге за картирaње вегетације, основну теренску опрему, идентификацију путем кључева и апликација,
+            фотографисање целе биљке, детаља и станишта, приказ резултата на Google My Maps и савет да се ретке или заштићене биљке не убирају.
+          </p>
+          <div class="alert">
+            Овде је све то задржано, али је развијено у јасну страницу за обуку посетилаца: од теренског протокола, преко уноса података,
+            до поузданих спољних извора, видео материјала и визуелних примера.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="teren">
+    <div class="wrap">
+      <h2 class="section-title">Како се ради на терену</h2>
+      <p class="section-lead">
+        Најбољи резултати се добијају када теренски рад има јасан редослед: избор трасе, бележење станишта, фотографисање,
+        GPS тачке, упис врста и накнадна провера идентификације. За посетилачки и волонтерски ниво важно је да метод буде једноставан,
+        али довољно стандардизован да се резултати могу поредити.
+      </p>
+
+      <div class="steps">
+        <div class="step">
+          <div class="step-num">1</div>
+          <div>
+            <h4>Изабери деоницу или микролокалитет</h4>
+            <p>Почни од јасно одређене стазе, ливаде, шумског руба, пропланка, влажног места или стеновите површине. Не покушавај да „снимаш све одједном“.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">2</div>
+          <div>
+            <h4>Опиши станиште пре врста</h4>
+            <p>Запиши да ли је место осунчано или сеновито, суво или влажно, кошено, зарастајуће, шумско, ливадско, поред пута, на рубу шуме или уз стене.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">3</div>
+          <div>
+            <h4>Фотографиши систематично</h4>
+            <p>Сними шири приказ станишта, целу биљку и дијагностичке детаље. Када је могуће, сними лист, цвет, плод, стабљику и непосредну околину.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">4</div>
+          <div>
+            <h4>Обележи положај</h4>
+            <p>Сачувај GPS тачку или кратку стазу. Једна фотографија без локације је лепа успомена; фотографија са локацијом је користан податак.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">5</div>
+          <div>
+            <h4>Накнадно среди податке</h4>
+            <p>По повратку са терена провери називе, раздвоји врсте по посматрањима, унеси белешке и припреми мапу или табелу.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="grid-3">
+        <article class="method">
+          <span class="tag">Транект</span>
+          <h3>Кретање дуж исте трасе</h3>
+          <p>
+            Транект је права или јасно дефинисана линија кроз станиште дуж које се врше стандардизована посматрања. Највећа вредност транекта је што омогућава
+            да се исти поступак понови више пута током године или наредних сезона, па се промене могу поредити.
+          </p>
+        </article>
+        <article class="method">
+          <span class="tag">Квадрат</span>
+          <h3>Мали узорак великог станишта</h3>
+          <p>
+            Квадрат је означена површина, најчешће 1 × 1 m, у којој се бележе присутне врсте, покровност и понекад висина вегетације. Практичан је за ливаде,
+            травњаке и ниже жбунасте заједнице где желимо да упоредимо више малих, јасно одређених места.
+          </p>
+        </article>
+        <article class="method">
+          <span class="tag">Тачке / пинови</span>
+          <h3>Бржа процена покровности</h3>
+          <p>
+            Код тачкастог или point-intercept приступа бележи се шта „погађа“ тачка дуж линије: врста, голо тло, листић, легло. Ово је корисно када желимо објективнију
+            процену покровности нижих заједница и упоредиве резултате кроз време.
+          </p>
+        </article>
+      </div>
+
+      <div class="alert">
+        За посетиоце и школске групе на Рајцу најпрактичнија је комбинација: кратак транект + неколико фотографија + GPS тачка + једноставна листа врста.
+        Квадрати и тачкасте методе су следећи корак када се жели озбиљније праћење ливада и других биљних заједница.
+      </div>
+    </div>
+  </section>
+
+  <section id="foto">
+    <div class="wrap">
+      <h2 class="section-title">Како фотографисати биљке да снимак стварно буде користан</h2>
+      <p class="section-lead">
+        Најчешћа грешка је да се направи само једна „лепа“ фотографија цвета. За идентификацију и картирaње често су много важнији цела биљка,
+        распоред листова, плод, стабљика, станиште и однос према околним врстама.
+      </p>
+      <div class="grid-2">
+        <div class="card soft">
+          <h3>Препоручени сет фотографија за један налаз</h3>
+          <div class="checklist">
+            <div class="check-item"><div class="check-icon">1</div><div><strong>Шири кадар станишта</strong><br><span class="muted mini">да се види да ли је ливада, шумски руб, влажна површина, стеновит терен или путни појас</span></div></div>
+            <div class="check-item"><div class="check-icon">2</div><div><strong>Цела биљка</strong><br><span class="muted mini">облик, висина, однос листова и цветова, раст у бусену или појединачно</span></div></div>
+            <div class="check-item"><div class="check-icon">3</div><div><strong>Детаљ листа, цвета и плода</strong><br><span class="muted mini">кад год постоји, јер су то кључни идентификациони елементи</span></div></div>
+            <div class="check-item"><div class="check-icon">4</div><div><strong>Контекст</strong><br><span class="muted mini">снимак са околним врстама често помаже у разумевању станишта и заједнице</span></div></div>
+          </div>
+        </div>
+        <div class="card">
+          <h3>Мали фото-протокол за терен</h3>
+          <p>
+            Користи равномерно светло кад год је могуће. Избегавај јаку сенку преко биљке и потпуно „спржен“ кадар на подневном сунцу.
+            Фокусирај најважнији детаљ, али не заборави и шири приказ. Ако користиш телефон, очисти сочиво пре снимања и направи више кадрова из различитих углова.
+          </p>
+          <div class="alert">
+            Добра теренска фотографија није нужно уметничка. Она пре свега треба да буде читљива, оштра и информативна.
+          </div>
+        </div>
+      </div>
+
+      <div class="gallery">
+        <figure>
+          <img src="/rajac-park-static/assets/vegetacija-gallery-1.webp" alt="Квадрати и линијски транекти у биљном истраживању" loading="lazy" decoding="async">
+          <figcaption>Квадрати и линијски транекти су класичан начин да се станиште посматра систематично, а не насумично.</figcaption>
+        </figure>
+        <figure>
+          <img src="/rajac-park-static/assets/vegetacija-gallery-2.webp" alt="Вегетацијски теренски преглед" loading="lazy" decoding="async">
+          <figcaption>Теренски преглед вегетације повезује биљке, простор, тип станишта и начин коришћења земљишта.</figcaption>
+        </figure>
+        <figure>
+          <img src="/rajac-park-static/assets/vegetacija-gallery-3.webp" alt="Дрон и сателитски снимци као допуна терену" loading="lazy" decoding="async">
+          <figcaption>Дрон и сателитски снимци не замењују терен, али одлично допуњују картирaње на већим површинама.</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <section id="alatke">
+    <div class="wrap">
+      <h2 class="section-title">Алатке и апликације које стварно вреди користити</h2>
+      <p class="section-lead">
+        За Рајац је најбоље комбиновати теренске алате за идентификацију и бележење налаза са слободним GIS и сателитским платформама.
+        Тако се један налаз може видети и као фотографија, и као тачка на карти, и као део шире слике станишта.
+      </p>
+
+      <div class="grid-3">
+        <article class="resource-card">
+          <h3>iNaturalist</h3>
+          <p>За унос посматрања по принципу „један организам, једно време, једно место“. Одличан је за јавне налазе, проверу идентификације и касније издвајање посматрања на карти.</p>
+          <div class="links">
+            <a href="https://www.inaturalist.org/" target="_blank" rel="noopener">Сајт</a>
+            <a href="https://help.inaturalist.org/en/support/solutions/articles/151000192921-how-to-make-an-observation" target="_blank" rel="noopener">Како се прави посматрање</a>
+          </div>
+        </article>
+        <article class="resource-card">
+          <h3>Pl@ntNet</h3>
+          <p>Веома користан за почетну идентификацију биљака на основу фотографије. Најбоље ради кад се пошаље више јасних снимака различитих органа биљке.</p>
+          <div class="links">
+            <a href="https://plantnet.org/en/" target="_blank" rel="noopener">Сајт</a>
+            <a href="https://docs.plantnet.org/en/tutorials/create-and-share-an-observation/" target="_blank" rel="noopener">Упутство</a>
+          </div>
+        </article>
+        <article class="resource-card">
+          <h3>GBIF</h3>
+          <p>Глобална отворена инфраструктура за биодиверзитет. Корисна је за поређење налаза, преглед познатих појава врста и разумевање ширег контекста.</p>
+          <div class="links">
+            <a href="https://www.gbif.org/" target="_blank" rel="noopener">Отвори GBIF</a>
+          </div>
+        </article>
+        <article class="resource-card">
+          <h3>Copernicus Browser</h3>
+          <p>Брз приступ Sentinel снимцима, прегледу сцена кроз време и једноставном визуелном читању стања вегетације. Добар за упоредне сезонске прегледе.</p>
+          <div class="links">
+            <a href="https://documentation.dataspace.copernicus.eu/Applications/Browser.html" target="_blank" rel="noopener">Browser</a>
+            <a href="https://land.copernicus.eu/en" target="_blank" rel="noopener">CLMS</a>
+          </div>
+        </article>
+        <article class="resource-card">
+          <h3>QGIS</h3>
+          <p>Слободан GIS за приказ GPS тачака, GPX стаза, фотографија, подлога и сопствених слојева. Практичан је за прављење радних карата Рајца.</p>
+          <div class="links">
+            <a href="https://qgis.org/" target="_blank" rel="noopener">QGIS</a>
+            <a href="https://docs.qgis.org/latest/en/docs/user_manual/working_with_gps/plugins_gps.html" target="_blank" rel="noopener">GPS у QGIS-у</a>
+          </div>
+        </article>
+        <article class="resource-card">
+          <h3>Google My Maps</h3>
+          <p>Најједноставнији начин да посетилац без GIS искуства прикаже тачке, фотографије и кратке описе на сопственој карти.</p>
+          <div class="links">
+            <a href="https://www.google.com/mymaps" target="_blank" rel="noopener">Отвори My Maps</a>
+          </div>
+        </article>
+        <article class="resource-card">
+          <h3>Поуздани методолошки извори</h3>
+          <p>Ако желиш корак више, користи приручнике за транекте, квадрате, point-intercept и процену покровности у вегетацији.</p>
+          <div class="links">
+            <a href="https://www.nps.gov/articles/000/what-are-transects.htm" target="_blank" rel="noopener">NPS — Transects</a>
+            <a href="https://www.fs.usda.gov/rm/pubs_series/rmrs/gtr/rmrs_gtr164/rmrs_gtr164_08_cover_freq.pdf" target="_blank" rel="noopener">USDA — Cover/Frequency</a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <h2 class="section-title">Једноставан радни протокол за посетиоце</h2>
+      <p class="section-lead">Ово је најлакши модел који можете применити на Рајцу без посебне опреме, а да резултат буде користан и за каснију анализу.</p>
+      <div class="grid-2">
+        <div class="card soft">
+          <h3>На терен понеси</h3>
+          <div class="checklist">
+            <div class="check-item"><div class="check-icon">•</div><div>телефон са пуњеном батеријом и укљученом локацијом</div></div>
+            <div class="check-item"><div class="check-icon">•</div><div>блокче или апликацију за белешке</div></div>
+            <div class="check-item"><div class="check-icon">•</div><div>воду, капу, одговарајућу обућу и дуге ногавице где је потребно</div></div>
+            <div class="check-item"><div class="check-icon">•</div><div>по жељи: ручну лупу, GPS уређај, метар, штампани водич</div></div>
+          </div>
+        </div>
+        <div class="card">
+          <h3>Шта после терена</h3>
+          <div class="checklist">
+            <div class="check-item"><div class="check-icon">•</div><div>разврстај фотографије по локалитету и датуму</div></div>
+            <div class="check-item"><div class="check-icon">•</div><div>провери називе у Pl@ntNet-у и/или iNaturalist-у</div></div>
+            <div class="check-item"><div class="check-icon">•</div><div>извези или забележи GPS тачке и отвори их у QGIS-у или My Maps-у</div></div>
+            <div class="check-item"><div class="check-icon">•</div><div>упиши тип станишта и кратку напомену о стању терена</div></div>
+          </div>
+        </div>
+      </div>
+      <div class="alert">
+        Највећа вредност података није у броју фотографија, већ у томе да сваки налаз има време, место, опис станишта и довољно јасне снимке.
+      </div>
+    </div>
+  </section>
+
+  <section id="video">
+    <div class="wrap">
+      <h2 class="section-title">Видео материјал за обуку</h2>
+      <p class="section-lead">
+        Ови видео-прилози су корисни за почетни рад: један показује како се уноси посматрање, други како се прегледају Copernicus снимци,
+        а трећи како се теренске фотографије и подаци повезују са GIS пројектом.
+      </p>
+      <div class="video-grid">
+        <article class="video-card">
+          <div class="video-frame">
+            <iframe src="https://www.youtube-nocookie.com/embed/xENz1xRu0wI" title="Како направити посматрање у iNaturalist-у" loading="lazy" allowfullscreen=""></iframe>
+          </div>
+          <div class="video-body">
+            <h3>Како направити посматрање у iNaturalist-у</h3>
+            <p>Кратак увод у унос фотографије, локације и назива врсте.</p>
+          </div>
+        </article>
+        <article class="video-card">
+          <div class="video-frame">
+            <iframe src="https://www.youtube-nocookie.com/embed/GecNCdilbig" title="Copernicus Browser — увод" loading="lazy" allowfullscreen=""></iframe>
+          </div>
+          <div class="video-body">
+            <h3>Copernicus Browser — увод</h3>
+            <p>Преглед Sentinel снимака, основна визуализација и рад са временским серијама.</p>
+          </div>
+        </article>
+        <article class="video-card">
+          <div class="video-frame">
+            <iframe src="https://www.youtube-nocookie.com/embed/NGXcFpSaTn0" title="Теренске фотографије у QGIS/Mergin Maps" loading="lazy" allowfullscreen=""></iframe>
+          </div>
+          <div class="video-body">
+            <h3>Фотографије са терена у GIS-у</h3>
+            <p>Како се фотографије прикупљене на терену повезују са пројектом и касније користе у анализи.</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="izvori">
+    <div class="wrap">
+      <h2 class="section-title">Поуздани спољни извори и методолошка упутства</h2>
+      <p class="section-lead">
+        Испод су извори који су корисни и за почетни ниво и за озбиљнији рад: од уноса посматрања, преко теренских метода,
+        до сателитских прегледа и GIS обраде.
+      </p>
+      <div class="grid-3">
+        <article class="resource-card">
+          <h3>USDA Forest Service — Existing Vegetation Technical Guide</h3>
+          <p>Шири технички оквир за класификацију, картирaње, процену тачности и употребу вегетацијских података.</p>
+          <div class="links"><a href="https://www.fs.usda.gov/emc/rig/documents/protocols/vegClassMapInv/EVTG_v2-0_AppendicesJune2015.pdf" target="_blank" rel="noopener">Отвори PDF</a></div>
+        </article>
+        <article class="resource-card">
+          <h3>USDA FIREMON — Cover/Frequency</h3>
+          <p>Квадрати постављени систематично дуж транеката за праћење покровности и учесталости врста.</p>
+          <div class="links"><a href="https://www.fs.usda.gov/rm/pubs_series/rmrs/gtr/rmrs_gtr164/rmrs_gtr164_08_cover_freq.pdf" target="_blank" rel="noopener">Отвори PDF</a></div>
+        </article>
+        <article class="resource-card">
+          <h3>USDA FIREMON — Point Intercept</h3>
+          <p>Тачкасти метод за покровност и голо тло, посебно користан за ниже заједнице и објективнију процену.</p>
+          <div class="links"><a href="https://www.fs.usda.gov/rm/pubs/rmrs_gtr164/rmrs_gtr164_09_point_inter.pdf" target="_blank" rel="noopener">Отвори PDF</a></div>
+        </article>
+        <article class="resource-card">
+          <h3>NPS — What Are Transects?</h3>
+          <p>Јасно и приступачно објашњење чему служе транекти и зашто су важни за упоредиво праћење станишта кроз време.</p>
+          <div class="links"><a href="https://www.nps.gov/articles/000/what-are-transects.htm" target="_blank" rel="noopener">Отвори чланак</a></div>
+        </article>
+        <article class="resource-card">
+          <h3>USGS — NDVI и вегетациони индекси</h3>
+          <p>Добра полазна тачка за разумевање шта сателитски „зелени индекс“ заправо мери и шта не може да замени.</p>
+          <div class="links"><a href="https://www.usgs.gov/special-topics/remote-sensing-phenology/science/ndvi-foundation-remote-sensing-phenology" target="_blank" rel="noopener">Отвори USGS</a></div>
+        </article>
+        <article class="resource-card">
+          <h3>Copernicus Land Monitoring Service</h3>
+          <p>Слободни европски и глобални производи за земљишни покривач, стање вегетације, воду и површинске процесе.</p>
+          <div class="links"><a href="https://land.copernicus.eu/en" target="_blank" rel="noopener">Отвори CLMS</a></div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="wrap">
+      <div class="footer-box">
+        <h2>Како ово применити баш на Рајцу</h2>
+        <p>
+          Најбоља посетилачка пракса је да се крене од неколико сталних локација: једна ливада, један шумски руб, једна влажнија тачка и једна површина под утицајем стазе или пута.
+          Ако се те исте локације обилазе више пута у сезони, већ после једне године добија се много јаснија слика о просторној и сезонској динамици биљног света.
+        </p>
+        <div class="footer-links">
+          <a href="/rajac-vegetacija/#teren">Теренски протокол</a>
+          <a href="/rajac-vegetacija/#foto">Фото савети</a>
+          <a href="/rajac-vegetacija/#alatke">Алатке</a>
+          <a href="/rajac-vegetacija/#video">Видео обука</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+
+
+
+<!-- SITE_EDITOR_ADMIN_BAR_START -->
+<script src="/admin-site-editor.php?admin_bar_js=1" defer></script>
+<!-- SITE_EDITOR_ADMIN_BAR_END -->
+</body></html>

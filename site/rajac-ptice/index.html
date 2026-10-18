@@ -1,0 +1,1370 @@
+<!DOCTYPE html>
+<html lang="sr-RS"><head>
+<!-- RAJAC_RESEARCH_PARK_STATIC_FAST=1.0 --><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Посматрање птица на Рајцу — истраживачка и едукативна страница</title>
+  <meta name="description" content="Практичан водич за посматрање птица на Рајцу: методологија, фотографисање, теренски протоколи, орнитолошки извори, апликације и видео материјал.">
+  <meta name="robots" content="index,follow,max-image-preview:large">
+  <link rel="canonical" href="https://piorajac.rs/rajac-ptice/">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="sr_RS">
+  <meta property="og:title" content="Посматрање птица на Рајцу">
+  <meta property="og:description" content="Практичан водич за посматрање, препознавање, бројање и одговорно фотографисање птица на Рајцу.">
+  <meta property="og:url" content="https://piorajac.rs/rajac-ptice/">
+  <meta property="og:image" content="https://piorajac.rs/rajac-park-static/assets/ptice.webp">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Посматрање птица на Рајцу">
+  <meta name="twitter:description" content="Практичан водич за посматрање, препознавање, бројање и одговорно фотографисање птица на Рајцу.">
+  <meta name="twitter:image" content="https://piorajac.rs/rajac-park-static/assets/ptice.webp">
+<style>
+    :root{
+      --bg:#f6f7f2;
+      --card:#ffffff;
+      --soft:#eef2e7;
+      --line:#d9e0d1;
+      --text:#1f2b22;
+      --muted:#5c6b5d;
+      --green:#1f4b34;
+      --green-2:#2f6b49;
+      --amber:#c28a3d;
+      --amber-2:#e0a654;
+      --shadow:0 18px 45px rgba(19, 40, 27, 0.08);
+      --radius:22px;
+      --radius-sm:16px;
+      --wrap:min(1220px, calc(100% - 32px));
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      background:
+        radial-gradient(circle at top right, rgba(224,166,84,.10), transparent 26%),
+        radial-gradient(circle at top left, rgba(31,75,52,.10), transparent 22%),
+        var(--bg);
+      color:var(--text);
+      font-family:"Inter",system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+      line-height:1.65;
+    }
+    a{color:var(--green-2); text-decoration:none}
+    a:hover{text-decoration:underline}
+    img{max-width:100%; display:block}
+    .wrap{width:var(--wrap); margin:0 auto}
+    .topbar{
+      position:sticky; top:0; z-index:50;
+      backdrop-filter: blur(12px);
+      background:rgba(246,247,242,.86);
+      border-bottom:1px solid rgba(31,75,52,.10);
+    }
+    .topbar-inner{
+      width:var(--wrap);
+      margin:0 auto;
+      display:flex; align-items:center; justify-content:space-between;
+      gap:16px; padding:12px 0;
+    }
+    .brand{
+      display:flex; align-items:center; gap:12px;
+      font-weight:800; color:var(--green); letter-spacing:.02em;
+    }
+    .brand-mark{
+      width:42px; height:42px; border-radius:50%;
+      display:grid; place-items:center;
+      background:linear-gradient(135deg,var(--green),#163524);
+      color:#fff; font-size:1.1rem; box-shadow:var(--shadow);
+    }
+    .topnav{
+      display:flex; gap:10px; flex-wrap:wrap; justify-content:flex-end;
+    }
+    .topnav a{
+      padding:10px 14px; border-radius:999px;
+      background:#fff; border:1px solid rgba(31,75,52,.10);
+      color:var(--green); font-size:.95rem; font-weight:600;
+    }
+    .hero{
+      position:relative;
+      min-height:84vh;
+      display:flex; align-items:flex-end;
+      background:
+        linear-gradient(180deg, rgba(12,23,16,.25) 0%, rgba(12,23,16,.35) 35%, rgba(12,23,16,.72) 100%),
+        url('https://rajac.rs/wp-content/uploads/2024/01/Short-toed_Snake_Eagle_STSE.jpg') center/cover no-repeat;
+      color:#fff;
+      overflow:hidden;
+    }
+    .hero::after{
+      content:"";
+      position:absolute; inset:auto 0 0 0; height:160px;
+      background:linear-gradient(180deg, rgba(246,247,242,0), var(--bg));
+    }
+    .hero-content{
+      position:relative; z-index:1;
+      width:var(--wrap); margin:0 auto;
+      padding:120px 0 110px;
+    }
+    .eyebrow{
+      display:inline-flex; align-items:center; gap:10px;
+      padding:10px 14px; border-radius:999px;
+      background:rgba(255,255,255,.12);
+      border:1px solid rgba(255,255,255,.18);
+      font-weight:700; letter-spacing:.03em; font-size:.88rem;
+      text-transform:uppercase;
+      backdrop-filter: blur(8px);
+    }
+    .hero h1{
+      margin:18px 0 14px;
+      max-width:980px;
+      font-family:"Marcellus",serif;
+      font-size:clamp(2.4rem, 5vw, 5.2rem);
+      line-height:1.08;
+      letter-spacing:.01em;
+    }
+    .hero p{
+      max-width:800px;
+      font-size:clamp(1rem,1.3vw,1.14rem);
+      color:rgba(255,255,255,.92);
+      margin:0 0 24px;
+    }
+    .hero-actions{
+      display:flex; gap:14px; flex-wrap:wrap;
+      margin-top:28px;
+    }
+    .btn{
+      display:inline-flex; align-items:center; justify-content:center;
+      gap:10px; padding:14px 18px; border-radius:999px;
+      font-weight:700; transition:.2s ease;
+      border:1px solid transparent;
+    }
+    .btn-primary{
+      background:linear-gradient(135deg,var(--amber),var(--amber-2));
+      color:#1f1a14; box-shadow:0 14px 30px rgba(194,138,61,.25);
+    }
+    .btn-secondary{
+      background:rgba(255,255,255,.10);
+      border-color:rgba(255,255,255,.18);
+      color:#fff;
+      backdrop-filter: blur(8px);
+    }
+    .hero-grid{
+      display:grid; grid-template-columns:repeat(3,1fr);
+      gap:16px; margin-top:34px; max-width:980px;
+    }
+    .hero-stat{
+      padding:18px 18px 16px;
+      border-radius:var(--radius-sm);
+      background:rgba(255,255,255,.10);
+      border:1px solid rgba(255,255,255,.16);
+      backdrop-filter: blur(10px);
+    }
+    .hero-stat strong{display:block; font-size:1.15rem; margin-bottom:6px}
+    .hero-stat span{color:rgba(255,255,255,.86); font-size:.95rem}
+    section{
+      padding:72px 0;
+    }
+    .section-head{
+      display:flex; gap:18px; align-items:flex-end; justify-content:space-between;
+      flex-wrap:wrap; margin-bottom:26px;
+    }
+    .section-head h2{
+      margin:0;
+      color:var(--green);
+      font-size:clamp(1.7rem, 3vw, 3rem);
+      line-height:1.12;
+      font-family:"Marcellus", serif;
+    }
+    .section-head p{
+      margin:0; max-width:760px; color:var(--muted);
+    }
+    .intro-grid{
+      display:grid; grid-template-columns:1.15fr .85fr; gap:26px;
+      align-items:stretch;
+    }
+    .card{
+      background:var(--card);
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
+    }
+    .card.pad{padding:28px}
+    .lead{
+      font-size:1.04rem; color:#314135;
+    }
+    .checklist{
+      display:grid; gap:12px; margin-top:22px;
+    }
+    .check{
+      display:flex; gap:12px; align-items:flex-start;
+      padding:14px 16px; border-radius:16px; background:var(--soft);
+      border:1px solid rgba(31,75,52,.08);
+    }
+    .check b{color:var(--green)}
+    .pill-row{
+      display:flex; gap:10px; flex-wrap:wrap; margin-top:20px;
+    }
+    .pill{
+      padding:10px 12px; border-radius:999px; background:#fff;
+      border:1px solid rgba(31,75,52,.12); font-size:.9rem; font-weight:600;
+      color:var(--green);
+    }
+    .org-grid{
+      display:grid; grid-template-columns:repeat(4,1fr); gap:18px;
+    }
+    .org-card{
+      padding:22px; display:flex; flex-direction:column; gap:16px;
+      min-height:100%;
+    }
+    .org-head{
+      display:flex; align-items:center; gap:12px;
+    }
+    .org-icon{
+      width:50px; height:50px; border-radius:15px;
+      display:grid; place-items:center;
+      background:linear-gradient(135deg, rgba(31,75,52,.15), rgba(194,138,61,.20));
+      color:var(--green); font-weight:800;
+      border:1px solid rgba(31,75,52,.10);
+    }
+    .org-card h3{
+      margin:0; font-size:1.05rem; line-height:1.2; color:var(--green);
+    }
+    .org-card p{
+      margin:0; color:var(--muted); font-size:.96rem;
+    }
+    .org-links{
+      margin-top:auto; display:flex; gap:10px; flex-wrap:wrap;
+    }
+    .org-links a{
+      padding:10px 12px; border-radius:12px; background:var(--soft);
+      border:1px solid rgba(31,75,52,.08); font-weight:700; font-size:.9rem;
+    }
+    .method-grid{
+      display:grid; grid-template-columns:repeat(3,1fr); gap:18px;
+    }
+    .method-card{
+      padding:24px;
+    }
+    .method-card .num{
+      width:42px; height:42px; border-radius:50%;
+      display:grid; place-items:center; margin-bottom:14px;
+      background:linear-gradient(135deg, var(--green), var(--green-2));
+      color:#fff; font-weight:800;
+    }
+    .method-card h3{margin:0 0 10px; color:var(--green)}
+    .method-card p{margin:0; color:var(--muted)}
+    .highlight{
+      background:linear-gradient(135deg, rgba(31,75,52,.08), rgba(194,138,61,.08));
+      border:1px solid rgba(31,75,52,.10);
+      border-radius:var(--radius);
+      padding:26px;
+      margin-top:20px;
+    }
+    .protocol-grid{
+      display:grid; grid-template-columns:1fr 1fr; gap:22px;
+      margin-top:24px;
+    }
+    .protocol{
+      padding:24px;
+    }
+    .protocol h3{margin:0 0 10px; color:var(--green)}
+    .protocol ol{
+      margin:0; padding-left:20px; color:var(--muted);
+    }
+    .protocol li{margin:0 0 8px}
+    .media-grid{
+      display:grid; grid-template-columns:repeat(3,1fr); gap:18px;
+    }
+    .video-card{
+      overflow:hidden;
+    }
+    .video-card iframe{
+      width:100%; aspect-ratio:16/9; border:0; display:block;
+      background:#000;
+    }
+    .video-info{padding:18px 20px}
+    .video-info h3{margin:0 0 8px; color:var(--green); font-size:1.06rem}
+    .video-info p{margin:0; color:var(--muted); font-size:.95rem}
+    .gallery-grid{
+      display:grid; grid-template-columns:1.2fr .8fr .8fr; gap:18px;
+    }
+    .gallery-tile{
+      position:relative; min-height:250px; overflow:hidden;
+      border-radius:var(--radius); border:1px solid var(--line); box-shadow:var(--shadow);
+      background:#dfe8dc;
+    }
+    .gallery-tile img{
+      width:100%; height:100%; object-fit:cover; transition:transform .5s ease;
+    }
+    .gallery-tile:hover img{transform:scale(1.03)}
+    .gallery-caption{
+      position:absolute; inset:auto 0 0 0;
+      padding:16px 18px;
+      background:linear-gradient(180deg, rgba(0,0,0,0), rgba(0,0,0,.75));
+      color:#fff;
+    }
+    .gallery-caption strong{display:block; margin-bottom:4px}
+    .resource-groups{
+      display:grid; grid-template-columns:repeat(3,1fr); gap:18px;
+    }
+    .resource-card{
+      padding:24px;
+    }
+    .resource-card h3{margin:0 0 14px; color:var(--green)}
+    .resource-list{
+      display:grid; gap:10px;
+    }
+    .resource-list a{
+      display:block;
+      padding:13px 14px; border-radius:14px;
+      border:1px solid rgba(31,75,52,.10); background:var(--soft);
+      font-weight:600;
+      color:var(--text);
+    }
+    .quote-band{
+      margin-top:26px;
+      padding:28px;
+      border-radius:var(--radius);
+      background:linear-gradient(135deg, var(--green), #183927);
+      color:#fff;
+      box-shadow:var(--shadow);
+    }
+    .quote-band strong{display:block; font-size:1.15rem; margin-bottom:8px}
+    .footer{
+      padding:42px 0 64px;
+      color:var(--muted);
+    }
+    .footer-inner{
+      width:var(--wrap); margin:0 auto;
+      padding:24px 0 0;
+      border-top:1px solid rgba(31,75,52,.12);
+      display:flex; justify-content:space-between; gap:20px; flex-wrap:wrap;
+    }
+    .small{font-size:.92rem}
+    @media (max-width:1100px){
+      .org-grid,.method-grid,.media-grid,.resource-groups{grid-template-columns:repeat(2,1fr)}
+      .gallery-grid{grid-template-columns:1fr 1fr}
+      .intro-grid,.protocol-grid{grid-template-columns:1fr}
+    }
+    @media (max-width:760px){
+      .topbar-inner{padding:10px 0}
+      .topnav{display:none}
+      .hero{min-height:auto}
+      .hero-content{padding:90px 0 80px}
+      .hero-grid,.org-grid,.method-grid,.media-grid,.resource-groups,.gallery-grid{grid-template-columns:1fr}
+      .section-head{margin-bottom:22px}
+      .card.pad,.org-card,.method-card,.resource-card,.protocol,.video-info{padding:20px}
+      .btn{width:100%}
+    }
+  
+
+/* v2.2.0 contrast cleanup */
+.hero-stat{
+  background:rgba(255,255,255,.82) !important;
+  border:1px solid rgba(255,255,255,.58) !important;
+  box-shadow:0 18px 40px rgba(20,28,22,.12) !important;
+}
+.hero-stat strong{color:#223228 !important;}
+.hero-stat span{color:#445447 !important;}
+.card, .card p, .card li, .card span, .card strong, .card h3, .card h4,
+.check, .check p, .check li, .check span,
+.pill, .resource-card, .resource-card p, .resource-card h3,
+.org-card, .org-card p, .org-card h3,
+.method-card, .method-card p, .method-card h3,
+.protocol, .protocol p, .protocol h3,
+.highlight, .highlight p, .highlight li{
+  color:inherit;
+}
+.card, .check, .pill, .resource-card, .org-card, .method-card, .protocol, .highlight{
+  color:var(--text) !important;
+}
+.card p, .card li, .card span,
+.check p, .check li, .check span,
+.resource-card p, .org-card p, .method-card p, .protocol p, .highlight p, .highlight li{
+  color:var(--muted) !important;
+}
+.card h2, .card h3, .card h4, .check b, .resource-card h3, .org-card h3, .method-card h3, .protocol h3{
+  color:var(--green) !important;
+}
+
+
+
+
+.rp-global-nav a.is-active,
+.rp-global-nav__menu a.is-active {
+  color: #f0cd69 !important;
+}
+.rp-clean-hero {
+  min-height: 86vh;
+  position: relative;
+  isolation: isolate;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding: clamp(96px, 14vh, 150px) 24px clamp(64px, 12vh, 112px);
+  overflow: hidden;
+  background-image:
+    linear-gradient(180deg, rgba(8, 14, 22, .10) 0%, rgba(8, 14, 22, .18) 42%, rgba(8, 14, 22, .62) 100%),
+    var(--rp-clean-hero-bg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.rp-clean-hero__title {
+  margin: 0;
+  max-width: 1180px;
+  text-align: center;
+  color: #fff;
+  font-family: Georgia, 'Times New Roman', serif;
+  font-weight: 400;
+  line-height: .98;
+  letter-spacing: 0;
+  font-size: clamp(44px, 8vw, 104px);
+  text-shadow: 0 6px 26px rgba(0, 0, 0, .42);
+}
+.rp-hero-summary {
+  background: #f4efe7;
+  padding: clamp(34px, 5vw, 62px) 22px;
+}
+.rp-hero-summary__inner {
+  max-width: 1120px;
+  margin: 0 auto;
+  background: rgba(255, 255, 255, .94);
+  border: 1px solid rgba(37, 42, 47, .14);
+  border-radius: 10px;
+  box-shadow: 0 18px 48px rgba(18, 24, 32, .08);
+  padding: clamp(24px, 4vw, 42px);
+}
+.rp-hero-summary__eyebrow {
+  margin: 0 0 10px;
+  color: #9b7725;
+  font: 800 12px/1.35 Arial, sans-serif;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+}
+.rp-hero-summary h2 {
+  margin: 0 0 16px;
+  color: #111a2b;
+  font-family: Georgia, 'Times New Roman', serif;
+  font-weight: 400;
+  line-height: 1.1;
+  font-size: clamp(28px, 4vw, 44px);
+}
+.rp-hero-summary p {
+  margin: 0 0 14px;
+  max-width: 980px;
+  color: #17243b;
+  font-size: clamp(17px, 1.45vw, 20px);
+  line-height: 1.72;
+}
+.rp-hero-summary__meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 20px;
+}
+.rp-hero-summary__chip {
+  display: inline-flex;
+  align-items: center;
+  border: 1px solid rgba(33, 48, 64, .16);
+  border-radius: 999px;
+  padding: 8px 12px;
+  background: #fbf8f2;
+  color: #213040;
+  font: 800 12px/1.2 Arial, sans-serif;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+}
+@media (max-width: 760px) {
+  .rp-clean-hero {
+    min-height: 76vh;
+    padding-left: 18px;
+    padding-right: 18px;
+  }
+  .rp-clean-hero__title {
+    font-size: clamp(40px, 14vw, 68px);
+  }
+}
+
+
+/* Shared Research Park navigation override. */
+.rp-global-nav {
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  z-index: 9000 !important;
+  background: rgba(255, 255, 255, .94) !important;
+  border-bottom: 1px solid rgba(37, 42, 47, .12) !important;
+  box-shadow: 0 8px 28px rgba(18, 24, 32, .06) !important;
+  backdrop-filter: blur(18px) saturate(180%) !important;
+  -webkit-backdrop-filter: blur(18px) saturate(180%) !important;
+}
+.rp-global-nav__inner {
+  max-width: 1400px !important;
+  margin: 0 auto !important;
+}
+.rp-global-nav a,
+.rp-global-nav__menu a {
+  color: #263241 !important;
+  background: transparent !important;
+  text-decoration: none !important;
+}
+.rp-global-nav a:hover,
+.rp-global-nav__menu a:hover {
+  color: #111a2b !important;
+  background: rgba(24, 60, 34, .07) !important;
+}
+.rp-global-nav a.is-active,
+.rp-global-nav__menu a.is-active {
+  color: #d39a16 !important;
+  background: transparent !important;
+}
+.rp-global-nav__mark {
+  background: #183c22 !important;
+  color: #fff !important;
+}
+.rp-global-nav-spacer {
+  min-height: 68px !important;
+}
+.rp-global-nav, .rp-global-nav * { text-shadow: none !important; }
+.rp-hero-summary, .rp-hero-summary * { text-shadow: none !important; }
+.rp-hero-summary h2 { color: #111a2b !important; }
+.rp-hero-summary p { color: #17243b !important; }
+/* Strong top menu and contrast fixes. */
+.rp-global-nav {
+  display: flex !important;
+  align-items: center !important;
+  min-height: 68px !important;
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  z-index: 99999 !important;
+  background: #ffffff !important;
+  border-bottom: 1px solid rgba(13,18,8,.14) !important;
+  box-shadow: 0 10px 28px rgba(13,18,8,.12) !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  transform: none !important;
+}
+.rp-global-nav__inner {
+  width: 100% !important;
+  max-width: 1400px !important;
+  margin: 0 auto !important;
+  padding: 0 clamp(18px, 4vw, 56px) !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  gap: 22px !important;
+}
+.rp-global-nav__menu {
+  display: flex !important;
+  align-items: center !important;
+  gap: 4px !important;
+  list-style: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+.rp-global-nav__scroller { overflow-x: auto !important; }
+.rp-global-nav a,
+.rp-global-nav__menu a {
+  display: inline-flex !important;
+  align-items: center !important;
+  min-height: 38px !important;
+  padding: 8px 13px !important;
+  border-radius: 8px !important;
+  color: #243044 !important;
+  background: transparent !important;
+  text-decoration: none !important;
+  font-weight: 700 !important;
+  text-shadow: none !important;
+  white-space: nowrap !important;
+}
+.rp-global-nav a:hover,
+.rp-global-nav__menu a:hover {
+  color: #0d1208 !important;
+  background: #f2efe8 !important;
+}
+.rp-global-nav a.is-active,
+.rp-global-nav__menu a.is-active {
+  color: #c08000 !important;
+  background: #fff7df !important;
+}
+.rp-global-nav__mark {
+  background: #183c22 !important;
+  color: #ffffff !important;
+}
+.rp-global-nav-spacer { min-height: 68px !important; }
+.rp-hero-summary, .rp-hero-summary * { text-shadow: none !important; }
+.rp-hero-summary h2 { color: #111a2b !important; }
+.rp-hero-summary p { color: #17243b !important; }
+
+
+.rp-global-nav {
+  display: flex !important;
+  align-items: center !important;
+  min-height: 68px !important;
+  height: 68px !important;
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  z-index: 999999 !important;
+  background: rgba(43, 55, 67, .78) !important;
+  border-bottom: 1px solid rgba(255,255,255,.28) !important;
+  box-shadow: none !important;
+  backdrop-filter: blur(12px) saturate(145%) !important;
+  -webkit-backdrop-filter: blur(12px) saturate(145%) !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  transform: none !important;
+}
+.rp-global-nav__inner {
+  width: 100% !important;
+  max-width: 1160px !important;
+  margin: 0 auto !important;
+  padding: 0 18px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: flex-start !important;
+  gap: 22px !important;
+}
+.rp-global-nav__inner > a:first-child {
+  height: 50px !important;
+  padding: 0 20px !important;
+  border-radius: 7px !important;
+  background: rgba(255, 255, 255, .82) !important;
+  color: #ffffff !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 11px !important;
+  text-decoration: none !important;
+  box-shadow: none !important;
+}
+.rp-global-nav__mark {
+  width: 28px !important;
+  height: 28px !important;
+  border-radius: 999px !important;
+  background: rgba(255,255,255,.18) !important;
+  color: #ffffff !important;
+  display: grid !important;
+  place-items: center !important;
+  font-weight: 700 !important;
+}
+.rp-global-nav__brand-text {
+  color: #ffffff !important;
+  font-size: 12px !important;
+  font-weight: 800 !important;
+  letter-spacing: .16em !important;
+  text-transform: uppercase !important;
+  text-shadow: none !important;
+}
+.rp-global-nav__scroller {
+  overflow-x: auto !important;
+  overflow-y: hidden !important;
+  flex: 1 1 auto !important;
+}
+.rp-global-nav__menu {
+  display: flex !important;
+  align-items: center !important;
+  gap: 12px !important;
+  list-style: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  white-space: nowrap !important;
+}
+.rp-global-nav__menu li { margin: 0 !important; padding: 0 !important; }
+.rp-global-nav__menu a {
+  min-height: 44px !important;
+  padding: 0 16px !important;
+  border-radius: 7px !important;
+  background: transparent !important;
+  color: #ffffff !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  text-decoration: none !important;
+  font-size: 12px !important;
+  font-weight: 900 !important;
+  letter-spacing: .12em !important;
+  text-transform: uppercase !important;
+  text-shadow: none !important;
+}
+.rp-global-nav__menu a:hover {
+  background: rgba(255,255,255,.14) !important;
+  color: #ffffff !important;
+}
+.rp-global-nav__menu a.is-active {
+  background: #fff3d7 !important;
+  color: #d3a337 !important;
+  box-shadow: none !important;
+}
+.rp-global-nav-spacer {
+  min-height: 0 !important;
+  height: 0 !important;
+}
+
+
+.rp-global-nav {
+  background: rgba(24, 34, 43, .90) !important;
+  border-bottom-color: rgba(255,255,255,.38) !important;
+}
+.rp-global-nav__menu a,
+.rp-global-nav__menu a:link,
+.rp-global-nav__menu a:visited,
+.rp-global-nav__menu a:not(.is-active) {
+  color: #ffffff !important;
+  opacity: 1 !important;
+  font-weight: 950 !important;
+  text-shadow: 0 1px 3px rgba(0,0,0,.65) !important;
+}
+.rp-global-nav__menu a:hover,
+.rp-global-nav__menu a:not(.is-active):hover {
+  color: #ffffff !important;
+  background: rgba(255,255,255,.20) !important;
+}
+.rp-global-nav__menu a.is-active,
+.rp-global-nav__menu a.is-active:link,
+.rp-global-nav__menu a.is-active:visited {
+  background: #fff1cf !important;
+  color: #9b5f00 !important;
+  text-shadow: none !important;
+  border-bottom: 3px solid #b56f00 !important;
+}
+.rp-global-nav__inner > a:first-child,
+.rp-global-nav__inner > a:first-child:link,
+.rp-global-nav__inner > a:first-child:visited {
+  background: rgba(255,255,255,.92) !important;
+  color: #ffffff !important;
+}
+.rp-global-nav__brand-text {
+  color: #ffffff !important;
+  opacity: 1 !important;
+  text-shadow: 0 1px 3px rgba(0,0,0,.42) !important;
+}
+
+
+.rp-global-nav__inner > a:first-child,
+.rp-global-nav__inner > a:first-child:link,
+.rp-global-nav__inner > a:first-child:visited {
+  background: rgba(255,255,255,.94) !important;
+  color: #223041 !important;
+}
+.rp-global-nav__mark {
+  background: rgba(34,48,65,.10) !important;
+  color: #223041 !important;
+  text-shadow: none !important;
+}
+.rp-global-nav__brand-text {
+  color: #223041 !important;
+  opacity: 1 !important;
+  text-shadow: none !important;
+}
+.rp-admin-bar,
+.rp-admin-spacer,
+.topbar,
+.quicknav,
+.local-nav,
+.subnav,
+.page-nav {
+  display: none !important;
+}
+
+
+.rp-clean-hero + section,
+.rp-clean-hero + .section,
+.rp-clean-hero + div,
+.rp-clean-hero + main {
+  margin-top: 0 !important;
+  padding-top: clamp(18px, 2.4vw, 32px) !important;
+}
+.rp-clean-hero + section .wrap,
+.rp-clean-hero + .section .wrap,
+.rp-clean-hero + section .section-head,
+.rp-clean-hero + .section .section-head,
+.rp-clean-hero + section .section-header,
+.rp-clean-hero + .section .section-header {
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+}
+.rp-clean-hero + section .label,
+.rp-clean-hero + section .kicker,
+.rp-clean-hero + section .section-label,
+.rp-clean-hero + section .section-head > p,
+.rp-clean-hero + section .section-header > p,
+.rp-clean-hero + section .section-lead,
+.rp-clean-hero + .section .label,
+.rp-clean-hero + .section .kicker,
+.rp-clean-hero + .section .section-label,
+.rp-clean-hero + .section .section-head > p,
+.rp-clean-hero + .section .section-header > p,
+.rp-clean-hero + .section .section-lead {
+  display: none !important;
+}
+.rp-clean-hero + section h2,
+.rp-clean-hero + .section h2,
+.rp-clean-hero + section .section-title,
+.rp-clean-hero + .section .section-title {
+  max-width: none !important;
+  white-space: nowrap !important;
+  font-size: clamp(30px, 4.2vw, 54px) !important;
+  line-height: 1.05 !important;
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+}
+@media (max-width: 760px) {
+  .rp-clean-hero + section h2,
+  .rp-clean-hero + .section h2,
+  .rp-clean-hero + section .section-title,
+  .rp-clean-hero + .section .section-title {
+    white-space: normal !important;
+    font-size: clamp(27px, 8vw, 40px) !important;
+  }
+}
+
+
+.rp-global-nav__inner > a:first-child,
+.rp-global-nav__inner > a:first-child:link,
+.rp-global-nav__inner > a:first-child:visited,
+.rp-global-nav__inner > a:first-child:hover {
+  background: rgba(255,255,255,.96) !important;
+  color: #172033 !important;
+  text-shadow: none !important;
+}
+.rp-global-nav__inner > a:first-child *,
+.rp-global-nav__brand-text,
+.rp-global-nav__mark {
+  color: #172033 !important;
+  text-shadow: none !important;
+  opacity: 1 !important;
+}
+.rp-global-nav__mark {
+  background: rgba(23,32,51,.10) !important;
+}
+
+body.rp-flora-course .rp-clean-hero {
+  margin-bottom: 0 !important;
+}
+body.rp-flora-course .rp-clean-hero + section,
+body.rp-flora-course .rp-clean-hero + .section,
+body.rp-flora-course .rp-clean-hero + div,
+body.rp-flora-course .rp-clean-hero + main {
+  margin-top: 0 !important;
+  padding-top: 8px !important;
+}
+body.rp-flora-course .rp-clean-hero + section .wrap,
+body.rp-flora-course .rp-clean-hero + .section .wrap,
+body.rp-flora-course .rp-clean-hero + section .section-head,
+body.rp-flora-course .rp-clean-hero + .section .section-head,
+body.rp-flora-course .rp-clean-hero + section .section-header,
+body.rp-flora-course .rp-clean-hero + .section .section-header {
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+}
+body.rp-flora-course .rp-clean-hero + section .label,
+body.rp-flora-course .rp-clean-hero + section .kicker,
+body.rp-flora-course .rp-clean-hero + section .section-label,
+body.rp-flora-course .rp-clean-hero + section .section-head > p,
+body.rp-flora-course .rp-clean-hero + section .section-header > p,
+body.rp-flora-course .rp-clean-hero + section .section-lead,
+body.rp-flora-course .rp-clean-hero + .section .label,
+body.rp-flora-course .rp-clean-hero + .section .kicker,
+body.rp-flora-course .rp-clean-hero + .section .section-label,
+body.rp-flora-course .rp-clean-hero + .section .section-head > p,
+body.rp-flora-course .rp-clean-hero + .section .section-header > p,
+body.rp-flora-course .rp-clean-hero + .section .section-lead {
+  display: none !important;
+}
+body.rp-flora-course .rp-clean-hero + section h2,
+body.rp-flora-course .rp-clean-hero + .section h2,
+body.rp-flora-course .rp-clean-hero + section .section-title,
+body.rp-flora-course .rp-clean-hero + .section .section-title {
+  display: block !important;
+  max-width: 100% !important;
+  width: 100% !important;
+  white-space: nowrap !important;
+  overflow: visible !important;
+  font-size: clamp(24px, 3.2vw, 42px) !important;
+  line-height: 1 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  letter-spacing: 0 !important;
+}
+@media (max-width: 760px) {
+  body.rp-flora-course .rp-clean-hero + section h2,
+  body.rp-flora-course .rp-clean-hero + .section h2,
+  body.rp-flora-course .rp-clean-hero + section .section-title,
+  body.rp-flora-course .rp-clean-hero + .section .section-title {
+    white-space: normal !important;
+    font-size: clamp(24px, 7vw, 36px) !important;
+  }
+}
+</style>
+<link rel="stylesheet" href="/rajac-design/rajac-global.css?v=1.0">
+<link rel="preload" as="image" href="/rajac-park-static/assets/ptice.webp" fetchpriority="high">
+
+<style id="rajac-park-fast-static-patch">
+html{scroll-behavior:smooth}
+body{font-display:swap}
+.rp-global-nav a:first-child,.nav__brand{cursor:pointer}
+.rp-clean-hero,.hero{background-image:var(--rp-clean-hero-bg, url('/rajac-park-static/assets/ptice.webp'))!important;background-size:cover!important;background-position:center!important;min-height:min(58vh,560px)}
+.rp-global-nav a[href="/"], .nav__brand[href="/"]{text-decoration:none!important}
+img{max-width:100%;height:auto}
+</style>
+
+
+<style id="rajac-static-layout-repair-v2">
+
+:root{--rp-deep:#102338;--rp-cream:#f4efe3;--rp-ink:#17251b;--rp-muted:#526055;--rp-gold:#efbf65;}
+body{overflow-x:hidden;}
+.wrap{max-width:1240px!important;margin-inline:auto!important;}
+.card,.media-card,.gallery-tile,.photo-link,.quote-band,.final-cta{box-sizing:border-box;}
+.card img,.media-card img,.gallery-tile img,.photo-link img,.figure-card img{display:block!important;width:100%!important;max-width:100%!important;object-fit:cover!important;object-position:center!important;}
+.media-card{overflow:hidden!important;border-radius:22px!important;}
+.media-card img{height:240px!important;}
+.grid-2 .media-card img,.grid-2 .card img{height:320px!important;}
+.grid-3 .media-card img,.grid-3 .card img{height:240px!important;}
+.gallery-grid{align-items:stretch!important;}
+.gallery-tile{height:260px!important;min-height:260px!important;overflow:hidden!important;}
+.gallery-tile img{height:100%!important;}
+.gallery-caption{z-index:2!important;color:#fff!important;text-shadow:0 1px 2px rgba(0,0,0,.45)!important;}
+.photo-link{display:flex!important;flex-direction:column!important;gap:12px!important;min-height:0!important;height:auto!important;overflow:hidden!important;padding:16px!important;border-radius:22px!important;background:#fff!important;}
+.photo-link .thumb{height:170px!important;min-height:170px!important;width:100%!important;overflow:hidden!important;border-radius:14px!important;background:#e8e4da!important;}
+.photo-link .thumb img{height:100%!important;}
+.photo-link h3,.photo-link p,.photo-link span{position:relative!important;z-index:2!important;}
+.quote-band,.final-cta,.cta-band,.closing,.proposal,.proposal-box{background:linear-gradient(135deg,#1f5a38,#102e20)!important;color:#fff!important;}
+.quote-band *,.final-cta *,.cta-band *,.closing *,.proposal *,.proposal-box *{color:#fff!important;opacity:1!important;}
+.quote-band a,.final-cta a,.cta-band a,.closing a,.proposal a,.proposal-box a{background:rgba(255,255,255,.15)!important;border-color:rgba(255,255,255,.28)!important;color:#fff!important;}
+.section-head p,.lead,.intro p{color:var(--rp-muted)!important;opacity:1!important;}
+section.dark,.dark,.night-section{color:#fff!important;}
+section.dark *,.dark *,.night-section *{color:inherit;}
+.video-card iframe,.video-card video,.media-card iframe,.media-card video{width:100%!important;aspect-ratio:16/9!important;height:auto!important;min-height:260px!important;background:#252525!important;border:0!important;display:block!important;}
+.g2{display:grid!important;grid-template-columns:repeat(auto-fit,minmax(320px,1fr))!important;gap:22px!important;align-items:start!important;}
+@media(max-width:780px){.media-card img,.grid-2 .media-card img,.grid-2 .card img,.grid-3 .media-card img,.grid-3 .card img{height:220px!important}.gallery-grid{grid-template-columns:1fr!important}.gallery-tile{height:240px!important}.photo-link .thumb{height:160px!important}.video-card iframe,.video-card video,.media-card iframe,.media-card video{min-height:210px!important}}
+</style>
+
+<link rel="stylesheet" href="/rajac-design/rajac-park-responsive.css">
+<script src="/rajac-design/rajac-park-responsive.js" defer></script>
+</head>
+<body class="rp-flora-course" data-rp-course="ptice"><nav class="rp-global-nav" id="mainNav" aria-label="Главна навигација курса">
+  <div class="rp-global-nav__inner">
+    <a class="" href="/">
+      <span class="rp-global-nav__mark">Р</span>
+      <span class="rp-global-nav__brand-text">ПИО „РАЈАЦ“</span>
+    </a>
+    <div class="rp-global-nav__scroller">
+      <ul class="rp-global-nav__menu">
+              <li><a class="" href="/istrazivacki-park-rajac/">Курсеви</a></li>
+              <li><a class="" href="/rajac-astronomija/">Астрономија</a></li>
+              <li><a class="" href="/rajac-leptiri/">Лептири</a></li>
+              <li><a class="is-active" href="/rajac-ptice/">Птице</a></li>
+              <li><a class="" href="/rajac-vegetacija/">Вегетација</a></li>
+              <li><a class="" href="/rajac-karst/">Карст</a></li>
+              <li><a class="" href="/rajac-oblaci/">Облаци</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<div class="rp-global-nav-spacer" aria-hidden="true"></div>
+
+  <header class="rp-clean-hero" style="--rp-clean-hero-bg:url('/rajac-park-static/assets/ptice.webp');">
+    <h1 class="rp-clean-hero__title">Посматрање птица на Рајцу</h1>
+  </header>
+
+  <section>
+    <div class="wrap">
+      <div class="section-head">
+        <h2>Како се птице посматрају на Рајцу</h2>
+        <p>Добро посматрање птица почиње стрпљењем, тихим кретањем и јасним записом. На Рајцу је важно повезати изглед врсте, глас, станиште, доба дана и понашање, а сваки налаз забележити тако да касније може да се провери и употреби у едукацији или мониторингу.</p>
+      </div>
+      <div class="intro-grid">
+        <article class="card pad">
+          <p class="lead">
+            За квалитетно посматрање птица нису довољни само двоглед и добра воља. Најбољи резултати
+            долазе када се терен чита као систем: станиште, доба дана, временски услови, активност птица,
+            тишина, смер кретања, бележење виђеног и чујеног, фотографски доказ и јасан унос података.
+          </p>
+          <div class="checklist">
+            <div class="check"><div>✓</div><div><b>Посматрај мирно и систематично</b><br>Успешно посматрање почиње тишином, спорим кретањем и читањем станишта пре него што се птица уопште појави у кадру.</div></div>
+            <div class="check"><div>✓</div><div><b>Раздвоји рекреативно и стандардизовано бележење</b><br>Једно је уживање у птицама, а друго мониторинг. За мониторинг су важни време, трајање, траса, локација и потпуна листа врста.</div></div>
+            <div class="check"><div>✓</div><div><b>Фотографиши одговорно</b><br>Добра фотографија никада не сме бити важнија од добробити птице, гнезда или станишта.</div></div>
+          </div>
+        </article>
+        <aside class="card pad">
+          <h3 style="margin-top:0;color:var(--green)">Шта ова страница доноси</h3>
+          <div class="pill-row">
+            <span class="pill">водеће организације</span>
+            <span class="pill">тачни теренски кораци</span>
+            <span class="pill">point count</span>
+            <span class="pill">transect</span>
+            <span class="pill">фото-савети</span>
+            <span class="pill">апликације</span>
+            <span class="pill">видео материјал</span>
+            <span class="pill">линкови ка изворима</span>
+          </div>
+          <div class="highlight">
+            <strong style="display:block;color:var(--green);margin-bottom:8px">Како користити ову страницу</strong>
+            Овај водич је намењен посетиоцима, ученицима, наставницима, волонтерима и истраживачима који
+            желе да посматрање птица повежу са одговорним бележењем налаза, теренском обуком и
+            мониторингом у ПИО „Рајац”.
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <section id="organizacije">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>Најзначајније организације и платформе</h2>
+        <p>Ови извори повезују идентификацију врста, citizen science, теренску методологију, фотографску етику и ширу заштиту птица.</p>
+      </div>
+      <div class="org-grid">
+        <article class="card org-card">
+          <div class="org-head"><div class="org-icon">CL</div><div><h3>Cornell Lab of Ornithology</h3></div></div>
+          <p>Један од најважнијих светских центара за орнитологију, образовање и дигиталне алате за препознавање и бележење птица.</p>
+          <div class="org-links">
+            <a href="https://www.birds.cornell.edu/home/" target="_blank" rel="noopener">Званични сајт</a>
+            <a href="https://academy.allaboutbirds.org/" target="_blank" rel="noopener">Bird Academy</a>
+          </div>
+        </article>
+        <article class="card org-card">
+          <div class="org-head"><div class="org-icon">eB</div><div><h3>eBird</h3></div></div>
+          <p>Најзначајнија светска платформа за унос посматрања птица. Посебно важна за чеклисте, локације, време, трајање и научну вредност података.</p>
+          <div class="org-links">
+            <a href="https://support.ebird.org/en/support/solutions/articles/48001158707-get-started-with-ebird" target="_blank" rel="noopener">Почетак рада</a>
+            <a href="https://support.ebird.org/en/support/solutions/articles/48000795623-ebird-rules-and-best-practices" target="_blank" rel="noopener">Best practices</a>
+          </div>
+        </article>
+        <article class="card org-card">
+          <div class="org-head"><div class="org-icon">MB</div><div><h3>Merlin Bird ID</h3></div></div>
+          <p>Брза помоћ у препознавању врста по фотографији, опису и гласу. Веома корисно за почетнике, али и као теренска помоћ на Рајцу.</p>
+          <div class="org-links">
+            <a href="https://merlin.allaboutbirds.org/" target="_blank" rel="noopener">Merlin</a>
+            <a href="https://merlin.allaboutbirds.org/sound-id/" target="_blank" rel="noopener">Sound ID</a>
+          </div>
+        </article>
+        <article class="card org-card">
+          <div class="org-head"><div class="org-icon">ML</div><div><h3>Macaulay Library</h3></div></div>
+          <p>Огромна научна архива фотографија, аудио и видео снимака птица и других животиња, одлична за поређење и верификацију.</p>
+          <div class="org-links">
+            <a href="https://www.macaulaylibrary.org/" target="_blank" rel="noopener">Архива</a>
+            <a href="https://search.macaulaylibrary.org/" target="_blank" rel="noopener">Претрага медија</a>
+          </div>
+        </article>
+        <article class="card org-card">
+          <div class="org-head"><div class="org-icon">BT</div><div><h3>British Trust for Ornithology</h3></div></div>
+          <p>Један од најбољих извора за теренску методологију, пописе, point count, transect и локални мониторинг птица.</p>
+          <div class="org-links">
+            <a href="https://www.bto.org/get-involved/volunteer/projects/bbs/research-conservation/methodology-and-survey-design" target="_blank" rel="noopener">BBS методологија</a>
+            <a href="https://www.bto.org/sites/default/files/ncea-bird-monitoring-at-a-local-scale-web.pdf" target="_blank" rel="noopener">Локални мониторинг</a>
+          </div>
+        </article>
+        <article class="card org-card">
+          <div class="org-head"><div class="org-icon">RS</div><div><h3>RSPB</h3></div></div>
+          <p>Одличан извор за почетничку и напредну идентификацију птица, посматрачке навике и читање облика, понашања и станишта.</p>
+          <div class="org-links">
+            <a href="https://www.rspb.org.uk/helping-nature/what-you-can-do/activities/go-birdwatching" target="_blank" rel="noopener">Go birdwatching</a>
+            <a href="https://www.rspb.org.uk/birds-and-wildlife/identifying-birds/top-tips-on-how-to-identify-birds" target="_blank" rel="noopener">ID савети</a>
+          </div>
+        </article>
+        <article class="card org-card">
+          <div class="org-head"><div class="org-icon">AU</div><div><h3>Audubon / ABA</h3></div></div>
+          <p>Кључни извори за етичко посматрање, одговорно фотографисање и поштовање птица, станишта и других посматрача.</p>
+          <div class="org-links">
+            <a href="https://www.audubon.org/photography/awards/audubons-guide-ethical-bird-photography-and-videography" target="_blank" rel="noopener">Фото-етика</a>
+            <a href="https://www.aba.org/aba-code-of-birding-ethics/" target="_blank" rel="noopener">ABA етика</a>
+          </div>
+        </article>
+        <article class="card org-card">
+          <div class="org-head"><div class="org-icon">SR</div><div><h3>Друштво за заштиту и проучавање птица Србије</h3></div></div>
+          <p>Најважнија домаћа адреса за заштиту и проучавање птица, орнитолошке кампање, апликације и јавне програме.</p>
+          <div class="org-links">
+            <a href="https://pticesrbije.rs/" target="_blank" rel="noopener">Почетна</a>
+            <a href="https://pticesrbije.rs/aplikacija/" target="_blank" rel="noopener">Ptice na dlanu</a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="metodologija">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>Како се птице посматрају, препознају и броје</h2>
+        <p>Испод је практично представљена методологија из водећих орнитолошких извора, прилагођена условима Рајца и корисницима различитог нивоа искуства.</p>
+      </div>
+      <div class="method-grid">
+        <article class="card method-card">
+          <div class="num">1</div>
+          <h3>Тихо посматрање и читање станишта</h3>
+          <p>Почни од станишта: шума, ливада, руб шуме, поток, пашњак, отворен гребен. Тек затим тражи птицу. Најбољи резултати долазе рано ујутру и при спором, тихом кретању.</p>
+        </article>
+        <article class="card method-card">
+          <div class="num">2</div>
+          <h3>Идентификација по више трагова</h3>
+          <p>Не ослањај се само на боју. Бележи величину, силуету, облик кљуна, ноге, образац лета, понашање, станиште, доба године и глас. То је кључ за сигурније одређивање врсте.</p>
+        </article>
+        <article class="card method-card">
+          <div class="num">3</div>
+          <h3>Види и чуј</h3>
+          <p>Озбиљно посматрање птица није само визуелно. Многе врсте се на терену прво открију песмом, позивом или кратким гласом упозорења, па тек онда фотографијом.</p>
+        </article>
+        <article class="card method-card">
+          <div class="num">4</div>
+          <h3>Потпуна листа и напор посматрања</h3>
+          <p>За податке корисне науци важно је бележити када је листа започета, колико је трајала, колико се прешло и да ли је листа потпуна. Краће и прецизније листе су вредније.</p>
+        </article>
+        <article class="card method-card">
+          <div class="num">5</div>
+          <h3>Point count</h3>
+          <p>Када је циљ мониторинг, могу се користити фиксне тачке са кратким смиривањем по доласку, а затим стандардизованим бројањем виђених и чутих птица.</p>
+        </article>
+        <article class="card method-card">
+          <div class="num">6</div>
+          <h3>Transect / линијска траса</h3>
+          <p>За веће површине и понављана истраживања погодна је иста траса, исто доба дана, слични временски услови и понављање више пута током сезоне.</p>
+        </article>
+      </div>
+
+      <div class="highlight">
+        <strong style="display:block;color:var(--green);margin-bottom:8px">Практична интерпретација за Рајац</strong>
+        За едукативне и волонтерске обиласке довољна је једноставна шема „стани — ослушни — уочи — запиши — фотографиши”.
+        За озбиљнији мониторинг треба увести фиксне тачке или унапред дефинисане стазе, исту дужину трајања,
+        исто доба дана, јасан радијус посматрања и обавезно раздвајање виђених и само чутих јединки.
+      </div>
+
+      <div class="protocol-grid">
+        <article class="card protocol">
+          <h3>Пример једноставног point count протокола</h3>
+          <ol>
+            <li>Дођи до унапред дефинисане тачке и немој одмах бројати.</li>
+            <li>Остани 1–2 минута мирно да се птице смире након твог доласка.</li>
+            <li>Потом бележи птице 5 минута, визуелно и по гласу.</li>
+            <li>У белешци раздвоји јединке у непосредној близини и даље контакте.</li>
+            <li>Користи исти радијус посматрања на свим тачкама.</li>
+            <li>Не понављај исту птицу два пута ако кружи или се премешта унутар тачке.</li>
+          </ol>
+        </article>
+        <article class="card protocol">
+          <h3>Пример једноставног transect протокола</h3>
+          <ol>
+            <li>Користи исту стазу при сваком обиласку и исту приближну брзину хода.</li>
+            <li>Најбоље време је рано јутро, без јаког ветра и јаче кише.</li>
+            <li>Белижи све птице које видиш и чујеш дуж трасе.</li>
+            <li>Уноси време почетка, дужину трајања и приближну дужину трасе.</li>
+            <li>Понављај обилазак више пута у сезони ради упоредивости.</li>
+            <li>Фотографије и аудио снимци треба да буду везани за тачну локацију и датум.</li>
+          </ol>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="teren">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>Теренско упутство посебно прилагођено Рајцу</h2>
+        <p>Следећи кораци воде од рекреативног посматрања ка систематичном бележењу налаза на Рајцу.</p>
+      </div>
+      <div class="org-grid">
+        <article class="card org-card">
+          <div class="org-head"><div class="org-icon">01</div><div><h3>Изабери станиште</h3></div></div>
+          <p>Посматрање на Рајцу треба делити по типу станишта: шумске стазе, рубови шума, ливаде, пашњаци, отворени видиковци и влажније депресије.</p>
+        </article>
+        <article class="card org-card">
+          <div class="org-head"><div class="org-icon">02</div><div><h3>Бирај право време</h3></div></div>
+          <p>Рано јутро и мирно време најчешће дају највише контаката. За грабљивице и једрење топлији део дана може бити веома користан.</p>
+        </article>
+        <article class="card org-card">
+          <div class="org-head"><div class="org-icon">03</div><div><h3>Носи праву опрему</h3></div></div>
+          <p>Двоглед, телефон или фотоапарат, резервна батерија, бележница, карта/ГПС, слојевита одећа и вода су основни теренски минимум.</p>
+        </article>
+        <article class="card org-card">
+          <div class="org-head"><div class="org-icon">04</div><div><h3>Пиши одмах</h3></div></div>
+          <p>На терену одмах упиши врсту, број, начин детекције, станиште, понашање, време и ако можеш – временске услове и координату.</p>
+        </article>
+        <article class="card org-card">
+          <div class="org-head"><div class="org-icon">05</div><div><h3>Раздвоји сигурно од несигурног</h3></div></div>
+          <p>Ако ниси сигуран у врсту, обележи је као могућу и накнадно провери преко фотографије, аудио снимка, водича или стручњака.</p>
+        </article>
+        <article class="card org-card">
+          <div class="org-head"><div class="org-icon">06</div><div><h3>Не узнемиравај</h3></div></div>
+          <p>Не прилази гнездима, не форсирај контакт, не „подижи” птице ради боље фотографије и не користи звучне мамце тамо где то може да ремети птице.</p>
+        </article>
+        <article class="card org-card">
+          <div class="org-head"><div class="org-icon">07</div><div><h3>Унеси податке дигитално</h3></div></div>
+          <p>Када се вратите са терена, унеси налазе у eBird, локалну базу, интерни образац за Рајац или апликације за идентификацију и архивирање.</p>
+        </article>
+        <article class="card org-card">
+          <div class="org-head"><div class="org-icon">08</div><div><h3>Повежи налаз са управљањем</h3></div></div>
+          <p>Понављани налази по истим тачкама временом постају вредни за процену стања станишта, сезонске активности и дугорочне промене.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="foto">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>Како фотографисати птице без ремећења природе</h2>
+        <p>Добра фотографија треба да помогне идентификацији и документовању налаза, али без стреса за птицу и без притиска на гнезда, колоније, места храњења и одмора.</p>
+      </div>
+      <div class="intro-grid">
+        <article class="card pad">
+          <h3 style="margin-top:0;color:var(--green)">Практични фото-савети</h3>
+          <div class="checklist">
+            <div class="check"><div>📷</div><div><b>Светло је пресудно</b><br>Најчешће су најбољи јутро и касно поподне, када је светло мекше, топлије и повољније за перје и текстуру.</div></div>
+            <div class="check"><div>📷</div><div><b>Птица није све</b><br>Укључи и део станишта у кадар. Таква фотографија је естетски јача, али и кориснија за тумачење контекста посматрања.</div></div>
+            <div class="check"><div>📷</div><div><b>Приближавај се стрпљиво</b><br>Споро и без наглих покрета. Птица која наставља природно понашање је знак да си на исправној дистанци.</div></div>
+            <div class="check"><div>📷</div><div><b>Боље телеобјектив него узнемиравање</b><br>Дужа жижна даљина, crop или стабилан ослонац увек су бољи избор од приласка који ремети птицу.</div></div>
+            <div class="check"><div>📷</div><div><b>Не терај птицу у лет</b><br>Никада немој намерно подизати птицу ради драматичне фотографије крила или полетања.</div></div>
+          </div>
+        </article>
+        <article class="card pad">
+          <h3 style="margin-top:0;color:var(--green)">Шта је добро да се види на документарној фотографији</h3>
+          <p class="lead">За идентификацију су највредније фотографије на којима се виде профил главе, кљун, ноге, шара на крилима и репу, држање тела и околно станиште.</p>
+          <div class="pill-row">
+            <span class="pill">профил главе</span>
+            <span class="pill">облик кљуна</span>
+            <span class="pill">шара крила</span>
+            <span class="pill">реп и ноге</span>
+            <span class="pill">понашање</span>
+            <span class="pill">станиште</span>
+            <span class="pill">датум и локација</span>
+          </div>
+          <div class="highlight" style="margin-top:22px">
+            <strong style="display:block;color:var(--green);margin-bottom:8px">Етички минимум</strong>
+            Када постоји било какав сукоб између добре фотографије и добробити птице, увек предност има птица.
+            То важи посебно за активна гнезда, места одмора, исхране и осетљиве или ретке врсте.
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="video">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>Видео материјал за обуку и инспирацију</h2>
+        <p>Локални садржаји и међународна видео-упутства показују како изгледа теренски рад и омогућавају постепени прелаз од основног посматрања ка напреднијој обуци.</p>
+      </div>
+      <div class="media-grid">
+        <article class="card video-card">
+          <iframe src="https://www.youtube-nocookie.com/embed/RvxIZSR4dkc" title="Посматрање птица на Рајцу" loading="lazy" allowfullscreen=""></iframe>
+          <div class="video-info">
+            <h3>Локални видео: Посматрање птица на Рајцу</h3>
+            <p>Увод у посматрање птица на Рајцу и локални теренски контекст.</p>
+          </div>
+        </article>
+        <article class="card video-card">
+          <iframe src="https://www.youtube-nocookie.com/embed/lVze5cVvf0g" title="Bird Photography 101" loading="lazy" allowfullscreen=""></iframe>
+          <div class="video-info">
+            <h3>Bird Photography 101</h3>
+            <p>Практичан увод за посетиоце који желе да пређу са обичног посматрања на свесно и квалитетно фотографисање птица.</p>
+          </div>
+        </article>
+        <article class="card video-card">
+          <iframe src="https://www.youtube-nocookie.com/embed/TkAY4lo6VIg" title="Breeding Bird Survey in the field" loading="lazy" allowfullscreen=""></iframe>
+          <div class="video-info">
+            <h3>Breeding Bird Survey: In the field</h3>
+            <p>Корисно за разумевање линијских обилазака, бројања и стандардизованог рада на терену.</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="section-head">
+        <h2>Локална галерија птица и теренске опреме</h2>
+        <p>Фотографије птица, посматрачке опреме и теренског рада приказују атмосферу посматрања птица на Рајцу.</p>
+      </div>
+      <div class="gallery-grid">
+        <div class="gallery-tile">
+          <img src="/rajac-park-static/assets/ptice-gallery-1.webp" alt="Посматрање птица на Рајцу" loading="lazy" decoding="async">
+          <div class="gallery-caption">
+            <strong>Орао змијар</strong>
+            Орао змијар у природном окружењу Рајца.
+          </div>
+        </div>
+        <div class="gallery-tile">
+          <img src="/rajac-park-static/assets/ptice-gallery-2.webp" alt="Посматрачка опрема за птице" loading="lazy" decoding="async">
+          <div class="gallery-caption">
+            <strong>Опрема</strong>
+            Двоглед и теренска опрема за посматрање птица.
+          </div>
+        </div>
+        <div class="gallery-tile">
+          <img src="/rajac-park-static/assets/ptice-gallery-3.webp" alt="Фотографисање птица на терену" loading="lazy" decoding="async">
+          <div class="gallery-caption">
+            <strong>Фотографисање</strong>
+            Теренско фотографисање уз поштовање птица и станишта.
+          </div>
+        </div>
+      </div>
+
+      <div class="quote-band">
+        <strong>Посматрање као допринос заштити</strong>
+        Посматрање птица на Рајцу је више од излетничке активности: оно помаже да се простор боље
+        разуме, документује и штити. Када посетиоци бележе шта су видели, чули и фотографисали,
+        настаје вредна база података која временом може бити корисна и за науку и за управљање.
+      </div>
+    </div>
+  </section>
+
+  <section id="izvori">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>Проверени спољни извори и линкови</h2>
+        <p>Линкови у наставку воде ка препознатим организацијама и званичним ресурсима за идентификацију, учење, мониторинг и етичко посматрање птица.</p>
+      </div>
+
+      <div class="resource-groups">
+        <article class="card resource-card">
+          <h3>Идентификација и учење</h3>
+          <div class="resource-list">
+            <a href="https://www.rspb.org.uk/birds-and-wildlife/identifying-birds/top-tips-on-how-to-identify-birds" target="_blank" rel="noopener">RSPB — 7 кључних савета за идентификацију</a>
+            <a href="https://academy.allaboutbirds.org/product/getting-started-with-birding/" target="_blank" rel="noopener">Bird Academy — Getting Started with Birding</a>
+            <a href="https://merlin.allaboutbirds.org/" target="_blank" rel="noopener">Merlin Bird ID</a>
+            <a href="https://pticesrbije.rs/aplikacija/" target="_blank" rel="noopener">Ptice na dlanu — апликација за Србију</a>
+          </div>
+        </article>
+
+        <article class="card resource-card">
+          <h3>Методологија и мониторинг</h3>
+          <div class="resource-list">
+            <a href="https://www.bto.org/get-involved/volunteer/projects/bbs/research-conservation/methodology-and-survey-design" target="_blank" rel="noopener">BTO — Methodology and survey design</a>
+            <a href="https://www.bto.org/sites/default/files/ncea-bird-monitoring-at-a-local-scale-web.pdf" target="_blank" rel="noopener">BTO — Bird monitoring at a local scale (PDF)</a>
+            <a href="https://support.ebird.org/en/support/solutions/articles/48000795623-ebird-rules-and-best-practices" target="_blank" rel="noopener">eBird — Rules and Best Practices</a>
+            <a href="https://support.ebird.org/en/support/solutions/articles/48000950859-guide-to-ebird-protocols" target="_blank" rel="noopener">eBird — Protocols</a>
+          </div>
+        </article>
+
+        <article class="card resource-card">
+          <h3>Етика, фото и архиве</h3>
+          <div class="resource-list">
+            <a href="https://www.aba.org/aba-code-of-birding-ethics/" target="_blank" rel="noopener">ABA Code of Birding Ethics</a>
+            <a href="https://www.audubon.org/photography/awards/audubons-guide-ethical-bird-photography-and-videography" target="_blank" rel="noopener">Audubon — Ethical Bird Photography</a>
+            <a href="https://www.allaboutbirds.org/news/5-basics-of-good-bird-photography/" target="_blank" rel="noopener">All About Birds — Bird Photography Basics</a>
+            <a href="https://search.macaulaylibrary.org/" target="_blank" rel="noopener">Macaulay Library — фото, звук, видео</a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  
+
+
+
+
+<!-- SITE_EDITOR_ADMIN_BAR_START -->
+<script src="/admin-site-editor.php?admin_bar_js=1" defer></script>
+<!-- SITE_EDITOR_ADMIN_BAR_END -->
+</body></html>
+
+
+
+
+
+
+
+

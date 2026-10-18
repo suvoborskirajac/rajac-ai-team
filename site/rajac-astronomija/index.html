@@ -1,0 +1,1311 @@
+<!DOCTYPE html>
+<html lang="sr"><head>
+<!-- RAJAC_RESEARCH_PARK_STATIC_FAST=1.0 --><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Астрономска посматрања са Рајца | Обука посетилаца</title>
+  <meta name="description" content="Едукативна страница за посматрање ноћног неба са Рајца: опрема, методологија, астрофотографија, светлосно загађење, видео материјали, организације и корисни линкови.">
+<style>
+    :root{
+      --bg:#07111f;
+      --bg-soft:#0d1a2b;
+      --panel:#11233a;
+      --panel-2:#0f2035;
+      --line:rgba(255,255,255,.12);
+      --text:#eef5ff;
+      --muted:rgba(238,245,255,.78);
+      --soft:rgba(238,245,255,.62);
+      --gold:#d8a55b;
+      --gold-2:#efc47d;
+      --blue:#86b4ff;
+      --sky:#4da4ff;
+      --ok:#99d7b0;
+      --shadow:0 24px 70px rgba(0,0,0,.35);
+      --radius:22px;
+      --radius-sm:16px;
+      --max:1240px;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family:"Inter",system-ui,sans-serif;
+      background:
+        radial-gradient(circle at top, rgba(77,164,255,.14), transparent 30%),
+        radial-gradient(circle at 80% 15%, rgba(216,165,91,.08), transparent 24%),
+        linear-gradient(180deg,#06101c 0%,#07111f 32%,#0a1627 100%);
+      color:var(--text);
+      line-height:1.65;
+    }
+    a{color:var(--blue);text-decoration:none}
+    a:hover{text-decoration:underline}
+    img{max-width:100%;display:block}
+    .wrap{width:min(var(--max),calc(100% - 32px));margin:0 auto}
+
+    .topbar{
+      position:sticky;top:0;z-index:30;
+      background:rgba(5,12,22,.74);
+      backdrop-filter:blur(14px);
+      border-bottom:1px solid rgba(255,255,255,.08);
+    }
+    .topbar-inner{
+      display:flex;align-items:center;justify-content:space-between;gap:20px;
+      min-height:72px;
+    }
+    .brand{
+      display:flex;align-items:center;gap:14px;font-weight:800;letter-spacing:.04em;
+      color:#fff;text-transform:uppercase;
+    }
+    .brand-mark{
+      width:42px;height:42px;border-radius:50%;
+      background:linear-gradient(135deg,#4b62ff,#6fd4ff 60%,#f0c67c);
+      box-shadow:0 0 0 5px rgba(255,255,255,.06), 0 12px 30px rgba(79,117,255,.35);
+      position:relative;overflow:hidden;flex:0 0 auto;
+    }
+    .brand-mark:before,
+    .brand-mark:after{
+      content:"";position:absolute;border-radius:50%;background:rgba(255,255,255,.95)
+    }
+    .brand-mark:before{width:6px;height:6px;top:8px;left:11px;box-shadow:17px 9px 0 0 rgba(255,255,255,.92), 11px 22px 0 0 rgba(255,255,255,.72)}
+    .brand-mark:after{width:18px;height:18px;right:-2px;bottom:-2px;background:rgba(240,198,124,.95)}
+    .topnav{display:flex;gap:16px;flex-wrap:wrap}
+    .topnav a{
+      color:var(--muted);font-size:.95rem;font-weight:600;
+      padding:10px 12px;border-radius:999px;transition:.25s ease;
+    }
+    .topnav a:hover{background:rgba(255,255,255,.07);color:#fff;text-decoration:none}
+
+    .hero{
+      position:relative;overflow:hidden;
+      min-height:88vh;display:flex;align-items:flex-end;
+      background:
+        linear-gradient(180deg, rgba(4,9,16,.1) 0%, rgba(4,9,16,.42) 35%, rgba(4,9,16,.88) 100%),
+        url('https://science.nasa.gov/wp-content/uploads/2023/06/trona-pinnacles-credit-nasa-preston-dyches-jpeg.webp?w=1024') center/cover no-repeat;
+    }
+    .hero:before{
+      content:"";position:absolute;inset:0;
+      background:
+        radial-gradient(circle at 20% 20%, rgba(255,255,255,.14) 0 1px, transparent 1.8px) 0 0/120px 120px,
+        radial-gradient(circle at 80% 15%, rgba(255,255,255,.10) 0 1px, transparent 1.8px) 0 0/150px 150px,
+        radial-gradient(circle at 60% 35%, rgba(255,255,255,.08) 0 1px, transparent 1.6px) 0 0/100px 100px;
+      opacity:.8;pointer-events:none;
+    }
+    .hero-inner{position:relative;z-index:1;padding:90px 0 72px;display:grid;grid-template-columns:1.2fr .8fr;gap:36px;align-items:end}
+    .eyebrow{
+      display:inline-flex;align-items:center;gap:10px;
+      padding:10px 16px;border:1px solid rgba(255,255,255,.18);
+      border-radius:999px;background:rgba(7,17,31,.42);color:#fff;font-weight:700;
+      text-transform:uppercase;letter-spacing:.08em;font-size:.78rem;
+      margin-bottom:18px;
+    }
+    .hero h1{
+      margin:0 0 18px;font-family:"Playfair Display",serif;
+      font-size:clamp(2.5rem,5vw,5.4rem);line-height:.95;letter-spacing:-.03em;
+      max-width:880px;
+    }
+    .hero p{
+      margin:0 0 28px;max-width:760px;font-size:1.08rem;color:var(--muted)
+    }
+    .hero-actions{display:flex;gap:14px;flex-wrap:wrap}
+    .btn{
+      display:inline-flex;align-items:center;justify-content:center;gap:10px;
+      min-height:52px;padding:0 22px;border-radius:999px;font-weight:800;
+      letter-spacing:.01em;transition:.25s ease;border:1px solid transparent;
+    }
+    .btn-primary{
+      background:linear-gradient(135deg,var(--gold),var(--gold-2));color:#07111f;
+      box-shadow:0 16px 34px rgba(216,165,91,.32)
+    }
+    .btn-primary:hover{transform:translateY(-1px);text-decoration:none}
+    .btn-ghost{
+      background:rgba(255,255,255,.06);color:#fff;border-color:rgba(255,255,255,.14)
+    }
+    .btn-ghost:hover{background:rgba(255,255,255,.1);text-decoration:none}
+
+    .hero-card{
+      background:linear-gradient(180deg,rgba(17,35,58,.72),rgba(10,23,39,.84));
+      border:1px solid rgba(255,255,255,.12);
+      border-radius:28px;padding:26px;box-shadow:var(--shadow);
+      backdrop-filter:blur(10px)
+    }
+    .hero-card h3{margin:0 0 14px;font-size:1.1rem}
+    .mini-list{display:grid;gap:12px;margin:0;padding:0;list-style:none}
+    .mini-list li{
+      display:flex;gap:12px;align-items:flex-start;
+      padding:12px 0;border-bottom:1px solid rgba(255,255,255,.08)
+    }
+    .mini-list li:last-child{border-bottom:0;padding-bottom:0}
+    .mini-list b{display:block;color:#fff;margin-bottom:2px}
+    .dot{
+      width:12px;height:12px;border-radius:50%;margin-top:8px;flex:0 0 auto;
+      background:linear-gradient(135deg,#fff,var(--gold-2));box-shadow:0 0 20px rgba(255,255,255,.45)
+    }
+
+    section{padding:70px 0}
+    .section-head{margin-bottom:28px}
+    .section-head .label{
+      color:var(--gold-2);font-weight:800;text-transform:uppercase;letter-spacing:.12em;
+      font-size:.8rem;margin-bottom:10px
+    }
+    .section-head h2{
+      margin:0 0 10px;font-size:clamp(1.9rem,3.2vw,3.2rem);
+      line-height:1.05;font-family:"Playfair Display",serif
+    }
+    .section-head p{margin:0;max-width:850px;color:var(--muted)}
+
+    .grid-4,.grid-3,.grid-2{display:grid;gap:18px}
+    .grid-4{grid-template-columns:repeat(4,minmax(0,1fr))}
+    .grid-3{grid-template-columns:repeat(3,minmax(0,1fr))}
+    .grid-2{grid-template-columns:repeat(2,minmax(0,1fr))}
+    .card{
+      background:linear-gradient(180deg,var(--panel),var(--panel-2));
+      border:1px solid var(--line);border-radius:var(--radius);padding:24px;
+      box-shadow:var(--shadow)
+    }
+    .card h3,.card h4{margin:0 0 10px}
+    .card p{margin:0;color:var(--muted)}
+    .icon{
+      width:54px;height:54px;border-radius:16px;margin-bottom:16px;
+      background:linear-gradient(135deg,rgba(77,164,255,.2),rgba(216,165,91,.2));
+      border:1px solid rgba(255,255,255,.12);display:grid;place-items:center;
+      color:#fff;font-size:1.35rem;font-weight:800
+    }
+
+    .steps{display:grid;gap:14px}
+    .step{
+      display:grid;grid-template-columns:74px 1fr;gap:16px;align-items:start;
+      padding:20px;border-radius:20px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.09)
+    }
+    .step-num{
+      width:54px;height:54px;border-radius:50%;display:grid;place-items:center;
+      font-size:1.1rem;font-weight:800;background:linear-gradient(135deg,var(--gold),var(--gold-2));color:#07111f
+    }
+    .step h3{margin:0 0 6px}
+    .step p{margin:0;color:var(--muted)}
+
+    .notice{
+      margin-top:20px;padding:18px 20px;border-radius:18px;
+      background:rgba(255,214,102,.08);border:1px solid rgba(255,214,102,.24);color:#fff
+    }
+    .notice strong{color:#ffe39a}
+
+    .targets .card{min-height:100%}
+    .target-tag{
+      display:inline-block;margin-bottom:12px;padding:7px 11px;border-radius:999px;
+      background:rgba(134,180,255,.12);border:1px solid rgba(134,180,255,.22);color:#cfe2ff;
+      font-size:.82rem;font-weight:700
+    }
+
+    .media-card{overflow:hidden;padding:0}
+    .media-card img{width:100%;height:240px;object-fit:cover}
+    .media-card .body{padding:20px 22px}
+    .media-card .credit{margin-top:10px;font-size:.82rem;color:var(--soft)}
+
+    .video-card{overflow:hidden;padding:0}
+    .video-card iframe{width:100%;aspect-ratio:16/9;border:0;display:block}
+    .video-card .body{padding:18px 20px 22px}
+    .video-card h3{margin:0 0 8px;font-size:1.05rem}
+
+    .resource-card{
+      display:flex;flex-direction:column;gap:12px;min-height:100%
+    }
+    .resource-card .kicker{
+      color:var(--gold-2);font-size:.8rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase
+    }
+    .resource-card h3{font-size:1.08rem}
+    .resource-card a.cta{font-weight:800;margin-top:auto}
+
+    .toolbar{
+      display:flex;gap:14px;flex-wrap:wrap;margin-top:20px
+    }
+
+    .checklist{
+      display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin-top:18px
+    }
+    .check-item{
+      padding:16px 18px;border-radius:18px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.09)
+    }
+    .check-item strong{display:block;margin-bottom:6px;color:#fff}
+    .check-item span{color:var(--muted);font-size:.96rem}
+
+    .widget-frame{
+      border-radius:22px;overflow:hidden;border:1px solid rgba(255,255,255,.12);
+      box-shadow:var(--shadow);background:#060d18
+    }
+    .widget-frame iframe{width:100%;height:720px;border:0;display:block}
+
+    .field-note{
+      background:linear-gradient(180deg,rgba(8,21,36,.72),rgba(7,17,31,.92));
+      border:1px solid rgba(255,255,255,.10);border-radius:26px;padding:28px
+    }
+    .field-note ol{margin:0;padding-left:20px;color:var(--muted)}
+    .field-note li+li{margin-top:10px}
+
+    .footer{
+      padding:40px 0 60px;border-top:1px solid rgba(255,255,255,.08);color:var(--soft)
+    }
+    .footer-inner{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+
+    @media (max-width:1120px){
+      .hero-inner,.grid-4,.grid-3,.grid-2{grid-template-columns:1fr 1fr}
+      .hero h1{max-width:unset}
+      .widget-frame iframe{height:640px}
+    }
+    @media (max-width:860px){
+      .topbar-inner,.hero-inner,.grid-4,.grid-3,.grid-2,.checklist{grid-template-columns:1fr}
+      .topbar-inner{display:block;padding:14px 0}
+      .topnav{margin-top:12px}
+      .hero{min-height:auto}
+      .hero-inner{padding:84px 0 56px}
+      .widget-frame iframe{height:560px}
+      .step{grid-template-columns:56px 1fr}
+    }
+    @media (max-width:560px){
+      .wrap{width:min(var(--max),calc(100% - 20px))}
+      .hero-card,.card,.field-note{padding:20px}
+      .widget-frame iframe{height:500px}
+      .btn{width:100%}
+      .hero-actions{display:grid}
+    }
+  
+
+/* v2.2.0 contrast cleanup */
+.notice, .notice p, .notice li, .notice span, .notice strong,
+.field-note, .field-note p, .field-note li, .field-note span, .field-note strong,
+.card, .card p, .card li, .card span, .card h3, .card h4{
+  color:inherit;
+}
+.card{color:#eef4fb !important;}
+.card p, .card li, .card span{color:var(--muted) !important;}
+.card h3, .card h4{color:#ffffff !important;}
+.notice{color:#ffffff !important;}
+.notice p, .notice li, .notice span{color:#d6e4f2 !important;}
+.field-note{color:#ffffff !important;}
+.field-note p, .field-note li, .field-note span{color:#d6e4f2 !important;}
+
+
+
+/* Clean hero update for Research Park preview pages. */
+.rp-global-nav a.is-active,
+.rp-global-nav__menu a.is-active {
+  color: #f0cd69 !important;
+}
+.rp-clean-hero {
+  min-height: 86vh;
+  position: relative;
+  isolation: isolate;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding: clamp(96px, 14vh, 150px) 24px clamp(64px, 12vh, 112px);
+  overflow: hidden;
+  background-image:
+    linear-gradient(180deg, rgba(8, 14, 22, .10) 0%, rgba(8, 14, 22, .18) 42%, rgba(8, 14, 22, .62) 100%),
+    var(--rp-clean-hero-bg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.rp-clean-hero__title {
+  margin: 0;
+  max-width: 1180px;
+  text-align: center;
+  color: #fff;
+  font-family: Georgia, 'Times New Roman', serif;
+  font-weight: 400;
+  line-height: .98;
+  letter-spacing: 0;
+  font-size: clamp(44px, 8vw, 104px);
+  text-shadow: 0 6px 26px rgba(0, 0, 0, .42);
+}
+.rp-hero-summary {
+  background: #f4efe7;
+  padding: clamp(34px, 5vw, 62px) 22px;
+}
+.rp-hero-summary__inner {
+  max-width: 1120px;
+  margin: 0 auto;
+  background: rgba(255, 255, 255, .94);
+  border: 1px solid rgba(37, 42, 47, .14);
+  border-radius: 10px;
+  box-shadow: 0 18px 48px rgba(18, 24, 32, .08);
+  padding: clamp(24px, 4vw, 42px);
+}
+.rp-hero-summary__eyebrow {
+  margin: 0 0 10px;
+  color: #9b7725;
+  font: 800 12px/1.35 Arial, sans-serif;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+}
+.rp-hero-summary h2 {
+  margin: 0 0 16px;
+  color: #111a2b;
+  font-family: Georgia, 'Times New Roman', serif;
+  font-weight: 400;
+  line-height: 1.1;
+  font-size: clamp(28px, 4vw, 44px);
+}
+.rp-hero-summary p {
+  margin: 0 0 14px;
+  max-width: 980px;
+  color: #17243b;
+  font-size: clamp(17px, 1.45vw, 20px);
+  line-height: 1.72;
+}
+.rp-hero-summary__meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 20px;
+}
+.rp-hero-summary__chip {
+  display: inline-flex;
+  align-items: center;
+  border: 1px solid rgba(33, 48, 64, .16);
+  border-radius: 999px;
+  padding: 8px 12px;
+  background: #fbf8f2;
+  color: #213040;
+  font: 800 12px/1.2 Arial, sans-serif;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+}
+@media (max-width: 760px) {
+  .rp-clean-hero {
+    min-height: 76vh;
+    padding-left: 18px;
+    padding-right: 18px;
+  }
+  .rp-clean-hero__title {
+    font-size: clamp(40px, 14vw, 68px);
+  }
+}
+
+
+/* Shared Research Park navigation override. */
+.rp-global-nav {
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  z-index: 9000 !important;
+  background: rgba(255, 255, 255, .94) !important;
+  border-bottom: 1px solid rgba(37, 42, 47, .12) !important;
+  box-shadow: 0 8px 28px rgba(18, 24, 32, .06) !important;
+  backdrop-filter: blur(18px) saturate(180%) !important;
+  -webkit-backdrop-filter: blur(18px) saturate(180%) !important;
+}
+.rp-global-nav__inner {
+  max-width: 1400px !important;
+  margin: 0 auto !important;
+}
+.rp-global-nav a,
+.rp-global-nav__menu a {
+  color: #263241 !important;
+  background: transparent !important;
+  text-decoration: none !important;
+}
+.rp-global-nav a:hover,
+.rp-global-nav__menu a:hover {
+  color: #111a2b !important;
+  background: rgba(24, 60, 34, .07) !important;
+}
+.rp-global-nav a.is-active,
+.rp-global-nav__menu a.is-active {
+  color: #d39a16 !important;
+  background: transparent !important;
+}
+.rp-global-nav__mark {
+  background: #183c22 !important;
+  color: #fff !important;
+}
+.rp-global-nav-spacer {
+  min-height: 68px !important;
+}
+.rp-global-nav, .rp-global-nav * { text-shadow: none !important; }
+.rp-hero-summary, .rp-hero-summary * { text-shadow: none !important; }
+.rp-hero-summary h2 { color: #111a2b !important; }
+.rp-hero-summary p { color: #17243b !important; }
+/* Strong top menu and contrast fixes. */
+.rp-global-nav {
+  display: flex !important;
+  align-items: center !important;
+  min-height: 68px !important;
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  z-index: 99999 !important;
+  background: #ffffff !important;
+  border-bottom: 1px solid rgba(13,18,8,.14) !important;
+  box-shadow: 0 10px 28px rgba(13,18,8,.12) !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  transform: none !important;
+}
+.rp-global-nav__inner {
+  width: 100% !important;
+  max-width: 1400px !important;
+  margin: 0 auto !important;
+  padding: 0 clamp(18px, 4vw, 56px) !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  gap: 22px !important;
+}
+.rp-global-nav__menu {
+  display: flex !important;
+  align-items: center !important;
+  gap: 4px !important;
+  list-style: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+.rp-global-nav__scroller { overflow-x: auto !important; }
+.rp-global-nav a,
+.rp-global-nav__menu a {
+  display: inline-flex !important;
+  align-items: center !important;
+  min-height: 38px !important;
+  padding: 8px 13px !important;
+  border-radius: 8px !important;
+  color: #243044 !important;
+  background: transparent !important;
+  text-decoration: none !important;
+  font-weight: 700 !important;
+  text-shadow: none !important;
+  white-space: nowrap !important;
+}
+.rp-global-nav a:hover,
+.rp-global-nav__menu a:hover {
+  color: #0d1208 !important;
+  background: #f2efe8 !important;
+}
+.rp-global-nav a.is-active,
+.rp-global-nav__menu a.is-active {
+  color: #c08000 !important;
+  background: #fff7df !important;
+}
+.rp-global-nav__mark {
+  background: #183c22 !important;
+  color: #ffffff !important;
+}
+.rp-global-nav-spacer { min-height: 68px !important; }
+.rp-hero-summary, .rp-hero-summary * { text-shadow: none !important; }
+.rp-hero-summary h2 { color: #111a2b !important; }
+.rp-hero-summary p { color: #17243b !important; }
+
+/* FINAL exact top menu from the Research School page. */
+.rp-global-nav {
+  display: flex !important;
+  align-items: center !important;
+  min-height: 68px !important;
+  height: 68px !important;
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  z-index: 999999 !important;
+  background: rgba(43, 55, 67, .78) !important;
+  border-bottom: 1px solid rgba(255,255,255,.28) !important;
+  box-shadow: none !important;
+  backdrop-filter: blur(12px) saturate(145%) !important;
+  -webkit-backdrop-filter: blur(12px) saturate(145%) !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  transform: none !important;
+}
+.rp-global-nav__inner {
+  width: 100% !important;
+  max-width: 1160px !important;
+  margin: 0 auto !important;
+  padding: 0 18px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: flex-start !important;
+  gap: 22px !important;
+}
+.rp-global-nav__inner > a:first-child {
+  height: 50px !important;
+  padding: 0 20px !important;
+  border-radius: 7px !important;
+  background: rgba(255, 255, 255, .82) !important;
+  color: #ffffff !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 11px !important;
+  text-decoration: none !important;
+  box-shadow: none !important;
+}
+.rp-global-nav__mark {
+  width: 28px !important;
+  height: 28px !important;
+  border-radius: 999px !important;
+  background: rgba(255,255,255,.18) !important;
+  color: #ffffff !important;
+  display: grid !important;
+  place-items: center !important;
+  font-weight: 700 !important;
+}
+.rp-global-nav__brand-text {
+  color: #ffffff !important;
+  font-size: 12px !important;
+  font-weight: 800 !important;
+  letter-spacing: .16em !important;
+  text-transform: uppercase !important;
+  text-shadow: none !important;
+}
+.rp-global-nav__scroller {
+  overflow-x: auto !important;
+  overflow-y: hidden !important;
+  flex: 1 1 auto !important;
+}
+.rp-global-nav__menu {
+  display: flex !important;
+  align-items: center !important;
+  gap: 12px !important;
+  list-style: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  white-space: nowrap !important;
+}
+.rp-global-nav__menu li { margin: 0 !important; padding: 0 !important; }
+.rp-global-nav__menu a {
+  min-height: 44px !important;
+  padding: 0 16px !important;
+  border-radius: 7px !important;
+  background: transparent !important;
+  color: #ffffff !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  text-decoration: none !important;
+  font-size: 12px !important;
+  font-weight: 900 !important;
+  letter-spacing: .12em !important;
+  text-transform: uppercase !important;
+  text-shadow: none !important;
+}
+.rp-global-nav__menu a:hover {
+  background: rgba(255,255,255,.14) !important;
+  color: #ffffff !important;
+}
+.rp-global-nav__menu a.is-active {
+  background: #fff3d7 !important;
+  color: #d3a337 !important;
+  box-shadow: none !important;
+}
+.rp-global-nav-spacer {
+  min-height: 0 !important;
+  height: 0 !important;
+}
+
+/* FINAL stronger menu contrast. */
+.rp-global-nav {
+  background: rgba(24, 34, 43, .90) !important;
+  border-bottom-color: rgba(255,255,255,.38) !important;
+}
+.rp-global-nav__menu a,
+.rp-global-nav__menu a:link,
+.rp-global-nav__menu a:visited,
+.rp-global-nav__menu a:not(.is-active) {
+  color: #ffffff !important;
+  opacity: 1 !important;
+  font-weight: 950 !important;
+  text-shadow: 0 1px 3px rgba(0,0,0,.65) !important;
+}
+.rp-global-nav__menu a:hover,
+.rp-global-nav__menu a:not(.is-active):hover {
+  color: #ffffff !important;
+  background: rgba(255,255,255,.20) !important;
+}
+.rp-global-nav__menu a.is-active,
+.rp-global-nav__menu a.is-active:link,
+.rp-global-nav__menu a.is-active:visited {
+  background: #fff1cf !important;
+  color: #9b5f00 !important;
+  text-shadow: none !important;
+  border-bottom: 3px solid #b56f00 !important;
+}
+.rp-global-nav__inner > a:first-child,
+.rp-global-nav__inner > a:first-child:link,
+.rp-global-nav__inner > a:first-child:visited {
+  background: rgba(255,255,255,.92) !important;
+  color: #ffffff !important;
+}
+.rp-global-nav__brand-text {
+  color: #ffffff !important;
+  opacity: 1 !important;
+  text-shadow: 0 1px 3px rgba(0,0,0,.42) !important;
+}
+
+/* FINAL brand contrast and cleanup. */
+.rp-global-nav__inner > a:first-child,
+.rp-global-nav__inner > a:first-child:link,
+.rp-global-nav__inner > a:first-child:visited {
+  background: rgba(255,255,255,.94) !important;
+  color: #223041 !important;
+}
+.rp-global-nav__mark {
+  background: rgba(34,48,65,.10) !important;
+  color: #223041 !important;
+  text-shadow: none !important;
+}
+.rp-global-nav__brand-text {
+  color: #223041 !important;
+  opacity: 1 !important;
+  text-shadow: none !important;
+}
+.rp-admin-bar,
+.rp-admin-spacer,
+.topbar,
+.quicknav,
+.local-nav,
+.subnav,
+.page-nav {
+  display: none !important;
+}
+
+/* FINAL title sizing and tighter post-hero spacing. */
+.rp-clean-hero + section,
+.rp-clean-hero + .section,
+.rp-clean-hero + div,
+.rp-clean-hero + main {
+  margin-top: 0 !important;
+  padding-top: clamp(18px, 2.4vw, 32px) !important;
+}
+.rp-clean-hero + section .wrap,
+.rp-clean-hero + .section .wrap,
+.rp-clean-hero + section .section-head,
+.rp-clean-hero + .section .section-head,
+.rp-clean-hero + section .section-header,
+.rp-clean-hero + .section .section-header {
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+}
+.rp-clean-hero + section .label,
+.rp-clean-hero + section .kicker,
+.rp-clean-hero + section .section-label,
+.rp-clean-hero + section .section-head > p,
+.rp-clean-hero + section .section-header > p,
+.rp-clean-hero + section .section-lead,
+.rp-clean-hero + .section .label,
+.rp-clean-hero + .section .kicker,
+.rp-clean-hero + .section .section-label,
+.rp-clean-hero + .section .section-head > p,
+.rp-clean-hero + .section .section-header > p,
+.rp-clean-hero + .section .section-lead {
+  display: none !important;
+}
+.rp-clean-hero + section h2,
+.rp-clean-hero + .section h2,
+.rp-clean-hero + section .section-title,
+.rp-clean-hero + .section .section-title {
+  max-width: none !important;
+  white-space: nowrap !important;
+  font-size: clamp(30px, 4.2vw, 54px) !important;
+  line-height: 1.05 !important;
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+}
+@media (max-width: 760px) {
+  .rp-clean-hero + section h2,
+  .rp-clean-hero + .section h2,
+  .rp-clean-hero + section .section-title,
+  .rp-clean-hero + .section .section-title {
+    white-space: normal !important;
+    font-size: clamp(27px, 8vw, 40px) !important;
+  }
+}
+
+/* ABSOLUTE FINAL nav contrast: keep PIO Rajac readable. */
+.rp-global-nav__inner > a:first-child,
+.rp-global-nav__inner > a:first-child:link,
+.rp-global-nav__inner > a:first-child:visited,
+.rp-global-nav__inner > a:first-child:hover {
+  background: rgba(255,255,255,.96) !important;
+  color: #172033 !important;
+  text-shadow: none !important;
+}
+.rp-global-nav__inner > a:first-child *,
+.rp-global-nav__brand-text,
+.rp-global-nav__mark {
+  color: #172033 !important;
+  text-shadow: none !important;
+  opacity: 1 !important;
+}
+.rp-global-nav__mark {
+  background: rgba(23,32,51,.10) !important;
+}
+/* ABSOLUTE FINAL course first title: one line, tight to hero. */
+body.rp-flora-course .rp-clean-hero {
+  margin-bottom: 0 !important;
+}
+body.rp-flora-course .rp-clean-hero + section,
+body.rp-flora-course .rp-clean-hero + .section,
+body.rp-flora-course .rp-clean-hero + div,
+body.rp-flora-course .rp-clean-hero + main {
+  margin-top: 0 !important;
+  padding-top: 8px !important;
+}
+body.rp-flora-course .rp-clean-hero + section .wrap,
+body.rp-flora-course .rp-clean-hero + .section .wrap,
+body.rp-flora-course .rp-clean-hero + section .section-head,
+body.rp-flora-course .rp-clean-hero + .section .section-head,
+body.rp-flora-course .rp-clean-hero + section .section-header,
+body.rp-flora-course .rp-clean-hero + .section .section-header {
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+}
+body.rp-flora-course .rp-clean-hero + section .label,
+body.rp-flora-course .rp-clean-hero + section .kicker,
+body.rp-flora-course .rp-clean-hero + section .section-label,
+body.rp-flora-course .rp-clean-hero + section .section-head > p,
+body.rp-flora-course .rp-clean-hero + section .section-header > p,
+body.rp-flora-course .rp-clean-hero + section .section-lead,
+body.rp-flora-course .rp-clean-hero + .section .label,
+body.rp-flora-course .rp-clean-hero + .section .kicker,
+body.rp-flora-course .rp-clean-hero + .section .section-label,
+body.rp-flora-course .rp-clean-hero + .section .section-head > p,
+body.rp-flora-course .rp-clean-hero + .section .section-header > p,
+body.rp-flora-course .rp-clean-hero + .section .section-lead {
+  display: none !important;
+}
+body.rp-flora-course .rp-clean-hero + section h2,
+body.rp-flora-course .rp-clean-hero + .section h2,
+body.rp-flora-course .rp-clean-hero + section .section-title,
+body.rp-flora-course .rp-clean-hero + .section .section-title {
+  display: block !important;
+  max-width: 100% !important;
+  width: 100% !important;
+  white-space: nowrap !important;
+  overflow: visible !important;
+  font-size: clamp(24px, 3.2vw, 42px) !important;
+  line-height: 1 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  letter-spacing: 0 !important;
+}
+@media (max-width: 760px) {
+  body.rp-flora-course .rp-clean-hero + section h2,
+  body.rp-flora-course .rp-clean-hero + .section h2,
+  body.rp-flora-course .rp-clean-hero + section .section-title,
+  body.rp-flora-course .rp-clean-hero + .section .section-title {
+    white-space: normal !important;
+    font-size: clamp(24px, 7vw, 36px) !important;
+  }
+}
+</style>
+<link rel="stylesheet" href="/rajac-design/rajac-global.css?v=1.0">
+<link rel="preload" as="image" href="/rajac-park-static/assets/astronomija.webp" fetchpriority="high">
+
+<style id="rajac-park-fast-static-patch">
+html{scroll-behavior:smooth}
+body{font-display:swap}
+.rp-global-nav a:first-child,.nav__brand{cursor:pointer}
+.rp-clean-hero,.hero{background-image:var(--rp-clean-hero-bg, url('/rajac-park-static/assets/astronomija.webp'))!important;background-size:cover!important;background-position:center!important;min-height:min(58vh,560px)}
+.rp-global-nav a[href="/"], .nav__brand[href="/"]{text-decoration:none!important}
+img{max-width:100%;height:auto}
+</style>
+
+
+<style id="rajac-research-fix-astronomy">
+html body{background:radial-gradient(circle at top,rgba(77,164,255,.14),transparent 30%),linear-gradient(180deg,#06101c 0%,#07111f 45%,#0a1627 100%)!important;color:#eef5ff!important;font-family:Georgia,"Times New Roman",serif!important;}
+body section{background:transparent!important;color:#eef5ff!important;}
+body p,body li,body .section-head p,body .step p,body .card p,body .body p{color:rgba(238,245,255,.82)!important;}
+body h1,body h2,body h3,body h4{color:#f4f7ef!important;}
+body .label,body .target-tag{color:#efc47d!important;}
+body .step,body .card,body .field-note,body .resource-card{background:#11233a!important;border-color:rgba(255,255,255,.14)!important;color:#eef5ff!important;}
+body .step-num{background:#d8a55b!important;color:#07111f!important;}
+body .card img{width:100%!important;height:260px!important;object-fit:cover!important;object-position:center!important;display:block!important;}
+body .grid-2 .card img{height:320px!important;}
+body .video-card iframe{background:#000!important;min-height:220px!important;}
+body .rajac-tool-frame{min-height:360px!important;background:#0d1a2b!important;border:1px solid rgba(255,255,255,.12)!important;display:grid!important;place-items:center!important;}
+body .tool-placeholder{max-width:760px;text-align:center;padding:34px;color:#eef5ff!important;}
+body .tool-placeholder p{margin:12px auto 22px;color:rgba(238,245,255,.78)!important;}
+body .btn{font-weight:700!important;}
+</style>
+
+<style id="rajac-static-layout-repair-v2">
+/* поправка статичких страница Истраживачког парка: контраст, слике, картице и видео */
+:root{--rp-deep:#102338;--rp-cream:#f4efe3;--rp-ink:#17251b;--rp-muted:#526055;--rp-gold:#efbf65;}
+body{overflow-x:hidden;}
+.wrap{max-width:1240px!important;margin-inline:auto!important;}
+.card,.media-card,.gallery-tile,.photo-link,.quote-band,.final-cta{box-sizing:border-box;}
+.card img,.media-card img,.gallery-tile img,.photo-link img,.figure-card img{display:block!important;width:100%!important;max-width:100%!important;object-fit:cover!important;object-position:center!important;}
+.media-card{overflow:hidden!important;border-radius:22px!important;}
+.media-card img{height:240px!important;}
+.grid-2 .media-card img,.grid-2 .card img{height:320px!important;}
+.grid-3 .media-card img,.grid-3 .card img{height:240px!important;}
+.gallery-grid{align-items:stretch!important;}
+.gallery-tile{height:260px!important;min-height:260px!important;overflow:hidden!important;}
+.gallery-tile img{height:100%!important;}
+.gallery-caption{z-index:2!important;color:#fff!important;text-shadow:0 1px 2px rgba(0,0,0,.45)!important;}
+.photo-link{display:flex!important;flex-direction:column!important;gap:12px!important;min-height:0!important;height:auto!important;overflow:hidden!important;padding:16px!important;border-radius:22px!important;background:#fff!important;}
+.photo-link .thumb{height:170px!important;min-height:170px!important;width:100%!important;overflow:hidden!important;border-radius:14px!important;background:#e8e4da!important;}
+.photo-link .thumb img{height:100%!important;}
+.photo-link h3,.photo-link p,.photo-link span{position:relative!important;z-index:2!important;}
+.quote-band,.final-cta,.cta-band,.closing,.proposal,.proposal-box{background:linear-gradient(135deg,#1f5a38,#102e20)!important;color:#fff!important;}
+.quote-band *,.final-cta *,.cta-band *,.closing *,.proposal *,.proposal-box *{color:#fff!important;opacity:1!important;}
+.quote-band a,.final-cta a,.cta-band a,.closing a,.proposal a,.proposal-box a{background:rgba(255,255,255,.15)!important;border-color:rgba(255,255,255,.28)!important;color:#fff!important;}
+.section-head p,.lead,.intro p{color:var(--rp-muted)!important;opacity:1!important;}
+section.dark,.dark,.night-section{color:#fff!important;}
+section.dark *,.dark *,.night-section *{color:inherit;}
+.video-card iframe,.video-card video,.media-card iframe,.media-card video{width:100%!important;aspect-ratio:16/9!important;height:auto!important;min-height:260px!important;background:#252525!important;border:0!important;display:block!important;}
+.g2{display:grid!important;grid-template-columns:repeat(auto-fit,minmax(320px,1fr))!important;gap:22px!important;align-items:start!important;}
+@media(max-width:780px){.media-card img,.grid-2 .media-card img,.grid-2 .card img,.grid-3 .media-card img,.grid-3 .card img{height:220px!important}.gallery-grid{grid-template-columns:1fr!important}.gallery-tile{height:240px!important}.photo-link .thumb{height:160px!important}.video-card iframe,.video-card video,.media-card iframe,.media-card video{min-height:210px!important}}
+</style>
+
+<link rel="stylesheet" href="/rajac-design/rajac-park-responsive.css">
+<script src="/rajac-design/rajac-park-responsive.js" defer></script>
+</head>
+<body class="rp-flora-course" data-rp-course="astronomija"><nav class="rp-global-nav" id="mainNav" aria-label="Главна навигација курса">
+  <div class="rp-global-nav__inner">
+    <a class="" href="/">
+      <span class="rp-global-nav__mark">Р</span>
+      <span class="rp-global-nav__brand-text">ПИО „РАЈАЦ“</span>
+    </a>
+    <div class="rp-global-nav__scroller">
+      <ul class="rp-global-nav__menu">
+              <li><a class="" href="/istrazivacki-park-rajac/">Курсеви</a></li>
+              <li><a class="is-active" href="/rajac-astronomija/">Астрономија</a></li>
+              <li><a class="" href="/rajac-leptiri/">Лептири</a></li>
+              <li><a class="" href="/rajac-ptice/">Птице</a></li>
+              <li><a class="" href="/rajac-vegetacija/">Вегетација</a></li>
+              <li><a class="" href="/rajac-karst/">Карст</a></li>
+              <li><a class="" href="/rajac-oblaci/">Облаци</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<div class="rp-global-nav-spacer" aria-hidden="true"></div>
+
+  <header class="rp-clean-hero" style="--rp-clean-hero-bg:url('/rajac-park-static/assets/astronomija.webp');">
+</header>
+
+  <section id="osnove">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="label">Зашто Рајац</div>
+        <h2>Ноћно небо као доживљај природе</h2>
+        <p>Посматрање неба на Рајцу није само астрономија већ и доживљај простора, тишине, хоризонта и природне таме. Добро организовано посматрање повезује заштиту природе, образовање, туристички доживљај и грађанску науку.</p>
+      </div>
+      <div class="grid-4">
+        <article class="card">
+          <div class="icon">01</div>
+          <h3>Тама као ресурс</h3>
+          <p>Највећа вредност локације није само надморска висина, већ што даље од извора непотребног осветљења. Што је небо тамније, више слабих звезда, маглина и детаља постаје видљиво.</p>
+        </article>
+        <article class="card">
+          <div class="icon">02</div>
+          <h3>Широк хоризонт</h3>
+          <p>Отворени видици помажу у уочавању изласка Месеца, планета, метеорских ројева и сезонског положаја Млечног пута над пејзажем.</p>
+        </article>
+        <article class="card">
+          <div class="icon">03</div>
+          <h3>Образовање на терену</h3>
+          <p>Рајац је погодан за кратке школе посматрања: оријентацију по сазвежђима, читање карте неба, разликовање планета и звезда и основе астрофотографије.</p>
+        </article>
+        <article class="card">
+          <div class="icon">04</div>
+          <h3>Очување ноћног амбијента</h3>
+          <p>Добра пракса осматрања подразумева минимум светла, тишину, уређено кретање и разумевање да је природна ноћ важна и за људе и за екосистеме.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="metodologija">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="label">Методологија</div>
+        <h2>Како изгледа једно добро планирано посматрање</h2>
+        <p>Најуспешнија ноћ почиње код куће. На терен треба доћи спреман, са јасним циљем: да ли се посматра Месец, планете, Млечни пут, метеори, променљиве звезде или квалитет ноћног неба.</p>
+      </div>
+      <div class="steps">
+        <article class="step">
+          <div class="step-num">1</div>
+          <div>
+            <h3>Провери услове</h3>
+            <p>Прати облачност, влагу, ветар и провидност атмосфере. За звездано небо најбоље су ведре ноћи, а за дубље објекте још боље ноћи без јаког Месеца. За Месец и планете ниска облачност и турбуленција су често важнији од саме температуре.</p>
+          </div>
+        </article>
+        <article class="step">
+          <div class="step-num">2</div>
+          <div>
+            <h3>Изабери циљ</h3>
+            <p>Не покушавај све у једној вечери. За почетнике је најбоље да једно посматрање има једну тему: оријентација по сазвежђима, Месец, две или три планете, један метеорски рој или фотографисање Млечног пута.</p>
+          </div>
+        </article>
+        <article class="step">
+          <div class="step-num">3</div>
+          <div>
+            <h3>Прилагоди очи мраку</h3>
+            <p>После доласка на локацију остави 15–20 минута да се очи навикну на таму. Користи само слабо црвено светло и избегавај екране на јакој осветљености јер брзо кваре ноћни вид.</p>
+          </div>
+        </article>
+        <article class="step">
+          <div class="step-num">4</div>
+          <div>
+            <h3>Ради од једноставног ка сложеном</h3>
+            <p>Почни голим оком: север, велика кола, упадљиве планете, правац Млечног пута. Затим пређи на двоглед, а тек потом на телескоп или камеру. Тај редослед помаже оријентацији и смањује губљење времена.</p>
+          </div>
+        </article>
+        <article class="step">
+          <div class="step-num">5</div>
+          <div>
+            <h3>Бележи запажања</h3>
+            <p>Запиши датум, време, место, временске услове, фазу Месеца, шта је посматрано и чиме. За фотографију забележи објектив, ISO, експозицију и број снимака. И кратка белешка постаје драгоцен архивски траг.</p>
+          </div>
+        </article>
+        <article class="step">
+          <div class="step-num">6</div>
+          <div>
+            <h3>Поштуј безбедност и терен</h3>
+            <p>На терен не иде се сам ако је локација удаљена. Носи топлу одећу, лампу са црвеним режимом, резервну батерију и држи се безбедних површина, даље од саобраћаја, стрмих ивица и неосветљених препрека.</p>
+          </div>
+        </article>
+      </div>
+      <div class="notice"><strong>Жуто упозорење:</strong> Сунце се никада не посматра директно без сертификованог соларног филтера постављеног испред оптике. Импровизована решења и несертификоване фолије нису прихватљиви.</div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="section-head">
+        <div class="label">Опрема</div>
+        <h2>Шта понети на Рајац</h2>
+        <p>Добра астрономска ноћ не мора да почне скупом опремом. Најчешће су пресудни удобност, стрпљење и правилан избор алата за задатак.</p>
+      </div>
+      <div class="grid-3">
+        <article class="card">
+          <span class="target-tag">Почетни ниво</span>
+          <h3>Голо око + лежаљка + црвена лампа</h3>
+          <p>За први сусрет са небом то је сасвим довољно. Уз топлу одећу и добру оријентацију могу се уочити главна сазвежђа, Млечни пут, најсјајније планете, метеори и пролази сателита.</p>
+        </article>
+        <article class="card">
+          <span class="target-tag">Најбоља прва опрема</span>
+          <h3>Двоглед 7×35, 8×42 или 10×50</h3>
+          <p>Двоглед је одличан за Месец, Плејаде, Андромеду, већа звездана јата и основне детаље код Јупитера. Лак је за ношење, брз за употребу и веома користан на терену.</p>
+        </article>
+        <article class="card">
+          <span class="target-tag">Напредније посматрање</span>
+          <h3>Мали телескоп или дурбин на стабилној монтажи</h3>
+          <p>Тада постају доступнији кратери и планински венци на Месецу, Јупитерови сателити, Сатурнови прстенови и светлији дубоки објекти. Стабилност монтаже је важнија од претераног увећања.</p>
+        </article>
+      </div>
+      <div class="checklist">
+        <div class="check-item"><strong>Теренска удобност</strong><span>Топла јакна, капа, танке рукавице, подметач или столица, термос и лампа са црвеним режимом.</span></div>
+        <div class="check-item"><strong>Дигитални алати</strong><span>Stellarium, PhotoPills, бележница у телефону, резервна батерија и кабл.</span></div>
+        <div class="check-item"><strong>За фотографисање</strong><span>Статив, оклопљена торба, крпица за сочива, даљински окидач или тајмер.</span></div>
+        <div class="check-item"><strong>За рад у групи</strong><span>Јасно место окупљања, договор о гашењу белог светла, распоред инструмената и ред приласка телескопу.</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="targets">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="label">Шта се посматра</div>
+        <h2>Најбољи циљеви за посетиоце Рајца</h2>
+        <p>Избор циља зависи од доба године, фазе Месеца, провидности ваздуха и врсте опреме. За јавна и едукативна посматрања најбоље је комбиновати неколико лако уочљивих и визуелно захвалних објеката.</p>
+      </div>
+      <div class="grid-3">
+        <article class="card">
+          <span class="target-tag">Најлакше за почетак</span>
+          <h3>Месец</h3>
+          <p>Идеалан за први сусрет са телескопом. Најбоље се посматра око прве и последње четврти, када сенке најјаче наглашавају рељеф и детаље на терминатору.</p>
+        </article>
+        <article class="card">
+          <span class="target-tag">Сјајни објекти</span>
+          <h3>Планете</h3>
+          <p>Венера, Марс, Јупитер и Сатурн су класични циљеви за популарна посматрања. Планете не трепере као звезде и често су прве које посетиоци науче да препознају.</p>
+        </article>
+        <article class="card">
+          <span class="target-tag">Пејзаж и небо</span>
+          <h3>Млечни пут</h3>
+          <p>Најбољи је за доживљај природне таме и астрофотографију широког поља. Посебно је атрактиван у топлијем делу године, далеко од градског сјаја.</p>
+        </article>
+        <article class="card">
+          <span class="target-tag">Догађаји</span>
+          <h3>Метеорски ројеви</h3>
+          <p>Не посматрају се телескопом него голим оком, из лежећег положаја и са што ширим видним пољем. Добра организација групе и тамно небо су важнији од инструмената.</p>
+        </article>
+        <article class="card">
+          <span class="target-tag">За пажљиве посматраче</span>
+          <h3>Звездана јата и двојне звезде</h3>
+          <p>Двоглед и мали телескоп откривају богата јата и лепе парове звезда, што је одлично за мирнија едукативна посматрања и вежбу фокусирања.</p>
+        </article>
+        <article class="card">
+          <span class="target-tag">Грађанска наука</span>
+          <h3>Променљиве звезде и квалитет неба</h3>
+          <p>Када посетиоци стекну рутину, могу да пређу са чистог доживљаја на корисна, поновљива посматрања: процену светлине звезда, квалитета неба и сезонских појава.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="fotografija">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="label">Астрофотографија</div>
+        <h2>Фотографисање ноћног неба без непотребне компликације</h2>
+        <p>Фотографије неба најбоље успевају када су циљ, композиција и подешавања јасно одређени. За јавне радионице на Рајцу има смисла раздвојити три приступа: телефон, камера за Месец и широко поље за Млечни пут или метеоре.</p>
+      </div>
+      <div class="grid-3">
+        <article class="card">
+          <span class="target-tag">Телефон</span>
+          <h3>За Месец и атмосферу догађаја</h3>
+          <p>Најбоље ради у сумрак, при изласку Месеца или када је Месец уклопљен у пејзаж. Искључи блиц, стабилизуј телефон, смањи експозицију и фокусирај на сам Месец. Тајмер помаже да избегнеш потрес.</p>
+        </article>
+        <article class="card">
+          <span class="target-tag">DSLR / mirrorless</span>
+          <h3>За Млечни пут и метеоре</h3>
+          <p>Потребни су статив, широкоугаони објектив и ручни фокус. За метеоре је боље широко видно поље, много узастопних снимака и стрпљење, него велико увећање.</p>
+        </article>
+        <article class="card">
+          <span class="target-tag">Планирање</span>
+          <h3>Постави кадар унапред</h3>
+          <p>Пре поласка одреди где ће бити Млечни пут, Месец или планета у односу на хоризонт. Добро планирање често значи више од саме опреме и штеди време на терену.</p>
+        </article>
+      </div>
+      <div class="toolbar">
+        <a class="btn btn-ghost" href="https://science.nasa.gov/moon/photography-guide/" target="_blank" rel="noopener">NASA водич за фотографисање Месеца</a>
+        <a class="btn btn-ghost" href="https://science.nasa.gov/solar-system/how-to-photograph-a-meteor-shower/" target="_blank" rel="noopener">NASA водич за метеоре</a>
+        <a class="btn btn-ghost" href="https://www.photopills.com/videos/how-find-and-plan-milky-way" target="_blank" rel="noopener">PhotoPills планирање Млечног пута</a>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="section-head">
+        <div class="label">Галерија</div>
+        <h2>Визуелна инспирација за ноћ на Рајцу</h2>
+        <p>Ови примери показују три различита типа ноћног садржаја који су добри за едукативне туре: звездани пејзаж, метеорска фотографија и лунарна композиција.</p>
+      </div>
+      <div class="grid-3">
+        <article class="card media-card">
+          <img src="/rajac-park-static/assets/astro-milkyway.webp" alt="Млечни пут изнад стеновитог пејзажа" loading="lazy" decoding="async">
+          <div class="body">
+            <h3>Млечни пут као главни пејзажни мотив</h3>
+            <p>Оваква фотографија је добар узор за радионице на којима се учи кадрирање, рад са хоризонтом и минимизација светлосног загађења у кадру.</p>
+            <div class="credit">Извор слике: NASA Science</div>
+          </div>
+        </article>
+        <article class="card media-card">
+          <img src="/rajac-park-static/assets/astro-landscape.webp" alt="Метеор изнад ноћног пејзажа" loading="lazy" decoding="async">
+          <div class="body">
+            <h3>Метеорски ројеви и дуге експозиције</h3>
+            <p>Метеори су идеални за јавне летње и јесење догађаје. Најбољи резултати долазе из серија снимака и ведрог неба без вишка месечине.</p>
+            <div class="credit">Извор слике: NASA Science / NPS</div>
+          </div>
+        </article>
+        <article class="card media-card">
+          <img src="/rajac-park-static/assets/astro-telescope.webp" alt="Фотоапарат на стативу и Месец изнад планине" loading="lazy" decoding="async">
+          <div class="body">
+            <h3>Месец као најбољи први фото-циљ</h3>
+            <p>Месец је захвалан јер је светлији, лакше се фокусира и одмах даје осећај успеха новим посетиоцима који први пут снимају ноћно небо.</p>
+            <div class="credit">Извор слике: NASA Science</div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="svetlosno">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="label">Тама и заштита природе</div>
+        <h2>Светлосно загађење је део астрономске обуке</h2>
+        <p>Посматрање неба на Рајцу има пун смисао само ако се истовремено објасни зашто је природна ноћ вредна. Тамно небо није важно само астрономима већ и живом свету, квалитету простора и доживљају посетилаца.</p>
+      </div>
+      <div class="grid-2">
+        <article class="card">
+          <h3>Шта посетилац може да уради на лицу места</h3>
+          <p>Користи минимално светло, затвара јаке фарове и лампе, поштује тишину, не снима беспотребно блицем и не ремети остале учеснике. За групне догађаје добро је увести једноставно правило: бело светло само кад је стварно неопходно.</p>
+        </article>
+        <article class="card">
+          <h3>Како се бележи квалитет ноћног неба</h3>
+          <p>Најједноставнији улаз у грађанску науку је визуелна процена таме неба и слање запажања преко Globe at Night платформе. Тако се посматрање претвара у користан податак за праћење промена.</p>
+        </article>
+      </div>
+      <div class="toolbar">
+        <a class="btn btn-primary" href="https://darksky.org/get-involved/measuring-light-pollution/" target="_blank" rel="noopener">DarkSky: мерење светлосног загађења</a>
+        <a class="btn btn-ghost" href="https://darksky.org/news/globe-at-night-2023/" target="_blank" rel="noopener">Globe at Night: како учествовати</a>
+        <a class="btn btn-ghost" href="https://cps.iau.org/" target="_blank" rel="noopener">IAU: Dark &amp; Quiet Skies</a>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="section-head">
+        <div class="label">Видео материјали</div>
+        <h2>Провери, научи, па изађи на терен</h2>
+        <p>Овде су издвојени практични видео материјали који добро раде у обуци посетилаца: један за праћење месечних догађаја на небу, један за мерење таме неба и један за планирање Млечног пута.</p>
+      </div>
+      <div class="grid-3">
+        <article class="card video-card">
+          <iframe src="https://www.youtube-nocookie.com/embed/videoseries?list=PLTiv_XWHnOZrT_ppDGiT__fI3yjD4t7dI" title="NASA What&#39;s Up playlist" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="" loading="lazy"></iframe>
+          <div class="body">
+            <h3>NASA • What’s Up</h3>
+            <p>Месечни видео прегледи неба: шта је видљиво, на шта вреди обратити пажњу и како планирати излазак.</p>
+          </div>
+        </article>
+        <article class="card video-card">
+          <iframe src="https://www.youtube-nocookie.com/embed/Pssub176uUY" title="Globe at Night How To" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="" loading="lazy"></iframe>
+          <div class="body">
+            <h3>Globe at Night • How To</h3>
+            <p>Кратко и јасно упутство како да процените колико је небо тамно и пошаљете налаз као део грађанске науке.</p>
+          </div>
+        </article>
+        <article class="card video-card">
+          <iframe src="https://www.youtube-nocookie.com/embed/MMbKEq-zr18" title="PhotoPills Milky Way planning" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="" loading="lazy"></iframe>
+          <div class="body">
+            <h3>PhotoPills • Планирање Млечног пута</h3>
+            <p>Практичан видео за одређивање датума, времена и положаја Млечног пута у односу на пејзаж.</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="skymap">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="label">Интерактивни алати</div>
+        <h2>Карта неба за Рајац и дигитално планирање ноћи</h2>
+        <p>Интерактивна карта омогућава брзу оријентацију: где су планете, која сазвежђа доминирају небом и ка ком делу хоризонта треба усмерити пажњу. За прецизније планирање унапред корисно је комбиновати карту неба, лунарни календар и апликације за астрофотографију.</p>
+      </div>
+      <div class="widget-frame rajac-tool-frame">
+        <div class="tool-placeholder">
+          <strong>Интерактивна карта неба</strong>
+          <p>Локални снимак старог виджета није био преносив у статичку верзију. За поуздан рад отворите Stellarium Web у новом прозору и подесите локацију Рајца.</p>
+          <a class="btn btn-primary" href="https://stellarium-web.org/" target="_blank" rel="noopener">Отвори Stellarium Web</a>
+        </div>
+      </div>
+      <div class="toolbar">
+        <a class="btn btn-primary" href="https://stellarium-web.org/" target="_blank" rel="noopener">Stellarium Web</a>
+        <a class="btn btn-ghost" href="https://science.nasa.gov/moon/observe-the-moon-night/" target="_blank" rel="noopener">NASA Observe the Moon</a>
+        <a class="btn btn-ghost" href="https://www.photopills.com/" target="_blank" rel="noopener">PhotoPills</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="materijali">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="label">Организације и извори</div>
+        <h2>Најкориснији спољни извори за посетиоце и водиче</h2>
+        <p>Издвојени су извори који су практични за јавну обуку, кућну припрему и постепени прелаз од аматерског посматрања ка озбиљнијем бележењу запажања и фотографија.</p>
+      </div>
+      <div class="grid-3">
+        <article class="card resource-card">
+          <div class="kicker">NASA</div>
+          <h3>Skywatching Tips</h3>
+          <p>Шта посматрати, како препознати најупадљивије објекте и где потражити почетне водиче за метеоре, двогледе и места за посматрање.</p>
+          <a class="cta" href="https://science.nasa.gov/skywatching/" target="_blank" rel="noopener">Отвори извор →</a>
+        </article>
+        <article class="card resource-card">
+          <div class="kicker">NASA</div>
+          <h3>Lunar Photography Guide</h3>
+          <p>Практичан водич за фотографисање Месеца телефоном, камером и телескопом, са јасним саветима о стабилизацији, фокусу и експозицији.</p>
+          <a class="cta" href="https://science.nasa.gov/moon/photography-guide/" target="_blank" rel="noopener">Отвори извор →</a>
+        </article>
+        <article class="card resource-card">
+          <div class="kicker">NASA / JPL</div>
+          <h3>Night Sky Network</h3>
+          <p>Сјајан почетни ресурс за прву опрему, избор двогледа или телескопа и организацију јавних догађаја и посматрачке вечери формата.</p>
+          <a class="cta" href="https://nightsky.jpl.nasa.gov/news/321/" target="_blank" rel="noopener">Отвори извор →</a>
+        </article>
+        <article class="card resource-card">
+          <div class="kicker">DarkSky</div>
+          <h3>Measuring Light Pollution</h3>
+          <p>Основе мерења светлосног загађења, едукативни материјали и разумевање зашто ноћно небо заслужује заштиту.</p>
+          <a class="cta" href="https://darksky.org/get-involved/measuring-light-pollution/" target="_blank" rel="noopener">Отвори извор →</a>
+        </article>
+        <article class="card resource-card">
+          <div class="kicker">Globe at Night</div>
+          <h3>Грађанска наука о тами неба</h3>
+          <p>Прост протокол: изађи на чисто небо, пронађи сазвежђе, упореди видљивост са картом и пошаљи налаз.</p>
+          <a class="cta" href="https://darksky.org/news/globe-at-night-2023/" target="_blank" rel="noopener">Отвори извор →</a>
+        </article>
+        <article class="card resource-card">
+          <div class="kicker">IAU</div>
+          <h3>Dark &amp; Quiet Skies</h3>
+          <p>Међународни оквир за разумевање заштите ноћног неба, утицаја вештачког светла и ширег значаја тишине и таме за астрономију и друштво.</p>
+          <a class="cta" href="https://cps.iau.org/" target="_blank" rel="noopener">Отвори извор →</a>
+        </article>
+        <article class="card resource-card">
+          <div class="kicker">AAVSO</div>
+          <h3>Observing Manuals</h3>
+          <p>За посетиоце који желе корак даље: увод у визуелна посматрања променљивих звезда и DSLR приступ научно употребљивим снимцима.</p>
+          <a class="cta" href="https://www.aavso.org/observing-manuals" target="_blank" rel="noopener">Отвори извор →</a>
+        </article>
+        <article class="card resource-card">
+          <div class="kicker">Stellarium</div>
+          <h3>Planetarijum за рачунар и телефон</h3>
+          <p>Један од најбољих бесплатних алата за учење неба, оријентацију по сазвежђима и припрему посматрања пре доласка на терен.</p>
+          <a class="cta" href="https://stellarium.org/" target="_blank" rel="noopener">Отвори извор →</a>
+        </article>
+        <article class="card resource-card">
+          <div class="kicker">Србија</div>
+          <h3>Астрономско друштво „Истраживач”</h3>
+          <p>Домаћи материјали на српском: упознавање звезданог неба, астрономски инструменти, посматрање планета, метеора, комета и астрофотографија.</p>
+          <a class="cta" href="https://istrazivac.rs/" target="_blank" rel="noopener">Отвори извор →</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap grid-2">
+      <div class="field-note">
+        <div class="section-head" style="margin-bottom:18px">
+          <div class="label">Теренска белешка</div>
+          <h2 style="font-size:2rem">Шта записати после сваке ноћи</h2>
+        </div>
+        <ol>
+          <li>Датум, почетак и крај посматрања.</li>
+          <li>Тачка посматрања и кратак опис хоризонта.</li>
+          <li>Облачност, провидност, ветар, присуство магле и фазу Месеца.</li>
+          <li>Шта је посматрано и којом опремом.</li>
+          <li>Који су утисци посетилаца: шта им је било најупадљивије, шта су први пут видели.</li>
+          <li>Да ли је било светлосних сметњи са околних извора.</li>
+          <li>За фотографије: ISO, експозиција, објектив, број снимака и кратак коментар о резултату.</li>
+        </ol>
+      </div>
+      <div class="field-note">
+        <div class="section-head" style="margin-bottom:18px">
+          <div class="label">Предлог за вођење групе</div>
+          <h2 style="font-size:2rem">Програм једне јавне вечери</h2>
+        </div>
+        <ol>
+          <li>Кратак увод о Рајцу као месту природне таме и основним правилима понашања.</li>
+          <li>Оријентација голим оком: север, велика кола, упадљиве планете и Млечни пут.</li>
+          <li>Двогледом или телескопом: Месец или највидљивија планета као први циљ.</li>
+          <li>Кратка демонстрација како се прави једноставна ноћна фотографија са стативом.</li>
+          <li>Објашњење светлосног загађења и укључивање посетилаца у Globe at Night налаз.</li>
+          <li>Завршни разговор и позив да се небо посматра поново у другој сезони.</li>
+        </ol>
+      </div>
+    </div>
+  </section>
+
+  
+
+
+
+
+<!-- SITE_EDITOR_ADMIN_BAR_START -->
+<script src="/admin-site-editor.php?admin_bar_js=1" defer></script>
+<!-- SITE_EDITOR_ADMIN_BAR_END -->
+</body></html>
+
+
+
+
+
+
