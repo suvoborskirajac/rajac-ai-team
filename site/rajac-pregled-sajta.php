@@ -68,7 +68,7 @@ function naslov(string $f): string {
 }
 function ima_naziv(string $f): ?bool {
     if (substr($f, -4) === '.php') return null; // PHP се не процењује по изворном коду
-    $s = (string)@file_get_contents($f, false, null, 0, 300000);
+    $s = (string)@file_get_contents($f, false, null, 0, 400000);
     return (bool)preg_match('~ПИО(?:\s|&nbsp;|<[^>]{0,80}>)*„РАЈАЦ“~u', $s);
 }
 
@@ -96,13 +96,38 @@ $skeniraj = function (string $dir, string $rel, int $d) use (&$skeniraj, $dodaj,
 $skeniraj($ROOT, '', 0);
 foreach (['index.html', 'index.php'] as $x) if (is_file("$ROOT/$x")) { $dodaj("$ROOT/$x", $x); break; }
 
-/* Груписање. Дуги спискови (врсте) се скупљају у једну ставку са бројем. */
-$sada = time(); $grupe = []; $ukupno = 0; $bezNaziva = 0; $staro = 0;
+/* Архиве дневних извештаја — скупљају се у по једну ставку. */
+$ARHIVE = [
+  '~^monitoring-izvestaji/copernicus/.+~'      => ['monitoring-izvestaji/copernicus/', 'Copernicus дневни извештаји'],
+  '~^monitoring-izvestaji/meteo-stanica/.+~'   => ['monitoring-izvestaji/meteo-stanica/', 'Метео станица — дневни извештаји'],
+  '~^monitoring-izvestaji/dnevni/.+~'          => ['monitoring-izvestaji/dnevni/', 'Дневни оперативни брифови'],
+  '~^amsrajac/dnevna-statistika/.+~'           => ['amsrajac/dnevna-statistika/arhiva.html', 'АМС — дневна статистика'],
+  '~^kopernikindeks/\d{4}-\d\d-\d\d/~'         => ['kopernikindeks/', 'Copernicus индекси по датумима'],
+];
+/* Радне копије, тестови, закрпе, покварена кодировка. */
+$CISTI = '~(test|backup|prototype|provera_|restore|probni|patch|thumbcards-2105/|vesti1007-rad/|/public_html/|radni-fajlovi/|rajac-home|#U|╨|тХ|-род/|^ptice/ptice/|-fix\.html|fixed|_stable\.html|kumulativni)~iu';
+function preusmerenje(string $f): bool {
+    if (@filesize($f) > 6000) return false;
+    $s = (string)@file_get_contents($f);
+    return (bool)preg_match('~http-equiv=["\']?refresh|location\.(replace|href)~i', $s);
+}
+$sada = time(); $grupe = []; $arh = []; $cist = []; $ukupno = 0; $bezNaziva = 0; $staro = 0; $nArh = 0;
 foreach ($strane as $s) {
-    [$ik, $ime] = $OBLASTI[$s['top']] ?? ['📁', 'Остале фасцикле'];
-    $s['naslov'] = naslov($s['f']) ?: $s['rel'];
-    $s['naziv'] = ima_naziv($s['f']);
     $s['sec'] = $sada - $s['mt'];
+    foreach ($ARHIVE as $re => [$koren, $ime]) {
+        if (preg_match($re, $s['rel'])) {
+            $a = &$arh[$ime]; $a['koren'] = $koren; $a['n'] = ($a['n'] ?? 0) + 1;
+            $a['sec'] = min($a['sec'] ?? PHP_INT_MAX, $s['sec']); unset($a); $nArh++;
+            continue 2;
+        }
+    }
+    $s['naslov'] = naslov($s['f']) ?: $s['rel'];
+    if (preg_match($CISTI, $s['rel']) || preusmerenje($s['f'])) {
+        $s['naziv'] = null; $s['vrsta'] = preusmerenje($s['f']) ? 'преусмерење' : 'копија';
+        $cist[] = $s; continue;
+    }
+    [$ik, $ime] = $OBLASTI[$s['top']] ?? ['📁', 'Остале фасцикле'];
+    $s['naziv'] = ima_naziv($s['f']);
     $grupe[$ime]['ik'] = $ik;
     $grupe[$ime]['lista'][] = $s;
     $ukupno++;
@@ -143,6 +168,7 @@ h1{font:600 clamp(1.7rem,3.4vw,2.5rem)/1.15 Georgia,"Times New Roman",serif;marg
 .alat label{font-size:.88rem;color:var(--muted);display:flex;gap:6px;align-items:center}
 .legend{display:flex;flex-wrap:wrap;gap:14px;font-size:.8rem;color:var(--muted);margin:8px 0}
 .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(360px,1fr));gap:18px;margin:12px 0 40px}
+.grupa.cist{background:#f4f3ef;border-style:dashed;box-shadow:none}
 .grupa{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:16px 16px 8px;box-shadow:0 6px 18px rgba(31,42,34,.05)}
 .gh{display:flex;gap:10px;align-items:center;margin-bottom:6px}
 .gh .ik{font-size:1.5rem}.gh h2{font-size:1.04rem;margin:0;flex:1}
@@ -170,8 +196,9 @@ footer{color:var(--muted);font-size:.8rem;padding:0 0 30px}
 <h1>Преглед сајта</h1>
 <p class="sub">Све активне странице на piorajac.rs, пронађене на диску · стање <?= h(date('d.m.Y. H:i')) ?></p>
 <div class="stats">
-  <div class="stat"><b><?= $ukupno ?></b><span>страница</span></div>
-  <div class="stat"><b><?= count($grupe) ?></b><span>области</span></div>
+  <div class="stat"><b><?= $ukupno ?></b><span>јавних страница</span></div>
+  <div class="stat"><b><?= $nArh ?></b><span>дневних извештаја у архивама</span></div>
+  <div class="stat"><b><?= count($cist) ?></b><span>копија и преусмерења</span></div>
   <div class="stat"><b><?= $bezNaziva ?></b><span>без ПИО „РАЈАЦ“</span></div>
   <div class="stat"><b><?= $staro ?></b><span>немењано преко 2 месеца</span></div>
 </div>
@@ -188,6 +215,17 @@ footer{color:var(--muted);font-size:.8rem;padding:0 0 30px}
   <span><b style="color:var(--warn)">жути датум</b> — немењано преко 2 месеца</span>
 </div>
 <div class="grid">
+<?php if ($arh): ?>
+  <section class="grupa" data-g>
+    <div class="gh"><span class="ik" aria-hidden="true">🗂️</span><h2>Архиве дневних извештаја</h2><span class="br"><?= $nArh ?></span></div>
+    <ul><?php foreach ($arh as $ime => $a): ?>
+      <li data-t="<?= h(mb_strtolower($ime)) ?>" data-ne="0"><a href="<?= h($BASE . $a['koren']) ?>">
+        <span class="t"><b><?= h($ime) ?></b><small><?= (int)$a['n'] ?> извештаја · последњи <?= h(starost($a['sec'])) ?></small></span>
+        <span class="kad<?= $a['sec'] > 3 * 86400 ? ' staro' : '' ?>"><?= h(starost($a['sec'])) ?></span>
+      </a></li>
+    <?php endforeach; ?></ul>
+  </section>
+<?php endif; ?>
 <?php foreach ($grupe as $ime => $g):
   usort($g['lista'], fn($a, $b) => strcmp($a['rel'], $b['rel']));
   $n = count($g['lista']); $ne = count(array_filter($g['lista'], fn($s) => $s['naziv'] === false));
@@ -209,6 +247,18 @@ footer{color:var(--muted);font-size:.8rem;padding:0 0 30px}
     <?php endif; ?>
   </section>
 <?php endforeach; ?>
+<?php if ($cist): usort($cist, fn($a, $b) => strcmp($a['rel'], $b['rel'])); ?>
+  <section class="grupa cist" data-g>
+    <div class="gh"><span class="ik" aria-hidden="true">🧹</span><h2>За чишћење — копије и преусмерења</h2><span class="br"><?= count($cist) ?></span></div>
+    <p style="margin:0 0 6px;font-size:.82rem;color:var(--muted)">Није део јавног сајта: радне копије, тестови, закрпе и старе адресе које само преусмеравају.</p>
+    <details><summary>Прикажи списак</summary><ul><?php foreach ($cist as $s): ?>
+      <li data-t="<?= h(mb_strtolower($s['naslov'] . ' ' . $s['rel'])) ?>" data-ne="0"><a href="<?= h($BASE . $s['url']) ?>">
+        <span class="t"><b><?= h($s['naslov']) ?></b><small>/<?= h($s['url']) ?></small></span>
+        <span class="zn php"><?= h($s['vrsta']) ?></span><span class="kad"><?= h(starost($s['sec'])) ?></span>
+      </a></li>
+    <?php endforeach; ?></ul></details>
+  </section>
+<?php endif; ?>
 </div>
 <footer>Страница сама проналази странице на диску (до три нивоа фасцикли). Прескаче фасцикле са подацима, сликама, копијама и помоћне PHP скрипте; приказује само <code>index</code> странице и самосталне <code>.html</code> странице.</footer>
 </main>
