@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="sr">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>ПИО Рајац — Планинарска акција 30–31. мај 2026</title>
+<meta name="description" content="Интерактивна карта за планинарску акцију на Рајцу 30. и 31. маја 2026: две стазе, контролне тачке, профили, деонице и временска прогноза по сатима.">
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+<script defer src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<style>
+:root{
+  --bg:#f6f2e7;--paper:#fffdf7;--nav:#0b1826;--ink:#182318;--muted:#61705e;--green:#243d2b;--green2:#365d40;--gold:#d8b55b;--amber:#f59f00;--red:#c93329;--blue:#2b6cb0;--line:rgba(20,34,18,.12);--shadow:0 18px 48px rgba(18,28,18,.10);--serif:Georgia,'Times New Roman',serif;--sans:system-ui,-apple-system,'Segoe UI',Roboto,Arial,sans-serif;
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0;background:var(--bg);color:var(--ink);font-family:var(--sans);line-height:1.55}
+a{text-decoration:none;color:inherit}
+button,select{font:inherit}
+.nav{height:58px;background:var(--nav);color:#ddd;display:flex;align-items:center;justify-content:center;border-bottom:2px solid var(--gold);position:sticky;top:0;z-index:8000}
+.nav-in{width:min(1380px,100%);padding:0 22px;display:flex;align-items:center;gap:22px;overflow:auto;white-space:nowrap}
+.nav a{font-size:13px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:#d6d3c6}
+.nav a.home{margin-right:auto;color:var(--gold)}
+.nav a.active{color:var(--gold)}
+.hero{padding:44px 22px 30px;background:linear-gradient(135deg,#07150b 0%,#102819 58%,#213a22 100%);color:#fff;border-bottom:1px solid rgba(216,181,91,.35)}
+.hero-in{width:min(1380px,100%);margin:auto;display:grid;grid-template-columns:minmax(0,1fr) 420px;gap:26px;align-items:end}
+.kicker{font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);font-weight:900;margin-bottom:12px}
+.hero h1{font-family:var(--serif);font-size:clamp(40px,5vw,76px);font-weight:400;line-height:.96;letter-spacing:-.04em;margin:0 0 16px}
+.hero p{max-width:840px;color:rgba(255,255,255,.78);font-size:15.5px;margin:0}
+.hero-box{border:1px solid rgba(255,255,255,.14);border-radius:18px;background:rgba(255,255,255,.06);padding:18px}
+.hero-box strong{display:block;font-family:var(--serif);font-size:27px;font-weight:400;margin-bottom:8px}
+.hero-box small{display:block;color:rgba(255,255,255,.66)}
+.app{width:min(1480px,100%);margin:auto;padding:18px}
+.top-tabs{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:16px}
+.day-tab{width:auto;min-height:46px;padding:11px 18px;border-radius:999px;border:1px solid rgba(20,34,18,.12);background:#fffdf7;color:#172316;font-size:14px;font-weight:800;box-shadow:var(--shadow)}
+.day-tab.active{background:#243d2b;color:#fff;border-color:#243d2b}
+.toolbar{background:var(--paper);border:1px solid var(--line);border-radius:18px;box-shadow:var(--shadow);padding:14px 16px;margin-bottom:16px;display:grid;grid-template-columns:1fr .9fr auto;gap:12px;align-items:end}
+.field label{display:block;font-size:10px;letter-spacing:.18em;text-transform:uppercase;font-weight:900;color:#526346;margin:0 0 6px}
+select,button{width:100%;min-height:44px;padding:10px 12px;border-radius:12px;border:1px solid rgba(20,34,18,.16);background:#fffdf7;color:var(--ink)}
+button{cursor:pointer;font-weight:800;background:#112817;color:#fff;border-color:#112817}
+.layout{display:grid;grid-template-columns:minmax(0,1.55fr) minmax(360px,.65fr);gap:16px;align-items:start}
+.card{background:var(--paper);border:1px solid var(--line);border-radius:20px;box-shadow:var(--shadow);overflow:hidden}
+.head{padding:14px 16px;border-bottom:1px solid var(--line);display:flex;gap:12px;align-items:center;justify-content:space-between}
+.head h2,.head h3{font-family:var(--serif);font-size:26px;font-weight:400;line-height:1.05;margin:0}
+.head p{margin:4px 0 0;color:var(--muted);font-size:13px}
+.badges{display:flex;gap:8px;flex-wrap:wrap;justify-content:flex-end}
+.badge{border:1px solid rgba(20,34,18,.12);border-radius:999px;padding:6px 10px;background:#fff8ea;font-size:12px;font-weight:800;color:#3b4438;white-space:nowrap}
+#map{height:680px;z-index:1;background:#102819}
+.legend{display:flex;gap:10px;flex-wrap:wrap;align-items:center;padding:12px 16px;border-top:1px solid var(--line);background:#fffdf7;font-size:12px;color:#485843}
+.legend-item{display:flex;align-items:center;gap:6px;white-space:nowrap}
+.line{display:inline-block;width:26px;height:4px;border-radius:99px}.flat{background:#2f9e44}.easy{background:#b8a33e}.up{background:#f59f00}.hard{background:#d7191c}.down{background:#2b6cb0}.riskH{background:#d04a3c}.riskM{background:#d8b55b}.riskL{background:#2f9e44}
+.side{display:flex;flex-direction:column;gap:16px}
+.body{padding:14px 16px}
+.stats{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+.stat{border:1px solid rgba(20,34,18,.1);border-radius:12px;padding:10px;background:#fffaf0}
+.stat span{display:block;font-size:10px;letter-spacing:.12em;text-transform:uppercase;font-weight:900;color:#65715e;margin-bottom:5px}
+.stat strong{font-family:var(--serif);font-size:23px;font-weight:400}
+.note{margin-top:10px;padding:12px 14px;border-radius:14px;background:#fff8ea;border:1px solid rgba(216,181,91,.28);color:#5d5847;font-size:14px}
+.reco{border-radius:14px;padding:13px;background:#eff8ef;border:1px solid rgba(26,127,58,.22);color:#193a20}
+.reco.warn{background:#fff7df;border-color:rgba(216,181,91,.5)}
+.reco.bad{background:#fff0ef;border-color:rgba(215,25,28,.3)}
+.profile-wrap{padding:14px 16px 18px}
+#profile{width:100%;height:240px;display:block;background:linear-gradient(180deg,#fffefa,#f5f0df);border:1px solid rgba(20,34,18,.1);border-radius:14px}
+.profile-note{font-size:12px;color:var(--muted);margin:8px 0 0}
+.tabs{display:flex;gap:6px;flex-wrap:wrap;padding:10px 12px;border-bottom:1px solid var(--line);background:#fffaf0}
+.tab{width:auto;min-height:34px;padding:7px 10px;border-radius:999px;background:#fff;border:1px solid rgba(20,34,18,.12);color:#1b2d18;font-size:12px}
+.tab.active{background:#112817;color:#fff}
+.route-list{display:grid;gap:8px}
+.sector{border:1px solid rgba(20,34,18,.1);border-radius:12px;padding:10px;display:grid;grid-template-columns:1fr auto;gap:7px;cursor:pointer;background:#fffdf7}
+.sector:hover{border-color:rgba(216,181,91,.75);box-shadow:0 8px 18px rgba(8,18,10,.07)}
+.sector strong{font-size:13px}
+.sector small{color:var(--muted)}
+.risk{font-size:11px;font-weight:900;text-transform:uppercase;border-radius:999px;padding:5px 8px;height:max-content}
+.risk.low{background:#e9f7ea;color:#16712f}.risk.mid{background:#fff3cd;color:#8a5f00}.risk.high{background:#fde2e0;color:#a11717}
+.weather-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px}
+.hour{border:1px solid rgba(20,34,18,.1);border-radius:13px;padding:10px;background:#fffaf0;min-height:118px}
+.hour .h{font-weight:900;color:#142212;font-size:13px}
+.hour .ic{font-size:23px;margin:5px 0}
+.hour .t{font-family:var(--serif);font-size:24px}
+.hour small{display:block;color:var(--muted);font-size:11px;line-height:1.35}
+.table{width:100%;border-collapse:separate;border-spacing:0 6px;font-size:13px}
+.table th{text-align:left;color:#5f6b5a;font-size:10px;letter-spacing:.12em;text-transform:uppercase}
+.table td{background:#fffaf0;border-top:1px solid rgba(20,34,18,.08);border-bottom:1px solid rgba(20,34,18,.08);padding:8px}
+.table td:first-child{border-left:1px solid rgba(20,34,18,.08);border-radius:10px 0 0 10px}
+.table td:last-child{border-right:1px solid rgba(20,34,18,.08);border-radius:0 10px 10px 0}
+.notice{padding:12px 16px;border-top:1px solid var(--line);font-size:12px;color:#5c6758;background:#fffaf0}
+@media(max-width:1100px){.hero-in,.layout{grid-template-columns:1fr}#map{height:560px}.toolbar{grid-template-columns:1fr 1fr}}
+@media(max-width:700px){.nav{height:52px}.nav-in{padding:0 14px}.hero{padding:28px 16px 22px}.app{padding:12px}.toolbar{grid-template-columns:1fr;padding:12px}.head{align-items:flex-start;flex-direction:column}#map{height:470px}.weather-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.stats{grid-template-columns:1fr 1fr}}
+@media(max-width:430px){#map{height:430px}.weather-grid{grid-template-columns:1fr}.stats{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<nav class="nav"><div class="nav-in"><a class="home" href="/">◉ ПИО РАЈАЦ</a><a href="/biljke/">Биљке</a><a href="/ptice/">Птице</a><a href="/insekti/">Инсекти</a><a href="/sisari/">Сисари</a><a href="/gljive/">Гљиве</a><a class="active" href="/staze/">Стазе</a></div></nav>
+<header class="hero">
+  <div class="hero-in">
+    <div>
+      <div class="kicker">планинарска акција · 30–31. мај 2026.</div>
+      <h1>Две карте за два дана акције</h1>
+      <p>Посебна страница за учеснике викенд акције. На врху је избор између првог и другог дана, а за сваки дан добијаш засебну трасу, контролне тачке, деонице, профил, процену ризика и временску прогнозу по сатима за планирани полазак у 08.00.</p>
+    </div>
+    <div class="hero-box">
+      <strong>Сутра и прекосутра на једном месту</strong>
+      <small>Стазе, контролне тачке, препорука за полазак, вода и могућа ограничења на терену.</small>
+    </div>
+  </div>
+</header>
+
+<main class="app">
+  <div class="top-tabs" aria-label="Избор дана акције">
+    <button class="day-tab active" data-day="day1">Субота 30. мај 2026 · Први дан</button>
+    <button class="day-tab" data-day="day2">Недеља 31. мај 2026 · Други дан</button>
+  </div>
+
+  <section class="toolbar">
+    <div class="field">
+      <label for="profileSelect">Профил планинара</label>
+      <select id="profileSelect">
+        <option value="steady" selected>Средња кондиција / организована група</option>
+        <option value="strong">Јача група / бржи темпо</option>
+        <option value="easy">Лаганији темпо</option>
+      </select>
+    </div>
+    <div class="field">
+      <label for="hourSelect">Стартни сат за прогнозу</label>
+      <select id="hourSelect">
+        <option value="8" selected>08.00</option>
+        <option value="9">09.00</option>
+        <option value="10">10.00</option>
+      </select>
+    </div>
+    <div class="field">
+      <label>&nbsp;</label>
+      <button id="refreshWeather">Освежи прогнозу</button>
+    </div>
+  </section>
+
+  <section class="layout">
+    <article class="card">
+      <div class="head">
+        <div>
+          <h2 id="routeTitle">Први дан</h2>
+          <p id="routeSubtitle">Учитавање података о акцији…</p>
+        </div>
+        <div class="badges" id="routeBadges"></div>
+      </div>
+      <div id="map"></div>
+      <div class="legend">
+        <span class="legend-item"><i class="line flat"></i>равнији део</span>
+        <span class="legend-item"><i class="line easy"></i>благ успон</span>
+        <span class="legend-item"><i class="line up"></i>умерен/стрм успон</span>
+        <span class="legend-item"><i class="line hard"></i>најјачи успон</span>
+        <span class="legend-item"><i class="line down"></i>силазак</span>
+        <span class="legend-item"><i class="line riskL"></i>низак ризик</span>
+        <span class="legend-item"><i class="line riskM"></i>умерен ризик</span>
+        <span class="legend-item"><i class="line riskH"></i>виши ризик</span>
+      </div>
+    </article>
+
+    <aside class="side">
+      <section class="card">
+        <div class="head"><h3>Основни подаци</h3></div>
+        <div class="body">
+          <div class="stats" id="routeStats"></div>
+          <div class="note" id="routeNote"></div>
+        </div>
+      </section>
+      <section class="card">
+        <div class="head"><h3>Препорука за полазак</h3></div>
+        <div class="body">
+          <div class="reco" id="recommendation">Чекам прогнозу…</div>
+        </div>
+      </section>
+    </aside>
+  </section>
+
+  <section class="layout" style="margin-top:16px">
+    <article class="card">
+      <div class="head">
+        <h3>Профил и деонице</h3>
+        <div class="badges"><span class="badge" id="selectedInfo">Клик на деоницу за издвајање</span></div>
+      </div>
+      <div class="profile-wrap">
+        <canvas id="profile" width="1200" height="260"></canvas>
+        <p class="profile-note">Профил је израђен на основу расподеле контролних тачака и службено датих укупних вредности успона/силазака. Може касније да се замени тачним GPX профилом.</p>
+      </div>
+      <div class="tabs">
+        <button class="tab active" data-mode="sectors">Главне деонице</button>
+        <button class="tab" data-mode="checkpoints">Контролне тачке</button>
+        <button class="tab" data-mode="segments">Сегменти по редоследу</button>
+      </div>
+      <div class="body" id="detailsPanel"></div>
+    </article>
+
+    <aside class="side">
+      <section class="card">
+        <div class="head"><h3>Прогноза по сатима</h3></div>
+        <div class="body"><div class="weather-grid" id="weatherCards"></div></div>
+      </section>
+      <section class="card">
+        <div class="head"><h3>Ризик по деоницама</h3></div>
+        <div class="body" id="sectorRisk"></div>
+        <div class="notice">Ризик комбинује тежину деонице и прогнозу у времену када група вероватно пролази том зоном.</div>
+      </section>
+    </aside>
+  </section>
+</main>
+
+<script>
+(function(){
+'use strict';
+const CENTER=[44.136333,20.224918];
+const OPEN_METEO='https://api.open-meteo.com/v1/forecast?latitude=44.136318&longitude=20.224904&hourly=temperature_2m,precipitation_probability,precipitation,wind_speed_10m,wind_gusts_10m,weather_code&timezone=Europe%2FBelgrade&forecast_days=4';
+const DAYS={
+  day1:{
+    id:'day1', label:'Субота 30. мај 2026', short:'Први дан',
+    date:'2026-05-30', startHour:8, distance:29, ascent:900, descent:900, time:'10–11 сати',
+    note:'Организована целодневна кружна тура. Понети довољно воде, храну за цео дан и заштиту од сунца.',
+    description:'Планинарски дом (KT1) – врх Рајца (KT2) – Добра вода (KT8) – Шиљак (KT9) – Сувобор (KT10) – Данилов врх (KT11) – Топлике (KT12) – Горњи Бањани – Црвено врело (KT13) – Чанак (KT14) – Планинарски дом.',
+    checkpoints:[
+      {code:'KT1',name:'Планинарски дом',lat:44.1363,lon:20.2249,ele:820,km:0},
+      {code:'KT2',name:'Врх Рајца',lat:44.1376,lon:20.2268,ele:848,km:1.8},
+      {code:'KT8',name:'Добра вода',lat:44.1245,lon:20.1808,ele:560,km:8.2},
+      {code:'KT9',name:'Шиљак',lat:44.1450,lon:20.1705,ele:720,km:11.5},
+      {code:'KT10',name:'Сувобор',lat:44.1548,lon:20.1970,ele:866,km:15.2},
+      {code:'KT11',name:'Данилов врх',lat:44.1508,lon:20.2135,ele:874,km:18.0},
+      {code:'KT12',name:'Топлике',lat:44.1405,lon:20.2480,ele:610,km:22.2},
+      {code:'KT12a',name:'Горњи Бањани',lat:44.1298,lon:20.2640,ele:510,km:24.5},
+      {code:'KT13',name:'Црвено врело',lat:44.1218,lon:20.2440,ele:620,km:26.4},
+      {code:'KT14',name:'Чанак',lat:44.1309,lon:20.2338,ele:740,km:27.8},
+      {code:'KT1',name:'Планинарски дом',lat:44.1363,lon:20.2249,ele:820,km:29.0}
+    ],
+    sectors:[
+      ['Дом – врх Рајца',0,1.8,'easy','кратак загревајући успон'],
+      ['Врх Рајца – Добра вода',1.8,8.2,'descent','дужи спуст ка нижој зони'],
+      ['Добра вода – Шиљак',8.2,11.5,'ascent','повратни успон из долине'],
+      ['Шиљак – Сувобор – Данилов врх',11.5,18.0,'hard','најзахтевнији централни гребен'],
+      ['Данилов врх – Топлике – Горњи Бањани',18.0,24.5,'descent','прелаз и дужи силазак'],
+      ['Горњи Бањани – Црвено врело – Чанак',24.5,27.8,'mixed','таласаста завршница'],
+      ['Чанак – Планинарски дом',27.8,29.0,'easy','краћи повратни успон']
+    ]
+  },
+  day2:{
+    id:'day2', label:'Недеља 31. мај 2026', short:'Други дан',
+    date:'2026-05-31', startHour:8, distance:13, ascent:550, descent:700, time:'око 5 сати',
+    note:'Понети довољну количину воде. Постоји могућност да до KT-5 Прoвалија не може да се дође услед оборених стабала. Акција може да се заврши у селу Ба, а може да се продужи пешке до Добре воде и дома.',
+    description:'Планинарски дом (KT1) – Слап (KT3) – Пурина црква (KT4) – Прoвалија (KT5) – Којића ком (KT6) – извор Љига (KT7) – село Ба.',
+    checkpoints:[
+      {code:'KT1',name:'Планинарски дом',lat:44.1363,lon:20.2249,ele:820,km:0},
+      {code:'KT3',name:'Слап',lat:44.1288,lon:20.2368,ele:700,km:2.1},
+      {code:'KT4',name:'Пурина црква',lat:44.1216,lon:20.2459,ele:760,km:4.0},
+      {code:'KT5',name:'Прoвалија',lat:44.1149,lon:20.2537,ele:790,km:5.7},
+      {code:'KT6',name:'Којића ком',lat:44.1095,lon:20.2662,ele:720,km:8.2},
+      {code:'KT7',name:'Извор Љига',lat:44.1048,lon:20.2818,ele:590,km:10.4},
+      {code:'BA',name:'Село Ба',lat:44.1021,lon:20.3005,ele:510,km:13.0}
+    ],
+    sectors:[
+      ['Дом – Слап',0,2.1,'descent','почетни силазак ка водотоку'],
+      ['Слап – Пурина црква',2.1,4.0,'ascent','умерен успон'],
+      ['Пурина црква – Прoвалија',4.0,5.7,'hard','краћа тежа деоница'],
+      ['Прoвалија – Којића ком',5.7,8.2,'mixed','прелаз преко шумске зоне'],
+      ['Којића ком – извор Љига',8.2,10.4,'descent','силазак ка извору'],
+      ['Извор Љига – Ба',10.4,13.0,'descent','завршни силазак']
+    ]
+  }
+};
+let map, baseLayers={}, routeLayer=L.layerGroup(), sectorLayer=L.layerGroup(), markerLayer=L.layerGroup();
+let active=DAYS.day1, forecast=null, tabMode='sectors', selectedSector=null;
+
+function $(id){return document.getElementById(id);}
+function fmt(n,d=1){return Number.isFinite(n)?n.toFixed(d):'—';}
+function hav(a,b){
+  const R=6371,dLat=(b[0]-a[0])*Math.PI/180,dLon=(b[1]-a[1])*Math.PI/180,la1=a[0]*Math.PI/180,la2=b[0]*Math.PI/180;
+  const s=Math.sin(dLat/2)**2+Math.cos(la1)*Math.cos(la2)*Math.sin(dLon/2)**2; return 2*R*Math.asin(Math.sqrt(s));
+}
+function weatherIcon(code){
+  code=Number(code);
+  if([0].includes(code)) return '☀️';
+  if([1,2,3].includes(code)) return '⛅';
+  if([45,48].includes(code)) return '🌫️';
+  if([51,53,55,61,63,65,80,81,82].includes(code)) return '🌧️';
+  if([71,73,75,77,85,86].includes(code)) return '❄️';
+  if([95,96,99].includes(code)) return '⛈️';
+  return '🌤️';
+}
+function colorForSlope(s){
+  if(s>12) return '#d7191c';
+  if(s>6) return '#f59f00';
+  if(s>2) return '#b8a33e';
+  if(s<-8) return '#2b6cb0';
+  return '#2f9e44';
+}
+function terrainRisk(cat){ return cat==='hard'?38 : cat==='ascent'?24 : cat==='descent'?22 : 16; }
+function riskClass(x){ return x>=68?'high':x>=38?'mid':'low'; }
+function riskText(x){ return x>=68?'висок':x>=38?'умерен':'низак'; }
+
+function initMap(){
+  baseLayers['Topo']=L.tileLayer('https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png',{maxZoom:17,attribution:'© OpenTopoMap © OpenStreetMap'});
+  baseLayers['OSM']=L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',{maxZoom:19,attribution:'© OpenStreetMap'});
+  baseLayers['Carto светла']=L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png',{maxZoom:20,subdomains:'abcd',attribution:'© OpenStreetMap © CARTO'});
+  baseLayers['Esri сателит']=L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}',{maxZoom:18,attribution:'Tiles © Esri'});
+  map=L.map('map',{center:CENTER,zoom:12,layers:[baseLayers['Esri сателит']],scrollWheelZoom:true,zoomControl:true});
+  routeLayer.addTo(map); sectorLayer.addTo(map); markerLayer.addTo(map);
+  L.control.layers(baseLayers, {'Траса':routeLayer,'Деонице':sectorLayer,'Контролне тачке':markerLayer}, {collapsed:false}).addTo(map);
+}
+function getTrackPoints(day){ return day.checkpoints.map(p=>[p.lat,p.lon,p.ele,p.km,p.code,p.name]); }
+function renderDay(){
+  $('routeTitle').textContent=active.label+' · '+active.short;
+  $('routeSubtitle').textContent=active.description;
+  $('routeBadges').innerHTML=[
+    active.distance+' km','+'+active.ascent+' m','−'+active.descent+' m',active.time
+  ].map(t=>'<span class="badge">'+t+'</span>').join('');
+  $('routeStats').innerHTML=[
+    ['Полазак',active.startHour.toString().padStart(2,'0')+'.00'],
+    ['Дужина',active.distance+' km'],
+    ['Успон','+'+active.ascent+' m'],
+    ['Силазак','−'+active.descent+' m'],
+    ['Планирано време',active.time],
+    ['Контролне тачке',active.checkpoints.length - (active.id==='day1'?1:0)]
+  ].map(x=>'<div class="stat"><span>'+x[0]+'</span><strong>'+x[1]+'</strong></div>').join('');
+  $('routeNote').textContent=active.note;
+  drawMap();
+  drawProfile();
+  renderDetails();
+  renderWeather();
+}
+function drawMap(){
+  routeLayer.clearLayers(); sectorLayer.clearLayers(); markerLayer.clearLayers();
+  const track=getTrackPoints(active);
+  const pts=track.map(p=>[p[0],p[1]]);
+  const bounds=L.latLngBounds(pts);
+  for(let i=1;i<track.length;i++){
+    const a=track[i-1], b=track[i];
+    const dh=(b[2]-a[2]), dd=(b[3]-a[3])*1000 || (hav([a[0],a[1]],[b[0],b[1]])*1000);
+    const slope=dd ? dh/dd*100 : 0;
+    L.polyline([[a[0],a[1]],[b[0],b[1]]],{color:colorForSlope(slope),weight:5,opacity:.95}).addTo(routeLayer);
+  }
+  track.forEach((p,i)=>{
+    const isStart=i===0, isEnd=i===track.length-1;
+    const fill=isStart?'#1a7f3a':isEnd?'#d8b55b':'#243d2b';
+    const marker=L.circleMarker([p[0],p[1]],{radius:isStart||isEnd?8:6,color:'#fff',weight:2,fillColor:fill,fillOpacity:1});
+    marker.bindPopup('<b>'+p[4]+' · '+p[5]+'</b><br>km '+fmt(p[3],1)+'<br>≈ '+fmt(p[2],0)+' m');
+    marker.addTo(markerLayer);
+  });
+  active.sectors.forEach((s,idx)=>{
+    const segment=subSegment(track,s[1],s[2]);
+    if(segment.length>1){
+      const pl=L.polyline(segment.map(p=>[p[0],p[1]]),{
+        color:s[3]==='hard'?'#d7191c':s[3]==='ascent'?'#f59f00':s[3]==='descent'?'#2b6cb0':'#2f9e44',
+        weight:selectedSector===idx?10:7,opacity:selectedSector===idx?1:.45,dashArray:selectedSector===idx?null:'8 8'
+      });
+      pl.on('click',()=>selectSector(idx));
+      pl.bindPopup('<b>'+s[0]+'</b><br>'+s[1]+'–'+s[2]+' km<br>'+s[4]);
+      pl.addTo(sectorLayer);
+    }
+  });
+  map.fitBounds(bounds,{padding:[26,26]});
+}
+function interpolatePoint(track, km){
+  if(km<=track[0][3]) return track[0];
+  if(km>=track[track.length-1][3]) return track[track.length-1];
+  for(let i=1;i<track.length;i++){
+    const a=track[i-1], b=track[i];
+    if(b[3] >= km){
+      const t=(km-a[3]) / ((b[3]-a[3]) || 1);
+      return [
+        a[0] + (b[0]-a[0])*t,
+        a[1] + (b[1]-a[1])*t,
+        a[2] + (b[2]-a[2])*t,
+        km
+      ];
+    }
+  }
+  return track[track.length-1];
+}
+function subSegment(track, startKm, endKm){
+  const pts=[interpolatePoint(track,startKm)];
+  for(const p of track){ if(p[3]>startKm && p[3]<endKm) pts.push(p); }
+  pts.push(interpolatePoint(track,endKm));
+  return pts;
+}
+function selectSector(idx){
+  selectedSector=idx;
+  $('selectedInfo').textContent=active.sectors[idx][0];
+  drawMap(); drawProfile(); renderDetails(); renderSectorRisk();
+}
+function drawProfile(){
+  const track=getTrackPoints(active);
+  const c=$('profile'), ctx=c.getContext('2d'), W=c.width, H=c.height;
+  ctx.clearRect(0,0,W,H);
+  const vals=track.map(p=>p[2]);
+  const min=Math.min.apply(null,vals)-20, max=Math.max.apply(null,vals)+20;
+  const len=active.distance;
+  const x=km=>50+(W-80)*km/len;
+  const y=el=>H-38-(H-70)*(el-min)/(max-min||1);
+  ctx.fillStyle='#fbf6e8'; ctx.fillRect(0,0,W,H);
+  ctx.strokeStyle='rgba(20,34,18,.13)';
+  for(let i=0;i<=5;i++){ let yy=28+i*(H-68)/5; ctx.beginPath(); ctx.moveTo(46,yy); ctx.lineTo(W-24,yy); ctx.stroke(); }
+  active.sectors.forEach((s,idx)=>{
+    if(selectedSector===idx){
+      ctx.fillStyle='rgba(216,181,91,.18)';
+      ctx.fillRect(x(s[1]),32,x(s[2])-x(s[1]),H-68);
+      ctx.strokeStyle='rgba(216,181,91,.8)';
+      ctx.strokeRect(x(s[1]),32,x(s[2])-x(s[1]),H-68);
+    }
+  });
+  for(let i=1;i<track.length;i++){
+    const a=track[i-1], b=track[i], dh=b[2]-a[2], dd=(b[3]-a[3])*1000, slope=dd? dh/dd*100:0;
+    ctx.strokeStyle=colorForSlope(slope); ctx.lineWidth=4;
+    ctx.beginPath(); ctx.moveTo(x(a[3]),y(a[2])); ctx.lineTo(x(b[3]),y(b[2])); ctx.stroke();
+  }
+  ctx.fillStyle='#5c6758'; ctx.font='22px Georgia'; ctx.fillText('Профил стазе',50,28);
+  ctx.font='12px system-ui'; ctx.fillText(fmt(min+20,0)+'–'+fmt(max-20,0)+' m',W-126,28);
+  for(let km=0; km<=Math.ceil(len); km+=Math.max(1,Math.ceil(len/7))){
+    ctx.fillText(km+' km',x(km)-10,H-14);
+  }
+}
+function renderDetails(){
+  const panel=$('detailsPanel');
+  if(tabMode==='sectors'){
+    panel.innerHTML='<div class="route-list">'+active.sectors.map((s,i)=>'<div class="sector" data-sector="'+i+'"><div><strong>'+s[0]+'</strong><br><small>'+s[1]+'–'+s[2]+' km · '+s[4]+'</small></div><span class="risk '+(s[3]==='hard'?'high':s[3]==='mixed'?'mid':'low')+'">'+(s[3]==='hard'?'јак успон':s[3]==='ascent'?'успон':s[3]==='descent'?'силазак':'мешовито')+'</span></div>').join('')+'</div>';
+    panel.querySelectorAll('[data-sector]').forEach(el=>el.onclick=()=>selectSector(Number(el.dataset.sector)));
+  }else if(tabMode==='checkpoints'){
+    panel.innerHTML='<table class="table"><thead><tr><th>ознака</th><th>тачка</th><th>km</th><th>висина</th></tr></thead><tbody>'+active.checkpoints.map(p=>'<tr><td>'+p.code+'</td><td>'+p.name+'</td><td>'+fmt(p.km,1)+'</td><td>'+fmt(p.ele,0)+' m</td></tr>').join('')+'</tbody></table>';
+  }else{
+    let rows='';
+    for(let i=1;i<active.checkpoints.length;i++){
+      const a=active.checkpoints[i-1], b=active.checkpoints[i];
+      const dh=b.ele-a.ele;
+      rows += '<tr><td>'+a.name+' → '+b.name+'</td><td>'+fmt(b.km-a.km,1)+' km</td><td>'+(dh>=0?'+':'')+fmt(dh,0)+' m</td><td>'+(Math.abs(dh)>=120?(dh>0?'јачи успон':'јачи силазак'):'умерено')+'</td></tr>';
+    }
+    panel.innerHTML='<table class="table"><thead><tr><th>деоница</th><th>дужина</th><th>Δh</th><th>напомена</th></tr></thead><tbody>'+rows+'</tbody></table>';
+  }
+}
+async function loadWeather(){
+  try{
+    const r=await fetch(OPEN_METEO,{cache:'no-store'});
+    if(!r.ok) throw new Error(r.status);
+    const data=await r.json();
+    forecast=data.hourly;
+  }catch(e){ forecast=null; }
+  renderWeather();
+}
+function hourRisk(h){
+  if(!h) return 0;
+  let r=0;
+  if((h.pp||0)>=60) r+=30; else if((h.pp||0)>=35) r+=18;
+  if((h.rain||0)>=2) r+=25; else if((h.rain||0)>0) r+=12;
+  if((h.gust||0)>=45) r+=30; else if((h.gust||0)>=30) r+=16;
+  if((h.temp||0)>=30) r+=14;
+  return r;
+}
+function sliceForecast(){
+  if(!forecast || !forecast.time) return [];
+  const startHour=Number($('hourSelect').value||active.startHour);
+  const out=[];
+  for(let i=0;i<forecast.time.length;i++){
+    const t=new Date(forecast.time[i]);
+    const localDate=t.toLocaleDateString('sv-SE',{timeZone:'Europe/Belgrade'});
+    const hr=t.toLocaleTimeString('en-GB',{hour:'2-digit',hour12:false,timeZone:'Europe/Belgrade'});
+    if(localDate===active.date && Number(hr)>=startHour && out.length<8){
+      out.push({
+        time:t,
+        temp:forecast.temperature_2m?.[i],
+        pp:forecast.precipitation_probability?.[i],
+        rain:forecast.precipitation?.[i],
+        wind:forecast.wind_speed_10m?.[i],
+        gust:forecast.wind_gusts_10m?.[i],
+        code:forecast.weather_code?.[i]
+      });
+    }
+  }
+  return out;
+}
+function renderWeather(){
+  const cards=$('weatherCards'), hrs=sliceForecast();
+  if(!hrs.length){
+    cards.innerHTML='<div class="hour" style="grid-column:1/-1"><div class="h">Прогноза</div><div class="ic">⌛</div><small>Прогноза још није доступна или је ван домета Open-Meteo forecast опсега. Остали елементи карте раде независно од прогнозе.</small></div>';
+    $('recommendation').className='reco warn';
+    $('recommendation').textContent='Нема довољно метео података за изабрани дан. Задржи опрез и провери прогнозу накнадно.';
+    renderSectorRisk();
+    return;
+  }
+  cards.innerHTML=hrs.map(h=>'<div class="hour"><div class="h">'+h.time.toLocaleTimeString('sr-RS',{hour:'2-digit',minute:'2-digit'})+'</div><div class="ic">'+weatherIcon(h.code)+'</div><div class="t">'+fmt(h.temp,0)+'°</div><small>Падавине '+fmt(h.pp,0)+'% · киша '+fmt(h.rain,1)+' mm · ветар '+fmt(h.wind,0)+' km/h · удар '+fmt(h.gust,0)+' km/h</small></div>').join('');
+  const maxRisk=Math.max.apply(null, hrs.map(hourRisk));
+  const maxP=Math.max.apply(null, hrs.map(h=>h.pp||0));
+  const maxG=Math.max.apply(null, hrs.map(h=>h.gust||0));
+  const avgT=hrs.reduce((a,h)=>a+(h.temp||0),0)/hrs.length;
+  let cls='reco', text='Повољно за полазак: просечна температура око '+fmt(avgT,1)+'°C, највећа вероватноћа падавина '+fmt(maxP,0)+'%, удари ветра до '+fmt(maxG,0)+' km/h.';
+  if(maxRisk>=65){ cls='reco bad'; text='Опрез: током планираног прозора очекује се виши временски ризик. Падавине до '+fmt(maxP,0)+'%, удари ветра до '+fmt(maxG,0)+' km/h. Размотрити прилагођавање темпа и опреме.'; }
+  else if(maxRisk>=38){ cls='reco warn'; text='Умерени услови: пратити небо и имати резервну одећу. Падавине до '+fmt(maxP,0)+'%, удари до '+fmt(maxG,0)+' km/h.'; }
+  $('recommendation').className=cls; $('recommendation').textContent=text;
+  renderSectorRisk();
+}
+function renderSectorRisk(){
+  const box=$('sectorRisk'), hrs=sliceForecast();
+  box.innerHTML='<div class="route-list">'+active.sectors.map((s,i)=>{
+    const mid=((s[1]+s[2])/2) / active.distance;
+    const idx=hrs.length ? Math.min(hrs.length-1, Math.max(0, Math.floor(mid * (hrs.length-1)))) : 0;
+    const h=hrs[idx];
+    const score=terrainRisk(s[3]) + hourRisk(h);
+    return '<div class="sector" data-risk="'+i+'"><div><strong>'+s[0]+'</strong><br><small>'+(h? h.time.toLocaleTimeString('sr-RS',{hour:'2-digit',minute:'2-digit'})+' · ' : '')+s[4]+'</small></div><span class="risk '+riskClass(score)+'">'+riskText(score)+'</span></div>';
+  }).join('')+'</div>';
+  box.querySelectorAll('[data-risk]').forEach(el=>el.onclick=()=>selectSector(Number(el.dataset.risk)));
+}
+function bind(){
+  document.querySelectorAll('.day-tab').forEach(btn=>btn.onclick=()=>{
+    document.querySelectorAll('.day-tab').forEach(x=>x.classList.remove('active'));
+    btn.classList.add('active');
+    active=DAYS[btn.dataset.day];
+    selectedSector=null;
+    $('selectedInfo').textContent='Клик на деоницу за издвајање';
+    renderDay();
+  });
+  document.querySelectorAll('.tab').forEach(btn=>btn.onclick=()=>{
+    document.querySelectorAll('.tab').forEach(x=>x.classList.remove('active'));
+    btn.classList.add('active'); tabMode=btn.dataset.mode; renderDetails();
+  });
+  $('profileSelect').onchange=renderWeather;
+  $('hourSelect').onchange=renderWeather;
+  $('refreshWeather').onclick=loadWeather;
+}
+window.addEventListener('load',()=>{ initMap(); bind(); renderDay(); loadWeather(); });
+})();
+</script>
+
+<!-- SITE_EDITOR_ADMIN_BAR_START -->
+<script src="/admin-site-editor.php?admin_bar_js=1" defer></script>
+<!-- SITE_EDITOR_ADMIN_BAR_END -->
+</body>
+</html>

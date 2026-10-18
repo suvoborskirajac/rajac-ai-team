@@ -1,0 +1,858 @@
+<!DOCTYPE html>
+<html lang="sr">
+<head>
+<!-- RAJAC_RESEARCH_PARK_STATIC_FAST=1.0 -->
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Посматрање облака на Рајцу — обука посетилаца и практични водич</title>
+<meta name="description" content="Едукативна страница за обуку посетилаца Рајца: како се облаци посматрају, препознају и фотографишу, теренски запис, апликације и поуздани спољни извори.">
+
+<!-- Performance: preconnect to image CDN -->
+<link rel="preconnect" href="https://commons.wikimedia.org">
+<link rel="preconnect" href="https://upload.wikimedia.org">
+<link rel="dns-prefetch" href="https://upload.wikimedia.org">
+<link rel="dns-prefetch" href="https://www.youtube.com">
+<link rel="dns-prefetch" href="https://istrazivac.rs">
+
+<!-- Fonts: system stack only for faster loading; no external Google Fonts request. -->
+
+<style>
+/* ─── Design tokens ───────────────────────────────────────────────────── */
+:root {
+  --bg:      #f4f8fc;
+  --card:    #ffffff;
+  --line:    #d2e5f4;
+  --text:    #183042;
+  --muted:   #557083;
+  --blue:    #246b97;
+  --blue2:   #348cc2;
+  --sky:     #6cb7e7;
+  --amber:   #d7a24b;
+  --shadow:  0 14px 36px rgba(26,74,109,.09);
+  --r:       22px;
+  --wrap:    min(1240px, calc(100% - 32px));
+  --title-font: Georgia, 'Times New Roman', serif;
+  --body-font:  system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  font-family: var(--body-font);
+  font-size: 1rem;
+  line-height: 1.72;
+  color: var(--text);
+  background: var(--bg);
+}
+a { color: var(--blue2); text-decoration: none; }
+a:hover { text-decoration: underline; }
+img, video, iframe { display: block; max-width: 100%; border: 0; }
+video, iframe { width: 100%; }
+.wrap { width: var(--wrap); margin: 0 auto; }
+
+/* ─── Nav ─────────────────────────────────────────────────────────────── */
+.nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 9999;
+  height: 64px;
+  display: flex; align-items: center;
+  background: rgba(24,34,43,.92);
+  border-bottom: 1px solid rgba(255,255,255,.18);
+  backdrop-filter: blur(14px);
+}
+.nav__inner {
+  width: var(--wrap); margin: 0 auto;
+  display: flex; align-items: center; gap: 20px;
+}
+.nav__brand {
+  display: inline-flex; align-items: center; gap: 10px;
+  padding: 0 16px; height: 44px; border-radius: 8px;
+  background: rgba(255,255,255,.94); text-decoration: none; flex-shrink: 0;
+}
+.nav__mark {
+  width: 26px; height: 26px; border-radius: 50%;
+  background: rgba(24,34,43,.12);
+  display: grid; place-items: center;
+  font-weight: 700; font-size: .85rem; color: #172033;
+}
+.nav__name { font-size: .72rem; font-weight: 800; letter-spacing: .14em; text-transform: uppercase; color: #172033; }
+.nav__scroll { overflow-x: auto; overflow-y: hidden; flex: 1; }
+.nav__links {
+  display: flex; align-items: center; gap: 6px;
+  list-style: none; margin: 0; padding: 0; white-space: nowrap;
+}
+.nav__links a {
+  display: inline-flex; align-items: center; height: 40px; padding: 0 14px;
+  border-radius: 7px; color: #fff; font-size: .75rem; font-weight: 800;
+  letter-spacing: .1em; text-transform: uppercase; text-decoration: none;
+  transition: background .15s;
+}
+.nav__links a:hover { background: rgba(255,255,255,.15); }
+.nav__links a.active { background: #fff1cf; color: #9b5f00; }
+
+/* ─── Hero ────────────────────────────────────────────────────────────── */
+.hero {
+  min-height: 82vh;
+  background:
+    linear-gradient(180deg, rgba(8,14,22,.12) 0%, rgba(8,14,22,.58) 100%),
+    url('/rajac-park-static/assets/oblaci.webp') center/cover no-repeat;
+  display: flex; align-items: flex-end;
+  padding: 0 0 clamp(52px,10vh,100px);
+  margin-top: 64px;
+}
+/* placeholder bg while hero loads */
+.hero { background-color: #5cb0e5; }
+
+/* ─── Section ─────────────────────────────────────────────────────────── */
+.section { padding: 52px 0; }
+.section-header { margin-bottom: 28px; }
+.section-header h2 {
+  margin: 0 0 10px;
+  font-family: var(--title-font); font-weight: 300;
+  font-size: clamp(1.8rem,3.2vw,2.8rem);
+  color: #16354a; line-height: 1.08;
+}
+.section-header p { margin: 0; color: var(--muted); max-width: 74ch; }
+
+/* ─── Grids ───────────────────────────────────────────────────────────── */
+.g2 { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 18px; }
+.g3 { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 18px; }
+.g4 { display: grid; grid-template-columns: repeat(4,minmax(0,1fr)); gap: 18px; }
+@media(max-width:1100px) { .g4 { grid-template-columns: repeat(2,1fr); } }
+@media(max-width:900px)  { .g3, .g2 { grid-template-columns: 1fr; } }
+@media(max-width:640px)  { .g4 { grid-template-columns: 1fr; } }
+
+/* ─── Cards ───────────────────────────────────────────────────────────── */
+.card {
+  background: var(--card); border: 1px solid var(--line);
+  border-radius: var(--r); box-shadow: var(--shadow); padding: 22px;
+}
+.card h3 { margin: 0 0 8px; font-size: 1.08rem; color: #17394d; }
+.card p  { margin: 0; color: var(--muted); }
+
+.note {
+  background: linear-gradient(135deg,rgba(36,107,151,.07),rgba(156,216,255,.18));
+  border: 1px solid rgba(36,107,151,.16);
+  border-radius: var(--r); padding: 18px;
+}
+.note strong { display: block; margin-bottom: 8px; color: #17394d; }
+.note p { margin: 0; color: var(--muted); }
+
+/* ─── Steps ───────────────────────────────────────────────────────────── */
+.steps { display: grid; gap: 14px; }
+.step {
+  display: grid; grid-template-columns: 52px 1fr; gap: 14px; align-items: flex-start;
+  padding: 16px; border-radius: var(--r);
+  background: var(--card); border: 1px solid var(--line); box-shadow: var(--shadow);
+}
+.step-n {
+  width: 52px; height: 52px; border-radius: 16px;
+  background: linear-gradient(145deg,var(--blue),var(--sky));
+  color: #fff; font-weight: 800; font-size: 1.05rem;
+  display: grid; place-items: center; flex-shrink: 0;
+}
+.step h3 { margin: 2px 0 6px; font-size: 1rem; color: #17394d; }
+.step p  { margin: 0; color: var(--muted); }
+@media(max-width:640px) { .step { grid-template-columns: 1fr; } }
+
+/* ─── Cloud type cards ────────────────────────────────────────────────── */
+.cloud-card {
+  border-radius: var(--r); overflow: hidden;
+  background: var(--card); border: 1px solid var(--line); box-shadow: var(--shadow);
+}
+.cloud-card img {
+  width: 100%; aspect-ratio: 4/3; object-fit: cover;
+  background: #c9e8ff;
+}
+.cloud-card figcaption {
+  font-size: .72rem; color: var(--muted);
+  padding: 4px 14px 0;
+  text-align: right;
+}
+.cloud-body { padding: 14px 14px 18px; }
+.cloud-body h3 { margin: 0 0 6px; font-size: 1rem; color: #17394d; }
+.pills { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 8px; }
+.pill {
+  display: inline-flex; align-items: center;
+  padding: 4px 10px; border-radius: 999px;
+  background: #edf6fd; border: 1px solid rgba(36,107,151,.12);
+  font-size: .73rem; font-weight: 700; color: #1a4866;
+}
+.cloud-body p { margin: 0; color: var(--muted); font-size: .93rem; }
+
+/* ─── Resource cards ──────────────────────────────────────────────────── */
+.res-card {
+  display: grid; grid-template-columns: 66px 1fr; gap: 14px; align-items: flex-start;
+  padding: 18px; border-radius: var(--r);
+  background: var(--card); border: 1px solid var(--line); box-shadow: var(--shadow);
+}
+.res-icon {
+  width: 66px; height: 66px; border-radius: 18px;
+  background: linear-gradient(145deg,rgba(52,140,194,.14),rgba(156,216,255,.28));
+  border: 1px solid rgba(36,107,151,.14);
+  display: grid; place-items: center;
+  font-size: 1.5rem; font-weight: 800; color: #11486b;
+}
+.res-card h3 { margin: 0 0 6px; font-size: 1rem; color: #17394d; }
+.res-card p  { margin: 0 0 10px; color: var(--muted); font-size: .93rem; }
+.chips { display: flex; gap: 8px; flex-wrap: wrap; }
+.chip {
+  display: inline-flex; align-items: center; min-height: 36px; padding: 0 12px;
+  border-radius: 999px; background: #edf6fd; border: 1px solid rgba(36,107,151,.12);
+  color: #17425c; font-size: .8rem; font-weight: 700;
+}
+.chip:hover { background: #fff; text-decoration: none; }
+
+/* ─── Media cards ─────────────────────────────────────────────────────── */
+.media-card {
+  border-radius: var(--r); overflow: hidden;
+  background: var(--card); border: 1px solid var(--line); box-shadow: var(--shadow);
+}
+.media-card img { width: 100%; aspect-ratio: 4/3; object-fit: cover; background: #c9e8ff; }
+.media-card iframe, .media-card video { border-radius: 0; }
+.media-body { padding: 14px 16px 18px; }
+.media-body h3 { margin: 0 0 6px; font-size: 1rem; color: #17394d; }
+.media-body p  { margin: 0; color: var(--muted); font-size: .93rem; }
+.video-links{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}
+.video-links .chip{min-height:32px;font-size:.78rem}
+
+
+/* ─── Alert ───────────────────────────────────────────────────────────── */
+.alert {
+  display: grid; grid-template-columns: 52px 1fr; gap: 14px; align-items: flex-start;
+  padding: 18px; border-radius: var(--r);
+  background: linear-gradient(135deg,rgba(215,162,75,.17),rgba(239,200,124,.22));
+  border: 1px solid rgba(215,162,75,.26);
+}
+.alert-icon {
+  width: 52px; height: 52px; border-radius: 16px;
+  background: rgba(255,255,255,.55); font-size: 1.4rem;
+  display: grid; place-items: center;
+}
+.alert h3 { margin: 0 0 6px; color: #3d3011; }
+.alert p  { margin: 0; color: #4f4a34; }
+@media(max-width:640px) { .alert { grid-template-columns: 1fr; } }
+
+/* ─── Checklist ───────────────────────────────────────────────────────── */
+.checklist {
+  background: #132f43; color: #fff;
+  border-radius: 26px; padding: 26px; box-shadow: 0 20px 40px rgba(19,47,67,.18);
+}
+.checklist h3 { margin: 0 0 8px; color: #fff; font-size: 1.2rem; }
+.checklist > p { margin: 0 0 16px; color: rgba(255,255,255,.82); }
+.cl-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 12px; }
+.cl-item {
+  padding: 14px 16px; border-radius: 16px;
+  background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.10);
+}
+.cl-item strong { display: block; margin-bottom: 4px; color: #fff; }
+.cl-item span   { display: block; color: rgba(255,255,255,.8); font-size: .92rem; }
+@media(max-width:640px) { .cl-grid { grid-template-columns: 1fr; } }
+
+/* ─── Sources ─────────────────────────────────────────────────────────── */
+.sources { display: grid; gap: 14px; }
+.src-group {
+  padding: 18px 20px; border-radius: var(--r);
+  background: var(--card); border: 1px solid var(--line); box-shadow: var(--shadow);
+}
+.src-group h3 { margin: 0 0 8px; color: #17394d; }
+.src-group ul { margin: 0; padding-left: 18px; color: var(--muted); }
+.src-group li + li { margin-top: 8px; }
+
+
+/* ─── Photo sources and lighter image loading ─────────────────────────── */
+.photo-source{margin:0;font-size:.68rem;line-height:1.35;color:var(--muted);}
+.photo-source a{color:#315f82;font-weight:700;}
+.cloud-card .photo-source{padding:5px 12px 0;text-align:right;background:#fff;}
+.media-source{padding:7px 14px 0;text-align:right;background:#fff;}
+.cloud-card, .media-card, .card, .step, .res-card{content-visibility:auto;contain-intrinsic-size:420px;}
+
+/* ─── Footer ──────────────────────────────────────────────────────────── */
+footer {
+  padding: 28px 0 48px; border-top: 1px solid var(--line);
+  color: var(--muted); font-size: .88rem;
+}
+</style>
+<link rel="stylesheet" href="/rajac-design/rajac-global.css?v=1.0">
+<link rel="preload" as="image" href="/rajac-park-static/assets/oblaci.webp" fetchpriority="high">
+
+<style id="rajac-park-fast-static-patch">
+html{scroll-behavior:smooth}
+body{font-display:swap}
+.rp-global-nav a:first-child,.nav__brand{cursor:pointer}
+.rp-clean-hero,.hero{background-image:var(--rp-clean-hero-bg, url('/rajac-park-static/assets/oblaci.webp'))!important;background-size:cover!important;background-position:center!important;min-height:min(58vh,560px)}
+.rp-global-nav a[href="/"], .nav__brand[href="/"]{text-decoration:none!important}
+img{max-width:100%;height:auto}
+</style>
+
+
+<style id="rajac-static-layout-repair-v2">
+/* поправка статичких страница Истраживачког парка: контраст, слике, картице и видео */
+:root{--rp-deep:#102338;--rp-cream:#f4efe3;--rp-ink:#17251b;--rp-muted:#526055;--rp-gold:#efbf65;}
+body{overflow-x:hidden;}
+.wrap{max-width:1240px!important;margin-inline:auto!important;}
+.card,.media-card,.gallery-tile,.photo-link,.quote-band,.final-cta{box-sizing:border-box;}
+.card img,.media-card img,.gallery-tile img,.photo-link img,.figure-card img{display:block!important;width:100%!important;max-width:100%!important;object-fit:cover!important;object-position:center!important;}
+.media-card{overflow:hidden!important;border-radius:22px!important;}
+.media-card img{height:240px!important;}
+.grid-2 .media-card img,.grid-2 .card img{height:320px!important;}
+.grid-3 .media-card img,.grid-3 .card img{height:240px!important;}
+.gallery-grid{align-items:stretch!important;}
+.gallery-tile{height:260px!important;min-height:260px!important;overflow:hidden!important;}
+.gallery-tile img{height:100%!important;}
+.gallery-caption{z-index:2!important;color:#fff!important;text-shadow:0 1px 2px rgba(0,0,0,.45)!important;}
+.photo-link{display:flex!important;flex-direction:column!important;gap:12px!important;min-height:0!important;height:auto!important;overflow:hidden!important;padding:16px!important;border-radius:22px!important;background:#fff!important;}
+.photo-link .thumb{height:170px!important;min-height:170px!important;width:100%!important;overflow:hidden!important;border-radius:14px!important;background:#e8e4da!important;}
+.photo-link .thumb img{height:100%!important;}
+.photo-link h3,.photo-link p,.photo-link span{position:relative!important;z-index:2!important;}
+.quote-band,.final-cta,.cta-band,.closing,.proposal,.proposal-box{background:linear-gradient(135deg,#1f5a38,#102e20)!important;color:#fff!important;}
+.quote-band *,.final-cta *,.cta-band *,.closing *,.proposal *,.proposal-box *{color:#fff!important;opacity:1!important;}
+.quote-band a,.final-cta a,.cta-band a,.closing a,.proposal a,.proposal-box a{background:rgba(255,255,255,.15)!important;border-color:rgba(255,255,255,.28)!important;color:#fff!important;}
+.section-head p,.lead,.intro p{color:var(--rp-muted)!important;opacity:1!important;}
+section.dark,.dark,.night-section{color:#fff!important;}
+section.dark *,.dark *,.night-section *{color:inherit;}
+.video-card iframe,.video-card video,.media-card iframe,.media-card video{width:100%!important;aspect-ratio:16/9!important;height:auto!important;min-height:260px!important;background:#252525!important;border:0!important;display:block!important;}
+.g2{display:grid!important;grid-template-columns:repeat(auto-fit,minmax(320px,1fr))!important;gap:22px!important;align-items:start!important;}
+@media(max-width:780px){.media-card img,.grid-2 .media-card img,.grid-2 .card img,.grid-3 .media-card img,.grid-3 .card img{height:220px!important}.gallery-grid{grid-template-columns:1fr!important}.gallery-tile{height:240px!important}.photo-link .thumb{height:160px!important}.video-card iframe,.video-card video,.media-card iframe,.media-card video{min-height:210px!important}}
+</style>
+
+<link rel="stylesheet" href="/rajac-design/rajac-park-responsive.css">
+<script src="/rajac-design/rajac-park-responsive.js" defer></script>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav" aria-label="Главна навигација">
+  <div class="nav__inner">
+    <a class="nav__brand" href="/">
+      <span class="nav__mark">Р</span>
+      <span class="nav__name">ПИО Рајац</span>
+    </a>
+    <div class="nav__scroll">
+      <ul class="nav__links">
+        <li><a href="/istrazivacki-park-rajac/">Курсеви</a></li>
+        <li><a href="/rajac-astronomija/">Астрономија</a></li>
+        <li><a href="/rajac-leptiri/">Лептири</a></li>
+        <li><a href="/rajac-ptice/">Птице</a></li>
+        <li><a href="/rajac-vegetacija/">Вегетација</a></li>
+        <li><a href="/rajac-karst/">Карст</a></li>
+        <li><a class="active" href="/rajac-oblaci/">Облаци</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<header class="hero" aria-label="Насловна слика"></header>
+
+<!-- WHY -->
+<section class="section">
+  <div class="wrap">
+    <div class="section-header">
+      <h2>Зашто посматрање облака има смисла на терену</h2>
+      <p>Облаци нису само леп призор. Они су један од најбржих и највидљивијих показатеља онога што се у атмосфери дешава. За посетиоце Рајца то значи да се кроз једноставно посматрање неба може учити о времену, променама у атмосфери, фотографији пејзажа и грађанској науци.</p>
+    </div>
+    <div class="g3">
+      <div class="card">
+        <h3>Читање времена</h3>
+        <p>Препознавање високих, средњих, ниских и облака вертикалног развоја помаже да се боље разуме да ли је небо стабилно, да ли се приближава промена времена и када треба прекинути боравак на изложеном месту.</p>
+      </div>
+      <div class="card">
+        <h3>Фото и видео праћење</h3>
+        <p>Серије снимака из исте тачке показују како се небо мења током дана. Такви материјали су корисни за сајт, едукативне радионице, презентације и теренске дневнике посетилаца.</p>
+      </div>
+      <div class="card">
+        <h3>Грађанска наука</h3>
+        <p>Када се снимци и запажања раде по једноставном протоколу, могу се поредити са сателитским подацима и користити као квалитетни допунски записи о стању неба и атмосфере.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- METHOD -->
+<section class="section" id="metod">
+  <div class="wrap">
+    <div class="section-header">
+      <h2>Како се облаци посматрају на начин који стварно вреди</h2>
+      <p>Најкориснији теренски приступ је једноставан: изабери безбедно и отворено место, запиши време и локацију, процени колики део неба је прекривен облацима, препознај главне типове и направи јасне фотографије из више праваца.</p>
+    </div>
+    <div class="steps">
+      <div class="step">
+        <div class="step-n">1</div>
+        <div>
+          <h3>Изабери добру тачку за посматрање</h3>
+          <p>Потребно је место са што мање препрека ка небу. Најбоље је да хоризонт буде видљив на више страна, а да посматрач не стоји на саобраћајници, ивици литице или на изложеном врху током грмљавине и јаког ветра.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-n">2</div>
+        <div>
+          <h3>Запиши основне податке</h3>
+          <p>За сваки налаз забележи датум, тачно време, место посматрања, процену укупне облачности и кратку напомену да ли се облаци брзо мењају, мирно стоје или се јасно крећу у једном смеру.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-n">3</div>
+        <div>
+          <h3>Погледај цело небо, не само један облак</h3>
+          <p>Научно користан запис не настаје када се фотографише само најлепши детаљ, већ када се процени целина: шта је изнад хоризонта, шта је директно изнад главе и који су типови облака присутни у различитим деловима неба.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-n">4</div>
+        <div>
+          <h3>Препознај род облака</h3>
+          <p>За посетиоце је довољно да се најпре препозна основни род: цируси, цирокумулуси, циростратуси, алтокумулуси, алтостратуси, нимбостратуси, стратокумулуси, стратуси, кумулуси и кумулонимбуси.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-n">5</div>
+        <div>
+          <h3>Сними серију фотографија</h3>
+          <p>Један користан сет може да садржи: широк кадар са хоризонтом, четири кадра по странама света и један кадар право навише. Ако се облаци брзо мењају, понови серију после 5, 10 или 15 минута.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-n">6</div>
+        <div>
+          <h3>Упореди своје запажање са званичним изворима</h3>
+          <p>После терена отвори WMO Cloud Atlas, NASA GLOBE Observer или NOAA cloud chart и провери да ли си добро проценио род облака, покровност неба и потенцијалну промену времена.</p>
+        </div>
+      </div>
+    </div>
+    <div class="g2" style="margin-top:18px">
+      <div class="note">
+        <strong>Практична процена облачности</strong>
+        <p>Најлакши начин је да небо замислиш подељено на четири дела. Процени облачност у сваком делу посебно и затим направи просечну вредност за цело небо.</p>
+      </div>
+      <div class="note">
+        <strong>Када посматрање има посебну вредност</strong>
+        <p>Најзанимљивији резултати настају кад се небо прати више пута истог дана, после промене ветра, пред фронталне системе, уочи олуја или током мирних дана када се постепено развијају кумулуси.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CLOUD TYPES -->
+<section class="section" id="tipovi">
+  <div class="wrap">
+    <div class="section-header">
+      <h2>Десет главних типова облака које вреди знати</h2>
+      <p>За обуку посетилаца није потребно да се одмах улази у све врсте, варијетете и додатне елементе. Довољно је да се најпре савлада десет основних родова облака.</p>
+    </div>
+    <div class="g4">
+
+      <!-- 1. Cirrus -->
+      <figure class="cloud-card" style="margin:0">
+        <img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Cirrus%20Clouds.jpg?width=720" alt="Цируси — танки влакнасти облаци на великој висини" loading="lazy" decoding="async" width="720" height="540" data-cloudtype="Ci" referrerpolicy="no-referrer">
+        <figcaption class="photo-source">Извор: <a href="https://commons.wikimedia.org/wiki/File:Cirrus%20Clouds.jpg" target="_blank" rel="noopener">Wikimedia Commons</a> · kevinlyfellow · public domain</figcaption>
+        <div class="cloud-body">
+          <h3>Цируси (Ci)</h3>
+          <div class="pills"><span class="pill">високи</span><span class="pill">влакнасти</span></div>
+          <p>Танки и провидни, често личе на влакна или перје. Обично су знак да се на великој висини дешавају промене у атмосфери.</p>
+        </div>
+      </figure>
+
+      <!-- 2. Cirrocumulus -->
+      <figure class="cloud-card" style="margin:0">
+        <img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Cirrocumulus%20clouds.JPG?width=720" alt="Цирокумулуси — ситне беле групице облака у низовима" loading="lazy" decoding="async" width="720" height="540" data-cloudtype="Cc" referrerpolicy="no-referrer">
+        <figcaption class="photo-source">Извор: <a href="https://commons.wikimedia.org/wiki/File:Cirrocumulus%20clouds.JPG" target="_blank" rel="noopener">Wikimedia Commons</a> · The High Fin Sperm Whale · CC BY-SA 3.0 / GFDL</figcaption>
+        <div class="cloud-body">
+          <h3>Цирокумулуси (Cc)</h3>
+          <div class="pills"><span class="pill">високи</span><span class="pill">зрнасти</span></div>
+          <p>Ситне беле групице или таласи. Делују као зрнца или љуспице распоређене у низове.</p>
+        </div>
+      </figure>
+
+      <!-- 3. Cirrostratus -->
+      <figure class="cloud-card" style="margin:0">
+        <img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Cirrostratus%20nebulosus.jpg?width=720" alt="Циростратус — танак млечни слој облака са ореолом" loading="lazy" decoding="async" width="720" height="540" data-cloudtype="Cs" referrerpolicy="no-referrer">
+        <figcaption class="photo-source">Извор: <a href="https://commons.wikimedia.org/wiki/File:Cirrostratus%20nebulosus.jpg" target="_blank" rel="noopener">Wikimedia Commons</a> · страница фајла · CC BY-SA</figcaption>
+        <div class="cloud-body">
+          <h3>Циростратуси (Cs)</h3>
+          <div class="pills"><span class="pill">високи</span><span class="pill">вел</span></div>
+          <p>Танак млечни слој који прекрива већи део неба. Често прати ореол око Сунца или Месеца.</p>
+        </div>
+      </figure>
+
+      <!-- 4. Altocumulus -->
+      <figure class="cloud-card" style="margin:0">
+        <img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Altocumulus%20cloud.jpg?width=720" alt="Алтокумулуси — средње високе облачне масе у групама" loading="lazy" decoding="async" width="720" height="540" data-cloudtype="Ac" referrerpolicy="no-referrer">
+        <figcaption class="photo-source">Извор: <a href="https://commons.wikimedia.org/wiki/File:Altocumulus%20cloud.jpg" target="_blank" rel="noopener">Wikimedia Commons</a> · Rastaman3000 / Felix Rubinstein · CC BY-SA</figcaption>
+        <div class="cloud-body">
+          <h3>Алтокумулуси (Ac)</h3>
+          <div class="pills"><span class="pill">средњи</span><span class="pill">закрпе</span></div>
+          <p>Средње високе облачне масе у групама или редовима. Могу бити врло фотогенични, посебно у косом светлу.</p>
+        </div>
+      </figure>
+
+      <!-- 5. Altostratus -->
+      <figure class="cloud-card" style="margin:0">
+        <img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Altostratus%20clouds.jpg?width=720" alt="Алтостратус — сив слојевити облак над хоризонтом" loading="lazy" decoding="async" width="720" height="540" data-cloudtype="As" referrerpolicy="no-referrer">
+        <figcaption class="photo-source">Извор: <a href="https://commons.wikimedia.org/wiki/File:Altostratus%20clouds.jpg" target="_blank" rel="noopener">Wikimedia Commons</a> · Anoushka Trivedi · CC BY-SA 4.0</figcaption>
+        <div class="cloud-body">
+          <h3>Алтостратуси (As)</h3>
+          <div class="pills"><span class="pill">средњи</span><span class="pill">слој</span></div>
+          <p>Сив или плавичаст слој који уме да прекрије велик део неба и пригуши сунчеву светлост.</p>
+        </div>
+      </figure>
+
+      <!-- 6. Nimbostratus -->
+      <figure class="cloud-card" style="margin:0">
+        <img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Nimbostratus%20clouds.jpg?width=720" alt="Нимбостратус — тамни кишни облак над пејзажем" loading="lazy" decoding="async" width="720" height="540" data-cloudtype="Ns" referrerpolicy="no-referrer">
+        <figcaption class="photo-source">Извор: <a href="https://commons.wikimedia.org/wiki/File:Nimbostratus%20clouds.jpg" target="_blank" rel="noopener">Wikimedia Commons</a> · YuRi YuZi · CC BY-SA 4.0</figcaption>
+        <div class="cloud-body">
+          <h3>Нимбостратуси (Ns)</h3>
+          <div class="pills"><span class="pill">кишни</span><span class="pill">слојевити</span></div>
+          <p>Тамни облаци повезани са дуготрајнијом кишом или снегом. Дају равномернију кишну завесу.</p>
+        </div>
+      </figure>
+
+      <!-- 7. Stratocumulus -->
+      <figure class="cloud-card" style="margin:0">
+        <img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Stratocumulus%20Cloud.jpg?width=720" alt="Стратокумулуси — ниски облаци у ваљцима и масама" loading="lazy" decoding="async" width="720" height="540" data-cloudtype="Sc" referrerpolicy="no-referrer">
+        <figcaption class="photo-source">Извор: <a href="https://commons.wikimedia.org/wiki/File:Stratocumulus%20Cloud.jpg" target="_blank" rel="noopener">Wikimedia Commons</a> · 20wardsa · слободна лиценца на страници фајла</figcaption>
+        <div class="cloud-body">
+          <h3>Стратокумулуси (Sc)</h3>
+          <div class="pills"><span class="pill">ниски</span><span class="pill">ваљци</span></div>
+          <p>Ниски облаци у појасевима, ролнама или већим масама. Често делују тешко, али не морају увек доносити озбиљне падавине.</p>
+        </div>
+      </figure>
+
+      <!-- 8. Stratus -->
+      <figure class="cloud-card" style="margin:0">
+        <img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Stratus%20Cloud.jpg?width=720" alt="Стратус — ниски равни слој облака над воденом површином" loading="lazy" decoding="async" width="720" height="540" data-cloudtype="St" referrerpolicy="no-referrer">
+        <figcaption class="photo-source">Извор: <a href="https://commons.wikimedia.org/wiki/File:Stratus%20Cloud.jpg" target="_blank" rel="noopener">Wikimedia Commons</a> · Natasha2006 · public domain</figcaption>
+        <div class="cloud-body">
+          <h3>Стратуси (St)</h3>
+          <div class="pills"><span class="pill">ниски</span><span class="pill">раван слој</span></div>
+          <p>Ниски, равномерни и често повезани са маглом, ситном кишом или веома ниским облачним покривачем.</p>
+        </div>
+      </figure>
+
+      <!-- 9. Cumulus -->
+      <figure class="cloud-card" style="margin:0">
+        <img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Cumulus%20clouds.jpg?width=720" alt="Кумулуси — бели памучни облаци јасних ивица" loading="lazy" decoding="async" width="720" height="540" data-cloudtype="Cu" referrerpolicy="no-referrer">
+        <figcaption class="photo-source">Извор: <a href="https://commons.wikimedia.org/wiki/File:Cumulus%20clouds.jpg" target="_blank" rel="noopener">Wikimedia Commons</a> · T.Voekler · CC BY-SA</figcaption>
+        <div class="cloud-body">
+          <h3>Кумулуси (Cu)</h3>
+          <div class="pills"><span class="pill">ниски</span><span class="pill">памучни</span></div>
+          <p>Памучни облаци јасних ивица. Најчешћи су на данима са развојем облака из загрејаног приземног слоја ваздуха.</p>
+        </div>
+      </figure>
+
+      <!-- 10. Cumulonimbus -->
+      <figure class="cloud-card" style="margin:0">
+        <img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Cumulonimbus-incus.JPG?width=720" alt="Кумулонимбус — масиван олујни облак вертикалног развоја" loading="lazy" decoding="async" width="720" height="540" data-cloudtype="Cb" referrerpolicy="no-referrer">
+        <figcaption class="photo-source">Извор: <a href="https://commons.wikimedia.org/wiki/File:Cumulonimbus-incus.JPG" target="_blank" rel="noopener">Wikimedia Commons</a> · C messier · CC BY-SA 3.0 / GFDL</figcaption>
+        <div class="cloud-body">
+          <h3>Кумулонимбуси (Cb)</h3>
+          <div class="pills"><span class="pill">вертикални развој</span><span class="pill">олујни</span></div>
+          <p>Високи, масивни и опасни облаци грмљавинског невремена. Када се јаве, посматрање постаје питање безбедности.</p>
+        </div>
+      </figure>
+
+      <!-- 11. Lenticular -->
+      <figure class="cloud-card" style="margin:0">
+        <img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Lenticularclouds.jpg?width=720" alt="Лећасти облаци над планинским пределом" loading="lazy" decoding="async" width="720" height="540" data-cloudtype="Lc" referrerpolicy="no-referrer">
+        <figcaption class="photo-source">Извор: <a href="https://commons.wikimedia.org/wiki/File:Lenticularclouds.jpg" target="_blank" rel="noopener">Wikimedia Commons</a> · C messier · CC BY-SA / GFDL</figcaption>
+        <div class="cloud-body">
+          <h3>Лећасти облаци</h3>
+          <div class="pills"><span class="pill">планински услови</span><span class="pill">посебан облик</span></div>
+          <p>Нису међу десет основних родова, али су занимљиви над брдско-планинским пределима. Изгледају као мирне леће или сложени тањири.</p>
+        </div>
+      </figure>
+
+    </div>
+  </div>
+</section>
+
+<!-- PHOTOGRAPHY -->
+<section class="section" id="foto">
+  <div class="wrap">
+    <div class="section-header">
+      <h2>Како фотографисати облаке да снимак буде стварно користан</h2>
+      <p>Лепа фотографија и добар теренски доказ нису увек исто. За Рајац је идеално да један део снимака буде естетски, а други методолошки јасан и упоредив.</p>
+    </div>
+    <div class="g3">
+      <div class="card"><h3>1. Почни широким кадром</h3><p>Први снимак треба да покаже однос облака и пејзажа. Укључи хоризонт, шумске и ливадске површине, а по могућству и истакнуту тачку са које је снимано.</p></div>
+      <div class="card"><h3>2. Направи серију по правцима</h3><p>Најкорисније је снимити север, исток, југ, запад и зенит. Такав сет омогућава да се касније процени распоред облака и смер развоја.</p></div>
+      <div class="card"><h3>3. Води рачуна о експозицији</h3><p>Код светлих облака често је корисно благо потамнити снимак. HDR и RAW формати могу бити од помоћи ако их апарат подржава.</p></div>
+      <div class="card"><h3>4. Бележи промену у времену</h3><p>Тајмлапс, burst серија или понављање исте фотографије на сваких неколико минута боље показују кретање и развој облака него један усамљен снимак.</p></div>
+      <div class="card"><h3>5. Сними и детаљ и целину</h3><p>Један кадар треба да покаже тип облака, а други његов однос према осталом небу. Тако се избегава да леп детаљ остане без контекста.</p></div>
+      <div class="card"><h3>6. Уз сваки снимак остави белешку</h3><p>Место, време, правац снимања и кратак опис су драгоцени. Без тога фотографија остаје занимљива, али тешко упоредива са другим посматрањима.</p></div>
+    </div>
+    <div class="g2" style="margin-top:18px">
+      <div class="alert">
+        <div class="alert-icon">⚠</div>
+        <div>
+          <h3>Безбедност је важнија од кадра</h3>
+          <p>Не посматрај небо са отворених врхова током грмљавине, не остај на местима изложеним ударима ветра и никада не гледај директно у Сунце кроз оптику. Код дронова избегавај летове у нестабилном времену и при јаким ударима ветра.</p>
+        </div>
+      </div>
+      <div class="note">
+        <strong>Минимална опрема која је довољна</strong>
+        <p>Смартфон, резервна батерија, бележница или телефонска белешка, по могућству GPS, и једноставан кишни покривач за опрему. Добар резултат не тражи скупу технику, већ дисциплинован приступ.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- RESOURCES -->
+<section class="section" id="alati">
+  <div class="wrap">
+    <div class="section-header">
+      <h2>Најважније организације, платформе и алати</h2>
+      <p>Ово су најкориснији спољни извори за посетиоце, наставу, волонтере и све који желе да посматрање облака подигну на ниво уредног и проверљивог записа.</p>
+    </div>
+    <div class="g2">
+      <div class="res-card">
+        <div class="res-icon">W</div>
+        <div>
+          <h3>WMO International Cloud Atlas</h3>
+          <p>Глобални референтни извор за класификацију облака. Најбоља полазна тачка када желиш да провериш да ли је идентификација исправна.</p>
+          <div class="chips">
+            <a class="chip" href="https://cloudatlas.wmo.int/" target="_blank" rel="noopener">Почетна страна</a>
+            <a class="chip" href="https://cloudatlas.wmo.int/identifying-clouds.html" target="_blank" rel="noopener">Идентификовање</a>
+            <a class="chip" href="https://cloudatlas.wmo.int/search-image-gallery.html" target="_blank" rel="noopener">Галерија</a>
+          </div>
+        </div>
+      </div>
+      <div class="res-card">
+        <div class="res-icon">N</div>
+        <div>
+          <h3>NASA GLOBE Observer</h3>
+          <p>Апликација и грађанско-научни програм за бележење облачности, типова облака и фотографија неба, уз поређење са сателитским снимцима.</p>
+          <div class="chips">
+            <a class="chip" href="https://observer.globe.gov/do-globe-observer/clouds" target="_blank" rel="noopener">Clouds overview</a>
+            <a class="chip" href="https://observer.globe.gov/about/get-the-app" target="_blank" rel="noopener">Апликација</a>
+          </div>
+        </div>
+      </div>
+      <div class="res-card">
+        <div class="res-icon">N</div>
+        <div>
+          <h3>NOAA JetStream</h3>
+          <p>Добро организована онлајн школа времена. Одличан увод у десет основних облака и њихову поделу.</p>
+          <div class="chips">
+            <a class="chip" href="https://www.noaa.gov/jetstream/clouds" target="_blank" rel="noopener">Clouds</a>
+            <a class="chip" href="https://www.noaa.gov/jetstream/clouds/ten-basic-clouds" target="_blank" rel="noopener">Ten basic clouds</a>
+            <a class="chip" href="https://www.noaa.gov/jetstream/clouds/nws-cloud-chart" target="_blank" rel="noopener">Cloud chart</a>
+          </div>
+        </div>
+      </div>
+      <div class="res-card">
+        <div class="res-icon">M</div>
+        <div>
+          <h3>Met Office</h3>
+          <p>Одличан избор за кратке водиче, cloud spotting материјале и приступачне PDF ресурсе погодне за наставу.</p>
+          <div class="chips">
+            <a class="chip" href="https://weather.metoffice.gov.uk/learn-about/weather/types-of-weather/clouds" target="_blank" rel="noopener">Clouds</a>
+            <a class="chip" href="https://www.metoffice.gov.uk/binaries/content/assets/metofficegovuk/pdf/weather/learn-about/weather/cloud-spotting.pdf" target="_blank" rel="noopener">Cloud spotting PDF</a>
+          </div>
+        </div>
+      </div>
+      <div class="res-card">
+        <div class="res-icon">U</div>
+        <div>
+          <h3>UCAR Center for Science Education</h3>
+          <p>Врло јасни визуелни прикази типова облака, необичних облака и висинских група, одлично за брзо учење и теренску припрему.</p>
+          <div class="chips">
+            <a class="chip" href="https://scied.ucar.edu/learning-zone/clouds/cloud-types" target="_blank" rel="noopener">Cloud types</a>
+            <a class="chip" href="https://scied.ucar.edu/learning-zone/clouds" target="_blank" rel="noopener">Clouds zone</a>
+          </div>
+        </div>
+      </div>
+      <div class="res-card">
+        <div class="res-icon">🛰</div>
+        <div>
+          <h3>NASA Earth Observatory</h3>
+          <p>За оне који желе да повежу посматрање са сателитским снимцима, климом и атмосферским сликама.</p>
+          <div class="chips">
+            <a class="chip" href="https://science.nasa.gov/earth/earth-observatory/" target="_blank" rel="noopener">Earth Observatory</a>
+            <a class="chip" href="https://www.earthdata.nasa.gov/topics/clouds" target="_blank" rel="noopener">Earthdata clouds</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- VISUAL GALLERY -->
+<section class="section">
+  <div class="wrap">
+    <div class="section-header">
+      <h2>Визуелни материјал и галерије које вреди отворити</h2>
+      <p>Поред снимака направљених на Рајцу, корисно је да уз обуку увек стоје и спољни примери: званичне галерије, дијаграми и cloud charts.</p>
+    </div>
+    <div class="g4">
+      <article class="media-card">
+        <img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Cirrostratus%20nebulosus.jpg?width=720" alt="Циростратус — пример из WMO галерије" loading="lazy" decoding="async" width="720" height="540" data-cloudtype="Cs" referrerpolicy="no-referrer">
+        <p class="photo-source media-source">Извор: <a href="https://commons.wikimedia.org/wiki/File:Cirrostratus%20nebulosus.jpg" target="_blank" rel="noopener">Wikimedia Commons</a> · страница фајла · CC BY-SA</p>
+        <div class="media-body">
+          <h3>WMO фото-галерија</h3>
+          <p>Велика збирка референтних фотографија облака и сродних атмосферских појава.</p>
+          <div class="chips" style="margin-top:10px"><a class="chip" href="https://cloudatlas.wmo.int/search-image-gallery.html" target="_blank" rel="noopener">Отвори галерију</a></div>
+        </div>
+      </article>
+      <article class="media-card">
+        <img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Stratocumulus%20Cloud.jpg?width=720" alt="Стратокумулуси — пример из NOAA cloud chart-а" loading="lazy" decoding="async" width="720" height="540" data-cloudtype="Sc" referrerpolicy="no-referrer">
+        <p class="photo-source media-source">Извор: <a href="https://commons.wikimedia.org/wiki/File:Stratocumulus%20Cloud.jpg" target="_blank" rel="noopener">Wikimedia Commons</a> · 20wardsa · слободна лиценца на страници фајла</p>
+        <div class="media-body">
+          <h3>NOAA cloud chart</h3>
+          <p>Брз преглед типова облака, распона висина и међусобних разлика.</p>
+          <div class="chips" style="margin-top:10px"><a class="chip" href="https://www.noaa.gov/jetstream/clouds/nws-cloud-chart" target="_blank" rel="noopener">Отвори chart</a></div>
+        </div>
+      </article>
+      <article class="media-card">
+        <img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Lenticularclouds.jpg?width=720" alt="Лећасти облаци — пример из UCAR приказа" loading="lazy" decoding="async" width="720" height="540" data-cloudtype="Lc" referrerpolicy="no-referrer">
+        <p class="photo-source media-source">Извор: <a href="https://commons.wikimedia.org/wiki/File:Lenticularclouds.jpg" target="_blank" rel="noopener">Wikimedia Commons</a> · C messier · CC BY-SA / GFDL</p>
+        <div class="media-body">
+          <h3>UCAR cloud types</h3>
+          <p>Добро уређен визуелни водич за основне и необичне облаке.</p>
+          <div class="chips" style="margin-top:10px"><a class="chip" href="https://scied.ucar.edu/learning-zone/clouds/cloud-types" target="_blank" rel="noopener">Отвори приказ</a></div>
+        </div>
+      </article>
+      <article class="media-card">
+        <img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Cumulonimbus-incus.JPG?width=720" alt="Кумулонимбус — пример из Met Office PDF водича" loading="lazy" decoding="async" width="720" height="540" data-cloudtype="Cb" referrerpolicy="no-referrer">
+        <p class="photo-source media-source">Извор: <a href="https://commons.wikimedia.org/wiki/File:Cumulonimbus-incus.JPG" target="_blank" rel="noopener">Wikimedia Commons</a> · C messier · CC BY-SA 3.0 / GFDL</p>
+        <div class="media-body">
+          <h3>Met Office PDF водич</h3>
+          <p>Јасан и штампив материјал погодан за теренску обуку или радионицу.</p>
+          <div class="chips" style="margin-top:10px"><a class="chip" href="https://www.metoffice.gov.uk/binaries/content/assets/metofficegovuk/pdf/weather/learn-about/weather/cloud-spotting.pdf" target="_blank" rel="noopener">Отвори PDF</a></div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- VIDEO -->
+<section class="section" id="video">
+  <div class="wrap">
+    <div class="section-header">
+      <h2>Видео материјал за обуку</h2>
+      <p>Изабрани материјали који добро раде у обуци посетилаца: локални увод, Met Office cloud spotting водич, NASA грађанско-научни видео и школски видео о типовима облака.</p>
+    </div>
+    <div class="g2">
+      <article class="media-card">
+        <video controls preload="none" poster="/rajac-park-static/assets/oblaci-gallery-1.webp" src="https://istrazivac.rs/wp-content/uploads/2023/08/%D0%9E%D0%91%D0%9B%D0%90%D0%9A.mp4" style="border-radius:0;background:#111"></video>
+        <div class="media-body">
+          <h3>Уводни видео о облацима</h3>
+          <p>Кратак почетни материјал погодан за отварање теме и основни визуелни увод пре детаљније обуке.</p>
+          <div class="video-links"><a class="chip" href="https://istrazivac.rs/wp-content/uploads/2023/08/%D0%9E%D0%91%D0%9B%D0%90%D0%9A.mp4" target="_blank" rel="noopener">Отвори MP4</a></div>
+        </div>
+      </article>
+      <article class="media-card">
+        <iframe loading="lazy" height="315"
+          src="https://www.youtube-nocookie.com/embed/QWeorlkJ39M"
+          title="Met Office — Cloud spotting guide"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen></iframe>
+        <div class="media-body">
+          <h3>Met Office — Cloud spotting guide</h3>
+          <p>Приступачан водич за препознавање облака и разумевање основних разлика у изгледу неба.</p>
+          <div class="video-links"><a class="chip" href="https://www.youtube.com/watch?v=QWeorlkJ39M" target="_blank" rel="noopener">Отвори видео</a></div>
+        </div>
+      </article>
+      <article class="media-card">
+        <iframe loading="lazy" height="315"
+          src="https://www.youtube-nocookie.com/embed/CNZGfeVaCHU"
+          title="GLOBE Observer Clouds: Getting Started"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen></iframe>
+        <div class="media-body">
+          <h3>NASA GLOBE Observer — Getting Started</h3>
+          <p>Најбољи видео ако желиш да облаке на Рајцу пратиш као грађански научник, уз фотографије и упоредив запис.</p>
+          <div class="video-links"><a class="chip" href="https://www.youtube.com/watch?v=CNZGfeVaCHU" target="_blank" rel="noopener">Отвори видео</a></div>
+        </div>
+      </article>
+      <article class="media-card">
+        <iframe loading="lazy" height="315"
+          src="https://www.youtube-nocookie.com/embed/JIkEMBiT6hQ"
+          title="NOAA SciJinks — What Are the Different Types of Clouds?"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen></iframe>
+        <div class="media-body">
+          <h3>NOAA SciJinks — Types of Clouds</h3>
+          <p>Кратак, јасан и добар за брзо понављање пре изласка на терен или за уводни рад са ученицима.</p>
+          <div class="video-links"><a class="chip" href="https://www.youtube.com/watch?v=JIkEMBiT6hQ" target="_blank" rel="noopener">Отвори видео</a></div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- CHECKLIST -->
+<section class="section">
+  <div class="wrap">
+    <div class="checklist">
+      <h3>Једноставан теренски лист за посетице Рајца</h3>
+      <p>Овај шаблон можеш буквално преписати у бележницу или телефон и користити на терену.</p>
+      <div class="cl-grid">
+        <div class="cl-item"><strong>Место</strong><span>Назив локације / GPS / видиковац / стаза</span></div>
+        <div class="cl-item"><strong>Време</strong><span>Датум и сат посматрања</span></div>
+        <div class="cl-item"><strong>Укупна облачност</strong><span>Процена покривености неба у % или опису</span></div>
+        <div class="cl-item"><strong>Главни типови</strong><span>На пример: Cu + Cs, или As + Ns</span></div>
+        <div class="cl-item"><strong>Смер кретања</strong><span>Да ли се облаци крећу са запада, југа, северозапада…</span></div>
+        <div class="cl-item"><strong>Појава на небу</strong><span>Ореол, virga, магла, кишна завеса, грмљавина, контраилс</span></div>
+        <div class="cl-item"><strong>Фотографије</strong><span>Хоризонт, стране света, зенит, детаљ</span></div>
+        <div class="cl-item"><strong>Кратка напомена</strong><span>Да ли се небо поправља, затвара, развија или смирује</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SOURCES -->
+<section class="section" id="izvori">
+  <div class="wrap">
+    <div class="section-header">
+      <h2>Поуздани спољни извори и методолошка упутства</h2>
+      <p>Ови извори су најкориснији за самосталну обуку, школски рад, вођење волонтера или будуће систематичније праћење облачности на Рајцу.</p>
+    </div>
+    <div class="sources">
+      <div class="src-group">
+        <h3>Међународна метеоролошка методологија</h3>
+        <ul>
+          <li><a href="https://cloudatlas.wmo.int/" target="_blank" rel="noopener">WMO International Cloud Atlas</a> — глобални референтни атлас за класификацију и опис облака.</li>
+          <li><a href="https://cloudatlas.wmo.int/observation-of-clouds-from-the-earths-surface.html" target="_blank" rel="noopener">Observation of clouds from the Earth's surface</a> — кораци за извођење посматрања са тла.</li>
+          <li><a href="https://cloudatlas.wmo.int/cloud-identification-guide.html" target="_blank" rel="noopener">Cloud identification guide</a> — кратак водич за брзо препознавање облака.</li>
+        </ul>
+      </div>
+      <div class="src-group">
+        <h3>Грађанска наука и апликације</h3>
+        <ul>
+          <li><a href="https://observer.globe.gov/do-globe-observer/clouds" target="_blank" rel="noopener">GLOBE Observer Clouds overview</a> — шта се бележи и зашто су ти подаци важни.</li>
+          <li><a href="https://observer.globe.gov/do-globe-observer/clouds/taking-observations" target="_blank" rel="noopener">Taking observations</a> — практично упутство за процену облачности и фотографисање.</li>
+          <li><a href="https://www.globe.gov/web/atmosphere/protocols/clouds" target="_blank" rel="noopener">GLOBE Clouds Protocol</a> — шири протокол за облаке, покривеност неба и услове на површини.</li>
+        </ul>
+      </div>
+      <div class="src-group">
+        <h3>Едукативни и визуелни извори</h3>
+        <ul>
+          <li><a href="https://www.noaa.gov/jetstream/clouds/ten-basic-clouds" target="_blank" rel="noopener">NOAA JetStream — Ten Basic Clouds</a>.</li>
+          <li><a href="https://weather.metoffice.gov.uk/learn-about/weather/types-of-weather/clouds" target="_blank" rel="noopener">Met Office — Clouds</a>.</li>
+          <li><a href="https://scied.ucar.edu/learning-zone/clouds/cloud-types" target="_blank" rel="noopener">UCAR — Cloud Types</a>.</li>
+          <li><a href="https://science.nasa.gov/earth/earth-observatory/" target="_blank" rel="noopener">NASA Earth Observatory</a> — шири контекст облака, климе и сателитског посматрања.</li>
+        </ul>
+      </div>
+      <div class="src-group">
+        <h3>Фотографије облака — извори</h3>
+        <ul>
+          <li>Све фотографије типова облака постављене су као стварне фотографије са <a href="https://commons.wikimedia.org/" target="_blank" rel="noopener">Wikimedia Commons</a>, без SVG/crtež fallback замена. Аутор, лиценца или страница фајла наведени су ситним словима испод сваке слике.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <p>© ПИО Рајац · Истраживачки парк Рајац · Фотографије: Wikimedia Commons (CC BY-SA)</p>
+  </div>
+</footer>
+
+
+<!-- SITE_EDITOR_ADMIN_BAR_START -->
+<script src="/admin-site-editor.php?admin_bar_js=1" defer></script>
+<!-- SITE_EDITOR_ADMIN_BAR_END -->
+</body>
+</html>

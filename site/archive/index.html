@@ -1,0 +1,1386 @@
+<!DOCTYPE html>
+
+<html lang="sr-RS">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<title>Птице ПИО Рајац — архива врста</title>
+<meta content="no-referrer" name="referrer"/>
+<style>
+:root{
+  --gold:#b06d1e;
+  --gold-l:#d8b55b;
+  --ink:#0e1318;
+  --nav:#0d1b2a;
+  --bg:#f6f7f8;
+  --card:#ffffff;
+  --muted:#617080;
+  --line:rgba(20,32,48,.10);
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:#111827;font-family:Inter,system-ui,sans-serif}
+a{text-decoration:none}
+img{display:block;max-width:100%}
+
+.rfx-chapter-nav{
+  background:var(--nav);
+  position:sticky;
+  top:0;
+  z-index:600;
+}
+.rfx-nav-inner{
+  max-width:1180px;
+  margin:0 auto;
+  padding:0 18px;
+  display:flex;
+  align-items:stretch;
+  min-height:56px;
+  gap:0;
+}
+.rfx-nav-home{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  padding-right:20px;
+  margin-right:8px;
+  border-right:1px solid rgba(255,255,255,.10);
+  flex-shrink:0;
+}
+.rfx-nav-home-mark,
+.rfx-nav-home-text{color:var(--gold-l)}
+.rfx-nav-home-text{font-weight:700;letter-spacing:.04em;font-size:16px}
+.rfx-nav-divider{
+  width:1px;
+  height:24px;
+  margin:auto 6px auto 0;
+  background:rgba(255,255,255,.14);
+  flex-shrink:0;
+}
+.rfx-nav-item{
+  position:relative;
+  display:flex;
+  align-items:center;
+  gap:7px;
+  padding:0 15px;
+  color:rgba(255,255,255,.68);
+  font-size:15px;
+  font-weight:700;
+  letter-spacing:.04em;
+  text-transform:uppercase;
+  white-space:nowrap;
+}
+.rfx-nav-item:hover{color:rgba(255,255,255,.94);background:rgba(255,255,255,.03)}
+.rfx-nav-item.rfx-nav-active{color:var(--gold-l)}
+.rfx-nav-item.rfx-nav-active::after{
+  content:"";
+  position:absolute;
+  left:15px;
+  right:15px;
+  bottom:8px;
+  height:1px;
+  background:var(--gold-l);
+}
+.rfx-nav-active-species{
+  color:var(--gold-l);
+  font-size:.84em;
+  text-transform:none;
+  letter-spacing:0;
+  font-weight:600;
+}
+.rfx-nav-item-trofo{color:#c8a24e}
+.rfx-nav-item-trofo:hover{color:#f0cb78}
+
+.rfw-edit-bar{
+  background:#1a1a2e;
+  padding:6px 0;
+  border-bottom:1px solid rgba(201,168,76,.15);
+}
+.rfw-edit-bar-inner{
+  max-width:1180px;
+  margin:0 auto;
+  padding:0 18px;
+  display:flex;
+  justify-content:flex-end;
+}
+.rfw-edit-btn{
+  display:inline-flex;
+  align-items:center;
+  gap:7px;
+  font-size:12px;
+  font-weight:600;
+  color:rgba(245,240,232,.65);
+  padding:5px 12px;
+  border-radius:4px;
+  border:1px solid rgba(201,168,76,.2);
+}
+
+.hero{position:relative;height:520px;overflow:hidden;display:flex;align-items:flex-end}
+.hero-img{
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  object-position:center 36%;
+  transform:translateX(14%) scale(1.30);
+  transition:transform 9s ease;
+  filter:brightness(.62) saturate(1.16);
+}
+.hero:hover .hero-img{transform:translateX(14%) scale(1.34)}
+.hero-g1{position:absolute;inset:0;background:linear-gradient(to top,rgba(13,27,42,.92) 0%,rgba(13,27,42,.34) 48%,rgba(13,27,42,.04) 100%)}
+.hero-g2{position:absolute;inset:0;background:linear-gradient(90deg,rgba(13,27,42,.92) 0%,rgba(13,27,42,.74) 34%,rgba(13,27,42,.28) 62%,rgba(13,27,42,.06) 100%)}
+.hero-content{
+  position:relative;
+  z-index:2;
+  max-width:1140px;
+  width:100%;
+  margin:0 auto;
+  padding:0 28px 52px;
+}
+.hero-eye{
+  font-size:10px;
+  font-weight:700;
+  letter-spacing:.28em;
+  text-transform:uppercase;
+  color:var(--gold);
+  margin-bottom:16px;
+  display:flex;
+  align-items:center;
+  gap:10px;
+}
+.hero-eye::before{content:"";width:28px;height:1px;background:var(--gold);flex-shrink:0}
+.hero-h1{
+  font-family:"Cormorant Garamond",Georgia,serif;
+  font-size:clamp(3rem,6vw,4.8rem);
+  font-weight:300;
+  color:#fff;
+  line-height:1.02;
+  letter-spacing:.01em;
+  margin:0 0 14px;
+}
+.hero-p{
+  font-size:14.5px;
+  color:rgba(255,255,255,.62);
+  max-width:560px;
+  line-height:1.82;
+  margin:0 0 34px;
+}
+.hero-stats{
+  display:flex;
+  background:rgba(255,255,255,.05);
+  backdrop-filter:blur(8px);
+  border:1px solid rgba(255,255,255,.08);
+  border-radius:12px;
+  overflow:hidden;
+  width:fit-content;
+}
+.hstat{padding:15px 24px;text-align:center;border-right:1px solid rgba(255,255,255,.07)}
+.hstat:last-child{border:none}
+.hstat-n{
+  font-size:1.9rem;
+  font-family:"Segoe UI Light","Helvetica Neue",Arial,sans-serif;
+  font-weight:300;
+  letter-spacing:.02em;
+  color:var(--gold-l);
+  line-height:1;
+  display:block;
+}
+.hstat-l{
+  font-size:9px;
+  text-transform:uppercase;
+  letter-spacing:.16em;
+  color:rgba(255,255,255,.36);
+  font-weight:600;
+  margin-top:4px;
+  display:block;
+}
+
+.page{
+  max-width:1240px;
+  margin:0 auto;
+  padding:26px 28px 70px;
+}
+.toolbar{
+  display:grid;
+  grid-template-columns:minmax(260px,.95fr) minmax(420px,1.05fr);
+  gap:18px;
+  align-items:end;
+  margin-bottom:20px;
+}
+.searchpanel{
+  background:#fff;
+  border:1px solid var(--line);
+  border-radius:14px;
+  padding:16px;
+}
+.searchlabel{
+  display:block;
+  margin-bottom:10px;
+  color:#304661;
+  font:500 13px/1.15 Inter,system-ui,sans-serif;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+}
+.searchinput{
+  width:100%;
+  border:1px solid rgba(20,32,48,.14);
+  border-radius:12px;
+  background:#fbfcfd;
+  padding:15px 16px;
+  font-size:15px;
+  color:#0e1318;
+}
+.chipbar{
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+  justify-content:flex-end;
+}
+.chip{
+  border:1px solid rgba(20,32,48,.12);
+  border-radius:999px;
+  background:#fff;
+  padding:10px 14px;
+  color:#304661;
+  font:500 13px/1.15 Inter,system-ui,sans-serif;
+  letter-spacing:.08em;
+  text-transform:none;
+  cursor:pointer;
+}
+.chip.active{
+  background:#2f6b2f;
+  border-color:#2f6b2f;
+  color:#fff;
+}
+.chip{display:inline-flex;align-items:center;gap:7px}
+.chip::before{font-size:14px;line-height:1;display:inline-block}
+.chip[data-filter="all"]::before{content:"🐦"}
+.chip[data-filter="vodene"]::before{content:"💧"}
+.chip[data-filter="grabljivice"]::before{content:"🦅"}
+.chip[data-filter="detlici"]::before{content:"🌳"}
+.chip[data-filter="vrane"]::before{content:"🪶"}
+.chip[data-filter="sove"]::before{content:"🦉"}
+.chip[data-filter="pevacice"]::before{content:"🎶"}
+.season-panel{grid-column:1/-1;width:100%;margin-top:12px;padding:12px;border:1px solid rgba(201,168,75,.36);border-radius:14px;background:#fffaf0}
+.season-title{font:700 10px/1 var(--mono);letter-spacing:.16em;text-transform:uppercase;color:#7a6426;margin:0 0 9px}
+.seasonbar{display:flex;flex-wrap:wrap;gap:8px}
+.seasonchip{display:inline-flex;align-items:center;gap:7px;border:1px solid #ded4b8;background:#fff;border-radius:999px;padding:8px 13px;color:#334155;font:700 12px/1 var(--sans);cursor:pointer;transition:.18s}
+.seasonchip:hover{border-color:#c8a84b;color:#172033}
+.seasonchip.active{background:#1f3f1b;border-color:#1f3f1b;color:#fff}
+.seasonnote{margin:9px 0 0;color:#6b7280;font-size:13px}
+.countline{
+  margin:0 0 16px;
+  color:#5f7286;
+  font-size:14px;
+}
+
+.archive{padding:0}
+.grid{
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:18px;
+}
+.bird-card{
+  display:flex;
+  flex-direction:column;
+  overflow:hidden;
+  border:1px solid var(--line);
+  border-radius:14px;
+  background:#fff;
+  box-shadow:0 10px 30px rgba(12,20,35,.04);
+}
+.bird-card:hover{transform:translateY(-2px)}
+.bird-card-media{
+  position:relative;
+  aspect-ratio:1.18/1;
+  overflow:hidden;
+  background:#d8e1e8;
+}
+.bird-card-media img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  object-position:center center;
+}
+.bird-card-badge{
+  position:absolute;
+  left:12px;
+  top:12px;
+  padding:8px 10px;
+  border-radius:999px;
+  background:rgba(13,27,42,.82);
+  color:#d8b55b;
+  font:700 .67rem/1 "DM Mono","SFMono-Regular",Consolas,monospace;
+  letter-spacing:.1em;
+  text-transform:uppercase;
+}
+.bird-card-body{padding:16px 16px 18px}
+.bird-card-title{
+  margin:0 0 6px;
+  font:400 1.65rem/1.02 Georgia,"Times New Roman",serif;
+  color:#0e1318;
+}
+.bird-card-sci{
+  margin:0 0 10px;
+  color:#1f6b9a;
+  font-style:italic;
+  font-size:15px;
+}
+.bird-card-copy{
+  margin:0 0 14px;
+  color:#4b5d72;
+  font-size:14px;
+  line-height:1.72;
+}
+.bird-card-meta{
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px;
+  margin-bottom:14px;
+}
+.bird-card-pill{
+  display:inline-flex;
+  align-items:center;
+  padding:7px 10px;
+  border-radius:999px;
+  background:#f2f5f8;
+  border:1px solid rgba(20,32,48,.08);
+  color:#425568;
+  font:700 .66rem/1 "DM Mono","SFMono-Regular",Consolas,monospace;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+}
+.bird-card-link{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  color:#6b4b13;
+  font:700 .76rem/1 "DM Mono","SFMono-Regular",Consolas,monospace;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+}
+
+.loadwrap{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:10px;
+  padding:28px 0 0;
+}
+.loadbtn{
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+  border:1px solid rgba(20,32,48,.10);
+  background:#0d1b2a;
+  color:var(--gold-l);
+  border-radius:12px;
+  padding:14px 18px;
+  font:700 .76rem/1 "DM Mono","SFMono-Regular",Consolas,monospace;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  cursor:pointer;
+}
+.loadinfo{
+  margin:0;
+  color:#6b7280;
+  font-size:13px;
+}
+
+.rfw-site-footer{
+  margin-top:40px;
+  border-top:1px solid #e5e7eb;
+  background:#f8f9fa;
+  padding:18px 0;
+}
+.rfx-footer-inner{
+  max-width:1180px;
+  margin:0 auto;
+  padding:0 18px;
+  text-align:center;
+}
+.rfx-footer-inner p{
+  margin:0 auto;
+  font-size:13px;
+  color:#6b7280;
+  font-family:"DM Mono","SFMono-Regular",Consolas,monospace;
+  letter-spacing:.06em;
+}
+.rfx-footer-inner a{
+  color:#6b4b13;
+  text-decoration:underline;
+}
+
+@media (max-width:980px){
+  .grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .toolbar{grid-template-columns:1fr}
+  .hero-stats{flex-wrap:wrap;width:100%}
+}
+@media (max-width:860px){
+  .rfx-nav-inner{overflow-x:auto;scrollbar-width:none}
+  .rfx-nav-inner::-webkit-scrollbar{display:none}
+  .rfx-nav-item{font-size:14px;padding:0 13px}
+  .rfx-nav-item.rfx-nav-active::after{left:13px;right:13px}
+}
+@media (max-width:680px){
+  .hero{height:480px}
+  .page,.hero-content{padding-left:18px;padding-right:18px}
+  .hero-h1{font-size:2.85rem}
+  .grid{grid-template-columns:1fr}
+}
+/* Final image-frame fix: every bird photo fills its designed frame. */
+.figure::before,.hero-photo::before,.rfw-head-img::before,.rfw-fig::before{display:none!important}
+.figure img,.hero-photo img,.rfw-head-img img,.rfw-fig img{position:relative!important;z-index:1!important;width:100%!important;object-fit:cover!important;object-position:center center!important;background:#e7eef2!important}
+.figure img,.rfw-fig img{height:260px!important}
+.hero-photo img,.rfw-head-img img{height:100%!important;max-height:none!important}
+
+/* Уједначена навигација у водичима и страницама птица. */
+.top .topin a[href="/ptice/"]::before,
+.topnav .navlink[href="https://piorajac.rs/ptice/"]::before,
+.topnav .navlink[href="/ptice/"]::before{content:"🦩";margin-right:7px;display:inline-block}
+.top .topin a.current,.top .topin a.active-current,.topnav .navlink.current{color:#f0cd69}
+
+</style>
+<style id="rajac-static-menu-css">
+:root{--rajac-nav:#0d1b2a;--rajac-gold:#d8b55b;--rajac-nav-text:rgba(255,255,255,.72)}
+.rajac-ds-nav{background:var(--rajac-nav);position:sticky;top:0;z-index:999999;border-bottom:1px solid rgba(255,255,255,.08);font-family:"Cormorant Garamond","EB Garamond",Garamond,"Palatino Linotype","Book Antiqua",Georgia,"Times New Roman",serif!important}
+body.admin-bar .rajac-ds-nav{top:32px}.rajac-ds-nav *{box-sizing:border-box}.rajac-ds-nav-inner{max-width:1180px;margin:0 auto;padding:0 18px;display:flex;align-items:stretch;min-height:56px;gap:0;overflow-x:auto;scrollbar-width:none}.rajac-ds-nav-inner::-webkit-scrollbar{display:none}.rajac-ds-home{display:flex;align-items:center;gap:9px;padding-right:20px;margin-right:8px;border-right:1px solid rgba(255,255,255,.12);flex-shrink:0;color:var(--rajac-gold)!important;text-decoration:none!important;font-weight:600;font-size:16px;letter-spacing:.03em}.rajac-ds-home-mark{width:18px;height:18px;display:inline-grid;place-items:center;color:var(--rajac-gold)}.rajac-ds-nav-item{position:relative;display:flex;align-items:center;gap:7px;padding:0 15px;color:var(--rajac-nav-text)!important;font-size:15px;font-weight:600;letter-spacing:.045em;text-transform:uppercase;white-space:nowrap;text-decoration:none!important}.rajac-ds-nav-item:hover{color:rgba(255,255,255,.94)!important;background:rgba(255,255,255,.035)}.rajac-ds-icon{font-size:15px;line-height:1}.rajac-ds-nav-item.rajac-ds-active{color:var(--rajac-gold)!important}.rajac-ds-nav-item.rajac-ds-active:after{content:"";position:absolute;left:15px;right:15px;bottom:8px;height:2px;border-radius:2px;background:var(--rajac-gold)}.rajac-ds-nav-trofo{color:#c8a24e!important}.rajac-ds-nav-trofo:hover{color:#f0cb78!important}@media(max-width:720px){.rajac-ds-nav-inner{padding:0 12px}.rajac-ds-home{padding-right:14px}.rajac-ds-nav-item{font-size:13px;padding:0 12px}.rajac-ds-nav-item.rajac-ds-active:after{left:12px;right:12px}}
+/* Safety: hide any old duplicated plugin navigation if it remains in a page. */
+body .rfx-chapter-nav,body nav.rfx-chapter-nav,body .topnav,body nav.topnav,body .rfw-edit-bar,body nav.top{display:none!important;height:0!important;min-height:0!important;max-height:0!important;overflow:hidden!important;visibility:hidden!important}
+</style>
+</head>
+<body>
+<nav aria-label="Главни мени ПИО Рајац" class="rajac-ds-nav"><div class="rajac-ds-nav-inner"><a class="rajac-ds-home" href="https://piorajac.rs/"><span aria-hidden="true" class="rajac-ds-home-mark">⊙</span><span>ПИО Рајац</span></a><a class="rajac-ds-nav-item" href="https://piorajac.rs/biljke/"><span aria-hidden="true" class="rajac-ds-icon">🌿</span><span>БИЉКЕ</span></a><a class="rajac-ds-nav-item rajac-ds-active" href="https://piorajac.rs/ptice/"><span aria-hidden="true" class="rajac-ds-icon">🦉</span><span>ПТИЦЕ</span></a><a class="rajac-ds-nav-item" href="https://piorajac.rs/insekti/"><span aria-hidden="true" class="rajac-ds-icon">🦋</span><span>ИНСЕКТИ</span></a><a class="rajac-ds-nav-item" href="https://piorajac.rs/sisari/"><span aria-hidden="true" class="rajac-ds-icon">🐾</span><span>СИСАРИ</span></a><a class="rajac-ds-nav-item" href="https://piorajac.rs/gljive/"><span aria-hidden="true" class="rajac-ds-icon">🍄</span><span>ГЉИВЕ</span></a><a class="rajac-ds-nav-item rajac-ds-nav-trofo" href="https://piorajac.rs/trofodinamika/"><span aria-hidden="true" class="rajac-ds-icon">🔗</span><span>ТРОФОДИНАМИКА</span></a></div></nav>
+<section class="hero">
+<img alt="Чешљугар" class="hero-img" decoding="async" fetchpriority="high" height="933" onerror="this.onerror=null;this.src='/ptice/assets/ptice2/hero-cesljugar.jpg';" src="/ptice/assets/ptice2/hero-cesljugar.webp" width="1400"/>
+<div class="hero-g1"></div>
+<div class="hero-g2"></div>
+<div class="hero-content">
+<div class="hero-eye">Фауна · ПИО Рајац · Aves</div>
+<h1 class="hero-h1">Птице ПИО Рајац</h1>
+<p class="hero-p">Комплетан каталог евидентираних врста птица на подручју Заштићеног природног добра Рајац — са описима, стаништем, угроженошћу и смерницама за мониторинг.</p>
+<div class="hero-stats">
+<div class="hstat"><span class="hstat-n">72</span><span class="hstat-l">Евид. врсте</span></div>
+<div class="hstat"><span class="hstat-n">3</span><span class="hstat-l">VU угрожене</span></div>
+<div class="hstat"><span class="hstat-n">7</span><span class="hstat-l">Грабљивице</span></div>
+<div class="hstat"><span class="hstat-n">5</span><span class="hstat-l">Детлићи</span></div>
+<div class="hstat"><span class="hstat-n">46</span><span class="hstat-l">Сеобне</span></div>
+</div>
+</div>
+</section>
+<div class="page">
+<section class="toolbar">
+<div class="searchpanel">
+<label class="searchlabel" for="birdSearch">Претрага птица</label>
+<input class="searchinput" id="birdSearch" placeholder="Унеси назив врсте, латински назив или групу врста" type="search"/>
+</div>
+<div class="chipbar" id="chipBar">
+<button class="chip active" data-filter="all" type="button">Све врсте</button>
+<button class="chip" data-filter="vodene" type="button">Водене</button>
+<button class="chip" data-filter="grabljivice" type="button">Грабљивице</button>
+<button class="chip" data-filter="detlici" type="button">Детлићи</button>
+<button class="chip" data-filter="vrane" type="button">Вране</button>
+<button class="chip" data-filter="sove" type="button">Сове</button>
+<button class="chip" data-filter="pevacice" type="button">Певачице</button>
+</div>
+<div aria-label="Сезонски филтер" class="season-panel">
+<p class="season-title">Шта тражити овог месеца</p>
+<div class="seasonbar" id="seasonBar">
+<button class="seasonchip active" data-season="all" type="button">Све сезоне</button>
+<button class="seasonchip" data-season="singing" type="button">Певају сада</button>
+<button class="seasonchip" data-season="nesting" type="button">Гнезде се</button>
+<button class="seasonchip" data-season="migration" type="button">Сеоба / пролаз</button>
+<button class="seasonchip" data-season="resident" type="button">Станарице</button>
+</div>
+<p class="seasonnote" id="seasonNote">Филтер користи месец у ком гледаш страну и сезонске ознаке из картица.</p>
+</div>
+</section>
+<p class="countline" id="countLine">Приказује се почетни избор врста у прегледу архиве.</p>
+<main class="archive">
+<div class="grid" id="bGrid"></div>
+<div class="loadwrap" id="loadWrap">
+<button class="loadbtn" id="loadBtn" type="button">
+<svg fill="none" height="15" stroke="currentColor" stroke-width="2.5" viewbox="0 0 24 24" width="15"><path d="M12 5v14M5 12l7 7 7-7"></path></svg>
+        Учитај још птица
+      </button>
+<p class="loadinfo" id="loadInfo"></p>
+</div>
+</main>
+</div>
+<footer class="rfw-site-footer">
+<div class="rfx-footer-inner">
+<p>© 2026 Туристичка организација општине Љиг · ПИО „Рајац” · Сва права задржана.</p>
+<p><a href="/ptice/assets/ptice2/credits.txt" rel="noopener" target="_blank">Извори фотографија и лиценце</a></p>
+</div>
+</footer>
+<script>
+const birds = [
+  {
+    name: "Велики вранац",
+    sci: "Phalacrocorax carbo",
+    group: "vodene",
+    pills: ["LC", "сеоба", "водени коридори"],
+    blurb: "Крупна рибоједна врста ширег воденог пејзажа. На Рајцу је најреалније очекивати је током пролаза и на већим воденим површинама у околини.",
+    img: "/ptice/assets/ptice2/veliki-vranac.jpg",
+    fallback: "/ptice/assets/ptice2/veliki-vranac.jpg",
+    url: "veliki-vranac1.html"
+  },
+  {
+    name: "Велики детлић",
+    sci: "Dendrocopos major",
+    group: "detlici",
+    pills: ["шуме", "станарица", "детлићи"],
+    blurb: "Најупадљивији детлић Рајца, важан индикатор старих стабала и здравих шумских микростаништа.",
+    img: "/ptice/assets/ptice2/veliki-detlic.jpg",
+    fallback: "/ptice/assets/ptice2/veliki-detlic.jpg",
+    url: "veliki-detlic1.html"
+  },
+  {
+    name: "Сива врана",
+    sci: "Corvus cornix",
+    group: "vrane",
+    pills: ["општа врста", "станарица", "вране"],
+    blurb: "Прилагодљива и интелигентна врста отворених предела, рубова шума и насеља ширег подручја Рајца.",
+    img: "/ptice/assets/ptice2/siva-vrana.jpg",
+    fallback: "/ptice/assets/ptice2/siva-vrana.jpg",
+    url: "siva-vrana1.html"
+  },
+  {
+    name: "Орао крсташ",
+    sci: "Aquila heliaca",
+    group: "grabljivice",
+    pills: ["VU", "висок приоритет", "грабљивице"],
+    blurb: "Једна од најзначајнијих врста за мониторинг и заштиту на ширем простору, са високом конзервационом вредношћу.",
+    img: "/ptice/assets/ptice2/orao-krstas.jpg",
+    fallback: "/ptice/assets/ptice2/orao-krstas.jpg",
+    url: "orao-krstas1.html"
+  },
+  {
+    name: "Гавран",
+    sci: "Corvus corax",
+    group: "vrane",
+    pills: ["станарица", "стене и гребени", "вране"],
+    blurb: "Крупна, интелигентна и веома препознатљива врста која одлично носи дивљи, отворени карактер Рајца.",
+    img: "/ptice/assets/ptice2/gavran.jpg",
+    fallback: "/ptice/assets/ptice2/gavran.jpg",
+    url: "gavran1.html"
+  },
+  {
+    name: "Кукавица",
+    sci: "Cuculus canorus",
+    group: "pevacice",
+    pills: ["сеобна", "оглашавање", "отворена станишта"],
+    blurb: "Врста коју посетиоци често прво уоче по гласу, а тек потом визуелно, током пролећа и раног лета.",
+    img: "/ptice/assets/ptice2/kukavica.jpg",
+    fallback: "/ptice/assets/ptice2/kukavica.jpg",
+    url: "kukavica1.html"
+  },
+  {
+    name: "Сури орао",
+    sci: "Aquila chrysaetos",
+    group: "grabljivice",
+    pills: ["грабљивице", "ретка", "карст"],
+    blurb: "Импресивна грабљивица која симболизује простране, мирне и добро очуване пределе.",
+    img: "/ptice/assets/ptice2/suri-orao.jpg",
+    fallback: "/ptice/assets/ptice2/suri-orao.jpg",
+    url: "suri-orao1.html"
+  },
+  {
+    name: "Обична траварка",
+    sci: "Saxicola rubetra",
+    group: "pevacice",
+    pills: ["ливаде", "сеоба", "певачице"],
+    blurb: "Врста отворених пашњака и травнатих површина, одлична за посматрање у мозаичним пределима.",
+    img: "/ptice/assets/ptice2/obicna-travarka.jpg",
+    fallback: "/ptice/assets/ptice2/obicna-travarka.jpg",
+    url: "obicna-travarka1.html"
+  },
+  {
+    name: "Врабац покућар",
+    sci: "Passer domesticus",
+    group: "pevacice",
+    pills: ["насеља", "станарица", "честа врста"],
+    blurb: "Добро позната врста која помаже посетиоцима да лакше уђу у причу о птичјем свету Рајца.",
+    img: "/ptice/assets/ptice2/vrabac.jpg",
+    fallback: "/ptice/assets/ptice2/vrabac.jpg",
+    url: "vrabac1.html"
+  },
+  {
+    name: "Велика сеница",
+    sci: "Parus major",
+    group: "pevacice",
+    pills: ["кућица", "станарица", "певачице"],
+    blurb: "Једна од најпознатијих шумских и насељских птица, добра за едукацију, мониторинг и практичан пример правилно направљене кућице.",
+    img: "/ptice/assets/ptice2/velika-senica.jpg",
+    fallback: "/ptice/assets/ptice2/velika-senica-2.jpg",
+    url: "velika-senica1.html"
+  },
+  {
+    name: "Плава сеница",
+    sci: "Cyanistes caeruleus",
+    group: "pevacice",
+    pills: ["кућица", "листопадне шуме", "певачице"],
+    blurb: "Ситна, живахна и врло препознатљива сеница. Добар пример како мањи улаз на кућици смањује конкуренцију већих врста.",
+    img: "/ptice/assets/ptice2/plava-senica.jpg",
+    fallback: "/ptice/assets/ptice2/plava-senica.jpg",
+    url: "plava-senica1.html"
+  },
+  {
+    name: "Бргљез",
+    sci: "Sitta europaea",
+    group: "pevacice",
+    pills: ["кућица", "стара стабла", "станарица"],
+    blurb: "Снажна шумска певачица која се креће низ стабло главом надоле и често сама сужава улаз дупље блатом.",
+    img: "/ptice/assets/ptice2/brgljez.jpg",
+    fallback: "/ptice/assets/ptice2/brgljez.jpg",
+    url: "brgljez1.html"
+  },
+  {
+    name: "Сива сеница",
+    sci: "Poecile palustris",
+    group: "pevacice",
+    pills: ["кућица", "стара стабла", "певачице"],
+    blurb: "Дискретна шумска сеница старих листопадних станишта, важна за процену дупљи, подраста и шумских рубова.",
+    img: "/ptice/assets/ptice2/siva-senica.jpg",
+    fallback: "/ptice/assets/ptice2/siva-senica-2.jpg",
+    url: "siva-senica1.html"
+  },
+  {
+    name: "Мали детлић",
+    sci: "Dryobates minor",
+    group: "detlici",
+    pills: ["кућица", "стара стабла", "детлићи"],
+    blurb: "Најмањи детлић у овој групи, везан за стара стабла, суве гране и шумске рубове са богатом кором.",
+    img: "/ptice/assets/ptice2/mali-detlic.jpg",
+    fallback: "/ptice/assets/ptice2/mali-detlic.jpg",
+    url: "mali-detlic1.html"
+  },
+  {
+    name: "Шумска сова",
+    sci: "Strix aluco",
+    group: "sove",
+    pills: ["кућица", "ноћна врста", "старе шуме"],
+    blurb: "Ноћна птица старих шума и крупних стабала. Њена кутија није мала кућица за певачице, већ велика гнездилишна кутија.",
+    img: "/ptice/assets/ptice2/sumska-sova.jpg",
+    fallback: "/ptice/assets/ptice2/sumska-sova.jpg",
+    url: "sumska-sova1.html"
+  },
+  {
+    name: "Чавка",
+    sci: "Corvus monedula",
+    group: "vrane",
+    pills: ["кућица", "колонијална", "вране"],
+    blurb: "Друштвена мања врана која користи шупљине старих стабала и објеката; кутије имају смисла само као веће групне кутије.",
+    img: "/ptice/assets/ptice2/cavka.jpg",
+    fallback: "/ptice/assets/ptice2/cavka.jpg",
+    url: "cavka1.html"
+  },
+  {
+    name: "Батокљун",
+    sci: "Coccothraustes coccothraustes",
+    group: "pevacice",
+    pills: ["LC", "станарица", "крошње"],
+    blurb: "Крупна шумска зеба снажног кљуна, везана за крошње, старе воћњаке и рубове листопадних шума.",
+    img: "/ptice/assets/ptice2/coccothraustes-coccothraustes.jpg",
+    fallback: "/ptice/assets/ptice2/coccothraustes-coccothraustes-2.jpg",
+    url: "coccothraustes-coccothraustes1.html"
+  },
+  {
+    name: "Бела плиска",
+    sci: "Motacilla alba",
+    group: "vodene",
+    pills: ["LC", "сеобна", "потоци"],
+    blurb: "Витка црно-бела птица отворених површина и водених рубова, препознатљива по сталном померању репа.",
+    img: "/ptice/assets/ptice2/motacilla-alba.jpg",
+    fallback: "/ptice/assets/ptice2/motacilla-alba-2.jpg",
+    url: "motacilla-alba1.html"
+  },
+  {
+    name: "Белогуза",
+    sci: "Oenanthe oenanthe",
+    group: "pevacice",
+    pills: ["LC", "сеобна", "каменити пашњаци"],
+    blurb: "Мала птица сувих, каменитих отворених станишта, са упадљивом белом шаром на репу и подрепку.",
+    img: "/ptice/assets/ptice2/oenanthe-oenanthe.jpg",
+    fallback: "/ptice/assets/ptice2/oenanthe-oenanthe-2.jpg",
+    url: "oenanthe-oenanthe1.html"
+  },
+  {
+    name: "Велика стрнадица",
+    sci: "Emberiza calandra",
+    group: "pevacice",
+    pills: ["LC", "ливаде", "отворена станишта"],
+    blurb: "Најкрупнија стрнадица отворених ливада и пашњака, позната по металној песми са истакнуте осматрачнице.",
+    img: "/ptice/assets/ptice2/emberiza-calandra.jpg",
+    fallback: "/ptice/assets/ptice2/emberiza-calandra-2.jpg",
+    url: "emberiza-calandra1.html"
+  },
+  {
+    name: "Виноградска стрнадица",
+    sci: "Emberiza hortulana",
+    group: "pevacice",
+    pills: ["LC", "сеобна", "суви мозаици"],
+    blurb: "Сеобна стрнадица топлих и сувих мозаичних предела, важна за праћење ливада, воћњака и жбунастих рубова.",
+    img: "/ptice/assets/ptice2/emberiza-hortulana.jpg",
+    fallback: "/ptice/assets/ptice2/emberiza-hortulana-2.jpg",
+    url: "emberiza-hortulana1.html"
+  }
+,
+  {
+    name: "Кобац",
+    sci: "Accipiter nisus",
+    group: "grabljivice",
+    pills: ["LC", "станарица", "шумски рубови"],
+    blurb: "Спретна шумска грабљивица кратких, заобљених крила и дугог репа, важна за праћење мозаика шума, живица и отворених ловних површина.",
+    img: "/ptice/assets/ptice2/accipiter-nisus.jpg",
+    fallback: "/ptice/assets/ptice2/accipiter-nisus.jpg",
+    url: "accipiter-nisus1.html"
+  },
+  {
+    name: "Обични мишар",
+    sci: "Buteo buteo",
+    group: "grabljivice",
+    pills: ["LC", "станарица", "отворени предели"],
+    blurb: "Најчешћа крупнија дневна грабљивица мозаичних предела, препознатљива по широким крилима, кружном једрењу и осматрању са истакнутих места.",
+    img: "/ptice/assets/ptice2/buteo-buteo.jpg",
+    fallback: "/ptice/assets/ptice2/buteo-buteo.jpg",
+    url: "buteo-buteo1.html"
+  },
+  {
+    name: "Црна рода",
+    sci: "Ciconia nigra",
+    group: "vodene",
+    pills: ["LC", "сеобна", "потоци и шуме"],
+    blurb: "Опрезна и осетљива врста старих шума, потока и мирних долина; добар показатељ очуваних влажних коридора и ниског узнемиравања.",
+    img: "/ptice/assets/ptice2/ciconia-nigra.jpg",
+    fallback: "/ptice/assets/ptice2/ciconia-nigra.jpg",
+    url: "ciconia-nigra1.html"
+  },
+  {
+    name: "Ластавичар",
+    sci: "Falco subbuteo",
+    group: "grabljivice",
+    pills: ["LC", "сеобна", "отворено небо"],
+    blurb: "Брз и елегантан соко отвореног неба, шумских рубова и долина, специјализован за лов инсеката и ситних птица у лету.",
+    img: "/ptice/assets/ptice2/falco-subbuteo.jpg",
+    fallback: "/ptice/assets/ptice2/falco-subbuteo.jpg",
+    url: "falco-subbuteo1.html"
+  },
+  {
+    name: "Сива ветрушка",
+    sci: "Falco vespertinus",
+    group: "grabljivice",
+    pills: ["VU", "сеобна", "отворена станишта"],
+    blurb: "Ситнија сеобна соколица отворених предела, ливада и пољопривредног мозаика; важна врста за бележење прелета и сезонских налаза.",
+    img: "/ptice/assets/ptice2/falco-vespertinus.jpg",
+    fallback: "/ptice/assets/ptice2/falco-vespertinus.jpg",
+    url: "falco-vespertinus1.html"
+  },
+  {
+    name: "Пупавац",
+    sci: "Upupa epops",
+    group: "pevacice",
+    pills: ["LC", "сеобна гнездарица", "отворени мозаици"],
+    blurb: "Препознатљива по еректилној круни и црно-белим пругама на крилима. Гнезди се у дупљама старих стабала и зидинама традиционалних агроекосистема.",
+    img: "/ptice/assets/ptice2/hero-pupavac.jpg",
+    fallback: "/ptice/assets/ptice2/hero-pupavac.jpg",
+    url: "upupa-epops1.html"
+  },
+  {
+    name: "Пчеларица",
+    sci: "Merops apiaster",
+    group: "pevacice",
+    pills: ["LC", "сеобна, заштићена", "песковите обале"],
+    blurb: "Једна од најшаренијих европских птица — мешавина зелене, плаве, жуте и кестењасте боје. На Рајцу пре свега током пролетње и јесење сеобе.",
+    img: "/ptice/assets/ptice2/merops-apiaster.jpg",
+    fallback: "/ptice/assets/ptice2/merops-apiaster.jpg",
+    url: "merops-apiaster1.html"
+  },
+  {
+    name: "Црвендаћ",
+    sci: "Erithacus rubecula",
+    group: "pevacice",
+    pills: ["LC", "станарица", "шумски подраст"],
+    blurb: "Мала, округла птица са наранџастим лицем и грудима. Један од најпрепознатљивијих становника шумског пода Рајца — често први гост уз стазу.",
+    img: "/ptice/assets/ptice2/erithacus-rubecula.jpg",
+    fallback: "/ptice/assets/ptice2/erithacus-rubecula.jpg",
+    url: "erithacus-rubecula1.html"
+  },
+  {
+    name: "Обични кос",
+    sci: "Turdus merula",
+    group: "pevacice",
+    pills: ["LC", "станарица", "шуме и насеља"],
+    blurb: "Једна од најпрепознатљивијих и најбројнијих певачица. Мужјак — потпуно црн са жутим кљуном — пева снажну, флужурну мелодију са врхова стабала.",
+    img: "/ptice/assets/ptice2/turdus-merula.jpg",
+    fallback: "/ptice/assets/ptice2/turdus-merula.jpg",
+    url: "turdus-merula1.html"
+  },
+  {
+    name: "Чешљугар",
+    sci: "Carduelis carduelis",
+    group: "pevacice",
+    pills: ["LC", "делимична сеоба", "ливаде са семенкама"],
+    blurb: "Мала, шарена зеба са црвеном маском и златножутим пругама на крилима. Везан за чичак и чкаљ — индикатор мозаичних агроекосистема.",
+    img: "/ptice/assets/ptice2/carduelis-carduelis.jpg",
+    fallback: "/ptice/assets/ptice2/carduelis-carduelis.jpg",
+    url: "carduelis-carduelis1.html"
+  },
+  {
+    name: "Сврака",
+    sci: "Pica pica",
+    group: "vrane",
+    pills: ["LC", "станарица", "отворени мозаици"],
+    blurb: "Крупна црно-бела врана са дугачким, металним сјајем плавим репом. На Рајцу присутна целе године у мозаичним пределима и око села.",
+    img: "/ptice/assets/ptice2/pica-pica.jpg",
+    fallback: "/ptice/assets/ptice2/pica-pica.jpg",
+    url: "pica-pica1.html"
+  },
+  {
+    name: "Сојка",
+    sci: "Garrulus glandarius",
+    group: "vrane",
+    pills: ["LC", "станарица", "листопадне шуме"],
+    blurb: "Шарена шумска врана — ружичасто-смеђа са плавом „лептировом“ пругом на крилима. Природни обновитељ храстове шуме својим складиштењем жира.",
+    img: "/ptice/assets/ptice2/garrulus-glandarius.jpg",
+    fallback: "/ptice/assets/ptice2/garrulus-glandarius.jpg",
+    url: "garrulus-glandarius1.html"
+  },
+  {
+    name: "Гугутка",
+    sci: "Streptopelia decaocto",
+    group: "pevacice",
+    pills: ["LC", "станарица", "насеља и баште"],
+    blurb: "Светло сиво-беж голуб са црном огрлицом на потиљку. Изразити синантроп — насељава села, паркове и баште Рајца током целе године.",
+    img: "/ptice/assets/ptice2/streptopelia-decaocto.jpg",
+    fallback: "/ptice/assets/ptice2/streptopelia-decaocto.jpg",
+    url: "streptopelia-decaocto1.html"
+  },
+  {
+    name: "Грлица",
+    sci: "Streptopelia turtur",
+    group: "pevacice",
+    pills: ["VU", "сеобна, заштићена", "мозаик ливада"],
+    blurb: "Витка сеобна голубица са „шахорним“ пругама на врату. Глобално угрожена врста — присуство на Рајцу је показатељ очуваних мозаичних предела.",
+    img: "/ptice/assets/ptice2/streptopelia-turtur.jpg",
+    fallback: "/ptice/assets/ptice2/streptopelia-turtur.jpg",
+    url: "streptopelia-turtur1.html"
+  },
+  {
+    name: "Сеоска ласта",
+    sci: "Hirundo rustica",
+    group: "pevacice",
+    pills: ["LC", "сеобна", "села и стаје"],
+    blurb: "Витка ласта са дугачким рачвастим репом и риђим челом. Гнезди се у штала, гаражама и предворјима — симбол сеоског пролећа на Рајцу.",
+    img: "/ptice/assets/ptice2/hirundo-rustica.jpg",
+    fallback: "/ptice/assets/ptice2/hirundo-rustica.jpg",
+    url: "hirundo-rustica1.html"
+  },
+  {
+    name: "Зеба",
+    sci: "Fringilla coelebs",
+    group: "pevacice",
+    pills: ["LC", "станарица", "шуме и баште"],
+    blurb: "Једна од најраспрострањенијих европских певачица. Мужјак — плавосива капа, риђе груди, две беле крилне пруге. Песма са завршницом „чу-вит“ је неоспорна.",
+    img: "/ptice/assets/ptice2/fringilla-coelebs.jpg",
+    fallback: "/ptice/assets/ptice2/fringilla-coelebs.jpg",
+    url: "fringilla-coelebs1.html"
+  },
+  {
+    name: "Чворак",
+    sci: "Sturnus vulgaris",
+    group: "pevacice",
+    pills: ["LC", "станарица", "отворени предели и насеља"],
+    blurb: "Метално зелено-љубичасти певач са белим тачкастим перјем. Изврсни имитатор — у његовој песми се могу чути и звукови мобилних телефона, мјаукање мачке.",
+    img: "/ptice/assets/ptice2/sturnus-vulgaris.jpg",
+    fallback: "/ptice/assets/ptice2/sturnus-vulgaris.jpg",
+    url: "sturnus-vulgaris1.html"
+  },
+  {
+    name: "Вуга",
+    sci: "Oriolus oriolus",
+    group: "pevacice",
+    pills: ["LC", "сеобна", "крошње листопадних шума"],
+    blurb: "Једна од најшаренијих европских птица — мужјак је блиставо златножут са црним крилима. Дискретна врста, чешће чута него виђена. Карактеристични флаутни звиждук.",
+    img: "/ptice/assets/ptice2/oriolus-oriolus-2.jpg",
+    fallback: "/ptice/assets/ptice2/oriolus-oriolus.jpg",
+    url: "oriolus-oriolus1.html"
+  },
+  {
+    name: "Жутовраћка стрнадица",
+    sci: "Emberiza citrinella",
+    group: "pevacice",
+    pills: ["LC", "станарица", "мозаични пашњаци"],
+    blurb: "Жута стрнадица са рђасто-смеђим леђима. Мужјак има упадљиву жуту главу. Песма са завршницом „...сирз“ је један од класичних звукова сеоских предела.",
+    img: "/ptice/assets/ptice2/emberiza-citrinella.jpg",
+    fallback: "/ptice/assets/ptice2/emberiza-citrinella.jpg",
+    url: "emberiza-citrinella1.html"
+  },
+  {
+    name: "Царић",
+    sci: "Troglodytes troglodytes",
+    group: "pevacice",
+    pills: ["LC", "станарица", "густи шумски подраст"],
+    blurb: "Једна од најмањих европских птица — само 9–10 cm. Веома гласна за своју величину, са изузетно снажном песмом. Бројна у густом подрасту шума.",
+    img: "/ptice/assets/ptice2/troglodytes-troglodytes.jpg",
+    fallback: "/ptice/assets/ptice2/troglodytes-troglodytes.jpg",
+    url: "troglodytes-troglodytes1.html"
+  },
+  {
+    name: "Дрозд певач",
+    sci: "Turdus philomelos",
+    group: "pevacice",
+    pills: ["LC", "делимична сеоба", "листопадне шуме"],
+    blurb: "Један од најбољих певача европске авифауне. Мрко-смеђ са белим прсима оквиреним црним мрљама. Песма са понављањем сваке фразе 2–3 пута.",
+    img: "/ptice/assets/ptice2/turdus-philomelos.jpg",
+    fallback: "/ptice/assets/ptice2/turdus-philomelos.jpg",
+    url: "turdus-philomelos1.html"
+  },
+  {
+    name: "Препелица",
+    sci: "Coturnix coturnix",
+    group: "pevacice",
+    pills: ["LC", "сеобна", "ливаде и пашњаци"],
+    blurb: "Најмања птица из породице фазанки — скривена у ливадама, откривена само по тросложном позиву „пиц-парвиц“. Индикатор очуваних традиционалних агроекосистема.",
+    img: "/ptice/assets/ptice2/coturnix-coturnix.jpg",
+    fallback: "/ptice/assets/ptice2/coturnix-coturnix.jpg",
+    url: "coturnix-coturnix.html"
+  },
+  {
+    name: "Фазан",
+    sci: "Phasianus colchicus",
+    group: "pevacice",
+    pills: ["LC", "станарица", "мозаични предели"],
+    blurb: "Крупна птица упадљивог обојења — мужјак са зеленом главом и бронзаним телом. Интродукована врста, широко присутна у ободним пределима Рајца.",
+    img: "/ptice/assets/ptice2/phasianus-colchicus.jpg",
+    fallback: "/ptice/assets/ptice2/phasianus-colchicus.jpg",
+    url: "phasianus-colchicus.html"
+  },
+  {
+    name: "Модроврана",
+    sci: "Coracias garrulus",
+    group: "pevacice",
+    pills: ["LC", "сеобна", "строго заштићена"],
+    blurb: "Незаменљиво упадљива — плаво-зелено перје и контрастни обрасци крила. Строго заштићена гнездарица, Анекс I EU Birds Directive. Индикатор здравих полуотворених станишта.",
+    img: "/ptice/assets/ptice2/coracias-garrulus.jpg",
+    fallback: "/ptice/assets/ptice2/coracias-garrulus.jpg",
+    url: "coracias-garrulus.html"
+  },
+  {
+    name: "Црна жуна",
+    sci: "Dryocopus martius",
+    group: "detlici",
+    pills: ["LC", "станарица", "зреле шуме"],
+    blurb: "Највећи детлић Европе — потпуно crн са упадљивом црвеном капом. Кључна врста за биодиверзитет шумских дупљи. Дубок позив одзвања кроз зреле шуме Рајца.",
+    img: "/ptice/assets/ptice2/dryocopus-martius.jpg",
+    fallback: "/ptice/assets/ptice2/dryocopus-martius.jpg",
+    url: "dryocopus-martius.html"
+  },
+  {
+    name: "Сива жуна",
+    sci: "Picus canus",
+    group: "detlici",
+    pills: ["LC", "станарица", "стare листопадне шуме"],
+    blurb: "Дискретни детлић зелено-сивог перја са тихим опадајућим позивом. Индикатор старих шума богатих мртвим дрветом и мравима. Чешће чута него виђена.",
+    img: "/ptice/assets/ptice2/picus-canus.jpg",
+    fallback: "/ptice/assets/ptice2/picus-canus.jpg",
+    url: "picus-canus.html"
+  },
+  {
+    name: "Градска ласта",
+    sci: "Delichon urbicum",
+    group: "pevacice",
+    pills: ["LC", "сеобна гнездарица", "нова страна"],
+    blurb: "Мала ласта са белом тртичном мрљом и кратким рачвастим репом; лови инсекте у лету и гради блатна гнезда под стрехама.",
+    img: "/ptice/assets/ptice2/delichon-urbicum-1.jpg",
+    fallback: "/ptice/assets/ptice2/delichon-urbicum-2.jpg",
+    url: "delichon-urbicum.html"
+  },
+  {
+    name: "Дрозд имелаш",
+    sci: "Turdus viscivorus",
+    group: "pevacice",
+    pills: ["LC", "станарица и делимична селица", "нова страна"],
+    blurb: "Најкрупнији дрозд, светле доње стране са крупним пегама; важан за рубове шума, стара стабла, имелу и плодоносеће жбунове.",
+    img: "/ptice/assets/ptice2/turdus-viscivorus-1.jpg",
+    fallback: "/ptice/assets/ptice2/turdus-viscivorus-2.jpg",
+    url: "turdus-viscivorus.html"
+  },
+  {
+    name: "Дугорепа сеница",
+    sci: "Aegithalos caudatus",
+    group: "pevacice",
+    pills: ["LC", "станарица", "нова страна"],
+    blurb: "Ситна птица са врло дугачким репом; креће се у породичним јатима кроз жбуње, живице и младе рубне шуме.",
+    img: "/ptice/assets/ptice2/aegithalos-caudatus-1.jpg",
+    fallback: "/ptice/assets/ptice2/aegithalos-caudatus-2.jpg",
+    url: "aegithalos-caudatus.html"
+  },
+  {
+    name: "Жутарица",
+    sci: "Serinus serinus",
+    group: "pevacice",
+    pills: ["LC", "станарица/делимична селица", "нова страна"],
+    blurb: "Ситна зеба жутих тонова и брзе звецкаве песме; користи семенске рубове, воћњаке и дрвореде.",
+    img: "/ptice/assets/ptice2/serinus-serinus-2.jpg",
+    fallback: "/ptice/assets/ptice2/serinus-serinus-3.jpg",
+    url: "serinus-serinus.html"
+  },
+  {
+    name: "Звиждак",
+    sci: "Phylloscopus trochilus",
+    group: "pevacice",
+    pills: ["LC", "сеобна гнездарица и пролазница", "нова страна"],
+    blurb: "Ситна зеленкаста певачица која се најпоузданије препознаје по мекој силазној песми.",
+    img: "/ptice/assets/ptice2/phylloscopus-trochilus-1.jpg",
+    fallback: "/ptice/assets/ptice2/phylloscopus-trochilus-2.jpg",
+    url: "phylloscopus-trochilus.html"
+  },
+  {
+    name: "Зелена жуна",
+    sci: "Picus viridis",
+    group: "detlici",
+    pills: ["LC", "станарица", "нова страна"],
+    blurb: "Крупан зелени детлић са црвеном капом и смехоликим гласом; често се храни мравима на земљи.",
+    img: "/ptice/assets/ptice2/picus-viridis-1.jpg",
+    fallback: "/ptice/assets/ptice2/picus-viridis-2.jpg",
+    url: "picus-viridis.html"
+  },
+  {
+    name: "Зеленгарка",
+    sci: "Chloris chloris",
+    group: "pevacice",
+    pills: ["LC", "станарица/делимична селица", "нова страна"],
+    blurb: "Здепаста зелена зеба са жутим пољима на крилима и репу; везана за живице и семенске рубове.",
+    img: "/ptice/assets/ptice2/chloris-chloris-2.jpg",
+    fallback: "/ptice/assets/ptice2/chloris-chloris-3.jpg",
+    url: "chloris-chloris.html"
+  },
+  {
+    name: "Мала мухарица",
+    sci: "Ficedula parva",
+    group: "pevacice",
+    pills: ["LC", "сеобна гнездарица/пролазница", "нова страна"],
+    blurb: "Ситна шумска мухарица; мужјак има наранџасто грло, а врста тражи мирне старе шуме са полудупљама.",
+    img: "/ptice/assets/ptice2/ficedula-parva-2.jpg",
+    fallback: "/ptice/assets/ptice2/ficedula-parva-3.jpg",
+    url: "ficedula-parva.html"
+  },
+  {
+    name: "Обична грмуша",
+    sci: "Sylvia communis",
+    group: "pevacice",
+    pills: ["LC", "сеобна гнездарица", "нова страна"],
+    blurb: "Типична птица жбунастих ливада и живица, са брзом гребуцавом песмом и кратким певачким летом.",
+    img: "/ptice/assets/ptice2/sylvia-communis-1.jpg",
+    fallback: "/ptice/assets/ptice2/sylvia-communis-2.jpg",
+    url: "sylvia-communis.html"
+  },
+  {
+    name: "Обична црвенперка",
+    sci: "Phoenicurus phoenicurus",
+    group: "pevacice",
+    pills: ["LC", "сеобна гнездарица", "нова страна"],
+    blurb: "Елегантна дупљашица са наранџастим репом који често трепери; воли старе воћњаке и светле шуме.",
+    img: "/ptice/assets/ptice2/phoenicurus-phoenicurus-1.jpg",
+    fallback: "/ptice/assets/ptice2/phoenicurus-phoenicurus-2.jpg",
+    url: "phoenicurus-phoenicurus.html"
+  }
+  ,{
+    name: "Шумска шева",
+    sci: "Lullula arborea",
+    group: "pevacice",
+    pills: ["LC", "ливаде", "нова страна"],
+    blurb: "Тиха, али важна врста сувих пашњака и светлих шумских рубова; у пролеће се најлакше открива по мелодичној песми у лету.",
+    img: "/ptice/assets/ptice2/lullula-arborea-3.jpg",
+    fallback: "/ptice/assets/ptice2/lullula-arborea-2.jpg",
+    url: "lullula-arborea.html"
+  },
+  {
+    name: "Пољска шева",
+    sci: "Alauda arvensis",
+    group: "pevacice",
+    pills: ["LC", "отворена станишта", "нова страна"],
+    blurb: "Певачица отворених ливада и пашњака, препознатљива по дугој песми високо изнад терена.",
+    img: "/ptice/assets/ptice2/alauda-arvensis-1.jpg",
+    fallback: "/ptice/assets/ptice2/alauda-arvensis-2.jpg",
+    url: "alauda-arvensis.html"
+  },
+  {
+    name: "Сива плиска",
+    sci: "Motacilla cinerea",
+    group: "pevacice",
+    pills: ["LC", "водени токови", "нова страна"],
+    blurb: "Елегантна врста чистих потока и извора; добар показатељ очуваних водених микростаништа.",
+    img: "/ptice/assets/ptice2/motacilla-cinerea-1.jpg",
+    fallback: "/ptice/assets/ptice2/motacilla-cinerea-2.jpg",
+    url: "motacilla-cinerea.html"
+  },
+  {
+    name: "Шумска трептељка",
+    sci: "Anthus trivialis",
+    group: "pevacice",
+    pills: ["LC", "рубови шума", "нова страна"],
+    blurb: "Врста шумских рубова и прогала, најлакше се бележи по певачком лету са врха стабла.",
+    img: "/ptice/assets/ptice2/anthus-trivialis-1.jpg",
+    fallback: "/ptice/assets/ptice2/anthus-trivialis-2.jpg",
+    url: "anthus-trivialis.html"
+  },
+  {
+    name: "Црноглава грмуша",
+    sci: "Sylvia atricapilla",
+    group: "pevacice",
+    pills: ["LC", "жбуње", "нова страна"],
+    blurb: "Честа шумска певачица густог жбуња и воћњака, са богатом флаутастом песмом.",
+    img: "/ptice/assets/ptice2/sylvia-atricapilla-1.jpg",
+    fallback: "/ptice/assets/ptice2/sylvia-atricapilla-2.jpg",
+    url: "sylvia-atricapilla.html"
+  },
+  {
+    name: "Обични звиждак",
+    sci: "Phylloscopus collybita",
+    group: "pevacice",
+    pills: ["LC", "шуме", "нова страна"],
+    blurb: "Ситна певачица шумских рубова, најлакше препознатљива по упорном ритмичном певању.",
+    img: "/ptice/assets/ptice2/phylloscopus-collybita-1.jpg",
+    fallback: "/ptice/assets/ptice2/phylloscopus-collybita-2.jpg",
+    url: "phylloscopus-collybita.html"
+  },
+  {
+    name: "Сива мухарица",
+    sci: "Muscicapa striata",
+    group: "pevacice",
+    pills: ["LC", "воћњаци", "нова страна"],
+    blurb: "Дискретна мухарица старих воћњака и рубова, препознатљива по кратким ловним излетима са исте осматрачнице.",
+    img: "/ptice/assets/ptice2/muscicapa-striata-1.jpg",
+    fallback: "/ptice/assets/ptice2/muscicapa-striata-2.jpg",
+    url: "muscicapa-striata.html"
+  },
+  {
+    name: "Црноврата мухарица",
+    sci: "Ficedula hypoleuca",
+    group: "pevacice",
+    pills: ["LC", "дупље", "нова страна"],
+    blurb: "Мала дупљашица и мухарица старих стабала, важна за праћење зрелих листопадних шума.",
+    img: "/ptice/assets/ptice2/ficedula-hypoleuca-1.jpg",
+    fallback: "/ptice/assets/ptice2/ficedula-hypoleuca-2.jpg",
+    url: "ficedula-hypoleuca.html"
+  },
+  {
+    name: "Црна црвенперка",
+    sci: "Phoenicurus ochruros",
+    group: "pevacice",
+    pills: ["LC", "каменита места", "нова страна"],
+    blurb: "Препознатљива по тамном телу и црвенкастом репу који стално трепери; воли каменита и насељска станишта.",
+    img: "/ptice/assets/ptice2/phoenicurus-ochruros-1.jpg",
+    fallback: "/ptice/assets/ptice2/phoenicurus-ochruros-2.jpg",
+    url: "phoenicurus-ochruros.html"
+  },
+  {
+    name: "Црноглава траварка",
+    sci: "Saxicola rubicola",
+    group: "pevacice",
+    pills: ["LC", "ливаде", "нова страна"],
+    blurb: "Упадљива мала певачица жбунастих ливада, често на врху жбуна или ограде као осматрачници.",
+    img: "/ptice/assets/ptice2/saxicola-rubicola-1.jpg",
+    fallback: "/ptice/assets/ptice2/saxicola-rubicola-2.jpg",
+    url: "saxicola-rubicola.html"
+  },
+  {
+    name: "Руси сврачак",
+    sci: "Lanius collurio",
+    group: "pevacice",
+    pills: ["LC", "сеобна гнездарица", "нова страна"],
+    blurb: "Карактеристична птица отворених мозаика; мужјак има сиву главу, црну маску и риђа леђа, а често осматра са врха жбуна.",
+    img: "/ptice/assets/ptice2/lanius-collurio.jpg",
+    fallback: "/ptice/assets/ptice2/lanius-collurio.jpg",
+    url: "lanius-collurio.html"
+  },
+  {
+    name: "Вијоглав",
+    sci: "Jynx torquilla",
+    group: "detlici",
+    pills: ["LC", "сеобна гнездарица", "нова страна"],
+    blurb: "Необичан сродник детлића са камуфлажним шарама; најчешће се открива по понављаном пролећном зову.",
+    img: "/ptice/assets/ptice2/jynx-torquilla.jpg",
+    fallback: "/ptice/assets/ptice2/jynx-torquilla.jpg",
+    url: "jynx-torquilla.html"
+  },
+  {
+    name: "Краткопрсти пузaвац",
+    sci: "Certhia brachydactyla",
+    group: "pevacice",
+    pills: ["LC", "станарица", "нова страна"],
+    blurb: "Ситна смеђа птица која спирално пузи уз кору стабла, тражећи инсекте у пукотинама коре.",
+    img: "/ptice/assets/ptice2/certhia-brachydactyla.jpg",
+    fallback: "/ptice/assets/ptice2/certhia-brachydactyla.jpg",
+    url: "certhia-brachydactyla.html"
+  },
+  {
+    name: "Краљић",
+    sci: "Regulus regulus",
+    group: "pevacice",
+    pills: ["LC", "станарица/зимска гошћа", "нова страна"],
+    blurb: "Једна од најмањих европских птица; креће се немирно кроз четинаре и препознаје се по жутој пруги на темену.",
+    img: "/ptice/assets/ptice2/regulus-regulus.jpg",
+    fallback: "/ptice/assets/ptice2/regulus-regulus.jpg",
+    url: "regulus-regulus.html"
+  },
+  {
+    name: "Сиви попић",
+    sci: "Prunella modularis",
+    group: "pevacice",
+    pills: ["LC", "станарица/делимична селица", "нова страна"],
+    blurb: "Дискретна сивосмеђа птица жбуња; често се креће ниско и тихо, а у пролеће пева са истакнуте гранчице.",
+    img: "/ptice/assets/ptice2/prunella-modularis.jpg",
+    fallback: "/ptice/assets/ptice2/prunella-modularis.jpg",
+    url: "prunella-modularis.html"
+  }
+];
+
+const grid = document.getElementById("bGrid");
+const loadWrap = document.getElementById("loadWrap");
+const loadBtn = document.getElementById("loadBtn");
+const loadInfo = document.getElementById("loadInfo");
+const countLine = document.getElementById("countLine");
+const searchInput = document.getElementById("birdSearch");
+const chips = Array.from(document.querySelectorAll(".chip"));
+const seasonChips = Array.from(document.querySelectorAll(".seasonchip"));
+const seasonNote = document.getElementById("seasonNote");
+
+let currentFilter = "all";
+let currentSeason = "all";
+let currentSearch = "";
+let visibleCount = 6;
+const groupLabels = {
+  vodene: "ВОДЕНЕ",
+  grabljivice: "ГРАБЉИВИЦЕ",
+  detlici: "ДЕТЛИЋИ",
+  vrane: "ВРАНЕ",
+  sove: "СОВЕ",
+  pevacice: "ПЕВАЧИЦЕ"
+};
+
+function birdText(bird) {
+  return [bird.name, bird.sci, bird.group, bird.blurb, ...(bird.pills || [])].join(" ").toLowerCase();
+}
+
+function isSpringSongMonth(month) {
+  return month >= 2 && month <= 6;
+}
+
+function isNestingMonth(month) {
+  return month >= 3 && month <= 7;
+}
+
+function matchesSeason(bird) {
+  if (currentSeason === "all") return true;
+  const text = birdText(bird);
+  const month = new Date().getMonth();
+  if (currentSeason === "resident") return text.includes("станарица");
+  if (currentSeason === "migration") return text.includes("сеоб") || text.includes("пролаз");
+  if (currentSeason === "nesting") return isNestingMonth(month) && (text.includes("гнезд") || text.includes("станарица") || text.includes("сеоб"));
+  if (currentSeason === "singing") return isSpringSongMonth(month) && (bird.group === "pevacice" || bird.group === "detlici" || bird.group === "sove" || text.includes("кукавица"));
+  return true;
+}
+
+function updateSeasonNote(itemsCount) {
+  if (!seasonNote) return;
+  const labels = {
+    all: "Приказују се све сезонске групе. Изабери један сезонски филтер за брз теренски избор.",
+    singing: "Пролећни избор: врсте које се у овом делу године најлакше откривају по песми или оглашавању.",
+    nesting: "Гнездеће врсте: посматрати са дистанце, без приласка дупљама, гнездима и колонијама.",
+    migration: "Сеоба и пролаз: врсте које су означене као сеобне, пролазнице или сезонски покретне.",
+    resident: "Станарице: врсте које се могу пратити током целе године и добро служе за редован мониторинг."
+  };
+  seasonNote.textContent = `${labels[currentSeason] || labels.all} Тренутно у избору: ${itemsCount} врста.`;
+}
+
+function filteredBirds() {
+  return birds.filter((bird) => {
+    const byFilter = currentFilter === "all" || bird.group === currentFilter;
+    const q = currentSearch.trim().toLowerCase();
+    const bySearch = !q || birdText(bird).includes(q);
+    return byFilter && matchesSeason(bird) && bySearch;
+  });
+}
+
+function cardTemplate(bird, index) {
+  const pills = bird.pills.map((pill) => `<span class="bird-card-pill">${pill}</span>`).join("");
+  const badge = groupLabels[bird.group] || bird.group;
+  const eager = index < 6;
+  const loadAttrs = eager ? 'loading="eager" fetchpriority="high" decoding="async"' : 'loading="lazy" decoding="async"';
+  return `
+    <article class="bird-card">
+      <div class="bird-card-media">
+        <img src="${bird.img}" alt="${bird.name}" ${loadAttrs} onerror="if(this.dataset.tried){this.onerror=null;}else{this.dataset.tried=1;this.src='${bird.fallback||bird.img}';}">
+        <span class="bird-card-badge">${badge}</span>
+      </div>
+      <div class="bird-card-body">
+        <h2 class="bird-card-title">${bird.name}</h2>
+        <p class="bird-card-sci">${bird.sci}</p>
+        <p class="bird-card-copy">${bird.blurb}</p>
+        <div class="bird-card-meta">${pills}</div>
+        <a class="bird-card-link" href="${bird.url}">отвори страницу →</a>
+      </div>
+    </article>
+  `;
+}
+
+function renderGrid() {
+  const items = filteredBirds();
+  const shown = items.slice(0, visibleCount);
+  grid.innerHTML = shown.map(cardTemplate).join("");
+  updateSeasonNote(items.length);
+
+  countLine.textContent = items.length
+    ? `Приказано ${shown.length} од ${items.length} врста у овом прегледу архиве.`
+    : "Нема резултата за задату претрагу или филтер.";
+
+  if (shown.length >= items.length || items.length === 0) {
+    loadWrap.style.display = "none";
+  } else {
+    loadWrap.style.display = "flex";
+    loadInfo.textContent = `Преостало још ${items.length - shown.length} врста за приказ.`;
+  }
+}
+
+loadBtn.addEventListener("click", () => {
+  visibleCount += 6;
+  renderGrid();
+});
+
+searchInput.addEventListener("input", (event) => {
+  currentSearch = event.target.value;
+  visibleCount = 6;
+  renderGrid();
+});
+
+chips.forEach((chip) => {
+  chip.addEventListener("click", () => {
+    chips.forEach((item) => item.classList.remove("active"));
+    chip.classList.add("active");
+    currentFilter = chip.dataset.filter;
+    visibleCount = 6;
+    renderGrid();
+  });
+});
+
+seasonChips.forEach((chip) => {
+  chip.addEventListener("click", () => {
+    seasonChips.forEach((item) => item.classList.remove("active"));
+    chip.classList.add("active");
+    currentSeason = chip.dataset.season || "all";
+    visibleCount = 6;
+    renderGrid();
+  });
+});
+
+renderGrid();
+</script>
+
+<!-- SITE_EDITOR_ADMIN_BAR_START -->
+<script src="/admin-site-editor.php?admin_bar_js=1" defer></script>
+<!-- SITE_EDITOR_ADMIN_BAR_END -->
+</body>
+</html>

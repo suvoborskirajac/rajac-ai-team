@@ -1,0 +1,131 @@
+<!DOCTYPE html><html lang="sr-Cyrl"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"><title>Акустички мониторинг птица | ПИО Рајац</title><meta name="description" content="Биоакустички мониторинг птица и слепих мишева на ПИО „Рајац" —="" тренутни="" рад="" са="" merlin="" bird="" id="" и="" план="" за="" аутоматски="" 24="" 7="" систем="" birdnet-go,="" wildtronics="" микрофоном="" ултразвучним="" модулом."=""><style id="rajac-smart-menu-model-v3">
+/* Samo preoblikovan postojeci SMART meni: ne dira slike, grafike, tekstove i ostale elemente stranice. */
+body.rajac-static-output header[role="banner"],
+body.rajac-static-output .ct-header,
+body.rajac-static-output [data-id="header"],
+body.rajac-static-output [data-row="middle"],
+body.rajac-static-output .site-header,
+body.rajac-static-output #site-header,
+body.rajac-static-output .ct-main-bar-module-container{display:none!important}
+body.rajac-static-output{padding-top:0!important}
+.rajac-smart-menu{width:100%;background:#06160d;color:#fff;border-bottom:1px solid rgba(255,255,255,.08);font-family:Outfit,Inter,system-ui,-apple-system,"Segoe UI",sans-serif;box-sizing:border-box;letter-spacing:0;}
+.rajac-smart-menu *{box-sizing:border-box;}
+.rajac-smart-menu--top{position:sticky;top:0;z-index:1000;}
+.rajac-smart-menu__inner{width:min(1180px,calc(100% - 40px));min-height:64px;margin:0 auto;display:flex;align-items:center;justify-content:flex-start;gap:0;}
+.rajac-smart-menu__brand{display:flex;align-items:center;align-self:stretch;padding:0 30px 0 0;margin:0 28px 0 0;border-right:1px solid rgba(255,255,255,.08);color:#fff!important;text-decoration:none!important;font-weight:700;font-size:17px;line-height:1;white-space:nowrap;}
+.rajac-smart-menu__brand:hover{color:#fff!important;}
+.rajac-smart-menu__links{display:flex;align-items:center;gap:clamp(24px,2.6vw,36px);min-width:0;}
+.rajac-smart-menu__link{position:relative;display:flex;align-items:center;min-height:64px;color:rgba(255,255,255,.82)!important;text-decoration:none!important;text-transform:uppercase;font-size:12px;font-weight:700;line-height:1;letter-spacing:.14em;white-space:nowrap;transition:color .18s ease;}
+.rajac-smart-menu__link::after{content:"";position:absolute;left:0;right:0;bottom:0;height:3px;background:transparent;border-radius:3px 3px 0 0;transition:background .18s ease;}
+.rajac-smart-menu__link:hover{color:#fff!important;}
+.rajac-smart-menu__link.is-active{color:#e9db55!important;}
+.rajac-smart-menu__link.is-active::after{background:#e1ce30;}
+@media(max-width:900px){.rajac-smart-menu__inner{width:100%;padding:0 16px;overflow-x:auto;justify-content:flex-start;-webkit-overflow-scrolling:touch;scrollbar-width:thin;}.rajac-smart-menu__brand{font-size:15px;padding-right:18px;margin-right:18px;}.rajac-smart-menu__links{gap:20px;}.rajac-smart-menu__link{font-size:10.5px;letter-spacing:.11em;}}
+@media(max-width:560px){.rajac-smart-menu__inner{min-height:58px;}.rajac-smart-menu__brand{font-size:14px;min-height:58px;}.rajac-smart-menu__link{min-height:58px;font-size:10px;}.rajac-smart-menu__links{gap:16px;}}
+</style><style id="rajac-fast-static-patch">
+/* FAST STATIC PATCH: uklonjeni su zavisni CSS/JS zahtevi iz browser-save _files foldera; kasnije sekcije renderuju se tek kada su blizu ekrana. */
+.rprog-section{content-visibility:auto;contain-intrinsic-size:1px 900px;}
+.rprog-section:first-of-type{content-visibility:visible;contain-intrinsic-size:auto;}
+.rprog img{max-width:100%;height:auto;}
+.rprog-chart-svg{display:block;width:100%;height:220px;}
+@media(max-width:640px){.rprog-chart-svg{height:180px;}}
+</style></head><body class="rajac-static-output"><nav class="rajac-smart-menu rajac-smart-menu--top" aria-label="Навигација SMART страница"><div class="rajac-smart-menu__inner"><a class="rajac-smart-menu__brand" href="https://piorajac.rs/">ПИО „Рајац”</a><div class="rajac-smart-menu__links"><a class="rajac-smart-menu__link" href="https://piorajac.rs/meteo-stanica/">Метео</a><a class="rajac-smart-menu__link" href="https://piorajac.rs/sateliti-vegetacija/">Сателити</a><a class="rajac-smart-menu__link is-active" href="https://piorajac.rs/monitoring-zvucnim-snimacima/">Акустика</a><a class="rajac-smart-menu__link" href="https://piorajac.rs/monitoring-svetlosne-zagadjenosti/">Тамно небо</a><a class="rajac-smart-menu__link" href="https://piorajac.rs/gis-analitika/">ГИС</a></div></div></nav><style id="rajac-program-pages-v36">
+:root{--rprog-bg:#ffffff;--rprog-paper:#fbfaf6;--rprog-ink:#22251f;--rprog-muted:#51564d;--rprog-line:rgba(34,37,31,.11);--rprog-serif:"Cormorant Garamond","Crimson Pro",Georgia,serif;--rprog-sans:Outfit,Inter,system-ui,-apple-system,"Segoe UI",sans-serif;--rprog-mono:"DM Mono","SFMono-Regular",Consolas,monospace;}
+html,body{margin:0;padding:0;background:var(--rprog-bg);color:var(--rprog-ink);}
+body.rajac-static-output{overflow-x:hidden;background:var(--rprog-bg)!important;}
+.rprog{font-family:var(--rprog-sans);background:var(--rprog-bg);color:var(--rprog-ink);overflow:hidden;}
+.rprog *{box-sizing:border-box;}
+.rprog a{color:inherit;text-decoration:none;}
+.rprog-wrap{width:min(1180px,calc(100% - 40px));margin:0 auto;}
+.rprog-kicker{display:inline-flex;align-items:center;gap:10px;margin:0 0 13px;color:#8fd09e;font-family:var(--rprog-mono);font-size:.66rem;line-height:1;letter-spacing:.20em;text-transform:uppercase;font-weight:300;}
+.rprog-kicker::before{content:"";width:32px;height:1px;background:currentColor;opacity:.78;}
+.rprog-section{padding:clamp(44px,5.2vw,76px) 0;background:var(--rprog-bg);}
+.rprog-intro{display:grid;grid-template-columns:minmax(0,.95fr) minmax(0,1.1fr);gap:clamp(34px,5vw,76px);align-items:start;}
+.rprog-copy p{margin:0 0 18px;font-size:1.02rem;line-height:1.84;color:var(--rprog-muted);font-weight:300;}
+.rprog-copy p:last-child{margin-bottom:0;}
+.rprog-section-kicker{display:flex;align-items:center;gap:10px;margin:0 0 15px;color:#4b845d;font-family:var(--rprog-mono);font-size:.72rem;letter-spacing:.20em;text-transform:uppercase;font-weight:400;}
+.rprog-section-kicker::before{content:"";width:24px;height:1px;background:currentColor;}
+.rprog-section-title{margin:0 0 18px;color:var(--rprog-ink);font-family:var(--rprog-serif);font-weight:300;line-height:1;letter-spacing:-.035em;font-size:clamp(2rem,3.2vw,3.4rem);}
+.rprog-feature-list{display:grid;gap:14px;}
+.rprog-feature{display:grid;grid-template-columns:62px 1fr;gap:16px;align-items:center;padding:18px 20px;border-radius:22px;background:#f5f1e8;border:1px solid var(--rprog-line);box-shadow:0 16px 44px rgba(31,35,28,.055);}
+.rprog-feature-ico{width:48px;height:48px;border-radius:50%;display:grid;place-items:center;background:rgba(75,132,93,.10);color:#3d7752;font-size:1.26rem;}
+.rprog-feature strong{display:block;margin:0 0 5px;color:var(--rprog-ink);font-weight:500;font-size:.98rem;}
+.rprog-feature p{margin:0;color:var(--rprog-muted);font-weight:300;font-size:.96rem;line-height:1.58;}
+.rprog-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;margin-top:30px;}
+.rprog-grid-3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin-top:30px;}
+.rprog-card{padding:26px 28px;border-radius:24px;background:#f5f1e8;border:1px solid var(--rprog-line);box-shadow:0 18px 50px rgba(31,35,28,.055);}
+.rprog-card h3{margin:0 0 10px;color:var(--rprog-ink);font-family:var(--rprog-serif);font-weight:300;font-size:clamp(1.38rem,1.9vw,1.9rem);line-height:1.05;letter-spacing:-.025em;}
+.rprog-card p{margin:0;color:var(--rprog-muted);font-weight:300;font-size:.98rem;line-height:1.72;}
+.rprog-mini{padding:18px 20px;border-radius:18px;background:#f5f1e8;border:1px solid var(--rprog-line);box-shadow:0 12px 32px rgba(31,35,28,.045);}
+.rprog-mini .idx{display:block;margin-bottom:6px;color:#4b845d;font-family:var(--rprog-mono);font-size:.66rem;letter-spacing:.18em;font-weight:400;text-transform:uppercase;}
+.rprog-mini h4{margin:0 0 6px;color:var(--rprog-ink);font-family:var(--rprog-serif);font-weight:300;font-size:1.15rem;line-height:1.1;letter-spacing:-.02em;}
+.rprog-mini p{margin:0;color:var(--rprog-muted);font-weight:300;font-size:.86rem;line-height:1.5;}
+.rprog-band{margin-top:clamp(34px,5vw,62px);padding:30px 34px;border-radius:28px;background:#213325;color:#fff;display:grid;grid-template-columns:1fr auto;gap:22px;align-items:center;}
+.rprog-band h2{margin:0 0 8px;color:#fff;font-family:var(--rprog-serif);font-size:clamp(1.8rem,3vw,3rem);font-weight:300;line-height:1;letter-spacing:-.035em;}
+.rprog-band p{margin:0;color:rgba(255,255,255,.86);font-weight:300;font-size:1rem;line-height:1.72;max-width:760px;}
+.rprog-band-link{display:inline-flex;align-items:center;gap:8px;margin-top:18px;padding:12px 22px;border-radius:999px;background:rgba(143,208,158,.18);border:1px solid rgba(143,208,158,.32);color:#8fd09e;font-family:var(--rprog-mono);font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;text-decoration:none;transition:background .2s;}
+.rprog-band-link:hover{background:rgba(143,208,158,.28);}
+.rprog-badge{display:inline-flex;align-items:center;padding:11px 15px;border-radius:999px;border:1px solid rgba(255,255,255,.16);color:rgba(255,255,255,.84);font-family:var(--rprog-mono);font-size:.68rem;letter-spacing:.15em;text-transform:uppercase;white-space:nowrap;}
+/* page title block */
+.rprog-page-head{padding:clamp(36px,5vw,64px) 0 0;border-bottom:1px solid var(--rprog-line);margin-bottom:0;}
+.rprog-page-head-inner{display:flex;flex-direction:column;gap:10px;padding-bottom:clamp(28px,4vw,48px);}
+.rprog-page-head h1{margin:0;font-family:var(--rprog-serif);font-weight:300;font-size:clamp(2.4rem,4.8vw,5rem);line-height:.96;letter-spacing:-.04em;color:var(--rprog-ink);}
+.rprog-page-head h1 em{font-style:italic;color:#4b845d;}
+.rprog-page-head-lead{max-width:720px;margin:8px 0 0;color:var(--rprog-muted);font-size:clamp(.96rem,1.1vw,1.08rem);line-height:1.72;font-weight:300;}
+/* status badges */
+.rprog-status{display:inline-flex;align-items:center;gap:5px;padding:4px 12px;border-radius:999px;font-family:var(--rprog-mono);font-size:.62rem;letter-spacing:.16em;text-transform:uppercase;font-weight:400;}
+.rprog-status--live{background:rgba(75,132,93,.12);color:#3a7050;border:1px solid rgba(75,132,93,.22);}
+.rprog-status--live::before{content:"●";font-size:.5rem;margin-right:1px;}
+.rprog-status--plan{background:rgba(160,120,30,.10);color:#7a5c18;border:1px solid rgba(160,120,30,.22);}
+.rprog-status--plan::before{content:"◌";font-size:.6rem;margin-right:1px;}
+.rprog-plan-block{border:1px dashed rgba(160,120,30,.28);border-radius:24px;padding:28px;background:rgba(255,248,230,.45);margin-top:6px;}
+.rprog-plan-block .rprog-section-kicker{color:#7a5c18;}
+.rprog-plan-block .rprog-section-kicker::before{background:#7a5c18;}
+/* shared bottom nav */
+body.rajac-static-output header[role="banner"],
+body.rajac-static-output .ct-header,
+body.rajac-static-output [data-id="header"],
+body.rajac-static-output [data-row="middle"],
+body.rajac-static-output .site-header,
+body.rajac-static-output #site-header,
+body.rajac-static-output .ct-main-bar-module-container{display:none!important}
+body.rajac-static-output{padding-top:0!important}
+.rprog-footnav{background:rgba(10,18,12,.97);border-top:1px solid rgba(255,255,255,.07);padding:11px clamp(16px,4vw,40px);}
+.rprog-footnav-inner{width:min(1180px,calc(100% - 40px));margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;}
+.rprog-footnav-home{color:rgba(255,255,255,.62);font-size:12px;font-weight:500;text-decoration:none;letter-spacing:.01em;white-space:nowrap;font-family:var(--rprog-sans);}
+.rprog-footnav-home:hover{color:#fff;}
+.rprog-footnav-links{display:flex;flex-wrap:wrap;gap:3px;}
+.rprog-footnav-links a{font-size:10px;font-weight:400;color:rgba(255,255,255,.42);letter-spacing:.13em;text-transform:uppercase;text-decoration:none;padding:6px 13px;border-radius:999px;border:1px solid transparent;font-family:var(--rprog-sans);transition:all .18s;}
+.rprog-footnav-links a:hover{color:rgba(255,255,255,.78);border-color:rgba(255,255,255,.10);}
+.rprog-footnav-links a.active{color:#8fd09e;border-color:rgba(143,208,158,.22);background:rgba(143,208,158,.06);}
+.rprog-minihead{position:sticky;top:0;z-index:200;background:rgba(10,18,12,.94);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);border-bottom:1px solid rgba(255,255,255,.06);padding:7px clamp(16px,4vw,40px);font-family:var(--rprog-sans);}
+.rprog-minihead-inner{width:min(1180px,calc(100% - 40px));margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;}
+.rprog-minihead-home{color:rgba(255,255,255,.52);font-size:11px;font-weight:500;text-decoration:none;letter-spacing:.02em;white-space:nowrap;transition:color .2s;}
+.rprog-minihead-home:hover{color:rgba(255,255,255,.82);}
+.rprog-minihead-links{display:flex;flex-wrap:wrap;gap:2px;}
+.rprog-minihead-links a{font-size:9.5px;font-weight:400;color:rgba(255,255,255,.38);letter-spacing:.13em;text-transform:uppercase;text-decoration:none;padding:5px 11px;border-radius:999px;border:1px solid transparent;font-family:var(--rprog-sans);transition:all .18s;}
+.rprog-minihead-links a:hover{color:rgba(255,255,255,.72);border-color:rgba(255,255,255,.09);}
+.rprog-minihead-links a.active{color:#8fd09e;border-color:rgba(143,208,158,.20);background:rgba(143,208,158,.05);}
+@media(max-width:980px){.rprog-intro,.rprog-grid{grid-template-columns:1fr;}.rprog-grid-3{grid-template-columns:repeat(2,1fr);}.rprog-band{grid-template-columns:1fr;}}
+@media(max-width:640px){.rprog-card{padding:22px;}.rprog-grid-3{grid-template-columns:1fr;}.rprog-band{padding:24px;}.rprog-plan-block{padding:20px 16px;}.rprog-footnav-inner{flex-direction:column;align-items:flex-start;gap:8px;}.rprog-footnav-links{gap:2px;}}
+</style><main class="rprog rprog--smart"><section class="rprog-section rprog-page-head"><div class="rprog-wrap rprog-page-head-inner"><div class="rprog-kicker">SMART биомониторинг · AI / BirdNET</div><h1>Акустички мониторинг <em>птица</em></h1><p class="rprog-page-head-lead">Биоакустичка идентификација врста птица и слепих мишева на ПИО „Рајац" — тренутни рад са мобилном апликацијом и план за аутоматски 24/7 систем.</p></div></section><section class="rprog-section"><div class="rprog-wrap rprog-intro"><div class="rprog-copy"><div class="rprog-section-kicker">Зашто акустика?</div><h2 class="rprog-section-title">Звук носи највише информација.</h2><p>Звук носи далеко више информација о биодиверзитету него слика — нарочито у условима густе вегетације или током ноћи, када визуелне методе не дају резултате. Птица која се не види, огласи се. Слепи миш чији је лет неухватљив за камеру, одаје присуство ултразвучним сигналом.</p><p>Класичан теренски биоакустички мониторинг подразумева повремене изласке истраживача са опремом. То значи да se изостављају ноћне птице, мигранти у преласку, ретка оглашавања у неповољним условима — све оно што се дешава у тренуцима када нема истраживача на терену.</p><p>Аутоматски 24/7 систем решава овај проблем потпуно: бележи сваки оглас, у свако доба и у свим временским условима, без ручне интервенције. Подаци се уписују у централну базу и у реалном времену корелишу са метеоролошким мерењима са АМС станице.</p></div><div class="rprog-feature-list"><article class="rprog-feature"><div class="rprog-feature-ico">🎙</div><div><strong>360° акустична слика</strong><p>Омнидирекциони микрофон бележи звучне таласе из свих праваца — потпуна акустична слика екосистема без мртвих углова.</p></div></article><article class="rprog-feature"><div class="rprog-feature-ico">🦇</div><div><strong>Ултразвук слепих мишева</strong><p>Специјализовани ултразвучни микрофон детектује комуникације слепих мишева (изнад 20 kHz) — недоступне стандардним системима.</p></div></article><article class="rprog-feature"><div class="rprog-feature-ico">◐</div><div><strong>Корелација са метеором</strong><p>Свака детекција добија временску ознаку и везује се за тренутне вредности са метеоролошке станице — температуру, притисак, влажност, ветар.</p></div></article></div></div><div class="rprog-wrap"><div class="rprog-section-kicker" style="margin-top:48px;">Тренутно у раду</div><h2 class="rprog-section-title">Merlin Bird ID — активни мониторинг</h2><div style="display:flex;align-items:center;gap:10px;margin-bottom:20px;"><span class="rprog-status rprog-status--live">Активно</span></div><div class="rprog-grid"><div><p style="color:var(--rprog-muted);font-weight:300;font-size:1rem;line-height:1.84;margin:0 0 15px;">Merlin Bird ID је бесплатна мобилна апликација Cornell Lab of Ornithology, доступна за iOS и Android. Користи исти BirdNET AI алгоритам за акустичну идентификацију птица — достатак је да корисник покрене „Sound ID" функцију и усмери телефон према вегетацији.</p><p style="color:var(--rprog-muted);font-weight:300;font-size:1rem;line-height:1.84;margin:0 0 15px;">На Рајцу се Merlin тренутно користи при теренским обиласцима управљача, истраживача и едукованих посетилаца. Апликација препознаје врсте у реалном времену, показује спектрограм и омогућава бележење опажања директно у eBird базу података — светски стандард за орнитолошке записе.</p><p style="color:var(--rprog-muted);font-weight:300;font-size:1rem;line-height:1.84;margin:0;">Ово је прва и тренутна фаза акустичке компоненте SMART система. Ограничење је јасно: Merlin захтева физичко присуство корисника на терену. Све ноћне врсте, мигранти у преласку и оглашавања у неповољним временским условима остају незабележени — управо то решава аутоматски систем у реализацији.</p></div><div class="rprog-feature-list"><article class="rprog-feature"><div class="rprog-feature-ico">📱</div><div><strong>Sound ID у реалном времену</strong><p>Препознаје птице по звуку уз живи приказ спектрограма — коришћен при свим теренским активностима на Рајцу.</p></div></article><article class="rprog-feature"><div class="rprog-feature-ico">🗺</div><div><strong>eBird интеграција</strong><p>Опажања се директно шаљу у Cornell eBird базу — прегледни записи о присуству врста по датумима и локацијама.</p></div></article><article class="rprog-feature"><div class="rprog-feature-ico">📚</div><div><strong>Едукативни алат</strong><p>Погодан за рад са посетиоцима, ученицима и студентима — омогућава интерактивно учење врста на терену.</p></div></article></div></div><div class="rprog-plan-block" style="margin-top:48px;"><div class="rprog-section-kicker">У реализацији</div><h2 class="rprog-section-title">Аутоматски 24/7 биоакустички систем</h2><div style="display:flex;align-items:center;gap:10px;margin-bottom:6px;"><span class="rprog-status rprog-status--plan">У процесу реализације</span></div><p style="color:var(--rprog-muted);font-weight:300;font-size:.98rem;line-height:1.84;max-width:820px;margin:0 0 28px;">Планирани систем замењује повремено теренско праћење потпуним аутоматским мониторингом — 24 сата дневно, 365 дана у години, без ручне интервенције. Свака детекција се у реалном времену уписује у PostgreSQL базу заједно са метеоролошким параметрима са АМС станице.</p><figure class="rajac-editor-image-block" style="width: 692px; max-width: 100%; margin-left: auto; margin-right: auto;"><img src="https://piorajac.rs/wp-content/uploads/2026/06/ChatGPT-Image-13.-%D1%98%D1%83%D0%BD-2026.-22_50_37.png" alt="Снимач певања птица који набављамо за аутоматски биоакустички мониторинг" loading="lazy" decoding="async" style="width: 100%; max-width: 100%; height: auto; border-radius:16px;"><figcaption style="margin-top:12px;color:var(--rprog-muted);font-size:.85rem;font-weight:300;line-height:1.55;text-align:center;">Снимач певања птица који набављамо — компонента планираног аутоматског 24/7 биоакустичког система.</figcaption></figure><div class="rprog-grid-3"><article class="rprog-mini"><span class="idx">01</span><h4>Wildtronics Amplified Omni</h4><p>Професионални омнидирекциони микрофон за континуирани мониторинг амбијента. Бележи звук из свих праваца (360°), изузетно низак сопствени шум за детекцију удаљених врста. Троструки ветробран до 40 km/h. Повезан XLR конектором.</p></article><article class="rprog-mini"><span class="idx">02</span><h4>Focusrite Scarlett Solo 4G</h4><p>Студијски аудио интерфејс са A/D конверзијом у резолуцији 24-bit / 192 kHz. Уграђени нискошумни preamp подиже сигнал са микрофона на оптималан ниво. Потпуно компатибилан са Raspberry Pi 5 / Linux Audio.</p></article><article class="rprog-mini"><span class="idx">03</span><h4>BirdNET-Go (AI идентификација)</h4><p>Модерна имплементација BirdNET алгоритма у Go програмском језику — компајлирани бинарни фајл или Docker контејнер. Минимална потрошња RAM-а, максимална стабилност. Подржава RTSP аудио улазе и интеграцију са BirdWeather сервисом.</p></article><article class="rprog-mini"><span class="idx">04</span><h4>Dodotronic Ultramic 250K</h4><p>Специјализовани ултразвучни микрофон за детекцију слепих мишева (до 250 kHz). Стандардни аудио интерфејси секу фреквенције изнад 20-40 kHz — овај уређај омогућава потпуни ноћни ултразвучни мониторинг.</p></article><article class="rprog-mini"><span class="idx">05</span><h4>BTO Acoustic Pipeline</h4><p>Аутоматизована класификација европских врста слепих мишева путем British Trust for Ornithology сервиса — најнапреднији алгоритми доступни данас. WAV снимци се шаљу на анализу током ноћи, резултати се враћају у базу.</p></article><article class="rprog-mini"><span class="idx">06</span><h4>Raspberry Pi 5 (16 GB)</h4><p>Централни процесор система. 16 GB RAM омогућава да се цела база звукова учита у меморију за реакцију у делићу секунде. Паралелно обрађује акустику, AI камере и синхронизацију са метео станицом.</p></article></div></div><div class="rprog-section-kicker" style="margin-top:56px;">Научни значај</div><h2 class="rprog-section-title">Шта 24/7 акустика омогућава?</h2><div class="rprog-grid"><article class="rprog-card"><h3>Фенолошки помаци</h3><p>Систем бележи први датум сезонске детекције индикаторских врста (нпр. кукавица <em>Cuculus canorus</em>) и повезује га са температурним трендовима. Израчунава се помак у данима по деценији — директан, мерљив индикатор климатских утицаја на биодиверзитет Рајца.</p></article><article class="rprog-card"><h3>Реакција на временске услове</h3><p>Метеоролошка станица региструје пад притиска и промену ветра пре невремена. BirdNET бележи промену у интензитету и типу оглашавања птица. Израчунава се временски праг реакције — колико минута пре метеоролошког догађаја почиње промена понашања.</p></article><article class="rprog-card"><h3>Период опоравка станишта</h3><p>Камера региструје узнемиравача (предатор, посетилац, возило), а аудио слој бележи пад оглашавања и постепени повратак на базни ниво. Мери се „период опоравка" — основ за управљачке одлуке о зонирању и режиму посета.</p></article><article class="rprog-card"><h3>Ноћне миграције</h3><p>Многе врсте птица мигрирају ноћу и оглашавају се у лету. Аутоматска детекција омогућава бројање мигрантских позива по ноћима, повезивање са метеоролошким условима и праћење интензитета миграција кроз сезоне и године.</p></article></div><div class="rprog-band"><div><h2>SMART биомониторинг Рајца.</h2><p>Акустика је само један модул. Метеоролошка станица, сателитски вегетациони мониторинг, ГИС аналитика и мониторинг таме неба — заједно граде потпуну дигиталну слику Рајца.</p></div><span class="rprog-badge">AI · BirdNET · Merlin</span></div></div></section></main><style id="rajac-unified-hero-1306">
+/* Уједначени hero — исти модел као страница светлосног загађења (szhero) */
+.rprog-page-head{position:relative!important;min-height:520px!important;margin:0!important;padding:0!important;border-bottom:none!important;display:flex!important;align-items:flex-end!important;overflow:hidden!important;isolation:isolate!important;background-image:url("https://commons.wikimedia.org/wiki/Special:FilePath/Forest%20sunrise.jpg?width=1920")!important;background-size:cover!important;background-position:center center!important;background-repeat:no-repeat!important;background-color:#16261c!important;}
+.rprog-page-head::before,.rprog-page-head::after{display:none!important;content:none!important;background:none!important;opacity:0!important;}
+.rprog-page-head .rprog-wrap,.rprog-page-head-inner{position:relative!important;z-index:1!important;}
+.rprog-page-head-inner{padding-top:clamp(96px,12vw,150px)!important;padding-bottom:clamp(50px,7vw,82px)!important;}
+.rprog-page-head-inner .rprog-kicker{display:none!important;}
+.rprog-page-head h1{max-width:900px!important;color:#fff!important;text-shadow:0 2px 8px rgba(0,0,0,.45)!important;}
+.rprog-page-head h1 em{color:#a9e9b5!important;}
+body.rajac-static-output .rprog-page-head .rprog-page-head-lead,.rprog-page-head .rprog-page-head-lead{max-width:790px!important;color:rgba(255,255,255,.96)!important;font-weight:400!important;text-shadow:0 2px 8px rgba(0,0,0,.55)!important;}
+@media(max-width:760px){.rprog-page-head{min-height:430px!important;background-position:center center!important;}.rprog-page-head-inner{padding-top:86px!important;padding-bottom:48px!important;}}
+</style>
+<style id="rajac-band-readable-1306">
+/* Доњи блок: светла позадина, читљив текст (уклоњена тамна подлога) */
+body.rajac-static-output main.rprog .rprog-band{background:#ece8db!important;border:1px solid rgba(188,177,145,.75)!important;color:#11160f!important;}
+body.rajac-static-output main.rprog .rprog-band h2{color:#11160f!important;text-shadow:none!important;}
+body.rajac-static-output main.rprog .rprog-band p{color:#26301e!important;font-weight:500!important;opacity:1!important;text-shadow:none!important;}
+body.rajac-static-output main.rprog .rprog-band a.rprog-band-link{color:#11160f!important;background:#f8f5ec!important;border-color:rgba(75,132,93,.42)!important;}
+body.rajac-static-output main.rprog .rprog-band .rprog-badge{color:#315540!important;background:#f8f5ec!important;border-color:rgba(75,132,93,.35)!important;}
+</style>
+</body></html>

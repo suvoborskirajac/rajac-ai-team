@@ -1,0 +1,130 @@
+<!DOCTYPE html><html lang="sr-RS"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"><title>Сателити и вегетација | ПИО Рајац</title><meta name="description" content="Свакодневни сателитски мониторинг вегетације Рајца — NDVI, FAPAR и EVI индекси из Sentinel-2 и PlanetScope снимака, месечни и годишњи картографски извештаји, ретроспективни архив 2017–."><style id="rajac-smart-menu-model-v3">
+/* Samo preoblikovan postojeci SMART meni: ne dira slike, grafike, tekstove i ostale elemente stranice. */
+body.rajac-static-output header[role="banner"],
+body.rajac-static-output .ct-header,
+body.rajac-static-output [data-id="header"],
+body.rajac-static-output [data-row="middle"],
+body.rajac-static-output .site-header,
+body.rajac-static-output #site-header,
+body.rajac-static-output .ct-main-bar-module-container{display:none!important}
+body.rajac-static-output{padding-top:0!important}
+.rajac-smart-menu{width:100%;background:#06160d;color:#fff;border-bottom:1px solid rgba(255,255,255,.08);font-family:Outfit,Inter,system-ui,-apple-system,"Segoe UI",sans-serif;box-sizing:border-box;letter-spacing:0;}
+.rajac-smart-menu *{box-sizing:border-box;}
+.rajac-smart-menu--top{position:sticky;top:0;z-index:1000;}
+.rajac-smart-menu__inner{width:min(1180px,calc(100% - 40px));min-height:64px;margin:0 auto;display:flex;align-items:center;justify-content:flex-start;gap:0;}
+.rajac-smart-menu__brand{display:flex;align-items:center;align-self:stretch;padding:0 30px 0 0;margin:0 28px 0 0;border-right:1px solid rgba(255,255,255,.08);color:#fff!important;text-decoration:none!important;font-weight:700;font-size:17px;line-height:1;white-space:nowrap;}
+.rajac-smart-menu__brand:hover{color:#fff!important;}
+.rajac-smart-menu__links{display:flex;align-items:center;gap:clamp(24px,2.6vw,36px);min-width:0;}
+.rajac-smart-menu__link{position:relative;display:flex;align-items:center;min-height:64px;color:rgba(255,255,255,.82)!important;text-decoration:none!important;text-transform:uppercase;font-size:12px;font-weight:700;line-height:1;letter-spacing:.14em;white-space:nowrap;transition:color .18s ease;}
+.rajac-smart-menu__link::after{content:"";position:absolute;left:0;right:0;bottom:0;height:3px;background:transparent;border-radius:3px 3px 0 0;transition:background .18s ease;}
+.rajac-smart-menu__link:hover{color:#fff!important;}
+.rajac-smart-menu__link.is-active{color:#e9db55!important;}
+.rajac-smart-menu__link.is-active::after{background:#e1ce30;}
+@media(max-width:900px){.rajac-smart-menu__inner{width:100%;padding:0 16px;overflow-x:auto;justify-content:flex-start;-webkit-overflow-scrolling:touch;scrollbar-width:thin;}.rajac-smart-menu__brand{font-size:15px;padding-right:18px;margin-right:18px;}.rajac-smart-menu__links{gap:20px;}.rajac-smart-menu__link{font-size:10.5px;letter-spacing:.11em;}}
+@media(max-width:560px){.rajac-smart-menu__inner{min-height:58px;}.rajac-smart-menu__brand{font-size:14px;min-height:58px;}.rajac-smart-menu__link{min-height:58px;font-size:10px;}.rajac-smart-menu__links{gap:16px;}}
+</style><style id="rajac-fast-static-patch">
+/* FAST STATIC PATCH: uklonjeni su zavisni CSS/JS zahtevi iz browser-save _files foldera; kasnije sekcije renderuju se tek kada su blizu ekrana. */
+.rprog-section{content-visibility:auto;contain-intrinsic-size:1px 900px;}
+.rprog-section:first-of-type{content-visibility:visible;contain-intrinsic-size:auto;}
+.rprog img{max-width:100%;height:auto;}
+.rprog-chart-svg{display:block;width:100%;height:220px;}
+@media(max-width:640px){.rprog-chart-svg{height:180px;}}
+</style></head><body class="rajac-static-output"><nav class="rajac-smart-menu rajac-smart-menu--top" aria-label="Навигација SMART страница"><div class="rajac-smart-menu__inner"><a class="rajac-smart-menu__brand" href="https://piorajac.rs/">ПИО „Рајац”</a><div class="rajac-smart-menu__links"><a class="rajac-smart-menu__link" href="https://piorajac.rs/meteo-stanica/">Метео</a><a class="rajac-smart-menu__link is-active" href="https://piorajac.rs/sateliti-vegetacija/">Сателити</a><a class="rajac-smart-menu__link" href="https://piorajac.rs/monitoring-zvucnim-snimacima/">Акустика</a><a class="rajac-smart-menu__link" href="https://piorajac.rs/monitoring-svetlosne-zagadjenosti/">Тамно небо</a><a class="rajac-smart-menu__link" href="https://piorajac.rs/gis-analitika/">ГИС</a></div></div></nav><style id="rajac-program-pages-v36">
+:root{--rprog-bg:#ffffff;--rprog-paper:#fbfaf6;--rprog-ink:#22251f;--rprog-muted:#51564d;--rprog-line:rgba(34,37,31,.11);--rprog-serif:"Cormorant Garamond","Crimson Pro",Georgia,serif;--rprog-sans:Outfit,Inter,system-ui,-apple-system,"Segoe UI",sans-serif;--rprog-mono:"DM Mono","SFMono-Regular",Consolas,monospace;}
+html,body{margin:0;padding:0;background:var(--rprog-bg);color:var(--rprog-ink);}
+body.rajac-static-output{overflow-x:hidden;background:var(--rprog-bg)!important;}
+.rprog{font-family:var(--rprog-sans);background:var(--rprog-bg);color:var(--rprog-ink);overflow:hidden;}
+.rprog *{box-sizing:border-box;}
+.rprog a{color:inherit;text-decoration:none;}
+.rprog-wrap{width:min(1180px,calc(100% - 40px));margin:0 auto;}
+.rprog-kicker{display:inline-flex;align-items:center;gap:10px;margin:0 0 13px;color:#8fd09e;font-family:var(--rprog-mono);font-size:.66rem;line-height:1;letter-spacing:.20em;text-transform:uppercase;font-weight:300;}
+.rprog-kicker::before{content:"";width:32px;height:1px;background:currentColor;opacity:.78;}
+.rprog-section{padding:clamp(44px,5.2vw,76px) 0;background:var(--rprog-bg);}
+.rprog-intro{display:grid;grid-template-columns:minmax(0,.95fr) minmax(0,1.1fr);gap:clamp(34px,5vw,76px);align-items:start;}
+.rprog-copy p{margin:0 0 18px;font-size:1.02rem;line-height:1.84;color:var(--rprog-muted);font-weight:300;}
+.rprog-copy p:last-child{margin-bottom:0;}
+.rprog-section-kicker{display:flex;align-items:center;gap:10px;margin:0 0 15px;color:#4b845d;font-family:var(--rprog-mono);font-size:.72rem;letter-spacing:.20em;text-transform:uppercase;font-weight:400;}
+.rprog-section-kicker::before{content:"";width:24px;height:1px;background:currentColor;}
+.rprog-section-title{margin:0 0 18px;color:var(--rprog-ink);font-family:var(--rprog-serif);font-weight:300;line-height:1;letter-spacing:-.035em;font-size:clamp(2rem,3.2vw,3.4rem);}
+.rprog-feature-list{display:grid;gap:14px;}
+.rprog-feature{display:grid;grid-template-columns:62px 1fr;gap:16px;align-items:center;padding:18px 20px;border-radius:22px;background:#f5f1e8;border:1px solid var(--rprog-line);box-shadow:0 16px 44px rgba(31,35,28,.055);}
+.rprog-feature-ico{width:48px;height:48px;border-radius:50%;display:grid;place-items:center;background:rgba(75,132,93,.10);color:#3d7752;font-size:1.26rem;}
+.rprog-feature strong{display:block;margin:0 0 5px;color:var(--rprog-ink);font-weight:500;font-size:.98rem;}
+.rprog-feature p{margin:0;color:var(--rprog-muted);font-weight:300;font-size:.96rem;line-height:1.58;}
+.rprog-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;margin-top:30px;}
+.rprog-grid-3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin-top:30px;}
+.rprog-card{padding:26px 28px;border-radius:24px;background:#f5f1e8;border:1px solid var(--rprog-line);box-shadow:0 18px 50px rgba(31,35,28,.055);}
+.rprog-card h3{margin:0 0 10px;color:var(--rprog-ink);font-family:var(--rprog-serif);font-weight:300;font-size:clamp(1.38rem,1.9vw,1.9rem);line-height:1.05;letter-spacing:-.025em;}
+.rprog-card p{margin:0;color:var(--rprog-muted);font-weight:300;font-size:.98rem;line-height:1.72;}
+.rprog-mini{padding:18px 20px;border-radius:18px;background:#f5f1e8;border:1px solid var(--rprog-line);box-shadow:0 12px 32px rgba(31,35,28,.045);}
+.rprog-mini .idx{display:block;margin-bottom:6px;color:#4b845d;font-family:var(--rprog-mono);font-size:.66rem;letter-spacing:.18em;font-weight:400;text-transform:uppercase;}
+.rprog-mini h4{margin:0 0 6px;color:var(--rprog-ink);font-family:var(--rprog-serif);font-weight:300;font-size:1.15rem;line-height:1.1;letter-spacing:-.02em;}
+.rprog-mini p{margin:0;color:var(--rprog-muted);font-weight:300;font-size:.86rem;line-height:1.5;}
+.rprog-band{margin-top:clamp(34px,5vw,62px);padding:30px 34px;border-radius:28px;background:#213325;color:#fff;display:grid;grid-template-columns:1fr auto;gap:22px;align-items:center;}
+.rprog-band h2{margin:0 0 8px;color:#fff;font-family:var(--rprog-serif);font-size:clamp(1.8rem,3vw,3rem);font-weight:300;line-height:1;letter-spacing:-.035em;}
+.rprog-band p{margin:0;color:rgba(255,255,255,.86);font-weight:300;font-size:1rem;line-height:1.72;max-width:760px;}
+.rprog-band-link{display:inline-flex;align-items:center;gap:8px;margin-top:18px;padding:12px 22px;border-radius:999px;background:rgba(143,208,158,.18);border:1px solid rgba(143,208,158,.32);color:#8fd09e;font-family:var(--rprog-mono);font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;text-decoration:none;transition:background .2s;}
+.rprog-band-link:hover{background:rgba(143,208,158,.28);}
+.rprog-badge{display:inline-flex;align-items:center;padding:11px 15px;border-radius:999px;border:1px solid rgba(255,255,255,.16);color:rgba(255,255,255,.84);font-family:var(--rprog-mono);font-size:.68rem;letter-spacing:.15em;text-transform:uppercase;white-space:nowrap;}
+/* page title block */
+.rprog-page-head{padding:clamp(36px,5vw,64px) 0 0;border-bottom:1px solid var(--rprog-line);margin-bottom:0;}
+.rprog-page-head-inner{display:flex;flex-direction:column;gap:10px;padding-bottom:clamp(28px,4vw,48px);}
+.rprog-page-head h1{margin:0;font-family:var(--rprog-serif);font-weight:300;font-size:clamp(2.4rem,4.8vw,5rem);line-height:.96;letter-spacing:-.04em;color:var(--rprog-ink);}
+.rprog-page-head h1 em{font-style:italic;color:#4b845d;}
+.rprog-page-head-lead{max-width:720px;margin:8px 0 0;color:var(--rprog-muted);font-size:clamp(.96rem,1.1vw,1.08rem);line-height:1.72;font-weight:300;}
+/* mini nav header */
+.rprog-minihead{position:sticky;top:0;z-index:200;background:rgba(10,18,12,.94);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);border-bottom:1px solid rgba(255,255,255,.06);padding:7px clamp(16px,4vw,40px);font-family:var(--rprog-sans);}
+.rprog-minihead-inner{width:min(1180px,calc(100% - 40px));margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;}
+.rprog-minihead-home{color:rgba(255,255,255,.52);font-size:11px;font-weight:500;text-decoration:none;letter-spacing:.02em;white-space:nowrap;transition:color .2s;}
+.rprog-minihead-home:hover{color:rgba(255,255,255,.82);}
+.rprog-minihead-links{display:flex;flex-wrap:wrap;gap:2px;}
+.rprog-minihead-links a{font-size:9.5px;font-weight:400;color:rgba(255,255,255,.38);letter-spacing:.13em;text-transform:uppercase;text-decoration:none;padding:5px 11px;border-radius:999px;border:1px solid transparent;font-family:var(--rprog-sans);transition:all .18s;}
+.rprog-minihead-links a:hover{color:rgba(255,255,255,.72);border-color:rgba(255,255,255,.09);}
+.rprog-minihead-links a.active{color:#8fd09e;border-color:rgba(143,208,158,.20);background:rgba(143,208,158,.05);}
+/* status badges */
+.rprog-status{display:inline-flex;align-items:center;gap:5px;padding:3px 10px;border-radius:999px;font-family:var(--rprog-mono);font-size:.60rem;letter-spacing:.16em;text-transform:uppercase;font-weight:400;margin-bottom:6px;}
+.rprog-status--live{background:rgba(75,132,93,.12);color:#3a7050;border:1px solid rgba(75,132,93,.22);}
+.rprog-status--live::before{content:"●";font-size:.45rem;margin-right:1px;}
+/* satellite index figure */
+.rprog-sat-fig{margin:28px 0 0;border-radius:20px;overflow:hidden;box-shadow:0 16px 44px rgba(31,35,28,.10);border:1px solid var(--rprog-line);}
+.rprog-sat-fig img{width:100%;display:block;max-height:520px;object-fit:cover;background:#d6dfd0;min-height:80px;}
+.rprog-sat-fig figcaption{padding:12px 20px;background:rgba(255,255,255,.72);border-top:1px solid var(--rprog-line);color:var(--rprog-muted);font-size:.85rem;font-weight:300;line-height:1.55;}
+/* responsive */
+body.rajac-static-output header[role="banner"],
+body.rajac-static-output .ct-header,
+body.rajac-static-output [data-id="header"],
+body.rajac-static-output [data-row="middle"],
+body.rajac-static-output .site-header,
+body.rajac-static-output #site-header,
+body.rajac-static-output .ct-main-bar-module-container{display:none!important}
+body.rajac-static-output{padding-top:0!important}
+.rprog-footnav{background:rgba(10,18,12,.97);border-top:1px solid rgba(255,255,255,.07);padding:11px clamp(16px,4vw,40px);}
+.rprog-footnav-inner{width:min(1180px,calc(100% - 40px));margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;}
+.rprog-footnav-home{color:rgba(255,255,255,.62);font-size:12px;font-weight:500;text-decoration:none;letter-spacing:.01em;white-space:nowrap;font-family:var(--rprog-sans);}
+.rprog-footnav-links{display:flex;flex-wrap:wrap;gap:3px;}
+.rprog-footnav-links a{font-size:10px;font-weight:400;color:rgba(255,255,255,.42);letter-spacing:.13em;text-transform:uppercase;text-decoration:none;padding:6px 13px;border-radius:999px;border:1px solid transparent;font-family:var(--rprog-sans);transition:all .18s;}
+.rprog-footnav-links a:hover{color:rgba(255,255,255,.78);border-color:rgba(255,255,255,.10);}
+.rprog-footnav-links a.active{color:#8fd09e;border-color:rgba(143,208,158,.22);background:rgba(143,208,158,.06);}
+@media(max-width:980px){.rprog-intro,.rprog-grid{grid-template-columns:1fr;}.rprog-grid-3{grid-template-columns:repeat(2,1fr);}.rprog-band{grid-template-columns:1fr;}.rprog-minihead-links{gap:1px;}}
+@media(max-width:640px){.rprog-card{padding:22px;}.rprog-grid-3{grid-template-columns:1fr;}.rprog-band{padding:24px;}.rprog-footnav-links a{font-size:9px;padding:5px 10px;}.rprog-minihead-links a{font-size:8.5px;padding:4px 8px;}}
+</style><main class="rprog rprog--smart"><section class="rprog-section rprog-page-head"><div class="rprog-wrap rprog-page-head-inner"><div class="rprog-kicker">SMART биомониторинг · Copernicus / Sentinel-2</div><h1>Сателити и <em>вегетација</em></h1><p class="rprog-page-head-lead">Свакодневни мониторинг здравља шумских и травних екосистема Рајца из свемира — спектрални индекси, сезонска динамика вегетације и вишегодишњи трендови из Sentinel-2 и PlanetScope сателитских снимака.</p></div></section><section class="rprog-section"><div class="rprog-wrap rprog-intro"><div class="rprog-copy"><div class="rprog-section-kicker">Систем</div><h2 class="rprog-section-title">Рајац под оком сателита.</h2><p>Кроз програм Copernicus Европске свемирске агенције (ESA), сателит Sentinel-2 покрива цео Рајац у потпуности сваких 5 дана са просторном резолуцијом од 10 метара и 13 спектралних канала. У комбинацији са комерцијалним PlanetScope сателитима, ефективни ритам свежих снимака скраћује се практично на свакодневни мониторинг — без зависности од облачности или видљивости са земље.</p><p>На свих <strong>53 дефинисана шумска и травна полигона</strong> Рајца аутоматски се израчунавају вегетациони индекси. Алгоритам за обраду обрађује снимке у реалном времену чим постану доступни, а резултати се картографски приказују на месечном и годишњем нивоу — омогућавајући праћење просторних промена у покривачу вегетације са прецизношћу парцеле.</p><p>Ретроспективни архив обухвата период <strong>од 2017. до данас</strong> — непрекидан низ вегетационих мерења за сваки полигон, видљив у реалном времену на LIVE сервису. Тако је могуће пратити не само тренутно стање, већ и дугорочне трендове везане за климатске промене, сушне периоде и динамику шумских екосистема.</p></div><div class="rprog-feature-list"><article class="rprog-feature"><div class="rprog-feature-ico">🛰</div><div><span class="rprog-status rprog-status--live">Активно</span><strong>Sentinel-2 (ESA Copernicus)</strong><p>5-дневни пролаз над Рајцем, 10 m резолуција, 13 спектралних канала — бесплатни Copernicus подаци у реалном времену. Основа за NDVI, FAPAR и EVI индексе.</p></div></article><article class="rprog-feature"><div class="rprog-feature-ico">⚙</div><div><span class="rprog-status rprog-status--live">Активно</span><strong>Аутоматска обрада — 53 полигона</strong><p>Сви вегетациони индекси рачунају се аутоматски за свих 53 дефинисаних полигона Рајца — без ручне интервенције, одмах по преузимању новог снимка.</p></div></article></div></div><div class="rprog-wrap"><div class="rprog-section-kicker" style="margin-top:48px;">Вегетациони индекси</div><h2 class="rprog-section-title">Шта систем мери</h2><div class="rprog-grid-3"><article class="rprog-mini"><span class="idx">NDVI</span><h4>Normalized Difference Vegetation Index</h4><p>Класичан показатељ зелене биомасе — мери апсорпцију хлорофила у близу-инфрацрвеном и црвеном делу спектра. Вредности 0.6–0.9 указују на густу, здраву вегетацију.</p></article><article class="rprog-mini"><span class="idx">FAPAR</span><h4>Fraction of Absorbed PAR</h4><p>Удео апсорбоване фотосинтетски активне радијације — директна мера продуктивности биљака. Користи се у климатским моделима и процени угљеничне секвестрације.</p></article><article class="rprog-mini"><span class="idx">EVI</span><h4>Enhanced Vegetation Index</h4><p>Побољшана верзија NDVI — мање осетљива на атмосферске ефекте и засићење у густим шумским покривачима. Бољи показатељ у периоду максималне листатости.</p></article><article class="rprog-mini"><span class="idx">RE-CHL</span><h4>Red-Edge Chlorophyll Index</h4><p>Садржај хлорофила у лишћу кроз Red-Edge спектрални опсег — рани индикатор стреса биљака пре него što постану видљиве физичке промене на крошњи.</p></article><article class="rprog-mini"><span class="idx">PHENO</span><h4>Сезонска фенологија</h4><p>Праћење фенофаза вегетације: почетак листања, максимум зелене биомасе, жутило, опадање лишћа. Кључно за детекцију помака фенофаза услед климатских промена.</p></article><article class="rprog-mini"><span class="idx">2017–</span><h4>Ретроспективни архив</h4><p>Backfill архив од 2017. до данас — непрекидан низ за свих 53 полигона. Омогућава дугорочни трендинг, детекцију сушних епизода и поређење са климатолошким нормалама.</p></article></div><div class="rprog-section-kicker" style="margin-top:56px;">Месечни снимак</div><h2 class="rprog-section-title">NDVI индекс — Рајац</h2><p style="color:var(--rprog-muted);font-weight:300;font-size:.98rem;margin:0 0 22px;">Картографски приказ нормализованог вегетационог индекса за ПИО „Рајац". Вредности у опсегу 0.6–0.85 потврђују густ и здрав шумски покривач. Детаљни месечни и годишњи картографски извештаји доступни су на LIVE сервису.</p><figure class="rprog-sat-fig"><img src="https://piorajac.rs/wp-content/uploads/2026/05/ndvi.jpg" alt="NDVI индекс — ПИО Рајац, април 2024" decoding="async" loading="lazy"><figcaption>NDVI индекс — ПИО „Рајац", <strong>април 2024.</strong> &nbsp;·&nbsp; Sentinel-2 / PlanetScope</figcaption></figure><div class="rprog-section-kicker" style="margin-top:56px;">Извештавање</div><h2 class="rprog-section-title">Месечни и годишњи извештаји</h2><p style="color:var(--rprog-muted);font-weight:300;font-size:.98rem;margin:0 0 4px;">Резултати мониторинга излазе у два облика: оперативни месечни снимак стања вегетације и годишња синтеза са трендовима и поређењем с претходним периодима.</p><div class="rprog-grid"><article class="rprog-card"><h3>Месечни картографски извештај</h3><p>Сваки месец систем генерише просторни приказ просечних вредности NDVI и FAPAR за свих 53 полигона. Карта показује које зоне напредују, које стагнирају и где постоје знаци стреса вегетације — у просторном контексту Рајца.</p></article><article class="rprog-card"><h3>Годишња синтеза и трендови</h3><p>На годишњем нивоу анализира се сезонска крива сваког полигона, поређење са претходним годинама и одступање од дугорочне климатолошке норме. Детектабилни су ефекти сушних лета, касних мразева и промена у шумском покривачу.</p></article><article class="rprog-card"><h3>Архив 2017–данас</h3><p>Непрекидни временски низ омогућава анализу дугорочних промена здравља шуме на Рајцу. Сваки нови снимак аутоматски улази у архив — без губитка података и без ручне обраде.</p></article><article class="rprog-card"><h3>Биодиверзитетски контекст</h3><p>Вегетациони индекси нису само шумарски показатељи. Стање вегетације директно утиче на станишта птица, инсеката и сисара — корелација са биоакустичким и метеоролошким подацима даје потпунији научни увид у динамику екосистема.</p></article></div><div class="rprog-band"><div><h2>LIVE вегетациони мониторинг.</h2><p>Тренутне вредности NDVI, FAPAR и осталих индекса за свих 53 полигона Рајца, месечне карте и ретроспективни архив од 2017. доступни су на:</p><a class="rprog-band-link" href="https://piorajac.rs/sateliti-vegetacija">piorajac.rs/sateliti-vegetacija &nbsp;→</a></div><span class="rprog-badge">NDVI · S2 / PS</span></div></div></section></main><style id="rajac-unified-hero-1306">
+/* Уједначени hero — исти модел као страница светлосног загађења (szhero) */
+.rprog-page-head{position:relative!important;min-height:520px!important;margin:0!important;padding:0!important;border-bottom:none!important;display:flex!important;align-items:flex-end!important;overflow:hidden!important;isolation:isolate!important;background-image:url("https://commons.wikimedia.org/wiki/Special:FilePath/Aerial%20View%20of%20Forest%20Grove%2C%20Oregon.JPG?width=1920")!important;background-size:cover!important;background-position:center center!important;background-repeat:no-repeat!important;background-color:#16261c!important;}
+.rprog-page-head::before,.rprog-page-head::after{display:none!important;content:none!important;background:none!important;opacity:0!important;}
+.rprog-page-head .rprog-wrap,.rprog-page-head-inner{position:relative!important;z-index:1!important;}
+.rprog-page-head-inner{padding-top:clamp(96px,12vw,150px)!important;padding-bottom:clamp(50px,7vw,82px)!important;}
+.rprog-page-head-inner .rprog-kicker{display:none!important;}
+.rprog-page-head h1{max-width:900px!important;color:#fff!important;text-shadow:0 2px 8px rgba(0,0,0,.45)!important;}
+.rprog-page-head h1 em{color:#a9e9b5!important;}
+body.rajac-static-output .rprog-page-head .rprog-page-head-lead,.rprog-page-head .rprog-page-head-lead{max-width:790px!important;color:rgba(255,255,255,.96)!important;font-weight:400!important;text-shadow:0 2px 8px rgba(0,0,0,.55)!important;}
+@media(max-width:760px){.rprog-page-head{min-height:430px!important;background-position:center center!important;}.rprog-page-head-inner{padding-top:86px!important;padding-bottom:48px!important;}}
+</style>
+<style id="rajac-band-readable-1306">
+/* Доњи блок: светла позадина, читљив текст (уклоњена тамна подлога) */
+body.rajac-static-output main.rprog .rprog-band{background:#ece8db!important;border:1px solid rgba(188,177,145,.75)!important;color:#11160f!important;}
+body.rajac-static-output main.rprog .rprog-band h2{color:#11160f!important;text-shadow:none!important;}
+body.rajac-static-output main.rprog .rprog-band p{color:#26301e!important;font-weight:500!important;opacity:1!important;text-shadow:none!important;}
+body.rajac-static-output main.rprog .rprog-band a.rprog-band-link{color:#11160f!important;background:#f8f5ec!important;border-color:rgba(75,132,93,.42)!important;}
+body.rajac-static-output main.rprog .rprog-band .rprog-badge{color:#315540!important;background:#f8f5ec!important;border-color:rgba(75,132,93,.35)!important;}
+</style>
+</body></html>

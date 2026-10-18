@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="sr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Вегетациони индекси ПИО „Рајац” — Copernicus Sentinel-2</title>
+<meta name="description" content="Брза статичка страница за вегетационе индексе ПИО „Рајац” из Sentinel-2 сателитских снимака.">
+<link rel="canonical" href="https://piorajac.rs/vegetacija-kopernikus/">
+<link rel="preconnect" href="https://raw.githubusercontent.com">
+<link rel="preconnect" href="https://piorajac.rs">
+<link rel="stylesheet" href="/rajac-design/rajac-global.css?v=1.0">
+<link rel="stylesheet" href="/rajac-design/rajac-pages.css?v=1.0">
+<link rel="stylesheet" href="https://piorajac.rs/wp-content/plugins/rajac-vegetation-monitor-static/assets/rajac-vegetation.css?ver=0.2.4">
+<style>
+  html{background:#f5f0e6;}
+  body{margin:0;background:#f5f0e6;color:#172116;}
+  .rveg-page-shell{min-height:100vh;padding:28px 18px 72px;background:
+    radial-gradient(circle at top left, rgba(184,138,59,.10), transparent 32%),
+    linear-gradient(180deg,#f5f0e6 0%,#eee7d8 100%);}
+  .rveg-page-intro{max-width:1180px;margin:0 auto 18px;padding:18px 0;color:#31402f;}
+  .rveg-page-intro a{color:#305e37;text-decoration:none;font-weight:700}
+  .rveg-loading-note{max-width:1180px;margin:0 auto 16px;padding:12px 18px;border:1px solid rgba(54,92,59,.18);border-radius:18px;background:rgba(255,255,255,.50);color:#42523f;font-size:15px;line-height:1.45}
+  .rveg-wrap{margin:0 auto!important;}
+  .rajac-ds-nav{background:#0d1b2a;position:sticky;top:0;z-index:50;border-bottom:1px solid rgba(255,255,255,.08)}
+  .rajac-ds-nav-inner{max-width:1180px;margin:0 auto;min-height:56px;display:flex;align-items:stretch;gap:0;padding:0 18px;overflow-x:auto;scrollbar-width:none}
+  .rajac-ds-home,.rajac-ds-nav-item{display:flex;align-items:center;text-decoration:none!important;white-space:nowrap;font-family:Georgia,"Times New Roman",serif}
+  .rajac-ds-home{gap:9px;padding-right:20px;margin-right:8px;border-right:1px solid rgba(255,255,255,.12);color:#d8b55b!important;font-weight:700}
+  .rajac-ds-nav-item{padding:0 15px;color:rgba(255,255,255,.74)!important;font-size:15px;font-weight:700;letter-spacing:.035em;text-transform:uppercase}
+  .rajac-ds-nav-item:hover{color:#fff!important;background:rgba(255,255,255,.04)}
+  @media(max-width:720px){.rveg-page-shell{padding:14px 10px 48px}.rajac-ds-nav-item{font-size:13px;padding:0 11px}}
+
+  /* FIX 21.05: само повратак на почетну у горњем менију */
+  .rajac-ds-nav-inner.rajac-ds-nav-home-only{justify-content:flex-start;min-height:52px}
+  .rajac-ds-nav-home-only .rajac-ds-home{border-right:0;margin-right:0;padding-right:0;font-size:17px;color:#d8b55b!important}
+  .rajac-ds-nav-home-only .rajac-ds-home:hover{color:#fff6c8!important}
+
+  /* FIX 21.05: таман падајући мени, без беле површине */
+  .rveg-wrap select,
+  .rveg-index,
+  .rveg-period{
+    background:#17291c!important;
+    color:#f4f0d5!important;
+    border:1px solid rgba(216,181,91,.65)!important;
+    box-shadow:0 0 0 3px rgba(216,181,91,.14)!important;
+    color-scheme:dark!important;
+  }
+  .rveg-wrap select option,
+  .rveg-index option,
+  .rveg-period option{
+    background:#102316!important;
+    color:#f4f0d5!important;
+  }
+  .rveg-wrap select option:checked,
+  .rveg-index option:checked,
+  .rveg-period option:checked{
+    background:#365c3b!important;
+    color:#fff6c8!important;
+  }
+  .rveg-wrap select optgroup,
+  .rveg-index optgroup,
+  .rveg-period optgroup{
+    background:#07170d!important;
+    color:#d8b55b!important;
+    font-weight:700!important;
+  }
+  @media(max-width:720px){.rajac-ds-nav-home-only .rajac-ds-home{font-size:15px}}
+</style>
+</head>
+<body>
+
+<nav class="rajac-ds-nav" aria-label="Навигација">
+  <div class="rajac-ds-nav-inner rajac-ds-nav-home-only">
+    <a class="rajac-ds-home" href="/"><span class="rajac-ds-home-mark">◆</span><span>ПИО „Рајац” — почетна</span></a>
+  </div>
+</nav>
+
+<main class="rveg-page-shell">
+  <div class="rveg-loading-note">
+    Страница се отвара као брз статички HTML. Апликација за Sentinel-2 податке покреће се одмах након HTML блока, без WordPress/Elementor оптерећења.
+  </div>
+  <section
+        id="rveg-65da345c-3e8b-4e5a-9f61-44e4dabc687e"
+        class="rveg-wrap"
+        data-base-url="https://raw.githubusercontent.com/suvoborskirajac/rajac-vegetation-data/main/public/results"
+        data-base-url-pio="https://raw.githubusercontent.com/suvoborskirajac/rajac-vegetation-data/main/public/results"
+        data-base-url-forests="https://raw.githubusercontent.com/suvoborskirajac/rajac-vegetation-data/main/public/results-forests"
+        data-boundary-url="https://raw.githubusercontent.com/suvoborskirajac/rajac-vegetation-data/main/public/boundaries/pio-rajac.geojson"
+        data-forests-boundary-url="https://raw.githubusercontent.com/suvoborskirajac/rajac-vegetation-data/main/public/boundaries/pio-rajac-forests-2024-clipped.geojson"
+        data-default-index="ndvi"
+        data-height="620"
+    >
+        <div class="rveg-head">
+            <div class="rveg-eyebrow">COPERNICUS · SENTINEL-2</div>
+            <h2>Вегетациони индекси ПИО „Рајац”</h2>
+            <p>Аутоматска карта вегетационих индекса за ПИО „Рајац” из Sentinel-2 сателитских снимака. Бирајте обухват, индекс и период.</p>
+        </div>
+
+        <div class="rveg-panel">
+            <div class="rveg-toolbar" aria-label="Контроле карте">
+                <div class="rveg-scope" role="tablist" aria-label="Обухват анализе">
+                    <button type="button" class="rveg-scope-btn is-active" data-scope="pio" aria-pressed="true">Цели ПИО <span class="rveg-scope-sub">1.766 ha</span></button>
+                    <button type="button" class="rveg-scope-btn" data-scope="forests" aria-pressed="false">Само шуме <span class="rveg-scope-sub">1.033 ha · 58,5%</span></button>
+                </div>
+                <label class="rveg-select-label">
+                    <span>Индекс</span>
+                    <select class="rveg-index" aria-label="Избор индекса">
+                        <option value="">Учитавање…</option>
+                    </select>
+                </label>
+                <button type="button" class="rveg-btn is-active" data-toggle-boundary="1">Граница ПИО</button>
+                <label class="rveg-select-label rveg-select-period">
+                    <span>Период</span>
+                    <select class="rveg-period" aria-label="Избор периода">
+                        <option value="">Учитавање…</option>
+                    </select>
+                </label>
+            </div>
+
+            <div class="rveg-map-shell" style="--rveg-height: 620px;">
+                <div class="rveg-status" role="status">Учитавање границе и JSON резултата…</div>
+                <svg class="rveg-svg" role="img" aria-label="Карта вегетационих индекса ПИО Рајац" preserveAspectRatio="xMidYMid meet"></svg>
+            </div>
+
+            <div class="rveg-legend" aria-label="Легенда">
+                <div class="rveg-grad-wrap">
+                    <div class="rveg-grad"></div>
+                    <div class="rveg-legend-scale">
+                        <span class="rveg-scale-min">—</span>
+                        <span class="rveg-scale-mid">—</span>
+                        <span class="rveg-scale-max">—</span>
+                    </div>
+                </div>
+                <p class="rveg-index-desc">—</p>
+            </div>
+        </div>
+
+        <div class="rveg-info-grid">
+            <article class="rveg-card">
+                <h3>Статистика периода</h3>
+                <dl class="rveg-stats">
+                    <div><dt>Средња вредност</dt><dd>—</dd></div>
+                    <div><dt>Медијана</dt><dd>—</dd></div>
+                    <div><dt>P10 (доњих 10%)</dt><dd>—</dd></div>
+                    <div><dt>P90 (горњих 10%)</dt><dd>—</dd></div>
+                    <div><dt>Минимум</dt><dd>—</dd></div>
+                    <div><dt>Максимум</dt><dd>—</dd></div>
+                    <div><dt>Број пиксела</dt><dd>—</dd></div>
+                    <div><dt>Број снимака</dt><dd>—</dd></div>
+                </dl>
+            </article>
+        </div>
+
+        <p class="rveg-footnote">Подаци: Copernicus Sentinel-2 SR Harmonized (Google Earth Engine). Изглађени просеци по периоду након маскирања облака и снега. <span class="rveg-version">Rajac Vegetation Monitor Static v0.2.4.</span></p>
+    </section>
+</main>
+<script id="rajac-veg-static-js-extra">
+var RajacVegCfg = {
+  "defaultBaseUrl":"https://raw.githubusercontent.com/suvoborskirajac/rajac-vegetation-data/main/public/results",
+  "localBoundaryUrl":"https://raw.githubusercontent.com/suvoborskirajac/rajac-vegetation-data/main/public/boundaries/pio-rajac.geojson",
+  "localForestsBoundaryUrl":"https://raw.githubusercontent.com/suvoborskirajac/rajac-vegetation-data/main/public/boundaries/pio-rajac-forests-2024-clipped.geojson"
+};
+</script>
+<script id="rajac-veg-static-js" src="https://piorajac.rs/wp-content/plugins/rajac-vegetation-monitor-static/assets/rajac-vegetation.js?ver=0.2.4"></script>
+
+<!-- SITE_EDITOR_ADMIN_BAR_START -->
+<script src="/admin-site-editor.php?admin_bar_js=1" defer></script>
+<!-- SITE_EDITOR_ADMIN_BAR_END -->
+</body>
+</html>

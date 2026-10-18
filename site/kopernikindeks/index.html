@@ -1,0 +1,828 @@
+<!doctype html>
+<html lang="sr-Cyrl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Copernicus NDVI, NDMI и RECI индекси — ПИО „Рајац“</title>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+<style>
+:root{
+  --bg:#081017;--top:#0b121b;--panel:#111c29;--panel2:#152336;--line:#25384d;
+  --text:#edf6ff;--muted:#9bb0c7;--soft:#cbd9e9;--green:#60d878;--blue:#6aa9ff;
+}
+*{box-sizing:border-box}
+html,body{margin:0;background:radial-gradient(circle at 50% -20%,#1b2c41 0,#081017 46%,#05080c 100%);color:var(--text);font-family:system-ui,-apple-system,"Segoe UI",Arial,sans-serif;line-height:1.55}
+button,a{font:inherit}
+a{color:inherit;text-decoration:none}
+button{-webkit-tap-highlight-color:transparent;touch-action:manipulation}
+.top{background:rgba(8,14,22,.96);border-bottom:1px solid rgba(255,255,255,.08);position:sticky;top:0;z-index:1000;backdrop-filter:blur(10px)}
+.wrap{width:min(1180px,calc(100% - 32px));margin:auto}
+.top .wrap{display:flex;justify-content:space-between;align-items:center;gap:14px;padding:8px 0}
+.brand{font-weight:600;color:#eef7ee;letter-spacing:.01em}.brand:before{content:"";display:inline-block;width:9px;height:9px;border-radius:50%;background:#5be27c;margin-right:9px;box-shadow:0 0 16px #5be27c}
+.home{font-size:.9rem;color:#bfd0e4;background:#111c2b;border:1px solid #29425d;border-radius:12px;padding:8px 13px}
+.hero{padding:14px 0 8px}.hero h1{font-size:clamp(1.38rem,2.05vw,1.9rem);font-weight:340;letter-spacing:-.035em;line-height:1.12;margin:0 0 8px;max-width:900px}.lead{font-size:.96rem;color:#d3e1f1;max-width:1120px;margin:0 0 10px}
+.panel{margin:10px auto 28px;background:linear-gradient(180deg,rgba(17,28,41,.98),rgba(8,13,20,.98));border:1px solid #24374d;border-radius:22px;overflow:hidden;box-shadow:0 22px 60px rgba(0,0,0,.24)}
+.toolbar{display:flex;align-items:center;justify-content:space-between;gap:14px;padding:12px 16px;border-bottom:1px solid #24374d;flex-wrap:wrap}
+.buttons,.field-buttons{display:flex;gap:8px;flex-wrap:wrap}
+.idx-btn,.map-btn{border:1px solid #2f4967;background:#132236;color:#e4f0ff;border-radius:12px;padding:10px 14px;font-weight:850;cursor:pointer;min-height:44px}
+.idx-btn.active,.map-btn.active{background:#17341f;border-color:#52c66b;color:#f3fff4;box-shadow:0 0 0 2px rgba(82,198,107,.18) inset}
+.map-btn.danger-active{background:#372020;border-color:#c96767;color:#fff4f4}
+.idx-btn:focus-visible,.map-btn:focus-visible,.home:focus-visible{outline:3px solid #78b6ff;outline-offset:2px}
+.map-btn:disabled{opacity:.46;cursor:not-allowed}
+.status{color:#a9bdd5;font-size:.92rem;text-align:right;max-width:650px}
+.field-controls{padding:12px 16px;border-bottom:1px solid #24374d;background:rgba(7,15,24,.48);display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+.field-controls-block{display:flex;gap:8px;flex-wrap:wrap}
+.field-info{padding:9px 16px;border-bottom:1px solid #24374d;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;color:#bed0e5;font-size:.9rem}
+.field-info strong{color:#edf6ff}
+.gps-ok{color:#91eda6}.gps-error{color:#ffb0b0}
+.map-box{padding:10px 14px 8px}
+.map-holder{position:relative;border:1px solid #21405b;border-radius:18px;background:#07140e;overflow:hidden}
+#fieldMap{width:100%;height:clamp(440px,68vh,780px);background:#07140e}
+.map-message{position:absolute;left:14px;right:14px;top:14px;z-index:600;background:rgba(5,12,18,.92);border:1px solid rgba(255,255,255,.18);border-radius:12px;padding:10px 12px;color:#f3f8ff;font-weight:750;display:none;pointer-events:none}
+.map-message.visible{display:block}
+.leaflet-container{font-family:inherit;background:#07140e;cursor:grab}
+.leaflet-container:active{cursor:grabbing}
+.leaflet-pane.leaflet-overlay-pane img{image-rendering:auto}
+.leaflet-tile-pane .satellite-base-layer{image-rendering:auto;backface-visibility:hidden;transform:translateZ(0)}
+.location-dot{width:18px;height:18px;border-radius:50%;background:#1e8fff;border:3px solid #fff;box-shadow:0 0 0 4px rgba(30,143,255,.26),0 2px 8px rgba(0,0,0,.6)}
+.map-source{padding:0 16px 12px;color:#7f96b0;font-size:.78rem}
+.legend-wrap{padding:12px 16px 14px;border-top:1px solid #24374d}.legend-title{color:#a9c6ec;text-transform:uppercase;font-weight:900;letter-spacing:.12em;font-size:.76rem;margin-bottom:7px}.legend-bar{height:18px;width:100%;border-radius:999px;border:1px solid rgba(255,255,255,.15);box-shadow:inset 0 0 18px rgba(0,0,0,.28)}.legend-labels{display:flex;justify-content:space-between;gap:12px;color:#d5e7fb;font-weight:900;font-size:.86rem;margin-top:6px}.note{border-top:1px solid #24374d;padding:10px 16px 12px;color:#bcd0e7;font-size:.94rem}.note b{color:#e8f5ff}.explain{border-top:1px solid #24374d;padding:12px 16px 14px;background:rgba(7,15,24,.34)}.explain h2{margin:0 0 4px;font-size:1rem;font-weight:720;color:#edf6ff;letter-spacing:-.015em}.explain p{margin:0;color:#c9d9ec;font-size:.94rem;line-height:1.52;max-width:980px}.explain-small{margin:8px 0 0!important;color:#98aec8!important;font-size:.86rem!important}
+[hidden]{display:none!important}
+@media(max-width:760px){
+  .wrap{width:min(100% - 18px,1180px)}
+  .hero h1{font-size:1.55rem}.lead{font-size:.92rem}
+  .top .wrap{align-items:flex-start}.brand{font-size:.9rem}.home{white-space:nowrap;padding:7px 10px;font-size:.8rem}
+  .toolbar,.field-controls{align-items:stretch}.status{text-align:left;width:100%}
+  .buttons,.field-controls-block{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));width:100%}
+  .buttons .idx-btn:nth-child(3){grid-column:span 2}
+  .idx-btn,.map-btn{width:100%;padding:11px 8px;font-size:.9rem}
+  .field-info{display:block}.field-info span{display:block}.field-info span+span{margin-top:4px}
+  .map-box{padding:8px}
+  #fieldMap{height:64vh;min-height:430px;max-height:720px}
+  .legend-labels{font-size:.76rem}
+}
+@media(max-width:420px){
+  .brand{max-width:58%}
+  .buttons,.field-controls-block{grid-template-columns:1fr 1fr}
+  #fieldMap{height:62vh;min-height:410px}
+}
+</style>
+<!-- PIO-SEO-MAX-START -->
+<meta name="description" content="Најновије Copernicus/Sentinel-2 карте и статистике NDVI, NDMI и RECI за праћење вегетације, влаге и промена биљног покривача у ПИО „Рајац“.">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+<link rel="canonical" href="https://piorajac.rs/kopernikindeks/">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="sr_RS">
+<meta property="og:site_name" content="ПИО „Рајац“">
+<meta property="og:title" content="Copernicus NDVI, NDMI и RECI индекси — ПИО „Рајац“">
+<meta property="og:description" content="Најновије Copernicus/Sentinel-2 карте и статистике NDVI, NDMI и RECI за праћење вегетације, влаге и промена биљног покривача у ПИО „Рајац“.">
+<meta property="og:url" content="https://piorajac.rs/kopernikindeks/">
+<meta property="og:image" content="https://piorajac.rs/assets/pio-rajac-og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="ПИО Рајац — заштита природе, мониторинг и наука">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Copernicus NDVI, NDMI и RECI индекси — ПИО „Рајац“">
+<meta name="twitter:description" content="Најновије Copernicus/Sentinel-2 карте и статистике NDVI, NDMI и RECI за праћење вегетације, влаге и промена биљног покривача у ПИО „Рајац“.">
+<meta name="twitter:image" content="https://piorajac.rs/assets/pio-rajac-og.png">
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@graph": [
+        {
+            "@type": "WebPage",
+            "@id": "https://piorajac.rs/kopernikindeks/#webpage",
+            "url": "https://piorajac.rs/kopernikindeks/",
+            "name": "Copernicus NDVI, NDMI и RECI индекси — ПИО „Рајац“",
+            "description": "Сателитски показатељи стања вегетације и влаге у заштићеном подручју.",
+            "inLanguage": "sr-Cyrl",
+            "isPartOf": {
+                "@id": "https://piorajac.rs/#website"
+            },
+            "mainEntity": {
+                "@id": "https://piorajac.rs/kopernikindeks/#dataset"
+            }
+        },
+        {
+            "@type": "Dataset",
+            "@id": "https://piorajac.rs/kopernikindeks/#dataset",
+            "name": "Copernicus индекси за ПИО „Рајац“",
+            "description": "NDVI, NDMI и RECI показатељи изведени из Copernicus/Sentinel-2 сателитских снимака.",
+            "url": "https://piorajac.rs/kopernikindeks/",
+            "inLanguage": "sr-Cyrl",
+            "isAccessibleForFree": true,
+            "spatialCoverage": {
+                "@type": "Place",
+                "@id": "https://piorajac.rs/#place",
+                "name": "Предео изузетних одлика „Рајац“",
+                "url": "https://piorajac.rs/",
+                "geo": {
+                    "@type": "GeoCoordinates",
+                    "latitude": 44.136333,
+                    "longitude": 20.224918
+                }
+            },
+            "variableMeasured": [
+                "NDVI",
+                "NDMI",
+                "RECI"
+            ]
+        }
+    ]
+}
+</script>
+<!-- PIO-SEO-MAX-END -->
+</head>
+<body>
+<header class="top"><div class="wrap"><div class="brand">Сателитски мониторинг вегетације у ПИО „Рајац“</div><a class="home" href="https://piorajac.rs/">ПИО „Рајац” — почетна</a></div></header>
+<main class="wrap">
+  <section class="hero">
+    <h1>Последњи сателитски индекс за ПИО „Рајац”</h1>
+    <p class="lead">Најновија обрађена Copernicus карта за NDVI, NDMI и RECI приказује се преко сателитске подлоге. На терену можете укључити GPS положај, искључити индекс и користити чист сателитски снимак, као и увећавати карту прстима или спољним дугмадима.</p>
+  </section>
+  <section class="panel" aria-label="Последња Copernicus карта">
+    <div class="toolbar">
+      <div class="buttons" aria-label="Избор индекса">
+        <button class="idx-btn active" data-index="NDVI" type="button" aria-pressed="true">NDVI</button>
+        <button class="idx-btn" data-index="NDMI" type="button" aria-pressed="false">NDMI</button>
+        <button class="idx-btn" data-index="RECI" type="button" aria-pressed="false">RECI</button>
+      </div>
+      <div class="status" id="statusText" role="status" aria-live="polite">Учитавање каталога…</div>
+    </div>
+
+    <div class="field-controls" aria-label="Теренске команде ван карте">
+      <div class="field-controls-block">
+        <button class="map-btn active" id="toggleIndexBtn" type="button" aria-pressed="true">🛰 Индекс: укључен</button>
+        <button class="map-btn" id="toggleLocationBtn" type="button" aria-pressed="false">📍 Укључи локацију</button>
+      </div>
+      <div class="field-controls-block">
+        <button class="map-btn" id="zoomInBtn" type="button" aria-label="Увећај карту">＋ Увећај</button>
+        <button class="map-btn" id="zoomOutBtn" type="button" aria-label="Умањи карту">− Умањи</button>
+        <button class="map-btn" id="centerLocationBtn" type="button" disabled>Моја локација</button>
+        <button class="map-btn" id="fitAreaBtn" type="button">Цео ПИО</button>
+      </div>
+    </div>
+
+    <div class="field-info">
+      <span><strong>Снимак:</strong> <span id="dateInfo">учитавање…</span></span>
+      <span id="gpsStatus">GPS је искључен.</span>
+    </div>
+
+    <div class="map-box">
+      <div class="map-holder">
+        <div id="fieldMap" aria-label="Интерактивна сателитска карта ПИО Рајац"></div>
+        <div class="map-message" id="mapMessage"></div>
+      </div>
+    </div>
+    <div class="map-source">Сателитска подлога: Esri World Imagery. Copernicus/Sentinel-2 индекс се приказује као посебан слој преко сателитске карте.</div>
+
+    <div id="indexDetails">
+      <div class="legend-wrap">
+        <div class="legend-title">Легенда <span id="legendName">NDVI</span></div>
+        <div class="legend-bar" id="legendBar"></div>
+        <div class="legend-labels"><span id="legendLow">-1 ниско</span><span id="legendMid">0 прелаз</span><span id="legendHigh">+1 високо</span></div>
+      </div>
+      <div class="note"><b id="noteIndex">NDVI</b>: <span id="noteText">виталност и густина зелене вегетације.</span></div>
+      <div class="explain" aria-label="Објашњење сателитског индекса">
+        <h2 id="explainTitle">NDVI — зелена вегетација</h2>
+        <p id="explainBody">Показује колико је биљни покривач зелен, густ и виталан. Више вредности обично значе активнију и здравију вегетацију.</p>
+        <p class="explain-small">Индекс је оријентациони приказ стања вегетације. За теренску проверу користите GPS положај и сателитску подлогу при већем зуму.</p>
+      </div>
+    </div>
+  </section>
+</main>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script>
+/* PIO Rajac field map — satellite max-zoom visibility fix v20260802-2 */
+(function(){
+  'use strict';
+
+  const SOURCES = [
+    {name:'kopindeksi/indeksi', base:'/kopindeksi/indeksi/', data:'/kopindeksi/indeksi/copernicus_data/', proxy:'/kopindeksi/indeksi/copernicus_proxy.php'},
+    {name:'kopindeksi', base:'/kopindeksi/', data:'/kopindeksi/copernicus_data/', proxy:'/kopindeksi/copernicus_proxy.php'},
+    {name:'root-data', base:'/', data:'/copernicus_data/', proxy:null}
+  ];
+  const DEFAULT_CENTER = [44.136333,20.224918];
+
+  const btns = Array.from(document.querySelectorAll('.idx-btn'));
+  const status = document.getElementById('statusText');
+  const dateInfo = document.getElementById('dateInfo');
+  const gpsStatus = document.getElementById('gpsStatus');
+  const mapMessage = document.getElementById('mapMessage');
+  const toggleIndexBtn = document.getElementById('toggleIndexBtn');
+  const toggleLocationBtn = document.getElementById('toggleLocationBtn');
+  const centerLocationBtn = document.getElementById('centerLocationBtn');
+  const zoomInBtn = document.getElementById('zoomInBtn');
+  const zoomOutBtn = document.getElementById('zoomOutBtn');
+  const fitAreaBtn = document.getElementById('fitAreaBtn');
+  const indexDetails = document.getElementById('indexDetails');
+  const legendName = document.getElementById('legendName');
+  const legendBar = document.getElementById('legendBar');
+  const legendLow = document.getElementById('legendLow');
+  const legendMid = document.getElementById('legendMid');
+  const legendHigh = document.getElementById('legendHigh');
+  const noteIndex = document.getElementById('noteIndex');
+  const noteText = document.getElementById('noteText');
+  const explainTitle = document.getElementById('explainTitle');
+  const explainBody = document.getElementById('explainBody');
+
+  let catalog = null;
+  let activeSource = null;
+  let boundaryGeoJSON = null;
+  let current = 'NDVI';
+  let map = null;
+  let baseLayer = null;
+  let indexOverlay = null;
+  let boundaryLayer = null;
+  let activeBounds = null;
+  let indexVisible = true;
+  let locationWatchId = null;
+  let locationMarker = null;
+  let accuracyCircle = null;
+  let lastLocation = null;
+  let firstLocationFix = true;
+  const bundleCache = {};
+  const imageUrlCache = {};
+
+  const DEFAULT = {
+    NDVI:{desc:'виталност и густина зелене вегетације', explainTitle:'NDVI — зелена вегетација', explainBody:'Показује колико је биљни покривач зелен, густ и виталан. Више вредности обично значе активнију и здравију вегетацију.', legendMin:'-1 ниско', legendMid:'0 прелаз', legendMax:'+1 високо', gradient:'linear-gradient(to right,#2f1b00 0%,#7a4f00 14%,#b86d00 24%,#d8b16f 34%,#f0f0b0 46%,#b7e075 58%,#57c84d 72%,#1f8b24 86%,#005a12 100%)'},
+    NDMI:{desc:'влажност вегетације и водни стрес', explainTitle:'NDMI — влага у вегетацији', explainBody:'Показује колико биљке и станишта задржавају влагу. Корисно је за праћење суше, опоравка после кише и могућег водног стреса.', legendMin:'-1 суво', legendMid:'0 прелаз', legendMax:'+1 влажно', gradient:'linear-gradient(to right,#00108b 0%,#0072ff 18%,#66ddff 30%,#d5ffd5 42%,#00c800 55%,#009600 66%,#ffff00 78%,#ff9600 88%,#ff0000 100%)'},
+    RECI:{desc:'хлорофил и јачина активне вегетације', explainTitle:'RECI — хлорофил', explainBody:'Показује стање хлорофила и физиолошку активност биљака. Помаже да се уоче промене у снази раста пре него што су јасно видљиве на терену.', legendMin:'ниско', legendMid:'средње', legendMax:'високо', gradient:'linear-gradient(to right,#2b0a3d 0%,#4e1d73 16%,#0b5bd3 34%,#09a5ff 50%,#34c759 68%,#c7d93a 84%,#fff275 100%)'}
+  };
+
+  function initMap(){
+    if(!window.L){
+      showMapMessage('Библиотека карте није учитана. Проверите интернет везу и поново отворите страницу.');
+      throw new Error('Leaflet није учитан.');
+    }
+    map = L.map('fieldMap',{
+      zoomControl:false,
+      attributionControl:false,
+      minZoom:9,
+      maxZoom:21,
+      zoomSnap:0.5,
+      zoomDelta:0.5,
+      wheelPxPerZoomLevel:90,
+      scrollWheelZoom:true,
+      touchZoom:true,
+      doubleClickZoom:true,
+      boxZoom:true,
+      keyboard:true,
+      dragging:true,
+      preferCanvas:true
+    }).setView(DEFAULT_CENTER,14);
+
+    /*
+      Esri World Imagery na pojedinim ruralnim lokacijama vraća sivu pločicu
+      „Map data not yet available“ na nivou 19 i višim. Zato se stvarne
+      satelitske pločice preuzimaju najviše sa nivoa 18, a Leaflet ih pri
+      zumu 19–21 uvećava. Tako satelitski snimak ostaje vidljiv i na
+      maksimalnom terenskom uvećanju umesto da nestane.
+    */
+    baseLayer = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}',{
+      minZoom:9,
+      maxZoom:21,
+      maxNativeZoom:18,
+      tileSize:256,
+      noWrap:false,
+      detectRetina:false,
+      updateWhenIdle:false,
+      updateWhenZooming:false,
+      keepBuffer:5,
+      className:'satellite-base-layer'
+    }).addTo(map);
+
+    baseLayer.on('tileerror',function(){
+      setStatus('Сателитска подлога се учитава успорено. Проверите интернет везу.');
+    });
+
+    map.on('zoomend',updateZoomButtons);
+    updateZoomButtons();
+    window.addEventListener('resize',function(){ setTimeout(function(){ map.invalidateSize(false); },80); });
+    window.addEventListener('orientationchange',function(){ setTimeout(function(){ map.invalidateSize(false); },250); });
+  }
+
+  function setStatus(t){ status.textContent = t; }
+  function showMapMessage(t){ mapMessage.textContent=t; mapMessage.classList.add('visible'); }
+  function hideMapMessage(){ mapMessage.classList.remove('visible'); }
+  function uniq(a){ return [...new Set(a)]; }
+  function cleanPath(path){
+    let p = String(path || '').replace(/\\/g,'/').trim();
+    if(!p) return '';
+    const m = p.match(/copernicus_data\/(.+)$/);
+    if(m) p = m[1];
+    p = p.replace(/^https?:\/\/[^/]+\//i,'');
+    p = p.replace(/^\/+/, '').replace(/^\.\//, '').replace(/^\.\.\//, '').replace(/^copernicus_data\//,'');
+    return p;
+  }
+  function displayPath(path){
+    const p = cleanPath(path);
+    const slash = p.lastIndexOf('/');
+    const dir = slash >= 0 ? p.slice(0,slash+1) : '';
+    const file = slash >= 0 ? p.slice(slash+1) : p;
+    const base = file.replace(/\.[^.]+$/,'');
+    return dir + 'display/' + base + '.webp';
+  }
+  function proxyUrl(src,path){ return src.proxy ? src.proxy + '?path=' + encodeURIComponent(cleanPath(path)) : null; }
+  function directUrl(src,path){ return src.data + cleanPath(path); }
+  function addBust(url,key){ return url + (url.includes('?') ? '&' : '?') + 'v=' + encodeURIComponent(key || Date.now()); }
+  async function fetchJson(url){
+    const res = await fetch(addBust(url,Date.now()),{cache:'reload'});
+    if(!res.ok) throw new Error('HTTP ' + res.status + ' · ' + url);
+    return res.json();
+  }
+  async function tryJson(path,sourceList=SOURCES){
+    const errors=[];
+    for(const src of sourceList){
+      const candidates=[directUrl(src,path),proxyUrl(src,path)].filter(Boolean);
+      for(const url of uniq(candidates)){
+        try{return {json:await fetchJson(url),source:src,url};}
+        catch(e){errors.push(e.message||String(e));}
+      }
+    }
+    throw new Error(errors.slice(-4).join(' | '));
+  }
+  function normalizeCatalog(raw){
+    const out={
+      ok:!!raw?.ok,
+      boundary:raw?.boundary||'pio_boundary.geojson',
+      indices_meta:{...DEFAULT,...(raw?.indices_meta||{})},
+      years_by_index:raw?.years_by_index||{},
+      indices:Array.isArray(raw?.indices)&&raw.indices.length?raw.indices:['NDVI','NDMI','RECI']
+    };
+    out.indices=uniq(out.indices.map(x=>String(x).toUpperCase()).filter(Boolean));
+    ['NDVI','NDMI','RECI'].forEach(code=>{
+      if(!out.indices.includes(code)) out.indices.push(code);
+      if(!Array.isArray(out.years_by_index[code])) out.years_by_index[code]=[];
+      out.years_by_index[code]=uniq(out.years_by_index[code].map(Number).filter(Boolean)).sort((a,b)=>b-a);
+    });
+    return out;
+  }
+  function setLegend(idx){
+    const meta=catalog?.indices_meta?.[idx]||DEFAULT[idx]||DEFAULT.NDVI;
+    legendName.textContent=idx;
+    legendBar.style.background=meta.gradient||DEFAULT[idx]?.gradient||DEFAULT.NDVI.gradient;
+    legendLow.textContent=meta.legendMin||'ниско';
+    legendMid.textContent=meta.legendMid||'средње';
+    legendHigh.textContent=meta.legendMax||'високо';
+    noteIndex.textContent=idx;
+    noteText.textContent=(meta.desc||DEFAULT[idx]?.desc||'индекс стања вегетације')+'.';
+    explainTitle.textContent=meta.explainTitle||DEFAULT[idx]?.explainTitle||(idx+' — индекс');
+    explainBody.textContent=meta.explainBody||DEFAULT[idx]?.explainBody||'Овај индекс помаже у праћењу стања вегетације и промена на стаништима.';
+    btns.forEach(b=>{
+      const active=b.dataset.index===idx;
+      b.classList.toggle('active',active);
+      b.setAttribute('aria-pressed',active?'true':'false');
+    });
+  }
+  function formatDate(v){
+    if(!v) return 'последњи доступан снимак';
+    const d=new Date(v);
+    if(Number.isNaN(d.getTime())) return String(v);
+    return d.toLocaleDateString('sr-Cyrl-RS',{day:'2-digit',month:'2-digit',year:'numeric'});
+  }
+  function latestFrame(frames){
+    if(!Array.isArray(frames)||!frames.length) return null;
+    return frames.slice().sort((a,b)=>String(b.date||b.datetime||'').localeCompare(String(a.date||a.datetime||'')))[0];
+  }
+  async function loadBundle(idx){
+    if(bundleCache[idx]) return bundleCache[idx];
+    const years=catalog?.years_by_index?.[idx]||[];
+    const nowYear=new Date().getFullYear();
+    const tryYears=years.length?years:[nowYear,nowYear-1,2026,2025];
+    const sourceOrder=activeSource?[activeSource,...SOURCES.filter(s=>s!==activeSource)]:SOURCES;
+    let lastErr=null;
+    for(const year of uniq(tryYears)){
+      const paths=[idx+'/'+year+'/frames.json'];
+      if(idx==='NDMI') paths.push(year+'/frames.json');
+      for(const p of paths){
+        try{
+          const got=await tryJson(p,sourceOrder);
+          const frame=latestFrame(got.json.frames);
+          if(frame){
+            const bundle=got.json;
+            bundle._source=got.source;
+            bundle._year=year;
+            bundle._latestFrame=frame;
+            bundleCache[idx]=bundle;
+            return bundle;
+          }
+        }catch(e){lastErr=e;}
+      }
+    }
+    throw lastErr||new Error('Нема frames.json за '+idx);
+  }
+  function imageCandidates(src,frame){
+    const raw=frame.url||frame.file||frame.path||frame.local_path||'';
+    const clean=cleanPath(raw);
+    const candidates=[];
+    const display=displayPath(clean);
+    if(raw&&/^https?:\/\//i.test(raw)) candidates.push(raw);
+    if(clean){
+      if(display){
+        candidates.push(directUrl(src,display));
+        const pd=proxyUrl(src,display); if(pd) candidates.push(pd);
+        for(const other of SOURCES){
+          candidates.push(directUrl(other,display));
+          const pod=proxyUrl(other,display); if(pod) candidates.push(pod);
+        }
+      }
+      candidates.push(directUrl(src,clean));
+      const p=proxyUrl(src,clean); if(p) candidates.push(p);
+      for(const other of SOURCES){
+        candidates.push(directUrl(other,clean));
+        const po=proxyUrl(other,clean); if(po) candidates.push(po);
+      }
+    }
+    if(raw&&!/^https?:\/\//i.test(raw)){
+      try{candidates.push(new URL(raw,location.origin+src.base).href);}catch(e){}
+      try{candidates.push(new URL(raw,location.origin+'/kopindeksi/indeksi/').href);}catch(e){}
+      try{candidates.push(new URL(raw,location.origin+'/kopindeksi/').href);}catch(e){}
+    }
+    return uniq(candidates.filter(Boolean));
+  }
+  function findWorkingImage(urls,version){
+    return new Promise((resolve,reject)=>{
+      let i=0;
+      function next(){
+        if(i>=urls.length){reject(new Error('Ниједна адреса слике није прошла.'));return;}
+        const url=addBust(urls[i++],version);
+        const test=new Image();
+        let done=false;
+        const timer=setTimeout(()=>{if(done)return;done=true;test.onload=test.onerror=null;next();},12000);
+        test.onload=()=>{if(done)return;done=true;clearTimeout(timer);resolve(url);};
+        test.onerror=()=>{if(done)return;done=true;clearTimeout(timer);next();};
+        test.src=url;
+      }
+      next();
+    });
+  }
+  function normalizeBbox(value){
+    if(!value) return null;
+    if(Array.isArray(value)){
+      if(value.length>=4&&value.slice(0,4).every(v=>Number.isFinite(Number(v)))){
+        const a=value.slice(0,4).map(Number);
+        return [Math.min(a[0],a[2]),Math.min(a[1],a[3]),Math.max(a[0],a[2]),Math.max(a[1],a[3])];
+      }
+      if(value.length===2&&Array.isArray(value[0])&&Array.isArray(value[1])){
+        const a=value[0].map(Number),b=value[1].map(Number);
+        if(a.length>=2&&b.length>=2&&a.concat(b).every(Number.isFinite)){
+          return [Math.min(a[1],b[1]),Math.min(a[0],b[0]),Math.max(a[1],b[1]),Math.max(a[0],b[0])];
+        }
+      }
+    }
+    if(typeof value==='object'){
+      const west=Number(value.west??value.minLon??value.min_lng??value.xmin??value.minX);
+      const south=Number(value.south??value.minLat??value.min_lat??value.ymin??value.minY);
+      const east=Number(value.east??value.maxLon??value.max_lng??value.xmax??value.maxX);
+      const north=Number(value.north??value.maxLat??value.max_lat??value.ymax??value.maxY);
+      if([west,south,east,north].every(Number.isFinite)) return [Math.min(west,east),Math.min(south,north),Math.max(west,east),Math.max(south,north)];
+    }
+    return null;
+  }
+  function computeGeoJsonBbox(gj){
+    const direct=normalizeBbox(gj?.bbox);
+    if(direct) return direct;
+    let minLon=Infinity,minLat=Infinity,maxLon=-Infinity,maxLat=-Infinity;
+    function walk(v){
+      if(!Array.isArray(v)) return;
+      if(v.length>=2&&Number.isFinite(Number(v[0]))&&Number.isFinite(Number(v[1]))){
+        const lon=Number(v[0]),lat=Number(v[1]);
+        minLon=Math.min(minLon,lon);minLat=Math.min(minLat,lat);maxLon=Math.max(maxLon,lon);maxLat=Math.max(maxLat,lat);return;
+      }
+      v.forEach(walk);
+    }
+    (gj?.features||[]).forEach(f=>walk(f?.geometry?.coordinates));
+    if([minLon,minLat,maxLon,maxLat].every(Number.isFinite)) return [minLon,minLat,maxLon,maxLat];
+    return null;
+  }
+  function getBbox(bundle,frame){
+    const candidates=[frame?.bbox,frame?.bounds,frame?.extent,bundle?.bbox,bundle?.bounds,bundle?.extent,boundaryGeoJSON?.bbox];
+    for(const c of candidates){const b=normalizeBbox(c);if(b)return b;}
+    return computeGeoJsonBbox(boundaryGeoJSON);
+  }
+  function leafletBounds(bbox){
+    if(!bbox) return null;
+    return L.latLngBounds([bbox[1],bbox[0]],[bbox[3],bbox[2]]);
+  }
+  async function loadBoundary(bundle){
+    const src=bundle._source||activeSource||SOURCES[0];
+    const path=bundle.boundary||catalog?.boundary||'pio_boundary.geojson';
+    const sourceOrder=[src,...SOURCES.filter(s=>s!==src)];
+    try{
+      const got=await tryJson(path,sourceOrder);
+      boundaryGeoJSON=got.json;
+      if(boundaryLayer) map.removeLayer(boundaryLayer);
+      boundaryLayer=L.geoJSON(boundaryGeoJSON,{
+        interactive:false,
+        style:{color:'#ffd35e',weight:3,opacity:1,fill:false,lineCap:'round',lineJoin:'round'}
+      }).addTo(map);
+      boundaryLayer.bringToFront();
+    }catch(e){
+      boundaryGeoJSON=null;
+      if(boundaryLayer){map.removeLayer(boundaryLayer);boundaryLayer=null;}
+    }
+  }
+  async function preloadIndex(idx){
+    if(imageUrlCache[idx]) return;
+    try{
+      const bundle=await loadBundle(idx);
+      const frame=bundle._latestFrame;
+      const urls=imageCandidates(bundle._source||activeSource||SOURCES[0],frame);
+      if(!urls.length)return;
+      imageUrlCache[idx]=await findWorkingImage(urls,bundle.updated||frame.date||Date.now());
+    }catch(e){}
+  }
+  function preloadOtherIndices(active){
+    ['NDVI','NDMI','RECI'].filter(x=>x!==active).forEach((idx,n)=>setTimeout(()=>preloadIndex(idx),600+n*900));
+  }
+  function updateIndexButton(){
+    toggleIndexBtn.classList.toggle('active',indexVisible);
+    toggleIndexBtn.classList.toggle('danger-active',!indexVisible);
+    toggleIndexBtn.setAttribute('aria-pressed',indexVisible?'true':'false');
+    toggleIndexBtn.textContent=indexVisible?'🛰 Индекс: укључен':'🛰 Индекс: искључен';
+    indexDetails.hidden=!indexVisible;
+  }
+  function applyIndexVisibility(){
+    if(indexOverlay){
+      if(indexVisible){
+        if(!map.hasLayer(indexOverlay)) indexOverlay.addTo(map);
+        indexOverlay.setOpacity(.72);
+        if(boundaryLayer) boundaryLayer.bringToFront();
+      }else if(map.hasLayer(indexOverlay)){
+        map.removeLayer(indexOverlay);
+      }
+    }
+    updateIndexButton();
+    if(indexVisible){
+      setStatus('Приказан је '+current+' преко сателитске подлоге.');
+    }else{
+      setStatus('Copernicus индекс је искључен — приказана је само сателитска подлога.');
+    }
+  }
+
+  /* PIO_CLIPPED_OVERLAY_V1_START
+     Минимална исправка: постојећи Copernicus raster се приказује само унутар
+     стварне GeoJSON границе ПИО Рајац. Нема промена UI-а, дугмади или текста. */
+  class PioClippedImageOverlay extends L.Layer {
+    constructor(url, bounds, geojson, options){
+      super();
+      this._url = url;
+      this._bounds = L.latLngBounds(bounds);
+      this._geojson = geojson;
+      this.options = Object.assign({opacity:.72,zIndex:320}, options||{});
+      this._img = null;
+      this._canvas = null;
+      this._map = null;
+    }
+    onAdd(map){
+      this._map = map;
+      this._canvas = L.DomUtil.create('canvas','leaflet-image-layer leaflet-zoom-hide');
+      this._canvas.style.position = 'absolute';
+      this._canvas.style.pointerEvents = 'none';
+      this._canvas.style.opacity = String(this.options.opacity);
+      this._canvas.style.zIndex = String(this.options.zIndex);
+      map.getPanes().overlayPane.appendChild(this._canvas);
+
+      this._img = new Image();
+      this._img.decoding = 'async';
+      this._img.onload = () => this._reset();
+      this._img.onerror = () => {};
+      this._img.src = this._url;
+
+      map.on('moveend zoomend resize viewreset', this._reset, this);
+      this._reset();
+      return this;
+    }
+    onRemove(map){
+      map.off('moveend zoomend resize viewreset', this._reset, this);
+      if(this._canvas && this._canvas.parentNode) this._canvas.parentNode.removeChild(this._canvas);
+      this._canvas = null;
+      this._map = null;
+    }
+    setOpacity(value){
+      this.options.opacity = value;
+      if(this._canvas) this._canvas.style.opacity = String(value);
+      return this;
+    }
+    getBounds(){ return this._bounds; }
+
+    _traceGeometry(ctx, geometry, origin){
+      if(!geometry) return;
+      const map = this._map;
+      const ring = (coords) => {
+        if(!Array.isArray(coords) || coords.length < 3) return;
+        coords.forEach((c,i) => {
+          if(!Array.isArray(c) || c.length < 2) return;
+          const p = map.latLngToLayerPoint([Number(c[1]),Number(c[0])]).subtract(origin);
+          if(i===0) ctx.moveTo(p.x,p.y); else ctx.lineTo(p.x,p.y);
+        });
+        ctx.closePath();
+      };
+      if(geometry.type === 'Polygon'){
+        (geometry.coordinates||[]).forEach(ring);
+      } else if(geometry.type === 'MultiPolygon'){
+        (geometry.coordinates||[]).forEach(poly => (poly||[]).forEach(ring));
+      } else if(geometry.type === 'GeometryCollection'){
+        (geometry.geometries||[]).forEach(g => this._traceGeometry(ctx,g,origin));
+      }
+    }
+    _traceBoundary(ctx, origin){
+      const gj = this._geojson;
+      ctx.beginPath();
+      if(!gj) return;
+      if(gj.type === 'FeatureCollection'){
+        (gj.features||[]).forEach(f => this._traceGeometry(ctx,f && f.geometry,origin));
+      } else if(gj.type === 'Feature'){
+        this._traceGeometry(ctx,gj.geometry,origin);
+      } else {
+        this._traceGeometry(ctx,gj,origin);
+      }
+    }
+    _reset(){
+      if(!this._map || !this._canvas) return;
+      const map = this._map;
+      const size = map.getSize();
+      const origin = map.containerPointToLayerPoint([0,0]);
+
+      L.DomUtil.setPosition(this._canvas, origin);
+      const w = Math.max(1,Math.round(size.x));
+      const h = Math.max(1,Math.round(size.y));
+      if(this._canvas.width !== w) this._canvas.width = w;
+      if(this._canvas.height !== h) this._canvas.height = h;
+      this._canvas.style.width = w+'px';
+      this._canvas.style.height = h+'px';
+
+      const ctx = this._canvas.getContext('2d');
+      ctx.clearRect(0,0,w,h);
+      if(!this._img || !this._img.complete || !this._img.naturalWidth) return;
+
+      const nw = map.latLngToLayerPoint(this._bounds.getNorthWest()).subtract(origin);
+      const se = map.latLngToLayerPoint(this._bounds.getSouthEast()).subtract(origin);
+      const iw = se.x - nw.x;
+      const ih = se.y - nw.y;
+      if(!Number.isFinite(iw) || !Number.isFinite(ih) || iw <= 0 || ih <= 0) return;
+
+      ctx.save();
+      this._traceBoundary(ctx, origin);
+      try { ctx.clip('evenodd'); } catch(e) { ctx.clip(); }
+      ctx.imageSmoothingEnabled = true;
+      ctx.drawImage(this._img, nw.x, nw.y, iw, ih);
+      ctx.restore();
+    }
+  }
+
+  async function ensureBoundaryForClip(){
+    if(boundaryGeoJSON) return;
+    const fallback='https://raw.githubusercontent.com/suvoborskirajac/rajac-vegetation-data/main/public/boundaries/pio-rajac.geojson';
+    const res=await fetch(fallback+(fallback.includes('?')?'&':'?')+'v='+Date.now(),{cache:'no-store'});
+    if(!res.ok) throw new Error('Граница ПИО није учитана: HTTP '+res.status);
+    boundaryGeoJSON=await res.json();
+    if(boundaryLayer) map.removeLayer(boundaryLayer);
+    boundaryLayer=L.geoJSON(boundaryGeoJSON,{
+      interactive:false,
+      style:{color:'#ffd35e',weight:3,opacity:1,fill:false,lineCap:'round',lineJoin:'round'}
+    }).addTo(map);
+    boundaryLayer.bringToFront();
+  }
+  /* PIO_CLIPPED_OVERLAY_V1_END */
+  async function showIndex(idx){
+    current=idx;
+    indexVisible=true;
+    setLegend(idx);
+    updateIndexButton();
+    hideMapMessage();
+    setStatus('Учитавање последње '+idx+' карте…');
+    try{
+      const bundle=await loadBundle(idx);
+      const frame=bundle._latestFrame;
+      await loadBoundary(bundle);
+      await ensureBoundaryForClip();
+      const bbox=getBbox(bundle,frame);
+      const bounds=leafletBounds(bbox);
+      if(!bounds||!bounds.isValid()) throw new Error('Нису пронађене географске границе карте.');
+      activeBounds=bounds;
+      const urls=imageCandidates(bundle._source||activeSource||SOURCES[0],frame);
+      if(!urls.length) throw new Error('У frames.json нема URL слике.');
+      let loadedUrl=imageUrlCache[idx]||null;
+      if(!loadedUrl){
+        loadedUrl=await findWorkingImage(urls,bundle.updated||frame.date||Date.now());
+        imageUrlCache[idx]=loadedUrl;
+      }
+      if(indexOverlay) map.removeLayer(indexOverlay);
+      indexOverlay=new PioClippedImageOverlay(loadedUrl,bounds,boundaryGeoJSON,{opacity:.72,zIndex:320});
+      if(indexVisible) indexOverlay.addTo(map);
+      if(boundaryLayer) boundaryLayer.bringToFront();
+      const label=formatDate(frame.date||frame.datetime||frame.label);
+      dateInfo.textContent=label+' · '+idx;
+      setStatus('Приказана је последња доступна '+idx+' карта · '+label+'.');
+      if(!lastLocation) fitArea();
+      preloadOtherIndices(idx);
+    }catch(e){
+      console.error(e);
+      dateInfo.textContent='индекс није учитан';
+      showMapMessage('Copernicus '+idx+' слој тренутно није учитан. Сателитска карта остаје доступна.');
+      setStatus('Индекс није учитан: '+(e.message||e));
+    }
+  }
+  function fitArea(){
+    let bounds=null;
+    if(boundaryLayer&&boundaryLayer.getBounds().isValid()) bounds=boundaryLayer.getBounds();
+    else if(activeBounds&&activeBounds.isValid()) bounds=activeBounds;
+    if(bounds) map.fitBounds(bounds,{padding:[22,22],animate:false,maxZoom:17});
+    else map.setView(DEFAULT_CENTER,14,{animate:false});
+  }
+  function updateZoomButtons(){
+    if(!map)return;
+    zoomInBtn.disabled=map.getZoom()>=map.getMaxZoom();
+    zoomOutBtn.disabled=map.getZoom()<=map.getMinZoom();
+  }
+  function setGpsText(text,kind){
+    gpsStatus.textContent=text;
+    gpsStatus.classList.toggle('gps-ok',kind==='ok');
+    gpsStatus.classList.toggle('gps-error',kind==='error');
+  }
+  function updateLocationButton(active){
+    toggleLocationBtn.classList.toggle('active',active);
+    toggleLocationBtn.setAttribute('aria-pressed',active?'true':'false');
+    toggleLocationBtn.textContent=active?'📍 Искључи локацију':'📍 Укључи локацију';
+    centerLocationBtn.disabled=!lastLocation;
+  }
+  function startLocation(){
+    if(!navigator.geolocation){
+      setGpsText('Овај уређај не подржава GPS локацију.','error');
+      return;
+    }
+    if(locationWatchId!==null)return;
+    firstLocationFix=true;
+    setGpsText('Тражим GPS положај…','');
+    updateLocationButton(true);
+    locationWatchId=navigator.geolocation.watchPosition(function(pos){
+      const lat=pos.coords.latitude;
+      const lng=pos.coords.longitude;
+      const accuracy=Math.max(1,Number(pos.coords.accuracy)||1);
+      lastLocation=L.latLng(lat,lng);
+      const icon=L.divIcon({className:'',html:'<div class="location-dot" aria-hidden="true"></div>',iconSize:[18,18],iconAnchor:[9,9]});
+      if(!locationMarker) locationMarker=L.marker(lastLocation,{icon,zIndexOffset:1000,keyboard:false}).addTo(map);
+      else locationMarker.setLatLng(lastLocation);
+      if(!accuracyCircle) accuracyCircle=L.circle(lastLocation,{radius:accuracy,color:'#54a8ff',weight:1,opacity:.9,fillColor:'#54a8ff',fillOpacity:.13,interactive:false}).addTo(map);
+      else accuracyCircle.setLatLng(lastLocation).setRadius(accuracy);
+      locationMarker.bindTooltip('Моја локација · тачност ±'+Math.round(accuracy)+' m',{direction:'top',offset:[0,-10]});
+      centerLocationBtn.disabled=false;
+      setGpsText('GPS укључен · тачност ±'+Math.round(accuracy)+' m.','ok');
+      if(firstLocationFix){
+        firstLocationFix=false;
+        map.setView(lastLocation,Math.max(map.getZoom(),17),{animate:false});
+      }
+    },function(err){
+      let msg='GPS положај није доступан.';
+      if(err.code===1) msg='Приступ локацији није дозвољен. У подешавањима прегледача дозволите локацију за piorajac.rs.';
+      else if(err.code===2) msg='Уређај тренутно не може да одреди положај.';
+      else if(err.code===3) msg='GPS одређивање је предуго трајало. Покушајте поново на отвореном.';
+      setGpsText(msg,'error');
+      stopLocation(false);
+    },{enableHighAccuracy:true,maximumAge:3000,timeout:18000});
+  }
+  function stopLocation(clearText=true){
+    if(locationWatchId!==null){navigator.geolocation.clearWatch(locationWatchId);locationWatchId=null;}
+    if(locationMarker){map.removeLayer(locationMarker);locationMarker=null;}
+    if(accuracyCircle){map.removeLayer(accuracyCircle);accuracyCircle=null;}
+    lastLocation=null;
+    centerLocationBtn.disabled=true;
+    updateLocationButton(false);
+    if(clearText)setGpsText('GPS је искључен.','');
+  }
+  async function boot(){
+    try{
+      initMap();
+      const got=await tryJson('catalog.json');
+      activeSource=got.source;
+      catalog=normalizeCatalog(got.json);
+      await showIndex(current);
+    }catch(e){
+      console.error(e);
+      catalog=normalizeCatalog({ok:false});
+      setLegend(current);
+      dateInfo.textContent='каталог није учитан';
+      showMapMessage('Нисам успео да учитам Copernicus каталог. Сателитска подлога је и даље доступна.');
+      setStatus('Нисам успео да учитам catalog.json са постојећег Copernicus модула.');
+    }
+  }
+
+  btns.forEach(b=>b.addEventListener('click',()=>showIndex(b.dataset.index)));
+  toggleIndexBtn.addEventListener('click',function(){indexVisible=!indexVisible;applyIndexVisibility();});
+  toggleLocationBtn.addEventListener('click',function(){if(locationWatchId===null)startLocation();else stopLocation(true);});
+  centerLocationBtn.addEventListener('click',function(){if(lastLocation)map.setView(lastLocation,Math.max(map.getZoom(),18),{animate:false});});
+  zoomInBtn.addEventListener('click',function(){map.zoomIn(1,{animate:false});});
+  zoomOutBtn.addEventListener('click',function(){map.zoomOut(1,{animate:false});});
+  fitAreaBtn.addEventListener('click',fitArea);
+  document.addEventListener('visibilitychange',function(){if(!document.hidden&&map)setTimeout(()=>map.invalidateSize(false),80);});
+
+  setLegend(current);
+  updateIndexButton();
+  boot();
+})();
+</script>
+<script defer src="/rajac-design/rajac-vrh-button.js?v=20260707-v6-round-no-home"></script>
+</body>
+</html>

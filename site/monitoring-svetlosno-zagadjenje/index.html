@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="sr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Светлосно загађење ПИО „Рајац”</title>
+<meta name="description" content="Аутоматска карта ноћне радијансе и светлосног загађења за ПИО „Рајац”.">
+<link rel="preconnect" href="https://raw.githubusercontent.com" crossorigin>
+<link rel="preload" as="style" href="https://piorajac.rs/wp-content/plugins/rajac-light-monitor-static/assets/rajac-light-monitor.css?ver=0.5.2">
+<link rel="stylesheet" href="https://piorajac.rs/wp-content/plugins/rajac-light-monitor-static/assets/rajac-light-monitor.css?ver=0.5.2">
+<style>
+:root{
+  --rajac-page-bg:#f4efe4;
+  --rajac-nav:#0d1b2a;
+  --rajac-gold:#d8b55b;
+  --rajac-cream:#eef7dc;
+  --rajac-green:#082414;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--rajac-page-bg);color:var(--rajac-cream);font-family:"Cormorant Garamond", "EB Garamond", Garamond, Georgia, "Times New Roman", serif;}
+.rajac-single-nav{position:sticky;top:0;z-index:9999;background:var(--rajac-nav);border-bottom:1px solid rgba(216,181,91,.22);}
+.rajac-single-nav-inner{max-width:1180px;margin:0 auto;min-height:54px;display:flex;align-items:center;padding:0 18px;}
+.rajac-home-link{display:inline-flex;align-items:center;gap:10px;color:var(--rajac-gold);font-weight:700;font-size:18px;letter-spacing:.035em;text-decoration:none;}
+.rajac-home-link:hover{color:#fff}
+.rajac-home-mark{font-size:18px;line-height:1;color:var(--rajac-gold)}
+.rajac-page-shell{width:min(1120px, calc(100% - 34px));margin:38px auto 70px;}
+.rlm-wrap{margin-left:auto!important;margin-right:auto!important;}
+/* Тамни падајући мени — Chrome/Edge/Firefox */
+.rlm-select-label select,
+.rlm-period,
+select.rlm-period{
+  color:var(--rajac-cream)!important;
+  background:#102b1b!important;
+  border:1px solid rgba(216,181,91,.55)!important;
+  color-scheme:dark!important;
+  outline:none!important;
+  box-shadow:none!important;
+}
+.rlm-select-label select:focus,
+.rlm-period:focus{
+  border-color:#d8b55b!important;
+  box-shadow:0 0 0 3px rgba(216,181,91,.18)!important;
+}
+.rlm-period option,
+.rlm-period optgroup,
+select.rlm-period option,
+select.rlm-period optgroup{
+  background:#102b1b!important;
+  color:#eef7dc!important;
+}
+.rlm-period option:checked{background:#264d2d!important;color:#fff!important;}
+.rlm-period option:hover{background:#365c3b!important;color:#fff!important;}
+.rlm-status{font-family:inherit!important}
+.rlm-footnote{line-height:1.55}
+.rajac-loading-note{margin:14px 0 0;color:rgba(238,247,220,.72);font-size:16px;}
+@media(max-width:720px){
+  .rajac-page-shell{width:min(100% - 18px,1120px);margin-top:16px}
+  .rajac-home-link{font-size:16px}
+}
+</style>
+</head>
+<body>
+<nav class="rajac-single-nav" aria-label="Повратак на почетну страну">
+  <div class="rajac-single-nav-inner">
+    <a class="rajac-home-link" href="/" aria-label="ПИО Рајац — почетна страна"><span class="rajac-home-mark">◆</span><span>ПИО „Рајац” — почетна</span></a>
+  </div>
+</nav>
+<main class="rajac-page-shell" id="main-content">
+<section class="rlm-wrap" data-base-url="https://raw.githubusercontent.com/suvoborskirajac/rajac-light-data/main/public/results" data-boundary-url="https://raw.githubusercontent.com/suvoborskirajac/rajac-light-data/main/public/boundaries/pio-rajac.geojson" data-height="620" id="rlm-353f8a8e-a9d5-42f5-bc94-7f0573133c26">
+<div class="rlm-head">
+<div class="rlm-eyebrow">NASA BLACK MARBLE / VIIRS</div>
+<h2>Светлосно загађење ПИО „Рајац”</h2>
+<p>Аутоматска карта ноћне радијансе за ПИО „Рајац”, са изглађеним јавним приказом, сировим пикселима за стручну статистику и спољном границом подручја.</p>
+</div>
+<div class="rlm-panel">
+<div aria-label="Контроле карте" class="rlm-toolbar">
+<button class="rlm-btn is-active" data-toggle-boundary="1" type="button">Граница ПИО</button>
+<label class="rlm-select-label">
+<span>Период</span>
+<select aria-label="Избор периода" class="rlm-period">
+<option value="">Учитавање…</option>
+</select>
+</label>
+</div>
+<div class="rlm-map-shell" style="--rlm-height: 620px;">
+<div class="rlm-status" role="status">Учитавање границе и JSON резултата…</div>
+<svg aria-label="Карта светлосног загађења ПИО Рајац" class="rlm-svg" preserveaspectratio="xMidYMid meet" role="img"></svg>
+</div>
+<div aria-label="Легенда" class="rlm-legend">
+<div class="rlm-grad"></div>
+<div class="rlm-legend-scale">
+<span>ниско</span><span>умерено</span><span>повишено</span><span>високо</span>
+</div>
+<div class="rlm-legend-items">
+<span><i class="c-vlow"></i> врло ниско</span>
+<span><i class="c-low"></i> ниско</span>
+<span><i class="c-mid"></i> умерено</span>
+<span><i class="c-high"></i> повишено</span>
+<span><i class="c-vhigh"></i> високо</span>
+<span><i class="c-border"></i> спољна граница ПИО</span>
+</div>
+</div>
+</div>
+<div class="rlm-info-grid">
+<article class="rlm-card">
+<h3>Статистика периода</h3>
+<dl class="rlm-stats">
+<div><dt>Средња вредност</dt><dd>—</dd></div>
+<div><dt>Максимум</dt><dd>—</dd></div>
+<div><dt>P90</dt><dd>—</dd></div>
+<div><dt>Број пиксела</dt><dd>—</dd></div>
+</dl>
+</article>
+</div>
+<p class="rlm-footnote">Вредности су ноћна радијанса у nW/cm²/sr. Јавни приказ је намерно изглађен; сирови пиксели остају доступни за статистику и стручни обрачун. <span class="rlm-version">Rajac Light Monitor Static v0.5.2 — без demo heatmap података.</span></p>
+</section>
+</main>
+<script>
+window.RajacLightMonitorCfg = {
+  defaultBaseUrl: "https://raw.githubusercontent.com/suvoborskirajac/rajac-light-data/main/public/results",
+  localBoundaryUrl: "https://raw.githubusercontent.com/suvoborskirajac/rajac-light-data/main/public/boundaries/pio-rajac.geojson",
+  pluginVersion: "0.5.2"
+};
+</script>
+<script src="https://piorajac.rs/wp-content/plugins/rajac-light-monitor-static/assets/rajac-light-monitor.js?ver=0.5.2&fix=20260920"></script>
+
+<!-- SITE_EDITOR_ADMIN_BAR_START -->
+<script src="/admin-site-editor.php?admin_bar_js=1" defer></script>
+<!-- SITE_EDITOR_ADMIN_BAR_END -->
+<!-- FIX 2026-09-20: granica PIO se učitava direktno iz javnog GitHub repozitorijuma, jer lokalni plugin asset pio-rajac.geojson nije bio dostupan. -->
+</body>
+</html>

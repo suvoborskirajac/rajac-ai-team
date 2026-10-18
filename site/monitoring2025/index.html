@@ -1,0 +1,871 @@
+<!DOCTYPE html>
+
+<!DOCTYPE html>
+
+<html lang="sr">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Мониторинг вегетације и птица 2025. године — ПИО „Рајац”</title>
+<style>
+    :root{
+      --bg:#f7f3ea;
+      --paper:#ffffff;
+      --paper-soft:#f3eee4;
+      --text:#1f2820;
+      --muted:#5f6c60;
+      --line:rgba(31,40,32,.10);
+      --accent:#315c39;
+      --accent-2:#4b7350;
+      --gold:#b8893f;
+      --gold-soft:#efe1c0;
+      --ok:#2f6c41;
+      --ok-soft:#e8f2ea;
+      --warn:#8b6627;
+      --warn-soft:#f4eddc;
+      --danger:#8f2e24;
+      --danger-soft:#f5e3dd;
+      --shadow:0 18px 44px rgba(20,28,22,.08);
+      --shadow-soft:0 10px 24px rgba(20,28,22,.06);
+      --wrap:1280px;
+    }
+
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+
+    body{
+      margin:0;
+      color:var(--text);
+      font-family:"Segoe UI", Arial, sans-serif;
+      background:
+        radial-gradient(circle at top left, rgba(184,137,63,.08), transparent 24%),
+        radial-gradient(circle at top right, rgba(49,92,57,.08), transparent 24%),
+        linear-gradient(180deg,#f8f4ec 0%,#f4efe5 100%);
+    }
+
+    img{
+      display:block;
+      width:100%;
+      max-width:100%;
+      height:auto;
+    }
+
+    a{color:inherit;text-decoration:none}
+
+    .wrap{
+      width:min(var(--wrap), calc(100% - 34px));
+      margin:0 auto;
+    }
+
+    .hero{
+      padding:24px 0 28px;
+    }
+
+    .hero-card{
+      position:relative;
+      overflow:hidden;
+      min-height:620px;
+      border-radius:36px;
+      border:1px solid rgba(255,255,255,.26);
+      box-shadow:var(--shadow);
+      background:
+        linear-gradient(90deg, rgba(8,12,9,.88) 0%, rgba(8,12,9,.74) 32%, rgba(8,12,9,.42) 58%, rgba(8,12,9,.18) 100%),
+        linear-gradient(180deg, rgba(0,0,0,.14), rgba(0,0,0,.24)),
+        url("https://commons.wikimedia.org/wiki/Special:Redirect/file/Oriolus%20oriolus%20Nev%C5%9Fehir%2C%20Turkey%202.jpg") right center / cover no-repeat;
+      isolation:isolate;
+    }
+
+    .hero-card::before{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:
+        radial-gradient(circle at 16% 18%, rgba(184,137,63,.18), transparent 24%),
+        radial-gradient(circle at 83% 20%, rgba(255,255,255,.06), transparent 20%),
+        radial-gradient(circle at 78% 80%, rgba(49,92,57,.12), transparent 24%);
+      pointer-events:none;
+      z-index:0;
+    }
+
+    .hero-inner{
+      position:relative;
+      z-index:1;
+      min-height:620px;
+      display:grid;
+      align-items:end;
+      padding:42px;
+    }
+
+    .hero-copy{
+      max-width:760px;
+      color:#fff;
+    }
+
+    .eyebrow{
+      display:inline-flex;
+      align-items:center;
+      min-height:38px;
+      padding:0 16px;
+      border-radius:999px;
+      border:1px solid rgba(255,255,255,.16);
+      background:rgba(255,255,255,.10);
+      color:#f7e2b8;
+      font-size:.82rem;
+      font-weight:800;
+      letter-spacing:.14em;
+      text-transform:uppercase;
+      backdrop-filter:blur(8px);
+      margin-bottom:18px;
+    }
+
+    .hero h1{
+      margin:0;
+      max-width:13.5ch;
+      font-size:clamp(2rem, 3vw, 3.6rem);
+      line-height:1.02;
+      letter-spacing:-.045em;
+      color:#fff;
+      text-shadow:
+        0 4px 14px rgba(0,0,0,.42),
+        0 10px 28px rgba(0,0,0,.30);
+    }
+
+    .lead{
+      margin:18px 0 0;
+      max-width:760px;
+      font-size:1.08rem;
+      line-height:1.82;
+      color:rgba(255,255,255,.96);
+      text-shadow:0 2px 10px rgba(0,0,0,.34);
+    }
+
+    .hero-meta{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      margin-top:22px;
+    }
+
+    .hero-chip{
+      display:inline-flex;
+      align-items:center;
+      min-height:40px;
+      padding:0 14px;
+      border-radius:999px;
+      border:1px solid rgba(255,255,255,.14);
+      background:rgba(255,255,255,.10);
+      color:#fff;
+      font-size:.92rem;
+      font-weight:700;
+      backdrop-filter:blur(8px);
+      text-shadow:0 2px 8px rgba(0,0,0,.22);
+    }
+
+    .hero-stats{
+      display:grid;
+      grid-template-columns:repeat(4, minmax(0,1fr));
+      gap:14px;
+      max-width:980px;
+      margin-top:26px;
+    }
+
+    .stat{
+      min-height:150px;
+      padding:20px 18px;
+      border-radius:22px;
+      border:1px solid rgba(255,255,255,.15);
+      background:rgba(255,255,255,.12);
+      box-shadow:0 10px 22px rgba(0,0,0,.08);
+      backdrop-filter:blur(10px);
+      color:#fff;
+    }
+
+    .stat strong{
+      display:block;
+      font-size:1.22rem;
+      line-height:1.08;
+      margin-bottom:10px;
+      color:#fff;
+      text-shadow:0 2px 8px rgba(0,0,0,.22);
+    }
+
+    .stat span{
+      display:block;
+      font-size:.94rem;
+      line-height:1.55;
+      color:rgba(255,255,255,.92);
+      text-shadow:0 2px 8px rgba(0,0,0,.20);
+    }
+
+    main{
+      padding:4px 0 56px;
+    }
+
+    .section{
+      margin-bottom:30px;
+    }
+
+    .panel{
+      background:var(--paper);
+      border:1px solid var(--line);
+      border-radius:28px;
+      box-shadow:var(--shadow-soft);
+    }
+
+    .intro,
+    .text-box,
+    .closing{
+      padding:30px 28px;
+    }
+
+    .section-tag{
+      display:inline-flex;
+      align-items:center;
+      min-height:34px;
+      padding:0 12px;
+      border-radius:999px;
+      background:rgba(184,137,63,.10);
+      color:#8b6627;
+      font-size:.78rem;
+      font-weight:800;
+      letter-spacing:.08em;
+      text-transform:uppercase;
+      margin-bottom:14px;
+    }
+
+    .section-title{
+      margin:0 0 12px;
+      font-size:1.72rem;
+      line-height:1.16;
+      letter-spacing:-.02em;
+      color:var(--accent);
+    }
+
+    .section-lead,
+    .text-box p,
+    .closing p,
+    .ambro-copy p{
+      margin:0;
+      font-size:1.03rem;
+      line-height:1.82;
+      color:var(--muted);
+    }
+
+    .text-box p,
+    .closing p,
+    .ambro-copy p{
+      margin-bottom:14px;
+    }
+
+    .text-box p:last-child,
+    .closing p:last-child,
+    .ambro-copy p:last-child{
+      margin-bottom:0;
+    }
+
+    .cards{
+      display:grid;
+      grid-template-columns:repeat(3, minmax(0,1fr));
+      gap:20px;
+      margin-top:18px;
+      margin-bottom:20px;
+    }
+
+    .card{
+      overflow:hidden;
+      background:var(--paper);
+      border:1px solid var(--line);
+      border-radius:28px;
+      box-shadow:var(--shadow-soft);
+      transition:transform .22s ease, box-shadow .22s ease, border-color .22s ease;
+    }
+
+    .card:hover{
+      transform:translateY(-4px);
+      box-shadow:0 20px 42px rgba(20,28,22,.08);
+      border-color:rgba(49,92,57,.20);
+    }
+
+    .card-photo{
+      position:relative;
+      aspect-ratio:16/10;
+      overflow:hidden;
+      background:#e7ece7;
+      border-bottom:1px solid var(--line);
+    }
+
+    .card-photo img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      transition:transform .45s ease;
+    }
+
+    .card:hover .card-photo img{
+      transform:scale(1.04);
+    }
+
+    .card-photo::after{
+      content:"";
+      position:absolute;
+      inset:auto 0 0 0;
+      height:42%;
+      background:linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,.14) 100%);
+      pointer-events:none;
+    }
+
+    .card-body{
+      padding:22px 22px 24px;
+    }
+
+    .name{
+      margin:0 0 6px;
+      font-size:1.34rem;
+      line-height:1.22;
+      color:var(--accent);
+    }
+
+    .latin{
+      display:block;
+      margin-bottom:14px;
+      font-style:italic;
+      color:#6a766b;
+      font-size:.98rem;
+    }
+
+    .card-body p{
+      margin:0;
+      font-size:1rem;
+      line-height:1.74;
+      color:var(--muted);
+    }
+
+    .badge-row{
+      display:flex;
+      flex-wrap:wrap;
+      gap:8px;
+      margin-top:14px;
+    }
+
+    .badge{
+      display:inline-flex;
+      align-items:center;
+      min-height:32px;
+      padding:0 10px;
+      border-radius:999px;
+      font-size:.84rem;
+      font-weight:800;
+      border:1px solid transparent;
+    }
+
+    .badge-ok{
+      background:var(--ok-soft);
+      border-color:#d5e6d8;
+      color:var(--ok);
+    }
+
+    .badge-warn{
+      background:var(--warn-soft);
+      border-color:#eadab4;
+      color:var(--warn);
+    }
+
+    .badge-bad{
+      background:var(--danger-soft);
+      border-color:#e8c8be;
+      color:var(--danger);
+    }
+
+    .note{
+      margin-top:16px;
+      padding:14px 16px;
+      border-radius:18px;
+      background:var(--warn-soft);
+      border:1px solid #eadab4;
+      color:#6e5425;
+      font-size:.94rem;
+      line-height:1.65;
+    }
+
+    .species-grid{
+      display:grid;
+      grid-template-columns:repeat(3, minmax(0,1fr));
+      gap:14px;
+      margin-top:18px;
+    }
+
+    .species-item{
+      padding:16px 16px 14px;
+      border-radius:20px;
+      background:var(--paper-soft);
+      border:1px solid rgba(31,40,32,.08);
+      min-height:118px;
+    }
+
+    .species-item h4{
+      margin:0 0 6px;
+      font-size:1.02rem;
+      line-height:1.3;
+      color:var(--text);
+    }
+
+    .species-item .latin-small{
+      display:block;
+      font-style:italic;
+      color:#6f7a70;
+      font-size:.93rem;
+      margin-bottom:10px;
+    }
+
+    .species-item p{
+      margin:0;
+      color:var(--muted);
+      font-size:.94rem;
+      line-height:1.62;
+    }
+
+    .species-item .mini{
+      display:inline-flex;
+      align-items:center;
+      min-height:28px;
+      padding:0 9px;
+      border-radius:999px;
+      font-size:.78rem;
+      font-weight:800;
+      margin-top:10px;
+    }
+
+    .species-item .mini.ok{background:var(--ok-soft);color:var(--ok)}
+    .species-item .mini.warn{background:var(--warn-soft);color:var(--warn)}
+    .species-item .mini.bad{background:var(--danger-soft);color:var(--danger)}
+
+    .ambro{
+      overflow:hidden;
+      display:grid;
+      grid-template-columns:minmax(320px,.92fr) minmax(0,1.08fr);
+      border-radius:30px;
+      background:
+        linear-gradient(180deg, rgba(143,46,36,.03), rgba(143,46,36,.02)),
+        var(--paper);
+    }
+
+    .ambro-media{
+      min-height:100%;
+      background:
+        linear-gradient(180deg, rgba(16,20,16,.12), rgba(16,20,16,.16)),
+        url("https://commons.wikimedia.org/wiki/Special:Redirect/file/Ambrosia%20artemisiifolia%20-%20img%2023694.jpg") center center / cover no-repeat;
+      border-right:1px solid var(--line);
+    }
+
+    .ambro-copy{
+      padding:30px 30px 32px;
+    }
+
+    .highlights{
+      display:grid;
+      grid-template-columns:repeat(2, minmax(0,1fr));
+      gap:12px;
+      margin-top:18px;
+    }
+
+    .highlight{
+      min-height:98px;
+      padding:16px 15px;
+      border-radius:18px;
+      background:var(--danger-soft);
+      border:1px solid #e8c8be;
+    }
+
+    .highlight strong{
+      display:block;
+      font-size:1rem;
+      line-height:1.2;
+      color:var(--danger);
+      margin-bottom:8px;
+    }
+
+    .highlight span{
+      display:block;
+      font-size:.92rem;
+      line-height:1.55;
+      color:var(--muted);
+    }
+
+    .footer-note{
+      text-align:center;
+      margin-top:24px;
+      color:#748174;
+      font-size:.94rem;
+      line-height:1.6;
+    }
+
+    @media (max-width:1180px){
+      .hero-stats{
+        grid-template-columns:repeat(2, minmax(0,1fr));
+        max-width:760px;
+      }
+
+      .cards,
+      .species-grid,
+      .highlights,
+      .ambro{
+        grid-template-columns:1fr;
+      }
+
+      .ambro-media{
+        min-height:340px;
+        border-right:none;
+        border-bottom:1px solid var(--line);
+      }
+    }
+
+    @media (max-width:760px){
+      .wrap{
+        width:min(100% - 22px, var(--wrap));
+      }
+
+      .hero-card{
+        min-height:auto;
+        border-radius:24px;
+      }
+
+      .hero-inner{
+        min-height:auto;
+        padding:30px 20px 24px;
+      }
+
+      .hero h1{
+        max-width:none;
+        font-size:clamp(1.8rem, 7vw, 2.8rem);
+      }
+
+      .hero-stats,
+      .cards,
+      .species-grid{
+        grid-template-columns:1fr;
+      }
+
+      .intro,
+      .text-box,
+      .closing,
+      .ambro-copy,
+      .card-body{
+        padding-left:18px;
+        padding-right:18px;
+      }
+
+      .intro,
+      .text-box,
+      .closing,
+      .ambro-copy{
+        padding-top:22px;
+        padding-bottom:22px;
+      }
+    }
+  
+
+/* === STATIC NEWS REPORT OVERRIDES: light report layout, no dark hero === */
+:root{--nav:#0d1b2a;--nav-text:rgba(255,255,255,.78);--nav-gold:#d8b55b;}
+body{background:linear-gradient(180deg,#f8f4ea 0%,#f2ecdf 100%)!important;color:var(--text);font-family:Georgia,"Times New Roman",serif;}
+.rp-mainnav-static{position:sticky;top:0;z-index:1000;background:var(--nav);border-bottom:1px solid rgba(255,255,255,.08);font-family:Georgia,"Times New Roman",serif;}
+.rp-mainnav-static *{box-sizing:border-box}.rp-mainnav-inner{width:min(1180px,calc(100% - 28px));margin:0 auto;min-height:56px;display:flex;align-items:center;gap:16px;overflow-x:auto;scrollbar-width:none}.rp-mainnav-inner::-webkit-scrollbar{display:none}.rp-home{flex:0 0 auto;display:inline-flex;align-items:center;min-height:36px;padding:0 18px;border:1px solid rgba(216,181,91,.45);border-radius:999px;color:var(--nav-gold);font-weight:800;text-decoration:none;letter-spacing:.03em}.rp-back{color:rgba(255,255,255,.55);font-weight:700;text-decoration:none;white-space:nowrap}.rp-navcat{display:inline-flex;align-items:center;gap:7px;min-height:36px;padding:0 13px;border-radius:999px;color:var(--nav-text);font-weight:800;text-decoration:none;white-space:nowrap}.rp-navcat:hover,.rp-navcat.active{color:var(--nav-gold);background:rgba(216,181,91,.08);box-shadow:inset 0 0 0 1px rgba(216,181,91,.34)}.rp-count{display:inline-grid;place-items:center;min-width:19px;height:19px;border-radius:999px;background:rgba(216,181,91,.18);font-size:12px;color:var(--nav-gold)}
+.hero{padding:58px 0 34px!important;background:transparent!important}.hero-card{min-height:auto!important;border-radius:30px!important;border:1px solid rgba(31,40,32,.12)!important;background:rgba(255,255,255,.72)!important;box-shadow:0 18px 54px rgba(20,28,22,.08)!important}.hero-card::before{background:radial-gradient(circle at 12% 0%,rgba(184,137,63,.13),transparent 28%),radial-gradient(circle at 90% 10%,rgba(49,92,57,.10),transparent 30%)!important}.hero-inner{min-height:auto!important;align-items:start!important;padding:44px 42px!important}.hero-copy{max-width:1050px!important;color:var(--text)!important}.eyebrow{background:rgba(184,137,63,.12)!important;border:1px solid rgba(184,137,63,.26)!important;color:#8b6627!important;text-shadow:none!important;backdrop-filter:none!important}.hero h1{max-width:980px!important;color:#172118!important;text-shadow:none!important;font-family:Georgia,"Times New Roman",serif!important;font-weight:400!important;letter-spacing:-.045em!important;font-size:clamp(2.8rem,5vw,5.9rem)!important;line-height:1.02!important}.lead{max-width:920px!important;color:#536053!important;text-shadow:none!important;font-size:1.18rem!important;line-height:1.72!important}.hero-chip{background:#fff!important;border:1px solid rgba(31,40,32,.14)!important;color:#315c39!important;text-shadow:none!important;box-shadow:0 10px 20px rgba(20,28,22,.05)!important;backdrop-filter:none!important}.hero-stats{max-width:100%!important}.stat{background:#fff!important;border:1px solid rgba(31,40,32,.11)!important;color:var(--text)!important;backdrop-filter:none!important;min-height:136px!important}.stat strong{color:#315c39!important;text-shadow:none!important;font-family:Georgia,"Times New Roman",serif!important}.stat span{color:#5f6c60!important;text-shadow:none!important}.section-title,.name{font-family:Georgia,"Times New Roman",serif!important;font-weight:400!important}.panel,.card,.species-item,.ambro{box-shadow:0 12px 34px rgba(20,28,22,.06)!important}.section{margin-bottom:26px!important}.footer-note{padding-bottom:28px}.card-photo{max-height:260px}.card-photo img{object-fit:cover}.ambro-media{min-height:380px}.source-note{width:min(1280px,calc(100% - 34px));margin:18px auto 0;color:#728071;font-size:13px;line-height:1.5;text-align:center}.source-note a{color:#8b6627;text-decoration:underline;text-underline-offset:3px}
+@media(max-width:760px){.rp-mainnav-inner{width:calc(100% - 16px);gap:8px}.rp-home,.rp-back,.rp-navcat{font-size:13px;padding:0 11px}.hero{padding-top:28px!important}.hero-inner{padding:28px 18px!important}.hero h1{font-size:clamp(2.1rem,12vw,3.4rem)!important}.hero-stats{grid-template-columns:1fr!important}.lead{font-size:1.02rem!important}.card-photo{max-height:none}}
+</style>
+<meta content="Извештај о мониторингу вегетације и птица у ПИО „Рајац” током 2025. године, са налазима птица, ливадских биљака и амброзије." name="description"/>
+<style id="rajac-static-news-menu-css">
+.rajac-news-menu{position:sticky;top:0;z-index:9999;background:#0d1b2a;border-bottom:1px solid rgba(255,255,255,.10);font-family:Georgia,"Times New Roman",serif;box-shadow:0 8px 26px rgba(0,0,0,.08)}
+.rajac-news-menu *{box-sizing:border-box}.rajac-news-menu-inner{max-width:1180px;margin:0 auto;padding:0 18px;min-height:56px;display:flex;align-items:center;gap:8px;overflow-x:auto;scrollbar-width:none}.rajac-news-menu-inner::-webkit-scrollbar{display:none}.rajac-news-menu a{display:inline-flex;align-items:center;gap:6px;min-height:38px;padding:0 13px;border-radius:999px;color:rgba(255,255,255,.74);text-decoration:none;font-size:13px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;white-space:nowrap}.rajac-news-menu a:hover{background:rgba(255,255,255,.06);color:#fff}.rajac-news-menu .home{color:#e0c678;border:1px solid rgba(224,198,120,.34);background:rgba(224,198,120,.06)}.rajac-news-menu a.active{color:#e0c678;background:rgba(224,198,120,.08);outline:1px solid rgba(224,198,120,.26)}.rajac-news-menu small,.rajac-news-menu .count{display:inline-flex;align-items:center;justify-content:center;min-width:20px;height:20px;padding:0 6px;border-radius:999px;background:rgba(255,255,255,.10);color:#e0c678;font-size:11px;letter-spacing:0}@media(max-width:720px){.rajac-news-menu-inner{padding:0 10px}.rajac-news-menu a{font-size:12px;padding:0 10px}}
+</style>
+<style id="rajac-single-fix-css">.rajac-added-cover{width:min(1120px,calc(100% - 34px));margin:24px auto;border-radius:22px;overflow:hidden;border:1px solid rgba(30,40,30,.14);background:#fff;box-shadow:0 18px 55px rgba(35,42,31,.06)}.rajac-added-cover img{width:100%;max-height:420px;object-fit:cover;display:block}.rajac-added-cover figcaption{padding:10px 14px;color:#6c6f65;font:13px/1.45 Arial,sans-serif}</style></head>
+<body><nav aria-label="Категорије вести" class="rajac-news-menu"><div class="rajac-news-menu-inner"><a class="home" href="/">ПИО „Рајац”</a><a href="/rajac-vesti-kategorija/aktuelno/">Актуелно <small>2</small></a><a class="active" href="/rajac-vesti-kategorija/vesti/">Вести <small>15</small></a><a href="/rajac-vesti-kategorija/dogadjaj/">Догађај <small>2</small></a><a href="/rajac-vesti-kategorija/izvestaji/">Извештаји <small>6</small></a><a href="/rajac-vesti-kategorija/istrazivanja/">Истраживања <small>7</small></a><a href="/rajac-vesti-kategorija/tema/">Тема <small>3</small></a><a href="/rajac-vesti-kategorija/u-fokusu/">У фокусу <small>5</small></a></div></nav>
+<header class="hero">
+<div class="wrap">
+<div class="hero-card">
+<div class="hero-inner">
+<div class="hero-copy">
+<span class="eyebrow">Извештај о мониторингу 2025</span>
+<h1>Мониторинг биодиверзитета<br/>у ПИО „Рајац“</h1>
+<p class="lead">Током 2025. године на Рајцу су издвојени важни налази птица и ливадских биљака, као и засебан програм праћења амброзије. Извештај обједињује орнитолошке и ботаничке налазе, уз посебно издвојену амброзију као управљачки приоритет.</p>
+<div class="hero-meta">
+<span class="hero-chip">ПИО „Рајац“</span>
+<span class="hero-chip">2025. година</span>
+<span class="hero-chip">Птице, ливадске биљке и амброзија</span>
+<span class="hero-chip">Теренски и дигитални мониторинг</span>
+</div>
+<div class="hero-stats">
+<div class="stat">
+<strong>15 врста птица</strong>
+<span>забележено је 13. маја 2025. у Merlin кампањи у радијусу до 2 km око Планинарског дома</span>
+</div>
+<div class="stat">
+<strong>27 врста биљака</strong>
+<span>евидентирано је у септембру 2025. уз Flora Incognita распон поузданости 27,63%–99,8%</span>
+</div>
+<div class="stat">
+<strong>12 врста &gt; 90%</strong>
+<span>у ботаничком извештају издвојено је дванаест врста са веома високом сигурношћу идентификације</span>
+</div>
+<div class="stat">
+<strong>амброзија 86,46%</strong>
+<span>издвојена је као приоритетна инвазивна врста за редовни надзор и уклањање</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</header>
+<main>
+<div class="wrap">
+<section class="section panel intro">
+<span class="section-tag">Преглед</span>
+<h2 class="section-title">Шта показују налази из 2025. године</h2>
+<p class="section-lead">
+          Орнитолошки део извештаја потврђује високу вредност мозаичних станишта Рајца, док ботанички део показује
+          да су полусуве и суве ливаде, рубови стаза и прелазне зоне и даље веома богати индикаторским врстама.
+          Посебан сегмент чини амброзија, која је препозната као инвазивна врста од непосредног управљачког значаја.
+        </p>
+</section>
+<section class="section">
+<span class="section-tag">Птице</span>
+<h2 class="section-title">Издвојене врсте са фотографијама</h2>
+<p class="section-lead">
+          За визуелни део странице задржане су три врсте које добро представљају различите еколошке сигнале уочене
+          током кампање 13. маја 2025: потенцијално нов налаз, врста нижег шумског слоја и индикатор зрелих шума.
+        </p>
+<div class="cards">
+<article class="card">
+<div class="card-photo">
+<img alt="Ватроглави краљић" decoding="async" src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Firecrest%202024%2001%2028%2001.jpg"/>
+</div>
+<div class="card-body">
+<h3 class="name">Ватроглави краљић</h3>
+<span class="latin">Regulus ignicapilla</span>
+<p>Потенцијално нова врста за подручје Рајца. Њено присуство упућује на добру структуру четинарске компоненте и значај мешовитих шумских појасева.</p>
+<div class="badge-row">
+<span class="badge badge-bad">Merlin: ниска</span>
+<span class="badge badge-warn">није у Студији</span>
+</div>
+</div>
+</article>
+<article class="card">
+<div class="card-photo">
+<img alt="Црвенаћ" decoding="async" src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Erithacus%20rubecula%20with%20cocked%20head.jpg"/>
+</div>
+<div class="card-body">
+<h3 class="name">Црвенаћ</h3>
+<span class="latin">Erithacus rubecula</span>
+<p>Важан показатељ благих микроклима, влажнијих долина и очуваности нижег вегетационог слоја у шумским и шибљастим појасевима.</p>
+<div class="badge-row">
+<span class="badge badge-warn">Merlin: средња</span>
+<span class="badge badge-warn">није у Студији</span>
+</div>
+</div>
+</article>
+<article class="card">
+<div class="card-photo">
+<img alt="Вуга" decoding="async" src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Oriolus%20oriolus%20Nev%C5%9Fehir%2C%20Turkey%202.jpg"/>
+</div>
+<div class="card-body">
+<h3 class="name">Вуга</h3>
+<span class="latin">Oriolus oriolus</span>
+<p>Индикатор очуваности зрелих листопадних шума и виших шумских слојева, значајан за тумачење структуре мирнијих делова подручја.</p>
+<div class="badge-row">
+<span class="badge badge-warn">Merlin: средња</span>
+<span class="badge badge-ok">у Студији</span>
+</div>
+</div>
+</article>
+</div>
+<section class="panel text-box">
+<h3 class="section-title" style="font-size:1.36rem;">Детаљан орнитолошки извештај</h3>
+<p>
+            Брза акустична кампања спроведена је 13. маја 2025. године у радијусу до два километра око Планинарског
+            дома, уз више сесија снимања мобилним телефоном и апликацијом Merlin Bird ID. Забележено је 15 врста,
+            што је веома добар резултат за једнодневни терен и јасан показатељ орнитолошке вредности простора.
+          </p>
+<p>
+            Највећу управљачку тежину има налаз ватроглавог краљића, који је означен као условно нова врста за
+            подручје и захтева визуелну или аудио потврду вишег квалитета. Поред њега, црвенаћ указује на вредност
+            шибљака, влажнијих долина и нижег вегетационог слоја, док вуга и мишар говоре о значају зрелих шумских
+            комплекса и очуваности ширег трофичког ланца.
+          </p>
+<div class="note">
+            За птице у приложеним документима нису дати бројчани проценти, већ само изворне Merlin ознаке:
+            <strong>висока</strong>, <strong>средња</strong>, <strong>умерена</strong> и <strong>ниска</strong>.
+          </div>
+</section>
+<div class="species-grid">
+<div class="species-item"><h4>Зеба</h4><span class="latin-small">Fringilla coelebs</span><p>Честа врста мозаичних станишта, добра за дугорочни мониторинг.</p><span class="mini ok">висока</span></div>
+<div class="species-item"><h4>Обични кос</h4><span class="latin-small">Turdus merula</span><p>Показатељ шумског пода, хумуса и стабилних микроклима.</p><span class="mini ok">висока</span></div>
+<div class="species-item"><h4>Црвенаћ</h4><span class="latin-small">Erithacus rubecula</span><p>Везан за шибљак, влажније долине и доњи слој вегетације.</p><span class="mini warn">средња</span></div>
+<div class="species-item"><h4>Дрозд имелаш</h4><span class="latin-small">Turdus viscivorus</span><p>Индикативан за старија стабла и присуство имеле.</p><span class="mini bad">ниска</span></div>
+<div class="species-item"><h4>Царић</h4><span class="latin-small">Troglodytes troglodytes</span><p>Важан за процену очуваности микростаништа у нижем шумском слоју.</p><span class="mini bad">ниска</span></div>
+<div class="species-item"><h4>Ватроглави краљић</h4><span class="latin-small">Regulus ignicapilla</span><p>Потенцијално нов налаз; потребна ревизија и потврда.</p><span class="mini bad">ниска</span></div>
+<div class="species-item"><h4>Мали славуј</h4><span class="latin-small">Luscinia megarhynchos</span><p>Одраз квалитетног подрасти и динамичних влажних станишта.</p><span class="mini warn">умерена</span></div>
+<div class="species-item"><h4>Обична црвенрепка</h4><span class="latin-small">Phoenicurus phoenicurus</span><p>Потенцијални индикатор блаже деградираних подручја у опоравку.</p><span class="mini warn">умерена</span></div>
+<div class="species-item"><h4>Чешљугар</h4><span class="latin-small">Carduelis carduelis</span><p>Кључан за праћење стања ливада и семенастих биљака.</p><span class="mini ok">висока</span></div>
+<div class="species-item"><h4>Црноглава грмуша</h4><span class="latin-small">Sylvia atricapilla</span><p>Типична врста густих шибљака и ниских шума.</p><span class="mini warn">умерена</span></div>
+<div class="species-item"><h4>Гачац</h4><span class="latin-small">Corvus frugilegus</span><p>Индикатор присуства пољопривредних и отворенијих површина.</p><span class="mini ok">висока</span></div>
+<div class="species-item"><h4>Мишар</h4><span class="latin-small">Buteo buteo</span><p>Висока поузданост, али је пожељна и визуелна потврда оптиком.</p><span class="mini ok">висока</span></div>
+<div class="species-item"><h4>Вуга</h4><span class="latin-small">Oriolus oriolus</span><p>Индикатор зрелих листопадних шума и виших слојева крошњи.</p><span class="mini warn">средња</span></div>
+<div class="species-item"><h4>Врабац покућар</h4><span class="latin-small">Passer domesticus</span><p>Одраз присуства људских активности у оквиру ПИО.</p><span class="mini ok">висока</span></div>
+<div class="species-item"><h4>Дрозд певач</h4><span class="latin-small">Turdus philomelos</span><p>Погодан за процену сложености шумског пода и здравља шуме.</p><span class="mini ok">висока</span></div>
+</div>
+</section>
+<section class="section">
+<span class="section-tag">Ливадске биљке</span>
+<h2 class="section-title">Издвојене врсте са фотографијама</h2>
+<p class="section-lead">
+          За визуелни део ботаничке секције издвојене су три јаке индикаторске врсте полусувих и сувих ливада,
+          све са веома високим степеном поузданости идентификације.
+        </p>
+<div class="cards">
+<article class="card">
+<div class="card-photo">
+<img alt="Пршљенаста жалфија" decoding="async" src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Salvia%20verticillata%20240606a.jpg"/>
+</div>
+<div class="card-body">
+<h3 class="name">Пршљенаста жалфија</h3>
+<span class="latin">Salvia verticillata</span>
+<p>Индикатор сувих мезофитних ливада у II и III зони, значајан за континуитет исхране опрашивача.</p>
+<div class="badge-row">
+<span class="badge badge-ok">99,8%</span>
+<span class="badge badge-ok">индикатор очуваних ливада</span>
+</div>
+</div>
+</article>
+<article class="card">
+<div class="card-photo">
+<img alt="Прави јазличак" decoding="async" src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Galium%20verum%20001.JPG"/>
+</div>
+<div class="card-body">
+<h3 class="name">Прави јазличак</h3>
+<span class="latin">Galium verum</span>
+<p>Дијагностичка врста очуваних сувих и полусувих ливада, важна као стабилан извор нектара за опрашиваче.</p>
+<div class="badge-row">
+<span class="badge badge-ok">99,28%</span>
+<span class="badge badge-ok">типична врста Рајца</span>
+</div>
+</div>
+</article>
+<article class="card">
+<div class="card-photo">
+<img alt="Жута чешљуга" decoding="async" src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Scabiosa%20ochroleucaG1.jpg"/>
+</div>
+<div class="card-body">
+<h3 class="name">Жута чешљуга</h3>
+<span class="latin">Scabiosa ochroleuca</span>
+<p>Приоритетна индикаторска врста у систему SMART мониторинга, нарочито важна као каснолетњи извор нектара.</p>
+<div class="badge-row">
+<span class="badge badge-ok">98,59%</span>
+<span class="badge badge-ok">приоритетна врста</span>
+</div>
+</div>
+</article>
+</div>
+<section class="panel text-box">
+<h3 class="section-title" style="font-size:1.36rem;">Детаљан ботанички извештај</h3>
+<p>
+            Теренско снимање ливадских биљака спроведено је у септембру 2025. године. Идентификација је обављена
+            апликацијом Flora Incognita, а подаци су геореференцирани. Укупно је евидентирано 27 јединствених врста,
+            са распоном поузданости од 27,63% до 99,8%.
+          </p>
+<p>
+            Најпоузданији налази односе се на врсте сувих и полусувих ливада, рубова стаза и умерено поремећених
+            станишта. Посебно се издвајају врсте које указују на очуваност травних екосистема и присуство квалитетних
+            цветних ресурса за опрашиваче, али и таксони који упозоравају на локалне поремећаје, еутрофикацију или
+            инвазивне процесе.
+          </p>
+</section>
+<div class="species-grid">
+<div class="species-item"><h4>Salvia verticillata</h4><span class="latin-small">Пршљенаста жалфија</span><p>Индикатор сувих мезофитних ливада.</p><span class="mini ok">99,8%</span></div>
+<div class="species-item"><h4>Salvia glutinosa</h4><span class="latin-small">Лепљива жалфија</span><p>Индикатор влажнијих и полусеновитих станишта.</p><span class="mini ok">99,64%</span></div>
+<div class="species-item"><h4>Nepeta nuda</h4><span class="latin-small">Гола мачја трава</span><p>Важан извор нектара на сувљим ливадама.</p><span class="mini ok">99,24%</span></div>
+<div class="species-item"><h4>Galium verum</h4><span class="latin-small">Прави јазличак</span><p>Дијагностичка врста очуваних ливада.</p><span class="mini ok">99,28%</span></div>
+<div class="species-item"><h4>Linaria vulgaris</h4><span class="latin-small">Дивља зевалица</span><p>Индикатор умерено нарушених станишта.</p><span class="mini ok">98,76%</span></div>
+<div class="species-item"><h4>Scabiosa ochroleuca</h4><span class="latin-small">Жута чешљуга</span><p>Приоритетна индикаторска врста SMART мониторинга.</p><span class="mini ok">98,59%</span></div>
+<div class="species-item"><h4>Silene vulgaris</h4><span class="latin-small">Бела пуцавица</span><p>Индикатор стабилних мало нарушених ливадских станишта.</p><span class="mini ok">98,21%</span></div>
+<div class="species-item"><h4>Sanguisorba minor</h4><span class="latin-small">Мала крвара</span><p>Значајна врста у анализи биодиверзитета ливада.</p><span class="mini ok">97,73%</span></div>
+<div class="species-item"><h4>Raphanus raphanistrum</h4><span class="latin-small">Дивља ротква</span><p>Индикатор умерених поремећаја у вегетацији.</p><span class="mini ok">96,56%</span></div>
+<div class="species-item"><h4>Chenopodium album</h4><span class="latin-small">Бела пепељуга</span><p>Сигнал локалног поремећаја и еутрофикације.</p><span class="mini ok">93,91%</span></div>
+<div class="species-item"><h4>Lotus corniculatus</h4><span class="latin-small">Птичја ногица</span><p>Дијагностичка врста мезофитних ливада.</p><span class="mini ok">92,27%</span></div>
+<div class="species-item"><h4>Petrorhagia saxifraga</h4><span class="latin-small">Камена саксифрага</span><p>Индикатор екстремних непоремећених станишта.</p><span class="mini ok">91,84%</span></div>
+<div class="species-item"><h4>Centaurea scabiosa</h4><span class="latin-small">Велика кичица</span><p>Важна за каснолетњу фенофазу и опрашиваче.</p><span class="mini warn">88,64%</span></div>
+<div class="species-item"><h4>Centaurea jacea</h4><span class="latin-small">Ливадска кичица</span><p>Кључна врста очуваних мезофитних ливада.</p><span class="mini warn">88,62%</span></div>
+<div class="species-item"><h4>Cirsium arvense</h4><span class="latin-small">Пољски осат</span><p>Потребно контролисати ширење на ливадама.</p><span class="mini warn">87,79%</span></div>
+<div class="species-item"><h4>Ambrosia artemisiifolia</h4><span class="latin-small">Обична амброзија</span><p>Инвазивна и алергена врста, управљачки приоритет.</p><span class="mini warn">86,46%</span></div>
+<div class="species-item"><h4>Verbascum chaixii</h4><span class="latin-small">Chaix-ова дивизма</span><p>Сигнал отворених сунчаних положаја.</p><span class="mini warn">80,36%</span></div>
+<div class="species-item"><h4>Crataegus monogyna</h4><span class="latin-small">Обични глог</span><p>Захтева пажљиву теренску верификацију.</p><span class="mini warn">77,88%</span></div>
+<div class="species-item"><h4>Ambrosia tenuifolia</h4><span class="latin-small">Чипкаста амброзија</span><p>Потребна додатна провера и опрез у тумачењу.</p><span class="mini warn">74,44%</span></div>
+<div class="species-item"><h4>Trifolium pratense</h4><span class="latin-small">Црвена детелина</span><p>Типична ливадска врста са умереном сигурношћу налаза.</p><span class="mini warn">73,12%</span></div>
+<div class="species-item"><h4>Leucanthemum vulgare</h4><span class="latin-small">Ливадска рада</span><p>Захтева пажљиву теренску проверу.</p><span class="mini warn">70,43%</span></div>
+<div class="species-item"><h4>Erigeron annuus</h4><span class="latin-small">Једногодишња коница</span><p>Инвазивна врста средњег ризика.</p><span class="mini bad">69,39%</span></div>
+<div class="species-item"><h4>Verbascum nigrum</h4><span class="latin-small">Црна дивизма</span><p>Врста са нижом сигурношћу, потребна верификација.</p><span class="mini bad">64,84%</span></div>
+<div class="species-item"><h4>Rosa dumalis</h4><span class="latin-small">Шипурак</span><p>Захтева пажљиво теренско потврђивање.</p><span class="mini bad">64,07%</span></div>
+<div class="species-item"><h4>Centaurea stoebe</h4><span class="latin-small">Пепељаста кичица</span><p>Нижа сигурност; корисна за накнадну проверу станишта.</p><span class="mini bad">53,21%</span></div>
+<div class="species-item"><h4>Rosa micrantha</h4><span class="latin-small">Ситноцветни шипурак</span><p>Врста ниске сигурности, обавезна верификација.</p><span class="mini bad">47,51%</span></div>
+<div class="species-item"><h4>Ambrosia psilostachya</h4><span class="latin-small">Вишегодишња амброзија</span><p>Критично низак степен сигурности; не тумачити без терена.</p><span class="mini bad">27,63%</span></div>
+</div>
+</section>
+<section class="section panel ambro">
+<div aria-hidden="true" class="ambro-media"></div>
+<div class="ambro-copy">
+<span class="section-tag">Амброзија</span>
+<h2 class="section-title">Посебно издвојена инвазивна врста</h2>
+<p>
+            Обична амброзија (<em>Ambrosia artemisiifolia</em>) у ботаничком извештају има поузданост идентификације
+            од <strong>86,46%</strong>. Описана је као једногодишња, високо алергена врста која се на Рајцу јавља дуж
+            стаза и на узнемиреним местима, без еколошке вредности за опрашиваче.
+          </p>
+<p>
+            За управљача је посебно важно што је ова врста препозната као јасан сигнал поремећаја станишта и као
+            таксон који захтева редовну контролу и уклањање пре цветања. Поред ње, на списку су наведене и
+            <em>Ambrosia tenuifolia</em> са 74,44% и <em>Ambrosia psilostachya</em> са 27,63%, што додатно указује
+            на потребу за пажљивом теренском верификацијом свих сумњивих налаза из рода <em>Ambrosia</em>.
+          </p>
+<div class="highlights">
+<div class="highlight">
+<strong>Поузданост</strong>
+<span><em>Ambrosia artemisiifolia</em> — 86,46%</span>
+</div>
+<div class="highlight">
+<strong>Ризик</strong>
+<span>Високо алергена врста без еколошке користи за опрашиваче</span>
+</div>
+<div class="highlight">
+<strong>Управљање</strong>
+<span>Редовна контрола и уклањање пре цветања</span>
+</div>
+<div class="highlight">
+<strong>Контекст</strong>
+<span>Индикатор поремећаја станишта и узнемирених површина</span>
+</div>
+</div>
+</div>
+</section>
+<section class="section panel closing">
+<span class="section-tag">Закључак</span>
+<h2 class="section-title">Зашто су ови подаци важни за управљање</h2>
+<p>
+          Мониторинг из 2025. године потврђује да Рајац има сложен мозаик станишта у коме су истовремено добро
+          заступљене шумске, рубне и ливадске врсте. Птице показују вредност подрасти, зрелих листопадних шума и
+          четинарске компоненте, док ботанички налази указују на очуване полусуве и суве травне заједнице у другој
+          и трећој зони заштите.
+        </p>
+<p>
+          Разлике у поузданости идентификације подсећају да мониторинг није само списак врста већ и систем процене
+          сигурности налаза. Зато су на овој страници задржане оригиналне ознаке из извештаја: квалитативне за птице
+          и бројчане за биљке.
+        </p>
+</section>
+<div class="footer-note">ПИО „Рајац“ • Мониторинг вегетације и птица 2025. године</div>
+</div>
+</main>
+
+<!-- SITE_EDITOR_ADMIN_BAR_START -->
+<script src="/admin-site-editor.php?admin_bar_js=1" defer></script>
+<!-- SITE_EDITOR_ADMIN_BAR_END -->
+</body>
+</html>

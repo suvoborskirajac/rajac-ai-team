@@ -1,0 +1,311 @@
+<!doctype html>
+<html lang="sr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Потврђено присуство Rosalia alpina — ендемска реликтна врста на Рајцу — ПИО „Рајац”</title>
+  <meta name="description" content="Вест о потврђеном присуству врсте Rosalia alpina у ПИО „Рајац”, са оригиналним текстом и фотографијом из странице вести.">
+  <link rel="canonical" href="https://piorajac.rs/rajac-vesti/potvrdjeno-prisustvo-rosalia-alpina/">
+  <style>
+    :root {
+      --bg:#f3efe4;
+      --paper:#fffdf8;
+      --ink:#172116;
+      --muted:#667064;
+      --nav:#0d1b2a;
+      --green:#174f2a;
+      --gold:#9a6a16;
+      --gold-soft:#ead7a6;
+      --line:rgba(28,36,27,.14);
+      --shadow:0 18px 50px rgba(33,33,24,.08);
+      --radius:28px;
+      --wrap:1120px;
+      --serif:"Cormorant Garamond","EB Garamond",Garamond,Georgia,serif;
+    }
+    * { box-sizing:border-box; }
+    html { scroll-behavior:smooth; }
+    body {
+      margin:0;
+      background:
+        radial-gradient(circle at 7% 0%, rgba(154,106,22,.08), transparent 28%),
+        linear-gradient(180deg,#f7f2e8 0%, var(--bg) 100%);
+      color:var(--ink);
+      font-family:var(--serif);
+      font-size:18px;
+      line-height:1.7;
+    }
+    a { color:inherit; }
+    .topbar {
+      position:sticky;
+      top:0;
+      z-index:50;
+      background:var(--nav);
+      border-bottom:1px solid rgba(255,255,255,.08);
+      box-shadow:0 8px 20px rgba(0,0,0,.08);
+    }
+    .topbar-inner {
+      width:min(var(--wrap), calc(100% - 32px));
+      margin:auto;
+      min-height:58px;
+      display:flex;
+      align-items:center;
+      gap:10px;
+      overflow-x:auto;
+      scrollbar-width:none;
+      white-space:nowrap;
+    }
+    .topbar-inner::-webkit-scrollbar { display:none; }
+    .nav-home,
+    .nav-link {
+      text-decoration:none;
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      min-height:38px;
+      padding:0 14px;
+      border-radius:999px;
+      color:rgba(255,255,255,.74);
+      font-size:15px;
+      font-weight:700;
+      letter-spacing:.055em;
+      text-transform:uppercase;
+    }
+    .nav-home {
+      color:#f0d98c;
+      border:1px solid rgba(240,217,140,.36);
+      margin-right:8px;
+      text-transform:none;
+      letter-spacing:.035em;
+    }
+    .nav-link:hover,
+    .nav-home:hover {
+      background:rgba(255,255,255,.05);
+      color:#fff;
+    }
+    .nav-link.is-active {
+      color:#f0d98c;
+      border:1px solid rgba(240,217,140,.32);
+    }
+    .count {
+      display:inline-grid;
+      place-items:center;
+      min-width:20px;
+      height:20px;
+      padding:0 6px;
+      border-radius:999px;
+      background:rgba(240,217,140,.16);
+      color:#f0d98c;
+      font-size:12px;
+      line-height:1;
+      margin-left:2px;
+    }
+    .shell {
+      width:min(var(--wrap), calc(100% - 32px));
+      margin:0 auto;
+      padding:80px 0 90px;
+    }
+    .hero {
+      background:rgba(255,255,255,.62);
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
+      padding:62px 64px;
+      margin-bottom:26px;
+    }
+    .kicker {
+      margin:0 0 22px;
+      color:var(--gold);
+      font-weight:800;
+      letter-spacing:.22em;
+      text-transform:uppercase;
+      font-size:14px;
+    }
+    h1 {
+      margin:0;
+      max-width:920px;
+      font-size:clamp(44px, 5.6vw, 78px);
+      line-height:1.05;
+      font-weight:300;
+      letter-spacing:-.035em;
+      color:#172116;
+    }
+    .lead {
+      margin:26px 0 0;
+      max-width:820px;
+      color:var(--muted);
+      font-size:23px;
+      line-height:1.55;
+    }
+    .meta-grid {
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:14px;
+      margin:0 0 26px;
+    }
+    .meta-item {
+      background:rgba(255,255,255,.68);
+      border:1px solid var(--line);
+      border-radius:18px;
+      padding:18px 20px;
+    }
+    .meta-label {
+      display:block;
+      color:var(--gold);
+      font-size:13px;
+      letter-spacing:.18em;
+      text-transform:uppercase;
+      font-weight:800;
+      margin-bottom:6px;
+    }
+    .meta-value {
+      display:block;
+      font-size:20px;
+      color:#172116;
+      font-weight:600;
+    }
+    .article {
+      background:rgba(255,255,255,.74);
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
+      padding:58px 64px;
+      overflow:hidden;
+    }
+    .prose {
+      max-width:900px;
+      margin:auto;
+    }
+    .prose p {
+      margin:0 0 23px;
+      color:#4f5b4d;
+      font-size:23px;
+      line-height:1.62;
+    }
+    .prose h2,
+    .prose h3 {
+      color:#172116;
+      font-weight:300;
+      line-height:1.15;
+      margin:42px 0 16px;
+      letter-spacing:-.02em;
+    }
+    .prose h2 { font-size:42px; }
+    .prose h3 { font-size:34px; }
+    .prose ul {
+      margin:18px 0 26px;
+      padding-left:24px;
+      color:#4f5b4d;
+      font-size:22px;
+      line-height:1.6;
+    }
+    .prose li { margin:0 0 12px; }
+    .prose strong { color:#172116; font-weight:700; }
+    .prose em { color:#172116; }
+    .news-figure {
+      margin:36px auto 38px;
+      max-width:760px;
+      border-radius:22px;
+      overflow:hidden;
+      border:1px solid rgba(28,36,27,.13);
+      box-shadow:0 16px 36px rgba(24,31,22,.12);
+      background:#fff;
+    }
+    .news-figure img {
+      display:block;
+      width:100%;
+      height:auto;
+    }
+    .foot {
+      display:flex;
+      justify-content:space-between;
+      gap:14px;
+      flex-wrap:wrap;
+      margin-top:26px;
+      padding-top:28px;
+      border-top:1px solid var(--line);
+    }
+    .btn {
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      min-height:42px;
+      padding:0 18px;
+      border-radius:999px;
+      border:1px solid rgba(23,79,42,.25);
+      background:#fff;
+      color:var(--green);
+      text-decoration:none;
+      font-size:15px;
+      font-weight:800;
+      letter-spacing:.08em;
+      text-transform:uppercase;
+    }
+    .btn:hover { background:#f2f8f1; }
+    @media (max-width:760px) {
+      .shell { width:min(100% - 22px, var(--wrap)); padding:34px 0 60px; }
+      .hero,.article { padding:30px 22px; border-radius:22px; }
+      .meta-grid { grid-template-columns:1fr; }
+      h1 { font-size:38px; }
+      .lead,.prose p,.prose ul { font-size:20px; }
+      .prose h2 { font-size:32px; }
+      .prose h3 { font-size:28px; }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar" aria-label="Главни мени вести">
+    <nav class="topbar-inner">
+      <a class="nav-home" href="https://piorajac.rs/">ПИО „Рајац”</a>
+      <a class="nav-link" href="/rajac-vesti/">← Све вести</a>
+      <a class="nav-link is-active" href="/rajac-vesti-kategorija/aktuelno/">Актуелно <span class="count">2</span></a>
+      <a class="nav-link" href="/rajac-vesti-kategorija/vesti/">Вести <span class="count">14</span></a>
+      <a class="nav-link" href="/rajac-vesti-kategorija/dogadjaj/">Догађај <span class="count">2</span></a>
+      <a class="nav-link" href="/rajac-vesti-kategorija/izvestaji/">Извештаји <span class="count">6</span></a>
+      <a class="nav-link" href="/rajac-vesti-kategorija/istrazivanja/">Истраживања <span class="count">7</span></a>
+      <a class="nav-link" href="/rajac-vesti-kategorija/tema/">Тема <span class="count">3</span></a>
+      <a class="nav-link" href="/rajac-vesti-kategorija/u-fokusu/">У фокусу <span class="count">5</span></a>
+    </nav>
+  </header>
+
+  <main class="shell">
+    <section class="hero">
+      <p class="kicker">АКТУЕЛНО · 6. март 2026.</p>
+      <h1>Потврђено присуство Rosalia alpina — ендемска реликтна врста на Рајцу</h1>
+      <p class="lead">Откриће врсте <em>Rosalia alpina</em> потврђује значај старих шумских станишта и строгих мера очувања у ПИО „Рајац”.</p>
+    </section>
+
+    <section class="meta-grid" aria-label="Подаци о вести">
+      <div class="meta-item"><span class="meta-label">Локација</span><span class="meta-value">ПИО „Рајац”</span></div>
+      <div class="meta-item"><span class="meta-label">Датум</span><span class="meta-value">6. март 2026.</span></div>
+      <div class="meta-item"><span class="meta-label">Категорија</span><span class="meta-value">Актуелно</span></div>
+    </section>
+
+    <article class="article">
+      <div class="prose" id="rp-prose-1292">
+        
+<p class="wp-block-paragraph">Током детаљних истраживања биолошке разноврсности спроведених 2023. године, на подручју Предела изузетних одлика „Рајац“ забележен је проналазак <strong>Алпске стрижибубе</strong> (<em>Rosalia alpina</em>), једне од најлепших и најугроженијих врста инсеката у Европи. Ово откриће представља крунски доказ еколошке вредности рајачких шума, јер ова врста служи као директан индикатор очуваности и здравља шумских станишта.</p>
+<h3 class="wp-block-heading">Зашто је ово откриће значајно?</h3>
+<p class="wp-block-paragraph">Алпска стрижибуба је врста која насељава искључиво старе букove шуме са значајним уделом мртвог и трулог дрвета. Њен проналазак потврђује да су планински масиви Рајца, посебно у зонама строге заштите, сачували свој изворни карактер и висок степен природности.</p>
+<ul class="wp-block-list">
+<li><strong>Локалитет проналаска:</strong> Инсект је детектован у зони <strong>Велике провалије</strong>, локалитету који се одликује „прашумским изгледом“ и у којем доминира шума брдске букве (<em>Fagetum moesiacae</em>).</li>
+<li><strong>Значај мртвог дрвета:</strong> Проналазак ове стрижибубе оправдава строге мере заштите I степена, које изричито забрањују уклањање старих и палих стабала, јер она представљају једини дом и храну за ларве ове врсте.</li>
+</ul>
+<p class="wp-block-paragraph">Овај инсект је лако препознатљив по својој специфичној <strong>светлоплавој или челичноплавој боји</strong> са карактеристичним црним мрљама на покрилцима. Њене дуге антене, које код мужјака могу бити знатно дуже од самог тела, такође имају чуперке црних длачица, што јој даје егзотичан изглед. Иако је веома уочљива на длану, њена боја пружа савршену камуфлажу на сивој кори букве.</p>
+<figure class="wp-block-image aligncenter size-full news-figure"><img alt="Rosalia alpina — алпска стрижибуба забележена на Рајцу" class="wp-image-1295" decoding="async" fetchpriority="high" height="557" loading="lazy" sizes="(max-width: 672px) 100vw, 672px" src="/wp-content/uploads/2026/03/Rosalia_alpina_MV-1.jpg" srcset="/wp-content/uploads/2026/03/Rosalia_alpina_MV-1.jpg 672w, /wp-content/uploads/2026/03/Rosalia_alpina_MV-1-300x249.jpg 300w" width="672"/></figure>
+<h3 class="wp-block-heading">Биологија и заштита</h3>
+<p class="wp-block-paragraph">Развојни циклус Алпске стрижибубе је дуг и траје од <strong>три до четири године</strong>, колико ларве проводе хранећи се дрветом. За разлику од дугог развоја, одрасле јединке живе свега неколико недеља током летњих месеци, када се паре и полажу јаја.</p>
+<p class="wp-block-paragraph">Због губитка станишта услед интензивног шумарства, ова врста је у многим деловима Европе потпуно нестала. Данас је строго заштићена како домаћим законодавством, тако и међународним конвенцијама.</p>
+
+      </div>
+      <footer class="foot">
+        <a class="btn" href="/rajac-vesti/">← Назад на све вести</a>
+        <a class="btn" href="https://piorajac.rs/">Почетна страна →</a>
+      </footer>
+    </article>
+  </main>
+
+<!-- SITE_EDITOR_ADMIN_BAR_START -->
+<script src="/admin-site-editor.php?admin_bar_js=1" defer></script>
+<!-- SITE_EDITOR_ADMIN_BAR_END -->
+</body>
+</html>

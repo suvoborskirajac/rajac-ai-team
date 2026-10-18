@@ -1,0 +1,233 @@
+<!doctype html>
+<html lang="sr-Cyrl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Кошење ливада 16→19.06.2026 — NDVI/NDMI/RECI — V2</title>
+<style>
+:root{
+  --bg:#f6efe4; --card:#fffaf2; --text:#2b241b; --muted:#6d6254; --line:#decfbb;
+  --accent:#b87922; --accent2:#ffda55; --danger:#d84224; --ok:#4d7d32;
+  --shadow:0 18px 44px rgba(73,53,28,.14);
+}
+*{box-sizing:border-box}
+html,body{margin:0;background:linear-gradient(180deg,#fffaf2 0%,#f6efe4 100%);color:var(--text);font-family:system-ui,-apple-system,"Segoe UI",Arial,sans-serif;line-height:1.5}
+a{color:inherit}.wrap{width:min(1320px,calc(100% - 28px));margin:auto}.top{position:sticky;top:0;z-index:20;background:rgba(255,250,242,.96);border-bottom:1px solid var(--line);backdrop-filter:blur(10px)}.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:12px 0}.brand{font-weight:900;letter-spacing:-.02em}.home{font-size:.92rem;color:#5d4d39;text-decoration:none;border:1px solid var(--line);background:#fff;padding:8px 12px;border-radius:12px}.hero{padding:24px 0 12px}.hero h1{font-size:clamp(1.45rem,2.4vw,2.35rem);line-height:1.1;margin:0 0 10px;letter-spacing:-.045em}.lead{max-width:1050px;color:#5f5348;margin:0}.panel{background:rgba(255,250,242,.96);border:1px solid var(--line);border-radius:22px;box-shadow:var(--shadow);margin:18px 0;padding:18px}.controls{display:grid;grid-template-columns:repeat(6,minmax(110px,1fr));gap:10px;align-items:end}.field label{display:block;font-size:.78rem;text-transform:uppercase;letter-spacing:.08em;color:#7a6a59;font-weight:800;margin:0 0 5px}.field input,.field select{width:100%;border:1px solid var(--line);border-radius:12px;background:#fff;color:var(--text);padding:10px 11px;font-weight:800}.buttons{display:flex;gap:8px;flex-wrap:wrap;align-items:center}.btn{border:1px solid #b98b4a;background:#fff3d7;color:#442b0b;border-radius:12px;padding:10px 14px;font-weight:900;cursor:pointer}.btn.primary{background:#b87922;color:#fff;border-color:#9b641b}.btn:disabled{opacity:.5;cursor:not-allowed}.status{margin-top:12px;color:#675a4d;background:#fff;border:1px solid var(--line);border-radius:14px;padding:11px 12px}.status b{color:#2f251a}.grid{display:grid;grid-template-columns:1.3fr .7fr;gap:18px}.mapbox{background:#fff;border:1px solid var(--line);border-radius:18px;overflow:hidden}.map-head{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:12px 14px;border-bottom:1px solid var(--line);background:#fff7e9}.map-title{font-weight:900}.badge{font-size:.86rem;font-weight:900;border:1px solid var(--line);border-radius:999px;background:#fff;padding:6px 10px;color:#6a5946}.stage{position:relative;background:#17110a;min-height:340px;display:flex;align-items:center;justify-content:center;overflow:auto}.stage canvas{max-width:100%;height:auto;display:block}.side{display:grid;gap:14px}.metric{background:#fff;border:1px solid var(--line);border-radius:18px;padding:14px}.metric h3{margin:0 0 8px;font-size:1rem}.metric p{margin:0;color:#625548}.metric .big{font-size:2rem;font-weight:950;letter-spacing:-.04em;color:#3c2b1d}.legend-row{display:flex;align-items:center;gap:8px;margin-top:8px;color:#6b5c4d;font-size:.9rem}.sw{width:22px;height:14px;border-radius:5px;border:1px solid rgba(0,0,0,.2)}.sw.y{background:#ffda55}.sw.o{background:#ff7a00}.sw.r{background:#d84224}.mini{font-size:.88rem;color:#6d6254}.hidden{display:none!important}.downloads{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}.thumbs{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:14px}.thumb{background:#fff;border:1px solid var(--line);border-radius:16px;overflow:hidden}.thumb h4{margin:0;padding:8px 10px;border-bottom:1px solid var(--line);font-size:.88rem;color:#5c4d3e}.thumb canvas{width:100%;height:auto;display:block;background:#160f09}.note{font-size:.92rem;color:#6e6255}.err{color:#b12a17;font-weight:900}.ok{color:#4e792f;font-weight:900}
+@media(max-width:980px){.controls{grid-template-columns:repeat(2,1fr)}.grid{grid-template-columns:1fr}.thumbs{grid-template-columns:1fr}.stage{min-height:260px}.top .wrap{align-items:flex-start}.home{white-space:nowrap}}
+</style>
+</head>
+<body>
+<header class="top"><div class="wrap"><div class="brand">ПИО Рајац · анализа кошења</div><a class="home" href="https://piorajac.rs/">ПИО Рајац — почетна</a></div></header>
+<main class="wrap">
+<section class="hero">
+  <h1>Нове покошене површине између 16. и 19. јуна 2026.</h1>
+  <p class="lead">Алат упоређује три Copernicus индекса — NDVI, NDMI и RECI — и боји само оне пикселе унутар границе ПИО „Рајац” код којих је истовремено опао сигнал зелене масе, влажности биомасе и хлорофила. Циљ је издвајање нових правоугаоних/парцелацијских површина које највероватније одговарају кошењу ливада.</p>
+</section>
+<section class="panel">
+  <div class="controls">
+    <div class="field"><label>Пре</label><input id="dateA" value="2026-06-16" type="date"></div>
+    <div class="field"><label>После</label><input id="dateB" value="2026-06-19" type="date"></div>
+    <div class="field"><label>Режим</label><select id="mode"><option value="strict" selected>строго 3/3 индекса</option><option value="soft">осетљиво 2/3 индекса</option></select></div>
+    <div class="field"><label>Минимум површине</label><select id="minArea"><option value="70">70 px</option><option value="120" selected>120 px</option><option value="220">220 px</option><option value="380">380 px</option></select></div>
+    <div class="field"><label>Резолуција анализе</label><select id="workWidth"><option value="900">900 px</option><option value="1200" selected>1200 px</option><option value="1600">1600 px</option></select></div>
+    <div class="buttons"><button class="btn primary" id="runBtn">Покрени анализу</button><button class="btn" id="downloadBtn" disabled>Преузми PNG</button></div>
+  </div>
+  <div class="status" id="status">Спремно. V2 користи апсолутну путању <b>/kopindeksi/indeksi/</b> и сам проба више варијанти читања података, без обзира у ком фолдеру је отворен HTML.</div>
+</section>
+<section class="grid">
+  <div class="mapbox">
+    <div class="map-head"><div class="map-title">NDVI 19.06.2026 + обојене нове површине</div><div class="badge" id="dateBadge">—</div></div>
+    <div class="stage"><canvas id="outCanvas" width="1200" height="520"></canvas></div>
+  </div>
+  <div class="side">
+    <div class="metric"><h3>Означено</h3><div class="big" id="pxCount">—</div><p>пиксела унутар границе ПИО после филтрирања ситног шума.</p></div>
+    <div class="metric"><h3>Компоненте</h3><div class="big" id="compCount">—</div><p>одвојених површина које личе на парцеле/косине.</p></div>
+    <div class="metric"><h3>Легенда</h3><div class="legend-row"><span class="sw y"></span> вероватно ново кошење — 3 индекса</div><div class="legend-row"><span class="sw o"></span> ивица / јачи сигнал</div><div class="legend-row"><span class="sw r"></span> центар компоненте</div><p class="mini">Црне/празне зоне, облаци, сенке и све ван границе ПИО се избацују.</p></div>
+  </div>
+</section>
+<section class="panel">
+  <div class="map-title">Провера по индексима</div>
+  <p class="note">Ови мали прикази помажу да се види да ли површина заиста има истовремени пад на NDVI, NDMI и RECI. Ако је потребно строжије издвајање, користи режим 3/3 и већи минимум површине.</p>
+  <div class="thumbs">
+    <div class="thumb"><h4>NDVI пад</h4><canvas id="ndviCanvas" width="400" height="170"></canvas></div>
+    <div class="thumb"><h4>NDMI пад</h4><canvas id="ndmiCanvas" width="400" height="170"></canvas></div>
+    <div class="thumb"><h4>RECI пад</h4><canvas id="reciCanvas" width="400" height="170"></canvas></div>
+  </div>
+</section>
+<section class="panel note">
+  <b>Напомена за тумачење:</b> ово није теренска потврда кошења, већ даљинска индикација. Најпоузданије су површине које су правоугаоне, парцелисане, јављају се на ливадама, а не на облацима/сенкама, и имају истовремени пад NDVI, NDMI и RECI.
+</section>
+</main>
+<script>
+(function(){
+'use strict';
+const PROXY_CANDIDATES = [
+  './copernicus_proxy.php',
+  '/kopindeksi/indeksi/copernicus_proxy.php',
+  '/kopindeksi/copernicus_proxy.php'
+];
+const DATA_ROOTS = [
+  './',
+  '/kopindeksi/indeksi/',
+  '/kopindeksi/indeksi/copernicus_data/',
+  '/kopindeksi/indeksi/data/',
+  '/kopindeksi/',
+  '/kopindeksi/copernicus_data/',
+  '/kopindeksi/data/'
+];
+const $ = id => document.getElementById(id);
+const statusEl=$('status'), runBtn=$('runBtn'), downloadBtn=$('downloadBtn');
+const out=$('outCanvas'), outCtx=out.getContext('2d',{willReadFrequently:true});
+const smallCan={NDVI:$('ndviCanvas'),NDMI:$('ndmiCanvas'),RECI:$('reciCanvas')};
+const RAMP={
+ NDVI:[[0,'#2f1b00'],[.14,'#7a4f00'],[.24,'#b86d00'],[.34,'#d8b16f'],[.46,'#f0f0b0'],[.58,'#b7e075'],[.72,'#57c84d'],[.86,'#1f8b24'],[1,'#005a12']],
+ NDMI:[[0,'#00108b'],[.18,'#0072ff'],[.30,'#66ddff'],[.42,'#d5ffd5'],[.55,'#00c800'],[.66,'#009600'],[.78,'#ffff00'],[.88,'#ff9600'],[1,'#ff0000']],
+ RECI:[[0,'#2b0a3d'],[.16,'#4e1d73'],[.34,'#0b5bd3'],[.50,'#09a5ff'],[.68,'#34c759'],[.84,'#c7d93a'],[1,'#fff275']]
+};
+function hexToRgb(h){h=h.replace('#','');return [parseInt(h.slice(0,2),16),parseInt(h.slice(2,4),16),parseInt(h.slice(4,6),16)];}
+for(const k in RAMP){RAMP[k]=RAMP[k].map(x=>[x[0],hexToRgb(x[1])]);}
+function msg(t,cls){statusEl.innerHTML=t; statusEl.className='status '+(cls||'');}
+function cleanPath(path){
+  let p=String(path||'').trim();
+  if(!p) return '';
+  if(/^https?:\/\//i.test(p)) return p;
+  p=p.replace(/^\.\//,'').replace(/^\.\.\//,'').replace(/^\/+/, '');
+  p=p.replace(/^kopindeksi\/indeksi\//,'').replace(/^kopindeksi\//,'');
+  p=p.replace(/^copernicus_data\//,'').replace(/^data\//,'');
+  return p;
+}
+function addCache(url){return url+(url.includes('?')?'&':'?')+'t='+Date.now();}
+function unique(list){return [...new Set(list.filter(Boolean))];}
+function dataUrlCandidates(path,allowProxy=true){
+  const raw=String(path||'').trim();
+  if(/^https?:\/\//i.test(raw)) return [raw];
+  const p=cleanPath(raw);
+  const list=[];
+  if(allowProxy){
+    for(const pr of PROXY_CANDIDATES) list.push(pr+'?path='+encodeURIComponent(p));
+  }
+  for(const root of DATA_ROOTS) list.push(root+p);
+  return unique(list);
+}
+async function fetchJson(path){
+  const urls=dataUrlCandidates(path,true);
+  let lastErr=null, tried=[];
+  for(const url of urls){
+    tried.push(url);
+    try{
+      const r=await fetch(addCache(url),{cache:'no-store'});
+      if(!r.ok){lastErr=new Error('HTTP '+r.status+' · '+url); continue;}
+      return await r.json();
+    }catch(e){lastErr=e;}
+  }
+  const first=tried.slice(0,5).join(' | ');
+  throw new Error((lastErr&&lastErr.message?lastErr.message:'Не могу да учитам JSON')+' · пробано: '+first);
+}
+function assetUrlCandidates(raw){
+  raw=String(raw||'').trim();
+  if(!raw) return [];
+  const m=raw.match(/copernicus_data\/(.+)$/);
+  if(m) raw=m[1];
+  return dataUrlCandidates(raw,true);
+}
+function normDate(v){return String(v||'').slice(0,10);}
+function daysDiff(a,b){return Math.abs((new Date(a)-new Date(b))/86400000);}
+function pickFrame(frames,target){
+  frames=(frames||[]).filter(f=>f && (f.url||f.file||f.path) && (f.date||f.label));
+  let exact=frames.find(f=>normDate(f.date||f.label)===target); if(exact) return exact;
+  frames.sort((a,b)=>daysDiff(normDate(a.date||a.label),target)-daysDiff(normDate(b.date||b.label),target));
+  return frames[0]||null;
+}
+async function loadBundle(idx,year){
+  const candidates=[idx+'/'+year+'/frames.json']; if(idx==='NDMI') candidates.push(year+'/frames.json');
+  let err=null;
+  for(const c of candidates){try{const j=await fetchJson(c); if(Array.isArray(j.frames)&&j.frames.length) return j;}catch(e){err=e;}}
+  throw err||new Error('Нема frames.json за '+idx);
+}
+function loadImage(url){return new Promise((res,rej)=>{const im=new Image(); im.crossOrigin='anonymous'; im.onload=()=>res(im); im.onerror=()=>rej(new Error('Не могу да учитам слику: '+url)); im.src=url;});}
+async function loadImageAny(raw){
+  const urls=assetUrlCandidates(raw);
+  let last=null;
+  for(const url of urls){
+    try{return await loadImage(addCache(url));}catch(e){last=e;}
+  }
+  throw last||new Error('Не могу да учитам слику: '+raw);
+}
+function drawImageToData(img,w,h){const c=document.createElement('canvas');c.width=w;c.height=h;const ctx=c.getContext('2d',{willReadFrequently:true});ctx.drawImage(img,0,0,w,h);return ctx.getImageData(0,0,w,h);}
+function rgbDist(a,b){const dr=a[0]-b[0],dg=a[1]-b[1],db=a[2]-b[2];return dr*dr+dg*dg+db*db;}
+function rampValue(idx,r,g,b){let bestV=0,bestD=1e9;for(const [v,c] of RAMP[idx]){const d=(r-c[0])*(r-c[0])+(g-c[1])*(g-c[1])+(b-c[2])*(b-c[2]); if(d<bestD){bestD=d;bestV=v;}}return {v:bestV,d:bestD};}
+function validPixel(r,g,b,a){if(a<30) return false; const max=Math.max(r,g,b),min=Math.min(r,g,b),avg=(r+g+b)/3; if(avg<14) return false; if(max>245 && min>225) return false; return true;}
+function makeBoundaryMask(geo,bbox,w,h){
+  const c=document.createElement('canvas');c.width=w;c.height=h;const ctx=c.getContext('2d');ctx.fillStyle='#000';ctx.fillRect(0,0,w,h);ctx.fillStyle='#fff';
+  let bb=(geo&&geo.bbox)||bbox; if(!bb || bb.length<4){ctx.fillStyle='#fff';ctx.fillRect(0,0,w,h);return ctx.getImageData(0,0,w,h).data;}
+  const [minLon,minLat,maxLon,maxLat]=bb.map(Number), dx=Math.max(maxLon-minLon,1e-9), dy=Math.max(maxLat-minLat,1e-9);
+  function xy(pt){const lon=Number(pt[0]),lat=Number(pt[1]); return [((lon-minLon)/dx)*w,((maxLat-lat)/dy)*h];}
+  function poly(coords){ctx.beginPath();coords.forEach(ring=>{ring.forEach((pt,i)=>{const p=xy(pt); if(i===0)ctx.moveTo(p[0],p[1]); else ctx.lineTo(p[0],p[1]);});ctx.closePath();});ctx.fill('evenodd');}
+  (geo.features||[]).forEach(ft=>{const g=ft.geometry||{}; if(g.type==='Polygon') poly(g.coordinates); if(g.type==='MultiPolygon') g.coordinates.forEach(poly);});
+  return ctx.getImageData(0,0,w,h).data;
+}
+function components(binary,w,h,minArea){
+  const seen=new Uint8Array(w*h), keep=new Uint8Array(w*h), comps=[]; const qx=new Int32Array(w*h),qy=new Int32Array(w*h);
+  for(let y=1;y<h-1;y++) for(let x=1;x<w-1;x++){const id=y*w+x; if(!binary[id]||seen[id]) continue; let head=0,tail=0; qx[tail]=x;qy[tail]=y;tail++; seen[id]=1; let pixels=[],minx=x,maxx=x,miny=y,maxy=y;
+    while(head<tail){const cx=qx[head],cy=qy[head];head++; const cid=cy*w+cx; pixels.push(cid); if(cx<minx)minx=cx;if(cx>maxx)maxx=cx;if(cy<miny)miny=cy;if(cy>maxy)maxy=cy;
+      for(let yy=cy-1;yy<=cy+1;yy++) for(let xx=cx-1;xx<=cx+1;xx++){const nid=yy*w+xx; if(xx<0||yy<0||xx>=w||yy>=h||seen[nid]||!binary[nid]) continue; seen[nid]=1; qx[tail]=xx;qy[tail]=yy;tail++;}
+    }
+    if(pixels.length>=minArea){pixels.forEach(p=>keep[p]=1); comps.push({area:pixels.length,minx,maxx,miny,maxy,cx:(minx+maxx)/2,cy:(miny+maxy)/2});}
+  }
+  return {keep, comps};
+}
+function outlineFromMask(mask,w,h){const edge=new Uint8Array(w*h);for(let y=1;y<h-1;y++)for(let x=1;x<w-1;x++){const id=y*w+x;if(!mask[id])continue; if(!mask[id-1]||!mask[id+1]||!mask[id-w]||!mask[id+w]) edge[id]=1;}return edge;}
+function drawSmall(can,baseData,mask,w,h,title){const ctx=can.getContext('2d'); const tw=can.width, th=Math.round(tw*h/w); can.height=th; const tmp=document.createElement('canvas');tmp.width=w;tmp.height=h;const tctx=tmp.getContext('2d'); const id=new ImageData(new Uint8ClampedArray(baseData.data),w,h); const arr=id.data; for(let i=0;i<w*h;i++){if(mask[i]){const p=i*4; arr[p]=255; arr[p+1]=210; arr[p+2]=40; arr[p+3]=230;}} tctx.putImageData(id,0,0); ctx.clearRect(0,0,tw,th); ctx.drawImage(tmp,0,0,tw,th);}
+async function run(){
+  runBtn.disabled=true; downloadBtn.disabled=true; $('pxCount').textContent='—'; $('compCount').textContent='—';
+  try{
+    const dA=$('dateA').value, dB=$('dateB').value, year=dB.slice(0,4), W=Number($('workWidth').value), minArea=Number($('minArea').value), strict=$('mode').value==='strict';
+    msg('Учитавање каталога, границе и три пара слика…');
+    const catalog=await fetchJson('catalog.json').catch(()=>({boundary:'pio_boundary.geojson'}));
+    const boundary=await fetchJson(catalog.boundary||'pio_boundary.geojson').catch(()=>null);
+    const bundles={}, framesA={}, framesB={}, imgsA={}, imgsB={};
+    for(const idx of ['NDVI','NDMI','RECI']){
+      bundles[idx]=await loadBundle(idx,year); framesA[idx]=pickFrame(bundles[idx].frames,dA); framesB[idx]=pickFrame(bundles[idx].frames,dB);
+      if(!framesA[idx]||!framesB[idx]) throw new Error('Недостаје снимак за '+idx+' у датумима '+dA+' / '+dB);
+      imgsA[idx]=await loadImageAny(framesA[idx].url||framesA[idx].file||framesA[idx].path);
+      imgsB[idx]=await loadImageAny(framesB[idx].url||framesB[idx].file||framesB[idx].path);
+    }
+    const aspect=imgsB.NDVI.naturalWidth/imgsB.NDVI.naturalHeight; const H=Math.round(W/aspect); out.width=W; out.height=H;
+    const dataA={},dataB={}; for(const idx of ['NDVI','NDMI','RECI']){dataA[idx]=drawImageToData(imgsA[idx],W,H); dataB[idx]=drawImageToData(imgsB[idx],W,H);}
+    const bbox=(boundary&&boundary.bbox)||bundles.NDVI.bbox||bundles.NDMI.bbox||bundles.RECI.bbox; const bmask=makeBoundaryMask(boundary,bbox,W,H);
+    const idxMasks={}, finalRaw=new Uint8Array(W*H);
+    const thresholds={NDVI:{before:.52,drop:.105},NDMI:{before:.42,drop:.085},RECI:{before:.42,drop:.080}};
+    for(const idx of ['NDVI','NDMI','RECI']){
+      const m=new Uint8Array(W*H), a=dataA[idx].data, b=dataB[idx].data, th=thresholds[idx];
+      for(let i=0;i<W*H;i++){
+        if(bmask[i*4]<1) continue; const p=i*4;
+        if(!validPixel(a[p],a[p+1],a[p+2],a[p+3]) || !validPixel(b[p],b[p+1],b[p+2],b[p+3])) continue;
+        const va=rampValue(idx,a[p],a[p+1],a[p+2]); const vb=rampValue(idx,b[p],b[p+1],b[p+2]);
+        if(va.d>26000 || vb.d>26000) continue;
+        if(va.v>th.before && (va.v-vb.v)>th.drop) m[i]=1;
+      }
+      idxMasks[idx]=m;
+    }
+    for(let i=0;i<W*H;i++){const s=idxMasks.NDVI[i]+idxMasks.NDMI[i]+idxMasks.RECI[i]; if(strict ? s===3 : s>=2) finalRaw[i]=1;}
+    const {keep,comps}=components(finalRaw,W,H,minArea); const edge=outlineFromMask(keep,W,H);
+    const base=new ImageData(new Uint8ClampedArray(dataB.NDVI.data),W,H); const arr=base.data; let px=0;
+    for(let i=0;i<W*H;i++) if(keep[i]){px++; const p=i*4; if(edge[i]){arr[p]=255;arr[p+1]=115;arr[p+2]=0;arr[p+3]=255;} else {arr[p]=Math.round(arr[p]*.30+255*.70);arr[p+1]=Math.round(arr[p+1]*.30+218*.70);arr[p+2]=Math.round(arr[p+2]*.30+60*.70);arr[p+3]=255;}}
+    outCtx.putImageData(base,0,0);
+    outCtx.save(); outCtx.fillStyle='rgba(216,66,36,.95)'; outCtx.strokeStyle='rgba(255,255,255,.95)'; outCtx.lineWidth=Math.max(1,W/600); comps.forEach(c=>{outCtx.beginPath();outCtx.arc(c.cx,c.cy,Math.max(2,W/420),0,Math.PI*2);outCtx.fill();outCtx.stroke();}); outCtx.restore();
+    drawSmall(smallCan.NDVI,dataB.NDVI,idxMasks.NDVI,W,H); drawSmall(smallCan.NDMI,dataB.NDMI,idxMasks.NDMI,W,H); drawSmall(smallCan.RECI,dataB.RECI,idxMasks.RECI,W,H);
+    $('pxCount').textContent=px.toLocaleString('sr-RS'); $('compCount').textContent=comps.length.toLocaleString('sr-RS'); $('dateBadge').textContent='пре: '+normDate(framesA.NDVI.date||framesA.NDVI.label)+' · после: '+normDate(framesB.NDVI.date||framesB.NDVI.label);
+    msg('<span class="ok">Готово.</span> Означене су само површине унутар границе ПИО које имају пад на '+(strict?'сва три':'најмање два од три')+' индекса.');
+    downloadBtn.disabled=false;
+  }catch(e){console.error(e);msg('<span class="err">Грешка:</span> '+String(e.message||e),'');}
+  finally{runBtn.disabled=false;}
+}
+runBtn.addEventListener('click',run);
+downloadBtn.addEventListener('click',()=>{const a=document.createElement('a');a.download='PIO-Rajac-kosnja-16-19-06-2026-NDVI-NDMI-RECI.png';a.href=out.toDataURL('image/png');a.click();});
+// automatski pokreni ako je strana na pravom serveru
+setTimeout(()=>{ if(location.protocol.startsWith('http')) run(); }, 500);
+})();
+</script>
+
+<script defer src="/rajac-design/rajac-vrh-button.js?v=20260707-v1"></script>
+</body>
+</html>
