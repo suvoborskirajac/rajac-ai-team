@@ -128,6 +128,8 @@ foreach ($strane as $s) {
         $cist[] = $s; continue;
     }
     [$ik, $ime] = $OBLASTI[$s['top']] ?? ['📁', 'Остале фасцикле'];
+    /* Књига „Светлосно загађење заштићених предела“ намерно нема натпис. */
+    if (preg_match('~^svetlosno-zagadjenje/~', $s['rel'])) { $s['naziv'] = 'knjiga'; $grupe[$ime]['ik'] = $ik; $grupe[$ime]['lista'][] = $s; $ukupno++; continue; }
     $s['naziv'] = $s['rel'] === 'index.html' || $s['rel'] === 'index.php' ? true : ima_naziv($s['f']); // почетна је сама сајт
     $grupe[$ime]['ik'] = $ik;
     $grupe[$ime]['lista'][] = $s;
@@ -238,7 +240,7 @@ footer{color:var(--muted);font-size:.8rem;padding:0 0 30px}
     <?php $red = function ($s) use ($BASE) { ?>
       <li data-t="<?= h(mb_strtolower($s['naslov'] . ' ' . $s['rel'])) ?>" data-ne="<?= $s['naziv'] === false ? 1 : 0 ?>"><a href="<?= h($BASE . $s['url']) ?>">
         <span class="t"><b><?= h($s['naslov']) ?></b><small>/<?= h($s['url']) ?></small></span>
-        <?php if ($s['naziv'] === null): ?><span class="zn php">PHP</span><?php elseif ($s['naziv']): ?><span class="zn da">РАЈАЦ</span><?php else: ?><span class="zn ne">нема</span><?php endif; ?>
+        <?php if ($s['naziv'] === 'knjiga'): ?><span class="zn php">књига</span><?php elseif ($s['naziv'] === null): ?><span class="zn php">PHP</span><?php elseif ($s['naziv']): ?><span class="zn da">РАЈАЦ</span><?php else: ?><span class="zn ne">нема</span><?php endif; ?>
         <span class="kad<?= $s['sec'] > 60 * 86400 ? ' staro' : '' ?>"><?= h(starost($s['sec'])) ?></span>
       </a></li>
     <?php }; ?>
