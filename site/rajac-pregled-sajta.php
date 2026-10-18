@@ -54,6 +54,7 @@ $PRESKOCI_HTML = '/(fragment|\.bak|before|backup|kopija|copy|test|proba|preview|
 
 function h(string $s): string { return htmlspecialchars($s, ENT_QUOTES, 'UTF-8'); }
 function starost(int $sec): string {
+    if ($sec > 20 * 365 * 86400) return 'датум непознат';
     if ($sec < 3600) return 'пре ' . max(0, intdiv($sec, 60)) . ' мин';
     if ($sec < 86400) return 'пре ' . intdiv($sec, 3600) . ' ч';
     return 'пре ' . intdiv($sec, 86400) . ' д';
@@ -127,7 +128,7 @@ foreach ($strane as $s) {
         $cist[] = $s; continue;
     }
     [$ik, $ime] = $OBLASTI[$s['top']] ?? ['📁', 'Остале фасцикле'];
-    $s['naziv'] = ima_naziv($s['f']);
+    $s['naziv'] = $s['rel'] === 'index.html' || $s['rel'] === 'index.php' ? true : ima_naziv($s['f']); // почетна је сама сајт
     $grupe[$ime]['ik'] = $ik;
     $grupe[$ime]['lista'][] = $s;
     $ukupno++;
