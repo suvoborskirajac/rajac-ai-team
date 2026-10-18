@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="sr">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>Мониторинг птица — ПИО Рајац (уживо)</title>
+<link href="https://piorajac.rs/ptice/monitoring-ptica-pio-rajac/" rel="canonical"/>
+<meta content="article" property="og:type"/>
+<meta content="Птице ПИО Рајац" property="og:site_name"/>
+<meta content="sr_RS" property="og:locale"/>
+<meta content="Мониторинг птица — Птице ПИО Рајац" property="og:title"/>
+<meta content="Снимио си птицу на Рајцу? Окачи је на eBird или iNaturalist — твоје посматрање се аутоматски појављује овде, у архиви врста и галерији. Свака чеклиста и…" property="og:description"/>
+<meta content="https://piorajac.rs/ptice/monitoring-ptica-pio-rajac/" property="og:url"/>
+<meta content="https://piorajac.rs/ptice/assets/hero-cesljugar-clean.jpg" property="og:image"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="Мониторинг птица — Птице ПИО Рајац" name="twitter:title"/>
+<meta content="Снимио си птицу на Рајцу? Окачи је на eBird или iNaturalist — твоје посматрање се аутоматски појављује овде, у архиви врста и галерији. Свака чеклиста и…" name="twitter:description"/>
+<meta content="https://piorajac.rs/ptice/assets/hero-cesljugar-clean.jpg" name="twitter:image"/>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Мониторинг птица — Птице ПИО Рајац","description":"Снимио си птицу на Рајцу? Окачи је на eBird или iNaturalist — твоје посматрање се аутоматски појављује овде, у архиви врста и галерији. Свака чеклиста и…","inLanguage":"sr-RS","url":"https://piorajac.rs/ptice/monitoring-ptica-pio-rajac/","isPartOf":{"@type":"WebSite","name":"Птице ПИО Рајац","url":"https://piorajac.rs/ptice/"}}</script>
+<meta content="Уживо мониторинг птица ПИО Рајац: посматрања са eBird и iNaturalist, архива врста и галерија снимака — аутоматски са терена." name="description"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
+<style>
+:root{
+  --bg:#f3efe6;--paper:#fffaf1;--paper2:#f8f1e2;--ink:#102019;--muted:#65736a;
+  --line:#dfd4bd;--green:#173d2b;--green2:#2e6747;--gold:#d3a64c;--soft:#eef5ee;
+  --navy:#0d1b2a;--shadow:0 20px 46px rgba(37,29,14,.10);--radius:28px;
+  --serif:"Cormorant Garamond","EB Garamond",Garamond,Georgia,serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;color:var(--ink);font-family:var(--serif);line-height:1.58;
+  background:radial-gradient(circle at 8% -8%,rgba(211,166,76,.20),transparent 34rem),
+             radial-gradient(circle at 95% 4%,rgba(23,61,43,.16),transparent 34rem),var(--bg)}
+.wrap{max-width:1180px;margin:0 auto;padding:0 20px}
+a{color:inherit}
+
+/* ── ЗАЈЕДНИЧКИ NAV ── */
+.rajac-ds-nav{background:var(--navy);position:sticky;top:0;z-index:99;border-bottom:1px solid rgba(255,255,255,.08)}
+.rajac-ds-nav-inner{max-width:1180px;margin:0 auto;padding:0 18px;display:flex;align-items:stretch;min-height:56px;overflow-x:auto;scrollbar-width:none}
+.rajac-ds-nav-inner::-webkit-scrollbar{display:none}
+.rajac-ds-home{display:flex;align-items:center;gap:9px;padding-right:20px;margin-right:8px;border-right:1px solid rgba(255,255,255,.12);flex-shrink:0;color:var(--gold);text-decoration:none;font-weight:600;font-size:16px;letter-spacing:.03em}
+.rajac-ds-nav-item{position:relative;display:flex;align-items:center;gap:7px;padding:0 15px;color:rgba(255,255,255,.72);font-size:15px;font-weight:600;letter-spacing:.045em;text-transform:uppercase;white-space:nowrap;text-decoration:none}
+.rajac-ds-nav-item:hover{color:#fff;background:rgba(255,255,255,.035)}
+.rajac-ds-nav-item.active{color:var(--gold)}
+.rajac-ds-nav-item.active:after{content:"";position:absolute;left:15px;right:15px;bottom:8px;height:2px;border-radius:2px;background:var(--gold)}
+
+/* ── HERO ── */
+.hero{position:relative;overflow:hidden;color:#fff;min-height:430px;display:flex;align-items:flex-end;
+  background:linear-gradient(105deg,rgba(10,18,13,.95),rgba(16,31,22,.74) 52%,rgba(18,32,25,.40)),
+             radial-gradient(circle at 80% 16%,rgba(211,166,76,.26),transparent 22rem),#172b20}
+.hero:after{content:"";position:absolute;inset:auto -8% -38% auto;width:560px;height:560px;border-radius:50%;background:rgba(255,255,255,.05)}
+.hero-inner{position:relative;z-index:1;width:100%;padding-top:70px;padding-bottom:56px}
+.kicker{display:inline-flex;align-items:center;gap:8px;font-size:13px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);margin-bottom:14px}
+.hero h1{font-weight:300;font-size:3.4rem;line-height:1.06;margin:0 0 14px;max-width:16ch}
+.hero p{max-width:62ch;font-size:1.22rem;color:rgba(255,255,255,.86);margin:0}
+.hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:26px}
+.btn{display:inline-flex;align-items:center;gap:9px;border-radius:999px;padding:13px 22px;font-size:1.02rem;font-weight:600;text-decoration:none;border:1px solid transparent;cursor:pointer;transition:.18s}
+.btn.gold{background:var(--gold);color:#21190c;border-color:var(--gold)}
+.btn.gold:hover{background:#e2b864}
+.btn.ghost{background:rgba(255,255,255,.07);color:#fff;border-color:rgba(255,255,255,.34)}
+.btn.ghost:hover{background:rgba(255,255,255,.14)}
+
+/* ── СТАТИСТИКА ── */
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin:-38px 0 8px;position:relative;z-index:2}
+.stat{background:var(--paper);border:1px solid var(--line);border-radius:22px;padding:18px 20px;box-shadow:var(--shadow)}
+.stat b{display:block;color:var(--green);font-size:30px;line-height:1;font-weight:500}
+.stat span{display:block;color:var(--muted);font-size:14px;margin-top:7px}
+
+section{margin:46px 0}
+.section-head{display:flex;align-items:flex-end;justify-content:space-between;gap:20px;margin-bottom:18px;flex-wrap:wrap}
+.section-head h2{font-weight:300;font-size:2rem;margin:0;color:var(--green)}
+.section-head p{max-width:760px;color:var(--muted);margin:6px 0 0;font-size:1.05rem}
+.pill{display:inline-flex;align-items:center;gap:6px;border-radius:999px;padding:7px 13px;background:var(--soft);color:var(--green);font-size:13px;font-weight:600;text-decoration:none;white-space:nowrap}
+
+/* ── КАКО ДА ДОПРИНЕСЕШ ── */
+.contribute{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.src-card{background:#fff;border:1px solid var(--line);border-radius:24px;padding:24px;box-shadow:0 12px 28px rgba(32,24,12,.06)}
+.src-head{display:flex;align-items:center;gap:12px;margin-bottom:12px}
+.src-logo{width:46px;height:46px;border-radius:13px;display:grid;place-items:center;font-size:24px;flex-shrink:0}
+.src-logo.ebird{background:#e7f0e8;color:#1b6b3a}
+.src-logo.inat{background:#e6f3ef;color:#15795f}
+.src-head strong{font-size:1.45rem;font-weight:500;color:var(--green);display:block}
+.src-head small{color:var(--muted);font-size:.95rem}
+.src-card ol{margin:8px 0 16px;padding-left:20px;color:#36433b}
+.src-card ol li{margin:5px 0}
+
+/* ── ПОСЛЕДЊА ПОСМАТРАЊА ── */
+.feed{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.obs{background:#fff;border:1px solid var(--line);border-radius:20px;overflow:hidden;display:flex;flex-direction:column;text-decoration:none;color:inherit;transition:.18s}
+.obs:hover{transform:translateY(-3px);box-shadow:0 16px 32px rgba(32,24,12,.10)}
+.obs-photo{position:relative;height:190px;background:linear-gradient(135deg,#22402e,#16331f);display:grid;place-items:center;overflow:hidden}
+.obs-photo img{width:100%;height:100%;object-fit:cover}
+.obs-photo .ph{font-size:46px;opacity:.5}
+.obs-src{position:absolute;top:10px;left:10px;border-radius:999px;padding:4px 10px;font-size:11px;font-weight:600;letter-spacing:.04em;color:#fff}
+.obs-src.ebird{background:rgba(27,107,58,.92)}
+.obs-src.inat{background:rgba(21,121,95,.92)}
+.obs-body{padding:14px 16px 16px}
+.obs-body strong{display:block;font-size:1.18rem;color:var(--green);font-weight:500;line-height:1.15}
+.obs-body .lat{font-style:italic;color:var(--muted);font-size:.92rem;margin:2px 0 8px}
+.obs-meta{display:flex;flex-wrap:wrap;gap:6px 14px;color:#5a685f;font-size:.9rem}
+.obs-meta span{display:inline-flex;align-items:center;gap:5px}
+
+/* ── АРХИВА ВРСТА ── */
+.archive{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}
+.arch{display:grid;grid-template-columns:96px minmax(0,1fr);gap:15px;align-items:center;background:#fff;border:1px solid var(--line);border-radius:16px;padding:14px;text-decoration:none;color:inherit;transition:.15s;min-height:124px}
+.arch:hover{border-color:var(--gold)}
+.arch-thumb{width:96px;height:96px;border-radius:12px;background:#e9efe7;display:grid;place-items:center;overflow:hidden;font-size:30px}
+.arch-thumb img{width:100%;height:100%;object-fit:cover}
+.arch strong{display:block;color:var(--green);font-size:1.28rem;font-weight:500;line-height:1.2}
+.arch .lat{font-style:italic;color:var(--muted);font-size:1rem;line-height:1.35;margin-top:3px}
+.arch .cnt{display:inline-block;margin-top:8px;border-radius:999px;background:#e9f1e9;color:var(--green);font-size:.95rem;font-weight:700;padding:5px 11px}
+
+/* ── ГАЛЕРИЈА ── */
+.gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(170px,1fr));gap:10px}
+.gphoto{position:relative;aspect-ratio:1;border-radius:14px;overflow:hidden;background:linear-gradient(135deg,#22402e,#16331f);display:block;text-decoration:none}
+.gphoto img{width:100%;height:100%;object-fit:cover;transition:.25s}
+.gphoto:hover img{transform:scale(1.05)}
+.gphoto .cap{position:absolute;left:0;right:0;bottom:0;padding:18px 10px 8px;color:#fff;font-size:.85rem;background:linear-gradient(to top,rgba(8,18,12,.82),transparent)}
+
+.loading{color:var(--muted);font-size:1.05rem;padding:10px 2px}
+.empty-flag{display:none;background:#fff6e4;border:1px solid #e6cf95;color:#7a5d16;border-radius:14px;padding:11px 16px;font-size:.95rem;margin-bottom:16px}
+.empty-flag.show{display:block}
+.btn-more{display:block;margin:20px auto 0;border:1px solid var(--line);background:#fff;color:var(--green);border-radius:999px;padding:13px 28px;font:600 1.05rem var(--serif);cursor:pointer;transition:.15s}
+.btn-more:hover{border-color:var(--gold);background:var(--soft)}
+.ph-block{display:grid;place-items:center;width:100%;height:100%;background:linear-gradient(135deg,#22402e,#16331f);color:rgba(255,255,255,.55);font-size:30px}
+
+footer{padding:30px 0 50px;color:var(--muted);font-size:.95rem;border-top:1px solid var(--line);margin-top:50px}
+footer a{color:var(--green);text-decoration:none}
+
+@media(max-width:1100px){.archive{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media(max-width:1000px){.stats{grid-template-columns:repeat(2,1fr)}.feed{grid-template-columns:repeat(2,1fr)}.contribute{grid-template-columns:1fr}.archive{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:620px){.hero h1{font-size:2.5rem}.feed{grid-template-columns:1fr}.stats{grid-template-columns:1fr}.section-head h2{font-size:1.6rem}.archive{grid-template-columns:1fr}.arch{grid-template-columns:88px minmax(0,1fr)}.arch-thumb{width:88px;height:88px}}
+</style>
+<link rel="stylesheet" href="/ptice/assets/ptice-mobile.css?v=20260716a">
+<script defer src="/ptice/assets/ptice-mobile.js?v=20260716a"></script>
+
+<link rel="stylesheet" href="/ptice/ptice-photo-credits.css?v=20260818b" data-pio-credit="PIO-PTICE-PHOTO-CREDITS-20260816">
+<style id="rajac-okvir-v1">.rajac-ds-home,.rfx-nav-home{display:flex!important;align-items:center!important;line-height:1!important}.rajac-ds-home>span,.rfx-nav-home>span{display:inline-flex!important;align-items:center!important;line-height:1!important}.rajac-ds-home>span:first-child,.rfx-nav-home>span:first-child{justify-content:center;width:18px;height:18px}</style>
+</head>
+<body>
+<nav aria-label="Главни мени ПИО Рајац" class="rajac-ds-nav"><div class="rajac-ds-nav-inner">
+<a class="rajac-ds-home" href="https://piorajac.rs/"><span aria-hidden="true">⊙</span><span>ПИО „РАЈАЦ“</span></a>
+<a class="rajac-ds-nav-item" href="https://piorajac.rs/biljke/"><span aria-hidden="true">🌿</span><span>БИЉКЕ</span></a>
+<a class="rajac-ds-nav-item active" href="https://piorajac.rs/ptice/"><span aria-hidden="true">🦉</span><span>ПТИЦЕ</span></a>
+<a class="rajac-ds-nav-item" href="https://piorajac.rs/insekti/"><span aria-hidden="true">🦋</span><span>ИНСЕКТИ</span></a>
+<a class="rajac-ds-nav-item" href="https://piorajac.rs/sisari/"><span aria-hidden="true">🐾</span><span>СИСАРИ</span></a>
+<a class="rajac-ds-nav-item" href="https://piorajac.rs/gljive/"><span aria-hidden="true">🍄</span><span>ГЉИВЕ</span></a>
+<a class="rajac-ds-nav-item" href="https://piorajac.rs/trofodinamika/"><span aria-hidden="true">🔗</span><span>ТРОФОДИНАМИКА</span></a>
+</div></nav>
+<header class="hero">
+<div class="wrap hero-inner">
+<div class="kicker">🦉 Мониторинг птица · уживо са терена</div>
+<h1>Птице Рајца — у реалном времену</h1>
+<p>Снимио си птицу на Рајцу? Окачи је на <strong>eBird</strong> или <strong>iNaturalist</strong> — твоје посматрање се аутоматски појављује овде, у архиви врста и галерији. Свака чеклиста и фотографија гради заједничку слику живота на Рајцу.</p>
+<div class="hero-actions">
+<a class="btn gold" href="https://ebird.org/hotspot/L7416435" rel="noopener" target="_blank">＋ Постави на eBird</a>
+<a class="btn ghost" href="https://www.inaturalist.org/" rel="noopener" target="_blank">＋ Постави на iNaturalist</a>
+</div>
+</div>
+</header>
+<div class="wrap">
+<div class="stats" id="stats">
+<div class="stat"><b id="st-species">—</b><span>врста забележено</span></div>
+<div class="stat"><b id="st-obs">—</b><span>посматрања (укупно)</span></div>
+<div class="stat"><b id="st-people">—</b><span>посматрача</span></div>
+<div class="stat"><b id="st-latest">—</b><span>последње посматрање</span></div>
+</div>
+<div class="empty-flag" id="emptyFlag">Тренутно нема доступних података. Покушајте касније.</div>
+<!-- КАКО ДА ДОПРИНЕСЕШ -->
+<section id="doprinesi">
+<div class="section-head"><div>
+<h2>Како да допринесеш мониторингу</h2>
+<p>Уместо слања чеклисте — постављаш своја посматрања на један од два светска сервиса. Подаци долазе право овде.</p>
+</div></div>
+<div class="contribute">
+<div class="src-card">
+<div class="src-head"><div class="src-logo ebird">🟢</div><div>
+<strong>eBird</strong><small>Чеклисте и бројања · Cornell Lab</small></div></div>
+<ol>
+<li>Направи налог на <a href="https://ebird.org" rel="noopener" target="_blank">ebird.org</a> (или Merlin апликација).</li>
+<li>Унеси чеклисту и као локацију изабери хотспот <strong>ПИО Рајац</strong>.</li>
+<li>Додај врсте, број јединки и (по жељи) снимке у Macaulay библиотеку.</li>
+</ol>
+<a class="pill" href="https://ebird.org/hotspot/L7416435" rel="noopener" target="_blank">→ Хотспот Рајац (L7416435)</a>
+</div>
+<div class="src-card">
+<div class="src-head"><div class="src-logo inat">🟩</div><div>
+<strong>iNaturalist</strong><small>Фотографије и одређивање врста</small></div></div>
+<ol>
+<li>Направи налог на <a href="https://inaturalist.org" rel="noopener" target="_blank">inaturalist.org</a> (или апликација).</li>
+<li>Окачи фотографију птице — GPS из снимка смешта је на Рајац.</li>
+<li>Заједница потврђује врсту → постаје „research grade" и стиже овде.</li>
+</ol>
+<a class="pill" href="https://www.inaturalist.org/observations?taxon_id=3&amp;place_id=any&amp;lat=44.14&amp;lng=20.31&amp;radius=12" rel="noopener" target="_blank">→ Птице око Рајца на iNaturalist</a>
+</div>
+</div>
+</section>
+<!-- ПОСЛЕДЊА ПОСМАТРАЊА -->
+<section id="poslednja">
+<div class="section-head"><div>
+<h2>Последња посматрања</h2>
+<p>Најновије забележене птице на Рајцу — аутоматски са eBird и iNaturalist.</p>
+</div><a class="pill" href="#arhiva">Цела архива ↓</a></div>
+<div class="loading" id="feedLoading">Учитавам посматрања…</div>
+<div class="feed" id="feed"></div>
+</section>
+<!-- АРХИВА ВРСТА -->
+<section id="arhiva">
+<div class="section-head"><div>
+<h2>Архива врста на Рајцу</h2>
+<p>Све птице икада забележене на подручју, са бројем посматрања. Клик води на страну врсте у каталогу.</p>
+</div><span class="pill" id="archCount">—</span></div>
+<div class="loading" id="archLoading">Учитавам архиву…</div>
+<div class="archive" id="archive"></div>
+<button class="btn-more" hidden="" id="archiveMore" type="button">Прикажи још врста</button>
+</section>
+</div>
+<footer><div class="wrap">
+  ПИО „Рајац" · Мониторинг птица уживо · извори: <a href="https://ebird.org/hotspot/L7416435" rel="noopener" target="_blank">eBird</a> и <a href="https://www.inaturalist.org/" rel="noopener" target="_blank">iNaturalist</a>. Подаци припадају ауторима посматрања.
+</div></footer>
+<script>
+/* ====================== ПОДЕШАВАЊА ====================== */
+const CFG = {
+  inatEndpoint: 'https://piorajac.rs/inat/rajac_inat_api.php?grupa=ptice',
+  ebirdLatest:  'https://piorajac.rs/ebird/rajac_ebird_api.php?type=latest',
+  ebirdAll:     'https://piorajac.rs/ebird/rajac_ebird_api.php?type=local',
+  birdPhoto:    'https://piorajac.rs/ptice/rajac-bird-photo.php',
+  assets:       'https://piorajac.rs/ptice/assets/ptice2/',
+  catalogBase:  'https://piorajac.rs/ptice/'
+};
+const SLUG = {"accipiter nisus":"accipiter-nisus","aegithalos caudatus":"aegithalos-caudatus","alauda arvensis":"alauda-arvensis","anthus trivialis":"anthus-trivialis","sitta europaea":"brgljez","buteo buteo":"buteo-buteo","carduelis carduelis":"carduelis-carduelis","corvus monedula":"cavka","certhia brachydactyla":"certhia-brachydactyla","chloris chloris":"chloris-chloris","ciconia nigra":"ciconia-nigra","coccothraustes coccothraustes":"coccothraustes-coccothraustes","coracias garrulus":"coracias-garrulus","coturnix coturnix":"coturnix-coturnix","crex crex":"crex-crex","delichon urbicum":"delichon-urbicum","dryocopus martius":"dryocopus-martius","emberiza calandra":"emberiza-calandra","emberiza citrinella":"emberiza-citrinella","emberiza hortulana":"emberiza-hortulana","erithacus rubecula":"erithacus-rubecula","falco subbuteo":"falco-subbuteo","falco vespertinus":"falco-vespertinus","ficedula hypoleuca":"ficedula-hypoleuca","ficedula parva":"ficedula-parva","fringilla coelebs":"fringilla-coelebs","garrulus glandarius":"garrulus-glandarius","corvus corax":"gavran","hirundo rustica":"hirundo-rustica","jynx torquilla":"jynx-torquilla","cuculus canorus":"kukavica","lanius collurio":"lanius-collurio","lullula arborea":"lullula-arborea","dryobates minor":"mali-detlic","merops apiaster":"merops-apiaster","motacilla alba":"motacilla-alba","motacilla cinerea":"motacilla-cinerea","muscicapa striata":"muscicapa-striata","saxicola rubetra":"obicna-travarka","oenanthe oenanthe":"oenanthe-oenanthe","aquila heliaca":"orao-krstas","oriolus oriolus":"oriolus-oriolus","phasianus colchicus":"phasianus-colchicus","phoenicurus ochruros":"phoenicurus-ochruros","phoenicurus phoenicurus":"phoenicurus-phoenicurus","phylloscopus collybita":"phylloscopus-collybita","phylloscopus trochilus":"phylloscopus-trochilus","pica pica":"pica-pica","picus canus":"picus-canus","picus viridis":"picus-viridis","cyanistes caeruleus":"plava-senica","prunella modularis":"prunella-modularis","regulus regulus":"regulus-regulus","saxicola rubicola":"saxicola-rubicola","serinus serinus":"serinus-serinus","poecile palustris":"siva-senica","corvus cornix":"siva-vrana","streptopelia decaocto":"streptopelia-decaocto","streptopelia turtur":"streptopelia-turtur","sturnus vulgaris":"sturnus-vulgaris","strix aluco":"sumska-sova","aquila chrysaetos":"suri-orao","sylvia atricapilla":"sylvia-atricapilla","sylvia communis":"sylvia-communis","troglodytes troglodytes":"troglodytes-troglodytes","turdus merula":"turdus-merula","turdus philomelos":"turdus-philomelos","turdus viscivorus":"turdus-viscivorus","upupa epops":"upupa-epops","parus major":"velika-senica","dendrocopos major":"veliki-detlic","phalacrocorax carbo":"veliki-vranac","passer domesticus":"vrabac"};
+const LOCAL_BIRDS = {"accipiter nisus":{"slug":"accipiter-nisus","hero":"/ptice/assets/ptice2/accipiter-nisus.jpg","code":"eurspa1"},"aegithalos caudatus":{"slug":"aegithalos-caudatus","hero":"/ptice/assets/ptice2/aegithalos-caudatus-1.jpg","code":"lottit1"},"alauda arvensis":{"slug":"alauda-arvensis","hero":"/ptice/assets/ptice2/alauda-arvensis-1.jpg","code":"skylar"},"anthus trivialis":{"slug":"anthus-trivialis","hero":"/ptice/assets/ptice2/anthus-trivialis-1.jpg","code":"trepip"},"sitta europaea":{"slug":"brgljez","hero":"/ptice/assets/ptice2/brgljez-hero-new.jpg","code":"eurnut2"},"buteo buteo":{"slug":"buteo-buteo","hero":"/ptice/assets/ptice2/buteo-buteo.jpg","code":"combuz1"},"carduelis carduelis":{"slug":"carduelis-carduelis","hero":"/ptice/assets/ptice2/carduelis-carduelis.jpg","code":"eurgol"},"corvus monedula":{"slug":"cavka","hero":"/ptice/assets/ptice2/cavka-hero-local.jpg","code":""},"certhia brachydactyla":{"slug":"certhia-brachydactyla","hero":"/ptice/assets/ptice2/certhia-brachydactyla.jpg","code":"shttre1"},"chloris chloris":{"slug":"chloris-chloris","hero":"/ptice/assets/ptice2/chloris-chloris-2.jpg","code":"eurgre1"},"ciconia nigra":{"slug":"ciconia-nigra","hero":"/ptice/assets/ptice2/ciconia-nigra.jpg","code":""},"coccothraustes coccothraustes":{"slug":"coccothraustes-coccothraustes","hero":"/ptice/assets/ptice2/coccothraustes-coccothraustes.jpg","code":"hawfin"},"coracias garrulus":{"slug":"coracias-garrulus","hero":"/ptice/assets/ptice2/coracias-garrulus.jpg","code":"eurrol1"},"coturnix coturnix":{"slug":"coturnix-coturnix","hero":"/ptice/assets/ptice2/coturnix-coturnix.jpg","code":"comqua1"},"crex crex":{"slug":"crex-crex","hero":"/ptice/assets/ptice2/crex-crex.jpg","code":"corcra"},"delichon urbicum":{"slug":"delichon-urbicum","hero":"/ptice/assets/ptice2/delichon-urbicum-1.jpg","code":""},"dryocopus martius":{"slug":"dryocopus-martius","hero":"/ptice/assets/ptice2/dryocopus-martius.jpg","code":"blawoo1"},"emberiza calandra":{"slug":"emberiza-calandra","hero":"/ptice/assets/ptice2/emberiza-calandra.jpg","code":"corbun1"},"emberiza citrinella":{"slug":"emberiza-citrinella","hero":"/ptice/assets/ptice2/emberiza-citrinella.jpg","code":"yellow2"},"emberiza hortulana":{"slug":"emberiza-hortulana","hero":"/ptice/assets/ptice2/emberiza-hortulana.jpg","code":"ortbun1"},"erithacus rubecula":{"slug":"erithacus-rubecula","hero":"/ptice/assets/ptice2/erithacus-rubecula.jpg","code":"eurrob1"},"falco subbuteo":{"slug":"falco-subbuteo","hero":"/ptice/assets/ptice2/falco-subbuteo.jpg","code":""},"falco vespertinus":{"slug":"falco-vespertinus","hero":"/ptice/assets/ptice2/falco-vespertinus.jpg","code":""},"ficedula hypoleuca":{"slug":"ficedula-hypoleuca","hero":"/ptice/assets/ptice2/ficedula-hypoleuca-1.jpg","code":""},"ficedula parva":{"slug":"ficedula-parva","hero":"/ptice/assets/ptice2/ficedula-parva-2.jpg","code":""},"fringilla coelebs":{"slug":"fringilla-coelebs","hero":"/ptice/assets/ptice2/fringilla-coelebs.jpg","code":"comcha"},"garrulus glandarius":{"slug":"garrulus-glandarius","hero":"/ptice/assets/ptice2/garrulus-glandarius.jpg","code":"eurjay1"},"corvus corax":{"slug":"gavran","hero":"/ptice/assets/ptice2/gavran.jpg","code":"comrav"},"hirundo rustica":{"slug":"hirundo-rustica","hero":"/ptice/assets/ptice2/hirundo-rustica.jpg","code":"barswa"},"jynx torquilla":{"slug":"jynx-torquilla","hero":"/ptice/assets/ptice2/jynx-torquilla.jpg","code":""},"cuculus canorus":{"slug":"kukavica","hero":"/ptice/assets/ptice2/kukavica.jpg","code":"comcuc"},"lanius collurio":{"slug":"lanius-collurio","hero":"/ptice/assets/ptice2/lanius-collurio.jpg","code":"rebshr1"},"lullula arborea":{"slug":"lullula-arborea","hero":"/ptice/assets/ptice2/lullula-arborea-3.jpg","code":"woolar1"},"dryobates minor":{"slug":"mali-detlic","hero":"/ptice/assets/ptice2/mali-detlic-hero-local.jpg","code":"leswoo1"},"merops apiaster":{"slug":"merops-apiaster","hero":"/ptice/assets/ptice2/merops-apiaster.jpg","code":"eubeat1"},"motacilla alba":{"slug":"motacilla-alba","hero":"/ptice/assets/ptice2/motacilla-alba.jpg","code":"whiwag"},"motacilla cinerea":{"slug":"motacilla-cinerea","hero":"/ptice/assets/ptice2/motacilla-cinerea-1.jpg","code":""},"muscicapa striata":{"slug":"muscicapa-striata","hero":"/ptice/assets/ptice2/muscicapa-striata-1.jpg","code":"spofly1"},"saxicola rubetra":{"slug":"obicna-travarka","hero":"/ptice/assets/ptice2/obicna-travarka.jpg","code":"whinch1"},"oenanthe oenanthe":{"slug":"oenanthe-oenanthe","hero":"/ptice/assets/ptice2/oenanthe-oenanthe.jpg","code":""},"aquila heliaca":{"slug":"orao-krstas","hero":"/ptice/assets/ptice2/orao-krstas.jpg","code":""},"oriolus oriolus":{"slug":"oriolus-oriolus","hero":"/ptice/assets/ptice2/oriolus-oriolus-gallery-1-new.jpg","code":"eugori2"},"phasianus colchicus":{"slug":"phasianus-colchicus","hero":"/ptice/assets/ptice2/phasianus-colchicus.jpg","code":"rinphe1"},"phoenicurus ochruros":{"slug":"phoenicurus-ochruros","hero":"/ptice/assets/ptice2/phoenicurus-ochruros-1.jpg","code":"blared1"},"phoenicurus phoenicurus":{"slug":"phoenicurus-phoenicurus","hero":"","code":"comred2"},"phylloscopus collybita":{"slug":"phylloscopus-collybita","hero":"/ptice/assets/ptice2/phylloscopus-collybita-1.jpg","code":"comchi1"},"phylloscopus trochilus":{"slug":"phylloscopus-trochilus","hero":"/ptice/assets/ptice2/phylloscopus-trochilus-1.jpg","code":""},"pica pica":{"slug":"pica-pica","hero":"/ptice/assets/ptice2/pica-pica.jpg","code":""},"picus canus":{"slug":"picus-canus","hero":"/ptice/assets/ptice2/picus-canus-hero-local.jpg","code":"gyfwoo1"},"picus viridis":{"slug":"picus-viridis","hero":"/ptice/assets/ptice2/picus-viridis-1.jpg","code":"eugwoo2"},"cyanistes caeruleus":{"slug":"plava-senica","hero":"/ptice/assets/ptice2/plava-senica-gallery-1-new.jpg","code":"blutit"},"prunella modularis":{"slug":"prunella-modularis","hero":"/ptice/assets/ptice2/prunella-modularis.jpg","code":""},"regulus regulus":{"slug":"regulus-regulus","hero":"/ptice/assets/ptice2/regulus-regulus.jpg","code":"goldcr1"},"saxicola rubicola":{"slug":"saxicola-rubicola","hero":"/ptice/assets/ptice2/saxicola-rubicola-1.jpg","code":""},"serinus serinus":{"slug":"serinus-serinus","hero":"/ptice/assets/ptice2/serinus-serinus-3.jpg?v=20260622d","code":"eurser1"},"poecile palustris":{"slug":"siva-senica","hero":"/ptice/assets/ptice2/siva-senica.jpg","code":"martit2"},"corvus cornix":{"slug":"siva-vrana","hero":"/ptice/assets/ptice2/siva-vrana.jpg","code":"hoocro1"},"streptopelia decaocto":{"slug":"streptopelia-decaocto","hero":"/ptice/assets/ptice2/streptopelia-decaocto.jpg","code":""},"streptopelia turtur":{"slug":"streptopelia-turtur","hero":"/ptice/assets/ptice2/streptopelia-turtur.jpg","code":""},"sturnus vulgaris":{"slug":"sturnus-vulgaris","hero":"/ptice/assets/ptice2/sturnus-vulgaris.jpg","code":"eursta"},"strix aluco":{"slug":"sumska-sova","hero":"/ptice/assets/ptice2/sumska-sova-2.jpg","code":"tawowl1"},"aquila chrysaetos":{"slug":"suri-orao","hero":"/ptice/assets/ptice2/suri-orao.jpg","code":"goleag"},"sylvia atricapilla":{"slug":"sylvia-atricapilla","hero":"/ptice/assets/ptice2/sylvia-atricapilla-1.jpg","code":"blackc1"},"sylvia communis":{"slug":"sylvia-communis","hero":"/ptice/assets/ptice2/sylvia-communis-1.jpg","code":"grewhi1"},"troglodytes troglodytes":{"slug":"troglodytes-troglodytes","hero":"/ptice/assets/ptice2/troglodytes-troglodytes.jpg","code":"winwre4"},"turdus merula":{"slug":"turdus-merula","hero":"/ptice/assets/ptice2/turdus-merula.jpg","code":"eurbla"},"turdus philomelos":{"slug":"turdus-philomelos","hero":"/ptice/assets/ptice2/turdus-philomelos-gallery-1-new.jpg","code":""},"turdus viscivorus":{"slug":"turdus-viscivorus","hero":"/ptice/assets/ptice2/turdus-viscivorus-1.jpg","code":"misthr1"},"upupa epops":{"slug":"upupa-epops","hero":"/ptice/assets/ptice2/hero-pupavac.jpg","code":"hoopoe"},"parus major":{"slug":"velika-senica","hero":"/ptice/assets/ptice2/velika-senica-3.jpg","code":"gretit1"},"dendrocopos major":{"slug":"veliki-detlic","hero":"/ptice/assets/ptice2/veliki-detlic.jpg","code":"grswoo"},"phalacrocorax carbo":{"slug":"veliki-vranac","hero":"/ptice/assets/ptice2/veliki-vranac.jpg","code":""},"passer domesticus":{"slug":"vrabac","hero":"/ptice/assets/ptice2/vrabac.jpg","code":"passer1"}};
+const CODE_TO_LATIN = {"eurspa1":"accipiter nisus","lottit1":"aegithalos caudatus","skylar":"alauda arvensis","trepip":"anthus trivialis","eurnut2":"sitta europaea","combuz1":"buteo buteo","eurgol":"carduelis carduelis","shttre1":"certhia brachydactyla","eurgre1":"chloris chloris","hawfin":"coccothraustes coccothraustes","eurrol1":"coracias garrulus","eugori2":"oriolus oriolus","comqua1":"coturnix coturnix","corcra":"crex crex","blawoo1":"dryocopus martius","corbun1":"emberiza calandra","yellow2":"emberiza citrinella","ortbun1":"emberiza hortulana","eurrob1":"erithacus rubecula","comcha":"fringilla coelebs","eurjay1":"garrulus glandarius","comrav":"corvus corax","barswa":"hirundo rustica","comcuc":"cuculus canorus","rebshr1":"lanius collurio","woolar1":"lullula arborea","leswoo1":"dryobates minor","eubeat1":"merops apiaster","whiwag":"motacilla alba","spofly1":"muscicapa striata","whinch1":"saxicola rubetra","rinphe1":"phasianus colchicus","blared1":"phoenicurus ochruros","comred2":"phoenicurus phoenicurus","comchi1":"phylloscopus collybita","gyfwoo1":"picus canus","eugwoo2":"picus viridis","blutit":"cyanistes caeruleus","goldcr1":"regulus regulus","eurser1":"serinus serinus","martit2":"poecile palustris","hoocro1":"corvus cornix","eursta":"sturnus vulgaris","tawowl1":"strix aluco","goleag":"aquila chrysaetos","blackc1":"sylvia atricapilla","grewhi1":"sylvia communis","winwre4":"troglodytes troglodytes","eurbla":"turdus merula","misthr1":"turdus viscivorus","hoopoe":"upupa epops","gretit1":"parus major","grswoo":"dendrocopos major","passer1":"passer domesticus"};
+/* ======================================================= */
+
+const $ = id => document.getElementById(id);
+const cap = s => s ? s.charAt(0).toUpperCase()+s.slice(1) : s;
+const esc = s => (s==null?'':String(s)).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const fmtDate = d => { try{ if(!d) return ''; return new Date(String(d).replace(' ','T')).toLocaleDateString('sr-RS',{day:'numeric',month:'short',year:'numeric'});}catch(e){return d;} };
+const localBird = (lat, code) => {
+  const key=(lat||'').toLowerCase().trim();
+  if(LOCAL_BIRDS[key]) return LOCAL_BIRDS[key];
+  const byCode=CODE_TO_LATIN[(code||'').toLowerCase().trim()];
+  return byCode ? LOCAL_BIRDS[byCode] : null;
+};
+const catLink = (lat, code) => {
+  const bird=localBird(lat, code);
+  return bird ? CFG.catalogBase+bird.slug+'/' : null;
+};
+
+/* ── КАСКАДА СЛИКЕ: извор посматрања → резервни фото сервис ── */
+function photoList(o, size, preferLocal){
+  const list=[];
+  const bird=localBird(o.lat, o.code);
+  const localPhoto=bird && bird.hero ? new URL(bird.hero, CFG.catalogBase).href : '';
+  if(preferLocal && localPhoto) list.push(localPhoto);
+  if(o.photo) list.push(o.photo);
+  if(!preferLocal && localPhoto) list.push(localPhoto);
+  if(o.code || o.lat){
+    const p=new URLSearchParams();
+    if(o.code) p.set('taxonCode', o.code);
+    if(o.lat)  p.set('latin', o.lat);
+    p.set('title', o.common||''); p.set('size', size||520); p.set('rbp','v9');
+    list.push(CFG.birdPhoto+'?'+p.toString());
+  }
+  return [...new Set(list.filter(Boolean))];
+}
+function imgTag(o, size, preferLocal){
+  const list=photoList(o, size, preferLocal);
+  if(!list.length) return '<span class="ph">🪶</span>';
+  return `<img src="${esc(list[0])}" alt="${esc(o.common)}" loading="lazy" data-fb="${esc(JSON.stringify(list.slice(1)))}" onerror="imgErr(this)">`;
+}
+function imgErr(img){
+  let fb=[]; try{fb=JSON.parse(img.getAttribute('data-fb')||'[]');}catch(e){}
+  if(fb.length){ const n=fb.shift(); img.setAttribute('data-fb',JSON.stringify(fb)); img.src=n; return; }
+  const sp=document.createElement('span'); sp.className='ph-block'; sp.textContent='🪶'; img.replaceWith(sp);
+}
+window.imgErr=imgErr;
+
+function badge(src){ return src==='ebird' ? '<span class="obs-src ebird">eBird</span>' : '<span class="obs-src inat">iNaturalist</span>'; }
+
+function fromInat(o){ return {source:'inat', common:cap(o.narodni||o.naucni||'Птица'), lat:o.naucni||'', code:'',
+  date:o.datum, who:o.korisnik||'', photo:o.foto_url||'', link:o.url||'#'}; }
+function fromEbird(r){ return {source:'ebird', common:cap(r.serbian_name||r.common_name||'Птица'), lat:r.scientific_name||'',
+  code:(r.species_code||'').toLowerCase(), date:r.obs_dt||r.last_obs_dt||r.first_obs_dt,
+  who:r.observer||(r.observers&&r.observers[0])||'', photo:r.image_url||r.thumbnail_url||r.media_url||'',
+  link:r.url||'#', n:r.sighting_count||r.all_records_count||0}; }
+
+function renderFeed(items){
+  $('feedLoading').style.display='none';
+  $('feed').innerHTML = items.slice(0,6).map(o=>`
+    <a class="obs" href="${esc(o.link)}" target="_blank" rel="noopener">
+      <div class="obs-photo">${badge(o.source)}${imgTag(o,520)}</div>
+      <div class="obs-body">
+        <strong>${esc(o.common)}</strong>
+        <div class="lat">${esc(o.lat)}</div>
+        <div class="obs-meta"><span>📅 ${fmtDate(o.date)}</span>${o.who?`<span>👤 ${esc(o.who)}</span>`:''}${o.n>1?`<span>· ${o.n} налаза</span>`:''}</div>
+      </div>
+    </a>`).join('') || '<p class="loading">Још нема забележених посматрања.</p>';
+}
+
+let ARCHIVE=[], archiveShown=0;
+function renderArchive(list, reset=true){
+  $('archLoading').style.display='none';
+  if(reset){
+    ARCHIVE=list.slice();
+    archiveShown=0;
+    $('archCount').textContent = ARCHIVE.length+' врста';
+  }
+  archiveShown=Math.min(archiveShown+12, ARCHIVE.length);
+  $('archive').innerHTML = ARCHIVE.slice(0,archiveShown).map(s=>{
+    const href=catLink(s.lat,s.code)||s.link||'#';
+    return `<a class="arch" href="${esc(href)}"${href.startsWith(CFG.catalogBase)?'':' target="_blank" rel="noopener"'}>
+      <div class="arch-thumb">${imgTag(s,260,true)}</div>
+      <div><strong>${esc(s.common)}</strong><div class="lat">${esc(s.lat)}</div><span class="cnt">${s.count} посм.</span></div>
+    </a>`;
+  }).join('');
+  const btn=$('archiveMore');
+  if(btn) btn.hidden=archiveShown>=ARCHIVE.length;
+}
+
+function setStats(species,obsTotal,people,latest){
+  $('st-species').textContent=species ?? '—';
+  $('st-obs').textContent=obsTotal ?? '—';
+  $('st-people').textContent=people ?? '—';
+  $('st-latest').textContent=latest ? fmtDate(latest) : '—';
+}
+
+/* Ако извори нису доступни, јавна страница не приказује демо податке. */
+async function init(){
+  const grab = u => fetch(u).then(r=>r.json());
+  const [inatR, ebLatR, ebAllR] = await Promise.allSettled([grab(CFG.inatEndpoint), grab(CFG.ebirdLatest), grab(CFG.ebirdAll)]);
+  const inat  = inatR.status==='fulfilled' ? (inatR.value.opservacije||[]) : [];
+  const ebLat = ebLatR.status==='fulfilled' ? (ebLatR.value.records||[]) : [];
+  const ebAll = ebAllR.status==='fulfilled' ? (ebAllR.value.records||[]) : [];
+
+  if(!inat.length && !ebLat.length && !ebAll.length){
+    $('emptyFlag').classList.add('show');
+    setStats(null, null, null, null);
+    renderFeed([]); renderArchive([]);
+    return;
+  }
+
+  /* Последња посматрања */
+  const feed = inat.map(fromInat).concat(ebLat.map(fromEbird));
+  feed.sort((a,b)=> new Date(String(b.date).replace(' ','T')) - new Date(String(a.date).replace(' ','T')));
+  renderFeed(feed);
+
+  /* Архива: обједињено по латинском имену */
+  const map=new Map();
+  function add(lat, common, count, photo, code, link){
+    const key=(lat||common).toLowerCase().trim(); if(!key) return;
+    const cur=map.get(key)||{lat:lat||'', common:common, count:0, photo:'', code:'', link:link};
+    cur.count += count||1;
+    if(common && common.length>cur.common.length) cur.common=common;
+    if(!cur.photo && photo) cur.photo=photo;
+    if(!cur.code && code) cur.code=code;
+    if(lat && !cur.lat) cur.lat=lat;
+    map.set(key,cur);
+  }
+  ebAll.forEach(r=> add(r.scientific_name, cap(r.serbian_name||r.common_name||''), r.sighting_count||r.all_records_count||1, r.image_url||r.thumbnail_url||'', (r.species_code||'').toLowerCase(), r.url));
+  inat.forEach(o=> add(o.naucni, cap(o.narodni||o.naucni||''), 1, o.foto_url||'', '', o.url));
+  const archive=Array.from(map.values()).sort((a,b)=> b.count-a.count);
+  renderArchive(archive);
+
+  /* Статистика */
+  const people=new Set(inat.map(o=>o.korisnik).concat(ebAll.flatMap(r=>r.observers||[r.observer])).filter(Boolean)).size;
+  const obsTotal=((inatR.value&&inatR.value.broj)||inat.length) + ((ebAllR.value&&ebAllR.value.broj)||ebAll.length);
+  setStats(archive.length, obsTotal, people||'—', feed[0] && feed[0].date);
+}
+const _am=$('archiveMore'); if(_am) _am.addEventListener('click',()=>renderArchive(ARCHIVE,false));
+init();
+</script>
+
+<script src="/ptice/ptice-photo-credits.js?v=20260818b" defer data-pio-credit="PIO-PTICE-PHOTO-CREDITS-20260816"></script>
+</body>
+</html>

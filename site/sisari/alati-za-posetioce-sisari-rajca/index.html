@@ -1,0 +1,889 @@
+<!DOCTYPE html>
+
+<html lang="sr-RS">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<title>Алати за посетиоце — сисари Рајца | ПИО Рајац</title>
+<meta content="Богата посетилачка страница за ПИО Рајац: препознавање трагова сисара, пријава налаза, водич „шта сам нашао”, квиз трагова, сезонски календар, безбедан сусрет, трофодинамика и SEO подаци." name="description"/>
+<meta content="no-referrer" name="referrer"/>
+<style>
+:root{
+  --forest:#2d5a27;--forest-dark:#1a3a15;--forest-light:#4a7c43;--nav:#0d1b2a;--blue:#163a58;
+  --cream:#f7f4ef;--warm-white:#fdfcfa;--paper:#fffdf8;--soft:#f2f0eb;--text:#2a2a2a;--muted:#5a5a5a;
+  --border:#d8d0c4;--accent:#8b6914;--gold:#d8b55b;--warn:#b56a1f;--red:#9a2d2d;
+  --tag-bg:#e8f0e6;--tag-border:#a8c4a4;--shadow:0 2px 12px rgba(0,0,0,.08);--shadow-hover:0 6px 24px rgba(0,0,0,.14);
+  --radius:10px;--font:"Cormorant Garamond","EB Garamond",Garamond,"Palatino Linotype","Book Antiqua",Georgia,"Times New Roman",serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--font);font-size:16px;line-height:1.75;color:var(--text);background:var(--warm-white)}
+a{color:inherit;text-decoration:none} img,svg{display:block;max-width:100%}
+.wrap{max-width:1180px;margin:0 auto;padding:0 22px}
+.rajac-ds-nav{background:#0d1b2a;position:sticky;top:0;z-index:50;border-bottom:1px solid rgba(255,255,255,.08)}
+.rajac-ds-nav-inner{max-width:1180px;margin:auto;display:flex;align-items:stretch;min-height:58px;padding:0 18px;gap:0;overflow-x:auto;scrollbar-width:none}
+.rajac-ds-nav-inner::-webkit-scrollbar{display:none}
+.rajac-ds-home{display:flex;align-items:center;gap:9px;padding-right:20px;margin-right:8px;border-right:1px solid rgba(255,255,255,.12);color:#d8b55b!important;font-weight:600;font-size:18px;white-space:nowrap}
+.rajac-ds-nav-item{position:relative;display:flex;align-items:center;gap:7px;padding:0 15px;color:rgba(255,255,255,.72);font-size:16px;font-weight:600;letter-spacing:.045em;text-transform:uppercase;white-space:nowrap}
+.rajac-ds-nav-item:hover{color:#fff;background:rgba(255,255,255,.035)}
+.rajac-ds-nav-item.rajac-ds-active{color:#d8b55b}
+.rajac-ds-nav-item.rajac-ds-active:after{content:"";position:absolute;left:15px;right:15px;bottom:8px;height:2px;border-radius:2px;background:#d8b55b}
+.rajac-ds-icon{font-size:15px}.rajac-ds-current{text-transform:none;letter-spacing:.02em;font-size:14px}
+.hero{position:relative;overflow:hidden;background:radial-gradient(circle at 18% 12%,rgba(200,168,75,.16),transparent 24%),linear-gradient(180deg,#fffdf8 0%,#f8f4ed 100%);border-bottom:1px solid var(--border)}
+.topline{display:flex;align-items:center;justify-content:space-between;gap:18px;padding:22px 0 8px;color:var(--muted);font-size:15px;letter-spacing:.08em;text-transform:uppercase;font-weight:600}
+.topline a{color:var(--forest);font-weight:700}
+.hero-grid{position:relative;z-index:2;display:grid;grid-template-columns:minmax(0,.94fr) minmax(420px,1.06fr);gap:46px;align-items:end;padding:40px 0 82px}
+.badge{display:inline-flex;align-items:center;gap:10px;width:max-content;padding:8px 14px;border-radius:999px;background:var(--tag-bg);border:1px solid var(--tag-border);color:var(--forest);font-size:15px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;margin-bottom:22px}
+h1{font-weight:300;letter-spacing:-.02em;line-height:.98;font-size:clamp(2.15rem,3.75vw,3.55rem);max-width:760px;margin:0 0 22px;color:var(--forest-dark)}
+.hero-lead{max-width:760px;color:var(--muted);font-size:clamp(1.12rem,1.55vw,1.34rem);line-height:1.48;margin:0}
+.hero-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:30px;max-width:760px}
+.stat{background:var(--soft);border:1px solid var(--border);border-radius:var(--radius);padding:15px 14px;box-shadow:var(--shadow)}
+.stat b{display:block;font-size:34px;line-height:1;color:var(--forest);font-weight:300}
+.stat span{display:block;color:var(--muted);font-size:16px;line-height:1.35;margin-top:6px}
+.hero-visual{position:relative;min-height:430px;border-radius:var(--radius);overflow:hidden;border:1px solid var(--border);box-shadow:var(--shadow);background:#f2f0eb;isolation:isolate;align-self:end}
+.hero-visual svg{width:100%;height:100%;min-height:430px}
+.hero-visual-badge{position:absolute;left:22px;bottom:22px;z-index:2;max-width:min(470px,calc(100% - 44px));padding:15px 17px;border-radius:var(--radius);background:rgba(26,58,21,.84);border:1px solid rgba(255,255,255,.18);box-shadow:0 18px 48px rgba(0,0,0,.18)}
+.hero-visual-badge strong{display:block;color:#f2d785;font-size:18px;line-height:1.2;font-weight:700;letter-spacing:.04em;text-transform:uppercase}
+.hero-visual-badge span{display:block;margin-top:5px;color:rgba(255,255,255,.86);font-size:17px;line-height:1.35}
+.quick-nav{position:relative;z-index:3;margin-top:-38px;margin-bottom:42px}
+.quick-nav-inner{background:rgba(255,255,255,.94);border:1px solid var(--border);border-radius:var(--radius);padding:12px;box-shadow:var(--shadow);display:grid;grid-template-columns:repeat(5,1fr);gap:10px;backdrop-filter:blur(10px)}
+.quick-nav a{border-radius:8px;padding:10px 9px;background:#fff;border:1px solid var(--border);text-align:center;font-size:16px;font-weight:700;color:var(--forest)}
+.quick-nav a:hover{background:var(--tag-bg);border-color:var(--tag-border)}
+.section{padding:34px 0}.section-head{margin-bottom:20px}
+.kicker{display:inline-flex;gap:9px;align-items:center;color:var(--accent);font-size:15px;font-weight:700;letter-spacing:.13em;text-transform:uppercase;margin-bottom:9px}
+h2{font-weight:300;font-size:clamp(2.1rem,4.2vw,3.45rem);line-height:1.02;letter-spacing:-.02em;color:var(--forest-dark);margin:0}
+.section-intro{max-width:900px;color:var(--muted);font-size:21px;line-height:1.52;margin:12px 0 0}
+.card{background:rgba(255,255,255,.88);border:1px solid var(--border);border-radius:var(--radius);box-shadow:var(--shadow)}
+.grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.grid-2{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+.rule-card{padding:23px;min-height:222px;position:relative;overflow:hidden}
+.rule-card:before{content:"";position:absolute;right:-45px;top:-45px;width:120px;height:120px;border-radius:50%;background:rgba(200,168,75,.12)}
+.rule-icon{font-size:34px;margin-bottom:12px}.rule-card h3{font-weight:600;font-size:1.5rem;line-height:1.15;margin:0 0 10px;color:var(--forest-dark)}
+.rule-card p{color:#3f4d5f;font-size:19px;line-height:1.45;margin:0}
+.highlight{margin:26px 0;padding:20px 22px;border-radius:var(--radius);background:linear-gradient(135deg,var(--forest-dark),#163a58);color:#fff;box-shadow:var(--shadow)}
+.highlight strong{color:#f2d785}
+.green-box{background:var(--tag-bg);border:1px solid var(--tag-border);border-left:4px solid var(--forest);border-radius:var(--radius);padding:16px 20px;margin-top:14px;font-size:18px;line-height:1.62;color:var(--forest-dark)}
+.warning-box{background:#fff8e6;border:1px solid #e8cc88;border-left:4px solid var(--accent);border-radius:var(--radius);padding:16px 20px;margin-top:14px;font-size:18px;line-height:1.62}
+.warning-box strong{color:var(--accent)}
+.panel{padding:23px}.panel h3{font-size:1.45rem;color:var(--forest-dark);font-weight:600;margin:0 0 12px}
+.panel ul{list-style:none;margin:0;padding:0;display:grid;gap:10px}
+.panel li{position:relative;padding:12px 13px 12px 34px;border:1px solid #eadfce;background:#fffaf1;border-radius:var(--radius);color:#4f5f72;font-size:18px;line-height:1.42}
+.panel li:before{content:"→";position:absolute;left:13px;top:12px;color:var(--accent);font-weight:700}
+.no-list li:before{content:"✗";color:var(--red)}.ok-list li:before{content:"✓";color:var(--forest)}
+.finder{display:grid;grid-template-columns:330px 1fr;gap:18px;align-items:start}
+.finder-tabs{display:grid;gap:8px}
+.finder-btn{border:1px solid var(--border);background:#fff;border-radius:var(--radius);padding:13px 14px;text-align:left;font-family:var(--font);font-size:18px;color:var(--forest-dark);font-weight:700;cursor:pointer;box-shadow:var(--shadow)}
+.finder-btn.is-active{background:var(--tag-bg);border-color:var(--tag-border)}
+.finder-panel{padding:23px;min-height:390px}
+.finder-panel h3{font-size:1.7rem;line-height:1.1;color:var(--forest-dark);margin-bottom:12px}
+.finder-panel p{font-size:19px;color:#3f4d5f;line-height:1.48;margin-bottom:12px}
+.finder-panel .meta{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-top:12px}
+.meta div{background:#fffaf1;border:1px solid #eadfce;border-radius:8px;padding:10px 12px;font-size:17px}
+.quiz{display:grid;grid-template-columns:1fr .82fr;gap:18px;align-items:start}
+.quiz-card{padding:24px}.quiz-card h3{font-size:1.8rem;color:var(--forest-dark);margin-bottom:10px}.quiz-card p{font-size:19px;color:#3f4d5f;line-height:1.48}
+.quiz-options{display:grid;gap:10px;margin-top:15px}
+.quiz-options button{border:1px solid var(--border);background:#fffaf1;border-radius:8px;padding:11px 12px;text-align:left;font-family:var(--font);font-size:18px;color:var(--forest-dark);font-weight:700;cursor:pointer}
+.quiz-options button:hover{background:var(--tag-bg)}.quiz-options button.correct{background:#e8f0e6;border-color:#2d5a27}.quiz-options button.wrong{background:#fff1ef;border-color:#9a2d2d}
+.quiz-visual{background:#fff;border:1px solid var(--border);border-radius:var(--radius);box-shadow:var(--shadow);overflow:hidden}.quiz-visual svg{width:100%;height:auto}
+.quiz-controls{display:flex;gap:10px;flex-wrap:wrap;margin-top:16px}
+.small-btn{display:inline-flex;align-items:center;justify-content:center;border:1.5px solid var(--forest);background:var(--forest);color:#fff;border-radius:6px;padding:9px 13px;font-family:var(--font);font-size:16px;font-weight:700;cursor:pointer}
+.small-btn.light{background:#fff;color:var(--forest)}
+.record-preview{padding:23px;background:linear-gradient(135deg,#fff,#f8f2e8);border:1px solid var(--border);border-radius:var(--radius);box-shadow:var(--shadow)}
+.record-preview h3{font-weight:600;color:var(--forest-dark);font-size:1.55rem;margin:0 0 14px}
+.record-preview label{display:block;font-size:14px;color:var(--accent);font-weight:700;text-transform:uppercase;letter-spacing:.1em;margin-top:10px}
+.record-preview .value{background:#fff;border:1px solid #eadfce;border-radius:8px;padding:10px 12px;color:#354050;font-size:18px;margin-top:4px}
+.data-table{width:100%;border-collapse:collapse;background:#fff;border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow)}
+.data-table th,.data-table td{padding:12px 14px;border-bottom:1px solid var(--border);vertical-align:top;text-align:left;font-size:18px;line-height:1.42}
+.data-table th{background:var(--forest-dark);color:#fff;font-weight:600}.data-table tr:last-child td{border-bottom:none}.data-table td:first-child{font-weight:700;color:var(--forest-dark);width:28%}
+.season-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.season{padding:20px;background:#fff;border:1px solid var(--border);border-radius:var(--radius);box-shadow:var(--shadow)}
+.season .month{display:inline-flex;border-radius:999px;padding:6px 11px;background:#fffaf1;border:1px solid #eadfce;font-weight:700;color:var(--accent);font-size:15px;margin-bottom:12px}
+.season h3{font-weight:600;font-size:1.36rem;line-height:1.12;color:var(--forest-dark);margin:0 0 9px}.season p{font-size:18px;color:#3f4d5f;line-height:1.45;margin:0}
+.trofo{background:#fff;border:1px solid var(--border);border-radius:var(--radius);box-shadow:var(--shadow);overflow:hidden}.trofo svg{width:100%;height:auto}
+.map-policy{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.map-card{padding:22px;background:#fff;border:1px solid var(--border);border-radius:var(--radius);box-shadow:var(--shadow)}
+.map-card h3{font-size:1.45rem;color:var(--forest-dark);margin-bottom:10px}.map-card p{font-size:19px;line-height:1.48;color:#3f4d5f;margin-bottom:12px}
+.guide-links{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin-top:42px;padding-top:24px;border-top:2px solid var(--border)}
+.guide-link{display:grid;grid-template-columns:44px 1fr 18px;align-items:center;gap:12px;min-height:94px;background:#fff;border:1px solid var(--border);border-radius:var(--radius);padding:14px 15px;box-shadow:var(--shadow);transition:box-shadow .2s,transform .2s}
+.guide-link:hover{box-shadow:var(--shadow-hover);transform:translateY(-1px)}
+.guide-link .ico{width:44px;height:44px;display:grid;place-items:center;border-radius:8px;background:var(--tag-bg);border:1px solid var(--tag-border);font-size:20px}
+.guide-link strong{display:block;color:var(--forest-dark);font-size:17px;line-height:1.12}.guide-link span{display:block;color:var(--muted);font-size:13px;line-height:1.35;margin-top:4px}.guide-link .arr{color:var(--accent);font-weight:700}
+.footer-nav{padding:34px 0 54px}.footer-box{display:flex;justify-content:space-between;align-items:center;gap:18px;background:#fff;border:1px solid var(--border);border-radius:var(--radius);padding:18px;box-shadow:var(--shadow)}
+.footer-box a{border-radius:6px;padding:9px 16px;font-weight:700;background:#fffaf1;border:1.5px solid var(--forest);color:var(--forest);font-size:15px}.footer-box a.primary{background:var(--forest);color:#fff;border-color:var(--forest)}
+.small-note{font-size:15px;color:#7b7268;text-align:center;margin-top:16px}.site-footer{background:var(--forest-dark);color:rgba(255,255,255,.7);text-align:center;padding:22px;font-size:13px}
+@media(max-width:1040px){
+  .hero-grid{grid-template-columns:1fr;gap:30px;padding-bottom:70px}.hero-visual{min-height:360px;max-width:760px}.hero-visual svg{min-height:360px}
+  .quick-nav-inner{grid-template-columns:repeat(3,1fr)}.grid-3,.season-grid{grid-template-columns:repeat(2,1fr)}.finder,.quiz,.map-policy{grid-template-columns:1fr}.guide-links{grid-template-columns:repeat(2,1fr)}
+}
+@media(max-width:760px){
+  body{font-size:15px}.wrap{padding:0 16px}.hero-grid{padding-top:28px;padding-bottom:60px}.hero h1,h1{font-size:clamp(2.05rem,10vw,3.05rem)}
+  .hero-visual{min-height:300px}.hero-visual svg{min-height:300px}.hero-visual-badge{left:14px;right:14px;bottom:14px;padding:12px 13px}
+  .hero-stats,.grid-3,.grid-2,.season-grid,.guide-links{grid-template-columns:1fr}.quick-nav{margin-top:-28px}.quick-nav-inner{grid-template-columns:repeat(2,1fr)}
+  .finder-panel .meta{grid-template-columns:1fr}.footer-box{flex-direction:column;align-items:stretch}.footer-box a{text-align:center}.rajac-ds-nav-item{font-size:14px;padding:0 12px}.rajac-ds-home{font-size:15px}
+}
+
+/* Звучна библиотека и квиз оглашавања сисара */
+.sound-library{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;margin-top:18px}
+.sound-card{background:#fffdf8;border:1px solid var(--border);border-radius:var(--radius);box-shadow:var(--shadow);padding:18px;display:flex;flex-direction:column;gap:10px;min-height:230px}
+.sound-card h3{font-family:var(--font);font-size:1.35rem;color:var(--forest-dark);line-height:1.15;margin:0}
+.sound-card .latin{font-size:15px;color:var(--forest);font-style:italic;margin-top:-4px}
+.sound-card p{font-size:17px;line-height:1.5;color:#3f4d5f;margin:0}
+.sound-card audio,.sound-quiz-player audio{width:100%;height:36px;accent-color:var(--forest)}
+.sound-note{font-size:13px!important;line-height:1.45!important;color:#66706a!important;margin:4px 0 0!important}
+.sound-quiz{display:grid;grid-template-columns:1fr .9fr;gap:18px;align-items:start;margin-top:18px}
+.sound-quiz-player{background:#fff;border:1px solid var(--border);border-radius:var(--radius);box-shadow:var(--shadow);padding:22px}
+.sound-quiz-player h3{font-size:1.55rem;color:var(--forest-dark);margin-bottom:10px}
+.sound-quiz-player p{font-size:18px;color:#3f4d5f;line-height:1.5;margin-bottom:14px}
+.sound-quiz-options{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin-top:14px}
+.sound-quiz-options button{border:1px solid var(--border);background:#fffaf1;border-radius:8px;padding:11px 12px;text-align:left;font-family:var(--font);font-size:18px;color:var(--forest-dark);font-weight:700;cursor:pointer}
+.sound-quiz-options button:hover{background:var(--tag-bg)}
+.sound-quiz-options button.correct{background:#e8f0e6;border-color:#2d5a27}.sound-quiz-options button.wrong{background:#fff1ef;border-color:#9a2d2d}
+.sound-quiz-info{background:#fffdf8;border:1px solid var(--border);border-radius:var(--radius);box-shadow:var(--shadow);padding:22px}
+.sound-quiz-info h3{font-size:1.45rem;color:var(--forest-dark);margin-bottom:8px}
+.sound-quiz-info p{font-size:18px;line-height:1.52;color:#3f4d5f;margin-bottom:10px}
+@media(max-width:1040px){.sound-library{grid-template-columns:repeat(2,minmax(0,1fr))}.sound-quiz{grid-template-columns:1fr}}
+@media(max-width:620px){.sound-library,.sound-quiz-options{grid-template-columns:1fr}.sound-card{min-height:0}}
+
+/* === SISARI STATUS V4: uredjeni IUCN / nacionalni status === */
+.status-clarification-box{margin:14px 0 18px;padding:12px 14px;border:1px solid #d9c9a3;background:#fffaf0;border-radius:12px;color:#3f3421;font-size:15px;line-height:1.55}
+.status-clarification-box strong{font-weight:800;color:#3b2c12}
+.status-clarification-box .status-row{display:block;margin:4px 0}
+.badge-iucn-lc,.badge-iucn-nt,.badge-iucn-vu,.badge-iucn-dd,.badge-iucn-ne{font-weight:800}
+.badge-national,.badge-serbia-status{background:#f3efe3;border:1px solid #d6c7a2;color:#42351e}
+
+/* Строга јавна фото-провера: не приказуј фотографије без провереног извора */
+.rajac-photo-placeholder{
+  width:100%; min-height:220px; border:1px dashed rgba(80,80,80,.35); border-radius:10px;
+  background:linear-gradient(135deg,#f7f4ef,#ffffff); color:#5a5147;
+  display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center;
+  padding:18px; font-size:15px; line-height:1.45; box-shadow:inset 0 0 0 1px rgba(255,255,255,.7);
+}
+.rajac-photo-placeholder strong{font-family:var(--font-serif, Georgia, serif); font-size:1.1rem; color:#3a332b; font-weight:500;}
+.rajac-photo-placeholder small{display:block; margin-top:6px; color:#7a7065; font-size:13px;}
+.species-thumb .rajac-photo-placeholder,.card-image .rajac-photo-placeholder,.species-card .rajac-photo-placeholder{min-height:160px; border-radius:8px; font-size:13px;}
+.page-hero .rajac-photo-placeholder{display:none;}
+
+
+/* SISARI v12 — ujednačen sitan potpis ispod fotografije */
+.img-caption,
+figure figcaption,
+.inline-img figcaption{
+  font-family: Georgia, "Times New Roman", serif !important;
+  font-size: 12px !important;
+  line-height: 1.35 !important;
+  color: #5f5a52 !important;
+  text-align: left !important;
+  font-style: italic !important;
+  font-weight: 400 !important;
+  letter-spacing: 0 !important;
+  margin: 6px auto 26px !important;
+  padding: 0 4px !important;
+  max-width: 900px !important;
+}
+.img-caption em,
+figure figcaption em,
+.inline-img figcaption em{
+  font-size: inherit !important;
+  line-height: inherit !important;
+  color: inherit !important;
+  font-style: italic !important;
+  font-weight: inherit !important;
+}
+.hero-image-wrap img{
+  object-fit: contain !important;
+  object-position: center center !important;
+  background: #f7f4ef !important;
+  transform: none !important;
+}
+.hero-image-wrap:hover img{
+  transform: none !important;
+}
+
+</style>
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"WebPage",
+  "name":"Алати за посетиоце — сисари Рајца",
+  "description":"Препознавање трагова, пријава налаза, интерактивни водич, квиз трагова, сезонски календар, безбедан сусрет и трофодинамика сисара ПИО Рајац.",
+  "inLanguage":"sr-Cyrl",
+  "about":["сисари","трагови сисара","пријава налаза","сезонски календар","трофодинамика","ПИО Рајац"],
+  "isPartOf":{"@type":"WebSite","name":"ПИО Рајац","url":"https://piorajac.rs/"},
+  "breadcrumb":{
+    "@type":"BreadcrumbList",
+    "itemListElement":[
+      {"@type":"ListItem","position":1,"name":"ПИО Рајац","item":"https://piorajac.rs/"},
+      {"@type":"ListItem","position":2,"name":"Сисари","item":"https://piorajac.rs/sisari/"},
+      {"@type":"ListItem","position":3,"name":"Алати за посетиоце"}
+    ]
+  }
+}
+</script>
+<style id="rajac-unified-footer-nav-v3">
+  .footer-nav{
+    padding:34px 0 54px!important;
+    margin:0!important;
+  }
+  .footer-nav .wrap{
+    max-width:1180px!important;
+    margin:0 auto!important;
+    padding:0 22px!important;
+  }
+  .footer-box,
+  nav.species-nav{
+    display:grid!important;
+    grid-template-columns:1fr auto 1fr!important;
+    align-items:center!important;
+    gap:18px!important;
+    width:100%!important;
+    margin:0!important;
+    padding:18px!important;
+    border:1px solid var(--border,#d8d0c4)!important;
+    border-radius:10px!important;
+    background:#fffdf8!important;
+    box-shadow:0 2px 12px rgba(0,0,0,.08)!important;
+  }
+  .footer-box a,
+  nav.species-nav a{
+    display:inline-flex!important;
+    align-items:center!important;
+    justify-content:center!important;
+    min-height:58px!important;
+    padding:13px 22px!important;
+    border:1.5px solid var(--forest,#2d5a27)!important;
+    border-radius:999px!important;
+    background:#fffaf1!important;
+    color:var(--forest-dark,#1a3a15)!important;
+    font-family:var(--font-serif,Georgia,serif)!important;
+    font-size:18px!important;
+    line-height:1.15!important;
+    font-weight:700!important;
+    text-decoration:none!important;
+    box-shadow:none!important;
+    transition:background .18s ease,color .18s ease,border-color .18s ease!important;
+  }
+  .footer-box a:hover,
+  nav.species-nav a:hover{
+    background:#e8f0e6!important;
+    color:var(--forest-dark,#1a3a15)!important;
+  }
+  .footer-box a.primary,
+  nav.species-nav a.center-link{
+    justify-self:center!important;
+    min-width:190px!important;
+    background:#0d1b2a!important;
+    border-color:#0d1b2a!important;
+    color:#fffdf8!important;
+  }
+  .footer-box a.primary:hover,
+  nav.species-nav a.center-link:hover{
+    background:#14283d!important;
+    border-color:#14283d!important;
+    color:#fffdf8!important;
+  }
+  .footer-box a:first-child,
+  nav.species-nav a:first-child{justify-self:start!important;}
+  .footer-box a:last-child,
+  nav.species-nav a:last-child{justify-self:end!important;}
+  .small-note{display:none!important;}
+  @media(max-width:760px){
+    .footer-box,
+    nav.species-nav{grid-template-columns:1fr!important;gap:10px!important;}
+    .footer-box a,
+    nav.species-nav a,
+    .footer-box a.primary,
+    nav.species-nav a.center-link{
+      width:100%!important;
+      justify-self:stretch!important;
+      min-width:0!important;
+    }
+  }
+</style>
+<style id="rajac-ds-menu-static-css">
+:root{--rajac-nav:#0d1b2a;--rajac-gold:#d8b55b;--rajac-nav-text:rgba(255,255,255,.72);--rajac-font-primary:"Cormorant Garamond","EB Garamond",Garamond,"Palatino Linotype","Book Antiqua",Georgia,"Times New Roman",serif;}
+body .sisari-topnav-wrap,body nav.rfx-chapter-nav,body .rfx-chapter-nav,body .rfw-edit-bar{display:none!important;height:0!important;min-height:0!important;max-height:0!important;overflow:hidden!important;visibility:hidden!important;}
+.rajac-ds-nav{background:var(--rajac-nav);position:sticky;top:0;z-index:999999;border-bottom:1px solid rgba(255,255,255,.08);font-family:var(--rajac-font-primary)!important;box-shadow:none!important;}
+.rajac-ds-nav *{box-sizing:border-box;}
+.rajac-ds-nav-inner{max-width:1180px;margin:0 auto;padding:0 18px;display:flex;align-items:stretch;min-height:56px;gap:0;overflow-x:auto;scrollbar-width:none;}
+.rajac-ds-nav-inner::-webkit-scrollbar{display:none;}
+.rajac-ds-home{display:flex;align-items:center;gap:9px;padding:0 20px 0 0;margin:0 8px 0 0;border-right:1px solid rgba(255,255,255,.12);flex-shrink:0;color:var(--rajac-gold)!important;text-decoration:none!important;font-weight:600;font-size:16px;letter-spacing:.03em;white-space:nowrap;line-height:1;}
+.rajac-ds-home-mark{width:18px;height:18px;display:inline-grid;place-items:center;color:var(--rajac-gold);}
+.rajac-ds-nav-item{position:relative;display:flex;align-items:center;gap:7px;padding:0 15px;color:var(--rajac-nav-text)!important;font-size:15px;font-weight:600;letter-spacing:.045em;text-transform:uppercase;white-space:nowrap;text-decoration:none!important;line-height:1;}
+.rajac-ds-nav-item:hover{color:rgba(255,255,255,.94)!important;background:rgba(255,255,255,.035);}
+.rajac-ds-icon{font-size:15px;line-height:1;}
+.rajac-ds-nav-item.rajac-ds-active{color:var(--rajac-gold)!important;}
+.rajac-ds-nav-item.rajac-ds-active:after{content:"";position:absolute;left:15px;right:15px;bottom:8px;height:2px;border-radius:2px;background:var(--rajac-gold);display:block;}
+.rajac-ds-nav-trofo{color:#c8a24e!important;}
+.rajac-ds-nav-trofo:hover{color:#f0cb78!important;}
+@media(max-width:720px){.rajac-ds-nav-inner{padding:0 12px}.rajac-ds-home{padding-right:14px}.rajac-ds-nav-item{font-size:13px;padding:0 12px}.rajac-ds-nav-item.rajac-ds-active:after{left:12px;right:12px}}
+.rajac-photo-credit-link{max-width:1180px;margin:24px auto 0;padding:0 18px 18px;text-align:center;font-family:var(--rajac-font-primary);font-size:15px;line-height:1.5;color:#6b7280;}
+.rajac-photo-credit-link a{color:#6b4b13;text-decoration:underline;}
+</style>
+<style id="rajac-sisari-photo-source-hover">
+/* Rajac SISARI: izvor fotografije na prelazak mišem / fokus */
+.rajac-photo-source-wrap{
+  position:relative!important;
+  display:block!important;
+  overflow:hidden!important;
+  line-height:0!important;
+}
+.rajac-photo-source-wrap>img{
+  display:block!important;
+}
+.hero-image-wrap>.rajac-photo-source-wrap,
+.card-img-wrap>.rajac-photo-source-wrap,
+.hero-visual>.rajac-photo-source-wrap{
+  width:100%!important;
+  height:100%!important;
+}
+.hero-image-wrap>.rajac-photo-source-wrap>img,
+.card-img-wrap>.rajac-photo-source-wrap>img,
+.hero-visual>.rajac-photo-source-wrap>img{
+  width:100%!important;
+  height:100%!important;
+  object-fit:cover!important;
+}
+.rajac-photo-source-wrap::after,
+.page-hero.rajac-photo-source-hero::after{
+  content:attr(data-photo-source);
+  position:absolute;
+  left:10px;
+  right:10px;
+  bottom:10px;
+  z-index:20;
+  padding:7px 10px;
+  border-radius:8px;
+  background:rgba(0,0,0,.74);
+  color:#fff;
+  font-size:12px;
+  line-height:1.35;
+  letter-spacing:.01em;
+  text-align:left;
+  white-space:normal;
+  opacity:0;
+  transform:translateY(6px);
+  transition:opacity .18s ease, transform .18s ease;
+  pointer-events:none;
+  box-shadow:0 3px 12px rgba(0,0,0,.25);
+}
+.rajac-photo-source-wrap:hover::after,
+.rajac-photo-source-wrap:focus::after,
+.rajac-photo-source-wrap:focus-within::after,
+.page-hero.rajac-photo-source-hero:hover::after,
+.page-hero.rajac-photo-source-hero:focus-within::after{
+  opacity:1;
+  transform:translateY(0);
+}
+.rajac-photo-source-wrap[data-photo-source*="допунити"]::after,
+.page-hero.rajac-photo-source-hero[data-photo-source*="допунити"]::after{
+  background:rgba(95,55,0,.86);
+}
+@media (hover:none){
+  .rajac-photo-source-wrap::after,
+  .page-hero.rajac-photo-source-hero::after{
+    opacity:.92;
+    transform:none;
+    font-size:11px;
+    bottom:8px;
+  }
+}
+</style>
+<style id="rajac-sisari-full-photo-contain-v2">
+/* V2: фотографије се више не секу у оквирима; приказује се цела фотографија/врста. */
+.hero-image-wrap,
+.inline-img,
+.track-photo-wrap,
+.house-photo,
+.photo-card figure,
+.card-img-wrap,
+.hero-visual,
+.rajac-photo-source-wrap{
+  background:#f7f4ef!important;
+}
+.hero-image-wrap img,
+.inline-img img,
+.track-photo-wrap img,
+.house-photo img,
+.photo-card figure img,
+.card-img-wrap img,
+.hero-visual img,
+.rajac-photo-source-wrap>img{
+  object-fit:contain!important;
+  object-position:center center!important;
+  background:#f7f4ef!important;
+}
+.hero-image-wrap>.rajac-photo-source-wrap,
+.card-img-wrap>.rajac-photo-source-wrap,
+.hero-visual>.rajac-photo-source-wrap{
+  width:100%!important;
+  height:100%!important;
+  display:block!important;
+}
+.hero-image-wrap>.rajac-photo-source-wrap>img,
+.card-img-wrap>.rajac-photo-source-wrap>img,
+.hero-visual>.rajac-photo-source-wrap>img{
+  width:100%!important;
+  height:100%!important;
+  display:block!important;
+}
+.inline-img img{
+  height:220px!important;
+  max-height:220px!important;
+}
+.track-photo-wrap img,
+.house-photo img,
+.photo-card figure img{
+  max-height:360px!important;
+}
+@media(max-width:820px){
+  .inline-img img{height:auto!important;max-height:340px!important;}
+  .hero-image-wrap{aspect-ratio:4/3!important;}
+}
+</style>
+<style id="sisari-v8-one-photo-standard">
+/* SISARI v8: једна главна фотографија по врсти, са извором на hover. */
+.hero-image-wrap{aspect-ratio:16/9!important;background:#f7f4ef!important}
+.hero-image-wrap img,.card-img-wrap img{object-fit:contain!important;object-position:center center!important;background:#f7f4ef!important}
+.card-img-wrap .rajac-photo-source-wrap{width:100%!important;height:100%!important}
+.card-img-wrap .rajac-photo-source-wrap img{width:100%!important;height:100%!important;display:block!important}
+</style>
+<style>
+/* v14: исправна атрибуција фотографија — без browser title tooltip-а */
+.rajac-photo-source-wrap>img,.hero-image-wrap img,.card-img-wrap img{object-fit:contain!important;object-position:center center!important;background:#f7f4ef!important;}
+@media (min-width:980px){.species-grid{grid-template-columns:repeat(3,minmax(0,1fr))!important;}}
+.filter-bar,.filter-controls{display:flex!important;flex-wrap:nowrap!important;gap:10px;justify-content:center;align-items:center;}
+.filter-btn{white-space:nowrap;}
+</style>
+<style id="sisari-v16-final-photo-layout-fix">
+/* SISARI v16 — završna zaštita: dugmad jedan red, vrste tri kolone, sitan potpis i lokalne fotografije gde postoje */
+@media (min-width: 981px){
+  body .filter-bar.filter-bar-v15{
+    display:grid!important;
+    grid-template-columns:repeat(7,minmax(0,1fr))!important;
+    gap:10px!important;
+    flex-wrap:nowrap!important;
+    max-width:1180px!important;
+    width:100%!important;
+    margin-left:auto!important;
+    margin-right:auto!important;
+  }
+  body .filter-bar.filter-bar-v15 .filter-btn{
+    width:100%!important;
+    min-width:0!important;
+    max-width:none!important;
+    height:44px!important;
+    padding:0 8px!important;
+    font-size:11.5px!important;
+    line-height:1!important;
+    white-space:nowrap!important;
+  }
+  body .species-grid-main.species-grid-v15{
+    display:grid!important;
+    grid-template-columns:repeat(3,minmax(0,1fr))!important;
+    gap:26px!important;
+    max-width:1180px!important;
+    width:100%!important;
+    margin:0 auto!important;
+  }
+}
+@media (max-width:980px){
+  body .filter-bar.filter-bar-v15{
+    display:flex!important;
+    flex-wrap:nowrap!important;
+    overflow-x:auto!important;
+    justify-content:flex-start!important;
+    gap:10px!important;
+    padding-bottom:12px!important;
+  }
+  body .filter-bar.filter-bar-v15 .filter-btn{flex:0 0 auto!important;}
+}
+body .hero-image-wrap{
+  width:100%!important;
+  max-width:900px!important;
+  margin-left:auto!important;
+  margin-right:auto!important;
+  aspect-ratio:16/9!important;
+  background:#f7f4ef!important;
+  overflow:hidden!important;
+}
+body .hero-image-wrap .rajac-photo-source-wrap{
+  display:block!important;
+  width:100%!important;
+  height:100%!important;
+}
+body .hero-image-wrap img,
+body .card-img-wrap img,
+body .rajac-photo-source-wrap>img{
+  width:100%!important;
+  height:100%!important;
+  object-fit:contain!important;
+  object-position:center center!important;
+  background:#f7f4ef!important;
+  transform:none!important;
+}
+body .species-card:hover .card-img-wrap img,
+body .hero-image-wrap:hover img{transform:none!important;}
+body p.img-caption,
+body .img-caption,
+body figure figcaption,
+body .caption{
+  font-family:Georgia,"Times New Roman",serif!important;
+  font-size:12px!important;
+  line-height:1.35!important;
+  color:#5f5a52!important;
+  text-align:left!important;
+  font-style:italic!important;
+  font-weight:400!important;
+  letter-spacing:0!important;
+  margin:7px auto 24px!important;
+  padding:0 4px!important;
+  max-width:900px!important;
+}
+body .img-caption em,
+body figure figcaption em,
+body .caption em{
+  font-size:inherit!important;
+  line-height:inherit!important;
+  color:inherit!important;
+  font-style:italic!important;
+  font-weight:inherit!important;
+}
+</style>
+<link rel="stylesheet" href="/sisari/assets/mobile/sisari-mobile.css?v=20260716f"/>
+<script defer src="/sisari/assets/mobile/sisari-mobile.js?v=20260716f"></script>
+
+<link rel="stylesheet" href="/sisari/assets/sisari-photo-credits-v2.css?v=20260817">
+<style id="rajac-okvir-v1">.rajac-ds-home,.rfx-nav-home{display:flex!important;align-items:center!important;line-height:1!important}.rajac-ds-home>span,.rfx-nav-home>span{display:inline-flex!important;align-items:center!important;line-height:1!important}.rajac-ds-home>span:first-child,.rfx-nav-home>span:first-child{justify-content:center;width:18px;height:18px}</style>
+</head>
+<body>
+<nav aria-label="Главни мени ПИО Рајац" class="rajac-ds-nav"><div class="rajac-ds-nav-inner"><a class="rajac-ds-home" href="https://piorajac.rs/"><span aria-hidden="true" class="rajac-ds-home-mark">⊙</span><span>ПИО „РАЈАЦ“</span></a><a class="rajac-ds-nav-item" href="https://piorajac.rs/biljke/"><span aria-hidden="true" class="rajac-ds-icon">🌿</span><span>БИЉКЕ</span></a><a class="rajac-ds-nav-item" href="https://piorajac.rs/ptice/"><span aria-hidden="true" class="rajac-ds-icon">🦉</span><span>ПТИЦЕ</span></a><a class="rajac-ds-nav-item" href="https://piorajac.rs/insekti/"><span aria-hidden="true" class="rajac-ds-icon">🦋</span><span>ИНСЕКТИ</span></a><a class="rajac-ds-nav-item rajac-ds-active" href="https://piorajac.rs/sisari/"><span aria-hidden="true" class="rajac-ds-icon">🐾</span><span>СИСАРИ</span></a><a class="rajac-ds-nav-item" href="https://piorajac.rs/gljive/"><span aria-hidden="true" class="rajac-ds-icon">🍄</span><span>ГЉИВЕ</span></a><a class="rajac-ds-nav-item rajac-ds-nav-trofo" href="https://piorajac.rs/trofodinamika/"><span aria-hidden="true" class="rajac-ds-icon">🔗</span><span>ТРОФОДИНАМИКА</span></a></div></nav>
+<header class="hero">
+<div class="wrap">
+<div class="topline"><span>ПИО Рајац · посетилачки алати за мониторинг сисара</span><a href="https://piorajac.rs/sisari/">← Сисари Рајца</a></div>
+<div class="hero-grid">
+<div>
+<div class="badge">🐾 трагови · налази · сезонски водич · квиз</div>
+<h1>Помози мониторингу сисара без узнемиравања дивљег света</h1>
+<p class="hero-lead">Посетиоци најчешће не виде сисара директно, али могу препознати траг, измет, ровање, јазбину, длаку или пролаз кроз снег. Ова страница претвара шетњу по Рајцу у пажљиво, безбедно и корисно посматрање природе.</p>
+<div class="hero-stats">
+<div class="stat"><b>8</b><span>типова налаза које посетилац може да препозна</span></div>
+<div class="stat"><b>10</b><span>питања у квизу „чији је ово траг”</span></div>
+<div class="stat"><b>0</b><span>тачних јавних локација осетљивих врста</span></div>
+</div>
+</div>
+<div aria-label="Илустрација трагова сисара на Рајцу" class="hero-visual">
+<svg aria-label="Илустрација шуме са отисцима, јазбином, дивљом свињом, срном и јежом" role="img" viewbox="0 0 900 560">
+<defs><lineargradient id="sky" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#e8e4d6"></stop><stop offset="1" stop-color="#cbbd8d"></stop></lineargradient><lineargradient id="hill" x1="0" x2="1"><stop stop-color="#6e845b"></stop><stop offset="1" stop-color="#9a8b5a"></stop></lineargradient><filter height="140%" id="sh" width="140%" x="-20%" y="-20%"><fedropshadow dx="0" dy="10" flood-color="#12251b" flood-opacity=".22" stddeviation="10"></fedropshadow></filter></defs>
+<rect fill="url(#sky)" height="560" width="900"></rect><circle cx="725" cy="82" fill="#d3af5a" opacity=".5" r="48"></circle>
+<path d="M0 310 C125 205 235 270 360 195 C505 110 616 260 735 186 C820 133 870 160 900 138 L900 560 L0 560Z" fill="#83996f" opacity=".78"></path>
+<path d="M0 390 C160 310 260 405 430 330 C570 270 690 390 900 315 L900 560 L0 560Z" fill="url(#hill)"></path>
+<path d="M0 470 C130 425 260 485 430 440 C585 398 700 488 900 420 L900 560 L0 560Z" fill="#263f2e"></path>
+<g opacity=".92"><path d="M110 360 C88 270 122 210 170 168 C220 212 242 280 214 362Z" fill="#263a2b"></path><rect fill="#2b2b22" height="130" rx="9" width="21" x="160" y="330"></rect><path d="M642 368 C620 270 657 202 710 155 C770 210 790 285 760 368Z" fill="#2e4632"></path><rect fill="#302a20" height="150" rx="9" width="23" x="700" y="328"></rect></g>
+<g filter="url(#sh)">
+<g transform="translate(390 330)"><ellipse cx="90" cy="58" fill="#7e563d" rx="84" ry="40"></ellipse><circle cx="26" cy="48" fill="#8d6346" r="34"></circle><path d="M7 35 C-11 6 -15 -28 0 -60 C20 -29 30 5 27 38Z" fill="#8d6346"></path><circle cx="18" cy="47" fill="#111" r="5"></circle><path d="M55 90 L43 150 M96 98 L88 158 M148 92 L168 148" stroke="#65402a" stroke-linecap="round" stroke-width="13"></path></g>
+<g transform="translate(604 410)"><ellipse cx="72" cy="40" fill="#3f342a" rx="70" ry="30"></ellipse><path d="M115 35 C145 12 178 17 205 42 C178 58 145 57 115 35Z" fill="#3f342a"></path><circle cx="170" cy="38" fill="#111" r="4"></circle></g>
+</g>
+<g fill="#3a2e25" opacity=".9">
+<ellipse cx="220" cy="466" rx="13" ry="24" transform="rotate(-18 220 466)"></ellipse><ellipse cx="250" cy="458" rx="13" ry="24" transform="rotate(18 250 458)"></ellipse>
+<ellipse cx="303" cy="500" rx="13" ry="24" transform="rotate(-18 303 500)"></ellipse><ellipse cx="333" cy="492" rx="13" ry="24" transform="rotate(18 333 492)"></ellipse>
+<circle cx="535" cy="470" r="10"></circle><circle cx="557" cy="470" r="10"></circle><circle cx="546" cy="447" r="8"></circle><ellipse cx="545" cy="490" rx="21" ry="14"></ellipse>
+</g>
+<path d="M735 455 C780 410 835 415 865 455 C824 470 775 470 735 455Z" fill="#1c241f"></path>
+<text fill="#fffdf8" font-family="Georgia" font-size="22" text-anchor="middle" x="450" y="535">траг је податак — ако га фотографишемо без узнемиравања</text>
+</svg>
+<div class="hero-visual-badge"><strong>Не јуримо животињу</strong><span>Бележимо знак присуства, станиште и време. Такви подаци су најкориснији и најбезбеднији.</span></div>
+</div>
+</div>
+</div>
+</header>
+<nav aria-label="Брза навигација" class="quick-nav"><div class="wrap"><div class="quick-nav-inner">
+<a href="#tragovi">Трагови</a><a href="#nalaz">Пријави налаз</a><a href="#vodic">Шта сам нашао</a><a href="#zvukovi">Звукови</a><a href="#kviz-zvuka">Квиз звука</a><a href="#kviz">Квиз трагова</a><a href="#sezona">Сезоне</a><a href="#trofo">Трофодинамика</a><a href="#mapa">Карта</a><a href="#susret">Сусрети</a>
+</div></div></nav>
+<section class="section" id="tragovi">
+<div class="wrap">
+<div class="section-head"><div class="kicker">🐾 препознавање трагова</div><h2>Осам знакова да је сисар био ту</h2><p class="section-intro">Траг не треба дирати, раскопавати или пратити у дубину станишта. Најбоље је фотографисати га из више углова, додати предмет за размеру и забележити станиште.</p></div>
+<div class="grid-3">
+<article class="card rule-card"><div class="rule-icon">👣</div><h3>Отисак стопала</h3><p>Папци срне и дивље свиње, шапе лисице, јазавца и куне или ситни трагови глодара најбоље се виде у блату, снегу и меком земљишту.</p></article>
+<article class="card rule-card"><div class="rule-icon">🟤</div><h3>Измет</h3><p>Облик, величина, место и састав измета могу указати на врсту. Не дирати руком; фотографисати са стране и одозго.</p></article>
+<article class="card rule-card"><div class="rule-icon">🌱</div><h3>Ровање земље</h3><p>Преврнуто тло, корење и разгрнута листинка често указују на дивљу свињу, нарочито у јесен и после кише.</p></article>
+<article class="card rule-card"><div class="rule-icon">🛁</div><h3>Ваљалиште</h3><p>Ублаћено плитко удубљење може бити место где се дивља свиња ваљала. Не прилазити ако је свеже и има јак мирис.</p></article>
+<article class="card rule-card"><div class="rule-icon">🕳</div><h3>Јазбина</h3><p>Један или више улаза, избачена земља и утабана стаза могу указати на јазавца, лисицу или друге врсте. Не завиривати и не пуштати пса.</p></article>
+<article class="card rule-card"><div class="rule-icon">🧵</div><h3>Длака</h3><p>Длака на кори, жици, трњу или у пролазу може бити користан знак, али се не скида без стручног разлога.</p></article>
+<article class="card rule-card"><div class="rule-icon">🍂</div><h3>Остаци хране</h3><p>Ољуштени плодови, разгризене љуске, перје, кости или остаци инсеката могу указати на исхрану, али се не односе са терена.</p></article>
+<article class="card rule-card"><div class="rule-icon">〰️</div><h3>Пролаз кроз траву или снег</h3><p>Утабана линија кретања кроз траву, снег или лишће може показати коридор, али га не треба пратити до склоништа.</p></article>
+<article class="card rule-card"><div class="rule-icon">📷</div><h3>Како фотографисати</h3><p>Снимити шири кадар станишта, крупан кадар трага и кадар са размером. Не газити преко трага пре фотографисања.</p></article>
+</div>
+</div>
+</section>
+<section class="section" id="nalaz">
+<div class="wrap">
+<div class="section-head"><div class="kicker">📋 пријава налаза</div><h2>Шта треба да садржи добра пријава</h2><p class="section-intro">Пријава налаза није научни рад, али мора имати основне податке. Ако врста није сигурна, боље је написати „непознат траг” него погрешно именовати животињу.</p></div>
+<div class="grid-2">
+<div class="record-preview">
+<h3>Шаблон пријаве</h3>
+<label>Врста, ако је позната</label><div class="value">нпр. дивља свиња, срна, лисица, јазавац, куна, непознат сисар</div>
+<label>Тип налаза</label><div class="value">отисак, измет, ровање, јазбина, длака, остатак хране, пролаз, директно виђење</div>
+<label>Датум и време</label><div class="value">нпр. 12. октобар 2026, 17:40</div>
+<label>Приближна локација</label><div class="value">шира зона, стаза, тип станишта; без јавне објаве осетљивих координата</div>
+<label>Станиште</label><div class="value">шума, руб ливаде, поток, живица, пашњак, воћњак, снег, блато</div>
+<label>Фотографија</label><div class="value">шири кадар + крупан кадар + размера ако је могуће</div>
+</div>
+<div class="card panel ok-list">
+<h3>CSV шаблон за каснији увоз</h3>
+<ul>
+<li>datum</li><li>vreme</li><li>tip_nalaza</li><li>vrsta_sumnja</li><li>staniste</li><li>opsta_lokacija</li><li>opis</li><li>fotografija_url</li><li>osetljivost</li><li>napomena</li>
+</ul>
+<div class="green-box"><strong>Правило:</strong> за осетљиве налазе у јавном приказу користити само општу локацију, док прецизни податак остаје код управљача.</div>
+<button class="small-btn" onclick="downloadCSV()">Преузми CSV шаблон</button>
+</div>
+</div>
+</div>
+</section>
+<section class="section" id="vodic">
+<div class="wrap">
+<div class="section-head"><div class="kicker">🔎 водич „шта сам нашао”</div><h2>Изабери знак који видиш на терену</h2><p class="section-intro">Овај водич не даје коначну идентификацију, већ помаже посетиоцу да правилно фотографише налаз и да не узнемири животињу.</p></div>
+<div class="finder">
+<div class="finder-tabs">
+<button class="finder-btn is-active" data-find="rovanje">Видим ровање земље</button>
+<button class="finder-btn" data-find="papci">Видим два издужена папка</button>
+<button class="finder-btn" data-find="jazbina">Видим јазбину са више улаза</button>
+<button class="finder-btn" data-find="izmet">Видим таман измет на стази</button>
+<button class="finder-btn" data-find="dlaka">Видим длаку на трњу или кори</button>
+<button class="finder-btn" data-find="prolaz">Видим утабани пролаз</button>
+</div>
+<article class="card finder-panel" id="finderPanel"></article>
+</div>
+</div>
+</section>
+<section class="section" id="zvukovi">
+<div class="wrap">
+<div class="section-head"><div class="kicker">🔊 звучни записи</div><h2>Препознај звукове сисара Рајца</h2><p class="section-intro">Оглашавање је користан знак присуства, али се никада не користи за намерно узнемиравање, дозивање или терање животиња. Звукове слушајте као едукативни пример, без пуштања у природи.</p></div>
+<div class="sound-library" id="soundLibrary"></div>
+</div>
+</section>
+<section class="section" id="kviz-zvuka">
+<div class="wrap">
+<div class="section-head"><div class="kicker">🎧 квиз оглашавања</div><h2>Квиз: која врста се оглашава?</h2><p class="section-intro">Квиз је намењен посетиоцима, деци и школским групама. Пустите непознат звук, изаберите одговор и упоредите га са описом оглашавања.</p></div>
+<div class="sound-quiz">
+<div class="sound-quiz-player">
+<h3 id="soundQuizTitle">Питање</h3>
+<p id="soundQuizText"></p>
+<audio controls="" id="soundQuizAudio" preload="none"></audio>
+<div class="sound-quiz-options" id="soundQuizOptions"></div>
+<div class="green-box" id="soundQuizFeedback" style="display:none"></div>
+<div class="quiz-controls" style="margin-top:14px"><button class="small-btn" onclick="nextSoundQuiz()">Следећи звук</button><button class="small-btn light" onclick="resetSoundQuiz()">Почни испочетка</button></div>
+</div>
+<div class="sound-quiz-info">
+<h3>Како слушати</h3>
+<p>Срна се често оглашава кратким, оштрим лавежом. Дивља свиња се препознаје по дубоком груктању и режању. Шакал има продужено завијање, а лисица оштрији лавеж и продорне позиве.</p>
+<div class="warning-box"><strong>Опрез:</strong> звуке не пуштати на терену ради привлачења животиња. То може изазвати стрес, напуштање склоништа или непотребно кретање.</div>
+</div>
+</div>
+</div>
+</section>
+<section class="section" id="kviz">
+<div class="wrap">
+<div class="section-head"><div class="kicker">🎮 квиз трагова</div><h2>Квиз: чији је ово траг?</h2><p class="section-intro">Квиз је намењен деци, школским групама и посетиоцима. Циљ није такмичење, већ учење како се траг посматра без додиривања и узнемиравања.</p></div>
+<div class="quiz">
+<div class="card quiz-card">
+<h3 id="quizTitle">Питање</h3>
+<p id="quizText"></p>
+<div class="quiz-options" id="quizOptions"></div>
+<div class="green-box" id="quizFeedback" style="display:none"></div>
+<div class="quiz-controls"><button class="small-btn" onclick="nextQuiz()">Следеће питање</button><button class="small-btn light" onclick="resetQuiz()">Почни испочетка</button></div>
+</div>
+<div class="quiz-visual" id="quizVisual"></div>
+</div>
+</div>
+</section>
+<section class="section" id="mapa">
+<div class="wrap">
+<div class="section-head"><div class="kicker">🗺 јавни приказ налаза</div><h2>Карта налаза мора штитити осетљиве локације</h2><p class="section-intro">За сисаре је карта корисна само ако не открива јазбине, легла, брлоге, тачке кретања осетљивих врста или места где би људи могли да их узнемире.</p></div>
+<div class="map-policy">
+<article class="map-card"><h3>Шта може јавно</h3><p>Јавна карта може приказати ширу зону, квадрат 1×1 km, тип станишта, месец налаза и врсту налаза. На страници врсте може стајати: „Потврђено присуство у широј зони Рајца”.</p><div class="green-box"><strong>Добро:</strong> шира зона, тип станишта, сезонски приказ, без тачне тачке.</div></article>
+<article class="map-card"><h3>Шта не сме јавно</h3><p>Не приказивати тачну јазбину, легло, брлог, место младунчади, пећину са слепим мишевима, тачку видре, дивље мачке, вука, медведа или друге осетљиве налазе.</p><div class="warning-box"><strong>Опрез:</strong> прецизни подаци могу бити корисни управљачу, али не и јавном приказу.</div></article>
+</div>
+</div>
+</section>
+<section class="section" id="sezona">
+<div class="wrap">
+<div class="section-head"><div class="kicker">📅 сезонски календар сусрета</div><h2>Шта посетиоци треба да знају током године</h2><p class="section-intro">Сезонски календар помаже да се зна када је најважније не силазити са стаза, не прилазити младунцима, не узнемиравати потоке и не терати животиње на додатно кретање.</p></div>
+<div class="season-grid">
+<article class="season"><span class="month">пролеће</span><h3>Младунци</h3><p>Не прилазити срнићима, младим зечевима и скровитим местима. Младунче у трави најчешће није напуштено.</p></article>
+<article class="season"><span class="month">лето</span><h3>Вода и хлад</h3><p>Потоци и сеновити рубови су важни. Не газити обалску вегетацију и не узнемиравати животиње у врућим деловима дана.</p></article>
+<article class="season"><span class="month">јесен</span><h3>Жир и плодови</h3><p>Дивља свиња, срна, лисица и глодари интензивније користе шумске и рубне зоне. Не остављати храну и отпад.</p></article>
+<article class="season"><span class="month">зима</span><h3>Трагови у снегу</h3><p>Снег открива кретање, али животиње не треба пратити до склоништа. Не терати их на бекство ради фотографије.</p></article>
+</div>
+</div>
+</section>
+<section class="section" id="susret">
+<div class="wrap">
+<div class="section-head"><div class="kicker">🛡 безбедан сусрет</div><h2>Кратке картице за најчешће ситуације</h2></div>
+<div class="grid-3">
+<article class="card rule-card"><div class="rule-icon">🐗</div><h3>Дивља свиња</h3><p>Ако чујеш крмачу или видиш прасад, не прилази, не фотографиши изблиза и не блокирај пролаз. Мирно се повуци.</p></article>
+<article class="card rule-card"><div class="rule-icon">🦌</div><h3>Срна</h3><p>Младунче у трави не дирати. Мајка је најчешће у близини, а додир човека може изазвати проблем.</p></article>
+<article class="card rule-card"><div class="rule-icon">🦡</div><h3>Јазавац</h3><p>Не прилазити јазбини и не пуштати пса у рупу. Јазбина није место за фотографисање изблиза.</p></article>
+<article class="card rule-card"><div class="rule-icon">🦊</div><h3>Лисица</h3><p>Не дозивати и не хранити. Ако је видиш, остани миран, направи кратак запис и не прати је.</p></article>
+<article class="card rule-card"><div class="rule-icon">🐾</div><h3>Куна и ласица</h3><p>Брзе су и опрезне. Не користити храну, мирисе или звучне мамце ради бољег сусрета.</p></article>
+<article class="card rule-card"><div class="rule-icon">🌙</div><h3>Ноћни сусрет</h3><p>Користити пригушено, усмерено светло само ради безбедног проласка. Не претраживати шуму и склоништа.</p></article>
+</div>
+</div>
+</section>
+<section class="section" id="trofo">
+<div class="wrap">
+<div class="section-head"><div class="kicker">🔗 сисари у трофодинамици</div><h2>Сисари као чворови у мрежи живота Рајца</h2><p class="section-intro">Сисари нису само „врсте за списак”. Они повезују инсекте, плодове, семена, лешине, предаторе, водотокове, шумски подмладак и земљиште.</p></div>
+<div class="trofo">
+<svg aria-label="Графички приказ трофодинамичке улоге сисара Рајца" role="img" viewbox="0 0 1180 470">
+<rect fill="#fffdf8" height="470" width="1180"></rect>
+<g fill="none" stroke="#d8d0c4" stroke-width="4">
+<path d="M220 130 C360 70 480 85 590 210"></path><path d="M220 330 C375 385 500 350 590 250"></path><path d="M960 120 C790 80 700 120 590 210"></path><path d="M960 335 C800 390 710 340 590 250"></path><path d="M590 210 C590 160 590 105 590 70"></path><path d="M590 250 C590 310 590 368 590 410"></path>
+</g>
+<g font-family="Georgia" text-anchor="middle">
+<g transform="translate(470 168)"><rect fill="#e8f0e6" height="116" rx="18" stroke="#a8c4a4" width="240"></rect><text fill="#1a3a15" font-size="28" x="120" y="46">Сисари Рајца</text><text fill="#5a5a5a" font-size="16" x="120" y="76">предатори, биљоједи, глодари,</text><text fill="#5a5a5a" font-size="16" x="120" y="98">слепи мишеви и врсте уз воду</text></g>
+<g transform="translate(60 70)"><rect fill="#fff8e6" height="100" rx="16" stroke="#d8d0c4" width="260"></rect><text fill="#1a3a15" font-size="23" x="130" y="40">Слепи мишеви</text><text fill="#5a5a5a" font-size="15" x="130" y="68">регулишу ноћне инсекте</text></g>
+<g transform="translate(60 285)"><rect fill="#fff8e6" height="100" rx="16" stroke="#d8d0c4" width="260"></rect><text fill="#1a3a15" font-size="23" x="130" y="40">Глодари и пухови</text><text fill="#5a5a5a" font-size="15" x="130" y="68">семена, плодови, храна за предаторе</text></g>
+<g transform="translate(860 70)"><rect fill="#fff8e6" height="100" rx="16" stroke="#d8d0c4" width="260"></rect><text fill="#1a3a15" font-size="23" x="130" y="40">Лисица и шакал</text><text fill="#5a5a5a" font-size="15" x="130" y="68">ситни сисари и лешине</text></g>
+<g transform="translate(860 285)"><rect fill="#fff8e6" height="100" rx="16" stroke="#d8d0c4" width="260"></rect><text fill="#1a3a15" font-size="23" x="130" y="40">Видра</text><text fill="#5a5a5a" font-size="15" x="130" y="68">показатељ очуваности водотока</text></g>
+<g transform="translate(458 20)"><rect fill="#f2f0eb" height="80" rx="16" stroke="#d8d0c4" width="264"></rect><text fill="#1a3a15" font-size="21" x="132" y="34">Дивља свиња</text><text fill="#5a5a5a" font-size="15" x="132" y="58">земљиште, подмладак, бескичмењаци</text></g>
+<g transform="translate(458 370)"><rect fill="#f2f0eb" height="80" rx="16" stroke="#d8d0c4" width="264"></rect><text fill="#1a3a15" font-size="21" x="132" y="34">Срна</text><text fill="#5a5a5a" font-size="15" x="132" y="58">подмладак дрвећа и жбуња</text></g>
+</g>
+</svg>
+</div>
+</div>
+</section>
+<section class="section" id="seo">
+<div class="wrap">
+<div class="section-head"><div class="kicker">🔍 SEO и структурисани подаци</div><h2>Страница је припремљена да је претраживачи разумеју</h2><p class="section-intro">У заглављу странице је унет основни структурисани опис: ВебПаге, БреадцрумбЛист, тема странице и веза са сајтом ПИО Рајац. Иста логика касније може да се дода и на сваку страницу врсте.</p></div>
+<table class="data-table">
+<thead><tr><th>Елемент</th><th>Примена за плагин сисара</th></tr></thead>
+<tbody>
+<tr><td>WebPage</td><td>Помаже претраживачу да разуме да је ово едукативна страница о сисарима Рајца.</td></tr>
+<tr><td>BreadcrumbList</td><td>Јасно повезује ПИО Рајац → Сисари → Алати за посетиоце.</td></tr>
+<tr><td>ДефинедТерм за врсте</td><td>Касније се може додати на странице срне, дивље свиње, јазавца, видре и других врста.</td></tr>
+<tr><td>Опис без осетљивих тачака</td><td>Добро за јавну претрагу, без откривања локација које могу угрозити животиње.</td></tr>
+</tbody>
+</table>
+</div>
+</section>
+<section class="section" id="zakljucak">
+<div class="wrap">
+<div class="highlight"><strong>Суштина:</strong> посетилац не мора да види сисара да би помогао. Довољно је да препозна траг, фотографише га без гажења, забележи станиште и пошаље податак без јавног откривања осетљиве локације.</div>
+<div class="guide-links">
+<a class="guide-link" href="https://piorajac.rs/sisari/pomoc-sisarima-rajca/"><span class="ico">🌿</span><span><strong>Помоћ сисарима</strong><span>Без узнемиравања</span></span><b class="arr">→</b></a>
+<a class="guide-link" href="https://piorajac.rs/sisari/fotografisanje-sisara-rajac/"><span class="ico">📷</span><span><strong>Фотографисање сисара</strong><span>Теренски савети</span></span><b class="arr">→</b></a>
+<a class="guide-link" href="https://piorajac.rs/sisari/ponasanje-prema-sisarima-rajac/"><span class="ico">🦌</span><span><strong>Понашање према сисарима</strong><span>Сусрети и правила</span></span><b class="arr">→</b></a>
+<a class="guide-link" href="https://piorajac.rs/sisari/alati-za-posetioce-sisari-rajca/"><span class="ico">🐾</span><span><strong>Алати за посетиоце</strong><span>Трагови, налази, сезонски водич и квиз</span></span><b class="arr">→</b></a>
+</div>
+</div>
+</section>
+<div class="footer-nav">
+<div class="wrap">
+<div class="footer-box">
+<a href="https://piorajac.rs/sisari/ponasanje-prema-sisarima-rajac/">← Понашање према сисарима</a>
+<a class="primary" href="https://piorajac.rs/sisari/">Сви сисари Рајца →</a>
+<a href="https://piorajac.rs/sisari/pomoc-sisarima-rajca/">Помоћ сисарима →</a>
+</div>
+</div>
+</div>
+<footer class="site-footer">© 2026 — Предео изузетних одлика „Рајац" · Туристичка организација општине Љиг
+</footer>
+<script>
+const finderData={
+  rovanje:{title:"Ровање земље",text:"Разгрнута листинка, преврнут хумус, видљиво корење и плитке јаме често указују на дивљу свињу. Посебно је често у јесен, после кише и у зонама богатим жиром.",do:"Сними шири кадар станишта и крупан кадар ровања.",dont:"Не прати свеж траг у дубину шуме и не остављај храну.",possible:"могуће: дивља свиња"},
+  papci:{title:"Два издужена папка",text:"Папци могу указати на срну или дивљу свињу. Срна оставља ужа, елегантнија два отиска; дивља свиња често оставља дубљи и шири траг, понекад са додатним бочним папцима.",do:"Додај размеру и сликај отисак одозго.",dont:"Не гази преко трага пре фотографисања.",possible:"могуће: срна или дивља свиња"},
+  jazbina:{title:"Јазбина са више улаза",text:"Више улаза, избачена земља, утабани прилази и трагови коришћења могу указати на јазавца или лисицу. То је осетљив налаз.",do:"Сними само са стазе или дистанце и забележи општу зону.",dont:"Не завируј, не убацуј грану, не пуштај пса.",possible:"могуће: јазавац или лисица"},
+  izmet:{title:"Таман измет на стази или камену",text:"Измет на стази, камену или истакнутом месту може бити знак лисице или куне. Садржај може имати длаке, коштице, инсекте или делове плодова.",do:"Сними одозго и са стране, без додиривања.",dont:"Не узимај узорак без стручног разлога.",possible:"могуће: лисица, куна или други месојед"},
+  dlaka:{title:"Длака на трњу, кори или жици",text:"Длака може остати на пролазу кроз жбуње, трње, кору дрвета или ограду. Боја и структура могу помоћи, али без анализе није увек сигурно.",do:"Фотографиши место и шири контекст пролаза.",dont:"Не кидај додатну длаку и не оштећуј кору.",possible:"могуће: срна, дивља свиња, лисица, јазавац"},
+  prolaz:{title:"Утабани пролаз кроз траву или снег",text:"Линија кретања кроз траву, снег или листинац може показати коридор којим сисари редовно пролазе. Такав податак је користан, али се не сме пратити до склоништа.",do:"Сними правац пролаза и станиште.",dont:"Не прати пролаз ако води ка јазбини или мирујућем месту.",possible:"могуће: више врста сисара"}
+};
+function showFinder(key){
+  const d=finderData[key]||finderData.rovanje;
+  document.querySelectorAll('.finder-btn').forEach(b=>b.classList.toggle('is-active',b.dataset.find===key));
+  document.getElementById('finderPanel').innerHTML=`<h3>${d.title}</h3><p>${d.text}</p><div class="meta"><div><strong>Шта урадити:</strong><br>${d.do}</div><div><strong>Шта не радити:</strong><br>${d.dont}</div><div><strong>Могуће тумачење:</strong><br>${d.possible}</div><div><strong>Пријава:</strong><br>додати датум, станиште и општу локацију</div></div>`;
+}
+document.querySelectorAll('.finder-btn').forEach(b=>b.addEventListener('click',()=>showFinder(b.dataset.find)));showFinder('rovanje');
+
+const soundSamples=[
+  {id:'srna',name:'Срна',latin:'Capreolus capreolus',local:'../assets/audio/capreolus-capreolus.ogg',remote:'https://upload.wikimedia.org/wikipedia/commons/c/c8/Male_roe_deer_growl.ogg',type:'audio/ogg',desc:'Кратко, оштро и лавежу слично оглашавање, најчешће при узнемирењу или територијалном понашању.',hint:'Слушај кратак, оштар лавеж, не дуго завијање.'},
+  {id:'divlja-svinja',name:'Дивља свиња',latin:'Sus scrofa',local:'../assets/audio/sus-scrofa.ogg',remote:'https://upload.wikimedia.org/wikipedia/commons/8/8a/Boar.Grwls%281%29.ogg',type:'audio/ogg',desc:'Дубоко груктање, рикање и кратки режаји, нарочито када је јединка узнемирена или је крдо у густој вегетацији.',hint:'Слушај грудно груктање и ниске, храпаве звуке.'},
+  {id:'sakal',name:'Шакал',latin:'Canis aureus',local:'../assets/audio/canis-aureus.ogg',remote:'https://upload.wikimedia.org/wikipedia/commons/1/1a/Jackal.ogg',type:'audio/ogg',desc:'Продужено, високо и таласасто завијање, често у сумрак или ноћу, понекад у групном одговору.',hint:'Слушај дуже завијање, више и продорније од лавежа.'},
+  {id:'lisica',name:'Лисица',latin:'Vulpes vulpes',local:'../assets/audio/vulpes-vulpes.ogg',remote:'https://upload.wikimedia.org/wikipedia/commons/7/79/Red_Fox_%28Vulpes_vulpes%29_%28W1CDR0001529_BD12%29.ogg',type:'audio/ogg',desc:'Оштрији лавеж и продорни позиви, најчешће ноћу или у периоду појачане активности.',hint:'Слушај оштрији лавеж, краћи и продорнији од шакаловог завијања.'}
+];
+function rajacSetAudio(audio,sample){
+  if(!audio||!sample)return;
+  audio.setAttribute('preload','none');
+  audio.src=sample.remote;
+}
+function initSoundLibrary(){
+  const box=document.getElementById('soundLibrary'); if(!box)return;
+  box.innerHTML=soundSamples.map((s,i)=>`<article class="sound-card"><h3>${s.name}</h3><div class="latin">${s.latin}</div><p>${s.desc}</p><audio id="soundLib${i}" controls preload="none" aria-label="Звук: ${s.name}"></audio><p class="sound-note">Учитава се тек када притиснете Play.</p></article>`).join('');
+  soundSamples.forEach((s,i)=>rajacSetAudio(document.getElementById('soundLib'+i),s));
+}
+let sqi=0,soundScore=0,soundAnswered=false;
+function renderSoundQuiz(){
+  const item=soundSamples[sqi]; soundAnswered=false;
+  document.getElementById('soundQuizTitle').textContent=`Звук ${sqi+1} / ${soundSamples.length}`;
+  document.getElementById('soundQuizText').textContent='Пустите звук и изаберите врсту.';
+  rajacSetAudio(document.getElementById('soundQuizAudio'),item);
+  document.getElementById('soundQuizFeedback').style.display='none';
+  const options=[...soundSamples].sort(()=>Math.random()-.5);
+  document.getElementById('soundQuizOptions').innerHTML=options.map(o=>`<button data-sound-answer="${o.id}" onclick="answerSoundQuiz('${o.id}')">${o.name}</button>`).join('');
+}
+function answerSoundQuiz(id){
+  if(soundAnswered)return; soundAnswered=true;
+  const item=soundSamples[sqi]; const buttons=[...document.querySelectorAll('#soundQuizOptions button')];
+  buttons.forEach(b=>{if(b.dataset.soundAnswer===item.id)b.classList.add('correct'); if(b.dataset.soundAnswer===id&&id!==item.id)b.classList.add('wrong');});
+  if(id===item.id)soundScore++;
+  const fb=document.getElementById('soundQuizFeedback'); fb.style.display='block'; fb.innerHTML=`<strong>${id===item.id?'Тачно.':'Није тачно.'}</strong> То је ${item.name}. ${item.hint}<br>Резултат: ${soundScore}/${soundSamples.length}`;
+}
+function nextSoundQuiz(){sqi=(sqi+1)%soundSamples.length;renderSoundQuiz();}
+function resetSoundQuiz(){sqi=0;soundScore=0;renderSoundQuiz();}
+initSoundLibrary();renderSoundQuiz();
+
+const quiz=[
+ {q:"Два уска издужена отиска у блату, без јасних прстију, највероватније припадају:",a:["срни","јежу","куни"],ok:0,why:"Срна оставља два издужена папка. Дивља свиња може бити слична, али је траг често шири и дубљи.",type:"hoof"},
+ {q:"Широко преврнуто земљиште са разгрнутим корењем најчешће указује на:",a:["дивљу свињу","слепог миша","видру"],ok:0,why:"Дивља свиња рије земљу у потрази за храном. Тај знак је чест у шумама богатим жиром.",type:"root"},
+ {q:"Јазбина са више улаза и избаченом земљом може бити налаз:",a:["јазавца","срне","слепог миша"],ok:0,why:"Јазавац често користи сложене системе јазбина. Не прилазити и не пуштати пса.",type:"burrow"},
+ {q:"Ситан таман измет на стази или камену може указати на:",a:["лисицу или куну","срну","дивљу свињу"],ok:0,why:"Месоједи често остављају измет на видљивим местима, као територијални знак.",type:"scat"},
+ {q:"Младунче срне које мирује у трави треба:",a:["оставити на миру","померити са стазе","нахранити"],ok:0,why:"Младунче најчешће није напуштено. Мајка је у близини и вратиће се.",type:"fawn"},
+ {q:"Ако траг води ка јазбини, посетилац треба да:",a:["прекине праћење","провери улаз","позове пса да њуши"],ok:0,why:"Праћење до јазбине може узнемирити животиње и открити осетљиву локацију.",type:"path"},
+ {q:"За добру пријаву налаза најважније је:",a:["датум, тип налаза, станиште и фотографија","само лепа фотографија","тачна јавна координата"],ok:0,why:"Тачне јавне координате осетљивих налаза нису пожељне; општа локација је безбеднија.",type:"note"},
+ {q:"У зимским условима трагови у снегу се:",a:["фотографишу без праћења до склоништа","прате што дуже","бришу да се не виде"],ok:0,why:"Снег је добар за мониторинг, али животиње не треба терати на додатно кретање.",type:"snow"},
+ {q:"Храњење дивљих сисара ради бољег сусрета је:",a:["погрешно","добар начин мониторинга","добро за младунце"],ok:0,why:"Храњење мења понашање, повећава ризик болести и навикава животиње на људе.",type:"food"},
+ {q:"За јавну карту налаза осетљивих врста најбоље је приказати:",a:["ширу зону или тип станишта","тачну јазбину","место младунчади"],ok:0,why:"Јавни приказ мора штитити осетљиве локације.",type:"map"}
+];
+let qi=0,score=0,answered=false;
+function trackSvg(type){
+  const icons={hoof:'<ellipse cx="155" cy="145" rx="30" ry="62" transform="rotate(-15 155 145)" fill="#3a2e25"/><ellipse cx="235" cy="145" rx="30" ry="62" transform="rotate(15 235 145)" fill="#3a2e25"/>',root:'<path d="M95 180 C145 105 220 250 305 115" stroke="#6b4e31" stroke-width="22" fill="none" stroke-linecap="round"/><path d="M130 170 L80 220 M190 160 L175 230 M250 160 L330 210" stroke="#6b4e31" stroke-width="10" fill="none" stroke-linecap="round"/>',burrow:'<ellipse cx="200" cy="180" rx="112" ry="58" fill="#2a241f"/><path d="M82 195 C130 145 270 145 318 195 L318 270 L82 270Z" fill="#6b4e31" opacity=".45"/>',scat:'<ellipse cx="160" cy="175" rx="55" ry="28" fill="#3a2e25"/><ellipse cx="220" cy="163" rx="48" ry="24" fill="#2b211b"/><ellipse cx="245" cy="190" rx="38" ry="19" fill="#4b382c"/>',fawn:'<ellipse cx="200" cy="178" rx="100" ry="45" fill="#8d6346"/><circle cx="130" cy="158" r="34" fill="#9a704f"/><circle cx="120" cy="154" r="5" fill="#111"/>',path:'<path d="M85 260 C145 170 245 230 315 98" stroke="#70563a" stroke-width="24" fill="none" stroke-linecap="round" stroke-dasharray="16 18"/>',snow:'<rect width="400" height="300" fill="#e9eef0"/><ellipse cx="155" cy="145" rx="22" ry="48" transform="rotate(-15 155 145)" fill="#8aa"/><ellipse cx="220" cy="170" rx="22" ry="48" transform="rotate(15 220 170)" fill="#8aa"/>',food:'<circle cx="200" cy="150" r="80" fill="#fff8e6" stroke="#d8d0c4"/><path d="M155 110 L245 200 M245 110 L155 200" stroke="#9a2d2d" stroke-width="18" stroke-linecap="round"/>',note:'<rect x="95" y="65" width="210" height="170" rx="14" fill="#fffdf8" stroke="#d8d0c4"/><path d="M130 115 H270 M130 150 H270 M130 185 H230" stroke="#2d5a27" stroke-width="10" stroke-linecap="round"/>',map:'<rect x="80" y="70" width="240" height="160" rx="16" fill="#e8f0e6" stroke="#a8c4a4"/><path d="M100 170 C150 110 220 230 300 120" stroke="#2d5a27" stroke-width="9" fill="none"/><circle cx="205" cy="155" r="18" fill="#8b6914"/>'};
+  return `<svg viewBox="0 0 400 300" aria-label="цртеж трага"><rect width="400" height="300" fill="#fffdf8"/><circle cx="330" cy="58" r="34" fill="#e8f0e6"/>${icons[type]||icons.hoof}<text x="200" y="270" text-anchor="middle" font-family="Georgia" font-size="18" fill="#1a3a15">посматрај, не узнемиравај</text></svg>`;
+}
+function renderQuiz(){
+  const item=quiz[qi]; answered=false;
+  document.getElementById('quizTitle').textContent=`Питање ${qi+1} / ${quiz.length}`;
+  document.getElementById('quizText').textContent=item.q;
+  document.getElementById('quizVisual').innerHTML=trackSvg(item.type);
+  document.getElementById('quizFeedback').style.display='none';
+  document.getElementById('quizOptions').innerHTML=item.a.map((x,i)=>`<button onclick="answerQuiz(${i})">${x}</button>`).join('');
+}
+function answerQuiz(i){
+  if(answered)return; answered=true;
+  const item=quiz[qi]; const buttons=[...document.querySelectorAll('#quizOptions button')];
+  buttons.forEach((b,idx)=>{if(idx===item.ok)b.classList.add('correct'); if(idx===i&&idx!==item.ok)b.classList.add('wrong');});
+  if(i===item.ok)score++;
+  const fb=document.getElementById('quizFeedback'); fb.style.display='block'; fb.innerHTML=`<strong>${i===item.ok?'Тачно.':'Није тачно.'}</strong> ${item.why}<br>Резултат: ${score}/${quiz.length}`;
+}
+function nextQuiz(){qi=(qi+1)%quiz.length;renderQuiz();}
+function resetQuiz(){qi=0;score=0;renderQuiz();}
+renderQuiz();
+function downloadCSV(){
+  const csv='datum,vreme,tip_nalaza,vrsta_sumnja,staniste,opsta_lokacija,opis,fotografija_url,osetljivost,napomena\n2026-05-01,18:40,otisak,nepoznat sisar,rub sume,opsta zona Rajca,\"dva otiska u blatu\",,srednja,\"bez tacnih javnih koordinata\"\n';
+  const blob=new Blob([csv],{type:'text/csv;charset=utf-8'});
+  const url=URL.createObjectURL(blob); const a=document.createElement('a'); a.href=url; a.download='sisari-rajca-prijava-nalaza-template.csv'; a.click(); URL.revokeObjectURL(url);
+}
+</script>
+<!-- SITE_EDITOR_ADMIN_BAR_START -->
+<script defer="" src="/admin-site-editor.php?admin_bar_js=1"></script>
+<!-- SITE_EDITOR_ADMIN_BAR_END -->
+
+<script defer src="/sisari/assets/sisari-photo-credits-v2.js?v=20260817"></script>
+</body>
+</html>

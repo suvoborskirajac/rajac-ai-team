@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="sr-RS">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<title>Квиз за препознавање птица по песми — ПИО Рајац</title>
+<meta content="Интерактивни квиз за препознавање птица ПИО Рајац по локално постављеним звучним снимцима оглашавања и певања птица." name="description"/>
+<link href="https://piorajac.rs/ptice/kviz-prepoznavanje-ptica-rajac/" rel="canonical"/>
+<meta content="website" property="og:type"/>
+<meta content="Квиз за препознавање птица по песми — ПИО Рајац" property="og:title"/>
+<meta content="Интерактивни квиз за препознавање птица ПИО Рајац по локално постављеним звучним снимцима оглашавања и певања птица." property="og:description"/>
+<meta content="https://piorajac.rs/ptice/kviz-prepoznavanje-ptica-rajac/" property="og:url"/>
+<meta content="https://piorajac.rs/ptice/assets/hero-cesljugar-clean.jpg" property="og:image"/>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","@id":"https://piorajac.rs/ptice/kviz-prepoznavanje-ptica-rajac/#webpage","url":"https://piorajac.rs/ptice/kviz-prepoznavanje-ptica-rajac/","name":"Квиз за препознавање птица по песми — ПИО Рајац","description":"Интерактивни квиз за препознавање птица ПИО Рајац по локално постављеним звучним снимцима оглашавања и певања птица.","inLanguage":"sr-Cyrl-RS","isPartOf":{"@type":"WebSite","name":"ПИО „Рајац”","url":"https://piorajac.rs/"},"about":[{"@type":"Thing","name":"препознавање птица по песми"},{"@type":"Place","name":"Предео изузетних одлика „Рајац“"}],"image":"https://piorajac.rs/ptice/assets/hero-cesljugar-clean.jpg"}</script>
+<style>
+:root{
+  --gold:#b06d1e;
+  --gold-l:#d8b55b;
+  --ink:#0e1318;
+  --nav:#0d1b2a;
+  --bg:#f6f7f8;
+  --card:#ffffff;
+  --muted:#617080;
+  --line:rgba(20,32,48,.12);
+  --ok:#167a46;
+  --bad:#a83b32;
+  --soft:#fff8e8;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:#111827;font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;line-height:1.55}
+a{text-decoration:none;color:inherit}
+button,input{font:inherit}
+img{display:block;max-width:100%}
+.rfx-chapter-nav{background:var(--nav);position:sticky;top:0;z-index:600;box-shadow:0 10px 28px rgba(0,0,0,.14)}
+.rfx-nav-inner{max-width:1180px;margin:0 auto;padding:0 18px;display:flex;align-items:stretch;min-height:56px;gap:0;overflow-x:auto;scrollbar-width:thin}
+.rfx-nav-home{display:flex;align-items:center;gap:10px;padding-right:20px;margin-right:8px;border-right:1px solid rgba(255,255,255,.10);flex-shrink:0}
+.rfx-nav-home-mark,.rfx-nav-home-text{color:var(--gold-l)}
+.rfx-nav-home-text{font-weight:700;letter-spacing:.04em;font-size:16px;white-space:nowrap}
+.rfx-nav-divider{width:1px;height:24px;margin:auto 6px auto 0;background:rgba(255,255,255,.14);flex-shrink:0}
+.rfx-nav-item{position:relative;display:flex;align-items:center;gap:7px;padding:0 15px;color:rgba(255,255,255,.68);font-size:15px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;white-space:nowrap}
+.rfx-nav-item:hover{color:rgba(255,255,255,.94);background:rgba(255,255,255,.03)}
+.rfx-nav-item.rfx-nav-active{color:var(--gold-l)}
+.rfx-nav-item.rfx-nav-active::after{content:"";position:absolute;left:15px;right:15px;bottom:8px;height:1px;background:var(--gold-l)}
+.rfx-nav-item-trofo{color:#c8a24e}
+.rfx-nav-item-trofo:hover{color:#f0cb78}
+.quiz-hero{position:relative;overflow:hidden;background:#0d1b2a;color:#fff}
+.quiz-hero::before{content:"";position:absolute;inset:0;background:linear-gradient(120deg,rgba(13,27,42,.95) 0%,rgba(13,27,42,.80) 45%,rgba(13,27,42,.38) 100%),url('/ptice/assets/ptice2/hero-cesljugar.webp') center/cover no-repeat;filter:saturate(1.06)}
+.quiz-hero-inner{position:relative;z-index:2;max-width:1180px;margin:0 auto;padding:92px 24px 72px;display:grid;grid-template-columns:minmax(0,1.05fr) minmax(280px,.62fr);gap:34px;align-items:end}
+.quiz-kicker{display:inline-flex;align-items:center;gap:8px;margin:0 0 16px;color:#f0cd69;text-transform:uppercase;letter-spacing:.13em;font-size:12px;font-weight:800}
+.quiz-h1{margin:0;max-width:850px;font-family:Georgia,"Times New Roman",serif;font-weight:400;font-size:clamp(42px,6vw,78px);line-height:.94;letter-spacing:-.035em}
+.quiz-lead{margin:22px 0 0;max-width:760px;color:rgba(255,255,255,.82);font-size:18px}
+.hero-card{background:rgba(255,255,255,.10);border:1px solid rgba(216,181,91,.34);border-radius:26px;padding:22px;backdrop-filter:blur(10px);box-shadow:0 22px 70px rgba(0,0,0,.24)}
+.hero-card h2{margin:0 0 10px;font-size:20px;color:#fff}
+.hero-card p{margin:0 0 16px;color:rgba(255,255,255,.80)}
+.hero-stat-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.hero-stat{border-radius:18px;background:rgba(255,255,255,.10);border:1px solid rgba(255,255,255,.13);padding:13px}
+.hero-stat b{display:block;font-size:26px;line-height:1;color:#f0cd69;font-weight:400;font-family:Georgia,"Times New Roman",serif}
+.hero-stat span{display:block;margin-top:5px;font-size:12px;color:rgba(255,255,255,.78);text-transform:uppercase;letter-spacing:.08em}
+.page{max-width:1180px;margin:-34px auto 0;padding:0 22px 68px;position:relative;z-index:5}
+.quiz-shell{display:grid;grid-template-columns:minmax(0,.72fr) minmax(330px,.28fr);gap:22px;align-items:start}
+.panel{background:var(--card);border:1px solid var(--line);border-radius:28px;box-shadow:0 18px 54px rgba(13,27,42,.09)}
+.main-panel{padding:24px}
+.side-panel{padding:20px;position:sticky;top:76px}
+.quiz-topline{display:flex;align-items:center;justify-content:space-between;gap:14px;margin-bottom:18px;flex-wrap:wrap}
+.step-pill{display:inline-flex;align-items:center;gap:8px;border:1px solid rgba(176,109,30,.25);background:#fff8ea;color:#7b4d16;border-radius:999px;padding:8px 13px;font-size:13px;font-weight:800;text-transform:uppercase;letter-spacing:.08em}
+.score-pill{display:inline-flex;align-items:center;gap:8px;border:1px solid rgba(13,27,42,.12);background:#f3f6f8;color:#263442;border-radius:999px;padding:8px 13px;font-size:13px;font-weight:800}
+.progress{height:9px;background:#e8edf1;border-radius:999px;overflow:hidden;margin-bottom:24px}
+.progress span{display:block;height:100%;width:0;background:linear-gradient(90deg,#b06d1e,#d8b55b);border-radius:999px;transition:width .35s ease}
+.listen-card{border-radius:24px;background:linear-gradient(135deg,#101e2d 0%,#18314a 100%);padding:22px;color:#fff;position:relative;overflow:hidden;margin-bottom:22px}
+.listen-card::after{content:"♪";position:absolute;right:18px;bottom:-42px;font-family:Georgia,"Times New Roman",serif;font-size:170px;color:rgba(255,255,255,.06);line-height:1}
+.listen-title{position:relative;z-index:2;margin:0 0 7px;font-family:Georgia,"Times New Roman",serif;font-weight:400;font-size:34px;line-height:1.05}
+.listen-sub{position:relative;z-index:2;margin:0 0 18px;color:rgba(255,255,255,.75)}
+.audio-row{position:relative;z-index:2;display:grid;grid-template-columns:1fr auto;gap:14px;align-items:center}
+audio{width:100%;height:42px;filter:saturate(.95)}
+.hint-btn,.primary-btn,.ghost-btn,.restart-btn{border:0;border-radius:999px;padding:12px 17px;font-weight:850;cursor:pointer;transition:transform .16s ease,box-shadow .16s ease,background .16s ease;color:#0d1b2a}
+.hint-btn{background:#f0cd69;white-space:nowrap}
+.hint-btn:hover,.primary-btn:hover,.ghost-btn:hover,.restart-btn:hover{transform:translateY(-1px)}
+.hint-box{display:none;position:relative;z-index:2;margin-top:15px;border-radius:18px;padding:14px 15px;background:rgba(255,255,255,.10);border:1px solid rgba(255,255,255,.15);color:rgba(255,255,255,.83)}
+.hint-box.open{display:block}
+.question-title{margin:0 0 13px;font-size:24px;line-height:1.2;color:#132130}
+.options{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin-bottom:18px}
+.option{border:1px solid rgba(13,27,42,.12);background:#fff;border-radius:18px;padding:16px 15px;text-align:left;cursor:pointer;transition:transform .16s ease,border-color .16s ease,box-shadow .16s ease,background .16s ease;min-height:86px}
+.option:hover{transform:translateY(-1px);border-color:rgba(176,109,30,.34);box-shadow:0 12px 30px rgba(13,27,42,.08)}
+.option b{display:block;color:#122033;font-size:17px;line-height:1.15}
+.option span{display:block;color:#687888;font-size:13px;font-style:italic;margin-top:5px}
+.option.correct{border-color:rgba(22,122,70,.42);background:#edf9f2;box-shadow:0 14px 30px rgba(22,122,70,.10)}
+.option.wrong{border-color:rgba(168,59,50,.38);background:#fff0ee;box-shadow:0 14px 30px rgba(168,59,50,.08)}
+.option:disabled{cursor:default;transform:none}
+.feedback{display:none;border-radius:22px;padding:16px;border:1px solid rgba(13,27,42,.10);background:#f7fafc;margin-top:12px}
+.feedback.open{display:grid;grid-template-columns:138px 1fr;gap:16px;align-items:center}
+.feedback img{height:112px;width:138px;object-fit:cover;border-radius:18px;background:#e7eef2}
+.feedback h3{margin:0 0 4px;font-size:22px;color:#111827}
+.feedback p{margin:6px 0 0;color:#4f5f70}
+.feedback .ok{color:var(--ok);font-weight:900;text-transform:uppercase;letter-spacing:.08em;font-size:12px}
+.feedback .bad{color:var(--bad);font-weight:900;text-transform:uppercase;letter-spacing:.08em;font-size:12px}
+.controls{display:flex;justify-content:space-between;gap:12px;align-items:center;margin-top:20px;flex-wrap:wrap}
+.primary-btn{background:#0d1b2a;color:#fff;box-shadow:0 16px 34px rgba(13,27,42,.18)}
+.ghost-btn{background:#eef3f6;color:#243240}
+.restart-btn{background:#fff2d2;color:#6c4313;border:1px solid rgba(176,109,30,.2)}
+.side-panel h2{margin:0 0 12px;font-family:Georgia,"Times New Roman",serif;font-weight:400;font-size:28px;color:#0d1b2a}
+.side-panel p{margin:0 0 14px;color:#5b6a78}
+.levels{display:grid;gap:10px;margin:16px 0 18px}
+.level{border:1px solid rgba(13,27,42,.12);background:#fff;border-radius:18px;padding:14px;cursor:pointer;text-align:left;transition:border-color .16s ease,background .16s ease}
+.level.active{border-color:rgba(176,109,30,.45);background:#fff8ea}
+.level b{display:block;color:#132130}
+.level span{display:block;color:#6c7884;font-size:13px;margin-top:3px}
+.mini-list{display:grid;gap:9px;margin-top:14px}
+.mini-row{display:grid;grid-template-columns:24px 1fr auto;gap:10px;align-items:center;color:#516170;font-size:14px;border-bottom:1px solid rgba(13,27,42,.07);padding-bottom:8px}
+.mini-dot{width:10px;height:10px;border-radius:50%;background:#cad3dc;margin-left:6px}
+.mini-row.done .mini-dot{background:#d8b55b}
+.mini-row.correct .mini-dot{background:var(--ok)}
+.mini-row.wrong .mini-dot{background:var(--bad)}
+.final{display:none;padding:28px;text-align:center}
+.final.open{display:block}
+.final-score{font-family:Georgia,"Times New Roman",serif;font-weight:400;font-size:70px;line-height:1;color:#0d1b2a;margin:0 0 8px}
+.final h2{margin:0 0 8px;font-size:28px;color:#0d1b2a}
+.final p{max-width:680px;margin:0 auto 18px;color:#596b7b}
+.missed{display:none;max-width:720px;margin:18px auto 0;text-align:left;background:#fff8ea;border:1px solid rgba(176,109,30,.18);border-radius:22px;padding:18px}
+.missed.open{display:block}
+.missed h3{margin:0 0 8px;font-size:18px;color:#6c4313}
+.missed ul{margin:0;padding-left:20px;color:#4d5a66}
+.study{margin-top:22px;padding:20px;background:#fff;border:1px solid var(--line);border-radius:26px;box-shadow:0 16px 48px rgba(13,27,42,.07)}
+.study h2{margin:0 0 8px;font-family:Georgia,"Times New Roman",serif;font-weight:400;font-size:32px;color:#0d1b2a}
+.study p{margin:0 0 16px;color:#5c6976}.study-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.study-card{border:1px solid rgba(13,27,42,.11);border-radius:18px;padding:14px;background:#fbfcfd}.study-card b{display:block;color:#132130}.study-card span{display:block;color:#6b7784;font-style:italic;font-size:13px}.study-card audio{margin-top:10px;height:38px}
+.rfx-footer-inner{max-width:1180px;margin:0 auto;padding:26px 22px;color:#6a7580;font-size:14px;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;border-top:1px solid rgba(13,27,42,.10)}
+.rfx-footer-inner a{color:#8d5b1d;font-weight:800}
+@media(max-width:980px){.quiz-hero-inner{grid-template-columns:1fr;padding-top:74px}.quiz-shell{grid-template-columns:1fr}.side-panel{position:relative;top:auto}.options{grid-template-columns:1fr}.feedback.open{grid-template-columns:110px 1fr}.feedback img{width:110px;height:94px}.study-grid{grid-template-columns:1fr}}
+@media(max-width:640px){.rfx-nav-inner{padding:0 12px}.rfx-nav-item{font-size:13px;padding:0 11px}.quiz-hero-inner{padding:62px 18px 54px}.quiz-h1{font-size:42px}.quiz-lead{font-size:16px}.page{padding:0 14px 48px}.main-panel,.side-panel,.final{padding:17px}.audio-row{grid-template-columns:1fr}.hint-btn{width:100%}.listen-title{font-size:28px}.feedback.open{grid-template-columns:1fr}.feedback img{width:100%;height:170px}.controls{display:grid;grid-template-columns:1fr}.primary-btn,.ghost-btn,.restart-btn{width:100%}.hero-stat-grid{grid-template-columns:1fr}.final-score{font-size:54px}}
+</style>
+<style id="rajac-static-menu-css">
+:root{--rajac-nav:#0d1b2a;--rajac-gold:#d8b55b;--rajac-nav-text:rgba(255,255,255,.72)}
+.rajac-ds-nav{background:var(--rajac-nav);position:sticky;top:0;z-index:999999;border-bottom:1px solid rgba(255,255,255,.08);font-family:"Cormorant Garamond","EB Garamond",Garamond,"Palatino Linotype","Book Antiqua",Georgia,"Times New Roman",serif!important}
+body.admin-bar .rajac-ds-nav{top:32px}.rajac-ds-nav *{box-sizing:border-box}.rajac-ds-nav-inner{max-width:1180px;margin:0 auto;padding:0 18px;display:flex;align-items:stretch;min-height:56px;gap:0;overflow-x:auto;scrollbar-width:none}.rajac-ds-nav-inner::-webkit-scrollbar{display:none}.rajac-ds-home{display:flex;align-items:center;gap:9px;padding-right:20px;margin-right:8px;border-right:1px solid rgba(255,255,255,.12);flex-shrink:0;color:var(--rajac-gold)!important;text-decoration:none!important;font-weight:600;font-size:16px;letter-spacing:.03em}.rajac-ds-home-mark{width:18px;height:18px;display:inline-grid;place-items:center;color:var(--rajac-gold)}.rajac-ds-nav-item{position:relative;display:flex;align-items:center;gap:7px;padding:0 15px;color:var(--rajac-nav-text)!important;font-size:15px;font-weight:600;letter-spacing:.045em;text-transform:uppercase;white-space:nowrap;text-decoration:none!important}.rajac-ds-nav-item:hover{color:rgba(255,255,255,.94)!important;background:rgba(255,255,255,.035)}.rajac-ds-icon{font-size:15px;line-height:1}.rajac-ds-nav-item.rajac-ds-active{color:var(--rajac-gold)!important}.rajac-ds-nav-item.rajac-ds-active:after{content:"";position:absolute;left:15px;right:15px;bottom:8px;height:2px;border-radius:2px;background:var(--rajac-gold)}.rajac-ds-nav-trofo{color:#c8a24e!important}.rajac-ds-nav-trofo:hover{color:#f0cb78!important}@media(max-width:720px){.rajac-ds-nav-inner{padding:0 12px}.rajac-ds-home{padding-right:14px}.rajac-ds-nav-item{font-size:13px;padding:0 12px}.rajac-ds-nav-item.rajac-ds-active:after{left:12px;right:12px}}
+/* Safety: hide any old duplicated plugin navigation if it remains in a page. */
+body .rfx-chapter-nav,body nav.rfx-chapter-nav,body .topnav,body nav.topnav,body .rfw-edit-bar,body nav.top{display:none!important;height:0!important;min-height:0!important;max-height:0!important;overflow:hidden!important;visibility:hidden!important}
+</style>
+<link rel="stylesheet" href="/ptice/assets/ptice-mobile.css?v=20260716a">
+<script defer src="/ptice/assets/ptice-mobile.js?v=20260716a"></script>
+
+<link rel="stylesheet" href="/ptice/ptice-photo-credits.css?v=20260818b" data-pio-credit="PIO-PTICE-PHOTO-CREDITS-20260816">
+<style id="rajac-okvir-v1">.rajac-ds-home,.rfx-nav-home{display:flex!important;align-items:center!important;line-height:1!important}.rajac-ds-home>span,.rfx-nav-home>span{display:inline-flex!important;align-items:center!important;line-height:1!important}.rajac-ds-home>span:first-child,.rfx-nav-home>span:first-child{justify-content:center;width:18px;height:18px}</style>
+</head>
+<body>
+<nav aria-label="Главни мени ПИО Рајац" class="rajac-ds-nav"><div class="rajac-ds-nav-inner"><a class="rajac-ds-home" href="https://piorajac.rs/"><span aria-hidden="true" class="rajac-ds-home-mark">⊙</span><span>ПИО „РАЈАЦ“</span></a><a class="rajac-ds-nav-item" href="https://piorajac.rs/biljke/"><span aria-hidden="true" class="rajac-ds-icon">🌿</span><span>БИЉКЕ</span></a><a class="rajac-ds-nav-item rajac-ds-active" href="https://piorajac.rs/ptice/"><span aria-hidden="true" class="rajac-ds-icon">🦉</span><span>ПТИЦЕ</span></a><a class="rajac-ds-nav-item" href="https://piorajac.rs/insekti/"><span aria-hidden="true" class="rajac-ds-icon">🦋</span><span>ИНСЕКТИ</span></a><a class="rajac-ds-nav-item" href="https://piorajac.rs/sisari/"><span aria-hidden="true" class="rajac-ds-icon">🐾</span><span>СИСАРИ</span></a><a class="rajac-ds-nav-item" href="https://piorajac.rs/gljive/"><span aria-hidden="true" class="rajac-ds-icon">🍄</span><span>ГЉИВЕ</span></a><a class="rajac-ds-nav-item rajac-ds-nav-trofo" href="https://piorajac.rs/trofodinamika/"><span aria-hidden="true" class="rajac-ds-icon">🔗</span><span>ТРОФОДИНАМИКА</span></a></div></nav>
+<header class="quiz-hero">
+<div class="quiz-hero-inner">
+<div>
+<p class="quiz-kicker">🎧 аудио квиз · птице Рајца</p>
+<h1 class="quiz-h1">Препознај птицу по песми</h1>
+<p class="quiz-lead">Послушај звучни снимак, изабери врсту и провери колико добро препознајеш птице које се могу чути у шумама, ливадама, воћњацима и насељеним рубовима Рајца.</p>
+</div>
+<aside aria-label="Подаци о квизу" class="hero-card">
+<h2>Квиз користи локалне снимке</h2>
+<p>Сви звукови се пуштају из плугин-а, па страница не зависи од спољних аудио сервиса.</p>
+<div class="hero-stat-grid">
+<div class="hero-stat"><b>14</b><span>снимака</span></div>
+<div class="hero-stat"><b>4</b><span>одговора</span></div>
+<div class="hero-stat"><b>2</b><span>режима</span></div>
+<div class="hero-stat"><b>0</b><span>спољних скрипти</span></div>
+</div>
+</aside>
+</div>
+</header>
+<div class="page">
+<div class="quiz-shell" data-audio-base="/ptice/assets/audio/" data-img-base="/ptice/assets/ptice2/" id="quizApp">
+<section aria-live="polite" class="panel main-panel" id="quizPanel">
+<div class="quiz-topline">
+<span class="step-pill" id="stepPill">Снимак 1/14</span>
+<span class="score-pill" id="scorePill">Тачно: 0</span>
+</div>
+<div aria-hidden="true" class="progress"><span id="progressBar"></span></div>
+<div class="listen-card">
+<h2 class="listen-title">Послушај снимак</h2>
+<p class="listen-sub" id="listenSub">Покушај прво без помоћи, а затим отвори кратак траг ако је потребно.</p>
+<div class="audio-row">
+<audio controls="" id="birdAudio" preload="none"></audio>
+<button class="hint-btn" id="hintBtn" type="button">Прикажи траг</button>
+</div>
+<div class="hint-box" id="hintBox"></div>
+</div>
+<h2 class="question-title">Која птица се чује на снимку?</h2>
+<div class="options" id="options"></div>
+<div class="feedback" id="feedback"></div>
+<div class="controls">
+<button class="ghost-btn" id="replayBtn" type="button">Пусти поново</button>
+<button class="primary-btn" disabled="" id="nextBtn" type="button">Следећи снимак →</button>
+</div>
+</section>
+<aside class="panel side-panel">
+<h2>Режим квиза</h2>
+<p>За посетиоце је најбоље да прво пробају кратки режим, а затим цео квиз са свим снимцима.</p>
+<div aria-label="Избор режима квиза" class="levels" role="group">
+<button class="level active" data-mode="full" type="button"><b>Цео квиз</b><span>свих 14 постављених снимака</span></button>
+<button class="level" data-mode="easy" type="button"><b>Кратка вежба</b><span>8 лакших и чешћих звукова</span></button>
+</div>
+<button class="restart-btn" id="restartBtn" type="button">Измешај и крени поново</button>
+<div aria-label="Напредак по питањима" class="mini-list" id="miniList"></div>
+</aside>
+</div>
+<section class="panel final" id="finalPanel">
+<p class="final-score" id="finalScore">0/14</p>
+<h2 id="finalTitle">Квиз је завршен</h2>
+<p id="finalText">Понови снимке које ниси препознао, јер се теренско препознавање птица најбоље учи слушањем кратких карактеристичних делова песме.</p>
+<div class="controls" style="justify-content:center">
+<button class="primary-btn" id="finalRestart" type="button">Понови квиз</button>
+<a class="ghost-btn" href="/ptice/merlin-ptice-rajac/">Отвори упутство за Merlin</a>
+<a class="ghost-btn" href="/ptice/">Назад на птице</a>
+</div>
+<div class="missed" id="missedBox"></div>
+</section>
+<section class="study" id="studyBox">
+<h2>Вежбање после квиза</h2>
+<p>После завршеног квиза посетиоци могу поново да преслушају све снимке и упореде назив врсте, латински назив и фотографију на појединачној страници птице.</p>
+<div class="study-grid" id="studyGrid"></div>
+</section>
+</div>
+<footer class="rfw-site-footer">
+<div class="rfx-footer-inner">
+<p>© 2026 Туристичка организација општине Љиг · ПИО „Рајац” · Птице</p>
+<p><a href="/ptice/">Архива птица</a> · <a href="/ptice/fotografisanje-ptica/">Фотографисање птица</a> · <a href="/ptice/kucice-za-ptice/">Кућице за птице</a></p>
+</div>
+</footer>
+<script>
+(function(){
+  const app = document.getElementById('quizApp');
+  const AUDIO_BASE = app.dataset.audioBase || '/ptice/assets/audio/';
+  const IMG_BASE = app.dataset.imgBase || '/ptice/assets/ptice2/';
+  const birds = [
+    {slug:'velika-senica', name:'Велика сеница', sci:'Parus major', group:'senice', audio:'velika-senica.ogg', img:'velika-senica.jpg', url:'/ptice/velika-senica/', hint:'Једна од најпознатијих сеница; песма је често ритмична, јасна и понављајућа, као кратка двосложна фраза.', note:'Велика сеница је чест шумски и баштенски глас. Добро је слушати ритам: кратко, јасно и упорно понављање.'},
+    {slug:'plava-senica', name:'Плава сеница', sci:'Cyanistes caeruleus', group:'senice', audio:'plava-senica.mp3', img:'plava-senica.jpg', url:'/ptice/plava-senica/', hint:'Ситна сеница брзог, звецкавог и високог оглашавања; често делује немирније и финије од велике сенице.', note:'Плава сеница има високе, брзе и танке тонове. У природи се често чује из крошњи и жбуња.'},
+    {slug:'siva-senica', name:'Сива сеница', sci:'Poecile palustris', group:'senice', audio:'siva-senica.mp3', img:'siva-senica.jpg', url:'/ptice/siva-senica/', hint:'Дискретна шумска сеница; глас је мекши и мање упадљив од велике сенице, често из листопадне шуме.', note:'Сива сеница је добар пример врсте коју је лакше чути него видети. Обрати пажњу на кратке, чисте шумске позиве.'},
+    {slug:'brgljez', name:'Бргљез', sci:'Sitta europaea', group:'sume', audio:'brgljez.mp3', img:'brgljez.jpg', url:'/ptice/brgljez/', hint:'Снажан, продоран шумски глас; врста се често креће по стаблу и низ стабло главом надоле.', note:'Бргљез има јасан, снажан и продоран глас. На терену га често откријемо пре него што га видимо на кори стабла.'},
+    {slug:'kukavica', name:'Кукавица', sci:'Cuculus canorus', group:'prepoznatljive', audio:'kukavica.mp3', img:'kukavica.jpg', url:'/ptice/kukavica/', hint:'Веома препознатљиво пролећно оглашавање, најчешће двосложно и далеко чујно.', note:'Кукавица је најлакши пример звучног препознавања: њено оглашавање је јасно, далеко чујно и понавља се у пролеће.'},
+    {slug:'veliki-detlic', name:'Велики детлић', sci:'Dendrocopos major', group:'detlici', audio:'veliki-detlic.mp3', img:'veliki-detlic.jpg', url:'/ptice/veliki-detlic/', hint:'Обрати пажњу на оштре позиве и могуће добовање по сувом стаблу или грани.', note:'Код детлића није важна само песма већ и добовање. То је звучни знак присуства зрелих стабала и сувих грана.'},
+    {slug:'mali-detlic', name:'Мали детлић', sci:'Dryobates minor', group:'detlici', audio:'mali-detlic.mp3', img:'mali-detlic.jpg', url:'/ptice/mali-detlic/', hint:'Мањи детлић, ситнији и виши утисак у гласу; везан за старо дрвеће, рубове и суве гране.', note:'Мали детлић је тиши и дискретнији од великог детлића. Слушање помаже да се открије у крошњама и на рубовима шума.'},
+    {slug:'sumska-sova', name:'Шумска сова', sci:'Strix aluco', group:'nocne', audio:'sumska-sova.mp3', img:'sumska-sova-2.jpg', url:'/ptice/sumska-sova/', hint:'Ноћна врста; дубљи, продужени глас најчешће се чује увече и ноћу у старим шумама.', note:'Шумска сова је ноћни звучни симбол старих шума. У квизу је препознатљива по дубљем, вечерњем карактеру гласа.'},
+    {slug:'cavka', name:'Чавка', sci:'Coloeus monedula', group:'vrane', audio:'cavka.ogg', img:'cavka.jpg', url:'/ptice/cavka/', hint:'Кратки, звучни позиви мање вране; често се чује у групи, око насеља, објеката и отворених простора.', note:'Чавка има кратке, јасне и друштвене позиве. На терену се често чује више јединки у контакту.'},
+    {slug:'oriolus-oriolus', name:'Вуга', sci:'Oriolus oriolus', group:'pevacice', audio:'oriolus-oriolus.ogg', img:'oriolus-oriolus.jpg', url:'/ptice/oriolus-oriolus/', hint:'Мелодичан, флутаст и чист глас из крошњи; птица је често скривена у лишћу.', note:'Вуга се често лакше препознаје по флутастој песми него по изгледу, јер остаје високо у крошњи.'},
+    {slug:'emberiza-citrinella', name:'Жута стрнадица', sci:'Emberiza citrinella', group:'livade', audio:'emberiza-citrinella.ogg', img:'emberiza-citrinella.jpg', url:'/ptice/emberiza-citrinella/', hint:'Пева са жбуна, жице или истакнутог места; песма је једноставна, понављајућа и типична за отворене мозаике.', note:'Жута стрнадица је добар показатељ мозаика ливада, жбуња и рубова. Песма је једноставна и добро се памти.'},
+    {slug:'sturnus-vulgaris', name:'Чворак', sci:'Sturnus vulgaris', group:'naselja', audio:'sturnus-vulgaris.ogg', img:'sturnus-vulgaris.jpg', url:'/ptice/sturnus-vulgaris/', hint:'Врста је добар имитатор; оглашавање може бити разноврсно, са звиждуцима и шкрипавим тоновима.', note:'Чворак је тежи за препознавање јер уме да имитира друге звукове. Обрати пажњу на мешавину звиждука, шкрипе и брзих промена.'},
+    {slug:'troglodytes-troglodytes', name:'Царић', sci:'Troglodytes troglodytes', group:'pevacice', audio:'troglodytes-troglodytes.ogg', img:'troglodytes-troglodytes.jpg', url:'/ptice/troglodytes-troglodytes/', hint:'Врло ситна птица, али са изненађујуће снажном, брзом и богатом песмом из жбуња и густиша.', note:'Царић је одличан пример несразмере између величине птице и јачине песме. Песма је брза, жива и пуна украса.'},
+    {slug:'turdus-philomelos', name:'Дрозд певач', sci:'Turdus philomelos', group:'pevacice', audio:'turdus-philomelos.ogg', img:'turdus-philomelos.jpg', url:'/ptice/turdus-philomelos/', hint:'Певач дрозд понавља кратке мотиве два или више пута, са јасне осматрачнице у шуми или на рубу.', note:'Дрозд певач се препознаје по понављању мотива. Слушај да ли птица исту фразу понови неколико пута пре него што пређе на следећу.'}
+  ];
+  const easySlugs = new Set(['kukavica','velika-senica','plava-senica','brgljez','veliki-detlic','sumska-sova','cavka','turdus-philomelos']);
+  let mode='full';
+  let order=[];
+  let index=0;
+  let score=0;
+  let answered=false;
+  let results=[];
+  const stepPill=document.getElementById('stepPill');
+  const scorePill=document.getElementById('scorePill');
+  const progressBar=document.getElementById('progressBar');
+  const audio=document.getElementById('birdAudio');
+  const hintBtn=document.getElementById('hintBtn');
+  const hintBox=document.getElementById('hintBox');
+  const options=document.getElementById('options');
+  const feedback=document.getElementById('feedback');
+  const nextBtn=document.getElementById('nextBtn');
+  const replayBtn=document.getElementById('replayBtn');
+  const restartBtn=document.getElementById('restartBtn');
+  const miniList=document.getElementById('miniList');
+  const finalPanel=document.getElementById('finalPanel');
+  const quizPanel=document.getElementById('quizPanel');
+  const finalScore=document.getElementById('finalScore');
+  const finalTitle=document.getElementById('finalTitle');
+  const finalText=document.getElementById('finalText');
+  const finalRestart=document.getElementById('finalRestart');
+  const missedBox=document.getElementById('missedBox');
+  const studyGrid=document.getElementById('studyGrid');
+  function shuffle(arr){return arr.map(v=>[Math.random(),v]).sort((a,b)=>a[0]-b[0]).map(v=>v[1]);}
+  function currentSet(){return mode==='easy' ? birds.filter(b=>easySlugs.has(b.slug)) : birds.slice();}
+  function updateMini(){
+    miniList.innerHTML=order.map((b,i)=>{
+      const r=results[i];
+      const cls=r ? (r.correct?' correct':' wrong') : (i===index?' done':'');
+      const label=r ? (r.correct?'тачно':'понови') : (i===index?'слуша се':'чека');
+      return `<div class="mini-row${cls}"><span class="mini-dot"></span><span>${i+1}. ${b.name}</span><small>${label}</small></div>`;
+    }).join('');
+  }
+  function makeOptions(correct){
+    const same=birds.filter(b=>b.slug!==correct.slug && b.group===correct.group);
+    const others=birds.filter(b=>b.slug!==correct.slug && b.group!==correct.group);
+    const pool=shuffle([...same,...others]);
+    return shuffle([correct,...pool.slice(0,3)]);
+  }
+  function loadQuestion(){
+    answered=false;
+    feedback.className='feedback';
+    feedback.innerHTML='';
+    nextBtn.disabled=true;
+    hintBox.className='hint-box';
+    const b=order[index];
+    const total=order.length;
+    stepPill.textContent=`Снимак ${index+1}/${total}`;
+    scorePill.textContent=`Тачно: ${score}`;
+    progressBar.style.width=`${(index/total)*100}%`;
+    audio.pause();
+    audio.src=AUDIO_BASE+b.audio;
+    audio.load();
+    hintBox.textContent=b.hint;
+    const opts=makeOptions(b);
+    options.innerHTML=opts.map(o=>`<button class="option" type="button" data-slug="${o.slug}"><b>${o.name}</b><span>${o.sci}</span></button>`).join('');
+    options.querySelectorAll('.option').forEach(btn=>btn.addEventListener('click',()=>answer(btn.dataset.slug)));
+    updateMini();
+  }
+  function answer(slug){
+    if(answered)return;
+    answered=true;
+    const b=order[index];
+    const ok=slug===b.slug;
+    if(ok)score++;
+    results[index]={slug:b.slug, chosen:slug, correct:ok};
+    options.querySelectorAll('.option').forEach(btn=>{
+      btn.disabled=true;
+      if(btn.dataset.slug===b.slug)btn.classList.add('correct');
+      if(btn.dataset.slug===slug && !ok)btn.classList.add('wrong');
+    });
+    const chosen=birds.find(x=>x.slug===slug);
+    feedback.className='feedback open';
+    feedback.innerHTML=`
+      <img src="${IMG_BASE+b.img}" alt="${b.name}" loading="lazy" onerror="this.style.display='none'">
+      <div>
+        <div class="${ok?'ok':'bad'}">${ok?'Тачно':'Нетачно'}</div>
+        <h3>${b.name} <span style="font-size:15px;color:#697684;font-style:italic;font-weight:500">${b.sci}</span></h3>
+        <p>${ok?'Добро препознато.':'Изабрано је: '+(chosen?chosen.name:'друга врста')+'.'} ${b.note}</p>
+        <p><a href="${b.url}" style="color:#8d5b1d;font-weight:900">Отвори страницу врсте →</a></p>
+      </div>`;
+    scorePill.textContent=`Тачно: ${score}`;
+    nextBtn.disabled=false;
+    progressBar.style.width=`${((index+1)/order.length)*100}%`;
+    updateMini();
+  }
+  function finish(){
+    quizPanel.style.display='none';
+    finalPanel.className='panel final open';
+    const total=order.length;
+    const pct=Math.round(score/total*100);
+    finalScore.textContent=`${score}/${total}`;
+    if(pct>=85){finalTitle.textContent='Одлично препознавање звукова';finalText.textContent='Ово је ниво који већ може да помогне у теренском бележењу честих и звучно упадљивих врста на Рајцу.';}
+    else if(pct>=55){finalTitle.textContent='Добар резултат, треба још слушања';finalText.textContent='Основа је добра. Највише ће помоћи да поновиш врсте које звуче слично: сенице, детлиће и шумске певачице.';}
+    else{finalTitle.textContent='Добар почетак за учење';finalText.textContent='Звучно препознавање се учи постепено. Понови квиз после преслушавања свих снимака у делу за вежбање.';}
+    const missed=results.filter(r=>!r.correct).map(r=>birds.find(b=>b.slug===r.slug)).filter(Boolean);
+    if(missed.length){
+      missedBox.className='missed open';
+      missedBox.innerHTML='<h3>Врсте за поновно слушање</h3><ul>'+missed.map(b=>`<li><strong>${b.name}</strong> — ${b.sci}</li>`).join('')+'</ul>';
+    } else {
+      missedBox.className='missed';
+      missedBox.innerHTML='';
+    }
+    finalPanel.scrollIntoView({behavior:'smooth',block:'start'});
+  }
+  function restart(){
+    const set=currentSet();
+    order=shuffle(set);
+    index=0;score=0;results=[];
+    quizPanel.style.display='block';
+    finalPanel.className='panel final';
+    missedBox.className='missed';
+    loadQuestion();
+  }
+  nextBtn.addEventListener('click',()=>{if(index<order.length-1){index++;loadQuestion();}else{finish();}});
+  replayBtn.addEventListener('click',()=>{audio.currentTime=0;audio.play().catch(()=>{});});
+  hintBtn.addEventListener('click',()=>{hintBox.classList.toggle('open');});
+  restartBtn.addEventListener('click',restart);
+  finalRestart.addEventListener('click',restart);
+  document.querySelectorAll('.level').forEach(btn=>btn.addEventListener('click',()=>{
+    document.querySelectorAll('.level').forEach(x=>x.classList.remove('active'));
+    btn.classList.add('active');mode=btn.dataset.mode;restart();
+  }));
+  studyGrid.innerHTML=birds.map(b=>`<article class="study-card"><b>${b.name}</b><span>${b.sci}</span><audio controls preload="none" src="${AUDIO_BASE+b.audio}"></audio></article>`).join('');
+  restart();
+})();
+</script>
+
+<script src="/ptice/ptice-photo-credits.js?v=20260818b" defer data-pio-credit="PIO-PTICE-PHOTO-CREDITS-20260816"></script>
+</body>
+</html>
