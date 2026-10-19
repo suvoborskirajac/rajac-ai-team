@@ -644,12 +644,12 @@ body .caption em{
 <nav aria-label="Главни мени ПИО Рајац" class="rajac-ds-nav"><div class="rajac-ds-nav-inner"><a class="rajac-ds-home" href="https://piorajac.rs/"><span aria-hidden="true" class="rajac-ds-home-mark">⊙</span><span>ПИО „РАЈАЦ“</span></a><a class="rajac-ds-nav-item" href="https://piorajac.rs/biljke/"><span aria-hidden="true" class="rajac-ds-icon">🌿</span><span>БИЉКЕ</span></a><a class="rajac-ds-nav-item" href="https://piorajac.rs/ptice/"><span aria-hidden="true" class="rajac-ds-icon">🦉</span><span>ПТИЦЕ</span></a><a class="rajac-ds-nav-item" href="https://piorajac.rs/insekti/"><span aria-hidden="true" class="rajac-ds-icon">🦋</span><span>ИНСЕКТИ</span></a><a class="rajac-ds-nav-item rajac-ds-active" href="https://piorajac.rs/sisari/"><span aria-hidden="true" class="rajac-ds-icon">🐾</span><span>СИСАРИ</span></a><a class="rajac-ds-nav-item" href="https://piorajac.rs/gljive/"><span aria-hidden="true" class="rajac-ds-icon">🍄</span><span>ГЉИВЕ</span></a><a class="rajac-ds-nav-item rajac-ds-nav-trofo" href="https://piorajac.rs/trofodinamika/"><span aria-hidden="true" class="rajac-ds-icon">🔗</span><span>ТРОФОДИНАМИКА</span></a></div></nav>
 <!-- Hero лисица: адаптирано (crop/webp) из Wikimedia Commons фотографије Charles J. Sharp, CC BY-SA 4.0: Red fox (Vulpes vulpes crucigera), Skalnaté Pleso, Slovakia. -->
 <!-- HERO FOX IMAGE IS EMBEDDED AS DATA URI, SO IT WORKS EVEN IF assets/images WERE NOT UPLOADED -->
-<div class="page-hero rajac-photo-source-hero" data-photo-source="Фото: Clément Bardot / Wikimedia Commons, CC BY-SA 4.0 — оригинал" data-source-page="https://commons.wikimedia.org/wiki/File:Roe_deer_in_woodland,_France.jpg">
-<img alt="Срна у шумском станишту — херо фотографија каталога сисара" aria-hidden="true" class="page-hero-bg" data-credit="Фото: Clément Bardot / Wikimedia Commons, CC BY-SA 4.0 — оригинал" decoding="async" fetchpriority="high" height="520" loading="eager" referrerpolicy="no-referrer" src="assets/images/hero-sisari-roe-deer.webp?v=20261019" width="1600"/>
+<div class="page-hero rajac-photo-source-hero" data-photo-source="Фото: Charles J. Sharp / Wikimedia Commons, CC BY-SA 4.0 — прилагођена величина и позадина, WebP" data-source-page="https://commons.wikimedia.org/wiki/File:Red_fox_(Vulpes_vulpes_crucigera)_Skalnate_Pleso.jpg">
+<picture><source media="(max-width: 720px)" srcset="assets/images/hero-sisari-lisica-m.webp?v=20261019b"/><img alt="Лисица — херо фотографија каталога сисара" aria-hidden="true" class="page-hero-bg" data-credit="Фото: Charles J. Sharp / Wikimedia Commons, CC BY-SA 4.0 — прилагођена величина и позадина, WebP" decoding="async" fetchpriority="high" height="600" loading="eager" referrerpolicy="no-referrer" src="assets/images/hero-sisari-lisica.webp?v=20261019b" width="1600"/></picture>
 <div class="page-hero-inner">
 <div class="section-super">ПИО „Рајац" · Фауна</div>
 <h1>Сисари Рајца<em>Mammalia</em></h1>
-<p>Каталог представља 50 врста сисара, укључујући 19 врста слепих мишева. <a href="https://ekologija.gov.rs/sites/default/files/inline-files/PIO%20Rajac_studija%20zastite.pdf">Студија заштите ПИО „Рајац“ (стр. 210–215)</a> наводи 51 врсту за подручје и околину, заједно са потенцијално присутним врстама. Каталог обухвата 48 врста из тог списка и две додатне врсте — вука (потенцијално присутан) и мрког медведа (забележен камером ПИО „Рајац“); домаћи миш, црни и сиви пацов нису обрађени. Ознаке на страницама разликују податке из Студије од потврђених појединачних налаза.</p>
+<p>Каталог представља 50 врста сисара Рајца, међу њима 19 врста слепих мишева.</p>
 <div class="hero-stats">
 <div class="hero-stat"><div class="num">50</div><div class="lbl">Врста у каталогу</div></div>
 <div class="hero-stat"><div class="num">19</div><div class="lbl">Врста слепих мишева</div></div>
@@ -757,7 +757,7 @@ body .caption em{
 <div class="card-body">
 <div class="card-common">Мрки медвед</div>
 <div class="card-latin">Ursus arctos</div>
-<div class="card-note">Забележен камером ПИО „Рајац“.</div>
+<div class="card-note">Забележен камером на Рајцу.</div>
 <div class="card-tags"><span class="card-tag tag-status">строго заштићена врста</span><span class="card-tag tag-iucn">IUCN LC</span><span class="card-tag tag-presence-confirmed">забележен камером</span></div>
 <div class="card-arrow">Прочитај више →</div> </div>
 </a><a class="species-card has-page" data-group="zveri" data-presence="potencijalne" href="https://piorajac.rs/sisari/lutra-lutra/">
@@ -1046,5 +1046,6 @@ function filterGroup(group, btn){
 <!-- SITE_EDITOR_ADMIN_BAR_END -->
 
 <script defer src="/sisari/assets/sisari-photo-credits-v2.js?v=20260817"></script>
+<style id="rajac-sisari-hero-v3">.rajac-archive--sisari .page-hero img.page-hero-bg{object-position:100% 50%!important}html body.rajac-archive--sisari .page-hero .hero-stats{display:none!important}@media(max-width:720px){.rajac-archive--sisari .page-hero img.page-hero-bg{object-position:50% 0%!important}}</style>
 </body>
 </html>
