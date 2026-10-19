@@ -1,0 +1,104 @@
+/* PIO Rajac — SISARI photo credits v2, 2026-08-17
+   Uskladjeno sa sistemom na Pticama: kredit je skriven, prikazuje se posle ~1 s hovera,
+   taman tekst bez trake/pozadine, klik vodi na original. */
+
+/* Stari pseudo-element kredit se gasi; v2 koristi stvarni element koji JS dodaje. */
+.rajac-photo-source-wrap::after,
+.page-hero.rajac-photo-source-hero::after{
+  content:none!important;
+  display:none!important;
+}
+
+.rajac-photo-source-wrap,
+.page-hero.rajac-photo-source-hero{
+  position:relative!important;
+}
+
+/* Vrati standardni prikaz fotografija: NE koristi globalni object-fit:contain. */
+.card-img-wrap .rajac-photo-source-wrap>img,
+.hero-image-wrap .rajac-photo-source-wrap>img,
+.hero-visual .rajac-photo-source-wrap>img,
+.inline-img .rajac-photo-source-wrap>img,
+.track-photo-wrap .rajac-photo-source-wrap>img,
+.house-photo .rajac-photo-source-wrap>img,
+.photo-card figure .rajac-photo-source-wrap>img{
+  width:100%!important;
+  height:100%!important;
+  object-fit:cover!important;
+  object-position:center center!important;
+  background:transparent!important;
+}
+
+/* Glavni HERO arhive ostaje puna pozadinska fotografija, bez promene rasporeda teksta. */
+body.rajac-archive--sisari .page-hero-bg{
+  width:100%!important;
+  height:100%!important;
+  object-fit:cover!important;
+  object-position:center center!important;
+  background:transparent!important;
+}
+
+.rajac-photo-credit-hover{
+  position:absolute!important;
+  left:12px!important;
+  right:12px!important;
+  bottom:10px!important;
+  z-index:35!important;
+  display:block!important;
+  margin:0!important;
+  padding:0!important;
+  border:0!important;
+  border-radius:0!important;
+  background:transparent!important;
+  box-shadow:none!important;
+  color:#18212a!important;
+  font-family:Georgia,"Times New Roman",serif!important;
+  font-size:11.5px!important;
+  font-style:normal!important;
+  font-weight:600!important;
+  line-height:1.35!important;
+  letter-spacing:0!important;
+  text-align:left!important;
+  text-decoration:none!important;
+  white-space:normal!important;
+  text-shadow:0 1px 2px rgba(255,255,255,.96),0 0 4px rgba(255,255,255,.78)!important;
+  opacity:0!important;
+  transform:translateY(3px)!important;
+  visibility:hidden!important;
+  pointer-events:none!important;
+  transition:opacity .16s ease,transform .16s ease,visibility 0s linear .16s!important;
+  cursor:pointer!important;
+}
+
+.rajac-photo-credit-visible>.rajac-photo-credit-hover,
+.rajac-photo-source-wrap:focus-within>.rajac-photo-credit-hover,
+.page-hero.rajac-photo-source-hero:focus-within>.rajac-photo-credit-hover{
+  opacity:1!important;
+  transform:translateY(0)!important;
+  visibility:visible!important;
+  pointer-events:auto!important;
+  transition-delay:0s!important;
+}
+
+/* Na velikom HERO-u kredit je dole desno da ne ulazi u naslov i opis levo. */
+.page-hero.rajac-photo-source-hero>.rajac-photo-credit-hover{
+  left:auto!important;
+  right:16px!important;
+  bottom:12px!important;
+  max-width:min(58%,760px)!important;
+  text-align:right!important;
+}
+
+/* Kredit ne sme da menja visinu ili raspored kartice/slike. */
+.card-img-wrap,.hero-image-wrap,.hero-visual,.inline-img,.track-photo-wrap,.house-photo,.photo-card figure{
+  overflow:hidden!important;
+}
+
+/* Na uredjajima bez hovera kredit ostaje skriven i ne zauzima prostor. */
+@media (hover:none), (pointer:coarse){
+  .rajac-photo-credit-hover{display:none!important;}
+}
+
+@media(max-width:720px){
+  .page-hero.rajac-photo-source-hero>.rajac-photo-credit-hover{display:none!important;}
+}

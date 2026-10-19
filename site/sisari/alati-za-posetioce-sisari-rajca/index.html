@@ -604,7 +604,7 @@ body .caption em{
 <div class="grid-3">
 <article class="card rule-card"><div class="rule-icon">👣</div><h3>Отисак стопала</h3><p>Папци срне и дивље свиње, шапе лисице, јазавца и куне или ситни трагови глодара најбоље се виде у блату, снегу и меком земљишту.</p></article>
 <article class="card rule-card"><div class="rule-icon">🟤</div><h3>Измет</h3><p>Облик, величина, место и састав измета могу указати на врсту. Не дирати руком; фотографисати са стране и одозго.</p></article>
-<article class="card rule-card"><div class="rule-icon">🌱</div><h3>Ровање земље</h3><p>Преврнуто тло, корење и разгрнута листинка често указују на дивљу свињу, нарочито у јесен и после кише.</p></article>
+<article class="card rule-card"><div class="rule-icon">🌱</div><h3>Ровање земље</h3><p>Преврнуто тло, корење и разгрнута стеља често указују на дивљу свињу, нарочито у јесен и после кише.</p></article>
 <article class="card rule-card"><div class="rule-icon">🛁</div><h3>Ваљалиште</h3><p>Ублаћено плитко удубљење може бити место где се дивља свиња ваљала. Не прилазити ако је свеже и има јак мирис.</p></article>
 <article class="card rule-card"><div class="rule-icon">🕳</div><h3>Јазбина</h3><p>Један или више улаза, избачена земља и утабана стаза могу указати на јазавца, лисицу или друге врсте. Не завиривати и не пуштати пса.</p></article>
 <article class="card rule-card"><div class="rule-icon">🧵</div><h3>Длака</h3><p>Длака на кори, жици, трњу или у пролазу може бити користан знак, али се не скида без стручног разлога.</p></article>
@@ -803,10 +803,10 @@ function showFinder(key){
 document.querySelectorAll('.finder-btn').forEach(b=>b.addEventListener('click',()=>showFinder(b.dataset.find)));showFinder('rovanje');
 
 const soundSamples=[
-  {id:'srna',name:'Срна',latin:'Capreolus capreolus',local:'../assets/audio/capreolus-capreolus.ogg',remote:'https://upload.wikimedia.org/wikipedia/commons/c/c8/Male_roe_deer_growl.ogg',type:'audio/ogg',desc:'Кратко, оштро и лавежу слично оглашавање, најчешће при узнемирењу или територијалном понашању.',hint:'Слушај кратак, оштар лавеж, не дуго завијање.'},
-  {id:'divlja-svinja',name:'Дивља свиња',latin:'Sus scrofa',local:'../assets/audio/sus-scrofa.ogg',remote:'https://upload.wikimedia.org/wikipedia/commons/8/8a/Boar.Grwls%281%29.ogg',type:'audio/ogg',desc:'Дубоко груктање, рикање и кратки режаји, нарочито када је јединка узнемирена или је крдо у густој вегетацији.',hint:'Слушај грудно груктање и ниске, храпаве звуке.'},
-  {id:'sakal',name:'Шакал',latin:'Canis aureus',local:'../assets/audio/canis-aureus.ogg',remote:'https://upload.wikimedia.org/wikipedia/commons/1/1a/Jackal.ogg',type:'audio/ogg',desc:'Продужено, високо и таласасто завијање, често у сумрак или ноћу, понекад у групном одговору.',hint:'Слушај дуже завијање, више и продорније од лавежа.'},
-  {id:'lisica',name:'Лисица',latin:'Vulpes vulpes',local:'../assets/audio/vulpes-vulpes.ogg',remote:'https://upload.wikimedia.org/wikipedia/commons/7/79/Red_Fox_%28Vulpes_vulpes%29_%28W1CDR0001529_BD12%29.ogg',type:'audio/ogg',desc:'Оштрији лавеж и продорни позиви, најчешће ноћу или у периоду појачане активности.',hint:'Слушај оштрији лавеж, краћи и продорнији од шакаловог завијања.'}
+  {id:'srna',name:'Срна',latin:'Capreolus capreolus',remote:'https://upload.wikimedia.org/wikipedia/commons/c/c8/Male_roe_deer_growl.ogg',type:'audio/ogg',desc:'Кратко, оштро и лавежу слично оглашавање, најчешће при узнемирењу или територијалном понашању.',hint:'Слушај кратак, оштар лавеж, не дуго завијање.'},
+  {id:'divlja-svinja',name:'Дивља свиња',latin:'Sus scrofa',remote:'https://upload.wikimedia.org/wikipedia/commons/8/8a/Boar.Grwls%281%29.ogg',type:'audio/ogg',desc:'Дубоко груктање, рикање и кратки режаји, нарочито када је јединка узнемирена или је крдо у густој вегетацији.',hint:'Слушај грудно груктање и ниске, храпаве звуке.'},
+  {id:'sakal',name:'Шакал',latin:'Canis aureus',remote:'https://upload.wikimedia.org/wikipedia/commons/1/1a/Jackal.ogg',type:'audio/ogg',desc:'Продужено, високо и таласасто завијање, често у сумрак или ноћу, понекад у групном одговору.',hint:'Слушај дуже завијање, више и продорније од лавежа.'},
+  {id:'lisica',name:'Лисица',latin:'Vulpes vulpes',remote:'https://upload.wikimedia.org/wikipedia/commons/7/79/Red_Fox_%28Vulpes_vulpes%29_%28W1CDR0001529_BD12%29.ogg',type:'audio/ogg',desc:'Оштрији лавеж и продорни позиви, најчешће ноћу или у периоду појачане активности.',hint:'Слушај оштрији лавеж, краћи и продорнији од шакаловог завијања.'}
 ];
 function rajacSetAudio(audio,sample){
   if(!audio||!sample)return;
@@ -885,5 +885,6 @@ function downloadCSV(){
 <!-- SITE_EDITOR_ADMIN_BAR_END -->
 
 <script defer src="/sisari/assets/sisari-photo-credits-v2.js?v=20260817"></script>
+<style id="rajac-foto-ispod-v1">.hero-visual{display:flex!important;flex-direction:column!important;min-height:0!important;align-self:center!important}.hero-visual:before{display:none!important}.hero-visual .rajac-photo-source-wrap{display:block!important}.hero-visual img,.hero-visual>svg{min-height:0!important;height:auto!important;transform:none!important}.hero-visual-badge{position:static!important;max-width:none!important;margin:0!important;border-radius:0!important;background:#1d3a2c!important;-webkit-backdrop-filter:none!important;backdrop-filter:none!important;box-shadow:none!important;border:0!important;padding:14px 18px 16px!important}.hero-visual-badge span{color:rgba(255,255,255,.9)!important}</style>
 </body>
 </html>
