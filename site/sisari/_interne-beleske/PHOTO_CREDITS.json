@@ -1,445 +1,716 @@
-[
-  {
-    "slug": "apodemus-agrarius",
+{
+  "apodemus-agrarius": {
+    "photo": "assets/images/apodemus-agrarius.webp",
+    "species": "Apodemus agrarius",
     "name": "Пругасти миш",
-    "latin": "Apodemus agrarius (Pallas, 1771)",
-    "image": "assets/images/apodemus-agrarius.webp",
-    "captions": [
-      "Пругасти миш (Apodemus agrarius (Pallas, 1771)) — природно станиште. © Wikimedia Commons CC BY-SA 4.0",
-      "Тамна пруга дуж кичме — поуздан знак разликовања, нема je ниjедна друга врста у Србиjи · CC BY-SA"
-    ]
+    "author": "Mardus",
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "commons_url": "https://commons.wikimedia.org/wiki/File:Juttselg-hiir_Mustam%C3%A4el,_2016-08-15.jpg",
+    "credit": "Фото: Mardus / Wikimedia Commons, CC BY-SA 4.0 — прилагођена величина, WebP",
+    "source_image_sha256": "c2ddc36febdf31280c2bcad756014c047302fb6a52bee14387a0d358979eef10",
+    "commons_page_sha256": "ae4d4e3eeae5ec291d2e308e20a0974f6d7657901aa6642b4c4611e7e30fcd7a",
+    "source_verified": true,
+    "visual_scope": "Врста наведена на Commons извору; фотографија упоређена са преузетом копијом. Фотографија није доказ налаза на Рајцу."
   },
-  {
-    "slug": "apodemus-flavicollis",
+  "apodemus-flavicollis": {
+    "photo": "assets/images/apodemus-flavicollis.webp",
+    "species": "Apodemus flavicollis",
     "name": "Жутогрли миш",
-    "latin": "Apodemus flavicollis (Melchior, 1834)",
-    "image": "assets/images/apodemus-flavicollis.webp",
-    "captions": [
-      "Жутогрли миш (Apodemus flavicollis (Melchior, 1834)) — природно станиште. © Wikimedia Commons CC BY-SA 4.0",
-      "Жута до наранџаста огрлица на грлу — jeдинствена особина ове врсте · CC BY-SA"
-    ]
+    "author": "James Lindsey",
+    "license": "CC BY-SA 2.5",
+    "license_url": "https://creativecommons.org/licenses/by-sa/2.5/",
+    "commons_url": "https://commons.wikimedia.org/wiki/File:Apodemus.flavicollis.jpg",
+    "credit": "Фото: James Lindsey / Wikimedia Commons, CC BY-SA 2.5 — прилагођена величина, WebP",
+    "source_image_sha256": "930b0895e5980fd4cd6583583eb8931af8acdb5482903ea18d04a714eac2298f",
+    "commons_page_sha256": "af1ce68f3ef7a9f1c973323494ed9e3424628831dc155c6bea5acfa60c054ca9",
+    "source_verified": true,
+    "visual_scope": "Врста наведена на Commons извору; фотографија упоређена са преузетом копијом. Фотографија није доказ налаза на Рајцу."
   },
-  {
-    "slug": "apodemus-sylvaticus",
+  "apodemus-sylvaticus": {
+    "photo": "assets/images/apodemus-sylvaticus.webp",
+    "species": "Apodemus sylvaticus",
     "name": "Шумски миш",
-    "latin": "Apodemus sylvaticus (Linnaeus, 1758)",
-    "image": "assets/images/apodemus-sylvaticus.webp",
-    "captions": [
-      "Шумски миш (Apodemus sylvaticus (Linnaeus, 1758)) — природно станиште. © Wikimedia Commons CC BY-SA 4.0",
-      "Шумски миш — без жуте огрлице, нешто ситниjи · CC BY-SA"
-    ]
+    "author": "Rasbak",
+    "license": "CC BY-SA 3.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+    "commons_url": "https://commons.wikimedia.org/wiki/File:Apodemus_sylvaticus_bosmuis.jpg",
+    "credit": "Фото: Rasbak / Wikimedia Commons, CC BY-SA 3.0 — прилагођена величина, WebP",
+    "source_image_sha256": "9e7bb1db7c520b2f50cc739dd78ac7b761a0179a91f6b2bf09f30df4415964fe",
+    "commons_page_sha256": "7e34d1ec6962b4ba6d1a0bed70fe91ca11e2974e30cb5175293b5a51123337a5",
+    "source_verified": true,
+    "visual_scope": "Врста наведена на Commons извору; фотографија упоређена са преузетом копијом. Фотографија није доказ налаза на Рајцу."
   },
-  {
-    "slug": "barbastella-barbastellus",
+  "barbastella-barbastellus": {
+    "photo": "assets/images/barbastella-barbastellus-detail.webp",
+    "species": "Barbastella barbastellus",
     "name": "Широкоухи љиљак",
-    "latin": "Barbastella barbastellus Schreber, 1774",
-    "image": "assets/images/barbastella-barbastellus.webp",
-    "captions": []
+    "author": "C. Robiller / Naturlichter.de",
+    "license": "CC BY-SA 3.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+    "commons_url": "https://commons.wikimedia.org/wiki/File:Barbastella_barbastellus_01.jpg",
+    "credit": "Фото: C. Robiller / Naturlichter.de / Wikimedia Commons, CC BY-SA 3.0 — прилагођена величина, WebP",
+    "source_image_sha256": "169bd7441fa562220f37d667224471f6dd2ae317e47f89cb5738ad8aa5120037",
+    "commons_page_sha256": "a02ae757c8c798134d0a914acf2e70f3271723adce5e5fed44f18ee1a81520f0",
+    "source_verified": true,
+    "visual_scope": "Врста наведена на Commons извору; фотографија упоређена са преузетом копијом. Фотографија није доказ налаза на Рајцу."
   },
-  {
-    "slug": "canis-aureus",
+  "canis-aureus": {
+    "photo": "assets/images/canis-aureus.webp",
+    "species": "Canis aureus",
     "name": "Шакал",
-    "latin": "Canis aureus Linnaeus, 1758",
-    "image": "assets/images/canis-aureus.webp",
-    "captions": [
-      "Шакал (Canis aureus) — одрасла јединка. Сличи на мањег, танкијег вука са златастим тоном длаке. © Wikimedia Commons CC BY-SA 4.0",
-      "Детаљ главе — шиљасте уши и карактеристичан поглед · CC BY-SA",
-      "Извор звука: Wikimedia Commons — File:Jackal.ogg."
-    ]
+    "author": "Dr Tarak N. Khan",
+    "license": "CC BY-SA 2.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/2.0/",
+    "commons_url": "https://commons.wikimedia.org/wiki/File:Canis_aureus_indicus.jpg",
+    "credit": "Фото: Dr Tarak N. Khan / Wikimedia Commons, CC BY-SA 2.0 — прилагођена величина, WebP",
+    "source_image_sha256": "f0f59172dddbb4541edaa4eea7df6c3940afa40903fc789c313b7adb76c572ef",
+    "commons_page_sha256": "97fbd41fb3b32d4018b6b03d4339346ebb655be5271be9683df4ce141f81e070",
+    "source_verified": true,
+    "visual_scope": "Врста наведена на Commons извору; фотографија упоређена са преузетом копијом. Фотографија није доказ налаза на Рајцу."
   },
-  {
-    "slug": "canis-lupus",
+  "canis-lupus": {
+    "photo": "assets/images/canis-lupus.webp",
+    "species": "Canis lupus",
     "name": "Вук",
-    "latin": "Canis lupus",
-    "image": "assets/images/canis-lupus.webp",
-    "captions": [
-      "Вук (Canis lupus) — природно станиште. © Wikimedia Commons CC BY-SA 4.0",
-      "Вук у природном станишту — длака сиво-смеђа до тавнија, карактеристична грађа · CC BY-SA"
-    ]
+    "author": "Mikkel Houmøller",
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "commons_url": "https://commons.wikimedia.org/wiki/File:Canis_lupus_Europe.jpg",
+    "credit": "Фото: Mikkel Houmøller / Wikimedia Commons, CC BY-SA 4.0 — прилагођена величина, WebP",
+    "source_image_sha256": "ab50410e49d355d4d2233f7de576d6a4b10a1eb83c675627fc2b233ff8f68653",
+    "commons_page_sha256": "a8d5b213740f8bc5ed56fb3bf1ecb62dc250c8251edd251d2bf075a08ab0265c",
+    "source_verified": true,
+    "visual_scope": "Врста наведена на Commons извору; фотографија упоређена са преузетом копијом. Фотографија није доказ налаза на Рајцу."
   },
-  {
-    "slug": "capreolus-capreolus",
+  "capreolus-capreolus": {
+    "photo": "assets/images/capreolus-capreolus.webp",
+    "species": "Capreolus capreolus",
     "name": "Срна",
-    "latin": "Capreolus capreolus (Linnaeus, 1758)",
-    "image": "assets/images/capreolus-capreolus.webp",
-    "captions": [
-      "Срна (Capreolus capreolus) — одрасла јединка на ливади и шумском рубу. © Wikimedia Commons CC BY-SA",
-      "Извор звука: Wikimedia Commons — File:Male roe deer growl.ogg.",
-      "Детаљ главе срне — велике уши и влажна, осетљива њушка · CC BY-SA"
-    ]
+    "author": "Ken Billington",
+    "license": "CC BY-SA 3.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+    "commons_url": "https://commons.wikimedia.org/wiki/File:Roe_Deer_(Capreolus_capreolus)_(1).jpg",
+    "credit": "Фото: Ken Billington / Wikimedia Commons, CC BY-SA 3.0 — прилагођена величина, WebP",
+    "source_image_sha256": "8062442f25c666599773912a867a1c6d8098eeb6223ba400cddd8b18bdcb0c43",
+    "commons_page_sha256": "2bc9f0d5b57077b1fa43132840928ca7f7dd32f4ef9b2c2f432a73fc66c2c56f",
+    "source_verified": true,
+    "visual_scope": "Врста наведена на Commons извору; фотографија упоређена са преузетом копијом. Фотографија није доказ налаза на Рајцу."
   },
-  {
-    "slug": "crocidura-leucodon",
+  "crocidura-leucodon": {
+    "photo": "assets/images/crocidura-leucodon.webp",
+    "species": "Crocidura leucodon",
     "name": "Пољска ровчица",
-    "latin": "Crocidura leucodon",
-    "image": "assets/images/crocidura-leucodon.webp",
-    "captions": [
-      "Пољска ровчица (Crocidura leucodon) — природно станиште. © Wikimedia Commons CC BY-SA 4.0",
-      "Crocidura leucodon — оштра граница боје на боковима · CC BY-SA"
-    ]
+    "author": "Dodoni",
+    "license": "CC BY-SA 3.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+    "commons_url": "https://commons.wikimedia.org/wiki/File:Crocidura_leucodon.JPG",
+    "credit": "Фото: Dodoni / Wikimedia Commons, CC BY-SA 3.0 — прилагођена величина, WebP",
+    "source_image_sha256": "f923c7b16178ab2ef3092e3606e736353ea061a4dd333fd3ac29f30fd5e6f559",
+    "commons_page_sha256": "77f216623edc43685aca5c57a59b0991c3c901e55a0aa11f81e75e962d7e4a28",
+    "source_verified": true,
+    "visual_scope": "Врста наведена на Commons извору; фотографија упоређена са преузетом копијом. Фотографија није доказ налаза на Рајцу."
   },
-  {
-    "slug": "crocidura-suaveolens",
+  "crocidura-suaveolens": {
+    "photo": "assets/images/crocidura-suaveolens.webp",
+    "species": "Crocidura suaveolens",
     "name": "Баштенска ровчица",
-    "latin": "Crocidura suaveolens",
-    "image": "assets/images/crocidura-suaveolens.webp",
-    "captions": [
-      "Баштенска ровчица (Crocidura suaveolens) — природно станиште. © Wikimedia Commons CC BY-SA 4.0",
-      "Crocidura suaveolens — кључна разлика: БЕЛИ зуби · CC BY-SA"
-    ]
+    "author": "Sebastian Ritter",
+    "license": "CC BY-SA 2.0 de",
+    "license_url": "https://creativecommons.org/licenses/by-sa/de/",
+    "commons_url": "https://commons.wikimedia.org/wiki/File:Gartenspitzmaus_(cropped).jpg",
+    "credit": "Фото: Sebastian Ritter / Wikimedia Commons, CC BY-SA 2.0 de — прилагођена величина, WebP",
+    "source_image_sha256": "38ddc70bc67aa47423360cb47234cae2cd4a912e4a95ae835df5d2c0c9725a46",
+    "commons_page_sha256": "940c318db7561cddc2abb7af2ad0614ca774502f77e941a52428e8662b22a1e9",
+    "source_verified": true,
+    "visual_scope": "Врста наведена на Commons извору; фотографија упоређена са преузетом копијом. Фотографија није доказ налаза на Рајцу."
   },
-  {
-    "slug": "eptesicus-serotinus",
+  "eptesicus-serotinus": {
+    "photo": "assets/images/eptesicus-serotinus-detail.webp",
+    "species": "Eptesicus serotinus",
     "name": "Ширококрили поноћњак",
-    "latin": "Eptesicus serotinus Schreber, 1774",
-    "image": "assets/images/eptesicus-serotinus.webp",
-    "captions": []
+    "author": "Mnolf",
+    "license": "CC BY-SA 3.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+    "commons_url": "https://commons.wikimedia.org/wiki/File:Eptesicus_serotinus.jpg",
+    "credit": "Фото: Mnolf / Wikimedia Commons, CC BY-SA 3.0 — прилагођена величина, WebP",
+    "source_image_sha256": "5ef69ea0f0e92d1a86611d0926c511d77026b6e61668bf8e37902a52a009cca5",
+    "commons_page_sha256": "95adb93a5a665d59b554d627a9b640be4d02102c59371bc6264ee5cc50faaa1a",
+    "source_verified": true,
+    "visual_scope": "Врста наведена на Commons извору; фотографија упоређена са преузетом копијом. Фотографија није доказ налаза на Рајцу."
   },
-  {
-    "slug": "erinaceus-roumanicus",
+  "erinaceus-roumanicus": {
+    "photo": "assets/images/erinaceus-roumanicus.webp",
+    "species": "Erinaceus roumanicus",
     "name": "Јеж",
-    "latin": "Erinaceus roumanicus Barrett-Hamilton, 1900",
-    "image": "assets/images/erinaceus-roumanicus.webp",
-    "captions": [
-      "Јеж (Erinaceus roumanicus) — одрасла јединка у природном станишту. Карактеристичне бодљике на леђима и шиљаста njušка. © Wikimedia Commons CC BY-SA",
-      "Детаљ бодљика — кератинска структура · CC BY-SA",
-      "Отисак шапе јежа — карактеристичних 5 прстiju са дугим ноктивима · Wikimedia Commons CC BY-SA",
-      "Кућица за јежа у башти — дрвена конструкција са природним покривачем · Wikimedia Commons CC BY-SA"
-    ]
+    "author": "Stefan.lefnaer",
+    "license": "CC BY-SA 3.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+    "commons_url": "https://commons.wikimedia.org/wiki/File:Erinaceus_roumanicus_sl_1.jpg",
+    "credit": "Фото: Stefan.lefnaer / Wikimedia Commons, CC BY-SA 3.0 — прилагођена величина, WebP",
+    "source_image_sha256": "77d0843677d8530477ef23b4ab7b528661f589212b78f8f951348e0407d3c582",
+    "commons_page_sha256": "ebecbddddbf188b4d64cde74d19243ddfe3a63f8f1be56ef0a055426ae5c3490",
+    "source_verified": true,
+    "visual_scope": "Врста наведена на Commons извору; фотографија упоређена са преузетом копијом. Фотографија није доказ налаза на Рајцу."
   },
-  {
-    "slug": "felis-silvestris",
+  "felis-silvestris": {
+    "photo": "assets/images/felis-silvestris.webp",
+    "species": "Felis silvestris",
     "name": "Дивља мачка",
-    "latin": "Felis silvestris Schreber, 1777",
-    "image": "assets/images/felis-silvestris.webp",
-    "captions": [
-      "Дивља мачка (Felis silvestris silvestris) — одрасла јединка. Запазити тупи, прстенасти реп са црним врхом — кључна разлика од домаће мачке. © Wikimedia Commons CC BY-SA 4.0",
-      "Снажна грађа и густа длака — видљиво крупнија и масивнија него домаћа мачка · CC BY-SA"
-    ]
+    "author": "Michael Gäbler",
+    "license": "CC BY 3.0",
+    "license_url": "https://creativecommons.org/licenses/by/3.0/",
+    "commons_url": "https://commons.wikimedia.org/wiki/File:Felis_silvestris_silvestris.jpg",
+    "credit": "Фото: Michael Gäbler / Wikimedia Commons, CC BY 3.0 — прилагођена величина, WebP",
+    "source_image_sha256": "f95dc34da789bae2a888f42410cb1e66ee4e0a3423205f6aa9d624bace8d7ea5",
+    "commons_page_sha256": "60b1e967e75f1e474c69b9d5d4f5b6945f5848f9f1590fa131018268363ceffc",
+    "source_verified": true,
+    "visual_scope": "Врста наведена на Commons извору; фотографија упоређена са преузетом копијом. Фотографија није доказ налаза на Рајцу."
   },
-  {
-    "slug": "glis-glis",
+  "glis-glis": {
+    "photo": "assets/images/glis-glis.webp",
+    "species": "Glis glis",
     "name": "Сиви пух",
-    "latin": "Glis glis",
-    "image": "assets/images/glis-glis.webp",
-    "captions": [
-      "Сиви пух — снимак из природног станишта. © Wikimedia Commons CC BY-SA 4.0"
-    ]
+    "author": "Bouke ten Cate",
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "commons_url": "https://commons.wikimedia.org/wiki/File:Edible_dormouse_-_Relmuis_-_Glis_glis_04.jpg",
+    "credit": "Фото: Bouke ten Cate / Wikimedia Commons, CC BY-SA 4.0 — прилагођена величина, WebP",
+    "source_image_sha256": "603d26d6ad0781d10f6ca4777fb863c622bc19605da6fbf729e6e93dfe11f619",
+    "commons_page_sha256": "2e285115eb77458885be9eebd290b09835a8ec82629bd96432d7a5110e79ebf0",
+    "source_verified": true,
+    "visual_scope": "Врста наведена на Commons извору; фотографија упоређена са преузетом копијом. Фотографија није доказ налаза на Рајцу."
   },
-  {
-    "slug": "lepus-europaeus",
+  "lepus-europaeus": {
+    "photo": "assets/images/lepus-europaeus.webp",
+    "species": "Lepus europaeus",
     "name": "Дивљи зец",
-    "latin": "Lepus europaeus",
-    "image": "assets/images/lepus-europaeus.webp",
-    "captions": []
+    "author": "Kim Hansen",
+    "license": "CC BY-SA 3.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+    "commons_url": "https://commons.wikimedia.org/wiki/File:European_Hare_2012-07-30_1.JPG",
+    "credit": "Фото: Kim Hansen / Wikimedia Commons, CC BY-SA 3.0 — прилагођена величина, WebP",
+    "source_image_sha256": "7e3ed8ed1a1b80b3cb17db85491a4e27202cafc1fc9e9e0693fae74760539800",
+    "commons_page_sha256": "3d928a86e7eb7e48ef9ae6957e3fbb87611d4be17f5d46d0f807bdd9917728fa",
+    "source_verified": true,
+    "visual_scope": "Врста наведена на Commons извору; фотографија упоређена са преузетом копијом. Фотографија није доказ налаза на Рајцу."
   },
-  {
-    "slug": "lutra-lutra",
+  "lutra-lutra": {
+    "photo": "assets/images/lutra-lutra.webp",
+    "species": "Lutra lutra",
     "name": "Видра",
-    "latin": "Lutra lutra",
-    "image": "assets/images/lutra-lutra.webp",
-    "captions": [
-      "Видра (Lutra lutra) — природно станиште. © Wikimedia Commons CC BY-SA 4.0",
-      "Видра — хидродинамично тело, пловне опне, вибрисе · CC BY-SA"
-    ]
+    "author": "Aditya4wiki",
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "commons_url": "https://commons.wikimedia.org/wiki/File:Eurasian_otter_Central_India.jpg",
+    "credit": "Фото: Aditya4wiki / Wikimedia Commons, CC BY-SA 4.0 — прилагођена величина, WebP",
+    "source_image_sha256": "078a136dd3b57b68fb698de20295155d696cbe6588b849039af0b274206a2c28",
+    "commons_page_sha256": "7d958235ced38484f2e42616504d84efe30fec04793ac78ea57b135061a1249b",
+    "source_verified": true,
+    "visual_scope": "Врста наведена на Commons извору; фотографија упоређена са преузетом копијом. Фотографија није доказ налаза на Рајцу."
   },
-  {
-    "slug": "martes-foina",
+  "martes-foina": {
+    "photo": "assets/images/martes-foina.webp",
+    "species": "Martes foina",
     "name": "Куна белица",
-    "latin": "Martes foina (Erxleben, 1777)",
-    "image": "assets/images/martes-foina.webp",
-    "captions": [
-      "Куна белица (Martes foina) — карактеристична бела пега на грлу, по којој је врста добила назив. © Wikimedia Commons CC BY-SA 4.0",
-      "Бела, неподељена грлна пега — поуздан знак идентификације · CC BY-SA"
-    ]
+    "author": "Stanislaw Szydlo",
+    "license": "CC BY-SA 3.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+    "commons_url": "https://commons.wikimedia.org/wiki/File:Martes_foina_kuna.jpg",
+    "credit": "Фото: Stanislaw Szydlo / Wikimedia Commons, CC BY-SA 3.0 — прилагођена величина, WebP",
+    "source_image_sha256": "4bd8141cabf2758821d5cf45bb485788b1e436aff442fa3b0a223975aa3d4d07",
+    "commons_page_sha256": "12dffba713caac01ff2fbd1279034606ef31f274b2fa3fd9ab0ede1dbc3c8e93",
+    "source_verified": true,
+    "visual_scope": "Врста наведена на Commons извору; фотографија упоређена са преузетом копијом. Фотографија није доказ налаза на Рајцу."
   },
-  {
-    "slug": "martes-martes",
+  "martes-martes": {
+    "photo": "assets/images/martes-martes.webp",
+    "species": "Martes martes",
     "name": "Куна златица",
-    "latin": "Martes martes (Linnaeus, 1758)",
-    "image": "assets/images/martes-martes.webp",
-    "captions": [
-      "Куна златица (Martes martes) — одрасла јединка са карактеристичном жутом или наранџастом пегом на грлу. © Wikimedia Commons CC BY-SA 4.0",
-      "Жута до наранџаста грлна пега — кључни знак разликовања · CC BY-SA"
-    ]
+    "author": "Christian Fischer",
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "commons_url": "https://commons.wikimedia.org/wiki/File:MartesMartes.jpg",
+    "credit": "Фото: Christian Fischer / Wikimedia Commons, CC BY-SA 4.0 — прилагођена величина, WebP",
+    "source_image_sha256": "4443437158cfeb1a1673963a4c23f30509c829977b80ad311827aa3b2a511680",
+    "commons_page_sha256": "c3b0c231ab53baef3670453c9c9350a1342788c1eb9a982a557cc186d36b3662",
+    "source_verified": true,
+    "visual_scope": "Врста наведена на Commons извору; фотографија упоређена са преузетом копијом. Фотографија није доказ налаза на Рајцу."
   },
-  {
-    "slug": "meles-meles",
+  "meles-meles": {
+    "photo": "assets/images/meles-meles.webp",
+    "species": "Meles meles",
     "name": "Јазавац",
-    "latin": "Meles meles (Linnaeus, 1758)",
-    "image": "assets/images/meles-meles.webp",
-    "captions": [
-      "Јазавац (Meles meles) — одрасла јединка са карактеристичним белим лицем и тамним пругама. © Wikimedia Commons CC BY-SA 4.0",
-      "Карактеристичне тамне пруге преко очију — јединствени знак препознавања · CC BY-SA"
-    ]
+    "author": "BadgerHero",
+    "license": "CC BY-SA 3.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+    "commons_url": "https://commons.wikimedia.org/wiki/File:Badger-badger.jpg",
+    "credit": "Фото: BadgerHero / Wikimedia Commons, CC BY-SA 3.0 — прилагођена величина, WebP",
+    "source_image_sha256": "a317fd7cfd5afd2f04cb55735db576a3655cf27b84c371c7670a4375c6826eb9",
+    "commons_page_sha256": "b33c035df79fd2dfc1c107af67a63fa1ef5388cc7e8948bf5166b3143877aa94",
+    "source_verified": true,
+    "visual_scope": "Врста наведена на Commons извору; фотографија упоређена са преузетом копијом. Фотографија није доказ налаза на Рајцу."
   },
-  {
-    "slug": "microtus-arvalis",
+  "microtus-arvalis": {
+    "photo": "assets/images/microtus-arvalis.webp",
+    "species": "Microtus arvalis",
     "name": "Пољска волухарица",
-    "latin": "Microtus arvalis (Pallas, 1778)",
-    "image": "assets/images/microtus-arvalis.webp",
-    "captions": [
-      "Пољска волухарица (Microtus arvalis (Pallas, 1778)) — јединка у природном окружењу, без приказа хватања или замки. © Dieter TD / Wikimedia Commons, CC BY-SA 3.0",
-      "Пољска волухарица — фотографија јединке без замки, кавеза и манипулације · Wikimedia Commons"
-    ]
+    "author": "Dieter TD, first upload in de wikipedia on 13:31, 28. Apr 2005 by Dieter TD",
+    "license": "CC BY-SA 3.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+    "commons_url": "https://commons.wikimedia.org/wiki/File:Feldmaus_Microtus_arvalis.jpg",
+    "credit": "Фото: Dieter TD, first upload in de wikipedia on 13:31, 28. Apr 2005 by Dieter TD / Wikimedia Commons, CC BY-SA 3.0 — прилагођена величина, WebP",
+    "source_image_sha256": "3495a6b3f59df33d848f829acd9cd6ea2ad159c793d7492c636e7156ff320a21",
+    "commons_page_sha256": "e352431433ec166d13441ce28fbad1bfddbc577b325078e12ba328b2bef8d5ae",
+    "source_verified": true,
+    "visual_scope": "Врста наведена на Commons извору; фотографија упоређена са преузетом копијом. Фотографија није доказ налаза на Рајцу."
   },
-  {
-    "slug": "microtus-subterraneus",
+  "microtus-subterraneus": {
+    "photo": "assets/images/microtus-subterraneus.webp",
+    "species": "Microtus subterraneus",
     "name": "Подземна волухарица",
-    "latin": "Microtus subterraneus (de Sélys-Longchamps, 1836)",
-    "image": "assets/images/microtus-subterraneus.webp",
-    "captions": [
-      "Подземна волухарица (Microtus subterraneus (de Sélys-Longchamps, 1836)) — природно станиште. © Wikimedia Commons CC BY-SA 4.0",
-      "Подземна волухарица — мали реп, здепасто тело, скривена врста · CC BY-SA"
-    ]
+    "author": "T.Voekler",
+    "license": "CC BY-SA 3.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+    "commons_url": "https://commons.wikimedia.org/wiki/File:Microtus_subterraneus_(Cologne,_Germany).jpg",
+    "credit": "Фото: T.Voekler / Wikimedia Commons, CC BY-SA 3.0 — прилагођена величина, WebP",
+    "source_image_sha256": "1578cede2ec201c4c69a8a9f000adb4ac687a6b49a31436ceeadccc75458f1c6",
+    "commons_page_sha256": "05f73c1a8bce7778d7673e89bdea51c95f82d2bc4fa8fd0e13963f1e2162b6f8",
+    "source_verified": true,
+    "visual_scope": "Врста наведена на Commons извору; фотографија упоређена са преузетом копијом. Фотографија није доказ налаза на Рајцу."
   },
-  {
-    "slug": "miniopterus-schreibersii",
+  "miniopterus-schreibersii": {
+    "photo": "assets/images/miniopterus-schreibersii-detail.webp",
+    "species": "Miniopterus schreibersii",
     "name": "Дугокрили љиљак",
-    "latin": "Miniopterus schreibersii Kuhl, 1817",
-    "image": "assets/images/miniopterus-schreibersii.webp",
-    "captions": []
+    "author": "Lukáš Jurek",
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "commons_url": "https://commons.wikimedia.org/wiki/File:Miniopterus_schreibersii.jpg",
+    "credit": "Фото: Lukáš Jurek / Wikimedia Commons, CC BY-SA 4.0 — прилагођена величина, WebP",
+    "source_image_sha256": "ceec444cf369eab1e3bcc5b36d3cdfdac01852fff7b9055b33e9232678881da0",
+    "commons_page_sha256": "f51bb57c38b2603a8f770c88fa876129d8625a98543c71d8750784240084a91c",
+    "source_verified": true,
+    "visual_scope": "Врста наведена на Commons извору; фотографија упоређена са преузетом копијом. Фотографија није доказ налаза на Рајцу."
   },
-  {
-    "slug": "muscardinus-avellanarius",
+  "muscardinus-avellanarius": {
+    "photo": "assets/images/muscardinus-avellanarius.webp",
+    "species": "Muscardinus avellanarius",
     "name": "Пух лешникар",
-    "latin": "Muscardinus avellanarius",
-    "image": "assets/images/muscardinus-avellanarius.webp",
-    "captions": [
-      "Пух лешникар — снимак из природног станишта. © Wikimedia Commons CC BY-SA 4.0"
-    ]
+    "author": "Zoë Helene Kindermann",
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "commons_url": "https://commons.wikimedia.org/wiki/File:Dormouse2.jpg",
+    "credit": "Фото: Zoë Helene Kindermann / Wikimedia Commons, CC BY-SA 4.0 — прилагођена величина, WebP",
+    "source_image_sha256": "2db2da0c5292a65a154d6b15b0d16120f267562a3d66e66fe92225da184d88f2",
+    "commons_page_sha256": "1cfbc0aed6b93dc5400130b5ccb75a62dcfb8460793d7140922e6becd6d92da1",
+    "source_verified": true,
+    "visual_scope": "Врста наведена на Commons извору; фотографија упоређена са преузетом копијом. Фотографија није доказ налаза на Рајцу."
   },
-  {
-    "slug": "mustela-nivalis",
+  "mustela-nivalis": {
+    "photo": "assets/images/mustela-nivalis.webp",
+    "species": "Mustela nivalis",
     "name": "Риђа ласица",
-    "latin": "Mustela nivalis Linnaeus, 1766",
-    "image": "assets/images/mustela-nivalis.webp",
-    "captions": [
-      "Риђа ласица (Mustela nivalis) — најмањи куновски предатор Европе. Риђе-смеђа горња страна, бела трбушна страна. © Wikimedia Commons CC BY-SA 3.0",
-      "Усправни став посматрања — карактеристично понашање кад детектује опасност · CC BY-SA"
-    ]
+    "author": "Anatolii Vlasov",
+    "license": "CC BY-SA 3.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+    "commons_url": "https://commons.wikimedia.org/wiki/File:Mustela_nivalis_-_2013%2704%2713-19h21m17s.jpg",
+    "credit": "Фото: Anatolii Vlasov / Wikimedia Commons, CC BY-SA 3.0 — прилагођена величина, WebP",
+    "source_image_sha256": "561b1ba1b038d8e6915a7d66938e158e7172c235d1b9321dfa61a8171e588d5c",
+    "commons_page_sha256": "dad4bcf4bbd6b439d4e154998dce15df1b546eeb43914ca00302393e6eb58605",
+    "source_verified": true,
+    "visual_scope": "Врста наведена на Commons извору; фотографија упоређена са преузетом копијом. Фотографија није доказ налаза на Рајцу."
   },
-  {
-    "slug": "mustela-putorius",
+  "mustela-putorius": {
+    "photo": "assets/images/mustela-putorius.webp",
+    "species": "Mustela putorius",
     "name": "Мрки твор",
-    "latin": "Mustela putorius Linnaeus, 1758",
-    "image": "assets/images/mustela-putorius.webp",
-    "captions": [
-      "Мрки твор (Mustela putorius) — одрасла јединка. Бела маска лица и тамно тело — карактеристичан изглед. © Wikimedia Commons CC BY-SA 4.0",
-      "Карактеристична бела лицна маска са тамним стрипама · CC BY-SA"
-    ]
+    "author": "Photograph by Mike Peel (www.mikepeel.net).",
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "commons_url": "https://commons.wikimedia.org/wiki/File:Old_photos_(MP)_328.jpg",
+    "credit": "Фото: Photograph by Mike Peel (www.mikepeel.net). / Wikimedia Commons, CC BY-SA 4.0 — прилагођена величина, WebP",
+    "source_image_sha256": "af73022ab6833afb771c598173014a613f107333028220db0e08e4091b0d4891",
+    "commons_page_sha256": "c052db29793f6402dbba576ab6568b024cb5641a75a68a52aebdfc2782af1716",
+    "source_verified": true,
+    "visual_scope": "Врста наведена на Commons извору; фотографија упоређена са преузетом копијом. Фотографија није доказ налаза на Рајцу."
   },
-  {
-    "slug": "myodes-glareolus",
+  "myodes-glareolus": {
+    "photo": "assets/images/myodes-glareolus.webp",
+    "species": "Myodes glareolus",
     "name": "Риђа волухарица",
-    "latin": "Myodes glareolus (Schreber, 1780)",
-    "image": "assets/images/myodes-glareolus.webp",
-    "captions": [
-      "Риђа волухарица (Myodes glareolus (Schreber, 1780)) — природно станиште. © Wikimedia Commons CC BY-SA 4.0",
-      "Риђе леђа, сиви трбух, кратак реп — лако препознатљива · CC BY-SA"
-    ]
+    "author": "Ermell",
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "commons_url": "https://commons.wikimedia.org/wiki/File:R%C3%B6telmaus-20200410-RM-113838.jpg",
+    "credit": "Фото: Ermell / Wikimedia Commons, CC BY-SA 4.0 — прилагођена величина, WebP",
+    "source_image_sha256": "42c57d3475c08eb53deec877703c05a7999e6d2bb587e2b65030f0a638692390",
+    "commons_page_sha256": "e58ca52ae4dc90e8f9c7637728cad09e6de0b971b40d65f944e47f014d1f471d",
+    "source_verified": true,
+    "visual_scope": "Врста наведена на Commons извору; фотографија упоређена са преузетом копијом. Фотографија није доказ налаза на Рајцу."
   },
-  {
-    "slug": "myotis-bechsteinii",
+  "myotis-bechsteinii": {
+    "photo": "assets/images/myotis-bechsteinii-detail.webp",
+    "species": "Myotis bechsteinii",
     "name": "Дугоухи вечерњак",
-    "latin": "Myotis bechsteinii Kuhl, 1817",
-    "image": "assets/images/myotis-bechsteinii.webp",
-    "captions": []
+    "author": "Gilles San Martin from Namur, Belgium",
+    "license": "CC BY-SA 2.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/2.0/",
+    "commons_url": "https://commons.wikimedia.org/wiki/File:Myotis_bechsteinii_(2862366039).jpg",
+    "credit": "Фото: Gilles San Martin from Namur, Belgium / Wikimedia Commons, CC BY-SA 2.0 — прилагођена величина, WebP",
+    "source_image_sha256": "a169f2c7772fa224fe9ba980e99deaa3590eb2d9066eaacba27a40835a408f70",
+    "commons_page_sha256": "023f6fc9d9a1e487dc5d591c633d3453d4a3919c74a387289ca22897f896da83",
+    "source_verified": true,
+    "visual_scope": "Врста наведена на Commons извору; фотографија упоређена са преузетом копијом. Фотографија није доказ налаза на Рајцу."
   },
-  {
-    "slug": "myotis-blythii",
+  "myotis-blythii": {
+    "photo": "assets/images/myotis-blythii-detail.webp",
+    "species": "Myotis blythii",
     "name": "Мали мишоухи вечерњак",
-    "latin": "Myotis blythii Tomes, 1857",
-    "image": "assets/images/myotis-blythii.webp",
-    "captions": []
+    "author": "Amirekul",
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "commons_url": "https://commons.wikimedia.org/wiki/File:Myotis_blythii_02.jpg",
+    "credit": "Фото: Amirekul / Wikimedia Commons, CC BY-SA 4.0 — прилагођена величина, WebP",
+    "source_image_sha256": "65a7e05a51e3664aeb9fd423105dceec2377a62bbf2e52940a6ebc3cb267cc23",
+    "commons_page_sha256": "a8e6c9efaa73cec9968e50f0ffec37f7cdbfd868cfb8c8564af7964eb01d5895",
+    "source_verified": true,
+    "visual_scope": "Врста наведена на Commons извору; фотографија упоређена са преузетом копијом. Фотографија није доказ налаза на Рајцу."
   },
-  {
-    "slug": "myotis-capaccinii",
+  "myotis-capaccinii": {
+    "photo": "assets/images/myotis-capaccinii-detail.webp",
+    "species": "Myotis capaccinii",
     "name": "Дугопрсти вечерњак",
-    "latin": "Myotis capaccinii Bonaparte, 1837",
-    "image": "assets/images/myotis-capaccinii.webp",
-    "captions": []
+    "author": "Joxerra Aihartza",
+    "license": "Free Art License",
+    "license_url": "https://artlibre.org/licence/lal/en/",
+    "commons_url": "https://commons.wikimedia.org/wiki/File:Myotis_capaccinii_0105b.jpg",
+    "credit": "Фото: Joxerra Aihartza / Wikimedia Commons, Free Art License — прилагођена величина, WebP",
+    "source_image_sha256": "0dcfd49b17b7e3a9ea86dc808c910b6d74f7ca5be1cda7b54dae89a684a743dd",
+    "commons_page_sha256": "256e4ae3f594c602ee9eea33c7679243f6ae3f4cda817071ed18a9e0f6376dc0",
+    "source_verified": true,
+    "visual_scope": "Врста наведена на Commons извору; фотографија упоређена са преузетом копијом. Фотографија није доказ налаза на Рајцу."
   },
-  {
-    "slug": "myotis-daubentonii",
+  "myotis-daubentonii": {
+    "photo": "assets/images/myotis-daubentonii.webp",
+    "species": "Myotis daubentonii",
     "name": "Водени вечерњак",
-    "latin": "Myotis daubentonii Kuhl, 1817",
-    "image": "assets/images/myotis-daubentonii.webp",
-    "captions": []
+    "author": "Gilles San Martin",
+    "license": "CC BY-SA 3.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+    "commons_url": "https://commons.wikimedia.org/wiki/File:Myotis_daubentoni.jpg",
+    "credit": "Фото: Gilles San Martin / Wikimedia Commons, CC BY-SA 3.0 — прилагођена величина, WebP",
+    "source_image_sha256": "9737bb4d9842735e198c5f09180104b0abf0b292d124790425d9f50548e295c6",
+    "commons_page_sha256": "c48102a2084ad4f239f6969eb00197c1700c311409c623aaa77ff781dd9ed4ca",
+    "source_verified": true,
+    "visual_scope": "Врста наведена на Commons извору; фотографија упоређена са преузетом копијом. Фотографија није доказ налаза на Рајцу."
   },
-  {
-    "slug": "myotis-emarginatus",
+  "myotis-emarginatus": {
+    "photo": "assets/images/myotis-emarginatus-detail.webp",
+    "species": "Myotis emarginatus",
     "name": "Шиљоухи вечерњак",
-    "latin": "Myotis emarginatus E. Geoffroy, 1806",
-    "image": "assets/images/myotis-emarginatus.webp",
-    "captions": []
+    "author": "Gilles San Martin from Namur, Belgium",
+    "license": "CC BY-SA 2.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/2.0/",
+    "commons_url": "https://commons.wikimedia.org/wiki/File:Myotis_emarginatus_(2862277831).jpg",
+    "credit": "Фото: Gilles San Martin from Namur, Belgium / Wikimedia Commons, CC BY-SA 2.0 — прилагођена величина, WebP",
+    "source_image_sha256": "2f5abb9d36983cd5a1128732d21987d83d9bea63d121f36fa4946098c41eceed",
+    "commons_page_sha256": "1db016d7b25d360e79dde234448871a611e2b3d7e324df210dfffb2620aab849",
+    "source_verified": true,
+    "visual_scope": "Врста наведена на Commons извору; фотографија упоређена са преузетом копијом. Фотографија није доказ налаза на Рајцу."
   },
-  {
-    "slug": "myotis-myotis",
+  "myotis-myotis": {
+    "photo": "assets/images/myotis-myotis.webp",
+    "species": "Myotis myotis",
     "name": "Велики мишоухи вечерњак",
-    "latin": "Myotis myotis Borkhausen, 1797",
-    "image": "assets/images/myotis-myotis.webp",
-    "captions": []
+    "author": "Gilles San Martin from Namur, Belgium",
+    "license": "CC BY-SA 2.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/2.0/",
+    "commons_url": "https://commons.wikimedia.org/wiki/File:Myotis_myotis.jpg",
+    "credit": "Фото: Gilles San Martin from Namur, Belgium / Wikimedia Commons, CC BY-SA 2.0 — прилагођена величина, WebP",
+    "source_image_sha256": "e41557a540a6e68d19c66073559a047107bdd8db7d204f9f6a7ee06c44453cf6",
+    "commons_page_sha256": "a7d4e2ffd720e5fe36b4855e6d2e725855ec240b82cd38bf7939f126356f1623",
+    "source_verified": true,
+    "visual_scope": "Врста наведена на Commons извору; фотографија упоређена са преузетом копијом. Фотографија није доказ налаза на Рајцу."
   },
-  {
-    "slug": "myotis-mystacinus",
+  "myotis-mystacinus": {
+    "photo": "assets/images/myotis-mystacinus-detail.webp",
+    "species": "Myotis mystacinus",
     "name": "Мали бркати вечерњак",
-    "latin": "Myotis mystacinus Kuhl, 1817",
-    "image": "assets/images/myotis-mystacinus.webp",
-    "captions": []
+    "author": "Manuel Ruedi (Natural History Museum of Geneva)",
+    "license": "CC BY 3.0",
+    "license_url": "https://creativecommons.org/licenses/by/3.0/",
+    "commons_url": "https://commons.wikimedia.org/wiki/File:Myotis_mystacinus_-_Manuel_Ruedi.JPG",
+    "credit": "Фото: Manuel Ruedi (Natural History Museum of Geneva) / Wikimedia Commons, CC BY 3.0 — прилагођена величина, WebP",
+    "source_image_sha256": "871f4dae2c484c48788cd8a93dc01c58dd3c535f76dacd3e87c52fae790a8d20",
+    "commons_page_sha256": "7a818d9bfe7d1e6fad9ab637fb8c56a0a91aed809bb325e29b1105f6669291be",
+    "source_verified": true,
+    "visual_scope": "Врста наведена на Commons извору; фотографија упоређена са преузетом копијом. Фотографија није доказ налаза на Рајцу."
   },
-  {
-    "slug": "myotis-nattereri",
+  "myotis-nattereri": {
+    "photo": "assets/images/myotis-nattereri-detail.webp",
+    "species": "Myotis nattereri",
     "name": "Ресасти вечерњак",
-    "latin": "Myotis nattereri Kuhl, 1817",
-    "image": "assets/images/myotis-nattereri.webp",
-    "captions": []
+    "author": "Gilles San Martin from Namur, Belgium",
+    "license": "CC BY-SA 2.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/2.0/",
+    "commons_url": "https://commons.wikimedia.org/wiki/File:Myotis_nattereri_(2862347369).jpg",
+    "credit": "Фото: Gilles San Martin from Namur, Belgium / Wikimedia Commons, CC BY-SA 2.0 — прилагођена величина, WebP",
+    "source_image_sha256": "88898adeaed93deeaeb7df52e04af1d665c6725325397f6910d8cb31d1ac6245",
+    "commons_page_sha256": "a53069c8f7a764281d975a4e4c1e963592010084ea00825650766c7cb7264fa9",
+    "source_verified": true,
+    "visual_scope": "Врста наведена на Commons извору; фотографија упоређена са преузетом копијом. Фотографија није доказ налаза на Рајцу."
   },
-  {
-    "slug": "nannospalax-leucodon",
+  "nannospalax-leucodon": {
+    "photo": "assets/images/nannospalax-leucodon.webp",
+    "species": "Nannospalax leucodon",
     "name": "Слепо куче",
-    "latin": "Nannospalax leucodon",
-    "image": "assets/images/nannospalax-leucodon.webp",
-    "captions": [
-      "Слепо куче — снимак из природног станишта. © Wikimedia Commons CC BY-SA 4.0"
-    ]
+    "author": "Lajos.rozsa",
+    "license": "CC BY-SA 3.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+    "commons_url": "https://commons.wikimedia.org/wiki/File:Nannospalax_leucodon.jpg",
+    "credit": "Фото: Lajos.rozsa / Wikimedia Commons, CC BY-SA 3.0 — прилагођена величина, WebP",
+    "source_image_sha256": "0984d8c4dc73a3f7ab73efda4e2d1094fbffa81f3ecfa5b15b2c9832b07ce839",
+    "commons_page_sha256": "b866ccca5e8e674ad81912d4b3a0b708932c20da6ff14c8d3e3ac5ed07866b3e",
+    "source_verified": true,
+    "visual_scope": "Врста наведена на Commons извору; фотографија упоређена са преузетом копијом. Фотографија није доказ налаза на Рајцу."
   },
-  {
-    "slug": "neomys-fodiens",
+  "neomys-fodiens": {
+    "photo": "assets/images/neomys-fodiens.webp",
+    "species": "Neomys fodiens",
     "name": "Водена ровчица",
-    "latin": "Neomys fodiens",
-    "image": "assets/images/neomys-fodiens.webp",
-    "captions": [
-      "Водена ровчица (Neomys fodiens) — природно станиште. © Wikimedia Commons CC BY-SA 4.0",
-      "Neomys fodiens — карактеристично: кил длаке на репу · CC BY-SA"
-    ]
+    "author": "Accipiter (R. Altenkamp, Berlin)",
+    "license": "CC BY-SA 3.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+    "commons_url": "https://commons.wikimedia.org/wiki/File:Neomys_fodiens_TF_090829.jpg",
+    "credit": "Фото: Accipiter (R. Altenkamp, Berlin) / Wikimedia Commons, CC BY-SA 3.0 — прилагођена величина, WebP",
+    "source_image_sha256": "93da0891c820568543c9acbc34f32771de9bbbd4a1df70bff3a24d55cd752b09",
+    "commons_page_sha256": "b5c7385b243924dbf356ec545f2bd91d853f71fd012f69d6e1a40a2754c50966",
+    "source_verified": true,
+    "visual_scope": "Врста наведена на Commons извору; фотографија упоређена са преузетом копијом. Фотографија није доказ налаза на Рајцу."
   },
-  {
-    "slug": "nyctalus-noctula",
+  "nyctalus-noctula": {
+    "photo": "assets/images/nyctalus-noctula-detail.webp",
+    "species": "Nyctalus noctula",
     "name": "Средњи ноћник",
-    "latin": "Nyctalus noctula Schreber, 1774",
-    "image": "assets/images/nyctalus-noctula.webp",
-    "captions": []
+    "author": "Mnolf",
+    "license": "CC BY-SA 3.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+    "commons_url": "https://commons.wikimedia.org/wiki/File:Nyctalus_noctula.jpg",
+    "credit": "Фото: Mnolf / Wikimedia Commons, CC BY-SA 3.0 — прилагођена величина, WebP",
+    "source_image_sha256": "213c9b390f7f5eee922d65b04521526d6adb0bf74c78c40189e87fc14d58fc8d",
+    "commons_page_sha256": "f3b74e9f2a3732c2a8b9e11e404de651893354a9a4581cef3046ce08bae2137e",
+    "source_verified": true,
+    "visual_scope": "Врста наведена на Commons извору; фотографија упоређена са преузетом копијом. Фотографија није доказ налаза на Рајцу."
   },
-  {
-    "slug": "pipistrellus-pipistrellus",
+  "pipistrellus-pipistrellus": {
+    "photo": "assets/images/pipistrellus-pipistrellus-detail.webp",
+    "species": "Pipistrellus pipistrellus",
     "name": "Патуљасти слепи мишић",
-    "latin": "Pipistrellus pipistrellus Schreber, 1774",
-    "image": "assets/images/pipistrellus-pipistrellus.webp",
-    "captions": []
+    "author": "Gilles San Martin from Namur, Belgium",
+    "license": "CC BY-SA 2.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/2.0/",
+    "commons_url": "https://commons.wikimedia.org/wiki/File:Pipistrellus_pipistrellus_(5933130195).jpg",
+    "credit": "Фото: Gilles San Martin from Namur, Belgium / Wikimedia Commons, CC BY-SA 2.0 — прилагођена величина, WebP",
+    "source_image_sha256": "c5d12e09d09da0adc40b7ac2fd2e6a6209026d15ed44b9bf7d548b0dfb36ab33",
+    "commons_page_sha256": "3b165c24c84c5e3f1c1b1e0d0b64fd43ba8e1fe8b9601143ff1215b6dff488cc",
+    "source_verified": true,
+    "visual_scope": "Врста наведена на Commons извору; фотографија упоређена са преузетом копијом. Фотографија није доказ налаза на Рајцу."
   },
-  {
-    "slug": "plecotus-auritus",
+  "plecotus-auritus": {
+    "photo": "assets/images/plecotus-auritus-detail.webp",
+    "species": "Plecotus auritus",
     "name": "Смеђи дугоухи љиљак",
-    "latin": "Plecotus auritus Linnaeus, 1758",
-    "image": "assets/images/plecotus-auritus.webp",
-    "captions": []
+    "author": "Evelyn Simak",
+    "license": "CC BY-SA 2.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/2.0/",
+    "commons_url": "https://commons.wikimedia.org/wiki/File:Plecotus_auritus01.jpg",
+    "credit": "Фото: Evelyn Simak / Wikimedia Commons, CC BY-SA 2.0 — прилагођена величина, WebP",
+    "source_image_sha256": "0b780156864ea8a0e758a2742ab4adebedc6124a0d74b936b4eb2526c38f7f04",
+    "commons_page_sha256": "3537bf3675fba3a7148a7293f39d5d082d4371de3b415cdcd7e11300cf21b9b7",
+    "source_verified": true,
+    "visual_scope": "Врста наведена на Commons извору; фотографија упоређена са преузетом копијом. Фотографија није доказ налаза на Рајцу."
   },
-  {
-    "slug": "plecotus-austriacus",
+  "plecotus-austriacus": {
+    "photo": "assets/images/plecotus-austriacus-detail.webp",
+    "species": "Plecotus austriacus",
     "name": "Сиви дугоухи љиљак",
-    "latin": "Plecotus austriacus J. B. Fischer, 1829",
-    "image": "assets/images/plecotus-austriacus.webp",
-    "captions": []
+    "author": "Andrei Sakhno",
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "commons_url": "https://commons.wikimedia.org/wiki/File:Plecotus_austriacus_(cropped).jpg",
+    "credit": "Фото: Andrei Sakhno / Wikimedia Commons, CC BY-SA 4.0 — прилагођена величина, WebP",
+    "source_image_sha256": "ea8079c76d36d6b15fcbdf430aa84d0c2ed6c1b966e2d79f10a4587b04399663",
+    "commons_page_sha256": "8fc02c3fc5311cdfbfe2bd7ebc5e4466b9adfe8c25ac8706c1be3d79c3b32b3d",
+    "source_verified": true,
+    "visual_scope": "Врста наведена на Commons извору; фотографија упоређена са преузетом копијом. Фотографија није доказ налаза на Рајцу."
   },
-  {
-    "slug": "rhinolophus-blasii",
+  "rhinolophus-blasii": {
+    "photo": "assets/images/rhinolophus-blasii-detail.webp",
+    "species": "Rhinolophus blasii",
     "name": "Средоземни потковичар",
-    "latin": "Rhinolophus blasii Peters, 1866",
-    "image": "assets/images/rhinolophus-blasii.webp",
-    "captions": []
+    "author": "Sylvain Eichhorn",
+    "license": "CC BY 4.0",
+    "license_url": "https://creativecommons.org/licenses/by/4.0/",
+    "commons_url": "https://commons.wikimedia.org/wiki/File:Rhinolophus_blasii.jpg",
+    "credit": "Фото: Sylvain Eichhorn / Wikimedia Commons, CC BY 4.0 — прилагођена величина, WebP",
+    "source_image_sha256": "7afecf606c22bbcb9c96a86c8b938ab62d7532bdc3ce6030386998d22478d695",
+    "commons_page_sha256": "fcf38fcdb68a794492e05b2caf12030ff47fe22c72c29e10f53d17fcbc1d7d51",
+    "source_verified": true,
+    "visual_scope": "Врста наведена на Commons извору; фотографија упоређена са преузетом копијом. Фотографија није доказ налаза на Рајцу."
   },
-  {
-    "slug": "rhinolophus-euryale",
+  "rhinolophus-euryale": {
+    "photo": "assets/images/rhinolophus-euryale-detail.webp",
+    "species": "Rhinolophus euryale",
     "name": "Јужни потковичар",
-    "latin": "Rhinolophus euryale Blasius, 1853",
-    "image": "assets/images/rhinolophus-euryale.webp",
-    "captions": []
+    "author": "Carlosblh",
+    "license": "CC BY 3.0",
+    "license_url": "https://creativecommons.org/licenses/by/3.0/",
+    "commons_url": "https://commons.wikimedia.org/wiki/File:Rhinolophus_euryale-cropped.jpg",
+    "credit": "Фото: Carlosblh / Wikimedia Commons, CC BY 3.0 — прилагођена величина, WebP",
+    "source_image_sha256": "7f81537dc4622e6b89f0a22a2c4d4e409b7841c192166d8bc82d550c01ec6d7a",
+    "commons_page_sha256": "f8bae1a67fa615767c018e1571f84a4139d1800d279a580105414a36e55e5156",
+    "source_verified": true,
+    "visual_scope": "Врста наведена на Commons извору; фотографија упоређена са преузетом копијом. Фотографија није доказ налаза на Рајцу."
   },
-  {
-    "slug": "rhinolophus-ferrumequinum",
+  "rhinolophus-ferrumequinum": {
+    "photo": "assets/images/rhinolophus-ferrumequinum.webp",
+    "species": "Rhinolophus ferrumequinum",
     "name": "Велики потковичар",
-    "latin": "Rhinolophus ferrumequinum Schreber, 1774",
-    "image": "assets/images/rhinolophus-ferrumequinum.webp",
-    "captions": []
+    "author": "Musa geçit",
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "commons_url": "https://commons.wikimedia.org/wiki/File:Rhinolophus_ferrumequinum.jpg",
+    "credit": "Фото: Musa geçit / Wikimedia Commons, CC BY-SA 4.0 — прилагођена величина, WebP",
+    "source_image_sha256": "dc531f01d961d37863236ef605e066465e0fb9bd08cd399e5802a19169d8df0f",
+    "commons_page_sha256": "36cedf44dd44c175fa1bdcbd8a1e70d43403b4fd333abff1e0c13d5c2c7a47bc",
+    "source_verified": true,
+    "visual_scope": "Врста наведена на Commons извору; фотографија упоређена са преузетом копијом. Фотографија није доказ налаза на Рајцу."
   },
-  {
-    "slug": "rhinolophus-hipposideros",
+  "rhinolophus-hipposideros": {
+    "photo": "assets/images/rhinolophus-hipposideros.webp",
+    "species": "Rhinolophus hipposideros",
     "name": "Мали потковичар",
-    "latin": "Rhinolophus hipposideros Bechstein, 1800",
-    "image": "assets/images/rhinolophus-hipposideros.webp",
-    "captions": []
+    "author": "Qgroom",
+    "license": "CC BY 1.0",
+    "license_url": "https://creativecommons.org/licenses/by/1.0/",
+    "commons_url": "https://commons.wikimedia.org/wiki/File:Rhinolophus_hipposideros.jpg",
+    "credit": "Фото: Qgroom / Wikimedia Commons, CC BY 1.0 — прилагођена величина, WebP",
+    "source_image_sha256": "a6874878cf7826dd9c6b17714a13ad5056d7606cd2b7279e84a633b9a7287d6c",
+    "commons_page_sha256": "1f75b413bf433bf2c48b7eb4f5b64e5cbae0d2652e7442b493738d94261d4d46",
+    "source_verified": true,
+    "visual_scope": "Врста наведена на Commons извору; фотографија упоређена са преузетом копијом. Фотографија није доказ налаза на Рајцу."
   },
-  {
-    "slug": "sciurus-vulgaris",
+  "sciurus-vulgaris": {
+    "photo": "assets/images/sciurus-vulgaris.webp",
+    "species": "Sciurus vulgaris",
     "name": "Веверица",
-    "latin": "Sciurus vulgaris",
-    "image": "assets/images/sciurus-vulgaris.webp",
-    "captions": [
-      "Веверица — снимак из природног станишта. © Wikimedia Commons CC BY-SA 4.0"
-    ]
+    "author": "Nemanja Časar",
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "commons_url": "https://commons.wikimedia.org/wiki/File:Evropska_veverica_(Sciurus_vulgaris),_Eurasian_red_squirrel.jpg",
+    "credit": "Фото: Nemanja Časar / Wikimedia Commons, CC BY-SA 4.0 — прилагођена величина, WebP",
+    "source_image_sha256": "68502d8f183d895214aa003ddc3cd15ec6f39ec9498ef1a71e51c322a33583e6",
+    "commons_page_sha256": "29e333c838e0dc8916eb32e403fa047025d47660d76509e59aede607ac0bf6b4",
+    "source_verified": true,
+    "visual_scope": "Врста наведена на Commons извору; фотографија упоређена са преузетом копијом. Фотографија није доказ налаза на Рајцу."
   },
-  {
-    "slug": "sorex-araneus",
+  "sorex-araneus": {
+    "photo": "assets/images/sorex-araneus.webp",
+    "species": "Sorex araneus",
     "name": "Шумска ровчица",
-    "latin": "Sorex araneus (Linnaeus, 1758)",
-    "image": "assets/images/sorex-araneus.webp",
-    "captions": [
-      "Шумска ровчица (Sorex araneus (Linnaeus, 1758)) — природно станиште. © Wikimedia Commons CC BY-SA 4.0",
-      "Шумска ровчица — дугачка шиљаста њушка, ситне очи, карактеристичан мирис · CC BY-SA"
-    ]
+    "author": "Emőke Dénes",
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "commons_url": "https://commons.wikimedia.org/wiki/File:E_-_Sorex_araneus.jpg",
+    "credit": "Фото: Emőke Dénes / Wikimedia Commons, CC BY-SA 4.0 — прилагођена величина, WebP",
+    "source_image_sha256": "0a395cf67174beabd8fd52dad5243f8968bafdc69befaa199e0fd7ee235c4215",
+    "commons_page_sha256": "18180ac796183bb968484231044918c412ce8e250afa51e5d9677f34f7be8133",
+    "source_verified": true,
+    "visual_scope": "Врста наведена на Commons извору; фотографија упоређена са преузетом копијом. Фотографија није доказ налаза на Рајцу."
   },
-  {
-    "slug": "sorex-minutus",
+  "sorex-minutus": {
+    "photo": "assets/images/sorex-minutus.webp",
+    "species": "Sorex minutus",
     "name": "Мала ровчица",
-    "latin": "Sorex minutus",
-    "image": "assets/images/sorex-minutus.webp",
-    "captions": [
-      "Мала ровчица (Sorex minutus) — природно станиште. © Wikimedia Commons CC BY-SA 4.0",
-      "Sorex minutus — карактеристично дугачак реп · CC BY-SA"
-    ]
+    "author": "John Cummings",
+    "license": "CC BY-SA 3.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+    "commons_url": "https://commons.wikimedia.org/wiki/File:Eurasian_pygmy_shrew_(Sorex_minutus),_Natural_History_Museum,_London,_Mammals_Gallery.JPG",
+    "credit": "Фото: John Cummings / Wikimedia Commons, CC BY-SA 3.0 — прилагођена величина, WebP",
+    "source_image_sha256": "79433e3a6b06281d67816102ddcde07376b9bdc2116596f70b73d30e67bbc528",
+    "commons_page_sha256": "869ffaf95b89909d761e68a2e79fb81cae20e7d5c8193ecbe0e4fecce4fd598e",
+    "source_verified": true,
+    "visual_scope": "Врста наведена на Commons извору; фотографија упоређена са преузетом копијом. Фотографија није доказ налаза на Рајцу."
   },
-  {
-    "slug": "sus-scrofa",
+  "sus-scrofa": {
+    "photo": "assets/images/sus-scrofa.webp",
+    "species": "Sus scrofa",
     "name": "Дивља свиња",
-    "latin": "Sus scrofa Linnaeus, 1758",
-    "image": "assets/images/sus-scrofa.webp",
-    "captions": [
-      "Дивља свиња (Sus scrofa) — одрасла јединка у шумском станишту. © Wikimedia Commons CC BY-SA 4.0",
-      "Извор звука: Wikimedia Commons — File:Boar.Grwls(1).ogg.",
-      "Детаљ главе — ружица са ноздрвама и клице (кутњаци) · CC BY-SA"
-    ]
+    "author": "Diego Delso",
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "commons_url": "https://commons.wikimedia.org/wiki/File:Jabal%C3%AD_(Sus_scrofa),_monte_Pf%C3%A4nder,_Bregenz,_Austria,_2022-10-23,_DD_12.jpg",
+    "credit": "Фото: Diego Delso / Wikimedia Commons, CC BY-SA 4.0 — прилагођена величина, WebP",
+    "source_image_sha256": "fcdcc27d54ef6d40cde7fed436f937aa3b54efbd6c10fa55550fc0791584b796",
+    "commons_page_sha256": "9a69a0f532a443dcf264b14e06a723eb0032ab682d8335907451490e4100e5cc",
+    "source_verified": true,
+    "visual_scope": "Врста наведена на Commons извору; фотографија упоређена са преузетом копијом. Фотографија није доказ налаза на Рајцу."
   },
-  {
-    "slug": "talpa-europaea",
+  "talpa-europaea": {
+    "photo": "assets/images/talpa-europaea.webp",
+    "species": "Talpa europaea",
     "name": "Кртица",
-    "latin": "Talpa europaea (Linnaeus, 1758)",
-    "image": "assets/images/talpa-europaea.webp",
-    "captions": [
-      "Кртица (Talpa europaea (Linnaeus, 1758)) — природно станиште. © Wikimedia Commons CC BY-SA 4.0",
-      "Кртица — лопатасте предње шапе, баршунаста длака, без функционалних очију · CC BY-SA"
-    ]
+    "author": "Luc hoogenstein",
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "commons_url": "https://commons.wikimedia.org/wiki/File:Talpa_europaea,_Common_Mole,_Mol_04.jpg",
+    "credit": "Фото: Luc hoogenstein / Wikimedia Commons, CC BY-SA 4.0 — прилагођена величина, WebP",
+    "source_image_sha256": "70ee9e4286986d986b6e76a1f5aae84b7e8c2664f9e53c29f6a0619c754683db",
+    "commons_page_sha256": "94d686449421e86cfc1cef3bdb51d25a155bd1b1afa3094913d4d578d735b962",
+    "source_verified": true,
+    "visual_scope": "Врста наведена на Commons извору; фотографија упоређена са преузетом копијом. Фотографија није доказ налаза на Рајцу."
   },
-  {
-    "slug": "ursus-arctos",
+  "ursus-arctos": {
+    "photo": "assets/images/ursus-arctos.webp",
+    "species": "Ursus arctos",
     "name": "Мрки медвед",
-    "latin": "Ursus arctos",
-    "image": "assets/images/ursus-arctos.webp",
-    "captions": [
-      "Мрки медвед (Ursus arctos) — природно станиште. © Wikimedia Commons CC BY-SA 4.0",
-      "Мрки медвед — карактеристична грба мишића на гребену, велика шапа · CC BY-SA"
-    ]
+    "author": "Charles J. Sharp",
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "commons_url": "https://commons.wikimedia.org/wiki/File:Eurasian_brown_bear_(Ursus_arctos_arctos)_female_5.jpg",
+    "credit": "Фото: Charles J. Sharp / Wikimedia Commons, CC BY-SA 4.0 — прилагођена величина, WebP",
+    "source_image_sha256": "2099d1a19f0db1ac6b4238b4fe18d4d3abca0e021f98b2fc87af769dfa0adc02",
+    "commons_page_sha256": "13ae4e63b1a6faae828ce3d92b49486d9d505a4957ce1a993e512ef30c944964",
+    "source_verified": true,
+    "visual_scope": "Врста наведена на Commons извору; фотографија упоређена са преузетом копијом. Фотографија није доказ налаза на Рајцу."
   },
-  {
-    "slug": "vulpes-vulpes",
+  "vulpes-vulpes": {
+    "photo": "assets/images/vulpes-vulpes.webp",
+    "species": "Vulpes vulpes",
     "name": "Лисица",
-    "latin": "Vulpes vulpes (Linnaeus, 1758)",
-    "image": "assets/images/vulpes-vulpes.webp",
-    "captions": [
-      "Лисица (Vulpes vulpes) — одрасла јединка у природном станишту. © Wikimedia Commons CC BY-SA",
-      "Извор звука: Wikimedia Commons / British Library — Red Fox (Vulpes vulpes), CC BY-SA 4.0.",
-      "Детаљ главе — шиљаста њушка и вертикалне зенице · CC BY-SA",
-      "Отисак шапе лисице у меком тлу — карактеристична елипсаста форма са видљивим ноктивима · CC BY-SA"
-    ]
+    "author": "Charles J. Sharp",
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "commons_url": "https://commons.wikimedia.org/wiki/File:Red_fox_(Vulpes_vulpes_crucigera)_Skalnate_Pleso.jpg",
+    "credit": "Фото: Charles J. Sharp / Wikimedia Commons, CC BY-SA 4.0 — прилагођена величина, WebP",
+    "source_image_sha256": "7754368793f33f80806f53940b7ecd0b89a27a0f67ee51ca1847c245f664f2c8",
+    "commons_page_sha256": "0e232b45fb5baf94dad198ba0abb47a643ac7adbcfefe5e03e1522c82caad500",
+    "source_verified": true,
+    "visual_scope": "Врста наведена на Commons извору; фотографија упоређена са преузетом копијом. Фотографија није доказ налаза на Рајцу."
+  },
+  "hero": {
+    "photo": "assets/images/hero-sisari-roe-deer.webp",
+    "species": "Capreolus capreolus",
+    "name": "Срна — насловна фотографија",
+    "author": "Clément Bardot",
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "commons_url": "https://commons.wikimedia.org/wiki/File:Roe_deer_in_woodland,_France.jpg",
+    "credit": "Фото: Clément Bardot / Wikimedia Commons, CC BY-SA 4.0 — исечак, WebP",
+    "source_image_sha256": "f2dcdbef73f17485b3e252c4a89668c6ba8827341b12cb5aa9bc8917b731e7f2",
+    "commons_page_sha256": "756a5fb50066eb8ca8cddf1cc3cb47b12c2e09275a1c602cb97ba30b8c7dfaab",
+    "source_verified": true,
+    "visual_scope": "Постојећи исечак визуелно одговара Commons оригиналу; фотографија није снимљена на Рајцу."
   }
-]
+}

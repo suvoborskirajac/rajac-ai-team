@@ -19,37 +19,31 @@ if ($origin !== '' && !preg_match('~^https?://(www\.)?piorajac\.rs$~i', $origin)
     respond(403, false, 'Захтев није послат са дозвољене странице.');
 }
 
-if (trim((string)($_POST['website'] ?? '')) !== '') {
+$honeypot = $_POST['website'] ?? '';
+if (!is_string($honeypot) || trim($honeypot) !== '') {
     respond(200, true, 'Хвала. Порука је примљена.');
 }
 
-$ip = preg_replace('/[^a-f0-9:.\-]/i', '', (string)($_SERVER['REMOTE_ADDR'] ?? 'unknown'));
-$rateFile = sys_get_temp_dir() . '/pio-rajac-sisari-' . sha1($ip) . '.rate';
-$now = time();
-$previous = is_file($rateFile) ? (int)file_get_contents($rateFile) : 0;
-if ($previous > 0 && ($now - $previous) < 45) {
-    respond(429, false, 'Сачекајте мало пре поновног слања.');
-}
-@file_put_contents($rateFile, (string)$now, LOCK_EX);
-
 function field(string $name, int $max): string {
-    $value = trim((string)($_POST[$name] ?? ''));
+    $raw = $_POST[$name] ?? '';
+    if (!is_string($raw) || !mb_check_encoding($raw, 'UTF-8')) return '';
+    $value = trim($raw);
     $value = preg_replace('/\R/u', "\n", $value);
     return mb_substr($value, 0, $max, 'UTF-8');
 }
 
-$name = field('name', 120);
+$name = str_replace(["\r", "\n"], '', field('name', 120));
 $email = filter_var(field('email', 190), FILTER_VALIDATE_EMAIL) ?: '';
-$bird = field('bird', 180);
+$species = str_replace(["\r", "\n"], '', field('species', 180) ?: field('bird', 180));
 $latin = field('latin', 180);
 $page = filter_var(field('page', 700), FILTER_VALIDATE_URL) ?: '';
 $type = field('type', 100);
 $comment = field('comment', 6000);
 $correction = field('correction', 6000);
 $sources = field('sources', 4000);
-$consent = (string)($_POST['consent'] ?? '') === 'yes';
+$consent = ($_POST['consent'] ?? '') === 'yes';
 
-if ($name === '' || $email === '' || $bird === '' || $type === '' || $comment === '' || !$consent) {
+if ($name === '' || $email === '' || $species === '' || $type === '' || $comment === '' || !$consent) {
     respond(422, false, 'Попуните име, исправан мејл, врсту примедбе и опис, па потврдите слање.');
 }
 
@@ -66,7 +60,40 @@ if (!in_array($type, $allowedTypes, true)) {
     respond(422, false, 'Изабрана врста примедбе није исправна.');
 }
 
+$ip = (string)($_SERVER['REMOTE_ADDR'] ?? 'unknown');
+$rateDir = sys_get_temp_dir() . '/pio-rajac-sisari-' . sha1(__DIR__);
+if ((!is_dir($rateDir) && !@mkdir($rateDir, 0700) && !is_dir($rateDir)) || is_link($rateDir) || !is_dir($rateDir)) {
+    respond(503, false, 'Слање тренутно није доступно. Покушајте касније.');
+}
+if (function_exists('posix_geteuid') && fileowner($rateDir) !== posix_geteuid()) {
+    respond(503, false, 'Слање тренутно није доступно. Покушајте касније.');
+}
+$rateFile = $rateDir . '/' . sha1($ip) . '.rate';
+if (is_link($rateFile)) respond(503, false, 'Слање тренутно није доступно. Покушајте касније.');
+$rateHandle = @fopen($rateFile, 'c+');
+if ($rateHandle === false || !flock($rateHandle, LOCK_EX)) {
+    if (is_resource($rateHandle)) fclose($rateHandle);
+    respond(503, false, 'Слање тренутно није доступно. Покушајте касније.');
+}
+$now = time();
+$previous = (int)stream_get_contents($rateHandle);
+if ($previous > 0 && ($now - $previous) < 45) {
+    flock($rateHandle, LOCK_UN);
+    fclose($rateHandle);
+    respond(429, false, 'Сачекајте мало пре поновног слања.');
+}
+$rateValue = (string)$now;
+$rateSaved = ftruncate($rateHandle, 0) && rewind($rateHandle) && fwrite($rateHandle, $rateValue) === strlen($rateValue) && fflush($rateHandle);
+flock($rateHandle, LOCK_UN);
+fclose($rateHandle);
+if (!$rateSaved) respond(503, false, 'Слање тренутно није доступно. Покушајте касније.');
+
 $attachments = [];
+register_shutdown_function(static function () use (&$attachments): void {
+    foreach ($attachments as $attachment) {
+        if (is_file($attachment)) @unlink($attachment);
+    }
+});
 $allowedMime = [
     'image/jpeg' => 'jpg',
     'image/png' => 'png',
@@ -76,10 +103,24 @@ $allowedMime = [
 ];
 $totalSize = 0;
 
+if (!empty($_FILES['attachments']) && !is_array($_FILES['attachments']['name'] ?? null)) {
+    respond(422, false, 'Подаци о прилозима нису исправни.');
+}
 if (!empty($_FILES['attachments']) && is_array($_FILES['attachments']['name'] ?? null)) {
-    $count = min(count($_FILES['attachments']['name']), 3);
+    $count = count($_FILES['attachments']['name']);
+    if ($count > 3) respond(422, false, 'Можете послати највише три прилога.');
+    foreach (['name', 'error', 'tmp_name', 'size'] as $key) {
+        if (!isset($_FILES['attachments'][$key]) || !is_array($_FILES['attachments'][$key]) || count($_FILES['attachments'][$key]) !== $count) {
+            respond(422, false, 'Подаци о прилозима нису исправни.');
+        }
+    }
     $finfo = new finfo(FILEINFO_MIME_TYPE);
     for ($i = 0; $i < $count; $i++) {
+        foreach (['name', 'error', 'tmp_name', 'size'] as $key) {
+            if (!array_key_exists($i, $_FILES['attachments'][$key]) || !is_scalar($_FILES['attachments'][$key][$i])) {
+                respond(422, false, 'Подаци о прилозима нису исправни.');
+            }
+        }
         $error = (int)($_FILES['attachments']['error'][$i] ?? UPLOAD_ERR_NO_FILE);
         if ($error === UPLOAD_ERR_NO_FILE) {
             continue;
@@ -107,9 +148,9 @@ if (!empty($_FILES['attachments']) && is_array($_FILES['attachments']['name'] ??
     }
 }
 
-$subject = 'Примедба за сисара: ' . $bird;
+$subject = 'Примедба за сисара: ' . $species;
 $body = "НОВИ УРЕДНИЧКИ ДОПРИНОС\n\n"
-    . "Сисар: {$bird}\n"
+    . "Сисар: {$species}\n"
     . ($latin !== '' ? "Латински назив: {$latin}\n" : '')
     . ($page !== '' ? "Страница: {$page}\n" : '')
     . "Врста примедбе: {$type}\n\n"
@@ -136,7 +177,7 @@ if (function_exists('wp_mail')) {
         'sisari@piorajac.rs',
         $subject,
         $body,
-        ['Content-Type: text/plain; charset=UTF-8', 'Reply-To: ' . $name . ' <' . $email . '>'],
+        ['Content-Type: text/plain; charset=UTF-8', 'Reply-To: ' . $email],
         $attachments
     );
 } else {
@@ -161,7 +202,7 @@ if (function_exists('wp_mail')) {
             . chunk_split(base64_encode((string)file_get_contents($attachment))) . "\r\n";
     }
     $message .= '--' . $boundary . "--\r\n";
-    $sent = mail('sisari@piorajac.rs', '=?UTF-8?B?' . base64_encode($subject) . '?=', $message, implode("\r\n", $headers));
+    $sent = function_exists('mail') && mail('sisari@piorajac.rs', '=?UTF-8?B?' . base64_encode($subject) . '?=', $message, implode("\r\n", $headers));
 }
 
 foreach ($attachments as $attachment) {
