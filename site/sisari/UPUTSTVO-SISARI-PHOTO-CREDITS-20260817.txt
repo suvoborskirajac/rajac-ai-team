@@ -1,0 +1,31 @@
+PIO RAJAC — SISARI PHOTO CREDITS + HERO — 17.08.2026
+
+1) OVAJ ZIP raspakovati TAČNO u:
+   /home/piorajac/public_html/sisari/
+
+2) Zatim u browseru otvoriti:
+   https://piorajac.rs/sisari/install-sisari-photo-credits-20260817-a91f.php
+
+3) Kliknuti:
+   "Napravi backup i primeni izmene"
+
+Installer PRE BILO KAKVE IZMENE pravi backup u:
+   /home/piorajac/.site-editor-backups/sisari-photo-credits-YYYYMMDD-HHMMSS/
+
+4) Posle uspešne instalacije otvoriti:
+   https://piorajac.rs/sisari/
+   i uraditi Ctrl+F5.
+
+Sta patch radi:
+- uvodi kredit kao kod Ptica: skriven, prikaz posle ~1 s hovera;
+- taman tekst bez tamne trake/pozadine;
+- klik na kredit otvara originalnu stranicu fotografije;
+- kartice vrsta ostaju klikabilne ka profilu vrste;
+- ne koristi globalni object-fit: contain; standardne foto-okvire vraća na cover;
+- menja samo veliku HERO fotografiju na /sisari/, bez promene položaja naslova/teksta;
+- novi HERO: srna (Capreolus capreolus), Clément Bardot / Wikimedia Commons, CC BY-SA 4.0;
+- dodaje interni registar _interne-beleske/FOTOGRAFIJE_LICENCE.csv.
+
+Nakon provere mogu se obrisati:
+- install-sisari-photo-credits-20260817-a91f.php
+- _patch_sisari_photo_credits_20260817/

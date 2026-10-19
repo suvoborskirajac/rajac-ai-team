@@ -1,0 +1,445 @@
+[
+  {
+    "slug": "apodemus-agrarius",
+    "name": "Пругасти миш",
+    "latin": "Apodemus agrarius (Pallas, 1771)",
+    "image": "assets/images/apodemus-agrarius.webp",
+    "captions": [
+      "Пругасти миш (Apodemus agrarius (Pallas, 1771)) — природно станиште. © Wikimedia Commons CC BY-SA 4.0",
+      "Тамна пруга дуж кичме — поуздан знак разликовања, нема je ниjедна друга врста у Србиjи · CC BY-SA"
+    ]
+  },
+  {
+    "slug": "apodemus-flavicollis",
+    "name": "Жутогрли миш",
+    "latin": "Apodemus flavicollis (Melchior, 1834)",
+    "image": "assets/images/apodemus-flavicollis.webp",
+    "captions": [
+      "Жутогрли миш (Apodemus flavicollis (Melchior, 1834)) — природно станиште. © Wikimedia Commons CC BY-SA 4.0",
+      "Жута до наранџаста огрлица на грлу — jeдинствена особина ове врсте · CC BY-SA"
+    ]
+  },
+  {
+    "slug": "apodemus-sylvaticus",
+    "name": "Шумски миш",
+    "latin": "Apodemus sylvaticus (Linnaeus, 1758)",
+    "image": "assets/images/apodemus-sylvaticus.webp",
+    "captions": [
+      "Шумски миш (Apodemus sylvaticus (Linnaeus, 1758)) — природно станиште. © Wikimedia Commons CC BY-SA 4.0",
+      "Шумски миш — без жуте огрлице, нешто ситниjи · CC BY-SA"
+    ]
+  },
+  {
+    "slug": "barbastella-barbastellus",
+    "name": "Широкоухи љиљак",
+    "latin": "Barbastella barbastellus Schreber, 1774",
+    "image": "assets/images/barbastella-barbastellus.webp",
+    "captions": []
+  },
+  {
+    "slug": "canis-aureus",
+    "name": "Шакал",
+    "latin": "Canis aureus Linnaeus, 1758",
+    "image": "assets/images/canis-aureus.webp",
+    "captions": [
+      "Шакал (Canis aureus) — одрасла јединка. Сличи на мањег, танкијег вука са златастим тоном длаке. © Wikimedia Commons CC BY-SA 4.0",
+      "Детаљ главе — шиљасте уши и карактеристичан поглед · CC BY-SA",
+      "Извор звука: Wikimedia Commons — File:Jackal.ogg."
+    ]
+  },
+  {
+    "slug": "canis-lupus",
+    "name": "Вук",
+    "latin": "Canis lupus",
+    "image": "assets/images/canis-lupus.webp",
+    "captions": [
+      "Вук (Canis lupus) — природно станиште. © Wikimedia Commons CC BY-SA 4.0",
+      "Вук у природном станишту — длака сиво-смеђа до тавнија, карактеристична грађа · CC BY-SA"
+    ]
+  },
+  {
+    "slug": "capreolus-capreolus",
+    "name": "Срна",
+    "latin": "Capreolus capreolus (Linnaeus, 1758)",
+    "image": "assets/images/capreolus-capreolus.webp",
+    "captions": [
+      "Срна (Capreolus capreolus) — одрасла јединка на ливади и шумском рубу. © Wikimedia Commons CC BY-SA",
+      "Извор звука: Wikimedia Commons — File:Male roe deer growl.ogg.",
+      "Детаљ главе срне — велике уши и влажна, осетљива њушка · CC BY-SA"
+    ]
+  },
+  {
+    "slug": "crocidura-leucodon",
+    "name": "Пољска ровчица",
+    "latin": "Crocidura leucodon",
+    "image": "assets/images/crocidura-leucodon.webp",
+    "captions": [
+      "Пољска ровчица (Crocidura leucodon) — природно станиште. © Wikimedia Commons CC BY-SA 4.0",
+      "Crocidura leucodon — оштра граница боје на боковима · CC BY-SA"
+    ]
+  },
+  {
+    "slug": "crocidura-suaveolens",
+    "name": "Баштенска ровчица",
+    "latin": "Crocidura suaveolens",
+    "image": "assets/images/crocidura-suaveolens.webp",
+    "captions": [
+      "Баштенска ровчица (Crocidura suaveolens) — природно станиште. © Wikimedia Commons CC BY-SA 4.0",
+      "Crocidura suaveolens — кључна разлика: БЕЛИ зуби · CC BY-SA"
+    ]
+  },
+  {
+    "slug": "eptesicus-serotinus",
+    "name": "Ширококрили поноћњак",
+    "latin": "Eptesicus serotinus Schreber, 1774",
+    "image": "assets/images/eptesicus-serotinus.webp",
+    "captions": []
+  },
+  {
+    "slug": "erinaceus-roumanicus",
+    "name": "Јеж",
+    "latin": "Erinaceus roumanicus Barrett-Hamilton, 1900",
+    "image": "assets/images/erinaceus-roumanicus.webp",
+    "captions": [
+      "Јеж (Erinaceus roumanicus) — одрасла јединка у природном станишту. Карактеристичне бодљике на леђима и шиљаста njušка. © Wikimedia Commons CC BY-SA",
+      "Детаљ бодљика — кератинска структура · CC BY-SA",
+      "Отисак шапе јежа — карактеристичних 5 прстiju са дугим ноктивима · Wikimedia Commons CC BY-SA",
+      "Кућица за јежа у башти — дрвена конструкција са природним покривачем · Wikimedia Commons CC BY-SA"
+    ]
+  },
+  {
+    "slug": "felis-silvestris",
+    "name": "Дивља мачка",
+    "latin": "Felis silvestris Schreber, 1777",
+    "image": "assets/images/felis-silvestris.webp",
+    "captions": [
+      "Дивља мачка (Felis silvestris silvestris) — одрасла јединка. Запазити тупи, прстенасти реп са црним врхом — кључна разлика од домаће мачке. © Wikimedia Commons CC BY-SA 4.0",
+      "Снажна грађа и густа длака — видљиво крупнија и масивнија него домаћа мачка · CC BY-SA"
+    ]
+  },
+  {
+    "slug": "glis-glis",
+    "name": "Сиви пух",
+    "latin": "Glis glis",
+    "image": "assets/images/glis-glis.webp",
+    "captions": [
+      "Сиви пух — снимак из природног станишта. © Wikimedia Commons CC BY-SA 4.0"
+    ]
+  },
+  {
+    "slug": "lepus-europaeus",
+    "name": "Дивљи зец",
+    "latin": "Lepus europaeus",
+    "image": "assets/images/lepus-europaeus.webp",
+    "captions": []
+  },
+  {
+    "slug": "lutra-lutra",
+    "name": "Видра",
+    "latin": "Lutra lutra",
+    "image": "assets/images/lutra-lutra.webp",
+    "captions": [
+      "Видра (Lutra lutra) — природно станиште. © Wikimedia Commons CC BY-SA 4.0",
+      "Видра — хидродинамично тело, пловне опне, вибрисе · CC BY-SA"
+    ]
+  },
+  {
+    "slug": "martes-foina",
+    "name": "Куна белица",
+    "latin": "Martes foina (Erxleben, 1777)",
+    "image": "assets/images/martes-foina.webp",
+    "captions": [
+      "Куна белица (Martes foina) — карактеристична бела пега на грлу, по којој је врста добила назив. © Wikimedia Commons CC BY-SA 4.0",
+      "Бела, неподељена грлна пега — поуздан знак идентификације · CC BY-SA"
+    ]
+  },
+  {
+    "slug": "martes-martes",
+    "name": "Куна златица",
+    "latin": "Martes martes (Linnaeus, 1758)",
+    "image": "assets/images/martes-martes.webp",
+    "captions": [
+      "Куна златица (Martes martes) — одрасла јединка са карактеристичном жутом или наранџастом пегом на грлу. © Wikimedia Commons CC BY-SA 4.0",
+      "Жута до наранџаста грлна пега — кључни знак разликовања · CC BY-SA"
+    ]
+  },
+  {
+    "slug": "meles-meles",
+    "name": "Јазавац",
+    "latin": "Meles meles (Linnaeus, 1758)",
+    "image": "assets/images/meles-meles.webp",
+    "captions": [
+      "Јазавац (Meles meles) — одрасла јединка са карактеристичним белим лицем и тамним пругама. © Wikimedia Commons CC BY-SA 4.0",
+      "Карактеристичне тамне пруге преко очију — јединствени знак препознавања · CC BY-SA"
+    ]
+  },
+  {
+    "slug": "microtus-arvalis",
+    "name": "Пољска волухарица",
+    "latin": "Microtus arvalis (Pallas, 1778)",
+    "image": "assets/images/microtus-arvalis.webp",
+    "captions": [
+      "Пољска волухарица (Microtus arvalis (Pallas, 1778)) — јединка у природном окружењу, без приказа хватања или замки. © Dieter TD / Wikimedia Commons, CC BY-SA 3.0",
+      "Пољска волухарица — фотографија јединке без замки, кавеза и манипулације · Wikimedia Commons"
+    ]
+  },
+  {
+    "slug": "microtus-subterraneus",
+    "name": "Подземна волухарица",
+    "latin": "Microtus subterraneus (de Sélys-Longchamps, 1836)",
+    "image": "assets/images/microtus-subterraneus.webp",
+    "captions": [
+      "Подземна волухарица (Microtus subterraneus (de Sélys-Longchamps, 1836)) — природно станиште. © Wikimedia Commons CC BY-SA 4.0",
+      "Подземна волухарица — мали реп, здепасто тело, скривена врста · CC BY-SA"
+    ]
+  },
+  {
+    "slug": "miniopterus-schreibersii",
+    "name": "Дугокрили љиљак",
+    "latin": "Miniopterus schreibersii Kuhl, 1817",
+    "image": "assets/images/miniopterus-schreibersii.webp",
+    "captions": []
+  },
+  {
+    "slug": "muscardinus-avellanarius",
+    "name": "Пух лешникар",
+    "latin": "Muscardinus avellanarius",
+    "image": "assets/images/muscardinus-avellanarius.webp",
+    "captions": [
+      "Пух лешникар — снимак из природног станишта. © Wikimedia Commons CC BY-SA 4.0"
+    ]
+  },
+  {
+    "slug": "mustela-nivalis",
+    "name": "Риђа ласица",
+    "latin": "Mustela nivalis Linnaeus, 1766",
+    "image": "assets/images/mustela-nivalis.webp",
+    "captions": [
+      "Риђа ласица (Mustela nivalis) — најмањи куновски предатор Европе. Риђе-смеђа горња страна, бела трбушна страна. © Wikimedia Commons CC BY-SA 3.0",
+      "Усправни став посматрања — карактеристично понашање кад детектује опасност · CC BY-SA"
+    ]
+  },
+  {
+    "slug": "mustela-putorius",
+    "name": "Мрки твор",
+    "latin": "Mustela putorius Linnaeus, 1758",
+    "image": "assets/images/mustela-putorius.webp",
+    "captions": [
+      "Мрки твор (Mustela putorius) — одрасла јединка. Бела маска лица и тамно тело — карактеристичан изглед. © Wikimedia Commons CC BY-SA 4.0",
+      "Карактеристична бела лицна маска са тамним стрипама · CC BY-SA"
+    ]
+  },
+  {
+    "slug": "myodes-glareolus",
+    "name": "Риђа волухарица",
+    "latin": "Myodes glareolus (Schreber, 1780)",
+    "image": "assets/images/myodes-glareolus.webp",
+    "captions": [
+      "Риђа волухарица (Myodes glareolus (Schreber, 1780)) — природно станиште. © Wikimedia Commons CC BY-SA 4.0",
+      "Риђе леђа, сиви трбух, кратак реп — лако препознатљива · CC BY-SA"
+    ]
+  },
+  {
+    "slug": "myotis-bechsteinii",
+    "name": "Дугоухи вечерњак",
+    "latin": "Myotis bechsteinii Kuhl, 1817",
+    "image": "assets/images/myotis-bechsteinii.webp",
+    "captions": []
+  },
+  {
+    "slug": "myotis-blythii",
+    "name": "Мали мишоухи вечерњак",
+    "latin": "Myotis blythii Tomes, 1857",
+    "image": "assets/images/myotis-blythii.webp",
+    "captions": []
+  },
+  {
+    "slug": "myotis-capaccinii",
+    "name": "Дугопрсти вечерњак",
+    "latin": "Myotis capaccinii Bonaparte, 1837",
+    "image": "assets/images/myotis-capaccinii.webp",
+    "captions": []
+  },
+  {
+    "slug": "myotis-daubentonii",
+    "name": "Водени вечерњак",
+    "latin": "Myotis daubentonii Kuhl, 1817",
+    "image": "assets/images/myotis-daubentonii.webp",
+    "captions": []
+  },
+  {
+    "slug": "myotis-emarginatus",
+    "name": "Шиљоухи вечерњак",
+    "latin": "Myotis emarginatus E. Geoffroy, 1806",
+    "image": "assets/images/myotis-emarginatus.webp",
+    "captions": []
+  },
+  {
+    "slug": "myotis-myotis",
+    "name": "Велики мишоухи вечерњак",
+    "latin": "Myotis myotis Borkhausen, 1797",
+    "image": "assets/images/myotis-myotis.webp",
+    "captions": []
+  },
+  {
+    "slug": "myotis-mystacinus",
+    "name": "Мали бркати вечерњак",
+    "latin": "Myotis mystacinus Kuhl, 1817",
+    "image": "assets/images/myotis-mystacinus.webp",
+    "captions": []
+  },
+  {
+    "slug": "myotis-nattereri",
+    "name": "Ресасти вечерњак",
+    "latin": "Myotis nattereri Kuhl, 1817",
+    "image": "assets/images/myotis-nattereri.webp",
+    "captions": []
+  },
+  {
+    "slug": "nannospalax-leucodon",
+    "name": "Слепо куче",
+    "latin": "Nannospalax leucodon",
+    "image": "assets/images/nannospalax-leucodon.webp",
+    "captions": [
+      "Слепо куче — снимак из природног станишта. © Wikimedia Commons CC BY-SA 4.0"
+    ]
+  },
+  {
+    "slug": "neomys-fodiens",
+    "name": "Водена ровчица",
+    "latin": "Neomys fodiens",
+    "image": "assets/images/neomys-fodiens.webp",
+    "captions": [
+      "Водена ровчица (Neomys fodiens) — природно станиште. © Wikimedia Commons CC BY-SA 4.0",
+      "Neomys fodiens — карактеристично: кил длаке на репу · CC BY-SA"
+    ]
+  },
+  {
+    "slug": "nyctalus-noctula",
+    "name": "Средњи ноћник",
+    "latin": "Nyctalus noctula Schreber, 1774",
+    "image": "assets/images/nyctalus-noctula.webp",
+    "captions": []
+  },
+  {
+    "slug": "pipistrellus-pipistrellus",
+    "name": "Патуљасти слепи мишић",
+    "latin": "Pipistrellus pipistrellus Schreber, 1774",
+    "image": "assets/images/pipistrellus-pipistrellus.webp",
+    "captions": []
+  },
+  {
+    "slug": "plecotus-auritus",
+    "name": "Смеђи дугоухи љиљак",
+    "latin": "Plecotus auritus Linnaeus, 1758",
+    "image": "assets/images/plecotus-auritus.webp",
+    "captions": []
+  },
+  {
+    "slug": "plecotus-austriacus",
+    "name": "Сиви дугоухи љиљак",
+    "latin": "Plecotus austriacus J. B. Fischer, 1829",
+    "image": "assets/images/plecotus-austriacus.webp",
+    "captions": []
+  },
+  {
+    "slug": "rhinolophus-blasii",
+    "name": "Средоземни потковичар",
+    "latin": "Rhinolophus blasii Peters, 1866",
+    "image": "assets/images/rhinolophus-blasii.webp",
+    "captions": []
+  },
+  {
+    "slug": "rhinolophus-euryale",
+    "name": "Јужни потковичар",
+    "latin": "Rhinolophus euryale Blasius, 1853",
+    "image": "assets/images/rhinolophus-euryale.webp",
+    "captions": []
+  },
+  {
+    "slug": "rhinolophus-ferrumequinum",
+    "name": "Велики потковичар",
+    "latin": "Rhinolophus ferrumequinum Schreber, 1774",
+    "image": "assets/images/rhinolophus-ferrumequinum.webp",
+    "captions": []
+  },
+  {
+    "slug": "rhinolophus-hipposideros",
+    "name": "Мали потковичар",
+    "latin": "Rhinolophus hipposideros Bechstein, 1800",
+    "image": "assets/images/rhinolophus-hipposideros.webp",
+    "captions": []
+  },
+  {
+    "slug": "sciurus-vulgaris",
+    "name": "Веверица",
+    "latin": "Sciurus vulgaris",
+    "image": "assets/images/sciurus-vulgaris.webp",
+    "captions": [
+      "Веверица — снимак из природног станишта. © Wikimedia Commons CC BY-SA 4.0"
+    ]
+  },
+  {
+    "slug": "sorex-araneus",
+    "name": "Шумска ровчица",
+    "latin": "Sorex araneus (Linnaeus, 1758)",
+    "image": "assets/images/sorex-araneus.webp",
+    "captions": [
+      "Шумска ровчица (Sorex araneus (Linnaeus, 1758)) — природно станиште. © Wikimedia Commons CC BY-SA 4.0",
+      "Шумска ровчица — дугачка шиљаста њушка, ситне очи, карактеристичан мирис · CC BY-SA"
+    ]
+  },
+  {
+    "slug": "sorex-minutus",
+    "name": "Мала ровчица",
+    "latin": "Sorex minutus",
+    "image": "assets/images/sorex-minutus.webp",
+    "captions": [
+      "Мала ровчица (Sorex minutus) — природно станиште. © Wikimedia Commons CC BY-SA 4.0",
+      "Sorex minutus — карактеристично дугачак реп · CC BY-SA"
+    ]
+  },
+  {
+    "slug": "sus-scrofa",
+    "name": "Дивља свиња",
+    "latin": "Sus scrofa Linnaeus, 1758",
+    "image": "assets/images/sus-scrofa.webp",
+    "captions": [
+      "Дивља свиња (Sus scrofa) — одрасла јединка у шумском станишту. © Wikimedia Commons CC BY-SA 4.0",
+      "Извор звука: Wikimedia Commons — File:Boar.Grwls(1).ogg.",
+      "Детаљ главе — ружица са ноздрвама и клице (кутњаци) · CC BY-SA"
+    ]
+  },
+  {
+    "slug": "talpa-europaea",
+    "name": "Кртица",
+    "latin": "Talpa europaea (Linnaeus, 1758)",
+    "image": "assets/images/talpa-europaea.webp",
+    "captions": [
+      "Кртица (Talpa europaea (Linnaeus, 1758)) — природно станиште. © Wikimedia Commons CC BY-SA 4.0",
+      "Кртица — лопатасте предње шапе, баршунаста длака, без функционалних очију · CC BY-SA"
+    ]
+  },
+  {
+    "slug": "ursus-arctos",
+    "name": "Мрки медвед",
+    "latin": "Ursus arctos",
+    "image": "assets/images/ursus-arctos.webp",
+    "captions": [
+      "Мрки медвед (Ursus arctos) — природно станиште. © Wikimedia Commons CC BY-SA 4.0",
+      "Мрки медвед — карактеристична грба мишића на гребену, велика шапа · CC BY-SA"
+    ]
+  },
+  {
+    "slug": "vulpes-vulpes",
+    "name": "Лисица",
+    "latin": "Vulpes vulpes (Linnaeus, 1758)",
+    "image": "assets/images/vulpes-vulpes.webp",
+    "captions": [
+      "Лисица (Vulpes vulpes) — одрасла јединка у природном станишту. © Wikimedia Commons CC BY-SA",
+      "Извор звука: Wikimedia Commons / British Library — Red Fox (Vulpes vulpes), CC BY-SA 4.0.",
+      "Детаљ главе — шиљаста њушка и вертикалне зенице · CC BY-SA",
+      "Отисак шапе лисице у меком тлу — карактеристична елипсаста форма са видљивим ноктивима · CC BY-SA"
+    ]
+  }
+]
