@@ -312,14 +312,14 @@
   },
   {
     "filename": "certhia-brachydactyla.jpg",
-    "species": "Краткопрсти пузавац",
-    "author": "",
-    "source": "",
-    "source_url": "",
-    "license": "",
-    "license_url": "",
+    "species": "Краткопрсти пузавац (Certhia brachydactyla)",
+    "author": "sébastien bertru",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Certhia_brachydactyla_IMG_0249.jpg",
+    "license": "CC BY-SA 2.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/2.0/",
     "page_slug": "certhia-brachydactyla",
-    "status": "потребна ручна провера"
+    "status": "проверено — Commons извор пронашао управљач 2026-10-19"
   },
   {
     "filename": "chloris-chloris-1.jpg",
@@ -433,14 +433,14 @@
   },
   {
     "filename": "coccothraustes-coccothraustes.jpg",
-    "species": "Батокљун",
-    "author": "",
-    "source": "",
-    "source_url": "",
-    "license": "",
-    "license_url": "",
+    "species": "Батокљун (Coccothraustes coccothraustes)",
+    "author": "Marek Szczepanek",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Coccothraustes_coccothraustes_1_(Marek_Szczepanek).jpg",
+    "license": "CC BY-SA 3.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
     "page_slug": "coccothraustes-coccothraustes",
-    "status": "потребна ручна провера"
+    "status": "проверено — Commons извор пронашао управљач 2026-10-19"
   },
   {
     "filename": "coracias-garrulus-2.jpg",
@@ -1172,14 +1172,14 @@
   },
   {
     "filename": "jynx-torquilla.jpg",
-    "species": "Вијоглав",
-    "author": "",
-    "source": "",
-    "source_url": "",
-    "license": "",
-    "license_url": "",
+    "species": "Вијоглав (Jynx torquilla)",
+    "author": "Ron Knight",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Eurasian_Wryneck_(Jynx_torquilla).jpg",
+    "license": "CC BY 2.0",
+    "license_url": "https://creativecommons.org/licenses/by/2.0/",
     "page_slug": "jynx-torquilla",
-    "status": "потребна ручна провера"
+    "status": "проверено — Commons извор пронашао управљач 2026-10-19"
   },
   {
     "filename": "kukavica-2.jpg",
@@ -1271,25 +1271,25 @@
   },
   {
     "filename": "lullula-arborea-2.jpg",
-    "species": "Шумска шева",
-    "author": "",
+    "species": "Шумска шева (Lullula arborea)",
+    "author": "Nikola Veljković",
     "source": "Wikimedia Commons",
-    "source_url": "https://commons.wikimedia.org/w/index.php?search=Lullula%20Arborea%202&title=Special%3AMediaSearch&type=image",
-    "license": "",
-    "license_url": "",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Mlade_šumske_ševe_(Lullula_arborea)_Woodlarks,_juvenile.jpg",
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
     "page_slug": "lullula-arborea",
-    "status": "потребна ручна провера"
+    "status": "проверено — Commons извор пронашао управљач 2026-10-19"
   },
   {
     "filename": "lullula-arborea-3.jpg",
-    "species": "Шумска шева",
-    "author": "",
-    "source": "",
-    "source_url": "",
-    "license": "",
-    "license_url": "",
+    "species": "Шумска шева (Lullula arborea)",
+    "author": "Frank Vassen",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Woodlark_(Lululla_arborea),_Serra_de_São_Mamede,_Portugal_(47658349692).jpg",
+    "license": "CC BY 2.0",
+    "license_url": "https://creativecommons.org/licenses/by/2.0/",
     "page_slug": "lullula-arborea",
-    "status": "потребна ручна провера"
+    "status": "проверено — Commons извор пронашао управљач 2026-10-19"
   },
   {
     "filename": "lullula-arborea-gallery-2-new.jpg",
@@ -1557,14 +1557,14 @@
   },
   {
     "filename": "oenanthe-oenanthe.jpg",
-    "species": "Белогуза",
-    "author": "",
-    "source": "",
-    "source_url": "",
-    "license": "",
-    "license_url": "",
+    "species": "Белогуза (Oenanthe oenanthe)",
+    "author": "Zeynel Cebeci",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Oenanthe_oenanthe_-_Northern_Wheatear_-_Kuyrukkakan_04.jpg",
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
     "page_slug": "oenanthe-oenanthe",
-    "status": "потребна ручна провера"
+    "status": "проверено — Commons извор пронашао управљач 2026-10-19"
   },
   {
     "filename": "orao-krstas-2.jpg",
@@ -1623,14 +1623,14 @@
   },
   {
     "filename": "oriolus-oriolus-2.jpg",
-    "species": "Вуга",
-    "author": "",
+    "species": "Вуга (Oriolus oriolus)",
+    "author": "Ron Knight",
     "source": "Wikimedia Commons",
-    "source_url": "https://commons.wikimedia.org/wiki/File:Rigogolo-(Oriolus_oriolus)_Lazio,_isola_di_Ventotene_(LT)_19.4.2024_(cropped).png",
-    "license": "",
-    "license_url": "",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Eurasian_Golden_Oriole_(Oriolus_oriolus)_(8079432364).jpg",
+    "license": "CC BY 2.0",
+    "license_url": "https://creativecommons.org/licenses/by/2.0/",
     "page_slug": "oriolus-oriolus",
-    "status": "потребна ручна провера"
+    "status": "проверено — Commons извор пронашао управљач 2026-10-19"
   },
   {
     "filename": "oriolus-oriolus-3.jpg",
@@ -2008,14 +2008,14 @@
   },
   {
     "filename": "prunella-modularis.jpg",
-    "species": "Сиви попић",
-    "author": "",
-    "source": "",
-    "source_url": "",
-    "license": "",
-    "license_url": "",
+    "species": "Сиви попић (Prunella modularis)",
+    "author": "Hobbyfotowiki",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:The_dunnock_(Prunella_modularis).jpg",
+    "license": "CC0 1.0",
+    "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
     "page_slug": "prunella-modularis",
-    "status": "потребна ручна провера"
+    "status": "проверено — Commons извор пронашао управљач 2026-10-19"
   },
   {
     "filename": "regulus-regulus-2.jpg",
@@ -2041,14 +2041,14 @@
   },
   {
     "filename": "regulus-regulus.jpg",
-    "species": "Краљић",
-    "author": "",
-    "source": "",
-    "source_url": "",
-    "license": "",
-    "license_url": "",
+    "species": "Краљић (Regulus regulus)",
+    "author": "Cj Hughson",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Regulus_regulus_1.jpg",
+    "license": "CC BY 2.0",
+    "license_url": "https://creativecommons.org/licenses/by/2.0/",
     "page_slug": "regulus-regulus",
-    "status": "потребна ручна провера"
+    "status": "проверено — Commons извор пронашао управљач 2026-10-19"
   },
   {
     "filename": "saxicola-rubicola-1.jpg",
@@ -2481,14 +2481,14 @@
   },
   {
     "filename": "troglodytes-troglodytes-3.jpg",
-    "species": "Царић",
-    "author": "",
-    "source": "",
-    "source_url": "",
-    "license": "",
-    "license_url": "",
+    "species": "Царић (Troglodytes troglodytes)",
+    "author": "Alexis Lours",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Eurasian_wren_(Troglodytes_troglodytes).jpg",
+    "license": "CC BY 4.0",
+    "license_url": "https://creativecommons.org/licenses/by/4.0/",
     "page_slug": "troglodytes-troglodytes",
-    "status": "потребна ручна провера — ранији изворни URL не припада овој фотографији; датотека сачувана"
+    "status": "проверено — Commons извор пронашао управљач 2026-10-19"
   },
   {
     "filename": "troglodytes-troglodytes-gallery-1-new.jpg",
@@ -2591,14 +2591,14 @@
   },
   {
     "filename": "turdus-philomelos.jpg",
-    "species": "Turdus philomelos",
-    "author": "",
+    "species": "Дрозд певач (Turdus philomelos)",
+    "author": "Dion Art",
     "source": "Wikimedia Commons",
-    "source_url": "https://commons.wikimedia.org/wiki/File:Pevchij_drozd_na_pen'ke_(Turdus_philomelos),_Bittsevskij_les.jpg",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Певчий_дрозд_на_пеньке_(Turdus_philomelos),_Битцевский_лес.jpg",
     "license": "CC BY-SA 4.0",
-    "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
     "page_slug": "turdus-philomelos",
-    "status": "делимично проверено — недостаје аутор"
+    "status": "проверено — Commons извор пронашао управљач 2026-10-19"
   },
   {
     "filename": "turdus-viscivorus-1.jpg",
@@ -2946,5 +2946,27 @@
     "license_url": "https://creativecommons.org/licenses/by-sa/2.0/",
     "page_slug": "veliki-detlic",
     "status": "проверено"
+  },
+  {
+    "filename": "turdus-merula-hero-fix-20260817.jpg",
+    "species": "Обични кос (Turdus merula)",
+    "author": "Andreas Trepte",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Common_Blackbird.jpg",
+    "license": "CC BY-SA 2.5",
+    "license_url": "https://creativecommons.org/licenses/by-sa/2.5/",
+    "page_slug": "turdus-merula",
+    "status": "проверено — Commons извор пронашао управљач 2026-10-19"
+  },
+  {
+    "filename": "coracias-garrulus-hero-fix-20260817.jpg",
+    "species": "Модроврана (Coracias garrulus)",
+    "author": "Zeynel Cebeci",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Coracias_garrulus_-_European_roller_02.jpg",
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "page_slug": "coracias-garrulus",
+    "status": "проверено — Commons извор пронашао управљач 2026-10-19"
   }
 ]
