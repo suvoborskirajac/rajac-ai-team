@@ -1802,7 +1802,7 @@
     "species": "Звиждак (Phylloscopus trochilus)",
     "author": "Steve Garvie from Dunfermline, Fife, Scotland",
     "source": "Wikimedia Commons",
-    "source_url": "https://upload.wikimedia.org/wikipedia/commons/e/e5/Flickr_-_Rainbirder_-_Willow_Warbler_%28Phylloscopus_trochilus%29.jpg",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Flickr_-_Rainbirder_-_Willow_Warbler_(Phylloscopus_trochilus).jpg",
     "license": "CC BY-SA 2.0",
     "license_url": "https://creativecommons.org/licenses/by-sa/2.0/",
     "page_slug": "phylloscopus-trochilus",
@@ -2240,13 +2240,13 @@
   {
     "filename": "streptopelia-decaocto.jpg",
     "species": "Streptopelia decaocto",
-    "author": "",
+    "author": "stevem4560",
     "source": "Wikimedia Commons",
     "source_url": "https://commons.wikimedia.org/wiki/File:2022-04-06_Streptopelia_decaocto,_Plovdiv,_Bulgaria_1.jpg",
-    "license": "CC BY-SA 4.0",
-    "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "license": "CC BY 4.0",
+    "license_url": "https://creativecommons.org/licenses/by/4.0/",
     "page_slug": "streptopelia-decaocto",
-    "status": "делимично проверено — недостаје аутор"
+    "status": "проверено — визуелно поклапање са извором 2026-10-19"
   },
   {
     "filename": "streptopelia-turtur-2.jpg",
@@ -2482,20 +2482,20 @@
   {
     "filename": "troglodytes-troglodytes-3.jpg",
     "species": "Царић",
-    "author": "Charles J. Sharp",
-    "source": "Wikimedia Commons",
-    "source_url": "https://commons.wikimedia.org/wiki/File:Common_chimpanzee_%28Pan_troglodytes_schweinfurthii%29_feeding.jpg",
-    "license": "CC BY-SA 4.0",
-    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "author": "",
+    "source": "",
+    "source_url": "",
+    "license": "",
+    "license_url": "",
     "page_slug": "troglodytes-troglodytes",
-    "status": "проверено"
+    "status": "потребна ручна провера — ранији изворни URL не припада овој фотографији; датотека сачувана"
   },
   {
     "filename": "troglodytes-troglodytes-gallery-1-new.jpg",
     "species": "Царић",
     "author": "Alexis Lours",
     "source": "Wikimedia Commons",
-    "source_url": "https://commons.wikimedia.org/wiki/Eurasian%20wren%202023%2012%2031%2002.jpg",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Eurasian_wren_2023_12_31_02.jpg",
     "license": "CC BY 4.0",
     "license_url": "https://creativecommons.org/licenses/by/4.0/",
     "page_slug": "troglodytes-troglodytes",
@@ -2504,13 +2504,13 @@
   {
     "filename": "troglodytes-troglodytes.jpg",
     "species": "Troglodytes troglodytes",
-    "author": "",
+    "author": "Alexis Lours",
     "source": "Wikimedia Commons",
     "source_url": "https://commons.wikimedia.org/wiki/File:Eurasian_wren_Franconville_02.jpg",
-    "license": "CC BY-SA 4.0",
-    "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "license": "CC BY 4.0",
+    "license_url": "https://creativecommons.org/licenses/by/4.0/",
     "page_slug": "troglodytes-troglodytes",
-    "status": "делимично проверено — недостаје аутор"
+    "status": "проверено — визуелно поклапање са извором 2026-10-19"
   },
   {
     "filename": "turdus-merula-2.jpg",

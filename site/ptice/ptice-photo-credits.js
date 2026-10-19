@@ -18,69 +18,38 @@
     }
   };
 
-  const pageSlug = () => {
-    const p = location.pathname.split("/").filter(Boolean);
-    const i = p.indexOf("ptice");
-    if (i >= 0 && p[i + 1]) return p[i + 1].replace(/\.html?$/i, "");
-    return "";
-  };
-
-  const cardSlug = (img) => {
-    const card = img.closest(".bird-card");
-    if (!card) return "";
-    const a = card.querySelector("a.bird-card-link[href]");
-    if (!a) return "";
-    try {
-      const p = new URL(a.href, location.href).pathname.split("/").filter(Boolean);
-      const i = p.indexOf("ptice");
-      return (i >= 0 && p[i + 1]) ? p[i + 1].replace(/\.html?$/i, "") : "";
-    } catch (_) { return ""; }
+  const safeURL = (value) => {
+    try { const u = new URL(value); return /^https?:$/.test(u.protocol) && !u.username && !u.password; }
+    catch (_) { return false; }
   };
 
   const isUsable = (r) =>
-    r && r.author && r.source_url && r.license &&
+    r && r.author && safeURL(r.source_url) && r.license &&
     !/потребна ручна провера/i.test(r.status || "") &&
     !/недостаје аутор/i.test(r.status || "");
 
-  const candidateNames = (name) => {
-    const out = [name];
-    const extm = name.match(/(\.[a-z0-9]+)$/i);
-    const ext = extm ? extm[1] : ".jpg";
-    const stem = name.replace(/\.[a-z0-9]+$/i, "");
-    const suffixes = [
-      "-hero","-card","-obala","-potok","-kora","-muzjak","-zenka",
-      "-male","-female","-naslovna","-header","-cover","-main",
-      "-gallery-1-new","-gallery-2-new","-gallery-3-new"
-    ];
-    for (const suf of suffixes) {
-      if (stem.endsWith(suf)) out.push(stem.slice(0, -suf.length) + ext);
-    }
-    out.push(stem.replace(/-\d+$/, "") + ext);
-    return [...new Set(out.map(x => x.toLowerCase()))];
-  };
-
-  const creditText = (r) => {
-    const source = r.source || "Wikimedia Commons";
-    return `Фото: ${r.author} / ${source}, ${r.license} — оригинал`;
-  };
-
-  const escapeHtml = (s) => String(s || "")
-    .replace(/&/g,"&amp;").replace(/</g,"&lt;")
-    .replace(/>/g,"&gt;").replace(/"/g,"&quot;");
-
   const makeOverlay = (r) => {
-    const a = document.createElement("a");
-    a.className = "pio-photo-credit";
-    a.href = r.source_url;
-    a.target = "_blank";
-    a.rel = "noopener noreferrer";
-    a.setAttribute("aria-label", creditText(r));
-    a.innerHTML =
-      `<strong>Фото: ${escapeHtml(r.author)}</strong> / ` +
-      `${escapeHtml(r.source || "Wikimedia Commons")}, ` +
-      `${escapeHtml(r.license)} — <span class="pio-credit-original">оригинал</span>`;
-    return a;
+    const box = document.createElement("span");
+    box.className = "pio-photo-credit";
+    const label = document.createElement("strong");
+    label.textContent = `Фото: ${r.author}`;
+    box.append(label, ` / ${r.source || "Wikimedia Commons"}, `);
+    const link = (text, url) => {
+      const a = document.createElement("a");
+      a.textContent = text;
+      a.href = url;
+      a.rel = "noopener noreferrer";
+      a.style.color = "inherit";
+      a.style.textDecoration = "underline";
+      return a;
+    };
+    if (safeURL(r.license_url)) box.append(link(r.license, r.license_url));
+    else box.append(r.license);
+    box.append(" — ", link("оригинал", r.source_url));
+    if (r.modifications) box.append(` (${r.modifications})`);
+    return box;
   };
+
 
 
   const TOUCH_QUERY = window.matchMedia("(hover: none), (pointer: coarse)");
@@ -98,13 +67,17 @@
       if (host === exceptHost) return;
       host.classList.remove("pio-credit-mobile-open");
       const toggle = [...host.children].find(el => el.classList?.contains("pio-photo-credit-toggle"));
-      if (toggle) toggle.setAttribute("aria-expanded", "false");
+      if (toggle) {
+        toggle.setAttribute("aria-expanded", "false");
+        toggle.setAttribute("aria-label", "Прикажи извор фотографије");
+      }
     });
   };
 
   const ensureMobileToggle = (host) => {
     const credit = directChildCredit(host);
     if (!credit) return;
+    if (!host.matches("a,button") && !host.hasAttribute("tabindex")) host.tabIndex = 0;
 
     if (!credit.id) credit.id = `pio-photo-credit-${++creditIdSeq}`;
 
@@ -130,7 +103,7 @@
         toggle.setAttribute("aria-expanded", opening ? "true" : "false");
         toggle.setAttribute("aria-label", opening ? "Сакриј извор фотографије" : "Прикажи извор фотографије");
         /* Android уме да задржи :focus након tap-а; blur спречава да focus-within поново открије кредит. */
-        try { toggle.blur(); } catch (_) {}
+        if (ev?.type === "touchend") { try { toggle.blur(); } catch (_) {} }
       };
 
       let touchActivatedAt = 0;
@@ -165,9 +138,6 @@
           return;
         }
         activate(ev);
-      });
-      toggle.addEventListener("keydown", ev => {
-        if (ev.key === "Enter" || ev.key === " ") activate(ev);
       });
       host.appendChild(toggle);
     }
@@ -228,23 +198,18 @@
     return null;
   };
 
-  fetch(REGISTRY_URL, {cache:"no-store"})
+  fetch(REGISTRY_URL, {cache:"no-cache"})
     .then(r => {
       if (!r.ok) throw new Error("credits registry HTTP " + r.status);
       return r.json();
     })
     .then(rows => {
-      const exact = new Map(), bySource = new Map(), bySlug = new Map();
+      if (!Array.isArray(rows)) throw new Error("Invalid credits registry");
+      const exact = new Map();
       for (const r of rows) {
+        if (!r || typeof r !== "object") continue;
         const fn = String(r.filename || "").toLowerCase();
         if (fn) { if (!exact.has(fn)) exact.set(fn, []); exact.get(fn).push(r); }
-        const su = norm(r.source_url);
-        if (su) { if (!bySource.has(su)) bySource.set(su, []); bySource.get(su).push(r); }
-        const slug = String(r.page_slug || "").toLowerCase();
-        if (slug) { if (!bySlug.has(slug)) bySlug.set(slug, []); bySlug.get(slug).push(r); }
-      }
-      for (const list of bySlug.values()) {
-        list.sort((a,b) => String(a.filename).localeCompare(String(b.filename), "sr"));
       }
 
       document.querySelectorAll("a").forEach(a => {
@@ -253,48 +218,55 @@
         }
       });
 
-      const usedForSlug = new Map();
-      const processed = new WeakSet();
+      const processed = new WeakMap();
+      const generated = new WeakMap();
 
-      const chooseCredit = (img, oldAnchor) => {
-        if (oldAnchor) {
-          const href = norm(oldAnchor.href);
-          if (href && bySource.has(href)) {
-            const r = bySource.get(href).find(isUsable);
-            if (r) return r;
-          }
-        }
-        for (const n of candidateNames(basename(img.currentSrc || img.src))) {
-          const r = (exact.get(n) || []).find(isUsable);
-          if (r) return r;
-        }
-        const slug = pageSlug() || cardSlug(img);
-        const bn = basename(img.currentSrc || img.src);
-        if (slug && bn.startsWith(slug)) {
-          const pool = (bySlug.get(slug) || []).filter(isUsable);
-          if (pool.length) {
-            const used = usedForSlug.get(slug) || 0;
-            const r = pool[Math.min(used, pool.length - 1)];
-            usedForSlug.set(slug, used + 1);
-            return r;
-          }
-        }
-        return null;
+      // Only an unambiguous exact filename may replace a published credit.
+      // Species names, order and suffixes do not identify a photograph.
+      const chooseCredit = (img) => {
+        const name = basename(img.currentSrc || img.src);
+        const pool = (exact.get(name) || []).filter(isUsable);
+        if (!pool.length) return null;
+        const identities = new Set(pool.map(r => JSON.stringify([
+          r.author, norm(r.source_url), r.license
+        ])));
+        return identities.size === 1 ? pool[0] : null;
       };
 
       const processImage = (img) => {
-        if (!(img instanceof HTMLImageElement) || processed.has(img)) return;
-        processed.add(img);
-        const host = findHost(img);
+        if (!(img instanceof HTMLImageElement)) return;
+        const signature = img.currentSrc || img.src;
+        if (processed.get(img) === signature) return;
+        processed.set(img, signature);
+        let host = findHost(img);
+        if (host?.tagName === "A" && host.parentElement?.classList.contains("pio-photo-credit-host")) host = host.parentElement;
         if (!host) return;
+        const previous = generated.get(img);
+        if (previous) {
+          previous.remove();
+          generated.delete(img);
+          if (!directChildCredit(host)) {
+            [...host.children].find(el => el.classList?.contains("pio-photo-credit-toggle"))?.remove();
+            host.classList.remove("pio-credit-mobile-open");
+          }
+        }
         const old = oldCreditAnchor(host);
-        const credit = chooseCredit(img, old);
+        const credit = chooseCredit(img);
         if (!credit) return;
+        // Catalog media is itself a link: credits and buttons must be siblings.
+        if (host.tagName === "A") {
+          const wrap = document.createElement("div");
+          host.parentNode.insertBefore(wrap, host);
+          wrap.appendChild(host);
+          host = wrap;
+        }
         host.classList.add("pio-photo-credit-host");
         if (old) old.remove();
         const existing = host.querySelector(":scope > .pio-photo-credit");
         if (existing) existing.remove();
-        host.appendChild(makeOverlay(credit));
+        const overlay = makeOverlay(credit);
+        host.appendChild(overlay);
+        generated.set(img, overlay);
         ensureMobileToggle(host);
       };
 
@@ -309,6 +281,7 @@
       scan(document);
       const mo = new MutationObserver(mutations => {
         for (const m of mutations) {
+          if (m.type === "attributes") { processImage(m.target); continue; }
           for (const node of m.addedNodes) {
             if (!(node instanceof Element)) continue;
             if (node.matches?.("img")) processImage(node);
@@ -316,7 +289,10 @@
           }
         }
       });
-      mo.observe(document.body, {childList:true, subtree:true});
+      mo.observe(document.body, {childList:true, subtree:true, attributes:true, attributeFilter:["src", "srcset"]});
+      document.addEventListener("load", ev => {
+        if (ev.target instanceof HTMLImageElement) processImage(ev.target);
+      }, true);
       document.documentElement.classList.add("pio-photo-credits-ready");
     })
     .catch(err => console.error("[PIO PTICE] Photo credits:", err));
