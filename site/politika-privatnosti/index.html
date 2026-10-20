@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="sr-Cyrl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Политика приватности | ПИО „Рајац“</title>
+<meta name="description" content="Политика приватности сајта ПИО „Рајац“: подаци који се могу прикупљати, сврха обраде, колачићи, чување података и права корисника.">
+<link rel="canonical" href="https://piorajac.rs/politika-privatnosti/">
+<style>
+:root{
+  --navy:#0e1c2f;
+  --gold:#c9a84c;
+  --paper:#ffffff;
+  --ink:#22251f;
+  --muted:#5d625b;
+  --line:rgba(34,37,31,.14);
+  --serif:Georgia,"Times New Roman",serif;
+  --sans:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;
+}
+*{box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{margin:0;background:#fff;color:var(--ink);font-family:var(--sans);font-size:17px;line-height:1.72;}
+a{color:inherit;}
+.topbar{position:sticky;top:0;z-index:100;background:var(--navy);color:#fff;border-bottom:1px solid rgba(255,255,255,.14);}
+.topbar-inner{width:min(1120px,calc(100% - 36px));margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:18px;min-height:56px;}
+.brand{font-family:var(--serif);font-size:1.18rem;font-weight:700;text-decoration:none;color:#fff;white-space:nowrap;}
+.brand span{color:#e7d49a;}
+.back{font-size:.82rem;text-decoration:none;color:rgba(255,255,255,.78);white-space:nowrap;}
+.back:hover{color:#e7d49a;}
+.chips{background:#fff;border-bottom:1px solid var(--line);position:sticky;top:56px;z-index:90;}
+.chips-inner{width:min(1120px,calc(100% - 36px));margin:0 auto;display:flex;gap:8px;overflow-x:auto;padding:12px 0;}
+.chip{flex:0 0 auto;text-decoration:none;font-size:.86rem;line-height:1;padding:9px 14px;border:1px solid var(--line);border-radius:999px;color:var(--muted);background:#fff;white-space:nowrap;}
+.chip:hover{border-color:var(--gold);color:var(--ink);}
+.chip.active{background:var(--navy);border-color:var(--navy);color:#fff;}
+main{background:#fff;}
+.wrap{width:min(820px,calc(100% - 36px));margin:0 auto;padding:46px 0 70px;}
+h1{font-family:var(--serif);font-size:clamp(2rem,4vw,3rem);line-height:1.1;margin:0 0 22px;color:var(--navy);font-weight:700;}
+.lead{font-size:1.12rem;line-height:1.72;color:#2f342e;margin:0 0 26px;}
+h2{font-family:var(--serif);font-size:clamp(1.42rem,2.6vw,1.85rem);line-height:1.22;margin:38px 0 12px;padding-top:22px;border-top:1px solid var(--line);color:var(--navy);font-weight:700;}
+p{margin:0 0 16px;}
+ul{margin:0 0 18px 0;padding:0;list-style:none;}
+li{position:relative;margin:0 0 10px;padding-left:24px;}
+li::before{content:"";position:absolute;left:3px;top:.78em;width:7px;height:7px;border-radius:50%;background:var(--gold);}
+.note{background:#fafafa;border:1px solid var(--line);border-left:4px solid var(--gold);padding:16px 18px;margin:18px 0 22px;border-radius:10px;color:#353a34;}
+.menu-toggle,.back-to-top{display:none;}
+@media(max-width:1100px){
+  html,body{overflow-x:hidden;}
+  body{font-size:16px;overflow-wrap:break-word;}
+  img,picture,video,canvas,svg,iframe{display:block;max-width:100%;height:auto;}
+  pre,code{max-width:100%;overflow-wrap:anywhere;white-space:normal;}
+  .topbar{padding-top:env(safe-area-inset-top);}
+  .topbar-inner{width:calc(100% - 32px);min-height:60px;}
+  .brand{font-size:1.06rem;}
+  .back{display:none;}
+  .menu-toggle{display:inline-flex;width:46px;height:44px;flex:0 0 46px;align-items:center;justify-content:center;border:1px solid rgba(255,255,255,.4);border-radius:10px;background:transparent;color:#fff;cursor:pointer;}
+  .menu-toggle-box{display:grid;gap:5px;width:22px;}
+  .menu-toggle-box span{display:block;width:100%;height:2px;border-radius:2px;background:currentColor;transition:transform .2s ease,opacity .2s ease;}
+  .topbar.menu-open .menu-toggle-box span:nth-child(1){transform:translateY(7px) rotate(45deg);}
+  .topbar.menu-open .menu-toggle-box span:nth-child(2){opacity:0;}
+  .topbar.menu-open .menu-toggle-box span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
+  .chips{display:none;position:fixed;top:calc(60px + env(safe-area-inset-top));left:16px;right:16px;z-index:95;border:1px solid var(--line);border-radius:0 0 14px 14px;box-shadow:0 12px 28px rgba(14,28,47,.22);}
+  .chips.menu-open{display:block;}
+  .chips-inner{width:100%;max-height:calc(100vh - 92px - env(safe-area-inset-top));padding:10px;flex-direction:column;overflow-y:auto;}
+  .chip{display:flex;align-items:center;width:100%;min-height:44px;padding:11px 14px;border-radius:9px;white-space:normal;line-height:1.25;}
+  .wrap{width:calc(100% - 32px);padding:30px 0 calc(90px + env(safe-area-inset-bottom));}
+  h1{font-size:clamp(1.85rem,6vw,2.5rem);overflow-wrap:anywhere;}
+  h2{margin-top:32px;padding-top:20px;font-size:1.35rem;}
+  a{overflow-wrap:anywhere;}
+  .note{padding:14px 15px;}
+  .back-to-top{display:flex;position:fixed;right:max(16px,env(safe-area-inset-right));bottom:max(16px,env(safe-area-inset-bottom));z-index:100;width:58px;height:58px;align-items:center;justify-content:center;flex-direction:column;border:1.5px solid var(--navy);border-radius:50%;background:rgba(255,255,255,.92);color:var(--navy);font:700 .66rem/1 var(--sans);letter-spacing:.06em;cursor:pointer;opacity:0;visibility:hidden;transform:translateY(10px);transition:opacity .2s ease,transform .2s ease,visibility .2s ease;box-shadow:0 4px 14px rgba(14,28,47,.14);}
+  .back-to-top .arrow{font-size:1.25rem;line-height:1.05;letter-spacing:0;}
+  .back-to-top.is-visible{opacity:1;visibility:visible;transform:none;}
+}
+@media(max-width:480px){.topbar-inner,.wrap{width:calc(100% - 28px);}.chips{left:14px;right:14px;}h1{font-size:1.8rem;}.lead{font-size:1.05rem;line-height:1.6;}}
+.updated{margin-top:34px;color:#6b7068;font-size:14px}
+</style>
+</head>
+<body>
+<header class="topbar">
+  <div class="topbar-inner">
+    <a class="brand" href="https://piorajac.rs/">ПИО <span>„РАЈАЦ“</span></a>
+    <a class="back" href="https://piorajac.rs/">↩ Назад на сајт</a>
+    <button class="menu-toggle" type="button" aria-label="Отвори мени" aria-controls="privacy-menu" aria-expanded="false"><span class="menu-toggle-box" aria-hidden="true"><span></span><span></span><span></span></span></button>
+  </div>
+</header>
+<nav class="chips" aria-label="Правни документи">
+  <div class="chips-inner" id="privacy-menu">
+    <a class="chip" href="https://piorajac.rs/politika-linkova/">Политика линкова</a>
+    <a class="chip" href="https://piorajac.rs/odricanje-odgovornosti/">Одрицање одговорности</a>
+    <a class="chip" href="https://piorajac.rs/uslovi-i-odredbe/">Услови и одредбе</a>
+    <a class="chip active" href="https://piorajac.rs/politika-privatnosti/" aria-current="page">Политика приватности</a>
+    <a class="chip" href="https://piorajac.rs/podesavanja-privatnosti/">Подешавања приватности</a>
+  </div>
+</nav>
+<main>
+  <div class="wrap">
+
+<h1>Политика приватности</h1>
+
+<p class="lead">Ова политика приватности објашњава које податке сајт ПИО „Рајац“ може прикупљати, због чега се подаци користе, како се чувају и која права имају корисници.</p>
+
+<p>Сајт је намењен информисању, едукацији, мониторингу природе, промоцији одговорног туризма и унапређењу управљања Пределом изузетних одлика „Рајац“.</p>
+
+<h2>Руковалац подацима</h2>
+<p>Руковалац подацима о личности који се обрађују путем сајта ПИО „Рајац“ је <strong>Туристичка организација општине Љиг</strong>, која управља Пределом изузетних одлика „Рајац“.</p>
+<p>Контакт за сва питања о подацима о личности: <a href="mailto:office@piorajac.rs">office@piorajac.rs</a>.</p>
+<p>Подаци се обрађују у складу са Законом о заштити података о личности („Службени гласник РС“, бр. 87/2018).</p>
+
+<h2>Које податке можемо прикупљати</h2>
+<p>Приликом коришћења сајта могу се прикупљати следећи подаци:</p>
+<ul>
+  <li>подаци које корисник сам достави путем контакт форме;</li>
+  <li>име и презиме, ако их корисник унесе;</li>
+  <li>имејл адреса, ако је потребна за одговор;</li>
+  <li>садржај поруке, пријаве или другог достављеног обавештења;</li>
+  <li>подаци о теренском налазу, фотографији, локацији или запажању, ако их корисник достави;</li>
+  <li>технички подаци о посети сајту, као што су IP адреса, тип уређаја, интернет прегледач, време приступа и посећене странице;</li>
+  <li>подаци потребни за основну безбедност, стабилност и функционисање сајта.</li>
+</ul>
+<p>Сајт не тражи осетљиве личне податке, осим ако их корисник сам не унесе у слободно поље поруке. Корисницима се препоручује да не достављају податке који нису неопходни за сврху контакта, пријаве или достављања теренског запажања.</p>
+
+<h2>Сврха обраде података</h2>
+<p>Подаци се могу користити ради:</p>
+<ul>
+  <li>одговора на упите корисника;</li>
+  <li>поступања по пријавама проблема у заштићеном подручју;</li>
+  <li>пријема и обраде теренских налаза, фотографија и запажања;</li>
+  <li>вођења евиденција у вези са мониторингом природе и стањем простора;</li>
+  <li>унапређења садржаја, прегледности и функционалности сајта;</li>
+  <li>заштите сајта од злоупотреба, неовлашћеног приступа и техничких напада.</li>
+</ul>
+
+<h2>Правни основ обраде</h2>
+<p>Подаци које корисник сам пошаље путем форме или имејла обрађују се на основу његовог пристанка, који даје слањем поруке, и ради поступања по његовом захтеву. Пристанак се може повући у сваком тренутку, без утицаја на законитост обраде пре повлачења.</p>
+<p>Технички подаци о приступу обрађују се на основу легитимног интереса да сајт ради безбедно и исправно.</p>
+
+<h2>Колачићи и аналитика</h2>
+<p>Сајт користи само неопходан технички колачић који поставља сервер хостинга ради безбедности и стабилног рада. Тај колачић не садржи личне податке и не служи за праћење посетилаца.</p>
+<p>Сајт не користи аналитичке, рекламне ни друге колачиће за праћење, па зато не приказује прозор за пристанак на колачиће.</p>
+<p>Корисник може у свом интернет прегледачу ограничити, блокирати или обрисати колачиће. Ограничење колачића може утицати на рад појединих функција сајта.</p>
+
+<h2>Достављање података трећим лицима</h2>
+<p>Подаци се не продају трећим лицима.</p>
+<p>Подаци могу бити доступни техничким пружаоцима услуга који омогућавају рад сајта, као што су хостинг, имејл сервис и безбедносни алати, искључиво у мери у којој је то потребно за функционисање сајта.</p>
+<p>Подаци се могу доставити надлежним органима ако је то прописано законом или ако је неопходно ради заштите људи, природе, имовине, јавног интереса или поступања по службеном захтеву.</p>
+
+<h2>Спољни сервиси на страницама</h2>
+<p>Поједине странице приказују садржаје са спољних сервиса: сателитске и топографске подлоге карата (Esri, OpenStreetMap), библиотеке за карте, фонтове (Google Fonts) и податке из научних база (Biologer, iNaturalist, GBIF). Приликом учитавања таквих садржаја прегледач корисника се повезује са тим сервисима, који могу видети IP адресу и основне техничке податке у складу са својим правилима приватности.</p>
+
+<h2>Чување података</h2>
+<p>Подаци се чувају онолико дуго колико је потребно за сврху због које су прикупљени, осим ако закон, службена евиденција или оправдани интерес не захтевају дужи период чувања.</p>
+<p>Поруке, пријаве и теренски налази могу се чувати ради документације, праћења поступања, израде извештаја и унапређења мониторинга заштићеног подручја.</p>
+
+<h2>Права корисника</h2>
+<p>Корисник има право да затражи информацију о томе да ли се његови подаци обрађују, приступ подацима, исправку нетачних података, брисање података када за то постоје услови, ограничење обраде или приговор на обраду.</p>
+<p>Захтев се упућује на <a href="mailto:office@piorajac.rs">office@piorajac.rs</a>. Одговор се даје без одлагања, а најкасније у року од 30 дана.</p>
+<p>Ако корисник сматра да је обрада његових података незаконита, има право да поднесе притужбу Поверенику за информације од јавног значаја и заштиту података о личности (<a href="https://www.poverenik.rs/">https://www.poverenik.rs/</a>).</p>
+
+<h2>Безбедност</h2>
+<p>Предузимају се разумне техничке и организационе мере ради заштите података од неовлашћеног приступа, губитка, злоупотребе или измене.</p>
+<p>Ипак, ниједан интернет систем не може гарантовати апсолутну безбедност, па корисници треба да буду опрезни приликом достављања личних података путем интернета.</p>
+
+    <p class="updated">Последња измена: 20. октобар 2026.</p>
+  </div>
+</main>
+<button class="back-to-top" type="button" aria-label="Врати се на врх странице"><span class="arrow" aria-hidden="true">↑</span><span>ВРХ</span></button>
+<script>
+(()=>{const header=document.querySelector('.topbar'),toggle=document.querySelector('.menu-toggle'),nav=document.querySelector('.chips'),topButton=document.querySelector('.back-to-top');if(header&&toggle&&nav){const close=()=>{header.classList.remove('menu-open');nav.classList.remove('menu-open');toggle.setAttribute('aria-expanded','false');toggle.setAttribute('aria-label','Отвори мени')};toggle.addEventListener('click',()=>{const open=!nav.classList.contains('menu-open');header.classList.toggle('menu-open',open);nav.classList.toggle('menu-open',open);toggle.setAttribute('aria-expanded',String(open));toggle.setAttribute('aria-label',open?'Затвори мени':'Отвори мени')});nav.addEventListener('click',e=>{if(e.target.closest('a'))close()});document.addEventListener('click',e=>{if(!header.contains(e.target)&&!nav.contains(e.target))close()});document.addEventListener('keydown',e=>{if(e.key==='Escape')close()});window.addEventListener('resize',()=>{if(innerWidth>1100)close()})}if(topButton){const update=()=>topButton.classList.toggle('is-visible',scrollY>320);addEventListener('scroll',update,{passive:true});update();topButton.addEventListener('click',()=>scrollTo({top:0,behavior:'smooth'}))}})();
+</script>
+</body>
+</html>
