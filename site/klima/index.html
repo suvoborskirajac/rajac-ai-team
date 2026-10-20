@@ -1,0 +1,1177 @@
+<!-- ПИО Рајац complete static export 2026-05-21 | klima -->
+<!doctype html>
+<html lang="sr-RS">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Клима Рајца</title>
+
+<style>
+html,body{margin:0;padding:0;}
+body{background:#f6f2ea;color:#1e241d;}
+a{color:inherit;}
+img{max-width:100%;height:auto;}
+
+/* v22 local climate graphs */
+.rklimx-details[open] .rklimx-figure,
+.rklimx-details[open] .rklimx-figure img{opacity:1!important;visibility:visible!important;display:block!important;}
+.rklimx-figure img{max-width:100%;height:auto;}
+</style>
+
+
+<link rel="stylesheet" id="rajac-static-common-menu-css" href="https://piorajac.rs/rajac-static-2105/assets/menu/rajac-static-menu.css?v=20260521-complete" media="all">
+
+<!-- RAJAC_DESIGN_SYSTEM=1.0.0 -->
+<link rel="stylesheet" href="/rajac-design/rajac-global.css?v=1.0.0">
+<link rel="stylesheet" href="/rajac-design/rajac-pages.css?v=1.0.0">
+
+<style id="rajac-klima-hero-final-v1">
+/* FINAL PATCH: Клима — уједначен мени и светли hero као на осталим исправљеним страницама */
+html,body{margin:0!important;padding:0!important;}
+body.rajac-static-output{background:#fafaf8!important;color:#253126!important;}
+
+.rajac-static-common-menu{
+  position:sticky!important;
+  top:0!important;
+  z-index:99999!important;
+  width:100%!important;
+  min-height:60px!important;
+  background:rgba(20,32,24,.96)!important;
+  border-bottom:1px solid rgba(176,145,63,.42)!important;
+  box-shadow:0 10px 24px rgba(0,0,0,.18)!important;
+  backdrop-filter:blur(12px)!important;
+  -webkit-backdrop-filter:blur(12px)!important;
+  font-family:'Outfit','Segoe UI',system-ui,-apple-system,Roboto,sans-serif!important;
+}
+.rajac-static-common-menu__inner{
+  width:min(1180px,calc(100% - 40px))!important;
+  min-height:60px!important;
+  margin:0 auto!important;
+  display:flex!important;
+  align-items:center!important;
+  gap:18px!important;
+  overflow-x:auto!important;
+  scrollbar-width:none!important;
+}
+.rajac-static-common-menu__inner::-webkit-scrollbar{display:none!important;}
+.rajac-static-common-menu__logo{
+  display:flex!important;
+  align-items:center!important;
+  min-height:40px!important;
+  padding-right:20px!important;
+  border-right:1px solid rgba(255,255,255,.10)!important;
+  color:#f3efe2!important;
+  text-decoration:none!important;
+  font-weight:700!important;
+  font-size:.98rem!important;
+  letter-spacing:.02em!important;
+  white-space:nowrap!important;
+}
+.rajac-static-common-menu__links{
+  display:flex!important;
+  align-items:center!important;
+  gap:0!important;
+  white-space:nowrap!important;
+}
+.rajac-static-common-menu__link{
+  display:flex!important;
+  align-items:center!important;
+  min-height:40px!important;
+  padding:0 12px!important;
+  color:rgba(243,239,226,.76)!important;
+  text-decoration:none!important;
+  font-size:.82rem!important;
+  line-height:1!important;
+  font-weight:700!important;
+  text-transform:uppercase!important;
+  letter-spacing:.12em!important;
+  border-bottom:2px solid transparent!important;
+}
+.rajac-static-common-menu__link:hover{color:#fff!important;}
+.rajac-static-common-menu__link.is-active,
+.rajac-static-common-menu__link.active,
+.rajac-static-common-menu__link[aria-current="page"]{
+  color:#d4b256!important;
+  border-bottom-color:#d4b256!important;
+}
+
+.rklim-hero{
+  position:relative!important;
+  height:460px!important;
+  min-height:460px!important;
+  max-height:460px!important;
+  padding:0!important;
+  display:flex!important;
+  align-items:flex-end!important;
+  overflow:hidden!important;
+  isolation:isolate!important;
+  border-bottom:1px solid rgba(176,145,63,.42)!important;
+  background-color:#efe7d6!important;
+  background-image:
+    linear-gradient(90deg,rgba(247,243,232,.72) 0%,rgba(247,243,232,.56) 30%,rgba(247,243,232,.24) 55%,rgba(247,243,232,.06) 76%,rgba(247,243,232,0) 100%),
+    url('assets/klima-hero.webp')!important;
+  background-size:cover!important;
+  background-position:center 48%!important;
+  background-repeat:no-repeat!important;
+}
+.rklim-hero-img,
+.rklim-hero-ov,
+.rklim-hero-credit,
+.rklim-kicker,
+.rklim-card,
+.rklim-hero::before{
+  display:none!important;
+}
+.rklim-hero-full{
+  position:relative!important;
+  z-index:2!important;
+  width:min(1180px,calc(100% - 40px))!important;
+  margin:0 auto!important;
+  padding:0 0 58px!important;
+}
+.rklim-hero-inner{
+  display:block!important;
+  max-width:760px!important;
+  padding:0!important;
+}
+.rklim-h1{
+  margin:0!important;
+  max-width:720px!important;
+  font-family:'Cormorant Garamond',Georgia,'Times New Roman',serif!important;
+  font-size:clamp(40px,4.3vw,58px)!important;
+  font-weight:500!important;
+  line-height:1.06!important;
+  letter-spacing:-.03em!important;
+  color:#253126!important;
+  text-shadow:none!important;
+}
+.rklim-h1 br,
+.rklim-h1 em{
+  display:none!important;
+}
+.rklim-sub{
+  max-width:760px!important;
+  margin:20px 0 0!important;
+  font-family:'Outfit','Segoe UI',system-ui,-apple-system,Roboto,sans-serif!important;
+  font-size:clamp(16px,1.55vw,19px)!important;
+  line-height:1.72!important;
+  color:rgba(37,49,38,.88)!important;
+  text-shadow:none!important;
+}
+
+/* Збијеније секције, без раздвајајућих линија */
+.rklim-section,
+.rklimx-section{
+  padding:clamp(30px,4.6vw,52px) 0!important;
+  border-bottom:none!important;
+}
+.rklim-lead,
+.rklim-body,
+.rklimx-note,
+.rklimx-figure figcaption{
+  line-height:1.72!important;
+}
+.rklim-lead{margin-top:12px!important;}
+.rklim-body{margin-top:10px!important;}
+.rklim p + p{margin-top:8px!important;}
+.rklim-2col{gap:36px!important;}
+
+/* Без тешких тамних површина у доњим блоковима */
+.rklim-arima,
+.rklim-closing,
+.section-dark{
+  background:linear-gradient(180deg,#f7f3e8 0%,#efe7d6 100%)!important;
+  color:#253126!important;
+  border-top:1px solid rgba(176,145,63,.22)!important;
+}
+.rklim-arima-h2,
+.rklim-cl-inner h2,
+.section-dark .s-title,
+.section-dark .s-title em{
+  color:#253126!important;
+}
+.rklim-arima-p,
+.rklim-cl-inner p,
+.section-dark .s-desc,
+.section-dark p{
+  color:rgba(37,49,38,.78)!important;
+  opacity:1!important;
+}
+.rklim-arima-kicker,
+.rklim-arima-sitem span,
+.rklim-badge{
+  color:rgba(37,49,38,.66)!important;
+}
+.rklim-arima-stats{
+  background:rgba(37,49,38,.10)!important;
+  border:1px solid rgba(37,49,38,.12)!important;
+}
+.rklim-arima-sitem{
+  background:rgba(255,255,255,.58)!important;
+}
+.rklim-arima-sitem b,
+.rklim-param-val,
+.rklim-param-trend,
+.rklim-sig.yes{
+  color:#8a5a1f!important;
+}
+.rklim-badge{
+  border:1px solid rgba(176,145,63,.56)!important;
+  background:rgba(255,255,255,.55)!important;
+}
+.rklim-badge::before,
+.rklim-arima-dot{
+  background:#b0913f!important;
+  box-shadow:none!important;
+}
+
+@media(max-width:640px){
+  .rajac-static-common-menu,
+  .rajac-static-common-menu__inner{min-height:58px!important;}
+  .rajac-static-common-menu__logo{font-size:.9rem!important;}
+  .rajac-static-common-menu__link{font-size:.76rem!important;padding:0 10px!important;}
+  .rklim-hero{
+    height:360px!important;
+    min-height:360px!important;
+    max-height:360px!important;
+  }
+  .rklim-hero-full{
+    width:min(100% - 32px,1180px)!important;
+    padding:0 0 34px!important;
+  }
+  .rklim-h1{font-size:34px!important;}
+  .rklim-sub{font-size:16px!important;line-height:1.65!important;}
+}
+</style>
+<!-- Hero background photo: NOAA Photo Library / Wikimedia Commons, public domain; locally cropped and optimized for this page. -->
+
+
+<style id="rajac-klima-hero-aws-image-v1">
+/* Hero image override: automatic / remote weather station, local optimized asset. */
+body.rajac-static-output .rklim-hero{
+  background-image:
+    linear-gradient(90deg,rgba(247,243,232,.76) 0%,rgba(247,243,232,.62) 30%,rgba(247,243,232,.28) 55%,rgba(247,243,232,.08) 76%,rgba(247,243,232,0) 100%),
+    url('assets/klima-hero.webp')!important;
+  background-size:cover!important;
+  background-position:center 48%!important;
+  background-repeat:no-repeat!important;
+}
+body.rajac-static-output .rklim-h1{color:#253126!important;text-shadow:none!important;}
+body.rajac-static-output .rklim-sub{color:rgba(37,49,38,.88)!important;text-shadow:none!important;}
+</style>
+
+<link data-pio-mobile="group3-v1" rel="stylesheet" href="../assets/mobile/pio-mobile.css?v=20260713-g3-3"></head>
+<body class="rajac-static-output"><nav class="rajac-static-common-menu" aria-label="Странице ПИО Рајац"><div class="rajac-static-common-menu__inner"><a class="rajac-static-common-menu__logo" href="/">ПИО „РАЈАЦ“</a><div class="rajac-static-common-menu__links"><a class="rajac-static-common-menu__link" href="../geologija/index.html">Геологија</a><a class="rajac-static-common-menu__link" href="../reljef/index.html">Рељеф</a><a class="rajac-static-common-menu__link" href="../pedologija/index.html">Педологија</a><a class="rajac-static-common-menu__link" href="../hidrografija/index.html">Хидрографија</a><a class="rajac-static-common-menu__link is-active" href="../klima/index.html">Клима</a></div></div></nav>
+<div class="rklim">
+<style>
+.rklim{--pbg:#fafaf8;--bg2:#f2f0ea;--ptext:#0e1210;--pmuted:#3a4840;--pline:rgba(14,20,14,.09);--pacc:#7a3a0a;--pacc2:#a05018;--serif:'Crimson Pro',Georgia,serif;--pmono:'DM Mono',monospace;--sans:'Outfit',system-ui,sans-serif;--r:6px;display:block;background:var(--pbg);color:var(--ptext);font-family:var(--sans);font-size:16px;line-height:1.65;}
+.rklim *,.rklim *::before,.rklim *::after{box-sizing:border-box;margin:0;padding:0;}
+.rklim a{color:inherit;text-decoration:none;}
+.rprir-nav{border-bottom:1px solid var(--pline);background:var(--pbg);padding:14px 0;position:sticky;top:0;z-index:100;}
+.rprir-nav-inner{width:min(1240px,calc(100% - 40px));margin:0 auto;display:flex;align-items:center;gap:24px;flex-wrap:wrap;}
+.rprir-nav-label{font-family:var(--pmono);font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;color:var(--ptext);opacity:.95;white-space:nowrap;font-weight:700;}
+.rprir-nav-label a{color:inherit;text-decoration:none;}
+.rprir-nav-links{display:flex;gap:0;flex-wrap:wrap;}
+.rprir-nav-links a{font-family:var(--pmono);font-size:.78rem;letter-spacing:.08em;text-transform:uppercase;color:var(--ptext);text-decoration:none;opacity:.88;padding:4px 14px;border-right:1px solid var(--pline);transition:opacity .18s,color .18s,font-weight .18s;font-weight:500;}
+.rprir-nav-links a:last-child{border-right:none;}
+.rprir-nav-links a:hover{opacity:1;color:var(--pacc);}
+.rprir-nav-links a.active,.rprir-nav-links a[aria-current="page"]{opacity:1;color:var(--pacc);font-weight:700;}
+.rklim-wrap{width:min(1240px,calc(100% - 40px));margin:0 auto;}
+.rklim-section{padding:clamp(48px,7vw,88px) 0;border-bottom:1px solid var(--pline);}
+.rklim-section:last-child{border-bottom:none;}
+.rklim-h2{font-family:var(--serif);font-size:clamp(2rem,3.8vw,4rem);font-weight:300;line-height:.95;letter-spacing:-.04em;color:var(--ptext);}
+.rklim-lead{font-size:1.08rem;color:var(--pmuted);line-height:1.82;margin-top:18px;}
+.rklim-body{font-size:1.02rem;color:var(--pmuted);line-height:1.82;margin-top:14px;}
+.rklim-label{display:inline-flex;align-items:center;gap:10px;font-family:var(--pmono);font-size:.68rem;letter-spacing:.22em;text-transform:uppercase;color:var(--pacc);margin-bottom:14px;}
+.rklim-label::before{content:"";width:26px;height:1px;background:currentColor;}
+@keyframes rprir-blink{0%,100%{opacity:1}50%{opacity:.25}}
+/* HERO */
+.rklim-hero{position:relative;overflow:hidden;border-bottom:1px solid var(--pline);padding:clamp(42px,5.5vw,68px) 0 clamp(30px,4vw,44px);min-height:380px;}
+.rklim-hero-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center center;pointer-events:none;z-index:0;}
+.rklim-hero::before{content:"";position:absolute;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,rgba(122,58,10,.75),transparent);animation:rklim-scan 6s linear infinite;opacity:0;z-index:2;pointer-events:none;}
+@keyframes rklim-scan{0%{top:-2px;opacity:0}4%{opacity:1}93%{opacity:1}100%{top:100%;opacity:0}}
+
+.rklim-hero-credit{position:absolute;right:18px;top:16px;z-index:3;padding:6px 9px;border-radius:999px;background:rgba(8,12,10,.44);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);font-family:var(--pmono);font-size:.58rem;line-height:1.1;letter-spacing:.08em;text-transform:uppercase;color:rgba(245,240,228,.88);}
+.rklim-hero-ov{position:absolute;inset:0;z-index:1;pointer-events:none;background:linear-gradient(105deg,rgba(16,8,4,.82) 0%,rgba(16,8,4,.48) 52%,rgba(16,8,4,.12) 100%),linear-gradient(180deg,transparent 58%,rgba(250,250,248,.96) 100%);}
+.rklim-hero-full{position:relative;z-index:2;padding-left:clamp(20px,3vw,48px);padding-right:clamp(20px,3vw,48px);}
+.rklim-hero-inner{display:grid;grid-template-columns:minmax(0,1fr);gap:34px;align-items:center;max-width:1120px;}
+.rklim-kicker{font-family:var(--pmono);font-size:.62rem;letter-spacing:.22em;text-transform:uppercase;color:rgba(255,255,255,.56);display:flex;align-items:center;gap:10px;margin-bottom:14px;}
+.rklim-kicker::before{content:"";width:24px;height:1px;background:currentColor;}
+.rklim-h1{font-family:var(--serif);font-size:clamp(2.05rem,3.35vw,3.5rem);font-weight:300;line-height:.98;letter-spacing:-.035em;color:#fff;text-shadow:0 2px 24px rgba(0,0,0,.34);}
+.rklim-h1 em{font-style:italic;color:#f0b87a;display:block;margin-top:2px;}
+.rklim-sub{max-width:560px;margin-top:16px;font-size:.98rem;color:rgba(255,255,255,.72);line-height:1.7;}
+.rklim-card{background:rgba(16,8,4,.74);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border:1px solid rgba(255,255,255,.12);border-radius:var(--r);padding:18px 20px;min-width:210px;}
+.rklim-card-lbl{font-family:var(--pmono);font-size:.58rem;letter-spacing:.18em;text-transform:uppercase;color:#f0b87a;margin-bottom:12px;display:flex;align-items:center;gap:8px;}
+.rklim-card-lbl::before{content:"";width:5px;height:5px;border-radius:50%;background:#f0b87a;box-shadow:0 0 10px rgba(240,184,122,.8);animation:rprir-blink 2s ease-in-out infinite;}
+.rklim-stat-row{display:flex;justify-content:space-between;align-items:baseline;padding:9px 0;border-bottom:1px solid rgba(255,255,255,.07);}
+.rklim-stat-row:last-child{border-bottom:none;padding-bottom:0;}
+.rklim-stat-row b{font-family:var(--pmono);font-size:.74rem;color:rgba(255,255,255,.85);font-weight:400;}
+.rklim-stat-row span{font-family:var(--pmono);font-size:.58rem;letter-spacing:.08em;color:rgba(255,255,255,.34);text-align:right;}
+/* Parameter cards 2×2 */
+.rklim-params{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border:1px solid var(--pline);border-radius:var(--r);overflow:hidden;margin-top:36px;}
+.rklim-param{padding:24px 20px;border-right:1px solid var(--pline);position:relative;overflow:hidden;transition:background .18s;}
+.rklim-param:last-child{border-right:none;}
+.rklim-param:hover{background:var(--bg2);}
+.rklim-param::before{content:"";position:absolute;top:0;left:0;right:0;height:3px;background:var(--pacc);transform:scaleX(0);transform-origin:left;transition:transform .32s cubic-bezier(.4,0,.2,1);}
+.rklim-param:hover::before{transform:scaleX(1);}
+.rklim-param-val{font-family:var(--pmono);font-size:1.5rem;color:var(--ptext);letter-spacing:-.04em;line-height:1;margin-bottom:6px;}
+.rklim-param-val sup{font-size:.6em;}
+.rklim-param-trend{font-family:var(--pmono);font-size:.68rem;color:var(--pacc);margin-bottom:10px;letter-spacing:.04em;}
+.rklim-param h4{font-family:var(--serif);font-size:1.1rem;font-weight:400;letter-spacing:-.02em;margin-bottom:4px;}
+.rklim-param p{font-size:.82rem;color:var(--pmuted);line-height:1.55;}
+/* 2col */
+.rklim-2col{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:start;}
+/* Trend items */
+.rklim-trends{display:grid;gap:0;}
+.rklim-trow{display:grid;grid-template-columns:1fr auto;align-items:center;padding:14px 0;border-bottom:1px solid var(--pline);gap:16px;}
+.rklim-trow:first-child{padding-top:0;}
+.rklim-trow:last-child{border-bottom:none;padding-bottom:0;}
+.rklim-trow h4{font-family:var(--serif);font-size:1.15rem;font-weight:400;letter-spacing:-.02em;margin-bottom:3px;}
+.rklim-trow p{font-size:.9rem;color:var(--pmuted);line-height:1.55;}
+.rklim-sig{font-family:var(--pmono);font-size:.62rem;letter-spacing:.1em;text-transform:uppercase;padding:3px 8px;border-radius:3px;white-space:nowrap;}
+.rklim-sig.yes{background:rgba(122,58,10,.1);color:var(--pacc);border:1px solid rgba(122,58,10,.2);}
+.rklim-sig.no{background:rgba(58,72,64,.06);color:var(--pmuted);border:1px solid rgba(58,72,64,.12);}
+/* ARIMA band */
+.rklim-arima{background:#0c0804;padding:clamp(44px,6vw,80px) 0;}
+.rklim-arima-inner{display:grid;grid-template-columns:1fr auto;gap:56px;align-items:center;width:min(1240px,calc(100% - 40px));margin:0 auto;}
+.rklim-arima-kicker{font-family:var(--pmono);font-size:.68rem;letter-spacing:.22em;text-transform:uppercase;color:rgba(255,255,255,.35);display:flex;align-items:center;gap:10px;margin-bottom:14px;}
+.rklim-arima-dot{width:5px;height:5px;border-radius:50%;background:#f0b87a;box-shadow:0 0 10px rgba(240,184,122,.7);animation:rprir-blink 2.8s ease-in-out infinite;}
+.rklim-arima-h2{font-family:var(--serif);font-size:clamp(1.9rem,3.4vw,3.6rem);font-weight:300;line-height:.95;letter-spacing:-.04em;color:#fff;margin-bottom:14px;}
+.rklim-arima-p{font-size:1.04rem;color:rgba(255,255,255,.52);line-height:1.78;max-width:580px;}
+.rklim-arima-stats{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.08);border-radius:var(--r);overflow:hidden;min-width:280px;}
+.rklim-arima-sitem{background:#0c0804;padding:16px 18px;}
+.rklim-arima-sitem b{display:block;font-family:var(--pmono);font-size:1.1rem;color:#f0b87a;letter-spacing:-.04em;margin-bottom:4px;}
+.rklim-arima-sitem span{font-size:.8rem;color:rgba(255,255,255,.38);font-family:var(--pmono);letter-spacing:.06em;}
+/* Closing */
+.rklim-closing{padding:clamp(48px,6vw,88px) 0;background:var(--ptext);}
+.rklim-cl-inner{display:grid;grid-template-columns:1fr auto;gap:40px;align-items:center;width:min(1240px,calc(100% - 40px));margin:0 auto;}
+.rklim-cl-inner h2{font-family:var(--serif);font-size:clamp(1.8rem,3vw,3.2rem);font-weight:300;line-height:1.02;letter-spacing:-.04em;color:#fff;margin-bottom:12px;}
+.rklim-cl-inner p{font-size:1rem;color:rgba(255,255,255,.48);line-height:1.78;max-width:640px;}
+.rklim-badge{display:inline-flex;align-items:center;gap:8px;padding:12px 20px;border-radius:var(--r);border:1px solid rgba(255,255,255,.15);font-family:var(--pmono);font-size:.67rem;letter-spacing:.16em;text-transform:uppercase;color:rgba(255,255,255,.58);white-space:nowrap;}
+.rklim-badge::before{content:"";width:6px;height:6px;border-radius:50%;background:#f0b87a;box-shadow:0 0 8px rgba(240,184,122,.8);}
+.rprir-reveal{opacity:0;transform:translateY(22px);transition:opacity .65s ease,transform .65s ease;}
+.rprir-reveal.rprir-in{opacity:1;transform:none;}
+.rprir-d1{transition-delay:.07s;} .rprir-d2{transition-delay:.14s;}
+@media(max-width:1200px){.rklim-params{grid-template-columns:1fr 1fr;}.rklim-param{border-bottom:1px solid var(--pline);}.rklim-param:nth-child(2n){border-right:none;}.rklim-param:nth-last-child(-n+2){border-bottom:none;}}
+@media(max-width:1024px){.rklim-hero-inner,.rklim-2col,.rklim-arima-inner,.rklim-cl-inner{grid-template-columns:1fr;gap:36px;}}
+@media(max-width:600px){.rklim-params{grid-template-columns:1fr;}.rklim-param{border-right:none;border-bottom:1px solid var(--pline);}.rklim-param:last-child{border-bottom:none;}}
+
+.rklimx-section{background:var(--pbg);}
+.rklimx-figgrid{display:grid;grid-template-columns:1fr;gap:28px;margin-top:30px;}
+.rklimx-figure{margin-top:28px;border:1px solid var(--pline);border-radius:var(--r);overflow:hidden;background:#fff;box-shadow:0 10px 35px rgba(14,18,16,.05);}
+.rklimx-figure img{display:block;width:100%;height:auto;background:#fff;}
+.rklimx-figure figcaption{padding:14px 18px;font-size:.88rem;line-height:1.65;color:var(--pmuted);border-top:1px solid var(--pline);}
+.rklimx-cards{display:grid;grid-template-columns:1fr 1fr;gap:26px;margin-top:32px;}
+
+.rklimx-cards>.rklimx-card:nth-child(3):last-child{grid-column:1/-1;}
+.rklimx-collapsible{padding-top:0;}
+.rklimx-details{margin-top:14px;}
+.rklimx-details summary{list-style:none;}
+.rklimx-details summary::-webkit-details-marker{display:none;}
+.rklimx-summary{
+  display:inline-flex;align-items:center;gap:12px;cursor:pointer;
+  font-family:var(--pmono);font-size:.76rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;
+  color:#6b4f2b;text-decoration:none;padding:14px 18px;border:1px solid rgba(186,137,64,.38);
+  border-radius:999px;background:linear-gradient(180deg,#fffdf7 0%,#f6efe0 100%);
+  box-shadow:0 8px 24px rgba(78,57,24,.08);
+  transition:transform .18s ease, box-shadow .18s ease, border-color .18s ease, color .18s ease;
+}
+.rklimx-summary:hover{transform:translateY(-1px);box-shadow:0 12px 28px rgba(78,57,24,.12);border-color:rgba(186,137,64,.7);color:#4d3515;}
+.rklimx-summary:focus-visible{outline:2px solid rgba(186,137,64,.35);outline-offset:3px;}
+.rklimx-summary::before{
+  content:"+";display:inline-grid;place-items:center;flex:0 0 auto;
+  width:24px;height:24px;border-radius:50%;
+  font-size:1rem;line-height:1;color:#fff;background:linear-gradient(180deg,#bb8a3a 0%,#91651d 100%);
+  box-shadow:0 4px 12px rgba(145,101,29,.25);
+}
+.rklimx-details[open] .rklimx-summary::before{content:"−";}
+.rklimx-details[open] .rklimx-summary{margin-bottom:26px;}
+.rklimx-details-inner{animation:rklimxDrop .28s ease;}
+@keyframes rklimxDrop{from{opacity:.1;transform:translateY(-4px)}to{opacity:1;transform:none}}
+
+.rklimx-card{border:1px solid var(--pline);border-radius:var(--r);background:linear-gradient(180deg,#fff 0%,#fbfaf7 100%);padding:22px 22px 20px;box-shadow:0 8px 30px rgba(14,18,16,.04);}
+.rklimx-card-title{font-family:var(--serif);font-size:1.45rem;line-height:1.08;font-weight:400;letter-spacing:-.03em;color:var(--ptext);margin-bottom:18px;}
+.rklimx-metrics{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin-bottom:16px;}
+.rklimx-metric{border:1px solid var(--pline);border-radius:4px;padding:11px 12px;background:var(--pbg);}
+.rklimx-metric-val{font-family:var(--pmono);font-size:1rem;line-height:1.05;color:var(--pacc);margin-bottom:5px;}
+.rklimx-metric-lab{font-size:.72rem;line-height:1.45;color:var(--pmuted);text-transform:uppercase;letter-spacing:.08em;}
+.rklimx-note{margin-top:14px;padding-top:14px;border-top:1px solid var(--pline);font-size:.9rem;line-height:1.72;color:var(--pmuted);}
+@media(max-width:1024px){.rklimx-cards{grid-template-columns:1fr;}}
+@media(max-width:640px){.rklimx-metrics{grid-template-columns:1fr;}.rklimx-card-title{font-size:1.28rem;}}
+
+
+@media(max-width:1024px){.rklim-hero{min-height:auto;}}
+@media(max-width:600px){.rklim-h1{font-size:clamp(1.8rem,8vw,2.35rem);}.rklim-sub{font-size:.93rem;}}
+
+
+/* balanced first-page climate additions */
+.rklim-intro-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:52px;align-items:start;margin-top:30px;}
+.rklim-mini-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;}
+.rklim-mini{border:1px solid var(--pline);border-radius:var(--r);background:linear-gradient(180deg,#fff 0%,#fbfaf7 100%);padding:18px 18px 16px;box-shadow:0 8px 24px rgba(14,18,16,.035);}
+.rklim-mini b{display:block;font-family:var(--pmono);font-size:.92rem;line-height:1.08;color:var(--pacc);letter-spacing:-.02em;margin-bottom:7px;}
+.rklim-mini span{display:block;font-size:.84rem;line-height:1.55;color:var(--pmuted);}
+.rklim-balanced-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;margin-top:32px;}
+.rklim-balanced-card{border:1px solid var(--pline);border-radius:var(--r);background:#fff;padding:22px 22px 20px;box-shadow:0 8px 30px rgba(14,18,16,.035);}
+.rklim-balanced-card h3{font-family:var(--serif);font-size:1.42rem;line-height:1.08;font-weight:400;letter-spacing:-.03em;color:var(--ptext);margin-bottom:12px;}
+.rklim-balanced-card p{font-size:.94rem;line-height:1.75;color:var(--pmuted);}
+.rklim-balanced-card .rklim-sig{display:inline-flex;margin-top:16px;}
+.rklim-compare{background:linear-gradient(180deg,#1f241e 0%,#151914 100%);color:#fff;border-top:1px solid rgba(255,255,255,.08);border-bottom:1px solid rgba(255,255,255,.08);padding:clamp(52px,7vw,92px) 0;}
+.rklim-compare .rklim-label{color:#d7bd73;}
+.rklim-compare .rklim-h2{color:#fff!important;max-width:850px;}
+.rklim-compare p{color:rgba(255,255,255,.64);}
+.rklim-compare-card{margin-top:30px;border:1px solid rgba(255,255,255,.12);border-radius:12px;background:rgba(255,255,255,.045);box-shadow:0 20px 60px rgba(0,0,0,.22);overflow:hidden;}
+.rklim-compare-lead{padding:26px 28px 22px;border-bottom:1px solid rgba(255,255,255,.10);display:grid;grid-template-columns:1fr 1fr;gap:28px;}
+.rklim-compare-lead p{font-size:.96rem;line-height:1.78;}
+.rklim-table-wrap{overflow-x:auto;}
+.rklim-compare-table{width:100%;border-collapse:collapse;min-width:820px;}
+.rklim-compare-table th{font-family:var(--pmono);font-size:.68rem;letter-spacing:.13em;text-transform:uppercase;color:#d7bd73;text-align:left;font-weight:500;padding:16px 18px;border-bottom:1px solid rgba(255,255,255,.12);background:rgba(0,0,0,.18);}
+.rklim-compare-table td{font-size:.9rem;line-height:1.55;color:rgba(255,255,255,.72);vertical-align:top;padding:15px 18px;border-bottom:1px solid rgba(255,255,255,.08);}
+.rklim-compare-table tr:last-child td{border-bottom:none;}
+.rklim-compare-table td:first-child{color:#fff;font-weight:500;}
+.rklim-compare-note{padding:22px 28px 28px;border-top:1px solid rgba(255,255,255,.10);}
+.rklim-compare-note h3{font-family:var(--serif);font-size:1.55rem;line-height:1.05;font-weight:400;letter-spacing:-.03em;color:#fff;margin-bottom:10px;}
+.rklim-compare-note p+p{margin-top:12px;}
+@media(max-width:1024px){.rklim-intro-grid,.rklim-compare-lead{grid-template-columns:1fr;gap:24px}.rklim-balanced-grid{grid-template-columns:1fr}.rklim-mini-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:640px){.rklim-mini-grid{grid-template-columns:1fr}.rklim-compare-card{border-radius:8px}.rklim-compare-lead,.rklim-compare-note{padding:20px 18px}.rklim-compare-table th,.rklim-compare-table td{padding:13px 14px}}
+
+/* v0.5.5 klima page alignment */
+body.rajac-static-output .rklim-hero{height:60vh!important;min-height:60vh!important;max-height:none!important;}
+body.rajac-static-output .rklim-hero-img{height:100%!important;object-fit:cover!important;object-position:center 48%!important;}
+body.rajac-static-output .rklim-hero-inner,body.rajac-static-output .rklim-wrap,body.rajac-static-output .rklim-arima-inner,body.rajac-static-output .rklim-cl-inner{max-width:1120px!important;width:min(1120px,calc(100% - 44px))!important;margin-left:auto!important;margin-right:auto!important;}
+body.rajac-static-output .rklim-hero-full{padding-left:0!important;padding-right:0!important;}
+body.rajac-static-output .rklim-h1{font-family:var(--rsp-serif,"Cormorant Garamond","Crimson Pro",Georgia,serif)!important;font-weight:300!important;font-size:clamp(2rem,3.05vw,3.15rem)!important;line-height:1!important;letter-spacing:-.035em!important;}
+body.rajac-static-output .rklim-h2{font-family:var(--rsp-serif,"Cormorant Garamond","Crimson Pro",Georgia,serif)!important;font-weight:300!important;font-size:clamp(1.72rem,2.65vw,2.8rem)!important;line-height:1.05!important;letter-spacing:-.03em!important;}
+body.rajac-static-output .rklim-lead{font-size:1rem!important;line-height:1.76!important;}
+body.rajac-static-output .rklim-body,body.rajac-static-output .rklim p,body.rajac-static-output .rklim li{font-size:.96rem!important;line-height:1.74!important;}
+body.rajac-static-output .rklim-label{font-size:.62rem!important;letter-spacing:.18em!important;color:var(--rsp-accent,#8a7440)!important;}
+body.rajac-static-output .rklim-card{background:rgba(32,36,29,.68)!important;border-color:rgba(255,255,255,.12)!important;}
+body.rajac-static-output .rklim-arima,body.rajac-static-output .rklim-closing,body.rajac-static-output .rklim-compare{background:#20241d!important;}
+@media(max-width:760px){body.rajac-static-output .rklim-hero-inner,body.rajac-static-output .rklim-wrap,body.rajac-static-output .rklim-arima-inner,body.rajac-static-output .rklim-cl-inner{width:min(100% - 28px,1120px)!important;}body.rajac-static-output .rklim-h1{font-size:clamp(1.72rem,8vw,2.2rem)!important;}body.rajac-static-output .rklim-h2{font-size:clamp(1.55rem,7vw,2.05rem)!important;}}
+</style>
+<style id="rajac-klima-visibility-fix-v2">
+/* visibility fix for lower climate sections */
+body.rajac-static-output .rklim-arima,
+body.rajac-static-output .rklim-closing,
+body.rajac-static-output .rklim-compare{
+  background:linear-gradient(180deg,#f7f3e8 0%,#efe7d6 100%)!important;
+  color:#253126!important;
+  border-top:1px solid rgba(176,145,63,.22)!important;
+}
+body.rajac-static-output .rklim-arima-kicker,
+body.rajac-static-output .rklim-badge,
+body.rajac-static-output .rklim-compare-eyebrow{
+  color:#7a6540!important;
+}
+body.rajac-static-output .rklim-arima-h2,
+body.rajac-static-output .rklim-cl-inner h2,
+body.rajac-static-output .rklim-compare-title,
+body.rajac-static-output .rklim-compare-note h3{
+  color:#253126!important;
+}
+body.rajac-static-output .rklim-arima-p,
+body.rajac-static-output .rklim-cl-inner p,
+body.rajac-static-output .rklim-compare-note p,
+body.rajac-static-output .rklim-compare-table td{
+  color:rgba(37,49,38,.80)!important;
+}
+body.rajac-static-output .rklim-compare-table th{
+  color:#8a6d24!important;
+  background:rgba(255,255,255,.62)!important;
+  border-bottom:1px solid rgba(37,49,38,.12)!important;
+}
+body.rajac-static-output .rklim-compare-table td:first-child{
+  color:#253126!important;
+}
+body.rajac-static-output .rklim-compare-table td{
+  border-bottom:1px solid rgba(37,49,38,.08)!important;
+}
+body.rajac-static-output .rklim-compare-note{
+  border-top:1px solid rgba(37,49,38,.10)!important;
+}
+body.rajac-static-output .rklim-arima-stats{
+  background:rgba(37,49,38,.10)!important;
+  border:1px solid rgba(37,49,38,.12)!important;
+}
+body.rajac-static-output .rklim-arima-sitem{
+  background:rgba(255,255,255,.72)!important;
+}
+body.rajac-static-output .rklim-arima-sitem b{
+  color:#9a6722!important;
+}
+body.rajac-static-output .rklim-arima-sitem span{
+  color:#5c655a!important;
+}
+body.rajac-static-output .rklim-badge{
+  border:1px solid rgba(176,145,63,.56)!important;
+  background:rgba(255,255,255,.55)!important;
+}
+body.rajac-static-output .rklim-badge::before,
+body.rajac-static-output .rklim-arima-dot{
+  background:#b0913f!important;
+  box-shadow:none!important;
+}
+</style>
+<style id="rajac-klima-light-sections-v3">
+/* additional force-light fixes for compare and closing sections */
+body.rajac-static-output .rklim-compare,
+body.rajac-static-output .rklim-closing{
+  background:linear-gradient(180deg,#f7f3e8 0%,#efe7d6 100%)!important;
+  color:#253126!important;
+}
+body.rajac-static-output .rklim-compare .rklim-label,
+body.rajac-static-output .rklim-closing .rklim-badge{
+  color:#8a6d24!important;
+}
+body.rajac-static-output .rklim-compare .rklim-h2,
+body.rajac-static-output .rklim-closing h2{
+  color:#253126!important;
+}
+body.rajac-static-output .rklim-compare p,
+body.rajac-static-output .rklim-closing p{
+  color:rgba(37,49,38,.82)!important;
+}
+body.rajac-static-output .rklim-compare-card{
+  background:rgba(255,255,255,.54)!important;
+  border:1px solid rgba(37,49,38,.12)!important;
+  box-shadow:0 14px 36px rgba(28,36,28,.08)!important;
+}
+body.rajac-static-output .rklim-compare-lead{
+  border-bottom:1px solid rgba(37,49,38,.10)!important;
+}
+body.rajac-static-output .rklim-compare-lead p,
+body.rajac-static-output .rklim-compare-note p{
+  color:rgba(37,49,38,.82)!important;
+}
+body.rajac-static-output .rklim-compare-note h3{
+  color:#253126!important;
+}
+body.rajac-static-output .rklim-compare-note{
+  background:rgba(255,255,255,.35)!important;
+}
+body.rajac-static-output .rklim-cl-inner{
+  align-items:center!important;
+}
+body.rajac-static-output .rklim-badge{
+  color:#6d5a2a!important;
+  border:1px solid rgba(176,145,63,.58)!important;
+  background:rgba(255,255,255,.62)!important;
+}
+body.rajac-static-output .rklim-badge::before{
+  background:#b0913f!important;
+  box-shadow:none!important;
+}
+</style>
+
+<header class="rklim-hero">
+<div class="rklim-hero-full">
+<div class="rklim-hero-inner">
+<div class="rprir-reveal rprir-in">
+<h1 class="rklim-h1">Клима ПИО „Рајац“</h1>
+<p class="rklim-sub">Клима Рајца одликује се свежијим планинским условима, јасним сезонским променама и све значајнијом улогом локалног мониторинга у праћењу климатских трендова.</p>
+</div>
+</div>
+</div>
+</header>
+
+<section class="rklim-section">
+<div class="rklim-wrap">
+<div class="rprir-reveal rprir-in">
+<div class="rklim-label">Климатска слика</div>
+<h2 class="rklim-h2">Клима Рајца од 1950. године до данас</h2>
+<p class="rklim-lead" style="max-width:820px;">Климатска анализа Рајца показује да је загревање најјаснији и статистички најпоузданији сигнал. Али то није једина важна промена: укупне падавине немају значајан тренд, екстремне кишне епизоде благо јачају, хладни дани су у опадању, вегетациони период се продужава, а индекси суше и аридности не показују да је простор постао систематски сушнији.</p>
+</div>
+<div class="rklim-intro-grid rprir-reveal rprir-d1 rprir-in">
+<div>
+<p class="rklim-body">Рајац се, као и остатак Србије, загрева. Средња, максимална и минимална годишња температура имају статистички значајан раст, а топли део године постаје дужи. Ипак, Рајац није изгубио своје планинско-побрђске одлике: тропске ноћи су и даље ретке, зимски мраз је и даље важна климатска карактеристика, а летње ноћно расхлађивање остаје једна од највећих предности у односу на Београд.</p>
+<p class="rklim-body">Зато ову страницу треба читати као приказ климатске трансформације, а не као једноставну поруку да је Рајац постао „врућ”. Промене постоје и важне су за управљање, туризам, вегетацију, стазе и водни режим, али се оне дешавају у оквиру простора који и даље има свежију, влажнију и ноћу пријатнију климу од урбане средине.</p>
+</div>
+<div class="rklim-mini-grid">
+<div class="rklim-mini"><b>Температура расте</b><span>Најјачи сигнал су значајни трендови средње, максималне и минималне годишње температуре.</span></div>
+<div class="rklim-mini"><b>Падавине стабилне</b><span>Годишња количина остаје око 747 mm, без статистички значајног тренда.</span></div>
+<div class="rklim-mini"><b>Екстреми су важни</b><span>Обилне кише и дневни максимуми падавина показују благ пораст.</span></div>
+<div class="rklim-mini"><b>Суша без јасног тренда</b><span>SPEI, аридност и хидро-термални показатељи не доказују хронично сушнију климу.</span></div>
+</div>
+</div>
+</div>
+</section>
+
+<section class="rklim-section" style="background:var(--bg2);">
+<div class="rklim-wrap">
+<div class="rprir-reveal rprir-in">
+<div class="rklim-label">Температура</div>
+<h2 class="rklim-h2">Три температурна показатеља — сви у порасту</h2>
+<p class="rklim-lead" style="max-width:760px;">Средња, максимална и минимална годишња температура показују статистички значајан растући тренд. Исправније је рећи да Рајац прати јасан регионални тренд отопљавања, него да се нужно загрева брже од целе Србије.</p>
+</div>
+<div class="rklim-params rprir-reveal rprir-d1 rprir-in">
+<div class="rklim-param">
+<div class="rklim-param-val">9,98°C</div>
+<div class="rklim-param-trend">↑ +0,026°C / год · p&lt;0,001</div>
+<h4>Средња годишња</h4>
+<p>Медијана је 9,96°C. Јака аутокорелација указује на постепено и дуготрајно загревање, без јасних декадних циклуса.</p>
+</div>
+<div class="rklim-param">
+<div class="rklim-param-val">15,39°C</div>
+<div class="rklim-param-trend">↑ +0,028°C / год · p&lt;0,001</div>
+<h4>Максимална годишња</h4>
+<p>Максималне температуре расту. Највиша годишња вредност у анализи забележена је 2019. године: 17,37°C.</p>
+</div>
+<div class="rklim-param">
+<div class="rklim-param-val">4,98°C</div>
+<div class="rklim-param-trend">↑ +0,028°C / год · p&lt;0,001</div>
+<h4>Минимална годишња</h4>
+<p>Пораст минималних температура указује на блаже зиме и ређе екстремно ниске вредности него средином 20. века.</p>
+</div>
+<div class="rklim-param" style="border-right:none;">
+<div class="rklim-param-val">2021–34</div>
+<div class="rklim-param-trend">ARIMA пројекција</div>
+<h4>Наставак тренда</h4>
+<p>Пројекција указује на више средње, максималне и минималне температуре, али је треба читати као статистички наставак тренда, не као сигурну прогнозу.</p>
+</div>
+</div>
+</div>
+</section>
+
+<section class="rklim-section">
+<div class="rklim-wrap">
+<div class="rklim-2col">
+<div class="rprir-reveal rprir-in">
+<div class="rklim-label">Падавине</div>
+<h2 class="rklim-h2">Укупна количина стабилна, екстреми благо расту</h2>
+<p class="rklim-lead">Просечна годишња сума падавина износи око 747 mm и не показује статистички значајан тренд. То значи да се основна количина воде током године није битно променила.</p>
+<p class="rklim-body">Ипак, поједини показатељи обилних падавина расту. То не значи да је свака година влажнија, већ да су у појединим годинама важније интензивне епизоде. Посебно се издваја 2014. година са 1164,2 mm укупних падавина, једнодневним максимумом 80,1 mm и петодневним максимумом 144,9 mm — као пример екстремне, поплавне године.</p>
+</div>
+<div class="rprir-reveal rprir-d1 rprir-in">
+<div class="rklim-trends">
+<div class="rklim-trow">
+<div><h4>Годишње падавине</h4><p>747,1 mm просек · тренд +0,98 mm/год</p></div>
+<span class="rklim-sig no">Није зн.</span>
+</div>
+<div class="rklim-trow">
+<div><h4>Дани &gt;20 mm</h4><p>2,4 дана/год · тренд +0,03/год</p></div>
+<span class="rklim-sig yes">Значајно</span>
+</div>
+<div class="rklim-trow">
+<div><h4>Дани &gt;30 mm</h4><p>0,7 дана/год · тренд +0,011/год</p></div>
+<span class="rklim-sig yes">Значајно</span>
+</div>
+<div class="rklim-trow">
+<div><h4>1-дневни максимум</h4><p>31,9 mm просек · тренд +0,16 mm/год</p></div>
+<span class="rklim-sig yes">Значајно</span>
+</div>
+<div class="rklim-trow">
+<div><h4>5-дневни максимум</h4><p>60,9 mm просек · тренд +0,21 mm/год</p></div>
+<span class="rklim-sig no">На граници</span>
+</div>
+<div class="rklim-trow">
+<div><h4>Кишни периоди</h4><p>7,8 дана просек · тренд приближно нула</p></div>
+<span class="rklim-sig no">Није зн.</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<section class="rklim-section" style="background:var(--bg2);">
+<div class="rklim-wrap">
+<div class="rprir-reveal rprir-in">
+<div class="rklim-label">Топло · хладно · суша</div>
+<h2 class="rklim-h2">Шта се још променило у клими Рајца</h2>
+<p class="rklim-lead" style="max-width:820px;">Температурни пораст се најбоље види кроз дужи топли део године и краће зимске хладне периоде. Али Рајац и даље има ретке тропске ноћи, велики број мразних дана и индексе суше који не показују јасно погоршање.</p>
+</div>
+<div class="rklim-balanced-grid rprir-reveal rprir-d1 rprir-in">
+<article class="rklim-balanced-card">
+<h3>Лета су топлија, али ноћи остају предност</h3>
+<p>Рајац просечно има 65,7 летњих дана и 15,7 тропских дана годишње. Врло врели дани су ретки, а тропске ноћи се јављају просечно само 0,3 пута годишње. То је кључна разлика у односу на Београд, где урбано топлотно острво задржава топлоту током ноћи.</p>
+<span class="rklim-sig yes">Туристичка предност</span>
+</article>
+<article class="rklim-balanced-card">
+<h3>Зиме су блаже, али Рајац остаје зимски простор</h3>
+<p>Број мразних и ледених дана опада, што показује ублажавање зиме. Ипак, просек од 105,6 мразних дана и 25,2 ледена дана годишње значи да зимски Рајац и даље захтева добру обућу, слојевиту гардеробу и опрез на стазама.</p>
+<span class="rklim-sig no">Потребна опрема</span>
+</article>
+<article class="rklim-balanced-card">
+<h3>Суша није једноставна прича</h3>
+<p>Више температуре могу повећати испаравање и локални летњи стрес, али SPEI, Еленбергов индекс, индекс аридности и хидро-термални коефицијент не показују статистички значајан тренд ка хронично сушнијој клими.</p>
+<span class="rklim-sig no">Без јасног тренда</span>
+</article>
+</div>
+</div>
+</section>
+
+<div class="rklim-arima">
+<div class="rklim-arima-inner rprir-reveal rprir-in">
+<div>
+<div class="rklim-arima-kicker"><span class="rklim-arima-dot"></span>ARIMA пројекција 2021–2034</div>
+<h2 class="rklim-arima-h2">Наставак загревања,<br/>стабилне падавине</h2>
+<p class="rklim-arima-p">Пројекција помоћу ARIMA модела указује на наставак пораста температуре у наредном периоду, док просечна годишња количина падавина остаје приближно на истом нивоу. Ове вредности треба користити као оријентацију за управљање и праћење трендова, уз свест да екстремне године и даље могу значајно одступати од просека.</p>
+</div>
+<div class="rklim-arima-stats">
+<div class="rklim-arima-sitem"><b>~12,0°C</b><span>Средња темп.</span></div>
+<div class="rklim-arima-sitem"><b>~16,78°C</b><span>Макс. темп.</span></div>
+<div class="rklim-arima-sitem"><b>~6,65°C</b><span>Мин. темп.</span></div>
+<div class="rklim-arima-sitem"><b>≈747 mm</b><span>Падавине</span></div>
+</div>
+</div>
+</div>
+
+<section class="rklim-section">
+<div class="rklim-wrap">
+<div class="rklim-2col">
+<div class="rprir-reveal rprir-in">
+<div class="rklim-label">Екосистемске импликације</div>
+<h2 class="rklim-h2">Шта климатске промене значе за Рајац</h2>
+<p class="rklim-lead">Промене климе највише се испољавају кроз пораст температуре, дужи топли део године, мањи број хладних дана и нешто израженије екстремне падавинске догађаје.</p>
+<p class="rklim-body">То је важно за вегетацију, фенологију биљака, активност инсеката, услове за птице и слепе мишеве, одржавање стаза, ерозију и планирање туристичких активности. Климатски ризици постоје, али их треба везивати за стварне индикаторе: температуру, екстремне кише, сушне епизоде и стање станишта.</p>
+</div>
+<div class="rprir-reveal rprir-d1 rprir-in">
+<div class="rklim-trends">
+<div class="rklim-trow">
+<div><h4>Вегетациона сезона</h4><p>Дужи биолошки активни период, раније кретање вегетације и могуће фенолошке промене.</p></div>
+<span class="rklim-sig yes">Пратити</span>
+</div>
+<div class="rklim-trow">
+<div><h4>Водни режим</h4><p>Падавине су укупно стабилне, али више температуре могу појачати испаравање у топлим летима.</p></div>
+<span class="rklim-sig yes">Пратити</span>
+</div>
+<div class="rklim-trow">
+<div><h4>Екстремне кише</h4><p>Обилне падавине су важне за ерозију, стазе, приступне путеве и бујичне процесе.</p></div>
+<span class="rklim-sig yes">Пратити</span>
+</div>
+<div class="rklim-trow">
+<div><h4>Астрономски услови</h4><p>Из ове студије не треба директно изводити закључак о броју јасних ноћи; облачност и провидност атмосфере треба пратити посебно.</p></div>
+<span class="rklim-sig no">Одвојен индекс</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="rklim-section rklimx-collapsible">
+<div class="rklim-wrap">
+<details class="rklimx-details">
+<summary class="rklimx-summary">Прикажи проширену анализу, графиконе и допунска поглавља</summary>
+<div class="rklimx-details-inner">
+<section class="rklim-section rklimx-section">
+<div class="rklim-wrap">
+<div class="rprir-reveal">
+<div class="rklim-label">Проширена анализа</div>
+<h2 class="rklim-h2">Допунски графикони и проширена климатска поглавља</h2>
+<p class="rklim-lead">У наставку следе графички прилози и аналитички блокови који продубљују климатску слику Рајца и допуњују основни приказ подацима о дугорочним трендовима и сезонским променама.</p>
+</div>
+</div>
+</section>
+<section class="rklim-section rklimx-section">
+<div class="rklim-wrap">
+<div class="rprir-reveal">
+<div class="rklim-label">Графички прилози</div>
+<h2 class="rklim-h2">Температура и падавине — допунски графикони</h2>
+<p class="rklim-lead">Графикони у наставку визуелно приказују температурне и падавинске трендове описане у основном делу анализе.</p>
+</div>
+<div class="rklimx-figgrid">
+<figure class="rklimx-figure rprir-reveal">
+<img alt="Кретање температура на Рајцу 1950-2020" decoding="async" loading="lazy" src="https://piorajac.rs/rajac-static-2105/assets/page-assets/klima/klima-grafikon-01.webp"/>
+<figcaption>Графикон 01 — Кретање средње, максималне и минималне годишње температуре на Рајцу (1950–2020) са линеарним трендовима. Статистички значајан пораст свих температурних показатеља.</figcaption>
+</figure>
+<figure class="rklimx-figure rprir-reveal">
+<img alt="Падавине и екстремни догађаји 1950-2020" decoding="async" loading="lazy" src="https://piorajac.rs/rajac-static-2105/assets/page-assets/klima/klima-grafikon-02.webp"/>
+<figcaption>Графикон 02 — Годишње падавине и показатељи екстремних падавинских догађаја (1950–2020). Одсуство тренда у укупним падавинама, али благи пораст екстремних догађаја.</figcaption>
+</figure>
+</div>
+</div>
+</section>
+<section class="rklim-section rklimx-section">
+<div class="rklim-wrap">
+<div class="rprir-reveal">
+<div class="rklim-label">Проширено поглавље · 03</div>
+<h2 class="rklim-h2">Топли дани и ноћи</h2>
+<p class="rklim-lead">Графикон 03 — Годишњи број топлих дана и ноћи на Рајцу (1950–2020). Повећање учесталости свих типова топлих екстрема.</p>
+</div>
+<figure class="rklimx-figure rprir-reveal rprir-d1">
+<img alt="Топли дани и ноћи 1950-2020" decoding="async" loading="lazy" src="https://piorajac.rs/rajac-static-2105/assets/page-assets/klima/klima-grafikon-03.webp"/>
+<figcaption>Графикон 03 — Годишњи број топлих дана и ноћи на Рајцу (1950–2020). Повећање учесталости свих типова топлих екстрема.</figcaption>
+</figure>
+<div class="rklimx-cards">
+<article class="rklimx-card rprir-reveal">
+<h3 class="rklimx-card-title">Летњи дани (Tmax ≥ 25°C)</h3>
+<div class="rklimx-metrics">
+<div class="rklimx-metric">
+<div class="rklimx-metric-val">65,7</div>
+<div class="rklimx-metric-lab">Дана просечно</div>
+</div>
+<div class="rklimx-metric">
+<div class="rklimx-metric-val">+0,39</div>
+<div class="rklimx-metric-lab">Тренд дана/год</div>
+</div>
+<div class="rklimx-metric">
+<div class="rklimx-metric-val">46–108</div>
+<div class="rklimx-metric-lab">Опсег</div>
+</div>
+<div class="rklimx-metric">
+<div class="rklimx-metric-val">88,8</div>
+<div class="rklimx-metric-lab">Прогноза 2021–34</div>
+</div></div>
+<p class="rklim-body">Број летњих дана (Tmax ≥ 25°C): У просеку на Рајцу годишње има 65,7 летњих дана (дана са максималном температуром ≥25°C). Медијана је 66, минималан број 46 (1978), а максималан 108 (2012); стандардна девијација 14,3 дана. Линеарни тренд је јасно растући (+0,39 дана/годишње), значајан (p &lt; 0,001), што указује на продужавање топлог дела године. Ово је у складу са продужетком трајања екстремно топлих периода забележеним у Србији од 1960-их до данас (climatechangepost.com). Аутокорелације су релативно високе (ацф_1 ≈ 0,41) због тренда, без других периодичности. Серија је нестационарна (ADF p=0,985). ARIMA прогноза показује да ће 2021–2034. просечно имати око 88,8 летњих дана годишње, што је знатно више него у прошлости (65,7; p &lt; 0,001). Очекује се, дакле, статистички значајно повећање броја топлих дана у односу на 20. век.</p>
+<p class="rklimx-note">Тренд јасно растући ↑ +0,39 дана/год (p &lt; 0,001). Значајно Прогноза: ~ 88,8 летњих дана годишње — значајно повећање.</p>
+</article>
+<article class="rklimx-card rprir-reveal">
+<h3 class="rklimx-card-title">Тропски дани (Tmax ≥ 30°C)</h3>
+<div class="rklimx-metrics">
+<div class="rklimx-metric">
+<div class="rklimx-metric-val">15,7</div>
+<div class="rklimx-metric-lab">Дана просечно</div>
+</div>
+<div class="rklimx-metric">
+<div class="rklimx-metric-val">+0,22</div>
+<div class="rklimx-metric-lab">Тренд дана/год</div>
+</div>
+<div class="rklimx-metric">
+<div class="rklimx-metric-val">0–52</div>
+<div class="rklimx-metric-lab">Опсег</div>
+</div>
+<div class="rklimx-metric">
+<div class="rklimx-metric-val">≈17,1</div>
+<div class="rklimx-metric-lab">Прогноза 2021–34</div>
+</div></div>
+<p class="rklim-body">Број тропских дана (Tmax ≥ 30°C): Просечан број тропских дана годишње (макс ≥30°C) је 15,7, медијана 14. Најмање их је било 0 (неколико хладнијих година средином века), а највише 52 (2012); стандардна девијација 12,3 дана, што указује на изражене варијације међу годинама. Тренд је позитиван (+0,22 дана/год), статистички значајан (p=0,001). Аутокорелација је умерена (ацф_1 ≈ 0,36), пре свега одраз тренда, без циклуса. Серија је нестационарна (ADF p=0,648). Предвиђени просек за наредни период је ≈17,1 тропских дана годишње, нешто више него историјски, али та разлика није статистички значајна (p=0,44). Иако је тренд досада био јак, велика природна варијабилност узрокује да пројекција није много изнад историјског просека – ипак, могуће је очекивати наставак учесталије појаве тропских дана у односу на ранији период.</p>
+<p class="rklimx-note">Тренд позитиван ↑ +0,22 дана/год (p=0,001). Значајно Максимум: 52 тропска дана (2012).</p>
+</article>
+<article class="rklimx-card rprir-reveal">
+<h3 class="rklimx-card-title">Врло врели дани (Tmax ≥ 35°C) и тропске ноћи (Tmin ≥ 20°C)</h3>
+<div class="rklimx-metrics">
+<div class="rklimx-metric">
+<div class="rklimx-metric-val">1,2</div>
+<div class="rklimx-metric-lab">Врелих дана просечно</div>
+</div>
+<div class="rklimx-metric">
+<div class="rklimx-metric-val">≈1,9</div>
+<div class="rklimx-metric-lab">Прогноза 2021–34</div>
+</div>
+<div class="rklimx-metric">
+<div class="rklimx-metric-val">0,3</div>
+<div class="rklimx-metric-lab">Тропских ноћи просечно</div>
+</div>
+<div class="rklimx-metric">
+<div class="rklimx-metric-val">+0,013</div>
+<div class="rklimx-metric-lab">Тренд ноћи/год</div>
+</div></div>
+<p class="rklim-body">Број врло врелих дана (Tmax ≥ 35°C): Ови екстремно врели дани су ретки на Рајцу – просек је 1,2 дана годишње (медијана 0). Већину година нема ниједног дана изнад 35°C, али у најтоплијим годинама (нпр. 2012) било их је до 9; стандардна девијација 2,0. Линеарни тренд је благ (+0,017 дана/год), статистички незнатан на α=0,05 (p=0,20). Аутокорелација је слаба (ацф_1 ≈ 0,32 заostatak тренда). Серија је нестационарна (ADF p=0,184). ARIMA модел предвиђа просек ≈1,9 дана ≥35°C годишње у 2021–2034, што је статистички значајно више него раније (1,2; p=0,009). Иако историјски тренд није био јак, прогноза указује на могућ раст учесталости екстремних врућина. Треба нагласити да су апсолутне вредности још увек мале, али релативно удвостручавање учесталости ових екстрема може имати значајне утицаје. Број тропских ноћи (Tmin ≥ 20°C): Тропске ноћи (када минимална температура не пада испод 20°C) су на овој планинској локацији до скора биле изузетно ретке или непостојеће. Просечан број тропских ноћи је само 0,3 годишње (медијана 0), с тим да их пре 1980-их практично није ни било, док су у последњим деценијама почеле да се јављају (нпр. максимум 4 ноћи у 1994. години). Тренд је позитиван (+0,013 ноћи/год), значајан (p=0,002), што одражава појаву тропских ноћи тек у новије време услед климатског загревања. Аутокорелација нема смислен образац (доминирају нуле већину година). Серија је формално стационарна (ADF p &lt; 0,001, мада је то последица бројних нултих вредности). За наредни период модел пројектује ≈0,4 тропских ноћи годишње, без битне статистичке разлике у односу на историјски просек (p=0,64). Иако ће тропске ноћи вероватно постати нешто учесталије него у прошлом веку (када их скоро није било), и даље се очекује да буду ретка појава на овој локацији.</p>
+<p class="rklimx-note">Врло врели дани: прогноза ≈1,9 дана — удвостручавање учесталости (p=0,009). Значајно Тропске ноћи: пре 1980-их практично нису постојале, сада се јављају. Тренд ↑ +0,013/год (p=0,002). Значајно</p>
+</article>
+</div>
+</div>
+</section>
+<section class="rklim-section rklimx-section">
+<div class="rklim-wrap">
+<div class="rprir-reveal">
+<div class="rklim-label">Проширено поглавље · 04</div>
+<h2 class="rklim-h2">Таласи топлоте и топли периоди</h2>
+<p class="rklim-lead">Графикон 04 — Топлотни таласи и продужени топли периоди (1950–2020). Раст и учесталости и трајања ових појава кроз време.</p>
+</div>
+<figure class="rklimx-figure rprir-reveal rprir-d1">
+<img alt="Топлотни таласи и топли периоди 1950-2020" decoding="async" loading="lazy" src="https://piorajac.rs/rajac-static-2105/assets/page-assets/klima/klima-grafikon-04.webp"/>
+<figcaption>Графикон 04 — Топлотни таласи и продужени топли периоди (1950–2020). Раст и учесталости и трајања ових појава кроз време.</figcaption>
+</figure>
+<div class="rklimx-cards">
+<article class="rklimx-card rprir-reveal">
+<h3 class="rklimx-card-title">Топлотни таласи — учесталост и дужина</h3>
+<div class="rklimx-metrics">
+<div class="rklimx-metric">
+<div class="rklimx-metric-val">1,0</div>
+<div class="rklimx-metric-lab">Таласа просечно</div>
+</div>
+<div class="rklimx-metric">
+<div class="rklimx-metric-val">+0,026</div>
+<div class="rklimx-metric-lab">Тренд / год</div>
+</div>
+<div class="rklimx-metric">
+<div class="rklimx-metric-val">6,8 дана</div>
+<div class="rklimx-metric-lab">Укупна дужина просечно</div>
+</div>
+<div class="rklimx-metric">
+<div class="rklimx-metric-val">+0,24</div>
+<div class="rklimx-metric-lab">Тренд дана/год</div>
+</div></div>
+<p class="rklim-body">Број топлотних таласа: Таласом топлоте се обично сматра период од ≥5 узастопних веома топлих дана (нпр. Tmax над екстремним процентилом). Према доступним подацима, на Рајцу је од 1950. до 2020. просечно било 1,0 топлотни талас годишње (медијана 1), али са великим варијацијама: у многим годинама није забележен ниједан, док је у најтоплијим годинама било и до 5 (нпр. 2012. имала 5 таласа). Стандардна девијација је 1,2. Тренд показује пораст учесталости (+0,026/год), значајан (p=0,003), што потврђује да су топлотни екстреми постали учесталији последњих деценија – тенденција у складу са општим глобалним и регионалним трендовима повећања учесталости топлотних таласа (climatechangepost.com). Аутокорелације су умерене (ацф_1 ≈ 0,50), без јасног циклуса. Серија је на граници стационарности (ADF p=0,025), али је моделом обухваћена. Пројекција за 2021–2034. предвиђа у просеку 1,5 топлотних таласа годишње, што јесте више од историјског 1,0, али разлика није статистички значајна (p=0,14) услед велике варијабилности. Ипак, тенденција раста указује на вероватноћу чешћих топлотних таласа убудуће. Дужина топлотних таласа: Овај индекс представља укупан број дана у току године који су део неког топлотног таласа (збир трајања свих таласа или дужина најдужег таласа – тумачење можда захтева додатно објашњење, али ћемо посматрати вредности). Просечна укупна дужина топлотних таласа годишње је 6,8 дана, али са великим варијацијама (медијана 0, јер је много година без таласа; максимум 54 дана у таласима током 2012). Стандардна девијација је 11,6 дана. Тренд је снажан узлазни (+0,24 дана/год), статистички веома значајан (p &lt; 0,001), што имплицира знатно продужавање екстремно топлих периода кроз деценије. Аутокорелације су високе (ацф_1 ≈ 0,45) због тренда. Серија је нестационарна (ADF p=0,470). ARIMA пројекција даје просек ≈16,8 дана годишње у топлотним таласима за 2021–2034, што је значајно више од историјског просека (6,8; p &lt; 0,001). Очекивања су дакле да ће у наредним деценијама велики део лета бити у режиму таласа топлоте, што представља драстичну промену у односу на период средине 20. века.</p>
+<p class="rklimx-note">Учесталост: ↑ +0,026/год (p=0,003) Значајно . Дужина: ↑ +0,24 дана/год (p &lt; 0,001) Значајно . Екстрем: 2012 — 5 таласа, 54 дана укупно.</p>
+</article>
+<article class="rklimx-card rprir-reveal">
+<h3 class="rklimx-card-title">Топли периоди — учесталост и дужина</h3>
+<div class="rklimx-metrics">
+<div class="rklimx-metric">
+<div class="rklimx-metric-val">2,0</div>
+<div class="rklimx-metric-lab">Периода просечно</div>
+</div>
+<div class="rklimx-metric">
+<div class="rklimx-metric-val">+0,045</div>
+<div class="rklimx-metric-lab">Тренд / год</div>
+</div>
+<div class="rklimx-metric">
+<div class="rklimx-metric-val">18,4 дана</div>
+<div class="rklimx-metric-lab">Укупна дужина просечно</div>
+</div>
+<div class="rklimx-metric">
+<div class="rklimx-metric-val">+0,42</div>
+<div class="rklimx-metric-lab">Тренд дана/год</div>
+</div></div>
+<p class="rklim-body">Број топлих периода: Топли периоди означавају дуже периоде изнад уобичајено топлог прага (мање екстремно од таласа топлоте). Просечан број топлих периода годишње је 2,0, медијана 2. Имамо године без иједног (нпр. 1952, 1967 итд.), али и године са до 8 топлих периодa (1998); стандардна девијација 1,7. Тренд је позитиван (+0,045/год), значајан (p &lt; 0,001), што указује на све чешћу појаву топлих епизода. Аутокорелације су релативно високе (ацф_1 ≈ 0,48). Серија је стационарна на 5% (ADF p=0,038). Прогнозирани просек је ≈2,3 топла периода годишње, без статистички значајне разлике у односу на прошлост (p=0,37). Иако је тренд био јак, пројекција сугерише да ће се број топлих периода стабилизовати на нешто већем нивоу (~2-3 годишње). Дужина топлих периода: Укупно трајање топлих периода (блажих топлих епизода) годишње у просеку износи 18,4 дана (медијана 15). Минимално је било година са свега 0–5 таквих дана, док је максимум 69 дана (2000); стандардна девијација 15,2 дана. Тренд је снажан узлазни (+0,42 дана/год), статистички значајан (p &lt; 0,001), што значи да је укупан број дана у топлим периодима растао (лета постају све дужа и топлија). Аутокорелације су високе (ацф_1 ≈ 0,51). Серија је стационарна (ADF p=0,022). За наредни период се предвиђа просек ≈33,8 дана топлих периода годишње, што јесте дуже него историјски просек, али та разлика није статистички значајна на 5% нивоу (p=0,32) због велике варијабилности. Упркос томе, тренд сугерише да ће летњи топли периоди наставити да буду дуготрајни, вероватно и дужи него раније, у складу са општим порастом топлотних екстрема.</p>
+<p class="rklimx-note">Оба тренда значајна (p &lt; 0,001). Значајно Прогноза: ~ 33,8 дана годишње у топлим периодима (максимум историјски: 69 дана, 2000). Летњи топли периоди наставиће да буду дуготрајни.</p>
+</article>
+</div>
+</div>
+</section>
+<section class="rklim-section rklimx-section">
+<div class="rklim-wrap">
+<div class="rprir-reveal">
+<div class="rklim-label">Проширено поглавље · 05</div>
+<h2 class="rklim-h2">Хладни дани</h2>
+<p class="rklim-lead">Графикон 05 — Мразни и ледени дани на Рајцу (1950–2020). Падајући трендови код оба показатеља — краће и блаже зиме.</p>
+</div>
+<figure class="rklimx-figure rprir-reveal rprir-d1">
+<img alt="Хладни дани 1950-2020" decoding="async" loading="lazy" src="https://piorajac.rs/rajac-static-2105/assets/page-assets/klima/klima-grafikon-05.webp"/>
+<figcaption>Графикон 05 — Мразни и ледени дани на Рајцу (1950–2020). Падајући трендови код оба показатеља — краће и блаже зиме.</figcaption>
+</figure>
+<div class="rklimx-cards">
+<article class="rklimx-card rprir-reveal">
+<h3 class="rklimx-card-title">Мразни дани (Tmin &lt; 0°C)</h3>
+<div class="rklimx-metrics">
+<div class="rklimx-metric">
+<div class="rklimx-metric-val">105,6</div>
+<div class="rklimx-metric-lab">Дана просечно</div>
+</div>
+<div class="rklimx-metric">
+<div class="rklimx-metric-val">–0,29</div>
+<div class="rklimx-metric-lab">Тренд дана/год</div>
+</div>
+<div class="rklimx-metric">
+<div class="rklimx-metric-val">72–136</div>
+<div class="rklimx-metric-lab">Опсег</div>
+</div>
+<div class="rklimx-metric">
+<div class="rklimx-metric-val">≈81</div>
+<div class="rklimx-metric-lab">Прогноза 2021–34</div>
+</div></div>
+<p class="rklim-body">Број мразних дана (Tmin &lt; 0°C): Мразни дани (дана са минималном температуром испод 0°C) на Рајцу су веома чести услед планинске климе. Просечно их је 105,6 дана годишње (медијана 106), са распоном од 72 (2014) до 136 (1956); стандардна девијација 13,5 дана. Линеарни тренд указује на смањење броја мразних дана за око -0,29 дана/годишње, што је статистички значајан пад (p=0,002). То значи да се сезона мразева скраћује – годишње сада има око 20-30 мразних дана мање него 1950-их. Аутокорелације су ниске (ацф_1 ≈ 0,25) сем утицаја опадајућег тренда, без цикличних осцилација. Серија је нестационарна (ADF p=0,431). ARIMA пројекција даје просек ~81 мразни дан годишње за 2021–2034, што је знатно мање од историјског просека (105,6; p &lt; 0,001). Дакле, очекује се да ће број мразних дана наставити да опада са даљим загревањем климе, што имплицира ублажавање зимских услова на Рајцу.</p>
+<p class="rklimx-note">Тренд ↓ –0,29 дана/год , статистички значајан пад (p=0,002). Значајно Сезона мразева се скраћује: годишње ~20–30 мразних дана мање него 1950-их.</p>
+</article>
+<article class="rklimx-card rprir-reveal">
+<h3 class="rklimx-card-title">Ледени дани (Tmax &lt; 0°C)</h3>
+<div class="rklimx-metrics">
+<div class="rklimx-metric">
+<div class="rklimx-metric-val">25,2</div>
+<div class="rklimx-metric-lab">Дана просечно</div>
+</div>
+<div class="rklimx-metric">
+<div class="rklimx-metric-val">–0,17</div>
+<div class="rklimx-metric-lab">Тренд дана/год</div>
+</div>
+<div class="rklimx-metric">
+<div class="rklimx-metric-val">4–60</div>
+<div class="rklimx-metric-lab">Опсег</div>
+</div></div>
+<p class="rklim-body">Број ледених дана (Tmax &lt; 0°C): Ледени дани (целодневни мраз, максимална температура испод 0°C) су ређи: просечно 25,2 дана годишње (медијана 26). Током најблажих зима било их је свега 4 (2020), док је у најхладнијим годинама било до 60 ледених дана (1956); стандардна девијација 11,3 дана. Линеарни тренд је негативан (-0,17 дана/год), значајан (p=0,005), што указује на смањење учесталости ледених дана како клима постаје блажа. Аутокорелације су ниске (ацф_1 ≈ 0,16). Серија је стационарна (ADF p &lt; 0,001). Модел предвиђа просек ~25,2 ледених дана годишње и за наредни период, што је исто као историјски просек (p=1,00). Ово је последица тога што је већ последњих деценија број ледeних дана опао и осцилирао око ~20–30; модел сугерише стационарност око тог нивоа. Ипак, приметно је да су у последњим годинама (после 2010) неке зиме имале изразито мали број ледених дана, што указује да би се у даљој будућности тренд опадања могао наставити, иако га краткорочна пројекција статистички не разликује од досадашњег просека.</p>
+<p class="rklimx-note">Тренд ↓ –0,17 дана/год (p=0,005). Значајно После 2010. неке зиме имале изразито мали број ледених дана (нпр. 2020: само 4).</p>
+</article>
+</div>
+</div>
+</section>
+<section class="rklim-section rklimx-section">
+<div class="rklim-wrap">
+<div class="rprir-reveal">
+<div class="rklim-label">Проширено поглавље · 06</div>
+<h2 class="rklim-h2">Вегетациони период</h2>
+<p class="rklim-lead">Графикон 06 — Дужина вегетационог периода (праг 5°C лево, 10°C десно) за 1950–2020. Продужавање периода без мраза, нарочито за блажи праг.</p>
+</div>
+<figure class="rklimx-figure rprir-reveal rprir-d1">
+<img alt="Вегетациони период 1950-2020" decoding="async" loading="lazy" src="https://piorajac.rs/rajac-static-2105/assets/page-assets/klima/klima-grafikon-06.webp"/>
+<figcaption>Графикон 06 — Дужина вегетационог периода (праг 5°C лево, 10°C десно) за 1950–2020. Продужавање периода без мраза, нарочито за блажи праг.</figcaption>
+</figure>
+<div class="rklimx-cards">
+<article class="rklimx-card rprir-reveal">
+<h3 class="rklimx-card-title">Вегетациони период ≥ 5°C</h3>
+<div class="rklimx-metrics">
+<div class="rklimx-metric">
+<div class="rklimx-metric-val">252 дана</div>
+<div class="rklimx-metric-lab">Просек</div>
+</div>
+<div class="rklimx-metric">
+<div class="rklimx-metric-val">+0,36</div>
+<div class="rklimx-metric-lab">Тренд дана/год</div>
+</div>
+<div class="rklimx-metric">
+<div class="rklimx-metric-val">200–319</div>
+<div class="rklimx-metric-lab">Опсег</div>
+</div>
+<div class="rklimx-metric">
+<div class="rklimx-metric-val">≈276</div>
+<div class="rklimx-metric-lab">Прогноза 2021–34</div>
+</div></div>
+<p class="rklim-body">Дужина вегетационог периода ≥5°C: Вегетациони период дефинисан прагом од 5°C (број дана у години са средњом дневном температуром изнад 5°C) на Рајцу у просеку траје 252 дана (медијана 254). То значи да просечно ~252 дана годишње температура одржава биолошку активност (прекида се током најхладнијих ~3 месеца). Минимална дужина била је 200 дана (1955), а максимална 319 дана (2019), уз стандардну девијацију 25 дана. Тренд је позитиван (+0,36 дана/год) и статистички значајан (p=0,008), што указује на продужавање вегетационог периода услед загревања (ранији почетак пролећа и каснији наступ јесени). Овај резултат се слаже са посматрањима ранијег почетка пролећа у Србији (researchgate.net). Аутокорелације не указују на значајне циклусе. Серија је стационарна (ADF p &lt; 0,001), иако тренд постоји (ADF без тренда може прецењивати стационарност). ARIMA пројекција за 2021–2034. даје просечну дужину ~276 дана, што је статистички више од историјског просека (252; p=0,001). То значи да се очекује да ће вегетациони период на Рајцу у просеку бити дужи за око месец дана него током друге половине 20. века, што је значајна промена са потенцијалним последицама на екосистеме и пољопривреду.</p>
+<p class="rklimx-note">Тренд ↑ +0,36 дана/год (p=0,008). Значајно</p>
+</article>
+<article class="rklimx-card rprir-reveal">
+<h3 class="rklimx-card-title">Вегетациони период ≥ 10°C</h3>
+<div class="rklimx-metrics">
+<div class="rklimx-metric">
+<div class="rklimx-metric-val">187 дана</div>
+<div class="rklimx-metric-lab">Просек</div>
+</div>
+<div class="rklimx-metric">
+<div class="rklimx-metric-val">+0,23</div>
+<div class="rklimx-metric-lab">Тренд дана/год</div>
+</div>
+<div class="rklimx-metric">
+<div class="rklimx-metric-val">148–240</div>
+<div class="rklimx-metric-lab">Опсег</div>
+</div>
+<div class="rklimx-metric">
+<div class="rklimx-metric-val">≈206</div>
+<div class="rklimx-metric-lab">Прогноза 2021–34</div>
+</div></div>
+<p class="rklim-body">Дужина вегетационог периода ≥10°C: За вегетациони период дефинисан строжим прагом од 10°C (дана са средњом температуром изнад 10°C), просечна годишња дужина је 187 дана (медијана 188). У најхладнијим годинама овај период је трајао ~150 дана (нпр. 1955: 148 дана), док је у најтоплијим достигао 240 дана (2019); стандардна девијација 21 дан. Тренд је позитиван (+0,23 дана/год), али на граници значајности (p=0,06). Ово сугерише тенденцију продужавања топлог дела године, мада нешто мање изражену него за праг 5°C. Аутокорелације су ниске. Серија је стационарна (ADF p &lt; 0,001). Прогнозирани просек за наредни период је ≈206 дана, што није статистички различито од историјског просека (187; p=1,00) – модел не показује значајну промену, делом јер је тренд био мало испод прага значајности. У стварности, ако загревање потраје, извесно је да ће и овај строжи вегетациони период постати дуже трајан (што се види у подацима до 2020), али краткорочна пројекција ту разлику не исказује јасно.</p>
+<p class="rklimx-note">Тренд ↑ +0,23 дана/год на граници значајности (p=0,06). На граници Ако загревање потраје, и строжи вегетациони период постаће дуже трајан.</p>
+</article>
+</div>
+</div>
+</section>
+<section class="rklim-section rklimx-section">
+<div class="rklim-wrap">
+<div class="rprir-reveal">
+<div class="rklim-label">Проширено поглавље · 07</div>
+<h2 class="rklim-h2">Климатски индекси суше и аридности</h2>
+<p class="rklim-lead">Графикон 07 — Климатски индекси суше и аридности (1950–2020): узастопни суви дани, SPEI, Еленбергов индекс, аридност и ХТК. Ни за један индикатор нема статистички значајног тренда.</p>
+</div>
+<figure class="rklimx-figure rprir-reveal rprir-d1">
+<img alt="Индекси суше и аридности 1950-2020" decoding="async" loading="lazy" src="https://piorajac.rs/rajac-static-2105/assets/page-assets/klima/klima-grafikon-07.webp"/>
+<figcaption>Графикон 07 — Климатски индекси суше и аридности (1950–2020): узастопни суви дани, SPEI, Еленбергов индекс, аридност и ХТК. Ни за један индикатор нема статистички значајног тренда.</figcaption>
+</figure>
+<div class="rklimx-cards">
+<article class="rklimx-card rprir-reveal">
+<h3 class="rklimx-card-title">Узастопни суви дани</h3>
+<div class="rklimx-metrics">
+<div class="rklimx-metric">
+<div class="rklimx-metric-val">25,6 дана</div>
+<div class="rklimx-metric-lab">Просек</div>
+</div>
+<div class="rklimx-metric">
+<div class="rklimx-metric-val">+0,03</div>
+<div class="rklimx-metric-lab">Тренд дана/год</div>
+</div></div>
+<p class="rklim-body">Узастопни суви дани: Овај индекс представља највећи број везаних дана без значајних падавина у току године (сушни период). Просек је 25,6 узастопних сувих дана годишње (медијана 25), са минимумом 17 (1969) и максимумом 46 (1951); стандардна девијација 6,7 дана. Линеарни тренд је незнатан (+0,03 дана/год), статистички незначајан (p=0,48), што значи да се дужина најдужег сушног периода није битно мењала током времена. Аутокорелације су ниске и не указују на постојање циклуса суше. Серија је стационарна (ADF p &lt; 0,001). Прогнозирана просечна дужина најдужег сушног периода за 2021–2034. је ≈26 дана, практично идентична историјској (25,6; p=1,00). Дакле, нема назнака да ће се дуги сушни периоди статистички мењати у наредним годинама.</p>
+<p class="rklimx-note">Тренд → +0,03/год (p=0,48). Није значајно Прогноза: ≈26 дана — без значајне промене.</p>
+</article>
+<article class="rklimx-card rprir-reveal">
+<h3 class="rklimx-card-title">SPEI индекс суше</h3>
+<div class="rklimx-metrics">
+<div class="rklimx-metric">
+<div class="rklimx-metric-val">–0,53</div>
+<div class="rklimx-metric-lab">Просечни SPEI</div>
+</div>
+<div class="rklimx-metric">
+<div class="rklimx-metric-val">–0,004</div>
+<div class="rklimx-metric-lab">Тренд / годишње</div>
+</div></div>
+<p class="rklim-body">SPEI индекс суше: SPEI (Standardized Precipitation Evapotranspiration Index) је стандардизовани индекс влажности/суше који узима у обзир падавине и потенцијалну евапотранспирацију. Позитивне вредности значе влажније од нормале, негативне сушније. Просечна годишња SPEI вредност за Рајац је -0,53 (медијана -0,40), уз стандардну девијацију 1,05. Највећа влажност забележена је 1965. (SPEI +2,31), а највећа суша 1950. и 1952. (SPEI -3,09). Током 1970-их и 1980-их индекс је варирао око нуле, док су 1990-е имале неке екстремно сушне године. Међутим, линеарни тренд од 1950. до 2020. је благо негативан (-0,004 годишње), без статистичке значајности (p=0,58). То имплицира да укупно посматрано нема јасног тренда ка сушнијим или влажнијим условима. Аутокорелације нису значајне. Серија је стационарна (ADF p &lt; 0,001). Прогнозирана средња SPEI вредност за 2021–2034. је око -0,53, практично једнака историјској (p=1,00). Дакле, модел не указује на померање климе у смислу хроничније суше или влажности у наредним годинама, што сугерише да ће варијабилност остати главна одлика (наизменично влажније и сушније године).</p>
+<p class="rklimx-note">Тренд → –0,004/год (p=0,58). Није значајно Нема јасног тренда ка сушнијим или влажнијим условима.</p>
+</article>
+<article class="rklimx-card rprir-reveal">
+<h3 class="rklimx-card-title">Еленбергов индекс · Индекс аридности · ХТК</h3>
+<div class="rklimx-metrics">
+<div class="rklimx-metric">
+<div class="rklimx-metric-val">30,8</div>
+<div class="rklimx-metric-lab">Еленберг (EQ)</div>
+</div>
+<div class="rklimx-metric">
+<div class="rklimx-metric-val">7,8</div>
+<div class="rklimx-metric-lab">Аридност</div>
+</div>
+<div class="rklimx-metric">
+<div class="rklimx-metric-val">1,42</div>
+<div class="rklimx-metric-lab">ХТК</div>
+</div>
+<div class="rklimx-metric">
+<div class="rklimx-metric-val">~0</div>
+<div class="rklimx-metric-lab">Сви трендови</div>
+</div></div>
+<p class="rklim-body">Еленбергов индекс: Еленбергов индекс (EQ) је климатски индекс којим се оцењује однос падавина и температуре (аридност) – веће вредности означавају влажнију и хладнију климу. На Рајцу просечан EQ износи 30,8 (медијана 33,3). Највлажнија година по овом индексу била је 1958. (EQ 43,7), а најариднија 2011. (EQ 19,0). Стандардна девијација је 6,9. Тренд индекса је благо позитиван (+0,010/год), али нeзначајан (p=0,76), што значи да нема систематске промене ка влажнијој или сушнијој клими према овом критеријуму. Аутокорелације су ниске. Серија је стационарна (ADF p &lt; 0,001). Прогнозирани просечан EQ за 2021–2034. остаје ~30,8, без промене у односу на 1950–2020 (p=1,00). Дакле, индекс не показује статистички значајну промену равнотеже падавина и температуре – клима Рајца остаје у истом рангу континенталности/влажности као и пре. Индекс аридности: Индекс аридности (бесплодности) износи просечно 7,8 (медијана 7,5) на Рајцу. Више вредности указују на сушније услове. Минимална вредност (највлажније) била је 4,8 (1976), а максимална 14,1 (2011); стандардна девијација 2,3. Тренд је благo негативан (-0,001/год), што би сугерисало незнатно смањење аридности, али то није статистички поуздано (p=0,94). Серија је стационарна (ADF p &lt; 0,001). Прогнозирани просек је ≈7,8, без разлике (p=0,97). Стога, ни овај индекс не указује на значајну промену сувоће климе на локацији – климатски услови у погледу односа падавина и испаравања остају слични. Хидро-термални коефицијент: Овај коефицијент (ХТК) односи суму падавина и температуру у вегетационом периоду, чиме се процењује сушност услова за вегетацију (ниске вредности = суша). Просек је 1,42, медијана 1,38. Креће се од екстремно ниских 0,65 (1950, сушно и топло) до 3,09 (1960, веома влажно и прохладно лето); стандардна девијација 0,47. Тренд је раван (+0,0004/год), статистички нeзначајан (p=0,94). Нема аутокорелације нити цикличности. Серија је стационарна (ADF p &lt; 0,001). Пројекција за наредни период даје просек 1,42, исти као досада (p=1,00). Дакле, хидро-термални услови за вегетацију се, према овом индексу, нису битно променили нити се пројектује промена до средине 2030-их – и даље варирају од сушнијих до влажнијих година, без тренда.</p>
+<p class="rklimx-note">Ниједан индекс не показује статистички значајну промену (сви p &gt; 0,7). Није значајно Клима Рајца остаје у истом рангу континенталности и влажности — хидро-термални услови непромењени до средине 2030-их.</p>
+</article>
+</div>
+</div>
+</section>
+</div>
+</details>
+</div>
+</section>
+
+<section class="rklim-compare">
+<div class="rklim-wrap">
+<div class="rprir-reveal rprir-in">
+<div class="rklim-label">Упоредни туристички контекст</div>
+<h2 class="rklim-h2">Рајац и Београд — у чему је климатска предност Рајца?</h2>
+</div>
+<div class="rklim-compare-card rprir-reveal rprir-d1 rprir-in">
+<div class="rklim-compare-lead">
+<p>Студија Рајца обрађује период 1950–2020. и за сваки параметар даје дескриптивну статистику, линеарни тренд, статистичку значајност, аутокорелацију, стационарност и ARIMA пројекцију за период 2021–2034. Главни резултат је да је средња годишња температура Рајца 9,98°C, са статистички значајним трендом од око +0,026°C годишње, док су максималне и минималне температуре такође у значајном порасту. Падавине на Рајцу у просеку износе 747,1 mm годишње, али без статистички значајног тренда у укупној годишњој количини.</p>
+<p>За туризам је најважније да Рајац, иако се загрева, и даље има много блажи летњи термални режим од Београда: просечно 65,7 летњих дана, 15,7 тропских дана, само 1,2 дана са температуром изнад 35°C и свега 0,3 тропске ноћи годишње. Истовремено, Рајац има много више мразних и ледених дана: просечно 105,6 мразних дана и 25,2 ледена дана годишње.</p>
+</div>
+<div class="rklim-table-wrap">
+<table class="rklim-compare-table">
+<thead>
+<tr><th>Елемент</th><th>Београд</th><th>Рајац</th><th>Туристичко значење</th></tr>
+</thead>
+<tbody>
+<tr><td>Средња годишња температура</td><td>13,2°C у периоду 1991–2020.</td><td>9,98°C за 1950–2020.</td><td>Рајац је осетно свежији, нарочито користан лети.</td></tr>
+<tr><td>Тренд загревања</td><td>+0,042°C/год. у периоду 1961–2020.</td><td>+0,026°C/год. у периоду 1950–2020.</td><td>Београд се загрева брже, вероватно и због урбаног ефекта.</td></tr>
+<tr><td>Урбано топлотно острво</td><td>+0,9 до +1,4°C у односу на околину.</td><td>Нема градско топлотно острво.</td><td>Највећа предност Рајца је ноћно и вечерње расхлађивање.</td></tr>
+<tr><td>Годишње падавине</td><td>699,2 mm у периоду 1991–2020.</td><td>747,1 mm у периоду 1950–2020.</td><td>Рајац је нешто влажнији; летње активности треба планирати уз могућност пљускова.</td></tr>
+<tr><td>Тропске ноћи</td><td>Све значајнији проблем због урбаног загревања и топлотног острва.</td><td>0,3 годишње у просеку.</td><td>Рајац има велику предност за спавање, вечерњи боравак и летњи одмор.</td></tr>
+<tr><td>Мразни дани</td><td>Ређи него на планини, јер град ублажава зимски минимум.</td><td>105,6 годишње.</td><td>Зими Рајац није „блажи” од Београда, већ хладнији и захтева бољу опрему.</td></tr>
+</tbody>
+</table>
+</div>
+<div class="rklim-compare-note">
+<h3>Да ли клима Рајца има предности за туристе из Београда?</h3>
+<p>Да — највећа предност Рајца за посетиоце из Београда је летњи и каснопролећни климатски комфор. Београд има снажан тренд загревања, јаку урбану компоненту и све израженији летњи топлотни стрес, док Рајац, због надморске висине, отвореног рељефа, вегетације и одсуства урбаног топлотног острва, пружа свежије дане и нарочито пријатније ноћи.</p>
+<p>Најповољнији периоди за туристе из Београда су мај, јун, септембар и прва половина октобра. Лето је такође повољно, али активности треба планирати у јутарњим и каснопоподневним сатима, јер и Рајац бележи раст броја летњих и тропских дана. Зима је климатски атрактивна за оне који траже снег, мраз, чист ваздух и планински амбијент, али захтева добру опрему и пажњу на стазама.</p>
+<p>Најважнија порука за туристичку промоцију је да Рајац није простор без климатских промена — има их — већ блиска, доступна и климатски пријатнија планинска зона у којој су последице летњег топлотног стреса за посетиоце осетно блаже него у урбаном Београду.</p>
+</div>
+</div>
+</div>
+</section>
+<div class="rklim-closing">
+<div class="rklim-cl-inner rprir-reveal rprir-in">
+<div>
+<h2>70 година климатских података —<br/>уравнотежена климатска слика</h2>
+<p>Рајац се јасно загрева, али укупне падавине остају стабилне, индекси суше не показују хронично погоршање, а планинско-побрђски карактер и даље доноси важне предности: свежије ноћи, више природног расхлађивања и боље услове за летњи боравак него у урбаном Београду.</p>
+</div>
+<span class="rklim-badge">1950–2034 · ARIMA · 70 год.</span>
+</div>
+</div>
+</div>
+<script>
+(function(){var els=document.querySelectorAll('.rprir-reveal');if(!els.length)return;var io=new IntersectionObserver(function(entries){entries.forEach(function(e){if(e.isIntersecting){e.target.classList.add('rprir-in');io.unobserve(e.target);}});},{threshold:0.07});els.forEach(function(el){io.observe(el);});})();
+</script> 
+
+<script>
+(function(){
+  var box=document.querySelector('.rklimx-details');
+  if(!box) return;
+  function revealInside(){
+    if(!box.open) return;
+    box.querySelectorAll('.rprir-reveal').forEach(function(el){el.classList.add('rprir-in');});
+    box.querySelectorAll('img').forEach(function(img){img.style.opacity='1';img.style.visibility='visible';});
+  }
+  box.addEventListener('toggle', revealInside);
+  if(box.open) revealInside();
+})();
+</script>
+
+
+<!-- SITE_EDITOR_ADMIN_BAR_START -->
+<script src="/admin-site-editor.php?admin_bar_js=1" defer></script>
+<!-- SITE_EDITOR_ADMIN_BAR_END -->
+
+<script defer src="/rajac-design/rajac-vrh-button.js?v=20260707-v6-round-no-home"></script>
+<script data-pio-mobile="group3-v1" defer src="../assets/mobile/pio-mobile.js?v=20260713-g3-1"></script></body>
+</html>

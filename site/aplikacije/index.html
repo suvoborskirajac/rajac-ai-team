@@ -1,0 +1,819 @@
+<!DOCTYPE html>
+<html lang="sr-RS"><head><meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<meta content="width=device-width, initial-scale=1.0, viewport-fit=cover" name="viewport"/>
+<title>Апликације | ПИО Рајац</title>
+<style>
+html,body{margin:0;padding:0;}
+body.rajac-static-output{background:#fafaf8;color:#0e1210;}
+.rinfo{--pbg:#fafaf8;--bg2:#f2f0ea;--ptext:#0e1210;--pmuted:#3a4840;--pline:rgba(14,20,14,.09);--pacc:#7a5010;--pacc2:#a06a18;--serif:'Crimson Pro',Georgia,serif;--pmono:'DM Mono',monospace;--sans:'Outfit',system-ui,sans-serif;--r:6px;display:block;background:var(--pbg);color:var(--ptext);font-family:var(--sans);font-size:16px;line-height:1.65;}
+.rinfo *,.rinfo *::before,.rinfo *::after{box-sizing:border-box;margin:0;padding:0;}
+.rinfo a{color:inherit;text-decoration:none;}
+.rinfo img{max-width:100%;height:auto;display:block;}
+.rinfo-wrap{width:min(1240px,calc(100% - 40px));margin:0 auto;}
+.rinfo-section{padding:clamp(48px,7vw,88px) 0;border-bottom:1px solid var(--pline);}
+.rinfo-section:last-child{border-bottom:none;}
+.rinfo-label{display:inline-flex;align-items:center;gap:10px;font-family:var(--pmono);font-size:.68rem;letter-spacing:.22em;text-transform:uppercase;color:var(--pacc);margin-bottom:14px;}
+.rinfo-label::before{content:"";width:26px;height:1px;background:currentColor;}
+.rinfo-h1{font-family:var(--serif);font-size:clamp(2.15rem,3.7vw,4rem);font-weight:300;line-height:.98;letter-spacing:-.035em;color:#fff;text-shadow:0 2px 24px rgba(0,0,0,.34);}
+.rinfo-h1 em{font-style:italic;color:#e8c87a;display:block;margin-top:2px;}
+.rinfo-h2{font-family:var(--serif);font-size:clamp(2rem,3.8vw,4rem);font-weight:300;line-height:.95;letter-spacing:-.04em;color:var(--ptext);}
+.rinfo-h2 em{font-style:italic;color:#5f684c;}
+.rinfo-h3{font-family:var(--serif);font-size:clamp(1.32rem,2vw,1.85rem);font-weight:400;line-height:1.08;letter-spacing:-.025em;color:var(--ptext);margin-bottom:10px;}
+.rinfo-lead{font-size:1.08rem;color:var(--pmuted);line-height:1.82;margin-top:18px;}
+.rinfo-body{font-size:1.02rem;color:var(--pmuted);line-height:1.82;margin-top:14px;}
+.rinfo-hero{position:relative;overflow:hidden;border-bottom:1px solid var(--pline);padding:clamp(42px,5.5vw,68px) 0 clamp(30px,4vw,44px);min-height:60vh;background:#15100b;display:flex;align-items:center;}
+.rinfo-hero-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 48%;pointer-events:none;z-index:0;color:transparent;}
+.rinfo-hero-ov{position:absolute;inset:0;z-index:1;pointer-events:none;background:linear-gradient(105deg,rgba(8,6,4,.84) 0%,rgba(8,6,4,.56) 52%,rgba(8,6,4,.16) 100%),linear-gradient(180deg,transparent 58%,rgba(250,250,248,.96) 100%);}
+.rinfo-hero-full{position:relative;z-index:2;padding-left:clamp(20px,3vw,48px);padding-right:clamp(20px,3vw,48px);width:100%;}
+.rinfo-hero-inner{display:grid;grid-template-columns:minmax(0,1fr);gap:34px;align-items:center;max-width:1120px;margin:0 auto;}
+.rinfo-kicker{font-family:var(--pmono);font-size:.62rem;letter-spacing:.22em;text-transform:uppercase;color:rgba(255,255,255,.62);display:flex;align-items:center;gap:10px;margin-bottom:14px;}
+.rinfo-kicker::before{content:"";width:24px;height:1px;background:currentColor;}
+.rinfo-sub{max-width:650px;margin-top:16px;font-size:1rem;color:rgba(255,255,255,.76);line-height:1.74;}
+.rinfo-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:26px;}
+.rinfo-btn{display:inline-flex;align-items:center;justify-content:center;min-height:42px;padding:11px 16px;border-radius:4px;border:1px solid rgba(255,255,255,.22);font-family:var(--sans);font-size:.9rem;font-weight:500;color:#fff;background:rgba(255,255,255,.08);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);transition:.18s ease;}
+.rinfo-btn:hover{transform:translateY(-1px);background:rgba(255,255,255,.14);}
+.rinfo-btn-primary{background:#e8c87a;color:#15100b;border-color:#e8c87a;}
+.rinfo-hero-card{background:rgba(12,8,4,.72);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border:1px solid rgba(255,255,255,.12);border-radius:var(--r);padding:18px 20px;}
+.rinfo-card-lbl{font-family:var(--pmono);font-size:.58rem;letter-spacing:.18em;text-transform:uppercase;color:#e8c87a;margin-bottom:12px;display:flex;align-items:center;gap:8px;}
+.rinfo-card-lbl::before{content:"";width:5px;height:5px;border-radius:50%;background:#e8c87a;box-shadow:0 0 10px rgba(232,200,122,.8);}
+.rinfo-stat{display:flex;justify-content:space-between;gap:18px;align-items:baseline;padding:9px 0;border-bottom:1px solid rgba(255,255,255,.08);}
+.rinfo-stat:last-child{border-bottom:none;padding-bottom:0;}
+.rinfo-stat b{font-family:var(--pmono);font-size:.74rem;color:rgba(255,255,255,.86);font-weight:400;}
+.rinfo-stat span{font-family:var(--pmono);font-size:.58rem;letter-spacing:.08em;color:rgba(255,255,255,.42);text-align:right;}
+.rinfo-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0;border:1px solid var(--pline);border-radius:var(--r);overflow:hidden;margin-top:34px;background:#fff;}
+.rinfo-card{padding:26px 22px;border-right:1px solid var(--pline);border-bottom:1px solid var(--pline);background:#fff;min-height:190px;transition:background .18s;position:relative;}
+.rinfo-card:nth-child(3n){border-right:none;}
+.rinfo-card:nth-last-child(-n+3){border-bottom:none;}
+.rinfo-card:hover{background:var(--bg2);}
+.rinfo-card::before{content:"";position:absolute;top:0;left:0;right:0;height:3px;background:var(--pacc);transform:scaleX(0);transform-origin:left;transition:transform .28s ease;}
+.rinfo-card:hover::before{transform:scaleX(1);}
+.rinfo-card-tag{display:inline-block;padding:4px 10px;border-radius:3px;background:rgba(122,80,16,.08);border:1px solid rgba(122,80,16,.18);font-family:var(--pmono);font-size:.62rem;letter-spacing:.1em;text-transform:uppercase;color:var(--pacc);margin-bottom:12px;}
+.rinfo-card p{font-size:.94rem;color:var(--pmuted);line-height:1.65;margin:0;}
+.rinfo-2col{display:grid;grid-template-columns:minmax(0,.88fr) minmax(0,1.12fr);gap:64px;align-items:start;}
+.rinfo-flow{display:grid;gap:0;border-top:1px solid var(--pline);margin-top:8px;}
+.rinfo-flow-item{display:grid;grid-template-columns:64px minmax(0,1fr);gap:18px;padding:18px 0;border-bottom:1px solid var(--pline);}
+.rinfo-num{font-family:var(--pmono);font-size:.8rem;letter-spacing:.12em;color:var(--pacc);}
+.rinfo-flow-item p{font-size:.98rem;color:var(--pmuted);line-height:1.72;margin:0;}
+.rinfo-soft{background:var(--bg2);border:1px solid var(--pline);border-radius:var(--r);padding:26px;margin-top:26px;}
+.rinfo-soft p{font-size:1rem;line-height:1.78;color:var(--pmuted);margin-bottom:14px;}
+.rinfo-soft p:last-child{margin-bottom:0;}
+.rinfo-pills{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px;}
+.rinfo-pill{display:inline-flex;align-items:center;min-height:34px;padding:8px 12px;border:1px solid var(--pline);border-radius:999px;background:#fff;font-family:var(--pmono);font-size:.66rem;letter-spacing:.08em;text-transform:uppercase;color:#3a4840;}
+.rinfo-band{background:#20241d;color:#f4efe4;padding:clamp(54px,7vw,86px) 0;border-bottom:1px solid rgba(255,255,255,.10);}
+.rinfo-band .rinfo-label{color:#e8c87a;}
+.rinfo-band .rinfo-h2{color:#f4efe4;}
+.rinfo-band p{color:rgba(244,239,228,.76);}
+.rinfo-band-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin-top:28px;}
+.rinfo-band-card{border:1px solid rgba(255,255,255,.12);background:rgba(255,255,255,.045);border-radius:var(--r);padding:18px;min-height:130px;}
+.rinfo-band-card b{display:block;color:#e8c87a;font-family:var(--pmono);font-weight:400;font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;margin-bottom:10px;}
+.rinfo-band-card span{display:block;color:rgba(244,239,228,.8);font-size:.94rem;line-height:1.58;}
+.rinfo-cta{background:#fff;border:1px solid var(--pline);border-radius:var(--r);padding:34px;margin-top:36px;display:grid;grid-template-columns:minmax(0,1fr) auto;gap:24px;align-items:center;}
+.rinfo-cta p{color:var(--pmuted);font-size:1rem;line-height:1.72;margin-top:10px;}
+.rinfo-cta .rinfo-btn{border-color:rgba(14,20,14,.16);color:#15100b;background:#f3f0e8;}
+.rinfo-cta .rinfo-btn-primary{background:#20241d;color:#fff;border-color:#20241d;}
+@media(max-width:980px){.rinfo-hero-inner,.rinfo-2col,.rinfo-cta{grid-template-columns:1fr;}.rinfo-grid{grid-template-columns:repeat(2,minmax(0,1fr));}.rinfo-card:nth-child(3n){border-right:1px solid var(--pline);}.rinfo-card:nth-child(2n){border-right:none;}.rinfo-card:nth-last-child(-n+3){border-bottom:1px solid var(--pline);}.rinfo-card:nth-last-child(-n+2){border-bottom:none;}.rinfo-band-grid{grid-template-columns:repeat(2,minmax(0,1fr));}}
+@media(max-width:640px){.rinfo-wrap{width:min(100% - 28px,1240px);}.rinfo-hero{min-height:60vh;}.rinfo-hero-full{padding-left:14px;padding-right:14px;}.rinfo-grid,.rinfo-band-grid{grid-template-columns:1fr;}.rinfo-card,.rinfo-card:nth-child(2n),.rinfo-card:nth-child(3n){border-right:none;}.rinfo-card:nth-last-child(-n+2),.rinfo-card:nth-last-child(-n+3){border-bottom:1px solid var(--pline);}.rinfo-card:last-child{border-bottom:none;}.rinfo-flow-item{grid-template-columns:42px minmax(0,1fr);}.rinfo-actions .rinfo-btn{width:100%;}.rinfo-hero-card{display:none;}}
+
+.rinfo-apps .rinfo-hero-img{object-position:center 48%;}
+.rinfo-apps .rinfo-feature{display:grid;grid-template-columns:minmax(0,.62fr) minmax(0,1.38fr);gap:34px;align-items:start;padding:34px 0;border-bottom:1px solid var(--pline);}
+.rinfo-apps .rinfo-feature:last-child{border-bottom:none;}
+.rinfo-apps .rinfo-feature-side{position:sticky;top:84px;background:#fff;border:1px solid var(--pline);border-radius:var(--r);padding:24px;}
+.rinfo-apps .rinfo-feature-side .rinfo-card-tag{margin-bottom:14px;}
+.rinfo-apps .rinfo-feature-side h3{margin-bottom:12px;}
+.rinfo-apps .rinfo-feature-side p{font-size:.96rem;line-height:1.72;color:var(--pmuted);}
+.rinfo-apps .rinfo-link-row{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px;}
+.rinfo-apps .rinfo-link-row .rinfo-btn{border-color:rgba(14,20,14,.16);color:#15100b;background:#f3f0e8;}
+.rinfo-apps .rinfo-link-row .rinfo-btn-primary{background:#20241d;color:#fff;border-color:#20241d;}
+.rinfo-apps .rinfo-note{margin-top:18px;padding:16px 18px;border-left:3px solid var(--pacc);background:#fffaf2;color:var(--pmuted);font-size:.96rem;line-height:1.72;}
+.rinfo-apps .rinfo-mini-list{display:grid;gap:12px;margin-top:22px;}
+.rinfo-apps .rinfo-mini{padding:18px;border:1px solid var(--pline);background:#fff;border-radius:var(--r);}
+.rinfo-apps .rinfo-mini b{display:block;font-family:var(--pmono);font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;color:var(--pacc);font-weight:400;margin-bottom:8px;}
+.rinfo-apps .rinfo-mini span{display:block;color:var(--pmuted);font-size:.96rem;line-height:1.68;}
+@media(max-width:980px){.rinfo-apps .rinfo-feature{grid-template-columns:1fr;}.rinfo-apps .rinfo-feature-side{position:relative;top:auto;}}
+</style>
+
+<style id="rajac-static-common-menu-inline">/* RAJAC_STATIC_COMMON_MENU_INLINE: self-contained menu style for static directory pages */
+.rajac-static-common-menu{position:sticky;top:0;z-index:9999;background:rgba(14,22,15,.96);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid rgba(201,168,76,.16);font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;}
+.rajac-static-common-menu *{box-sizing:border-box;}
+.rajac-static-common-menu__inner{width:min(1180px,calc(100% - 44px));margin:0 auto;display:flex;align-items:center;min-height:58px;overflow-x:auto;scrollbar-width:none;}
+.rajac-static-common-menu__inner::-webkit-scrollbar{display:none;}
+.rajac-static-common-menu__logo{flex:0 0 auto;min-height:58px;display:flex;align-items:center;padding-right:26px;margin-right:14px;border-right:1px solid rgba(255,255,255,.08);color:rgba(245,240,228,.98);font-size:.88rem;font-weight:650;letter-spacing:.06em;white-space:nowrap;text-decoration:none;}
+.rajac-static-common-menu__links{display:flex;align-items:stretch;gap:0;}
+.rajac-static-common-menu__link{position:relative;display:flex;align-items:center;height:58px;padding:0 13px;color:rgba(245,240,228,.82);text-transform:uppercase;letter-spacing:.15em;font-size:.68rem;font-weight:450;white-space:nowrap;border-bottom:2px solid transparent;transition:color .18s ease,background .18s ease,border-color .18s ease;text-decoration:none;}
+.rajac-static-common-menu__link:hover{color:rgba(245,240,228,.98);background:rgba(255,255,255,.04);}
+.rajac-static-common-menu__link.is-active{color:#e1c978;border-bottom-color:#e1c978;}
+@media(max-width:700px){.rajac-static-common-menu__inner{width:100%;padding:0 14px;}.rajac-static-common-menu__logo{padding-right:16px;margin-right:6px;font-size:.82rem;}.rajac-static-common-menu__link{padding:0 10px;font-size:.62rem;letter-spacing:.12em;}}</style><style id="rajac-no-hero-fix">/* RAJAC_NO_HERO_FIX: top HERO blocks removed intentionally */
+.rp-strip{margin:0 auto 0!important;}
+.rp-main{margin-top:56px!important;}
+.rinfo > .rinfo-section:first-of-type{padding-top:clamp(42px,6vw,72px)!important;}
+.rir-page > .rir-section:first-of-type{padding-top:clamp(42px,6vw,72px)!important;}</style>
+<style id="rajac-force-no-hero-v2">
+/* SAFE v2: potpuno sklanja hero blokove ako je na serveru ostao stari HTML/CSS. */
+.rp-hero,.rinfo-hero,.rir-hero,header.rp-hero,section.rp-hero,section.rinfo-hero,section.rir-hero{display:none!important;height:0!important;min-height:0!important;max-height:0!important;padding:0!important;margin:0!important;overflow:hidden!important;border:0!important;}
+.rp-hero::before,.rp-hero::after,.rinfo-hero::before,.rinfo-hero::after,.rir-hero::before,.rir-hero::after{display:none!important;content:none!important;}
+.rp-strip{margin:0 auto!important;}
+.rinfo-section:first-of-type,.rir-section:first-of-type{padding-top:clamp(34px,5vw,62px)!important;}
+</style>
+<style id="rajac-unified-white-v4">
+/* RAJAC_UNIFIED_WHITE_V4
+   Беле позадине, уједначена типографија и мањи наслови за пет статичких страница. */
+:root{
+  --rajac-u-bg:#ffffff;
+  --rajac-u-paper:#ffffff;
+  --rajac-u-ink:#152015;
+  --rajac-u-text:#253126;
+  --rajac-u-muted:#586357;
+  --rajac-u-line:rgba(21,32,21,.14);
+  --rajac-u-soft:#f7f8f5;
+  --rajac-u-accent:#6f7f47;
+  --rajac-u-gold:#b99a45;
+  --rajac-u-serif:Georgia,"Times New Roman",serif;
+  --rajac-u-sans:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;
+}
+html,body,
+body.rajac-static-output{
+  background:#fff!important;
+  color:var(--rajac-u-text)!important;
+  font-family:var(--rajac-u-sans)!important;
+  font-size:17px!important;
+  line-height:1.72!important;
+}
+body.rajac-static-output{
+  margin:0!important;
+}
+.rajac-static-common-menu{
+  background:#0d1b12!important;
+  border-bottom:1px solid rgba(255,255,255,.12)!important;
+  box-shadow:none!important;
+  font-family:var(--rajac-u-sans)!important;
+}
+.rajac-static-common-menu__logo,
+.rajac-static-common-menu__link{
+  font-family:var(--rajac-u-sans)!important;
+}
+.rajac-static-common-menu__link{
+  font-size:.68rem!important;
+  letter-spacing:.13em!important;
+  font-weight:500!important;
+}
+.rajac-static-common-menu__link.is-active{
+  color:#d7c06c!important;
+  border-bottom-color:#d7c06c!important;
+}
+.rinfo,
+.rp-page,
+.rir-page{
+  background:#fff!important;
+  background-image:none!important;
+  color:var(--rajac-u-text)!important;
+  font-family:var(--rajac-u-sans)!important;
+  --pbg:#fff!important;
+  --bg2:#fff!important;
+  --ptext:var(--rajac-u-ink)!important;
+  --pmuted:var(--rajac-u-muted)!important;
+  --pline:var(--rajac-u-line)!important;
+  --pacc:var(--rajac-u-accent)!important;
+  --serif:var(--rajac-u-serif)!important;
+  --sans:var(--rajac-u-sans)!important;
+  --rp-bg:#fff!important;
+  --rp-paper:#fff!important;
+  --rp-ink:var(--rajac-u-ink)!important;
+  --rp-muted:var(--rajac-u-muted)!important;
+  --rp-line:var(--rajac-u-line)!important;
+  --rp-serif:var(--rajac-u-serif)!important;
+  --rp-sans:var(--rajac-u-sans)!important;
+  --rir-bg:#fff!important;
+  --rir-paper:#fff!important;
+  --rir-soft:#fff!important;
+  --rir-ink:var(--rajac-u-ink)!important;
+  --rir-text:var(--rajac-u-text)!important;
+  --rir-muted:var(--rajac-u-muted)!important;
+  --rir-line:var(--rajac-u-line)!important;
+  --rir-serif:var(--rajac-u-serif)!important;
+  --rir-sans:var(--rajac-u-sans)!important;
+}
+.rinfo-wrap,
+.rp-main,
+.rir-wrap{
+  width:min(1180px,calc(100% - 48px))!important;
+  margin-left:auto!important;
+  margin-right:auto!important;
+}
+.rp-main{
+  margin-top:clamp(44px,5vw,68px)!important;
+  padding-bottom:clamp(70px,7vw,100px)!important;
+}
+.rinfo-section,
+.rir-section{
+  background:#fff!important;
+  background-image:none!important;
+  padding:clamp(46px,5.8vw,76px) 0!important;
+  border-bottom:1px solid var(--rajac-u-line)!important;
+}
+.rp-section{
+  background:#fff!important;
+  background-image:none!important;
+  padding:clamp(48px,5.8vw,76px) 0!important;
+  border-top:1px solid var(--rajac-u-line)!important;
+}
+.rp-intro{
+  margin-bottom:clamp(42px,5vw,64px)!important;
+}
+.rp-grid,
+.rinfo-grid,
+.rir-cards,
+.rir-disciplines,
+.rinfo-band-grid{
+  margin-top:28px!important;
+}
+.rp-intro h2,
+.rp-section h2,
+.rp-final h2,
+.rp-wide h2,
+.rinfo-h2,
+.rir-title{
+  font-family:var(--rajac-u-serif)!important;
+  color:var(--rajac-u-ink)!important;
+  font-weight:400!important;
+  font-size:clamp(2.05rem,3.1vw,3.15rem)!important;
+  line-height:1.08!important;
+  letter-spacing:-.028em!important;
+  text-shadow:none!important;
+}
+.rp-card h3,
+.rp-note h3,
+.rinfo-h3,
+.rir-card h3,
+.rir-note h3,
+.rir-data-item b{
+  font-family:var(--rajac-u-serif)!important;
+  color:var(--rajac-u-ink)!important;
+  font-weight:400!important;
+  font-size:clamp(1.35rem,2vw,1.9rem)!important;
+  line-height:1.14!important;
+  letter-spacing:-.018em!important;
+}
+.rp-eyebrow,
+.rinfo-label,
+.rir-label,
+.rinfo-card-tag,
+.rinfo-num,
+.rir-card small,
+.rir-principle b,
+.rp-strip-label{
+  font-family:var(--rajac-u-sans)!important;
+  color:var(--rajac-u-accent)!important;
+  font-size:.72rem!important;
+  letter-spacing:.14em!important;
+  font-weight:650!important;
+}
+.rp-intro-card,
+.rp-card,
+.rp-note,
+.rp-feature-row,
+.rp-final,
+.rp-wide,
+.rinfo-card,
+.rinfo-soft,
+.rinfo-cta,
+.rinfo-band-card,
+.rinfo-feature-side,
+.rinfo-mini,
+.rir-card,
+.rir-note,
+.rir-data-list,
+.rir-data-item,
+.rir-principle,
+.rir-cta-box,
+.rir-application,
+.rir-form-wrap,
+.rir-summary,
+.rir-field,
+.rir-wide,
+.rir-pill,
+.rinfo-pill,
+.rp-pill{
+  background:#fff!important;
+  background-image:none!important;
+  color:var(--rajac-u-text)!important;
+  border-color:var(--rajac-u-line)!important;
+  box-shadow:none!important;
+}
+.rp-card,
+.rinfo-card,
+.rir-card,
+.rp-intro-card,
+.rp-note,
+.rp-feature-row,
+.rp-final,
+.rinfo-soft,
+.rinfo-cta,
+.rir-note,
+.rir-cta-box,
+.rir-form-wrap,
+.rir-summary{
+  border:1px solid var(--rajac-u-line)!important;
+  border-radius:22px!important;
+}
+.rp-card,
+.rinfo-card,
+.rir-card{
+  min-height:auto!important;
+}
+.rp-card:hover,
+.rinfo-card:hover,
+.rir-card:hover{
+  background:#fff!important;
+  transform:none!important;
+}
+.rinfo-card::before,
+.rir-card::before{
+  background:var(--rajac-u-accent)!important;
+}
+.rp-card-icon,
+.rp-feature-row span,
+.rir-summary-icon{
+  background:#f2f5ef!important;
+  color:var(--rajac-u-ink)!important;
+}
+.rinfo-band,
+.rir-dark,
+.rir-cta,
+.rp-wide{
+  background:#fff!important;
+  background-image:none!important;
+  color:var(--rajac-u-text)!important;
+  border-top:1px solid var(--rajac-u-line)!important;
+  border-bottom:1px solid var(--rajac-u-line)!important;
+  box-shadow:none!important;
+}
+.rinfo-band .rinfo-h2,
+.rir-dark .rir-title,
+.rp-wide h2{
+  color:var(--rajac-u-ink)!important;
+}
+.rinfo-band p,
+.rinfo-band-card span,
+.rir-dark .rir-lead,
+.rir-dark .rir-text,
+.rir-data-item span,
+.rp-wide p,
+.rp-card p,
+.rp-intro-card p,
+.rp-section-text p,
+.rp-feature-row p,
+.rp-final p,
+.rinfo-lead,
+.rinfo-body,
+.rinfo-card p,
+.rinfo-flow-item p,
+.rinfo-soft p,
+.rinfo-cta p,
+.rir-lead,
+.rir-text,
+.rir-note p,
+.rir-card p,
+.rir-principle p{
+  color:var(--rajac-u-muted)!important;
+  font-family:var(--rajac-u-sans)!important;
+  font-weight:400!important;
+}
+.rp-btn,
+.rinfo-btn,
+.rir-actions a,
+.rir-submit{
+  font-family:var(--rajac-u-sans)!important;
+  border-radius:999px!important;
+  box-shadow:none!important;
+}
+.rp-btn,
+.rinfo-btn,
+.rir-actions a{
+  background:#fff!important;
+  color:var(--rajac-u-ink)!important;
+  border:1px solid var(--rajac-u-line)!important;
+}
+.rp-btn-primary,
+.rinfo-btn-primary,
+.rir-submit{
+  background:#102317!important;
+  color:#fff!important;
+  border-color:#102317!important;
+}
+.rp-final .rp-btn,
+.rinfo-cta .rinfo-btn{
+  background:#fff!important;
+  color:var(--rajac-u-ink)!important;
+  border:1px solid var(--rajac-u-line)!important;
+}
+.rp-final .rp-btn-primary,
+.rinfo-cta .rinfo-btn-primary{
+  background:#102317!important;
+  color:#fff!important;
+  border-color:#102317!important;
+}
+.rp-pill,
+.rinfo-pill,
+.rir-pill{
+  border-radius:999px!important;
+  color:var(--rajac-u-muted)!important;
+}
+.rinfo-2col,
+.rir-intro-grid,
+.rir-dark-grid,
+.rp-intro,
+.rp-section,
+.rinfo-cta,
+.rir-cta-box{
+  gap:clamp(28px,4vw,48px)!important;
+}
+@media(max-width:980px){
+  .rp-grid,.rinfo-grid,.rir-cards,.rir-disciplines,.rinfo-band-grid{grid-template-columns:1fr 1fr!important;}
+}
+@media(max-width:720px){
+  html,body,body.rajac-static-output{font-size:16px!important;}
+  .rinfo-wrap,.rp-main,.rir-wrap{width:min(100% - 28px,1180px)!important;}
+  .rp-intro h2,.rp-section h2,.rp-final h2,.rp-wide h2,.rinfo-h2,.rir-title{
+    font-size:clamp(1.85rem,9vw,2.55rem)!important;
+    line-height:1.1!important;
+  }
+  .rp-grid,.rinfo-grid,.rir-cards,.rir-disciplines,.rinfo-band-grid{grid-template-columns:1fr!important;}
+}
+</style>
+<style id="rajac-aplikacije-hero-final">
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,500&family=Outfit:wght@300;400;500;600;700&family=DM+Mono:wght@400;500&display=swap');
+
+/* FINAL: isti gornji sistem kao na stranici O platformi */
+:root{
+  --rj-display:'Cormorant Garamond', Georgia, 'Times New Roman', serif;
+  --rj-body:'Outfit', 'Segoe UI', system-ui, -apple-system, Roboto, sans-serif;
+  --rj-mono:'DM Mono', 'Cascadia Code', Consolas, ui-monospace, monospace;
+  --rj-h1:clamp(38px,4.2vw,56px);
+  --rj-hero-min:460px;
+  --rj-hero-max:520px;
+  --rj-hero-pad:104px 0 60px;
+  --rj-nav-height:64px;
+  --gold:#9c7e2e;
+  --gold-soft:#e7cf85;
+  --sand:#bdad87;
+  --c1:#5f8e45;--c1l:#a4cd84;
+  --c2:#b0913f;--c2l:#e7cf85;
+  --c3:#4f8a9e;--c3l:#8fc4d4;
+  --c4:#b3703f;--c4l:#e6a577;
+  --shadow:0 16px 40px rgba(38,48,30,.1);
+}
+
+html{scroll-padding-top:calc(var(--rj-nav-height) + 18px)!important;}
+body.rajac-static-output{
+  padding-top:var(--rj-nav-height)!important;
+  margin:0!important;
+  background:#ffffff!important;
+  color:#253126!important;
+  font-family:var(--rj-body)!important;
+}
+
+/* stari meni se ne koristi */
+.rajac-static-common-menu{display:none!important;}
+
+/* isti fiksni meni */
+.book-nav{
+  position:fixed!important;
+  top:0!important;
+  left:0!important;
+  right:0!important;
+  width:100%!important;
+  height:var(--rj-nav-height)!important;
+  min-height:var(--rj-nav-height)!important;
+  z-index:99999!important;
+  background:rgba(38,48,30,.96)!important;
+  backdrop-filter:blur(12px)!important;
+  -webkit-backdrop-filter:blur(12px)!important;
+  border-bottom:1px solid rgba(189,173,135,.45)!important;
+  font-family:var(--rj-body)!important;
+}
+.book-nav .shell{
+  width:min(1180px,calc(100% - 40px))!important;
+  margin:0 auto!important;
+  display:flex!important;
+  align-items:center!important;
+  overflow-x:auto!important;
+  scrollbar-width:none!important;
+  min-height:var(--rj-nav-height)!important;
+  height:var(--rj-nav-height)!important;
+  max-height:var(--rj-nav-height)!important;
+}
+.book-nav .shell::-webkit-scrollbar{display:none!important;}
+.nav-logo{
+  display:flex!important;
+  align-items:center!important;
+  gap:9px!important;
+  color:#fdf6e6!important;
+  font-weight:600!important;
+  letter-spacing:.02em!important;
+  padding-right:20px!important;
+  margin-right:12px!important;
+  border-right:1px solid rgba(255,255,255,.12)!important;
+  white-space:nowrap!important;
+  height:42px!important;
+  min-height:42px!important;
+  text-decoration:none!important;
+}
+.nav-logo::before{
+  content:""!important;
+  width:9px!important;
+  height:9px!important;
+  border-radius:50%!important;
+  background:var(--sand)!important;
+  box-shadow:0 0 0 4px rgba(189,173,135,.22)!important;
+}
+.nav-links{display:flex!important;align-items:stretch!important;}
+.nav-link{
+  display:flex!important;
+  align-items:center!important;
+  padding:0 12px!important;
+  color:rgba(253,246,230,.8)!important;
+  font-size:.68rem!important;
+  font-weight:500!important;
+  text-transform:uppercase!important;
+  letter-spacing:.14em!important;
+  white-space:nowrap!important;
+  border-bottom:2px solid transparent!important;
+  transition:color .2s,border-color .2s!important;
+  height:42px!important;
+  min-height:42px!important;
+  text-decoration:none!important;
+}
+.nav-link:hover{color:#fff!important;}
+.nav-link.is-active{color:var(--gold-soft)!important;border-bottom-color:var(--sand)!important;}
+
+/* stari hero se ne koristi */
+.rinfo-hero,.rp-hero,.rir-hero{display:none!important;}
+
+/* novi hero */
+.hero{
+  min-height:var(--rj-hero-min)!important;
+  max-height:var(--rj-hero-max)!important;
+  display:flex!important;
+  align-items:center!important;
+  position:relative!important;
+  overflow:hidden!important;
+  isolation:isolate!important;
+  margin:0!important;
+  padding:0!important;
+  border-bottom:1px solid rgba(189,173,135,.6)!important;
+  background-image:
+    linear-gradient(90deg, rgba(38,48,30,.82) 0%, rgba(38,48,30,.66) 42%, rgba(38,48,30,.22) 100%),
+    url('https://piorajac.rs/wp-content/uploads/2026/06/toponimi.jpg')!important;
+  background-position:center center!important;
+  background-size:cover!important;
+  background-repeat:no-repeat!important;
+  background-color:#26301e!important;
+}
+.hero:after{display:none!important;content:none!important;}
+.hero-inner{
+  width:min(1180px, calc(100% - 40px))!important;
+  margin:0 auto!important;
+  padding:var(--rj-hero-pad)!important;
+  position:relative!important;
+  z-index:2!important;
+}
+.hero h1{
+  font-family:var(--rj-display)!important;
+  font-size:var(--rj-h1)!important;
+  font-weight:500!important;
+  line-height:1.06!important;
+  letter-spacing:-.03em!important;
+  max-width:720px!important;
+  margin:0!important;
+  color:#fff7df!important;
+  text-shadow:0 2px 14px rgba(0,0,0,.35)!important;
+}
+.hero .lead{
+  font-family:var(--rj-body)!important;
+  font-size:clamp(16px,1.6vw,19px)!important;
+  line-height:1.8!important;
+  max-width:760px!important;
+  margin:22px 0 0!important;
+  color:rgba(255,250,235,.92)!important;
+  text-shadow:0 1px 10px rgba(0,0,0,.28)!important;
+}
+
+/* 4 kartice ispod hero-a */
+.op-stats{
+  width:min(1180px,calc(100% - 40px))!important;
+  margin:0 auto!important;
+  display:grid!important;
+  grid-template-columns:repeat(4,minmax(0,1fr))!important;
+  background:#2a3420!important;
+  border-radius:18px!important;
+  overflow:hidden!important;
+  box-shadow:var(--shadow)!important;
+  margin-top:clamp(-44px,-4vw,-30px)!important;
+  position:relative!important;
+  z-index:3!important;
+}
+.op-stat{position:relative!important;padding:26px 24px 24px!important;}
+.op-stat::before{content:""!important;position:absolute!important;left:0!important;right:0!important;top:0!important;height:4px!important;background:var(--acc)!important;}
+.op-stat::after{content:""!important;position:absolute!important;inset:0!important;background:linear-gradient(180deg,var(--acc) 0%,transparent 70%)!important;opacity:.12!important;pointer-events:none!important;}
+.op-stat b{
+  display:block!important;
+  font-family:var(--rj-display)!important;
+  font-weight:500!important;
+  font-size:clamp(1.4rem,2vw,1.85rem)!important;
+  line-height:1.06!important;
+  color:var(--accl)!important;
+  letter-spacing:-.01em!important;
+  position:relative!important;
+}
+.op-stat span{
+  display:block!important;
+  margin-top:7px!important;
+  font-family:var(--rj-mono)!important;
+  font-size:.78rem!important;
+  line-height:1.4!important;
+  color:rgba(247,243,232,.66)!important;
+  position:relative!important;
+}
+.op-stat--a{--acc:var(--c1);--accl:var(--c1l);}
+.op-stat--b{--acc:var(--c2);--accl:var(--c2l);}
+.op-stat--c{--acc:var(--c3);--accl:var(--c3l);}
+.op-stat--d{--acc:var(--c4);--accl:var(--c4l);}
+
+/* sadržaj ispod hero-a */
+.rinfo{
+  background:#ffffff!important;
+  background-image:none!important;
+}
+.rinfo > .rinfo-section:first-of-type{
+  padding-top:clamp(74px,7vw,104px)!important;
+}
+
+@media (max-width:980px){
+  .op-stats{grid-template-columns:1fr 1fr!important;}
+}
+@media (max-width:640px){
+  :root{--rj-nav-height:60px;}
+  .book-nav .nav-logo,.book-nav .nav-link{height:38px!important;min-height:38px!important;}
+  .hero{min-height:360px!important;max-height:none!important;}
+  .hero-inner{padding:80px 0 46px!important;}
+  .hero h1{font-size:34px!important;}
+  .op-stats{grid-template-columns:1fr!important;margin-top:0!important;border-radius:0!important;width:100%!important;}
+  .rinfo > .rinfo-section:first-of-type{padding-top:clamp(42px,6vw,72px)!important;}
+}
+</style>
+
+<link data-pio-mobile="v1" rel="stylesheet" href="../assets/mobile/pio-mobile-glavni.css?v=20260714-gl-v8">
+<style id="rajac-nav-v1">.book-nav .nav-logo,.book-nav .nav-link{text-decoration:none!important}@media(min-width:721px){.book-nav{position:fixed!important;top:0!important;left:0!important;right:0!important;width:100%!important;height:64px!important;min-height:64px!important;box-sizing:border-box!important;z-index:99999!important}.book-nav .shell{width:min(1180px,calc(100% - 40px))!important;margin:0 auto!important;padding:0!important;display:flex!important;align-items:center!important;height:100%!important;box-sizing:border-box!important}.book-nav .nav-logo{box-sizing:border-box!important;height:42px!important;min-height:42px!important;font-size:17px!important;font-weight:600!important;letter-spacing:.02em!important;line-height:1.72!important;text-decoration:none!important;padding-right:20px!important;margin-right:12px!important}.book-nav .nav-links{display:flex!important;align-items:stretch!important;height:42px!important}.book-nav .nav-link{box-sizing:border-box!important;height:42px!important;min-height:42px!important;padding:0 12px!important;font-size:11.56px!important;letter-spacing:.14em!important;line-height:1.72!important;text-decoration:none!important;border-bottom-width:2px!important;color:rgba(253,246,230,.8)}.book-nav .nav-link.is-active{color:var(--gold-soft,#e3c983)}}</style>
+</head>
+<body class="rajac-static-output">
+
+<nav class="book-nav" aria-label="Странице ПИО Рајац">
+  <div class="shell">
+    <a class="nav-logo" href="https://piorajac.rs/">ПИО „РАЈАЦ“</a>
+    <div class="nav-links">
+      <a class="nav-link" href="https://piorajac.rs/o-platformi/">О платформи</a>
+      <a class="nav-link" href="https://piorajac.rs/za-posetioce/">За посетиоце</a>
+      <a class="nav-link" href="https://piorajac.rs/za-istrazivace/">За истраживаче</a>
+      <a class="nav-link" href="https://piorajac.rs/za-vlasnike/">За власнике</a>
+      <a class="nav-link is-active" href="https://piorajac.rs/aplikacije/" aria-current="page">Апликације</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="hero-inner">
+    <h1>Апликације</h1>
+    <p class="lead">Практични дигитални алати ПИО „Рајац“ за теренски унос налаза, оријентацију по топонимима и проверу метеоролошких услова — осмишљени да подаци буду корисни одмах, на самом простору.</p>
+  </div>
+</header>
+
+<div class="op-stats">
+  <div class="op-stat op-stat--a"><b>Терен</b><span>пријаве · налази · фотографије</span></div>
+  <div class="op-stat op-stat--b"><b>Топоними</b><span>GPS · локални називи · оријентација</span></div>
+  <div class="op-stat op-stat--c"><b>Метео</b><span>услови · ветар · падавине</span></div>
+  <div class="op-stat op-stat--d"><b>Примена</b><span>посетиоци · истраживачи · власници</span></div>
+</div>
+
+<div class="rinfo rinfo-apps">
+<section class="rinfo-section" id="uvod">
+<div class="rinfo-wrap rinfo-2col">
+<div>
+<div class="rinfo-label">дигитални слој простора</div>
+<h2 class="rinfo-h2">Од информације до алата који се користи на <em>терену</em></h2>
+<p class="rinfo-lead">Платформа ПИО „Рајац” развија се као систем у ком подаци нису само приказани, већ постају употребљиви. Апликације помажу да се пријави појава на терену, да се простор препозна преко локалних назива и да се пре доласка провере стварни метеоролошки услови.</p>
+</div>
+<div class="rinfo-soft">
+<p>Три издвојене апликације покривају три основне потребе: шта се дешава на терену, где се корисник налази у односу на локалне топониме и какви су тренутни услови за боравак, рад или истраживање.</p>
+<p>Оне су намењене посетиоцима, власницима, сарадницима, истраживачима и управљачу, али су довољно једноставне да их може користити и неко ко први пут долази на Рајац.</p>
+</div>
+</div>
+</section>
+<section class="rinfo-section" id="pregled-aplikacija">
+<div class="rinfo-wrap">
+<div class="rinfo-label">три апликације</div>
+<h2 class="rinfo-h2">Теренски извештаји, топоними и метео услови</h2>
+<div class="rinfo-grid">
+<a class="rinfo-card" href="https://izvestaji.piorajac.rs/"><span class="rinfo-card-tag">терен</span><h3 class="rinfo-h3">Теренски извештаји</h3><p>Брза пријава појава, проблема и промена на карти, уз опис, тип пријаве и фотографију када је потребна.</p></a>
+<a class="rinfo-card" href="https://piorajac.rs/toponimi/"><span class="rinfo-card-tag">GPS</span><h3 class="rinfo-h3">Топоними Рајца</h3><p>Оријентација у простору помоћу локалних назива и GPS положаја корисника, са приказом најближих топонима.</p></a>
+<a class="rinfo-card" href="https://piorajac.rs/meteo-mini/rajac-meteo-app.html"><span class="rinfo-card-tag">метео</span><h3 class="rinfo-h3">Рајац Метео</h3><p>Мини апликација за температуру, ветар, падавине, УВ, соларно зрачење, услове на стазама и планирање боравка.</p></a>
+</div>
+</div>
+</section>
+<section class="rinfo-section" id="detalji">
+<div class="rinfo-wrap">
+<article class="rinfo-feature" id="terenski-izvestaji">
+<div class="rinfo-feature-side">
+<span class="rinfo-card-tag">01 · терен</span>
+<h3 class="rinfo-h3">Теренски извештаји</h3>
+<p>Апликација за брзу пријаву појава, проблема и промена на терену.</p>
+<div class="rinfo-link-row"><a class="rinfo-btn rinfo-btn-primary" href="https://izvestaji.piorajac.rs/">Отвори апликацију</a></div>
+</div>
+<div>
+<div class="rinfo-label">пријава појава</div>
+<h2 class="rinfo-h2">Када се проблем уочи, може одмах да се унесе на карти</h2>
+<p class="rinfo-body">Апликација <strong>Теренски извештаји</strong> намењена је уносу података директно са терена. Корисник може да означи локацију, унесе опис, изабере тип појаве и по потреби дода фотографију. На тај начин се отпад, дивља депонија, пожарни ризик, загађење воде, оштећење стазе, нелегална сеча, пад стабла или друга важна појава могу забележити одмах, док је корисник још на лицу места.</p>
+<p class="rinfo-body">Овај алат је важан зато што теренска запажања више не остају само у усменим пријавама, појединачним порукама или непотпуним описима. Сваки извештај добија просторни контекст, а управљач лакше види где се проблем налази, шта је пријављено и како треба реаговати.</p>
+<div class="rinfo-mini-list">
+<div class="rinfo-mini"><b>намена</b><span>Пријава проблема, промена и појава на терену.</span></div>
+<div class="rinfo-mini"><b>корисници</b><span>Управљач, чуварска служба, сарадници, посетиоци и власници.</span></div>
+<div class="rinfo-mini"><b>вредност</b><span>Брже реаговање, боља евиденција и јасна просторна слика стања на Рајцу.</span></div>
+</div>
+</div>
+</article>
+<article class="rinfo-feature" id="toponimi">
+<div class="rinfo-feature-side">
+<span class="rinfo-card-tag">02 · GPS</span>
+<h3 class="rinfo-h3">Топоними Рајца</h3>
+<p>Теренска карта локалних назива са GPS положајем и најближим топонимима.</p>
+<div class="rinfo-link-row"><a class="rinfo-btn rinfo-btn-primary" href="https://piorajac.rs/toponimi/">Отвори апликацију</a></div>
+</div>
+<div>
+<div class="rinfo-label">локални називи</div>
+<h2 class="rinfo-h2">Карта која повезује простор, GPS и памћење локалних назива</h2>
+<p class="rinfo-body">Апликација <strong>Топоними Рајца</strong> чува и приказује локалне називе простора — брда, долове, стране, ливаде, шуме, изворе, путеве, превоје и друге микролокалитете важне за разумевање Рајца. Она није само карта назива, већ практичан теренски GPS водич који помаже кориснику да се оријентише у односу на називе које користе мештани, планинари, власници земљишта и људи који добро познају простор.</p>
+<p class="rinfo-body">Када је корисник на терену, апликација приказује његову позицију и аутоматски израчунава три најближа топонима. Најближи топоним се визуелно истиче, а корисник може да види растојање и лакше се оријентише. Додатно, могуће је подесити аларм када се корисник приближи неком топониму, уз контролу тачности GPS сигнала.</p>
+<p class="rinfo-body">Вредност ове апликације није само техничка. Топоними су део локалне географске меморије Рајца. Када се дигитализују и повежу са GPS навигацијом, постају корисни и за нове посетиоце, истраживаче, управљача и власнике земљишта.</p>
+<div class="rinfo-mini-list">
+<div class="rinfo-mini"><b>намена</b><span>Теренска оријентација, приказ локалних назива и GPS навигација до најближих топонима.</span></div>
+<div class="rinfo-mini"><b>корисници</b><span>Посетиоци, планинари, управљач, теренске екипе, истраживачи, мештани и власници земљишта.</span></div>
+<div class="rinfo-mini"><b>вредност</b><span>Очување локалне топонимије, боља навигација и прецизнија комуникација о простору.</span></div>
+</div>
+</div>
+</article>
+<article class="rinfo-feature" id="meteo">
+<div class="rinfo-feature-side">
+<span class="rinfo-card-tag">03 · метео</span>
+<h3 class="rinfo-h3">Рајац Метео</h3>
+<p>Мини метео-апликација за тренутне услове и планирање боравка.</p>
+<div class="rinfo-link-row"><a class="rinfo-btn rinfo-btn-primary" href="https://piorajac.rs/meteo-mini/rajac-meteo-app.html">Отвори апликацију</a></div>
+</div>
+<div>
+<div class="rinfo-label">услови на терену</div>
+<h2 class="rinfo-h2">Време није само температура — важно је шта услови значе за боравак</h2>
+<p class="rinfo-body">Апликација <strong>Рајац Метео</strong> приказује метеоролошке и биометеоролошке услове важне за боравак на Рајцу. Она помаже да се процени да ли су услови погодни за шетњу, планинарење, фотографисање, рад на имању, посматрање птица, ноћно посматрање неба или друге активности на отвореном.</p>
+<p class="rinfo-body">У апликацији се могу пратити температура ваздуха, осетна температура, влажност, притисак, ветар, падавине, УВ индекс, соларно зрачење, тачка росе и други параметри који утичу на реалне услове на терену. За планински простор као што је Рајац то је посебно важно, јер се време може брзо променити, а услови на вишим деловима не морају бити исти као у нижим насељима.</p>
+<p class="rinfo-body">Метео-апликација је корисна за посетиоце који желе да знају шта да понесу и када је најбоље кренути, али и за власнике земљишта и објеката који планирају радове, кошење, обилазак имања или боравак у викендици. Управљачу ови подаци помажу у планирању теренских активности и праћењу ризика.</p>
+<div class="rinfo-mini-list">
+<div class="rinfo-mini"><b>намена</b><span>Провера времена, стања стаза и погодности дана за активности на отвореном.</span></div>
+<div class="rinfo-mini"><b>корисници</b><span>Посетиоци, планинари, фотографи, астрономи, власници имања, управљач и теренске екипе.</span></div>
+<div class="rinfo-mini"><b>вредност</b><span>Безбедније планирање боравка и боља употреба података аутоматске метеоролошке станице.</span></div>
+</div>
+</div>
+</article>
+</div>
+</section>
+<section class="rinfo-band" id="zajednicka-vrednost">
+<div class="rinfo-wrap">
+<div class="rinfo-label">заједничка вредност</div>
+<h2 class="rinfo-h2">Три алата, један циљ: боље разумевање и чување Рајца</h2>
+<p class="rinfo-lead">Ове апликације повезују три основне потребе платформе: пријаву стања на терену, оријентацију у простору и проверу тренутних услова. Заједно омогућавају да се Рајац не посматра само као карта или опис, већ као жив простор у ком се подаци стално прикупљају, тумаче и користе.</p>
+<div class="rinfo-band-grid">
+<div class="rinfo-band-card"><b>терен</b><span>проблеми, промене, фотографије и просторне пријаве</span></div>
+<div class="rinfo-band-card"><b>простор</b><span>локални називи, GPS позиција и најближи топоними</span></div>
+<div class="rinfo-band-card"><b>услови</b><span>температура, ветар, падавине, УВ, роса и стање стаза</span></div>
+<div class="rinfo-band-card"><b>управљање</b><span>брже реаговање, боље планирање и јаснија комуникација</span></div>
+</div>
+</div>
+</section>
+<section class="rinfo-section">
+<div class="rinfo-wrap">
+<div class="rinfo-cta">
+<div>
+<div class="rinfo-label">практична употреба</div>
+<h2 class="rinfo-h2">Изабери апликацију према ономе што ти треба на Рајцу</h2>
+<p>За пријаву проблема отвори теренске извештаје, за сналажење на простору користи топониме, а за планирање боравка провери Рајац Метео.</p>
+</div>
+<div class="rinfo-actions">
+<a class="rinfo-btn rinfo-btn-primary" href="https://izvestaji.piorajac.rs/">Извештаји</a>
+<a class="rinfo-btn" href="https://piorajac.rs/toponimi/">Топоними</a>
+<a class="rinfo-btn" href="https://piorajac.rs/meteo-mini/rajac-meteo-app.html">Метео</a>
+</div>
+</div>
+</div>
+</section>
+</div>
+<!-- SITE_EDITOR_ADMIN_BAR_START -->
+<script src="/admin-site-editor.php?admin_bar_js=1" defer></script>
+<!-- SITE_EDITOR_ADMIN_BAR_END -->
+<script data-pio-mobile="v1" defer src="../assets/mobile/pio-mobile-glavni.js?v=20260714-gl-v8"></script>
+</body></html>
