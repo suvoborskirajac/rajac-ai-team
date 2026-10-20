@@ -4,3 +4,11 @@ Options -Indexes
 <FilesMatch "^(config\.local\.php|config\.php)$">
   Require all denied
 </FilesMatch>
+
+# Радни фајлови, сирови подаци и белешке нису јавни (CSV садржи тачне координате).
+<FilesMatch "\.(csv|txt|md|sh|log|lock|kml)$">
+  Require all denied
+</FilesMatch>
+<FilesMatch "^(config\.local\.example\.php|health\.php|finalize-csv-baseline\.php|reset-initial-sync\.php)$">
+  Require all denied
+</FilesMatch>
