@@ -6,7 +6,7 @@ function escape(s){return String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':
 function norm(s){return String(s||'').toLocaleLowerCase('sr').normalize('NFD').replace(/[\u0300-\u036f]/g,'')}
 for(const rec of data){
  const art=document.createElement('article');art.className='item';art.dataset.group=rec.group;art.dataset.state='pending';
- art.innerHTML='<small class="kicker">'+escape(rec.group)+' · '+escape(rec.id)+'</small><h3>'+escape(rec.name)+'</h3><p class="latin">'+escape(rec.scientific)+'</p><p class="lic">Аутор: '+escape(rec.author)+' · <a target="_blank" rel="noopener noreferrer" href="'+escape(rec.license_url)+'">'+escape(rec.license)+'</a></p><p class="lic">Локална датотека: <code>'+escape(rec.local)+'</code></p><p><span class="status">Провера…</span></p><a target="_blank" rel="noopener noreferrer" href="'+escape(rec.source)+'">Извор фотографије ↗</a>';
+ art.innerHTML='<small class="kicker">'+escape(rec.group)+' · '+escape(rec.id)+'</small><h3>'+escape(rec.name)+'</h3><p class="latin">'+escape(rec.scientific)+'</p><p class="lic">Аутор: '+escape(rec.author)+' · <a rel="noopener noreferrer" href="'+escape(rec.license_url)+'">'+escape(rec.license)+'</a></p><p class="lic">Локална датотека: <code>'+escape(rec.local)+'</code></p><p><span class="status">Провера…</span></p><a rel="noopener noreferrer" href="'+escape(rec.source)+'">Извор фотографије ↗</a>';
  list.append(art);
  const badge=art.querySelector('.status');els.push({art,rec});
  const img=new Image();img.onload=()=>{rec.check='ok';badge.textContent='Локална датотека доступна';badge.className='status ok';art.dataset.state='ok';update()};

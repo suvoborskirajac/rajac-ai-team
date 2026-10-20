@@ -25,7 +25,7 @@ for(const t of matches){const arr=photosByTaxon.get(t.id)||[],st=status(t);
  const badge=text('span','fi-status '+st,st==='missing'?'Нема снимка':st==='meta'?'Метаподаци постоје':'Потребна допуна');card.append(head,badge);
  const req=text('p','fi-req');req.append(text('strong','', 'Шта треба фотографисати: '),document.createTextNode(t.checklist||'Дијагностичка обележја и целу биљку.'));card.append(req);
  const count=text('p','fi-count',`${arr.length} локалних фотографија; ${arr.filter(metaOK).length} са основним метаподацима. Није стручна потврда.`);card.append(count);
- const actions=text('div','fi-links');actions.append(makeLink('foto-radionica.html?taxon='+encodeURIComponent(t.id),'Додај фотографију →'),makeLink(t.href,'Профил врсте'),makeLink(t.source,'Изворна страница ↗'));actions.lastChild.target='_blank';actions.lastChild.rel='noopener noreferrer';card.append(actions);out.append(card);
+ const actions=text('div','fi-links');actions.append(makeLink('foto-radionica.html?taxon='+encodeURIComponent(t.id),'Додај фотографију →'),makeLink(t.href,'Профил врсте'),makeLink(t.source,'Изворна страница ↗'));actions.lastChild.rel='noopener noreferrer';card.append(actions);out.append(card);
 }
 msg.textContent=(storageError?'Локална база није доступна ('+storageError+'). Приказ је информативан. ':'')+`Приказано ${matches.length} од 31 профила. Статуси фотографија односе се само на овај прегледач.`;
 }

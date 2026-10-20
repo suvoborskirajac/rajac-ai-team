@@ -16,7 +16,7 @@ function ready(){
   let creditLink=card?.querySelector('.ref-photo-credit a[href*="commons.wikimedia.org/wiki/File"],.ref-photo-credit a[href*="piorajac.rs/biljke/"]');
   if(!creditLink){creditLink=frame.parentElement?.querySelector('a[href*="commons.wikimedia.org/wiki/File"],a[href*="piorajac.rs/biljke/"]');}
   if(creditLink){
-   const link=document.createElement('a');link.href=creditLink.href;link.target='_blank';link.rel='noopener noreferrer';link.textContent='Отвори извор →';fallback.append(link);
+   const link=document.createElement('a');link.href=creditLink.href;link.rel='noopener noreferrer';link.textContent='Отвори извор →';fallback.append(link);
   }
   frame.append(fallback);
   function update(status){

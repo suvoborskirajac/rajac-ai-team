@@ -12,7 +12,7 @@ function attachFallbacks(){
     const title=document.createElement('strong');title.textContent='Фотографија тренутно није доступна';
     const p=document.createElement('small');p.textContent='Провери интернет везу и отвори изворни запис. Не приказујемо заменску слику друге врсте.';
     fallback.append(title,p);
-    if(a){const link=document.createElement('a');link.href=a.href;link.target='_blank';link.rel='noopener noreferrer';link.textContent='Отвори извор →';fallback.append(link);}
+    if(a){const link=document.createElement('a');link.href=a.href;link.rel='noopener noreferrer';link.textContent='Отвори извор →';fallback.append(link);}
     frame.append(fallback);
     const fail=()=>{frame.classList.add('is-unavailable');card.dataset.load='failed';document.dispatchEvent(new Event('reference-photo-state-changed'))};
     const good=()=>{card.dataset.load='ok';frame.classList.remove('is-unavailable');document.dispatchEvent(new Event('reference-photo-state-changed'))};
