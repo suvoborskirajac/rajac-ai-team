@@ -1,0 +1,773 @@
+<!DOCTYPE html>
+<html lang="sr-RS">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Месец над Рајцем</title>
+<meta name="description" content="Интерактивна анимација фаза Месеца за ПИО Рајац.">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{background:#020509;color:#e8f2ff;font-family:system-ui,-apple-system,"Segoe UI",sans-serif;min-height:100%;overflow-x:hidden}
+
+/* ── nav ─── */
+.mh{position:sticky;top:0;z-index:99;background:rgba(3,7,16,.96);backdrop-filter:blur(14px);border-bottom:1px solid rgba(255,255,255,.05);padding:7px clamp(14px,3vw,40px)}
+.mh-in{max-width:1280px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap}
+.mh-home{color:rgba(255,255,255,.42);font-size:11px;font-weight:600;text-decoration:none;letter-spacing:.03em;transition:color .2s}
+.mh-home:hover{color:rgba(255,255,255,.78)}
+.mh-nav{display:flex;flex-wrap:wrap;gap:2px}
+.mh-nav a{font-size:9px;color:rgba(255,255,255,.32);letter-spacing:.14em;text-transform:uppercase;text-decoration:none;padding:5px 10px;border-radius:999px;border:1px solid transparent;transition:all .18s}
+.mh-nav a:hover{color:rgba(255,255,255,.68);border-color:rgba(255,255,255,.08)}
+.mh-nav a.on{color:#8fd09e;border-color:rgba(143,208,158,.22);background:rgba(143,208,158,.06)}
+
+/* ── page ─── */
+.pg{max-width:1280px;margin:0 auto;padding:14px 14px 28px}
+.topbar{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:10px;flex-wrap:wrap}
+.brand{display:flex;align-items:center;gap:9px;font-weight:800;font-size:14px}
+.dot{width:11px;height:11px;border-radius:999px;background:#d8eeff;box-shadow:0 0 16px rgba(200,228,255,.88),0 0 5px rgba(200,228,255,.5)}
+.brand small{display:block;color:#6e90ab;font-size:9.5px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;margin-top:1px}
+.pill{border:1px solid #182d44;background:rgba(6,14,26,.75);padding:6px 12px;border-radius:999px;color:#90b4cc;font-size:12px}
+
+/* ── hero card ─── */
+.hero{border:1px solid #111e2f;border-radius:20px;background:linear-gradient(165deg,rgba(8,17,32,.95),rgba(3,7,16,.97));box-shadow:0 22px 64px rgba(0,0,0,.55);overflow:hidden}
+.hero-top{display:flex;align-items:flex-start;justify-content:space-between;gap:14px;padding:18px 18px 3px;flex-wrap:wrap}
+h1{font-size:clamp(22px,3.4vw,50px);line-height:1.02;letter-spacing:-.04em;font-weight:900}
+.lead{color:#6e90ab;font-size:13px;line-height:1.56;margin-top:6px;max-width:720px}
+.tags{display:flex;flex-wrap:wrap;gap:4px}
+.tag{border:1px solid rgba(255,255,255,.07);background:rgba(255,255,255,.04);border-radius:999px;padding:4px 9px;color:#aac4dc;font-size:10px;font-weight:700}
+.cv{padding:2px 10px 8px}
+#sky{display:block;width:100%;max-width:1220px;margin:0 auto;border-radius:13px;background:#010408}
+
+/* ── controls ─── */
+.ctrl{display:grid;grid-template-columns:1.05fr .65fr 1fr .9fr auto auto auto;gap:8px;padding:9px 14px 16px;border-top:1px solid rgba(255,255,255,.04);align-items:end}
+label{font-size:10px;color:#5e82a0;text-transform:uppercase;letter-spacing:.09em;font-weight:700;display:block;margin-bottom:5px}
+input[type=date],input[type=time],select{width:100%;border:1px solid #18304c;background:#08172a;color:#dbeeff;border-radius:9px;padding:9px 10px;font-weight:700;outline:none;font-size:13px}
+input[type=range]{width:100%;accent-color:#5aaef0;height:34px;cursor:pointer}
+.btn{border:1px solid #214870;background:linear-gradient(170deg,#163d68,#0e2c4a);color:#d8eeff;border-radius:9px;padding:10px 12px;font-weight:800;cursor:pointer;font-size:12px;transition:filter .15s;white-space:nowrap}
+.btn:hover{filter:brightness(1.14)}
+.btn.live-on{border-color:rgba(143,208,158,.45);background:linear-gradient(170deg,#1b5d3a,#0d3321);color:#dfffe6}
+.btn.live-off{border-color:rgba(255,255,255,.11);background:linear-gradient(170deg,#172232,#0a111d);color:#93a8ba}
+
+/* ── cards ─── */
+.cards{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:12px 0}
+.card{border:1px solid #0f1f32;background:linear-gradient(165deg,#0b1927,#060f1b);border-radius:14px;padding:13px}
+.card .k{color:#506d89;font-size:11px;margin-bottom:6px;letter-spacing:.04em}
+.card .v{font-size:clamp(19px,1.8vw,29px);font-weight:900;line-height:1.05;letter-spacing:-.02em}
+.card .s{color:#6a8da6;font-size:11px;line-height:1.4;margin-top:5px}
+.bar{height:7px;background:#102030;border-radius:999px;overflow:hidden;margin-top:9px}
+.bar>div{height:100%;background:linear-gradient(90deg,#163060,#4aa0f8,#ffe8a0);border-radius:999px;transition:width .35s}
+
+/* ── bottom ─── */
+.g2{display:grid;grid-template-columns:1.2fr .8fr;gap:10px;margin-top:10px}
+.panel{border:1px solid #0f1f32;background:rgba(6,13,24,.9);border-radius:16px;padding:14px}
+h2{margin:0 0 9px;font-size:17px;letter-spacing:-.02em}
+.pl{display:grid;grid-template-columns:1fr 1fr;gap:7px}
+.pi{display:flex;align-items:center;justify-content:space-between;gap:8px;border:1px solid rgba(255,255,255,.05);background:rgba(255,255,255,.02);border-radius:10px;padding:8px 10px}
+.pi strong{font-size:12px}.pi span{font-size:11px;color:#7a9cb8;white-space:nowrap}
+.note{color:#7898b2;line-height:1.65;font-size:13px}
+.rec{font-weight:900;color:#fff;font-size:17px;margin-top:8px;line-height:1.45}
+
+/* ── footnav ─── */
+.fn{background:rgba(2,5,12,.97);border-top:1px solid rgba(255,255,255,.04);padding:8px clamp(14px,3vw,40px)}
+.fn-in{max-width:1280px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap}
+.fn-home{color:rgba(255,255,255,.4);font-size:11px;font-weight:600;text-decoration:none;letter-spacing:.02em}
+.fn-nav{display:flex;flex-wrap:wrap;gap:2px}
+.fn-nav a{font-size:9px;color:rgba(255,255,255,.32);letter-spacing:.13em;text-transform:uppercase;text-decoration:none;padding:5px 10px;border-radius:999px;border:1px solid transparent;transition:all .18s}
+.fn-nav a:hover{color:rgba(255,255,255,.68);border-color:rgba(255,255,255,.08)}
+.fn-nav a.on{color:#8fd09e;border-color:rgba(143,208,158,.22);background:rgba(143,208,158,.06)}
+
+.foot{margin:16px auto 0;max-width:980px;color:#83a6c0;font-size:14.5px;text-align:center;line-height:1.65;background:rgba(255,255,255,.025);border:1px solid rgba(255,255,255,.055);border-radius:12px;padding:10px 14px}
+
+@media(max-width:860px){.hero-top{flex-direction:column}.ctrl{grid-template-columns:1fr 1fr}.cards{grid-template-columns:1fr 1fr}.g2{grid-template-columns:1fr}.pl{grid-template-columns:1fr}}
+@media(max-width:500px){.ctrl{grid-template-columns:1fr}.cards{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+
+
+<div class="pg">
+  <div class="topbar">
+    <a class="brand" href="https://piorajac.rs/" style="color:inherit;text-decoration:none"><span class="dot"></span><div>ПИО „РАЈАЦ“<small>астрономски модул</small></div></a>
+    <div class="pill" id="pill">Учитавање…</div>
+  </div>
+
+  <main class="hero">
+    <div class="hero-top">
+      <div>
+        <h1>Месец над Рајцем</h1>
+        <p class="lead">Интерактивна анимација фаза Месеца за координате врха Рајца — фотографска текстура Месеца, прорачун фазе, положај изнад или испод хоризонта и препорука шта има смисла посматрати током ноћи.</p>
+      </div>
+      <div class="tags">
+        <span class="tag">44.136°N · 20.225°E</span>
+        <span class="tag">848 м н.в.</span>
+      </div>
+    </div>
+    <div class="cv">
+      <canvas id="sky" width="1220" height="900"></canvas>
+    </div>
+    <div class="ctrl">
+      <div><label for="dp">Датум</label><input type="date" id="dp"></div>
+      <div><label for="tm">Време</label><input type="time" id="tm" step="60"></div>
+      <div><label for="sl">Позиција у лунарном месецу</label><input type="range" id="sl" min="0" max="29.53" step="0.01" value="0"></div>
+      <div><label for="sp">Брзина анимације</label>
+        <select id="sp">
+          <option value="180">споро</option>
+          <option value="80" selected>нормално</option>
+          <option value="25">брзо</option>
+        </select>
+      </div>
+      <button class="btn" id="todayBtn">Данас</button>
+      <button class="btn live-on" id="liveBtn" title="Аутоматски освежава стварно време сваких 60 секунди">● Уживо</button>
+      <button class="btn" id="playBtn">▶ Пусти</button>
+    </div>
+  </main>
+
+  <section class="cards">
+    <div class="card"><div class="k">Фаза</div><div class="v" id="cP">—</div><div class="s" id="cN">—</div></div>
+    <div class="card"><div class="k">Осветљеност диска</div><div class="v" id="cI">—</div><div class="bar"><div id="cB"></div></div></div>
+    <div class="card"><div class="k">Старост Месеца</div><div class="v" id="cA">—</div><div class="s">од последног младог Месеца</div></div>
+    <div class="card"><div class="k">Положај Месеца</div><div class="v" id="cS">—</div><div class="s" id="cT">—</div></div>
+  </section>
+
+  <section class="g2">
+    <div class="panel"><h2>Следеће главне мене</h2><div class="pl" id="pl"></div></div>
+    <div class="panel"><h2>Шта посматрати на небу</h2><p class="note" id="ci">—</p><div class="rec" id="cr">—</div></div>
+  </section>
+
+  <p class="foot">Прорачун: просечни синодички месец (29,530588853 дана). Фотографија: Luc Viatour / Wikimedia Commons CC BY-SA 3.0. Координате: 44.136318°N 20.224904°E · 848 m n.v.</p>
+</div>
+
+
+<script>
+(function(){
+'use strict';
+
+/* ══════════════════════════════════════════════════
+   CONSTANTS
+══════════════════════════════════════════════════ */
+const SYN   = 29.530588853;               // synodic month in days
+const EPOCH = Date.UTC(2000,0,6,18,14,0); // J2000.0 new moon
+const DAY   = 86400000;                   // ms per day
+
+/* ══════════════════════════════════════════════════
+   ASTRONOMY  (all calculations use raw ms, no rounding)
+══════════════════════════════════════════════════ */
+function moonAge(ms){
+  return (((ms - EPOCH) / DAY % SYN) + SYN) % SYN;
+}
+
+function moonInfo(ms){
+  const age   = moonAge(ms);
+  const f     = age / SYN;
+  const illum = (1 - Math.cos(2 * Math.PI * f)) / 2;
+  let name, note;
+  if(age < 1.4 || age > SYN - 1.4){ name='Млад Месец';               note='тамна ноћ — идеално за Млечни пут'; }
+  else if(age < 6.5)                { name='Растући срп';              note='танак Месец после заласка Сунца'; }
+  else if(age < 8.8)                { name='Прва четврт';              note='десна половина диска осветљена'; }
+  else if(age < 13.8)               { name='Растући избочени Месец';   note='све јаче месечево светло'; }
+  else if(age < 16.0)               { name='Пун Месец';                note='максимално месечево светло'; }
+  else if(age < 21.5)               { name='Опадајући избочени Месец'; note='Месец доминира ноћним небом'; }
+  else if(age < 23.7)               { name='Последња четврт';          note='лева половина диска осветљена'; }
+  else                              { name='Опадајући срп';            note='танак јутарњи Месец'; }
+  return { age, f, illum, name, note };
+}
+
+/* Approximate topocentric context for Rajac.
+   This is intentionally lightweight: enough for public observing advice without external APIs. */
+const RAJAC_LAT = 44.136318;
+const RAJAC_LON = 20.224904; // east positive
+const DEG = Math.PI / 180;
+const RAD = 180 / Math.PI;
+
+function norm360(x){ return ((x % 360) + 360) % 360; }
+function toJulian(ms){ return ms / DAY + 2440587.5; }
+
+function gmstDeg(jd){
+  const T = (jd - 2451545.0) / 36525;
+  return norm360(280.46061837 + 360.98564736629 * (jd - 2451545.0) + 0.000387933 * T*T - T*T*T / 38710000);
+}
+
+function equToAltAz(raDeg, decDeg, ms){
+  const jd = toJulian(ms);
+  const lst = norm360(gmstDeg(jd) + RAJAC_LON);
+  let ha = norm360(lst - raDeg);
+  if(ha > 180) ha -= 360;
+  const lat = RAJAC_LAT * DEG, dec = decDeg * DEG, h = ha * DEG;
+  const alt = Math.asin(Math.sin(lat)*Math.sin(dec) + Math.cos(lat)*Math.cos(dec)*Math.cos(h));
+  const az  = Math.atan2(-Math.sin(h), Math.tan(dec)*Math.cos(lat) - Math.sin(lat)*Math.cos(h));
+  return { alt: alt * RAD, az: norm360(az * RAD) };
+}
+
+function sunAltAz(ms){
+  const jd = toJulian(ms);
+  const n  = jd - 2451545.0;
+  const L  = norm360(280.460 + 0.9856474 * n);
+  const g  = norm360(357.528 + 0.9856003 * n) * DEG;
+  const lam = (L + 1.915 * Math.sin(g) + 0.020 * Math.sin(2*g)) * DEG;
+  const eps = (23.439 - 0.0000004 * n) * DEG;
+  const ra  = norm360(Math.atan2(Math.cos(eps)*Math.sin(lam), Math.cos(lam)) * RAD);
+  const dec = Math.asin(Math.sin(eps)*Math.sin(lam)) * RAD;
+  return equToAltAz(ra, dec, ms);
+}
+
+function moonAltAz(ms){
+  const jd = toJulian(ms);
+  const d = jd - 2451543.5;
+  const N = norm360(125.1228 - 0.0529538083 * d) * DEG;
+  const i = 5.1454 * DEG;
+  const w = norm360(318.0634 + 0.1643573223 * d) * DEG;
+  const a = 60.2666;
+  const e = 0.054900;
+  const M = norm360(115.3654 + 13.0649929509 * d) * DEG;
+
+  let E = M + e * Math.sin(M) * (1 + e * Math.cos(M));
+  for(let k=0; k<4; k++) E = E - (E - e*Math.sin(E) - M) / (1 - e*Math.cos(E));
+
+  const xv = a * (Math.cos(E) - e);
+  const yv = a * (Math.sqrt(1 - e*e) * Math.sin(E));
+  const v  = Math.atan2(yv, xv);
+  const r  = Math.sqrt(xv*xv + yv*yv);
+
+  const xh = r * (Math.cos(N)*Math.cos(v+w) - Math.sin(N)*Math.sin(v+w)*Math.cos(i));
+  const yh = r * (Math.sin(N)*Math.cos(v+w) + Math.cos(N)*Math.sin(v+w)*Math.cos(i));
+  const zh = r * (Math.sin(v+w)*Math.sin(i));
+
+  const eps = (23.4393 - 3.563E-7 * d) * DEG;
+  const xeq = xh;
+  const yeq = yh*Math.cos(eps) - zh*Math.sin(eps);
+  const zeq = yh*Math.sin(eps) + zh*Math.cos(eps);
+
+  const ra  = norm360(Math.atan2(yeq, xeq) * RAD);
+  const dec = Math.atan2(zeq, Math.sqrt(xeq*xeq + yeq*yeq)) * RAD;
+  return equToAltAz(ra, dec, ms);
+}
+
+function azName(deg){
+  const dirs = ['север','североисток','исток','југоисток','југ','југозапад','запад','северозапад'];
+  return dirs[Math.round(norm360(deg) / 45) % 8];
+}
+
+function observingAdvice(info, moonPos, sunPos){
+  const above = moonPos.alt > 0;
+  const lowMoon = above && moonPos.alt < 12;
+  const darkEnough = sunPos.alt <= -18;
+  const twilight = sunPos.alt > -18 && sunPos.alt <= -6;
+
+  let intro = '';
+  if(sunPos.alt > -6){
+    intro = 'Сунце је још високо или је грађански сумрак, па небо није довољно тамно за озбиљно посматрање слабих објеката. ';
+  } else if(twilight){
+    intro = 'У току је астрономски/наутички сумрак; за дубоко небо боље је сачекати потпуну таму, али се Месец, сјајне звезде и планете могу посматрати. ';
+  } else {
+    intro = 'Небо је довољно тамно за ноћна посматрања. ';
+  }
+
+  if(!above){
+    const base = 'Месец је у изабрано време испод хоризонта, па не уноси директно месечево светло у небо над Рајцем. ';
+    if(info.illum < .35){
+      return {
+        interp: intro + base + 'То је најбољи сценарио за природно тамно небо: Млечни пут, метеори, слабија звездана јата, маглине и галаксије имају највеће шансе да буду видљиви, нарочито далеко од локалних извора светла.',
+        rec: '▸ Препорука: дубоко небо, широкоугаона астрофотографија, мерење SQM и праћење светлосног загађења.'
+      };
+    }
+    if(info.illum < .72){
+      return {
+        interp: intro + base + 'Иако је фаза Месеца средње осветљена, његово одсуство са неба даје добар „тамни прозор”. Тада има смисла посматрати слабије објекте, али у белешкама треба навести да је Месец у тој ноћи био у фази ' + info.name.toLowerCase() + '.',
+        rec: '▸ Препорука: Млечни пут ако је у сезони, сјајније маглине, отворена јата и контролна SQM мерења.'
+      };
+    }
+    return {
+      interp: intro + base + 'Фаза је иначе светла, али док је Месец испод хоризонта услови су знатно бољи него када је на небу. Тај период треба искористити пре његовог изласка или после заласка.',
+      rec: '▸ Препорука: искористити тамни део ноћи; после изласка Месеца прећи на лунарну фотографију и сјајне објекте.'
+    };
+  }
+
+  let altitudeNote = lowMoon ? 'Пошто је Месец ниско над хоризонтом, његов утицај је слабији него када је високо, али се светлост и даље расипа у атмосфери. ' : 'Пошто је Месец изнад хоризонта, његова светлост директно утиче на тамноћу неба. ';
+  if(info.illum < .12){
+    return {
+      interp: intro + altitudeNote + 'Фаза је врло танка или близу младог Месеца, па се може посматрати Земљин сјај на тамном делу диска, танак срп и месечев пејзаж у сумрак, док дубоко небо остаје релативно добро очувано.',
+      rec: '▸ Препорука: танак срп Месеца, Земљин сјај, Млечни пут и пејзажна астрофотографија.'
+    };
+  }
+  if(info.illum < .35){
+    return {
+      interp: intro + altitudeNote + 'Осветљеност је умерена. Најзанимљивији је терминатор — граница светла и сенке на Месецу — где се јасно виде кратери, планине и сенке. Дубоко небо је могуће, али боље у супротном делу неба од Месеца.',
+      rec: '▸ Препорука: кратери дуж терминатора, сјајније звездано јато, двојне звезде и пејзажи са Месецом.'
+    };
+  }
+  if(info.illum < .72){
+    return {
+      interp: intro + altitudeNote + 'Месечево светло је већ јако и смањује контраст слабих објеката. Најбољи избор су сам Месец, планете, двојне звезде, сјајне звезде и најсјајнија отворена јата. За мерење тамног неба фазу и висину Месеца треба обавезно уписати у напомену.',
+      rec: '▸ Препорука: лунарни детаљи, планете, двојне звезде и едукативно посматрање.'
+    };
+  }
+  return {
+    interp: intro + altitudeNote + 'Пун или скоро пун Месец доминира небом. Слабе маглине, галаксије и Млечни пут углавном нису добар циљ, али су услови одлични за фотографисање месечевог диска, месечевих пејзажа и демонстрацију утицаја Месеца на светлосно загађење.',
+    rec: '▸ Препорука: лунарна фотографија, месечев ореол, ноћни пејзажи и поређење SQM вредности са тамним ноћима.'
+  };
+}
+
+function nextPhases(ms){
+  const base = Math.floor((ms - EPOCH) / DAY / SYN) - 1;
+  const defs = [['Млад Месец',0],['Прва четврт',SYN/4],['Пун Месец',SYN/2],['Последња четврт',SYN*3/4]];
+  const out  = [];
+  for(let c = base; c < base + 4 && out.length < 4; c++){
+    for(const [nm, off] of defs){
+      const t = EPOCH + (c * SYN + off) * DAY;
+      if(t > ms - DAY && out.length < 4) out.push({ name: nm, ts: t });
+    }
+  }
+  return out;
+}
+
+/* ══════════════════════════════════════════════════
+   CANVAS SETUP
+══════════════════════════════════════════════════ */
+const canvas = document.getElementById('sky');
+const ctx    = canvas.getContext('2d');
+const W = canvas.width, H = canvas.height;
+
+/* Moon texture – loaded from same folder */
+const TEX = new Image();
+let   texOK = false;
+TEX.onload  = () => { texOK = true;  paint(curMs); };
+TEX.onerror = () => { texOK = false; paint(curMs); };
+TEX.src = 'moon.jpg';
+
+/* ══════════════════════════════════════════════════
+   PROCEDURAL FALLBACK DATA
+══════════════════════════════════════════════════ */
+// Accurate mare (dark sea) positions and sizes
+const MARE = [
+  {x:-.30,y:-.26,rx:.28,ry:.24,v:.40}, // Mare Imbrium
+  {x:.14, y:-.17,rx:.20,ry:.17,v:.46}, // Mare Serenitatis
+  {x:.23, y:.04, rx:.21,ry:.18,v:.44}, // Mare Tranquillitatis
+  {x:.50, y:-.07,rx:.12,ry:.10,v:.48}, // Mare Crisium
+  {x:-.44,y:.10, rx:.34,ry:.28,v:.38}, // Oceanus Procellarum
+  {x:.39, y:.16, rx:.14,ry:.11,v:.46}, // Mare Fecunditatis
+  {x:.28, y:.25, rx:.09,ry:.08,v:.50}, // Mare Nectaris
+  {x:.04, y:-.02,rx:.10,ry:.08,v:.48}, // Mare Vaporum
+  {x:-.08,y:.36, rx:.10,ry:.08,v:.44}, // Mare Nubium
+];
+
+const CRATERS = (()=>{
+  let s = 777777;
+  const rng = () => { s = (s * 1664525 + 1013904223) >>> 0; return s / 4294967296; };
+  return Array.from({length:55}, ()=>{
+    const r = Math.sqrt(rng()) * .88, a = rng() * Math.PI * 2;
+    return { x:Math.cos(a)*r, y:Math.sin(a)*r, r:.014+rng()*.044, d:.08+rng()*.20 };
+  });
+})();
+
+/* ══════════════════════════════════════════════════
+   STARFIELD  (static, seeded)
+══════════════════════════════════════════════════ */
+const STARS = (()=>{
+  let s = 31337;
+  const rng = () => { s = (s * 1664525 + 1013904223) >>> 0; return s / 4294967296; };
+  return Array.from({length:220}, ()=>({
+    x: rng() * W, y: rng() * H * .80,
+    a: .05 + rng() * .26,
+    r: rng() > .95 ? 1.4 : .7
+  }));
+})();
+
+/* ══════════════════════════════════════════════════
+   DRAW HELPERS
+══════════════════════════════════════════════════ */
+function drawStars(){
+  ctx.save();
+  for(const s of STARS){
+    ctx.fillStyle = `rgba(255,255,255,${s.a.toFixed(2)})`;
+    ctx.beginPath(); ctx.arc(s.x, s.y, s.r, 0, Math.PI*2); ctx.fill();
+  }
+  ctx.restore();
+}
+
+/* tiny moon for calendar row */
+function miniMoon(cx, cy, r, f){
+  ctx.save();
+  ctx.beginPath(); ctx.arc(cx,cy,r,0,Math.PI*2);
+  ctx.fillStyle='#06090f'; ctx.fill(); ctx.clip();
+
+  const grad = ctx.createRadialGradient(cx-r*.15,cy-r*.15,r*.05,cx,cy,r);
+  grad.addColorStop(0,'rgba(255,255,255,.92)');
+  grad.addColorStop(1,'rgba(90,125,165,.22)');
+  ctx.globalAlpha = .15 + (1-Math.cos(2*Math.PI*f))/2 * .85;
+  ctx.beginPath();
+  if(f < .5) ctx.rect(cx, cy-r, r, r*2);
+  else       ctx.rect(cx-r, cy-r, r, r*2);
+  ctx.fillStyle = grad; ctx.fill();
+  ctx.globalAlpha = 1; ctx.restore();
+
+  ctx.beginPath(); ctx.arc(cx,cy,r,0,Math.PI*2);
+  ctx.strokeStyle='rgba(255,255,255,.18)'; ctx.lineWidth=.6; ctx.stroke();
+}
+
+/* calendar strip across the top */
+function drawCalendar(ms){
+  const d0   = new Date(ms);
+  const yr   = d0.getFullYear(), mo = d0.getMonth(), day = d0.getDate();
+  const nDays = new Date(yr, mo+1, 0).getDate();
+  const mName = d0.toLocaleDateString('sr-RS',{month:'long',year:'numeric'}).toUpperCase();
+
+  const stripH = 68, padX = 18;
+  const cellW  = (W - padX*2) / nDays;
+  const mY     = 10, mR = 7, numY = stripH - 6;
+
+  // month label
+  ctx.save();
+  ctx.font = '700 11.5px system-ui';
+  ctx.fillStyle = 'rgba(190,218,245,.52)';
+  ctx.textAlign = 'center';
+  ctx.fillText(mName, W/2, mY);
+
+  for(let d = 1; d <= nDays; d++){
+    const x   = padX + (d-.5) * cellW;
+    const dMs = Date.UTC(yr, mo, d, 12, 0, 0);
+    const ph  = moonInfo(dMs);
+    const cur = d === day;
+
+    if(cur){
+      ctx.fillStyle = 'rgba(244,212,122,.10)';
+      ctx.beginPath();
+      ctx.roundRect(x - cellW*.46, mY + 4, cellW*.92, stripH - 10, 5);
+      ctx.fill();
+    }
+
+    miniMoon(x, mY + 26, mR, ph.f);
+
+    ctx.font = cur ? '700 8.5px system-ui' : '400 8px system-ui';
+    ctx.fillStyle = cur ? '#f4d47a' : 'rgba(160,192,218,.38)';
+    ctx.textAlign = 'center';
+    ctx.fillText(d, x, numY);
+  }
+  ctx.restore();
+}
+
+/* ══════════════════════════════════════════════════
+   MOON RENDER  (photo texture + phase shadow)
+══════════════════════════════════════════════════ */
+function drawMoonPhoto(cx, cy, r, info){
+  const d  = r * 2;
+  const oc = Object.assign(document.createElement('canvas'),{width:d,height:d});
+  const o  = oc.getContext('2d');
+
+  /* 1. circular clip → draw photo texture (exact radius, no gap) */
+  o.save();
+  o.beginPath(); o.arc(r, r, r, 0, Math.PI*2); o.clip();
+  o.drawImage(TEX, 0, 0, d, d);
+  o.restore();
+
+  /* 2. phase shadow — clipped to moon circle to prevent bleed-outside */
+  const ang  = 2 * Math.PI * info.f;
+  const tRx  = r * Math.abs(Math.cos(ang));
+  const bL   = Math.cos(ang) < 0;
+
+  o.save();
+  o.beginPath(); o.arc(r, r, r, 0, Math.PI*2); o.clip(); // shadow confined to circle
+  o.fillStyle = '#010408';
+  o.beginPath();
+  if(info.f <= 0.5){
+    o.arc(r, r, r, -Math.PI/2, Math.PI/2, true);
+    o.ellipse(r, r, tRx, r, 0, Math.PI/2, -Math.PI/2, !bL);
+  } else {
+    o.arc(r, r, r, -Math.PI/2, Math.PI/2, false);
+    o.ellipse(r, r, tRx, r, 0, Math.PI/2, -Math.PI/2, bL);
+  }
+  o.closePath(); o.fill();
+  o.restore();
+
+  /* 3. limb darkening — благо, да не ствара видљив тамни прстен */
+  const lg = o.createRadialGradient(r, r, r*.68, r, r, r);
+  lg.addColorStop(0, 'rgba(0,0,0,0)');
+  lg.addColorStop(1, 'rgba(0,0,0,.22)');
+  o.save();
+  o.beginPath(); o.arc(r, r, r, 0, Math.PI*2); o.clip();
+  o.fillStyle = lg; o.fillRect(0, 0, d, d);
+  o.restore();
+
+  /* 4. blit with atmospheric glow */
+  ctx.save();
+  if(info.illum > .05){
+    ctx.shadowColor = `rgba(160,198,248,${(.04 + info.illum*.18).toFixed(2)})`;
+    ctx.shadowBlur  = info.illum * 58 + 6;
+  }
+  ctx.drawImage(oc, cx - r, cy - r);
+  ctx.restore();
+
+  /* 5. thin outer ring */
+  ctx.save();
+  ctx.beginPath(); ctx.arc(cx, cy, r, 0, Math.PI*2);
+  ctx.strokeStyle = 'rgba(255,255,255,.08)'; ctx.lineWidth = 1; ctx.stroke();
+  ctx.restore();
+}
+
+/* procedural moon fallback (if moon.jpg missing) */
+function drawMoonProc(cx, cy, r, info){
+  const sz  = r * 2;
+  const img = ctx.createImageData(sz, sz);
+  const ang = 2 * Math.PI * (info.f - .5);    // растући = десно осветљено, опадајући = лево осветљено
+  const len = Math.hypot(-Math.sin(ang), -.08, Math.cos(ang));
+  const lx  = -Math.sin(ang)/len, ly = -.08/len, lz = Math.cos(ang)/len;
+
+  for(let py = 0; py < sz; py++){
+    for(let px = 0; px < sz; px++){
+      const nx = (px-r)/r, ny = (py-r)/r, rr = nx*nx+ny*ny;
+      if(rr > 1) continue;
+      const nz = Math.sqrt(1-rr);
+      // surface
+      let base = .62;
+      for(const m of MARE){
+        const ex = (nx-m.x)/m.rx, ey = (ny-m.y)/m.ry;
+        const dd = Math.sqrt(ex*ex+ey*ey);
+        if(dd < 1) base = base + (m.v - base) * Math.pow(1-dd, .55);
+      }
+      for(const c of CRATERS){
+        const dd = Math.sqrt((nx-c.x)**2+(ny-c.y)**2);
+        if(dd<c.r)        base -= (1-dd/c.r)*c.d;
+        else if(dd<c.r*1.5) base += (1-(dd-c.r)/(c.r*.5))*c.d*.14;
+      }
+      const noise = (Math.sin((nx*28+ny*16)*16)+Math.sin((nx*7-ny*20)*26))*.016;
+      base  = Math.max(.04, Math.min(.94, base+noise));
+      const shade = .14 + .86 * Math.max(0, nx*lx+ny*ly+nz*lz);
+      const limb  = Math.pow(Math.max(0, nz), .36);
+      const v     = Math.max(0, Math.min(1, base*shade*limb));
+      const alpha = rr > .980 ? Math.max(0,(1-rr)/.020) : 1;
+      const p = (py*sz+px)*4;
+      img.data[p]   = Math.round(210*v);
+      img.data[p+1] = Math.round(220*v);
+      img.data[p+2] = Math.round(226*v);
+      img.data[p+3] = Math.round(255*alpha);
+    }
+  }
+  ctx.save();
+  ctx.shadowColor = `rgba(170,205,248,${(.04+info.illum*.16).toFixed(2)})`;
+  ctx.shadowBlur  = info.illum*46+4;
+  ctx.putImageData(img, Math.round(cx-r), Math.round(cy-r));
+  ctx.restore();
+  ctx.save();
+  ctx.beginPath(); ctx.arc(cx,cy,r,0,Math.PI*2);
+  ctx.strokeStyle='rgba(255,255,255,.07)'; ctx.lineWidth=1; ctx.stroke();
+  ctx.restore();
+}
+
+/* ══════════════════════════════════════════════════
+   MAIN PAINT
+══════════════════════════════════════════════════ */
+function paint(ms){
+  const info = moonInfo(ms);
+  const d    = new Date(ms);
+  const MOON_CY = Math.round(H * .520);
+  const MOON_R  = Math.round(H * .330); // увећан радијус — покрива тамни круг
+
+  /* sky background */
+  ctx.clearRect(0, 0, W, H);
+  const bg = ctx.createLinearGradient(0, 0, 0, H);
+  bg.addColorStop(0, '#020509'); bg.addColorStop(1, '#040c18');
+  ctx.fillStyle = bg; ctx.fillRect(0, 0, W, H);
+
+  drawStars();
+  drawCalendar(ms);
+
+  /* moon */
+  if(texOK) drawMoonPhoto(W/2, MOON_CY, MOON_R, info);
+  else       drawMoonProc(W/2, MOON_CY, MOON_R, info);
+
+  /* date label */
+  const dd = String(d.getDate()).padStart(2,'0');
+  const mm = String(d.getMonth()+1).padStart(2,'0');
+  const yy = d.getFullYear();
+  const dateStr = `${dd}.${mm}.${yy}.`;
+
+  ctx.textAlign = 'center';
+  ctx.fillStyle = 'rgba(232,244,255,.88)';
+  ctx.font      = `800 ${Math.round(H*.046)}px system-ui`;
+  ctx.fillText(dateStr, W/2, MOON_CY + MOON_R + 46);
+
+  ctx.fillStyle = 'rgba(140,175,210,.80)';
+  ctx.font      = `600 ${Math.round(H*.020)}px system-ui`;
+  ctx.fillText(
+    `${info.name}  ·  осветљеност ${(info.illum*100).toFixed(1)}%  ·  старост ${info.age.toFixed(1)} дана`,
+    W/2, MOON_CY + MOON_R + 80
+  );
+
+  updateUI(ms, info);
+}
+
+/* ══════════════════════════════════════════════════
+   UI UPDATE
+══════════════════════════════════════════════════ */
+function pad2(n){ return String(n).padStart(2,'0'); }
+function fmtD(ms){
+  const d=new Date(ms);
+  return `${pad2(d.getDate())}.${pad2(d.getMonth()+1)}.${d.getFullYear()}.`;
+}
+
+function updateUI(ms, info){
+  const moonPos = moonAltAz(ms);
+  const sunPos  = sunAltAz(ms);
+  const above   = moonPos.alt > 0;
+  const obs     = observingAdvice(info, moonPos, sunPos);
+
+  document.getElementById('pill').textContent = `${fmtD(ms)} · ${isoTime(ms)} · ${info.name}${liveMode ? ' · уживо' : ' · ручни избор'}`;
+  document.getElementById('cP').textContent   = info.name;
+  document.getElementById('cN').textContent   = info.note;
+  document.getElementById('cI').textContent   = `${(info.illum*100).toFixed(1)}%`;
+  document.getElementById('cB').style.width   = `${(info.illum*100).toFixed(0)}%`;
+  document.getElementById('cA').textContent   = `${info.age.toFixed(1)} дана`;
+  document.getElementById('cS').textContent   = above ? 'изнад хоризонта' : 'испод хоризонта';
+  document.getElementById('cT').textContent   =
+    `висина ${moonPos.alt.toFixed(1)}° · ${azName(moonPos.az)} (${moonPos.az.toFixed(0)}°)`;
+
+  document.getElementById('ci').textContent = obs.interp;
+  document.getElementById('cr').textContent = obs.rec;
+
+  document.getElementById('pl').innerHTML = nextPhases(ms)
+    .map(p=>`<div class="pi"><strong>${p.name}</strong><span>${fmtD(p.ts)}</span></div>`)
+    .join('');
+}
+
+/* ══════════════════════════════════════════════════
+   STATE  &  CONTROLS
+══════════════════════════════════════════════════ */
+// curMs tracks sub-day precision (milliseconds) for smooth animation
+let curMs   = new Date().getTime();
+let playing = false;
+let timer   = null;
+let liveMode = true;
+let liveTimer = null;
+
+function updateLiveButton(){
+  const b = document.getElementById('liveBtn');
+  if(!b) return;
+  b.textContent = liveMode ? '● Уживо' : '○ Ручно';
+  b.classList.toggle('live-on', liveMode);
+  b.classList.toggle('live-off', !liveMode);
+}
+function setManualMode(){
+  liveMode = false;
+  updateLiveButton();
+}
+function startLiveRefresh(){
+  clearInterval(liveTimer);
+  liveTimer = setInterval(()=>{
+    if(liveMode && !playing){
+      setMs(new Date().getTime());
+    }
+  }, 60000);
+}
+
+function isoDate(ms){
+  const d=new Date(ms);
+  return `${d.getFullYear()}-${pad2(d.getMonth()+1)}-${pad2(d.getDate())}`;
+}
+function isoTime(ms){
+  const d=new Date(ms);
+  return `${pad2(d.getHours())}:${pad2(d.getMinutes())}`;
+}
+function selectedTimeParts(){
+  const v = document.getElementById('tm').value || '22:00';
+  const [h,m] = v.split(':').map(Number);
+  return {h:h||0, m:m||0};
+}
+function makeMsFromInputs(){
+  const [y,m,d] = document.getElementById('dp').value.split('-').map(Number);
+  const t = selectedTimeParts();
+  return new Date(y, m-1, d, t.h, t.m, 0).getTime();
+}
+
+function setMs(ms, syncSlider=true){
+  curMs = ms;
+  document.getElementById('dp').value = isoDate(ms);
+  document.getElementById('tm').value = isoTime(ms);
+  if(syncSlider) document.getElementById('sl').value = moonAge(ms).toFixed(3);
+  paint(ms);
+}
+
+// Date and time picker — horizon status depends on the selected time
+document.getElementById('dp').addEventListener('change', ()=>{
+  setManualMode();
+  setMs(makeMsFromInputs());
+});
+document.getElementById('tm').addEventListener('change', ()=>{
+  setManualMode();
+  setMs(makeMsFromInputs());
+});
+
+// Slider — advance/retreat fractional days from CURRENT day
+document.getElementById('sl').addEventListener('input', e=>{
+  setManualMode();
+  const targetAge = parseFloat(e.target.value);
+  const curAge    = moonAge(curMs);
+  const delta     = targetAge - curAge;
+  setMs(curMs + delta * DAY, false);
+});
+
+// Today button
+document.getElementById('todayBtn').addEventListener('click', ()=>{
+  liveMode = true;
+  updateLiveButton();
+  setMs(new Date().getTime());
+});
+
+document.getElementById('liveBtn').addEventListener('click', ()=>{
+  liveMode = !liveMode;
+  if(liveMode){
+    if(playing){
+      playing = false;
+      clearInterval(timer);
+      document.getElementById('playBtn').textContent = '▶ Пусти';
+    }
+    setMs(new Date().getTime());
+  }
+  updateLiveButton();
+});
+
+// Play/Pause — advances curMs by 0.15 days per tick (fractional, smooth)
+document.getElementById('playBtn').addEventListener('click', ()=>{
+  playing = !playing;
+  if(playing){
+    liveMode = false;
+    updateLiveButton();
+  }
+  document.getElementById('playBtn').textContent = playing ? '⏸ Пауза' : '▶ Пусти';
+  if(playing){
+    timer = setInterval(()=>{
+      curMs += 0.15 * DAY;             // sub-day step → smooth phase animation
+      document.getElementById('dp').value   = isoDate(curMs);
+      document.getElementById('tm').value   = isoTime(curMs);
+      document.getElementById('sl').value   = moonAge(curMs).toFixed(3);
+      paint(curMs);
+    }, +document.getElementById('sp').value);
+  } else {
+    clearInterval(timer);
+  }
+});
+
+// Speed change — restart interval if playing
+document.getElementById('sp').addEventListener('change', ()=>{
+  if(playing){
+    clearInterval(timer);
+    timer = setInterval(()=>{
+      curMs += 0.15 * DAY;
+      document.getElementById('dp').value  = isoDate(curMs);
+      document.getElementById('tm').value  = isoTime(curMs);
+      document.getElementById('sl').value  = moonAge(curMs).toFixed(3);
+      paint(curMs);
+    }, +document.getElementById('sp').value);
+  }
+});
+
+/* ── init ── */
+updateLiveButton();
+setMs(curMs);
+startLiveRefresh();
+
+})();
+</script>
+
+<!-- SITE_EDITOR_ADMIN_BAR_START -->
+<script src="/admin-site-editor.php?admin_bar_js=1" defer></script>
+<!-- SITE_EDITOR_ADMIN_BAR_END -->
+</body>
+</html>

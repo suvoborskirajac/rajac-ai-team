@@ -1,0 +1,520 @@
+<!-- ПИО Рајац complete static export 2026-05-21 | hidrografija -->
+<!doctype html>
+<html lang="sr-RS">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Хидрографија</title>
+<meta name="description" content="Хидрографија Рајца: два слива, ка Љигу и Дичини, извори, потоци и подземна динамика воде у крашком пределу.">
+<link href="../assets/vendor/leaflet/leaflet.css" rel="stylesheet"/>
+
+<style>
+html,body{margin:0;padding:0;}
+body{background:#f6f2ea;color:#1e241d;}
+a{color:inherit;}
+img{max-width:100%;height:auto;}
+</style>
+
+
+<link rel="stylesheet" id="rajac-static-common-menu-css" href="https://piorajac.rs/rajac-static-2105/assets/menu/rajac-static-menu.css?v=20260521-complete" media="all">
+
+<!-- RAJAC_DESIGN_SYSTEM=1.0.0 -->
+<link rel="stylesheet" href="/rajac-design/rajac-global.css?v=1.0.0">
+<link rel="stylesheet" href="/rajac-design/rajac-pages.css?v=1.0.0">
+
+
+<style id="rajac-hidrografija-hero-final-v1">
+/* PATCH: уједначен систем као на Рељефу — таман мени, светли hero, без картица и дугмади */
+html,body{margin:0!important;padding:0!important;}
+body.rajac-static-output{background:#fafaf8!important;color:#253126!important;}
+
+.rajac-static-common-menu{
+  position:sticky!important;
+  top:0!important;
+  z-index:99999!important;
+  width:100%!important;
+  min-height:60px!important;
+  background:rgba(20,32,24,.96)!important;
+  border-bottom:1px solid rgba(176,145,63,.42)!important;
+  box-shadow:0 10px 24px rgba(0,0,0,.18)!important;
+  backdrop-filter:blur(12px)!important;
+  -webkit-backdrop-filter:blur(12px)!important;
+  font-family:'Outfit','Segoe UI',system-ui,-apple-system,Roboto,sans-serif!important;
+}
+.rajac-static-common-menu__inner{
+  width:min(1180px,calc(100% - 40px))!important;
+  min-height:60px!important;
+  margin:0 auto!important;
+  display:flex!important;
+  align-items:center!important;
+  gap:18px!important;
+  overflow-x:auto!important;
+  scrollbar-width:none!important;
+}
+.rajac-static-common-menu__inner::-webkit-scrollbar{display:none!important;}
+.rajac-static-common-menu__logo{
+  display:flex!important;
+  align-items:center!important;
+  min-height:40px!important;
+  padding-right:20px!important;
+  border-right:1px solid rgba(255,255,255,.10)!important;
+  color:#f3efe2!important;
+  text-decoration:none!important;
+  font-weight:700!important;
+  font-size:.98rem!important;
+  letter-spacing:.02em!important;
+  white-space:nowrap!important;
+}
+.rajac-static-common-menu__links{
+  display:flex!important;
+  align-items:center!important;
+  gap:0!important;
+  white-space:nowrap!important;
+}
+.rajac-static-common-menu__link{
+  display:flex!important;
+  align-items:center!important;
+  min-height:40px!important;
+  padding:0 12px!important;
+  color:rgba(243,239,226,.76)!important;
+  text-decoration:none!important;
+  font-size:.82rem!important;
+  line-height:1!important;
+  font-weight:700!important;
+  text-transform:uppercase!important;
+  letter-spacing:.12em!important;
+  border-bottom:2px solid transparent!important;
+}
+.rajac-static-common-menu__link:hover{color:#fff!important;}
+.rajac-static-common-menu__link.is-active,
+.rajac-static-common-menu__link.active,
+.rajac-static-common-menu__link[aria-current="page"]{
+  color:#d4b256!important;
+  border-bottom-color:#d4b256!important;
+}
+
+.rhid-hero{
+  position:relative!important;
+  height:460px!important;
+  min-height:460px!important;
+  max-height:460px!important;
+  padding:0!important;
+  display:flex!important;
+  align-items:flex-end!important;
+  overflow:hidden!important;
+  isolation:isolate!important;
+  border-bottom:1px solid rgba(176,145,63,.42)!important;
+  background-color:#efe7d6!important;
+  background-image:
+    linear-gradient(90deg,rgba(247,243,232,.72) 0%,rgba(247,243,232,.56) 30%,rgba(247,243,232,.24) 55%,rgba(247,243,232,.06) 76%,rgba(247,243,232,0) 100%),
+    url('https://piorajac.rs/rajac-static-2105/assets/page-assets/hidrografija/vodopad-hero.webp')!important;
+  background-size:cover!important;
+  background-position:center 44%!important;
+  background-repeat:no-repeat!important;
+}
+.rhid-hero-img,
+.rhid-hero-ov,
+.rhid-hero-credit,
+.rhid-kicker,
+.rhid-card,
+.rhid-hero::before{display:none!important;}
+.rhid-hero-full{
+  position:relative!important;
+  z-index:2!important;
+  width:min(1180px,calc(100% - 40px))!important;
+  margin:0 auto!important;
+  padding:0 0 58px!important;
+}
+.rhid-hero-inner{
+  display:block!important;
+  max-width:760px!important;
+  padding:0!important;
+}
+.rhid-h1{
+  margin:0!important;
+  max-width:760px!important;
+  font-family:'Cormorant Garamond',Georgia,'Times New Roman',serif!important;
+  font-size:clamp(40px,4.3vw,58px)!important;
+  font-weight:500!important;
+  line-height:1.06!important;
+  letter-spacing:-.03em!important;
+  color:#253126!important;
+  text-shadow:none!important;
+}
+.rhid-h1 br,
+.rhid-h1 em{display:none!important;}
+.rhid-sub{
+  max-width:780px!important;
+  margin:20px 0 0!important;
+  font-family:'Outfit','Segoe UI',system-ui,-apple-system,Roboto,sans-serif!important;
+  font-size:clamp(16px,1.6vw,19px)!important;
+  line-height:1.75!important;
+  color:rgba(37,49,38,.86)!important;
+  text-shadow:none!important;
+}
+.rhid-section{
+  padding:clamp(30px,4.6vw,52px) 0!important;
+  border-bottom:none!important;
+}
+.rhid-section.rhid-section-intro{padding-bottom:clamp(18px,2.6vw,26px)!important;}
+.rhid-section.rhid-section-map{padding:clamp(10px,1.8vw,18px) 0 clamp(14px,2vw,22px)!important;}
+.rhid-section.rhid-section-after-map{padding-top:clamp(18px,2.4vw,28px)!important;}
+.rhid-lead{margin-top:12px!important;line-height:1.72!important;}
+.rhid-body{margin-top:10px!important;line-height:1.72!important;}
+.rhid-body + .rhid-body,
+.rhid-lead + .rhid-body,
+.rhid p + p{margin-top:8px!important;}
+.rhid-2col{gap:36px!important;}
+.rhid-closing{
+  background:linear-gradient(180deg,#f7f3e8 0%,#efe7d6 100%)!important;
+  border-top:1px solid rgba(189,173,135,.35)!important;
+}
+.rhid-cl-inner h2{color:#253126!important;}
+.rhid-cl-inner p{color:rgba(37,49,38,.78)!important;}
+.rhid-badge{
+  border:1px solid rgba(189,173,135,.65)!important;
+  background:rgba(255,255,255,.56)!important;
+  color:#6c5a2b!important;
+}
+.rhid-badge::before{background:#2d8aa7!important;box-shadow:none!important;}
+@media(max-width:640px){
+  .rajac-static-common-menu{min-height:58px!important;}
+  .rajac-static-common-menu__inner{width:min(100% - 28px,1180px)!important;min-height:58px!important;}
+  .rajac-static-common-menu__logo{font-size:.9rem!important;}
+  .rajac-static-common-menu__link{font-size:.75rem!important;padding:0 10px!important;}
+  .rhid-hero{height:360px!important;min-height:360px!important;max-height:360px!important;}
+  .rhid-hero-full{width:min(100% - 32px,1180px)!important;padding:0 0 34px!important;}
+  .rhid-h1{font-size:34px!important;}
+  .rhid-sub{font-size:16px!important;line-height:1.65!important;}
+}
+</style>
+
+<link data-pio-mobile="group3-v1" rel="stylesheet" href="../assets/mobile/pio-mobile.css?v=20260713-g3-3"></head>
+<body class="rajac-static-output"><nav class="rajac-static-common-menu" aria-label="Странице ПИО Рајац"><div class="rajac-static-common-menu__inner"><a class="rajac-static-common-menu__logo" href="/">ПИО „РАЈАЦ“</a><div class="rajac-static-common-menu__links"><a class="rajac-static-common-menu__link" href="../geologija/index.html">Геологија</a><a class="rajac-static-common-menu__link" href="../reljef/index.html">Рељеф</a><a class="rajac-static-common-menu__link" href="../pedologija/index.html">Педологија</a><a class="rajac-static-common-menu__link is-active" href="../hidrografija/index.html">Хидрографија</a><a class="rajac-static-common-menu__link" href="../klima/index.html">Клима</a></div></div></nav>
+
+
+<div class="rhid">
+<style>
+.rhid{--pbg:#fafaf8;--bg2:#f2f0ea;--ptext:#0e1210;--pmuted:#3a4840;--pline:rgba(14,20,14,.09);--pacc:#1a5a8a;--pacc2:#2878b0;--serif:'Crimson Pro',Georgia,serif;--pmono:'DM Mono',monospace;--sans:'Outfit',system-ui,sans-serif;--r:6px;display:block;background:var(--pbg);color:var(--ptext);font-family:var(--sans);font-size:16px;line-height:1.65;}
+.rhid *,.rhid *::before,.rhid *::after{box-sizing:border-box;margin:0;padding:0;}
+.rhid a{color:inherit;text-decoration:none;}
+.rprir-nav{border-bottom:1px solid var(--pline);background:var(--pbg);padding:14px 0;position:sticky;top:0;z-index:100;}
+.rprir-nav-inner{width:min(1240px,calc(100% - 40px));margin:0 auto;display:flex;align-items:center;gap:24px;}
+.rprir-nav-label{font-family:var(--pmono);font-size:.62rem;letter-spacing:.22em;text-transform:uppercase;color:var(--pmuted);opacity:.55;white-space:nowrap;}
+.rprir-nav-links{display:flex;gap:0;flex-wrap:wrap;}
+.rprir-nav-links a{font-family:var(--pmono);font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;color:var(--pmuted);text-decoration:none;opacity:.5;padding:4px 14px;border-right:1px solid var(--pline);transition:opacity .18s,color .18s;}
+.rprir-nav-links a:last-child{border-right:none;}
+.rprir-nav-links a:hover{opacity:.85;}
+.rprir-nav-links a.active{opacity:1;color:var(--pacc);}
+.rhid-wrap{width:min(1240px,calc(100% - 40px));margin:0 auto;}
+.rhid-section{padding:clamp(48px,7vw,88px) 0;border-bottom:1px solid var(--pline);}
+.rhid-section:last-child{border-bottom:none;}
+.rhid-h2{font-family:var(--serif);font-size:clamp(2rem,3.8vw,4rem);font-weight:300;line-height:.95;letter-spacing:-.04em;color:var(--ptext);}
+.rhid-lead{font-size:1.08rem;color:var(--pmuted);line-height:1.82;margin-top:18px;}
+.rhid-body{font-size:1.02rem;color:var(--pmuted);line-height:1.82;margin-top:14px;}
+.rhid-label{display:inline-flex;align-items:center;gap:10px;font-family:var(--pmono);font-size:.68rem;letter-spacing:.22em;text-transform:uppercase;color:var(--pacc);margin-bottom:14px;}
+.rhid-label::before{content:"";width:26px;height:1px;background:currentColor;}
+@keyframes rprir-blink{0%,100%{opacity:1}50%{opacity:.25}}
+/* HERO */
+.rhid-hero{position:relative;overflow:hidden;border-bottom:1px solid var(--pline);padding:clamp(64px,9vw,110px) 0 clamp(48px,6vw,80px);}
+.rhid-hero-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 40%;pointer-events:none;z-index:0;}
+.rhid-hero::before{content:"";position:absolute;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,rgba(26,90,138,.75),transparent);animation:rhid-scan 6s linear infinite;opacity:0;z-index:2;pointer-events:none;}
+@keyframes rhid-scan{0%{top:-2px;opacity:0}4%{opacity:1}93%{opacity:1}100%{top:100%;opacity:0}}
+.rhid-hero-ov{position:absolute;inset:0;z-index:1;pointer-events:none;background:linear-gradient(105deg,rgba(4,10,18,.74) 0%,rgba(4,10,18,.38) 52%,rgba(4,10,18,.10) 100%),linear-gradient(180deg,transparent 58%,rgba(250,250,248,.96) 100%);}
+.rhid-hero-full{position:relative;z-index:2;padding-left:clamp(20px,3vw,48px);padding-right:clamp(20px,3vw,48px);}
+.rhid-hero-inner{display:grid;grid-template-columns:1fr auto;gap:48px;align-items:center;max-width:1600px;}
+.rhid-kicker{font-family:var(--pmono);font-size:.68rem;letter-spacing:.24em;text-transform:uppercase;color:rgba(255,255,255,.5);display:flex;align-items:center;gap:10px;margin-bottom:18px;}
+.rhid-kicker::before{content:"";width:26px;height:1px;background:currentColor;}
+.rhid-h1{font-family:var(--serif);font-size:clamp(2.8rem,5.5vw,6.2rem);font-weight:300;line-height:.92;letter-spacing:-.04em;color:#fff;text-shadow:0 2px 28px rgba(0,0,0,.4);}
+.rhid-h1 em{font-style:italic;color:#7ac8f0;display:block;margin-top:4px;}
+.rhid-sub{max-width:500px;margin-top:22px;font-size:1.06rem;color:rgba(255,255,255,.68);line-height:1.78;}
+.rhid-card{background:rgba(4,10,18,.78);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);border:1px solid rgba(255,255,255,.12);border-radius:var(--r);padding:22px 24px;min-width:220px;}
+.rhid-card-lbl{font-family:var(--pmono);font-size:.62rem;letter-spacing:.2em;text-transform:uppercase;color:#7ac8f0;margin-bottom:16px;display:flex;align-items:center;gap:8px;}
+.rhid-card-lbl::before{content:"";width:5px;height:5px;border-radius:50%;background:#7ac8f0;box-shadow:0 0 10px rgba(122,200,240,.8);animation:rprir-blink 2s ease-in-out infinite;}
+.rhid-stat-row{display:flex;justify-content:space-between;align-items:baseline;padding:11px 0;border-bottom:1px solid rgba(255,255,255,.07);}
+.rhid-stat-row:last-child{border-bottom:none;padding-bottom:0;}
+.rhid-stat-row b{font-family:var(--pmono);font-size:.78rem;color:rgba(255,255,255,.85);font-weight:400;}
+.rhid-stat-row span{font-family:var(--pmono);font-size:.62rem;letter-spacing:.1em;color:rgba(255,255,255,.32);text-align:right;}
+/* 2col */
+.rhid-2col{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:start;}
+/* Callout */
+
+.rhid-photo{margin:26px 0 8px;border:1px solid var(--pline);border-radius:18px;overflow:hidden;background:#fff;box-shadow:0 16px 42px rgba(0,0,0,.08);}
+.rhid-photo img{display:block;width:100%;height:auto;}
+.rhid-photo figcaption{padding:12px 16px;font-family:var(--pmono);font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;color:#3a4840;background:#fafaf8;border-top:1px solid var(--pline);}
+
+.rhid-callout{border-left:3px solid var(--pacc);padding:16px 20px;background:rgba(26,90,138,.05);border-radius:0 var(--r) var(--r) 0;margin-top:22px;}
+.rhid-callout p{font-family:var(--serif);font-size:1.22rem;font-style:italic;color:var(--ptext);line-height:1.55;}
+/* Flow */
+.rhid-flow{display:grid;gap:0;border:1px solid var(--pline);border-radius:var(--r);overflow:hidden;}
+.rhid-fitem{display:flex;gap:16px;align-items:flex-start;padding:18px 20px;border-bottom:1px solid var(--pline);transition:background .18s;}
+.rhid-fitem:last-child{border-bottom:none;}
+.rhid-fitem:hover{background:var(--bg2);}
+.rhid-fnum{font-family:var(--pmono);font-size:.85rem;color:var(--pacc);opacity:.45;flex-shrink:0;padding-top:2px;width:22px;text-align:right;}
+.rhid-fitem h4{font-family:var(--serif);font-size:1.2rem;font-weight:400;letter-spacing:-.02em;margin-bottom:4px;}
+.rhid-fitem p{font-size:.92rem;color:var(--pmuted);line-height:1.6;}
+/* Metrics table */
+.rhid-metrics{display:grid;gap:0;border:1px solid var(--pline);border-radius:var(--r);overflow:hidden;margin-top:36px;}
+.rhid-mrow{display:grid;grid-template-columns:1fr 1fr;padding:14px 20px;border-bottom:1px solid var(--pline);transition:background .18s;}
+.rhid-mrow:last-child{border-bottom:none;}
+.rhid-mrow:hover{background:var(--bg2);}
+.rhid-mrow dt{font-family:var(--pmono);font-size:.78rem;color:var(--pmuted);letter-spacing:.06em;}
+.rhid-mrow dd{font-family:var(--pmono);font-size:.78rem;color:var(--ptext);text-align:right;}
+/* Heritage */
+.rhid-heritage{display:grid;gap:0;margin-top:32px;}
+.rhid-hitem{display:flex;gap:16px;padding:16px 0;border-bottom:1px solid var(--pline);align-items:flex-start;}
+.rhid-hitem:first-child{padding-top:0;}
+.rhid-hitem:last-child{border-bottom:none;padding-bottom:0;}
+.rhid-hstar{font-size:1rem;color:var(--pacc);flex-shrink:0;margin-top:2px;}
+.rhid-hitem h4{font-family:var(--serif);font-size:1.2rem;font-weight:400;letter-spacing:-.02em;margin-bottom:4px;}
+.rhid-hitem p{font-size:.96rem;color:var(--pmuted);line-height:1.65;}
+/* Closing */
+.rhid-closing{padding:clamp(48px,6vw,88px) 0;background:#f6f2ea;border-top:1px solid var(--pline);}
+.rhid-cl-inner{display:grid;grid-template-columns:1fr auto;gap:40px;align-items:center;width:min(1240px,calc(100% - 40px));margin:0 auto;}
+.rhid-cl-inner h2{font-family:var(--serif);font-size:clamp(1.8rem,3vw,3.2rem);font-weight:300;line-height:1.02;letter-spacing:-.04em;color:var(--ptext);margin-bottom:12px;}
+.rhid-cl-inner p{font-size:1rem;color:var(--pmuted);line-height:1.78;max-width:640px;}
+.rhid-badge{display:inline-flex;align-items:center;gap:8px;padding:12px 20px;border-radius:var(--r);border:1px solid rgba(16,26,21,.14);font-family:var(--pmono);font-size:.67rem;letter-spacing:.16em;text-transform:uppercase;color:var(--pmuted);white-space:nowrap;background:#fffaf1;}
+.rhid-badge::before{content:"";width:6px;height:6px;border-radius:50%;background:#7ac8f0;box-shadow:0 0 8px rgba(122,200,240,.8);}
+.rprir-reveal{opacity:0;transform:translateY(22px);transition:opacity .65s ease,transform .65s ease;}
+.rprir-reveal.rprir-in{opacity:1;transform:none;}
+.rprir-d1{transition-delay:.07s;} .rprir-d2{transition-delay:.14s;}
+@media(max-width:1024px){.rhid-hero-inner,.rhid-2col,.rhid-cl-inner{grid-template-columns:1fr;gap:36px;}.rhid-mrow{grid-template-columns:1fr 1fr;}}
+
+/* HYDRO MAP — Leaflet karta izvora, tokova i zona PIO Rajac */
+.rhid-section.rhid-section-map{padding:clamp(14px,2vw,22px) 0 clamp(18px,2.4vw,28px);background:var(--pbg);}
+.rhid-section.rhid-section-after-map{padding-top:clamp(24px,3vw,38px);}
+.rhid-map-head{display:grid;grid-template-columns:minmax(0,1fr) minmax(260px,.42fr);gap:34px;align-items:end;margin-bottom:22px;}
+.rhid-map-head .rhid-lead{margin-top:0;font-size:.98rem;line-height:1.72;}
+.rhid-map-embed{margin-top:0;}
+.rhid-map-shell{position:relative;height:clamp(430px,54vh,620px);min-height:430px;border-radius:18px;overflow:hidden;border:1px solid rgba(14,20,14,.14);box-shadow:0 24px 70px rgba(0,0,0,.12);background:#dfe9ea;}
+#rhid-map{position:absolute;inset:0;z-index:1;}
+.rhid-map-legend{position:absolute;left:16px;right:16px;bottom:16px;z-index:500;background:rgba(250,250,248,.92);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border:1px solid rgba(14,20,14,.13);border-radius:14px;padding:12px 14px;box-shadow:0 14px 36px rgba(0,0,0,.12);}
+.rhid-map-legend-title{margin:0 0 10px 0;font-family:var(--pmono);font-size:.68rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#283936;}
+.rhid-map-legend-row{display:flex;flex-wrap:wrap;gap:10px 16px;align-items:center;}
+.rhid-map-item{display:inline-flex;align-items:center;gap:8px;min-height:22px;font-size:13px;color:#26323b;line-height:1.35;}
+.rhid-map-dot{width:14px;height:14px;border-radius:50%;border:2px solid #fff;box-shadow:0 0 0 1px rgba(0,0,0,.28);box-sizing:border-box;flex:0 0 auto;background:#0288d1;}
+.rhid-map-dot.strong{background:#004e9f;width:16px;height:16px;box-shadow:0 0 0 1px rgba(0,0,0,.3),0 0 0 5px rgba(2,136,209,.18);}
+.rhid-map-line{width:28px;height:0;border-top:4px solid #0288d1;border-radius:999px;flex:0 0 auto;}
+.rhid-map-swatch{width:18px;height:18px;border-radius:6px;border:1.5px solid rgba(28,35,42,.32);box-sizing:border-box;flex:0 0 auto;}
+.rhid-map-swatch.zone1{background:rgba(215,25,28,.45);border-color:#d7191c;}
+.rhid-map-swatch.zone2{background:rgba(253,174,97,.48);border-color:#fdae61;}
+.rhid-map-swatch.zone3{background:rgba(26,150,65,.38);border-color:#1a9641;}
+.rhid-map-swatch.boundary{background:transparent;border:2px solid #006d77;border-radius:3px;}
+.rhid-map-link{margin-left:auto;font-family:var(--pmono);font-size:.65rem;letter-spacing:.12em;text-transform:uppercase;color:#1a5a8a!important;text-decoration:none!important;border-bottom:1px solid rgba(26,90,138,.35);}
+.rhid-map-link:hover{border-bottom-color:#1a5a8a;}
+.rhid .leaflet-control-zoom{border:none!important;box-shadow:0 8px 22px rgba(0,0,0,.14)!important;}
+.rhid .leaflet-popup-content-wrapper{border-radius:12px;box-shadow:0 16px 44px rgba(0,0,0,.18);}
+.rhid .leaflet-popup-content{font-family:var(--sans);font-size:13px;line-height:1.45;margin:11px 13px;color:#1e241d;}
+.rhid .leaflet-popup-content b{font-family:var(--serif);font-size:16px;font-weight:500;letter-spacing:-.01em;}
+.rhid .hydro-marker{background:transparent;border:0;}
+.rhid .hydro-marker span{display:block;width:14px;height:14px;border-radius:50%;border:2px solid #fff;background:#0288d1;box-shadow:0 2px 10px rgba(0,0,0,.35),0 0 0 1px rgba(0,0,0,.22);}
+.rhid .hydro-marker.featured span{width:18px;height:18px;background:#004e9f;box-shadow:0 2px 12px rgba(0,0,0,.38),0 0 0 5px rgba(2,136,209,.22);}
+.rhid .leaflet-tooltip.hydro-tip{font-family:var(--pmono);font-size:.68rem;letter-spacing:.06em;border:1px solid rgba(14,20,14,.14);background:rgba(250,250,248,.93);color:#243431;border-radius:9px;box-shadow:0 12px 30px rgba(0,0,0,.12);}
+@media(max-width:900px){
+  .rhid-map-head{grid-template-columns:1fr;gap:16px;}
+  .rhid-map-shell{height:560px;min-height:560px;border-radius:16px;}
+  .rhid-map-legend{left:10px;right:10px;bottom:10px;padding:10px 12px;}
+  .rhid-map-item{font-size:12px;}
+  .rhid-map-swatch{width:15px;height:15px;}
+  .rhid-map-link{margin-left:0;}
+}
+@media(max-width:520px){.rhid-map-shell{height:500px;min-height:420px}.rhid-map-legend-row{gap:8px 12px}.rhid-map-legend{max-height:44%;overflow:auto;}}
+
+</style>
+<header class="rhid-hero">
+<div class="rhid-hero-full">
+<div class="rhid-hero-inner">
+<div class="rprir-reveal rprir-in">
+<h1 class="rhid-h1">Хидрографија ПИО „Рајац“</h1>
+<p class="rhid-sub">Хидрографију Рајца чине извори, врела, повремени потоци и слапови који повезују крашки плато са ободним водним системима.</p>
+</div>
+</div>
+</div>
+</header>
+
+
+
+<section class="rhid-section rhid-section-intro">
+<div class="rhid-wrap">
+<div class="rhid-2col">
+<div class="rprir-reveal rprir-in">
+<div class="rhid-label">Подземна динамика</div>
+<h2 class="rhid-h2">Речни токови и подземне понорске везе</h2>
+<p class="rhid-lead">Специфичност Рајца лежи у подземној динамици воде. Два главна слива деле планину: северне падине отичу ка Љигу, а јужне формирају Дичину.</p>
+<div class="rhid-callout">
+<p>„Свака кап воде на Рајцу поштује се — извори су крвоток ове планине."</p>
+</div>
+</div>
+<div class="rprir-reveal rprir-d1 rprir-in">
+<div class="rhid-flow">
+<div class="rhid-fitem"><div class="rhid-fnum">↓</div><div><h4>Слив Љига (северне падине)</h4><p>Дубоки поток, Велика провалија, Бели поток, Слап, Врело, Ресановац, Букљинац, Миладиновац.</p></div></div>
+<div class="rhid-fitem"><div class="rhid-fnum">↓</div><div><h4>Слив Дичине (јужне падине)</h4><p>Равна река (извор Добра вода), Башчићка река, Шишковац, Рајачки и Трнови поток → ка Чемерници.</p></div></div>
+<div class="rhid-fitem"><div class="rhid-fnum">★</div><div><h4>Врело Ба</h4><p>Снажно крашко врело аседентног, сифонског типа — окосница водоснабдевања општине Љиг.</p></div></div>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<section class="rhid-section rhid-section-map" id="karta-izvora-na-rajcu">
+<div class="rhid-wrap">
+<div class="rhid-map-head rprir-reveal rprir-in">
+<div>
+<div class="rhid-label">Карта</div>
+<h2 class="rhid-h2">Карта извора и водотокова<br/><em>ПИО „Рајац”</em></h2>
+</div>
+<p class="rhid-lead">Карта приказује изворе и чесме, повремене или сталне токове, границу заштићеног подручја и зоне заштите.</p>
+</div>
+<div class="rhid-map-embed rprir-reveal rprir-d1 rprir-in">
+<div class="rhid-map-shell">
+<div id="rhid-map" aria-label="Карта извора и водотокова ПИО Рајац"></div>
+<div class="rhid-map-legend" aria-label="Легенда карте извора и водотокова">
+<div class="rhid-map-legend-title">Легенда</div>
+<div class="rhid-map-legend-row">
+<span class="rhid-map-item"><span class="rhid-map-dot strong"></span>Именовани извори и чесме</span>
+<span class="rhid-map-item"><span class="rhid-map-dot"></span>Остали извори</span>
+<span class="rhid-map-item"><span class="rhid-map-line"></span>Повремени или стални токови</span>
+<span class="rhid-map-item"><span class="rhid-map-swatch boundary"></span>Граница ПИО „Рајац”</span>
+<span class="rhid-map-item"><span class="rhid-map-swatch zone1"></span>I зона</span>
+<span class="rhid-map-item"><span class="rhid-map-swatch zone2"></span>II зона</span>
+<span class="rhid-map-item"><span class="rhid-map-swatch zone3"></span>III зона</span>
+<a class="rhid-map-link" href="https://piorajac.rs/rajac-static-2105/assets/page-assets/hidrografija/izvori-na-rajcu.kmz" download>Преузми KMZ</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<section class="rhid-section" style="background:var(--bg2);">
+<div class="rhid-wrap">
+<div class="rprir-reveal">
+<div class="rhid-label">Хидролошко наслеђе</div>
+<h2 class="rhid-h2">Кључни извори, чесме и наслеђе</h2>
+</div>
+<div class="rhid-2col" style="margin-top:28px;">
+<div class="rprir-reveal">
+<div class="rhid-heritage">
+<div class="rhid-hitem"><div class="rhid-hstar">★</div><div><h4>Врело Ба (Врело Љига)</h4><p>Национални хидролошки објекат наслеђа. Снажно крашко врело сифонског типа, просек ~138 l/s.</p></div></div>
+<div class="rhid-hitem"><div class="rhid-hstar">★</div><div><h4>Извориште Дичине</h4><p>Водни резерват, значајан речни слив ка југу. Национални значај.</p></div></div>
+<div class="rhid-hitem"><div class="rhid-hstar">◆</div><div><h4>Водопад Црквине</h4><p>На потоку Слап — пад са ерозивне степенице ~8 м, директно из отвора у стени. Потенцијално наслеђе.</p></div></div>
+<div class="rhid-hitem"><div class="rhid-hstar">◆</div><div><h4>Понорница Степановића пећине</h4><p>Флувио-крашка појава — кратка долина завршава понором у буковој шуми.</p></div></div>
+</div>
+</div>
+<div class="rprir-reveal rprir-d1">
+<div class="rhid-heritage">
+<div class="rhid-hitem"><div class="rhid-hstar">·</div><div><h4>Рајачка чесма</h4><p>Изграђена 1910. — култни симбол планине, главни оријентир за планинаре.</p></div></div>
+<div class="rhid-hitem"><div class="rhid-hstar">·</div><div><h4>Савина вода</h4><p>Најпознатији извор пијаће воде на платоу, вековима напаја путнике.</p></div></div>
+<div class="rhid-hitem"><div class="rhid-hstar">·</div><div><h4>Добра вода</h4><p>Извор средње издашности у близини Вучјег тркалишта.</p></div></div>
+<div class="rhid-hitem"><div class="rhid-hstar">·</div><div><h4>Велика провалија</h4><p>Амфитеатрални облук са каскадама, слаповима и бигреним пречагама на северним падинама.</p></div></div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="rhid-section">
+<div class="rhid-wrap">
+<div class="rhid-2col">
+<div class="rprir-reveal">
+<div class="rhid-label">Квалитет воде</div>
+<h2 class="rhid-h2">Мерења и осетљивост извора</h2>
+<p class="rhid-lead">Кречњак без заштитног покривача тла значи да вода из вртача директно доспева у подземне токове без природне филтрације. Извори Рајца изузетно су рањиви.</p>
+
+<p class="rhid-body">Патогене бактерије у хладним подземним водама могу опстати и до 400 дана — неопходна је строга контрола отпадних вода и употребе ђубрива у зони заштите.</p>
+</div>
+<div class="rprir-reveal rprir-d1">
+<div class="rhid-metrics">
+<div class="rhid-mrow"><dt>Издашност Врела Ба</dt><dd>13–2000 l/s (просек ~138)</dd></div>
+<div class="rhid-mrow"><dt>Температура воде</dt><dd>9–11°C годишње</dd></div>
+<div class="rhid-mrow"><dt>Хемијски тип</dt><dd>HCO₃⁻–Ca²⁺</dd></div>
+<div class="rhid-mrow"><dt>Минерализација</dt><dd>0,2–0,3 mg/l</dd></div>
+<div class="rhid-mrow"><dt>pH вредност</dt><dd>Неутрална</dd></div>
+<div class="rhid-mrow"><dt>Сензитивност</dt><dd>Висока (замућивање)</dd></div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<div class="rhid-closing">
+<div class="rhid-cl-inner rprir-reveal">
+<div>
+<h2>Рајац је место где се свака кап воде поштује —<br/>очувајмо изворе, јер су крвоток планине</h2>
+<p>Подземна динамика воде, снажна врела и јединствена хидролошка наслеђа чине Рајац неодвојивим делом регионалног водног система.</p>
+</div>
+<span class="rhid-badge">Врело Ба · 68h · 440 м денив.</span>
+</div>
+</div>
+</div>
+<script>
+(function(){var els=document.querySelectorAll('.rprir-reveal');if(!els.length)return;var io=new IntersectionObserver(function(entries){entries.forEach(function(e){if(e.isIntersecting){e.target.classList.add('rprir-in');io.unobserve(e.target);}});},{threshold:0.07});els.forEach(function(el){io.observe(el);});})();
+</script>
+
+
+<script src="../assets/vendor/leaflet/leaflet.js"></script>
+<script>
+(function(){
+  var mapEl=document.getElementById('rhid-map');
+  if(!mapEl || typeof L==='undefined') return;
+  var map=L.map(mapEl,{center:[44.143,20.225],zoom:13,scrollWheelZoom:true,preferCanvas:true});
+  map.scrollWheelZoom.enable();
+  map.doubleClickZoom.enable();
+  L.tileLayer('https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png',{
+    maxZoom:17,
+    attribution:'© <a href="https://opentopomap.org">OpenTopoMap</a> | © <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+  }).addTo(map);
+
+  function esc(v){return String(v==null?'':v).replace(/[&<>"']/g,function(ch){return({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[ch]);});}
+  function markerIcon(cat){return L.divIcon({className:'hydro-marker '+(cat==='featured_source'?'featured':''),html:'<span></span>',iconSize:cat==='featured_source'?[18,18]:[14,14],iconAnchor:cat==='featured_source'?[9,9]:[7,7],popupAnchor:[0,-8]});}
+  function styleFor(f){
+    var c=(f.properties&&f.properties.category)||'other';
+    if(c==='watercourse') return {color:'#0288d1',weight:4.2,opacity:.9,lineCap:'round',lineJoin:'round'};
+    if(c==='boundary') return {color:'#006d77',weight:2.4,opacity:.96,fill:false,dashArray:'8 6'};
+    if(c==='zone1') return {color:'#d7191c',weight:1.4,opacity:.85,fillColor:'#d7191c',fillOpacity:.20};
+    if(c==='zone2') return {color:'#fdae61',weight:1.2,opacity:.75,fillColor:'#fdae61',fillOpacity:.18};
+    if(c==='zone3') return {color:'#1a9641',weight:1.1,opacity:.70,fillColor:'#1a9641',fillOpacity:.13};
+    return {color:'#4a5560',weight:1,opacity:.75,fillOpacity:.12};
+  }
+  function popupFor(f){
+    var p=f.properties||{};
+    var c=p.category||'';
+    var label='Хидролошки елемент';
+    if(c==='featured_source' || c==='source') label='Извор / чесма';
+    else if(c==='watercourse') label='Повремени или стални водоток';
+    else if(c==='boundary') label='Граница ПИО „Рајац”';
+    else if(c==='zone1') label='I зона заштите';
+    else if(c==='zone2') label='II зона заштите';
+    else if(c==='zone3') label='III зона заштите';
+    return '<b>'+esc(label)+'</b>';
+  }
+
+  fetch('https://piorajac.rs/rajac-static-2105/assets/page-assets/hidrografija/izvori-na-rajcu.geojson',{cache:'force-cache'})
+    .then(function(r){return r.json();})
+    .then(function(data){
+      var sourceLayer=L.geoJSON(data,{
+        style:styleFor,
+        pointToLayer:function(f,latlng){return L.marker(latlng,{icon:markerIcon((f.properties||{}).category)});},
+        onEachFeature:function(f,l){
+          l.bindPopup(popupFor(f));
+        }
+      }).addTo(map);
+      var boundary=L.geoJSON(data,{filter:function(f){return (f.properties||{}).category==='boundary';}});
+      if(boundary.getLayers().length){map.fitBounds(boundary.getBounds(),{paddingTopLeft:[26,26],paddingBottomRight:[26,96]});
+        setTimeout(function(){map.invalidateSize();map.fitBounds(boundary.getBounds(),{paddingTopLeft:[26,26],paddingBottomRight:[26,96]});},120);}
+      else if(sourceLayer.getLayers().length){map.fitBounds(sourceLayer.getBounds(),{paddingTopLeft:[26,26],paddingBottomRight:[26,96]});
+        setTimeout(function(){map.invalidateSize();map.fitBounds(sourceLayer.getBounds(),{paddingTopLeft:[26,26],paddingBottomRight:[26,96]});},120);}
+      setTimeout(function(){map.invalidateSize();},250);
+    })
+    .catch(function(){
+      mapEl.innerHTML='<div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;padding:30px;text-align:center;font-family:system-ui,sans-serif;color:#243431;background:#edf3f4;">Карта извора није учитана.</div>';
+    });
+})();
+</script>
+
+
+<!-- SITE_EDITOR_ADMIN_BAR_START -->
+<script src="/admin-site-editor.php?admin_bar_js=1" defer></script>
+<!-- SITE_EDITOR_ADMIN_BAR_END -->
+
+<script defer src="/rajac-design/rajac-vrh-button.js?v=20260707-v6-round-no-home"></script>
+<script data-pio-mobile="group3-v1" defer src="../assets/mobile/pio-mobile.js?v=20260713-g3-1"></script></body>
+</html>

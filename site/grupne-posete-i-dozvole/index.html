@@ -1,0 +1,1272 @@
+<!DOCTYPE html>
+<html lang="sr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Групне посете и дозволе — ПИО Рајац</title>
+  <meta name="description" content="Правила за групне и организоване посете, улазак у пећине и јаме, научна истраживања, сакупљање биљака и активности које захтевају сагласност управљача ПИО Рајац.">
+  <link rel="canonical" href="https://piorajac.rs/grupne-posete-i-dozvole/">
+
+  <style>
+    :root{
+      --bg:#f6f1e7;
+      --paper:#fffdf8;
+      --ink:#142219;
+      --muted:#5b6a60;
+      --dark:#07130c;
+      --dark2:#0d1e12;
+      --green:#1f7a43;
+      --green2:#8bd49e;
+      --gold:#c99a3b;
+      --line:rgba(20,34,25,.13);
+      --serif:Georgia,"Times New Roman",serif;
+      --sans:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;
+      --shadow:0 22px 55px rgba(8,18,10,.12);
+      --radius:22px;
+    }
+
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      background:var(--bg);
+      color:var(--ink);
+      font-family:var(--sans);
+      line-height:1.65;
+      -webkit-font-smoothing:antialiased;
+    }
+
+    a{color:inherit;text-decoration:none}
+    img{max-width:100%;display:block}
+
+    .skip{
+      position:absolute;
+      left:-9999px;
+      top:auto;
+      width:1px;
+      height:1px;
+      overflow:hidden;
+    }
+    .skip:focus{
+      left:18px;
+      top:18px;
+      width:auto;
+      height:auto;
+      z-index:999;
+      padding:10px 14px;
+      background:#111;
+      color:var(--ink);
+      border-radius:8px;
+    }
+
+    .top{
+      position:sticky;
+      top:0;
+      z-index:50;
+      background:rgba(7,19,12,.96);
+      border-bottom:1px solid rgba(20,34,25,.08);
+      backdrop-filter:blur(14px);
+    }
+    .top-inner{
+      max-width:1180px;
+      min-height:58px;
+      margin:0 auto;
+      padding:0 24px;
+      display:flex;
+      align-items:center;
+      justify-content:flex-start;
+      gap:14px;
+    }
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:10px;
+      color:var(--ink);
+      font-weight:800;
+      white-space:nowrap;
+    }
+    .brand-mark{
+      width:30px;
+      height:30px;
+      border-radius:8px;
+      display:grid;
+      place-items:center;
+      background:rgba(255,255,255,.08);
+      border:1px solid rgba(255,255,255,.16);
+      font-family:var(--serif);
+      font-weight:400;
+    }
+    .brand small{
+      display:block;
+      color:rgba(255,255,255,.50);
+      font-size:10px;
+      line-height:1;
+      letter-spacing:.08em;
+      text-transform:uppercase;
+      margin-top:2px;
+      font-weight:650;
+    }
+    .nav{
+      display:flex;
+      flex-wrap:wrap;
+      justify-content:flex-end;
+      gap:18px;
+    }
+    .nav a{
+      font-size:13px;
+      font-weight:750;
+      color:var(--muted);
+    }
+    .nav a:hover,
+    .nav a.active{color:#fff}
+
+    .hero{
+      position:relative;
+      overflow:hidden;
+      color:var(--ink);
+      background:var(--bg);
+    }
+    .hero::before{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:linear-gradient(180deg,rgba(255,253,248,.98),rgba(246,241,231,.98));
+    }
+    .hero::after{
+      content:"";
+      position:absolute;
+      left:0;
+      right:0;
+      bottom:0;
+      height:1px;
+      background:rgba(20,34,25,.08);
+    }
+    .hero-inner{
+      position:relative;
+      max-width:1180px;
+      margin:0 auto;
+      padding:82px 24px 74px;
+      display:grid;
+      grid-template-columns:minmax(0,1fr) 360px;
+      gap:46px;
+      align-items:end;
+    }
+    .kicker{
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      color:var(--green);
+      font-size:11px;
+      font-weight:850;
+      letter-spacing:.22em;
+      text-transform:uppercase;
+    }
+    .kicker::before{
+      content:"";
+      width:8px;
+      height:8px;
+      border-radius:50%;
+      background:var(--green2);
+      box-shadow:0 0 0 5px rgba(139,212,158,.16);
+    }
+    h1{
+      font-family:var(--serif);
+      font-weight:300;
+      font-size:clamp(46px,7vw,82px);
+      line-height:.94;
+      letter-spacing:-.045em;
+      margin:18px 0 18px;
+    }
+    .lead{
+      max-width:700px;
+      color:var(--muted);
+      font-size:18px;
+      line-height:1.7;
+      margin:0;
+    }
+    .hero-actions{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      margin-top:28px;
+    }
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      min-height:42px;
+      padding:11px 18px;
+      border-radius:999px;
+      font-size:13px;
+      font-weight:850;
+    }
+    .btn.gold{
+      background:#e5c36d;
+      color:#172016;
+    }
+    .btn.ghost{
+      border:1px solid rgba(255,255,255,.24);
+      color:var(--ink);
+      background:rgba(255,255,255,.06);
+    }
+    .hero-card{
+      border:1px solid rgba(20,34,25,.10);
+      border-radius:22px;
+      background:rgba(255,255,255,.9);
+      padding:24px;
+      box-shadow:0 16px 34px rgba(8,18,10,.08);
+    }
+    .hero-card b{
+      display:block;
+      font-family:var(--serif);
+      font-weight:300;
+      font-size:29px;
+      line-height:1.05;
+      margin-bottom:10px;
+    }
+    .hero-card p{
+      margin:0;
+      color:var(--muted);
+      font-size:13.5px;
+    }
+
+    .shell{
+      max-width:1180px;
+      margin:0 auto;
+      padding:62px 24px;
+    }
+    .intro-grid{
+      display:grid;
+      grid-template-columns:repeat(3,minmax(0,1fr));
+      gap:14px;
+      margin-top:-96px;
+      position:relative;
+      z-index:3;
+    }
+    .quick{
+      min-height:170px;
+      border-radius:18px;
+      background:var(--paper);
+      border:1px solid rgba(20,34,25,.10);
+      box-shadow:var(--shadow);
+      padding:24px;
+    }
+    .quick span{
+      display:block;
+      color:var(--gold);
+      font-size:11px;
+      font-weight:900;
+      letter-spacing:.18em;
+      text-transform:uppercase;
+      margin-bottom:10px;
+    }
+    .quick h2{
+      font-family:var(--serif);
+      font-weight:300;
+      font-size:30px;
+      line-height:1.05;
+      margin:0 0 10px;
+    }
+    .quick p{
+      margin:0;
+      color:var(--muted);
+      font-size:14px;
+      line-height:1.65;
+    }
+
+    .section-head{
+      display:grid;
+      grid-template-columns:220px minmax(0,1fr);
+      gap:34px;
+      align-items:end;
+      margin-bottom:28px;
+    }
+    .section-label{
+      font-size:11px;
+      font-weight:900;
+      letter-spacing:.22em;
+      text-transform:uppercase;
+      color:var(--green);
+    }
+    .section-head h2{
+      font-family:var(--serif);
+      font-size:clamp(34px,4.4vw,54px);
+      font-weight:300;
+      letter-spacing:-.035em;
+      line-height:1;
+      margin:0;
+    }
+    .section-head p{
+      margin:12px 0 0;
+      color:var(--muted);
+      max-width:780px;
+    }
+
+    .cards{
+      display:grid;
+      grid-template-columns:repeat(2,minmax(0,1fr));
+      gap:14px;
+    }
+    .card{
+      position:relative;
+      overflow:hidden;
+      border-radius:var(--radius);
+      background:var(--paper);
+      border:1px solid var(--line);
+      padding:30px;
+      box-shadow:0 12px 34px rgba(8,18,10,.07);
+    }
+    .card::before{
+      content:"";
+      position:absolute;
+      top:0;
+      left:0;
+      right:0;
+      height:4px;
+      background:linear-gradient(90deg,var(--green),var(--gold));
+    }
+    .num{
+      font-family:var(--serif);
+      font-size:54px;
+      line-height:.85;
+      color:rgba(31,122,67,.13);
+      position:absolute;
+      right:22px;
+      top:22px;
+    }
+    .tag{
+      display:inline-flex;
+      margin-bottom:14px;
+      padding:5px 10px;
+      border-radius:999px;
+      background:rgba(31,122,67,.10);
+      color:#226c3e;
+      font-size:10px;
+      letter-spacing:.16em;
+      text-transform:uppercase;
+      font-weight:900;
+    }
+    .card h3{
+      font-family:var(--serif);
+      font-weight:300;
+      font-size:31px;
+      line-height:1.05;
+      margin:0 0 12px;
+      letter-spacing:-.02em;
+    }
+    .card p,
+    .card li{
+      color:var(--muted);
+      font-size:14.5px;
+    }
+    .card p{margin:0}
+    .card ul{
+      margin:14px 0 0;
+      padding-left:20px;
+    }
+    .card li{margin:7px 0}
+
+    .notice{
+      margin-top:14px;
+      border-radius:22px;
+      border:1px solid rgba(201,154,59,.38);
+      background:linear-gradient(180deg,rgba(201,154,59,.11),rgba(255,253,248,.82));
+      padding:26px;
+      display:grid;
+      grid-template-columns:52px 1fr;
+      gap:16px;
+    }
+    .notice i{
+      width:52px;
+      height:52px;
+      border-radius:16px;
+      background:rgba(201,154,59,.16);
+      display:grid;
+      place-items:center;
+      font-style:normal;
+      font-size:24px;
+      font-weight:900;
+      color:#8a641f;
+    }
+    .notice h3{
+      margin:0 0 6px;
+      font-family:var(--serif);
+      font-size:28px;
+      font-weight:300;
+    }
+    .notice p{
+      margin:0;
+      color:var(--muted);
+      font-size:14.5px;
+    }
+
+    .wide{
+      display:grid;
+      grid-template-columns:360px minmax(0,1fr);
+      gap:14px;
+      margin-top:14px;
+    }
+    .side-panel{
+      border-radius:var(--radius);
+      background:var(--paper);
+      color:var(--ink);
+      padding:30px;
+      min-height:100%;
+      box-shadow:var(--shadow);
+    }
+    .side-panel h3{
+      font-family:var(--serif);
+      font-weight:300;
+      font-size:36px;
+      line-height:1;
+      margin:0 0 14px;
+    }
+    .side-panel p{
+      color:var(--muted);
+      font-size:14px;
+      margin:0;
+    }
+    .step-list{
+      background:var(--paper);
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      box-shadow:0 12px 34px rgba(8,18,10,.06);
+      overflow:hidden;
+    }
+    .step{
+      display:grid;
+      grid-template-columns:72px 1fr;
+      gap:18px;
+      padding:22px 26px;
+      border-bottom:1px solid var(--line);
+    }
+    .step:last-child{border-bottom:0}
+    .step b{
+      font-family:var(--serif);
+      font-size:34px;
+      color:var(--gold);
+      font-weight:300;
+      line-height:1;
+    }
+    .step h4{
+      margin:0 0 4px;
+      font-size:17px;
+    }
+    .step p{
+      margin:0;
+      color:var(--muted);
+      font-size:14px;
+      line-height:1.65;
+    }
+
+    .contact{
+      margin-top:56px;
+      border-radius:28px;
+      background:var(--paper);
+      color:var(--ink);
+      overflow:hidden;
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      border:1px solid rgba(20,34,25,.12);
+      box-shadow:0 24px 62px rgba(8,18,10,.18);
+    }
+    .contact-copy{
+      padding:34px;
+    }
+    .contact-copy h2{
+      font-family:var(--serif);
+      font-size:44px;
+      font-weight:300;
+      letter-spacing:-.035em;
+      line-height:1;
+      margin:0 0 14px;
+    }
+    .contact-copy p{
+      color:var(--muted);
+      margin:0;
+    }
+    .contact-data{
+      padding:34px;
+      background:rgba(31,122,67,.055);
+      display:grid;
+      gap:12px;
+      align-content:center;
+    }
+    .contact-row{
+      padding:16px;
+      border:1px solid rgba(20,34,25,.12);
+      border-radius:16px;
+      background:rgba(31,122,67,.055);
+    }
+    .contact-row span{
+      display:block;
+      color:var(--green);
+      font-size:10px;
+      letter-spacing:.17em;
+      text-transform:uppercase;
+      font-weight:900;
+    }
+    .contact-row b{
+      display:block;
+      margin-top:4px;
+      font-size:16px;
+      color:var(--ink);
+    }
+
+    footer{
+      background:#07130c;
+      color:var(--ink);
+    }
+    .foot{
+      max-width:1180px;
+      margin:0 auto;
+      padding:44px 24px;
+      display:grid;
+      grid-template-columns:1.4fr 1fr 1fr 1fr;
+      gap:34px;
+      border-top:1px solid rgba(255,255,255,.08);
+    }
+    .foot h3{
+      font-size:13px;
+      margin:0 0 14px;
+      color:var(--ink);
+    }
+    .foot p,
+    .foot a{
+      display:block;
+      color:rgba(255,255,255,.64);
+      font-size:13px;
+      line-height:1.7;
+      margin:0 0 7px;
+    }
+    .foot a:hover{color:#fff}
+    .bottom{
+      max-width:1180px;
+      margin:0 auto;
+      padding:16px 24px 24px;
+      color:rgba(255,255,255,.45);
+      font-size:12px;
+      border-top:1px solid rgba(255,255,255,.06);
+    }
+
+
+    .species-block{
+      margin-top:18px;
+      display:grid;
+      gap:14px;
+    }
+    .species-box{
+      border-radius:24px;
+      background:var(--paper);
+      border:1px solid var(--line);
+      box-shadow:0 12px 34px rgba(8,18,10,.06);
+      overflow:hidden;
+    }
+    .species-head{
+      padding:24px 28px 18px;
+      border-bottom:1px solid var(--line);
+      background:linear-gradient(180deg,rgba(31,122,67,.075),rgba(255,253,248,.92));
+    }
+    .species-head.danger{
+      background:linear-gradient(180deg,rgba(155,54,44,.09),rgba(255,253,248,.92));
+    }
+    .species-head.special{
+      background:linear-gradient(180deg,rgba(201,154,59,.13),rgba(255,253,248,.92));
+    }
+    .species-head span{
+      display:inline-flex;
+      margin-bottom:10px;
+      padding:5px 10px;
+      border-radius:999px;
+      background:rgba(31,122,67,.10);
+      color:#226c3e;
+      font-size:10px;
+      letter-spacing:.16em;
+      text-transform:uppercase;
+      font-weight:900;
+    }
+    .species-head.danger span{
+      background:rgba(155,54,44,.10);
+      color:#8a2f27;
+    }
+    .species-head.special span{
+      background:rgba(201,154,59,.14);
+      color:#7a581d;
+    }
+    .species-head h3{
+      margin:0 0 8px;
+      font-family:var(--serif);
+      font-size:34px;
+      line-height:1.05;
+      letter-spacing:-.025em;
+      font-weight:300;
+      color:var(--ink);
+    }
+    .species-head p{
+      margin:0;
+      color:var(--muted);
+      font-size:14.5px;
+      line-height:1.65;
+      max-width:950px;
+    }
+    .species-list{
+      list-style:none;
+      margin:0;
+      padding:22px 28px 28px;
+      display:grid;
+      grid-template-columns:repeat(2,minmax(0,1fr));
+      gap:9px 18px;
+    }
+    .species-list li{
+      position:relative;
+      padding:9px 12px 9px 34px;
+      border:1px solid rgba(20,34,25,.10);
+      border-radius:14px;
+      background:rgba(255,255,255,.55);
+      color:var(--ink);
+      font-size:14px;
+      line-height:1.35;
+    }
+    .species-list li::before{
+      content:"";
+      position:absolute;
+      left:13px;
+      top:16px;
+      width:7px;
+      height:7px;
+      border-radius:50%;
+      background:var(--green);
+      box-shadow:0 0 0 4px rgba(31,122,67,.10);
+    }
+    .species-box.danger .species-list li::before{
+      background:#9b362c;
+      box-shadow:0 0 0 4px rgba(155,54,44,.10);
+    }
+    .species-list em{
+      color:#44534a;
+      font-style:italic;
+      white-space:nowrap;
+    }
+    .special-note{
+      padding:24px 28px 28px;
+      color:var(--muted);
+      font-size:15px;
+      line-height:1.72;
+    }
+    .special-note strong{
+      color:var(--ink);
+    }
+
+    @media(max-width:900px){
+      .top-inner{
+        padding:13px 18px;
+        align-items:flex-start;
+        flex-direction:column;
+        gap:10px;
+      }
+      .nav{justify-content:flex-start}
+      .hero-inner{
+        grid-template-columns:1fr;
+        padding-top:68px;
+      }
+      .hero-card{max-width:520px}
+      .intro-grid,
+      .cards,
+      .wide,
+      .contact,
+      .section-head,
+      .foot{
+        grid-template-columns:1fr;
+      }
+      .intro-grid{margin-top:-58px}
+      .shell{padding:42px 18px}
+      .section-head{gap:12px}
+      .contact-copy,
+      .contact-data{padding:26px}
+      .foot{gap:22px}
+      .species-list{grid-template-columns:1fr}
+    }
+
+    @media(max-width:540px){
+      h1{font-size:44px}
+      .lead{font-size:16px}
+      .quick,
+      .card,
+      .side-panel{padding:22px}
+      .step{
+        grid-template-columns:46px 1fr;
+        padding:19px;
+      }
+      .hero-actions{flex-direction:column}
+      .btn{width:100%}
+      .notice{grid-template-columns:1fr}
+      .contact-copy h2{font-size:34px}
+    }
+  </style>
+
+  <style id="pio-final-light-block-fix-v6">
+    /* FINAL v6: all content blocks are light, no dark panels except no top menu/footer. */
+    .info-panel,
+    .side-panel,
+    .contact,
+    .hero-card{
+      background:var(--paper,#fffdf8) !important;
+      color:var(--ink,#142219) !important;
+      border:1px solid rgba(20,34,25,.12) !important;
+      box-shadow:0 16px 38px rgba(8,18,10,.08) !important;
+    }
+
+    .info-panel *,
+    .side-panel *,
+    .contact *,
+    .hero-card *{
+      color:inherit !important;
+      text-shadow:none !important;
+    }
+
+    .info-head,
+    .contact-data{
+      background:linear-gradient(180deg,rgba(31,122,67,.07),rgba(255,253,248,.94)) !important;
+      border-color:rgba(20,34,25,.12) !important;
+    }
+
+    .contact-copy{
+      background:var(--paper,#fffdf8) !important;
+      border-right:1px solid rgba(20,34,25,.10) !important;
+    }
+
+    .contact-row{
+      background:rgba(31,122,67,.055) !important;
+      border:1px solid rgba(20,34,25,.12) !important;
+    }
+
+    .contact-row:hover{
+      background:rgba(31,122,67,.09) !important;
+      border-color:rgba(31,122,67,.28) !important;
+    }
+
+    .info-head span,
+    .contact-row span,
+    .side-panel .tag,
+    .contact-row .tag{
+      color:var(--green,#1f7a43) !important;
+      font-weight:900 !important;
+    }
+
+    .info-head h2,
+    .side-panel h3,
+    .contact-copy h2,
+    .contact-row b{
+      color:var(--ink,#142219) !important;
+    }
+
+    .info-panel p,
+    .side-panel p,
+    .contact-copy p,
+    .contact-row small,
+    .special-note,
+    .help{
+      color:var(--muted,#5b6a60) !important;
+    }
+
+    .wide .side-panel{
+      min-height:auto !important;
+    }
+
+    .brand,
+    .brand span,
+    .brand small{
+      color:var(--ink,#142219) !important;
+    }
+
+    .brand-mark{
+      color:var(--ink,#142219) !important;
+      background:rgba(31,122,67,.10) !important;
+      border-color:rgba(31,122,67,.24) !important;
+    }
+
+    .top{
+      background:rgba(255,253,248,.98) !important;
+      border-bottom:1px solid rgba(20,34,25,.12) !important;
+    }
+
+    .hero{
+      background:var(--bg,#f6f1e7) !important;
+      color:var(--ink,#142219) !important;
+    }
+
+    .hero::before{
+      background:linear-gradient(180deg,rgba(255,253,248,.98),rgba(246,241,231,.98)) !important;
+    }
+
+    .hero::after{
+      background:rgba(20,34,25,.08) !important;
+      height:1px !important;
+      bottom:0 !important;
+    }
+
+    .hero .lead{
+      color:var(--muted,#5b6a60) !important;
+    }
+
+    .kicker{
+      color:var(--green,#1f7a43) !important;
+    }
+
+    /* Do not show the old footer if an older version is mixed by cache. */
+    footer{
+      display:none !important;
+    }
+  </style>
+
+</head>
+
+<body>
+  <a class="skip" href="#sadrzaj">Прескочи на садржај</a>
+
+  <header class="top" role="banner">
+    <div class="top-inner">
+      <a class="brand" href="https://piorajac.rs/" aria-label="Повратак на почетну страну ПИО Рајац">
+        <span class="brand-mark">⊙</span>
+        <span>ПИО „РАЈАЦ“<small>заштићено подручје</small></span>
+      </a>
+    </div>
+  </header>
+
+  <main id="sadrzaj">
+    <section class="hero" aria-labelledby="page-title">
+      <div class="hero-inner">
+        <div>
+          <span class="kicker">Посета · сагласности · режим заштите</span>
+          <h1 id="page-title">Групне посете и дозволе</h1>
+          <p class="lead">
+            Организоване посете, теренске активности, улазак у спелеолошке објекте,
+            научна истраживања и коришћење природних ресурса у ПИО „Рајац” морају
+            бити усклађени са режимима заштите и условима управљача.
+          </p>
+        </div>
+
+        <aside class="hero-card" aria-label="Кратко правило">
+          <b>Пре доласка проверити услове.</b>
+          <p>
+            За групе, истраживања, улазак у пећине и активности у осетљивим зонама
+            потребна је претходна најава, а у појединим случајевима и писана
+            сагласност или одобрење.
+          </p>
+        </aside>
+      </div>
+    </section>
+
+    <section class="shell" aria-label="Кратак преглед">
+      <div class="intro-grid">
+        <article class="quick">
+          <span>01 · посете</span>
+          <h2>Групе и организатори</h2>
+          <p>
+            Планинарска друштва, школе, факултети, туристичке групе и удружења
+            треба да најаве долазак када се посета спроводи организовано.
+          </p>
+        </article>
+
+        <article class="quick">
+          <span>02 · ограничења</span>
+          <h2>Осетљиве зоне</h2>
+          <p>
+            У зони I степена заштите, нарочито на простору Велике провалије,
+            посете су бројно, временски и просторно ограничене.
+          </p>
+        </article>
+
+        <article class="quick">
+          <span>03 · дозволе</span>
+          <h2>Посебне активности</h2>
+          <p>
+            Истраживања, улазак у пећине и јаме, сакупљање заштићених врста
+            и друге активности захтевају додатно усаглашавање.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section class="shell" aria-labelledby="pravila-title">
+      <div class="section-head">
+        <div class="section-label">Основна правила</div>
+        <div>
+          <h2 id="pravila-title">Шта мора бити најављено или одобрено</h2>
+          <p>
+            Управљач је дужан да кориснике обавештава о могућностима за радове
+            и активности у заштићеном подручју и да, у складу са прописаним
+            режимима, издаје потребне сагласности и одобрења.
+          </p>
+        </div>
+      </div>
+
+      <div class="cards">
+        <article class="card">
+          <span class="num">01</span>
+          <span class="tag">Групне посете</span>
+          <h3>Организовани доласци</h3>
+          <p>
+            Групне посете треба унапред најавити управљачу, посебно када
+            укључују већи број посетилаца, вођене туре, едукативне програме,
+            снимање, дужи боравак или кретање ван уређених праваца.
+          </p>
+          <ul>
+            <li>доставити датум, сатницу и број учесника;</li>
+            <li>навести планирану трасу или локацију;</li>
+            <li>одредити одговорно лице групе;</li>
+            <li>ускладити посету са правилима боравка.</li>
+          </ul>
+        </article>
+
+        <article class="card">
+          <span class="num">02</span>
+          <span class="tag">Зона I</span>
+          <h3>Велика провалија</h3>
+          <p>
+            У зони најстроже заштите посете су ограничене бројем људи, временом
+            трајања и простором кретања. Могу се спроводити само у образовне,
+            рекреативне и општекултурне сврхе, без нарушавања природних вредности.
+          </p>
+          <ul>
+            <li>кретање само уз јасно одређене услове;</li>
+            <li>без коришћења природних ресурса;</li>
+            <li>без активности које могу узнемирити врсте или оштетити станишта.</li>
+          </ul>
+        </article>
+
+        <article class="card">
+          <span class="num">03</span>
+          <span class="tag">Пећине и јаме</span>
+          <h3>Спелеолошки објекти</h3>
+          <p>
+            Улазак у пећине и јаме није слободна туристичка активност. Због
+            безбедности људи и заштите подземних станишта, улазак је забрањен
+            без одобрења управљача и/или пратње одговарајућег водича.
+          </p>
+          <ul>
+            <li>обавезна претходна најава;</li>
+            <li>поштовање упутстава водича;</li>
+            <li>без ломљења, сакупљања, узнемиравања животиња или остављања отпада.</li>
+          </ul>
+        </article>
+
+        <article class="card">
+          <span class="num">04</span>
+          <span class="tag">Истраживања</span>
+          <h3>Научни и стручни рад</h3>
+          <p>
+            Сва научна истраживања, мониторинг и праћење природних процеса
+            морају бити најављени и усклађени са планом управљања. То се односи
+            и на постављање опреме, узорковање, снимање и дуготрајни теренски рад.
+          </p>
+          <ul>
+            <li>доставити циљ, метод и период рада;</li>
+            <li>навести локације и евентуално узорковање;</li>
+            <li>по завршетку активности доставити основни извештај или налазе, када је то предвиђено условима.</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section class="shell" aria-labelledby="biljke-title">
+      <div class="section-head">
+        <div class="section-label">Биљке, гљиве и ресурси</div>
+        <div>
+          <h2 id="biljke-title">Сакупљање није слободно коришћење природе</h2>
+          <p>
+            Прикупљање биљака, гљива и других природних добара у заштићеном
+            подручју мора бити контролисано, јер неконтролисано сакупљање
+            директно угрожава популације врста и стање станишта.
+          </p>
+        </div>
+      </div>
+
+      <div class="cards">
+        <article class="card">
+          <span class="num">05</span>
+          <span class="tag">Забране</span>
+          <h3>Режими I и II степена</h3>
+          <p>
+            У режимима заштите I и II степена забрањено је комерцијално
+            прикупљање гљива и неконтролисано сакупљање лековитог биља.
+            У зони Велике провалије забрањено је свако коришћење природних ресурса.
+          </p>
+        </article>
+
+        <article class="card">
+          <span class="num">06</span>
+          <span class="tag">Контингенти</span>
+          <h3>Заштићене врсте</h3>
+          <p>
+            Сакупљање 25 заштићених врста дозвољено је само у оквиру годишњег
+            контингента који одобравају надлежне институције. То није слободно
+            сакупљање, већ контролисано коришћење према прописаним квотама.
+          </p>
+        </article>
+
+        <article class="card">
+          <span class="num">07</span>
+          <span class="tag">Строга забрана</span>
+          <h3>Врсте које се не сакупљају</h3>
+          <p>
+            За 12 врста биљака комерцијално прикупљање је у потпуности забрањено
+            ради очувања природних популација. За ове врсте није довољна најава,
+            јер је забрана потпуна.
+          </p>
+        </article>
+
+        <article class="card">
+          <span class="num">08</span>
+          <span class="tag">Практично правило</span>
+          <h3>Не брати непознато</h3>
+          <p>
+            Посетиоци не треба да сакупљају биљке, гљиве, плодове или делове
+            станишта ако нису сигурни да је активност дозвољена. За групе је
+            најбоље правило: посматрати, фотографисати и оставити природу нетакнуту.
+          </p>
+        </article>
+      </div>
+
+      <div class="species-block">
+        <article class="species-box">
+          <div class="species-head">
+            <span>25 врста · годишњи контингент</span>
+            <h3>Врсте дозвољене за сакупљање само уз одобрени контингент</h3>
+            <p>
+              Ове врсте су обухваћене Уредбом о стављању под контролу коришћења
+              и промета дивље флоре и фауне. Њихово прикупљање је дозвољено
+              искључиво према квотама које одобравају надлежне институције.
+            </p>
+          </div>
+
+          <ol class="species-list">
+            <li>Хајдучка трава — <em>Achillea millefolium</em></li>
+            <li>Сремуш — <em>Allium ursinum</em></li>
+            <li>Белодун — <em>Anthyllis vulneraria</em></li>
+            <li>Обична бреза — <em>Betula pendula</em></li>
+            <li>Вилинско сито — <em>Carlina acaulis</em></li>
+            <li>Кичица — <em>Centaurium erythraea</em></li>
+            <li>Дрен — <em>Cornus mas</em></li>
+            <li>Једносемени глог — <em>Crataegus monogyna</em></li>
+            <li>Видац — <em>Euphrasia stricta</em></li>
+            <li>Шумска јагода — <em>Fragaria vesca</em></li>
+            <li>Крушина — <em>Frangula dodonei</em></li>
+            <li>Жива трава — <em>Geranium robertianum</em></li>
+            <li>Трепљава пљускавица — <em>Hypericum barbatum</em></li>
+            <li>Кантарион — <em>Hypericum perforatum</em></li>
+            <li>Клека — <em>Juniperus communis</em></li>
+            <li>Срчењак — <em>Potentilla erecta</em></li>
+            <li>Јагорчевина — <em>Primula veris</em></li>
+            <li>Шипак — <em>Rosa canina</em></li>
+            <li>Оштролисна кострика — <em>Ruscus aculeatus</em></li>
+            <li>Широколисна кострика — <em>Ruscus hypoglossum</em></li>
+            <li>Дубачац — <em>Teucrium chamaedrys</em></li>
+            <li>Трава ива — <em>Teucrium montanum</em></li>
+            <li>Зимска липа — <em>Tilia cordata</em></li>
+            <li>Сребрна липа — <em>Tilia tomentosa</em></li>
+            <li>Обична боровница — <em>Vaccinium myrtillus</em></li>
+          </ol>
+        </article>
+
+        <article class="species-box danger">
+          <div class="species-head danger">
+            <span>12 врста · потпуна забрана</span>
+            <h3>Врсте са строгом забраном сакупљања</h3>
+            <p>
+              Иако су у категорији заштићених врста, за ових 12 врста је
+              комерцијално прикупљање у потпуности забрањено ради очувања
+              природних популација.
+            </p>
+          </div>
+
+          <ol class="species-list">
+            <li>Маркграфова жуменица — <em>Alyssum markgrafii</em></li>
+            <li>Плаштак — <em>Anacamptis pyramidalis</em></li>
+            <li>Бела заврата — <em>Cephalanthera damasonium</em></li>
+            <li>Заврата бела — <em>Cephalanthera longifolia</em></li>
+            <li>Заврата црвена — <em>Cephalanthera rubra</em></li>
+            <li>Мразовац — <em>Colchicum autumnale</em></li>
+            <li>Висибаба — <em>Galanthus nivalis</em></li>
+            <li>Линцура — <em>Gentiana lutea</em></li>
+            <li>Врањак — <em>Gymnadenia conopsea</em></li>
+            <li>Шумски љиљан — <em>Lilium martagon</em></li>
+            <li>Шиљореп — <em>Limodorum abortivum</em></li>
+            <li>Салеп — <em>Orchis morio</em></li>
+          </ol>
+        </article>
+
+        <article class="species-box">
+          <div class="species-head special">
+            <span>Велика провалија · I степен заштите</span>
+            <h3>Посебан режим за локалитет „Велика провалија”</h3>
+            <p>
+              У оквиру локалитета „Велика провалија”, који се налази под режимом
+              заштите I степена, забрањено је свако коришћење природних ресурса.
+            </p>
+          </div>
+          <div class="special-note">
+            <strong>То укључује и потпуну забрану сакупљања било којих биљних врста,</strong>
+            чак и оних које су дозвољене у другим деловима Рајца уз годишњи
+            контингент. У овој зони посета мора бити усмерена на образовање,
+            рекреацију, културу и посматрање природе без узимања материјала из природе.
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="shell" aria-labelledby="lov-title">
+      <div class="section-head">
+        <div class="section-label">Лов и заштићене врсте</div>
+        <div>
+          <h2 id="lov-title">Ловне активности под посебним надзором</h2>
+          <p>
+            Ловне активности се одвијају у складу са прихваћеним ловним основама
+            и прописима из области дивљачи и ловства, али у заштићеном подручју
+            морају бити усклађене са режимима заштите и очувањем ретких и
+            заштићених врста.
+          </p>
+        </div>
+      </div>
+
+      <div class="cards">
+        <article class="card">
+          <span class="num">09</span>
+          <span class="tag">Зона I</span>
+          <h3>Строга забрана</h3>
+          <p>
+            Лов је строго забрањен у зони заштите I степена. То је простор
+            у коме приоритет има очување природних процеса, станишта и осетљивих врста.
+          </p>
+        </article>
+
+        <article class="card">
+          <span class="num">10</span>
+          <span class="tag">Зона II</span>
+          <h3>Додатна ограничења</h3>
+          <p>
+            У зони II степена забрањено је постављање осматрачница у близини
+            гнезда ретких птица. Сва активност мора бити планирана тако да не
+            доведе до узнемиравања заштићених врста.
+          </p>
+        </article>
+      </div>
+
+      <div class="notice" role="note">
+        <i>!</i>
+        <div>
+          <h3>Ово није ловно упутство</h3>
+          <p>
+            Ова страница служи за информисање о ограничењима у заштићеном
+            подручју. За сва питања о примени правила, надлежности и конкретним
+            условима потребно је обратити се управљачу и надлежним службама.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="shell" id="postupak" aria-labelledby="postupak-title">
+      <div class="section-head">
+        <div class="section-label">Поступак</div>
+        <div>
+          <h2 id="postupak-title">Како припремити захтев</h2>
+          <p>
+            Да би се посета или активност брзо проценила, захтев треба да
+            садржи основне податке о организатору, групи, локацији, трајању
+            и циљу активности.
+          </p>
+        </div>
+      </div>
+
+      <div class="wide">
+        <aside class="side-panel">
+          <h3>Јасна најава штити и посетиоце и природу.</h3>
+          <p>
+            Када управљач унапред зна где, када и са којом сврхом група долази,
+            лакше је спречити штету, избећи преклапање активности и дати
+            прецизне услове кретања.
+          </p>
+        </aside>
+
+        <div class="step-list">
+          <div class="step">
+            <b>1</b>
+            <div>
+              <h4>Пошаљите основне податке</h4>
+              <p>
+                Назив организатора, контакт особу, телефон или е-пошту,
+                број учесника, узраст групе и датум доласка.
+              </p>
+            </div>
+          </div>
+
+          <div class="step">
+            <b>2</b>
+            <div>
+              <h4>Опишите активност</h4>
+              <p>
+                Наведите да ли је у питању излет, едукативни програм,
+                истраживање, снимање, улазак у спелеолошки објекат или друга активност.
+              </p>
+            </div>
+          </div>
+
+          <div class="step">
+            <b>3</b>
+            <div>
+              <h4>Доставите локацију и трасу</h4>
+              <p>
+                Пожељно је доставити планирану стазу, тачке задржавања,
+                време почетка и очекивано време завршетка.
+              </p>
+            </div>
+          </div>
+
+          <div class="step">
+            <b>4</b>
+            <div>
+              <h4>Сачекајте услове управљача</h4>
+              <p>
+                Управљач може потврдити посету, предложити измену трасе,
+                ограничити број учесника или затражити додатну сагласност
+                надлежних органа.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="shell" id="kontakt" aria-label="Контакт управљача">
+      <div class="contact">
+        <div class="contact-copy">
+          <h2>Контакт за најаву групне посете</h2>
+          <p>
+            За организоване доласке, истраживања и активности које могу
+            захтевати сагласност, обратите се управљачу ПИО „Рајац”.
+          </p>
+        </div>
+
+        <div class="contact-data">
+          <div class="contact-row">
+            <span>Управљач</span>
+            <b>Туристичка организација општине Љиг</b>
+          </div>
+
+          <div class="contact-row">
+            <span>Телефон</span>
+            <b><a href="tel:+381143445242">014/3445 242</a></b>
+          </div>
+
+          <div class="contact-row">
+            <span>Е-пошта</span>
+            <b><a href="mailto:office@piorajac.rs">office@piorajac.rs</a></b>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+<script defer src="/rajac-design/rajac-vrh-button.js?v=20260707-v6-round-no-home"></script>
+</body>
+</html>

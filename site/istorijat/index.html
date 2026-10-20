@@ -1,0 +1,184 @@
+<!doctype html>
+<html lang="sr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Историјат | ПИО „Рајац”</title>
+<meta name="description" content="Историјат заштите Рајца од прве заштите 1963. године до данашњег Предела изузетних одлика „Рајац“.">
+  <style>
+:root{
+  --rp-bg:#f7f2e8;
+  --rp-paper:#fffaf2;
+  --rp-ink:#111827;
+  --rp-text:#2f3440;
+  --rp-muted:#626a75;
+  --rp-line:rgba(41,35,24,.15);
+  --rp-gold:#b38a2e;
+  --rp-gold-dark:#7a5514;
+  --rp-navy:#0d1b2d;
+  --rp-navy-2:#14243a;
+  --rp-navy-soft:#22334d;
+  --rp-shadow:0 24px 60px rgba(38,30,16,.09);
+  --rp-radius:24px;
+  --rp-max:1240px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;
+  color:var(--rp-text);
+  background:
+    radial-gradient(circle at 12% 0%, rgba(179,138,46,.12), transparent 34%),
+    linear-gradient(180deg,#fbf8f1 0%,var(--rp-bg) 62%,#efe6d5 100%);
+  line-height:1.74;
+}
+a{color:#244669;text-decoration:none}
+a:hover{text-decoration:underline;text-underline-offset:3px}
+.rp-mainnav{
+  position:sticky;
+  top:0;
+  z-index:50;
+  background:rgba(13,27,45,.98);
+  border-bottom:1px solid rgba(179,138,46,.22);
+  box-shadow:0 10px 28px rgba(5,13,23,.18);
+}
+.rp-mainnav-inner{
+  max-width:var(--rp-max);
+  margin:0 auto;
+  padding:9px 22px 10px;
+  overflow-x:auto;
+  scrollbar-width:thin;
+}
+.rp-mainnav-list{
+  display:flex;
+  align-items:center;
+  gap:8px;
+  min-width:max-content;
+}
+.rp-mainnav a{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  min-height:36px;
+  padding:8px 17px;
+  border-radius:999px;
+  color:rgba(235,240,247,.58);
+  font-size:14px;
+  font-weight:800;
+  line-height:1;
+  white-space:nowrap;
+  border:1px solid transparent;
+  letter-spacing:.01em;
+}
+.rp-mainnav a:hover{
+  color:#f3ead1;
+  background:rgba(255,255,255,.05);
+  border-color:rgba(179,138,46,.28);
+  text-decoration:none;
+}
+.rp-mainnav a.is-active,
+.rp-mainnav a.rp-home{
+  color:#f4d777;
+  border-color:rgba(244,215,119,.38);
+  background:rgba(244,215,119,.05);
+}
+.rp-shell{max-width:var(--rp-max);margin:0 auto;padding:38px 26px 78px}
+.rp-hero{padding:52px 0 34px;border-bottom:1px solid var(--rp-line)}
+.rp-kicker{font-size:12px;letter-spacing:.28em;text-transform:uppercase;color:var(--rp-gold-dark);font-weight:900;margin:0 0 15px}
+h1{font-family:Georgia,"Times New Roman",serif;font-weight:400;letter-spacing:-.035em;line-height:.98;color:var(--rp-ink);font-size:clamp(42px,7.2vw,84px);margin:0 0 18px;max-width:1100px}
+.rp-subtitle{margin:0;color:var(--rp-muted);font-size:clamp(16px,2vw,21px);line-height:1.55;max-width:900px}
+.rp-layout{margin-top:30px}
+.rp-card{background:rgba(255,250,242,.74);border:1px solid var(--rp-line);border-radius:var(--rp-radius);box-shadow:var(--rp-shadow);overflow:hidden;width:100%}
+.rp-card-head{padding:16px 28px;border-bottom:1px solid var(--rp-line);background:linear-gradient(180deg,rgba(255,255,255,.72),rgba(255,255,255,.24));font-size:12px;font-weight:900;letter-spacing:.14em;text-transform:uppercase;color:var(--rp-gold-dark)}
+.rp-content{padding:32px 38px 38px;max-width:1120px;margin:0 auto;font-size:16px}
+.rp-content h2{font-family:Georgia,"Times New Roman",serif;font-size:clamp(26px,3vw,40px);line-height:1.08;font-weight:400;letter-spacing:-.025em;color:var(--rp-ink);margin:34px 0 13px}
+.rp-content h2:first-child{margin-top:0}
+.rp-content h3{font-size:18px;line-height:1.35;margin:25px 0 9px;color:var(--rp-ink)}
+.rp-content p{margin:0 0 15px}.rp-content p:last-child{margin-bottom:0}
+.rp-content ul{margin:10px 0 18px;padding:0;list-style:none}.rp-content li{position:relative;padding-left:22px;margin:0 0 8px}.rp-content li::before{content:"";position:absolute;left:0;top:.78em;width:7px;height:7px;border-radius:50%;background:var(--rp-gold)}
+.rp-note{background:#f5ead6;border-left:4px solid var(--rp-gold);padding:17px 19px;border-radius:0 18px 18px 0;margin:22px 0;color:#403625}
+.rp-photo-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:24px 0}.rp-photo-grid figure{margin:0;border-radius:18px;overflow:hidden;border:1px solid var(--rp-line);background:#fff;box-shadow:0 14px 34px rgba(38,30,16,.07)}.rp-photo-grid img{width:100%;height:300px;object-fit:cover;display:block}.rp-photo-grid figcaption{font-size:12px;line-height:1.45;color:var(--rp-muted);padding:10px 12px;background:#fff}
+.rp-audio{display:grid;grid-template-columns:260px 1fr;gap:0;background:linear-gradient(135deg,var(--rp-navy),var(--rp-navy-soft));border-radius:var(--rp-radius);overflow:hidden;box-shadow:var(--rp-shadow);margin-top:22px}.rp-audio img{width:100%;height:100%;min-height:210px;object-fit:cover;display:block}.rp-audio-body{padding:26px;color:#fff}.rp-audio-body p{color:rgba(255,255,255,.76);margin-bottom:12px}.rp-audio-body strong{display:block;font-size:20px;line-height:1.3;margin-bottom:8px}.rp-btn{display:inline-flex;align-items:center;justify-content:center;margin-top:8px;padding:10px 16px;border-radius:999px;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.28);color:#fff;font-weight:800;font-size:13px}.rp-btn:hover{text-decoration:none;background:rgba(255,255,255,.20)}
+@media(max-width:760px){.rp-shell{padding:30px 16px 58px}.rp-mainnav-inner{padding:8px 12px}.rp-mainnav a{padding:8px 14px;font-size:13px}.rp-hero{padding:42px 0 28px}.rp-content{padding:23px 20px}.rp-photo-grid{grid-template-columns:1fr}.rp-photo-grid img{height:220px}.rp-audio{grid-template-columns:1fr}.rp-audio img{height:190px}}
+  </style>
+<link data-pio-mobile="group3-v1" rel="stylesheet" href="../assets/mobile/pio-mobile-upravljanje.css?v=20260714-upr-v9"></head>
+<body>
+<header class="rp-mainnav" aria-label="Главни мени">
+  <div class="rp-mainnav-inner">
+    <nav class="rp-mainnav-list">
+        <a class="rp-home" href="https://piorajac.rs/">ПИО „РАЈАЦ“</a>
+        <a href="/ko-upravlja/">Ко управља</a>
+        <a href="/nadleznosti/">Надлежности</a>
+        <a href="/saradnja/">Сарадња</a>
+        <a class="is-active" href="/istorijat/">Историјат</a>
+        <a href="/kontakt/">Контакт</a>
+    </nav>
+  </div>
+</header>
+<main class="rp-shell">
+  <section class="rp-hero">
+    <p class="rp-kicker">Историјат · Пут ка заштити</p>
+    <h1>Историјат ПИО „Рајац”</h1>
+    <p class="rp-subtitle">Од прве заштите 1963. године до савременог Предела изузетних одлика — преко шест деценија истраживања, иницијатива и постепеног проширења заштите.</p>
+  </section>
+  <section class="rp-layout">
+    <article class="rp-card">
+      <div class="rp-card-head">Садржај странице</div>
+      <div class="rp-content">
+<h2>Пут ка заштити: Од 1963. до данас</h2>
+<p>Заштита Рајца није се десила преко ноћи – то је био процес који је трајао дуже од шест деценија, вођен радом научних институција, планинарских удружења и одлучношћу локалних ентузијаста који су препознали да ова планина заслужује посебан статус.</p>
+<h3>Први кораци и десигнација из 1963. године</h3>
+<p>Званична прича о очувању ове шумадијске лепотице почиње 22. марта 1963. године. Тада је Савет за просвету и културу Народног одбора општине Љиг донео Решење којим је део Рајца стављен под непосредну заштиту државе. Простор од 1.200 хектара тада је проглашен за заштићено природно добро.</p>
+<h3>Буђење свести деведесетих: Иницијативе планинара</h3>
+<p>Након неколико деценија, постало је јасно да првобитни ниво заштите није довољан да покрије све вредности које Рајац крије.</p>
+<ul>
+<li><strong>1992. година:</strong> Планинарски савез Београда поднео је иницијативу Заводу за заштиту природе Србије, указујући на благотворност климе и богатство биљног света. Тада су први пут стручно истакнуте ретке врсте попут орхидеја.</li>
+<li><strong>1996. година:</strong> Планинарско-смучарско друштво „Победа” из Београда покренуло је званичан предлог за ревизију заштите. Визија је била проширење граница како би се очували локалитети Велика провалија, Ликин богаз и друга вредна станишта.</li>
+</ul>
+<h3>2012–2015: Прекретница и грађански активизам</h3>
+<p>Нова ера у заштити Рајца почиње када су се саме локалне самоуправе активно укључиле у процес. Скупштина општине Љиг је 2012. године донела допунско решење којим је утврдила тадашњег управљача, док је 2015. године општина Горњи Милановац, на захтев мештана и власника викендица, тражила хитно стављање под заштиту „Рајачке букове шуме” ради спречавања неконтролисане сече.</p>
+<p>Истовремено је Група за просторно планирање Скупштине општине Љиг покренула суштинско питање — зашто заштита из 1963. године још увек није модерно ревидирана. Инсистирало се да се заштита природе мора ускладити са одговорним туристичким развојем.</p>
+<h3>Стручна верификација и финална уредба 2017–2024.</h3>
+<p>Као одговор на ове иницијативе, стручњаци Завода за заштиту природе Србије су током 2017. и 2018. године обавили свеобухватна теренска истраживања. Истраживања су потврдила постојање нових врста инсеката за Србију, присуство преко 80 врста птица и изузетан фитоценолошки значај подручја.</p>
+<p>Кулминација овог дугог пута десила се 8. августа 2024. године, када је Влада Републике Србије усвојила Уредбу којом је Рајац званично проглашен за Предео изузетних одлика. Подручје је заштићено на површини од 1.771,58 хектара.</p>
+<div class="rp-photo-grid">
+<figure>
+<img alt="Сувоборски одред на Рајцу поред ровова из Првог светског рата, март 1942." src="https://piorajac.rs/wp-content/uploads/2026/02/Suvoborski_odred_na_Rajcu_pored_rovova_iz_prvog_svetskog_rata_mart_1942.webp"/>
+<figcaption>Сувоборски одред на Рајцу, поред ровова из Првог светског рата — март 1942.</figcaption>
+</figure>
+<figure>
+<img alt="Разгледница Рајац 1957. година" src="https://piorajac.rs/wp-content/uploads/2026/02/Razglednica-RAJAC-1957_slika_XL_150741033.webp"/>
+<figcaption>Разгледница Рајац — 1957. година</figcaption>
+</figure>
+</div>
+
+        <p>Временска линија заштите Рајца може се сажети у неколико кључних корака: прва непосредна заштита дела Рајца 1963. године, иницијативе планинарских организација током 1992–1996, нови локални захтеви за ревизију 2012–2015, стручна теренска истраживања 2017–2018. и коначно проглашење ПИО „Рајац” 2024. године.</p>
+        <h2>Рајац као научна ризница</h2>
+<p>Кроз историју, истраживачи су на Рајцу проналазили врсте нове чак и за светску науку. Прва геолошка и спелеолошка запажања датирају са краја 19. века, док је Јован Цвијић 1924. године описао кључне крашке облике овог масива. На Рајцу је регистровано 12 спелеолошких објеката, међу којима се истичу Велика пећина у Брезацима и Степановића пећина.</p>
+<p>Први велики ботанички траг оставио је Јосиф Панчић, који је 1874. године овде забележио орхидеју засучак. Данас је Рајац препознат као простор значајан за биљни свет, птице, инсекте, пећинску фауну и очување мозаика ливада, пашњака и шума.</p>
+<h3>Спектакуларни налази у свету инсеката</h3>
+<p>Највећи научни успех догодио се током биоспелеолошких истраживања 2001–2003. године. У Великој пећини у Брезацима пронађена је нова врста за науку — стеноендемични тврдокрилац <em>Duvalius suvoborensis</em>. Такође, тада су по први пут за фауну Србије забележене две врсте пауколиких животиња.</p>
+<h3>Фауна птица</h3>
+<p>Систематско праћење птица почело је са др Сергејем Матвејевим у периоду 1960–1963. Данас је на Рајцу забележена богата орнитофауна, са великим бројем строго заштићених врста.</p>
+<h2>Неистражене „беле мрље”</h2>
+<p>Упркос бројним открићима, Рајац и даље крије многе тајне. Посебан значај за будућност имају дневни лептири, зимске птице, слепи мишеви, ноћни инсекти и дугорочно праћење утицаја климе, туризма и светлосног загађења на осетљива станишта.</p>
+<div class="rp-audio">
+<img alt="Аудио снимак о историји Рајца" src="https://piorajac.rs/wp-content/uploads/2026/02/podkast-3.webp"/>
+<div class="rp-audio-body">
+<strong>Рајац: Ризница природе, историје и науке</strong>
+<p>Аудио запис о историји заштите, научним открићима и вредностима предела.</p>
+<a class="rp-btn" href="https://drive.google.com/file/d/1wZXS_2fDqPS1QIVNzLIEcu-z3gtCS-3i/view?usp=sharing" rel="noopener">Слушај снимак</a>
+</div>
+</div>
+      </div>
+    </article>
+  </section>
+</main>
+
+<!-- SITE_EDITOR_ADMIN_BAR_START -->
+<script src="/admin-site-editor.php?admin_bar_js=1" defer></script>
+<!-- SITE_EDITOR_ADMIN_BAR_END -->
+<script data-pio-mobile="group3-v1" defer src="../assets/mobile/pio-mobile-upravljanje.js?v=20260714-upr-v9"></script></body>
+</html>
+

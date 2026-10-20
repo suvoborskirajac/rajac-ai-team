@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="sr-RS"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, viewport-fit=cover" name="viewport"/><title>Мониторинг екосистема</title>
+<meta name="description" content="Мониторинг екосистема Рајца: сензори, камере, акустика, сателитски снимци, микроклима и мерења ноћног неба на једном месту."><link as="image" href="https://piorajac.rs/rajac-static-2105/assets/page-assets/monitoring-ekosistema/smartpio.webp" rel="preload"/><style>
+:root{--bg:#fff;--paper:#fffaf0;--paper2:#f8f0df;--ink:#26301e;--muted:#65705a;--line:#d7c8a8;--line2:#bdad87;--forest:#2f3f27;--gold:#b7872c;--cream:#fff2cf;--shadow:0 20px 60px rgba(58,48,30,.13);--max:1180px;--navy:#122033}*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:#fff;color:var(--ink);font-family:Georgia,"Times New Roman",serif;line-height:1.65;text-rendering:optimizeLegibility}a{color:inherit;text-decoration:none}img{max-width:100%;display:block}.book-nav{position:sticky;top:0;z-index:100;width:100%;background:#122033;border-top:1px solid rgba(255,255,255,.12);border-bottom:1px solid rgba(255,255,255,.10);box-shadow:0 8px 22px rgba(10,18,30,.22);font-family:Arial,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}.book-nav .shell{width:min(var(--max),calc(100% - 40px));margin-inline:auto;min-height:64px;display:flex;align-items:center;justify-content:flex-start;gap:10px;overflow-x:auto;overflow-y:hidden;scrollbar-width:none;-webkit-overflow-scrolling:touch}.book-nav .shell::-webkit-scrollbar{display:none}.book-nav .nav-logo,.book-nav .nav-link{display:inline-flex;align-items:center;justify-content:center;min-height:42px;padding:0 16px;border-radius:999px;white-space:nowrap;line-height:1;font-size:15px;font-weight:800;text-decoration:none;letter-spacing:0;transition:.18s ease;color:rgba(232,237,226,.52);border:1px solid transparent;background:transparent}.book-nav .nav-logo{color:#f2d678;border-color:rgba(197,164,70,.46);background:rgba(197,164,70,.10)}.book-nav .nav-logo::before{content:"";width:6px;height:6px;margin-right:9px;border-radius:50%;background:#e0b447;flex:0 0 6px}.book-nav .nav-link.active{color:#f2d678;background:transparent;border-color:transparent;box-shadow:none}.book-nav .nav-link:hover,.book-nav .nav-logo:hover{color:#f2d678;background:rgba(197,164,70,.14);border-color:rgba(197,164,70,.46)}.hero{min-height:500px;max-height:580px;height:500px;display:flex;align-items:center;position:relative;overflow:hidden;isolation:isolate;background:linear-gradient(90deg,rgba(38,48,30,.86) 0%,rgba(38,48,30,.72) 42%,rgba(38,48,30,.30) 100%),var(--hero-img) center 68%/cover no-repeat;border-bottom:1px solid rgba(189,173,135,.6)}.hero-inner{width:min(var(--max),calc(100% - 40px));margin:0 auto;padding:120px 0 64px;position:relative;z-index:2}.eyebrow{display:flex;align-items:center;gap:12px;margin:0 0 16px;color:#f2ce75;font-family:Arial,system-ui,sans-serif;font-size:13px;line-height:1;letter-spacing:.18em;text-transform:uppercase;font-weight:800}.eyebrow:before{content:"";width:42px;height:1px;background:#f2ce75;opacity:.8;flex:0 0 auto}h1{max-width:760px;margin:0;color:#fff7df;font-size:clamp(44px,6vw,74px);line-height:.98;letter-spacing:-.045em;font-weight:500;text-shadow:0 2px 14px rgba(0,0,0,.28)}.lead{max-width:740px;margin:26px 0 0;color:rgba(255,250,235,.88);font-family:Arial,system-ui,sans-serif;font-size:clamp(17px,1.7vw,20px);line-height:1.85}.stats-wrap{width:min(var(--max),calc(100% - 40px));margin:-24px auto 46px;position:relative;z-index:4}.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}.stat{min-height:112px;padding:20px 20px 18px;border-radius:22px;background:linear-gradient(180deg,#fffaf0,#f5ead4);border:1px solid var(--line);box-shadow:0 14px 34px rgba(75,62,38,.08);display:flex;flex-direction:column;justify-content:center}.stat strong{display:block;color:#314229;font-family:Arial,system-ui,sans-serif;font-size:21px;line-height:1.1;margin-bottom:8px}.stat span{color:#68715c;font-family:Arial,system-ui,sans-serif;font-weight:700;font-size:14px;line-height:1.35}.section{padding:54px 0;background:#fff}.section.lighter,.section.light,.section.dark2,.section.monitoring-wrap{background:#fff}.shell{width:min(var(--max),calc(100% - 40px));margin-inline:auto}.section-head{display:grid;gap:16px;margin:0 0 34px;text-align:left;max-width:900px}.section-head .eyebrow{margin:0}.s-title,.section-head h2{margin:0;color:#2f3a25;font-size:clamp(32px,4vw,54px);line-height:1.08;letter-spacing:-.035em;font-weight:500}.s-title em,.section-head h2 em{font-style:italic;color:#75865b;font-weight:400}.s-desc,.section-head p{margin:0;max-width:820px;color:#5f6856;font-family:Arial,system-ui,sans-serif;font-size:18px;line-height:1.85}.timeline-grid,.roles-grid,.cards-grid,.phase-grid,.reports-grid,.intro-grid,.metrics-grid{display:grid;gap:16px}.timeline-grid,.roles-grid,.phase-grid,.reports-grid,.metrics-grid{grid-template-columns:repeat(4,1fr)}.cards-grid.columns-3{grid-template-columns:repeat(3,1fr)}.intro-grid{grid-template-columns:1fr 1fr}.tl-card,.role-card,.feature-card,.info-card,.phase-card,.report-card,.story-card,.metric-box{background:var(--paper);border:1px solid var(--line);border-radius:24px;padding:26px 24px;box-shadow:0 12px 34px rgba(75,62,38,.07);transition:.2s ease}.tl-card:hover,.role-card:hover,.feature-card:hover,.info-card:hover,.phase-card:hover,.report-card:hover,.story-card:hover{transform:translateY(-3px);box-shadow:var(--shadow)}.tl-num,.role-num,.num,.phase-num{width:max-content;border-radius:999px;background:#efe3cb;color:#6b5420;padding:7px 13px;font-family:Arial,system-ui,sans-serif;font-size:13px;font-weight:900;margin-bottom:14px}.tl-label,.tag-row span,.tags span,.species-list span,.metric-box span,.more,.report-card small{font-family:Arial,system-ui,sans-serif}.tl-label,.report-card small{display:block;color:var(--gold);font-weight:900;text-transform:uppercase;letter-spacing:.08em;margin-bottom:8px}.tl-card h3,.role-card h3,.feature-card h3,.info-card h3,.phase-card h3,.report-card h3,.story-card h3{margin:0 0 12px;color:#29351f;font-size:24px;line-height:1.15;letter-spacing:-.02em}.tl-card p,.role-card p,.feature-card p,.info-card p,.phase-card p,.report-card p,.story-card p,.section li{margin:0;color:#5d6655;font-family:Arial,system-ui,sans-serif;font-size:16px;line-height:1.75}.tag-row,.tags,.species-list{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}.tag-row span,.tags span,.species-list span{border:1px solid #d8c8a8;border-radius:999px;padding:8px 11px;color:#606958;background:#fbf3e3;font-size:13px;font-weight:700}.highlight-band,.split-band{padding:34px 38px;border-radius:28px;background:#dfe0c9;border:1px solid #c9c1a4;box-shadow:0 18px 46px rgba(58,48,30,.08);margin:0 0 28px}.highlight-band p,.split-band p{margin:0;color:#3e4a35;font-size:clamp(24px,2.6vw,38px);line-height:1.18}.monitoring-panel{padding:52px;border-radius:34px;background:radial-gradient(circle at 92% 0%,rgba(183,135,44,.14),transparent 34%),linear-gradient(135deg,#f8f0df,#ebe0c6);border:1px solid var(--line2);box-shadow:var(--shadow)}.dark-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:34px}.dark-card{padding:28px;border-radius:26px;background:rgba(255,250,240,.78);border:1px solid rgba(189,173,135,.72)}.dark-card h3{font-size:24px;padding-bottom:14px;border-bottom:1px solid #d8c8a8;margin:0 0 16px;color:#29351f}.dark-card ul{list-style:none;margin:0;padding:0;display:grid;gap:13px}.dark-card li{position:relative;padding-left:24px;color:#5d6655;font-family:Arial,system-ui,sans-serif;font-size:16px;line-height:1.75}.dark-card li:before{content:"›";position:absolute;left:0;top:0;color:#9a6c15;font-weight:900}.closing-box{padding:42px 46px;border-radius:30px;background:#dfe0c9;color:#2f3b28;border:1px solid #c9c1a4;box-shadow:0 18px 46px rgba(58,48,30,.10)}.closing-box h2{margin:0;color:#2f3b28;font-size:clamp(30px,3.5vw,48px);line-height:1.08}.closing-box p{max-width:880px;color:#4f5b45;font-family:Arial,system-ui,sans-serif;font-size:18px;line-height:1.85;margin:18px 0 0}.metric-box{text-align:center}.metric-box strong{display:block;color:#314229;font-family:Arial,system-ui,sans-serif;font-size:34px;line-height:1;margin-bottom:10px}.report-card{display:flex;flex-direction:column}.more{margin-top:auto;padding-top:16px;color:#365c3b;font-weight:800}.divider{display:none}.reveal{opacity:1!important;transform:none!important}.back-to-top,.progress-bar,#rajac-progress-bar{display:none!important}@media(max-width:980px){.hero{height:auto;min-height:auto;max-height:none}.hero-inner{padding:96px 0 56px}.stats,.timeline-grid,.roles-grid,.phase-grid,.reports-grid,.metrics-grid,.cards-grid.columns-3,.intro-grid,.dark-grid{grid-template-columns:repeat(2,1fr)}.monitoring-panel{padding:34px 24px}}@media(max-width:620px){.book-nav .shell,.hero-inner,.stats-wrap,.shell{width:min(100% - 28px,var(--max))}.book-nav .nav-logo,.book-nav .nav-link{font-size:13px;min-height:38px;padding:0 12px}h1{font-size:42px}.stats,.timeline-grid,.roles-grid,.phase-grid,.reports-grid,.metrics-grid,.cards-grid.columns-3,.intro-grid,.dark-grid{grid-template-columns:1fr}.section{padding:42px 0}.stats-wrap{margin:-14px auto 36px}.closing-box,.monitoring-panel{padding:34px 24px}.highlight-band,.split-band{padding:28px 24px}}
+</style>
+<link href="https://piorajac.rs/assets/rajac-stanista.css" rel="stylesheet"/><style>
+/* Приказ три слике на страници Мониторинг — један ред као картице */
+#oprema-monitoringa .monitoring-showcase-row{
+display:grid !important;
+grid-template-columns:repeat(3,minmax(0,1fr)) !important;
+gap:18px !important;
+align-items:stretch !important;
+margin-top:14px !important;
+}
+#oprema-monitoringa .monitoring-showcase-card{
+background:#fffaf0 !important;
+border:1px solid #d7c8a8 !important;
+border-radius:22px !important;
+overflow:hidden !important;
+box-shadow:0 12px 34px rgba(75,62,38,.07) !important;
+transition:transform .2s ease, box-shadow .2s ease !important;
+}
+#oprema-monitoringa .monitoring-showcase-card:hover{
+transform:translateY(-3px) !important;
+box-shadow:0 20px 60px rgba(58,48,30,.13) !important;
+}
+#oprema-monitoringa .monitoring-showcase-card figure{
+margin:0 !important;
+height:100% !important;
+display:flex !important;
+flex-direction:column !important;
+}
+#oprema-monitoringa .monitoring-showcase-media{
+width:100% !important;
+height:220px !important;
+overflow:hidden !important;
+background:#0c1118 !important;
+flex:0 0 auto !important;
+}
+#oprema-monitoringa .monitoring-showcase-card img{
+width:100% !important;
+height:100% !important;
+aspect-ratio:auto !important;
+object-fit:cover !important;
+object-position:center !important;
+background:#efe3cb !important;
+}
+/* Посебно подешавање за слику Sentinel-2: јаче зумирање уклања бели празан део, тако да се доња ивица сателитске слике поравна са осталим сликама. */
+#oprema-monitoringa .monitoring-showcase-card:first-child .monitoring-showcase-media{
+background:#070b12 !important;
+}
+#oprema-monitoringa .monitoring-showcase-card:first-child .monitoring-showcase-media img{
+object-position:center top !important;
+transform:scale(2.02) translateY(-2px) !important;
+transform-origin:center top !important;
+}
+#oprema-monitoringa .monitoring-showcase-card figcaption{
+flex:1 1 auto !important;
+padding:24px 24px 26px !important;
+min-height:210px !important;
+display:block !important;
+background:linear-gradient(180deg,#fffaf0,#f7eedc) !important;
+}
+#oprema-monitoringa .monitoring-showcase-card small{
+display:block !important;
+margin:0 0 10px !important;
+color:#b7872c !important;
+font-family:Arial,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif !important;
+font-size:13px !important;
+line-height:1.2 !important;
+font-weight:900 !important;
+letter-spacing:.12em !important;
+}
+#oprema-monitoringa .monitoring-showcase-card h3{
+margin:0 0 12px !important;
+color:#29351f !important;
+font-size:25px !important;
+line-height:1.15 !important;
+letter-spacing:-.025em !important;
+font-weight:700 !important;
+}
+#oprema-monitoringa .monitoring-showcase-card p{
+margin:0 !important;
+color:#5d6655 !important;
+font-family:Arial,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif !important;
+font-size:16px !important;
+line-height:1.75 !important;
+}
+@media(max-width:980px){
+#oprema-monitoringa .monitoring-showcase-row{
+grid-template-columns:repeat(3,minmax(0,1fr)) !important;
+gap:12px !important;
+}
+#oprema-monitoringa .monitoring-showcase-media{height:170px !important;}
+#oprema-monitoringa .monitoring-showcase-card figcaption{padding:18px !important;min-height:190px !important;}
+#oprema-monitoringa .monitoring-showcase-card h3{font-size:20px !important;}
+#oprema-monitoringa .monitoring-showcase-card p{font-size:14px !important;line-height:1.6 !important;}
+}
+@media(max-width:760px){
+#oprema-monitoringa .monitoring-showcase-row{grid-template-columns:1fr !important;}
+#oprema-monitoringa .monitoring-showcase-media{height:auto !important;aspect-ratio:16/9 !important;}
+#oprema-monitoringa .monitoring-showcase-card figcaption{min-height:auto !important;}
+}</style><link data-pio-mobile="habitats-v1" rel="stylesheet" href="https://piorajac.rs/assets/mobile/pio-mobile-stanista.css?v=20260714-st-v8">
+<style id="rajac-kopernikindeks-embed-style">
+/* Компактно уграђена жива страница /kopernikindeks/. */
+#kopernikindeks-ugradjen{
+  background:#fff;
+  padding:6px 0 8px;
+}
+#kopernikindeks-ugradjen .shell{
+  width:min(var(--max),calc(100% - 40px));
+  margin-inline:auto;
+}
+.rajac-kopernik-embed-card{
+  position:relative;
+  width:100%;
+  min-height:0;
+  background:#fff;
+  border:1px solid var(--line);
+  border-radius:28px;
+  box-shadow:0 12px 34px rgba(75,62,38,.07);
+  overflow:hidden;
+}
+.rajac-kopernik-embed-frame{
+  display:block;
+  width:100%;
+  height:1180px;
+  min-height:0;
+  border:0;
+  background:#fff;
+}
+.rajac-kopernik-embed-loading,
+.rajac-kopernik-embed-error{
+  position:absolute;
+  inset:0;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:34px;
+  text-align:center;
+  font-family:Arial,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  color:#65705a;
+  background:linear-gradient(180deg,#fffaf0,#f8f0df);
+  font-weight:700;
+  z-index:2;
+}
+.rajac-kopernik-embed-card.is-ready .rajac-kopernik-embed-loading{display:none}
+.rajac-kopernik-embed-error{display:none;flex-direction:column;gap:12px}
+.rajac-kopernik-embed-card.has-error .rajac-kopernik-embed-loading{display:none}
+.rajac-kopernik-embed-card.has-error .rajac-kopernik-embed-error{display:flex}
+.rajac-kopernik-embed-error a{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  min-height:42px;
+  padding:0 16px;
+  border-radius:999px;
+  border:1px solid #bdad87;
+  background:#fffaf0;
+  color:#314229;
+  font-weight:800;
+}
+#kopernikindeks-ugradjen + .section.dark2{padding-top:6px}
+@media(max-width:760px){
+  #kopernikindeks-ugradjen{padding:4px 0 6px}
+  #kopernikindeks-ugradjen .shell{width:min(100% - 28px,var(--max))}
+  .rajac-kopernik-embed-card{border-radius:20px;min-height:0}
+  .rajac-kopernik-embed-frame{height:1080px;min-height:0}
+  #kopernikindeks-ugradjen + .section.dark2{padding-top:4px}
+}
+</style>
+</head><body class="rajac-static-output"><main aria-labelledby="rajac-monitoring-page-title" class="rajac-series-page" id="rajac-monitoring-page"><nav aria-label="Навигација станишта" class="book-nav"><div class="shell"><a class="nav-logo" href="https://piorajac.rs/">ПИО „РАЈАЦ“</a><a class="nav-link" href="https://piorajac.rs/sumska-stanista/">Шумска станишта</a><a class="nav-link" href="https://piorajac.rs/livadska-stanista/">Ливадска и пашњачка</a><a class="nav-link" href="https://piorajac.rs/vodena-stanista/">Водена и приобална</a><a class="nav-link" href="https://piorajac.rs/speleoloska-stanista/">Спелеолошка и стенска</a><a class="nav-link active" href="https://piorajac.rs/monitoring-ekosistema/">Мониторинг</a></div></nav><section class="hero" style="--hero-img:url('https://piorajac.rs/rajac-static-2105/assets/page-assets/monitoring-ekosistema/smartpio.webp');--hero-pos:center 25%"><div class="hero-inner"><h1 id="rajac-monitoring-page-title">Мониторинг екосистема</h1><p class="lead">Интелигентан систем у реалном времену повезује теренске сензоре, камере, акустику, сателитске снимке, микроклиму и мерења ноћног неба како би управљање заштићеним подручјем прешло из повременог посматрања у непрекидан, доказима заснован надзор.</p></div></section><section aria-label="Кључне одлике" class="stats-wrap"><div class="stats"><article class="stat"><strong>24/7</strong><span>континуирано праћење кључних параметара</span></article><article class="stat"><strong>AI</strong><span>препознавање образаца у звуку и слици</span></article><article class="stat"><strong>GIS</strong><span>просторна анализа станишта и ризика</span></article><article class="stat"><strong>21.40</strong><span>mag/arcsec² на тамним локацијама</span></article></div></section><section class="section lighter" id="koncept"><div class="shell"><header class="section-head reveal visible"><div class="eyebrow">Целодневни мониторинг</div><h2 class="s-title">Рајац се прати кроз <em>сателите, инструменте и теренски рад</em></h2><p class="s-desc">Мониторинг ПИО „Рајац” није једнократно посматрање, већ целодневни систем праћења који повезује даљинску детекцију, аутоматска мерења на терену и непосредна стручна запажања. Тако се промене у стаништима, микроклими, светлосном загађењу и живом свету могу пратити благовремено, упоредиво и на основу проверљивих података.</p></header><div class="cards-grid columns-3 monitoring-day-grid"><article class="feature-card reveal visible"><h3>Сателитско праћење биодиверзитета и светлосне загађености</h3><p>Сателитски снимци омогућавају редовно праћење целог простора ПИО „Рајац”, а не само појединачних тачака на терену. Sentinel-2 и Copernicus индекси NDVI, NDMI и RECI користе се за процену виталности вегетације, влажности, хлорофила, сушног стреса, кошења ливада, опоравка травних површина и промена у шумским и ливадским стаништима. За ноћно окружење користе се сателитски подаци о вештачком осветљењу, посебно ради праћења ширења светлосне загађености и притиска на тамно небо.</p><div class="tag-row"><span>Sentinel-2</span><span>NDVI / NDMI / RECI</span><span>VIIRS</span><span>светлосно загађење</span></div></article><article class="feature-card reveal visible"><h3>Инструментална мерења на терену</h3><p>На терену се прикупљају подаци које сателити не могу да измере довољно прецизно: температура, влажност ваздуха, притисак, ветар, количина падавина, тачка росе, топлотни стрес, услови за вегетацију, као и подаци о влажности листа и земљишта када су сензори укључени у систем. Мере се и параметри ноћног неба SQM уређајима, бележи се светлосна загађеност, а теренске камере и акустички уређаји прате активност птица, сисара, слепих мишева и других група које реагују на промене у стаништима.</p><div class="tag-row"><span>Davis VP2</span><span>SQM</span><span>камере</span><span>акустика</span></div></article><article class="feature-card reveal visible"><h3>Непосредан рад на терену</h3><p>Аутоматска мерења се допуњују класичним теренским радом: посматрањем лептира на ливадама и пашњацима, снимањем и препознавањем птица, евидентирањем трагова и присуства сисара, бележењем стања извора, водотокова, пећина и осетљивих станишта, као и фотографисањем и геореференцирањем налаза. Теренска запажања дају контекст бројевима и омогућавају да се свако одступање у подацима провери у стварном простору.</p><div class="tag-row"><span>лептири</span><span>птице</span><span>станишта</span><span>теренски налази</span></div></article></div></div></section><section class="section lighter rajac-potato-trend" id="vegetaciona-aktivnost-krompira">
+  <div class="shell">
+    <header class="section-head reveal visible">
+      <div class="eyebrow">Copernicus Sentinel-2 · NDVI</div>
+      <h2 class="s-title">Вегетациона активност кромпира на изабраној њиви на Рајцу.</h2>
+    </header>
+
+    <div class="rajac-potato-chart-card" id="rajac-potato-chart-card">
+      <div class="rajac-potato-chart-loading" id="rajac-potato-chart-loading">Учитавање најновијих Copernicus података…</div>
+      <div class="rajac-potato-chart-host" id="rajac-potato-chart-host" aria-live="polite"></div>
+    </div>
+  </div>
+</section>
+
+<style id="rajac-potato-trend-style">
+/* Блок је намерно подигнут навише у односу на претходну секцију. */
+#vegetaciona-aktivnost-krompira{margin-top:-54px;padding-top:10px;padding-bottom:30px;background:#fff}
+#vegetaciona-aktivnost-krompira .section-head{margin-bottom:18px}
+#vegetaciona-aktivnost-krompira .s-title{font-size:clamp(30px,3.4vw,48px)}
+.rajac-potato-chart-card{position:relative;width:100%;min-height:330px;background:#fffaf0;border:1px solid #d7c8a8;border-radius:24px;box-shadow:0 12px 34px rgba(75,62,38,.07);overflow:hidden}
+.rajac-potato-chart-host{width:100%;padding:20px 22px;background:transparent;font-family:Arial,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:#142033}
+.rajac-potato-chart-loading{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;padding:30px;text-align:center;color:#65705a;background:linear-gradient(180deg,#fffaf0,#f8f0df);font-family:Arial,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;font-weight:700;z-index:2}
+.rajac-potato-chart-card.is-ready .rajac-potato-chart-loading{display:none}
+.rajac-potato-chart-card.is-error .rajac-potato-chart-loading{display:flex;color:#7a2d22;background:#fff6f3}
+.rajac-potato-chart-host .card{margin:0!important;padding:0!important;border:0!important;border-radius:0!important;box-shadow:none!important;background:transparent!important}
+.rajac-potato-chart-host .card>h2{margin:0 0 14px!important;color:#122033!important;font-size:23px!important;line-height:1.2!important;font-family:Arial,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif!important}
+.rajac-potato-chart-host .idxgrid{display:grid!important;grid-template-columns:minmax(0,1fr) 285px!important;gap:18px!important;align-items:stretch!important}
+.rajac-potato-chart-host .summary{background:#f8f1e3!important;border:1px solid #ded2bd!important;border-radius:14px!important;padding:14px!important}
+.rajac-potato-chart-host .summary dl{display:grid!important;grid-template-columns:1fr auto!important;gap:6px 10px!important;margin:0!important}
+.rajac-potato-chart-host .summary dt{font-weight:400!important}
+.rajac-potato-chart-host .summary dd{margin:0!important;font-weight:900!important}
+.rajac-potato-chart-host .trend-chart{display:block!important;width:100%!important;height:auto!important;background:#fff!important;border:1px solid #e5dac7!important;border-radius:14px!important;margin:0!important}
+.rajac-potato-chart-host .trend-chart .grid{stroke:#eee3d1!important}
+.rajac-potato-chart-host .trend-chart .axis{stroke:#d3c3aa!important}
+.rajac-potato-chart-host .trend-chart .line{stroke:#1e5aa8!important;stroke-width:3.4!important;stroke-linecap:round!important;stroke-linejoin:round!important}
+.rajac-potato-chart-host .trend-chart circle{fill:#fff!important;stroke:#1e5aa8!important;stroke-width:3!important}
+.rajac-potato-chart-host details{display:none!important}
+.rajac-potato-chart-host .muted{color:#68738a!important}
+.rajac-potato-chart-host .agro-v42-legend{margin:8px 4px 0;padding:8px 10px;border:1px solid rgba(156,111,35,.28);border-radius:10px;background:rgba(255,251,235,.72);color:#1f2937;font-size:14px;line-height:1.55}
+.rajac-potato-chart-host .agro-v42-legend strong{font-weight:800}
+.rajac-potato-chart-host .agro-v42-legend .agro-v42-measured-swatch,.rajac-potato-chart-host .agro-v42-legend .agro-v42-cloud-swatch,.rajac-potato-chart-host .agro-v42-legend .agro-v42-smooth-swatch{display:inline-block;vertical-align:middle;margin:0 5px 0 8px}
+.rajac-potato-chart-host .agro-v42-legend .agro-v42-measured-swatch{width:34px;height:0;border-top:3px solid #2563eb}
+.rajac-potato-chart-host .agro-v42-legend .agro-v42-cloud-swatch{width:10px;height:10px;border-radius:50%;background:#f59e0b;border:2px solid #92400e}
+.rajac-potato-chart-host .agro-v42-legend .agro-v42-smooth-swatch{width:44px;height:0;border-top:3px dashed #92400e}
+.rajac-potato-chart-host .agro-v42-cloud-point{fill:#f59e0b!important;stroke:#92400e!important;stroke-width:2.5!important}
+.rajac-potato-chart-host .agro-v42-cloud-ring{fill:none;stroke:#92400e;stroke-width:2;opacity:.85;pointer-events:none}
+.rajac-potato-chart-host .agro-v42-smooth{fill:none;stroke:#92400e;stroke-width:2.8;stroke-dasharray:8 6;stroke-linecap:round;stroke-linejoin:round;pointer-events:none}
+@media(max-width:850px){
+  .rajac-potato-chart-host .idxgrid{grid-template-columns:1fr!important}
+  .rajac-potato-chart-host .card>h2{font-size:20px!important}
+}
+@media(max-width:760px){
+  #vegetaciona-aktivnost-krompira{margin-top:-34px;padding-top:8px;padding-bottom:24px}
+  #vegetaciona-aktivnost-krompira .section-head{margin-bottom:14px}
+  .rajac-potato-chart-card{border-radius:18px;min-height:360px}
+  .rajac-potato-chart-host{padding:16px}
+}
+</style>
+
+<script id="rajac-potato-trend-script">
+(function(){
+  'use strict';
+
+  var PARCEL = 'agri_03_krompir';
+  var REFRESH_MS = 30 * 60 * 1000;
+  var host = document.getElementById('rajac-potato-chart-host');
+  var card = document.getElementById('rajac-potato-chart-card');
+  var loading = document.getElementById('rajac-potato-chart-loading');
+  if (!host || !card || !loading) return;
+
+  function buildUrl(){
+    var year = new Date().getFullYear();
+    var u = new URL('/agro-kopernikus/copernicus_agri_season_trends.php', window.location.origin);
+    u.searchParams.set('parcel', PARCEL);
+    u.searchParams.set('year', String(year));
+    u.searchParams.set('nocache', '1');
+    u.searchParams.set('_', String(Date.now()));
+    return u.toString();
+  }
+
+  function findNdviCard(doc){
+    var cards = Array.prototype.slice.call(doc.querySelectorAll('main.wrap > section.card, main > section.card, section.card'));
+    return cards.find(function(section){
+      var h = section.querySelector('h2');
+      return h && /^\s*NDVI\b/i.test((h.textContent || '').trim()) && section.querySelector('svg.trend-chart');
+    }) || null;
+  }
+
+  function enhanceLiveChart(){
+    /* Покрени само постојећи Agro v42 модул који црта кафену изглађену криву.
+       Убацује се после NDVI SVG-а, па нема iframe-а и нема X-Frame-Options блокаде. */
+    var old = document.getElementById('rajac-potato-v42-enhancer');
+    if (old && old.parentNode) old.parentNode.removeChild(old);
+    var script = document.createElement('script');
+    script.id = 'rajac-potato-v42-enhancer';
+    script.src = '/agro-kopernikus/agro-v42-curve-cloud-mapfilter.js?v=20260817-monitoring-' + Date.now();
+    script.defer = true;
+    document.body.appendChild(script);
+  }
+
+  function loadChart(){
+    card.classList.remove('is-error');
+    if (!card.classList.contains('is-ready')) loading.textContent = 'Учитавање најновијих Copernicus података…';
+
+    fetch(buildUrl(), {credentials:'same-origin', cache:'no-store'})
+      .then(function(response){
+        if (!response.ok) throw new Error('HTTP ' + response.status);
+        return response.text();
+      })
+      .then(function(html){
+        var parsed = new DOMParser().parseFromString(html, 'text/html');
+        var ndvi = findNdviCard(parsed);
+        if (!ndvi) throw new Error('NDVI графикон није пронађен у Agro Copernicus одговору.');
+
+        var copy = document.importNode(ndvi, true);
+        copy.querySelectorAll('details').forEach(function(el){ el.remove(); });
+        copy.querySelectorAll('.agro-v42-forecast-panel,.agro-v42-forecast-control,.agro-v42-duplicate-forecast,.agro-v42-duplicate-forecast-control').forEach(function(el){ el.remove(); });
+
+        host.innerHTML = '';
+        host.appendChild(copy);
+        card.classList.add('is-ready');
+        card.classList.remove('is-error');
+        enhanceLiveChart();
+      })
+      .catch(function(err){
+        card.classList.remove('is-ready');
+        card.classList.add('is-error');
+        loading.textContent = 'Графикон тренутно није могуће учитати. Agro Copernicus подаци нису мењани.';
+        if (window.console && console.warn) console.warn('Rajac NDVI embed:', err);
+      });
+  }
+
+  loadChart();
+  window.setInterval(loadChart, REFRESH_MS);
+})();
+</script>
+
+<section class="section light" id="stubovi"><div class="shell"><header class="section-head reveal"><div class="eyebrow">Стубови мониторинга</div><h2 class="s-title">Технологија у служби <em>заштите природе</em></h2><p class="s-desc">Кључни стубови система обједињују аутоматизовану обраду података, даљинску детекцију, акустички надзор фауне, праћење сисара, климатска и звучна мерења и процену квалитета ноћног неба.</p></header><div class="cards-grid columns-3"><article class="info-card reveal"><div class="num">01 · 🤖</div><h3>SMART систем и вештачка интелигенција</h3><p>Централна платформа омогућава локалну обраду података и повезивање звукова птица, ултразвука слепих мишева, визуелних снимака, микроклиме и података о тами неба.</p><span>локална аналитика</span></article><article class="info-card reveal"><div class="num">02 · 🌿</div><h3>Мониторинг флоре и станишта</h3><p>Sentinel-2 снимци, NDVI и RECI прате здравље биљака, сезонске промене и инвазивне врсте, док дронови омогућавају детаљно снимање ливада, пашњака и других осетљивих станишта.</p><span>даљинска детекција</span></article><article class="info-card reveal"><div class="num">03 · 🐦</div><h3>Орнитофауна</h3><p>BirdNET-Go аутоматски препознаје врсте на основу оглашавања и певања, што омогућава континуирано праћење присуства, сезонске активности и промена у структури заједница птица.</p><span>BirdNET-Go</span></article><article class="info-card reveal"><div class="num">04 · 🦇</div><h3>Слепи мишеви и хироптерофауна</h3><p>Ултразвучни сензори до 384 kHz бележе ехолокационе сигнале и дају увид у активност врста које снажно реагују на светлосно загађење, губитак станишта и климатске промене.</p><span>до 384 kHz</span></article><article class="info-card reveal"><div class="num">05 · 🦌</div><h3>Сисари под видео-надзором</h3><p>Паметне TrackMix камере са ауто-тракингом и 4K резолуцијом омогућавају евидентирање присуства, активности и просторног понашања крупнијих и средњих сисара.</p><span>4K + auto-tracking</span></article><article class="info-card reveal"><div class="num">06 · 🌙</div><h3>Тамно небо, клима и бука</h3><p>SQM-LE уређаји, аутоматска метеоролошка станица Davis Vantage Pro2 и сензори антропогене буке прате услове који директно утичу на живи свет и функционалност екосистема.</p><span>SQM-LE + Davis VP2</span></article></div></div></section><section class="section lighter" id="oprema-monitoringa"><div class="shell"><header class="section-head reveal"><div class="eyebrow">Опрема и извори података</div><h2 class="s-title">Сателити, камере и мерења <em>на терену</em></h2><p class="s-desc">Мониторинг ПИО „Рајац” ослања се на више извора података: сателитско праћење вегетације и станишта, теренске камере за евиденцију сисара и инструменте за процену квалитета ноћног неба.</p></header><div class="monitoring-image-row monitoring-showcase-row reveal"><article class="monitoring-image-card monitoring-showcase-card"><figure><div class="monitoring-showcase-media"><img alt="Сателит Copernicus Sentinel-2 за праћење биодиверзитета на целом простору ПИО Рајац" decoding="async" loading="lazy" src="https://piorajac.rs/wp-content/uploads/2026/06/sental2.jpg"/></div><figcaption><small>САТЕЛИТСКИ МОНИТОРИНГ</small><h3>Copernicus Sentinel-2</h3><p>Сателитско праћење биодиверзитета, вегетације и промена станишта на целом простору ПИО „Рајац”.</p></figcaption></figure></article><article class="monitoring-image-card monitoring-showcase-card"><figure><div class="monitoring-showcase-media"><img alt="Камера Reolink Go Series 4K PT за праћење сисара на Рајцу" decoding="async" loading="lazy" src="https://piorajac.rs/wp-content/uploads/2026/06/reolink.jpg"/></div><figcaption><small>ТЕРЕНСКЕ КАМЕРЕ</small><h3>Reolink Go Series 4K PT</h3><p>Камера за праћење сисара, активности дивљачи и просторног понашања животиња на Рајцу.</p></figcaption></figure></article><article class="monitoring-image-card monitoring-showcase-card"><figure><div class="monitoring-showcase-media"><img alt="Опрема за мониторинг квалитета неба и светлосне загађености на Рајцу" decoding="async" loading="lazy" src="https://piorajac.rs/wp-content/uploads/2026/06/zvnebosv.jpg"/></div><figcaption><small>ТАМНО НЕБО</small><h3>Квалитет неба и светлосно загађење</h3><p>Опрема за мерење таме ноћног неба и праћење утицаја вештачког осветљења на екосистеме.</p></figcaption></figure></article></div></div></section><section class="section lighter" id="upravljanje"><div class="shell"><header class="section-head reveal"><div class="eyebrow">Адаптивно управљање</div><h2 class="s-title">Од података до <em>благовремене реакције</em></h2><p class="s-desc">Вредност система није само у количини података већ у њиховој примени. Прикупљене информације се претварају у основу за брже препознавање угрожавајућих процеса и паметније управљање заштићеним подручјем.</p></header><div class="phase-grid reveal"><article class="phase-card"><div class="phase-num">01</div><h3>Прикупљање</h3><p>Сензори, камере, метеостаница, SQM, дронови и сателити бележе стање у простору и времену.</p></article><article class="phase-card"><div class="phase-num">02</div><h3>Обрада</h3><p>АИ препознаје врсте, издваја догађаје и повезује биолошке и абиотичке параметре у истом току.</p></article><article class="phase-card"><div class="phase-num">03</div><h3>Анализа</h3><p>Подаци се тумаче кроз просторне и временске обрасце ради уочавања промена, ризика и приоритета.</p></article><article class="phase-card"><div class="phase-num">04</div><h3>Одлука</h3><p>Управљач добија основу за благовремено реаговање, планирање мера и дугорочно очување екосистема.</p></article></div></div></section><section class="section light" id="izvestaji"><div class="shell"><header class="section-head reveal"><div class="eyebrow">Актуелно</div><h2 class="s-title">Извештаји и <em>теренске објаве</em></h2><p class="s-desc">Преглед најновијих извештаја, резултата посматрања и важних објава о стању природе, мониторингу и теренским активностима на Рајцу.</p></header><div class="reports-grid"><a class="report-card reveal" href="https://piorajac.rs/rajac-vesti/monitoring2025/"><small>Извештај</small><h3>Мониторинг вегетације и птица 2025. године</h3><p>Пример синтетичког извештаја који повезује стање станишта и фауне у једном управљачком прегледу.</p><span class="more">Отвори објаву →</span></a><a class="report-card reveal" href="https://piorajac.rs/rajac-vesti/zimski-monitoring-ptice-2026/"><small>Терен</small><h3>Зимски мониторинг птица 2026. године</h3><p>Сезонско праћење орнитофауне показује како се систем користи за континуирано праћење годишњих промена.</p><span class="more">Отвори објаву →</span></a><a class="report-card reveal" href="https://piorajac.rs/rajac-vesti/montaza-meteo-stanice/"><small>Инфраструктура</small><h3>Монтажа аутоматске метеоролошке станице на Рајцу</h3><p>Кључни корак за повезивање микроклиме, светлосног загађења, вегетације и фауне у реалном времену.</p><span class="more">Отвори објаву →</span></a><a class="report-card reveal" href="https://piorajac.rs/rajac-vesti/suvoborski-duvalijus-duvalius-suvoborensis-nova-vrsta/"><small>Наука</small><h3>Сувоборски дувалијус — нова врста за науку</h3><p>Добар пример како мониторинг, истраживање и заштита на Рајцу доводе до нових стручних сазнања.</p><span class="more">Отвори објаву →</span></a></div></div></section>
+<section class="section lighter" id="kopernikindeks-ugradjen" aria-label="Copernicus индекси вегетације">
+  <div class="shell">
+    <div class="rajac-kopernik-embed-card" id="rajac-kopernik-embed-card">
+      <div class="rajac-kopernik-embed-loading" id="rajac-kopernik-embed-loading">Учитавање најновије Copernicus карте и индекса…</div>
+      <div class="rajac-kopernik-embed-error" id="rajac-kopernik-embed-error">
+        <div>Тренутно није могуће учитати уграђену Copernicus страницу.</div>
+        <a href="https://piorajac.rs/kopernikindeks/">Отвори Copernicus индексе →</a>
+      </div>
+      <iframe class="rajac-kopernik-embed-frame" id="rajac-kopernik-embed-frame" title="Copernicus NDVI, NDMI и RECI индекси — ПИО Рајац" loading="lazy"></iframe>
+    </div>
+  </div>
+</section>
+<section class="section dark2"><div class="shell"><div class="closing-box reveal"><h2>Технологија, наука и природа у истом систему</h2><p>Мониторинг екосистема на Рајцу није заснован само на прикупљању података, већ на њиховом претварању у благовремену реакцију, стручну интерпретацију и боље управљачке одлуке. Управо зато ова страница може постати централно место за представљање паметног парка, теренске инфраструктуре и дугорочне заштите ПИО „Рајац”.</p></div></div></section><script>document.querySelectorAll('.reveal').forEach(e=>e.classList.add('visible'));</script></main><script data-pio-mobile="habitats-v1" defer src="https://piorajac.rs/assets/mobile/pio-mobile-stanista.js?v=20260714-st-v8"></script>
+<script id="rajac-kopernikindeks-embed-script">
+(function(){
+  'use strict';
+
+  var TARGET = '/kopernikindeks/';
+  var REFRESH_MS = 30 * 60 * 1000;
+  var frame = document.getElementById('rajac-kopernik-embed-frame');
+  var card = document.getElementById('rajac-kopernik-embed-card');
+  if (!frame || !card) return;
+
+  var resizeObserver = null;
+  var mutationObserver = null;
+  var resizeTimer = null;
+
+  function prepareSource(html){
+    html = String(html || '');
+    html = html.replace(/<meta[^>]+http-equiv=["']Content-Security-Policy["'][^>]*>/ig, '');
+
+    var inject = '<base href="' + window.location.origin + TARGET + '">' +
+      '<style id="pio-monitoring-embed-overrides">' +
+      'html,body{margin:0!important;padding:0!important;overflow-x:hidden!important;background:#fff!important;min-height:0!important;}' +
+      'body{height:auto!important;}' +
+      'main{margin-bottom:0!important;padding-bottom:0!important;min-height:0!important;}' +
+      'h1,h2{opacity:1!important;}' +
+      '.leaflet-container{height:520px!important;min-height:520px!important;max-height:520px!important;margin-top:0!important;margin-bottom:0!important;}' +
+      '@media(max-width:760px){.leaflet-container{height:420px!important;min-height:420px!important;max-height:420px!important;}}' +
+      '</style>';
+
+    if (/<head\b[^>]*>/i.test(html)) {
+      return html.replace(/<head\b([^>]*)>/i, '<head$1>' + inject);
+    }
+    return '<!doctype html><html lang="sr-RS"><head><meta charset="utf-8">' + inject + '</head><body>' + html + '</body></html>';
+  }
+
+  function makeIntroReadable(doc){
+    if (!doc) return;
+    var nodes = doc.querySelectorAll('h1,h2,h3,p,div');
+    Array.prototype.forEach.call(nodes, function(el){
+      var t = (el.textContent || '').replace(/\s+/g,' ').trim();
+      if (
+        t === 'Последњи сателитски индекс за ПИО „Рајац”' ||
+        t === 'Последњи сателитски индекс за ПИО „Рајац“' ||
+        t.indexOf('Најновија обрађена Copernicus карта за NDVI, NDMI и RECI') === 0
+      ) {
+        el.style.setProperty('color','#142033','important');
+        el.style.setProperty('opacity','1','important');
+        el.style.setProperty('text-shadow','none','important');
+      }
+    });
+  }
+
+  function clickWholePIO(doc){
+    if (!doc) return;
+    var buttons = doc.querySelectorAll('button,a');
+    for (var i=0;i<buttons.length;i++){
+      var t = (buttons[i].textContent || '').replace(/\s+/g,' ').trim();
+      if (/^Цео\s+ПИО$/i.test(t) || /Цео\s+ПИО/i.test(t)) {
+        try { buttons[i].click(); } catch(e) {}
+        return;
+      }
+    }
+  }
+
+  function compactMapAndRefit(){
+    try {
+      var doc = frame.contentDocument;
+      var win = frame.contentWindow;
+      if (!doc || !win) return;
+
+      makeIntroReadable(doc);
+
+      var map = doc.querySelector('.leaflet-container');
+      if (map) {
+        var targetH = window.matchMedia('(max-width:760px)').matches ? 420 : 520;
+        map.style.setProperty('height', targetH + 'px', 'important');
+        map.style.setProperty('min-height', targetH + 'px', 'important');
+        map.style.setProperty('max-height', targetH + 'px', 'important');
+      }
+
+      try { win.dispatchEvent(new win.Event('resize')); } catch(e) {}
+      setTimeout(function(){ clickWholePIO(doc); },120);
+      setTimeout(function(){
+        try { win.dispatchEvent(new win.Event('resize')); } catch(e) {}
+        clickWholePIO(doc);
+      },500);
+    } catch(e) {}
+  }
+
+  function findLastContentAnchor(doc){
+    if (!doc) return null;
+    var nodes = doc.querySelectorAll('p,div,section,article');
+    for (var i = nodes.length - 1; i >= 0; i--) {
+      var t = (nodes[i].textContent || '').replace(/\s+/g,' ').trim();
+      if (t.indexOf('Индекс је оријентациони приказ стања вегетације') === 0) {
+        return nodes[i];
+      }
+    }
+    return null;
+  }
+
+  function naturalContentBottom(doc){
+    var win = frame.contentWindow;
+    if (!doc || !win || !doc.body) return 0;
+
+    /*
+      НЕ користимо body/html scrollHeight. Код srcdoc iframe-а висина viewport-а
+      улази у scrollHeight, па је старо решење правило повратну спрегу:
+      iframe се повећа 2 px -> scrollHeight се повећа -> iframe поново расте.
+      Висину зато меримо до стварног последњег садржаја странице.
+    */
+    var anchor = findLastContentAnchor(doc);
+    if (anchor) {
+      var bottom = anchor.getBoundingClientRect().bottom + (win.pageYOffset || 0);
+      var box = anchor;
+
+      /* Укључи доњи padding непосредне картице, али никада велики wrapper/main. */
+      for (var level = 0; level < 4; level++) {
+        var parent = box.parentElement;
+        if (!parent || parent === doc.body || parent === doc.documentElement) break;
+        var pr = parent.getBoundingClientRect();
+        var parentBottom = pr.bottom + (win.pageYOffset || 0);
+        var extra = parentBottom - bottom;
+        if (extra >= 0 && extra <= 120) {
+          bottom = parentBottom;
+          box = parent;
+        } else {
+          break;
+        }
+      }
+      return Math.ceil(bottom + 8);
+    }
+
+    /* Резерва: дно последњег видљивог body детета, без html/body scrollHeight. */
+    var children = doc.body.children;
+    var maxBottom = 0;
+    for (var j = 0; j < children.length; j++) {
+      var el = children[j];
+      var cs = win.getComputedStyle(el);
+      if (cs.display === 'none' || cs.position === 'fixed') continue;
+      var r = el.getBoundingClientRect();
+      var b = r.bottom + (win.pageYOffset || 0);
+      if (isFinite(b)) maxBottom = Math.max(maxBottom, b);
+    }
+    return Math.ceil(maxBottom + 8);
+  }
+
+  function fitFrame(){
+    try {
+      var doc = frame.contentDocument;
+      if (!doc) return;
+      var h = naturalContentBottom(doc);
+      if (h < 250) return;
+
+      /* Заштита од било каквог будућег runaway ширења. */
+      h = Math.min(h, 1800);
+      var current = parseFloat(frame.style.height || '') || frame.getBoundingClientRect().height || 0;
+      if (Math.abs(current - h) > 3) {
+        frame.style.height = h + 'px';
+      }
+      card.style.minHeight = '0';
+    } catch (e) {}
+  }
+
+  function watchFrame(){
+    try {
+      var doc = frame.contentDocument;
+      if (!doc || !doc.body) return;
+
+      compactMapAndRefit();
+      fitFrame();
+
+      if (resizeObserver) resizeObserver.disconnect();
+      if (mutationObserver) mutationObserver.disconnect();
+
+      /*
+        Намерно НЕ посматрамо ResizeObserver-ом html/body iframe-а.
+        То је био узрок сталног ширења простора испод карте.
+      */
+      mutationObserver = new MutationObserver(function(){
+        clearTimeout(resizeTimer);
+        resizeTimer = setTimeout(function(){
+          makeIntroReadable(doc);
+          compactMapAndRefit();
+          fitFrame();
+        },160);
+      });
+      mutationObserver.observe(doc.body,{subtree:true,childList:true,attributes:true,characterData:false});
+
+      if (doc.fonts && doc.fonts.ready) {
+        doc.fonts.ready.then(function(){
+          compactMapAndRefit();
+          fitFrame();
+        }).catch(function(){});
+      }
+
+      setTimeout(function(){ compactMapAndRefit(); fitFrame(); },250);
+      setTimeout(function(){ compactMapAndRefit(); fitFrame(); },900);
+      setTimeout(function(){ compactMapAndRefit(); fitFrame(); },1800);
+      setTimeout(function(){ compactMapAndRefit(); fitFrame(); },3200);
+    } catch (e) {}
+  }
+
+  async function loadEmbeddedPage(){
+    card.classList.remove('has-error');
+    try {
+      var sep = TARGET.indexOf('?') === -1 ? '?' : '&';
+      var response = await fetch(TARGET + sep + '_monitoring_embed=' + Date.now(), {
+        credentials: 'same-origin',
+        cache: 'no-store',
+        headers: {'X-Requested-With':'XMLHttpRequest'}
+      });
+      if (!response.ok) throw new Error('HTTP ' + response.status);
+      var html = await response.text();
+      if (!html || html.length < 200) throw new Error('Празан одговор');
+
+      frame.srcdoc = prepareSource(html);
+      card.classList.add('is-ready');
+    } catch (err) {
+      card.classList.remove('is-ready');
+      card.classList.add('has-error');
+      console.error('Copernicus embed:', err);
+    }
+  }
+
+  frame.addEventListener('load', function(){
+    card.classList.add('is-ready');
+    watchFrame();
+  });
+
+  loadEmbeddedPage();
+  setInterval(loadEmbeddedPage, REFRESH_MS);
+
+  window.addEventListener('resize', function(){
+    compactMapAndRefit();
+    fitFrame();
+  }, {passive:true});
+})();
+</script>
+</body></html>
