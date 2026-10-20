@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="sr">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Годишњи извештаји о светлосном загађењу — ПИО Рајац</title>
+<meta name="description" content="Годишњи ALAN / VIIRS извештаји о светлосном загађењу ПИО Рајац, дугорочни тренд 2015–2025. и месечни оперативни билтен за 2026. годину.">
+<link rel="stylesheet" href="assets/alan-report.css">
+</head>
+<body>
+<header class="top"><a class="brand" href="https://piorajac.rs/"><span class="mark">△</span><span>ПИО „РАЈАЦ“</span></a><nav class="nav"><a href="https://piorajac.rs/">Почетна</a><a href="https://piorajac.rs/monitoring-izvestaji/">Мониторинг извештаји</a><a class="active" href="https://piorajac.rs/monitoring-svetlosno-zagadjenje/">Светлосно загађење</a></nav></header>
+<section class="hero"><div class="wrap"><div class="kicker">VIIRS / NASA Black Marble · годишњи тренд</div><h1>Светлосно<br>загађење</h1><p>Главни ниво извештавања су годишњи извештаји, јер боље показују дугорочни тренд од појединачних месечних вредности. Месечни извештаји остају као оперативни билтен само за текућу 2026. годину.</p><div class="btns"><a class="btn green" href="godisnji/2015-2025/">Тренд 2015–2025.</a><a class="btn ghost" href="https://piorajac.rs/monitoring-svetlosno-zagadjenje/">Јавна карта</a></div></div></section>
+<main class="wrap">
+<section id="najnoviji" class="panel status pending"><div><span class="status-label">Годишњи мониторинг</span><h2>Годишњи извештаји 2015–2025.</h2><p>Годишњи извештаји обухватају период од 2015. до 2025. године и посебан преглед тренда за цео период. Нове године се додају кад обрада сателитских података буде завршена.</p><div class="btns"><a class="btn green" href="godisnji/2015-2025/">Тренд 2015–2025.</a><a class="btn ghost" href="https://piorajac.rs/monitoring-svetlosno-zagadjenje/">Јавна карта</a></div></div><div><img src="assets/alan-card.webp" alt="Ноћно небо Рајца" style="border-radius:10px"></div></section>
+<section class="panel"><h2>Зашто су годишњи извештаји главни?</h2><p class="lead">Месечне VIIRS вредности могу осцилирати због облачности, снежног покривача, сезонске вегетације, влажности ваздуха, аеросола и краткотрајних извора светла. Зато је за оцену стања и тренда светлосног загађења поузданији годишњи ниво.</p><div class="grid"><div class="card"><div class="card-body"><span class="tag">Главни документ</span><h3>Годишњи извештаји 2015–2025.</h3><p>Свака година добија посебан HTML извештај са средњом радијансом, медијаном, максимумом, P90, бројем пиксела и променом у односу на претходну годину.</p></div></div><div class="card"><div class="card-body"><span class="tag">Стручни преглед</span><h3>Тренд 2015–2025.</h3><p>Посебна страница обједињује целу серију, издваја најсветлију и најтамнију годину и тумачи укупан тренд.</p></div></div><div class="card"><div class="card-body"><span class="tag">Оперативно</span><h3>Месечни билтен 2026.</h3><p>Месечни извештаји се користе само за текућу годину као оперативно праћење и не замењују годишњи закључак.</p></div></div></div></section>
+<section class="panel"><h2>Годишња архива</h2><div id="annual-list" class="archive-table"><div class="row"><strong>Још нема објављених годишњих извештаја</strong><span>Годишњи извештаји се објављују по завршеној обради података.</span><span class="badge">у припреми</span></div></div></section>
+
+<section class="panel public-map-panel"><h2>Јавна карта светлосног загађења</h2><p class="lead">За преглед саме интерактивне карте, избор периода и приказ границе ПИО „Рајац”, користи се постојећа јавна страница мониторинга светлосног загађења.</p><div class="btns"><a class="btn green" href="https://piorajac.rs/monitoring-svetlosno-zagadjenje/">Отвори јавну карту светлосног загађења</a><a class="btn ghost" href="godisnji/2015-2025/">Отвори тренд 2015–2025.</a></div></section>
+<section class="panel"><h2>Месечни извештаји — само 2026.</h2><p class="lead">Овај део служи као оперативни билтен за текућу годину. Месечни закључци се тумаче опрезно и не користе се као главни доказ дугорочног тренда.</p><div class="btns"><a class="btn green" href="reports/2026-01_2026-09/">Месечни преглед 2026.</a></div></section>
+
+<section id="annual-chart-panel" class="panel chart-panel" style="display:none">
+  <h2>Средња годишња радијанса по годинама</h2>
+  <p class="lead">Графикон приказује дугорочно кретање средње годишње ноћне радијансе за ПИО „Рајац”. Вредности су у nW/cm²/sr.</p>
+  <div class="chart-card">
+    <div class="chart-head"><div><h3>Годишњи тренд светлосног притиска</h3><p>Годишњи ниво је главни за стручно тумачење, јер умањује утицај облачности, снега, сезонске вегетације и краткотрајних месечних одступања.</p></div><div class="chart-legend"><i></i><span>Средња радијанса</span></div></div>
+    <div id="annual-chart-target" class="chart-empty">Графикон ће се приказати када се обнови data/annual-reports.json.</div>
+  </div>
+</section>
+<section class="panel"><h2>Методологија</h2><p>Годишњи извештај користи ноћну радијансу у nW/cm²/sr као индикатор притиска вештачког осветљења. Када постоји годишњи JSON, користи се директно. Када су доступни само месечни JSON резултати, годишња вредност се изводи из доступних месеци, уз напомену о броју месеци који су ушли у обрачун.</p><p class="note">Овим се раздвајају две врсте извештавања: годишњи документи за стручну оцену стања и месечни билтен за текуће оперативно праћење.</p></section>
+</main><footer class="footer"><div class="wrap"><b>ПИО „РАЈАЦ“</b><span>© ПИО Рајац 2026. Годишњи мониторинг светлосног загађења.</span></div></footer>
+<script>
+function annualChartSvg(items){
+  items=items.map(x=>({year:String(x.year),mean:Number(x.mean_radiance),url:x.url||'#'})).filter(x=>isFinite(x.mean)).sort((a,b)=>a.year.localeCompare(b.year));
+  if(items.length<2)return '<div class="chart-empty">Нема довољно годишњих вредности за графикон.</div>';
+  const W=980,H=360,L=64,R=30,T=34,B=56,cw=W-L-R,ch=H-T-B;
+  const vals=items.map(x=>x.mean), min=Math.min(...vals), max=Math.max(...vals), pad=Math.max((max-min)*0.12,0.02), ymin=Math.max(0,min-pad), ymax=max+pad;
+  const x=i=>L+(items.length===1?0:(cw*i/(items.length-1)));
+  const y=v=>T+ch-((v-ymin)/(ymax-ymin))*ch;
+  const pts=items.map((d,i)=>[x(i),y(d.mean)]);
+  let grid='', labels='', circles='', poly=pts.map(p=>p[0].toFixed(1)+','+p[1].toFixed(1)).join(' ');
+  for(let i=0;i<=4;i++){let val=ymin+(ymax-ymin)*i/4, yy=y(val);grid+=`<line class="chart-grid" x1="${L}" y1="${yy.toFixed(1)}" x2="${W-R}" y2="${yy.toFixed(1)}"></line><text class="axis-text" x="12" y="${(yy+4).toFixed(1)}">${val.toFixed(2)}</text>`;}
+  items.forEach((d,i)=>{let xx=x(i), yy=y(d.mean);labels+=`<text class="chart-year-label" x="${xx.toFixed(1)}" y="${H-22}" text-anchor="middle">${d.year}</text>`;circles+=`<a href="${d.url}"><circle class="chart-point${i===items.length-1?' latest':''}" cx="${xx.toFixed(1)}" cy="${yy.toFixed(1)}" r="5"><title>${d.year}: ${d.mean.toFixed(3)} nW/cm²/sr</title></circle></a>`;});
+  const area=`M ${pts[0][0]} ${T+ch} L `+pts.map(p=>p[0].toFixed(1)+' '+p[1].toFixed(1)).join(' L ')+` L ${pts[pts.length-1][0]} ${T+ch} Z`;
+  let mini='<div class="chart-table-mini"><div class="mini-row"><span>Година</span><span>Однос у серији</span><span>Средња радијанса</span></div>';
+  items.forEach(d=>{let w=((d.mean-ymin)/(ymax-ymin))*100;mini+=`<a class="mini-row" href="${d.url}"><span>${d.year}</span><span class="mini-bar"><i style="width:${Math.max(2,Math.min(100,w)).toFixed(1)}%"></i></span><span>${d.mean.toFixed(3)} nW/cm²/sr</span></a>`;});
+  mini+='</div><p class="chart-foot">Клик на годину отвара појединачни годишњи извештај.</p>';
+  return `<svg class="annual-chart" viewBox="0 0 ${W} ${H}" role="img" aria-label="Графикон средње годишње радијансе"><defs><linearGradient id="annualArea" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#d8b55b"></stop><stop offset="1" stop-color="#fffdf8"></stop></linearGradient></defs><rect x="0" y="0" width="${W}" height="${H}" rx="14" fill="#fffdf8"></rect>${grid}<line class="chart-axis" x1="${L}" y1="${T}" x2="${L}" y2="${T+ch}"></line><line class="chart-axis" x1="${L}" y1="${T+ch}" x2="${W-R}" y2="${T+ch}"></line><text class="axis-text axis-title" x="${L}" y="18">nW/cm²/sr</text><path class="chart-area" d="${area}"></path><polyline class="chart-line" points="${poly}"></polyline>${circles}${labels}</svg>${mini}`;
+}
+fetch('data/annual-reports.json?ts='+Date.now(),{cache:'no-store'}).then(r=>r.ok?r.json():null).then(data=>{
+  if(!data||!Array.isArray(data.reports)||!data.reports.length)return;
+  let reports=data.reports.filter(x=>x&&x.mean_radiance!=null);
+  if(!reports.length)return;
+  let sorted=[...reports].sort((a,b)=>String(b.year).localeCompare(String(a.year)));
+  let latest=sorted[0];
+  let top=document.querySelector('.status');
+  top.classList.remove('pending');top.querySelector('.status-label').textContent='Најновији годишњи извештај';top.querySelector('h2').textContent=latest.title||'Годишњи извештај о светлосном загађењу';top.querySelector('p').innerHTML=latest.summary||'Годишњи извештај је објављен.';top.querySelector('.btns').innerHTML='<a class="btn green" href="'+latest.url+'">Отвори годишњи извештај</a><a class="btn ghost" href="godisnji/2015-2025/">Тренд 2015–2025.</a><a class="btn ghost" href="https://piorajac.rs/monitoring-svetlosno-zagadjenje/">Јавна карта</a>';
+  document.getElementById('annual-list').innerHTML=sorted.map(x=>'<a class="row" href="'+x.url+'"><strong>'+x.year_label+'</strong><span>'+x.title+'</span><span class="badge">'+(x.mean_radiance==null?'—':Number(x.mean_radiance).toFixed(3))+'</span></a>').join('');
+  const panel=document.getElementById('annual-chart-panel');panel.style.display='block';document.getElementById('annual-chart-target').className='';document.getElementById('annual-chart-target').innerHTML=annualChartSvg(reports);
+}).catch(()=>{});
+</script>
+<script defer src="/rajac-design/rajac-vrh-button.js?v=20260707-v6-round-no-home"></script>
+</body></html>
