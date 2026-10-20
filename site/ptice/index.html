@@ -360,6 +360,8 @@ img{display:block;max-width:100%}
   font:400 1.65rem/1.02 Georgia,"Times New Roman",serif;
   color:#0e1318;
 }
+.bird-card-title a{color:inherit;text-decoration:none}
+.bird-card-title a:hover,.bird-card-title a:focus-visible{color:#1f6b9a;text-decoration:underline;text-underline-offset:3px}
 .bird-card-sci{
   margin:0 0 10px;
   color:#1f6b9a;
@@ -1531,7 +1533,7 @@ function cardTemplate(bird, index) {
         <span class="bird-card-badge">${badge}</span>
       </a>
       <div class="bird-card-body">
-        <h2 class="bird-card-title">${bird.name}</h2>
+        <h2 class="bird-card-title"><a href="${bird.url}">${bird.name}</a></h2>
         <p class="bird-card-sci">${bird.sci}</p>
         <p class="bird-card-copy">${bird.blurb}</p>
         <div class="bird-card-meta">${pills}</div>
