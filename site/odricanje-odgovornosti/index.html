@@ -72,6 +72,11 @@ li::before{content:"";position:absolute;left:3px;top:.78em;width:7px;height:7px;
   .back-to-top.is-visible{opacity:1;visibility:visible;transform:none;}
 }
 @media(max-width:480px){.topbar-inner,.wrap{width:calc(100% - 28px);}.chips{left:14px;right:14px;}h1{font-size:1.8rem;}.lead{font-size:1.05rem;line-height:1.6;}}
+.topbar{background:#fff;color:var(--ink);border-bottom:1px solid var(--line);}
+.brand{color:var(--navy);}
+.brand span{color:#b8892a;}
+@media(min-width:1101px){.topbar-inner{justify-content:flex-start;gap:26px;min-height:66px;}.chips{position:static;border:0;background:transparent;flex:1 1 auto;min-width:0;}.chips-inner{width:auto;margin:0;padding:12px 0;flex-wrap:wrap;overflow:visible;}}
+@media(max-width:1100px){.menu-toggle{border-color:var(--line);color:var(--navy);}}
 .updated{margin-top:34px;color:#6b7068;font-size:14px}
 </style>
 </head>
@@ -79,11 +84,7 @@ li::before{content:"";position:absolute;left:3px;top:.78em;width:7px;height:7px;
 <header class="topbar">
   <div class="topbar-inner">
     <a class="brand" href="https://piorajac.rs/">ПИО <span>„РАЈАЦ“</span></a>
-    <a class="back" href="https://piorajac.rs/">↩ Назад на сајт</a>
-    <button class="menu-toggle" type="button" aria-label="Отвори мени" aria-controls="privacy-menu" aria-expanded="false"><span class="menu-toggle-box" aria-hidden="true"><span></span><span></span><span></span></span></button>
-  </div>
-</header>
-<nav class="chips" aria-label="Правни документи">
+    <nav class="chips" aria-label="Правни документи">
   <div class="chips-inner" id="privacy-menu">
     <a class="chip" href="https://piorajac.rs/politika-linkova/">Политика линкова</a>
     <a class="chip active" href="https://piorajac.rs/odricanje-odgovornosti/" aria-current="page">Одрицање одговорности</a>
@@ -92,6 +93,9 @@ li::before{content:"";position:absolute;left:3px;top:.78em;width:7px;height:7px;
     <a class="chip" href="https://piorajac.rs/podesavanja-privatnosti/">Подешавања приватности</a>
   </div>
 </nav>
+    <button class="menu-toggle" type="button" aria-label="Отвори мени" aria-controls="privacy-menu" aria-expanded="false"><span class="menu-toggle-box" aria-hidden="true"><span></span><span></span><span></span></span></button>
+  </div>
+</header>
 <main>
   <div class="wrap">
 <h1>Одрицање одговорности</h1>
