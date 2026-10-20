@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="sr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Мониторинг извештаји — ПИО „Рајац“</title>
+  
+  <meta name="rajac-build" content="monitoring-izvestaji-restored-from-index75-minimal-fix-20260617">
+  <link rel="preload" as="image" href="https://piorajac.rs/wp-content/uploads/2026/06/1780416944015.jpg">
+  <style>
+    *,*::before,*::after{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;background:#f8f6ef;color:#17251b;font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+    a{text-decoration:none;color:inherit}
+    img{display:block;max-width:100%}
+    :root{
+      --dark:#06130b;--dark2:#0a1b10;--green:#165f35;--green2:#1c7b43;--gold:#c99b39;--gold2:#e7cf88;
+      --paper:#fffdf8;--soft:#f8f6ef;--line:#e7dfcf;--muted:#647268;--ink:#17251b;--night:#171b31;
+      --shadow:0 18px 46px rgba(8,25,13,.13);--shadow2:0 10px 28px rgba(8,25,13,.08);
+      --serif:Georgia,"Times New Roman",serif;--sans:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;
+      --hero-bg:url('https://piorajac.rs/wp-content/uploads/2026/06/1780416944015.jpg');
+      --cop-bg:url('assets/copernicus-card.webp');
+      --meteo-bg:url('https://piorajac.rs/wp-content/uploads/2026/06/meteo.webp');
+      --night-bg:url('assets/night-card.webp');
+      --bio-bg:url('assets/biodiverzitet-card.webp');
+    }
+    .skip{position:absolute;left:-9999px;top:auto}.skip:focus{left:16px;top:16px;z-index:999;background:#fff;color:#111;padding:10px 14px;border-radius:10px}
+    .topbar{position:fixed;z-index:50;top:0;left:0;right:0;height:58px;padding:0 5.9vw;display:flex;align-items:center;gap:26px;background:rgba(5,15,10,.86);border-bottom:1px solid rgba(255,255,255,.08);backdrop-filter:blur(14px)}
+    .brand{display:flex;align-items:center;gap:12px;color:#fff;min-width:210px}.brand-mark{width:35px;height:35px;border:1px solid rgba(255,255,255,.42);border-radius:999px;display:grid;place-items:center;background:rgba(255,255,255,.05)}
+    .brand-mark svg{width:24px;height:24px;stroke:rgba(255,255,255,.88);fill:none;stroke-width:1.6}.brand-name{font-family:var(--serif);font-size:20px;letter-spacing:.055em;white-space:nowrap}.nav{margin-left:auto;display:flex;gap:25px;align-items:center}.nav a{position:relative;font-size:13px;font-weight:700;letter-spacing:.005em;color:rgba(255,255,255,.82);white-space:nowrap}.nav a:hover,.nav a.active{color:#fff}.nav a.active::after{content:"";position:absolute;left:0;right:0;bottom:-19px;height:2px;background:var(--gold)}.search-btn{margin-left:8px;color:rgba(255,255,255,.88);width:25px;height:25px;display:grid;place-items:center}.search-btn svg{width:17px;height:17px;stroke:currentColor;fill:none;stroke-width:2}
+    .hero{position:relative;min-height:500px;padding:86px 5.9vw 76px;display:flex;align-items:flex-end;overflow:hidden;color:#fff;background:#132015;isolation:isolate}.hero::before{content:"";position:absolute;inset:0;z-index:-2;background-image:linear-gradient(90deg,rgba(4,12,7,.92) 0%,rgba(4,12,7,.68) 38%,rgba(4,12,7,.24) 70%,rgba(4,12,7,.42) 100%),var(--hero-bg);background-size:cover;background-position:center 58%;transform:scale(1.025)}.hero::after{content:"";position:absolute;z-index:-1;left:0;right:0;bottom:0;height:142px;background:linear-gradient(to bottom,rgba(248,246,239,0),rgba(248,246,239,.98))}.hero-inner{max-width:675px}.kicker{display:block;color:var(--gold2);text-transform:uppercase;letter-spacing:.12em;font-size:16px;font-weight:800;margin-bottom:18px}.hero h1{font-family:var(--serif);font-size:clamp(48px,7vw,86px);line-height:.96;font-weight:400;letter-spacing:-.055em;text-shadow:0 8px 30px rgba(0,0,0,.34)}.hero p{max-width:570px;margin:24px 0 0;color:rgba(255,255,255,.83);font-size:17px;line-height:1.68;font-weight:600}.hero-actions{display:flex;flex-wrap:wrap;gap:13px;margin-top:31px}.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:46px;padding:0 20px;border-radius:8px;font-size:13px;font-weight:850;border:1px solid transparent;transition:.18s ease}.btn:hover{transform:translateY(-2px)}.btn svg{width:18px;height:18px;stroke:currentColor;fill:none;stroke-width:2}.btn-primary{background:linear-gradient(135deg,#176337,#0f4a29);color:#fff;box-shadow:0 14px 30px rgba(0,0,0,.22)}.btn-ghost{color:#fff;border-color:rgba(234,208,138,.56);background:rgba(9,22,13,.30)}
+    .wrap{width:min(1180px,calc(100% - 48px));margin:0 auto}.main{position:relative;z-index:3;margin-top:-34px;padding-bottom:48px}.latest-panel{display:grid;grid-template-columns:minmax(0,1fr) 246px 207px;gap:25px;align-items:center;background:rgba(255,253,248,.98);border:1px solid rgba(231,223,207,.95);border-radius:8px;box-shadow:0 13px 35px rgba(8,25,13,.12);padding:20px 20px 20px 22px;backdrop-filter:blur(12px)}.panel-label{font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:#a26d13;font-weight:900;margin-bottom:8px}.latest-panel h2{font-family:var(--serif);font-size:29px;font-weight:400;letter-spacing:-.025em;margin-bottom:10px}.latest-panel p{font-size:14px;line-height:1.62;color:#4f5e53;margin:0 0 14px;max-width:610px}.text-link{display:inline-flex;align-items:center;gap:8px;color:#155f35;font-size:13px;font-weight:850}.text-link:hover{color:#0b3c22}.report-thumb{border-radius:6px;overflow:hidden;height:145px;background:linear-gradient(135deg,#d7e2cb,#789a68);box-shadow:inset 0 0 0 1px rgba(0,0,0,.08)}.report-thumb img{width:100%;height:100%;object-fit:cover}.report-meta{display:grid;gap:22px;padding-left:2px}.meta-line{display:grid;grid-template-columns:28px 1fr;gap:8px;align-items:start;color:#4d594f;font-size:12px;line-height:1.35}.meta-line svg{width:19px;height:19px;stroke:#69746c;fill:none;stroke-width:1.8}.meta-line strong{display:block;color:#263329;font-size:13px;margin-bottom:3px;font-weight:700}
+    .block{padding:18px 0}.section-head{display:flex;align-items:end;justify-content:space-between;gap:20px;margin-bottom:17px}.section-head h2{font-family:var(--serif);font-weight:400;letter-spacing:-.035em;font-size:31px}.section-head p{margin:8px 0 0;color:var(--muted);line-height:1.6;font-size:14px;max-width:660px}.category-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}.category-card{position:relative;min-height:326px;border-radius:6px;padding:24px 22px;color:#fff;overflow:hidden;background:#12351f;box-shadow:var(--shadow2);display:flex;flex-direction:column;justify-content:flex-start;isolation:isolate;border:1px solid rgba(255,255,255,.12);transition:.18s ease}.category-card::before{content:"";position:absolute;inset:0;z-index:-2;background-image:linear-gradient(to bottom,rgba(8,20,12,.73),rgba(8,20,12,.52) 45%,rgba(8,20,12,.88)),var(--bg);background-size:cover;background-position:center}.category-card::after{content:"";position:absolute;inset:0;z-index:-1;background:radial-gradient(circle at 50% 16%,rgba(255,255,255,.16),transparent 34%)}.category-card:hover{transform:translateY(-4px);box-shadow:0 22px 54px rgba(9,25,13,.20)}.cat-icon{width:58px;height:58px;border-radius:50%;display:grid;place-items:center;border:1px solid rgba(255,255,255,.70);background:rgba(255,255,255,.08);margin:0 auto 23px}.cat-icon svg{width:29px;height:29px;stroke:#fff;fill:none;stroke-width:1.6}.category-card h3{font-family:var(--serif);font-size:27px;font-weight:400;margin-bottom:13px;text-align:center;line-height:1.12}.category-card p{font-size:13px;line-height:1.66;color:rgba(255,255,255,.84);text-align:center;margin:0 auto 18px;max-width:238px}.category-card .text-link{margin:auto auto 0;color:#dff2e3}.reports-head{padding-top:4px}.reports-head h2{font-size:30px}.reports-head .text-link{margin-bottom:3px}.reports-slider{position:relative}.cards-row{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.small-card{display:grid;grid-template-columns:116px 1fr;grid-template-rows:auto auto 1fr auto;gap:0 14px;background:#fff;border:1px solid var(--line);border-radius:6px;padding:12px;box-shadow:0 8px 22px rgba(9,25,13,.055);min-height:139px;transition:.18s ease}.small-card:hover{box-shadow:var(--shadow2);transform:translateY(-2px)}.small-img{grid-row:1/5;width:116px;height:116px;border-radius:5px;overflow:hidden;background:#dfe8d6}.small-img img{width:100%;height:100%;object-fit:cover}.small-tag{display:block;font-size:10px;color:#226b3d;text-transform:uppercase;letter-spacing:.08em;font-weight:900;margin-top:2px}.small-card h3{font-size:16px;line-height:1.28;margin:6px 0 7px;color:#1e2d22;font-weight:800}.small-card p{font-size:12.2px;line-height:1.45;margin:0 0 9px;color:#667168}.small-meta{display:flex;flex-wrap:wrap;gap:14px;font-size:11px;color:#778078;margin-top:auto}.slider-arrow{position:absolute;right:-20px;top:50%;transform:translateY(-50%);width:42px;height:42px;border-radius:999px;background:#fff;border:1px solid #e6dfd0;box-shadow:0 8px 24px rgba(9,25,13,.14);display:grid;place-items:center;color:#667268}.slider-arrow svg{width:18px;height:18px;stroke:currentColor;fill:none;stroke-width:2.2}
+    .cop-section{background:#fff;border:1px solid var(--line);border-radius:6px;box-shadow:0 9px 24px rgba(9,25,13,.06);padding:16px 18px 18px;margin-top:0}.cop-section .section-head{margin-bottom:18px}.cop-section .section-head h2{font-size:30px}.cop-card{display:grid;grid-template-columns:minmax(0,1fr) 525px;gap:22px;align-items:stretch}.cop-card h3{font-family:var(--serif);font-weight:400;font-size:26px;letter-spacing:-.025em;margin-bottom:10px}.cop-card p{margin:0 0 16px;color:#536154;line-height:1.65;font-size:14px}.metric-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:17px 0}.metric{border:1px solid #e5dfd1;border-radius:4px;padding:14px;background:linear-gradient(180deg,#fff,#fbf8ef)}.metric b{display:block;font-family:var(--serif);font-size:32px;font-weight:400;margin:7px 0 4px}.metric span{font-size:11px;color:#59695e;line-height:1.35}.metric small{display:block;text-transform:uppercase;letter-spacing:.12em;font-weight:900}.metric.ndvi small,.metric.ndvi b{color:#126c38}.metric.ndmi small,.metric.ndmi b{color:#1e6282}.metric.reci small,.metric.reci b{color:#8a5514}.trend{font-weight:700}.trend.up{color:#1b7a42}.trend.down{color:#bd4a28}.cop-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:15px}.cop-actions .btn{min-height:40px}.btn-light{background:#fff;color:#1b311f;border-color:#d5cbb4}.cop-map{border-radius:4px;overflow:hidden;background:#dbe8d2;min-height:270px;align-self:stretch}.cop-map img{width:100%;height:100%;object-fit:cover}
+    .archive-grid{display:grid;grid-template-columns:minmax(0,1fr) 420px;gap:22px}.archive-box,.help-box{background:#fff;border:1px solid var(--line);border-radius:6px;box-shadow:0 8px 22px rgba(9,25,13,.055);overflow:hidden}.tabs{display:flex;gap:24px;padding:0 16px;border-bottom:1px solid var(--line)}.archive-static{cursor:pointer}.archive-static:hover{background:#fbf7ec}.archive-static:hover .chev{color:#155f35}.tab{font-size:13px;font-weight:800;color:#69736b;padding:12px 0;border-bottom:2px solid transparent}.tab.active{color:#174a2b;border-bottom-color:#174a2b}.year-row{display:grid;grid-template-columns:110px 1fr auto 18px;align-items:center;gap:12px;padding:13px 16px;border-bottom:1px solid #eee8d9}.year-row:last-child{border-bottom:0}.year-row strong{font-family:var(--serif);font-size:18px;font-weight:400}.bar{height:6px;border-radius:99px;background:#efe9d9;overflow:hidden}.bar i{display:block;height:100%;background:linear-gradient(90deg,#155f35,#c7a447)}.badge{font-size:11px;color:#516054;border:1px solid #d8d0bf;border-radius:999px;padding:4px 9px;background:#fff;white-space:nowrap}.chev{color:#6d766e}.help-box{padding:25px;background:linear-gradient(135deg,#fffdf8,#f4ead6);position:relative;overflow:hidden}.help-box::after{content:"";position:absolute;right:-20px;bottom:-24px;width:168px;height:168px;opacity:.18;background:radial-gradient(circle,#bda262 1.5px,transparent 2px);background-size:14px 14px}.help-inner{position:relative;z-index:2;display:grid;grid-template-columns:48px 1fr;gap:15px}.help-icon{width:48px;height:48px;border:1px solid #d9cfbb;border-radius:6px;display:grid;place-items:center;color:#57705e}.help-icon svg{width:25px;height:25px;stroke:currentColor;fill:none;stroke-width:1.7}.help-box h3{font-family:var(--sans);font-weight:900;font-size:16px;margin:0 0 8px}.help-box p{font-size:14px;line-height:1.65;color:#59655d;margin:0 0 12px}.help-box .text-link{font-size:13px}
+    .footer{background:linear-gradient(135deg,#07150c,#051008);color:#fff;margin-top:0}.footer-main{width:min(1180px,calc(100% - 48px));margin:0 auto;padding:44px 0 33px;display:grid;grid-template-columns:1.35fr .9fr .98fr 1.15fr;gap:55px;border-bottom:1px solid rgba(255,255,255,.10)}.footer h3{font-size:14px;letter-spacing:.01em;color:rgba(255,255,255,.92);margin:0 0 16px}.footer p,.footer a,.contact-line{font-size:14px;line-height:1.65;color:rgba(255,255,255,.70)}.footer a{display:block;margin-bottom:5px}.footer a:hover{color:#fff}.footer-brand{display:flex;align-items:center;gap:11px;margin-bottom:15px}.footer-brand-name{font-family:var(--serif);font-size:20px;letter-spacing:.05em}.socials{display:flex;gap:11px;margin-top:19px}.socials a{width:28px;height:28px;border-radius:50%;border:1px solid rgba(255,255,255,.45);display:grid;place-items:center;margin:0;color:rgba(255,255,255,.78);font-size:12px}.contact-line{display:grid;grid-template-columns:22px 1fr;gap:10px;margin-bottom:11px}.contact-line svg{width:16px;height:16px;stroke:rgba(255,255,255,.78);fill:none;stroke-width:1.8;margin-top:3px}.footer-bottom{width:min(1180px,calc(100% - 48px));margin:0 auto;padding:18px 0 22px;display:flex;justify-content:space-between;gap:20px;align-items:center}.legal-row{display:flex;flex-wrap:wrap;gap:0;align-items:center}.legal-row a{font-size:13px;color:rgba(255,255,255,.62);display:inline;margin:0}.legal-row a+a::before{content:"·";margin:0 13px;color:rgba(255,255,255,.35)}.copy{font-size:13px;color:rgba(255,255,255,.50);white-space:nowrap}
+    @media(max-width:1160px){.nav{gap:16px}.topbar{padding-inline:4vw}.latest-panel{grid-template-columns:1fr 240px}.report-meta{grid-column:1/3;grid-template-columns:repeat(2,1fr)}.cop-card{grid-template-columns:1fr}.archive-grid{grid-template-columns:1fr}.footer-main{grid-template-columns:repeat(2,1fr)}}
+    @media(max-width:950px){.category-grid{grid-template-columns:repeat(2,1fr)}.cards-row{grid-template-columns:1fr}.small-card{grid-template-columns:124px 1fr}.small-img{width:124px;height:124px}.slider-arrow{display:none}.cop-card{grid-template-columns:1fr}.cop-map{min-height:240px}.footer-main{gap:30px}.nav{display:none}.search-btn{margin-left:auto}}
+    @media(max-width:720px){.topbar{position:absolute;height:auto;padding:14px 18px}.brand{min-width:0}.brand-name{font-size:18px}.hero{padding:86px 22px 76px;min-height:500px}.hero p{font-size:15.5px}.wrap{width:calc(100% - 28px)}.latest-panel{grid-template-columns:1fr;padding:18px}.report-meta{grid-template-columns:1fr}.report-thumb{height:170px}.category-grid,.metric-grid{grid-template-columns:1fr}.cop-section{padding:15px}.cop-card{grid-template-columns:1fr}.footer-main,.footer-bottom{width:calc(100% - 32px);display:grid;grid-template-columns:1fr}.copy{white-space:normal}.year-row{grid-template-columns:1fr auto}.year-row .bar{grid-column:1/3}.chev{display:none}.legal-row{gap:8px}.legal-row a+a::before{display:none}.kicker{font-size:13px}.hero h1{font-size:50px}}
+  .home-brand{position:fixed;z-index:80;top:0;left:0;display:inline-flex;align-items:flex-start;height:40px;padding:9px 22px 0;background:#06130b;color:#f4cc67!important;font-weight:900;letter-spacing:.08em;font-size:16px;line-height:1;text-transform:uppercase;box-shadow:0 8px 22px rgba(0,0,0,.18)}.home-brand:hover{color:#ffe28c!important}.home-brand:focus{outline:2px solid #e7cf88;outline-offset:2px}@media(max-width:720px){.home-brand{height:38px;padding:8px 18px 0;font-size:15px}}
+/* Исправка 16.06: без измишљеног футера, без доњих дугмади, јавни Коперник линк и отварање текста наниже */
+.footer,.site-footer{display:none!important}
+button.text-link,a.text-link{font-family:inherit}
+.cop-copy{display:flex;flex-direction:column;justify-content:center;min-width:0}.cop-card{align-items:center}.cop-map{min-height:300px}.cop-map img{height:100%;object-fit:cover}.cop-section .section-head .text-link{white-space:normal;text-align:right}.help-box .text-link{cursor:pointer}.monitoring-reveal{margin:18px 0 0;background:#fff;border:1px solid var(--line);border-radius:10px;box-shadow:0 12px 30px rgba(9,25,13,.07);padding:28px}.monitoring-reveal[hidden]{display:none}.monitoring-reveal .panel-label{font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:#a26d13;font-weight:900;margin-bottom:10px}.monitoring-reveal h2{font-family:var(--serif);font-size:clamp(31px,4vw,45px);line-height:1.08;font-weight:400;letter-spacing:-.04em;margin:0 0 16px;color:#142419}.monitoring-reveal h3{font-family:var(--serif);font-size:25px;line-height:1.14;font-weight:400;letter-spacing:-.03em;margin:0 0 11px;color:#17251b}.monitoring-lead{font-size:17px;line-height:1.75;color:#334139;margin:0 0 22px}.monitoring-cards{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin:20px 0 22px}.monitoring-card{background:#fffdf8;border:1px solid #e7dfcf;border-radius:9px;padding:18px;min-height:180px}.monitoring-icon{width:46px;height:46px;border-radius:999px;display:grid;place-items:center;border:1px solid #d8caa8;background:linear-gradient(180deg,#fff,#fbf5e7);color:#166337;margin-bottom:14px;font-size:21px}.monitoring-card p,.monitoring-article p,.monitoring-note p{margin:0;color:#5f6d64;line-height:1.68;font-size:14px}.monitoring-text-grid{display:grid;grid-template-columns:minmax(0,1fr) 330px;gap:18px;align-items:start}.monitoring-article{background:#fff;border:1px solid #e7dfcf;border-radius:9px;padding:23px}.monitoring-article p{font-size:15.5px;color:#2f3d34;margin-bottom:15px}.monitoring-article p:last-child{margin-bottom:0}.monitoring-side{display:grid;gap:12px}.monitoring-note{background:#fff;border:1px solid #e7dfcf;border-radius:9px;padding:18px}.monitoring-note.important{border-left:4px solid #165f35;background:#fffdf8}.monitoring-note h3{font-family:var(--sans);font-size:15px;font-weight:900;letter-spacing:0;margin:0 0 7px;color:#17351f}.monitoring-two{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:18px}.monitoring-reveal .small-print{margin:19px 0 0;color:#69776d;font-size:13px;line-height:1.6}@media(max-width:980px){.monitoring-cards{grid-template-columns:repeat(2,1fr)}.monitoring-text-grid,.monitoring-two{grid-template-columns:1fr}.cop-section .section-head{align-items:flex-start}.cop-section .section-head .text-link{text-align:left}.cop-map{min-height:235px}}@media(max-width:620px){.monitoring-reveal{padding:20px}.monitoring-cards{grid-template-columns:1fr}.cop-map{min-height:210px}}
+
+  
+    /* Годишњи извештаји биодиверзитета */
+    .bio-annual-section{background:#fff;border:1px solid var(--line);border-radius:6px;box-shadow:0 8px 22px rgba(9,25,13,.055);padding:20px 18px;margin-top:0}
+    .bio-annual-intro{margin:0 0 18px;color:#56635b;line-height:1.65;font-size:14px;max-width:880px}
+    .bio-annual-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+    .bio-annual-card{display:block;border:1px solid var(--line);border-radius:6px;background:#fffdf8;padding:20px;color:inherit;transition:.18s ease}
+    .bio-annual-card:hover{transform:translateY(-2px);box-shadow:var(--shadow2)}
+    .bio-annual-card h3{font-family:var(--serif);font-size:26px;font-weight:400;line-height:1.1;margin:0 0 8px;color:#17251b}
+    .bio-annual-card .period{font-size:13px;font-weight:900;color:#155f35;margin:0 0 12px;text-transform:uppercase;letter-spacing:.08em}
+    .bio-annual-card p{margin:0 0 12px;color:#5d6a61;line-height:1.6;font-size:14px}
+    .bio-annual-card strong{display:block;font-size:36px;line-height:1;color:#8a6a28;margin:5px 0}
+    .bio-annual-card span{font-size:13px;font-weight:800;color:#59645e}
+    @media(max-width:720px){.bio-annual-grid{grid-template-columns:1fr}}
+
+  </style>
+  <link rel="prefetch" as="image" href="assets/copernicus-card.webp">
+  <link rel="prefetch" as="image" href="https://piorajac.rs/wp-content/uploads/2026/06/meteo.webp">
+  <link rel="prefetch" as="image" href="assets/night-card.webp">
+  <link rel="prefetch" as="image" href="assets/biodiverzitet-card.webp">
+<!-- PIO-SEO-MAX-START -->
+<meta name="description" content="Јавна архива дневних, седмичних, месечних и тематских извештаја о метеоролошком, Copernicus, биодиверзитетском и светлосном мониторингу Рајца.">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+<link rel="canonical" href="https://piorajac.rs/monitoring-izvestaji/">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="sr_RS">
+<meta property="og:site_name" content="ПИО „Рајац“">
+<meta property="og:title" content="Мониторинг извештаји — ПИО „Рајац“">
+<meta property="og:description" content="Јавна архива дневних, седмичних, месечних и тематских извештаја о метеоролошком, Copernicus, биодиверзитетском и светлосном мониторингу Рајца.">
+<meta property="og:url" content="https://piorajac.rs/monitoring-izvestaji/">
+<meta property="og:image" content="https://piorajac.rs/assets/pio-rajac-og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="ПИО Рајац — заштита природе, мониторинг и наука">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Мониторинг извештаји — ПИО „Рајац“">
+<meta name="twitter:description" content="Јавна архива дневних, седмичних, месечних и тематских извештаја о метеоролошком, Copernicus, биодиверзитетском и светлосном мониторингу Рајца.">
+<meta name="twitter:image" content="https://piorajac.rs/assets/pio-rajac-og.png">
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    "@id": "https://piorajac.rs/monitoring-izvestaji/#webpage",
+    "url": "https://piorajac.rs/monitoring-izvestaji/",
+    "name": "Мониторинг извештаји — ПИО „Рајац“",
+    "description": "Архива извештаја о природним вредностима, метеоролошким условима, сателитском мониторингу и светлосном загађењу.",
+    "inLanguage": "sr-Cyrl",
+    "isPartOf": {
+        "@id": "https://piorajac.rs/#website"
+    },
+    "about": {
+        "@id": "https://piorajac.rs/#place"
+    }
+}
+</script>
+<!-- PIO-SEO-MAX-END -->
+</head>
+<body>
+<a class="skip" href="#sadrzaj">Прескочи на садржај</a>
+<!-- Горњи мени је уклоњен по захтеву: страница почиње директно херо блоком. -->
+
+<section class="hero">
+  <div class="hero-inner">
+    <a class="kicker" href="https://piorajac.rs/" aria-label="Почетна страница ПИО Рајац">ПИО „РАЈАЦ“</a>
+    <h1>Мониторинг<br>извештаји</h1>
+    <p>Редовни извештаји о стању животне средине на Рајцу кроз метеоролошки мониторинг, сателитске индексе, светлосно загађење и биодиверзитет.</p>
+    <div class="hero-actions">
+      <a class="btn btn-primary" href="#najnoviji"><svg viewBox="0 0 24 24"><path d="M8 3h7l4 4v14H8z"/><path d="M14 3v5h5M11 12h5M11 16h5"/></svg>Најновији извештаји</a>
+      <a class="btn btn-ghost" href="#arhiva"><svg viewBox="0 0 24 24"><path d="M3 7h6l2 2h10v10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><path d="M3 7V5a2 2 0 0 1 2-2h4l2 2h3"/></svg>Архива извештаја</a>
+      <a class="btn btn-ghost" href="#monitoring-arhiva-panel" data-open-monitoring="true"><svg viewBox="0 0 24 24"><path d="M4 5h16v14H4z"/><path d="M8 9h8M8 13h8M8 17h5"/></svg>Мониторинг и архива</a>
+    </div>
+  </div>
+</section>
+<main id="sadrzaj" class="main wrap">
+  <section class="latest-panel" aria-label="Најновији извештај">
+    <div>
+      <div class="panel-label">Најновији извештај</div>
+      <h2 id="latest-title">АМС дневни извештај за 15.06.2026.</h2>
+      <p id="latest-summary">Дневни преглед метеоролошких параметара са АМС Рајац: температура, падавине, ветар, влажност и други услови у претходном дану.</p>
+      <a id="cop-report-link" class="text-link" href="https://piorajac.rs/amsrajac/dnevna-statistika/latest.html">Прикажи детаље →</a>
+    </div>
+    <a id="latest-thumb-link" class="report-thumb" href="https://piorajac.rs/amsrajac/dnevna-statistika/latest.html"><img id="latest-img" src="https://piorajac.rs/wp-content/uploads/2026/06/meteo.webp" alt="Најновији мониторинг извештај"></a>
+    <div class="report-meta">
+      <div class="meta-line"><svg viewBox="0 0 24 24"><rect x="4" y="5" width="16" height="15" rx="2"/><path d="M8 3v4M16 3v4M4 10h16"/></svg><span><strong id="latest-date">15.06.2026.</strong>Датум извештаја</span></div>
+      <div class="meta-line"><svg viewBox="0 0 24 24"><path d="M20 13 13 20a2 2 0 0 1-2.8 0L4 13.8V4h9.8l6.2 6.2a2 2 0 0 1 0 2.8Z"/><circle cx="8" cy="8" r="1.2"/></svg><span><strong id="latest-category">Метео станица</strong>Категорија</span></div>
+    </div>
+  </section>
+
+  <section id="najnoviji" class="block reports-slider" aria-labelledby="naj-naslov">
+    <div class="section-head reports-head"><h2 id="naj-naslov">Најновији извештаји</h2><a class="text-link" href="#arhiva">Прикажи све извештаје →</a></div>
+    <div class="cards-row">
+      <a class="small-card" id="small-cop" data-report-card="cop" data-report-ts="0" href="https://piorajac.rs/monitoring-izvestaji/copernicus/2026-06-14/">
+        <span class="small-img"><img id="small-cop-img" src="https://piorajac.rs/kopindeksi/copernicus_data/NDVI/2026/NDVI_2026-06-14.png" alt="NDVI карта"></span><span class="small-tag">Copernicus индекси</span><h3 id="small-cop-title">Copernicus извештај за 14.06.2026.</h3><p>Анализа NDVI, NDMI и RECI индекса за подручје ПИО „Рајац”.</p><span class="small-meta"><span id="small-cop-date">▣ 14.06.2026.</span><span>▧ преглед</span></span>
+      </a>
+      <a class="small-card" id="small-ams" data-report-card="ams" data-report-ts="0" href="https://piorajac.rs/amsrajac/dnevna-statistika/latest.html">
+        <span class="small-img"><img src="https://piorajac.rs/wp-content/uploads/2026/06/meteo.webp" alt="Метео станица Рајац"></span><span class="small-tag">Метео станица</span><h3 id="ams-title">АМС дневни извештај за 15.06.2026.</h3><p id="ams-summary">Дневни преглед метеоролошких параметара и падавина.</p><span class="small-meta"><span id="ams-date">▣ 15.06.2026.</span><span>▧ преглед</span></span>
+      </a>
+      <a class="small-card" id="small-light" data-report-card="light" data-report-ts="0" href="https://piorajac.rs/monitoring-izvestaji/svetlosno-zagadjenje/">
+        <span class="small-img"><img src="assets/night-thumb.webp" alt="Ноћно небо Рајца"></span><span class="small-tag">Светлосно загађење</span><h3 id="light-title">Извештај о светлосном загађењу — мај 2026.</h3><p id="light-summary">Анализа ноћног неба и индекса светлосног загађења.</p><span class="small-meta"><span id="light-date">▣ 13.06.2026.</span><span>▧ преглед</span></span>
+      </a>
+    </div>
+    <a class="slider-arrow" href="#arhiva" aria-label="Следећи извештаји"><svg viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></svg></a>
+  </section>
+
+
+  <section class="block" aria-label="Области мониторинга">
+    <div class="category-grid">
+      <a class="category-card" href="https://piorajac.rs/monitoring-izvestaji/copernicus/" style="--bg:var(--cop-bg)">
+        <span class="cat-icon"><svg viewBox="0 0 32 32"><circle cx="16" cy="16" r="3"/><path d="M6 26 26 6M10 6l16 16M8 11l13 13M20 4l8 8M4 20l8 8"/></svg></span>
+        <h3>Copernicus индекси</h3><p>Праћење стања вегетације, влажности земљишта и ризика од пожара коришћењем сателитских података.</p><span class="text-link">Прикажи извештаје →</span>
+      </a>
+      <a class="category-card" href="https://piorajac.rs/amsrajac/dnevna-statistika/latest.html" style="--bg:var(--meteo-bg)">
+        <span class="cat-icon"><svg viewBox="0 0 32 32"><path d="M16 4v24M11 7l5-3 5 3M11 25l5 3 5-3M4 16h24M7 11l-3 5 3 5M25 11l3 5-3 5"/><circle cx="16" cy="16" r="4"/></svg></span>
+        <h3>Метео станица</h3><p>Аутоматска метеоролошка станица на Рајцу бележи температуру, падавине, ветар, влажност и друге параметре.</p><span class="text-link">Прикажи извештаје →</span>
+      </a>
+      <a class="category-card" href="https://piorajac.rs/monitoring-izvestaji/svetlosno-zagadjenje/" style="--bg:var(--night-bg)">
+        <span class="cat-icon"><svg viewBox="0 0 32 32"><path d="M16 3v7M16 22v7M3 16h7M22 16h7M7 7l5 5M20 20l5 5M25 7l-5 5M12 20l-5 5"/><circle cx="16" cy="16" r="2"/></svg></span>
+        <h3>Светлосно загађење</h3><p>Праћење ноћног неба и нивоа светлосног загађења ради очувања тамног неба и природне равнотеже.</p><span class="text-link">Прикажи извештаје →</span>
+      </a>
+      <a class="category-card" href="https://piorajac.rs/monitoring-izvestaji/biodiverzitet/" style="--bg:var(--bio-bg)">
+        <span class="cat-icon"><svg viewBox="0 0 32 32"><path d="M26 6c-10 1-16 7-18 18 11-2 17-8 18-18Z"/><path d="M9 23c5-6 10-10 17-17M13 13c0 6 2 10 7 13"/></svg></span>
+        <h3>Биодиверзитет</h3><p>Мониторинг биљних и животињских врста и станишта као индикатор здравља екосистема Рајца.</p><span class="text-link">Прикажи извештаје →</span>
+      </a>
+    </div>
+  </section>
+
+  <section class="block" aria-labelledby="cop-naslov">
+    <article class="cop-section">
+      <div class="section-head"><h2 id="cop-naslov">Copernicus извештаји</h2><a class="text-link" href="https://piorajac.rs/kopernikindeks/">Отвори јавни Коперник сервис →</a></div>
+      <div class="cop-card">
+        <div class="cop-copy">
+          <h3 id="cop-card-title">Copernicus извештај за 14.06.2026.</h3>
+          <p id="cop-card-text">Сателитска анализа за подручје ПИО „Рајац”. Подаци показују стабилно стање вегетације уз благо побољшање влажности земљишта. Ризик од пожара је низак.</p>
+          <div class="metric-grid">
+            <div class="metric ndvi"><small>NDVI</small><b id="ndvi-val">0.72</b><span><span class="trend up">↗ +0.04</span> у односу на 31.05.2026.</span></div>
+            <div class="metric ndmi"><small>NDMI</small><b id="ndmi-val">0.48</b><span><span class="trend up">↗ +0.03</span> у односу на 31.05.2026.</span></div>
+            <div class="metric reci"><small>RECI</small><b id="reci-val">0.21</b><span><span class="trend down">↘ -0.02</span> у односу на 31.05.2026.</span></div>
+          </div>
+        </div>
+        <a class="cop-map" href="https://piorajac.rs/kopernikindeks/"><img id="cop-map-img" src="https://piorajac.rs/kopindeksi/copernicus_data/NDVI/2026/NDVI_2026-06-14.png" alt="Copernicus карта ПИО Рајац"></a>
+      </div>
+    </article>
+  </section>
+
+  <section id="godisnji-biodiverzitet" class="block" aria-labelledby="godisnji-bio-naslov">
+    <article class="bio-annual-section">
+      <div class="section-head">
+        <h2 id="godisnji-bio-naslov">Годишњи извештаји биодиверзитета</h2>
+        <a class="text-link" href="https://piorajac.rs/monitoring-izvestaji/biodiverzitet/godisnji/">Отвори годишњу архиву →</a>
+      </div>
+      <p class="bio-annual-intro">Годишњи прегледи налаза биодиверзитета у границама ПИО „Рајац”. Архива почиње од 2025. године, а 2026. је текућа година која се допуњава како пристижу нови налази.</p>
+      <div class="bio-annual-grid">
+        <a class="bio-annual-card" href="https://piorajac.rs/monitoring-izvestaji/biodiverzitet/godisnji/2026/">
+          <div class="period">текућа година</div>
+          <h3>Годишњи извештај 2026.</h3>
+          <p>Привремени годишњи преглед за текућу годину. Извештај се допуњава после сваког новог ажурирања података.</p>
+          <strong>65</strong><span>прочитаних налаза · 48 таксона / врста</span>
+        </a>
+        <a class="bio-annual-card" href="https://piorajac.rs/monitoring-izvestaji/biodiverzitet/godisnji/2025/">
+          <div class="period">прва цела година архиве</div>
+          <h3>Годишњи извештај 2025.</h3>
+          <p>Полазна година за поређење са 2026. и наредним годишњим пресецима.</p>
+          <strong>20</strong><span>прочитаних налаза · 18 таксона / врста</span>
+        </a>
+      </div>
+    </article>
+  </section>
+
+  <section id="arhiva" class="block" aria-labelledby="arh-naslov">
+    <div class="section-head"><h2 id="arh-naslov">Архива извештаја</h2></div>
+    <div class="archive-grid">
+      <div class="archive-box">
+        <div class="tabs"><span class="tab active">Годишња архива</span></div>
+        <a class="year-row archive-static" href="https://piorajac.rs/monitoring-izvestaji/biodiverzitet/godisnji/2026/"><strong>2026.</strong><span class="bar"><i style="width:72%"></i></span><span class="badge">текућа година</span><span class="chev">→</span></a>
+        <a class="year-row archive-static" href="https://piorajac.rs/monitoring-izvestaji/biodiverzitet/godisnji/2025/"><strong>2025.</strong><span class="bar"><i style="width:100%"></i></span><span class="badge">прва цела година</span><span class="chev">→</span></a>
+      </div>
+      <aside class="help-box">
+        <div class="help-inner"><span class="help-icon"><svg viewBox="0 0 24 24"><path d="M12 3v12M7 10l5 5 5-5"/><rect x="4" y="17" width="16" height="4" rx="1"/></svg></span><div><h3>Како користити архиву?</h3><p>Архива је сведена на 2025. и 2026. годину. Клик на годину отвара годишњи извештај биодиверзитета за изабрану годину.</p><a class="text-link" href="#monitoring-arhiva-panel" data-open-monitoring="true">Мониторинг и архива ПИО „Рајац” →</a></div></div>
+      </aside>
+    </div>
+  </section>
+
+  <section id="monitoring-arhiva-panel" class="monitoring-reveal" aria-labelledby="monitoring-arhiva-naslov" hidden>
+    <div class="panel-label">ПИО Рајац</div>
+    <h2 id="monitoring-arhiva-naslov">Мониторинг и архива ПИО „Рајац”</h2>
+    <p class="monitoring-lead">Од почетка проглашења ПИО „Рајац” за заштићени предео, Туристичка организација Љиг приступила је систематском и дугорочном мониторингу природних вредности, промена у пределу и стања животне средине. Циљ оваквог приступа није само прикупљање података, већ стварање поуздане основе за управљање заштићеним подручјем, планирање мера заштите, научна истраживања, едукацију и благовремено реаговање на промене које се дешавају у простору.</p>
+
+    <div class="monitoring-cards" aria-label="Врсте мониторинга">
+      <article class="monitoring-card"><div class="monitoring-icon">◈</div><h3>Сателитско праћење</h3><p>Прате се светлосна загађеност, стање вегетације, влажност биљног покривача, промене у пределу, могући сушни стрес и просторна динамика станишта.</p></article>
+      <article class="monitoring-card"><div class="monitoring-icon">☁</div><h3>Инструментална мерења</h3><p>Аутоматска метеоролошка станица и друга опрема обезбеђују податке о температури, влажности, притиску, ветру, падавинама и условима у реалном времену.</p></article>
+      <article class="monitoring-card"><div class="monitoring-icon">✦</div><h3>Теренска запажања</h3><p>Чланови управе, професионални истраживачи и обучена лица бележе птице, биљке, гљиве, инсекте и друге групе организама на терену.</p></article>
+      <article class="monitoring-card"><div class="monitoring-icon">▣</div><h3>Дневна архива</h3><p>Запажања и мерења се свакодневно архивирају и повезују у базу за управљање, истраживања, извештавање, наставу и едукативне програме.</p></article>
+    </div>
+
+    <div class="monitoring-text-grid">
+      <article class="monitoring-article">
+        <h3>Јединствен систем података</h3>
+        <p>Мониторинг ПИО „Рајац” обухвата више међусобно повезаних извора података. Један део праћења заснива се на сателитским снимцима и даљинској детекцији. На тај начин се прате промене у вегетацији, стање ливада, пашњака и шумских површина, влажност биљног покривача, могући знаци сушног стреса, промене у коришћењу земљишта, као и динамика светлосног загађења.</p>
+        <p>Други део мониторинга чине инструментална мерења на терену. Аутоматска метеоролошка станица на Рајцу обезбеђује податке о температури, влажности ваздуха, ваздушном притиску, ветру, падавинама и другим метеоролошким параметрима. Ови подаци су важни за тумачење промена у природи, јер стање вегетације, активност животиња, појава суше и услови за теренска истраживања непосредно зависе од временских прилика.</p>
+        <p>Трећи, изузетно важан део система, чине теренска запажања. Она се прикупљају кроз изласке на терен чланова управе, стручних сарадника, професионалних истраживача, као и великог броја обучених лица која бележе налазе биљака, птица, гљива, инсеката и других група организама.</p>
+      </article>
+      <aside class="monitoring-side" aria-label="Напомене">
+        <div class="monitoring-note important"><h3>Јавно доступни подаци</h3><p>Највећи број прикупљених запажања доступан је јавности, што доприноси транспарентности рада, образовању посетилаца и развоју грађанске науке.</p></div>
+        <div class="monitoring-note"><h3>Заштићене локације</h3><p>Тачне локације једног броја строго заштићених и осетљивих врста не објављују се јавно. Оне су доступне управљачу и истраживачима када су неопходне за заштиту и стручни рад.</p></div>
+        <div class="monitoring-note"><h3>Контекст података</h3><p>Појединачни налази се не посматрају изоловано, већ заједно са временским приликама, сателитским снимцима, стањем вегетације и сезонским циклусима.</p></div>
+      </aside>
+    </div>
+
+    <div class="monitoring-two">
+      <article class="monitoring-article">
+        <h3>Архива за управљање</h3>
+        <p>Сва запажања и мерења се свакодневно архивирају и повезују у јединствену базу података. Та архива представља основу за израду дневних, месечних и годишњих извештаја, праћење дугорочних трендова и упоређивање стања кроз различите периоде.</p>
+        <p>Овако организован систем помаже у препознавању локалитета на којима су потребне додатне теренске провере, уочавању промена у пределу, планирању мера очувања станишта и праћењу утицаја туризма и других активности.</p>
+      </article>
+      <article class="monitoring-article">
+        <h3>Архива за истраживање и наставу</h3>
+        <p>Архивирани подаци могу бити коришћени у настави, едукативним програмима, научним радовима, промотивним материјалима и сарадњи са институцијама, школама, факултетима и истраживачима.</p>
+        <p>Вредност мониторинга расте из године у годину, јер сваки нови податак постаје део шире слике о стању природе, променама у простору и потребама заштите.</p>
+      </article>
+    </div>
+    <p class="small-print">Напомена: јавни приказ не објављује тачне локације осетљивих строго заштићених врста.</p>
+  </section>
+
+</main>
+<script>
+(function(){
+  'use strict';
+  var RAJAC_LIVE_HOST = /(^|\.)piorajac\.rs$/i.test(location.hostname);
+  var latestCandidates = [];
+
+  function monthName(m){
+    return ['јануар','фебруар','март','април','мај','јун','јул','август','септембар','октобар','новембар','децембар'][m-1] || '';
+  }
+  function fmtDate(s){
+    if(!s) return '';
+    s = String(s);
+    var m;
+    if((m=s.match(/^(\d{4})-(\d{2})-(\d{2})/))){ return m[3]+'.'+m[2]+'.'+m[1]+'.'; }
+    if((m=s.match(/^(\d{4})-(\d{2})$/))){ return monthName(parseInt(m[2],10))+' '+m[1]+'.'; }
+    return s;
+  }
+  function dateTs(s){
+    if(!s) return 0;
+    s = String(s);
+    var m;
+    if((m=s.match(/^(\d{4})-(\d{2})-(\d{2})/))){ return new Date(+m[1], +m[2]-1, +m[3]).getTime(); }
+    if((m=s.match(/^(\d{4})-(\d{2})$/))){ return new Date(+m[1], +m[2], 0).getTime(); }
+    var t = Date.parse(s);
+    return isNaN(t) ? 0 : t;
+  }
+  function txt(id,v){ var e=document.getElementById(id); if(e&&v!==undefined&&v!==null&&v!=='') e.textContent=v; }
+  function href(id,v){ var e=document.getElementById(id); if(e&&v) e.href=v; }
+  function img(id,v){ var e=document.getElementById(id); if(e&&v) e.src=v; }
+  function setCardTime(id, ts){ var e=document.getElementById(id); if(e&&ts) e.dataset.reportTs = String(ts); }
+  function sortReportCards(){
+    var row=document.querySelector('.cards-row');
+    if(!row) return;
+    Array.from(row.querySelectorAll('.small-card'))
+      .sort(function(a,b){
+        var aw = a.classList.contains('is-waiting') ? 1 : 0;
+        var bw = b.classList.contains('is-waiting') ? 1 : 0;
+        if(aw !== bw) return aw - bw;
+        return (+b.dataset.reportTs||0)-(+a.dataset.reportTs||0);
+      })
+      .forEach(function(el){ row.appendChild(el); });
+  }
+  function getJSON(url){
+    return fetch(url+(url.indexOf('?')>-1?'&':'?')+'ts='+Date.now(),{cache:'no-store'})
+      .then(function(r){ if(!r.ok) throw new Error('HTTP '+r.status); return r.json(); });
+  }
+  function addLatestCandidate(r){
+    if(!r || !r.ts || !r.title) return;
+    latestCandidates = latestCandidates.filter(function(x){ return x.key !== r.key; });
+    latestCandidates.push(r);
+    latestCandidates.sort(function(a,b){ return (b.ts-a.ts) || ((b.priority||0)-(a.priority||0)); });
+    renderFeatured(latestCandidates[0]);
+  }
+  function renderFeatured(r){
+    if(!r) return;
+    txt('latest-title', r.title);
+    txt('latest-summary', r.summary);
+    txt('latest-date', r.displayDate);
+    txt('latest-category', r.category);
+    href('cop-report-link', r.url);
+    href('latest-thumb-link', r.url);
+    img('latest-img', r.image);
+  }
+
+  if(!RAJAC_LIVE_HOST){
+    setCardTime('small-ams', dateTs('2026-06-15'));
+    setCardTime('small-cop', dateTs('2026-06-14'));
+    setCardTime('small-light', dateTs('2026-05'));
+    sortReportCards();
+    return;
+  }
+
+  getJSON('/monitoring-izvestaji/copernicus/latest.json').then(function(data){
+    if(!data || !data.summary) return;
+    var s=data.summary, i=data.indices||{}, raw=s.date, d=fmtDate(raw);
+    var ru=s.report_url || ('https://piorajac.rs/monitoring-izvestaji/copernicus/'+raw+'/');
+    txt('cop-card-title','Copernicus извештај за '+d);
+    txt('small-cop-title','Copernicus извештај за '+d);
+    txt('small-cop-date','▣ '+d);
+    if(s.overall_text) txt('cop-card-text',s.overall_text);
+    if(i.NDVI && typeof i.NDVI.mean==='number') txt('ndvi-val',i.NDVI.mean.toFixed(2));
+    if(i.NDMI && typeof i.NDMI.mean==='number') txt('ndmi-val',i.NDMI.mean.toFixed(2));
+    if(i.RECI && typeof i.RECI.mean==='number') txt('reci-val',i.RECI.mean.toFixed(2));
+    var copImage = (i.NDVI && i.NDVI.image_url) || (i.NDMI && i.NDMI.image_url) || (i.RECI && i.RECI.image_url) || 'https://piorajac.rs/kopindeksi/copernicus_data/NDVI/2026/NDVI_2026-06-14.png';
+    img('cop-map-img', copImage); img('small-cop-img', copImage);
+    href('cop-open',ru); href('small-cop',ru);
+    var ts=dateTs(raw); setCardTime('small-cop',ts); sortReportCards();
+    addLatestCandidate({
+      key:'cop', priority:20, ts:ts, displayDate:d,
+      title:'Copernicus извештај за '+d,
+      summary:s.overall_text || 'Анализа сателитских индекса NDVI, NDMI и RECI за подручје ПИО „Рајац”.',
+      category:'Copernicus индекси', url:ru, image:copImage
+    });
+  }).catch(function(){});
+
+  getJSON('/amsrajac/dnevna-statistika/latest.json').then(function(d){
+    if(!d) return;
+    var raw = d.date || d.report_date || d.generated_date || d.generated_at;
+    var date = fmtDate(raw);
+    var url = d.latest_url || d.report_url || d.url || '/amsrajac/dnevna-statistika/latest.html';
+    var title = 'АМС дневни извештај' + (date ? ' за '+date : '');
+    var summary = d.summary || d.short_summary || 'Дневни преглед метеоролошких параметара, падавина, ветра, температуре и влажности са АМС Рајац.';
+    txt('ams-title', title);
+    txt('ams-summary', summary);
+    if(date) txt('ams-date','▣ '+date);
+    href('small-ams', url);
+    var ts=dateTs(raw); setCardTime('small-ams',ts); sortReportCards();
+    addLatestCandidate({
+      key:'ams', priority:30, ts:ts, displayDate:date,
+      title:title, summary:summary, category:'Метео станица', url:url, image:'https://piorajac.rs/wp-content/uploads/2026/06/meteo.webp'
+    });
+  }).catch(function(){});
+
+  getJSON('/monitoring-izvestaji/svetlosno-zagadjenje/latest.json').then(function(d){
+    if(!d) return;
+    var raw = d.report_date || d.date || d.period || d.month;
+    var date = fmtDate(raw);
+    var url = d.report_url || 'https://piorajac.rs/monitoring-izvestaji/svetlosno-zagadjenje/';
+    var title = d.title || ('Извештај о светлосном загађењу' + (date ? ' — '+date : ''));
+    var summary = d.summary || d.overall_text || 'Месечни VIIRS / Black Marble извештај о ноћној радијанси и светлосном загађењу.';
+    txt('light-title', title);
+    txt('light-summary', summary);
+    if(date) txt('light-date','▣ '+date);
+    href('small-light', url);
+    var waiting = (d.available === false || d.status === 'waiting');
+    var ts = waiting ? 0 : dateTs(d.report_date || d.date || d.generated_at || d.period || d.month);
+    var lightCard = document.getElementById('small-light');
+    if(lightCard){ lightCard.classList.toggle('is-waiting', waiting); }
+    setCardTime('small-light',ts); sortReportCards();
+    if(waiting) return;
+    addLatestCandidate({
+      key:'light', priority:10, ts:ts, displayDate:date,
+      title:title, summary:summary, category:'Светлосно загађење', url:url, image:'assets/night-thumb.webp'
+    });
+  }).catch(function(){});
+})();
+</script>
+
+<script>
+(function(){
+  function openMonitoring(e){
+    var panel=document.getElementById('monitoring-arhiva-panel');
+    if(!panel) return;
+    if(e) e.preventDefault();
+    var opening=panel.hasAttribute('hidden');
+    if(opening){ panel.removeAttribute('hidden'); }
+    else { panel.setAttribute('hidden',''); }
+    document.querySelectorAll('[data-open-monitoring]').forEach(function(link){
+      link.setAttribute('aria-expanded', opening ? 'true' : 'false');
+    });
+    if(opening){ setTimeout(function(){ panel.scrollIntoView({behavior:'smooth',block:'start'}); }, 30); }
+  }
+  document.querySelectorAll('[data-open-monitoring]').forEach(function(link){
+    link.addEventListener('click', openMonitoring);
+  });
+})();
+</script>
+
+
+<!-- RAJAC BIODIVERSITY LATEST CARD v1 -->
+<script src="assets/monitoring-biodiv-latest-card-v1.js?v=20260706-biodiv-v1" defer></script>
+<!-- /RAJAC BIODIVERSITY LATEST CARD v1 -->
+
+<script defer src="/rajac-design/rajac-vrh-button.js?v=20260707-v6-round-no-home"></script>
+</body>
+</html>

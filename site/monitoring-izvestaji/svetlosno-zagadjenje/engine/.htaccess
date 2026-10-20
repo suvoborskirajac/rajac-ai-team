@@ -1,0 +1,10 @@
+# ПИО Рајац — заштита помоћних фајлова engine-а
+# run.php је заштићен token-ом; остали помоћни фајлови нису јавни.
+<Files "config.php">
+  Require all denied
+</Files>
+
+# Логови и белешке нису јавни
+<FilesMatch "(error_log|\.log|\.md|\.json\.bak)$">
+  Require all denied
+</FilesMatch>
