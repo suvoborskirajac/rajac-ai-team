@@ -3,3 +3,8 @@
 <Files "config.php">
   Require all denied
 </Files>
+
+# Логови и белешке нису јавни
+<FilesMatch "(error_log|\.log|\.md|\.json\.bak)$">
+  Require all denied
+</FilesMatch>
