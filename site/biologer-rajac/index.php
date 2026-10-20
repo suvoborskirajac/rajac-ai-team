@@ -68,5 +68,5 @@ header('Pragma: no-cache');
 <script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js"></script>
 <script src="https://unpkg.com/leaflet.heat@0.2.0/dist/leaflet-heat.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js"></script>
-<script src="assets/app.js"></script>
+<script src="assets/app.js?v=20261020"></script>
 </body></html>

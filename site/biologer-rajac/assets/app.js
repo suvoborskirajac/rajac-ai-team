@@ -43,7 +43,7 @@ function renderMap(geo){
    const pts=geo.features.map(f=>[f.geometry.coordinates[1],f.geometry.coordinates[0],1]);
    heatLayer=L.heatLayer(pts,{radius:24,blur:18,maxZoom:22,minOpacity:.28}).addTo(map);
  } else {
-   const group=mode==='clusters'?L.markerClusterGroup({chunkedLoading:true,disableClusteringAtZoom:18,spiderfyOnMaxZoom:true}):L.layerGroup();
+   const group=mode==='clusters'?L.markerClusterGroup({chunkedLoading:true,disableClusteringAtZoom:18,spiderfyOnMaxZoom:true,showCoverageOnHover:false}):L.layerGroup();
    geo.features.forEach(f=>{
       const p=f.properties,c=groupColor(p.taxon_group);
       const marker=L.circleMarker([f.geometry.coordinates[1],f.geometry.coordinates[0]],{radius:6,color:'#fff',weight:1.2,fillColor:c,fillOpacity:.9});
