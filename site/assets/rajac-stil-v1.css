@@ -1,0 +1,106 @@
+/* ПИО „РАЈАЦ“ — заједнички стил, ПРЕДЛОГ А (пилот), 2026-10-20
+   Наслови: Cormorant Garamond · Текст, мени, ознаке: Source Sans 3 (оба имају потпуну ћирилицу)
+   Привремено: због старих правила са !important, овај фајл користи појачан селектор html:root:not(#_).
+   Кад се старе закрпе уклоне, појачање се брише. */
+
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Source+Sans+3:ital,wght@0,400;0,600;0,700;1,400;1,600&display=swap");
+
+:root{
+  --rajac-plava:#0f2744;
+  --rajac-zelena:#213325;
+  --rajac-zlatna:#c8a84b;
+  --rajac-zlatna-tamna:#7a5f1c;
+  --rajac-krem:#fbf9f4;
+  --rajac-tekst:#1d2a22;
+  --rajac-tekst-2:#4a5a50;
+  --rajac-link:#1f5b8a;
+  --rajac-link-hover:#164569;
+  --rajac-linija:#e3ddcf;
+  --rajac-font-naslov:"Cormorant Garamond",Georgia,"Times New Roman",serif;
+  --rajac-font-tekst:"Source Sans 3","Segoe UI",Roboto,Arial,sans-serif;
+}
+
+/* 1. Сав текст: Source Sans 3 (осим кода и мерних ознака) */
+html:root:not(#_) body,
+html:root:not(#_) body *:where(:not(code,pre,kbd,samp,[class*="mono"],.leaflet-container *,svg *)){
+  font-family:var(--rajac-font-tekst)!important;
+}
+
+/* 2. Наслови и наслови картица: Cormorant Garamond 600 */
+html:root:not(#_) body h1, html:root:not(#_) body h1 *,
+html:root:not(#_) body h2, html:root:not(#_) body h2 *,
+html:root:not(#_) body h3, html:root:not(#_) body h3 *,
+html:root:not(#_) body [class*="card-title"], html:root:not(#_) body [class*="card-title"] *,
+html:root:not(#_) body [class*="card-name"], html:root:not(#_) body [class*="card-name"] *{
+  font-family:var(--rajac-font-naslov)!important;
+  font-weight:600!important;
+  letter-spacing:0!important;
+}
+html:root:not(#_) body h1{line-height:1.08!important}
+html:root:not(#_) body h2, html:root:not(#_) body h3{line-height:1.15!important}
+
+/* 3. Натпис ПИО „РАЈАЦ“ у заглављу: увек исти */
+html:root:not(#_) body .rajac-ds-home > span:not(.rajac-ds-home-mark),
+html:root:not(#_) body .rfx-nav-home > span:not(.rfx-nav-home-mark),
+html:root:not(#_) body .rfx-nav-home{
+  font-family:var(--rajac-font-naslov)!important;
+  font-weight:700!important;
+  font-size:18px!important;
+  letter-spacing:.06em!important;
+  text-transform:uppercase!important;
+}
+
+/* 4. Ставке главног менија */
+html:root:not(#_) body .rajac-ds-nav-item,
+html:root:not(#_) body .rajac-ds-nav-item *,
+html:root:not(#_) body .rfx-chapter-nav a:not(.rfx-nav-home),
+html:root:not(#_) body .rfx-chapter-nav a:not(.rfx-nav-home) *{
+  font-family:var(--rajac-font-tekst)!important;
+  font-weight:600!important;
+  font-size:14px!important;
+  letter-spacing:.06em!important;
+}
+
+/* 5. Обичан текст: величина и проред */
+html:root:not(#_) body main p,
+html:root:not(#_) body article p,
+html:root:not(#_) body main li{
+  line-height:1.6!important;
+}
+
+/* 6. Линкови у тексту: исти фонт и дебљина као текст, плави, подвучени */
+html:root:not(#_) body p a:not([class*="btn"]):not([class*="button"]):not(nav *):not(header *):not(footer *),
+html:root:not(#_) body li a:not([class*="btn"]):not([class*="button"]):not(nav *):not(header *):not(footer *),
+html:root:not(#_) body td a{
+  color:var(--rajac-link)!important;
+  font-weight:inherit!important;
+  text-decoration:underline!important;
+  text-decoration-thickness:1px!important;
+  text-underline-offset:3px!important;
+}
+html:root:not(#_) body p a:hover, html:root:not(#_) body li a:hover, html:root:not(#_) body td a:hover{
+  color:var(--rajac-link-hover)!important;
+}
+
+/* 7. Латински називи: курзив у фонту текста (боја остаје она коју страница има) */
+html:root:not(#_) body [class*="sci"],
+html:root:not(#_) body [class*="latin"]{
+  font-style:italic!important;
+}
+
+/* 8. Ознаке, чипови, значке */
+html:root:not(#_) body [class*="chip"],
+html:root:not(#_) body [class*="pill"],
+html:root:not(#_) body [class*="badge"],
+html:root:not(#_) body [class*="tag"]:not(meta):not(link){
+  font-family:var(--rajac-font-tekst)!important;
+  font-weight:600!important;
+}
+
+/* 9. Фокус тастатуре */
+html:root:not(#_) body a:focus-visible,
+html:root:not(#_) body button:focus-visible,
+html:root:not(#_) body [tabindex]:focus-visible{
+  outline:2px solid var(--rajac-zlatna)!important;
+  outline-offset:2px!important;
+}
