@@ -177,3 +177,7 @@ main.edition-main{padding-inline:14px!important}
   .rp62-header .rp62-nav a{font-size:13px!important;padding-inline:4px!important}
   .rp62-header .rp62-right{gap:7px!important}
 }
+
+/* v78: naziv parka zauzima koliko mu treba; meni se ne preklapa */
+@media(min-width:1071px){.rp62-header .rp62-brand{flex:0 0 auto!important;max-width:none!important}.rp62-header .rp62-brandwords strong{font-size:clamp(17px,1.35vw,23px)!important}.rp62-header .rp62-nav a{white-space:nowrap}}
+@media(min-width:1071px) and (max-width:1360px){.rp62-header .rp62-nav{gap:2px!important}.rp62-header .rp62-nav a{font-size:13px!important;padding-left:5px!important;padding-right:5px!important}.rp62-header .rp62-brandwords small{display:none!important}}
