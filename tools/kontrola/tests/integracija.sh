@@ -86,7 +86,7 @@ ok "слика без alt" '[ "$(v alt)" = "1" ]'
 ok "прескочени фолдери у извештају" '[ "$(v skip)" = "kontrola/ ris/" ]'
 
 # 6. преузимање само дозвољених фајлова
-ok "преузимање kontrola.json" 'curl -s -b "$J" "$URL?preuzmi=kontrola.json" | grep -q "\"verzija\": \"1.1\""'
+ok "преузимање kontrola.json" 'curl -s -b "$J" "$URL?preuzmi=kontrola.json" | grep -q "\"verzija\": \"1.2\""'
 CODE=$(curl -s -o /dev/null -w '%{http_code}' -b "$J" "$URL?preuzmi=../../etc/passwd")
 ok "покушај изласка из фолдера одбијен (404)" '[ "$CODE" = "404" ]'
 CODE=$(curl -s -o /dev/null -w '%{http_code}' -b "$J" "$URL?preuzmi=stanje.json")
