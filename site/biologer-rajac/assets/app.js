@@ -3,7 +3,7 @@
 const $=id=>document.getElementById(id);
 const months=['','јануар','фебруар','март','април','мај','јун','јул','август','септембар','октобар','новембар','децембар'];
 const colors={
- 'Дневни лептири':'#d97706','Биљке':'#2e7d32','Птице':'#1565c0','Сисари':'#6d4c41',
+ 'Дневни лептири':'#d97706','Ноћни лептири':'#8e5b3a','Стенице':'#9e9d24','Биљке':'#2e7d32','Птице':'#1565c0','Сисари':'#6d4c41',
  'Гмизавци':'#7b1fa2','Водоземци':'#00838f','Вилински коњици':'#0083b8',
  'Правокрилци':'#8d6e00','Тврдокрилци':'#455a64','Пчеле, осе и мрави':'#c2185b',
  'Двокрилци':'#5d4037','Гљиве':'#6a1b9a','Мекушци':'#607d8b','Рибе':'#0277bd','Остало':'#546e7a'
@@ -46,13 +46,17 @@ function renderMap(geo){
    const group=mode==='clusters'?L.markerClusterGroup({chunkedLoading:true,disableClusteringAtZoom:18,spiderfyOnMaxZoom:true,showCoverageOnHover:false}):L.layerGroup();
    geo.features.forEach(f=>{
       const p=f.properties,c=groupColor(p.taxon_group);
-      const marker=L.circleMarker([f.geometry.coordinates[1],f.geometry.coordinates[0]],{radius:6,color:'#fff',weight:1.2,fillColor:c,fillOpacity:.9});
+      const lat=f.geometry.coordinates[1],lng=f.geometry.coordinates[0],coarse=p.coarse==1;
+      const marker=L.circleMarker([lat,lng],coarse?{radius:7,color:'#fff',weight:2,dashArray:'3 3',fillColor:c,fillOpacity:.75}:{radius:6,color:'#fff',weight:1.2,fillColor:c,fillOpacity:.9});
+      if(coarse){let cellBox=null;
+        marker.on('popupopen',()=>{cellBox=L.rectangle([[lat-.005,lng-.005],[lat+.005,lng+.005]],{color:'#fff',weight:2,dashArray:'6 4',fill:true,fillColor:c,fillOpacity:.12,interactive:false}).addTo(map)});
+        marker.on('popupclose',()=>{if(cellBox){map.removeLayer(cellBox);cellBox=null}});}
       const photo=p.photo_url?`<img class="popup-photo" src="${escape(p.photo_url)}" alt="">`:'';
       marker.bindPopup(`<div class="popup-title"><i>${escape(p.scientific_name)}</i></div>
       <div class="popup-native">${escape(p.native_name||'')}</div>
       <div class="popup-meta"><b>Група:</b> ${escape(p.taxon_group)}<br><b>Датум:</b> ${escape(p.event_date||'непотпун датум')}<br>
-      <b>Зона:</b> ${escape(p.zone_name||'—')}<br><b>Прецизност:</b> ${p.accuracy?escape(p.accuracy)+' m':'није наведена'}
-      ${p.observer?'<br><b>Посматрач:</b> '+escape(p.observer):''}${p.uncertain==1?'<br><b>Напомена:</b> непрецизан/осетљив налаз':''}</div>${photo}`);
+      <b>Зона:</b> ${escape(p.zone_name||'—')}<br><b>Прецизност:</b> ${coarse?'поље од око 1 km':(p.accuracy?escape(p.accuracy)+' m':'није наведена')}
+      ${p.observer?'<br><b>Посматрач:</b> '+escape(p.observer):''}${p.uncertain==1?'<br><b>Напомена:</b> непрецизан/осетљив налаз':''}${coarse?'<br><span class="popup-coarse">'+escape(p.coarse_note||'')+'</span>':''}</div>${photo}`);
       group.addLayer(marker);
    });
    pointLayer=group.addTo(map);
@@ -63,14 +67,14 @@ function renderMap(geo){
 
 function renderLegend(features){
  const groups=[...new Set(features.map(f=>f.properties.taxon_group))].sort();
- $('legend').innerHTML=groups.length?groups.map(g=>`<span><i class="swatch" style="background:${groupColor(g)}"></i>${escape(g)}</span>`).join(''):'<span>Нема приказаних налаза.</span>';
+ $('legend').innerHTML=groups.length?groups.map(g=>`<span><i class="swatch" style="background:${groupColor(g)}"></i>${escape(g)}</span>`).join('')+(features.some(f=>f.properties.coarse==1)?'<span class="legend-coarse"><i class="swatch swatch-coarse"></i>Заштићена врста — тачка означава поље од око 1 km</span>':''):'<span>Нема приказаних налаза.</span>';
 }
 
 function renderTable(features){
  $('obsTable').innerHTML=features.slice(0,500).map(f=>{const p=f.properties;return `<tr>
  <td class="species-name"><i>${escape(p.scientific_name)}</i><span>${escape(p.native_name||'')}</span></td>
  <td>${escape(p.taxon_group)}</td><td>${escape(p.event_date||'—')}</td><td>${escape(p.zone_name||'—')}</td>
- <td>${p.uncertain==1?'непрецизан':(p.accuracy?escape(p.accuracy)+' m':'—')}</td></tr>`}).join('')||'<tr><td colspan="5" class="empty">Нема налаза за изабране филтере.</td></tr>';
+ <td>${p.coarse==1?'поље ~1 km':(p.uncertain==1?'непрецизан':(p.accuracy?escape(p.accuracy)+' m':'—'))}</td></tr>`}).join('')||'<tr><td colspan="5" class="empty">Нема налаза за изабране филтере.</td></tr>';
 }
 
 async function loadFilters(){
