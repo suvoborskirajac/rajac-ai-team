@@ -4,6 +4,7 @@
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>ПЕШАЧКЕ СТАЗЕ НА РАЈЦУ</title>
+<meta name="description" content="Пешачке стазе на Рајцу: интерактивна карта, дужина, успон, силазак, висински профил и најважнији сектори сваке трасе.">
 <link crossorigin="" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" rel="stylesheet"/>
 <script crossorigin="" src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
@@ -463,8 +464,9 @@ tr.rta-active-row td{background:#fff8e4}
 .rta-inline-link{color:inherit;text-decoration:none;border-bottom:1px solid rgba(13,107,48,.35)}
 .rta-inline-link:hover{border-bottom-color:rgba(13,107,48,.85)}
 </style>
+<style id="rajac-mobil-v1">@media(max-width:900px){.rta-wrap{overflow-x:hidden}.rta-wrap [class*="rta-"]{min-width:0;max-width:100%}.rta-main,.rta-head.rta-minihero{grid-template-columns:minmax(0,1fr)!important}.rta-tablewrap{overflow-x:auto}.rta-hero-copy *{overflow-wrap:anywhere}}</style>
 </head>
-<body>
+<body><a class="rajac-home-link" href="https://piorajac.rs/" style="display:inline-block;margin:10px 14px;padding:7px 12px;border:1px solid rgba(0,0,0,.15);border-radius:999px;background:#fff;color:#14301f;font:600 13px/1.2 system-ui,sans-serif;text-decoration:none">← ПИО „РАЈАЦ“</a>
 <div class="rta-wrap">
 <div class="rta-shell">
 <main class="rta-main">
@@ -622,7 +624,7 @@ tr.rta-active-row td{background:#fff8e4}
 </div>
 <div class="rta-weather-grid">
 <section class="rta-weatherbox">
-<h3>Тренутно стање у <a class="rta-inline-link" href="https://piorajac.rs/" target="_blank" rel="noopener">ПИО „РАЈАЦ“</a></h3>
+<h3>Тренутно стање у <a class="rta-inline-link" href="https://piorajac.rs/" rel="noopener">ПИО „РАЈАЦ“</a></h3>
 <div class="rta-weather-meta">
 <span class="rta-pill" id="amsStatePill">Учитавање…</span>
 <span class="rta-pill" id="amsUpdatePill">—</span>
@@ -1710,7 +1712,7 @@ function renderWeather(){
   document.getElementById('amsPressure').textContent = a.pressure_hpa != null ? `${a.pressure_hpa.toFixed(1)} hPa` : '—';
   if (amsUsable){
     document.getElementById('amsSummary').innerHTML = `
-      <b>${a.temp != null ? a.temp.toFixed(1) + ' °C' : '—'}</b> на локацији AMS станице у <a class="rta-inline-link" href="https://piorajac.rs/" target="_blank" rel="noopener">ПИО „Рајац“</a>, ветар <b>${a.wind_speed != null ? a.wind_speed.toFixed(1) : '—'} м/с</b> из правца <b>${windDirLabel(a.wind_dir)}</b>, удари до <b>${a.wind_gust != null ? a.wind_gust.toFixed(1) : '—'} м/с</b>.<br>
+      <b>${a.temp != null ? a.temp.toFixed(1) + ' °C' : '—'}</b> на локацији AMS станице у <a class="rta-inline-link" href="https://piorajac.rs/" rel="noopener">ПИО „Рајац“</a>, ветар <b>${a.wind_speed != null ? a.wind_speed.toFixed(1) : '—'} м/с</b> из правца <b>${windDirLabel(a.wind_dir)}</b>, удари до <b>${a.wind_gust != null ? a.wind_gust.toFixed(1) : '—'} м/с</b>.<br>
       Притисак је <b>${trendLabel(a.bar_trend ?? d.bar_trend)}</b>, а стање стазе по AMS процени је <b>${d.trail_state || 'без локалне процене'}</b>.<br>
       <small>Тренутни блок користи искључиво AMS податке, а Open-Meteo остаје само за прогнозу наредних сати. Извор: ${weatherState.amsSource || ams.source || 'AMS Рајац'}.</small>
     `;
