@@ -109,3 +109,38 @@ html:root:not(#_) body [tabindex]:focus-visible{
   outline:2px solid var(--rajac-zlatna)!important;
   outline-offset:2px!important;
 }
+
+/* ===== Стил Б: савременији изглед ===== */
+/* Наслови унутар странице (H2, H3, наслови картица): Manrope 700, збијенији.
+   Cormorant Garamond остаје само за главни наслов странице (H1) и натпис ПИО „РАЈАЦ“. */
+html:root:not(#_) body h2, html:root:not(#_) body h2 *,
+html:root:not(#_) body h3, html:root:not(#_) body h3 *,
+html:root:not(#_) body [class*="card-title"], html:root:not(#_) body [class*="card-title"] *,
+html:root:not(#_) body [class*="card-name"], html:root:not(#_) body [class*="card-name"] *{
+  font-family:var(--rajac-font-tekst)!important;
+  font-weight:700!important;
+  letter-spacing:-.01em!important;
+}
+html:root:not(#_) body h2{line-height:1.2!important}
+html:root:not(#_) body [class*="card-title"], html:root:not(#_) body [class*="card-name"]{font-size:clamp(19px,1.6vw,22px)!important;line-height:1.25!important}
+html:root:not(#_) body h3{font-size:clamp(17px,1.4vw,19px)!important;line-height:1.3!important}
+/* H1: Cormorant Garamond, нешто тежи */
+html:root:not(#_) body h1, html:root:not(#_) body h1 *{font-weight:600!important;letter-spacing:-.005em!important}
+/* Ситне ознаке изнад наслова и у картицама: Manrope 700, велика слова, шири размак */
+html:root:not(#_) body .kicker, html:root:not(#_) body [class*="kicker"],
+html:root:not(#_) body [class*="badge"], html:root:not(#_) body [class*="eyebrow"]{
+  font-family:var(--rajac-font-tekst)!important;
+  font-weight:700!important;
+  letter-spacing:.12em!important;
+}
+/* Чипови и дугмад: заобљени, без великих слова */
+html:root:not(#_) body [class*="chip"], html:root:not(#_) body [class*="pill"]{
+  border-radius:999px!important;
+  letter-spacing:.02em!important;
+}
+/* Картице: мекша сенка и заобљење */
+html:root:not(#_) body .bird-card, html:root:not(#_) body .rf-card{
+  border-radius:16px!important;
+  box-shadow:0 1px 2px rgba(16,24,40,.06),0 8px 24px rgba(16,24,40,.08)!important;
+  overflow:hidden!important;
+}
