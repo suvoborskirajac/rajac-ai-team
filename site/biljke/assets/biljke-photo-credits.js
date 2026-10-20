@@ -177,7 +177,7 @@
     function openPanel(ev){
       if(ev){ev.preventDefault();ev.stopPropagation();}
       var u=panel.getAttribute('data-flora-original');
-      if(u) window.open(u,'_blank','noopener');
+      if(u) window.location.href=u;
     }
     if(url){
       panel.addEventListener('click',openPanel);
