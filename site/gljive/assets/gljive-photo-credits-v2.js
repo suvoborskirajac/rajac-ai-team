@@ -25,8 +25,7 @@
     var url = el.getAttribute('data-credit-url');
     if(!url) return;
     if(ev){ ev.preventDefault(); ev.stopPropagation(); }
-    var w = window.open(url, '_blank', 'noopener,noreferrer');
-    if(w) w.opener = null;
+    window.location.href = url;
   }
 
   document.addEventListener('click', function(e){
