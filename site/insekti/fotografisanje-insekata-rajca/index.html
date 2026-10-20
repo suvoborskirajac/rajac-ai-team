@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="sr-Cyrl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Фотографисање инсеката Рајца | ПИО Рајац</title>
+<meta name="description" content="Практични водич за фотографисање инсеката у ПИО Рајац: како снимити употребљив налаз, које углове фотографисати, како бележити биљку, станиште и понашање, без хватања и узнемиравања инсеката.">
+<meta name="referrer" content="no-referrer">
+<style>
+:root{
+  --forest:#2d5a27;--forest-dark:#1a3a15;--forest-light:#4a7c43;--nav:#0d1b2a;--blue:#163a58;
+  --cream:#f7f4ef;--warm-white:#fdfcfa;--paper:#fffdf8;--soft:#f2f0eb;--text:#2a2a2a;--muted:#5a5a5a;
+  --border:#d8d0c4;--accent:#8b6914;--gold:#d8b55b;--warn:#b56a1f;--red:#9a2d2d;
+  --tag-bg:#e8f0e6;--tag-border:#a8c4a4;--shadow:0 2px 12px rgba(0,0,0,.08);--shadow-hover:0 6px 24px rgba(0,0,0,.14);
+  --radius:10px;--font:"Cormorant Garamond","EB Garamond",Garamond,"Palatino Linotype","Book Antiqua",Georgia,"Times New Roman",serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--font);font-size:16px;line-height:1.75;color:var(--text);background:var(--warm-white)}
+a{color:inherit;text-decoration:none}
+img,svg{display:block;max-width:100%}
+.wrap{max-width:1180px;margin:0 auto;padding:0 22px}
+.rajac-ds-nav{background:#0d1b2a;position:sticky;top:0;z-index:50;border-bottom:1px solid rgba(255,255,255,.08)}
+.rajac-ds-nav-inner{max-width:1180px;margin:auto;display:flex;align-items:stretch;min-height:58px;padding:0 18px;gap:0;overflow-x:auto;scrollbar-width:none}
+.rajac-ds-nav-inner::-webkit-scrollbar{display:none}
+.rajac-ds-home{display:flex;align-items:center;gap:9px;padding-right:20px;margin-right:8px;border-right:1px solid rgba(255,255,255,.12);color:#d8b55b!important;font-weight:600;font-size:18px;white-space:nowrap}
+.rajac-ds-home-mark{width:18px;height:18px;display:inline-grid;place-items:center;color:#d8b55b}
+.rajac-ds-nav-item{position:relative;display:flex;align-items:center;gap:7px;padding:0 15px;color:rgba(255,255,255,.72);font-size:16px;font-weight:600;letter-spacing:.045em;text-transform:uppercase;white-space:nowrap}
+.rajac-ds-nav-item:hover{color:#fff;background:rgba(255,255,255,.035)}
+.rajac-ds-nav-item.rajac-ds-active{color:#d8b55b}
+.rajac-ds-nav-item.rajac-ds-active:after{content:"";position:absolute;left:15px;right:15px;bottom:8px;height:2px;border-radius:2px;background:#d8b55b}
+.rajac-ds-nav-trofo{color:#c8a24e!important}.rajac-ds-icon{font-size:15px}
+.hero{position:relative;overflow:hidden;background:radial-gradient(circle at 18% 12%,rgba(200,168,75,.16),transparent 24%),linear-gradient(180deg,#fffdf8 0%,#f8f4ed 100%);border-bottom:1px solid var(--border)}
+.topline{display:flex;align-items:center;justify-content:space-between;gap:18px;padding:22px 0 8px;color:var(--muted);font-size:15px;letter-spacing:.08em;text-transform:uppercase;font-weight:600}
+.topline a{color:var(--forest);font-weight:700}.topline a:hover{text-decoration:underline}
+.hero-grid{position:relative;z-index:2;display:grid;grid-template-columns:minmax(0,.94fr) minmax(420px,1.06fr);gap:46px;align-items:end;padding:40px 0 82px}
+.badge{display:inline-flex;align-items:center;gap:10px;width:max-content;padding:8px 14px;border-radius:999px;background:var(--tag-bg);border:1px solid var(--tag-border);color:var(--forest);font-size:15px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;margin-bottom:22px}
+h1{font-weight:300;letter-spacing:-.02em;line-height:.98;font-size:clamp(2.15rem,3.75vw,3.55rem);max-width:760px;margin:0 0 22px;color:var(--forest-dark)}
+.hero-lead{max-width:760px;color:var(--muted);font-size:clamp(1.12rem,1.55vw,1.34rem);line-height:1.48;margin:0}
+.hero-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:30px;max-width:760px}
+.stat{background:var(--soft);border:1px solid var(--border);border-radius:var(--radius);padding:15px 14px;box-shadow:var(--shadow)}
+.stat b{display:block;font-size:34px;line-height:1;color:var(--forest);font-weight:300}.stat span{display:block;color:var(--muted);font-size:16px;line-height:1.35;margin-top:6px}
+.hero-visual{position:relative;min-height:430px;border-radius:var(--radius);overflow:hidden;border:1px solid var(--border);box-shadow:var(--shadow);background:#f2f0eb;isolation:isolate;align-self:end}
+.hero-visual svg{width:100%;height:100%;min-height:430px}.hero-visual-badge{position:absolute;left:22px;bottom:22px;z-index:2;max-width:min(470px,calc(100% - 44px));padding:15px 17px;border-radius:var(--radius);background:rgba(26,58,21,.84);border:1px solid rgba(255,255,255,.18);box-shadow:0 18px 48px rgba(0,0,0,.18)}
+.hero-visual-badge strong{display:block;color:#f2d785;font-size:18px;line-height:1.2;font-weight:700;letter-spacing:.04em;text-transform:uppercase}.hero-visual-badge span{display:block;margin-top:5px;color:rgba(255,255,255,.86);font-size:17px;line-height:1.35}
+.quick-nav{position:relative;z-index:3;margin-top:-38px;margin-bottom:42px}.quick-nav-inner{background:rgba(255,255,255,.94);border:1px solid var(--border);border-radius:var(--radius);padding:12px;box-shadow:var(--shadow);display:grid;grid-template-columns:repeat(6,1fr);gap:10px;backdrop-filter:blur(10px)}
+.quick-nav a{border-radius:8px;padding:10px 9px;background:#fff;border:1px solid var(--border);text-align:center;font-size:16px;font-weight:700;color:var(--forest)}.quick-nav a:hover{background:var(--tag-bg);border-color:var(--tag-border)}
+.section{padding:34px 0}.section-head{margin-bottom:20px}.kicker{display:inline-flex;gap:9px;align-items:center;color:var(--accent);font-size:15px;font-weight:700;letter-spacing:.13em;text-transform:uppercase;margin-bottom:9px}
+h2{font-weight:300;font-size:clamp(2.1rem,4.2vw,3.45rem);line-height:1.02;letter-spacing:-.02em;color:var(--forest-dark);margin:0}.section-intro{max-width:920px;color:var(--muted);font-size:21px;line-height:1.52;margin:12px 0 0}
+.card{background:rgba(255,255,255,.88);border:1px solid var(--border);border-radius:var(--radius);box-shadow:var(--shadow)}.grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.grid-2{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+.rule-card{padding:23px;min-height:222px;position:relative;overflow:hidden}.rule-card:before{content:"";position:absolute;right:-45px;top:-45px;width:120px;height:120px;border-radius:50%;background:rgba(200,168,75,.12)}.rule-icon{font-size:34px;margin-bottom:12px}.rule-card h3{font-weight:600;font-size:1.5rem;line-height:1.15;margin:0 0 10px;color:var(--forest-dark)}.rule-card p{color:#3f4d5f;font-size:19px;line-height:1.45;margin:0}
+.highlight{margin:26px 0;padding:20px 22px;border-radius:var(--radius);background:linear-gradient(135deg,var(--forest-dark),#163a58);color:#fff;box-shadow:var(--shadow)}.highlight strong{color:#f2d785}
+.green-box{background:var(--tag-bg);border:1px solid var(--tag-border);border-left:4px solid var(--forest);border-radius:var(--radius);padding:16px 20px;margin-top:14px;font-size:18px;line-height:1.62;color:var(--forest-dark)}
+.warning-box{background:#fff8e6;border:1px solid #e8cc88;border-left:4px solid var(--accent);border-radius:var(--radius);padding:16px 20px;margin-top:14px;font-size:18px;line-height:1.62}.warning-box strong{color:var(--accent)}
+.panel{padding:23px}.panel h3{font-size:1.45rem;color:var(--forest-dark);font-weight:600;margin:0 0 12px}.panel ul{list-style:none;margin:0;padding:0;display:grid;gap:10px}.panel li{position:relative;padding:12px 13px 12px 34px;border:1px solid #eadfce;background:#fffaf1;border-radius:var(--radius);color:#4f5f72;font-size:18px;line-height:1.42}.panel li:before{content:"→";position:absolute;left:13px;top:12px;color:var(--accent);font-weight:700}.ok-list li:before{content:"✓";color:var(--forest)}.no-list li:before{content:"✗";color:var(--red)}
+.frame-set{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.frame-card{overflow:hidden;background:#fff;border:1px solid var(--border);border-radius:var(--radius);box-shadow:var(--shadow)}.frame-visual{height:230px;background:#f4efe4;position:relative;overflow:hidden;border-bottom:1px solid var(--border)}.frame-visual svg{width:100%;height:100%}.frame-body{padding:18px}.frame-body h3{font-size:1.45rem;color:var(--forest-dark);line-height:1.14;margin-bottom:9px}.frame-body p{font-size:18px;line-height:1.46;color:#4f5f72}.frame-tag{position:absolute;left:12px;top:12px;background:rgba(26,58,21,.88);color:#fff;border-radius:999px;padding:5px 10px;font-size:14px;font-weight:700;letter-spacing:.04em;text-transform:uppercase}
+.workflow{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;counter-reset:step}.step{position:relative;padding:18px 15px;background:#fff;border:1px solid var(--border);border-radius:var(--radius);box-shadow:var(--shadow);min-height:185px}.step:before{counter-increment:step;content:counter(step);display:grid;place-items:center;width:34px;height:34px;border-radius:50%;background:#0d1b2a;color:#fff;font-weight:700;margin-bottom:13px}.step h3{font-weight:600;font-size:1.25rem;color:var(--forest-dark);margin:0 0 8px}.step p{font-size:18px;color:#4f5f72;line-height:1.42;margin:0}
+.species-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.species-card{padding:20px;background:#fff;border:1px solid var(--border);border-radius:var(--radius);box-shadow:var(--shadow)}.species-card h3{font-size:1.38rem;line-height:1.14;color:var(--forest-dark);margin-bottom:10px}.species-card p{font-size:18px;line-height:1.46;color:#4f5f72}.species-card .latin{display:block;font-style:italic;color:var(--forest);font-size:16px;margin-top:4px}.mini-list{display:grid;gap:7px;margin-top:12px}.mini-list span{display:block;background:#fffaf1;border:1px solid #eadfce;border-radius:8px;padding:8px 10px;color:#4f5f72;font-size:17px;line-height:1.32}
+.phone-grid{display:grid;grid-template-columns:1fr .8fr;gap:18px;align-items:stretch}.phone-demo{padding:20px;display:grid;place-items:center;background:#fff}.phone{width:min(310px,100%);border:8px solid #0d1b2a;border-radius:32px;padding:14px;background:#111;box-shadow:0 18px 44px rgba(0,0,0,.18)}.phone-screen{border-radius:22px;overflow:hidden;background:#f8f4ed;border:1px solid #303b48}.phone-screen svg{width:100%;height:auto}.phone-caption{background:#fffaf1;border-top:1px solid #eadfce;padding:12px;color:#1a3a15;font-size:17px;line-height:1.38}
+.record-preview{padding:23px;background:linear-gradient(135deg,#fff,#f8f2e8);border:1px solid var(--border);border-radius:var(--radius);box-shadow:var(--shadow)}.record-preview h3{font-weight:600;color:var(--forest-dark);font-size:1.55rem;margin:0 0 14px}.record-preview label{display:block;font-size:14px;color:var(--accent);font-weight:700;text-transform:uppercase;letter-spacing:.1em;margin-top:10px}.record-preview .value{background:#fff;border:1px solid #eadfce;border-radius:8px;padding:10px 12px;color:#354050;font-size:18px;margin-top:4px}
+.check-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}.check-item{display:flex;gap:12px;padding:14px;background:#fff;border:1px solid var(--border);border-radius:var(--radius);box-shadow:var(--shadow);cursor:pointer}.check-item input{width:20px;height:20px;margin-top:3px;accent-color:var(--forest)}.check-item strong{display:block;color:var(--forest-dark);font-size:1.15rem;line-height:1.18}.check-item span{display:block;color:#4f5f72;font-size:17px;line-height:1.38;margin-top:4px}.progress{margin-top:18px;background:#fff;border:1px solid var(--border);border-radius:999px;padding:6px;box-shadow:var(--shadow)}.progress-bar{height:18px;width:0;border-radius:999px;background:linear-gradient(90deg,var(--forest),var(--gold));transition:width .25s ease}.progress-text{margin-top:10px;color:var(--forest-dark);font-size:18px;font-weight:700}
+.light-table{width:100%;border-collapse:collapse;background:#fff;border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow)}.light-table th,.light-table td{padding:12px 14px;border-bottom:1px solid var(--border);vertical-align:top;text-align:left;font-size:18px;line-height:1.42}.light-table th{background:var(--forest-dark);color:#fff;font-weight:600}.light-table tr:last-child td{border-bottom:none}.light-table td:first-child{font-weight:700;color:var(--forest-dark);width:28%}
+.guide-links{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:12px;margin-top:42px;padding-top:24px;border-top:2px solid var(--border)}.guide-link{display:grid;grid-template-columns:44px 1fr 18px;align-items:center;gap:12px;min-height:94px;background:#fff;border:1px solid var(--border);border-radius:var(--radius);padding:14px 15px;box-shadow:var(--shadow);transition:box-shadow .2s,transform .2s}.guide-link:hover{box-shadow:var(--shadow-hover);transform:translateY(-1px)}.guide-link .ico{width:44px;height:44px;display:grid;place-items:center;border-radius:8px;background:var(--tag-bg);border:1px solid var(--tag-border);font-size:20px}.guide-link strong{display:block;color:var(--forest-dark);font-size:17px;line-height:1.12}.guide-link span{display:block;color:var(--muted);font-size:13px;line-height:1.35;margin-top:4px}.guide-link .arr{color:var(--accent);font-weight:700}
+.footer-nav{padding:34px 0 54px}.footer-box{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:18px;background:#fff;border:1px solid var(--border);border-radius:var(--radius);padding:18px;box-shadow:var(--shadow)}.footer-box a{display:inline-flex;align-items:center;justify-content:center;min-height:58px;border-radius:999px;padding:13px 22px;font-weight:700;background:#fffaf1;border:1.5px solid var(--forest);color:var(--forest-dark);font-size:18px;line-height:1.15}.footer-box a.primary{justify-self:center;background:#0d1b2a;color:#fff;border-color:#0d1b2a;min-width:190px}.footer-box a:first-child{justify-self:start}.footer-box a:last-child{justify-self:end}.site-footer{background:var(--forest-dark);color:rgba(255,255,255,.7);text-align:center;padding:22px;font-size:13px}
+@media(max-width:1040px){
+  .hero-grid{grid-template-columns:1fr;gap:30px;padding-bottom:70px}.hero-visual{min-height:360px;max-width:760px}.hero-visual svg{min-height:360px}.quick-nav-inner{grid-template-columns:repeat(3,1fr)}.grid-3,.species-grid,.frame-set{grid-template-columns:repeat(2,1fr)}.workflow{grid-template-columns:repeat(3,1fr)}.phone-grid{grid-template-columns:1fr}.guide-links{grid-template-columns:repeat(2,1fr)}
+}
+@media(max-width:760px){
+  body{font-size:15px}.wrap{padding:0 16px}.hero-grid{padding-top:28px;padding-bottom:60px}.hero h1,h1{font-size:clamp(2.05rem,10vw,3.05rem)}.hero-visual{min-height:300px}.hero-visual svg{min-height:300px}.hero-visual-badge{left:14px;right:14px;bottom:14px;padding:12px 13px}.hero-stats,.grid-3,.grid-2,.species-grid,.frame-set,.check-grid,.guide-links{grid-template-columns:1fr}.quick-nav{margin-top:-28px}.quick-nav-inner{grid-template-columns:repeat(2,1fr)}.workflow{grid-template-columns:1fr}.footer-box{grid-template-columns:1fr}.footer-box a,.footer-box a.primary{justify-self:stretch;text-align:center;min-width:0}.rajac-ds-nav-item{font-size:14px;padding:0 12px}.rajac-ds-home{font-size:15px}
+}
+</style>
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"WebPage",
+  "name":"Фотографисање инсеката Рајца",
+  "description":"Практични водич за фотографисање инсеката у ПИО Рајац: употребљиви кадрови, макро приступ, бележење биљке и станишта и етичка правила без хватања инсеката.",
+  "inLanguage":"sr-Cyrl",
+  "about":["инсекти","макро фотографија","дневни лептири","опрашивачи","осолике муве","ПИО Рајац","теренски налаз"],
+  "isPartOf":{"@type":"WebSite","name":"ПИО Рајац","url":"https://piorajac.rs/"},
+  "breadcrumb":{"@type":"BreadcrumbList","itemListElement":[
+    {"@type":"ListItem","position":1,"name":"ПИО Рајац","item":"https://piorajac.rs/"},
+    {"@type":"ListItem","position":2,"name":"Инсекти","item":"https://piorajac.rs/insekti/"},
+    {"@type":"ListItem","position":3,"name":"Фотографисање инсеката Рајца"}
+  ]}
+}
+</script>
+<style id="rajac-ds-menu-static-css">
+:root{--rajac-nav:#0d1b2a;--rajac-gold:#d8b55b;--rajac-nav-text:rgba(255,255,255,.72)}
+.rajac-ds-nav{background:var(--rajac-nav);position:sticky;top:0;z-index:999999;border-bottom:1px solid rgba(255,255,255,.08);font-family:"Cormorant Garamond","EB Garamond",Garamond,"Palatino Linotype","Book Antiqua",Georgia,"Times New Roman",serif!important}
+body.admin-bar .rajac-ds-nav{top:32px}.rajac-ds-nav *{box-sizing:border-box}.rajac-ds-nav-inner{max-width:1180px;margin:0 auto;padding:0 18px;display:flex;align-items:stretch;min-height:56px;gap:0;overflow-x:auto;scrollbar-width:none}.rajac-ds-nav-inner::-webkit-scrollbar{display:none}.rajac-ds-home{display:flex;align-items:center;gap:9px;padding-right:20px;margin-right:8px;border-right:1px solid rgba(255,255,255,.12);flex-shrink:0;color:var(--rajac-gold)!important;text-decoration:none!important;font-weight:600;font-size:16px;letter-spacing:.03em}.rajac-ds-home-mark{width:18px;height:18px;display:inline-grid;place-items:center;color:var(--rajac-gold)}.rajac-ds-nav-item{position:relative;display:flex;align-items:center;gap:7px;padding:0 15px;color:var(--rajac-nav-text)!important;font-size:15px;font-weight:600;letter-spacing:.045em;text-transform:uppercase;white-space:nowrap;text-decoration:none!important}.rajac-ds-nav-item:hover{color:rgba(255,255,255,.94)!important;background:rgba(255,255,255,.035)}.rajac-ds-icon{font-size:15px;line-height:1}.rajac-ds-nav-item.rajac-ds-active{color:var(--rajac-gold)!important}.rajac-ds-nav-item.rajac-ds-active:after{content:"";position:absolute;left:15px;right:15px;bottom:8px;height:2px;border-radius:2px;background:var(--rajac-gold)}.rajac-ds-nav-trofo{color:#c8a24e!important}.rajac-ds-nav-trofo:hover{color:#f0cb78!important}.ins-topnav-wrap,.site-header{display:none!important;height:0!important;min-height:0!important;max-height:0!important;overflow:hidden!important;visibility:hidden!important}@media(max-width:720px){.rajac-ds-nav-inner{padding:0 12px}.rajac-ds-home{padding-right:14px}.rajac-ds-nav-item{font-size:13px;padding:0 12px}.rajac-ds-nav-item.rajac-ds-active:after{left:12px;right:12px}}
+</style>
+<style id="rajac-okvir-v1">.rajac-ds-home,.rfx-nav-home{display:flex!important;align-items:center!important;line-height:1!important}.rajac-ds-home>span,.rfx-nav-home>span{display:inline-flex!important;align-items:center!important;line-height:1!important}.rajac-ds-home>span:first-child,.rfx-nav-home>span:first-child{justify-content:center;width:18px;height:18px}</style>
+<style id="rajac-insekti-font-v1">html body .card-tag,html body .tags .tag{font-size:12.5px!important}html body .card-body p.note{font-size:15px!important;line-height:1.5!important}html body .card-body .arrow,html body .card-arrow{font-size:14.5px!important}html body .filter-btn .filter-label{font-size:13px!important}html body .hero-in .super{font-size:12px!important}html body .hero-pills .pill,html body .hero-tags .htag{font-size:12.5px!important}html body .info-cell .info-label{font-size:12.5px!important}html body .kv-item .kv-l{font-size:12px!important}html body .card-title{font-size:13px!important}html body .info-box p,html body .smart-card p{font-size:14.5px!important;line-height:1.55!important}</style>
+</head>
+<body>
+<nav class="rajac-ds-nav" aria-label="Главни мени ПИО Рајац"><div class="rajac-ds-nav-inner"><a class="rajac-ds-home" href="https://piorajac.rs/"><span class="rajac-ds-home-mark" aria-hidden="true">⊙</span><span>ПИО „РАЈАЦ“</span></a><a class="rajac-ds-nav-item" href="https://piorajac.rs/biljke/"><span class="rajac-ds-icon" aria-hidden="true">🌿</span><span>БИЉКЕ</span></a><a class="rajac-ds-nav-item" href="https://piorajac.rs/ptice/"><span class="rajac-ds-icon" aria-hidden="true">🦉</span><span>ПТИЦЕ</span></a><a class="rajac-ds-nav-item rajac-ds-active" href="https://piorajac.rs/insekti/"><span class="rajac-ds-icon" aria-hidden="true">🦋</span><span>ИНСЕКТИ</span></a><a class="rajac-ds-nav-item" href="https://piorajac.rs/sisari/"><span class="rajac-ds-icon" aria-hidden="true">🐾</span><span>СИСАРИ</span></a><a class="rajac-ds-nav-item" href="https://piorajac.rs/gljive/"><span class="rajac-ds-icon" aria-hidden="true">🍄</span><span>ГЉИВЕ</span></a><a class="rajac-ds-nav-item rajac-ds-nav-trofo" href="https://piorajac.rs/trofodinamika/"><span class="rajac-ds-icon" aria-hidden="true">🔗</span><span>ТРОФОДИНАМИКА</span></a></div></nav>
+
+<header class="hero" id="vrh">
+  <div class="wrap">
+    <div class="topline"><span>ПИО Рајац · фотографисање инсеката без узнемиравања</span><a href="https://piorajac.rs/insekti/">← Инсекти Рајца</a></div>
+    <div class="hero-grid">
+      <div>
+        <div class="badge">📷 макро · станиште · биљка · налаз</div>
+        <h1>Свака добра фотографија инсекта је и теренски податак</h1>
+        <p class="hero-lead">За мониторинг инсеката није довољно да се инсект види. Највреднији налаз има јасан снимак, биљку на којој је инсект, шири кадар станишта, датум, приближну локацију и опис понашања. Циљ је да се добије користан податак без хватања, премештања и узнемиравања.</p>
+        <div class="hero-stats">
+          <div class="stat"><b>3</b><span>обавезна кадра: станиште, инсект, детаљ</span></div>
+          <div class="stat"><b>0</b><span>хватања ради фотографије</span></div>
+          <div class="stat"><b>1</b><span>биљка домаћин често решава идентификацију</span></div>
+        </div>
+      </div>
+      <div class="hero-visual" aria-label="Илустрација фотографисања инсекта на цвету">
+        <svg viewBox="0 0 900 560" role="img" aria-label="Телефон фотографише лептира и опрашивача на цветној ливади">
+          <defs>
+            <linearGradient id="sky" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#f0eadf"/><stop offset="1" stop-color="#d7c491"/></linearGradient>
+            <linearGradient id="grass" x1="0" x2="1"><stop stop-color="#6f8a58"/><stop offset="1" stop-color="#2d5a27"/></linearGradient>
+            <filter id="sh" x="-20%" y="-20%" width="140%" height="140%"><feDropShadow dx="0" dy="12" stdDeviation="12" flood-color="#12251b" flood-opacity=".18"/></filter>
+          </defs>
+          <rect width="900" height="560" fill="url(#sky)"/>
+          <circle cx="720" cy="82" r="50" fill="#d8b55b" opacity=".42"/>
+          <path d="M0 335 C145 270 275 355 420 300 C575 240 695 352 900 285 L900 560 L0 560Z" fill="#8fa86e" opacity=".74"/>
+          <path d="M0 420 C148 360 285 445 445 388 C602 332 720 438 900 370 L900 560 L0 560Z" fill="url(#grass)"/>
+          <path d="M0 480 C160 438 286 498 430 456 C600 406 720 498 900 445 L900 560 L0 560Z" fill="#203d29"/>
+          <g filter="url(#sh)" transform="translate(92 92)">
+            <rect x="0" y="0" width="250" height="385" rx="38" fill="#0d1b2a"/>
+            <rect x="18" y="42" width="214" height="298" rx="24" fill="#fffdf8"/>
+            <circle cx="125" cy="362" r="13" fill="#fffdf8" opacity=".65"/>
+            <rect x="66" y="20" width="118" height="9" rx="5" fill="#29394a"/>
+            <g transform="translate(43 93)">
+              <rect width="165" height="160" rx="18" fill="#e8f0e6"/>
+              <path d="M0 115 C34 90 70 126 104 105 C130 88 145 101 165 92 L165 160 L0 160Z" fill="#5e7f48"/>
+              <path d="M84 130 C91 88 106 58 124 35" stroke="#1a3a15" stroke-width="8" stroke-linecap="round"/>
+              <circle cx="126" cy="34" r="14" fill="#f2d785"/><circle cx="145" cy="48" r="12" fill="#f2d785"/><circle cx="106" cy="48" r="11" fill="#f2d785"/>
+              <path d="M105 88 C80 45 109 23 137 58 C158 20 193 36 174 76 C151 102 127 103 105 88Z" fill="#d96f3c" opacity=".92"/>
+              <ellipse cx="137" cy="75" rx="9" ry="38" fill="#101a21"/>
+            </g>
+            <rect x="46" y="266" width="158" height="15" rx="8" fill="#e0dbd3"/><rect x="46" y="290" width="98" height="12" rx="6" fill="#e0dbd3"/>
+          </g>
+          <g transform="translate(468 182)" filter="url(#sh)">
+            <path d="M105 197 C112 132 136 82 167 35" stroke="#1a3a15" stroke-width="14" stroke-linecap="round"/>
+            <circle cx="169" cy="35" r="24" fill="#f2d785"/><circle cx="201" cy="56" r="22" fill="#f2d785"/><circle cx="137" cy="60" r="20" fill="#f2d785"/>
+            <path d="M180 109 C126 48 174 -1 228 56 C270 -10 330 22 288 89 C251 139 214 142 180 109Z" fill="#d96f3c"/>
+            <path d="M228 56 C270 -10 330 22 288 89 C251 139 214 142 180 109Z" fill="#d8b55b" opacity=".82"/>
+            <ellipse cx="214" cy="96" rx="12" ry="67" fill="#101a21"/>
+            <path d="M202 96 C174 102 157 118 145 140" stroke="#101a21" stroke-width="4" fill="none"/>
+            <path d="M226 97 C255 103 275 120 290 144" stroke="#101a21" stroke-width="4" fill="none"/>
+          </g>
+          <g transform="translate(685 330)">
+            <ellipse cx="70" cy="28" rx="58" ry="20" fill="#d8f0df" opacity=".65"/>
+            <ellipse cx="74" cy="48" rx="49" ry="17" fill="#101a21"/><rect x="45" y="36" width="58" height="7" rx="4" fill="#d8b55b"/><rect x="43" y="50" width="62" height="7" rx="4" fill="#d8b55b"/>
+          </g>
+          <text x="450" y="528" text-anchor="middle" font-family="Georgia" font-size="22" fill="#fffdf8">не хватај — фотографиши станиште, биљку и детаљ</text>
+        </svg>
+        <div class="hero-visual-badge"><strong>Биљка је пола налаза</strong><span>Инсект на цвету, листу, кори или трави говори много више од изолованог крупног кадра.</span></div>
+      </div>
+    </div>
+  </div>
+</header>
+<nav aria-label="Брза навигација" class="quick-nav"><div class="wrap"><div class="quick-nav-inner">
+  <a href="#tri-kadra">Три кадра</a><a href="#telefon">Телефон</a><a href="#makro">Макро</a><a href="#grupe">Групе</a><a href="#protokol">Протокол</a><a href="#etika">Етика</a>
+</div></div></nav>
+<main>
+<section class="section" id="tri-kadra">
+  <div class="wrap">
+    <div class="section-head"><div class="kicker">📷 основно правило</div><h2>Три кадра која сваки налаз чине употребљивим</h2><p class="section-intro">Једна лепа фотографија није увек довољна за идентификацију. За потребе мониторинга најбоље је направити кратку серију: шири кадар, средњи кадар и крупан детаљ. Тако се види и врста, и понашање, и станиште.</p></div>
+    <div class="frame-set">
+      <article class="frame-card">
+        <div class="frame-visual"><span class="frame-tag">1 · станиште</span><svg viewBox="0 0 520 260" role="img" aria-label="Шири кадар станишта"><rect width="520" height="260" fill="#efe7d6"/><circle cx="415" cy="54" r="34" fill="#d8b55b" opacity=".55"/><path d="M0 150 C76 110 128 160 212 125 C305 86 367 164 520 105 L520 260 L0 260Z" fill="#8ea56c"/><path d="M0 198 C100 150 180 213 300 174 C400 142 442 209 520 166 L520 260 L0 260Z" fill="#2d5a27"/><g fill="#f2d785"><circle cx="120" cy="162" r="9"/><circle cx="168" cy="183" r="7"/><circle cx="224" cy="155" r="8"/><circle cx="352" cy="175" r="7"/><circle cx="425" cy="152" r="9"/></g></svg></div>
+        <div class="frame-body"><h3>Шири кадар станишта</h3><p>Сними ливаду, руб шуме, поток, цветни појас, труло дрво или стазу. Овај кадар показује где је инсект заиста пронађен.</p></div>
+      </article>
+      <article class="frame-card">
+        <div class="frame-visual"><span class="frame-tag">2 · инсект</span><svg viewBox="0 0 520 260" role="img" aria-label="Инсект на биљци"><rect width="520" height="260" fill="#f6f1e7"/><path d="M208 250 C220 160 252 92 300 45" stroke="#1a3a15" stroke-width="13" stroke-linecap="round"/><circle cx="305" cy="45" r="22" fill="#f2d785"/><circle cx="337" cy="64" r="20" fill="#f2d785"/><circle cx="272" cy="66" r="18" fill="#f2d785"/><path d="M292 124 C239 65 285 16 339 72 C383 13 440 47 397 110 C360 157 323 158 292 124Z" fill="#d96f3c"/><ellipse cx="326" cy="108" rx="12" ry="58" fill="#101a21"/></svg></div>
+        <div class="frame-body"><h3>Инсект на биљци</h3><p>Сними инсекта у природном положају. У кадру треба да се види цвет, лист, стабљика, кора или подлога на којој се налази.</p></div>
+      </article>
+      <article class="frame-card">
+        <div class="frame-visual"><span class="frame-tag">3 · детаљ</span><svg viewBox="0 0 520 260" role="img" aria-label="Крупан детаљ крила и тела"><rect width="520" height="260" fill="#fffaf1"/><circle cx="260" cy="130" r="95" fill="#e8f0e6" stroke="#a8c4a4" stroke-width="2"/><path d="M244 127 C187 58 232 16 289 76 C338 13 404 45 355 117 C321 164 278 166 244 127Z" fill="#d96f3c"/><path d="M290 76 C338 13 404 45 355 117 C321 164 278 166 244 127Z" fill="#d8b55b" opacity=".9"/><ellipse cx="286" cy="116" rx="13" ry="69" fill="#101a21"/><path d="M270 117 C240 124 218 145 202 175" stroke="#101a21" stroke-width="5" fill="none"/><path d="M304 117 C338 126 360 148 376 179" stroke="#101a21" stroke-width="5" fill="none"/></svg></div>
+        <div class="frame-body"><h3>Крупан кадар детаља</h3><p>За идентификацију често су пресудни шара крила, антене, ноге, очи, чељусти, леђна линија или облик тела.</p></div>
+      </article>
+    </div>
+    <div class="highlight"><strong>Најбоља серија:</strong> прво фотографија станишта, затим инсект на биљци, па тек онда крупан детаљ. Ако инсект одлети, остаје барем користан податак о месту и станишту.</div>
+  </div>
+</section>
+<section class="section" id="telefon">
+  <div class="wrap">
+    <div class="section-head"><div class="kicker">📱 фотографисање телефоном</div><h2>Како добити јасан снимак без скупе опреме</h2><p class="section-intro">Већина посетилаца користи телефон. То је довољно за велики број налаза ако се снима мирно, без наглог приласка и без покушаја да се инсект ухвати или премести.</p></div>
+    <div class="phone-grid">
+      <div class="grid-2">
+        <article class="card rule-card"><div class="rule-icon">🚶</div><h3>Прилази споро</h3><p>Крећи се бочно и полако. Нагли покрети, сенка преко инсекта и приближавање одозго најчешће доводе до одлетања.</p></article>
+        <article class="card rule-card"><div class="rule-icon">🌤</div><h3>Пази на светло</h3><p>Најбоље је меко јутарње или каснопоподневно светло. Јако подневно сунце често спали детаље на светлим крилима.</p></article>
+        <article class="card rule-card"><div class="rule-icon">🎯</div><h3>Фокус на очи и тело</h3><p>Код крупнијих инсеката додирни екран на месту где су глава или грудни део. Код лептира фокусирај раван крила.</p></article>
+        <article class="card rule-card"><div class="rule-icon">🔁</div><h3>Сними серију</h3><p>Боље је пет умерено добрих фотографија из различитих углова него један савршен, али недовољан кадар.</p></article>
+      </div>
+      <div class="card phone-demo">
+        <div class="phone">
+          <div class="phone-screen">
+            <svg viewBox="0 0 300 420" role="img" aria-label="Телефонски приказ инсекта на цвету"><rect width="300" height="420" fill="#fffdf8"/><rect x="20" y="22" width="260" height="260" rx="18" fill="#e8f0e6"/><path d="M20 210 C74 172 121 225 177 188 C225 156 248 203 280 178 L280 282 L20 282Z" fill="#63834d"/><path d="M138 260 C145 190 168 128 198 72" stroke="#1a3a15" stroke-width="9" stroke-linecap="round"/><circle cx="201" cy="71" r="17" fill="#f2d785"/><circle cx="225" cy="89" r="15" fill="#f2d785"/><circle cx="176" cy="91" r="14" fill="#f2d785"/><path d="M194 144 C155 92 190 60 232 102 C262 58 306 86 270 134 C246 168 217 170 194 144Z" fill="#d96f3c"/><ellipse cx="222" cy="132" rx="9" ry="45" fill="#101a21"/><rect x="52" y="316" width="196" height="14" rx="7" fill="#d8d0c4"/><rect x="76" y="344" width="148" height="12" rx="6" fill="#d8d0c4"/><circle cx="150" cy="386" r="18" fill="#2d5a27"/></svg>
+            <div class="phone-caption">Сними инсекта у контексту: цвет, лист или кора треба да остану у кадру.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="section" id="makro">
+  <div class="wrap">
+    <div class="section-head"><div class="kicker">🔎 макро приступ</div><h2>Крупан кадар није вредан ако је добијен узнемиравањем</h2><p class="section-intro">Макро фотографија је корисна само ако не нарушава понашање инсекта. Нема хватања у руке, тегле, кутије, мреже или премештања на „лепши” цвет ради фотографије.</p></div>
+    <div class="workflow">
+      <article class="step"><h3>Почни из даљине</h3><p>Први кадар направи одмах, чак и ако није идеалан. То је резервни доказ ако инсект одлети.</p></article>
+      <article class="step"><h3>Смањи сенку</h3><p>Не заклањај инсекта телом или телефоном. Сенка преко цвета често прекида исхрану.</p></article>
+      <article class="step"><h3>Прати раван крила</h3><p>Код лептира је важно да фотоапарат буде што паралелнији са крилима.</p></article>
+      <article class="step"><h3>Не померај подлогу</h3><p>Не савијај стабљику и не треси цвет да би инсект „боље стао”.</p></article>
+      <article class="step"><h3>Заврши белешком</h3><p>Запиши биљку, понашање, станиште и број јединки ако их има више.</p></article>
+    </div>
+    <div class="warning-box"><strong>Важно:</strong> светлосни мамци, мреже, клопке, сакупљање примерака и рад у пећинама нису посетилачке активности. То припада стручном мониторингу са дозволом и јасним програмом.</div>
+  </div>
+</section>
+<section class="section" id="grupe">
+  <div class="wrap">
+    <div class="section-head"><div class="kicker">🦋 шта снимити код различитих група</div><h2>Свака група тражи мало другачији кадар</h2><p class="section-intro">Исти приступ не одговара лептирима, осоликим мувама, тврдокрилцима и вилиним коњицима. Испод су практични подсетници шта је најкорисније за каснију проверу налаза.</p></div>
+    <div class="species-grid">
+      <article class="species-card"><h3>Дневни лептири<span class="latin">Lepidoptera</span></h3><p>Најважнији су горња и доња страна крила, облик ивица, шара, боја, биљка и тип станишта.</p><div class="mini-list"><span>Сними отворена крила ако је могуће.</span><span>Сними доњу страну крила док мирује.</span><span>Бележи цвет или биљку на којој се храни.</span></div></article>
+      <article class="species-card"><h3>Осолике муве<span class="latin">Syrphidae</span></h3><p>Важни су лице, очи, шара на абдомену, бочни кадар и цвет на ком се хране.</p><div class="mini-list"><span>Не мешати са пчелама само по жутим шарама.</span><span>Сними бочни и горњи кадар.</span><span>Бележи биљку, јер су често на цветовима.</span></div></article>
+      <article class="species-card"><h3>Дивље пчеле и бумбари<span class="latin">Apoidea</span></h3><p>Не хватати и не затварати. Корисни су цвет, боја длакавости, ноге са поленом и величина.</p><div class="mini-list"><span>Сними на цвету, не у руци.</span><span>Сними поленове корпице ако се виде.</span><span>Упиши биљку коју посећује.</span></div></article>
+      <article class="species-card"><h3>Тврдокрилци<span class="latin">Coleoptera</span></h3><p>Потребан је горњи кадар тела, глава, антене, ноге и подлога: цвет, кора, труло дрво или земља.</p><div class="mini-list"><span>Не скидати са трулог дрвета.</span><span>Сними величину поред листа или коре.</span><span>Бележи да ли је на цвету, кори или земљи.</span></div></article>
+      <article class="species-card"><h3>Вилини коњици<span class="latin">Odonata</span></h3><p>Корисни су бочни кадар, положај крила, боја груди и абдомена, као и близина воде.</p><div class="mini-list"><span>Сними место одмора поред воде.</span><span>Не прилазити ларвеним стаништима у потоку.</span><span>Бележи поток, барицу или влажно место.</span></div></article>
+      <article class="species-card"><h3>Скакавци, зрикавци и стенице<span class="latin">Orthoptera · Hemiptera</span></h3><p>За ове групе су важни бочни кадар, облик тела, антене, задње ноге, биљка и структура травњака.</p><div class="mini-list"><span>Сними у трави пре него што скочи.</span><span>Не газити високу траву ван стазе.</span><span>Бележи суву, влажну или цветну ливаду.</span></div></article>
+    </div>
+  </div>
+</section>
+<section class="section" id="protokol">
+  <div class="wrap">
+    <div class="section-head"><div class="kicker">📝 теренски запис</div><h2>Фотографија без података је само лепа слика</h2><p class="section-intro">За сајт, базу налаза и будући мониторинг потребно је да уз фотографију постоји кратак, али јасан опис. Не мора бити научни опис; довољно је да се забележе основне чињенице.</p></div>
+    <div class="grid-2">
+      <div class="record-preview">
+        <h3>Минимални запис уз фотографију</h3>
+        <label>Датум и време</label><div class="value">нпр. 18. јун 2026, 10:35</div>
+        <label>Шира локација</label><div class="value">нпр. цветна ливада изнад стазе, руб шуме, поток, воћњак, пропланак</div>
+        <label>Станиште</label><div class="value">сува ливада, влажна ливада, шумски руб, поток, мозаик жбуња и траве</div>
+        <label>Биљка или подлога</label><div class="value">нпр. на цвету мајчине душице, на кори храста, на листу коприве</div>
+        <label>Понашање</label><div class="value">храни се, мирује, пари се, полаже јаја, лети, сакупља полен</div>
+      </div>
+      <div class="card panel ok-list">
+        <h3>Шта чини налаз посебно корисним</h3>
+        <ul>
+          <li>више фотографија исте јединке из различитих углова;</li>
+          <li>биљка у кадру или барем наведена у опису;</li>
+          <li>шири кадар станишта, не само макро снимак;</li>
+          <li>број јединки ако их има више на истом месту;</li>
+          <li>напомена да ли је врста виђена на стази, ливади, рубу шуме или уз воду;</li>
+          <li>избегавање тачних јавних координата код ретких и осетљивих врста.</li>
+        </ul>
+        <div class="green-box"><strong>Добар налаз:</strong> „Лептир на цвету мајчине душице, сува ливада, сунчано, две јединке, снимљена горња и доња страна крила.”</div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="section" id="kontrola">
+  <div class="wrap">
+    <div class="section-head"><div class="kicker">✅ контролна листа</div><h2>Провери да ли је налаз спреман за слање</h2><p class="section-intro">Ова листа служи као брза провера на терену. Не мора сваки налаз имати све елементе, али што је више поља испуњено, податак је кориснији.</p></div>
+    <div class="check-grid" id="checkGrid">
+      <label class="check-item"><input type="checkbox"><span><strong>Снимљен је шири кадар станишта</strong><span>Види се ливада, руб шуме, поток, цветни појас или друга околина.</span></span></label>
+      <label class="check-item"><input type="checkbox"><span><strong>Инсект је снимљен на природној подлози</strong><span>Цвет, лист, кора, трава или земља нису уклоњени из контекста.</span></span></label>
+      <label class="check-item"><input type="checkbox"><span><strong>Постоји крупан кадар детаља</strong><span>Виде се крила, антене, ноге, глава, шара или облик тела.</span></span></label>
+      <label class="check-item"><input type="checkbox"><span><strong>Записана је биљка или подлога</strong><span>Наведено је на чему је инсект био или шта је посећивао.</span></span></label>
+      <label class="check-item"><input type="checkbox"><span><strong>Записано је понашање</strong><span>Храни се, мирује, лети, сакупља полен, пари се или полаже јаја.</span></span></label>
+      <label class="check-item"><input type="checkbox"><span><strong>Није било хватања ни премештања</strong><span>Инсект је фотографисан онако како је пронађен.</span></span></label>
+    </div>
+    <div class="progress" aria-hidden="true"><div class="progress-bar" id="progressBar"></div></div>
+    <div class="progress-text" id="progressText">Означено је 0 од 6 елемената.</div>
+  </div>
+</section>
+<section class="section" id="etika">
+  <div class="wrap">
+    <div class="section-head"><div class="kicker">🟡 етика и безбедност</div><h2>Шта се не ради ради боље фотографије</h2><p class="section-intro">Најбоља фотографија нема вредност ако је добијена уништавањем станишта или узнемиравањем животиње. Посетилачко фотографисање мора бити ненаметљиво.</p></div>
+    <div class="grid-2">
+      <div class="card panel no-list">
+        <h3>Не радити</h3>
+        <ul>
+          <li>не хватати инсекте у руке, тегле, кутије или мреже;</li>
+          <li>не премештати инсекта на други цвет ради лепшег кадра;</li>
+          <li>не скидати гусенице, јаја или ларве са биљке;</li>
+          <li>не љуштити кору и не разваљивати труло дрво;</li>
+          <li>не газити високу траву ван стазе током сезоне активности;</li>
+          <li>не објављивати прецизне локације ретких, пећинских и осетљивих врста.</li>
+        </ul>
+      </div>
+      <div class="card panel ok-list">
+        <h3>Добра пракса</h3>
+        <ul>
+          <li>сними из даљине, па полако приђи ако инсект остаје миран;</li>
+          <li>остави биљку, камен, кору и лист у природном положају;</li>
+          <li>упиши станиште и биљку јер су то кључни подаци;</li>
+          <li>користи природно светло и избегавај блиц у лице инсекта;</li>
+          <li>ако је врста несигурна, пријави као „непознат инсект” или групу;</li>
+          <li>за осетљиве налазе користи само општи опис локације.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="warning-box"><strong>Црвено правило:</strong> фотографија не сме бити разлог да се уништи микростаниште. Код инсеката је микростаниште често мање од једног квадратног метра, али може бити пресудно за целу локалну популацију.</div>
+  </div>
+</section>
+<section class="section" id="primeri">
+  <div class="wrap">
+    <div class="section-head"><div class="kicker">📌 брзи подсетник</div><h2>Који кадар највише помаже идентификацији</h2><p class="section-intro">Следећа табела може да стоји као практичан подсетник за посетиоце и ученике на терену.</p></div>
+    <table class="light-table" aria-label="Кадрови корисни за идентификацију инсеката">
+      <thead><tr><th>Група</th><th>Најважнији кадрови</th><th>Додатни податак</th></tr></thead>
+      <tbody>
+        <tr><td>Дневни лептири</td><td>горња и доња страна крила, бочни кадар, цвет</td><td>биљка, време, тип ливаде</td></tr>
+        <tr><td>Осолике муве</td><td>лице, очи, шара абдомена, бочни кадар</td><td>цвет који посећује</td></tr>
+        <tr><td>Пчеле и бумбари</td><td>тело на цвету, ноге са поленом, глава и длакавост</td><td>биљка, број јединки</td></tr>
+        <tr><td>Тврдокрилци</td><td>горњи кадар тела, глава, антене, подлога</td><td>кора, труло дрво, цвет или земља</td></tr>
+        <tr><td>Вилини коњици</td><td>бочни кадар, крила, боја груди и абдомена</td><td>близина воде и тип воденог станишта</td></tr>
+        <tr><td>Скакавци и стенице</td><td>бочни кадар, антене, ноге, шара тела</td><td>структура травњака и биљка</td></tr>
+      </tbody>
+    </table>
+    <div class="guide-links" aria-label="Повезани водичи за инсекте Рајца">
+      <a class="guide-link" href="https://piorajac.rs/insekti/alati-za-posetioce-insekti-rajca/"><span class="ico">🧰</span><span><strong>Алати за посетиоце</strong><span>Препознавање група и пријава налаза.</span></span><span class="arr">→</span></a>
+      <a class="guide-link" href="https://piorajac.rs/insekti/fotografisanje-insekata-rajca/"><span class="ico">📷</span><span><strong>Фотографисање</strong><span>Како снимити употребљив налаз.</span></span><span class="arr">→</span></a>
+      <a class="guide-link" href="https://piorajac.rs/insekti/ponasanje-prema-insektima-rajca/"><span class="ico">🟡</span><span><strong>Понашање</strong><span>Етичка правила без узнемиравања.</span></span><span class="arr">→</span></a>
+      <a class="guide-link" href="https://piorajac.rs/insekti/pomoc-insektima-rajca/"><span class="ico">🌼</span><span><strong>Помоћ инсектима</strong><span>Очување цветних и шумских микростаништа.</span></span><span class="arr">→</span></a>
+      <a class="guide-link" href="https://piorajac.rs/insekti/monitoring-insekata-rajca/"><span class="ico">📊</span><span><strong>Мониторинг</strong><span>Како налази постају подаци.</span></span><span class="arr">→</span></a>
+    </div>
+  </div>
+</section>
+</main>
+<nav class="footer-nav" aria-label="Навигација на дну странице">
+  <div class="wrap"><div class="footer-box">
+    <a href="https://piorajac.rs/insekti/alati-za-posetioce-insekti-rajca/">← Алати за посетиоце</a>
+    <a class="primary" href="https://piorajac.rs/insekti/">Инсекти Рајца</a>
+    <a href="https://piorajac.rs/insekti/ponasanje-prema-insektima-rajca/">Понашање према инсектима →</a>
+  </div></div>
+</nav>
+<footer class="site-footer">ПИО Рајац · водич за фотографисање инсеката без узнемиравања станишта и јединки</footer>
+<script>
+(function(){
+  var inputs=[].slice.call(document.querySelectorAll('#checkGrid input[type="checkbox"]'));
+  var bar=document.getElementById('progressBar');
+  var text=document.getElementById('progressText');
+  function update(){
+    var done=inputs.filter(function(i){return i.checked;}).length;
+    var pct=Math.round((done/inputs.length)*100);
+    bar.style.width=pct+'%';
+    text.textContent='Означено је '+done+' од '+inputs.length+' елемената.'+(done===inputs.length?' Налаз је одлично документован.':'');
+  }
+  inputs.forEach(function(i){i.addEventListener('change',update);});
+  update();
+})();
+</script>
+
+<script src="/insekti/assets/insekti-doprinos.js?v=4" defer></script>
+</body>
+</html>
