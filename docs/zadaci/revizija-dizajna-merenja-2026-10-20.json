@@ -1,0 +1,7389 @@
+[
+ {
+  "name": "Почетна",
+  "url": "https://piorajac.rs/",
+  "w": {
+   "390": {
+    "home": null,
+    "nav": null,
+    "h1": {
+     "t": "Рајац — предео изузетних одлика.",
+     "f": "Georgia",
+     "s": "54.6px",
+     "wt": "300",
+     "tt": "none",
+     "col": "#ffffff",
+     "deco": "none",
+     "cr": null
+    },
+    "h2": {
+     "t": "ТРЕНУТНИ МЕТЕОРОЛОШКИ УСЛОВИ НА РАЈЦ",
+     "f": "Georgia",
+     "s": "16px",
+     "wt": "300",
+     "tt": "uppercase",
+     "col": "#106421",
+     "deco": "none",
+     "cr": 7.33
+    },
+    "h3": {
+     "t": "",
+     "f": "Georgia",
+     "s": "27px",
+     "wt": "300",
+     "tt": "none",
+     "col": "#ffffff",
+     "deco": "none",
+     "cr": null
+    },
+    "card": {
+     "t": "",
+     "f": "Georgia",
+     "s": "27px",
+     "wt": "300",
+     "tt": "none",
+     "col": "#ffffff",
+     "deco": "none",
+     "cr": 17.91
+    },
+    "p": {
+     "t": "Планински пејзаж шуме, карста и тамн",
+     "f": "system-ui (системски)",
+     "s": "14px",
+     "wt": "300",
+     "tt": "none",
+     "col": "#ffffff",
+     "deco": "none",
+     "cr": null
+    },
+    "pa": null,
+    "sci": null,
+    "btn": null,
+    "foot": {
+     "t": "ПИО „Рајац”",
+     "f": "Georgia",
+     "s": "27px",
+     "wt": "600",
+     "tt": "none",
+     "col": "#ffffff",
+     "deco": "none",
+     "cr": 19.07
+    },
+    "h1n": 1,
+    "lang": "sr",
+    "imp": 8154,
+    "rules": 1853,
+    "sheets": 21,
+    "styleBlocks": 20,
+    "inlineStyle": 18,
+    "fc": {
+     "system-ui (системски)": 146,
+     "Arial": 1,
+     "Georgia": 52,
+     "monospace (системски)": 23
+    },
+    "hscroll": false,
+    "bodyBg": "#ffffff",
+    "headerH": null,
+    "title": "ПИО „Рајац“ — заштита природе, мониторинг и наука"
+   },
+   "820": {
+    "home": null,
+    "nav": {
+     "t": "О платформи",
+     "f": "system-ui (системски)",
+     "s": "16px",
+     "wt": "900",
+     "tt": "none",
+     "col": "#ffffff",
+     "deco": "none",
+     "cr": 18.72
+    },
+    "h1": {
+     "t": "Рајац — предео изузетних одлика.",
+     "f": "Georgia",
+     "s": "65.6px",
+     "wt": "300",
+     "tt": "none",
+     "col": "#ffffff",
+     "deco": "none",
+     "cr": null
+    },
+    "h2": {
+     "t": "ТРЕНУТНИ МЕТЕОРОЛОШКИ УСЛОВИ НА РАЈЦ",
+     "f": "Georgia",
+     "s": "18px",
+     "wt": "300",
+     "tt": "uppercase",
+     "col": "#106421",
+     "deco": "none",
+     "cr": 7.33
+    },
+    "h3": {
+     "t": "",
+     "f": "Georgia",
+     "s": "27px",
+     "wt": "300",
+     "tt": "none",
+     "col": "#ffffff",
+     "deco": "none",
+     "cr": null
+    },
+    "card": {
+     "t": "",
+     "f": "Georgia",
+     "s": "30px",
+     "wt": "300",
+     "tt": "none",
+     "col": "#ffffff",
+     "deco": "none",
+     "cr": 17.91
+    },
+    "p": {
+     "t": "Планински пејзаж шуме, карста и тамн",
+     "f": "system-ui (системски)",
+     "s": "15px",
+     "wt": "300",
+     "tt": "none",
+     "col": "#ffffff",
+     "deco": "none",
+     "cr": null
+    },
+    "pa": null,
+    "sci": null,
+    "btn": null,
+    "foot": {
+     "t": "ПИО „Рајац”",
+     "f": "Georgia",
+     "s": "27px",
+     "wt": "600",
+     "tt": "none",
+     "col": "#ffffff",
+     "deco": "none",
+     "cr": 19.07
+    },
+    "h1n": 1,
+    "lang": "sr",
+    "imp": 8154,
+    "rules": 1853,
+    "sheets": 21,
+    "styleBlocks": 20,
+    "inlineStyle": 18,
+    "fc": {
+     "system-ui (системски)": 154,
+     "Georgia": 52,
+     "monospace (системски)": 23
+    },
+    "hscroll": false,
+    "bodyBg": "#ffffff",
+    "headerH": null,
+    "title": "ПИО „Рајац“ — заштита природе, мониторинг и наука"
+   },
+   "1440": {
+    "home": null,
+    "nav": {
+     "t": "О платформи",
+     "f": "system-ui (системски)",
+     "s": "16px",
+     "wt": "900",
+     "tt": "none",
+     "col": "#ffffff",
+     "deco": "none",
+     "cr": 18.72
+    },
+    "h1": {
+     "t": "Рајац — предео изузетних одлика.",
+     "f": "Georgia",
+     "s": "80px",
+     "wt": "300",
+     "tt": "none",
+     "col": "#ffffff",
+     "deco": "none",
+     "cr": null
+    },
+    "h2": {
+     "t": "ТРЕНУТНИ МЕТЕОРОЛОШКИ УСЛОВИ НА РАЈЦ",
+     "f": "Georgia",
+     "s": "20.16px",
+     "wt": "300",
+     "tt": "uppercase",
+     "col": "#106421",
+     "deco": "none",
+     "cr": 7.33
+    },
+    "h3": {
+     "t": "",
+     "f": "Georgia",
+     "s": "31.68px",
+     "wt": "300",
+     "tt": "none",
+     "col": "#ffffff",
+     "deco": "none",
+     "cr": null
+    },
+    "card": {
+     "t": "Шумска станишта",
+     "f": "Georgia",
+     "s": "34px",
+     "wt": "300",
+     "tt": "none",
+     "col": "#ffffff",
+     "deco": "none",
+     "cr": 17.91
+    },
+    "p": {
+     "t": "Планински пејзаж шуме, карста и тамн",
+     "f": "system-ui (системски)",
+     "s": "15.5px",
+     "wt": "300",
+     "tt": "none",
+     "col": "#ffffff",
+     "deco": "none",
+     "cr": null
+    },
+    "pa": null,
+    "sci": null,
+    "btn": null,
+    "foot": {
+     "t": "ПИО „Рајац”",
+     "f": "Georgia",
+     "s": "28.8px",
+     "wt": "600",
+     "tt": "none",
+     "col": "#ffffff",
+     "deco": "none",
+     "cr": 19.07
+    },
+    "h1n": 1,
+    "lang": "sr",
+    "imp": 8154,
+    "rules": 1853,
+    "sheets": 21,
+    "styleBlocks": 20,
+    "inlineStyle": 18,
+    "fc": {
+     "system-ui (системски)": 155,
+     "Georgia": 52,
+     "monospace (системски)": 23
+    },
+    "hscroll": false,
+    "bodyBg": "#ffffff",
+    "headerH": null,
+    "title": "ПИО „Рајац“ — заштита природе, мониторинг и наука",
+    "focusVisible": true
+   }
+  }
+ },
+ {
+  "name": "О платформи",
+  "url": "https://piorajac.rs/o-platformi/",
+  "w": {
+   "390": {
+    "home": {
+     "t": "ПИО „РАЈАЦ“",
+     "f": "system-ui (системски)",
+     "s": "14px",
+     "wt": "700",
+     "tt": "none",
+     "col": "#f7f3e8",
+     "deco": "none",
+     "cr": 16.61
+    },
+    "nav": null,
+    "h1": {
+     "t": "О платформи",
+     "f": "Cormorant Garamond",
+     "s": "39px",
+     "wt": "500",
+     "tt": "none",
+     "col": "#fff7df",
+     "deco": "none",
+     "cr": null
+    },
+    "h2": {
+     "t": "Шта платформа конкретно ради за Раја",
+     "f": "Cormorant Garamond",
+     "s": "27px",
+     "wt": "500",
+     "tt": "none",
+     "col": "#26301e",
+     "deco": "none",
+     "cr": 12.42
+    },
+    "h3": {
+     "t": "Информисање",
+     "f": "Cormorant Garamond",
+     "s": "22px",
+     "wt": "500",
+     "tt": "none",
+     "col": "#26301e",
+     "deco": "none",
+     "cr": 12.42
+    },
+    "card": null,
+    "p": {
+     "t": "Иста дигитална основа служи трима гр",
+     "f": "Outfit",
+     "s": "16.32px",
+     "wt": "400",
+     "tt": "none",
+     "col": "#56603f",
+     "deco": "none",
+     "cr": 6.03
+    },
+    "pa": null,
+    "sci": null,
+    "btn": {
+     "t": "АТМОСФЕРА Метео и небо Метеоролошки ",
+     "f": "Outfit",
+     "s": "16px",
+     "wt": "400",
+     "tt": "none",
+     "col": "#36402b",
+     "deco": "none",
+     "cr": 9.83
+    },
+    "foot": null,
+    "h1n": 1,
+    "lang": "sr-Cyrl",
+    "imp": 104,
+    "rules": 119,
+    "sheets": 5,
+    "styleBlocks": 4,
+    "inlineStyle": 1,
+    "fc": {
+     "system-ui (системски)": 2,
+     "Cormorant Garamond": 24,
+     "Outfit": 30,
+     "DM Mono": 41
+    },
+    "hscroll": false,
+    "bodyBg": "#f6f3ea",
+    "headerH": 58,
+    "title": "О платформи | ПИО „Рајац“"
+   },
+   "820": {
+    "home": {
+     "t": "ПИО „РАЈАЦ“",
+     "f": "system-ui (системски)",
+     "s": "14px",
+     "wt": "700",
+     "tt": "none",
+     "col": "#f7f3e8",
+     "deco": "none",
+     "cr": 16.61
+    },
+    "nav": {
+     "t": "О ПЛАТФОРМИ",
+     "f": "Outfit",
+     "s": "11.56px",
+     "wt": "500",
+     "tt": "uppercase",
+     "col": "#e7cf85",
+     "deco": "none",
+     "cr": 11.98
+    },
+    "h1": {
+     "t": "О платформи",
+     "f": "Cormorant Garamond",
+     "s": "54.4px",
+     "wt": "500",
+     "tt": "none",
+     "col": "#fff7df",
+     "deco": "none",
+     "cr": null
+    },
+    "h2": {
+     "t": "Шта платформа конкретно ради за Раја",
+     "f": "Cormorant Garamond",
+     "s": "27px",
+     "wt": "500",
+     "tt": "none",
+     "col": "#26301e",
+     "deco": "none",
+     "cr": 12.42
+    },
+    "h3": {
+     "t": "Информисање",
+     "f": "Cormorant Garamond",
+     "s": "22px",
+     "wt": "500",
+     "tt": "none",
+     "col": "#26301e",
+     "deco": "none",
+     "cr": 12.42
+    },
+    "card": null,
+    "p": {
+     "t": "Иста дигитална основа служи трима гр",
+     "f": "Outfit",
+     "s": "16.32px",
+     "wt": "400",
+     "tt": "none",
+     "col": "#56603f",
+     "deco": "none",
+     "cr": 6.03
+    },
+    "pa": null,
+    "sci": null,
+    "btn": {
+     "t": "АТМОСФЕРА Метео и небо Метеоролошки ",
+     "f": "Outfit",
+     "s": "16px",
+     "wt": "400",
+     "tt": "none",
+     "col": "#36402b",
+     "deco": "none",
+     "cr": 9.83
+    },
+    "foot": null,
+    "h1n": 1,
+    "lang": "sr-Cyrl",
+    "imp": 104,
+    "rules": 119,
+    "sheets": 5,
+    "styleBlocks": 4,
+    "inlineStyle": 1,
+    "fc": {
+     "system-ui (системски)": 2,
+     "Outfit": 35,
+     "Cormorant Garamond": 24,
+     "DM Mono": 41
+    },
+    "hscroll": false,
+    "bodyBg": "#f6f3ea",
+    "headerH": 63,
+    "title": "О платформи | ПИО „Рајац“"
+   },
+   "1440": {
+    "home": {
+     "t": "ПИО „РАЈАЦ“",
+     "f": "Outfit",
+     "s": "17px",
+     "wt": "600",
+     "tt": "none",
+     "col": "#fdf6e6",
+     "deco": "none",
+     "cr": 12.8
+    },
+    "nav": {
+     "t": "О ПЛАТФОРМИ",
+     "f": "Outfit",
+     "s": "11.56px",
+     "wt": "500",
+     "tt": "uppercase",
+     "col": "#e7cf85",
+     "deco": "none",
+     "cr": 8.96
+    },
+    "h1": {
+     "t": "О платформи",
+     "f": "Cormorant Garamond",
+     "s": "56px",
+     "wt": "500",
+     "tt": "none",
+     "col": "#fff7df",
+     "deco": "none",
+     "cr": null
+    },
+    "h2": {
+     "t": "Шта платформа конкретно ради за Раја",
+     "f": "Cormorant Garamond",
+     "s": "40px",
+     "wt": "500",
+     "tt": "none",
+     "col": "#26301e",
+     "deco": "none",
+     "cr": 12.42
+    },
+    "h3": {
+     "t": "Информисање",
+     "f": "Cormorant Garamond",
+     "s": "22px",
+     "wt": "500",
+     "tt": "none",
+     "col": "#26301e",
+     "deco": "none",
+     "cr": 12.42
+    },
+    "card": null,
+    "p": {
+     "t": "Иста дигитална основа служи трима гр",
+     "f": "Outfit",
+     "s": "16.32px",
+     "wt": "400",
+     "tt": "none",
+     "col": "#56603f",
+     "deco": "none",
+     "cr": 6.03
+    },
+    "pa": null,
+    "sci": null,
+    "btn": {
+     "t": "АТМОСФЕРА Метео и небо Метеоролошки ",
+     "f": "Outfit",
+     "s": "16px",
+     "wt": "400",
+     "tt": "none",
+     "col": "#36402b",
+     "deco": "none",
+     "cr": 9.83
+    },
+    "foot": null,
+    "h1n": 1,
+    "lang": "sr-Cyrl",
+    "imp": 104,
+    "rules": 119,
+    "sheets": 5,
+    "styleBlocks": 4,
+    "inlineStyle": 1,
+    "fc": {
+     "Outfit": 36,
+     "Cormorant Garamond": 24,
+     "DM Mono": 41
+    },
+    "hscroll": false,
+    "bodyBg": "#f6f3ea",
+    "headerH": 64,
+    "title": "О платформи | ПИО „Рајац“",
+    "focusVisible": true
+   }
+  }
+ },
+ {
+  "name": "За посетиоце",
+  "url": "https://piorajac.rs/za-posetioce/",
+  "w": {
+   "390": {
+    "home": {
+     "t": "ПИО „РАЈАЦ“",
+     "f": "system-ui (системски)",
+     "s": "14px",
+     "wt": "700",
+     "tt": "none",
+     "col": "#f7f3e8",
+     "deco": "none",
+     "cr": 16.61
+    },
+    "nav": null,
+    "h1": {
+     "t": "За посетиоце",
+     "f": "Georgia",
+     "s": "39px",
+     "wt": "500",
+     "tt": "none",
+     "col": "#fff7df",
+     "deco": "none",
+     "cr": null
+    },
+    "h2": {
+     "t": "Оријентиши се пре него што кренеш",
+     "f": "Georgia",
+     "s": "25.35px",
+     "wt": "400",
+     "tt": "none",
+     "col": "#172117",
+     "deco": "none",
+     "cr": 16.58
+    },
+    "h3": {
+     "t": "Природна основа и зоне ПИО",
+     "f": "Georgia",
+     "s": "25.92px",
+     "wt": "500",
+     "tt": "none",
+     "col": "#172117",
+     "deco": "none",
+     "cr": 16.58
+    },
+    "card": {
+     "t": "Природна основа и зоне ПИО",
+     "f": "Georgia",
+     "s": "25.92px",
+     "wt": "500",
+     "tt": "none",
+     "col": "#172117",
+     "deco": "none",
+     "cr": 16.58
+    },
+    "p": {
+     "t": "За посетиоца су најважнији стазе, гр",
+     "f": "Segoe UI (системски)",
+     "s": "16.96px",
+     "wt": "400",
+     "tt": "none",
+     "col": "#657064",
+     "deco": "none",
+     "cr": 5.18
+    },
+    "pa": null,
+    "sci": null,
+    "btn": {
+     "t": "ПРИРОДНА ОСНОВА",
+     "f": "monospace (системски)",
+     "s": "9.92px",
+     "wt": "400",
+     "tt": "uppercase",
+     "col": "#6f7f47",
+     "deco": "none",
+     "cr": 3.97
+    },
+    "foot": null,
+    "h1n": 1,
+    "lang": "sr-RS",
+    "imp": 4,
+    "rules": 95,
+    "sheets": 3,
+    "styleBlocks": 2,
+    "inlineStyle": 0,
+    "fc": {
+     "system-ui (системски)": 2,
+     "Georgia": 21,
+     "Segoe UI (системски)": 49,
+     "monospace (системски)": 22
+    },
+    "hscroll": false,
+    "bodyBg": "#ffffff",
+    "headerH": 58,
+    "title": "За посетиоце | ПИО Рајац"
+   },
+   "820": {
+    "home": {
+     "t": "ПИО „РАЈАЦ“",
+     "f": "system-ui (системски)",
+     "s": "14px",
+     "wt": "700",
+     "tt": "none",
+     "col": "#f7f3e8",
+     "deco": "none",
+     "cr": 16.61
+    },
+    "nav": {
+     "t": "О ПЛАТФОРМИ",
+     "f": "Segoe UI (системски)",
+     "s": "11.56px",
+     "wt": "500",
+     "tt": "uppercase",
+     "col": "#fdf6e6",
+     "deco": "none",
+     "cr": 17.1
+    },
+    "h1": {
+     "t": "За посетиоце",
+     "f": "Georgia",
+     "s": "54.4px",
+     "wt": "500",
+     "tt": "none",
+     "col": "#fff7df",
+     "deco": "none",
+     "cr": null
+    },
+    "h2": {
+     "t": "Оријентиши се пре него што кренеш",
+     "f": "Georgia",
+     "s": "35.2px",
+     "wt": "400",
+     "tt": "none",
+     "col": "#172117",
+     "deco": "none",
+     "cr": 16.58
+    },
+    "h3": {
+     "t": "Природна основа и зоне ПИО",
+     "f": "Georgia",
+     "s": "25.92px",
+     "wt": "500",
+     "tt": "none",
+     "col": "#172117",
+     "deco": "none",
+     "cr": 16.58
+    },
+    "card": {
+     "t": "Природна основа и зоне ПИО",
+     "f": "Georgia",
+     "s": "25.92px",
+     "wt": "500",
+     "tt": "none",
+     "col": "#172117",
+     "deco": "none",
+     "cr": 16.58
+    },
+    "p": {
+     "t": "За посетиоца су најважнији стазе, гр",
+     "f": "Segoe UI (системски)",
+     "s": "16.96px",
+     "wt": "400",
+     "tt": "none",
+     "col": "#657064",
+     "deco": "none",
+     "cr": 5.18
+    },
+    "pa": null,
+    "sci": null,
+    "btn": {
+     "t": "ПРИРОДНА ОСНОВА",
+     "f": "monospace (системски)",
+     "s": "9.92px",
+     "wt": "400",
+     "tt": "uppercase",
+     "col": "#6f7f47",
+     "deco": "none",
+     "cr": 3.97
+    },
+    "foot": null,
+    "h1n": 1,
+    "lang": "sr-RS",
+    "imp": 4,
+    "rules": 95,
+    "sheets": 3,
+    "styleBlocks": 2,
+    "inlineStyle": 0,
+    "fc": {
+     "system-ui (системски)": 2,
+     "Segoe UI (системски)": 54,
+     "Georgia": 21,
+     "monospace (системски)": 22
+    },
+    "hscroll": false,
+    "bodyBg": "#ffffff",
+    "headerH": 63,
+    "title": "За посетиоце | ПИО Рајац"
+   },
+   "1440": {
+    "home": {
+     "t": "ПИО „РАЈАЦ“",
+     "f": "Segoe UI (системски)",
+     "s": "17px",
+     "wt": "600",
+     "tt": "none",
+     "col": "#fdf6e6",
+     "deco": "none",
+     "cr": 12.8
+    },
+    "nav": {
+     "t": "О ПЛАТФОРМИ",
+     "f": "Segoe UI (системски)",
+     "s": "11.56px",
+     "wt": "500",
+     "tt": "uppercase",
+     "col": "#fdf6e6",
+     "deco": "none",
+     "cr": 12.8
+    },
+    "h1": {
+     "t": "За посетиоце",
+     "f": "Georgia",
+     "s": "56px",
+     "wt": "500",
+     "tt": "none",
+     "col": "#fff7df",
+     "deco": "none",
+     "cr": null
+    },
+    "h2": {
+     "t": "Оријентиши се пре него што кренеш",
+     "f": "Georgia",
+     "s": "44.64px",
+     "wt": "400",
+     "tt": "none",
+     "col": "#172117",
+     "deco": "none",
+     "cr": 16.58
+    },
+    "h3": {
+     "t": "Природна основа и зоне ПИО",
+     "f": "Georgia",
+     "s": "25.92px",
+     "wt": "500",
+     "tt": "none",
+     "col": "#172117",
+     "deco": "none",
+     "cr": 16.58
+    },
+    "card": {
+     "t": "Природна основа и зоне ПИО",
+     "f": "Georgia",
+     "s": "25.92px",
+     "wt": "500",
+     "tt": "none",
+     "col": "#172117",
+     "deco": "none",
+     "cr": 16.58
+    },
+    "p": {
+     "t": "За посетиоца су најважнији стазе, гр",
+     "f": "Segoe UI (системски)",
+     "s": "16.96px",
+     "wt": "400",
+     "tt": "none",
+     "col": "#657064",
+     "deco": "none",
+     "cr": 5.18
+    },
+    "pa": null,
+    "sci": null,
+    "btn": {
+     "t": "ПРИРОДНА ОСНОВА",
+     "f": "monospace (системски)",
+     "s": "9.92px",
+     "wt": "400",
+     "tt": "uppercase",
+     "col": "#6f7f47",
+     "deco": "none",
+     "cr": 3.97
+    },
+    "foot": null,
+    "h1n": 1,
+    "lang": "sr-RS",
+    "imp": 4,
+    "rules": 95,
+    "sheets": 3,
+    "styleBlocks": 2,
+    "inlineStyle": 0,
+    "fc": {
+     "Segoe UI (системски)": 55,
+     "Georgia": 21,
+     "monospace (системски)": 22
+    },
+    "hscroll": false,
+    "bodyBg": "#ffffff",
+    "headerH": 63,
+    "title": "За посетиоце | ПИО Рајац",
+    "focusVisible": true
+   }
+  }
+ },
+ {
+  "name": "Карта ПИО",
+  "url": "https://piorajac.rs/karta-pio-rajac/",
+  "w": {
+   "390": {
+    "home": null,
+    "nav": null,
+    "h1": null,
+    "h2": null,
+    "h3": null,
+    "card": null,
+    "p": null,
+    "pa": null,
+    "sci": null,
+    "btn": null,
+    "foot": null,
+    "h1n": 0,
+    "lang": "sr",
+    "imp": 2,
+    "rules": 28,
+    "sheets": 3,
+    "styleBlocks": 2,
+    "inlineStyle": 0,
+    "fc": {
+     "system-ui (системски)": 5,
+     "Georgia": 1
+    },
+    "hscroll": false,
+    "bodyBg": "#000000",
+    "headerH": null,
+    "title": "Карта ПИО Рајац — интерактивна iframe 100% × 342"
+   },
+   "820": {
+    "home": null,
+    "nav": null,
+    "h1": null,
+    "h2": null,
+    "h3": null,
+    "card": null,
+    "p": null,
+    "pa": null,
+    "sci": null,
+    "btn": null,
+    "foot": null,
+    "h1n": 0,
+    "lang": "sr",
+    "imp": 2,
+    "rules": 28,
+    "sheets": 3,
+    "styleBlocks": 2,
+    "inlineStyle": 0,
+    "fc": {
+     "system-ui (системски)": 5,
+     "Georgia": 1
+    },
+    "hscroll": false,
+    "bodyBg": "#000000",
+    "headerH": null,
+    "title": "Карта ПИО Рајац — интерактивна iframe 100% × 342"
+   },
+   "1440": {
+    "home": null,
+    "nav": null,
+    "h1": null,
+    "h2": null,
+    "h3": null,
+    "card": null,
+    "p": null,
+    "pa": null,
+    "sci": null,
+    "btn": null,
+    "foot": null,
+    "h1n": 0,
+    "lang": "sr",
+    "imp": 2,
+    "rules": 28,
+    "sheets": 3,
+    "styleBlocks": 2,
+    "inlineStyle": 0,
+    "fc": {
+     "system-ui (системски)": 5,
+     "Georgia": 1
+    },
+    "hscroll": false,
+    "bodyBg": "#000000",
+    "headerH": null,
+    "title": "Карта ПИО Рајац — интерактивна iframe 100% × 342",
+    "focusVisible": null
+   }
+  }
+ },
+ {
+  "name": "Контакт",
+  "url": "https://piorajac.rs/kontakt/",
+  "w": {
+   "390": {
+    "home": {
+     "t": "ПИО „РАЈАЦ“",
+     "f": "Arial",
+     "s": "16px",
+     "wt": "800",
+     "tt": "none",
+     "col": "#f3e5aa",
+     "deco": "none",
+     "cr": 13.42
+    },
+    "nav": {
+     "t": "Р ПИО „Рајац” ЗАШТИЋЕНО ПОДРУЧЈЕ",
+     "f": "system-ui (системски)",
+     "s": "16px",
+     "wt": "800",
+     "tt": "none",
+     "col": "#142219",
+     "deco": "none",
+     "cr": 16.23
+    },
+    "h1": {
+     "t": "Контакт",
+     "f": "Georgia",
+     "s": "39px",
+     "wt": "300",
+     "tt": "none",
+     "col": "#142219",
+     "deco": "none",
+     "cr": 14.66
+    },
+    "h2": {
+     "t": "Туристичка организација општине Љиг",
+     "f": "Georgia",
+     "s": "31.2px",
+     "wt": "300",
+     "tt": "none",
+     "col": "#142219",
+     "deco": "none",
+     "cr": null
+    },
+    "h3": {
+     "t": "Групе, школе и водичи",
+     "f": "Georgia",
+     "s": "22px",
+     "wt": "300",
+     "tt": "none",
+     "col": "#142219",
+     "deco": "none",
+     "cr": 16.23
+    },
+    "card": {
+     "t": "Групе, школе и водичи",
+     "f": "Georgia",
+     "s": "22px",
+     "wt": "300",
+     "tt": "none",
+     "col": "#142219",
+     "deco": "none",
+     "cr": 16.23
+    },
+    "p": {
+     "t": "За питања о посети, групним доласцим",
+     "f": "system-ui (системски)",
+     "s": "16px",
+     "wt": "400",
+     "tt": "none",
+     "col": "#5b6a60",
+     "deco": "none",
+     "cr": 5.08
+    },
+    "pa": null,
+    "sci": null,
+    "btn": {
+     "t": "Пошаљи поруку",
+     "f": "system-ui (системски)",
+     "s": "14px",
+     "wt": "850",
+     "tt": "none",
+     "col": "#142219",
+     "deco": "none",
+     "cr": 3.08
+    },
+    "foot": null,
+    "h1n": 1,
+    "lang": "sr",
+    "imp": 159,
+    "rules": 106,
+    "sheets": 4,
+    "styleBlocks": 3,
+    "inlineStyle": 1,
+    "fc": {
+     "Arial": 2,
+     "system-ui (системски)": 47,
+     "Georgia": 7
+    },
+    "hscroll": false,
+    "bodyBg": "#f6f1e7",
+    "headerH": 58,
+    "title": "Контакт — ПИО Рајац"
+   },
+   "820": {
+    "home": {
+     "t": "ПИО „РАЈАЦ“",
+     "f": "Arial",
+     "s": "16px",
+     "wt": "800",
+     "tt": "none",
+     "col": "#f3e5aa",
+     "deco": "none",
+     "cr": 13.42
+    },
+    "nav": {
+     "t": "Р ПИО „Рајац” ЗАШТИЋЕНО ПОДРУЧЈЕ",
+     "f": "system-ui (системски)",
+     "s": "16px",
+     "wt": "800",
+     "tt": "none",
+     "col": "#142219",
+     "deco": "none",
+     "cr": 16.23
+    },
+    "h1": {
+     "t": "Контакт",
+     "f": "Georgia",
+     "s": "57.4px",
+     "wt": "300",
+     "tt": "none",
+     "col": "#142219",
+     "deco": "none",
+     "cr": 14.66
+    },
+    "h2": {
+     "t": "Туристичка организација општине Љиг",
+     "f": "Georgia",
+     "s": "34px",
+     "wt": "300",
+     "tt": "none",
+     "col": "#142219",
+     "deco": "none",
+     "cr": null
+    },
+    "h3": {
+     "t": "Групе, школе и водичи",
+     "f": "Georgia",
+     "s": "30px",
+     "wt": "300",
+     "tt": "none",
+     "col": "#142219",
+     "deco": "none",
+     "cr": 16.23
+    },
+    "card": {
+     "t": "Групе, школе и водичи",
+     "f": "Georgia",
+     "s": "30px",
+     "wt": "300",
+     "tt": "none",
+     "col": "#142219",
+     "deco": "none",
+     "cr": 16.23
+    },
+    "p": {
+     "t": "За питања о посети, групним доласцим",
+     "f": "system-ui (системски)",
+     "s": "18px",
+     "wt": "400",
+     "tt": "none",
+     "col": "#5b6a60",
+     "deco": "none",
+     "cr": 5.08
+    },
+    "pa": null,
+    "sci": null,
+    "btn": {
+     "t": "Пошаљи поруку",
+     "f": "system-ui (системски)",
+     "s": "14px",
+     "wt": "850",
+     "tt": "none",
+     "col": "#142219",
+     "deco": "none",
+     "cr": 3.08
+    },
+    "foot": null,
+    "h1n": 1,
+    "lang": "sr",
+    "imp": 159,
+    "rules": 106,
+    "sheets": 4,
+    "styleBlocks": 3,
+    "inlineStyle": 1,
+    "fc": {
+     "Arial": 2,
+     "system-ui (системски)": 47,
+     "Georgia": 7
+    },
+    "hscroll": false,
+    "bodyBg": "#f6f1e7",
+    "headerH": 58,
+    "title": "Контакт — ПИО Рајац"
+   },
+   "1440": {
+    "home": {
+     "t": "Р ПИО „Рајац” ЗАШТИЋЕНО ПОДРУЧЈЕ",
+     "f": "system-ui (системски)",
+     "s": "16px",
+     "wt": "800",
+     "tt": "none",
+     "col": "#142219",
+     "deco": "none",
+     "cr": 16.23
+    },
+    "nav": null,
+    "h1": {
+     "t": "Контакт",
+     "f": "Georgia",
+     "s": "84px",
+     "wt": "300",
+     "tt": "none",
+     "col": "#142219",
+     "deco": "none",
+     "cr": 14.66
+    },
+    "h2": {
+     "t": "Туристичка организација општине Љиг",
+     "f": "Georgia",
+     "s": "34px",
+     "wt": "300",
+     "tt": "none",
+     "col": "#142219",
+     "deco": "none",
+     "cr": null
+    },
+    "h3": {
+     "t": "Групе, школе и водичи",
+     "f": "Georgia",
+     "s": "30px",
+     "wt": "300",
+     "tt": "none",
+     "col": "#142219",
+     "deco": "none",
+     "cr": 16.23
+    },
+    "card": {
+     "t": "Групе, школе и водичи",
+     "f": "Georgia",
+     "s": "30px",
+     "wt": "300",
+     "tt": "none",
+     "col": "#142219",
+     "deco": "none",
+     "cr": 16.23
+    },
+    "p": {
+     "t": "За питања о посети, групним доласцим",
+     "f": "system-ui (системски)",
+     "s": "18px",
+     "wt": "400",
+     "tt": "none",
+     "col": "#5b6a60",
+     "deco": "none",
+     "cr": 5.08
+    },
+    "pa": null,
+    "sci": null,
+    "btn": {
+     "t": "Пошаљи поруку",
+     "f": "system-ui (системски)",
+     "s": "14px",
+     "wt": "850",
+     "tt": "none",
+     "col": "#142219",
+     "deco": "none",
+     "cr": 3.08
+    },
+    "foot": null,
+    "h1n": 1,
+    "lang": "sr",
+    "imp": 159,
+    "rules": 106,
+    "sheets": 4,
+    "styleBlocks": 3,
+    "inlineStyle": 0,
+    "fc": {
+     "system-ui (системски)": 47,
+     "Georgia": 7
+    },
+    "hscroll": false,
+    "bodyBg": "#f6f1e7",
+    "headerH": 59,
+    "title": "Контакт — ПИО Рајац",
+    "focusVisible": true
+   }
+  }
+ },
+ {
+  "name": "Биљке — каталог",
+  "url": "https://piorajac.rs/biljke/",
+  "w": {
+   "390": {
+    "home": {
+     "t": "⊙ ПИО „РАЈАЦ“",
+     "f": "Cormorant Garamond",
+     "s": "16px",
+     "wt": "600",
+     "tt": "none",
+     "col": "#f1cb65",
+     "deco": "none",
+     "cr": 11.16
+    },
+    "nav": null,
+    "h1": {
+     "t": "Биљке Рајца",
+     "f": "Cormorant Garamond",
+     "s": "34.4px",
+     "wt": "300",
+     "tt": "none",
+     "col": "#ffffff",
+     "deco": "none",
+     "cr": 12.25
+    },
+    "h2": null,
+    "h3": null,
+    "card": null,
+    "p": {
+     "t": "Мозаик шумских, ливадских и влажних ",
+     "f": "system-ui (системски)",
+     "s": "16px",
+     "wt": "600",
+     "tt": "none",
+     "col": "#ffffff",
+     "deco": "none",
+     "cr": 17.92
+    },
+    "pa": null,
+    "sci": null,
+    "btn": {
+     "t": "ⓘ Фото",
+     "f": "system-ui (системски)",
+     "s": "10px",
+     "wt": "800",
+     "tt": "none",
+     "col": "#ffffff",
+     "deco": "none",
+     "cr": 12.25
+    },
+    "foot": null,
+    "h1n": 1,
+    "lang": "sr",
+    "imp": 2153,
+    "rules": 349,
+    "sheets": 16,
+    "styleBlocks": 13,
+    "inlineStyle": 207,
+    "fc": {
+     "Cormorant Garamond": 2,
+     "system-ui (системски)": 30,
+     "Georgia": 24,
+     "monospace (системски)": 22,
+     "Arial": 3
+    },
+    "hscroll": false,
+    "bodyBg": "#f6f7f8",
+    "headerH": 58,
+    "title": "Биљке Рајца — каталог флоре ПИО „Рајац“"
+   },
+   "820": {
+    "home": {
+     "t": "⊙ ПИО „РАЈАЦ“",
+     "f": "Cormorant Garamond",
+     "s": "16px",
+     "wt": "600",
+     "tt": "none",
+     "col": "#f1cb65",
+     "deco": "none",
+     "cr": 11.16
+    },
+    "nav": null,
+    "h1": {
+     "t": "Биљке Рајца",
+     "f": "Cormorant Garamond",
+     "s": "52px",
+     "wt": "300",
+     "tt": "none",
+     "col": "#ffffff",
+     "deco": "none",
+     "cr": 12.25
+    },
+    "h2": null,
+    "h3": null,
+    "card": null,
+    "p": {
+     "t": "Мозаик шумских, ливадских и влажних ",
+     "f": "system-ui (системски)",
+     "s": "16px",
+     "wt": "600",
+     "tt": "none",
+     "col": "#ffffff",
+     "deco": "none",
+     "cr": 17.92
+    },
+    "pa": null,
+    "sci": null,
+    "btn": {
+     "t": "ⓘ Фото",
+     "f": "system-ui (системски)",
+     "s": "10px",
+     "wt": "800",
+     "tt": "none",
+     "col": "#ffffff",
+     "deco": "none",
+     "cr": 12.25
+    },
+    "foot": null,
+    "h1n": 1,
+    "lang": "sr",
+    "imp": 2153,
+    "rules": 349,
+    "sheets": 16,
+    "styleBlocks": 13,
+    "inlineStyle": 207,
+    "fc": {
+     "Cormorant Garamond": 2,
+     "system-ui (системски)": 30,
+     "Georgia": 24,
+     "monospace (системски)": 22,
+     "Arial": 3
+    },
+    "hscroll": false,
+    "bodyBg": "#f6f7f8",
+    "headerH": 58,
+    "title": "Биљке Рајца — каталог флоре ПИО „Рајац“"
+   },
+   "1440": {
+    "home": {
+     "t": "⊙ ПИО „РАЈАЦ“",
+     "f": "Cormorant Garamond",
+     "s": "16px",
+     "wt": "600",
+     "tt": "none",
+     "col": "#d8b55b",
+     "deco": "none",
+     "cr": 8.85
+    },
+    "nav": {
+     "t": "🌿 БИЉКЕ",
+     "f": "Cormorant Garamond",
+     "s": "15px",
+     "wt": "600",
+     "tt": "uppercase",
+     "col": "#d8b55b",
+     "deco": "none",
+     "cr": 8.85
+    },
+    "h1": {
+     "t": "Биљке Рајца",
+     "f": "Cormorant Garamond",
+     "s": "76.8px",
+     "wt": "300",
+     "tt": "none",
+     "col": "#ffffff",
+     "deco": "none",
+     "cr": 5.24
+    },
+    "h2": null,
+    "h3": null,
+    "card": null,
+    "p": {
+     "t": "Мозаик шумских, ливадских и влажних ",
+     "f": "system-ui (системски)",
+     "s": "15px",
+     "wt": "600",
+     "tt": "none",
+     "col": "#ffffff",
+     "deco": "none",
+     "cr": 17.92
+    },
+    "pa": null,
+    "sci": null,
+    "btn": {
+     "t": "🌺 СВЕ БИЉКЕ 🍎 ЈЕСТИВЕ 🌿 ЛЕКОВИТЕ ",
+     "f": "Arial",
+     "s": "16px",
+     "wt": "400",
+     "tt": "none",
+     "col": "#0e1318",
+     "deco": "none",
+     "cr": 17.4
+    },
+    "foot": null,
+    "h1n": 1,
+    "lang": "sr",
+    "imp": 2153,
+    "rules": 349,
+    "sheets": 16,
+    "styleBlocks": 13,
+    "inlineStyle": 207,
+    "fc": {
+     "Cormorant Garamond": 14,
+     "system-ui (системски)": 15,
+     "Georgia": 24,
+     "monospace (системски)": 22,
+     "Arial": 3
+    },
+    "hscroll": false,
+    "bodyBg": "#f6f7f8",
+    "headerH": 56,
+    "title": "Биљке Рајца — каталог флоре ПИО „Рајац“",
+    "focusVisible": true
+   }
+  }
+ },
+ {
+  "name": "Биљке — врста",
+  "url": "https://piorajac.rs/biljke/abies-alba-mill/",
+  "w": {
+   "390": {
+    "home": {
+     "t": "⊙ ПИО „РАЈАЦ“",
+     "f": "system-ui (системски)",
+     "s": "16px",
+     "wt": "700",
+     "tt": "none",
+     "col": "#f1cb65",
+     "deco": "none",
+     "cr": 11.16
+    },
+    "nav": null,
+    "h1": {
+     "t": "Обична јела",
+     "f": "Georgia",
+     "s": "32px",
+     "wt": "300",
+     "tt": "none",
+     "col": "#18211b",
+     "deco": "none",
+     "cr": 16.51
+    },
+    "h2": {
+     "t": "",
+     "f": "Georgia",
+     "s": "16.8px",
+     "wt": "700",
+     "tt": "none",
+     "col": "#1f3d27",
+     "deco": "none",
+     "cr": 11.05
+    },
+    "h3": null,
+    "card": null,
+    "p": {
+     "t": "Локални налаз у ПИО „Рајац“ је потвр",
+     "f": "system-ui (системски)",
+     "s": "16px",
+     "wt": "400",
+     "tt": "none",
+     "col": "#5d675f",
+     "deco": "none",
+     "cr": 5.88
+    },
+    "pa": null,
+    "sci": {
+     "t": "Abies alba Mill.",
+     "f": "system-ui (системски)",
+     "s": "14px",
+     "wt": "600",
+     "tt": "none",
+     "col": "#355a3c",
+     "deco": "none",
+     "cr": null
+    },
+    "btn": {
+     "t": "＋ ДОПРИНЕСИ ПОЗНАВАЊУ БИЉАКА НА РАЈЦ",
+     "f": "system-ui (системски)",
+     "s": "11.2px",
+     "wt": "800",
+     "tt": "uppercase",
+     "col": "#e2c87a",
+     "deco": "none",
+     "cr": 9.77
+    },
+    "foot": {
+     "t": "Списак свих врста",
+     "f": "Georgia",
+     "s": "17px",
+     "wt": "500",
+     "tt": "none",
+     "col": "#355a3c",
+     "deco": "none",
+     "cr": 7.5
+    },
+    "h1n": 1,
+    "lang": "sr",
+    "imp": 166,
+    "rules": 738,
+    "sheets": 13,
+    "styleBlocks": 7,
+    "inlineStyle": 7,
+    "fc": {
+     "system-ui (системски)": 92,
+     "Georgia": 22,
+     "monospace (системски)": 33
+    },
+    "hscroll": false,
+    "bodyBg": "#ffffff",
+    "headerH": 58,
+    "title": "Обична јела — Abies alba Mill."
+   },
+   "820": {
+    "home": {
+     "t": "⊙ ПИО „РАЈАЦ“",
+     "f": "system-ui (системски)",
+     "s": "16px",
+     "wt": "700",
+     "tt": "none",
+     "col": "#f1cb65",
+     "deco": "none",
+     "cr": 11.16
+    },
+    "nav": null,
+    "h1": {
+     "t": "Обична јела",
+     "f": "Georgia",
+     "s": "51.2px",
+     "wt": "300",
+     "tt": "none",
+     "col": "#18211b",
+     "deco": "none",
+     "cr": 16.51
+    },
+    "h2": {
+     "t": "",
+     "f": "Georgia",
+     "s": "16.8px",
+     "wt": "700",
+     "tt": "none",
+     "col": "#1f3d27",
+     "deco": "none",
+     "cr": 11.05
+    },
+    "h3": null,
+    "card": null,
+    "p": {
+     "t": "Локални налаз у ПИО „Рајац“ је потвр",
+     "f": "system-ui (системски)",
+     "s": "16px",
+     "wt": "400",
+     "tt": "none",
+     "col": "#5d675f",
+     "deco": "none",
+     "cr": 5.88
+    },
+    "pa": null,
+    "sci": {
+     "t": "Abies alba Mill.",
+     "f": "system-ui (системски)",
+     "s": "16px",
+     "wt": "600",
+     "tt": "none",
+     "col": "#355a3c",
+     "deco": "none",
+     "cr": null
+    },
+    "btn": {
+     "t": "＋ ДОПРИНЕСИ ПОЗНАВАЊУ БИЉАКА НА РАЈЦ",
+     "f": "system-ui (системски)",
+     "s": "12.48px",
+     "wt": "800",
+     "tt": "uppercase",
+     "col": "#e2c87a",
+     "deco": "none",
+     "cr": 9.77
+    },
+    "foot": {
+     "t": "Списак свих врста",
+     "f": "Georgia",
+     "s": "17px",
+     "wt": "500",
+     "tt": "none",
+     "col": "#355a3c",
+     "deco": "none",
+     "cr": 7.5
+    },
+    "h1n": 1,
+    "lang": "sr",
+    "imp": 166,
+    "rules": 738,
+    "sheets": 13,
+    "styleBlocks": 7,
+    "inlineStyle": 7,
+    "fc": {
+     "system-ui (системски)": 92,
+     "Georgia": 22,
+     "monospace (системски)": 33
+    },
+    "hscroll": false,
+    "bodyBg": "#ffffff",
+    "headerH": 58,
+    "title": "Обична јела — Abies alba Mill."
+   },
+   "1440": {
+    "home": {
+     "t": "⊙ ПИО „РАЈАЦ“",
+     "f": "system-ui (системски)",
+     "s": "16px",
+     "wt": "700",
+     "tt": "none",
+     "col": "#efc36a",
+     "deco": "none",
+     "cr": 9.98
+    },
+    "nav": {
+     "t": "🌿 БИЉКЕ (Обична јела)",
+     "f": "system-ui (системски)",
+     "s": "14.72px",
+     "wt": "700",
+     "tt": "uppercase",
+     "col": "#efc36a",
+     "deco": "none",
+     "cr": 9.98
+    },
+    "h1": {
+     "t": "Обична јела",
+     "f": "Georgia",
+     "s": "72px",
+     "wt": "300",
+     "tt": "none",
+     "col": "#18211b",
+     "deco": "none",
+     "cr": 16.51
+    },
+    "h2": {
+     "t": "",
+     "f": "Georgia",
+     "s": "16.8px",
+     "wt": "700",
+     "tt": "none",
+     "col": "#1f3d27",
+     "deco": "none",
+     "cr": 11.05
+    },
+    "h3": null,
+    "card": null,
+    "p": {
+     "t": "Локални налаз у ПИО „Рајац“ је потвр",
+     "f": "system-ui (системски)",
+     "s": "16px",
+     "wt": "400",
+     "tt": "none",
+     "col": "#5d675f",
+     "deco": "none",
+     "cr": 5.88
+    },
+    "pa": null,
+    "sci": {
+     "t": "Abies alba Mill.",
+     "f": "system-ui (системски)",
+     "s": "16px",
+     "wt": "600",
+     "tt": "none",
+     "col": "#355a3c",
+     "deco": "none",
+     "cr": null
+    },
+    "btn": {
+     "t": "＋ ДОПРИНЕСИ ПОЗНАВАЊУ БИЉАКА НА РАЈЦ",
+     "f": "system-ui (системски)",
+     "s": "12.48px",
+     "wt": "800",
+     "tt": "uppercase",
+     "col": "#e2c87a",
+     "deco": "none",
+     "cr": 9.77
+    },
+    "foot": {
+     "t": "ПРЕТХОДНА БИЉКА",
+     "f": "monospace (системски)",
+     "s": "11.52px",
+     "wt": "700",
+     "tt": "uppercase",
+     "col": "#8a6a34",
+     "deco": "none",
+     "cr": null
+    },
+    "h1n": 1,
+    "lang": "sr",
+    "imp": 166,
+    "rules": 738,
+    "sheets": 13,
+    "styleBlocks": 7,
+    "inlineStyle": 7,
+    "fc": {
+     "system-ui (системски)": 104,
+     "Georgia": 24,
+     "monospace (системски)": 35
+    },
+    "hscroll": false,
+    "bodyBg": "#ffffff",
+    "headerH": 58,
+    "title": "Обична јела — Abies alba Mill.",
+    "focusVisible": true
+   }
+  }
+ },
+ {
+  "name": "Птице — каталог",
+  "url": "https://piorajac.rs/ptice/",
+  "w": {
+   "390": {
+    "home": null,
+    "nav": null,
+    "h1": {
+     "t": "Птице Рајца",
+     "f": "Cormorant Garamond",
+     "s": "37.6px",
+     "wt": "300",
+     "tt": "none",
+     "col": "#ffffff",
+     "deco": "none",
+     "cr": null
+    },
+    "h2": {
+     "t": "Орао крсташ",
+     "f": "Georgia",
+     "s": "26.4px",
+     "wt": "400",
+     "tt": "none",
+     "col": "#0e1318",
+     "deco": "none",
+     "cr": 18.67
+    },
+    "h3": null,
+    "card": {
+     "t": "Орао крсташ",
+     "f": "Georgia",
+     "s": "26.4px",
+     "wt": "400",
+     "tt": "none",
+     "col": "#0e1318",
+     "deco": "none",
+     "cr": 18.67
+    },
+    "p": {
+     "t": "Комплетан каталог евидентираних врст",
+     "f": "system-ui (системски)",
+     "s": "17px",
+     "wt": "600",
+     "tt": "none",
+     "col": "#ffffff",
+     "deco": "none",
+     "cr": 17.92
+    },
+    "pa": null,
+    "sci": {
+     "t": "Aquila heliaca",
+     "f": "system-ui (системски)",
+     "s": "15px",
+     "wt": "400",
+     "tt": "none",
+     "col": "#1f6b9a",
+     "deco": "none",
+     "cr": 5.79
+    },
+    "btn": {
+     "t": "СВЕ ВРСТЕ ГРАБЉИВИЦЕ СОВЕ ДЕТЛИЋИ ВР",
+     "f": "system-ui (системски)",
+     "s": "16px",
+     "wt": "400",
+     "tt": "none",
+     "col": "#111827",
+     "deco": "none",
+     "cr": 16.54
+    },
+    "foot": null,
+    "h1n": 1,
+    "lang": "sr-RS",
+    "imp": 466,
+    "rules": 163,
+    "sheets": 9,
+    "styleBlocks": 6,
+    "inlineStyle": 12,
+    "fc": {
+     "Georgia": 8,
+     "Cormorant Garamond": 1,
+     "system-ui (системски)": 22,
+     "monospace (системски)": 31
+    },
+    "hscroll": false,
+    "bodyBg": "#f6f7f8",
+    "headerH": null,
+    "title": "Птице ПИО „Рајац“ — каталог врста"
+   },
+   "820": {
+    "home": null,
+    "nav": null,
+    "h1": {
+     "t": "Птице Рајца",
+     "f": "Cormorant Garamond",
+     "s": "57.6px",
+     "wt": "300",
+     "tt": "none",
+     "col": "#ffffff",
+     "deco": "none",
+     "cr": null
+    },
+    "h2": {
+     "t": "Орао крсташ",
+     "f": "Georgia",
+     "s": "26.4px",
+     "wt": "400",
+     "tt": "none",
+     "col": "#0e1318",
+     "deco": "none",
+     "cr": 18.67
+    },
+    "h3": null,
+    "card": {
+     "t": "Орао крсташ",
+     "f": "Georgia",
+     "s": "26.4px",
+     "wt": "400",
+     "tt": "none",
+     "col": "#0e1318",
+     "deco": "none",
+     "cr": 18.67
+    },
+    "p": {
+     "t": "Комплетан каталог евидентираних врст",
+     "f": "system-ui (системски)",
+     "s": "17px",
+     "wt": "600",
+     "tt": "none",
+     "col": "#ffffff",
+     "deco": "none",
+     "cr": 17.92
+    },
+    "pa": null,
+    "sci": {
+     "t": "Aquila heliaca",
+     "f": "system-ui (системски)",
+     "s": "15px",
+     "wt": "400",
+     "tt": "none",
+     "col": "#1f6b9a",
+     "deco": "none",
+     "cr": 5.79
+    },
+    "btn": {
+     "t": "СВЕ ВРСТЕ ГРАБЉИВИЦЕ СОВЕ ДЕТЛИЋИ ВР",
+     "f": "system-ui (системски)",
+     "s": "16px",
+     "wt": "400",
+     "tt": "none",
+     "col": "#111827",
+     "deco": "none",
+     "cr": 16.54
+    },
+    "foot": null,
+    "h1n": 1,
+    "lang": "sr-RS",
+    "imp": 466,
+    "rules": 163,
+    "sheets": 9,
+    "styleBlocks": 6,
+    "inlineStyle": 12,
+    "fc": {
+     "Georgia": 8,
+     "Cormorant Garamond": 1,
+     "system-ui (системски)": 22,
+     "monospace (системски)": 31
+    },
+    "hscroll": false,
+    "bodyBg": "#f6f7f8",
+    "headerH": null,
+    "title": "Птице ПИО „Рајац“ — каталог врста"
+   },
+   "1440": {
+    "home": {
+     "t": "⊙ ПИО „РАЈАЦ“",
+     "f": "Cormorant Garamond",
+     "s": "16px",
+     "wt": "600",
+     "tt": "none",
+     "col": "#d8b55b",
+     "deco": "none",
+     "cr": 8.85
+    },
+    "nav": {
+     "t": "🌿 БИЉКЕ",
+     "f": "Cormorant Garamond",
+     "s": "15px",
+     "wt": "600",
+     "tt": "uppercase",
+     "col": "#ffffff",
+     "deco": "none",
+     "cr": 17.39
+    },
+    "h1": {
+     "t": "Птице Рајца",
+     "f": "Cormorant Garamond",
+     "s": "76.8px",
+     "wt": "300",
+     "tt": "none",
+     "col": "#ffffff",
+     "deco": "none",
+     "cr": null
+    },
+    "h2": {
+     "t": "Орао крсташ",
+     "f": "Georgia",
+     "s": "26.4px",
+     "wt": "400",
+     "tt": "none",
+     "col": "#0e1318",
+     "deco": "none",
+     "cr": 18.67
+    },
+    "h3": null,
+    "card": {
+     "t": "Орао крсташ",
+     "f": "Georgia",
+     "s": "26.4px",
+     "wt": "400",
+     "tt": "none",
+     "col": "#0e1318",
+     "deco": "none",
+     "cr": 18.67
+    },
+    "p": {
+     "t": "Комплетан каталог евидентираних врст",
+     "f": "system-ui (системски)",
+     "s": "15px",
+     "wt": "600",
+     "tt": "none",
+     "col": "#ffffff",
+     "deco": "none",
+     "cr": 17.92
+    },
+    "pa": null,
+    "sci": {
+     "t": "Aquila heliaca",
+     "f": "system-ui (системски)",
+     "s": "15px",
+     "wt": "400",
+     "tt": "none",
+     "col": "#1f6b9a",
+     "deco": "none",
+     "cr": 5.79
+    },
+    "btn": {
+     "t": "СВЕ ВРСТЕ ГРАБЉИВИЦЕ СОВЕ ДЕТЛИЋИ ВР",
+     "f": "system-ui (системски)",
+     "s": "16px",
+     "wt": "400",
+     "tt": "none",
+     "col": "#111827",
+     "deco": "none",
+     "cr": 16.54
+    },
+    "foot": null,
+    "h1n": 1,
+    "lang": "sr-RS",
+    "imp": 466,
+    "rules": 163,
+    "sheets": 9,
+    "styleBlocks": 6,
+    "inlineStyle": 12,
+    "fc": {
+     "Cormorant Garamond": 14,
+     "system-ui (системски)": 22,
+     "monospace (системски)": 31,
+     "Georgia": 6
+    },
+    "hscroll": false,
+    "bodyBg": "#f6f7f8",
+    "headerH": 56,
+    "title": "Птице ПИО „Рајац“ — каталог врста",
+    "focusVisible": true
+   }
+  }
+ },
+ {
+  "name": "Птице — врста",
+  "url": "https://piorajac.rs/ptice/suri-orao/",
+  "w": {
+   "390": {
+    "home": null,
+    "nav": null,
+    "h1": {
+     "t": "Сури орао",
+     "f": "Georgia",
+     "s": "46.4px",
+     "wt": "300",
+     "tt": "none",
+     "col": "#ffffff",
+     "deco": "none",
+     "cr": null
+    },
+    "h2": {
+     "t": "Препознавање",
+     "f": "Georgia",
+     "s": "27.2px",
+     "wt": "300",
+     "tt": "none",
+     "col": "#1a1a2e",
+     "deco": "none",
+     "cr": 17.06
+    },
+    "h3": {
+     "t": "🗺 Где и када тражити на Рајцу",
+     "f": "Georgia",
+     "s": "21.6px",
+     "wt": "300",
+     "tt": "none",
+     "col": "#173015",
+     "deco": "none",
+     "cr": null
+    },
+    "card": {
+     "t": "🗺 Где и када тражити на Рајцу",
+     "f": "Georgia",
+     "s": "21.6px",
+     "wt": "300",
+     "tt": "none",
+     "col": "#173015",
+     "deco": "none",
+     "cr": null
+    },
+    "p": {
+     "t": "Велики мирни шумски комплекси. Кружи",
+     "f": "Georgia",
+     "s": "20px",
+     "wt": "400",
+     "tt": "none",
+     "col": "#354050",
+     "deco": "none",
+     "cr": null
+    },
+    "pa": null,
+    "sci": {
+     "t": "Aquila chrysaetos",
+     "f": "Georgia",
+     "s": "24.8px",
+     "wt": "300",
+     "tt": "none",
+     "col": "#e8cc7a",
+     "deco": "none",
+     "cr": null
+    },
+    "btn": {
+     "t": "ИУЦН: LC ретка врста грабљивица",
+     "f": "Georgia",
+     "s": "16px",
+     "wt": "400",
+     "tt": "none",
+     "col": "#ffffff",
+     "deco": "none",
+     "cr": null
+    },
+    "foot": {
+     "t": "ПРЕТХОДНА ПТИЦА",
+     "f": "monospace (системски)",
+     "s": "11.52px",
+     "wt": "700",
+     "tt": "uppercase",
+     "col": "#8a6a34",
+     "deco": "none",
+     "cr": null
+    },
+    "h1n": 1,
+    "lang": "sr-RS",
+    "imp": 884,
+    "rules": 448,
+    "sheets": 13,
+    "styleBlocks": 10,
+    "inlineStyle": 6,
+    "fc": {
+     "Georgia": 60,
+     "monospace (системски)": 9
+    },
+    "hscroll": false,
+    "bodyBg": "#f8f4ed",
+    "headerH": null,
+    "title": "Сури орао — Птице ПИО Рајац"
+   },
+   "820": {
+    "home": null,
+    "nav": null,
+    "h1": {
+     "t": "Сури орао",
+     "f": "Georgia",
+     "s": "46.4px",
+     "wt": "300",
+     "tt": "none",
+     "col": "#ffffff",
+     "deco": "none",
+     "cr": null
+    },
+    "h2": {
+     "t": "Препознавање",
+     "f": "Georgia",
+     "s": "27.2px",
+     "wt": "300",
+     "tt": "none",
+     "col": "#1a1a2e",
+     "deco": "none",
+     "cr": 17.06
+    },
+    "h3": {
+     "t": "🗺 Где и када тражити на Рајцу",
+     "f": "Georgia",
+     "s": "21.6px",
+     "wt": "300",
+     "tt": "none",
+     "col": "#173015",
+     "deco": "none",
+     "cr": null
+    },
+    "card": {
+     "t": "🗺 Где и када тражити на Рајцу",
+     "f": "Georgia",
+     "s": "21.6px",
+     "wt": "300",
+     "tt": "none",
+     "col": "#173015",
+     "deco": "none",
+     "cr": null
+    },
+    "p": {
+     "t": "Велики мирни шумски комплекси. Кружи",
+     "f": "Georgia",
+     "s": "20px",
+     "wt": "400",
+     "tt": "none",
+     "col": "#354050",
+     "deco": "none",
+     "cr": null
+    },
+    "pa": null,
+    "sci": {
+     "t": "Aquila chrysaetos",
+     "f": "Georgia",
+     "s": "24.8px",
+     "wt": "300",
+     "tt": "none",
+     "col": "#e8cc7a",
+     "deco": "none",
+     "cr": null
+    },
+    "btn": {
+     "t": "ИУЦН: LC ретка врста грабљивица",
+     "f": "Georgia",
+     "s": "16px",
+     "wt": "400",
+     "tt": "none",
+     "col": "#ffffff",
+     "deco": "none",
+     "cr": null
+    },
+    "foot": {
+     "t": "ПРЕТХОДНА ПТИЦА",
+     "f": "monospace (системски)",
+     "s": "11.52px",
+     "wt": "700",
+     "tt": "uppercase",
+     "col": "#8a6a34",
+     "deco": "none",
+     "cr": null
+    },
+    "h1n": 1,
+    "lang": "sr-RS",
+    "imp": 884,
+    "rules": 448,
+    "sheets": 13,
+    "styleBlocks": 10,
+    "inlineStyle": 6,
+    "fc": {
+     "Georgia": 60,
+     "monospace (системски)": 11
+    },
+    "hscroll": false,
+    "bodyBg": "#f8f4ed",
+    "headerH": null,
+    "title": "Сури орао — Птице ПИО Рајац"
+   },
+   "1440": {
+    "home": {
+     "t": "⊙ ПИО „РАЈАЦ“",
+     "f": "Georgia",
+     "s": "16px",
+     "wt": "600",
+     "tt": "none",
+     "col": "#d8b55b",
+     "deco": "none",
+     "cr": 8.85
+    },
+    "nav": {
+     "t": "🌿 БИЉКЕ",
+     "f": "Georgia",
+     "s": "15px",
+     "wt": "600",
+     "tt": "uppercase",
+     "col": "#ffffff",
+     "deco": "none",
+     "cr": 17.39
+    },
+    "h1": {
+     "t": "Сури орао",
+     "f": "Georgia",
+     "s": "46.4px",
+     "wt": "300",
+     "tt": "none",
+     "col": "#ffffff",
+     "deco": "none",
+     "cr": null
+    },
+    "h2": {
+     "t": "Препознавање",
+     "f": "Georgia",
+     "s": "27.2px",
+     "wt": "300",
+     "tt": "none",
+     "col": "#1a1a2e",
+     "deco": "none",
+     "cr": 17.06
+    },
+    "h3": {
+     "t": "🗺 Где и када тражити на Рајцу",
+     "f": "Georgia",
+     "s": "21.6px",
+     "wt": "300",
+     "tt": "none",
+     "col": "#173015",
+     "deco": "none",
+     "cr": null
+    },
+    "card": {
+     "t": "🗺 Где и када тражити на Рајцу",
+     "f": "Georgia",
+     "s": "21.6px",
+     "wt": "300",
+     "tt": "none",
+     "col": "#173015",
+     "deco": "none",
+     "cr": null
+    },
+    "p": {
+     "t": "Велики мирни шумски комплекси. Кружи",
+     "f": "Georgia",
+     "s": "20px",
+     "wt": "400",
+     "tt": "none",
+     "col": "#354050",
+     "deco": "none",
+     "cr": null
+    },
+    "pa": null,
+    "sci": {
+     "t": "Aquila chrysaetos",
+     "f": "Georgia",
+     "s": "24.8px",
+     "wt": "300",
+     "tt": "none",
+     "col": "#e8cc7a",
+     "deco": "none",
+     "cr": null
+    },
+    "btn": {
+     "t": "ИУЦН: LC ретка врста грабљивица",
+     "f": "Georgia",
+     "s": "16px",
+     "wt": "400",
+     "tt": "none",
+     "col": "#ffffff",
+     "deco": "none",
+     "cr": null
+    },
+    "foot": {
+     "t": "ПРЕТХОДНА ПТИЦА",
+     "f": "monospace (системски)",
+     "s": "11.52px",
+     "wt": "700",
+     "tt": "uppercase",
+     "col": "#8a6a34",
+     "deco": "none",
+     "cr": null
+    },
+    "h1n": 1,
+    "lang": "sr-RS",
+    "imp": 884,
+    "rules": 448,
+    "sheets": 13,
+    "styleBlocks": 10,
+    "inlineStyle": 6,
+    "fc": {
+     "Georgia": 71,
+     "monospace (системски)": 11
+    },
+    "hscroll": false,
+    "bodyBg": "#f8f4ed",
+    "headerH": 56,
+    "title": "Сури орао — Птице ПИО Рајац",
+    "focusVisible": true
+   }
+  }
+ },
+ {
+  "name": "Птице — приручник",
+  "url": "https://piorajac.rs/ptice/prirucnik/katalog.html",
+  "w": {
+   "390": {
+    "home": {
+     "t": "ПОСМАТРАЊЕ ПТИЦА ПИО „РАЈАЦ“",
+     "f": "system-ui (системски)",
+     "s": "16px",
+     "wt": "400",
+     "tt": "none",
+     "col": "#ffffff",
+     "deco": "none",
+     "cr": 18.61
+    },
+    "nav": null,
+    "h1": {
+     "t": "Каталог птица Рајца",
+     "f": "Georgia",
+     "s": "40px",
+     "wt": "500",
+     "tt": "none",
+     "col": "#22251f",
+     "deco": "none",
+     "cr": null
+    },
+    "h2": {
+     "t": "Садржај",
+     "f": "Georgia",
+     "s": "28.8px",
+     "wt": "500",
+     "tt": "none",
+     "col": "#22251f",
+     "deco": "none",
+     "cr": 15.53
+    },
+    "h3": {
+     "t": "Батокљун",
+     "f": "Georgia",
+     "s": "21.44px",
+     "wt": "600",
+     "tt": "none",
+     "col": "#22251f",
+     "deco": "none",
+     "cr": 15.53
+    },
+    "card": {
+     "t": "Батокљун",
+     "f": "Georgia",
+     "s": "21.44px",
+     "wt": "600",
+     "tt": "none",
+     "col": "#22251f",
+     "deco": "none",
+     "cr": 15.53
+    },
+    "p": {
+     "t": "Претражите и филтрирајте врсте, отво",
+     "f": "system-ui (системски)",
+     "s": "16px",
+     "wt": "400",
+     "tt": "none",
+     "col": "#596159",
+     "deco": "none",
+     "cr": null
+    },
+    "pa": null,
+    "sci": {
+     "t": "Coccothraustes coccothraustes",
+     "f": "Georgia",
+     "s": "13.76px",
+     "wt": "400",
+     "tt": "none",
+     "col": "#777d76",
+     "deco": "none",
+     "cr": 4.22
+    },
+    "btn": {
+     "t": "Теренски приказ",
+     "f": "system-ui (системски)",
+     "s": "12.48px",
+     "wt": "650",
+     "tt": "none",
+     "col": "#263129",
+     "deco": "none",
+     "cr": 12.49
+    },
+    "foot": null,
+    "h1n": 1,
+    "lang": "sr-Cyrl",
+    "imp": 238,
+    "rules": 1369,
+    "sheets": 1,
+    "styleBlocks": 0,
+    "inlineStyle": 1,
+    "fc": {
+     "system-ui (системски)": 811,
+     "monospace (системски)": 35,
+     "Georgia": 488,
+     "Arial": 155
+    },
+    "hscroll": true,
+    "bodyBg": "#ffffff",
+    "headerH": 63,
+    "title": "Каталог птица Рајца | ПИО „Рајац“"
+   },
+   "820": {
+    "home": null,
+    "nav": {
+     "t": "ПОСМАТРАЊЕ ПТИЦА",
+     "f": "system-ui (системски)",
+     "s": "16.5px",
+     "wt": "400",
+     "tt": "none",
+     "col": "#ffffff",
+     "deco": "none",
+     "cr": 18.61
+    },
+    "h1": {
+     "t": "Каталог птица Рајца",
+     "f": "Georgia",
+     "s": "41px",
+     "wt": "500",
+     "tt": "none",
+     "col": "#22251f",
+     "deco": "none",
+     "cr": null
+    },
+    "h2": {
+     "t": "Садржај",
+     "f": "Georgia",
+     "s": "28.8px",
+     "wt": "500",
+     "tt": "none",
+     "col": "#22251f",
+     "deco": "none",
+     "cr": 15.53
+    },
+    "h3": {
+     "t": "Батокљун",
+     "f": "Georgia",
+     "s": "21.44px",
+     "wt": "600",
+     "tt": "none",
+     "col": "#22251f",
+     "deco": "none",
+     "cr": 15.53
+    },
+    "card": {
+     "t": "Батокљун",
+     "f": "Georgia",
+     "s": "21.44px",
+     "wt": "600",
+     "tt": "none",
+     "col": "#22251f",
+     "deco": "none",
+     "cr": 15.53
+    },
+    "p": {
+     "t": "Претражите и филтрирајте врсте, отво",
+     "f": "system-ui (системски)",
+     "s": "16px",
+     "wt": "400",
+     "tt": "none",
+     "col": "#596159",
+     "deco": "none",
+     "cr": null
+    },
+    "pa": null,
+    "sci": {
+     "t": "Coccothraustes coccothraustes",
+     "f": "Georgia",
+     "s": "13.76px",
+     "wt": "400",
+     "tt": "none",
+     "col": "#777d76",
+     "deco": "none",
+     "cr": 4.22
+    },
+    "btn": {
+     "t": "Теренски приказ",
+     "f": "system-ui (системски)",
+     "s": "12.48px",
+     "wt": "650",
+     "tt": "none",
+     "col": "#263129",
+     "deco": "none",
+     "cr": 12.49
+    },
+    "foot": null,
+    "h1n": 1,
+    "lang": "sr-Cyrl",
+    "imp": 238,
+    "rules": 1369,
+    "sheets": 1,
+    "styleBlocks": 0,
+    "inlineStyle": 1,
+    "fc": {
+     "system-ui (системски)": 829,
+     "Georgia": 488,
+     "monospace (системски)": 34,
+     "Arial": 155
+    },
+    "hscroll": false,
+    "bodyBg": "#ffffff",
+    "headerH": null,
+    "title": "Каталог птица Рајца | ПИО „Рајац“"
+   },
+   "1440": {
+    "home": {
+     "t": "ПОСМАТРАЊЕ ПТИЦА ПИО „РАЈАЦ“",
+     "f": "system-ui (системски)",
+     "s": "16.5px",
+     "wt": "400",
+     "tt": "none",
+     "col": "#ffffff",
+     "deco": "none",
+     "cr": 18.61
+    },
+    "nav": {
+     "t": "Почетна",
+     "f": "system-ui (системски)",
+     "s": "13px",
+     "wt": "650",
+     "tt": "none",
+     "col": "#ffffff",
+     "deco": "none",
+     "cr": 18.61
+    },
+    "h1": {
+     "t": "Каталог птица Рајца",
+     "f": "Georgia",
+     "s": "67.2px",
+     "wt": "500",
+     "tt": "none",
+     "col": "#22251f",
+     "deco": "none",
+     "cr": null
+    },
+    "h2": {
+     "t": "Садржај",
+     "f": "Georgia",
+     "s": "28.8px",
+     "wt": "500",
+     "tt": "none",
+     "col": "#22251f",
+     "deco": "none",
+     "cr": 15.53
+    },
+    "h3": {
+     "t": "Батокљун",
+     "f": "Georgia",
+     "s": "21.44px",
+     "wt": "600",
+     "tt": "none",
+     "col": "#22251f",
+     "deco": "none",
+     "cr": 15.53
+    },
+    "card": {
+     "t": "Батокљун",
+     "f": "Georgia",
+     "s": "21.44px",
+     "wt": "600",
+     "tt": "none",
+     "col": "#22251f",
+     "deco": "none",
+     "cr": 15.53
+    },
+    "p": {
+     "t": "Претражите и филтрирајте врсте, отво",
+     "f": "system-ui (системски)",
+     "s": "16px",
+     "wt": "400",
+     "tt": "none",
+     "col": "#596159",
+     "deco": "none",
+     "cr": null
+    },
+    "pa": null,
+    "sci": {
+     "t": "Coccothraustes coccothraustes",
+     "f": "Georgia",
+     "s": "13.76px",
+     "wt": "400",
+     "tt": "none",
+     "col": "#777d76",
+     "deco": "none",
+     "cr": 4.22
+    },
+    "btn": {
+     "t": "Теренски приказ",
+     "f": "system-ui (системски)",
+     "s": "12.48px",
+     "wt": "650",
+     "tt": "none",
+     "col": "#263129",
+     "deco": "none",
+     "cr": 12.49
+    },
+    "foot": null,
+    "h1n": 1,
+    "lang": "sr-Cyrl",
+    "imp": 238,
+    "rules": 1369,
+    "sheets": 1,
+    "styleBlocks": 0,
+    "inlineStyle": 3,
+    "fc": {
+     "system-ui (системски)": 829,
+     "monospace (системски)": 35,
+     "Georgia": 488,
+     "Arial": 155
+    },
+    "hscroll": false,
+    "bodyBg": "#ffffff",
+    "headerH": 71,
+    "title": "Каталог птица Рајца | ПИО „Рајац“",
+    "focusVisible": true
+   }
+  }
+ },
+ {
+  "name": "Инсекти — каталог",
+  "url": "https://piorajac.rs/insekti/",
+  "w": {
+   "390": {
+    "home": {
+     "t": "⊙ ПИО „РАЈАЦ“",
+     "f": "Cormorant Garamond",
+     "s": "16px",
+     "wt": "700",
+     "tt": "none",
+     "col": "#d8b55b",
+     "deco": "none",
+     "cr": 8.85
+    },
+    "nav": null,
+    "h1": {
+     "t": "Инсекти Рајца",
+     "f": "Cormorant Garamond",
+     "s": "48px",
+     "wt": "300",
+     "tt": "none",
+     "col": "#ffffff",
+     "deco": "none",
+     "cr": null
+    },
+    "h2": null,
+    "h3": null,
+    "card": null,
+    "p": {
+     "t": "Каталог инсеката ПИО „Рајац” са фото",
+     "f": "system-ui (системски)",
+     "s": "15px",
+     "wt": "400",
+     "tt": "none",
+     "col": "#ffffff",
+     "deco": "none",
+     "cr": 17.92
+    },
+    "pa": null,
+    "sci": {
+     "t": "Aphrodes tricinctus (Schrank, 1776)",
+     "f": "Cormorant Garamond",
+     "s": "14px",
+     "wt": "400",
+     "tt": "none",
+     "col": "#4a7c43",
+     "deco": "none",
+     "cr": 4.94
+    },
+    "btn": {
+     "t": "🪲 COLEOPTERA",
+     "f": "system-ui (системски)",
+     "s": "11px",
+     "wt": "700",
+     "tt": "uppercase",
+     "col": "#30445f",
+     "deco": "none",
+     "cr": 9.24
+    },
+    "foot": null,
+    "h1n": 1,
+    "lang": "sr",
+    "imp": 705,
+    "rules": 168,
+    "sheets": 14,
+    "styleBlocks": 10,
+    "inlineStyle": 0,
+    "fc": {
+     "Cormorant Garamond": 10,
+     "system-ui (системски)": 31,
+     "Arial": 1
+    },
+    "hscroll": false,
+    "bodyBg": "#f6f7f8",
+    "headerH": 58,
+    "title": "Инсекти Рајца | ПИО „Рајац”"
+   },
+   "820": {
+    "home": {
+     "t": "⊙ ПИО „РАЈАЦ“",
+     "f": "Cormorant Garamond",
+     "s": "16px",
+     "wt": "700",
+     "tt": "none",
+     "col": "#d8b55b",
+     "deco": "none",
+     "cr": 8.85
+    },
+    "nav": null,
+    "h1": {
+     "t": "Инсекти Рајца",
+     "f": "Cormorant Garamond",
+     "s": "60.8px",
+     "wt": "300",
+     "tt": "none",
+     "col": "#ffffff",
+     "deco": "none",
+     "cr": null
+    },
+    "h2": null,
+    "h3": null,
+    "card": null,
+    "p": {
+     "t": "Каталог инсеката ПИО „Рајац” са фото",
+     "f": "system-ui (системски)",
+     "s": "15px",
+     "wt": "400",
+     "tt": "none",
+     "col": "#ffffff",
+     "deco": "none",
+     "cr": 17.92
+    },
+    "pa": null,
+    "sci": {
+     "t": "Aphrodes tricinctus (Schrank, 1776)",
+     "f": "Cormorant Garamond",
+     "s": "14px",
+     "wt": "400",
+     "tt": "none",
+     "col": "#4a7c43",
+     "deco": "none",
+     "cr": 4.94
+    },
+    "btn": {
+     "t": "🪲 COLEOPTERA",
+     "f": "system-ui (системски)",
+     "s": "11px",
+     "wt": "700",
+     "tt": "uppercase",
+     "col": "#30445f",
+     "deco": "none",
+     "cr": 9.24
+    },
+    "foot": null,
+    "h1n": 1,
+    "lang": "sr",
+    "imp": 705,
+    "rules": 168,
+    "sheets": 14,
+    "styleBlocks": 10,
+    "inlineStyle": 0,
+    "fc": {
+     "Cormorant Garamond": 20,
+     "system-ui (системски)": 46,
+     "Arial": 1
+    },
+    "hscroll": false,
+    "bodyBg": "#f6f7f8",
+    "headerH": 58,
+    "title": "Инсекти Рајца | ПИО „Рајац”"
+   },
+   "1440": {
+    "home": {
+     "t": "⊙ ПИО „РАЈАЦ“",
+     "f": "Cormorant Garamond",
+     "s": "16px",
+     "wt": "700",
+     "tt": "none",
+     "col": "#d8b55b",
+     "deco": "none",
+     "cr": 8.85
+    },
+    "nav": {
+     "t": "🌿 БИЉКЕ",
+     "f": "Cormorant Garamond",
+     "s": "15px",
+     "wt": "700",
+     "tt": "uppercase",
+     "col": "#ffffff",
+     "deco": "none",
+     "cr": 17.39
+    },
+    "h1": {
+     "t": "Инсекти Рајца",
+     "f": "Cormorant Garamond",
+     "s": "82.4px",
+     "wt": "300",
+     "tt": "none",
+     "col": "#ffffff",
+     "deco": "none",
+     "cr": null
+    },
+    "h2": null,
+    "h3": null,
+    "card": null,
+    "p": {
+     "t": "Каталог инсеката ПИО „Рајац” са фото",
+     "f": "system-ui (системски)",
+     "s": "15px",
+     "wt": "400",
+     "tt": "none",
+     "col": "#ffffff",
+     "deco": "none",
+     "cr": 17.92
+    },
+    "pa": null,
+    "sci": {
+     "t": "Aphrodes tricinctus (Schrank, 1776)",
+     "f": "Cormorant Garamond",
+     "s": "14px",
+     "wt": "400",
+     "tt": "none",
+     "col": "#4a7c43",
+     "deco": "none",
+     "cr": 4.94
+    },
+    "btn": {
+     "t": "🪲 COLEOPTERA",
+     "f": "system-ui (системски)",
+     "s": "11px",
+     "wt": "700",
+     "tt": "uppercase",
+     "col": "#30445f",
+     "deco": "none",
+     "cr": 9.24
+    },
+    "foot": null,
+    "h1n": 1,
+    "lang": "sr",
+    "imp": 705,
+    "rules": 168,
+    "sheets": 14,
+    "styleBlocks": 10,
+    "inlineStyle": 0,
+    "fc": {
+     "Cormorant Garamond": 32,
+     "system-ui (системски)": 45,
+     "Arial": 1
+    },
+    "hscroll": false,
+    "bodyBg": "#f6f7f8",
+    "headerH": 56,
+    "title": "Инсекти Рајца | ПИО „Рајац”",
+    "focusVisible": true
+   }
+  }
+ },
+ {
+  "name": "Инсекти — врста",
+  "url": "https://piorajac.rs/insekti/apatura-ilia/",
+  "w": {
+   "390": {
+    "home": {
+     "t": "⊙ ПИО „РАЈАЦ“",
+     "f": "Georgia",
+     "s": "16px",
+     "wt": "600",
+     "tt": "none",
+     "col": "#d8b55b",
+     "deco": "none",
+     "cr": 8.85
+    },
+    "nav": null,
+    "h1": {
+     "t": "Мали преливац",
+     "f": "Georgia",
+     "s": "39px",
+     "wt": "300",
+     "tt": "none",
+     "col": "#ffffff",
+     "deco": "none",
+     "cr": null
+    },
+    "h2": null,
+    "h3": null,
+    "card": {
+     "t": "🧭 ЛЕГЕНДА ПРЕПОЗНАВАЊА",
+     "f": "system-ui (системски)",
+     "s": "13px",
+     "wt": "800",
+     "tt": "uppercase",
+     "col": "#6b7280",
+     "deco": "none",
+     "cr": 4.83
+    },
+    "p": {
+     "t": "Крупан шумски лептир чији мужјак под",
+     "f": "system-ui (системски)",
+     "s": "14.5px",
+     "wt": "400",
+     "tt": "none",
+     "col": "#ffffff",
+     "deco": "none",
+     "cr": null
+    },
+    "pa": null,
+    "sci": {
+     "t": "Apatura ilia (Denis & Schiffermüller",
+     "f": "Georgia",
+     "s": "20.8px",
+     "wt": "300",
+     "tt": "none",
+     "col": "#e8cc7a",
+     "deco": "none",
+     "cr": null
+    },
+    "btn": {
+     "t": "Lepidoptera Nymphalidae Строго зашти",
+     "f": "system-ui (системски)",
+     "s": "15px",
+     "wt": "400",
+     "tt": "none",
+     "col": "#1a1a2e",
+     "deco": "none",
+     "cr": null
+    },
+    "foot": null,
+    "h1n": 1,
+    "lang": "sr",
+    "imp": 362,
+    "rules": 284,
+    "sheets": 10,
+    "styleBlocks": 8,
+    "inlineStyle": 0,
+    "fc": {
+     "Georgia": 3,
+     "system-ui (системски)": 54,
+     "Arial": 7
+    },
+    "hscroll": false,
+    "bodyBg": "#fdfcfa",
+    "headerH": 58,
+    "title": "Мали преливац — Apatura ilia | Инсекти Рајца | ПИО „Рајац“"
+   },
+   "820": {
+    "home": {
+     "t": "⊙ ПИО „РАЈАЦ“",
+     "f": "Georgia",
+     "s": "16px",
+     "wt": "600",
+     "tt": "none",
+     "col": "#d8b55b",
+     "deco": "none",
+     "cr": 8.85
+    },
+    "nav": null,
+    "h1": {
+     "t": "Мали преливац",
+     "f": "Georgia",
+     "s": "36.08px",
+     "wt": "300",
+     "tt": "none",
+     "col": "#ffffff",
+     "deco": "none",
+     "cr": null
+    },
+    "h2": null,
+    "h3": null,
+    "card": {
+     "t": "🧭 ЛЕГЕНДА ПРЕПОЗНАВАЊА",
+     "f": "system-ui (системски)",
+     "s": "13px",
+     "wt": "800",
+     "tt": "uppercase",
+     "col": "#6b7280",
+     "deco": "none",
+     "cr": 4.83
+    },
+    "p": {
+     "t": "Крупан шумски лептир чији мужјак под",
+     "f": "system-ui (системски)",
+     "s": "14.5px",
+     "wt": "400",
+     "tt": "none",
+     "col": "#ffffff",
+     "deco": "none",
+     "cr": null
+    },
+    "pa": null,
+    "sci": {
+     "t": "Apatura ilia (Denis & Schiffermüller",
+     "f": "Georgia",
+     "s": "20.8px",
+     "wt": "300",
+     "tt": "none",
+     "col": "#e8cc7a",
+     "deco": "none",
+     "cr": null
+    },
+    "btn": {
+     "t": "Lepidoptera Nymphalidae Строго зашти",
+     "f": "system-ui (системски)",
+     "s": "15px",
+     "wt": "400",
+     "tt": "none",
+     "col": "#1a1a2e",
+     "deco": "none",
+     "cr": null
+    },
+    "foot": null,
+    "h1n": 1,
+    "lang": "sr",
+    "imp": 362,
+    "rules": 284,
+    "sheets": 10,
+    "styleBlocks": 8,
+    "inlineStyle": 0,
+    "fc": {
+     "Georgia": 3,
+     "system-ui (системски)": 54,
+     "Arial": 7
+    },
+    "hscroll": false,
+    "bodyBg": "#fdfcfa",
+    "headerH": 58,
+    "title": "Мали преливац — Apatura ilia | Инсекти Рајца | ПИО „Рајац“"
+   },
+   "1440": {
+    "home": {
+     "t": "⊙ ПИО „РАЈАЦ“",
+     "f": "Georgia",
+     "s": "16px",
+     "wt": "600",
+     "tt": "none",
+     "col": "#d8b55b",
+     "deco": "none",
+     "cr": 8.85
+    },
+    "nav": {
+     "t": "🌿 БИЉКЕ",
+     "f": "Georgia",
+     "s": "15px",
+     "wt": "600",
+     "tt": "uppercase",
+     "col": "#ffffff",
+     "deco": "none",
+     "cr": 17.39
+    },
+    "h1": {
+     "t": "Мали преливац",
+     "f": "Georgia",
+     "s": "48px",
+     "wt": "300",
+     "tt": "none",
+     "col": "#ffffff",
+     "deco": "none",
+     "cr": null
+    },
+    "h2": null,
+    "h3": null,
+    "card": {
+     "t": "🧭 ЛЕГЕНДА ПРЕПОЗНАВАЊА",
+     "f": "system-ui (системски)",
+     "s": "13px",
+     "wt": "800",
+     "tt": "uppercase",
+     "col": "#6b7280",
+     "deco": "none",
+     "cr": 4.83
+    },
+    "p": {
+     "t": "Крупан шумски лептир чији мужјак под",
+     "f": "system-ui (системски)",
+     "s": "14.5px",
+     "wt": "400",
+     "tt": "none",
+     "col": "#ffffff",
+     "deco": "none",
+     "cr": null
+    },
+    "pa": null,
+    "sci": {
+     "t": "Apatura ilia (Denis & Schiffermüller",
+     "f": "Georgia",
+     "s": "20.8px",
+     "wt": "300",
+     "tt": "none",
+     "col": "#e8cc7a",
+     "deco": "none",
+     "cr": null
+    },
+    "btn": {
+     "t": "Lepidoptera Nymphalidae Строго зашти",
+     "f": "system-ui (системски)",
+     "s": "15px",
+     "wt": "400",
+     "tt": "none",
+     "col": "#1a1a2e",
+     "deco": "none",
+     "cr": null
+    },
+    "foot": null,
+    "h1n": 1,
+    "lang": "sr",
+    "imp": 362,
+    "rules": 284,
+    "sheets": 10,
+    "styleBlocks": 8,
+    "inlineStyle": 0,
+    "fc": {
+     "Georgia": 15,
+     "system-ui (системски)": 53,
+     "Arial": 7
+    },
+    "hscroll": false,
+    "bodyBg": "#fdfcfa",
+    "headerH": 56,
+    "title": "Мали преливац — Apatura ilia | Инсекти Рајца | ПИО „Рајац“",
+    "focusVisible": true
+   }
+  }
+ },
+ {
+  "name": "Сисари — каталог",
+  "url": "https://piorajac.rs/sisari/",
+  "w": {
+   "390": {
+    "home": {
+     "t": "⊙ ПИО „РАЈАЦ“",
+     "f": "Cormorant Garamond",
+     "s": "17px",
+     "wt": "700",
+     "tt": "none",
+     "col": "#c9a84c",
+     "deco": "none",
+     "cr": 7.5
+    },
+    "nav": null,
+    "h1": {
+     "t": "Сисари Рајца",
+     "f": "Cormorant Garamond",
+     "s": "48px",
+     "wt": "400",
+     "tt": "none",
+     "col": "#ffffff",
+     "deco": "none",
+     "cr": 12.68
+    },
+    "h2": null,
+    "h3": null,
+    "card": null,
+    "p": null,
+    "pa": null,
+    "sci": {
+     "t": "Capreolus capreolus",
+     "f": "Cormorant Garamond",
+     "s": "16.5px",
+     "wt": "500",
+     "tt": "none",
+     "col": "#4a7c43",
+     "deco": "none",
+     "cr": 4.94
+    },
+    "btn": {
+     "t": "СВЕ ВРСТЕ",
+     "f": "Outfit",
+     "s": "12px",
+     "wt": "600",
+     "tt": "uppercase",
+     "col": "#ffffff",
+     "deco": "none",
+     "cr": 5.28
+    },
+    "foot": null,
+    "h1n": 1,
+    "lang": "sr",
+    "imp": 2071,
+    "rules": 355,
+    "sheets": 19,
+    "styleBlocks": 15,
+    "inlineStyle": 50,
+    "fc": {
+     "Cormorant Garamond": 14,
+     "Arial": 2,
+     "Outfit": 33
+    },
+    "hscroll": false,
+    "bodyBg": "#f6f7f8",
+    "headerH": 58,
+    "title": "Сисари Рајца | ПИО „Рајац\""
+   },
+   "820": {
+    "home": {
+     "t": "⊙ ПИО „РАЈАЦ“",
+     "f": "Cormorant Garamond",
+     "s": "17px",
+     "wt": "700",
+     "tt": "none",
+     "col": "#c9a84c",
+     "deco": "none",
+     "cr": 7.5
+    },
+    "nav": null,
+    "h1": {
+     "t": "Сисари Рајца",
+     "f": "Cormorant Garamond",
+     "s": "49.2px",
+     "wt": "400",
+     "tt": "none",
+     "col": "#ffffff",
+     "deco": "none",
+     "cr": 12.68
+    },
+    "h2": null,
+    "h3": null,
+    "card": null,
+    "p": null,
+    "pa": null,
+    "sci": {
+     "t": "Capreolus capreolus",
+     "f": "Cormorant Garamond",
+     "s": "16.5px",
+     "wt": "500",
+     "tt": "none",
+     "col": "#4a7c43",
+     "deco": "none",
+     "cr": 4.94
+    },
+    "btn": {
+     "t": "СВЕ ВРСТЕ",
+     "f": "Outfit",
+     "s": "12.2px",
+     "wt": "600",
+     "tt": "uppercase",
+     "col": "#ffffff",
+     "deco": "none",
+     "cr": 5.28
+    },
+    "foot": null,
+    "h1n": 1,
+    "lang": "sr",
+    "imp": 2071,
+    "rules": 355,
+    "sheets": 19,
+    "styleBlocks": 15,
+    "inlineStyle": 50,
+    "fc": {
+     "Cormorant Garamond": 18,
+     "Arial": 2,
+     "Outfit": 41
+    },
+    "hscroll": false,
+    "bodyBg": "#f6f7f8",
+    "headerH": 58,
+    "title": "Сисари Рајца | ПИО „Рајац\""
+   },
+   "1440": {
+    "home": {
+     "t": "⊙ ПИО „РАЈАЦ“",
+     "f": "Cormorant Garamond",
+     "s": "16px",
+     "wt": "700",
+     "tt": "none",
+     "col": "#c9a84c",
+     "deco": "none",
+     "cr": 7.5
+    },
+    "nav": {
+     "t": "🌿 БИЉКЕ",
+     "f": "Cormorant Garamond",
+     "s": "15px",
+     "wt": "700",
+     "tt": "uppercase",
+     "col": "#aeb8c5",
+     "deco": "none",
+     "cr": 8.53
+    },
+    "h1": {
+     "t": "Сисари Рајца",
+     "f": "Cormorant Garamond",
+     "s": "76.8px",
+     "wt": "400",
+     "tt": "none",
+     "col": "#ffffff",
+     "deco": "none",
+     "cr": 12.68
+    },
+    "h2": null,
+    "h3": null,
+    "card": null,
+    "p": null,
+    "pa": null,
+    "sci": {
+     "t": "Capreolus capreolus",
+     "f": "Cormorant Garamond",
+     "s": "16.5px",
+     "wt": "500",
+     "tt": "none",
+     "col": "#4a7c43",
+     "deco": "none",
+     "cr": 4.94
+    },
+    "btn": {
+     "t": "СВЕ ВРСТЕ",
+     "f": "Outfit",
+     "s": "11px",
+     "wt": "600",
+     "tt": "uppercase",
+     "col": "#ffffff",
+     "deco": "none",
+     "cr": 5.28
+    },
+    "foot": null,
+    "h1n": 1,
+    "lang": "sr",
+    "imp": 2071,
+    "rules": 355,
+    "sheets": 19,
+    "styleBlocks": 15,
+    "inlineStyle": 0,
+    "fc": {
+     "Cormorant Garamond": 114,
+     "Outfit": 216
+    },
+    "hscroll": false,
+    "bodyBg": "#f6f7f8",
+    "headerH": 56,
+    "title": "Сисари Рајца | ПИО „Рајац\"",
+    "focusVisible": true
+   }
+  }
+ },
+ {
+  "name": "Сисари — врста",
+  "url": "https://piorajac.rs/sisari/apodemus-flavicollis/",
+  "w": {
+   "390": {
+    "home": {
+     "t": "⊙ ПИО „РАЈАЦ“",
+     "f": "Georgia",
+     "s": "17px",
+     "wt": "600",
+     "tt": "none",
+     "col": "#d8b55b",
+     "deco": "none",
+     "cr": 8.85
+    },
+    "nav": null,
+    "h1": {
+     "t": "Жутогрли миш",
+     "f": "Georgia",
+     "s": "32px",
+     "wt": "700",
+     "tt": "none",
+     "col": "#1a3a15",
+     "deco": "none",
+     "cr": 12.34
+    },
+    "h2": {
+     "t": "🔍 Морфологија — жута огрлица",
+     "f": "Georgia",
+     "s": "18.4px",
+     "wt": "700",
+     "tt": "none",
+     "col": "#1a3a15",
+     "deco": "none",
+     "cr": 12.34
+    },
+    "h3": {
+     "t": "□ ТАКСОНОМИЈА",
+     "f": "system-ui (системски)",
+     "s": "12px",
+     "wt": "700",
+     "tt": "uppercase",
+     "col": "#5a5a5a",
+     "deco": "none",
+     "cr": 6.06
+    },
+    "card": null,
+    "p": {
+     "t": "Жутогрли миш је крупнији и изразитиј",
+     "f": "system-ui (системски)",
+     "s": "15.5px",
+     "wt": "400",
+     "tt": "none",
+     "col": "#2a2a2a",
+     "deco": "none",
+     "cr": 14
+    },
+    "pa": null,
+    "sci": {
+     "t": "Apodemus flavicollis (Melchior, 1834",
+     "f": "Georgia",
+     "s": "18.88px",
+     "wt": "400",
+     "tt": "none",
+     "col": "#4a7c43",
+     "deco": "none",
+     "cr": 4.81
+    },
+    "btn": null,
+    "foot": null,
+    "h1n": 1,
+    "lang": "sr",
+    "imp": 558,
+    "rules": 245,
+    "sheets": 15,
+    "styleBlocks": 13,
+    "inlineStyle": 4,
+    "fc": {
+     "Georgia": 30,
+     "Arial": 1,
+     "system-ui (системски)": 118
+    },
+    "hscroll": false,
+    "bodyBg": "#fdfcfa",
+    "headerH": 58,
+    "title": "Жутогрли миш — Apodemus flavicollis | Сисари Рајца | ПИО „Рајац“"
+   },
+   "820": {
+    "home": {
+     "t": "⊙ ПИО „РАЈАЦ“",
+     "f": "Georgia",
+     "s": "17px",
+     "wt": "600",
+     "tt": "none",
+     "col": "#d8b55b",
+     "deco": "none",
+     "cr": 8.85
+    },
+    "nav": null,
+    "h1": {
+     "t": "Жутогрли миш",
+     "f": "Georgia",
+     "s": "40px",
+     "wt": "700",
+     "tt": "none",
+     "col": "#1a3a15",
+     "deco": "none",
+     "cr": 12.34
+    },
+    "h2": {
+     "t": "🔍 Морфологија — жута огрлица",
+     "f": "Georgia",
+     "s": "18.4px",
+     "wt": "700",
+     "tt": "none",
+     "col": "#1a3a15",
+     "deco": "none",
+     "cr": 12.34
+    },
+    "h3": {
+     "t": "□ ТАКСОНОМИЈА",
+     "f": "system-ui (системски)",
+     "s": "12px",
+     "wt": "700",
+     "tt": "uppercase",
+     "col": "#5a5a5a",
+     "deco": "none",
+     "cr": 6.06
+    },
+    "card": null,
+    "p": {
+     "t": "Жутогрли миш је крупнији и изразитиј",
+     "f": "system-ui (системски)",
+     "s": "15.5px",
+     "wt": "400",
+     "tt": "none",
+     "col": "#2a2a2a",
+     "deco": "none",
+     "cr": 14
+    },
+    "pa": null,
+    "sci": {
+     "t": "Apodemus flavicollis (Melchior, 1834",
+     "f": "Georgia",
+     "s": "21.6px",
+     "wt": "400",
+     "tt": "none",
+     "col": "#4a7c43",
+     "deco": "none",
+     "cr": 4.81
+    },
+    "btn": null,
+    "foot": null,
+    "h1n": 1,
+    "lang": "sr",
+    "imp": 558,
+    "rules": 245,
+    "sheets": 15,
+    "styleBlocks": 13,
+    "inlineStyle": 4,
+    "fc": {
+     "Georgia": 30,
+     "Arial": 1,
+     "system-ui (системски)": 118
+    },
+    "hscroll": false,
+    "bodyBg": "#fdfcfa",
+    "headerH": 58,
+    "title": "Жутогрли миш — Apodemus flavicollis | Сисари Рајца | ПИО „Рајац“"
+   },
+   "1440": {
+    "home": {
+     "t": "⊙ ПИО „РАЈАЦ“",
+     "f": "Georgia",
+     "s": "16px",
+     "wt": "600",
+     "tt": "none",
+     "col": "#d8b55b",
+     "deco": "none",
+     "cr": 8.85
+    },
+    "nav": {
+     "t": "🌿 БИЉКЕ",
+     "f": "Georgia",
+     "s": "15px",
+     "wt": "600",
+     "tt": "uppercase",
+     "col": "#ffffff",
+     "deco": "none",
+     "cr": 17.39
+    },
+    "h1": {
+     "t": "Жутогрли миш",
+     "f": "Georgia",
+     "s": "40px",
+     "wt": "700",
+     "tt": "none",
+     "col": "#1a3a15",
+     "deco": "none",
+     "cr": 12.34
+    },
+    "h2": {
+     "t": "🔍 Морфологија — жута огрлица",
+     "f": "Georgia",
+     "s": "18.4px",
+     "wt": "700",
+     "tt": "none",
+     "col": "#1a3a15",
+     "deco": "none",
+     "cr": 12.34
+    },
+    "h3": {
+     "t": "□ ТАКСОНОМИЈА",
+     "f": "system-ui (системски)",
+     "s": "12px",
+     "wt": "700",
+     "tt": "uppercase",
+     "col": "#5a5a5a",
+     "deco": "none",
+     "cr": 6.06
+    },
+    "card": null,
+    "p": {
+     "t": "Жутогрли миш је крупнији и изразитиј",
+     "f": "system-ui (системски)",
+     "s": "15.5px",
+     "wt": "400",
+     "tt": "none",
+     "col": "#2a2a2a",
+     "deco": "none",
+     "cr": 14
+    },
+    "pa": null,
+    "sci": {
+     "t": "Apodemus flavicollis (Melchior, 1834",
+     "f": "Georgia",
+     "s": "20.8px",
+     "wt": "400",
+     "tt": "none",
+     "col": "#4a7c43",
+     "deco": "none",
+     "cr": 4.81
+    },
+    "btn": null,
+    "foot": null,
+    "h1n": 1,
+    "lang": "sr",
+    "imp": 558,
+    "rules": 245,
+    "sheets": 15,
+    "styleBlocks": 13,
+    "inlineStyle": 4,
+    "fc": {
+     "Georgia": 42,
+     "system-ui (системски)": 119
+    },
+    "hscroll": false,
+    "bodyBg": "#fdfcfa",
+    "headerH": 56,
+    "title": "Жутогрли миш — Apodemus flavicollis | Сисари Рајца | ПИО „Рајац“",
+    "focusVisible": true
+   }
+  }
+ },
+ {
+  "name": "Гљиве — каталог",
+  "url": "https://piorajac.rs/gljive/",
+  "w": {
+   "390": {
+    "home": {
+     "t": "ПИО „РАЈАЦ“",
+     "f": "Cormorant Garamond",
+     "s": "16px",
+     "wt": "600",
+     "tt": "none",
+     "col": "#c9a84c",
+     "deco": "none",
+     "cr": 7.61
+    },
+    "nav": null,
+    "h1": {
+     "t": "Гљиве Рајца",
+     "f": "Cormorant Garamond",
+     "s": "42.9px",
+     "wt": "400",
+     "tt": "none",
+     "col": "#ffffff",
+     "deco": "none",
+     "cr": null
+    },
+    "h2": {
+     "t": "Каталог врста",
+     "f": "Cormorant Garamond",
+     "s": "27px",
+     "wt": "500",
+     "tt": "none",
+     "col": "#2a2a2a",
+     "deco": "none",
+     "cr": 13.38
+    },
+    "h3": {
+     "t": "Бисерка",
+     "f": "Cormorant Garamond",
+     "s": "22px",
+     "wt": "500",
+     "tt": "none",
+     "col": "#142212",
+     "deco": "none",
+     "cr": 16.57
+    },
+    "card": {
+     "t": "Бисерка",
+     "f": "Cormorant Garamond",
+     "s": "22px",
+     "wt": "500",
+     "tt": "none",
+     "col": "#142212",
+     "deco": "none",
+     "cr": 16.57
+    },
+    "p": {
+     "t": "Каталог гљива које се могу очекивати",
+     "f": "Outfit",
+     "s": "14.5px",
+     "wt": "400",
+     "tt": "none",
+     "col": "#ffffff",
+     "deco": "none",
+     "cr": null
+    },
+    "pa": null,
+    "sci": {
+     "t": "Amanita rubescens",
+     "f": "Georgia",
+     "s": "13px",
+     "wt": "500",
+     "tt": "none",
+     "col": "#5c4d2a",
+     "deco": "none",
+     "cr": 8.24
+    },
+    "btn": {
+     "t": "ЈЕСТИВЕ",
+     "f": "Outfit",
+     "s": "12px",
+     "wt": "600",
+     "tt": "uppercase",
+     "col": "#1f3354",
+     "deco": "none",
+     "cr": 11.17
+    },
+    "foot": null,
+    "h1n": 1,
+    "lang": "sr-Cyrl",
+    "imp": 1639,
+    "rules": 355,
+    "sheets": 15,
+    "styleBlocks": 11,
+    "inlineStyle": 58,
+    "fc": {
+     "Cormorant Garamond": 29,
+     "system-ui (системски)": 1,
+     "Outfit": 92,
+     "Georgia": 29,
+     "-apple-system (системски)": 1
+    },
+    "hscroll": false,
+    "bodyBg": "#f6f7f8",
+    "headerH": 58,
+    "title": "Гљиве Рајца"
+   },
+   "820": {
+    "home": {
+     "t": "ПИО „РАЈАЦ“",
+     "f": "Cormorant Garamond",
+     "s": "16px",
+     "wt": "600",
+     "tt": "none",
+     "col": "#c9a84c",
+     "deco": "none",
+     "cr": 7.61
+    },
+    "nav": null,
+    "h1": {
+     "t": "Гљиве Рајца",
+     "f": "Cormorant Garamond",
+     "s": "49.2px",
+     "wt": "400",
+     "tt": "none",
+     "col": "#ffffff",
+     "deco": "none",
+     "cr": null
+    },
+    "h2": {
+     "t": "Каталог врста",
+     "f": "Cormorant Garamond",
+     "s": "27px",
+     "wt": "500",
+     "tt": "none",
+     "col": "#2a2a2a",
+     "deco": "none",
+     "cr": 13.38
+    },
+    "h3": {
+     "t": "Бисерка",
+     "f": "Cormorant Garamond",
+     "s": "22px",
+     "wt": "500",
+     "tt": "none",
+     "col": "#142212",
+     "deco": "none",
+     "cr": 16.57
+    },
+    "card": {
+     "t": "Бисерка",
+     "f": "Cormorant Garamond",
+     "s": "22px",
+     "wt": "500",
+     "tt": "none",
+     "col": "#142212",
+     "deco": "none",
+     "cr": 16.57
+    },
+    "p": {
+     "t": "Каталог гљива које се могу очекивати",
+     "f": "Outfit",
+     "s": "14.5px",
+     "wt": "400",
+     "tt": "none",
+     "col": "#ffffff",
+     "deco": "none",
+     "cr": null
+    },
+    "pa": null,
+    "sci": {
+     "t": "Amanita rubescens",
+     "f": "Georgia",
+     "s": "12.5px",
+     "wt": "500",
+     "tt": "none",
+     "col": "#5c4d2a",
+     "deco": "none",
+     "cr": 8.24
+    },
+    "btn": {
+     "t": "ЈЕСТИВЕ",
+     "f": "Outfit",
+     "s": "12px",
+     "wt": "600",
+     "tt": "uppercase",
+     "col": "#1f3354",
+     "deco": "none",
+     "cr": 11.17
+    },
+    "foot": null,
+    "h1n": 1,
+    "lang": "sr-Cyrl",
+    "imp": 1639,
+    "rules": 355,
+    "sheets": 15,
+    "styleBlocks": 11,
+    "inlineStyle": 58,
+    "fc": {
+     "Cormorant Garamond": 29,
+     "system-ui (системски)": 1,
+     "Outfit": 92,
+     "Georgia": 29,
+     "-apple-system (системски)": 1
+    },
+    "hscroll": false,
+    "bodyBg": "#f6f7f8",
+    "headerH": 58,
+    "title": "Гљиве Рајца"
+   },
+   "1440": {
+    "home": {
+     "t": "⊙ ПИО „РАЈАЦ“",
+     "f": "Cormorant Garamond",
+     "s": "16px",
+     "wt": "600",
+     "tt": "none",
+     "col": "#c9a84c",
+     "deco": "none",
+     "cr": 7.5
+    },
+    "nav": {
+     "t": "🌿 БИЉКЕ",
+     "f": "Cormorant Garamond",
+     "s": "15px",
+     "wt": "600",
+     "tt": "uppercase",
+     "col": "#aeb8c5",
+     "deco": "none",
+     "cr": 8.53
+    },
+    "h1": {
+     "t": "Гљиве Рајца",
+     "f": "Cormorant Garamond",
+     "s": "76.8px",
+     "wt": "400",
+     "tt": "none",
+     "col": "#ffffff",
+     "deco": "none",
+     "cr": null
+    },
+    "h2": {
+     "t": "Каталог врста",
+     "f": "Cormorant Garamond",
+     "s": "40px",
+     "wt": "500",
+     "tt": "none",
+     "col": "#2a2a2a",
+     "deco": "none",
+     "cr": 13.38
+    },
+    "h3": {
+     "t": "Бисерка",
+     "f": "Cormorant Garamond",
+     "s": "22px",
+     "wt": "500",
+     "tt": "none",
+     "col": "#142212",
+     "deco": "none",
+     "cr": 16.57
+    },
+    "card": {
+     "t": "Бисерка",
+     "f": "Cormorant Garamond",
+     "s": "22px",
+     "wt": "500",
+     "tt": "none",
+     "col": "#142212",
+     "deco": "none",
+     "cr": 16.57
+    },
+    "p": {
+     "t": "Каталог гљива које се могу очекивати",
+     "f": "Outfit",
+     "s": "14.5px",
+     "wt": "400",
+     "tt": "none",
+     "col": "#ffffff",
+     "deco": "none",
+     "cr": null
+    },
+    "pa": null,
+    "sci": {
+     "t": "Amanita rubescens",
+     "f": "Georgia",
+     "s": "12.5px",
+     "wt": "500",
+     "tt": "none",
+     "col": "#5c4d2a",
+     "deco": "none",
+     "cr": 8.24
+    },
+    "btn": {
+     "t": "ЈЕСТИВЕ",
+     "f": "Outfit",
+     "s": "12px",
+     "wt": "600",
+     "tt": "uppercase",
+     "col": "#1f3354",
+     "deco": "none",
+     "cr": 11.17
+    },
+    "foot": null,
+    "h1n": 1,
+    "lang": "sr-Cyrl",
+    "imp": 1639,
+    "rules": 355,
+    "sheets": 15,
+    "styleBlocks": 11,
+    "inlineStyle": 58,
+    "fc": {
+     "Cormorant Garamond": 41,
+     "Outfit": 92,
+     "Georgia": 29,
+     "-apple-system (системски)": 1
+    },
+    "hscroll": false,
+    "bodyBg": "#f6f7f8",
+    "headerH": 56,
+    "title": "Гљиве Рајца",
+    "focusVisible": true
+   }
+  }
+ },
+ {
+  "name": "Гљиве — врста",
+  "url": "https://piorajac.rs/gljive/amanita-caesarea/",
+  "w": {
+   "390": {
+    "home": {
+     "t": "ПИО „РАЈАЦ“",
+     "f": "Georgia",
+     "s": "13px",
+     "wt": "600",
+     "tt": "none",
+     "col": "#d8b55b",
+     "deco": "none",
+     "cr": 8.85
+    },
+    "nav": null,
+    "h1": {
+     "t": "Царска гљива",
+     "f": "Georgia",
+     "s": "42.9px",
+     "wt": "500",
+     "tt": "none",
+     "col": "#142212",
+     "deco": "none",
+     "cr": null
+    },
+    "h2": {
+     "t": "🔍 Морфолошке карактеристике",
+     "f": "Georgia",
+     "s": "22px",
+     "wt": "500",
+     "tt": "none",
+     "col": "#142212",
+     "deco": "none",
+     "cr": 16.57
+    },
+    "h3": {
+     "t": "Капа",
+     "f": "Georgia",
+     "s": "18px",
+     "wt": "500",
+     "tt": "none",
+     "col": "#142212",
+     "deco": "none",
+     "cr": 16.57
+    },
+    "card": {
+     "t": "Златна правила безбедног понашања са",
+     "f": "Georgia",
+     "s": "21px",
+     "wt": "500",
+     "tt": "none",
+     "col": "#142212",
+     "deco": "none",
+     "cr": 16.57
+    },
+    "p": {
+     "t": "Најцењенија европска гљива — деликат",
+     "f": "-apple-system (системски)",
+     "s": "14.5px",
+     "wt": "400",
+     "tt": "none",
+     "col": "#3a3a32",
+     "deco": "none",
+     "cr": null
+    },
+    "pa": null,
+    "sci": {
+     "t": "Amanita caesarea",
+     "f": "Georgia",
+     "s": "17px",
+     "wt": "500",
+     "tt": "none",
+     "col": "#5c6b4c",
+     "deco": "none",
+     "cr": null
+    },
+    "btn": null,
+    "foot": null,
+    "h1n": 1,
+    "lang": "sr-Cyrl",
+    "imp": 234,
+    "rules": 242,
+    "sheets": 16,
+    "styleBlocks": 13,
+    "inlineStyle": 15,
+    "fc": {
+     "Georgia": 49,
+     "system-ui (системски)": 1,
+     "-apple-system (системски)": 136
+    },
+    "hscroll": false,
+    "bodyBg": "#faf7f0",
+    "headerH": 58,
+    "title": "Царска гљива — Гљиве Рајца"
+   },
+   "820": {
+    "home": {
+     "t": "ПИО „РАЈАЦ“",
+     "f": "Georgia",
+     "s": "14px",
+     "wt": "600",
+     "tt": "none",
+     "col": "#d8b55b",
+     "deco": "none",
+     "cr": 8.85
+    },
+    "nav": null,
+    "h1": {
+     "t": "Царска гљива",
+     "f": "Georgia",
+     "s": "41px",
+     "wt": "500",
+     "tt": "none",
+     "col": "#142212",
+     "deco": "none",
+     "cr": null
+    },
+    "h2": {
+     "t": "🔍 Морфолошке карактеристике",
+     "f": "Georgia",
+     "s": "30px",
+     "wt": "500",
+     "tt": "none",
+     "col": "#142212",
+     "deco": "none",
+     "cr": 16.57
+    },
+    "h3": {
+     "t": "Капа",
+     "f": "Georgia",
+     "s": "22px",
+     "wt": "500",
+     "tt": "none",
+     "col": "#142212",
+     "deco": "none",
+     "cr": 16.57
+    },
+    "card": {
+     "t": "Златна правила безбедног понашања са",
+     "f": "Georgia",
+     "s": "21px",
+     "wt": "500",
+     "tt": "none",
+     "col": "#142212",
+     "deco": "none",
+     "cr": 16.57
+    },
+    "p": {
+     "t": "Најцењенија европска гљива — деликат",
+     "f": "-apple-system (системски)",
+     "s": "16px",
+     "wt": "400",
+     "tt": "none",
+     "col": "#3a3a32",
+     "deco": "none",
+     "cr": null
+    },
+    "pa": {
+     "t": "Ђаволска гљива",
+     "f": "-apple-system (системски)",
+     "s": "13.5px",
+     "wt": "500",
+     "tt": "none",
+     "col": "#a8842a",
+     "deco": "none",
+     "cr": 3.5
+    },
+    "sci": {
+     "t": "Amanita caesarea",
+     "f": "Georgia",
+     "s": "22px",
+     "wt": "500",
+     "tt": "none",
+     "col": "#5c6b4c",
+     "deco": "none",
+     "cr": null
+    },
+    "btn": null,
+    "foot": null,
+    "h1n": 1,
+    "lang": "sr-Cyrl",
+    "imp": 234,
+    "rules": 242,
+    "sheets": 16,
+    "styleBlocks": 13,
+    "inlineStyle": 15,
+    "fc": {
+     "Georgia": 50,
+     "system-ui (системски)": 1,
+     "-apple-system (системски)": 161
+    },
+    "hscroll": false,
+    "bodyBg": "#faf7f0",
+    "headerH": 58,
+    "title": "Царска гљива — Гљиве Рајца"
+   },
+   "1440": {
+    "home": {
+     "t": "⊙ ПИО „РАЈАЦ“",
+     "f": "Georgia",
+     "s": "16px",
+     "wt": "600",
+     "tt": "none",
+     "col": "#d8b55b",
+     "deco": "none",
+     "cr": 8.85
+    },
+    "nav": {
+     "t": "🌿 БИЉКЕ",
+     "f": "Georgia",
+     "s": "15px",
+     "wt": "600",
+     "tt": "uppercase",
+     "col": "#ffffff",
+     "deco": "none",
+     "cr": 17.39
+    },
+    "h1": {
+     "t": "Царска гљива",
+     "f": "Georgia",
+     "s": "56px",
+     "wt": "500",
+     "tt": "none",
+     "col": "#142212",
+     "deco": "none",
+     "cr": null
+    },
+    "h2": {
+     "t": "🔍 Морфолошке карактеристике",
+     "f": "Georgia",
+     "s": "30px",
+     "wt": "500",
+     "tt": "none",
+     "col": "#142212",
+     "deco": "none",
+     "cr": 16.57
+    },
+    "h3": {
+     "t": "Капа",
+     "f": "Georgia",
+     "s": "22px",
+     "wt": "500",
+     "tt": "none",
+     "col": "#142212",
+     "deco": "none",
+     "cr": 16.57
+    },
+    "card": {
+     "t": "Златна правила безбедног понашања са",
+     "f": "Georgia",
+     "s": "21px",
+     "wt": "500",
+     "tt": "none",
+     "col": "#142212",
+     "deco": "none",
+     "cr": 16.57
+    },
+    "p": {
+     "t": "Најцењенија европска гљива — деликат",
+     "f": "-apple-system (системски)",
+     "s": "16px",
+     "wt": "400",
+     "tt": "none",
+     "col": "#3a3a32",
+     "deco": "none",
+     "cr": null
+    },
+    "pa": {
+     "t": "Ђаволска гљива",
+     "f": "-apple-system (системски)",
+     "s": "13.5px",
+     "wt": "500",
+     "tt": "none",
+     "col": "#a8842a",
+     "deco": "none",
+     "cr": 3.5
+    },
+    "sci": {
+     "t": "Amanita caesarea",
+     "f": "Georgia",
+     "s": "22px",
+     "wt": "500",
+     "tt": "none",
+     "col": "#5c6b4c",
+     "deco": "none",
+     "cr": null
+    },
+    "btn": null,
+    "foot": null,
+    "h1n": 1,
+    "lang": "sr-Cyrl",
+    "imp": 234,
+    "rules": 242,
+    "sheets": 16,
+    "styleBlocks": 13,
+    "inlineStyle": 15,
+    "fc": {
+     "Georgia": 59,
+     "-apple-system (системски)": 164
+    },
+    "hscroll": false,
+    "bodyBg": "#faf7f0",
+    "headerH": 56,
+    "title": "Царска гљива — Гљиве Рајца",
+    "focusVisible": true
+   }
+  }
+ },
+ {
+  "name": "Трофодинамика",
+  "url": "https://piorajac.rs/trofodinamika/",
+  "w": {
+   "390": {
+    "home": {
+     "t": "⊙ ПИО „РАЈАЦ“",
+     "f": "Cormorant",
+     "s": "14px",
+     "wt": "300",
+     "tt": "none",
+     "col": "#d8b55b",
+     "deco": "none",
+     "cr": 8.85
+    },
+    "nav": {
+     "t": "🌿 БИЉКЕ",
+     "f": "Cormorant",
+     "s": "14px",
+     "wt": "300",
+     "tt": "uppercase",
+     "col": "#ffffff",
+     "deco": "none",
+     "cr": 17.39
+    },
+    "h1": {
+     "t": "Трофичка мрежа ПИО „Рајац\"",
+     "f": "Cormorant",
+     "s": "33px",
+     "wt": "300",
+     "tt": "none",
+     "col": "#000000",
+     "deco": "none",
+     "cr": 18.65
+    },
+    "h2": {
+     "t": "🕸️ Анимована трофичка мрежа",
+     "f": "Cormorant",
+     "s": "25px",
+     "wt": "300",
+     "tt": "none",
+     "col": "#071525",
+     "deco": "none",
+     "cr": 18.37
+    },
+    "h3": null,
+    "card": {
+     "t": "🕸️ Анимована трофичка мрежа",
+     "f": "Cormorant",
+     "s": "25px",
+     "wt": "300",
+     "tt": "none",
+     "col": "#071525",
+     "deco": "none",
+     "cr": 18.37
+    },
+    "p": {
+     "t": "За разлику од енергије (која се губи",
+     "f": "Cormorant",
+     "s": "17px",
+     "wt": "300",
+     "tt": "none",
+     "col": "#080808",
+     "deco": "none",
+     "cr": 20.03
+    },
+    "pa": null,
+    "sci": {
+     "t": "Artificial light at night as a new t",
+     "f": "Cormorant",
+     "s": "17px",
+     "wt": "300",
+     "tt": "none",
+     "col": "#0e1c2f",
+     "deco": "none",
+     "cr": 17.13
+    },
+    "btn": {
+     "t": "Истражи →",
+     "f": "Cormorant",
+     "s": "17px",
+     "wt": "300",
+     "tt": "none",
+     "col": "#050505",
+     "deco": "none",
+     "cr": 20.38
+    },
+    "foot": null,
+    "h1n": 1,
+    "lang": "sr",
+    "imp": 2589,
+    "rules": 437,
+    "sheets": 11,
+    "styleBlocks": 5,
+    "inlineStyle": 146,
+    "fc": {
+     "Cormorant": 70
+    },
+    "hscroll": false,
+    "bodyBg": "#eef2f5",
+    "headerH": 56,
+    "title": "Трофичка мрежа – ПИО Рајац"
+   },
+   "820": {
+    "home": {
+     "t": "⊙ ПИО „РАЈАЦ“",
+     "f": "Cormorant",
+     "s": "16px",
+     "wt": "300",
+     "tt": "none",
+     "col": "#d8b55b",
+     "deco": "none",
+     "cr": 8.85
+    },
+    "nav": {
+     "t": "🌿 БИЉКЕ",
+     "f": "Cormorant",
+     "s": "16px",
+     "wt": "300",
+     "tt": "uppercase",
+     "col": "#ffffff",
+     "deco": "none",
+     "cr": 17.39
+    },
+    "h1": {
+     "t": "Трофичка мрежа ПИО „Рајац\"",
+     "f": "Cormorant",
+     "s": "46px",
+     "wt": "300",
+     "tt": "none",
+     "col": "#000000",
+     "deco": "none",
+     "cr": 18.65
+    },
+    "h2": {
+     "t": "🕸️ Анимована трофичка мрежа",
+     "f": "Cormorant",
+     "s": "18px",
+     "wt": "300",
+     "tt": "none",
+     "col": "#071525",
+     "deco": "none",
+     "cr": 18.37
+    },
+    "h3": null,
+    "card": {
+     "t": "🕸️ Анимована трофичка мрежа",
+     "f": "Cormorant",
+     "s": "18px",
+     "wt": "300",
+     "tt": "none",
+     "col": "#071525",
+     "deco": "none",
+     "cr": 18.37
+    },
+    "p": {
+     "t": "За разлику од енергије (која се губи",
+     "f": "Cormorant",
+     "s": "18px",
+     "wt": "300",
+     "tt": "none",
+     "col": "#080808",
+     "deco": "none",
+     "cr": 20.03
+    },
+    "pa": null,
+    "sci": {
+     "t": "Artificial light at night as a new t",
+     "f": "Cormorant",
+     "s": "18px",
+     "wt": "300",
+     "tt": "none",
+     "col": "#0e1c2f",
+     "deco": "none",
+     "cr": 17.13
+    },
+    "btn": {
+     "t": "Истражи →",
+     "f": "Cormorant",
+     "s": "17px",
+     "wt": "300",
+     "tt": "none",
+     "col": "#050505",
+     "deco": "none",
+     "cr": 20.38
+    },
+    "foot": null,
+    "h1n": 1,
+    "lang": "sr",
+    "imp": 2589,
+    "rules": 437,
+    "sheets": 11,
+    "styleBlocks": 5,
+    "inlineStyle": 146,
+    "fc": {
+     "Cormorant": 70
+    },
+    "hscroll": false,
+    "bodyBg": "#eef2f5",
+    "headerH": 56,
+    "title": "Трофичка мрежа – ПИО Рајац"
+   },
+   "1440": {
+    "home": {
+     "t": "⊙ ПИО „РАЈАЦ“",
+     "f": "Cormorant",
+     "s": "16px",
+     "wt": "300",
+     "tt": "none",
+     "col": "#d8b55b",
+     "deco": "none",
+     "cr": 8.85
+    },
+    "nav": {
+     "t": "🌿 БИЉКЕ",
+     "f": "Cormorant",
+     "s": "16px",
+     "wt": "300",
+     "tt": "uppercase",
+     "col": "#ffffff",
+     "deco": "none",
+     "cr": 17.39
+    },
+    "h1": {
+     "t": "Трофичка мрежа ПИО „Рајац\"",
+     "f": "Cormorant",
+     "s": "46px",
+     "wt": "300",
+     "tt": "none",
+     "col": "#000000",
+     "deco": "none",
+     "cr": 18.65
+    },
+    "h2": {
+     "t": "🕸️ Анимована трофичка мрежа",
+     "f": "Cormorant",
+     "s": "18px",
+     "wt": "300",
+     "tt": "none",
+     "col": "#071525",
+     "deco": "none",
+     "cr": 18.37
+    },
+    "h3": null,
+    "card": {
+     "t": "🕸️ Анимована трофичка мрежа",
+     "f": "Cormorant",
+     "s": "18px",
+     "wt": "300",
+     "tt": "none",
+     "col": "#071525",
+     "deco": "none",
+     "cr": 18.37
+    },
+    "p": {
+     "t": "За разлику од енергије (која се губи",
+     "f": "Cormorant",
+     "s": "18px",
+     "wt": "300",
+     "tt": "none",
+     "col": "#080808",
+     "deco": "none",
+     "cr": 20.03
+    },
+    "pa": null,
+    "sci": {
+     "t": "Artificial light at night as a new t",
+     "f": "Cormorant",
+     "s": "18px",
+     "wt": "300",
+     "tt": "none",
+     "col": "#0e1c2f",
+     "deco": "none",
+     "cr": 17.13
+    },
+    "btn": {
+     "t": "Истражи →",
+     "f": "Cormorant",
+     "s": "17px",
+     "wt": "300",
+     "tt": "none",
+     "col": "#050505",
+     "deco": "none",
+     "cr": 20.38
+    },
+    "foot": null,
+    "h1n": 1,
+    "lang": "sr",
+    "imp": 2589,
+    "rules": 437,
+    "sheets": 11,
+    "styleBlocks": 5,
+    "inlineStyle": 146,
+    "fc": {
+     "Cormorant": 69
+    },
+    "hscroll": false,
+    "bodyBg": "#eef2f5",
+    "headerH": 56,
+    "title": "Трофичка мрежа – ПИО Рајац",
+    "focusVisible": true
+   }
+  }
+ },
+ {
+  "name": "Приручник биљака",
+  "url": "https://piorajac.rs/istrazivacki-park-rajac/biljke/",
+  "w": {
+   "390": {
+    "home": {
+     "t": "ПИО „РАЈАЦ“ ↗",
+     "f": "system-ui (системски)",
+     "s": "9px",
+     "wt": "800",
+     "tt": "none",
+     "col": "#133524",
+     "deco": "none",
+     "cr": 11.05
+    },
+    "nav": {
+     "t": "✿ Истраживачки парк „Рајац“ БИЉКЕ РА",
+     "f": "system-ui (системски)",
+     "s": "16px",
+     "wt": "400",
+     "tt": "none",
+     "col": "#f8f8ef",
+     "deco": "none",
+     "cr": 15.11
+    },
+    "h1": {
+     "t": "Истраживање биљака на Рајцу",
+     "f": "Georgia",
+     "s": "43px",
+     "wt": "700",
+     "tt": "none",
+     "col": "#ffffff",
+     "deco": "none",
+     "cr": null
+    },
+    "h2": {
+     "t": "",
+     "f": "system-ui (системски)",
+     "s": "10px",
+     "wt": "800",
+     "tt": "uppercase",
+     "col": "#e6bb63",
+     "deco": "none",
+     "cr": 7.39
+    },
+    "h3": {
+     "t": "Први пут на терену",
+     "f": "Georgia",
+     "s": "20.8px",
+     "wt": "700",
+     "tt": "none",
+     "col": "#18392a",
+     "deco": "none",
+     "cr": 12.67
+    },
+    "card": {
+     "t": "Први пут на терену",
+     "f": "Georgia",
+     "s": "20.8px",
+     "wt": "700",
+     "tt": "none",
+     "col": "#18392a",
+     "deco": "none",
+     "cr": 12.67
+    },
+    "p": {
+     "t": "Од препознавања биљака и описа стани",
+     "f": "Arial",
+     "s": "13px",
+     "wt": "400",
+     "tt": "none",
+     "col": "#f6f7f0",
+     "deco": "none",
+     "cr": null
+    },
+    "pa": {
+     "t": "Како снимити биљку да снимак користи",
+     "f": "Arial",
+     "s": "16px",
+     "wt": "600",
+     "tt": "none",
+     "col": "#18553b",
+     "deco": "underline",
+     "cr": 8.74
+    },
+    "sci": null,
+    "btn": {
+     "t": "Поглавља 1–11 Поглавља 12–22 Поглављ",
+     "f": "Arial",
+     "s": "16px",
+     "wt": "400",
+     "tt": "none",
+     "col": "#0b271e",
+     "deco": "none",
+     "cr": null
+    },
+    "foot": null,
+    "h1n": 1,
+    "lang": "sr-Cyrl",
+    "imp": 565,
+    "rules": 474,
+    "sheets": 10,
+    "styleBlocks": 2,
+    "inlineStyle": 0,
+    "fc": {
+     "Georgia": 35,
+     "system-ui (системски)": 33,
+     "Arial": 90
+    },
+    "hscroll": false,
+    "bodyBg": "#faf8f1",
+    "headerH": 93,
+    "title": "Истраживање биљака на Рајцу — методологија и теренски алати · Истраживачки парк „Рајац“"
+   },
+   "820": {
+    "home": {
+     "t": "ПИО „РАЈАЦ“ ↗",
+     "f": "system-ui (системски)",
+     "s": "12px",
+     "wt": "800",
+     "tt": "none",
+     "col": "#133524",
+     "deco": "none",
+     "cr": 11.05
+    },
+    "nav": {
+     "t": "✿ Истраживачки парк „Рајац“ БИЉКЕ РА",
+     "f": "system-ui (системски)",
+     "s": "16px",
+     "wt": "400",
+     "tt": "none",
+     "col": "#f8f8ef",
+     "deco": "none",
+     "cr": 15.11
+    },
+    "h1": {
+     "t": "Истраживање биљака на Рајцу",
+     "f": "Georgia",
+     "s": "50px",
+     "wt": "700",
+     "tt": "none",
+     "col": "#ffffff",
+     "deco": "none",
+     "cr": null
+    },
+    "h2": {
+     "t": "",
+     "f": "system-ui (системски)",
+     "s": "10px",
+     "wt": "800",
+     "tt": "uppercase",
+     "col": "#e6bb63",
+     "deco": "none",
+     "cr": 7.39
+    },
+    "h3": {
+     "t": "Први пут на терену",
+     "f": "Georgia",
+     "s": "20.8px",
+     "wt": "700",
+     "tt": "none",
+     "col": "#18392a",
+     "deco": "none",
+     "cr": 12.67
+    },
+    "card": {
+     "t": "Први пут на терену",
+     "f": "Georgia",
+     "s": "20.8px",
+     "wt": "700",
+     "tt": "none",
+     "col": "#18392a",
+     "deco": "none",
+     "cr": 12.67
+    },
+    "p": {
+     "t": "Од препознавања биљака и описа стани",
+     "f": "Arial",
+     "s": "15px",
+     "wt": "400",
+     "tt": "none",
+     "col": "#f6f7f0",
+     "deco": "none",
+     "cr": null
+    },
+    "pa": {
+     "t": "Како снимити биљку да снимак користи",
+     "f": "Arial",
+     "s": "16px",
+     "wt": "600",
+     "tt": "none",
+     "col": "#18553b",
+     "deco": "underline",
+     "cr": 8.74
+    },
+    "sci": null,
+    "btn": {
+     "t": "Поглавља 1–11 Поглавља 12–22 Поглављ",
+     "f": "Arial",
+     "s": "16px",
+     "wt": "400",
+     "tt": "none",
+     "col": "#0b271e",
+     "deco": "none",
+     "cr": null
+    },
+    "foot": null,
+    "h1n": 1,
+    "lang": "sr-Cyrl",
+    "imp": 565,
+    "rules": 474,
+    "sheets": 10,
+    "styleBlocks": 2,
+    "inlineStyle": 0,
+    "fc": {
+     "Georgia": 35,
+     "system-ui (системски)": 33,
+     "Arial": 90
+    },
+    "hscroll": false,
+    "bodyBg": "#faf8f1",
+    "headerH": 75,
+    "title": "Истраживање биљака на Рајцу — методологија и теренски алати · Истраживачки парк „Рајац“"
+   },
+   "1440": {
+    "home": {
+     "t": "ПИО „РАЈАЦ“ ↗",
+     "f": "system-ui (системски)",
+     "s": "12px",
+     "wt": "800",
+     "tt": "none",
+     "col": "#133524",
+     "deco": "none",
+     "cr": 11.05
+    },
+    "nav": {
+     "t": "✿ Истраживачки парк „Рајац“ БИЉКЕ РА",
+     "f": "system-ui (системски)",
+     "s": "16px",
+     "wt": "400",
+     "tt": "none",
+     "col": "#f8f8ef",
+     "deco": "none",
+     "cr": 15.11
+    },
+    "h1": {
+     "t": "Истраживање биљака на Рајцу",
+     "f": "Georgia",
+     "s": "70.56px",
+     "wt": "700",
+     "tt": "none",
+     "col": "#ffffff",
+     "deco": "none",
+     "cr": null
+    },
+    "h2": {
+     "t": "",
+     "f": "system-ui (системски)",
+     "s": "10px",
+     "wt": "800",
+     "tt": "uppercase",
+     "col": "#e6bb63",
+     "deco": "none",
+     "cr": 7.39
+    },
+    "h3": {
+     "t": "Први пут на терену",
+     "f": "Georgia",
+     "s": "20.8px",
+     "wt": "700",
+     "tt": "none",
+     "col": "#18392a",
+     "deco": "none",
+     "cr": 12.67
+    },
+    "card": {
+     "t": "Први пут на терену",
+     "f": "Georgia",
+     "s": "20.8px",
+     "wt": "700",
+     "tt": "none",
+     "col": "#18392a",
+     "deco": "none",
+     "cr": 12.67
+    },
+    "p": {
+     "t": "Од препознавања биљака и описа стани",
+     "f": "Arial",
+     "s": "15px",
+     "wt": "400",
+     "tt": "none",
+     "col": "#f6f7f0",
+     "deco": "none",
+     "cr": null
+    },
+    "pa": {
+     "t": "Како снимити биљку да снимак користи",
+     "f": "Arial",
+     "s": "16px",
+     "wt": "600",
+     "tt": "none",
+     "col": "#18553b",
+     "deco": "underline",
+     "cr": 8.74
+    },
+    "sci": null,
+    "btn": {
+     "t": "Поглавља 1–11 Поглавља 12–22 Поглављ",
+     "f": "Arial",
+     "s": "16px",
+     "wt": "400",
+     "tt": "none",
+     "col": "#0b271e",
+     "deco": "none",
+     "cr": null
+    },
+    "foot": null,
+    "h1n": 1,
+    "lang": "sr-Cyrl",
+    "imp": 565,
+    "rules": 474,
+    "sheets": 10,
+    "styleBlocks": 2,
+    "inlineStyle": 0,
+    "fc": {
+     "Georgia": 35,
+     "system-ui (системски)": 40,
+     "Arial": 90
+    },
+    "hscroll": false,
+    "bodyBg": "#faf8f1",
+    "headerH": 77,
+    "title": "Истраживање биљака на Рајцу — методологија и теренски алати · Истраживачки парк „Рајац“",
+    "focusVisible": true
+   }
+  }
+ },
+ {
+  "name": "Приручник — поглавље",
+  "url": "https://piorajac.rs/istrazivacki-park-rajac/biljke/atlas.html",
+  "w": {
+   "390": {
+    "home": {
+     "t": "ПИО „РАЈАЦ“ ↗",
+     "f": "system-ui (системски)",
+     "s": "9px",
+     "wt": "800",
+     "tt": "none",
+     "col": "#133524",
+     "deco": "none",
+     "cr": 11.05
+    },
+    "nav": {
+     "t": "✿ Истраживачки парк „Рајац“ БИЉКЕ РА",
+     "f": "system-ui (системски)",
+     "s": "16px",
+     "wt": "400",
+     "tt": "none",
+     "col": "#f8f8ef",
+     "deco": "none",
+     "cr": 15.11
+    },
+    "h1": {
+     "t": "Фотоатлас биљака Рајца",
+     "f": "Georgia",
+     "s": "38px",
+     "wt": "400",
+     "tt": "none",
+     "col": "#123726",
+     "deco": "none",
+     "cr": 13.12
+    },
+    "h2": {
+     "t": "",
+     "f": "system-ui (системски)",
+     "s": "10px",
+     "wt": "800",
+     "tt": "uppercase",
+     "col": "#e6bb63",
+     "deco": "none",
+     "cr": 7.39
+    },
+    "h3": {
+     "t": "Зовин каћун",
+     "f": "Georgia",
+     "s": "21px",
+     "wt": "700",
+     "tt": "none",
+     "col": "#143827",
+     "deco": "none",
+     "cr": 12.71
+    },
+    "card": {
+     "t": "Зовин каћун",
+     "f": "Georgia",
+     "s": "21px",
+     "wt": "700",
+     "tt": "none",
+     "col": "#143827",
+     "deco": "none",
+     "cr": 12.71
+    },
+    "p": {
+     "t": "Преглед 31 изворног профила са рефер",
+     "f": "system-ui (системски)",
+     "s": "15px",
+     "wt": "400",
+     "tt": "none",
+     "col": "#657366",
+     "deco": "none",
+     "cr": 5
+    },
+    "pa": {
+     "t": "Провери изворне профиле (31) →",
+     "f": "system-ui (системски)",
+     "s": "14px",
+     "wt": "700",
+     "tt": "none",
+     "col": "#20573b",
+     "deco": "underline",
+     "cr": 8.44
+    },
+    "sci": {
+     "t": "Dactylorhiza sambucina",
+     "f": "system-ui (системски)",
+     "s": "13px",
+     "wt": "400",
+     "tt": "none",
+     "col": "#5a6b5d",
+     "deco": "none",
+     "cr": 5.59
+    },
+    "btn": null,
+    "foot": null,
+    "h1n": 1,
+    "lang": "sr",
+    "imp": 444,
+    "rules": 296,
+    "sheets": 8,
+    "styleBlocks": 0,
+    "inlineStyle": 3,
+    "fc": {
+     "Georgia": 33,
+     "system-ui (системски)": 262
+    },
+    "hscroll": false,
+    "bodyBg": "#000000",
+    "headerH": 93,
+    "title": "Фотоатлас биљака Рајца — 31 референтна фотографија · Истраживачки парк Рајац"
+   },
+   "820": {
+    "home": {
+     "t": "ПИО „РАЈАЦ“ ↗",
+     "f": "system-ui (системски)",
+     "s": "12px",
+     "wt": "800",
+     "tt": "none",
+     "col": "#133524",
+     "deco": "none",
+     "cr": 11.05
+    },
+    "nav": {
+     "t": "✿ Истраживачки парк „Рајац“ БИЉКЕ РА",
+     "f": "system-ui (системски)",
+     "s": "16px",
+     "wt": "400",
+     "tt": "none",
+     "col": "#f8f8ef",
+     "deco": "none",
+     "cr": 15.11
+    },
+    "h1": {
+     "t": "Фотоатлас биљака Рајца",
+     "f": "Georgia",
+     "s": "41px",
+     "wt": "400",
+     "tt": "none",
+     "col": "#123726",
+     "deco": "none",
+     "cr": 13.12
+    },
+    "h2": {
+     "t": "",
+     "f": "system-ui (системски)",
+     "s": "10px",
+     "wt": "800",
+     "tt": "uppercase",
+     "col": "#e6bb63",
+     "deco": "none",
+     "cr": 7.39
+    },
+    "h3": {
+     "t": "Зовин каћун",
+     "f": "Georgia",
+     "s": "21px",
+     "wt": "700",
+     "tt": "none",
+     "col": "#143827",
+     "deco": "none",
+     "cr": 12.71
+    },
+    "card": {
+     "t": "Зовин каћун",
+     "f": "Georgia",
+     "s": "21px",
+     "wt": "700",
+     "tt": "none",
+     "col": "#143827",
+     "deco": "none",
+     "cr": 12.71
+    },
+    "p": {
+     "t": "Преглед 31 изворног профила са рефер",
+     "f": "system-ui (системски)",
+     "s": "15px",
+     "wt": "400",
+     "tt": "none",
+     "col": "#657366",
+     "deco": "none",
+     "cr": 5
+    },
+    "pa": {
+     "t": "Провери изворне профиле (31) →",
+     "f": "system-ui (системски)",
+     "s": "14px",
+     "wt": "700",
+     "tt": "none",
+     "col": "#20573b",
+     "deco": "underline",
+     "cr": 8.44
+    },
+    "sci": {
+     "t": "Dactylorhiza sambucina",
+     "f": "system-ui (системски)",
+     "s": "13px",
+     "wt": "400",
+     "tt": "none",
+     "col": "#5a6b5d",
+     "deco": "none",
+     "cr": 5.59
+    },
+    "btn": null,
+    "foot": null,
+    "h1n": 1,
+    "lang": "sr",
+    "imp": 444,
+    "rules": 296,
+    "sheets": 8,
+    "styleBlocks": 0,
+    "inlineStyle": 3,
+    "fc": {
+     "Georgia": 33,
+     "system-ui (системски)": 262
+    },
+    "hscroll": false,
+    "bodyBg": "#000000",
+    "headerH": 75,
+    "title": "Фотоатлас биљака Рајца — 31 референтна фотографија · Истраживачки парк Рајац"
+   },
+   "1440": {
+    "home": {
+     "t": "ПИО „РАЈАЦ“ ↗",
+     "f": "system-ui (системски)",
+     "s": "12px",
+     "wt": "800",
+     "tt": "none",
+     "col": "#133524",
+     "deco": "none",
+     "cr": 11.05
+    },
+    "nav": {
+     "t": "✿ Истраживачки парк „Рајац“ БИЉКЕ РА",
+     "f": "system-ui (системски)",
+     "s": "16px",
+     "wt": "400",
+     "tt": "none",
+     "col": "#f8f8ef",
+     "deco": "none",
+     "cr": 15.11
+    },
+    "h1": {
+     "t": "Фотоатлас биљака Рајца",
+     "f": "Georgia",
+     "s": "68px",
+     "wt": "400",
+     "tt": "none",
+     "col": "#123726",
+     "deco": "none",
+     "cr": 13.12
+    },
+    "h2": {
+     "t": "",
+     "f": "system-ui (системски)",
+     "s": "10px",
+     "wt": "800",
+     "tt": "uppercase",
+     "col": "#e6bb63",
+     "deco": "none",
+     "cr": 7.39
+    },
+    "h3": {
+     "t": "Зовин каћун",
+     "f": "Georgia",
+     "s": "21px",
+     "wt": "700",
+     "tt": "none",
+     "col": "#143827",
+     "deco": "none",
+     "cr": 12.71
+    },
+    "card": {
+     "t": "Зовин каћун",
+     "f": "Georgia",
+     "s": "21px",
+     "wt": "700",
+     "tt": "none",
+     "col": "#143827",
+     "deco": "none",
+     "cr": 12.71
+    },
+    "p": {
+     "t": "Преглед 31 изворног профила са рефер",
+     "f": "system-ui (системски)",
+     "s": "15px",
+     "wt": "400",
+     "tt": "none",
+     "col": "#657366",
+     "deco": "none",
+     "cr": 5
+    },
+    "pa": {
+     "t": "Провери изворне профиле (31) →",
+     "f": "system-ui (системски)",
+     "s": "14px",
+     "wt": "700",
+     "tt": "none",
+     "col": "#20573b",
+     "deco": "underline",
+     "cr": 8.44
+    },
+    "sci": {
+     "t": "Dactylorhiza sambucina",
+     "f": "system-ui (системски)",
+     "s": "13px",
+     "wt": "400",
+     "tt": "none",
+     "col": "#5a6b5d",
+     "deco": "none",
+     "cr": 5.59
+    },
+    "btn": null,
+    "foot": null,
+    "h1n": 1,
+    "lang": "sr",
+    "imp": 444,
+    "rules": 296,
+    "sheets": 8,
+    "styleBlocks": 0,
+    "inlineStyle": 3,
+    "fc": {
+     "Georgia": 33,
+     "system-ui (системски)": 269
+    },
+    "hscroll": false,
+    "bodyBg": "#000000",
+    "headerH": 77,
+    "title": "Фотоатлас биљака Рајца — 31 референтна фотографија · Истраживачки парк Рајац",
+    "focusVisible": true
+   }
+  }
+ },
+ {
+  "name": "Звездани парк",
+  "url": "https://piorajac.rs/zvezdani-park/",
+  "w": {
+   "390": {
+    "home": null,
+    "nav": {
+     "t": "Звездани парк РАЈАЦ",
+     "f": "Manrope",
+     "s": "17px",
+     "wt": "400",
+     "tt": "none",
+     "col": "#ffffff",
+     "deco": "none",
+     "cr": 1.1
+    },
+    "h1": {
+     "t": "Звездани парк „Рајац“",
+     "f": "Cormorant Garamond",
+     "s": "54.6px",
+     "wt": "500",
+     "tt": "none",
+     "col": "#ffffff",
+     "deco": "none",
+     "cr": 19.81
+    },
+    "h2": {
+     "t": "Тамно небо као природна вредност кој",
+     "f": "Cormorant Garamond",
+     "s": "36px",
+     "wt": "500",
+     "tt": "none",
+     "col": "#141b2a",
+     "deco": "none",
+     "cr": 15.68
+    },
+    "h3": {
+     "t": "Цело небо изнад Рајца",
+     "f": "Cormorant Garamond",
+     "s": "25.6px",
+     "wt": "500",
+     "tt": "none",
+     "col": "#ffffff",
+     "deco": "none",
+     "cr": 19.81
+    },
+    "card": {
+     "t": "Цело небо изнад Рајца",
+     "f": "Cormorant Garamond",
+     "s": "25.6px",
+     "wt": "500",
+     "tt": "none",
+     "col": "#ffffff",
+     "deco": "none",
+     "cr": 19.81
+    },
+    "p": {
+     "t": "Од четири деценије истраживања астро",
+     "f": "Manrope",
+     "s": "16.8px",
+     "wt": "400",
+     "tt": "none",
+     "col": "#ffffff",
+     "deco": "none",
+     "cr": 19.81
+    },
+    "pa": null,
+    "sci": null,
+    "btn": {
+     "t": "☀ Дневно",
+     "f": "Manrope",
+     "s": "12px",
+     "wt": "600",
+     "tt": "none",
+     "col": "#f1dca6",
+     "deco": "none",
+     "cr": 14.65
+    },
+    "foot": {
+     "t": "Звездани парк „Рајац“",
+     "f": "Cormorant Garamond",
+     "s": "30.4px",
+     "wt": "500",
+     "tt": "none",
+     "col": "#ffffff",
+     "deco": "none",
+     "cr": 19.81
+    },
+    "h1n": 1,
+    "lang": "sr",
+    "imp": 473,
+    "rules": 739,
+    "sheets": 5,
+    "styleBlocks": 3,
+    "inlineStyle": 3,
+    "fc": {
+     "Manrope": 92,
+     "Cormorant Garamond": 46
+    },
+    "hscroll": false,
+    "bodyBg": "#f7f4ee",
+    "headerH": null,
+    "title": "Звездани парк „Рајац“ — ноћно небо Предела изузетних одлика „Рајац“"
+   },
+   "820": {
+    "home": null,
+    "nav": {
+     "t": "Звездани парк РАЈАЦ",
+     "f": "Manrope",
+     "s": "17px",
+     "wt": "400",
+     "tt": "none",
+     "col": "#ffffff",
+     "deco": "none",
+     "cr": 1.1
+    },
+    "h1": {
+     "t": "Звездани парк „Рајац“",
+     "f": "Cormorant Garamond",
+     "s": "73.8px",
+     "wt": "500",
+     "tt": "none",
+     "col": "#ffffff",
+     "deco": "none",
+     "cr": 19.81
+    },
+    "h2": {
+     "t": "Тамно небо као природна вредност кој",
+     "f": "Cormorant Garamond",
+     "s": "36px",
+     "wt": "500",
+     "tt": "none",
+     "col": "#141b2a",
+     "deco": "none",
+     "cr": 15.68
+    },
+    "h3": {
+     "t": "Цело небо изнад Рајца",
+     "f": "Cormorant Garamond",
+     "s": "25.6px",
+     "wt": "500",
+     "tt": "none",
+     "col": "#ffffff",
+     "deco": "none",
+     "cr": 19.81
+    },
+    "card": {
+     "t": "Цело небо изнад Рајца",
+     "f": "Cormorant Garamond",
+     "s": "25.6px",
+     "wt": "500",
+     "tt": "none",
+     "col": "#ffffff",
+     "deco": "none",
+     "cr": 19.81
+    },
+    "p": {
+     "t": "Од четири деценије истраживања астро",
+     "f": "Manrope",
+     "s": "16.8px",
+     "wt": "400",
+     "tt": "none",
+     "col": "#ffffff",
+     "deco": "none",
+     "cr": 19.81
+    },
+    "pa": null,
+    "sci": null,
+    "btn": {
+     "t": "☀ Дневно",
+     "f": "Manrope",
+     "s": "13px",
+     "wt": "600",
+     "tt": "none",
+     "col": "#f1dca6",
+     "deco": "none",
+     "cr": 14.65
+    },
+    "foot": {
+     "t": "Звездани парк „Рајац“",
+     "f": "Cormorant Garamond",
+     "s": "30.4px",
+     "wt": "500",
+     "tt": "none",
+     "col": "#ffffff",
+     "deco": "none",
+     "cr": 19.81
+    },
+    "h1n": 1,
+    "lang": "sr",
+    "imp": 473,
+    "rules": 739,
+    "sheets": 5,
+    "styleBlocks": 3,
+    "inlineStyle": 3,
+    "fc": {
+     "Manrope": 92,
+     "Cormorant Garamond": 46
+    },
+    "hscroll": false,
+    "bodyBg": "#f7f4ee",
+    "headerH": null,
+    "title": "Звездани парк „Рајац“ — ноћно небо Предела изузетних одлика „Рајац“"
+   },
+   "1440": {
+    "home": {
+     "t": "ПИО „РАЈАЦ“ ↗",
+     "f": "Manrope",
+     "s": "14.4px",
+     "wt": "600",
+     "tt": "none",
+     "col": "#ffffff",
+     "deco": "none",
+     "cr": 1.1
+    },
+    "nav": {
+     "t": "Звездани парк РАЈАЦ",
+     "f": "Manrope",
+     "s": "17px",
+     "wt": "400",
+     "tt": "none",
+     "col": "#ffffff",
+     "deco": "none",
+     "cr": 1.1
+    },
+    "h1": {
+     "t": "Звездани парк „Рајац“",
+     "f": "Cormorant Garamond",
+     "s": "129.6px",
+     "wt": "500",
+     "tt": "none",
+     "col": "#ffffff",
+     "deco": "none",
+     "cr": 19.81
+    },
+    "h2": {
+     "t": "Тамно небо као природна вредност кој",
+     "f": "Cormorant Garamond",
+     "s": "57.6px",
+     "wt": "500",
+     "tt": "none",
+     "col": "#141b2a",
+     "deco": "none",
+     "cr": 15.68
+    },
+    "h3": {
+     "t": "Цело небо изнад Рајца",
+     "f": "Cormorant Garamond",
+     "s": "33.12px",
+     "wt": "500",
+     "tt": "none",
+     "col": "#ffffff",
+     "deco": "none",
+     "cr": 19.81
+    },
+    "card": {
+     "t": "Цело небо изнад Рајца",
+     "f": "Cormorant Garamond",
+     "s": "33.12px",
+     "wt": "500",
+     "tt": "none",
+     "col": "#ffffff",
+     "deco": "none",
+     "cr": 19.81
+    },
+    "p": {
+     "t": "Од четири деценије истраживања астро",
+     "f": "Manrope",
+     "s": "20.8px",
+     "wt": "400",
+     "tt": "none",
+     "col": "#ffffff",
+     "deco": "none",
+     "cr": 19.81
+    },
+    "pa": null,
+    "sci": null,
+    "btn": {
+     "t": "☀ Дневно",
+     "f": "Manrope",
+     "s": "13px",
+     "wt": "600",
+     "tt": "none",
+     "col": "#f1dca6",
+     "deco": "none",
+     "cr": 14.65
+    },
+    "foot": {
+     "t": "Звездани парк „Рајац“",
+     "f": "Cormorant Garamond",
+     "s": "30.4px",
+     "wt": "500",
+     "tt": "none",
+     "col": "#ffffff",
+     "deco": "none",
+     "cr": 19.81
+    },
+    "h1n": 1,
+    "lang": "sr",
+    "imp": 473,
+    "rules": 739,
+    "sheets": 5,
+    "styleBlocks": 3,
+    "inlineStyle": 3,
+    "fc": {
+     "Manrope": 103,
+     "Cormorant Garamond": 46
+    },
+    "hscroll": false,
+    "bodyBg": "#f7f4ee",
+    "headerH": 76,
+    "title": "Звездани парк „Рајац“ — ноћно небо Предела изузетних одлика „Рајац“",
+    "focusVisible": true
+   }
+  }
+ },
+ {
+  "name": "Звездани парк — поглавље",
+  "url": "https://piorajac.rs/zvezdani-park/02-svetlosno-zagadjenje.html",
+  "w": {
+   "390": {
+    "home": null,
+    "nav": {
+     "t": "Звездани парк РАЈАЦ",
+     "f": "Manrope",
+     "s": "17px",
+     "wt": "400",
+     "tt": "none",
+     "col": "#ffffff",
+     "deco": "none",
+     "cr": 1.1
+    },
+    "h1": {
+     "t": "Светлосно загађење Рајца",
+     "f": "Cormorant Garamond",
+     "s": "41.6px",
+     "wt": "500",
+     "tt": "none",
+     "col": "#ffffff",
+     "deco": "none",
+     "cr": 19.81
+    },
+    "h2": {
+     "t": "02.1 Светлосно загађење и његов утиц",
+     "f": "Cormorant Garamond",
+     "s": "33.6px",
+     "wt": "500",
+     "tt": "none",
+     "col": "#141b2a",
+     "deco": "none",
+     "cr": 15.68
+    },
+    "h3": {
+     "t": "Историјске карте квалитета неба: 200",
+     "f": "Cormorant Garamond",
+     "s": "28px",
+     "wt": "500",
+     "tt": "none",
+     "col": "#141b2a",
+     "deco": "none",
+     "cr": 15.68
+    },
+    "card": null,
+    "p": {
+     "t": "Светлосно загађење представља преком",
+     "f": "Manrope",
+     "s": "18.24px",
+     "wt": "400",
+     "tt": "none",
+     "col": "#141b2a",
+     "deco": "none",
+     "cr": 15.68
+    },
+    "pa": {
+     "t": "Alejandro Sánchez de Miguel — RALAN-",
+     "f": "Manrope",
+     "s": "17px",
+     "wt": "400",
+     "tt": "none",
+     "col": "#94732f",
+     "deco": "underline",
+     "cr": 4.03
+    },
+    "sci": null,
+    "btn": {
+     "t": "☀ Дневно",
+     "f": "Manrope",
+     "s": "12px",
+     "wt": "600",
+     "tt": "none",
+     "col": "#f1dca6",
+     "deco": "none",
+     "cr": 14.65
+    },
+    "foot": {
+     "t": "Звездани парк „Рајац“",
+     "f": "Cormorant Garamond",
+     "s": "30.4px",
+     "wt": "500",
+     "tt": "none",
+     "col": "#ffffff",
+     "deco": "none",
+     "cr": 19.81
+    },
+    "h1n": 1,
+    "lang": "sr",
+    "imp": 434,
+    "rules": 772,
+    "sheets": 4,
+    "styleBlocks": 2,
+    "inlineStyle": 2,
+    "fc": {
+     "Manrope": 131,
+     "Cormorant Garamond": 18
+    },
+    "hscroll": false,
+    "bodyBg": "#f7f4ee",
+    "headerH": null,
+    "title": "Светлосно загађење Рајца — Звездани парк „Рајац“"
+   },
+   "820": {
+    "home": null,
+    "nav": {
+     "t": "Звездани парк РАЈАЦ",
+     "f": "Manrope",
+     "s": "17px",
+     "wt": "400",
+     "tt": "none",
+     "col": "#ffffff",
+     "deco": "none",
+     "cr": 1.1
+    },
+    "h1": {
+     "t": "Светлосно загађење Рајца",
+     "f": "Cormorant Garamond",
+     "s": "45.92px",
+     "wt": "500",
+     "tt": "none",
+     "col": "#ffffff",
+     "deco": "none",
+     "cr": 19.81
+    },
+    "h2": {
+     "t": "02.1 Светлосно загађење и његов утиц",
+     "f": "Cormorant Garamond",
+     "s": "33.6px",
+     "wt": "500",
+     "tt": "none",
+     "col": "#141b2a",
+     "deco": "none",
+     "cr": 15.68
+    },
+    "h3": {
+     "t": "Историјске карте квалитета неба: 200",
+     "f": "Cormorant Garamond",
+     "s": "28px",
+     "wt": "500",
+     "tt": "none",
+     "col": "#141b2a",
+     "deco": "none",
+     "cr": 15.68
+    },
+    "card": null,
+    "p": {
+     "t": "Светлосно загађење представља преком",
+     "f": "Manrope",
+     "s": "18.24px",
+     "wt": "400",
+     "tt": "none",
+     "col": "#141b2a",
+     "deco": "none",
+     "cr": 15.68
+    },
+    "pa": {
+     "t": "Alejandro Sánchez de Miguel — RALAN-",
+     "f": "Manrope",
+     "s": "17px",
+     "wt": "400",
+     "tt": "none",
+     "col": "#94732f",
+     "deco": "underline",
+     "cr": 4.03
+    },
+    "sci": null,
+    "btn": {
+     "t": "☀ Дневно",
+     "f": "Manrope",
+     "s": "13px",
+     "wt": "600",
+     "tt": "none",
+     "col": "#f1dca6",
+     "deco": "none",
+     "cr": 14.65
+    },
+    "foot": {
+     "t": "Звездани парк „Рајац“",
+     "f": "Cormorant Garamond",
+     "s": "30.4px",
+     "wt": "500",
+     "tt": "none",
+     "col": "#ffffff",
+     "deco": "none",
+     "cr": 19.81
+    },
+    "h1n": 1,
+    "lang": "sr",
+    "imp": 434,
+    "rules": 772,
+    "sheets": 4,
+    "styleBlocks": 2,
+    "inlineStyle": 2,
+    "fc": {
+     "Manrope": 131,
+     "Cormorant Garamond": 18
+    },
+    "hscroll": false,
+    "bodyBg": "#f7f4ee",
+    "headerH": null,
+    "title": "Светлосно загађење Рајца — Звездани парк „Рајац“"
+   },
+   "1440": {
+    "home": {
+     "t": "ПИО „РАЈАЦ“ ↗",
+     "f": "Manrope",
+     "s": "14.4px",
+     "wt": "600",
+     "tt": "none",
+     "col": "#ffffff",
+     "deco": "none",
+     "cr": 1.1
+    },
+    "nav": {
+     "t": "Звездани парк РАЈАЦ",
+     "f": "Manrope",
+     "s": "17px",
+     "wt": "400",
+     "tt": "none",
+     "col": "#ffffff",
+     "deco": "none",
+     "cr": 1.1
+    },
+    "h1": {
+     "t": "Светлосно загађење Рајца",
+     "f": "Cormorant Garamond",
+     "s": "80.64px",
+     "wt": "500",
+     "tt": "none",
+     "col": "#ffffff",
+     "deco": "none",
+     "cr": 19.81
+    },
+    "h2": {
+     "t": "02.1 Светлосно загађење и његов утиц",
+     "f": "Cormorant Garamond",
+     "s": "48px",
+     "wt": "500",
+     "tt": "none",
+     "col": "#141b2a",
+     "deco": "none",
+     "cr": 15.68
+    },
+    "h3": {
+     "t": "Историјске карте квалитета неба: 200",
+     "f": "Cormorant Garamond",
+     "s": "38.4px",
+     "wt": "500",
+     "tt": "none",
+     "col": "#141b2a",
+     "deco": "none",
+     "cr": 15.68
+    },
+    "card": null,
+    "p": {
+     "t": "Светлосно загађење представља преком",
+     "f": "Manrope",
+     "s": "18.24px",
+     "wt": "400",
+     "tt": "none",
+     "col": "#141b2a",
+     "deco": "none",
+     "cr": 15.68
+    },
+    "pa": {
+     "t": "Alejandro Sánchez de Miguel — RALAN-",
+     "f": "Manrope",
+     "s": "17px",
+     "wt": "400",
+     "tt": "none",
+     "col": "#94732f",
+     "deco": "underline",
+     "cr": 4.03
+    },
+    "sci": null,
+    "btn": {
+     "t": "☀ Дневно",
+     "f": "Manrope",
+     "s": "13px",
+     "wt": "600",
+     "tt": "none",
+     "col": "#f1dca6",
+     "deco": "none",
+     "cr": 14.65
+    },
+    "foot": {
+     "t": "Звездани парк „Рајац“",
+     "f": "Cormorant Garamond",
+     "s": "30.4px",
+     "wt": "500",
+     "tt": "none",
+     "col": "#ffffff",
+     "deco": "none",
+     "cr": 19.81
+    },
+    "h1n": 1,
+    "lang": "sr",
+    "imp": 434,
+    "rules": 772,
+    "sheets": 4,
+    "styleBlocks": 2,
+    "inlineStyle": 2,
+    "fc": {
+     "Manrope": 142,
+     "Cormorant Garamond": 18
+    },
+    "hscroll": false,
+    "bodyBg": "#f7f4ee",
+    "headerH": 76,
+    "title": "Светлосно загађење Рајца — Звездани парк „Рајац“",
+    "focusVisible": true
+   }
+  }
+ },
+ {
+  "name": "Светлосно загађење",
+  "url": "https://piorajac.rs/svetlosno-zagadjenje/",
+  "w": {
+   "390": {
+    "home": null,
+    "nav": null,
+    "h1": {
+     "t": "СВЕТЛОСНО ЗАГАЂЕЊЕ ЗАШТИЋЕНИХ ПРЕДЕЛ",
+     "f": "Georgia",
+     "s": "26.325px",
+     "wt": "300",
+     "tt": "uppercase",
+     "col": "#ffffff",
+     "deco": "none",
+     "cr": 1.07
+    },
+    "h2": {
+     "t": "Предговор",
+     "f": "Georgia",
+     "s": "28.86px",
+     "wt": "300",
+     "tt": "none",
+     "col": "#1a1916",
+     "deco": "none",
+     "cr": 16.43
+    },
+    "h3": {
+     "t": "Коме је приручник намењен",
+     "f": "Georgia",
+     "s": "22.23px",
+     "wt": "300",
+     "tt": "none",
+     "col": "#8a6500",
+     "deco": "none",
+     "cr": 4.98
+    },
+    "card": {
+     "t": "GLARE",
+     "f": "Georgia",
+     "s": "12.5px",
+     "wt": "600",
+     "tt": "uppercase",
+     "col": "#8a6500",
+     "deco": "none",
+     "cr": 4.57
+    },
+    "p": {
+     "t": "Онлајн платформа о разумевању, мерењ",
+     "f": "Georgia",
+     "s": "16.66px",
+     "wt": "300",
+     "tt": "none",
+     "col": "#ffffff",
+     "deco": "none",
+     "cr": 1.07
+    },
+    "pa": {
+     "t": "Увод",
+     "f": "Arial",
+     "s": "16.66px",
+     "wt": "700",
+     "tt": "none",
+     "col": "#173f68",
+     "deco": "underline",
+     "cr": 10.61
+    },
+    "sci": null,
+    "btn": {
+     "t": "О платформи",
+     "f": "Arial",
+     "s": "12.24px",
+     "wt": "650",
+     "tt": "none",
+     "col": "#e2c87a",
+     "deco": "none",
+     "cr": null
+    },
+    "foot": null,
+    "h1n": 1,
+    "lang": "sr-Cyrl-RS",
+    "imp": 6538,
+    "rules": 1297,
+    "sheets": 29,
+    "styleBlocks": 23,
+    "inlineStyle": 207,
+    "fc": {
+     "Georgia": 213,
+     "Courier New": 25,
+     "Arial": 66,
+     "Segoe UI (системски)": 3
+    },
+    "hscroll": false,
+    "bodyBg": "#faf7f0",
+    "headerH": null,
+    "title": "Светлосно загађење заштићених предела"
+   },
+   "820": {
+    "home": null,
+    "nav": null,
+    "h1": {
+     "t": "СВЕТЛОСНО ЗАГАЂЕЊЕ ЗАШТИЋЕНИХ ПРЕДЕЛ",
+     "f": "Georgia",
+     "s": "36px",
+     "wt": "300",
+     "tt": "uppercase",
+     "col": "#ffffff",
+     "deco": "none",
+     "cr": 1.07
+    },
+    "h2": {
+     "t": "Предговор",
+     "f": "Georgia",
+     "s": "36px",
+     "wt": "300",
+     "tt": "none",
+     "col": "#1a1916",
+     "deco": "none",
+     "cr": 16.43
+    },
+    "h3": {
+     "t": "Коме је приручник намењен",
+     "f": "Georgia",
+     "s": "21.06px",
+     "wt": "300",
+     "tt": "none",
+     "col": "#8a6500",
+     "deco": "none",
+     "cr": 4.98
+    },
+    "card": {
+     "t": "GLARE",
+     "f": "Georgia",
+     "s": "12.5px",
+     "wt": "600",
+     "tt": "uppercase",
+     "col": "#8a6500",
+     "deco": "none",
+     "cr": 4.57
+    },
+    "p": {
+     "t": "Онлајн платформа о разумевању, мерењ",
+     "f": "Georgia",
+     "s": "18.9px",
+     "wt": "300",
+     "tt": "none",
+     "col": "#ffffff",
+     "deco": "none",
+     "cr": 1.07
+    },
+    "pa": {
+     "t": "Увод",
+     "f": "Arial",
+     "s": "16.74px",
+     "wt": "700",
+     "tt": "none",
+     "col": "#173f68",
+     "deco": "none",
+     "cr": 10.08
+    },
+    "sci": null,
+    "btn": {
+     "t": "О платформи",
+     "f": "Arial",
+     "s": "12.96px",
+     "wt": "650",
+     "tt": "none",
+     "col": "#e2c87a",
+     "deco": "none",
+     "cr": 1.54
+    },
+    "foot": null,
+    "h1n": 1,
+    "lang": "sr-Cyrl-RS",
+    "imp": 6538,
+    "rules": 1297,
+    "sheets": 29,
+    "styleBlocks": 23,
+    "inlineStyle": 207,
+    "fc": {
+     "Georgia": 213,
+     "Courier New": 27,
+     "Arial": 66,
+     "Segoe UI (системски)": 3
+    },
+    "hscroll": false,
+    "bodyBg": "#faf7f0",
+    "headerH": null,
+    "title": "Светлосно загађење заштићених предела"
+   },
+   "1440": {
+    "home": null,
+    "nav": null,
+    "h1": {
+     "t": "СВЕТЛОСНО ЗАГАЂЕЊЕ ЗАШТИЋЕНИХ ПРЕДЕЛ",
+     "f": "Georgia",
+     "s": "48.24px",
+     "wt": "300",
+     "tt": "uppercase",
+     "col": "#ffffff",
+     "deco": "none",
+     "cr": 1.07
+    },
+    "h2": {
+     "t": "Предговор",
+     "f": "Georgia",
+     "s": "48.96px",
+     "wt": "300",
+     "tt": "none",
+     "col": "#1a1916",
+     "deco": "none",
+     "cr": 16.43
+    },
+    "h3": {
+     "t": "Коме је приручник намењен",
+     "f": "Georgia",
+     "s": "21.06px",
+     "wt": "300",
+     "tt": "none",
+     "col": "#8a6500",
+     "deco": "none",
+     "cr": 4.98
+    },
+    "card": {
+     "t": "GLARE",
+     "f": "Georgia",
+     "s": "12.5px",
+     "wt": "600",
+     "tt": "uppercase",
+     "col": "#8a6500",
+     "deco": "none",
+     "cr": 4.57
+    },
+    "p": {
+     "t": "Онлајн платформа о разумевању, мерењ",
+     "f": "Georgia",
+     "s": "18.9px",
+     "wt": "300",
+     "tt": "none",
+     "col": "#ffffff",
+     "deco": "none",
+     "cr": 1.07
+    },
+    "pa": {
+     "t": "Увод",
+     "f": "Arial",
+     "s": "16.74px",
+     "wt": "700",
+     "tt": "none",
+     "col": "#173f68",
+     "deco": "none",
+     "cr": 10.08
+    },
+    "sci": null,
+    "btn": {
+     "t": "О платформи",
+     "f": "Arial",
+     "s": "12.96px",
+     "wt": "650",
+     "tt": "none",
+     "col": "#e2c87a",
+     "deco": "none",
+     "cr": 1.54
+    },
+    "foot": null,
+    "h1n": 1,
+    "lang": "sr-Cyrl-RS",
+    "imp": 6538,
+    "rules": 1297,
+    "sheets": 29,
+    "styleBlocks": 23,
+    "inlineStyle": 207,
+    "fc": {
+     "Georgia": 213,
+     "Courier New": 27,
+     "Arial": 66,
+     "Segoe UI (системски)": 3
+    },
+    "hscroll": false,
+    "bodyBg": "#faf7f0",
+    "headerH": null,
+    "title": "Светлосно загађење заштићених предела",
+    "focusVisible": false
+   }
+  }
+ },
+ {
+  "name": "Вести",
+  "url": "https://piorajac.rs/rajac-vesti/",
+  "w": {
+   "390": {
+    "home": {
+     "t": "ПИО „РАЈАЦ“",
+     "f": "system-ui (системски)",
+     "s": "11px",
+     "wt": "750",
+     "tt": "uppercase",
+     "col": "#e4cb7e",
+     "deco": "none",
+     "cr": 10.89
+    },
+    "nav": {
+     "t": "СВЕ ВЕСТИ",
+     "f": "system-ui (системски)",
+     "s": "11px",
+     "wt": "750",
+     "tt": "uppercase",
+     "col": "#e5cb78",
+     "deco": "none",
+     "cr": 10.89
+    },
+    "h1": {
+     "t": "Дневник заштићеног подручја",
+     "f": "Georgia",
+     "s": "46px",
+     "wt": "400",
+     "tt": "none",
+     "col": "#142018",
+     "deco": "none",
+     "cr": null
+    },
+    "h2": {
+     "t": "Рајац домаћин 24. „Дана чистих плани",
+     "f": "Georgia",
+     "s": "24px",
+     "wt": "400",
+     "tt": "none",
+     "col": "#142018",
+     "deco": "none",
+     "cr": 16.81
+    },
+    "h3": null,
+    "card": {
+     "t": "Рајац домаћин 24. „Дана чистих плани",
+     "f": "Georgia",
+     "s": "24px",
+     "wt": "400",
+     "tt": "none",
+     "col": "#142018",
+     "deco": "none",
+     "cr": 16.81
+    },
+    "p": {
+     "t": "Рајац 26. и 27. септембра окупља пла",
+     "f": "Georgia",
+     "s": "16px",
+     "wt": "400",
+     "tt": "none",
+     "col": "#5f6a60",
+     "deco": "none",
+     "cr": 5.65
+    },
+    "pa": null,
+    "sci": null,
+    "btn": null,
+    "foot": null,
+    "h1n": 1,
+    "lang": "sr-RS",
+    "imp": 305,
+    "rules": 74,
+    "sheets": 8,
+    "styleBlocks": 7,
+    "inlineStyle": 0,
+    "fc": {
+     "system-ui (системски)": 8,
+     "Georgia": 80,
+     "Arial": 114
+    },
+    "hscroll": false,
+    "bodyBg": "#000000",
+    "headerH": 52,
+    "title": "Дневник заштићеног подручја · ПИО „Рајац”"
+   },
+   "820": {
+    "home": {
+     "t": "ПИО „РАЈАЦ“",
+     "f": "system-ui (системски)",
+     "s": "12px",
+     "wt": "750",
+     "tt": "uppercase",
+     "col": "#e4cb7e",
+     "deco": "none",
+     "cr": 10.89
+    },
+    "nav": {
+     "t": "СВЕ ВЕСТИ",
+     "f": "system-ui (системски)",
+     "s": "12px",
+     "wt": "750",
+     "tt": "uppercase",
+     "col": "#e5cb78",
+     "deco": "none",
+     "cr": 10.89
+    },
+    "h1": {
+     "t": "Дневник заштићеног подручја",
+     "f": "Georgia",
+     "s": "49.2px",
+     "wt": "400",
+     "tt": "none",
+     "col": "#142018",
+     "deco": "none",
+     "cr": null
+    },
+    "h2": {
+     "t": "Рајац домаћин 24. „Дана чистих плани",
+     "f": "Georgia",
+     "s": "26px",
+     "wt": "400",
+     "tt": "none",
+     "col": "#142018",
+     "deco": "none",
+     "cr": 16.81
+    },
+    "h3": null,
+    "card": {
+     "t": "Рајац домаћин 24. „Дана чистих плани",
+     "f": "Georgia",
+     "s": "26px",
+     "wt": "400",
+     "tt": "none",
+     "col": "#142018",
+     "deco": "none",
+     "cr": 16.81
+    },
+    "p": {
+     "t": "Рајац 26. и 27. септембра окупља пла",
+     "f": "Georgia",
+     "s": "16px",
+     "wt": "400",
+     "tt": "none",
+     "col": "#5f6a60",
+     "deco": "none",
+     "cr": 5.65
+    },
+    "pa": null,
+    "sci": null,
+    "btn": null,
+    "foot": null,
+    "h1n": 1,
+    "lang": "sr-RS",
+    "imp": 305,
+    "rules": 74,
+    "sheets": 8,
+    "styleBlocks": 7,
+    "inlineStyle": 0,
+    "fc": {
+     "system-ui (системски)": 8,
+     "Georgia": 80,
+     "Arial": 114
+    },
+    "hscroll": false,
+    "bodyBg": "#000000",
+    "headerH": 58,
+    "title": "Дневник заштићеног подручја · ПИО „Рајац”"
+   },
+   "1440": {
+    "home": {
+     "t": "ПИО „РАЈАЦ“",
+     "f": "system-ui (системски)",
+     "s": "12.384px",
+     "wt": "750",
+     "tt": "uppercase",
+     "col": "#e4cb7e",
+     "deco": "none",
+     "cr": 10.89
+    },
+    "nav": {
+     "t": "СВЕ ВЕСТИ",
+     "f": "system-ui (системски)",
+     "s": "12.384px",
+     "wt": "750",
+     "tt": "uppercase",
+     "col": "#e5cb78",
+     "deco": "none",
+     "cr": 10.89
+    },
+    "h1": {
+     "t": "Дневник заштићеног подручја",
+     "f": "Georgia",
+     "s": "86px",
+     "wt": "400",
+     "tt": "none",
+     "col": "#142018",
+     "deco": "none",
+     "cr": null
+    },
+    "h2": {
+     "t": "Рајац домаћин 24. „Дана чистих плани",
+     "f": "Georgia",
+     "s": "26px",
+     "wt": "400",
+     "tt": "none",
+     "col": "#142018",
+     "deco": "none",
+     "cr": 16.81
+    },
+    "h3": null,
+    "card": {
+     "t": "Рајац домаћин 24. „Дана чистих плани",
+     "f": "Georgia",
+     "s": "26px",
+     "wt": "400",
+     "tt": "none",
+     "col": "#142018",
+     "deco": "none",
+     "cr": 16.81
+    },
+    "p": {
+     "t": "Рајац 26. и 27. септембра окупља пла",
+     "f": "Georgia",
+     "s": "16px",
+     "wt": "400",
+     "tt": "none",
+     "col": "#5f6a60",
+     "deco": "none",
+     "cr": 5.65
+    },
+    "pa": null,
+    "sci": null,
+    "btn": null,
+    "foot": null,
+    "h1n": 1,
+    "lang": "sr-RS",
+    "imp": 305,
+    "rules": 74,
+    "sheets": 8,
+    "styleBlocks": 7,
+    "inlineStyle": 0,
+    "fc": {
+     "system-ui (системски)": 8,
+     "Georgia": 80,
+     "Arial": 114
+    },
+    "hscroll": false,
+    "bodyBg": "#000000",
+    "headerH": 58,
+    "title": "Дневник заштићеног подручја · ПИО „Рајац”",
+    "focusVisible": true
+   }
+  }
+ },
+ {
+  "name": "Вест — чланак",
+  "url": "https://piorajac.rs/rajac-vesti/ams-rajac-avgust-2026-klimatoloski-izvestaj/",
+  "w": {
+   "390": {
+    "home": {
+     "t": "ПИО „РАЈАЦ“",
+     "f": "system-ui (системски)",
+     "s": "11px",
+     "wt": "750",
+     "tt": "uppercase",
+     "col": "#e5cb78",
+     "deco": "none",
+     "cr": 10.89
+    },
+    "nav": {
+     "t": "СВЕ ВЕСТИ",
+     "f": "system-ui (системски)",
+     "s": "11px",
+     "wt": "750",
+     "tt": "uppercase",
+     "col": "#ffffff",
+     "deco": "none",
+     "cr": 17.39
+    },
+    "h1": {
+     "t": "Август 2026.",
+     "f": "system-ui (системски)",
+     "s": "34px",
+     "wt": "700",
+     "tt": "none",
+     "col": "#172033",
+     "deco": "none",
+     "cr": null
+    },
+    "h2": {
+     "t": "Кључни показатељи",
+     "f": "system-ui (системски)",
+     "s": "26px",
+     "wt": "700",
+     "tt": "none",
+     "col": "#172033",
+     "deco": "none",
+     "cr": 16.27
+    },
+    "h3": {
+     "t": "Покривеност",
+     "f": "system-ui (системски)",
+     "s": "21px",
+     "wt": "700",
+     "tt": "none",
+     "col": "#172033",
+     "deco": "none",
+     "cr": 16.27
+    },
+    "card": {
+     "t": "Покривеност",
+     "f": "system-ui (системски)",
+     "s": "21px",
+     "wt": "700",
+     "tt": "none",
+     "col": "#172033",
+     "deco": "none",
+     "cr": 16.27
+    },
+    "p": {
+     "t": "Статистички метеоролошки извештај на",
+     "f": "system-ui (системски)",
+     "s": "19px",
+     "wt": "400",
+     "tt": "none",
+     "col": "#5d6778",
+     "deco": "none",
+     "cr": null
+    },
+    "pa": null,
+    "sci": null,
+    "btn": {
+     "t": "Период: 1–31.08.2026.",
+     "f": "system-ui (системски)",
+     "s": "13px",
+     "wt": "400",
+     "tt": "none",
+     "col": "#5d6778",
+     "deco": "none",
+     "cr": 5.71
+    },
+    "foot": {
+     "t": "piorajac_ams_archive.ams_observation",
+     "f": "system-ui (системски)",
+     "s": "16px",
+     "wt": "700",
+     "tt": "none",
+     "col": "#5d6778",
+     "deco": "none",
+     "cr": 5.32
+    },
+    "h1n": 1,
+    "lang": "sr-Cyrl",
+    "imp": 127,
+    "rules": 67,
+    "sheets": 3,
+    "styleBlocks": 2,
+    "inlineStyle": 13,
+    "fc": {
+     "system-ui (системски)": 901,
+     "Arial": 1,
+     "monospace (системски)": 7
+    },
+    "hscroll": false,
+    "bodyBg": "#ffffff",
+    "headerH": 52,
+    "title": "АМС Рајац — статистички метеоролошки извештај, август 2026."
+   },
+   "820": {
+    "home": {
+     "t": "ПИО „РАЈАЦ“",
+     "f": "system-ui (системски)",
+     "s": "12px",
+     "wt": "750",
+     "tt": "uppercase",
+     "col": "#e5cb78",
+     "deco": "none",
+     "cr": 10.89
+    },
+    "nav": {
+     "t": "СВЕ ВЕСТИ",
+     "f": "system-ui (системски)",
+     "s": "12px",
+     "wt": "750",
+     "tt": "uppercase",
+     "col": "#ffffff",
+     "deco": "none",
+     "cr": 17.39
+    },
+    "h1": {
+     "t": "Август 2026.",
+     "f": "system-ui (системски)",
+     "s": "41px",
+     "wt": "700",
+     "tt": "none",
+     "col": "#172033",
+     "deco": "none",
+     "cr": null
+    },
+    "h2": {
+     "t": "Кључни показатељи",
+     "f": "system-ui (системски)",
+     "s": "31px",
+     "wt": "700",
+     "tt": "none",
+     "col": "#172033",
+     "deco": "none",
+     "cr": 16.27
+    },
+    "h3": {
+     "t": "Покривеност",
+     "f": "system-ui (системски)",
+     "s": "21px",
+     "wt": "700",
+     "tt": "none",
+     "col": "#172033",
+     "deco": "none",
+     "cr": 16.27
+    },
+    "card": {
+     "t": "Покривеност",
+     "f": "system-ui (системски)",
+     "s": "21px",
+     "wt": "700",
+     "tt": "none",
+     "col": "#172033",
+     "deco": "none",
+     "cr": 16.27
+    },
+    "p": {
+     "t": "Статистички метеоролошки извештај на",
+     "f": "system-ui (системски)",
+     "s": "19px",
+     "wt": "400",
+     "tt": "none",
+     "col": "#5d6778",
+     "deco": "none",
+     "cr": null
+    },
+    "pa": null,
+    "sci": null,
+    "btn": {
+     "t": "Период: 1–31.08.2026.",
+     "f": "system-ui (системски)",
+     "s": "13px",
+     "wt": "400",
+     "tt": "none",
+     "col": "#5d6778",
+     "deco": "none",
+     "cr": 5.71
+    },
+    "foot": {
+     "t": "piorajac_ams_archive.ams_observation",
+     "f": "system-ui (системски)",
+     "s": "16px",
+     "wt": "700",
+     "tt": "none",
+     "col": "#5d6778",
+     "deco": "none",
+     "cr": 5.32
+    },
+    "h1n": 1,
+    "lang": "sr-Cyrl",
+    "imp": 127,
+    "rules": 67,
+    "sheets": 3,
+    "styleBlocks": 2,
+    "inlineStyle": 13,
+    "fc": {
+     "system-ui (системски)": 901,
+     "Arial": 1,
+     "monospace (системски)": 7
+    },
+    "hscroll": false,
+    "bodyBg": "#ffffff",
+    "headerH": 58,
+    "title": "АМС Рајац — статистички метеоролошки извештај, август 2026."
+   },
+   "1440": {
+    "home": {
+     "t": "ПИО „РАЈАЦ“",
+     "f": "system-ui (системски)",
+     "s": "13px",
+     "wt": "750",
+     "tt": "uppercase",
+     "col": "#e5cb78",
+     "deco": "none",
+     "cr": 10.89
+    },
+    "nav": {
+     "t": "СВЕ ВЕСТИ",
+     "f": "system-ui (системски)",
+     "s": "13px",
+     "wt": "750",
+     "tt": "uppercase",
+     "col": "#ffffff",
+     "deco": "none",
+     "cr": 17.39
+    },
+    "h1": {
+     "t": "Август 2026.",
+     "f": "system-ui (системски)",
+     "s": "62px",
+     "wt": "700",
+     "tt": "none",
+     "col": "#172033",
+     "deco": "none",
+     "cr": null
+    },
+    "h2": {
+     "t": "Кључни показатељи",
+     "f": "system-ui (системски)",
+     "s": "31px",
+     "wt": "700",
+     "tt": "none",
+     "col": "#172033",
+     "deco": "none",
+     "cr": 16.27
+    },
+    "h3": {
+     "t": "Покривеност",
+     "f": "system-ui (системски)",
+     "s": "21px",
+     "wt": "700",
+     "tt": "none",
+     "col": "#172033",
+     "deco": "none",
+     "cr": 16.27
+    },
+    "card": {
+     "t": "Покривеност",
+     "f": "system-ui (системски)",
+     "s": "21px",
+     "wt": "700",
+     "tt": "none",
+     "col": "#172033",
+     "deco": "none",
+     "cr": 16.27
+    },
+    "p": {
+     "t": "Статистички метеоролошки извештај на",
+     "f": "system-ui (системски)",
+     "s": "19px",
+     "wt": "400",
+     "tt": "none",
+     "col": "#5d6778",
+     "deco": "none",
+     "cr": null
+    },
+    "pa": null,
+    "sci": null,
+    "btn": {
+     "t": "Период: 1–31.08.2026.",
+     "f": "system-ui (системски)",
+     "s": "13px",
+     "wt": "400",
+     "tt": "none",
+     "col": "#5d6778",
+     "deco": "none",
+     "cr": 5.71
+    },
+    "foot": {
+     "t": "piorajac_ams_archive.ams_observation",
+     "f": "system-ui (системски)",
+     "s": "16px",
+     "wt": "700",
+     "tt": "none",
+     "col": "#5d6778",
+     "deco": "none",
+     "cr": 5.32
+    },
+    "h1n": 1,
+    "lang": "sr-Cyrl",
+    "imp": 127,
+    "rules": 67,
+    "sheets": 3,
+    "styleBlocks": 2,
+    "inlineStyle": 13,
+    "fc": {
+     "system-ui (системски)": 901,
+     "Arial": 1,
+     "monospace (системски)": 7
+    },
+    "hscroll": false,
+    "bodyBg": "#ffffff",
+    "headerH": 58,
+    "title": "АМС Рајац — статистички метеоролошки извештај, август 2026.",
+    "focusVisible": true
+   }
+  }
+ },
+ {
+  "name": "АМС Рајац",
+  "url": "https://piorajac.rs/amsrajac/",
+  "w": {
+   "390": {
+    "home": {
+     "t": "← ПИО „РАЈАЦ“",
+     "f": "DM Sans",
+     "s": "11px",
+     "wt": "850",
+     "tt": "uppercase",
+     "col": "#3f3325",
+     "deco": "none",
+     "cr": 11.81
+    },
+    "nav": null,
+    "h1": {
+     "t": "LIVE УСЛОВИ НА ПЛАНИНИ Рајац у реалн",
+     "f": "Syne",
+     "s": "30px",
+     "wt": "800",
+     "tt": "none",
+     "col": "#2a241c",
+     "deco": "none",
+     "cr": null
+    },
+    "h2": {
+     "t": "Брза процена за посетиоце",
+     "f": "Syne",
+     "s": "16px",
+     "wt": "700",
+     "tt": "none",
+     "col": "#2a241c",
+     "deco": "none",
+     "cr": 15.11
+    },
+    "h3": {
+     "t": "Билтен стања и астрономски услови",
+     "f": "Syne",
+     "s": "28px",
+     "wt": "700",
+     "tt": "none",
+     "col": "#2a241c",
+     "deco": "none",
+     "cr": 15.11
+    },
+    "card": null,
+    "p": {
+     "t": "Праћење температуре, влажности вазду",
+     "f": "DM Sans",
+     "s": "14px",
+     "wt": "400",
+     "tt": "none",
+     "col": "#6f6558",
+     "deco": "none",
+     "cr": null
+    },
+    "pa": null,
+    "sci": null,
+    "btn": {
+     "t": "БРОЈЧАНИ ПОДАЦИ",
+     "f": "DM Sans",
+     "s": "0px",
+     "wt": "950",
+     "tt": "uppercase",
+     "col": "#111111",
+     "deco": "none",
+     "cr": 18.15
+    },
+    "foot": null,
+    "h1n": 2,
+    "lang": "sr",
+    "imp": 996,
+    "rules": 943,
+    "sheets": 18,
+    "styleBlocks": 14,
+    "inlineStyle": 61,
+    "fc": {
+     "DM Sans": 90,
+     "Syne": 21,
+     "Arial": 3
+    },
+    "hscroll": false,
+    "bodyBg": "#f7f1e8",
+    "headerH": 223,
+    "title": "АМС Рајац — временски услови уживо и метеоролошки подаци"
+   },
+   "820": {
+    "home": {
+     "t": "← ПИО „РАЈАЦ“",
+     "f": "DM Sans",
+     "s": "12px",
+     "wt": "850",
+     "tt": "uppercase",
+     "col": "#3f3325",
+     "deco": "none",
+     "cr": 11.81
+    },
+    "nav": null,
+    "h1": {
+     "t": "LIVE УСЛОВИ НА ПЛАНИНИ Рајац у реалн",
+     "f": "Syne",
+     "s": "34.44px",
+     "wt": "800",
+     "tt": "none",
+     "col": "#2a241c",
+     "deco": "none",
+     "cr": null
+    },
+    "h2": {
+     "t": "Брза процена за посетиоце",
+     "f": "Syne",
+     "s": "16px",
+     "wt": "700",
+     "tt": "none",
+     "col": "#2a241c",
+     "deco": "none",
+     "cr": 15.11
+    },
+    "h3": {
+     "t": "Билтен стања и астрономски услови",
+     "f": "Syne",
+     "s": "28px",
+     "wt": "700",
+     "tt": "none",
+     "col": "#2a241c",
+     "deco": "none",
+     "cr": 15.11
+    },
+    "card": null,
+    "p": {
+     "t": "Праћење температуре, влажности вазду",
+     "f": "DM Sans",
+     "s": "14px",
+     "wt": "400",
+     "tt": "none",
+     "col": "#6f6558",
+     "deco": "none",
+     "cr": null
+    },
+    "pa": null,
+    "sci": null,
+    "btn": {
+     "t": "БРОЈЧАНИ ПОДАЦИ",
+     "f": "DM Sans",
+     "s": "0px",
+     "wt": "950",
+     "tt": "uppercase",
+     "col": "#111111",
+     "deco": "none",
+     "cr": 18.15
+    },
+    "foot": null,
+    "h1n": 2,
+    "lang": "sr",
+    "imp": 996,
+    "rules": 943,
+    "sheets": 18,
+    "styleBlocks": 14,
+    "inlineStyle": 61,
+    "fc": {
+     "DM Sans": 90,
+     "Syne": 21
+    },
+    "hscroll": false,
+    "bodyBg": "#f7f1e8",
+    "headerH": 167,
+    "title": "АМС Рајац — временски услови уживо и метеоролошки подаци"
+   },
+   "1440": {
+    "home": {
+     "t": "← ПИО „РАЈАЦ“",
+     "f": "DM Sans",
+     "s": "12px",
+     "wt": "850",
+     "tt": "uppercase",
+     "col": "#3f3325",
+     "deco": "none",
+     "cr": 11.81
+    },
+    "nav": null,
+    "h1": {
+     "t": "LIVE УСЛОВИ НА ПЛАНИНИ Рајац у реалн",
+     "f": "Syne",
+     "s": "56px",
+     "wt": "800",
+     "tt": "none",
+     "col": "#2a241c",
+     "deco": "none",
+     "cr": null
+    },
+    "h2": {
+     "t": "Брза процена за посетиоце",
+     "f": "Syne",
+     "s": "16px",
+     "wt": "700",
+     "tt": "none",
+     "col": "#2a241c",
+     "deco": "none",
+     "cr": 15.11
+    },
+    "h3": {
+     "t": "Билтен стања и астрономски услови",
+     "f": "Syne",
+     "s": "42px",
+     "wt": "700",
+     "tt": "none",
+     "col": "#2a241c",
+     "deco": "none",
+     "cr": 15.11
+    },
+    "card": null,
+    "p": {
+     "t": "Праћење температуре, влажности вазду",
+     "f": "DM Sans",
+     "s": "14px",
+     "wt": "400",
+     "tt": "none",
+     "col": "#6f6558",
+     "deco": "none",
+     "cr": null
+    },
+    "pa": null,
+    "sci": null,
+    "btn": {
+     "t": "БРОЈЧАНИ ПОДАЦИ",
+     "f": "DM Sans",
+     "s": "13px",
+     "wt": "950",
+     "tt": "uppercase",
+     "col": "#111111",
+     "deco": "none",
+     "cr": 18.16
+    },
+    "foot": {
+     "t": "Ова страна приказује тренутне и изве",
+     "f": "DM Sans",
+     "s": "13px",
+     "wt": "400",
+     "tt": "none",
+     "col": "#6e8aa8",
+     "deco": "none",
+     "cr": 3.52
+    },
+    "h1n": 2,
+    "lang": "sr",
+    "imp": 996,
+    "rules": 943,
+    "sheets": 18,
+    "styleBlocks": 14,
+    "inlineStyle": 61,
+    "fc": {
+     "DM Sans": 92,
+     "Syne": 21
+    },
+    "hscroll": false,
+    "bodyBg": "#f7f1e8",
+    "headerH": 73,
+    "title": "АМС Рајац — временски услови уживо и метеоролошки подаци",
+    "focusVisible": true
+   }
+  }
+ },
+ {
+  "name": "Пожарна опасност",
+  "url": "https://piorajac.rs/pozarna-opasnost/",
+  "w": {
+   "390": {
+    "home": null,
+    "nav": null,
+    "h1": {
+     "t": "Дневна и тренутна пожарна опасност —",
+     "f": "system-ui (системски)",
+     "s": "23px",
+     "wt": "700",
+     "tt": "none",
+     "col": "#17241f",
+     "deco": "none",
+     "cr": 14.89
+    },
+    "h2": null,
+    "h3": null,
+    "card": null,
+    "p": null,
+    "pa": null,
+    "sci": null,
+    "btn": null,
+    "foot": null,
+    "h1n": 1,
+    "lang": "sr-Cyrl",
+    "imp": 0,
+    "rules": 31,
+    "sheets": 1,
+    "styleBlocks": 1,
+    "inlineStyle": 0,
+    "fc": {
+     "system-ui (системски)": 7
+    },
+    "hscroll": false,
+    "bodyBg": "#f5f7f3",
+    "headerH": null,
+    "title": "Дневна и тренутна пожарна опасност — ПИО „Рајац“"
+   },
+   "820": {
+    "home": null,
+    "nav": null,
+    "h1": {
+     "t": "Дневна и тренутна пожарна опасност —",
+     "f": "system-ui (системски)",
+     "s": "23px",
+     "wt": "700",
+     "tt": "none",
+     "col": "#17241f",
+     "deco": "none",
+     "cr": 14.89
+    },
+    "h2": null,
+    "h3": null,
+    "card": null,
+    "p": null,
+    "pa": null,
+    "sci": null,
+    "btn": null,
+    "foot": null,
+    "h1n": 1,
+    "lang": "sr-Cyrl",
+    "imp": 0,
+    "rules": 31,
+    "sheets": 1,
+    "styleBlocks": 1,
+    "inlineStyle": 0,
+    "fc": {
+     "system-ui (системски)": 7
+    },
+    "hscroll": false,
+    "bodyBg": "#f5f7f3",
+    "headerH": null,
+    "title": "Дневна и тренутна пожарна опасност — ПИО „Рајац“"
+   },
+   "1440": {
+    "home": null,
+    "nav": null,
+    "h1": {
+     "t": "Дневна и тренутна пожарна опасност —",
+     "f": "system-ui (системски)",
+     "s": "31.68px",
+     "wt": "700",
+     "tt": "none",
+     "col": "#17241f",
+     "deco": "none",
+     "cr": 14.89
+    },
+    "h2": null,
+    "h3": null,
+    "card": null,
+    "p": null,
+    "pa": null,
+    "sci": null,
+    "btn": null,
+    "foot": null,
+    "h1n": 1,
+    "lang": "sr-Cyrl",
+    "imp": 0,
+    "rules": 31,
+    "sheets": 1,
+    "styleBlocks": 1,
+    "inlineStyle": 0,
+    "fc": {
+     "system-ui (системски)": 7
+    },
+    "hscroll": false,
+    "bodyBg": "#f5f7f3",
+    "headerH": null,
+    "title": "Дневна и тренутна пожарна опасност — ПИО „Рајац“",
+    "focusVisible": false
+   }
+  }
+ },
+ {
+  "name": "Политика приватности",
+  "url": "https://piorajac.rs/politika-privatnosti/",
+  "w": {
+   "390": {
+    "home": {
+     "t": "ПИО „РАЈАЦ“",
+     "f": "Georgia",
+     "s": "16.96px",
+     "wt": "700",
+     "tt": "none",
+     "col": "#ffffff",
+     "deco": "none",
+     "cr": 17.13
+    },
+    "nav": null,
+    "h1": {
+     "t": "Политика приватности",
+     "f": "Georgia",
+     "s": "28.8px",
+     "wt": "700",
+     "tt": "none",
+     "col": "#0e1c2f",
+     "deco": "none",
+     "cr": 17.13
+    },
+    "h2": {
+     "t": "Руковалац подацима",
+     "f": "Georgia",
+     "s": "21.6px",
+     "wt": "700",
+     "tt": "none",
+     "col": "#0e1c2f",
+     "deco": "none",
+     "cr": 17.13
+    },
+    "h3": null,
+    "card": null,
+    "p": {
+     "t": "Ова политика приватности објашњава к",
+     "f": "system-ui (системски)",
+     "s": "16.8px",
+     "wt": "400",
+     "tt": "none",
+     "col": "#2f342e",
+     "deco": "none",
+     "cr": 12.72
+    },
+    "pa": {
+     "t": "office@piorajac.rs",
+     "f": "system-ui (системски)",
+     "s": "16px",
+     "wt": "400",
+     "tt": "none",
+     "col": "#22251f",
+     "deco": "underline",
+     "cr": 15.53
+    },
+    "sci": null,
+    "btn": null,
+    "foot": null,
+    "h1n": 1,
+    "lang": "sr-Cyrl",
+    "imp": 0,
+    "rules": 30,
+    "sheets": 1,
+    "styleBlocks": 1,
+    "inlineStyle": 0,
+    "fc": {
+     "Georgia": 13,
+     "system-ui (системски)": 42
+    },
+    "hscroll": false,
+    "bodyBg": "#ffffff",
+    "headerH": 61,
+    "title": "Политика приватности | ПИО „Рајац“"
+   },
+   "820": {
+    "home": {
+     "t": "ПИО „РАЈАЦ“",
+     "f": "Georgia",
+     "s": "16.96px",
+     "wt": "700",
+     "tt": "none",
+     "col": "#ffffff",
+     "deco": "none",
+     "cr": 17.13
+    },
+    "nav": null,
+    "h1": {
+     "t": "Политика приватности",
+     "f": "Georgia",
+     "s": "40px",
+     "wt": "700",
+     "tt": "none",
+     "col": "#0e1c2f",
+     "deco": "none",
+     "cr": 17.13
+    },
+    "h2": {
+     "t": "Руковалац подацима",
+     "f": "Georgia",
+     "s": "21.6px",
+     "wt": "700",
+     "tt": "none",
+     "col": "#0e1c2f",
+     "deco": "none",
+     "cr": 17.13
+    },
+    "h3": null,
+    "card": null,
+    "p": {
+     "t": "Ова политика приватности објашњава к",
+     "f": "system-ui (системски)",
+     "s": "17.92px",
+     "wt": "400",
+     "tt": "none",
+     "col": "#2f342e",
+     "deco": "none",
+     "cr": 12.72
+    },
+    "pa": {
+     "t": "office@piorajac.rs",
+     "f": "system-ui (системски)",
+     "s": "16px",
+     "wt": "400",
+     "tt": "none",
+     "col": "#22251f",
+     "deco": "underline",
+     "cr": 15.53
+    },
+    "sci": null,
+    "btn": null,
+    "foot": null,
+    "h1n": 1,
+    "lang": "sr-Cyrl",
+    "imp": 0,
+    "rules": 30,
+    "sheets": 1,
+    "styleBlocks": 1,
+    "inlineStyle": 0,
+    "fc": {
+     "Georgia": 13,
+     "system-ui (системски)": 42
+    },
+    "hscroll": false,
+    "bodyBg": "#ffffff",
+    "headerH": 61,
+    "title": "Политика приватности | ПИО „Рајац“"
+   },
+   "1440": {
+    "home": {
+     "t": "ПИО „РАЈАЦ“",
+     "f": "Georgia",
+     "s": "18.88px",
+     "wt": "700",
+     "tt": "none",
+     "col": "#ffffff",
+     "deco": "none",
+     "cr": 17.13
+    },
+    "nav": {
+     "t": "↩ Назад на сајт",
+     "f": "system-ui (системски)",
+     "s": "13.12px",
+     "wt": "400",
+     "tt": "none",
+     "col": "#ffffff",
+     "deco": "none",
+     "cr": 17.13
+    },
+    "h1": {
+     "t": "Политика приватности",
+     "f": "Georgia",
+     "s": "48px",
+     "wt": "700",
+     "tt": "none",
+     "col": "#0e1c2f",
+     "deco": "none",
+     "cr": 17.13
+    },
+    "h2": {
+     "t": "Руковалац подацима",
+     "f": "Georgia",
+     "s": "29.6px",
+     "wt": "700",
+     "tt": "none",
+     "col": "#0e1c2f",
+     "deco": "none",
+     "cr": 17.13
+    },
+    "h3": null,
+    "card": null,
+    "p": {
+     "t": "Ова политика приватности објашњава к",
+     "f": "system-ui (системски)",
+     "s": "17.92px",
+     "wt": "400",
+     "tt": "none",
+     "col": "#2f342e",
+     "deco": "none",
+     "cr": 12.72
+    },
+    "pa": {
+     "t": "office@piorajac.rs",
+     "f": "system-ui (системски)",
+     "s": "17px",
+     "wt": "400",
+     "tt": "none",
+     "col": "#22251f",
+     "deco": "underline",
+     "cr": 15.53
+    },
+    "sci": null,
+    "btn": null,
+    "foot": null,
+    "h1n": 1,
+    "lang": "sr-Cyrl",
+    "imp": 0,
+    "rules": 30,
+    "sheets": 1,
+    "styleBlocks": 1,
+    "inlineStyle": 0,
+    "fc": {
+     "Georgia": 13,
+     "system-ui (системски)": 48
+    },
+    "hscroll": false,
+    "bodyBg": "#ffffff",
+    "headerH": 57,
+    "title": "Политика приватности | ПИО „Рајац“",
+    "focusVisible": true
+   }
+  }
+ }
+]
