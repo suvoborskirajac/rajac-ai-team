@@ -1,0 +1,183 @@
+/* v6.2: global approved forest/cream site header, aligned photos, accessible floating back-to-top */
+:root{--rp62-dark:#08281b;--rp62-gold:#e6bb63;--rp62-green:#24573b}
+html{scroll-behavior:smooth;scroll-padding-top:95px}
+body{min-width:0}
+header.rp62-header,header.rp62-header *{box-sizing:border-box}
+header.rp62-header{position:sticky!important;top:0!important;z-index:9999!important;width:100%;margin:0!important;padding:0!important;background:#07261a!important;border-bottom:1px solid #31523b!important;box-shadow:0 6px 24px rgba(8,35,24,.12)!important;color:#f7f5e8!important;font-family:system-ui,-apple-system,"Segoe UI",Arial,sans-serif!important}
+.rp62-header .rp62-inner{width:min(1380px,100%);margin:auto;min-height:76px;padding:11px 24px;display:flex;align-items:center;gap:clamp(12px,2vw,25px);justify-content:space-between;max-width:none}
+.rp62-header a{color:#f8f8ef!important;text-decoration:none!important}
+.rp62-header .rp62-brand{display:flex;align-items:center;gap:12px;flex:0 0 auto;min-width:0}
+.rp62-header .rp62-mark{width:36px;height:36px;display:grid;place-items:center;font:normal 27px Georgia,serif;color:var(--rp62-gold);background:#133e2a;border:1px solid #587359;border-radius:12px;line-height:1}
+.rp62-header .rp62-brandwords{display:flex;flex-direction:column;gap:1px;line-height:1.1}
+.rp62-header .rp62-brandwords strong{font:700 clamp(17px,1.55vw,22px)/1.12 Georgia,"Times New Roman",serif;color:#fffdf2;white-space:nowrap}
+.rp62-header .rp62-brandwords small{font:600 8px/1.4 system-ui,sans-serif;letter-spacing:.065em;color:#bbd2bb;white-space:nowrap}
+.rp62-header nav.rp62-nav{display:flex;align-items:center;justify-content:center;flex:1 1 auto;gap:clamp(1px,.6vw,10px);min-width:0}
+.rp62-header .rp62-nav a,.rp62-header .rp62-dropdown a{font:700 15px/1.35 system-ui,"Segoe UI",sans-serif;letter-spacing:0;white-space:nowrap;position:relative;border:0}
+.rp62-header .rp62-nav a{padding:12px 8px 15px;border-radius:4px}
+.rp62-header .rp62-nav a::after{content:"";position:absolute;bottom:3px;left:9px;right:9px;height:3px;background:transparent;border-radius:99px;transition:background .17s}
+.rp62-header .rp62-nav a:hover::after,.rp62-header .rp62-nav a:focus-visible::after,.rp62-header .rp62-nav a.rp62-active::after{background:var(--rp62-gold)!important}
+.rp62-header .rp62-nav a.rp62-active{color:#fff1bf!important}
+.rp62-header .rp62-right{display:flex;align-items:center;gap:12px;flex:0 0 auto;min-width:0}
+.rp62-header .rp62-pio{padding:9px 12px!important;background:#f1e9cb;color:#133524!important;border-radius:8px;font:800 12px/1.4 system-ui,sans-serif!important;white-space:nowrap;border:1px solid #f4dab1}
+.rp62-header .rp62-pio:hover{background:#ffefc5}
+.rp62-header details.rp62-more{position:relative;flex:0 0 auto}
+.rp62-header .rp62-more>summary{list-style:none;cursor:pointer;border:1px solid #64826c;background:#113725;color:#f8f6ee;border-radius:8px;padding:10px 12px;font:700 13px/1.4 system-ui,sans-serif;white-space:nowrap}
+.rp62-header .rp62-more>summary::-webkit-details-marker{display:none}
+.rp62-header .rp62-more>summary:after{content:' ▾';font-size:12px;color:#e6bd62}
+.rp62-header .rp62-more[open]>summary,.rp62-header .rp62-more>summary:hover,.rp62-header .rp62-more>summary.rp62-active{border-bottom:3px solid var(--rp62-gold);padding-bottom:8px;color:#ffecaf}
+.rp62-header .rp62-dropdown{position:absolute;right:0;top:calc(100% + 10px);width:min(540px,calc(100vw - 32px));padding:18px;display:grid;grid-template-columns:1fr 1fr;gap:5px;background:#113624;border:1px solid #647d62;border-radius:13px;box-shadow:0 15px 40px #00191066;max-height:min(72vh,700px);overflow-y:auto;z-index:10}
+.rp62-header .rp62-dropdown a{display:block;white-space:normal!important;border-radius:7px;padding:10px 11px!important;color:#eef5e7!important}
+.rp62-header .rp62-dropdown a:hover,.rp62-header .rp62-dropdown a:focus-visible,.rp62-header .rp62-dropdown a.rp62-active{background:#27523a!important;color:#ffde93!important;outline:0}
+.rp62-header .rp62-dropdown h2{grid-column:1/-1;color:#e6bb63;font:800 10px/1.5 system-ui,sans-serif!important;text-transform:uppercase;letter-spacing:.14em;margin:10px 6px 0}
+.rp62-header .rp62-mobile-links{display:none}
+.rp62-up{position:fixed!important;right:22px!important;bottom:22px!important;z-index:9998!important;width:53px!important;height:53px!important;border-radius:50%!important;display:flex!important;align-items:center!important;justify-content:center!important;box-sizing:border-box!important;background:transparent!important;border:2px solid #d9bf7a!important;color:#174832!important;box-shadow:none!important;font:700 29px/1 system-ui,sans-serif!important;text-decoration:none!important;cursor:pointer}
+.rp62-up:hover{background:transparent!important;transform:translateY(-2px)}
+.rp62-up:focus-visible,.rp62-header a:focus-visible,.rp62-header summary:focus-visible{outline:3px solid #ffd16a!important;outline-offset:4px!important}
+/* Uniform photo frames: thumbnails cover, lesson diagnostic images may contain, reference profiles use a fixed-height cover frame. */
+.edu-atlas-grid .atlas-card{overflow:hidden!important;display:flex!important;flex-direction:column!important;min-width:0}
+.edu-atlas-grid .atlas-card>a.edu-card-photo{display:block!important;width:100%!important;max-width:100%!important;height:228px!important;min-height:228px!important;flex:0 0 auto!important;position:relative;overflow:hidden!important;background:#e7eee2!important}
+.edu-atlas-grid .atlas-card>a.edu-card-photo img.edu-thumb{display:block;width:100%!important;max-width:none!important;height:100%!important;min-height:0!important;object-fit:cover!important;object-position:center!important;margin:0!important}
+.edu-atlas-grid .atlas-card>a.edu-card-photo .edu-thumb-fallback{height:100%!important;min-height:0!important}
+.edu-atlas-grid .atlas-card>.pad{flex:1 1 auto;display:flex;flex-direction:column;align-items:flex-start}
+.edu-atlas-grid .atlas-card>.pad a{margin-top:auto}
+.ref-photo-card .ref-photo-frame{width:100%!important;aspect-ratio:4/3!important;height:auto!important}
+.ref-photo-card .ref-photo-frame img{width:100%!important;height:100%!important;object-fit:cover!important}
+
+.v56-photo,.v57-image,.p54-photo{width:100%!important;min-width:0!important;overflow:hidden!important}
+.v56-photo{aspect-ratio:4/3!important}
+.v57-image{height:auto!important;aspect-ratio:4/3!important}
+.p54-photo img{height:auto!important;aspect-ratio:4/3!important;object-fit:cover!important}
+.compare61-photo img{height:100%!important;width:100%!important;object-fit:cover!important}
+.edu-visual-section .edu-figure .edu-frame img{object-fit:contain!important;background:#e6eee2!important}
+@media(max-width:1270px){.rp62-header .rp62-inner{padding:12px 16px;gap:9px}.rp62-header .rp62-nav a{padding-left:6px;padding-right:6px;font-size:14px}.rp62-header .rp62-brandwords strong{font-size:19px}.rp62-header .rp62-brandwords small{font-size:8px}}
+@media(max-width:1070px){.rp62-header nav.rp62-nav{display:none!important}.rp62-header .rp62-inner{flex-wrap:wrap;min-height:72px}.rp62-header .rp62-right{margin-left:auto}.rp62-header .rp62-dropdown{right:0}.rp62-header .rp62-mobile-links{display:contents}}
+@media(max-width:520px){.rp62-header .rp62-inner{padding:9px 11px;gap:7px}.rp62-header .rp62-mark{width:33px;height:33px;font-size:24px}.rp62-header .rp62-brand{gap:7px}.rp62-header .rp62-brandwords strong{font-size:17px}.rp62-header .rp62-brandwords small{font-size:7px;letter-spacing:0}.rp62-header .rp62-more>summary{padding:7px;font-size:11px}.rp62-header .rp62-pio{font-size:9px!important;padding:7px 8px!important}.rp62-header .rp62-right{gap:5px}.rp62-header .rp62-dropdown{position:fixed;right:10px;top:67px;width:calc(100vw - 20px);grid-template-columns:1fr 1fr;max-height:72vh}.rp62-up{width:47px!important;height:47px!important;right:13px!important;bottom:15px!important}.edu-atlas-grid .atlas-card>a.edu-card-photo{height:220px!important}}
+@media(max-width:359px){.rp62-header .rp62-brandwords strong{font-size:15px}.rp62-header .rp62-pio{font-size:8px!important}.rp62-header .rp62-dropdown{grid-template-columns:1fr}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.rp62-up:hover{transform:none}}
+@media print{header.rp62-header,.rp62-up{display:none!important}}
+/* Fixed a pre-existing 768px homepage overflow caused by the photographic progress buttons. */
+@media(max-width:900px){.photo-progress-inner{display:flex!important;flex-wrap:wrap!important;gap:12px!important}.photo-progress-inner>a,.photo-progress-inner>.photo-progress-button{max-width:100%!important;min-width:0!important;white-space:normal!important;overflow-wrap:break-word!important}.photo-progress-inner>div{min-width:0!important;max-width:100%!important}}
+
+/* v6.4: fix chapter text blocks sticking to the left edge */
+main.edition-main{padding-inline:14px!important}
+.edition-main .reading{max-width:1040px!important;margin-inline:auto!important;padding:34px 46px!important;background:transparent!important;border:none!important;box-shadow:none!important;border-radius:0!important}
+.edition-main .reading>*:first-child{margin-top:0!important}
+@media(max-width:760px){main.edition-main{padding-inline:10px!important}.edition-main .reading{padding:22px 18px!important}}
+
+
+/* v6.5: restore original prominent park-brand hierarchy from retained v3.4 header CSS.
+   Original v3.4: 50px mark, 25px Georgia title, 11px subtitle. The menu remains v6.4. */
+.rp62-header .rp62-brand{display:flex!important;align-items:center!important;gap:14px!important;flex:0 1 402px!important;max-width:402px!important;min-width:0!important}
+.rp62-header .rp62-mark{width:50px!important;height:50px!important;flex:0 0 50px!important;font-size:33px!important;border-radius:14px!important}
+.rp62-header .rp62-brandwords{min-width:0!important;gap:3px!important;line-height:1.1!important}
+.rp62-header .rp62-brandwords strong{font:700 25px/1.05 Georgia,"Times New Roman",serif!important;letter-spacing:-.025em!important;color:#fffdf2!important;white-space:nowrap!important}
+.rp62-header .rp62-brandwords small{font:600 11px/1.3 system-ui,"Segoe UI",sans-serif!important;letter-spacing:.018em!important;color:#c5d8c8!important;white-space:nowrap!important}
+@media(max-width:1380px) and (min-width:1141px){
+ .rp62-header .rp62-inner{gap:8px!important;padding-inline:12px!important}
+ .rp62-header .rp62-brand{gap:9px!important;flex-basis:355px!important}
+ .rp62-header .rp62-brandwords strong{font-size:22px!important}
+ .rp62-header .rp62-brandwords small{font-size:9px!important}
+ .rp62-header .rp62-mark{width:43px!important;height:43px!important;flex-basis:43px!important;font-size:29px!important}
+ .rp62-header .rp62-nav a{font-size:13px!important;padding-inline:5px!important}
+ .rp62-header .rp62-right{gap:7px!important}
+}
+@media(max-width:1140px){
+ .rp62-header nav.rp62-nav{display:none!important}
+ .rp62-header .rp62-brand{flex:0 1 auto!important;max-width:calc(100% - 160px)!important}
+}
+@media(max-width:650px){
+ .rp62-header .rp62-inner{gap:7px!important;min-height:72px!important}
+ .rp62-header .rp62-brand{gap:7px!important;max-width:calc(100% - 121px)!important}
+ .rp62-header .rp62-mark{width:36px!important;height:36px!important;flex-basis:36px!important;font-size:24px!important;border-radius:10px!important}
+ .rp62-header .rp62-brandwords strong{font-size:clamp(12px,3.5vw,19px)!important;white-space:normal!important;line-height:1.1!important}
+ .rp62-header .rp62-brandwords small{font-size:8px!important;white-space:normal!important;line-height:1.2!important}
+ .rp62-header .rp62-right{gap:5px!important}
+}
+@media(max-width:390px){
+ .rp62-header .rp62-brandwords strong{font-size:13px!important}
+ .rp62-header .rp62-brandwords small{font-size:7px!important}
+ .rp62-header .rp62-mark{width:31px!important;height:31px!important;flex-basis:31px!important;font-size:22px!important}
+ .rp62-header .rp62-pio{max-width:78px!important;white-space:normal!important;text-align:center!important;line-height:1.1!important}
+}
+
+/* v7.0: move top notices to bottom */
+.rp62-bottom-notes{max-width:1150px;margin:28px auto 18px;padding:0 16px;box-sizing:border-box}.rp62-bottom-notes>*:first-child{margin-top:0!important}.rp62-bottom-notes>*:last-child{margin-bottom:0!important}.rp62-bottom-notes .photo-v51-link{margin:14px 0 0}.rp62-bottom-notes section,.rp62-bottom-notes aside{margin-left:auto!important;margin-right:auto!important}@media(max-width:760px){.rp62-bottom-notes{margin:24px auto 16px;padding:0 12px}}
+
+/* v7.3: unobtrusive in-context tool links; no new footer or extraneous full-page area */
+.rp73-related-tools{box-sizing:border-box;max-width:1160px;margin:24px auto 26px;padding:0 16px;display:grid;gap:14px;clear:both}
+.rp73-related-tools > *{box-sizing:border-box;margin-top:0!important;margin-bottom:0!important;max-width:100%!important}
+.rp73-related-tools > a{justify-self:start;display:inline-block;line-height:1.5}
+.rp73-related-tools > .wrap{width:100%;margin-inline:0!important}
+.rp73-related-tools > section.wrap{width:100%}
+@media(max-width:760px){.rp73-related-tools{padding:0 12px;gap:12px;margin:20px auto 24px}}
+
+/* v7.3.1: center the standalone, primary next-step action */
+.rp73-related-tools > .wrap:has(> a:only-child){text-align:center}
+
+/* v7.6: One authoritative, bounded photograph layout for 31 source profiles.
+   Absolute positioning prevents intrinsic portrait height from expanding the grid. */
+.ref-profile-block .ref-photo-figure{
+  display:grid!important;
+  grid-template-columns:minmax(0,42%) minmax(0,1fr)!important;
+  gap:0!important;
+  align-items:start!important;
+}
+.ref-profile-block .ref-photo-frame{
+  position:relative!important;
+  box-sizing:border-box!important;
+  display:block!important;
+  width:100%!important;
+  min-width:0!important;
+  height:370px!important;
+  min-height:0!important;
+  max-height:370px!important;
+  aspect-ratio:auto!important;
+  overflow:hidden!important;
+  flex:none!important;
+  background:#e4ece1!important;
+}
+.ref-profile-block .ref-photo-frame>img{
+  position:absolute!important;
+  inset:0!important;
+  display:block!important;
+  margin:0!important;
+  width:100%!important;
+  height:100%!important;
+  min-width:0!important;
+  min-height:0!important;
+  max-width:100%!important;
+  max-height:100%!important;
+  aspect-ratio:auto!important;
+  object-fit:cover!important;
+  object-position:center center!important;
+}
+.ref-profile-block .ref-photo-caption{
+  min-width:0!important;
+  min-height:370px!important;
+  box-sizing:border-box!important;
+}
+@media(max-width:900px){
+  .ref-profile-block .ref-photo-figure{grid-template-columns:minmax(0,1fr)!important}
+  .ref-profile-block .ref-photo-frame{height:300px!important;max-height:300px!important}
+  .ref-profile-block .ref-photo-caption{min-height:0!important}
+}
+@media(max-width:660px){
+  .ref-profile-block .ref-photo-frame{height:255px!important;max-height:255px!important}
+}
+
+.ref-profile-block .ref-photo-frame.is-unavailable .ref-img-failure{position:absolute!important;inset:0!important;min-height:0!important;overflow:auto!important}
+
+/* v7.7: longer descriptive names in the seven-link navigation */
+@media(min-width:1381px) and (max-width:1600px){
+  .rp62-header .rp62-inner{gap:9px!important;padding-inline:12px!important}
+  .rp62-header .rp62-brand{flex-basis:360px!important;max-width:360px!important;gap:9px!important}
+  .rp62-header .rp62-mark{width:43px!important;height:43px!important;flex-basis:43px!important;font-size:29px!important}
+  .rp62-header .rp62-brandwords strong{font-size:22px!important}
+  .rp62-header .rp62-brandwords small{font-size:9px!important}
+  .rp62-header .rp62-nav a{font-size:13px!important;padding-inline:4px!important}
+  .rp62-header .rp62-right{gap:7px!important}
+}
+
+/* v78: naziv parka zauzima koliko mu treba; meni se ne preklapa */
+@media(min-width:1071px){.rp62-header .rp62-brand{flex:0 0 auto!important;max-width:none!important}.rp62-header .rp62-brandwords strong{font-size:clamp(17px,1.35vw,23px)!important}.rp62-header .rp62-nav a{white-space:nowrap}}
+@media(min-width:1071px) and (max-width:1360px){.rp62-header .rp62-nav{gap:2px!important}.rp62-header .rp62-nav a{font-size:13px!important;padding-left:5px!important;padding-right:5px!important}.rp62-header .rp62-brandwords small{display:none!important}}
