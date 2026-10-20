@@ -30,7 +30,7 @@ declare(strict_types=1);
 
 /* ============ ПОДЕШАВАЊА ============ */
 
-const VERSION     = '1.1';
+const VERSION     = '1.2';
 const MAX_SECONDS = 15;             // колико секунди сме да траје једна серија
 const MAX_BATCH   = 400;            // највише страница у једној серији
 const MAX_LINKS   = 3000;           // највише мртвих линкова у извештају
@@ -321,6 +321,34 @@ function mixed_words(string $text): array
                 $out[$w] = ($out[$w] ?? 0) + 1;
             }
         }
+    }
+    return $out;
+}
+
+/** Назив подручја који није ПИО „Рајац“ / ПИО „РАЈАЦ“ / Предео изузетних одлика „Рајац“: [облик => број]. */
+function name_issues(string $text): array
+{
+    $out = [];
+    $q = '[„"“”«»\'‘’‚]';
+    if (preg_match_all('~(?<!\p{L})(ПИО|PIO|П\.И\.О\.|Предео изузетних одлика)\s*(' . $q . '?)\s*(Рајац|РАЈАЦ|Rajac|RAJAC)(?!\p{L})(' . $q . '?)~u', $text, $m, PREG_SET_ORDER)) {
+        foreach ($m as $x) {
+            $ok = ($x[1] === 'ПИО' || $x[1] === 'Предео изузетних одлика') && $x[2] === '„' && $x[4] === '“'
+                && ($x[3] === 'Рајац' || ($x[3] === 'РАЈАЦ' && $x[1] === 'ПИО'));
+            if (!$ok) { $f = preg_replace('~\s+~u', ' ', $x[0]); $out[$f] = ($out[$f] ?? 0) + 1; }
+        }
+    }
+    return $out;
+}
+
+/** Наводници: „…” или „…" уместо „…“, и "…" око ћириличног текста: [исечак => број]. */
+function quote_issues(string $text): array
+{
+    $out = [];
+    if (preg_match_all('~„[^„“”"\n]{0,120}[”"]~u', $text, $m)) {
+        foreach ($m[0] as $x) { $k = mb_substr($x, 0, 40, 'UTF-8'); $out[$k] = ($out[$k] ?? 0) + 1; }
+    }
+    if (preg_match_all('~(?<![\p{L}\d=])"(?=\p{Cyrillic})[^"„“”\n]{1,120}"(?![\p{L}\d])~u', $text, $m)) {
+        foreach ($m[0] as $x) { $k = mb_substr($x, 0, 40, 'UTF-8'); $out[$k] = ($out[$k] ?? 0) + 1; }
     }
     return $out;
 }
@@ -626,7 +654,7 @@ function analyze(string $root, string $rel, array &$cssCache, array &$htCache): 
     $html = @file_get_contents($root . '/' . $rel);
     $r = ['folder' => folder_of($rel), 'read_error' => $html === false, 'bytes' => is_string($html) ? strlen($html) : 0,
           'title' => '', 'h1' => 0, 'viewport' => false, 'canonical' => false, 'description' => false,
-          'script' => 'празно', 'mixed' => [], 'mixed_n' => 0, 'latin' => [], 'latin_n' => 0, 'latin_checked' => false,
+          'script' => 'празно', 'mixed' => [], 'mixed_n' => 0, 'naziv' => [], 'naziv_n' => 0, 'navod' => [], 'navod_n' => 0, 'latin' => [], 'latin_n' => 0, 'latin_checked' => false,
           'fonts' => [], 'menu' => '', 'menu_sig' => '', 'home_link' => '', 'home_ok' => false, 'blank' => 0,
           'missing' => [], 'rewrite' => [], 'ext_img' => [], 'alt_missing' => 0, 'alt_empty' => 0];
     if (!is_string($html) || $html === '') { return $r; }
@@ -641,6 +669,20 @@ function analyze(string $root, string $rel, array &$cssCache, array &$htCache): 
     $r['mixed'] = array_slice(array_keys($mixed), 0, MAX_SAMPLES);
 
     if ($r['script'] === 'ћирилица') {
+        $meta = '';
+        foreach (tags(strip_code($html), 'meta') as $t) {
+            $n = strtolower((string)(attr($t, 'name') ?? attr($t, 'property') ?? ''));
+            if (in_array($n, ['description', 'og:title', 'og:description', 'twitter:title', 'twitter:description'], true)) {
+                $meta .= ' ' . html_entity_decode((string)attr($t, 'content'), ENT_QUOTES | ENT_HTML5, 'UTF-8');
+            }
+        }
+        $all = $r['title'] . ' ' . $meta . ' ' . $text;
+        $nz = name_issues($all);
+        $r['naziv_n'] = array_sum($nz);
+        $r['naziv'] = array_slice(array_keys($nz), 0, MAX_SAMPLES);
+        $nv = quote_issues($all);
+        $r['navod_n'] = array_sum($nv);
+        $r['navod'] = array_slice(array_keys($nv), 0, MAX_SAMPLES);
         $lat = latin_words($html);
         $r['latin_checked'] = true;
         $r['latin_n'] = array_sum($lat);
@@ -777,11 +819,11 @@ function write_reports(string $out, array $st): bool
 {
     $pages = $st['pages'];
     $sum = ['stranica' => count($pages), 'necitljivo' => 0, 'php_neobuhvaceno' => (int)$st['php'],
-            'mesano' => 0, 'mesano_str' => 0, 'latinica_str' => 0, 'latinica_nije_provereno' => 0,
+            'mesano' => 0, 'mesano_str' => 0, 'naziv' => 0, 'naziv_str' => 0, 'navodnici' => 0, 'navodnici_str' => 0, 'latinica_str' => 0, 'latinica_nije_provereno' => 0,
             'blank' => 0, 'blank_str' => 0, 'nedostaje' => 0, 'nedostaje_str' => 0, 'preusmerenje' => 0,
             'bez_naslova' => 0, 'h1_greska' => 0, 'bez_viewport' => 0, 'bez_canonical' => 0, 'bez_opisa' => 0,
             'alt_nedostaje' => 0, 'alt_prazan' => 0, 'tudje_slike_str' => 0, 'bez_pocetne' => 0, 'pocetna_naziv' => 0];
-    $menus = []; $homes = []; $fonts = []; $folders = []; $mixedAll = []; $latinAll = []; $hosts = []; $broken = [];
+    $menus = []; $homes = []; $fonts = []; $folders = []; $mixedAll = []; $nameAll = []; $quoteAll = []; $latinAll = []; $hosts = []; $broken = [];
 
     foreach ($pages as $rel => $p) {
         $f = $p['folder'];
@@ -790,6 +832,11 @@ function write_reports(string $out, array $st): bool
         if ($p['read_error']) { $sum['necitljivo']++; }
         if ($p['mixed_n'] > 0) { $sum['mesano'] += $p['mixed_n']; $sum['mesano_str']++; $folders[$f]['mesano'] += $p['mixed_n']; }
         foreach ($p['mixed'] as $w) { $mixedAll[$w][] = $rel; }
+        $p += ['naziv' => [], 'naziv_n' => 0, 'navod' => [], 'navod_n' => 0];
+        if ($p['naziv_n'] > 0) { $sum['naziv'] += $p['naziv_n']; $sum['naziv_str']++; $folders[$f]['naziv'] = ($folders[$f]['naziv'] ?? 0) + $p['naziv_n']; }
+        foreach ($p['naziv'] as $w) { $nameAll[$w][] = $rel; }
+        if ($p['navod_n'] > 0) { $sum['navodnici'] += $p['navod_n']; $sum['navodnici_str']++; $folders[$f]['navodnici'] = ($folders[$f]['navodnici'] ?? 0) + $p['navod_n']; }
+        foreach ($p['navod'] as $w) { $quoteAll[$w][] = $rel; }
         if (!$p['latin_checked'] && $p['script'] === 'латиница') { $sum['latinica_nije_provereno']++; }
         if ($p['latin_n'] > 0) { $sum['latinica_str']++; $folders[$f]['latinica'] += $p['latin_n']; }
         foreach ($p['latin'] as $w) { $latinAll[$w] = ($latinAll[$w] ?? 0) + 1; }
@@ -821,18 +868,19 @@ function write_reports(string $out, array $st): bool
 
     $json = ['verzija' => VERSION, 'pocetak' => $st['start'], 'kraj' => date('d. m. Y. H:i'), 'zbir' => $sum,
              'preskoceni_folderi' => $st['skipped'], 'folderi' => $folders, 'meniji' => $menus, 'pocetna' => $homes,
-             'fontovi' => $fonts, 'mesana_slova' => $mixedAll, 'latinica_reci' => $latinAll, 'tudje_slike' => $hosts,
+             'fontovi' => $fonts, 'mesana_slova' => $mixedAll, 'naziv_oblici' => $nameAll, 'navodnici_primeri' => $quoteAll, 'latinica_reci' => $latinAll, 'tudje_slike' => $hosts,
              'linkovi' => $broken, 'stranice' => $pages];
     $j = json_encode($json, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES | JSON_PRETTY_PRINT | JSON_INVALID_UTF8_SUBSTITUTE);
     if ($j === false || !write_atomic($out . '/kontrola.json', $j)) { return false; }
 
     $csv = fopen('php://temp', 'w+');
     fwrite($csv, "\xEF\xBB\xBF");
-    fputcsv($csv, ['страница', 'фолдер', 'писмо', 'мешана слова', 'примери мешања', 'латиничне речи', 'примери латинице',
+    fputcsv($csv, ['страница', 'фолдер', 'писмо', 'мешана слова', 'примери мешања', 'назив', 'облици назива', 'наводници', 'примери наводника', 'латиничне речи', 'примери латинице',
         'target_blank', 'недостаје фајл', 'могуће преусмерење', 'наслов', 'h1', 'viewport', 'canonical', 'опис',
         'декларисани фонтови', 'мени', 'линк ка почетној', 'почетна гласи ' . HOME_NAME, 'alt недостаје', 'alt празан', 'туђе слике'], ';', '"', '');
     foreach ($pages as $rel => $p) {
         fputcsv($csv, [$rel, $p['folder'], $p['script'], $p['mixed_n'], implode(' ', $p['mixed']),
+            $p['naziv_n'] ?? 0, implode(' | ', $p['naziv'] ?? []), $p['navod_n'] ?? 0, implode(' | ', $p['navod'] ?? []),
             $p['latin_checked'] ? $p['latin_n'] : 'није проверено', implode(' ', $p['latin']), $p['blank'],
             implode(' ', $p['missing']), implode(' ', $p['rewrite']), $p['title'], $p['h1'],
             $p['viewport'] ? 'да' : 'не', $p['canonical'] ? 'да' : 'не', $p['description'] ? 'да' : 'не',
@@ -873,6 +921,8 @@ function report_html(array $j): string
         . $line('Нечитљивих страница', $s['necitljivo'])
         . $line('PHP фајлова изван провере', $s['php_neobuhvaceno'], 'скрипта чита само .html и .htm', true)
         . $line('Речи са мешаним ћириличним и латиничним словима', $s['mesano'], 'број страница: ' . $s['mesano_str'])
+        . $line('Назив није ПИО „Рајац“ (у тексту, наслову и опису)', $s['naziv'] ?? 0, 'број страница: ' . ($s['naziv_str'] ?? 0))
+        . $line('Погрешни наводници (треба „…“)', $s['navodnici'] ?? 0, 'број страница: ' . ($s['navodnici_str'] ?? 0))
         . $line('Ћириличне странице са латиничним речима (ван дозвољених)', $s['latinica_str'], 'део ће бити дозвољен — одлучује управљач')
         . $line('Латиничне странице (латиница није проверавана)', $s['latinica_nije_provereno'], '', true)
         . $line('target="_blank"', $s['blank'], 'број страница: ' . $s['blank_str'])
@@ -924,6 +974,14 @@ function report_html(array $j): string
         $o .= '<tr><td>' . h((string)$w) . '</td><td>' . $rows(array_values(array_unique($list)), 6) . '</td></tr>';
     }
     $o .= '</table></div>';
+
+    foreach (['naziv_oblici' => 'Облици назива који нису ПИО „Рајац“', 'navodnici_primeri' => 'Погрешни наводници'] as $key => $title) {
+        $o .= '<h2>' . h($title) . '</h2><div class="w"><table><tr><th>Облик</th><th>Где</th></tr>';
+        foreach (array_slice($j[$key] ?? [], 0, 300, true) as $w => $list) {
+            $o .= '<tr><td>' . h((string)$w) . '</td><td>' . $rows(array_values(array_unique($list)), 6) . '</td></tr>';
+        }
+        $o .= '</table></div>';
+    }
 
     $o .= '<h2>Латиничне речи на ћириличним страницама</h2><p>Број страница на којима се реч јавља (ван курзива и кода).</p>'
         . '<div class="w"><table><tr><th>Реч</th><th>Страница</th></tr>';
