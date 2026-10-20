@@ -1,6 +1,8 @@
 <?php
 declare(strict_types=1);
 require __DIR__ . '/lib.php';
+require __DIR__ . '/auth.php';
+rajac_sh_auth();
 
 $s = rajac_sh_load_latest();
 if (!$s) {
@@ -26,6 +28,7 @@ function cls($status): string {
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
 <title>Агент надзора система — ПИО Рајац</title>
 <style>
 :root{--bg:#07150f;--panel:#0e2419;--line:#284938;--text:#eef8f1;--muted:#9ab3a4;--ok:#2fe184;--late:#e5b94f;--partial:#f08b4b;--bad:#ff6666}
@@ -51,8 +54,9 @@ th,td{padding:12px 10px;border-bottom:1px solid #1d3d2d;text-align:left;vertical
 </section>
 
 <div class="actions">
-<a href="api.php" target="_blank">JSON снимак</a>
+<a href="api.php">JSON снимак</a>
 <a href="api.php?run=1">Покрени проверу сада</a>
+<a href="?odjava=1">Одјава</a>
 </div>
 
 <section class="grid">

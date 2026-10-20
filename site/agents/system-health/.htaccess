@@ -1,8 +1,8 @@
 Options -Indexes
 DirectoryIndex index.php
-<FilesMatch "^(lib|kustos-adapter)\.php$">
+<FilesMatch "^(lib|kustos-adapter|auth|cron)\.php$">
   Require all denied
 </FilesMatch>
-<FilesMatch "\.(jsonl|log)$">
+<FilesMatch "\.(jsonl|log|json|md)$">
   Require all denied
 </FilesMatch>

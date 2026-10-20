@@ -41,3 +41,4 @@ site/monitoring-izvestaji/
 # Систем
 .DS_Store
 Thumbs.db
+site/agents/system-health/config/lozinka.php
