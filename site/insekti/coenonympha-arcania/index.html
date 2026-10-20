@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+
+<html lang="sr">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Бисерна нимфа — Coenonympha arcania | Инсекти Рајца | ПИО „Рајац“</title>
+<meta content="Бисерна нимфа (Coenonympha arcania) — опис, биологија, станиште, фенологија, мониторинг и налази на Рајцу." name="description"/>
+<!-- PRELOAD LCP IMAGE (local responsive WebP) -->
+<!-- CRITICAL CSS (system fonts, no Google Fonts) -->
+<style>
+:root{
+  --plum-a:#123f54; --plum-b:#16546a; --plum-c:#356b63;
+  --sky:#0b2744; --sky-mid:#163a58; --sky-light:#1e5a84;
+  --gold:#c8a84b; --gold-light:#e8cc7a;
+  --cream:#f8f4ed; --warm:#fdfcfa;
+  --text:#1a1a2e; --muted:#6b7280; --border:#e0dbd3;
+  --forest:#2d5a27; --forest-dark:#1a3a15; --forest-light:#4a7c43;
+  --forest-bg:#edf7f0;
+  --red:#b8354a; --red-muted:#9a2d3e;
+  --radius:12px; --shadow:0 2px 12px rgba(0,0,0,.08);
+  --font-serif:"Cormorant Garamond","EB Garamond",Garamond,"Palatino Linotype","Book Antiqua",Georgia,"Times New Roman",serif;
+  --font-sans:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:var(--font-sans);background:var(--warm);color:var(--text);font-size:15px;line-height:1.7;min-height:100vh;display:flex;flex-direction:column;text-rendering:optimizeSpeed}
+a{text-decoration:none;color:inherit}
+img{max-width:100%;display:block}
+
+.ins-topnav-wrap{background:linear-gradient(90deg,#142212 0%,#182a14 45%,#132312 100%);border-bottom:1px solid rgba(201,168,76,.18);position:sticky;top:0;z-index:200}
+html.admin-bar .ins-topnav-wrap{top:32px}
+.ins-topnav{max-width:1240px;margin:0 auto;padding:0 18px;display:flex;align-items:center;min-height:70px;gap:4px;flex-wrap:wrap}
+.ins-topnav-link{position:relative;color:rgba(255,255,255,.62);font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;padding:22px 10px 20px;transition:color .2s;white-space:nowrap}
+.ins-topnav-link:hover{color:#f4f0e6}
+.ins-topnav-link.is-active{color:var(--gold)}
+.ins-topnav-link.is-active::after{content:"";position:absolute;left:10px;right:10px;bottom:0;height:3px;border-radius:3px;background:var(--gold)}
+.ins-topnav-sep{color:rgba(255,255,255,.2);padding:0 2px;font-size:14px;align-self:center}
+.ins-topnav-current{color:rgba(255,255,255,.88);font-size:14px;font-weight:600;padding:22px 8px 20px;font-style:italic;max-width:300px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.ins-topnav-current-inline{color:var(--gold);font-size:.84em;text-transform:none;letter-spacing:0;font-weight:700;margin-left:2px;max-width:190px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+
+/* ── HERO — softer plum (was dark red) ── */
+.species-hero{background:linear-gradient(135deg,var(--plum-a) 0%,var(--plum-b) 56%,var(--plum-c) 100%);overflow:hidden;position:relative;contain:layout paint}
+.hero-inner{max-width:1060px;margin:0 auto;display:grid;grid-template-columns:1fr 420px;align-items:stretch}
+.hero-text{padding:48px 32px 44px 32px;display:flex;flex-direction:column;justify-content:center}
+.back-link{color:rgba(255,255,255,.7);font-size:13px;font-weight:500;margin-bottom:20px;display:inline-flex;align-items:center;gap:6px}
+.back-link:hover{color:var(--gold-light)}
+.common-name{font-family:var(--font-serif);font-size:clamp(2.15rem,4.4vw,3rem);font-weight:300;color:#fff;line-height:1.05;letter-spacing:0;margin-bottom:6px}
+.latin-name{font-family:var(--font-serif);font-style:italic;font-size:1.3rem;color:var(--gold-light);margin-bottom:18px;font-weight:300}
+.hero-short{color:rgba(255,255,255,.86);font-size:14.5px;max-width:560px;line-height:1.75;margin-bottom:20px}
+.hero-pills{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:14px}
+.pill{font-size:11px;font-weight:700;letter-spacing:.04em;padding:6px 13px;border-radius:999px}
+.pill-order{background:rgba(200,168,75,.18);border:1px solid rgba(200,168,75,.3);color:var(--gold-light)}
+.pill-family{background:rgba(255,255,255,.10);border:1px solid rgba(255,255,255,.16);color:rgba(255,255,255,.85)}
+.pill-iucn{background:rgba(45,168,64,.22);border:1px solid rgba(45,168,64,.35);color:#86efac}
+.pill-bio{background:rgba(184,53,74,.22);border:1px solid rgba(184,53,74,.4);color:#f9b9c4}
+.hero-tags{display:flex;gap:7px;flex-wrap:wrap}
+.htag{font-size:11px;background:rgba(255,255,255,.10);border:1px solid rgba(255,255,255,.15);color:rgba(255,255,255,.85);padding:4px 10px;border-radius:999px;font-weight:600}
+.hero-photo{position:relative;overflow:hidden;border-left:1px solid rgba(255,255,255,.08);aspect-ratio:1/1;min-height:320px;background:#234d49}
+.hero-photo img{width:100%;height:100%;object-fit:cover;object-position:center 35%}
+.hero-photo-cap{position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(0,0,0,.72));padding:18px 14px 12px;font-size:10.5px;color:rgba(255,255,255,.92);font-style:italic;text-align:right}
+
+.infobar{background:#0c2f4f;border-top:1px solid rgba(255,255,255,.07)}
+.infobar-inner{max-width:1060px;margin:0 auto;display:grid;grid-template-columns:repeat(5,1fr)}
+.info-cell{padding:15px 20px;border-right:1px solid rgba(255,255,255,.07)}
+.info-cell:last-child{border-right:none}
+.info-label{font-size:11px;text-transform:uppercase;letter-spacing:1.2px;color:rgba(255,255,255,.78);font-weight:700;margin-bottom:6px}
+.info-val{font-size:14px;color:#fff;font-weight:600;line-height:1.35}
+
+.page-wrap{max-width:1060px;margin:0 auto;padding:36px 24px 56px;flex:1;width:100%}
+.tabs{display:flex;border-bottom:2px solid var(--border);overflow-x:auto;scrollbar-width:none;margin-bottom:6px}
+.tabs::-webkit-scrollbar{display:none}
+.tab{padding:13px 20px;font-size:13.5px;font-weight:700;color:var(--muted);cursor:pointer;border:none;background:none;white-space:nowrap;border-bottom:2.5px solid transparent;margin-bottom:-2px;transition:color .2s;display:inline-flex;align-items:center;gap:6px}
+.tab:hover{color:var(--sky)}
+.tab.active{color:var(--sky);border-bottom-color:var(--sky-light)}
+.tab-panel{display:none;padding:30px 0;content-visibility:auto;contain-intrinsic-size:1px 600px}
+.tab-panel.active{display:block}
+
+@media(max-width:900px){
+  .hero-inner{grid-template-columns:1fr}
+  .hero-photo{aspect-ratio:16/10;min-height:240px}
+  .infobar-inner{grid-template-columns:1fr 1fr}
+  .ins-topnav-current{display:none}.ins-topnav-current-inline{color:var(--gold);font-size:.84em;text-transform:none;letter-spacing:0;font-weight:700;margin-left:2px;max-width:190px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+}
+
+@media(max-width:960px){.hero-inner{grid-template-columns:1fr!important}.hero-photo{order:-1;min-height:260px;border-left:none!important;border-bottom:1px solid rgba(255,255,255,.08)}.hero-photo img{width:100%;height:100%;object-fit:cover;display:block}.hero-text{padding:32px 24px 28px!important}}
+@media(max-width:640px){.hero-text{padding:30px 18px 24px!important}.common-name{font-size:clamp(2rem,10vw,2.7rem)!important}.hero-photo{min-height:220px!important}.ins-topnav-current{display:none}.ins-topnav-current-inline{color:var(--gold);font-size:.84em;text-transform:none;letter-spacing:0;font-weight:700;margin-left:2px;max-width:190px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}}
+
+.review-grid-4{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
+.review-grid-3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-top:12px}
+.review-micro,.review-mini{background:#fff;border:1px solid var(--border);border-radius:12px;padding:14px}
+.review-micro h4,.review-mini h4{font-size:13px;color:var(--forest-dark);margin-bottom:6px;font-family:var(--font-sans)}
+.review-micro p,.review-mini p{font-size:13.5px;line-height:1.72;color:var(--text)}
+.legend-note,.note-soft{margin-top:12px;font-size:13px;line-height:1.7;color:var(--text-muted);background:#f7f4ef;border:1px solid var(--border);border-radius:10px;padding:10px 12px}
+.pheno-grid{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:10px;margin-top:14px}
+.pheno-card{border-radius:12px;padding:12px 10px;border:1px solid var(--border)}
+.pheno-month{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--forest-dark);margin-bottom:6px}
+.pheno-note{font-size:12px;line-height:1.55;color:var(--text)}
+.phase-rest{background:#f1eee8}.phase-early{background:#eef5ff}.phase-active{background:#eef8f0}.phase-peak{background:#fff1cf;border-color:#edc661}.phase-late{background:#fff3e8}
+.pheno-legend{display:flex;flex-wrap:wrap;gap:10px;margin-top:12px}.pheno-chip{display:inline-flex;align-items:center;gap:7px;font-size:12px;color:var(--text-muted);background:#fff;border:1px solid var(--border);border-radius:999px;padding:6px 10px}.pheno-dot{width:10px;height:10px;border-radius:50%;display:inline-block}.pheno-dot.early{background:#cfe0ff}.pheno-dot.active{background:#cfeccb}.pheno-dot.peak{background:#ffd779}.pheno-dot.late{background:#ffd7b0}.pheno-dot.rest{background:#d9d4ca}
+.cta-green{margin-top:14px;background:#edf7f0;border:1px solid #b5d5b5;border-radius:12px;padding:14px 16px}.cta-green h3{font-size:16px;color:#1f5d2b;margin-bottom:6px;font-family:var(--font-sans)}.cta-green p{font-size:14px;line-height:1.7;color:#21442a}
+
+@media(max-width:900px){.hero-inner{grid-template-columns:1fr!important}.hero-photo{order:-1;aspect-ratio:16/10;min-height:240px!important}.ins-topnav-current{display:none!important}.ins-topnav-current-inline{color:var(--gold);font-size:.84em;text-transform:none;letter-spacing:0;font-weight:700;margin-left:2px;max-width:190px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.review-grid-4{grid-template-columns:repeat(2,minmax(0,1fr))}.review-grid-3{grid-template-columns:1fr}}
+@media(max-width:640px){.hero-text{padding:38px 22px 34px!important}.page-wrap{padding:28px 18px 48px!important}.common-name{font-size:clamp(2rem,10vw,2.7rem)!important}.pheno-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.kv-grid,.obs-grid{grid-template-columns:1fr!important}}
+
+
+/* unified mobile hero + thin species names */
+.common-name,.latin-name{font-weight:300!important}
+.hero-photo img{display:block!important;visibility:visible!important;opacity:1!important;max-width:100%}
+@media(max-width:960px){.hero-inner{grid-template-columns:1fr!important}.hero-photo{order:-1!important;display:block!important;aspect-ratio:16/10!important;min-height:240px!important;border-left:none!important;border-bottom:1px solid rgba(255,255,255,.08)!important}.hero-photo img{width:100%!important;height:100%!important;object-fit:cover!important;object-position:center center!important}}
+@media(max-width:640px){.hero-photo{min-height:220px!important}.hero-photo-cap{font-size:10px!important;line-height:1.45!important;padding:16px 12px 11px!important}.common-name{font-size:clamp(2rem,10vw,2.7rem)!important}}
+
+</style>
+<!-- DEFERRED CSS (non-critical, below-fold) -->
+<style>
+.card,.eco-card,.warn-card,.bio-card{border-radius:var(--radius);padding:22px;margin-bottom:16px}
+.card{background:#fff;border:1px solid var(--border)}
+.eco-card{background:linear-gradient(135deg,var(--forest-bg),#f5fbf7);border:1px solid #b8dfc5;border-left:4px solid var(--forest)}
+.warn-card{background:#fef9ee;border:1px solid #f0c040;border-left:4px solid #e6a700}
+.bio-card{background:linear-gradient(135deg,#fff9f9,#fff5f5);border:1px solid #fecaca;border-left:4px solid var(--red)}
+.card-title{font-size:12px;text-transform:uppercase;letter-spacing:.1em;color:var(--muted);font-weight:800;margin-bottom:14px;display:flex;align-items:center;gap:8px}
+.card-body{font-size:14px;color:#374151;line-height:1.85}
+.card-body p{margin-bottom:12px}
+.card-body p:last-child{margin-bottom:0}
+.kv-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:20px}
+.kv-item{background:#fff;border:1px solid var(--border);border-radius:10px;padding:15px 17px}
+.kv-l{font-size:10px;text-transform:uppercase;letter-spacing:.1em;color:var(--muted);font-weight:800;margin-bottom:6px}
+.kv-v{font-size:13.5px;font-weight:700;color:var(--text);line-height:1.4}
+.wing-diagram-box{background:linear-gradient(135deg,#0f2744,#1a3a5c);border-radius:var(--radius);padding:24px 26px;display:grid;grid-template-columns:auto 1fr;gap:28px;align-items:center;margin-bottom:16px;border:1px solid rgba(201,168,76,.18)}
+.wing-diagram-box .wd-legend{color:#fff}
+.wing-diagram-box .wd-title{font-size:11px;text-transform:uppercase;letter-spacing:.12em;color:var(--gold-light);font-weight:800;margin-bottom:12px}
+.wing-diagram-box ul{list-style:none}
+.wing-diagram-box li{display:flex;align-items:flex-start;gap:9px;font-size:13px;color:rgba(255,255,255,.88);line-height:1.6;margin-bottom:7px}
+.wing-diagram-box .wd-dot{width:13px;height:13px;border-radius:2px;flex-shrink:0;margin-top:3px}
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:16px}
+.info-box{background:#fff;border:1px solid var(--border);border-radius:10px;padding:17px}
+.info-box h3{font-size:12px;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);font-weight:800;margin-bottom:8px}
+.info-box p{font-size:13px;line-height:1.72;color:#374151}
+.migration-block{background:linear-gradient(135deg,#2d0f14,#5d1a24);border-radius:var(--radius);padding:24px;margin-bottom:16px;display:grid;grid-template-columns:1fr 1fr;gap:22px;color:#fff;border:1px solid rgba(184,53,74,.3)}
+.migr-text h3{font-size:13px;font-weight:800;color:var(--gold-light);margin-bottom:10px;text-transform:uppercase;letter-spacing:.08em}
+.migr-text p{font-size:13.5px;line-height:1.75;color:rgba(255,255,255,.86)}
+.migr-stats{display:flex;flex-direction:column;gap:10px}
+.migr-stat{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.12);border-radius:8px;padding:12px 16px}
+.migr-stat .mn{font-family:var(--font-serif);font-size:1.9rem;font-weight:700;color:var(--gold);line-height:1}
+
+.pheno-section{margin-bottom:18px}
+.pheno-title{font-size:11px;text-transform:uppercase;letter-spacing:.1em;color:var(--muted);font-weight:800;margin-bottom:12px;display:flex;align-items:center;gap:8px}
+.pheno-cards{display:grid;grid-template-columns:repeat(12,1fr);gap:6px}
+.ph-card{background:#f3efe8;border:1px solid #e2dbd0;border-radius:8px;min-height:72px;padding:10px 4px 8px;text-align:center;display:flex;flex-direction:column;justify-content:space-between}
+.ph-card .m-name{display:block;font-weight:800;color:#6b7280;margin-bottom:6px;font-size:11px;letter-spacing:.02em}
+.ph-card .m-icon{display:block;font-size:18px;line-height:1}
+.ph-card.is-sporadic{background:#f2efeb}
+.ph-card.is-active{background:#d7ebff;border-color:#b8d8fb}
+.ph-card.is-peak{background:#ffe1a8;border-color:#f3c56a}
+.ph-card.is-migration{background:#ffd5b7;border-color:#f0b07c}
+.ph-card.is-larva{background:#dff0d9;border-color:#bcd7b4}
+.ph-legend{display:flex;flex-wrap:wrap;gap:18px;margin-top:14px;align-items:center}
+.ph-legend-item{display:inline-flex;align-items:center;gap:7px;color:#6b7280;font-size:13px}
+.ph-legend-swatch{width:13px;height:13px;border-radius:3px;border:1px solid rgba(0,0,0,.08);display:inline-block}
+.ph-legend-swatch.sporadic{background:#f2efeb}
+.ph-legend-swatch.active{background:#d7ebff}
+.ph-legend-swatch.peak{background:#ffe1a8}
+.ph-legend-swatch.migration{background:#ffd5b7}
+.ph-legend-swatch.larva{background:#dff0d9}
+
+.smart-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-bottom:14px}
+.smart-card{background:#fff;border:1px solid var(--border);border-radius:10px;padding:15px 17px;border-left:3px solid var(--sky-light)}
+.smart-card h3{font-size:13px;font-weight:800;color:var(--sky);margin-bottom:6px}
+.smart-card p{font-size:13px;line-height:1.65;color:#374151}
+.ext-links{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px}
+.ext-btn{display:inline-flex;align-items:center;gap:7px;background:var(--cream);border:1.5px solid var(--border);border-radius:8px;padding:10px 17px;font-size:13px;font-weight:700;color:var(--sky);transition:background .18s}
+.ext-btn:hover{background:var(--sky);color:#fff;border-color:var(--sky)}
+.ext-btn.gbif{border-color:#c8a020;color:#7a5a00}
+.ext-btn.gbif:hover{background:#c8a020}
+.ext-btn.inat{border-color:#4a8c5c;color:var(--forest)}
+.ext-btn.inat:hover{background:var(--forest)}
+.bottom-section{margin-top:52px;border-top:3px solid var(--border);padding-top:44px;content-visibility:auto;contain-intrinsic-size:1px 1400px}
+.bottom-section-heading{text-align:center;margin-bottom:36px}
+.bottom-section-heading h2{font-family:var(--font-serif);font-size:1.85rem;font-weight:700;color:var(--forest-dark);margin-bottom:10px}
+.bottom-section-heading p{font-size:14.5px;color:var(--muted);max-width:620px;margin:0 auto;line-height:1.75}
+.obs-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-bottom:28px}
+.obs-card{background:#fff;border:1px solid var(--border);border-radius:var(--radius);padding:20px 17px;text-align:center;box-shadow:var(--shadow)}
+.obs-icon{font-size:30px;display:block;margin-bottom:12px}
+.obs-card h3{font-size:12px;font-weight:800;text-transform:uppercase;letter-spacing:.08em;color:var(--forest-dark);margin-bottom:8px}
+.obs-card p{font-size:12.5px;color:#4b5563;line-height:1.65}
+.obs-details{display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px;margin-bottom:28px}
+.obs-detail-card{background:#fff;border:1px solid var(--border);border-radius:var(--radius);padding:20px}
+.obs-detail-card h3{font-size:12px;font-weight:800;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);margin-bottom:12px;display:flex;align-items:center;gap:7px}
+.obs-detail-card ul{list-style:none}
+.obs-detail-card ul li{font-size:13px;color:#374151;padding:6px 0;border-bottom:1px solid var(--border);line-height:1.55}
+.obs-detail-card ul li:last-child{border-bottom:none}
+.obs-detail-card ul li::before{content:"→ ";color:var(--forest);font-weight:700}
+.lep-tips{background:linear-gradient(135deg,#fff4f5,#ffe8ea);border:1px solid #fecaca;border-left:4px solid var(--red);border-radius:var(--radius);padding:22px;margin-bottom:28px}
+.lep-tips h3{font-size:12.5px;font-weight:800;text-transform:uppercase;letter-spacing:.08em;color:#7f1d1d;margin-bottom:12px;display:flex;align-items:center;gap:7px}
+.lep-tips p{font-size:13px;color:#4c1d1f;line-height:1.8}
+.lep-tips strong{color:#3b0a0f}
+.inat-cta{background:linear-gradient(135deg,#142212,#1a3a15);border-radius:var(--radius);padding:28px 32px;display:grid;grid-template-columns:1fr auto;gap:24px;align-items:center;margin-bottom:24px}
+.inat-cta-text h3{font-size:1.15rem;font-weight:800;color:#fff;margin-bottom:8px}
+.inat-cta-text p{font-size:13px;color:rgba(255,255,255,.82);line-height:1.72;max-width:540px}
+.inat-cta-btns{display:flex;flex-direction:column;gap:10px;flex-shrink:0}
+.cta-btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:12px 22px;border-radius:8px;font-size:13px;font-weight:700;transition:background .18s;white-space:nowrap}
+.cta-btn-primary{background:var(--gold);color:#2d1a0f;border:none}
+.cta-btn-primary:hover{background:var(--gold-light)}
+.cta-btn-secondary{background:rgba(255,255,255,.12);color:#fff;border:1.5px solid rgba(255,255,255,.25)}
+.cta-btn-secondary:hover{background:rgba(255,255,255,.22)}
+.species-nav{display:flex;justify-content:space-between;align-items:center;margin-top:40px;padding-top:24px;border-top:2px solid var(--border);gap:12px;flex-wrap:wrap}
+.species-nav a{font-size:13px;font-weight:700;color:var(--sky-light);padding:10px 20px;border:1.5px solid #c0d8e8;border-radius:8px;background:#f0f8ff;transition:background .18s}
+.species-nav a:hover{background:var(--sky);color:#fff;border-color:var(--sky)}
+.species-nav .center-link{background:var(--sky);color:#fff;border-color:var(--sky)}
+.species-nav .center-link:hover{background:var(--sky-mid)}
+.site-footer{background:var(--forest-dark);color:rgba(255,255,255,.7);text-align:center;padding:24px;font-size:13px}
+@media(max-width:900px){
+  .kv-grid,.obs-grid{grid-template-columns:1fr 1fr}
+  .obs-details,.smart-grid{grid-template-columns:1fr}
+  .two-col,.wing-diagram-box,.migration-block,.inat-cta{grid-template-columns:1fr}
+  .wing-diagram-box{text-align:center}
+  .pheno-cards{grid-template-columns:repeat(6,1fr)}
+}
+@media(max-width:500px){
+  .kv-grid,.obs-grid{grid-template-columns:1fr}
+}
+</style>
+<style id="rajac-ds-menu-static-css">
+:root{--rajac-nav:#0d1b2a;--rajac-gold:#d8b55b;--rajac-nav-text:rgba(255,255,255,.72)}
+.rajac-ds-nav{background:var(--rajac-nav);position:sticky;top:0;z-index:999999;border-bottom:1px solid rgba(255,255,255,.08);font-family:"Cormorant Garamond","EB Garamond",Garamond,"Palatino Linotype","Book Antiqua",Georgia,"Times New Roman",serif!important}
+body.admin-bar .rajac-ds-nav{top:32px}.rajac-ds-nav *{box-sizing:border-box}.rajac-ds-nav-inner{max-width:1180px;margin:0 auto;padding:0 18px;display:flex;align-items:stretch;min-height:56px;gap:0;overflow-x:auto;scrollbar-width:none}.rajac-ds-nav-inner::-webkit-scrollbar{display:none}.rajac-ds-home{display:flex;align-items:center;gap:9px;padding-right:20px;margin-right:8px;border-right:1px solid rgba(255,255,255,.12);flex-shrink:0;color:var(--rajac-gold)!important;text-decoration:none!important;font-weight:600;font-size:16px;letter-spacing:.03em}.rajac-ds-home-mark{width:18px;height:18px;display:inline-grid;place-items:center;color:var(--rajac-gold)}.rajac-ds-nav-item{position:relative;display:flex;align-items:center;gap:7px;padding:0 15px;color:var(--rajac-nav-text)!important;font-size:15px;font-weight:600;letter-spacing:.045em;text-transform:uppercase;white-space:nowrap;text-decoration:none!important}.rajac-ds-nav-item:hover{color:rgba(255,255,255,.94)!important;background:rgba(255,255,255,.035)}.rajac-ds-icon{font-size:15px;line-height:1}.rajac-ds-nav-item.rajac-ds-active{color:var(--rajac-gold)!important}.rajac-ds-nav-item.rajac-ds-active:after{content:"";position:absolute;left:15px;right:15px;bottom:8px;height:2px;border-radius:2px;background:var(--rajac-gold)}.rajac-ds-nav-trofo{color:#c8a24e!important}.rajac-ds-nav-trofo:hover{color:#f0cb78!important}.ins-topnav-wrap,.site-header{display:none!important;height:0!important;min-height:0!important;max-height:0!important;overflow:hidden!important;visibility:hidden!important}@media(max-width:720px){.rajac-ds-nav-inner{padding:0 12px}.rajac-ds-home{padding-right:14px}.rajac-ds-nav-item{font-size:13px;padding:0 12px}.rajac-ds-nav-item.rajac-ds-active:after{left:12px;right:12px}}
+
+/* v5: чиста навигација врста и извор фотографије на hover */
+.back-link{display:none!important}
+.hero-photo{cursor:help}
+.hero-photo:focus{outline:2px solid rgba(255,255,255,.55);outline-offset:-3px}
+.hero-photo-cap{opacity:0;transform:translateY(8px);transition:opacity .18s ease,transform .18s ease;pointer-events:none}
+.hero-photo:hover .hero-photo-cap,.hero-photo:focus .hero-photo-cap,.hero-photo:focus-within .hero-photo-cap{opacity:1;transform:translateY(0)}
+@media(hover:none){.hero-photo-cap{opacity:1;transform:none}}
+.species-nav{display:grid!important;grid-template-columns:1fr auto 1fr;align-items:center;margin-top:42px;padding-top:24px;border-top:2px solid var(--border,#e0dbd3);gap:14px;clear:both}
+.species-nav a{display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:10px 20px;border-radius:10px;border:1.5px solid #b8d3e7;background:#f7fbff;color:var(--sky,#0b2744)!important;font-size:13px;font-weight:800;text-decoration:none!important;box-shadow:0 1px 0 rgba(255,255,255,.8) inset;white-space:nowrap}
+.species-nav .prev-link{justify-self:start}.species-nav .next-link{justify-self:end}.species-nav .center-link{justify-self:center;background:var(--sky,#0b2744)!important;color:#fff!important;border-color:var(--sky,#0b2744)!important}
+.species-nav a:hover{background:var(--sky,#0b2744)!important;color:#fff!important;border-color:var(--sky,#0b2744)!important}
+@media(max-width:640px){.species-nav{grid-template-columns:1fr;gap:8px}.species-nav .prev-link,.species-nav .next-link,.species-nav .center-link{justify-self:stretch;width:100%}}
+</style>
+<link rel="stylesheet" href="../insekti-responsive.css?v=20260716-v3">
+
+<link rel="stylesheet" href="/insekti/insekti-krediti-kao-ptice.css?v=20260817v3" data-pio="PIO-INSEKTI-FOTO-KREDITI-20260817-V3">
+<style id="pio-insekti-credit-nobg-final" data-pio="PIO-INSEKTI-CREDIT-NOBG-FINAL-20260817">
+/* FINAL: kredit je samo taman tekst preko fotografije — bez trake, gradijenta ili box-a. */
+html body .species-hero .hero-photo .hero-photo-cap,
+html body .hero-photo .hero-photo-cap{
+  position:absolute!important;
+  left:12px!important;right:12px!important;bottom:9px!important;
+  width:auto!important;max-width:calc(100% - 24px)!important;
+  z-index:999!important;margin:0!important;padding:0!important;
+  border:0!important;border-radius:0!important;
+  background:transparent!important;background-color:transparent!important;background-image:none!important;
+  box-shadow:none!important;backdrop-filter:none!important;-webkit-backdrop-filter:none!important;
+  color:#111827!important;
+  font:600 11px/1.35 Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif!important;
+  font-style:normal!important;text-align:left!important;text-transform:none!important;letter-spacing:0!important;
+  text-shadow:0 1px 1px rgba(255,255,255,.98),0 0 3px rgba(255,255,255,.92),0 0 6px rgba(255,255,255,.72)!important;
+  opacity:0!important;visibility:hidden!important;transform:translateY(4px)!important;pointer-events:none!important;
+  transition:opacity .14s ease 0s,transform .14s ease 0s,visibility 0s linear .14s!important;
+}
+html body .species-hero .hero-photo .hero-photo-cap *,
+html body .hero-photo .hero-photo-cap *{
+  background:transparent!important;background-color:transparent!important;background-image:none!important;
+  border:0!important;border-radius:0!important;box-shadow:none!important;
+  color:#111827!important;text-shadow:inherit!important;
+}
+html body .hero-photo .hero-photo-cap::before,
+html body .hero-photo .hero-photo-cap::after,
+html body .hero-photo .hero-photo-cap *::before,
+html body .hero-photo .hero-photo-cap *::after{background:transparent!important;background-image:none!important;box-shadow:none!important;}
+html body .hero-photo .hero-photo-cap a{color:#111827!important;text-decoration:none!important;pointer-events:inherit!important;}
+html body .hero-photo .hero-photo-cap .pio-original{text-decoration:underline!important;text-underline-offset:2px!important;}
+@media (hover:hover) and (pointer:fine){
+  html body .species-hero .hero-photo:hover .hero-photo-cap,
+  html body .hero-photo:hover .hero-photo-cap,
+  html body .hero-photo:focus-within .hero-photo-cap,
+  html body .hero-photo.pio-credit-open .hero-photo-cap,
+  html body .hero-photo.is-credit-visible .hero-photo-cap{
+    opacity:1!important;visibility:visible!important;transform:translateY(0)!important;pointer-events:auto!important;
+    transition:opacity .14s ease 1s,transform .14s ease 1s,visibility 0s linear 1s!important;
+  }
+}
+@media (hover:none), (pointer:coarse){
+  html body .hero-photo.pio-credit-open .hero-photo-cap,
+  html body .hero-photo.is-credit-visible .hero-photo-cap{
+    opacity:1!important;visibility:visible!important;transform:none!important;pointer-events:auto!important;transition:none!important;
+  }
+}
+@media(max-width:680px){
+  html body .hero-photo .hero-photo-cap{left:8px!important;right:8px!important;bottom:7px!important;max-width:calc(100% - 16px)!important;font-size:10px!important;}
+}
+</style>
+<style id="rajac-okvir-v1">.rajac-ds-home,.rfx-nav-home{display:flex!important;align-items:center!important;line-height:1!important}.rajac-ds-home>span,.rfx-nav-home>span{display:inline-flex!important;align-items:center!important;line-height:1!important}.rajac-ds-home>span:first-child,.rfx-nav-home>span:first-child{justify-content:center;width:18px;height:18px}</style>
+<link rel="stylesheet" href="/biljke-map-live/assets/live-map.css?v=13">
+<style id="lk-style">.lk-section .rfm-map{height:420px}@media(max-width:700px){.lk-section .rfm-map{height:320px}}.lk-section .rfm-method a{color:#125b37;text-decoration:underline}</style>
+</head>
+<body class="pio-insekti-responsive">
+<nav aria-label="Главни мени ПИО Рајац" class="rajac-ds-nav"><div class="rajac-ds-nav-inner"><a class="rajac-ds-home" href="https://piorajac.rs/"><span aria-hidden="true" class="rajac-ds-home-mark">⊙</span><span>ПИО „РАЈАЦ“</span></a><button class="pio-insekti-menu-toggle" type="button" aria-expanded="false" aria-label="Отвори мени"><span class="pio-insekti-menu-icon" aria-hidden="true"></span>МЕНИ</button><a class="rajac-ds-nav-item" href="https://piorajac.rs/biljke/"><span aria-hidden="true" class="rajac-ds-icon">🌿</span><span>БИЉКЕ</span></a><a class="rajac-ds-nav-item" href="https://piorajac.rs/ptice/"><span aria-hidden="true" class="rajac-ds-icon">🦉</span><span>ПТИЦЕ</span></a><a class="rajac-ds-nav-item rajac-ds-active" href="https://piorajac.rs/insekti/"><span aria-hidden="true" class="rajac-ds-icon">🦋</span><span>ИНСЕКТИ</span></a><a class="rajac-ds-nav-item" href="https://piorajac.rs/sisari/"><span aria-hidden="true" class="rajac-ds-icon">🐾</span><span>СИСАРИ</span></a><a class="rajac-ds-nav-item" href="https://piorajac.rs/gljive/"><span aria-hidden="true" class="rajac-ds-icon">🍄</span><span>ГЉИВЕ</span></a><a class="rajac-ds-nav-item rajac-ds-nav-trofo" href="https://piorajac.rs/trofodinamika/"><span aria-hidden="true" class="rajac-ds-icon">🔗</span><span>ТРОФОДИНАМИКА</span></a></div></nav>
+<section class="species-hero"><div class="hero-inner"><div class="hero-text"><h1 class="common-name">Бисерна нимфа</h1><div class="latin-name">Coenonympha arcania (Linnaeus, 1761)</div><p class="hero-short">Ситан смеђаш шумских рубова, лако препознатљив по широком белом појасу и низу окца на наличју задњег крила. На Рајцу је историјски забележен 2015. године.</p><div class="hero-pills"><span class="pill pill-order">Lepidoptera</span><span class="pill pill-family">Nymphalidae</span><span class="pill pill-iucn">Историјски налаз</span><span class="pill pill-family">мај–август</span></div><div class="hero-tags"><span class="htag">🦋 ситан смеђаш</span><span class="htag">⚪ бисерни бели појас</span><span class="htag">⭕ низ окца</span><span class="htag">🌳 жбунасти рубови</span></div></div><div class="hero-photo" tabindex="0" aria-label="Извор фотографије доступан је задржавањем миша, фокусом или додиром."><img alt="Бисерна нимфа — Coenonympha arcania" data-fallback="/insekti/assets/order-lepidoptera.webp" decoding="async" fetchpriority="high" height="853" loading="eager" sizes="(max-width: 960px) 100vw, 420px" src="/insekti/assets/heroes/coenonympha-arcania.webp" srcset="/insekti/assets/heroes-mobile/coenonympha-arcania.webp 640w, /insekti/assets/heroes/coenonympha-arcania.webp 1280w" width="1280"><div class="hero-photo-cap"><a class="pio-insect-credit" href="https://commons.wikimedia.org/wiki/File:Coenonympha_arcania_LC0349.jpg" target="_blank" rel="noopener noreferrer"><strong>Фото: Jörg Hempel / Wikimedia Commons</strong>, CC BY-SA 3.0 DE — <span class="pio-original">оригинал</span></a></div></div></div></section>
+<section class="infobar"><div class="infobar-inner"><div class="info-cell"><div class="info-label">Размах крила</div><div class="info-val">30–38 mm</div></div><div class="info-cell"><div class="info-label">Генерације</div><div class="info-val">1 / год.</div></div><div class="info-cell"><div class="info-label">Хранитељке</div><div class="info-val">траве (<em>Festuca</em>, <em>Brachypodium</em>, <em>Bromus</em>)</div></div><div class="info-cell"><div class="info-label">Активност</div><div class="info-val">мај–август</div></div><div class="info-cell"><div class="info-label">Налази Рајца</div><div class="info-val">2015</div></div></div></section>
+<main class="page-wrap"><div aria-label="Садржај странице" class="tabs" id="mainTabs" role="tablist"><button aria-controls="tab-opis" aria-selected="true" class="tab active" data-tab="opis" id="tabbtn-opis" role="tab">🔍 Опис</button><button aria-controls="tab-staniste" aria-selected="false" class="tab" data-tab="staniste" id="tabbtn-staniste" role="tab">🌾 Станиште</button><button aria-controls="tab-biologija" aria-selected="false" class="tab" data-tab="biologija" id="tabbtn-biologija" role="tab">🐛 Биологија</button><button aria-controls="tab-ekologija" aria-selected="false" class="tab" data-tab="ekologija" id="tabbtn-ekologija" role="tab">🌐 Еколошка улога</button><button aria-controls="tab-monitoring" aria-selected="false" class="tab" data-tab="monitoring" id="tabbtn-monitoring" role="tab">📡 Мониторинг</button><button aria-controls="tab-pretnje" aria-selected="false" class="tab" data-tab="pretnje" id="tabbtn-pretnje" role="tab">⚠️ Претње</button><button aria-controls="tab-izvori" aria-selected="false" class="tab" data-tab="izvori" id="tabbtn-izvori" role="tab">📚 Налази и извори</button></div><div aria-labelledby="tabbtn-opis" class="tab-panel active" id="tab-opis" role="tabpanel"><div class="card review-addon"><div class="card-title"><span>🧭</span> Легенда препознавања</div><div class="card-body"><div class="review-grid-4"><div class="review-mini"><h4>Општа форма</h4><p>Ситан и окретан лептир који лети ниско око жбуња и високих трава. Готово увек мирује затворених крила, па је наличје главни теренски знак.</p></div><div class="review-mini"><h4>Горња страна</h4><p>Горња страна је наранџастосмеђа, са широким тамним рубом. Задње крило је углавном тамносмеђе, док су окца слабо видљива.</p></div><div class="review-mini"><h4>Доња страна</h4><p>На задњем крилу се истиче широк, неправилан беличаст појас бисерног изгледа и низ црних окца са белим средиштем и жутим прстеном.</p></div><div class="review-mini"><h4>Полни диморфизам</h4><p>Полови су слични. Женка је обично мало крупнија и светлија, а мужјак чешће патролира уз жбуње; фотографија наличја није поуздан основ за пол.</p></div></div><div class="legend-note">За поуздан теренски запис потребни су оштри кадрови обе стране крила и фотографија станишта. Једна замућена фотографија није довољна за искључивање сродних врста.</div></div></div>
+<div class="kv-grid"><div class="kv-item"><div class="kv-l">Ред</div><div class="kv-v">Lepidoptera</div></div><div class="kv-item"><div class="kv-l">Фамилија</div><div class="kv-v">Nymphalidae</div></div><div class="kv-item"><div class="kv-l">Размах</div><div class="kv-v">30–38 mm</div></div><div class="kv-item"><div class="kv-l">Генерације</div><div class="kv-v">1 / год.</div></div><div class="kv-item"><div class="kv-l">Лет имага</div><div class="kv-v">мај–август</div></div><div class="kv-item"><div class="kv-l">Налази Рајца</div><div class="kv-v">2015</div></div></div>
+<div class="card"><div class="card-title"><span>🔍</span> Морфолошки опис и детерминација</div><div class="card-body"><p>Горња страна је наранџастосмеђа, са широким тамним рубом. Задње крило је углавном тамносмеђе, док су окца слабо видљива.</p><p>На задњем крилу се истиче широк, неправилан беличаст појас бисерног изгледа и низ црних окца са белим средиштем и жутим прстеном.</p><p>Полови су слични. Женка је обично мало крупнија и светлија, а мужјак чешће патролира уз жбуње; фотографија наличја није поуздан основ за пол.</p></div></div>
+<div class="warn-card"><div class="card-title"><span>🔎</span> Сличне врсте и граница сигурне идентификације</div><div class="card-body"><p>Најсличнија је другим нимфама рода <em>Coenonympha</em>. Од кестењасте нимфе се одваја широким, јасним белим појасом који пресеца низ окца на наличју.</p></div></div></div><div aria-labelledby="tabbtn-staniste" class="tab-panel" id="tab-staniste" role="tabpanel"><div class="eco-card"><div class="card-title"><span>🌾</span> Станиште на Рајцу</div><div class="card-body"><p>Сунчани шумски рубови, светле шуме, чистине, жбунасти суви травњаци и зарасли путеви са разуђеним прелазом између траве и дрвенасте вегетације.</p></div></div><div class="two-col"><div class="info-box"><h3>🌡️ Микроклима и структура</h3><p>Кључан је топао, заклоњен мозаик виших трава, ниског жбуња и отворених сунчаних места. Лептири често слећу на врхове ниских гранчица.</p></div><div class="info-box"><h3>🌿 Биљке хранитељке</h3><p>Картирати бусенасте траве уз жбунасте рубове. При чишћењу оставити део ниског жбуња и непокошене траке, уместо стварања оштре границе шума–ливада.</p></div></div>
+<div class="card"><div class="pheno-section"><div class="pheno-title">🗓 ФЕНОСЕЗОНСКИ КАЛЕНДАР</div><div class="pheno-cards"><div class="ph-card is-sporadic"><span class="m-name">ЈАН</span><span class="m-icon">💤</span></div><div class="ph-card is-sporadic"><span class="m-name">ФЕБ</span><span class="m-icon">💤</span></div><div class="ph-card is-larva"><span class="m-name">МАР</span><span class="m-icon">🐛</span></div><div class="ph-card is-larva"><span class="m-name">АПР</span><span class="m-icon">🐛</span></div><div class="ph-card is-active"><span class="m-name">МАЈ</span><span class="m-icon">🦋</span></div><div class="ph-card is-peak"><span class="m-name">ЈУН</span><span class="m-icon">☀️</span></div><div class="ph-card is-peak"><span class="m-name">ЈУЛ</span><span class="m-icon">☀️</span></div><div class="ph-card is-active"><span class="m-name">АВГ</span><span class="m-icon">🦋</span></div><div class="ph-card is-larva"><span class="m-name">СЕП</span><span class="m-icon">🐛</span></div><div class="ph-card is-larva"><span class="m-name">ОКТ</span><span class="m-icon">🐛</span></div><div class="ph-card is-sporadic"><span class="m-name">НОВ</span><span class="m-icon">💤</span></div><div class="ph-card is-sporadic"><span class="m-name">ДЕЦ</span><span class="m-icon">💤</span></div></div><div class="ph-legend"><span class="ph-legend-item"><span class="ph-legend-swatch active"></span> имаго активан</span><span class="ph-legend-item"><span class="ph-legend-swatch peak"></span> очекивани врхунац</span><span class="ph-legend-item"><span class="ph-legend-swatch larva"></span> незрели стадијуми</span><span class="ph-legend-item"><span class="ph-legend-swatch sporadic"></span> зимовање / ван лета</span></div><p class="note-soft">Календар је оријентациони за централни Балкан. Надморска висина и време на Рајцу могу померити појаву за више недеља, па датум сваког налаза треба чувати као засебан податак.</p></div></div></div><div aria-labelledby="tabbtn-biologija" class="tab-panel" id="tab-biologija" role="tabpanel"><div class="card"><div class="card-title"><span>🐛</span> Животни циклус</div><div class="card-body"><p>Врста пролази потпуну метаморфозу: јаје → гусеница → лутка → имаго. Трајање сваке фазе зависи од температуре, влаге, надморске висине и квалитета хранитељке.</p></div></div><div class="review-grid-4"><div class="review-mini"><h4>🥚 Јаје</h4><p>Женка полаже јаја појединачно или у малим групама на стабљике трава, обично у непосредној близини ниског жбуња и осунчаних рубова.</p></div><div class="review-mini"><h4>🐛 Гусеница</h4><p>Зелена гусеница се храни различитим травама, укључујући вијуке, усправни безбридњак и сродне родове <em>Festuca</em>, <em>Brachypodium</em> и <em>Bromus</em>.</p></div><div class="review-mini"><h4>❄️ Зимовање</h4><p>Презимљава као млада или полурасла гусеница у бусену и сувој приземној вегетацији. Потпуно јесење чишћење уклања зимска склоништа.</p></div><div class="review-mini"><h4>🦋 Лутка и имаго</h4><p>Лутка је причвршћена ниско на трави или другој стабљици. На Рајцу се очекује једна генерација, са главним летом у јуну и јулу.</p></div></div><div class="cta-green"><h3>Зашто је биљка хранитељка кључна</h3><p>Нектарске биљке хране одрасле лептире, али само биљка хранитељка омогућава развој гусенице. Зато присуство имага не доказује да се врста на том месту и размножава.</p></div></div><div aria-labelledby="tabbtn-ekologija" class="tab-panel" id="tab-ekologija" role="tabpanel"><div class="eco-card"><div class="card-title"><span>🌐</span> Место у екосистему Рајца</div><div class="card-body"><p>Бисерна нимфа је показатељ очуваног прелаза између травњака и светле шуме. Зависи од фине просторне смене топлих травних микроместа и заклона жбуња.</p><p>Одрасли најчешће користе нектар, биљне сокове или минерале, док су гусенице храна птицама, пауцима, грабљивим инсектима и осама паразитоидима.</p></div></div><div class="smart-grid"><div class="smart-card"><h3>🌼 Одрасли лептир</h3><p>Нектар омогућава лет и репродукцију; бележење посећеног цвета показује које биљке одржавају врсту током сезоне.</p></div><div class="smart-card"><h3>🌿 Гусеница</h3><p>Везана је за ограничен скуп хранитељки и њихову микроклиму, па је осетљивија на промене станишта од имага.</p></div><div class="smart-card"><h3>🕷️ Трофичка мрежа</h3><p>Сви стадијуми улазе у исхрану предатора и паразитоида; локалне везе треба документовати, не претпостављати.</p></div><div class="smart-card"><h3>📈 Индикатор</h3><p>Понављани налази на истом трансекту могу указати на промене структуре вегетације и режима управљања.</p></div></div></div><div aria-labelledby="tabbtn-monitoring" class="tab-panel" id="tab-monitoring" role="tabpanel"><div class="card"><div class="card-title"><span>📡</span> Протокол мониторинга на Рајцу</div><div class="card-body"><p>Обиласке изводити по истој трансектној путањи у сунчаним и мирним условима. Понављати их кроз цео период активности и бележити понашање, број јединки и коришћени микростанишни елемент.</p><p>За сваки налаз сачувати GPS, датум, број јединки, фотографије горње и доње стране крила, коришћени цвет или хранитељку и шири снимак микростаништа.</p></div></div><div class="smart-grid"><div class="smart-card"><h3>📍 Локација</h3><p>GPS координате, надморска висина, експозиција и фотографија целог микростаништа.</p></div><div class="smart-card"><h3>🗓️ Време</h3><p>Датум, сат, температура, облачност и ветар. Обиласке понављати истом путањом и сличним темпом.</p></div><div class="smart-card"><h3>📷 Доказ</h3><p>Серија фотографија горње и доње стране крила, без хватања и оштећивања јединке.</p></div><div class="smart-card"><h3>🌱 Контекст</h3><p>Биљка хранитељка или нектарска биљка, висина траве, датум последњег кошења и видљиве претње.</p></div></div><div class="cta-green"><h3>Минимални стандард записа</h3><p>Запис без фотографије може бити сигнал за нову проверу, али не треба аутоматски користити као потврђен налаз врсте у јавној бази.</p></div></div><div aria-labelledby="tabbtn-pretnje" class="tab-panel" id="tab-pretnje" role="tabpanel"><div class="warn-card"><div class="card-title"><span>⚠️</span> Главне претње</div><div class="card-body"><p>Губитак хранитељки и нектарских ресурса, синхроно кошење, пестициди, зарастање или потпуно чишћење шумских рубова и климатски екстреми који ремете развојни циклус.</p></div></div><div class="two-col"><div class="info-box"><h3>✂️ Управљање вегетацијом</h3><p>Одржавати мозаик травњака, жбуња и шумских рубова; косити фазно; остављати непокошене траке; чувати хранитељке и нектарске биљке; избегавати пестициде.</p></div><div class="info-box"><h3>🧪 Хемијски притисци</h3><p>Не користити инсектициде на станишту; хербициди могу индиректно уништити хранитељке и нектарске биљке. Ђубрење мења структуру травњака у корист малог броја бујних врста.</p></div></div><div class="card"><div class="card-title"><span>🛡️</span> Конзервациони статус</div><div class="card-body"><p><strong>Историјски налаз Рајца.</strong> Национални или историјски статус не сме се мешати са проценом тренутне локалне бројности. За Рајац су потребни поновљиви подаци са истих трансеката.</p></div></div></div><div aria-labelledby="tabbtn-izvori" class="tab-panel" id="tab-izvori" role="tabpanel"><div class="card"><div class="card-title"><span>📚</span> Налази, таксономија и тумачење</div><div class="card-body"><p>Историјски скуп садржи налаз из 2015. године. За поновну потврду најважнији су обиласци жбунастих рубова у јуну и фотографија целог наличја задњег крила.</p><p>Прихваћено име странице усклађено је са GBIF таксономским записом: <em>Coenonympha arcania (Linnaeus, 1761)</em>. Историјске године преузете су из објављене листе дневних лептира Рајца за период 1977–2020.</p><p><strong>Ограничење:</strong> историјски податак потврђује да је врста забележена, али сам по себи не даје величину популације, тачну локацију данашњег станишта нити тренд. Све нове пријаве пролазе проверу фотографије и детерминације.</p></div></div><div class="ext-links"><a class="ext-btn inat" href="https://www.inaturalist.org/taxa/125815" target="_blank" rel="noopener">🌿 iNaturalist</a><a class="ext-btn gbif" href="https://www.gbif.org/species/search?q=Coenonympha%20arcania" target="_blank" rel="noopener">🗺️ GBIF</a><a class="ext-btn" href="https://www.eurobutterflies.com/sp/arcania.php" target="_blank" rel="noopener">📘 EuroButterflies</a><a class="ext-btn" href="/insekti/radovi/Dnevni_leptiri_PIO_Rajac_I_deo_istorijski_podaci_1977_2020.pdf" target="_blank">📄 Историјска листа Рајца</a></div></div><div class="card lk-section" data-lk-slug="coenonympha-arcania" aria-label="Карта налаза лептира" style="margin-top:22px"><div class="card-title"><span>🗺️</span> Карта налаза на Рајцу</div><div class="card-body"><p class="rfm-description">Налази врсте <em>Coenonympha arcania</em> у бази Biologer за подручје ПИО „Рајац“.</p><div class="rfm-map" role="region" aria-label="Интерактивна карта налаза: Бисерна нимфа"></div><div class="rfm-status" role="status" aria-live="polite">Учитавање налаза…</div><div class="rfm-legend" aria-label="Легенда карте"><span><i style="--c:#e5af29"></i>Граница ПИО</span> <span><i style="--c:#e44e4e"></i>Режим I</span> <span><i style="--c:#f5b35b"></i>Режим II</span> <span><i style="--c:#73b98c"></i>Режим III</span> <span class="rfm-legend-point" hidden><i style="--c:#007f68"></i>Потврђен налаз</span> <span class="rfm-legend-point lk-legend-wait" hidden><i style="--c:#d47c18"></i>Чека потврду</span></div><p class="rfm-method">Подаци: <a href="https://biologer.rs/">Biologer.rs</a>. Положај тачака заокружен је на око 10 m. Одсуство тачке на неком месту не значи да врсте тамо нема.</p></div></div>
+<style>.leptiri-arrow-nav{max-width:1120px;margin:34px auto 24px;padding:24px 14px 8px;border-top:1px solid #d8d0c4;display:grid;grid-template-columns:1fr auto 1fr;align-items:center}.leptiri-arrow-nav a{width:48px;height:48px;border:1px solid #b8cfe5;border-radius:12px;display:grid;place-items:center;background:#f6fbff;color:#0b2948;font:bold 25px/1 system-ui;text-decoration:none}.leptiri-arrow-nav .all{justify-self:center;width:auto;min-width:150px;padding:0 18px;font-size:14px}.leptiri-arrow-nav .next{justify-self:end}</style><div class="leptiri-arrow-nav"><a href="/insekti/brintesia-circe/" aria-label="Претходни лептир">←</a><a class="all" href="/insekti/dnevni-leptiri/" aria-label="Сви лептири">🦋 Сви лептири</a><a class="next" href="/insekti/coenonympha-glycerion/" aria-label="Следећи лептир">→</a></div></main>
+<script defer="">
+(function(){
+  const tabs=document.querySelectorAll('#mainTabs .tab');
+  const panels=document.querySelectorAll('.tab-panel');
+  function activateTab(t){
+    tabs.forEach(x=>{x.classList.remove('active');x.setAttribute('aria-selected','false');});
+    panels.forEach(p=>p.classList.remove('active'));
+    t.classList.add('active');
+    t.setAttribute('aria-selected','true');
+    const el=document.getElementById('tab-'+t.dataset.tab);
+    if(el) el.classList.add('active');
+  }
+  tabs.forEach(t=>{
+    t.addEventListener('click',()=>activateTab(t));
+    t.addEventListener('keydown',(e)=>{
+      const arr=[...tabs];
+      const i=arr.indexOf(t);
+      if(e.key==='ArrowRight'){e.preventDefault();activateTab(arr[(i+1)%arr.length]);arr[(i+1)%arr.length].focus();}
+      if(e.key==='ArrowLeft'){e.preventDefault();activateTab(arr[(i-1+arr.length)%arr.length]);arr[(i-1+arr.length)%arr.length].focus();}
+    });
+  });
+})();
+</script>
+<script defer="" src="/insekti/assets/insekti-doprinos.js?v=20260817-nobg-final"></script>
+<button id="pio-insekti-vrh" type="button" aria-label="Врати се на врх странице" title="ВРХ"><span class="arr" aria-hidden="true">↑</span><span class="txt">ВРХ</span></button><script defer src="../insekti-responsive.js?v=20260716-v3"></script>
+
+<script src="/insekti/insekti-krediti-kao-ptice.js?v=20260817v3" defer data-pio="PIO-INSEKTI-FOTO-KREDITI-20260817-V3"></script>
+<script defer src="/insekti/leptiri-karta/leptiri-karta.js?v=3"></script>
+</body>
+</html>
