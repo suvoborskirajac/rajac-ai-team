@@ -692,12 +692,12 @@ body .rfx-chapter-nav,body nav.rfx-chapter-nav,body .topnav,body nav.topnav,body
 <section class="toolbar">
 <div class="chipbar" id="chipBar">
 <button class="chip active" data-filter="all" type="button">Све врсте</button>
-<button class="chip" data-filter="vodene" type="button">Водене</button>
 <button class="chip" data-filter="grabljivice" type="button">Грабљивице</button>
+<button class="chip" data-filter="sove" type="button">Сове</button>
 <button class="chip" data-filter="detlici" type="button">Детлићи</button>
 <button class="chip" data-filter="vrane" type="button">Вране</button>
-<button class="chip" data-filter="sove" type="button">Сове</button>
 <button class="chip" data-filter="pevacice" type="button">Певачице</button>
+<button class="chip" data-filter="vodene" type="button">Водене</button>
 </div>
 </section>
 <p class="countline" id="countLine">Приказује се почетни избор врста у прегледу архиве.</p>
@@ -716,14 +716,64 @@ body .rfx-chapter-nav,body nav.rfx-chapter-nav,body .topnav,body nav.topnav,body
 <script>
 const birds = [
   {
-    name: "Велики вранац",
-    sci: "Phalacrocorax carbo",
-    group: "vodene",
-    pills: ["LC", "сеоба", "водени коридори"],
-    blurb: "Крупна рибоједна врста ширег воденог пејзажа. На Рајцу је најреалније очекивати је током пролаза и на већим воденим површинама у околини.",
-    img: "/ptice/assets/ptice2/veliki-vranac.jpg",
-    fallback: "/ptice/assets/ptice2/veliki-vranac.jpg",
-    url: "/ptice/veliki-vranac/"
+    name: "Орао крсташ",
+    sci: "Aquila heliaca",
+    group: "grabljivice",
+    pills: ["VU", "висок приоритет", "грабљивице"],
+    blurb: "Једна од најзначајнијих врста за мониторинг и заштиту на ширем простору, са високом конзервационом вредношћу.",
+    img: "/ptice/assets/ptice2/orao-krstas.jpg",
+    fallback: "/ptice/assets/ptice2/orao-krstas.jpg",
+    url: "/ptice/orao-krstas/"
+  },
+  {
+    name: "Сури орао",
+    sci: "Aquila chrysaetos",
+    group: "grabljivice",
+    pills: ["грабљивице", "ретка", "карст"],
+    blurb: "Импресивна грабљивица која симболизује простране, мирне и добро очуване пределе.",
+    img: "/ptice/assets/ptice2/suri-orao.jpg",
+    fallback: "/ptice/assets/ptice2/suri-orao.jpg",
+    url: "/ptice/suri-orao/"
+  },
+  {
+    name: "Кобац",
+    sci: "Accipiter nisus",
+    group: "grabljivice",
+    pills: ["LC", "станарица", "шумски рубови"],
+    blurb: "Спретна шумска грабљивица кратких, заобљених крила и дугог репа, важна за праћење мозаика шума, живица и отворених ловних површина.",
+    img: "/ptice/assets/ptice2/accipiter-nisus.jpg",
+    fallback: "/ptice/assets/ptice2/accipiter-nisus.jpg",
+    url: "/ptice/accipiter-nisus/"
+  },
+  {
+    name: "Обични мишар",
+    sci: "Buteo buteo",
+    group: "grabljivice",
+    pills: ["LC", "станарица", "отворени предели"],
+    blurb: "Најчешћа крупнија дневна грабљивица мозаичних предела, препознатљива по широким крилима, кружном једрењу и осматрању са истакнутих места.",
+    img: "/ptice/assets/ptice2/buteo-buteo.jpg",
+    fallback: "/ptice/assets/ptice2/buteo-buteo.jpg",
+    url: "/ptice/buteo-buteo/"
+  },
+  {
+    name: "Ластавичар",
+    sci: "Falco subbuteo",
+    group: "grabljivice",
+    pills: ["LC", "сеобна", "отворено небо"],
+    blurb: "Брз и елегантан соко отвореног неба, шумских рубова и долина, специјализован за лов инсеката и ситних птица у лету.",
+    img: "/ptice/assets/ptice2/falco-subbuteo.jpg",
+    fallback: "/ptice/assets/ptice2/falco-subbuteo.jpg",
+    url: "/ptice/falco-subbuteo/"
+  },
+  {
+    name: "Сива ветрушка",
+    sci: "Falco vespertinus",
+    group: "grabljivice",
+    pills: ["VU", "сеобна", "отворена станишта"],
+    blurb: "Ситнија сеобна соколица отворених предела, ливада и пољопривредног мозаика; важна врста за бележење прелета и сезонских налаза.",
+    img: "/ptice/assets/ptice2/falco-vespertinus.jpg",
+    fallback: "/ptice/assets/ptice2/falco-vespertinus.jpg",
+    url: "/ptice/falco-vespertinus/"
   },
   {
     name: "Велики детлић",
@@ -746,16 +796,6 @@ const birds = [
     url: "/ptice/siva-vrana/"
   },
   {
-    name: "Орао крсташ",
-    sci: "Aquila heliaca",
-    group: "grabljivice",
-    pills: ["VU", "висок приоритет", "грабљивице"],
-    blurb: "Једна од најзначајнијих врста за мониторинг и заштиту на ширем простору, са високом конзервационом вредношћу.",
-    img: "/ptice/assets/ptice2/orao-krstas.jpg",
-    fallback: "/ptice/assets/ptice2/orao-krstas.jpg",
-    url: "/ptice/orao-krstas/"
-  },
-  {
     name: "Гавран",
     sci: "Corvus corax",
     group: "vrane",
@@ -774,16 +814,6 @@ const birds = [
     img: "/ptice/assets/ptice2/kukavica.jpg",
     fallback: "/ptice/assets/ptice2/kukavica.jpg",
     url: "/ptice/kukavica/"
-  },
-  {
-    name: "Сури орао",
-    sci: "Aquila chrysaetos",
-    group: "grabljivice",
-    pills: ["грабљивице", "ретка", "карст"],
-    blurb: "Импресивна грабљивица која симболизује простране, мирне и добро очуване пределе.",
-    img: "/ptice/assets/ptice2/suri-orao.jpg",
-    fallback: "/ptice/assets/ptice2/suri-orao.jpg",
-    url: "/ptice/suri-orao/"
   },
   {
     name: "Обична траварка",
@@ -886,16 +916,6 @@ const birds = [
     url: "/ptice/coccothraustes-coccothraustes/"
   },
   {
-    name: "Бела плиска",
-    sci: "Motacilla alba",
-    group: "vodene",
-    pills: ["LC", "сеобна", "потоци"],
-    blurb: "Витка црно-бела птица отворених површина и водених рубова, препознатљива по сталном померању репа.",
-    img: "/ptice/assets/ptice2/motacilla-alba.jpg",
-    fallback: "/ptice/assets/ptice2/motacilla-alba-2.jpg",
-    url: "/ptice/motacilla-alba/"
-  },
-  {
     name: "Белогуза",
     sci: "Oenanthe oenanthe",
     group: "pevacice",
@@ -924,57 +944,6 @@ const birds = [
     img: "/ptice/assets/ptice2/emberiza-hortulana.jpg",
     fallback: "/ptice/assets/ptice2/emberiza-hortulana-2.jpg",
     url: "/ptice/emberiza-hortulana/"
-  }
-,
-  {
-    name: "Кобац",
-    sci: "Accipiter nisus",
-    group: "grabljivice",
-    pills: ["LC", "станарица", "шумски рубови"],
-    blurb: "Спретна шумска грабљивица кратких, заобљених крила и дугог репа, важна за праћење мозаика шума, живица и отворених ловних површина.",
-    img: "/ptice/assets/ptice2/accipiter-nisus.jpg",
-    fallback: "/ptice/assets/ptice2/accipiter-nisus.jpg",
-    url: "/ptice/accipiter-nisus/"
-  },
-  {
-    name: "Обични мишар",
-    sci: "Buteo buteo",
-    group: "grabljivice",
-    pills: ["LC", "станарица", "отворени предели"],
-    blurb: "Најчешћа крупнија дневна грабљивица мозаичних предела, препознатљива по широким крилима, кружном једрењу и осматрању са истакнутих места.",
-    img: "/ptice/assets/ptice2/buteo-buteo.jpg",
-    fallback: "/ptice/assets/ptice2/buteo-buteo.jpg",
-    url: "/ptice/buteo-buteo/"
-  },
-  {
-    name: "Црна рода",
-    sci: "Ciconia nigra",
-    group: "vodene",
-    pills: ["LC", "сеобна", "потоци и шуме"],
-    blurb: "Опрезна и осетљива врста старих шума, потока и мирних долина; добар показатељ очуваних влажних коридора и ниског узнемиравања.",
-    img: "/ptice/assets/ptice2/ciconia-nigra-card-f.jpg?v=20260817f",
-    fallback: "/ptice/assets/ptice2/ciconia-nigra-card-f.jpg?v=20260817f",
-    url: "/ptice/ciconia-nigra/"
-  },
-  {
-    name: "Ластавичар",
-    sci: "Falco subbuteo",
-    group: "grabljivice",
-    pills: ["LC", "сеобна", "отворено небо"],
-    blurb: "Брз и елегантан соко отвореног неба, шумских рубова и долина, специјализован за лов инсеката и ситних птица у лету.",
-    img: "/ptice/assets/ptice2/falco-subbuteo.jpg",
-    fallback: "/ptice/assets/ptice2/falco-subbuteo.jpg",
-    url: "/ptice/falco-subbuteo/"
-  },
-  {
-    name: "Сива ветрушка",
-    sci: "Falco vespertinus",
-    group: "grabljivice",
-    pills: ["VU", "сеобна", "отворена станишта"],
-    blurb: "Ситнија сеобна соколица отворених предела, ливада и пољопривредног мозаика; важна врста за бележење прелета и сезонских налаза.",
-    img: "/ptice/assets/ptice2/falco-vespertinus.jpg",
-    fallback: "/ptice/assets/ptice2/falco-vespertinus.jpg",
-    url: "/ptice/falco-vespertinus/"
   },
   {
     name: "Пупавац",
@@ -1295,8 +1264,8 @@ const birds = [
     img: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9d/Obi%C4%8Dna_crvenrepka_mu%C5%BEjak_%28Phoenicurus_phoenicurus%29%3B_Common_Redstart_male.jpg/960px-Obi%C4%8Dna_crvenrepka_mu%C5%BEjak_%28Phoenicurus_phoenicurus%29%3B_Common_Redstart_male.jpg",
     fallback: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bc/Obi%C4%8Dna_crvenrepka_%28Phoenicurus_phoenicurus%29%2C_mu%C5%BEjak%3B_Common_Redstart_male.jpg/960px-Obi%C4%8Dna_crvenrepka_%28Phoenicurus_phoenicurus%29%2C_mu%C5%BEjak%3B_Common_Redstart_male.jpg",
     url: "/ptice/phoenicurus-phoenicurus/"
-  }
-  ,{
+  },
+  {
     name: "Шумска шева",
     sci: "Lullula arborea",
     group: "pevacice",
@@ -1445,6 +1414,36 @@ const birds = [
     img: "/ptice/assets/ptice2/prunella-modularis.jpg",
     fallback: "/ptice/assets/ptice2/prunella-modularis.jpg",
     url: "/ptice/prunella-modularis/"
+  },
+  {
+    name: "Велики вранац",
+    sci: "Phalacrocorax carbo",
+    group: "vodene",
+    pills: ["LC", "сеоба", "водени коридори"],
+    blurb: "Крупна рибоједна врста ширег воденог пејзажа. На Рајцу је најреалније очекивати је током пролаза и на већим воденим површинама у околини.",
+    img: "/ptice/assets/ptice2/veliki-vranac.jpg",
+    fallback: "/ptice/assets/ptice2/veliki-vranac.jpg",
+    url: "/ptice/veliki-vranac/"
+  },
+  {
+    name: "Бела плиска",
+    sci: "Motacilla alba",
+    group: "vodene",
+    pills: ["LC", "сеобна", "потоци"],
+    blurb: "Витка црно-бела птица отворених површина и водених рубова, препознатљива по сталном померању репа.",
+    img: "/ptice/assets/ptice2/motacilla-alba.jpg",
+    fallback: "/ptice/assets/ptice2/motacilla-alba-2.jpg",
+    url: "/ptice/motacilla-alba/"
+  },
+  {
+    name: "Црна рода",
+    sci: "Ciconia nigra",
+    group: "vodene",
+    pills: ["LC", "сеобна", "потоци и шуме"],
+    blurb: "Опрезна и осетљива врста старих шума, потока и мирних долина; добар показатељ очуваних влажних коридора и ниског узнемиравања.",
+    img: "/ptice/assets/ptice2/ciconia-nigra-card-f.jpg?v=20260817f",
+    fallback: "/ptice/assets/ptice2/ciconia-nigra-card-f.jpg?v=20260817f",
+    url: "/ptice/ciconia-nigra/"
   }
 ];
 
