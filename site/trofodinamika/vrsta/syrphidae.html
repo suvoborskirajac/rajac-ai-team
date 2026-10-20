@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+
+<html lang="sr"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<title>Осолике муве (Syrphidae) – ПИО Рајац</title>
+<meta content="Осолике муве (Syrphidae) (Syrphidae / Cheilosia schnabli) у трофичкој мрежи ПИО „Рајац”: основни подаци, станиште, улога и трофичке везе." name="description"/>
+<link href="https://fonts.googleapis.com" id="rajac-trofo-font-preconnect" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" id="rajac-trofo-font-gstatic" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant:wght@300;400;500&amp;family=Cormorant+Infant:wght@300;400;500&amp;display=swap&amp;subset=cyrillic" id="rajac-trofo-font-v7" rel="stylesheet"/>
+<!-- RAJAC TROFO FONT FIX v7 ACTIVE - enlarged readable typography -->
+<style>
+:root{
+  --bg:#ffffff; --panel:#f7f5f0; --panel2:#ede8dd;
+  --text:#111111; --muted:#333333; --border:rgba(14,28,47,.15);
+  --green:#1a6b2a; --orange:#a04800; --purple:#5a2e8a;
+  --red:#8a1e2e; --blue:#0f4d8a; --teal:#0f6b5e;
+  --green-d:rgba(26,107,42,.10); --orange-d:rgba(160,72,0,.09);
+  --purple-d:rgba(90,46,138,.10); --red-d:rgba(138,30,46,.09);
+  --blue-d:rgba(15,77,138,.10);
+  --r:18px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{min-height:100%;scroll-behavior:smooth}
+body{font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif;
+  line-height:1.6;color:var(--text);
+  background:#ffffff;
+  background-attachment:fixed;
+}
+a{color:inherit;text-decoration:none}
+/* NAV */
+.topbar{position:sticky;top:0;z-index:100;
+  background:rgba(14,28,47,.97);backdrop-filter:blur(14px);
+  border-bottom:1px solid var(--border);}
+.topbar-inner{max-width:1200px;margin:0 auto;padding:10px 20px;
+  display:flex;align-items:center;gap:12px;flex-wrap:wrap;}
+.brand-logo{font-size:18px;line-height:1}
+.brand-text .site-title{font-size:17px;font-weight:800;letter-spacing:.01em}
+.brand-text .site-sub{font-size:17px;color:var(--muted)}
+.nav{display:flex;gap:4px;flex-wrap:wrap;margin-left:auto}
+.nav a{padding:7px 11px;border-radius:10px;font-size:17px;color:var(--muted);
+  border:1px solid transparent;transition:.15s}
+.nav a:hover,.nav a.on{background:rgba(255,255,255,.12);
+  border-color:rgba(255,255,255,.22);color:var(--text)}
+/* LAYOUT */
+.wrap{max-width:1200px;margin:0 auto;padding:24px 20px 60px}
+.page-title{font-size:18px;font-weight:900;margin-bottom:6px;line-height:1.2}
+.page-sub{color:var(--muted);font-size:17px;margin-bottom:24px}
+/* CARDS */
+.card{background:#ffffff;
+  border:1px solid var(--border);border-radius:var(--r);padding:22px;margin-bottom:18px;
+  box-shadow:0 2px 14px rgba(14,28,47,.07);}
+.card h2{font-size:18px;margin-bottom:10px}
+.card h3{font-size:18px;margin-bottom:8px}
+/* SPECIES GRID */
+.sp-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:14px}
+.sp-card{background:#f4f1eb;border:1px solid var(--border);border-radius:14px;
+  padding:14px;text-align:center;transition:.2s;cursor:pointer;display:block}
+.sp-card:hover{transform:translateY(-3px);border-color:rgba(255,255,255,.2);
+  background:#e8e3d8}
+.sp-card .sp-icon{width:100%;height:110px;display:flex;align-items:center;
+  justify-content:center;margin-bottom:10px}
+.sp-card .sp-icon svg{max-width:90px;max-height:90px}
+.sp-card .sp-name{font-weight:800;font-size:18px;margin-bottom:3px}
+.sp-card .sp-latin{font-size:17px;color:var(--muted);font-style:italic}
+.sp-card .sp-role{display:inline-block;margin-top:6px;padding:3px 9px;
+  border-radius:999px;font-size:17px;font-weight:700;border:1px solid var(--border)}
+/* BADGES */
+.badge{display:inline-flex;align-items:center;padding:5px 11px;border-radius:999px;
+  font-size:17px;font-weight:800;border:1px solid;margin-bottom:8px}
+.b-prod{color:var(--green);border-color:rgba(74,222,128,.35);background:var(--green-d)}
+.b-cons{color:var(--orange);border-color:rgba(251,146,60,.35);background:var(--orange-d)}
+.b-pred{color:var(--red);border-color:rgba(251,113,133,.35);background:var(--red-d)}
+.b-deco{color:var(--purple);border-color:rgba(192,132,252,.35);background:var(--purple-d)}
+.b-poll{color:var(--blue);border-color:rgba(96,165,250,.35);background:var(--blue-d)}
+.b-press{color:var(--red);border-color:rgba(251,113,133,.35);background:var(--red-d)}
+/* FILTER */
+.filter-bar{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:18px}
+.fb{cursor:pointer;padding:8px 14px;border-radius:999px;
+  border:1px solid rgba(255,255,255,.12);background:rgba(255,255,255,.05);
+  color:var(--muted);font-size:17px;font-weight:700;transition:.15s}
+.fb.on,.fb:hover{background:#e2ddd2;border-color:rgba(14,28,47,.22);color:var(--text)}
+/* TROPHIC WEB */
+#web-svg{width:100%;cursor:pointer;border-radius:var(--r);
+  border:1px solid var(--border);background:rgba(0,0,0,.25)}
+.web-node{cursor:pointer;transition:.15s}
+.web-node circle{transition:.15s}
+.web-node.dimmed circle{opacity:.2}
+.web-node.dimmed text{opacity:.2}
+.web-edge{transition:.15s}
+.web-edge.dimmed{opacity:.05}
+.web-edge.lit{stroke-width:4;opacity:1}
+/* INTERACTION DIAGRAM */
+.interact-grid{display:grid;grid-template-columns:1fr auto 1fr;gap:0;align-items:center;margin:14px 0}
+.interact-side{display:flex;flex-direction:column;gap:8px}
+.interact-arrow{width:80px;display:flex;flex-direction:column;align-items:center;gap:4px;padding:0 6px}
+.interact-arrow svg{width:100%}
+.interact-arrow span{font-size:17px;color:var(--muted);text-align:center}
+.icard{background:#f4f1eb;border:1px solid var(--border);border-radius:12px;
+  padding:10px 14px;display:flex;align-items:center;gap:10px}
+.icard svg{flex-shrink:0;width:36px;height:36px}
+.icard-text{font-size:17px}
+.icard-text strong{display:block;font-size:18px}
+/* SPECIES PAGE */
+.sp-hero{display:grid;grid-template-columns:1fr 1fr;gap:24px;align-items:center;margin-bottom:24px}
+.sp-hero-art{background:#f4f1eb;border:1px solid var(--border);
+  border-radius:var(--r);padding:20px;text-align:center}
+.sp-hero-art svg{max-width:260px;max-height:220px;width:100%}
+.sp-info-table{width:100%;border-collapse:collapse}
+.sp-info-table td{padding:8px 12px;border-bottom:1px solid var(--border);font-size:18px}
+.sp-info-table td:first-child{color:var(--muted);font-weight:700;width:40%}
+/* ENERGY FLOW */
+.eflow{display:flex;align-items:center;gap:0;margin:14px 0;flex-wrap:wrap}
+.eflow-node{background:rgba(0,0,0,.22);border:1px solid var(--border);border-radius:12px;
+  padding:10px 14px;text-align:center;font-size:17px;font-weight:700;min-width:110px}
+.eflow-arrow{font-size:18px;color:var(--muted);padding:0 8px}
+/* CALLOUT */
+.callout{padding:14px 16px;border-radius:14px;border-left:3px solid var(--green);
+  background:rgba(74,222,128,.08);margin:14px 0;font-size:18px}
+.callout.warn{border-color:var(--red);background:rgba(251,113,133,.08)}
+.callout.blue{border-color:var(--blue);background:rgba(96,165,250,.08)}
+/* BREADCRUMB */
+.breadcrumb{font-size:17px;color:var(--muted);margin-bottom:18px}
+.breadcrumb a{color:var(--muted)}
+.breadcrumb a:hover{color:var(--text)}
+.breadcrumb span{margin:0 6px}
+/* WHO EATS WHO */
+.eats-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:14px}
+.eats-box{background:#f4f1eb;border:1px solid var(--border);border-radius:14px;padding:14px}
+.eats-box h4{font-size:17px;color:var(--muted);margin-bottom:10px;font-weight:700;text-transform:uppercase;letter-spacing:.05em}
+.eats-item{display:flex;align-items:center;gap:10px;padding:7px;border-radius:10px;
+  transition:.15s;font-size:17px}
+.eats-item:hover{background:rgba(14,28,47,.05)}
+.eats-item svg{width:28px;height:28px;flex-shrink:0}
+/* NAV PILLS */
+.nav-pills{display:flex;gap:10px;flex-wrap:wrap;margin-top:24px}
+.pill{padding:10px 16px;border-radius:14px;border:1px solid rgba(255,255,255,.14);
+  background:rgba(255,255,255,.06);font-weight:700;font-size:18px;transition:.2s}
+.pill:hover{background:#e2ddd2;transform:translateY(-1px)}
+.pill.prev::before{content:"← "}
+.pill.next::after{content:" →"}
+/* HABITAT TAGS */
+.htag{display:inline-block;padding:4px 10px;border-radius:999px;font-size:17px;
+  border:1px solid var(--border);margin:3px;color:var(--muted)}
+/* QUOTE */
+.eco-fact{font-style:italic;color:var(--muted);border-left:2px solid var(--teal);
+  padding-left:14px;margin:12px 0;font-size:18px}
+/* FOOTER */
+.foot{padding:24px 20px;text-align:center;color:var(--muted);font-size:17px;
+  border-top:1px solid var(--border);margin-top:40px;background:#f4f1eb}
+/* GRID 2 */
+.g2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.g3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px}
+/* SECTION DIV */
+.sec{margin-bottom:30px}
+/* STAT ROW */
+.stat-row{display:flex;gap:14px;flex-wrap:wrap;margin:14px 0}
+.stat-box{flex:1;min-width:120px;background:#f4f1eb;border:1px solid var(--border);
+  border-radius:12px;padding:14px;text-align:center}
+.stat-box .val{font-size:18px;font-weight:900;line-height:1}
+.stat-box .lbl{font-size:17px;color:var(--muted);margin-top:4px}
+/* RESPONSIVE */
+@media(max-width:750px){
+  .sp-grid{grid-template-columns:repeat(2,1fr)}
+  .g2,.g3,.eats-grid{grid-template-columns:1fr}
+  .sp-hero{grid-template-columns:1fr}
+  .interact-grid{grid-template-columns:1fr}
+  .interact-arrow{display:none}
+  .page-title{font-size:18px}
+}
+
+/* RAJAC TROFO FONT SIZE FIX v7 - enlarged readable typography */
+html body .site-title{font-size:18px!important;line-height:1.15!important;}
+html body .site-sub{font-size:18px!important;line-height:1.25!important;}
+html body .nav a{font-size:17px!important;padding:10px 15px!important;line-height:1.2!important;}
+html body .page-title{font-size:46px!important;line-height:1.08!important;margin-bottom:8px!important;}
+html body .page-sub{font-size:18px!important;line-height:1.45!important;margin-bottom:26px!important;}
+html body .stat-row{gap:16px!important;margin:18px 0!important;}
+html body .stat-box{padding:18px 16px!important;}
+html body .stat-box .val{font-size:42px!important;line-height:1!important;}
+html body .stat-box .lbl{font-size:18px!important;line-height:1.2!important;margin-top:6px!important;}
+html body .card{padding:24px!important;}
+html body .card h2{font-size:18px!important;line-height:1.18!important;margin-bottom:12px!important;}
+html body .card h3{font-size:18px!important;line-height:1.2!important;}
+html body p,
+html body li,
+html body .callout,
+html body .eco-fact,
+html body .eflow-node,
+html body .pill,
+html body .foot,
+html body .icard-text,
+html body .eats-item,
+html body .sp-info-table td{font-size:18px!important;line-height:1.55!important;}
+html body .badge,
+html body .htag,
+html body .breadcrumb,
+html body .fb,
+html body .sp-role{font-size:18px!important;}
+html body .sp-card .sp-name{font-size:18px!important;}
+html body .sp-card .sp-latin{font-size:17px!important;}
+html body .wrap{max-width:1240px!important;}
+@media(max-width:750px){
+  html body .site-title{font-size:17px!important;}
+  html body .site-sub{font-size:18px!important;}
+  html body .nav a{font-size:18px!important;padding:8px 10px!important;}
+  html body .page-title{font-size:33px!important;line-height:1.1!important;}
+  html body .page-sub{font-size:18px!important;}
+  html body .stat-box .val{font-size:18px!important;}
+  html body .stat-box .lbl{font-size:18px!important;}
+  html body .card h2{font-size:25px!important;}
+  html body p,html body li,html body .callout,html body .eflow-node,html body .pill{font-size:17px!important;}
+}
+
+
+/* RAJAC TROFO FONT FAMILY HARD FIX v7 */
+html body,
+html body *:not(svg):not(path):not(circle):not(line):not(polyline):not(polygon):not(rect):not(canvas),
+html body button,html body input,html body select,html body textarea{
+  font-family:"Cormorant","Cormorant Infant","Cormorant Garamond",Georgia,"Times New Roman",serif!important;
+  font-weight:300!important;
+  text-shadow:none!important;
+  -webkit-text-stroke:0 transparent!important;
+}
+html body strong,html body b{font-weight:400!important;}
+
+
+
+/* RAJAC GLOBAL MAIN MENU v8 - shared top navigation for Trofodinamika */
+.rp-global-menu{
+  position:sticky;
+  top:0;
+  z-index:99999;
+  width:100%;
+  background:#f4f1eb;
+  border-bottom:1px solid rgba(255,255,255,.12);
+  font-family:"Cormorant","Cormorant Garamond",Georgia,"Times New Roman",serif!important;
+  box-shadow:0 8px 26px rgba(0,0,0,.18);
+}
+.rp-global-menu-inner{
+  max-width:1200px;
+  margin:0 auto;
+  padding:0 18px;
+  min-height:52px;
+  display:flex;
+  align-items:center;
+  gap:22px;
+  white-space:nowrap;
+  overflow-x:auto;
+  scrollbar-width:none;
+}
+.rp-global-menu-inner::-webkit-scrollbar{display:none;}
+.rp-global-menu a{
+  display:flex;
+  align-items:center;
+  gap:7px;
+  height:52px;
+  color:#d9e7f2;
+  text-decoration:none;
+  font-size:17px;
+  font-weight:500!important;
+  letter-spacing:.02em;
+  border-bottom:2px solid transparent;
+  opacity:.94;
+  flex:0 0 auto;
+}
+.rp-global-menu a:hover{color:#f3c64d;opacity:1;}
+.rp-global-menu a.rp-active{color:#f3c64d;border-bottom-color:#f3c64d;}
+.rp-global-menu a.rp-home{
+  color:#f3c64d;
+  padding-right:22px;
+  border-right:1px solid rgba(255,255,255,.15);
+}
+.rp-global-menu .rp-ico{font-size:17px;line-height:1;}
+/* Local Trofo navigation stays below the global menu, not over it */
+.topbar{position:relative!important;top:auto!important;z-index:100!important;}
+@media(max-width:760px){
+  .rp-global-menu-inner{gap:16px;padding:0 12px;}
+  .rp-global-menu a{font-size:17px;height:48px;}
+  .rp-global-menu a.rp-home{padding-right:16px;}
+}
+
+
+/* ═══════ RAJAC TROFO KONTRAST FIX - bela pozadina, citljiv tekst ═══════ */
+body, html body *:not(svg):not(path):not(circle):not(line):not(polyline):not(polygon):not(rect):not(canvas) {
+  font-weight: 400 !important;
+  color: #0e1c2f !important;
+}
+h1, h2, h3, h4, h5, h6,
+.page-title, .site-title, .brand-text .site-title,
+.card h2, .card h3, .sec h2, .sec h3, .val {
+  font-weight: 600 !important;
+  color: #0e1c2f !important;
+}
+.page-sub, .site-sub, .lbl, .sp-latin, .breadcrumb,
+.breadcrumb a, .foot, .muted, .eats-box h4,
+.interact-arrow span, .sp-info-table td:first-child,
+.eco-fact, .htag, .eflow-arrow {
+  color: #3a4e62 !important;
+  font-weight: 400 !important;
+}
+/* Badge boje - vidljive na belom */
+.b-prod { color: #155a22 !important; }
+.b-cons { color: #7a3200 !important; }
+.b-pred { color: #7a1525 !important; }
+.b-deco { color: #4a1a7a !important; }
+.b-poll { color: #0a3d7a !important; }
+.b-press { color: #7a1525 !important; }
+/* nav pills, filter dugmici */
+.pill, .fb { color: #0e1c2f !important; }
+.fb.on, .fb:hover { color: #0e1c2f !important; }
+/* sp-card */
+.sp-card .sp-name { color: #0e1c2f !important; }
+.sp-card .sp-latin { color: #3a4e62 !important; }
+.sp-card .sp-role { color: #3a4e62 !important; }
+/* Naslovi u topbaru ostaju svetli (tamna pozadina) */
+.rp-global-menu a { color: #d9e7f2 !important; }
+.rp-global-menu a:hover, .rp-global-menu a.rp-active, .rp-global-menu a.rp-home { color: #f3c64d !important; }
+/* Lokalni nav (druga traka) */
+.topbar .nav a { color: rgba(255,255,255,.75) !important; }
+.topbar .nav a:hover, .topbar .nav a.on { color: #ffffff !important; }
+.brand-text .site-title { color: rgba(255,255,255,.90) !important; }
+.brand-text .site-sub { color: rgba(255,255,255,.62) !important; }
+/* Callout i eco-fact border ostaje, tekst taman */
+.callout { color: #0e1c2f !important; }
+.callout.warn { color: #6a0e1a !important; }
+.callout.blue { color: #0a2a5a !important; }
+/* Tabela */
+.sp-info-table td { color: #0e1c2f !important; }
+/* ═══════════════════════════════════════════════════════════════════════ */
+
+
+/* TROFO EDIT 2026-06-23: stručne napomene, izvori i čitljiviji tekst */
+.source-list{padding-left:22px;font-size:17px;line-height:1.8;color:var(--muted)}
+.source-list li{margin:6px 0}
+.science-note{border-left:4px solid var(--blue);background:rgba(15,77,138,.06);padding:14px 16px;border-radius:14px;margin:14px 0;font-size:18px}
+.science-note strong{color:var(--text)}
+.small-muted{font-size:16px;color:var(--muted);line-height:1.6}
+</style>
+<style id="rf">
+/* === TROFO FIX === */
+html,body{background:#fff!important;color:#111!important}
+.card{background:#f7f5f0!important;border:1px solid #ccc!important}
+p,li,td,span,div,.lbl,.foot,.eco-fact,.eflow-arrow,.page-sub,.site-sub,.muted,.breadcrumb{color:#111!important;font-weight:400!important;font-size:17px!important}
+h1,.page-title{color:#0a1628!important;font-weight:500!important;font-size:36px!important}
+h2,.card h2{color:#0a1628!important;font-weight:500!important;font-size:24px!important}
+h3,.card h3{color:#0a1628!important;font-weight:500!important;font-size:20px!important}
+.val{color:#0a1628!important;font-weight:500!important}
+/* Drugi nav (topbar) - veca slova */
+.topbar{background:#0e1c2f!important}
+.topbar *{background:#0e1c2f!important;color:rgba(255,255,255,.85)!important;font-size:18px!important;font-weight:500!important}
+.topbar .nav a.on,.topbar .nav a:hover{color:#c9a84c!important}
+.brand-text .site-title{color:#fff!important;font-size:19px!important;font-weight:600!important}
+.brand-text .site-sub{color:rgba(255,255,255,.65)!important;font-size:14px!important}
+/* Gornji meni ostaje isti */
+.rp-global-menu{background:#0e1c2f!important}
+.rp-global-menu a,.rp-global-menu span{color:#e8f0fa!important;font-size:17px!important;font-weight:500!important;background:#0e1c2f!important}
+.rp-global-menu a:hover,.rp-global-menu a.rp-active{color:#c9a84c!important}
+.rp-global-menu a.rp-home,.rp-global-menu .rp-home span{color:#c9a84c!important}
+/* Slike bez okvira */
+.sp-hero-art{border:none!important;background:transparent!important;box-shadow:none!important}
+img{border:none!important;outline:none!important}
+</style>
+<link href="../../assets/rajac-stanista.css?v=20260814" id="rajac-stanista" rel="stylesheet"/>
+<link href="../assets/trofo-visoki-kontrast.css?v=20260817-c52" id="trofo-visoki-kontrast" rel="stylesheet"/>
+<link rel="stylesheet" href="../assets/trofo-mobile-tablet.css?v=20260814">
+
+<style id="pio-trofo-photo-credit-v2">
+/* PIO TROFODINAMIKA 2026-08-17: kredit kao kod Ptice/Gljive — bez trake i bez browser tooltip-a */
+.rajac-trofodinamika .photo-credit-wrap{position:relative!important;overflow:hidden!important}
+.rajac-trofodinamika .photo-credit-wrap .photo-credit{
+  position:absolute!important;left:12px!important;right:12px!important;bottom:8px!important;z-index:99!important;
+  margin:0!important;padding:0!important;border:0!important;border-radius:0!important;
+  background:transparent!important;background-color:transparent!important;background-image:none!important;
+  box-shadow:none!important;filter:none!important;backdrop-filter:none!important;
+  color:#171717!important;font-family:Georgia,"Times New Roman",serif!important;font-size:12px!important;
+  font-weight:700!important;line-height:1.35!important;text-align:left!important;
+  text-shadow:0 1px 1px rgba(255,255,255,.98),1px 0 1px rgba(255,255,255,.98),-1px 0 1px rgba(255,255,255,.98),0 -1px 1px rgba(255,255,255,.96),0 0 4px rgba(255,255,255,.96)!important;
+  opacity:0!important;visibility:hidden!important;transform:translateY(3px)!important;pointer-events:none!important;
+  transition:opacity .14s ease 0s,transform .14s ease 0s,visibility 0s linear .14s!important;
+}
+.rajac-trofodinamika .photo-credit-wrap:hover .photo-credit,
+.rajac-trofodinamika .photo-credit-wrap:focus-within .photo-credit{
+  opacity:1!important;visibility:visible!important;transform:translateY(0)!important;pointer-events:auto!important;
+  transition-delay:1s,1s,1s!important;
+}
+.rajac-trofodinamika .photo-credit-wrap .photo-credit a{
+  color:#171717!important;background:transparent!important;background-color:transparent!important;
+  text-decoration:none!important;font-weight:800!important;text-shadow:inherit!important;box-shadow:none!important;
+}
+.rajac-trofodinamika .photo-credit-wrap .photo-credit a:hover,
+.rajac-trofodinamika .photo-credit-wrap .photo-credit a:focus{color:#000!important;text-decoration:underline!important;text-underline-offset:2px!important}
+@media (hover:none),(pointer:coarse){.rajac-trofodinamika .photo-credit-wrap .photo-credit{opacity:0!important;visibility:hidden!important;pointer-events:none!important;transition:none!important}}
+</style>
+<style id="rajac-okvir-v1">.rajac-ds-home,.rfx-nav-home{display:flex!important;align-items:center!important;line-height:1!important}.rajac-ds-home>span,.rfx-nav-home>span{display:inline-flex!important;align-items:center!important;line-height:1!important}.rajac-ds-home>span:first-child,.rfx-nav-home>span:first-child{justify-content:center;width:18px;height:18px}</style>
+</head><body class="rajac-trofodinamika">
+<nav aria-label="Главни мени ПИО Рајац" class="rajac-ds-nav"><div class="rajac-ds-nav-inner"><a class="rajac-ds-home" href="https://piorajac.rs/"><span aria-hidden="true" class="rajac-ds-home-mark">⊙</span><span>ПИО „РАЈАЦ“</span></a><button class="rajac-mobile-toggle" type="button" aria-expanded="false"><span aria-hidden="true">☰</span><span>МЕНИ</span></button><a class="rajac-ds-nav-item" href="https://piorajac.rs/biljke/"><span aria-hidden="true" class="rajac-ds-icon">🌿</span><span>БИЉКЕ</span></a><a class="rajac-ds-nav-item" href="https://piorajac.rs/ptice/"><span aria-hidden="true" class="rajac-ds-icon">🦉</span><span>ПТИЦЕ</span></a><a class="rajac-ds-nav-item" href="https://piorajac.rs/insekti/"><span aria-hidden="true" class="rajac-ds-icon">🦋</span><span>ИНСЕКТИ</span></a><a class="rajac-ds-nav-item" href="https://piorajac.rs/sisari/"><span aria-hidden="true" class="rajac-ds-icon">🐾</span><span>СИСАРИ</span></a><a class="rajac-ds-nav-item" href="https://piorajac.rs/gljive/"><span aria-hidden="true" class="rajac-ds-icon">🍄</span><span>ГЉИВЕ</span></a><a class="rajac-ds-nav-item rajac-ds-nav-trofo rajac-ds-active" href="https://piorajac.rs/trofodinamika/"><span aria-hidden="true" class="rajac-ds-icon">🔗</span><span>ТРОФОДИНАМИКА</span></a></div></nav>
+<nav class="topbar">
+<div class="topbar-inner">
+<span class="brand-logo">🌲</span>
+<div class="brand-text">
+<div class="site-title">Трофички односи – ПИО „Рајац"</div>
+<div class="site-sub">Интерактивни едукативни ресурс</div>
+</div>
+<nav class="nav"><a href="../index.html">Увод</a>
+<a href="../1_producers.html">Продуценти 🌿</a>
+<a href="../2_consumers.html">Потрошачи 🦌</a>
+<a class="on" href="../3_pollination.html">Опрашивање 🦋</a>
+<a href="../4_decomposers_threats.html">Разлагачи &amp; Притисци 🍄</a>
+</nav>
+</div></nav>
+<main class="wrap">
+<div class="breadcrumb">
+<a href="../index.html">Почетна</a>
+<span>›</span>
+<a href="../3_pollination.html">Опрашивање 🦋</a>
+<span>›</span>
+<strong>Осолике муве (Syrphidae)</strong>
+</div>
+<div class="sp-hero">
+<div>
+<span class="badge b-poll">Опрашивач</span>
+<h1 class="page-title">Осолике муве (Syrphidae)</h1>
+<p class="page-sub" style="font-style:italic">Syrphidae / Cheilosia schnabli</p>
+<p style="margin-top:12px;font-size:17px;line-height:1.7">Осолике муве (Syrphidae) изгледом имитирају пчеле или осе (Батесово мимикрство). Строго заштићена врста Cheilosia schnabli потврђена је на Рајцу. Ларве су хищне – хране се лисним вашима, чиме обављају биолошку контролу.</p>
+<div class="callout" style="margin-top:16px">
+<strong>Еко-чињеница</strong><br/>Осолике муве опрашују у хладнијим условима (јутро, касна јесен) кад пчеле нису активне – незаменљива улога у продужавању опрашивачке сезоне.
+    </div>
+</div>
+<div class="sp-hero-art" style="overflow:hidden;border-radius:12px;border:none;background:transparent;">
+<figure class="photo-credit-wrap">
+<img alt="Осолике муве (Syrphidae) – Syrphidae / Cheilosia schnabli" loading="lazy" onerror="this.onerror=null;this.src='../images/rajac-image-fallback.jpg';" src="../images/syrphidae.jpg" style="width:100%;height:280px;object-fit:cover;border-radius:12px;display:block;"/>
+<figcaption class="photo-credit" aria-label="Аутор, извор и лиценца фотографије">Фото: Alvesgaspar / Wikimedia Commons, <a href="https://creativecommons.org/licenses/by-sa/3.0/" target="_blank" rel="noopener noreferrer">CC BY-SA 3.0</a>; прилагођено за веб — <a href="https://commons.wikimedia.org/wiki/File:Hoverfly_December_2007-8.jpg" target="_blank" rel="noopener noreferrer">оригинал</a>.</figcaption>
+</figure>
+</div>
+</div>
+<div class="g2">
+<div class="card">
+<h2>📋 Основни подаци</h2>
+<table class="sp-info-table">
+<tr><td>Латински назив</td><td><i>Syrphidae / Cheilosia schnabli</i></td></tr>
+<tr><td>Група</td><td>Опрашивање 🦋</td></tr>
+<tr><td>Улога</td><td>Опрашивач</td></tr>
+<tr><td>Станиште</td><td><span class="htag">Ливада</span><span class="htag">Шумски руб</span></td></tr>
+<tr><td>Детаљ</td><td style="font-size:17px">Ливаде богате нектарницама, шумски рубови. Ларве у разлагајућем дрвету или биљкама.</td></tr>
+</table>
+</div>
+<div class="card">
+<h2>⚡ Ток енергије</h2>
+<div class="eflow" style="flex-direction:column;gap:6px">
+<div style="font-size:17px;color:var(--muted);margin-bottom:6px">Трофичка позиција врсте у мрежи</div>
+<div class="eflow-node" style="border-color:rgba(74,222,128,.4)">🌿 Продуценти – извор енергије</div><div class="eflow-arrow">↓</div>
+<div class="eflow-node" style="border-color:var(--blue);border-width:2px">Осолике муве (Syrphidae)</div>
+<div class="eflow-arrow">↓</div><div class="eflow-node" style="border-color:rgba(251,113,133,.4)">Потрошачи / предатори</div>
+</div>
+</div>
+</div>
+<div class="card sec">
+<h2>🍽️ Трофичке везе</h2>
+<div class="eats-grid">
+<div class="eats-box">
+<h4>Шта конзумира (храна)</h4>
+<a class="eats-item" href="../vrsta/yarrow.html"><svg viewbox="0 0 90 90" xmlns="http://www.w3.org/2000/svg"><svg viewbox="0 0 80 90" xmlns="http://www.w3.org/2000/svg">
+<line stroke="#5a8a3c" stroke-width="2.5" x1="40" x2="40" y1="88" y2="30"></line>
+<line stroke="#5a8a3c" stroke-width="1.5" x1="25" x2="40" y1="60" y2="45"></line>
+<line stroke="#5a8a3c" stroke-width="1.5" x1="55" x2="40" y1="58" y2="45"></line>
+<circle cx="40" cy="18" fill="#fde68a" r="14"></circle>
+<circle cx="28" cy="22" fill="#fef3c7" r="9"></circle>
+<circle cx="52" cy="20" fill="#fef3c7" r="9"></circle>
+<circle cx="34" cy="10" fill="#fde68a" r="8"></circle>
+<circle cx="46" cy="9" fill="#fde68a" r="8"></circle>
+</svg></svg><span>Нектар хајдучке траве</span></a><a class="eats-item" href="../vrsta/anacamptis.html"><svg viewbox="0 0 90 90" xmlns="http://www.w3.org/2000/svg"><svg viewbox="0 0 80 100" xmlns="http://www.w3.org/2000/svg">
+<line stroke="#4a7c3f" stroke-width="3" x1="40" x2="40" y1="95" y2="50"></line>
+<ellipse cx="40" cy="40" fill="#c084fc" rx="10" ry="20"></ellipse>
+<ellipse cx="25" cy="35" fill="#a855f7" rx="9" ry="16" transform="rotate(-35,25,35)"></ellipse>
+<ellipse cx="55" cy="35" fill="#a855f7" rx="9" ry="16" transform="rotate(35,55,35)"></ellipse>
+<ellipse cx="20" cy="52" fill="#9333ea" rx="8" ry="14" transform="rotate(-60,20,52)"></ellipse>
+<ellipse cx="60" cy="52" fill="#9333ea" rx="8" ry="14" transform="rotate(60,60,52)"></ellipse>
+<circle cx="40" cy="28" fill="#f0abfc" r="7"></circle>
+</svg></svg><span>Нектар ливадских биљака</span></a><a class="eats-item" href="../vrsta/agrostis-festuca.html"><svg viewbox="0 0 90 90" xmlns="http://www.w3.org/2000/svg"><svg viewbox="0 0 80 80" xmlns="http://www.w3.org/2000/svg">
+<path d="M10,70 Q14,40 18,20 Q20,45 22,70Z" fill="#3d9e5c"></path>
+<path d="M25,70 Q30,35 35,15 Q37,42 40,70Z" fill="#4ab36a"></path>
+<path d="M42,70 Q48,38 54,18 Q56,44 60,70Z" fill="#36904f"></path>
+<path d="M58,70 Q62,42 66,25 Q68,48 70,70Z" fill="#43a65e"></path>
+</svg></svg><span>Полен</span></a>
+</div>
+<div class="eats-box">
+<h4>Ко је конзумира (предатори)</h4>
+<a class="eats-item" href="../vrsta/fringilla.html"><svg viewbox="0 0 90 90" xmlns="http://www.w3.org/2000/svg"><svg viewbox="0 0 80 70" xmlns="http://www.w3.org/2000/svg">
+<ellipse cx="50" cy="42" fill="#b06040" rx="22" ry="16"></ellipse>
+<circle cx="30" cy="32" fill="#6080c0" r="14"></circle>
+<path d="M20,34 Q14,36 16,40 Q18,38 22,37Z" fill="#d4a020"></path>
+<circle cx="27" cy="30" fill="#1a1a1a" r="3"></circle>
+<circle cx="26" cy="29" fill="#fff" r="1"></circle>
+<path d="M42,55 Q55,60 65,55 Q60,65 50,63Z" fill="#3a3a5a"></path>
+<path d="M60,32 Q72,28 76,34 Q72,40 62,38Z" fill="#e8e8f8"></path>
+<rect fill="#c08040" height="12" rx="2" width="5" x="44" y="58"></rect>
+<rect fill="#c08040" height="12" rx="2" width="5" x="54" y="58"></rect>
+</svg></svg><span>Зеба (ларве)</span></a><a class="eats-item" href="../vrsta/strix-aluco.html"><svg viewbox="0 0 90 90" xmlns="http://www.w3.org/2000/svg"><svg viewbox="0 0 80 100" xmlns="http://www.w3.org/2000/svg">
+<!-- body -->
+<ellipse cx="40" cy="65" fill="#8b7050" rx="24" ry="30"></ellipse>
+<!-- head -->
+<circle cx="40" cy="28" fill="#9a7c5c" r="22"></circle>
+<!-- ear tufts -->
+<path d="M30,8 Q27,0 34,6" fill="none" stroke="#8b7050" stroke-linecap="round" stroke-width="4"></path>
+<path d="M50,8 Q53,0 46,6" fill="none" stroke="#8b7050" stroke-linecap="round" stroke-width="4"></path>
+<!-- facial disc -->
+<ellipse cx="40" cy="30" fill="#c0a080" opacity=".5" rx="18" ry="16"></ellipse>
+<!-- eyes -->
+<circle cx="32" cy="28" fill="#e8c040" r="8"></circle>
+<circle cx="32" cy="28" fill="#1a1a1a" r="5"></circle>
+<circle cx="30" cy="26" fill="#fff" r="1.5"></circle>
+<circle cx="48" cy="28" fill="#e8c040" r="8"></circle>
+<circle cx="48" cy="28" fill="#1a1a1a" r="5"></circle>
+<circle cx="46" cy="26" fill="#fff" r="1.5"></circle>
+<!-- beak -->
+<path d="M40,33 Q44,38 40,41 Q36,38 40,33Z" fill="#b08040"></path>
+<!-- wing pattern -->
+<path d="M18,55 Q25,48 38,50" fill="none" stroke="#6a5030" stroke-width="1.5"></path>
+<path d="M62,55 Q55,48 42,50" fill="none" stroke="#6a5030" stroke-width="1.5"></path>
+</svg></svg><span>Птице инсективоре</span></a><a class="eats-item" href="../vrsta/sitta.html"><svg viewbox="0 0 90 90" xmlns="http://www.w3.org/2000/svg"><svg viewbox="0 0 80 70" xmlns="http://www.w3.org/2000/svg">
+<ellipse cx="48" cy="42" fill="#4a7aaa" rx="20" ry="15"></ellipse>
+<!-- white belly with rufous flanks -->
+<ellipse cx="48" cy="50" fill="#f0e8d0" rx="14" ry="10"></ellipse>
+<ellipse cx="35" cy="50" fill="#c07040" rx="7" ry="7"></ellipse>
+<circle cx="28" cy="28" fill="#5a8aba" r="12"></circle>
+<!-- black eye stripe -->
+<path d="M18,28 Q26,25 34,28" fill="none" stroke="#1a1a1a" stroke-width="4"></path>
+<path d="M18,29 Q26,26 34,29" fill="none" stroke="#1a1a1a" stroke-width="2"></path>
+<path d="M16,31 Q12,32 13,36 Q16,35 18,33Z" fill="#d4c080"></path>
+<circle cx="24" cy="27" fill="#1a1a1a" r="3"></circle>
+<circle cx="23" cy="26" fill="#fff" r="1"></circle>
+<rect fill="#b08040" height="12" rx="2" width="5" x="42" y="56"></rect>
+<rect fill="#b08040" height="12" rx="2" width="5" x="52" y="56"></rect>
+</svg></svg><span>Бргљез</span></a>
+</div>
+</div>
+</div>
+<div class="nav-pills">
+<a class="pill prev" href="../3_pollination.html">Опрашивање 🦋</a>
+<a class="pill" href="../index.html">🌐 Трофичка мрежа</a>
+</div>
+</main>
+
+<script>
+// Filter buttons
+document.querySelectorAll('.filter-bar').forEach(bar=>{
+  const btns=[...bar.querySelectorAll('.fb')];
+  const target=bar.dataset.target;
+  const items=[...document.querySelectorAll('[data-cat]')].filter(el=>!target||el.closest('.'+target));
+  const apply=f=>items.forEach(el=>{
+    const cats=(el.dataset.cat||'').split(' ');
+    el.style.display=(f==='all'||cats.includes(f))?'':'none';
+  });
+  btns.forEach(b=>b.addEventListener('click',()=>{
+    btns.forEach(x=>x.classList.toggle('on',x===b));
+    apply(b.dataset.f||'all');
+  }));
+  apply('all');
+});
+</script>
+<script src="../assets/trofo-mobile-tablet.js?v=20260817-c52"></script>
+</body></html>
