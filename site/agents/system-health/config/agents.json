@@ -1,0 +1,81 @@
+{
+  "version": "1.0",
+  "language": "sr-Cyrl",
+  "agents": [
+    {
+      "slug": "kustos",
+      "name": "Кустос — главни координатор система",
+      "type": "glavni"
+    },
+    {
+      "slug": "weather",
+      "name": "Метеоролошки агент",
+      "type": "specijalisticki"
+    },
+    {
+      "slug": "fire",
+      "name": "Пожарни агент",
+      "type": "specijalisticki"
+    },
+    {
+      "slug": "earth-observation",
+      "name": "Агент сателитског мониторинга",
+      "type": "specijalisticki"
+    },
+    {
+      "slug": "forest",
+      "name": "Агент мониторинга шума",
+      "type": "specijalisticki"
+    },
+    {
+      "slug": "spatial-change",
+      "name": "Агент промена простора",
+      "type": "specijalisticki"
+    },
+    {
+      "slug": "biodiversity",
+      "name": "Агент биодиверзитета",
+      "type": "specijalisticki"
+    },
+    {
+      "slug": "trails-safety",
+      "name": "Агент стаза и безбедности посетилаца",
+      "type": "specijalisticki"
+    },
+    {
+      "slug": "dark-sky",
+      "name": "Агент природног мрака и светлосног загађења",
+      "type": "specijalisticki"
+    },
+    {
+      "slug": "system-health",
+      "name": "Агент надзора система",
+      "type": "specijalisticki"
+    },
+    {
+      "slug": "knowledge",
+      "name": "Агент научне литературе и знања",
+      "type": "specijalisticki"
+    },
+    {
+      "slug": "reporting",
+      "name": "Агент извештавања",
+      "type": "specijalisticki"
+    },
+    {
+      "slug": "projects",
+      "name": "Агент за пројекте и конкурсе",
+      "type": "specijalisticki"
+    },
+    {
+      "slug": "alerts",
+      "name": "Агент аларма и приоритета",
+      "type": "specijalisticki"
+    },
+    {
+      "slug": "vision",
+      "name": "Агент визуелног надзора",
+      "type": "podsistem"
+    }
+  ]
+}
