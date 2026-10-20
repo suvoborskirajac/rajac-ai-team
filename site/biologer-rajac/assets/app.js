@@ -55,7 +55,7 @@ function renderMap(geo){
       marker.bindPopup(`<div class="popup-title"><i>${escape(p.scientific_name)}</i></div>
       <div class="popup-native">${escape(p.native_name||'')}</div>
       <div class="popup-meta"><b>Група:</b> ${escape(p.taxon_group)}<br><b>Датум:</b> ${escape(p.event_date||'непотпун датум')}<br>
-      <b>Зона:</b> ${escape(p.zone_name||'—')}<br><b>Прецизност:</b> ${coarse?'поље од око 1 km':(p.accuracy?escape(p.accuracy)+' m':'није наведена')}
+      <b>Зона:</b> ${escape(p.zone_name||'—')}<br>${p.elevation!=null&&p.elevation!==''&&!coarse?'<b>Надморска висина:</b> '+escape(Math.round(p.elevation))+' m<br>':''}${coarse?'<b>Прецизност:</b> поље од око 1 km':(p.accuracy?'<b>Прецизност:</b> ±'+escape(p.accuracy)+' m':'<b>Прецизност:</b> није дата у извозу из Biologer-а')}
       ${p.observer?'<br><b>Посматрач:</b> '+escape(p.observer):''}${p.uncertain==1?'<br><b>Напомена:</b> непрецизан/осетљив налаз':''}${coarse?'<br><span class="popup-coarse">'+escape(p.coarse_note||'')+'</span>':''}</div>${photo}`);
       group.addLayer(marker);
    });
