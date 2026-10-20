@@ -680,7 +680,7 @@ body .rfx-chapter-nav,body nav.rfx-chapter-nav,body .topnav,body nav.topnav,body
 <body class="rajac-archive rajac-archive--ptice">
 <nav aria-label="Главни мени ПИО Рајац" class="rajac-ds-nav"><div class="rajac-ds-nav-inner"><a class="rajac-ds-home" href="https://piorajac.rs/"><span aria-hidden="true" class="rajac-ds-home-mark">⊙</span><span>ПИО „РАЈАЦ“</span></a><a class="rajac-ds-nav-item" href="https://piorajac.rs/biljke/"><span aria-hidden="true" class="rajac-ds-icon">🌿</span><span>БИЉКЕ</span></a><a class="rajac-ds-nav-item rajac-ds-active" href="https://piorajac.rs/ptice/"><span aria-hidden="true" class="rajac-ds-icon">🦉</span><span>ПТИЦЕ</span></a><a class="rajac-ds-nav-item" href="https://piorajac.rs/insekti/"><span aria-hidden="true" class="rajac-ds-icon">🦋</span><span>ИНСЕКТИ</span></a><a class="rajac-ds-nav-item" href="https://piorajac.rs/sisari/"><span aria-hidden="true" class="rajac-ds-icon">🐾</span><span>СИСАРИ</span></a><a class="rajac-ds-nav-item" href="https://piorajac.rs/gljive/"><span aria-hidden="true" class="rajac-ds-icon">🍄</span><span>ГЉИВЕ</span></a><a class="rajac-ds-nav-item rajac-ds-nav-trofo" href="https://piorajac.rs/trofodinamika/"><span aria-hidden="true" class="rajac-ds-icon">🔗</span><span>ТРОФОДИНАМИКА</span></a></div></nav>
 <section class="hero">
-<figure class="pio-hero-credit-wrap" style="margin:0"><img alt="Чешљугар" class="hero-img" decoding="async" fetchpriority="high" height="1281" src="/ptice/assets/hero-carduelis-sharp.jpg?v=20260622u" onerror="this.onerror=null;this.src='/ptice/assets/hero-cesljugar-clean.jpg';" width="1920"/><figcaption class="pio-hero-credit">Фото: Pierre Dalous · CC BY-SA 3.0 · Wikimedia Commons — <a href="https://commons.wikimedia.org/wiki/File:Carduelis_carduelis_(2012).jpg" target="_blank" rel="noopener">оригинал</a></figcaption></figure>
+<figure class="pio-hero-credit-wrap" style="margin:0"><img alt="Чешљугар" class="hero-img" decoding="async" fetchpriority="high" height="1281" src="/ptice/assets/hero-carduelis-sharp.jpg?v=20260622u" onerror="this.onerror=null;this.src='/ptice/assets/hero-cesljugar-clean.jpg';" width="1920"/><figcaption class="pio-hero-credit">Фото: Pierre Dalous · CC BY-SA 3.0 · Wikimedia Commons — <a href="https://commons.wikimedia.org/wiki/File:Carduelis_carduelis_(2012).jpg" rel="noopener">оригинал</a></figcaption></figure>
 <div class="hero-g1"></div>
 <div class="hero-g2"></div>
 <div class="hero-content">
@@ -702,6 +702,7 @@ body .rfx-chapter-nav,body nav.rfx-chapter-nav,body .topnav,body nav.topnav,body
 </section>
 <p class="countline" id="countLine">Приказује се почетни избор врста у прегледу архиве.</p>
 <main class="archive">
+
 <div class="grid" id="bGrid"></div>
 <div class="loadwrap" id="loadWrap">
 <button class="loadbtn" id="loadBtn" type="button">
@@ -830,8 +831,8 @@ const birds = [
     group: "pevacice",
     pills: ["кућица", "стара стабла", "станарица"],
     blurb: "Снажна шумска певачица која се креће низ стабло главом надоле и често сама сужава улаз дупље блатом.",
-    img: "/ptice/assets/ptice2/brgljez.jpg",
-    fallback: "/ptice/assets/ptice2/brgljez.jpg",
+    img: "/ptice/assets/ptice2/brgljez-hero-new.jpg",
+    fallback: "/ptice/assets/ptice2/brgljez-hero-new.jpg",
     url: "/ptice/brgljez/"
   },
   {
@@ -1286,13 +1287,13 @@ const birds = [
     url: "/ptice/sylvia-communis/"
   },
   {
-    name: "Обична црвенперка",
+    name: "Обична црвенрепка",
     sci: "Phoenicurus phoenicurus",
     group: "pevacice",
     pills: ["LC", "сеобна гнездарица"],
     blurb: "Елегантна дупљашица са наранџастим репом који често трепери; воли старе воћњаке и светле шуме.",
-    img: "/ptice/assets/ptice2/phoenicurus-phoenicurus-1.jpg",
-    fallback: "/ptice/assets/ptice2/phoenicurus-phoenicurus-2.jpg",
+    img: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9d/Obi%C4%8Dna_crvenrepka_mu%C5%BEjak_%28Phoenicurus_phoenicurus%29%3B_Common_Redstart_male.jpg/960px-Obi%C4%8Dna_crvenrepka_mu%C5%BEjak_%28Phoenicurus_phoenicurus%29%3B_Common_Redstart_male.jpg",
+    fallback: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bc/Obi%C4%8Dna_crvenrepka_%28Phoenicurus_phoenicurus%29%2C_mu%C5%BEjak%3B_Common_Redstart_male.jpg/960px-Obi%C4%8Dna_crvenrepka_%28Phoenicurus_phoenicurus%29%2C_mu%C5%BEjak%3B_Common_Redstart_male.jpg",
     url: "/ptice/phoenicurus-phoenicurus/"
   }
   ,{
@@ -1311,8 +1312,8 @@ const birds = [
     group: "pevacice",
     pills: ["LC", "отворена станишта"],
     blurb: "Певачица отворених ливада и пашњака, препознатљива по дугој песми високо изнад терена.",
-    img: "/ptice/assets/ptice2/alauda-arvensis-1.jpg",
-    fallback: "/ptice/assets/ptice2/alauda-arvensis-2.jpg",
+    img: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f6/Skylark_2%2C_Lake_District%2C_England_-_June_2009.jpg/1280px-Skylark_2%2C_Lake_District%2C_England_-_June_2009.jpg",
+    fallback: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/22/Alauda_arvensis_Ehedydd.jpg/960px-Alauda_arvensis_Ehedydd.jpg",
     url: "/ptice/alauda-arvensis/"
   },
   {
@@ -1321,8 +1322,8 @@ const birds = [
     group: "pevacice",
     pills: ["LC", "водени токови"],
     blurb: "Елегантна врста чистих потока и извора; добар показатељ очуваних водених микростаништа.",
-    img: "/ptice/assets/ptice2/motacilla-cinerea-1.jpg",
-    fallback: "/ptice/assets/ptice2/motacilla-cinerea-2.jpg",
+    img: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/Grey_wagtail_%28Motacilla_cinerea_cinerea%29.jpg/1280px-Grey_wagtail_%28Motacilla_cinerea_cinerea%29.jpg",
+    fallback: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/Motacilla_cinerea_-_Grey_Wagtail_01-1.jpg/960px-Motacilla_cinerea_-_Grey_Wagtail_01-1.jpg",
     url: "/ptice/motacilla-cinerea/"
   },
   {
@@ -1331,8 +1332,8 @@ const birds = [
     group: "pevacice",
     pills: ["LC", "рубови шума"],
     blurb: "Врста шумских рубова и прогала, најлакше се бележи по певачком лету са врха стабла.",
-    img: "/ptice/assets/ptice2/anthus-trivialis-1.jpg",
-    fallback: "/ptice/assets/ptice2/anthus-trivialis-2.jpg",
+    img: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/49/Baumpieper_%28Anthus_trivialis%29%2C_Holzwarchetal_bei_M%C3%BCrringen%2C_Ostbelgien_%283938435013%29_%28cropped%29.jpg/1280px-Baumpieper_%28Anthus_trivialis%29%2C_Holzwarchetal_bei_M%C3%BCrringen%2C_Ostbelgien_%283938435013%29_%28cropped%29.jpg",
+    fallback: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/2015-04-21_Anthus_trivialis%2C_Abernethy_Forest_1_%28cropped%29.jpg/960px-2015-04-21_Anthus_trivialis%2C_Abernethy_Forest_1_%28cropped%29.jpg",
     url: "/ptice/anthus-trivialis/"
   },
   {
@@ -1341,8 +1342,8 @@ const birds = [
     group: "pevacice",
     pills: ["LC", "жбуње"],
     blurb: "Честа шумска певачица густог жбуња и воћњака, са богатом флаутастом песмом.",
-    img: "/ptice/assets/ptice2/sylvia-atricapilla-1.jpg",
-    fallback: "/ptice/assets/ptice2/sylvia-atricapilla-2.jpg",
+    img: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/41/Eurasian_Blackcap_2025_04_05.jpg/1280px-Eurasian_Blackcap_2025_04_05.jpg",
+    fallback: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/22/Blackcap_%28Sylvia_atricapilla%29_female_ringed_Malta.jpg/960px-Blackcap_%28Sylvia_atricapilla%29_female_ringed_Malta.jpg",
     url: "/ptice/sylvia-atricapilla/"
   },
   {
@@ -1351,8 +1352,8 @@ const birds = [
     group: "pevacice",
     pills: ["LC", "шуме"],
     blurb: "Ситна певачица шумских рубова, најлакше препознатљива по упорном ритмичном певању.",
-    img: "/ptice/assets/ptice2/phylloscopus-collybita-1.jpg",
-    fallback: "/ptice/assets/ptice2/phylloscopus-collybita-2.jpg",
+    img: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/85/Common_Chiffchaff_2025_04_04_01.jpg/1280px-Common_Chiffchaff_2025_04_04_01.jpg",
+    fallback: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/Common_Chiffchaff_2025_04_04_02.jpg/960px-Common_Chiffchaff_2025_04_04_02.jpg",
     url: "/ptice/phylloscopus-collybita/"
   },
   {
@@ -1361,8 +1362,8 @@ const birds = [
     group: "pevacice",
     pills: ["LC", "воћњаци"],
     blurb: "Дискретна мухарица старих воћњака и рубова, препознатљива по кратким ловним излетима са исте осматрачнице.",
-    img: "/ptice/assets/ptice2/muscicapa-striata-1.jpg",
-    fallback: "/ptice/assets/ptice2/muscicapa-striata-2.jpg",
+    img: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/59/Papamoscas_cincento.jpg/1280px-Papamoscas_cincento.jpg",
+    fallback: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/54/Muscicapa_striata_gwybedog_mannog.jpg/960px-Muscicapa_striata_gwybedog_mannog.jpg",
     url: "/ptice/muscicapa-striata/"
   },
   {
@@ -1376,13 +1377,13 @@ const birds = [
     url: "/ptice/ficedula-hypoleuca/"
   },
   {
-    name: "Црна црвенперка",
+    name: "Црна црвенрепка",
     sci: "Phoenicurus ochruros",
     group: "pevacice",
     pills: ["LC", "каменита места"],
     blurb: "Препознатљива по тамном телу и црвенкастом репу који стално трепери; воли каменита и насељска станишта.",
-    img: "/ptice/assets/ptice2/phoenicurus-ochruros-1.jpg",
-    fallback: "/ptice/assets/ptice2/phoenicurus-ochruros-2.jpg",
+    img: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bf/Black_redstart_%28Phoenicurus_ochruros_gibraltariensis%29_female_Skalnate_pleso.jpg/1280px-Black_redstart_%28Phoenicurus_ochruros_gibraltariensis%29_female_Skalnate_pleso.jpg",
+    fallback: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e6/2018-05-22_%28124%29_Phoenicurus_ochruros_gibraltariensis_%28black_redstart%29_at_Bichlh%C3%A4usl_in_Frankenfels%2C_Austria.jpg/960px-2018-05-22_%28124%29_Phoenicurus_ochruros_gibraltariensis_%28black_redstart%29_at_Bichlh%C3%A4usl_in_Frankenfels%2C_Austria.jpg",
     url: "/ptice/phoenicurus-ochruros/"
   },
   {
@@ -1391,8 +1392,8 @@ const birds = [
     group: "pevacice",
     pills: ["LC", "ливаде"],
     blurb: "Упадљива мала певачица жбунастих ливада, често на врху жбуна или ограде као осматрачници.",
-    img: "/ptice/assets/ptice2/saxicola-rubicola-1.jpg",
-    fallback: "/ptice/assets/ptice2/saxicola-rubicola-2.jpg",
+    img: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/71/Common_stonechat_%28Saxicola_rubicola_rubicola%29_male_non-breeding_Loja.jpg/1280px-Common_stonechat_%28Saxicola_rubicola_rubicola%29_male_non-breeding_Loja.jpg",
+    fallback: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e1/Saxicola_rubicola_female%2C_Serbia.jpg/960px-Saxicola_rubicola_female%2C_Serbia.jpg",
     url: "/ptice/saxicola-rubicola/"
   },
   {
