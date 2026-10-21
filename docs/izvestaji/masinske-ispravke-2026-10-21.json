@@ -1,0 +1,4156 @@
+{
+ "izmenjeno": 964,
+ "zbir": {
+  "target=_blank": 1473,
+  "поправљен type аудио снимка": 48,
+  "мешана слова (ручни речник)": 163,
+  "назив": 2314,
+  "наводници „…”/„…\"": 2365,
+  "target=_blank (у скрипти)": 31,
+  "мешана слова": 458,
+  "пресловљено назад у латиницу": 443,
+  "наводници \"…\"": 27
+ },
+ "po_stranici": {
+  "copernicus_viewer.html": {
+   "назив": 2
+  },
+  "mape/mapa.html": {
+   "назив": 2
+  },
+  "mape/index.html": {
+   "назив": 1
+  },
+  "mape/geologija.html": {
+   "мешана слова": 1
+  },
+  "siva-senica/index.html": {
+   "target=_blank": 8,
+   "поправљен type аудио снимка": 1,
+   "назив": 6,
+   "наводници „…”/„…\"": 1,
+   "пресловљено назад у латиницу": 3
+  },
+  "livadska-stanista/index.html": {
+   "назив": 5,
+   "наводници „…”/„…\"": 1
+  },
+  "index.m.html": {
+   "target=_blank": 2,
+   "назив": 5,
+   "наводници „…”/„…\"": 14
+  },
+  "emberiza-hortulana/index.html": {
+   "target=_blank": 7,
+   "поправљен type аудио снимка": 1,
+   "назив": 6,
+   "наводници „…”/„…\"": 3,
+   "пресловљено назад у латиницу": 5
+  },
+  "ko-upravlja/index.html": {
+   "наводници „…”/„…\"": 5
+  },
+  "phasianus-colchicus/index.html": {
+   "target=_blank": 7,
+   "поправљен type аудио снимка": 1,
+   "назив": 7,
+   "наводници „…”/„…\"": 4,
+   "мешана слова": 1,
+   "пресловљено назад у латиницу": 3
+  },
+  "eupteryx-notata/index.html": {
+   "target=_blank": 3,
+   "назив": 2,
+   "наводници „…”/„…\"": 4
+  },
+  "veliki-vranac/index.html": {
+   "target=_blank": 7,
+   "назив": 6,
+   "пресловљено назад у латиницу": 1
+  },
+  "hidrografija/index.html": {
+   "назив": 2,
+   "наводници „…”/„…\"": 4
+  },
+  "craterellus-cornucopioides/index.html": {
+   "target=_blank": 2,
+   "мешана слова (ручни речник)": 2,
+   "назив": 3,
+   "наводници „…”/„…\"": 5,
+   "мешана слова": 1
+  },
+  "leaflet-terenski-izvestaji/cuvar/teren/index.html": {
+   "наводници „…”/„…\"": 1
+  },
+  "leaflet-terenski-izvestaji/cuvar/index.html": {
+   "наводници „…”/„…\"": 6
+  },
+  "leaflet-terenski-izvestaji/cuvar/docs/PIO-Rajac_CUVAR_makete.html": {
+   "наводници „…”/„…\"": 6
+  },
+  "leaflet-terenski-izvestaji/index.html": {
+   "мешана слова (ручни речник)": 2,
+   "назив": 3,
+   "наводници „…”/„…\"": 1,
+   "мешана слова": 2
+  },
+  "leaflet-terenski-izvestaji/pio_rajac/index.html": {
+   "назив": 1,
+   "наводници „…”/„…\"": 1
+  },
+  "rajac-oblaci/index.html": {
+   "target=_blank": 48,
+   "назив": 1
+  },
+  "idiocerus-confusus/index.html": {
+   "target=_blank": 2,
+   "назив": 2,
+   "наводници „…”/„…\"": 5
+  },
+  "pozarna-opasnost/index.html": {
+   "назив": 2
+  },
+  "turdus-viscivorus/index.html": {
+   "target=_blank": 7,
+   "поправљен type аудио снимка": 1,
+   "назив": 6,
+   "наводници „…”/„…\"": 1,
+   "пресловљено назад у латиницу": 3
+  },
+  "rosalia-alpina/index.html": {
+   "target=_blank": 5,
+   "мешана слова (ручни речник)": 8,
+   "назив": 5,
+   "наводници „…”/„…\"": 5,
+   "мешана слова": 3,
+   "наводници \"…\"": 9
+  },
+  "montaza-meteo-stanice/index.html": {
+   "наводници „…”/„…\"": 3
+  },
+  "о-платформи/index.html": {
+   "назив": 3
+  },
+  "pieris-rod/index.html": {
+   "target=_blank": 4,
+   "мешана слова (ручни речник)": 2,
+   "назив": 3,
+   "наводници „…”/„…\"": 8,
+   "мешана слова": 3
+  },
+  "fotografisanje-gljiva-rajca/index.html": {
+   "назив": 6,
+   "мешана слова": 1
+  },
+  "pio-rajac-naslovna/index-naslovna.html": {
+   "target=_blank": 2,
+   "назив": 4,
+   "наводници „…”/„…\"": 14
+  },
+  "monitoring-svetlosne-zagadjenosti/index.html": {
+   "назив": 3,
+   "наводници „…”/„…\"": 8
+  },
+  "monitoring-svetlosne-zagadjenosti/UBACI-LINK-U-POSTOJECI-INDEX.html": {
+   "наводници „…”/„…\"": 1
+  },
+  "amanita-rubescens/index.html": {
+   "target=_blank": 2,
+   "назив": 3,
+   "наводници „…”/„…\"": 5,
+   "мешана слова": 3
+  },
+  "trametes-versicolor/index.html": {
+   "target=_blank": 2,
+   "мешана слова (ручни речник)": 2,
+   "назив": 3,
+   "наводници „…”/„…\"": 5,
+   "мешана слова": 1
+  },
+  "platycnemis-pennipes/index.html": {
+   "target=_blank": 3,
+   "назив": 2,
+   "наводници „…”/„…\"": 4
+  },
+  "hepialidae/index.html": {
+   "target=_blank": 2,
+   "назив": 2,
+   "наводници „…”/„…\"": 5
+  },
+  "knjiga/metodologija/index.html": {
+   "мешана слова (ручни речник)": 8,
+   "назив": 1,
+   "наводници „…”/„…\"": 26,
+   "мешана слова": 9
+  },
+  "knjiga/index.html": {
+   "назив": 2,
+   "наводници „…”/„…\"": 26
+  },
+  "knjiga/uvod/index.html": {
+   "назив": 2,
+   "наводници „…”/„…\"": 26
+  },
+  "ganoderma-lucidum/index.html": {
+   "target=_blank": 2,
+   "назив": 3,
+   "наводници „…”/„…\"": 5,
+   "мешана слова": 2
+  },
+  "biljke/fotografisanje-biljaka-rajca/index.html": {
+   "назив": 2
+  },
+  "biljke/index.html": {
+   "наводници „…”/„…\"": 1
+  },
+  "biljke/kalendar-cvetanja-biljaka-rajca/index.html": {
+   "назив": 2
+  },
+  "biljke/ponasanje-prema-biljkama-rajca/index.html": {
+   "назив": 2
+  },
+  "biljke/pomoc-biljkama-rajca/index.html": {
+   "назив": 2
+  },
+  "biljke/alati-za-posetioce-biljke-rajca/index.html": {
+   "назив": 2
+  },
+  "biljke/NEUTVRDJENI_IZVORI_pregled.html": {
+   "наводници „…”/„…\"": 1
+  },
+  "biljke/fotografisanje-biljaka-rajca.html": {
+   "наводници „…”/„…\"": 16
+  },
+  "picus-canus/index.html": {
+   "target=_blank": 7,
+   "назив": 6,
+   "наводници „…”/„…\"": 7,
+   "мешана слова": 1,
+   "пресловљено назад у латиницу": 3
+  },
+  "beovideo/index.html": {
+   "наводници „…”/„…\"": 3,
+   "мешана слова": 1
+  },
+  "satelitski-monitoring-svetlosnog-zagadjenja/index.html": {
+   "назив": 1,
+   "наводници „…”/„…\"": 9
+  },
+  "pholiota-squarrosa/index.html": {
+   "target=_blank": 1,
+   "назив": 2,
+   "наводници „…”/„…\"": 4,
+   "мешана слова": 1
+  },
+  "sylvia-atricapilla/index.html": {
+   "target=_blank": 7,
+   "поправљен type аудио снимка": 1,
+   "назив": 6,
+   "пресловљено назад у латиницу": 5
+  },
+  "pticezip/menizaptice.html": {
+   "target=_blank": 2,
+   "назив": 4,
+   "наводници „…”/„…\"": 4,
+   "target=_blank (у скрипти)": 1,
+   "мешана слова": 2,
+   "наводници \"…\"": 1
+  },
+  "pticezip/Птице ПИО Рајац — preview.html": {
+   "назив": 5
+  },
+  "reljef/index.html": {
+   "назив": 2,
+   "наводници „…”/„…\"": 3
+  },
+  "za-posetioce/astro-prognoza/index.html": {
+   "назив": 2,
+   "target=_blank (у скрипти)": 3
+  },
+  "za-posetioce/index.html": {
+   "назив": 3
+  },
+  "za-posetioce/karta/index.html": {
+   "назив": 3
+  },
+  "idiocerus-populi/index.html": {
+   "target=_blank": 2,
+   "назив": 2,
+   "наводници „…”/„…\"": 5
+  },
+  "psammotettix-cephalotes/index.html": {
+   "target=_blank": 3,
+   "назив": 3,
+   "наводници „…”/„…\"": 4
+  },
+  "ndmi-final/ndmi_viewer.html": {
+   "target=_blank": 1,
+   "мешана слова (ручни речник)": 1,
+   "назив": 3,
+   "наводници „…”/„…\"": 1
+  },
+  "gljive/izvestaj_agenti_uzorak.html": {
+   "назив": 1,
+   "наводници „…”/„…\"": 4
+  },
+  "gljive/craterellus-cornucopioides/index.html": {
+   "назив": 2
+  },
+  "gljive/fotografisanje-gljiva-rajca/index.html": {
+   "назив": 7
+  },
+  "gljive/amanita-rubescens/index.html": {
+   "назив": 2
+  },
+  "gljive/trametes-versicolor/index.html": {
+   "назив": 2
+  },
+  "gljive/ganoderma-lucidum/index.html": {
+   "назив": 2
+  },
+  "gljive/pholiota-squarrosa/index.html": {
+   "назив": 2
+  },
+  "gljive/alati-za-posetioce-gljive-rajca/index.html": {
+   "назив": 7
+  },
+  "gljive/pomoc-gljivama-rajca/index.html": {
+   "назив": 5
+  },
+  "gljive/lactarius-deliciosus/index.html": {
+   "назив": 2
+  },
+  "gljive/coprinus-comatus/index.html": {
+   "назив": 2
+  },
+  "gljive/marasmius-oreades/index.html": {
+   "назив": 2
+  },
+  "gljive/index.html": {
+   "назив": 2,
+   "наводници „…”/„…\"": 1
+  },
+  "gljive/amanita-vaginata/index.html": {
+   "назив": 3,
+   "наводници „…”/„…\"": 2
+  },
+  "gljive/morchella-esculenta/index.html": {
+   "назив": 2
+  },
+  "gljive/suillus-luteus/index.html": {
+   "назив": 2
+  },
+  "gljive/amanita-phalloides/index.html": {
+   "назив": 2,
+   "наводници „…”/„…\"": 2
+  },
+  "gljive/macrolepiota-procera/index.html": {
+   "назив": 2
+  },
+  "gljive/cantharellus-cibarius/index.html": {
+   "назив": 2
+  },
+  "gljive/fistulina-hepatica/index.html": {
+   "назив": 2
+  },
+  "gljive/amanita-muscaria/index.html": {
+   "назив": 2
+  },
+  "gljive/russula-virescens/index.html": {
+   "назив": 2
+  },
+  "gljive/armillaria-mellea/index.html": {
+   "назив": 2,
+   "наводници „…”/„…\"": 1
+  },
+  "gljive/lycoperdon-perlatum/index.html": {
+   "назив": 2,
+   "наводници „…”/„…\"": 1
+  },
+  "gljive/ponasanje-prema-gljivama-i-stanistima-rajca/index.html": {
+   "назив": 6
+  },
+  "gljive/ponasanje-prema-gljivama-rajca/index.html": {
+   "назив": 5,
+   "наводници „…”/„…\"": 2
+  },
+  "gljive/amanita-caesarea/index.html": {
+   "назив": 2,
+   "наводници „…”/„…\"": 2
+  },
+  "gljive/hypholoma-fasciculare/index.html": {
+   "назив": 2
+  },
+  "gljive/boletus-edulis/index.html": {
+   "назив": 2,
+   "наводници „…”/„…\"": 1
+  },
+  "gljive/pleurotus-ostreatus/index.html": {
+   "назив": 2
+  },
+  "gljive/izvori-fotografija/index.html": {
+   "target=_blank": 25,
+   "назив": 4
+  },
+  "gljive/russula-cyanoxantha/index.html": {
+   "назив": 2
+  },
+  "gljive/rubroboletus-satanas/index.html": {
+   "назив": 3
+  },
+  "monitoring-ptica-pio-rajac/index.html": {
+   "target=_blank": 5,
+   "назив": 4,
+   "наводници „…”/„…\"": 3,
+   "target=_blank (у скрипти)": 5
+  },
+  "monitoring/meteo/mesecni/2026-03/index.html": {
+   "наводници „…”/„…\"": 1
+  },
+  "monitoring/meteo/mesecni/2026-02/index.html": {
+   "наводници „…”/„…\"": 1
+  },
+  "monitoring/meteo/mesecni/2026-06/index.html": {
+   "наводници „…”/„…\"": 1
+  },
+  "monitoring/meteo/mesecni/2026-05/index.html": {
+   "наводници „…”/„…\"": 1
+  },
+  "monitoring/meteo/mesecni/2026-01/index.html": {
+   "наводници „…”/„…\"": 1
+  },
+  "monitoring/meteo/mesecni/2026-04/index.html": {
+   "наводници „…”/„…\"": 1
+  },
+  "monitoring/index.html": {
+   "наводници „…”/„…\"": 2
+  },
+  "lucanus-cervus/index.html": {
+   "target=_blank": 3,
+   "назив": 4,
+   "наводници „…”/„…\"": 2
+  },
+  "limonovac/index.html": {
+   "target=_blank": 3,
+   "мешана слова (ручни речник)": 4,
+   "назив": 4,
+   "наводници „…”/„…\"": 2
+  },
+  "sumska-sova/index.html": {
+   "target=_blank": 8,
+   "поправљен type аудио снимка": 1,
+   "назив": 6,
+   "наводници „…”/„…\"": 1,
+   "пресловљено назад у латиницу": 3
+  },
+  "oriolus-oriolus/index.html": {
+   "target=_blank": 7,
+   "поправљен type аудио снимка": 1,
+   "назив": 6,
+   "наводници „…”/„…\"": 9,
+   "пресловљено назад у латиницу": 4
+  },
+  "fotografisanje-ptica/index.html": {
+   "target=_blank": 1,
+   "назив": 3,
+   "наводници „…”/„…\"": 7,
+   "пресловљено назад у латиницу": 14
+  },
+  "siva-vrana/index.html": {
+   "target=_blank": 7,
+   "назив": 6,
+   "пресловљено назад у латиницу": 3
+  },
+  "bird-live/pilot/index.html": {
+   "назив": 2
+  },
+  "satelitski-monitoring-vegetacije-pio-rajac-2017-2025/index.html": {
+   "target=_blank": 2,
+   "назив": 6,
+   "наводници „…”/„…\"": 7
+  },
+  "merlin-ptice-rajac/index.html": {
+   "target=_blank": 13,
+   "назив": 2,
+   "наводници „…”/„…\"": 1,
+   "пресловљено назад у латиницу": 9
+  },
+  "suvoborski-duvalijus-duvalius-suvoborensis-nova-vrsta/index.html": {
+   "наводници „…”/„…\"": 2
+  },
+  "cavka/index.html": {
+   "target=_blank": 8,
+   "поправљен type аудио снимка": 1,
+   "назив": 6,
+   "пресловљено назад у латиницу": 5
+  },
+  "evacanthus-acuminatus/index.html": {
+   "target=_blank": 2,
+   "назив": 2,
+   "наводници „…”/„…\"": 5
+  },
+  "alati-za-posetioce-gljive-rajca/index.html": {
+   "назив": 6,
+   "наводници „…”/„…\"": 4,
+   "мешана слова": 2
+  },
+  "rajac-ai/agents/daily-scout/data/archive/2026-09-21.html": {
+   "target=_blank": 44
+  },
+  "rajac-ai/digitalno-jato/index.html": {
+   "назив": 1
+  },
+  "kucice-za-ptice/index.html": {
+   "назив": 2
+  },
+  "otkrice-u-pio-rajac-potvrdjeno-prisustvo-cheilosia-schnabli/index.html": {
+   "target=_blank": 1,
+   "наводници „…”/„…\"": 4
+  },
+  "velika-senica/index.html": {
+   "target=_blank": 8,
+   "поправљен type аудио снимка": 1,
+   "назив": 6,
+   "наводници „…”/„…\"": 2,
+   "пресловљено назад у латиницу": 6
+  },
+  "kontakt/index.html": {
+   "назив": 3,
+   "наводници „…”/„…\"": 3
+  },
+  "nadleznosti/index.html": {
+   "наводници „…”/„…\"": 4
+  },
+  "cheilosia-schnabli/index.html": {
+   "target=_blank": 4,
+   "назив": 3,
+   "наводници „…”/„…\"": 5
+  },
+  "atheta-contristata/index.html": {
+   "target=_blank": 6,
+   "назив": 4,
+   "наводници „…”/„…\"": 5,
+   "мешана слова": 2
+  },
+  "aleochara-funebris/index.html": {
+   "target=_blank": 5,
+   "назив": 2,
+   "наводници „…”/„…\"": 5,
+   "мешана слова": 5,
+   "наводници \"…\"": 2
+  },
+  "eupteroidia-stellulata/index.html": {
+   "target=_blank": 3,
+   "назив": 2,
+   "наводници „…”/„…\"": 4
+  },
+  "amsrajac/ams/index.html": {
+   "назив": 2,
+   "мешана слова": 1
+  },
+  "amsrajac/ams/AMS Rajac Dashboard.html": {
+   "мешана слова (ручни речник)": 1,
+   "target=_blank (у скрипти)": 1
+  },
+  "amsrajac/ams/AMS Rajac Mobile.html": {
+   "target=_blank (у скрипти)": 2
+  },
+  "amsrajac/copernicus_viewer.html": {
+   "назив": 2
+  },
+  "amsrajac/amsrajac-pro-historic-sync-fix/index.html": {
+   "назив": 1,
+   "наводници „…”/„…\"": 2
+  },
+  "amsrajac/lokalna-prognoza/index.html": {
+   "назив": 1
+  },
+  "amsrajac/podrska_poljoprivredi_rain_cumulative.html": {
+   "target=_blank": 4,
+   "наводници „…”/„…\"": 6,
+   "target=_blank (у скрипти)": 1,
+   "мешана слова": 2
+  },
+  "amsrajac/preglednije.html": {
+   "назив": 1,
+   "наводници „…”/„…\"": 2
+  },
+  "amsrajac/PIO-Rajac-revizija-R3-2026-09-14.html": {
+   "назив": 2
+  },
+  "amsrajac/prognozakise/index.html": {
+   "target=_blank": 1,
+   "назив": 1,
+   "наводници „…”/„…\"": 2
+  },
+  "amsrajac/index.html": {
+   "назив": 2
+  },
+  "amsrajac/index-old.html": {
+   "назив": 1,
+   "наводници „…”/„…\"": 2
+  },
+  "amsrajac/parcele/index.html": {
+   "назив": 2,
+   "target=_blank (у скрипти)": 1
+  },
+  "amsrajac/agro.html": {
+   "назив": 2,
+   "target=_blank (у скрипти)": 1
+  },
+  "amsrajac/indeksi/index.html": {
+   "назив": 2,
+   "target=_blank (у скрипти)": 1
+  },
+  "amsrajac/parcel_longterm_analytics.html": {
+   "назив": 1
+  },
+  "amsrajac/copernicus_histogram_panel.html": {
+   "назив": 1,
+   "наводници „…”/„…\"": 1
+  },
+  "amsrajac/dizajn/index.html": {
+   "назив": 2,
+   "мешана слова": 1
+  },
+  "amsrajac/mesecni-izvestaji/index.html": {
+   "назив": 1
+  },
+  "amsrajac/probni/podrska_poljoprivredi_rain_cumulative.html": {
+   "target=_blank": 4,
+   "наводници „…”/„…\"": 6,
+   "target=_blank (у скрипти)": 1,
+   "мешана слова": 2
+  },
+  "amsrajac/parcel_analytics.html": {
+   "назив": 1
+  },
+  "izvestaj-monitoring-biljaka-22-maj-2026/index.html": {
+   "назив": 1,
+   "наводници „…”/„…\"": 5
+  },
+  "posmatranje-ptica-na-rajcu/index.html": {
+   "наводници „…”/„…\"": 2
+  },
+  "monitoring-zvucnim-snimacima/index.html": {
+   "назив": 2,
+   "наводници „…”/„…\"": 3
+  },
+  "zvezdani-park/komete.html": {
+   "target=_blank": 20
+  },
+  "zvezdani-park/planete.html": {
+   "target=_blank": 13,
+   "наводници „…”/„…\"": 1
+  },
+  "zvezdani-park/instrumenti.html": {
+   "target=_blank": 27
+  },
+  "zvezdani-park/astro-prognoza/index.html": {
+   "target=_blank": 4,
+   "target=_blank (у скрипти)": 3
+  },
+  "zvezdani-park/zivo-nebo-rajac.html": {
+   "назив": 1
+  },
+  "zvezdani-park/02-svetlosno-zagadjenje.html": {
+   "target=_blank": 1
+  },
+  "zvezdani-park/astrofotografija.html": {
+   "target=_blank": 45
+  },
+  "zvezdani-park/astrognozija.html": {
+   "target=_blank": 25
+  },
+  "zvezdani-park/dodaci.html": {
+   "target=_blank": 10,
+   "назив": 3
+  },
+  "zvezdani-park/rosa.html": {
+   "мешана слова": 1
+  },
+  "zvezdani-park/svetlosno-zagadjenje/astro-prognoza/index.html": {
+   "target=_blank": 4,
+   "target=_blank (у скрипти)": 3
+  },
+  "zvezdani-park/promenljive-zvezde.html": {
+   "target=_blank": 69
+  },
+  "zvezdani-park/01-uvod-i-rajac.html": {
+   "мешана слова": 2
+  },
+  "zvezdani-park/nocno-nebo-rajac.html": {
+   "назив": 1
+  },
+  "zvezdani-park/meteori.html": {
+   "target=_blank": 27
+  },
+  "zvezdani-park/sunce.html": {
+   "target=_blank": 35
+  },
+  "zvezdani-park/svetlosno-zagadjenje-u-srbiji.html": {
+   "target=_blank": 3,
+   "назив": 2
+  },
+  "turdus-merula/index.html": {
+   "target=_blank": 7,
+   "поправљен type аудио снимка": 1,
+   "назив": 6,
+   "наводници „…”/„…\"": 3,
+   "пресловљено назад у латиницу": 5
+  },
+  "vodic/index.html": {
+   "назив": 5,
+   "наводници „…”/„…\"": 4,
+   "мешана слова": 4
+  },
+  "bisnius-fimetarius/index.html": {
+   "target=_blank": 5,
+   "мешана слова (ручни речник)": 2,
+   "назив": 2,
+   "наводници „…”/„…\"": 6,
+   "мешана слова": 2
+  },
+  "gis-analitika/index.html": {
+   "назив": 1,
+   "наводници „…”/„…\"": 1
+  },
+  "vegetacija-kopernikus/index.html": {
+   "назив": 1,
+   "наводници „…”/„…\"": 4
+  },
+  "megadelphax-sordidula/index.html": {
+   "target=_blank": 3,
+   "назив": 2,
+   "наводници „…”/„…\"": 4
+  },
+  "certhia-brachydactyla/index.html": {
+   "target=_blank": 7,
+   "назив": 6,
+   "пресловљено назад у латиницу": 4
+  },
+  "pomoc-gljivama-rajca/index.html": {
+   "назив": 4,
+   "наводници „…”/„…\"": 1
+  },
+  "aplikacije/index.html": {
+   "назив": 2,
+   "наводници „…”/„…\"": 1
+  },
+  "lactarius-deliciosus/index.html": {
+   "target=_blank": 2,
+   "назив": 3,
+   "наводници „…”/„…\"": 5,
+   "мешана слова": 1
+  },
+  "episyrphus-balteatus/index.html": {
+   "target=_blank": 4,
+   "мешана слова (ручни речник)": 2,
+   "назив": 3,
+   "наводници „…”/„…\"": 8,
+   "мешана слова": 3
+  },
+  "aeshna-cyanea/index.html": {
+   "target=_blank": 4,
+   "мешана слова (ручни речник)": 2,
+   "назив": 4,
+   "наводници „…”/„…\"": 5,
+   "мешана слова": 3
+  },
+  "obicna-travarka/index.html": {
+   "target=_blank": 7,
+   "поправљен type аудио снимка": 1,
+   "назив": 6,
+   "пресловљено назад у латиницу": 2
+  },
+  "prunella-modularis/index.html": {
+   "target=_blank": 7,
+   "назив": 6,
+   "пресловљено назад у латиницу": 4
+  },
+  "karta-pio-rajac/index.html": {
+   "назив": 2,
+   "наводници „…”/„…\"": 3
+  },
+  "coprinus-comatus/index.html": {
+   "target=_blank": 2,
+   "назив": 3,
+   "наводници „…”/„…\"": 5,
+   "мешана слова": 1
+  },
+  "kukavica/index.html": {
+   "target=_blank": 10,
+   "поправљен type аудио снимка": 1,
+   "назив": 6,
+   "наводници „…”/„…\"": 3,
+   "пресловљено назад у латиницу": 2
+  },
+  "biljke_biljke_ne_koristi/karta1.html": {
+   "мешана слова": 1
+  },
+  "oenanthe-oenanthe/index.html": {
+   "target=_blank": 7,
+   "поправљен type аудио снимка": 1,
+   "назив": 6,
+   "наводници „…”/„…\"": 5,
+   "пресловљено назад у латиницу": 5
+  },
+  "motacilla-alba/index.html": {
+   "target=_blank": 7,
+   "назив": 6,
+   "наводници „…”/„…\"": 3,
+   "мешана слова": 3,
+   "пресловљено назад у латиницу": 3
+  },
+  "suri-orao/index.html": {
+   "target=_blank": 7,
+   "назив": 6,
+   "пресловљено назад у латиницу": 2
+  },
+  "libellula-depressa/index.html": {
+   "target=_blank": 3,
+   "назив": 2,
+   "наводници „…”/„…\"": 4
+  },
+  "pomoc-insektima-rajca/index.html": {
+   "назив": 7,
+   "наводници „…”/„…\"": 11
+  },
+  "marasmius-oreades/index.html": {
+   "target=_blank": 2,
+   "назив": 3,
+   "наводници „…”/„…\"": 6,
+   "мешана слова": 2
+  },
+  "garrulus-glandarius/index.html": {
+   "target=_blank": 8,
+   "назив": 6,
+   "пресловљено назад у латиницу": 3
+  },
+  "ptice/siva-senica/index.html": {
+   "мешана слова (ручни речник)": 1,
+   "назив": 8,
+   "наводници „…”/„…\"": 1,
+   "пресловљено назад у латиницу": 3
+  },
+  "ptice/emberiza-hortulana/index.html": {
+   "назив": 8,
+   "наводници „…”/„…\"": 3,
+   "пресловљено назад у латиницу": 3
+  },
+  "ptice/phasianus-colchicus/index.html": {
+   "мешана слова (ручни речник)": 3,
+   "назив": 8,
+   "наводници „…”/„…\"": 4,
+   "пресловљено назад у латиницу": 2
+  },
+  "ptice/veliki-vranac/index.html": {
+   "назив": 8
+  },
+  "ptice/turdus-viscivorus/index.html": {
+   "назив": 8,
+   "наводници „…”/„…\"": 5,
+   "пресловљено назад у латиницу": 2
+  },
+  "ptice/picus-canus/index.html": {
+   "назив": 8,
+   "наводници „…”/„…\"": 6,
+   "мешана слова": 3,
+   "пресловљено назад у латиницу": 1
+  },
+  "ptice/sylvia-atricapilla/index.html": {
+   "мешана слова (ручни речник)": 1,
+   "назив": 8,
+   "пресловљено назад у латиницу": 3
+  },
+  "ptice/monitoring-ptica-pio-rajac/index.html": {
+   "назив": 7,
+   "наводници „…”/„…\"": 2
+  },
+  "ptice/sumska-sova/index.html": {
+   "назив": 8,
+   "наводници „…”/„…\"": 3,
+   "пресловљено назад у латиницу": 1
+  },
+  "ptice/oriolus-oriolus/index.html": {
+   "назив": 8,
+   "наводници „…”/„…\"": 10,
+   "пресловљено назад у латиницу": 3
+  },
+  "ptice/fotografisanje-ptica/index.html": {
+   "назив": 6,
+   "наводници „…”/„…\"": 10,
+   "пресловљено назад у латиницу": 15
+  },
+  "ptice/siva-vrana/index.html": {
+   "мешана слова (ручни речник)": 1,
+   "назив": 8,
+   "пресловљено назад у латиницу": 2
+  },
+  "ptice/merlin-ptice-rajac/index.html": {
+   "назив": 5,
+   "наводници „…”/„…\"": 1
+  },
+  "ptice/cavka/index.html": {
+   "назив": 8,
+   "пресловљено назад у латиницу": 2
+  },
+  "ptice/kucice-za-ptice/index.html": {
+   "назив": 5
+  },
+  "ptice/velika-senica/index.html": {
+   "мешана слова (ручни речник)": 1,
+   "назив": 8,
+   "наводници „…”/„…\"": 2,
+   "пресловљено назад у латиницу": 3
+  },
+  "ptice/turdus-merula/index.html": {
+   "мешана слова (ручни речник)": 2,
+   "назив": 8,
+   "наводници „…”/„…\"": 3,
+   "пресловљено назад у латиницу": 1
+  },
+  "ptice/certhia-brachydactyla/index.html": {
+   "назив": 8,
+   "пресловљено назад у латиницу": 1
+  },
+  "ptice/obicna-travarka/index.html": {
+   "назив": 8,
+   "пресловљено назад у латиницу": 1
+  },
+  "ptice/prunella-modularis/index.html": {
+   "мешана слова (ручни речник)": 1,
+   "назив": 8,
+   "пресловљено назад у латиницу": 1
+  },
+  "ptice/prirucnik/prepoznaj.html": {
+   "назив": 1
+  },
+  "ptice/prirucnik/poglavlje-03.html": {
+   "мешана слова": 2
+  },
+  "ptice/prirucnik/metodologija.html": {
+   "target=_blank": 1,
+   "мешана слова": 1
+  },
+  "ptice/prirucnik/poglavlje-09.html": {
+   "мешана слова": 2
+  },
+  "ptice/prirucnik/delovi-tela.html": {
+   "назив": 1
+  },
+  "ptice/prirucnik/index.html": {
+   "назив": 1
+  },
+  "ptice/prirucnik/teren.html": {
+   "назив": 1
+  },
+  "ptice/prirucnik/poglavlje-11.html": {
+   "target=_blank": 1
+  },
+  "ptice/kukavica/index.html": {
+   "назив": 8,
+   "наводници „…”/„…\"": 4,
+   "пресловљено назад у латиницу": 1
+  },
+  "ptice/oenanthe-oenanthe/index.html": {
+   "назив": 8,
+   "наводници „…”/„…\"": 5,
+   "пресловљено назад у латиницу": 4
+  },
+  "ptice/motacilla-alba/index.html": {
+   "назив": 8,
+   "наводници „…”/„…\"": 3,
+   "пресловљено назад у латиницу": 1
+  },
+  "ptice/suri-orao/index.html": {
+   "назив": 8
+  },
+  "ptice/garrulus-glandarius/index.html": {
+   "мешана слова (ручни речник)": 1,
+   "назив": 8,
+   "пресловљено назад у латиницу": 1
+  },
+  "ptice/carduelis-carduelis/index.html": {
+   "назив": 8,
+   "наводници „…”/„…\"": 8,
+   "пресловљено назад у латиницу": 2
+  },
+  "ptice/coccothraustes-coccothraustes/index.html": {
+   "назив": 8,
+   "наводници „…”/„…\"": 5,
+   "пресловљено назад у латиницу": 2
+  },
+  "ptice/accipiter-nisus/index.html": {
+   "назив": 8,
+   "наводници „…”/„…\"": 1
+  },
+  "ptice/brgljez/index.html": {
+   "назив": 8,
+   "наводници „…”/„…\"": 1,
+   "пресловљено назад у латиницу": 2
+  },
+  "ptice/dryocopus-martius/index.html": {
+   "мешана слова (ручни речник)": 1,
+   "назив": 8,
+   "наводници „…”/„…\"": 8,
+   "пресловљено назад у латиницу": 2
+  },
+  "ptice/coracias-garrulus/index.html": {
+   "мешана слова (ручни речник)": 1,
+   "назив": 8,
+   "наводници „…”/„…\"": 2,
+   "пресловљено назад у латиницу": 3
+  },
+  "ptice/emberiza-calandra/index.html": {
+   "назив": 8,
+   "наводници „…”/„…\"": 4,
+   "мешана слова": 1,
+   "пресловљено назад у латиницу": 2
+  },
+  "ptice/plava-senica/index.html": {
+   "назив": 8,
+   "пресловљено назад у латиницу": 3
+  },
+  "ptice/hirundo-rustica/index.html": {
+   "назив": 8,
+   "наводници „…”/„…\"": 4,
+   "пресловљено назад у латиницу": 1
+  },
+  "ptice/muscicapa-striata/index.html": {
+   "назив": 8,
+   "пресловљено назад у латиницу": 4
+  },
+  "ptice/emberiza-citrinella/index.html": {
+   "назив": 8,
+   "наводници „…”/„…\"": 14,
+   "пресловљено назад у латиницу": 2
+  },
+  "ptice/troglodytes-troglodytes/index.html": {
+   "назив": 8,
+   "наводници „…”/„…\"": 5,
+   "пресловљено назад у латиницу": 2
+  },
+  "ptice/fringilla-coelebs/index.html": {
+   "назив": 8
+  },
+  "ptice/aegithalos-caudatus/index.html": {
+   "назив": 8,
+   "наводници „…”/„…\"": 8,
+   "пресловљено назад у латиницу": 2
+  },
+  "ptice/coturnix-coturnix/index.html": {
+   "мешана слова (ручни речник)": 1,
+   "назив": 8,
+   "наводници „…”/„…\"": 9,
+   "пресловљено назад у латиницу": 1
+  },
+  "ptice/veliki-detlic/index.html": {
+   "мешана слова (ручни речник)": 1,
+   "назив": 8,
+   "пресловљено назад у латиницу": 3
+  },
+  "ptice/alauda-arvensis/index.html": {
+   "назив": 8,
+   "пресловљено назад у латиницу": 3
+  },
+  "ptice/regulus-regulus/index.html": {
+   "назив": 8,
+   "наводници „…”/„…\"": 1,
+   "пресловљено назад у латиницу": 1
+  },
+  "ptice/lanius-collurio/index.html": {
+   "назив": 8,
+   "наводници „…”/„…\"": 1,
+   "пресловљено назад у латиницу": 3
+  },
+  "ptice/orao-krstas/index.html": {
+   "назив": 8,
+   "пресловљено назад у латиницу": 1
+  },
+  "ptice/motacilla-cinerea/index.html": {
+   "назив": 8,
+   "мешана слова": 1,
+   "пресловљено назад у латиницу": 2
+  },
+  "ptice/kviz-prepoznavanje-ptica-rajac/index.html": {
+   "назив": 6,
+   "наводници „…”/„…\"": 2
+  },
+  "ptice/phylloscopus-collybita/index.html": {
+   "назив": 8,
+   "наводници „…”/„…\"": 2,
+   "пресловљено назад у латиницу": 2
+  },
+  "ptice/serinus-serinus/index.html": {
+   "мешана слова (ручни речник)": 2,
+   "назив": 8,
+   "наводници „…”/„…\"": 6,
+   "пресловљено назад у латиницу": 2
+  },
+  "ptice/phylloscopus-trochilus/index.html": {
+   "назив": 8,
+   "наводници „…”/„…\"": 6,
+   "мешана слова": 2,
+   "пресловљено назад у латиницу": 5
+  },
+  "ptice/gavran/index.html": {
+   "назив": 8,
+   "наводници „…”/„…\"": 2,
+   "мешана слова": 1,
+   "пресловљено назад у латиницу": 1
+  },
+  "ptice/streptopelia-turtur/index.html": {
+   "назив": 8,
+   "наводници „…”/„…\"": 3,
+   "пресловљено назад у латиницу": 2
+  },
+  "ptice/sylvia-communis/index.html": {
+   "назив": 8,
+   "наводници „…”/„…\"": 5,
+   "пресловљено назад у латиницу": 1
+  },
+  "ptice/sturnus-vulgaris/index.html": {
+   "назив": 8,
+   "наводници „…”/„…\"": 5,
+   "пресловљено назад у латиницу": 1
+  },
+  "ptice/ficedula-hypoleuca/index.html": {
+   "назив": 8,
+   "пресловљено назад у латиницу": 4
+  },
+  "ptice/jynx-torquilla/index.html": {
+   "назив": 8,
+   "наводници „…”/„…\"": 2,
+   "пресловљено назад у латиницу": 3
+  },
+  "ptice/upupa-epops/index.html": {
+   "назив": 8,
+   "наводници „…”/„…\"": 6,
+   "мешана слова": 1,
+   "пресловљено назад у латиницу": 4
+  },
+  "ptice/ficedula-parva/index.html": {
+   "назив": 8,
+   "наводници „…”/„…\"": 5,
+   "мешана слова": 3,
+   "пресловљено назад у латиницу": 2
+  },
+  "ptice/merops-apiaster/index.html": {
+   "назив": 8,
+   "наводници „…”/„…\"": 7,
+   "мешана слова": 1,
+   "пресловљено назад у латиницу": 2
+  },
+  "ptice/ponasanje-prema-pticama/index.html": {
+   "назив": 6,
+   "наводници „…”/„…\"": 3
+  },
+  "ptice/falco-subbuteo/index.html": {
+   "назив": 8,
+   "пресловљено назад у латиницу": 3
+  },
+  "ptice/phoenicurus-ochruros/index.html": {
+   "назив": 8,
+   "пресловљено назад у латиницу": 2
+  },
+  "ptice/lullula-arborea/index.html": {
+   "назив": 8,
+   "наводници „…”/„…\"": 1,
+   "пресловљено назад у латиницу": 4
+  },
+  "ptice/saxicola-rubicola/index.html": {
+   "назив": 8,
+   "мешана слова": 1,
+   "пресловљено назад у латиницу": 3
+  },
+  "ptice/pica-pica/index.html": {
+   "назив": 8,
+   "пресловљено назад у латиницу": 1
+  },
+  "ptice/delichon-urbicum/index.html": {
+   "назив": 8,
+   "наводници „…”/„…\"": 5,
+   "мешана слова": 2,
+   "пресловљено назад у латиницу": 2
+  },
+  "ptice/buteo-buteo/index.html": {
+   "назив": 8,
+   "пресловљено назад у латиницу": 1
+  },
+  "ptice/turdus-philomelos/index.html": {
+   "назив": 8,
+   "наводници „…”/„…\"": 9,
+   "пресловљено назад у латиницу": 2
+  },
+  "ptice/mali-detlic/index.html": {
+   "назив": 8,
+   "наводници „…”/„…\"": 2,
+   "мешана слова": 2,
+   "пресловљено назад у латиницу": 2
+  },
+  "ptice/crex-crex/index.html": {
+   "назив": 8,
+   "наводници „…”/„…\"": 10
+  },
+  "ptice/streptopelia-decaocto/index.html": {
+   "мешана слова (ручни речник)": 1,
+   "назив": 9,
+   "наводници „…”/„…\"": 2,
+   "пресловљено назад у латиницу": 1
+  },
+  "ptice/archive/index.html": {
+   "мешана слова (ручни речник)": 2,
+   "назив": 3,
+   "наводници „…”/„…\"": 2,
+   "мешана слова": 1
+  },
+  "ptice/picus-viridis/index.html": {
+   "назив": 8,
+   "наводници „…”/„…\"": 6,
+   "пресловљено назад у латиницу": 1
+  },
+  "ptice/phoenicurus-phoenicurus/index.html": {
+   "назив": 8,
+   "наводници „…”/„…\"": 5,
+   "пресловљено назад у латиницу": 3
+  },
+  "ptice/chloris-chloris/index.html": {
+   "назив": 8,
+   "наводници „…”/„…\"": 5,
+   "пресловљено назад у латиницу": 3
+  },
+  "ptice/ciconia-nigra/index.html": {
+   "мешана слова (ручни речник)": 1,
+   "назив": 8,
+   "мешана слова": 1,
+   "пресловљено назад у латиницу": 1
+  },
+  "ptice/falco-vespertinus/index.html": {
+   "назив": 8,
+   "пресловљено назад у латиницу": 1
+  },
+  "ptice/anthus-trivialis/index.html": {
+   "назив": 8,
+   "пресловљено назад у латиницу": 5
+  },
+  "ptice/vrabac/index.html": {
+   "мешана слова (ручни речник)": 1,
+   "назив": 8,
+   "пресловљено назад у латиницу": 1
+  },
+  "ptice/erithacus-rubecula/index.html": {
+   "назив": 8,
+   "наводници „…”/„…\"": 2,
+   "пресловљено назад у латиницу": 1
+  },
+  "carduelis-carduelis/index.html": {
+   "target=_blank": 7,
+   "поправљен type аудио снимка": 1,
+   "назив": 6,
+   "наводници „…”/„…\"": 9,
+   "пресловљено назад у латиницу": 5
+  },
+  "admiral/index.html": {
+   "target=_blank": 3,
+   "назив": 2,
+   "наводници „…”/„…\"": 3
+  },
+  "index.html": {
+   "назив": 5,
+   "наводници „…”/„…\"": 14
+  },
+  "izvestaj-2025/index.html": {
+   "назив": 1,
+   "наводници „…”/„…\"": 8,
+   "мешана слова": 1
+  },
+  "izvestaj-2025/monitoring.html": {
+   "мешана слова (ручни речник)": 2,
+   "наводници „…”/„…\"": 4
+  },
+  "izvestaj-2025/infrastruktura.html": {
+   "мешана слова (ручни речник)": 2,
+   "наводници „…”/„…\"": 7,
+   "мешана слова": 1,
+   "наводници \"…\"": 1
+  },
+  "izvestaj-2025/vi-inovacije.html": {
+   "назив": 3,
+   "наводници „…”/„…\"": 10
+  },
+  "izvestaj-2025/astro.html": {
+   "наводници „…”/„…\"": 7
+  },
+  "sisari/talpa-europaea/index.html": {
+   "назив": 1,
+   "наводници „…”/„…\"": 4
+  },
+  "sisari/myotis-mystacinus/index.html": {
+   "назив": 1,
+   "наводници „…”/„…\"": 2
+  },
+  "sisari/microtus-subterraneus/index.html": {
+   "назив": 1,
+   "наводници „…”/„…\"": 4
+  },
+  "sisari/myotis-capaccinii/index.html": {
+   "назив": 1,
+   "наводници „…”/„…\"": 2
+  },
+  "sisari/capreolus-capreolus/index.html": {
+   "назив": 2,
+   "наводници „…”/„…\"": 11,
+   "пресловљено назад у латиницу": 1
+  },
+  "sisari/mustela-putorius/index.html": {
+   "назив": 1,
+   "наводници „…”/„…\"": 4
+  },
+  "sisari/nannospalax-leucodon/index.html": {
+   "назив": 1,
+   "наводници „…”/„…\"": 5
+  },
+  "sisari/apodemus-flavicollis/index.html": {
+   "назив": 1,
+   "наводници „…”/„…\"": 4
+  },
+  "sisari/eptesicus-serotinus/index.html": {
+   "назив": 1,
+   "наводници „…”/„…\"": 2
+  },
+  "sisari/myotis-daubentonii/index.html": {
+   "назив": 1,
+   "наводници „…”/„…\"": 4
+  },
+  "sisari/myotis-myotis/index.html": {
+   "назив": 1,
+   "наводници „…”/„…\"": 2
+  },
+  "sisari/ursus-arctos/index.html": {
+   "назив": 1,
+   "наводници „…”/„…\"": 4
+  },
+  "sisari/neomys-fodiens/index.html": {
+   "назив": 1,
+   "наводници „…”/„…\"": 4
+  },
+  "sisari/martes-martes/index.html": {
+   "назив": 1,
+   "наводници „…”/„…\"": 3
+  },
+  "sisari/sorex-araneus/index.html": {
+   "назив": 1,
+   "наводници „…”/„…\"": 5
+  },
+  "sisari/miniopterus-schreibersii/index.html": {
+   "назив": 1,
+   "наводници „…”/„…\"": 2
+  },
+  "sisari/apodemus-agrarius/index.html": {
+   "назив": 1,
+   "наводници „…”/„…\"": 4
+  },
+  "sisari/erinaceus-roumanicus/index.html": {
+   "назив": 1,
+   "наводници „…”/„…\"": 10
+  },
+  "sisari/martes-foina/index.html": {
+   "назив": 1,
+   "наводници „…”/„…\"": 4
+  },
+  "sisari/felis-silvestris/index.html": {
+   "назив": 2,
+   "наводници „…”/„…\"": 5
+  },
+  "sisari/index.html": {
+   "назив": 1,
+   "наводници „…”/„…\"": 2
+  },
+  "sisari/mustela-nivalis/index.html": {
+   "назив": 1,
+   "наводници „…”/„…\"": 4
+  },
+  "sisari/crocidura-suaveolens/index.html": {
+   "назив": 2,
+   "наводници „…”/„…\"": 4
+  },
+  "sisari/fotografisanje-sisara-rajac/index.html": {
+   "назив": 4,
+   "наводници „…”/„…\"": 4
+  },
+  "sisari/vulpes-vulpes/index.html": {
+   "назив": 2,
+   "наводници „…”/„…\"": 10
+  },
+  "sisari/plecotus-austriacus/index.html": {
+   "назив": 1,
+   "наводници „…”/„…\"": 2
+  },
+  "sisari/microtus-arvalis/index.html": {
+   "назив": 1,
+   "наводници „…”/„…\"": 7
+  },
+  "sisari/rhinolophus-ferrumequinum/index.html": {
+   "назив": 1,
+   "наводници „…”/„…\"": 6
+  },
+  "sisari/pomoc-sisarima-rajca/index.html": {
+   "назив": 2,
+   "наводници „…”/„…\"": 4
+  },
+  "sisari/ponasanje-prema-sisarima-rajac/index.html": {
+   "назив": 4,
+   "наводници „…”/„…\"": 5
+  },
+  "sisari/sus-scrofa/index.html": {
+   "назив": 2,
+   "наводници „…”/„…\"": 8,
+   "пресловљено назад у латиницу": 1
+  },
+  "sisari/pipistrellus-pipistrellus/index.html": {
+   "назив": 1,
+   "наводници „…”/„…\"": 2
+  },
+  "sisari/rhinolophus-hipposideros/index.html": {
+   "назив": 1,
+   "наводници „…”/„…\"": 6
+  },
+  "sisari/sorex-minutus/index.html": {
+   "назив": 2,
+   "наводници „…”/„…\"": 4
+  },
+  "sisari/myotis-blythii/index.html": {
+   "назив": 1,
+   "наводници „…”/„…\"": 2
+  },
+  "sisari/apodemus-sylvaticus/index.html": {
+   "назив": 1,
+   "наводници „…”/„…\"": 4
+  },
+  "sisari/rhinolophus-blasii/index.html": {
+   "назив": 1,
+   "наводници „…”/„…\"": 5
+  },
+  "sisari/meles-meles/index.html": {
+   "назив": 1,
+   "наводници „…”/„…\"": 6
+  },
+  "sisari/plecotus-auritus/index.html": {
+   "назив": 1,
+   "наводници „…”/„…\"": 2
+  },
+  "sisari/myotis-nattereri/index.html": {
+   "назив": 1,
+   "наводници „…”/„…\"": 2
+  },
+  "sisari/lepus-europaeus/index.html": {
+   "назив": 2,
+   "наводници „…”/„…\"": 3
+  },
+  "sisari/barbastella-barbastellus/index.html": {
+   "назив": 1,
+   "наводници „…”/„…\"": 4
+  },
+  "sisari/alati-za-posetioce-sisari-rajca/index.html": {
+   "назив": 7,
+   "наводници „…”/„…\"": 7
+  },
+  "sisari/myodes-glareolus/index.html": {
+   "назив": 1,
+   "наводници „…”/„…\"": 6
+  },
+  "sisari/nyctalus-noctula/index.html": {
+   "назив": 1,
+   "наводници „…”/„…\"": 2
+  },
+  "sisari/lutra-lutra/index.html": {
+   "назив": 1,
+   "наводници „…”/„…\"": 4
+  },
+  "sisari/sciurus-vulgaris/index.html": {
+   "назив": 1,
+   "наводници „…”/„…\"": 6
+  },
+  "sisari/canis-lupus/index.html": {
+   "назив": 1,
+   "наводници „…”/„…\"": 6
+  },
+  "sisari/muscardinus-avellanarius/index.html": {
+   "назив": 1,
+   "наводници „…”/„…\"": 4
+  },
+  "sisari/crocidura-leucodon/index.html": {
+   "назив": 1,
+   "наводници „…”/„…\"": 5
+  },
+  "sisari/canis-aureus/index.html": {
+   "назив": 1,
+   "наводници „…”/„…\"": 7,
+   "пресловљено назад у латиницу": 1
+  },
+  "sisari/myotis-emarginatus/index.html": {
+   "назив": 1,
+   "наводници „…”/„…\"": 5
+  },
+  "sisari/myotis-bechsteinii/index.html": {
+   "назив": 1,
+   "наводници „…”/„…\"": 3
+  },
+  "sisari/izvori-fotografija/index.html": {
+   "назив": 1
+  },
+  "sisari/rhinolophus-euryale/index.html": {
+   "назив": 1,
+   "наводници „…”/„…\"": 5
+  },
+  "sisari/glis-glis/index.html": {
+   "назив": 1,
+   "наводници „…”/„…\"": 5
+  },
+  "inat/index.html": {
+   "назив": 1
+  },
+  "meteo-stanica/index.html": {
+   "назив": 1,
+   "наводници „…”/„…\"": 2
+  },
+  "amanita-vaginata/index.html": {
+   "target=_blank": 2,
+   "мешана слова (ручни речник)": 1,
+   "назив": 4,
+   "наводници „…”/„…\"": 8,
+   "мешана слова": 1
+  },
+  "ndmi_viewer.html": {
+   "target=_blank": 1,
+   "мешана слова (ручни речник)": 1,
+   "назив": 3,
+   "наводници „…”/„…\"": 1
+  },
+  "coccothraustes-coccothraustes/index.html": {
+   "target=_blank": 7,
+   "поправљен type аудио снимка": 1,
+   "назив": 6,
+   "наводници „…”/„…\"": 4,
+   "пресловљено назад у латиницу": 5
+  },
+  "nevreme/DEMO-ORIGINAL.html": {
+   "назив": 1
+  },
+  "zvezdano-nebo/index.html": {
+   "назив": 1,
+   "наводници „…”/„…\"": 2
+  },
+  "morchella-esculenta/index.html": {
+   "target=_blank": 2,
+   "назив": 3,
+   "наводници „…”/„…\"": 6,
+   "мешана слова": 7
+  },
+  "alati-za-posetioce-insekti-rajca/index.html": {
+   "назив": 6,
+   "наводници „…”/„…\"": 4
+  },
+  "meteo-mini/rajac-meteo-widget.html": {
+   "target=_blank": 2
+  },
+  "meteo-mini/meteo_redesign/rajac-meteo-widget.html": {
+   "target=_blank": 2
+  },
+  "accipiter-nisus/index.html": {
+   "target=_blank": 7,
+   "назив": 6,
+   "пресловљено назад у латиницу": 2
+  },
+  "brgljez/index.html": {
+   "target=_blank": 8,
+   "поправљен type аудио снимка": 1,
+   "назив": 6,
+   "наводници „…”/„…\"": 1,
+   "пресловљено назад у латиницу": 4
+  },
+  "dryocopus-martius/index.html": {
+   "target=_blank": 7,
+   "назив": 6,
+   "наводници „…”/„…\"": 8,
+   "пресловљено назад у латиницу": 4
+  },
+  "suillus-luteus/index.html": {
+   "target=_blank": 2,
+   "назив": 3,
+   "наводници „…”/„…\"": 5,
+   "мешана слова": 1
+  },
+  "staponeti/oprema.html": {
+   "назив": 2
+  },
+  "staponeti/klima.html": {
+   "назив": 2,
+   "наводници „…”/„…\"": 1
+  },
+  "staponeti/sport.html": {
+   "назив": 2,
+   "наводници „…”/„…\"": 1
+  },
+  "staponeti/astronomija.html": {
+   "назив": 2
+  },
+  "staponeti/index.html": {
+   "назив": 2
+  },
+  "staponeti/fotografija.html": {
+   "назив": 2
+  },
+  "staponeti/orijentiring.html": {
+   "назив": 2
+  },
+  "staponeti/istrazivanja.html": {
+   "назив": 2
+  },
+  "staponeti/bilje_gljive.html": {
+   "назив": 2
+  },
+  "staponeti/prognoza.html": {
+   "target=_blank": 2,
+   "назив": 2
+  },
+  "komandni-centar/index.html": {
+   "назив": 3,
+   "мешана слова": 2
+  },
+  "geologija/index.html": {
+   "назив": 2,
+   "наводници „…”/„…\"": 6,
+   "мешана слова": 2
+  },
+  "bioakustika/index.html": {
+   "назив": 5
+  },
+  "bioakustika/obnovi-spektrograme.html": {
+   "назив": 1
+  },
+  "aphrodes-tricinctus/index.html": {
+   "target=_blank": 5,
+   "мешана слова (ручни речник)": 1,
+   "назив": 2,
+   "наводници „…”/„…\"": 5,
+   "мешана слова": 5,
+   "наводници \"…\"": 1
+  },
+  "trechus-cardioderus-balcanicus/index.html": {
+   "target=_blank": 6,
+   "мешана слова (ручни речник)": 1,
+   "назив": 2,
+   "наводници „…”/„…\"": 4
+  },
+  "o-platformi/index.html": {
+   "назив": 2
+  },
+  "liogluta-londiscula/index.html": {
+   "target=_blank": 5,
+   "назив": 2,
+   "наводници „…”/„…\"": 4
+  },
+  "amanita-phalloides/index.html": {
+   "target=_blank": 1,
+   "мешана слова (ручни речник)": 1,
+   "назив": 3,
+   "наводници „…”/„…\"": 5,
+   "мешана слова": 1
+  },
+  "idiocerus-distinguendus/index.html": {
+   "target=_blank": 2,
+   "назив": 2,
+   "наводници „…”/„…\"": 5
+  },
+  "coracias-garrulus/index.html": {
+   "target=_blank": 7,
+   "поправљен type аудио снимка": 1,
+   "назив": 6,
+   "наводници „…”/„…\"": 3,
+   "мешана слова": 1,
+   "пресловљено назад у латиницу": 4
+  },
+  "emberiza-calandra/index.html": {
+   "target=_blank": 7,
+   "поправљен type аудио снимка": 1,
+   "назив": 6,
+   "наводници „…”/„…\"": 4,
+   "пресловљено назад у латиницу": 5
+  },
+  "plava-senica/index.html": {
+   "target=_blank": 8,
+   "поправљен type аудио снимка": 1,
+   "назив": 6,
+   "пресловљено назад у латиницу": 4
+  },
+  "hirundo-rustica/index.html": {
+   "target=_blank": 7,
+   "поправљен type аудио снимка": 1,
+   "назив": 6,
+   "наводници „…”/„…\"": 4,
+   "пресловљено назад у латиницу": 2
+  },
+  "monitoring-svetlosno-zagadjenje/index.html": {
+   "назив": 2,
+   "наводници „…”/„…\"": 4
+  },
+  "muscicapa-striata/index.html": {
+   "target=_blank": 7,
+   "поправљен type аудио снимка": 1,
+   "назив": 6,
+   "пресловљено назад у латиницу": 5
+  },
+  "emberiza-citrinella/index.html": {
+   "target=_blank": 7,
+   "поправљен type аудио снимка": 1,
+   "назив": 6,
+   "наводници „…”/„…\"": 10,
+   "пресловљено назад у латиницу": 4
+  },
+  "gonepteryx-rhamni/index.html": {
+   "target=_blank": 3,
+   "мешана слова (ручни речник)": 4,
+   "назив": 4,
+   "наводници „…”/„…\"": 2
+  },
+  "gis-rajac/index.html": {
+   "target=_blank": 3
+  },
+  "troglodytes-troglodytes/index.html": {
+   "target=_blank": 7,
+   "поправљен type аудио снимка": 1,
+   "назив": 6,
+   "наводници „…”/„…\"": 6,
+   "пресловљено назад у латиницу": 3
+  },
+  "vanessa-atalanta/index.html": {
+   "target=_blank": 3,
+   "назив": 2,
+   "наводници „…”/„…\"": 3
+  },
+  "fringilla-coelebs/index.html": {
+   "target=_blank": 8,
+   "назив": 6,
+   "пресловљено назад у латиницу": 2
+  },
+  "aegithalos-caudatus/index.html": {
+   "target=_blank": 7,
+   "поправљен type аудио снимка": 1,
+   "назив": 6,
+   "наводници „…”/„…\"": 3,
+   "пресловљено назад у латиницу": 5
+  },
+  "coturnix-coturnix/index.html": {
+   "target=_blank": 7,
+   "поправљен type аудио снимка": 1,
+   "назив": 6,
+   "наводници „…”/„…\"": 5,
+   "пресловљено назад у латиницу": 4
+  },
+  "macropsis-infuscata/index.html": {
+   "target=_blank": 3,
+   "назив": 3,
+   "наводници „…”/„…\"": 4
+  },
+  "svetlosno-zagadjenje/strategije-za-smanjenje-svetlosnog-zagadjenja.html": {
+   "target=_blank": 5,
+   "назив": 1
+  },
+  "svetlosno-zagadjenje/astro-prognoza/index.html": {
+   "target=_blank": 4,
+   "target=_blank (у скрипти)": 3
+  },
+  "svetlosno-zagadjenje/index.html": {
+   "target=_blank": 3,
+   "назив": 1
+  },
+  "svetlosno-zagadjenje/obrada-podataka.html": {
+   "target=_blank": 4,
+   "назив": 3
+  },
+  "svetlosno-zagadjenje/dodaci.html": {
+   "target=_blank": 10,
+   "назив": 3
+  },
+  "svetlosno-zagadjenje/put-ka-tamnijem-nebu.html": {
+   "target=_blank": 11,
+   "назив": 3
+  },
+  "svetlosno-zagadjenje/literatura/index.html": {
+   "назив": 3
+  },
+  "svetlosno-zagadjenje/literatura/data/latest.html": {
+   "target=_blank": 70
+  },
+  "svetlosno-zagadjenje/uticaj-na-ljude.html": {
+   "target=_blank": 12,
+   "наводници „…”/„…\"": 3
+  },
+  "svetlosno-zagadjenje/sky-slider.html": {
+   "назив": 2,
+   "наводници „…”/„…\"": 1
+  },
+  "svetlosno-zagadjenje/uticaji-svetlosnog-zagadjenja.html": {
+   "target=_blank": 4,
+   "назив": 1,
+   "наводници „…”/„…\"": 4
+  },
+  "svetlosno-zagadjenje/metodologija-merenja-svetlosnog-zagadjenja.html": {
+   "target=_blank": 15,
+   "назив": 3
+  },
+  "svetlosno-zagadjenje/svetlosno-zagadjenje-u-srbiji.html": {
+   "target=_blank": 3,
+   "назив": 2
+  },
+  "veliki-detlic/index.html": {
+   "target=_blank": 8,
+   "поправљен type аудио снимка": 1,
+   "назив": 6,
+   "пресловљено назад у латиницу": 3
+  },
+  "rajac-home/prva.html": {
+   "target=_blank": 2,
+   "назив": 4,
+   "наводници „…”/„…\"": 4
+  },
+  "rajac-home/index.html": {
+   "target=_blank": 2,
+   "назив": 4,
+   "наводници „…”/„…\"": 4
+  },
+  "rajac-home/templates/home.html": {
+   "target=_blank": 2,
+   "назив": 4,
+   "наводници „…”/„…\"": 4
+  },
+  "pametni-park/index.html": {
+   "назив": 7
+  },
+  "alauda-arvensis/index.html": {
+   "target=_blank": 7,
+   "поправљен type аудио снимка": 1,
+   "назив": 6,
+   "пресловљено назад у латиницу": 5
+  },
+  "dnevni-leptiri/index.html": {
+   "назив": 3,
+   "наводници „…”/„…\"": 1
+  },
+  "macrolepiota-procera/index.html": {
+   "target=_blank": 2,
+   "мешана слова (ручни речник)": 1,
+   "назив": 3,
+   "наводници „…”/„…\"": 8,
+   "мешана слова": 2
+  },
+  "staze-subdomen/index.html": {
+   "назив": 2
+  },
+  "staze-subdomen/lokacija/index.html": {
+   "назив": 2
+  },
+  "RIS_VIIRS_M6_V4/ris/index.html": {
+   "назив": 1,
+   "наводници „…”/„…\"": 3
+  },
+  "RIS_VIIRS_M6_V4/ris/tamno-nebo/index.html": {
+   "назив": 2,
+   "наводници „…”/„…\"": 1
+  },
+  "istrazivacki-park-rajac/biljke/terenska-provera.html": {
+   "назив": 1
+  },
+  "istrazivacki-park-rajac/biljke/biljka-11.html": {
+   "назив": 1
+  },
+  "istrazivacki-park-rajac/biljke/izvor-vrsta-31.html": {
+   "назив": 1
+  },
+  "istrazivacki-park-rajac/biljke/izvor-vrsta-17.html": {
+   "назив": 1,
+   "наводници „…”/„…\"": 1
+  },
+  "istrazivacki-park-rajac/biljke/poredi.html": {
+   "назив": 1,
+   "мешана слова": 1
+  },
+  "istrazivacki-park-rajac/biljke/poglavlje-29.html": {
+   "назив": 1
+  },
+  "istrazivacki-park-rajac/biljke/poglavlje-46.html": {
+   "назив": 1
+  },
+  "istrazivacki-park-rajac/biljke/biljka-02.html": {
+   "назив": 1
+  },
+  "istrazivacki-park-rajac/biljke/izvor-vrsta-14.html": {
+   "назив": 1
+  },
+  "istrazivacki-park-rajac/biljke/poglavlje-08.html": {
+   "назив": 1
+  },
+  "istrazivacki-park-rajac/biljke/foto-inventar.html": {
+   "назив": 1,
+   "мешана слова": 2
+  },
+  "istrazivacki-park-rajac/biljke/familije.html": {
+   "назив": 1
+  },
+  "istrazivacki-park-rajac/biljke/izvor-vrsta-04.html": {
+   "назив": 1
+  },
+  "istrazivacki-park-rajac/biljke/izvor-vrsta-02.html": {
+   "назив": 1
+  },
+  "istrazivacki-park-rajac/biljke/izvor-vrsta-18.html": {
+   "назив": 1,
+   "мешана слова": 1
+  },
+  "istrazivacki-park-rajac/biljke/prepoznaj.html": {
+   "назив": 1
+  },
+  "istrazivacki-park-rajac/biljke/odredjivanje-vrste.html": {
+   "назив": 1
+  },
+  "istrazivacki-park-rajac/biljke/profil-vrste-radni.html": {
+   "назив": 1
+  },
+  "istrazivacki-park-rajac/biljke/poglavlje-12.html": {
+   "назив": 1
+  },
+  "istrazivacki-park-rajac/biljke/poglavlje-32.html": {
+   "назив": 1
+  },
+  "istrazivacki-park-rajac/biljke/poglavlje-59.html": {
+   "назив": 1
+  },
+  "istrazivacki-park-rajac/biljke/poglavlje-50.html": {
+   "назив": 2
+  },
+  "istrazivacki-park-rajac/biljke/poglavlje-10.html": {
+   "назив": 1
+  },
+  "istrazivacki-park-rajac/biljke/biljka-09.html": {
+   "назив": 1
+  },
+  "istrazivacki-park-rajac/biljke/probna-povrsina.html": {
+   "назив": 1,
+   "мешана слова": 1
+  },
+  "istrazivacki-park-rajac/biljke/orhideje-kljuc.html": {
+   "назив": 1
+  },
+  "istrazivacki-park-rajac/biljke/kalendar.html": {
+   "назив": 1
+  },
+  "istrazivacki-park-rajac/biljke/izvor-vrsta-05.html": {
+   "назив": 1
+  },
+  "istrazivacki-park-rajac/biljke/foto-atlas.html": {
+   "назив": 1,
+   "мешана слова": 2
+  },
+  "istrazivacki-park-rajac/biljke/inventar.html": {
+   "назив": 1
+  },
+  "istrazivacki-park-rajac/biljke/vodic-identifikacija.html": {
+   "назив": 1
+  },
+  "istrazivacki-park-rajac/biljke/poglavlje-58.html": {
+   "назив": 1
+  },
+  "istrazivacki-park-rajac/biljke/poglavlje-06.html": {
+   "назив": 1
+  },
+  "istrazivacki-park-rajac/biljke/poglavlje-56.html": {
+   "назив": 1
+  },
+  "istrazivacki-park-rajac/biljke/poglavlje-03.html": {
+   "назив": 1,
+   "мешана слова": 1
+  },
+  "istrazivacki-park-rajac/biljke/poglavlje-24.html": {
+   "назив": 1,
+   "мешана слова": 2
+  },
+  "istrazivacki-park-rajac/biljke/biljka-07.html": {
+   "назив": 1
+  },
+  "istrazivacki-park-rajac/biljke/biljka-12.html": {
+   "назив": 1
+  },
+  "istrazivacki-park-rajac/biljke/dnevnik.html": {
+   "назив": 1
+  },
+  "istrazivacki-park-rajac/biljke/poglavlje-39.html": {
+   "назив": 1,
+   "мешана слова": 1
+  },
+  "istrazivacki-park-rajac/biljke/izvor-vrsta-09.html": {
+   "назив": 1
+  },
+  "istrazivacki-park-rajac/biljke/poglavlje-51.html": {
+   "назив": 1,
+   "наводници „…”/„…\"": 3
+  },
+  "istrazivacki-park-rajac/biljke/izvor-vrsta-13.html": {
+   "назив": 1
+  },
+  "istrazivacki-park-rajac/biljke/katalog.html": {
+   "назив": 1
+  },
+  "istrazivacki-park-rajac/biljke/izvor-vrsta-20.html": {
+   "назив": 1,
+   "наводници „…”/„…\"": 1
+  },
+  "istrazivacki-park-rajac/biljke/izvor-vrsta-21.html": {
+   "назив": 1
+  },
+  "istrazivacki-park-rajac/biljke/foto-redakcija-43.html": {
+   "назив": 1,
+   "мешана слова": 2
+  },
+  "istrazivacki-park-rajac/biljke/izvor-vrsta-30.html": {
+   "назив": 1
+  },
+  "istrazivacki-park-rajac/biljke/naucni-katalog.html": {
+   "назив": 2
+  },
+  "istrazivacki-park-rajac/biljke/status-atlasa.html": {
+   "назив": 1
+  },
+  "istrazivacki-park-rajac/biljke/godisnji-plan.html": {
+   "назив": 1
+  },
+  "istrazivacki-park-rajac/biljke/biljka-10.html": {
+   "назив": 1
+  },
+  "istrazivacki-park-rajac/biljke/poglavlje-25.html": {
+   "назив": 1
+  },
+  "istrazivacki-park-rajac/biljke/metodologija-izvora.html": {
+   "назив": 1
+  },
+  "istrazivacki-park-rajac/biljke/izvorni-atlas.html": {
+   "назив": 1
+  },
+  "istrazivacki-park-rajac/biljke/izvor-vrsta-12.html": {
+   "назив": 1
+  },
+  "istrazivacki-park-rajac/biljke/provera-lokalnih-fotografija.html": {
+   "назив": 1
+  },
+  "istrazivacki-park-rajac/biljke/poglavlje-40.html": {
+   "назив": 1
+  },
+  "istrazivacki-park-rajac/biljke/recnik.html": {
+   "назив": 1
+  },
+  "istrazivacki-park-rajac/biljke/poglavlje-09.html": {
+   "назив": 1,
+   "мешана слова": 1
+  },
+  "istrazivacki-park-rajac/biljke/poglavlje-45.html": {
+   "назив": 1
+  },
+  "istrazivacki-park-rajac/biljke/kontrola-identifikacije.html": {
+   "назив": 1
+  },
+  "istrazivacki-park-rajac/biljke/protokol.html": {
+   "назив": 1
+  },
+  "istrazivacki-park-rajac/biljke/planer-uzorkovanja.html": {
+   "назив": 1
+  },
+  "istrazivacki-park-rajac/biljke/biljka-03.html": {
+   "назив": 1
+  },
+  "istrazivacki-park-rajac/biljke/zimski-kljuc.html": {
+   "назив": 1
+  },
+  "istrazivacki-park-rajac/biljke/obrazovni-atlas.html": {
+   "назив": 1
+  },
+  "istrazivacki-park-rajac/biljke/izvor-vrsta-10.html": {
+   "назив": 1
+  },
+  "istrazivacki-park-rajac/biljke/index.html": {
+   "назив": 1
+  },
+  "istrazivacki-park-rajac/biljke/foto-priprema.html": {
+   "назив": 1,
+   "мешана слова": 2
+  },
+  "istrazivacki-park-rajac/biljke/poglavlje-33.html": {
+   "назив": 1,
+   "мешана слова": 2
+  },
+  "istrazivacki-park-rajac/biljke/poglavlje-52.html": {
+   "назив": 1,
+   "наводници „…”/„…\"": 1
+  },
+  "istrazivacki-park-rajac/biljke/poglavlje-15.html": {
+   "назив": 1
+  },
+  "istrazivacki-park-rajac/biljke/stanista-protokol.html": {
+   "назив": 1
+  },
+  "istrazivacki-park-rajac/biljke/poglavlje-16.html": {
+   "назив": 1,
+   "мешана слова": 1
+  },
+  "istrazivacki-park-rajac/biljke/pretraga-prirucnika.html": {
+   "назив": 1
+  },
+  "istrazivacki-park-rajac/biljke/poglavlje-36.html": {
+   "назив": 1
+  },
+  "istrazivacki-park-rajac/biljke/obrada-podataka.html": {
+   "назив": 1
+  },
+  "istrazivacki-park-rajac/biljke/taxonomija.html": {
+   "назив": 1
+  },
+  "istrazivacki-park-rajac/biljke/poglavlje-28.html": {
+   "назив": 1
+  },
+  "istrazivacki-park-rajac/biljke/poglavlje-22.html": {
+   "назив": 1
+  },
+  "istrazivacki-park-rajac/biljke/dosije-vrste.html": {
+   "назив": 1,
+   "наводници „…”/„…\"": 2,
+   "мешана слова": 2
+  },
+  "istrazivacki-park-rajac/biljke/izvor-vrsta-08.html": {
+   "назив": 1
+  },
+  "istrazivacki-park-rajac/biljke/poglavlje-04.html": {
+   "назив": 1,
+   "мешана слова": 2
+  },
+  "istrazivacki-park-rajac/biljke/status-fotografija.html": {
+   "назив": 1
+  },
+  "istrazivacki-park-rajac/biljke/uporedi-slicne.html": {
+   "назив": 1
+  },
+  "istrazivacki-park-rajac/biljke/poglavlje-61.html": {
+   "назив": 1
+  },
+  "istrazivacki-park-rajac/biljke/izvor-vrsta-01.html": {
+   "назив": 1
+  },
+  "istrazivacki-park-rajac/biljke/poglavlje-47.html": {
+   "назив": 1,
+   "мешана слова": 1
+  },
+  "istrazivacki-park-rajac/biljke/poglavlje-54.html": {
+   "назив": 1,
+   "наводници „…”/„…\"": 6
+  },
+  "istrazivacki-park-rajac/biljke/biljka-05.html": {
+   "назив": 1
+  },
+  "istrazivacki-park-rajac/biljke/livadske-kljuc.html": {
+   "назив": 1,
+   "мешана слова": 1
+  },
+  "istrazivacki-park-rajac/biljke/poglavlje-42.html": {
+   "мешана слова (ручни речник)": 1,
+   "назив": 1
+  },
+  "istrazivacki-park-rajac/biljke/poglavlje-13.html": {
+   "назив": 1
+  },
+  "istrazivacki-park-rajac/biljke/izvor-vrsta-16.html": {
+   "назив": 1
+  },
+  "istrazivacki-park-rajac/biljke/izvor-vrsta-22.html": {
+   "назив": 1,
+   "наводници „…”/„…\"": 1
+  },
+  "istrazivacki-park-rajac/biljke/izvor-vrsta-11.html": {
+   "назив": 1,
+   "мешана слова": 1
+  },
+  "istrazivacki-park-rajac/biljke/poglavlje-35.html": {
+   "назив": 1
+  },
+  "istrazivacki-park-rajac/biljke/poglavlje-01.html": {
+   "назив": 1
+  },
+  "istrazivacki-park-rajac/biljke/poglavlje-31.html": {
+   "назив": 1
+  },
+  "istrazivacki-park-rajac/biljke/poglavlje-43.html": {
+   "назив": 1,
+   "мешана слова": 1
+  },
+  "istrazivacki-park-rajac/biljke/kljuc-list-cvet.html": {
+   "назив": 1
+  },
+  "istrazivacki-park-rajac/biljke/izvor-vrsta-19.html": {
+   "назив": 1,
+   "мешана слова": 1
+  },
+  "istrazivacki-park-rajac/biljke/poglavlje-21.html": {
+   "назив": 1
+  },
+  "istrazivacki-park-rajac/biljke/izvor-vrsta-24.html": {
+   "назив": 1
+  },
+  "istrazivacki-park-rajac/biljke/poglavlje-27.html": {
+   "назив": 1
+  },
+  "istrazivacki-park-rajac/biljke/biljka-08.html": {
+   "назив": 1
+  },
+  "istrazivacki-park-rajac/biljke/poglavlje-14.html": {
+   "назив": 1
+  },
+  "istrazivacki-park-rajac/biljke/izvor-vrsta-26.html": {
+   "назив": 1,
+   "мешана слова": 1
+  },
+  "istrazivacki-park-rajac/biljke/poglavlje-48.html": {
+   "назив": 1,
+   "мешана слова": 1
+  },
+  "istrazivacki-park-rajac/biljke/poglavlje-34.html": {
+   "назив": 1
+  },
+  "istrazivacki-park-rajac/biljke/poglavlje-19.html": {
+   "назив": 1
+  },
+  "istrazivacki-park-rajac/biljke/biljka-04.html": {
+   "назив": 1
+  },
+  "istrazivacki-park-rajac/biljke/izvori-flore.html": {
+   "назив": 1
+  },
+  "istrazivacki-park-rajac/biljke/poglavlje-44.html": {
+   "назив": 1
+  },
+  "istrazivacki-park-rajac/biljke/poglavlje-20.html": {
+   "назив": 1,
+   "мешана слова": 1
+  },
+  "istrazivacki-park-rajac/biljke/izvor-vrsta-25.html": {
+   "назив": 1,
+   "мешана слова": 1
+  },
+  "istrazivacki-park-rajac/biljke/izvor-vrsta-23.html": {
+   "назив": 1
+  },
+  "istrazivacki-park-rajac/biljke/poglavlje-53.html": {
+   "назив": 1,
+   "наводници „…”/„…\"": 9
+  },
+  "istrazivacki-park-rajac/biljke/poglavlje-26.html": {
+   "назив": 2,
+   "мешана слова": 1
+  },
+  "istrazivacki-park-rajac/biljke/izvor-vrsta-28.html": {
+   "назив": 1
+  },
+  "istrazivacki-park-rajac/biljke/poglavlje-60.html": {
+   "назив": 1
+  },
+  "istrazivacki-park-rajac/biljke/biljka-01.html": {
+   "назив": 1
+  },
+  "istrazivacki-park-rajac/biljke/sumske-kljuc.html": {
+   "назив": 1
+  },
+  "istrazivacki-park-rajac/biljke/terenski-list.html": {
+   "назив": 1
+  },
+  "istrazivacki-park-rajac/biljke/fenologija-protokol.html": {
+   "назив": 1
+  },
+  "istrazivacki-park-rajac/biljke/poglavlje-37.html": {
+   "назив": 1
+  },
+  "istrazivacki-park-rajac/biljke/poglavlje-07.html": {
+   "назив": 1
+  },
+  "istrazivacki-park-rajac/biljke/referentna-foto-galerija.html": {
+   "назив": 1
+  },
+  "istrazivacki-park-rajac/biljke/poglavlje-17.html": {
+   "назив": 1
+  },
+  "istrazivacki-park-rajac/biljke/monitoring-program.html": {
+   "назив": 1
+  },
+  "istrazivacki-park-rajac/biljke/morfologija.html": {
+   "назив": 1
+  },
+  "istrazivacki-park-rajac/biljke/foto-dokumentacija.html": {
+   "назив": 1
+  },
+  "istrazivacki-park-rajac/biljke/izvor-vrsta-29.html": {
+   "назив": 1
+  },
+  "istrazivacki-park-rajac/biljke/izvor-vrsta-03.html": {
+   "назив": 1
+  },
+  "istrazivacki-park-rajac/biljke/kljuc-familije-v29.html": {
+   "назив": 1
+  },
+  "istrazivacki-park-rajac/biljke/izvor-vrsta-06.html": {
+   "назив": 1
+  },
+  "istrazivacki-park-rajac/biljke/vodic-familije.html": {
+   "назив": 1
+  },
+  "istrazivacki-park-rajac/biljke/poglavlje-30.html": {
+   "назив": 1
+  },
+  "istrazivacki-park-rajac/biljke/poglavlje-05.html": {
+   "назив": 1
+  },
+  "istrazivacki-park-rajac/biljke/poglavlje-63.html": {
+   "назив": 1
+  },
+  "istrazivacki-park-rajac/biljke/uporedi-vrste.html": {
+   "назив": 1
+  },
+  "istrazivacki-park-rajac/biljke/poglavlje-11.html": {
+   "назив": 1
+  },
+  "istrazivacki-park-rajac/biljke/atlas-familija.html": {
+   "назив": 1,
+   "мешана слова": 1
+  },
+  "istrazivacki-park-rajac/biljke/kontrola-kvaliteta.html": {
+   "назив": 1
+  },
+  "istrazivacki-park-rajac/biljke/foto-radionica.html": {
+   "назив": 1,
+   "мешана слова": 2
+  },
+  "istrazivacki-park-rajac/biljke/fenoloska-baza.html": {
+   "назив": 1
+  },
+  "istrazivacki-park-rajac/biljke/poglavlje-55.html": {
+   "назив": 1,
+   "наводници „…”/„…\"": 5
+  },
+  "istrazivacki-park-rajac/biljke/biljka-06.html": {
+   "назив": 1
+  },
+  "istrazivacki-park-rajac/biljke/poglavlje-18.html": {
+   "назив": 1
+  },
+  "istrazivacki-park-rajac/biljke/izvor-vrsta-07.html": {
+   "назив": 1
+  },
+  "istrazivacki-park-rajac/biljke/kviz.html": {
+   "назив": 1
+  },
+  "istrazivacki-park-rajac/biljke/atlas.html": {
+   "назив": 1
+  },
+  "istrazivacki-park-rajac/biljke/poglavlje-02.html": {
+   "назив": 1
+  },
+  "istrazivacki-park-rajac/biljke/terenski-atlas.html": {
+   "назив": 1,
+   "наводници „…”/„…\"": 5,
+   "мешана слова": 4
+  },
+  "istrazivacki-park-rajac/biljke/poglavlje-57.html": {
+   "назив": 1
+  },
+  "istrazivacki-park-rajac/biljke/poglavlje-38.html": {
+   "назив": 1
+  },
+  "istrazivacki-park-rajac/biljke/izvor-vrsta-15.html": {
+   "назив": 1
+  },
+  "istrazivacki-park-rajac/biljke/poglavlje-41.html": {
+   "назив": 1
+  },
+  "istrazivacki-park-rajac/biljke/naucna-revizija.html": {
+   "назив": 1
+  },
+  "istrazivacki-park-rajac/biljke/evidencija.html": {
+   "назив": 1
+  },
+  "istrazivacki-park-rajac/biljke/poglavlje-23.html": {
+   "назив": 1
+  },
+  "istrazivacki-park-rajac/biljke/izvor-vrsta-27.html": {
+   "назив": 1,
+   "наводници „…”/„…\"": 1
+  },
+  "istrazivacki-park-rajac/biljke/drvece-kljuc.html": {
+   "назив": 1
+  },
+  "istrazivacki-park-rajac/biljke/poglavlje-62.html": {
+   "назив": 1
+  },
+  "istrazivacki-park-rajac/biljke/poglavlje-49.html": {
+   "назив": 2
+  },
+  "istrazivacki-park-rajac/biljke/dokazi-i-revizija.html": {
+   "назив": 1,
+   "мешана слова": 2
+  },
+  "istrazivacki-park-rajac/index.html": {
+   "назив": 1,
+   "наводници „…”/„…\"": 3
+  },
+  "diplocolenus-abdominalis/index.html": {
+   "target=_blank": 3,
+   "назив": 2,
+   "наводници „…”/„…\"": 4
+  },
+  "kalendar/index.html": {
+   "мешана слова (ручни речник)": 3,
+   "назив": 3,
+   "мешана слова": 17
+  },
+  "inboxpio/index.html": {
+   "наводници \"…\"": 1
+  },
+  "regulus-regulus/index.html": {
+   "target=_blank": 7,
+   "назив": 6,
+   "пресловљено назад у латиницу": 4
+  },
+  "cantharellus-cibarius/index.html": {
+   "target=_blank": 2,
+   "назив": 3,
+   "наводници „…”/„…\"": 5,
+   "мешана слова": 1
+  },
+  "istorijat/index.html": {
+   "наводници „…”/„…\"": 6
+  },
+  "fistulina-hepatica/index.html": {
+   "target=_blank": 2,
+   "мешана слова (ручни речник)": 2,
+   "назив": 3,
+   "наводници „…”/„…\"": 5,
+   "мешана слова": 1
+  },
+  "rajac-karst/index.html": {
+   "target=_blank": 11,
+   "мешана слова": 1
+  },
+  "agroportal/copernicus_viewer.html": {
+   "назив": 2
+  },
+  "agroportal/ndmi-final/ndmi_viewer.html": {
+   "target=_blank": 1,
+   "мешана слова (ручни речник)": 1,
+   "назив": 3,
+   "наводници „…”/„…\"": 1
+  },
+  "agroportal/index.html": {
+   "назив": 2
+  },
+  "agroportal/ndmi_viewer.html": {
+   "target=_blank": 1,
+   "мешана слова (ручни речник)": 1,
+   "назив": 3,
+   "наводници „…”/„…\"": 1
+  },
+  "omalium-rivulare/index.html": {
+   "target=_blank": 3,
+   "назив": 3,
+   "наводници „…”/„…\"": 4
+  },
+  "index-staro-20261003.html": {
+   "target=_blank": 2,
+   "назив": 5,
+   "наводници „…”/„…\"": 14
+  },
+  "amanita-muscaria/index.html": {
+   "target=_blank": 1,
+   "мешана слова (ручни речник)": 7,
+   "назив": 3,
+   "наводници „…”/„…\"": 3,
+   "мешана слова": 1
+  },
+  "russula-virescens/index.html": {
+   "target=_blank": 2,
+   "назив": 3,
+   "наводници „…”/„…\"": 6,
+   "мешана слова": 1
+  },
+  "lanius-collurio/index.html": {
+   "target=_blank": 7,
+   "назив": 6,
+   "наводници „…”/„…\"": 1,
+   "пресловљено назад у латиницу": 4
+  },
+  "armillaria-mellea/index.html": {
+   "target=_blank": 2,
+   "назив": 3,
+   "наводници „…”/„…\"": 6,
+   "мешана слова": 1
+  },
+  "orao-krstas/index.html": {
+   "target=_blank": 7,
+   "назив": 6,
+   "пресловљено назад у латиницу": 1
+  },
+  "speleoloska-stanista/index.html": {
+   "назив": 1,
+   "наводници „…”/„…\"": 1
+  },
+  "rajac-vesti/rajac-transverzala-cika-duskove-staze-2026/index.html": {
+   "target=_blank": 3,
+   "наводници „…”/„…\"": 4
+  },
+  "rajac-vesti/montaza-meteo-stanice/index.html": {
+   "наводници „…”/„…\"": 3
+  },
+  "rajac-vesti/novi-prirucnik-posmatranje-ptica-rajac/index.html": {
+   "назив": 1
+  },
+  "rajac-vesti/satelitski-monitoring-svetlosnog-zagadjenja/index.html": {
+   "назив": 1,
+   "наводници „…”/„…\"": 9
+  },
+  "rajac-vesti/poslednji-copernicus-indeksi-pio-rajac/index.html": {
+   "назив": 2,
+   "наводници „…”/„…\"": 14
+  },
+  "rajac-vesti/istorijski-podaci-dnevni-leptiri-rajac-1977-2020/index.html": {
+   "наводници „…”/„…\"": 2
+  },
+  "rajac-vesti/dnevna-i-trenutna-pozarna-opasnost-rajac/index.html": {
+   "назив": 1,
+   "наводници „…”/„…\"": 12
+  },
+  "rajac-vesti/satelitski-monitoring-vegetacije-pio-rajac-2017-2025/index.html": {
+   "target=_blank": 2,
+   "назив": 6,
+   "наводници „…”/„…\"": 8
+  },
+  "rajac-vesti/suvoborski-duvalijus-duvalius-suvoborensis-nova-vrsta/index.html": {
+   "наводници „…”/„…\"": 2
+  },
+  "rajac-vesti/otkrice-u-pio-rajac-potvrdjeno-prisustvo-cheilosia-schnabli/index.html": {
+   "target=_blank": 1,
+   "наводници „…”/„…\"": 4
+  },
+  "rajac-vesti/stanje-sumske-vegetacije-rajac-2026/index.html": {
+   "назив": 3,
+   "наводници „…”/„…\"": 6
+  },
+  "rajac-vesti/rajac-transverzala-30-31-maj-2026/index.html": {
+   "target=_blank": 3,
+   "наводници „…”/„…\"": 7
+  },
+  "rajac-vesti/satelitsko-otkrivanje-pozara-pio-rajac/index.html": {
+   "назив": 2,
+   "наводници „…”/„…\"": 6
+  },
+  "rajac-vesti/svetlosno-zagadjenje-pio-rajac-januar-jun-2026/kartica-za-vesti.html": {
+   "наводници „…”/„…\"": 3
+  },
+  "rajac-vesti/svetlosno-zagadjenje-pio-rajac-januar-jun-2026/index-ispravljen.html": {
+   "назив": 5,
+   "наводници „…”/„…\"": 12
+  },
+  "rajac-vesti/svetlosno-zagadjenje-pio-rajac-januar-jun-2026/index.html": {
+   "назив": 5,
+   "наводници „…”/„…\"": 7
+  },
+  "rajac-vesti/izvestaj-monitoring-biljaka-22-maj-2026/index.html": {
+   "назив": 1,
+   "наводници „…”/„…\"": 5
+  },
+  "rajac-vesti/posmatranje-ptica-na-rajcu/index.html": {
+   "наводници „…”/„…\"": 2
+  },
+  "rajac-vesti/leto-2026-vodni-stres-vegetacija-rajac/index.html": {
+   "наводници „…”/„…\"": 2
+  },
+  "rajac-vesti/godisnji-copernicus-izvestaj-vegetacija-pio-rajac-2025/index.html": {
+   "наводници „…”/„…\"": 8
+  },
+  "rajac-vesti/metodologija-kosenje-kopernikus-rajac/kartica-za-vesti.html": {
+   "наводници „…”/„…\"": 1
+  },
+  "rajac-vesti/metodologija-kosenje-kopernikus-rajac/index.html": {
+   "назив": 2,
+   "наводници „…”/„…\"": 1
+  },
+  "rajac-vesti/svetlosno-zagadjenje-i-biodiverzitet-rajca/kartica-za-vesti.html": {
+   "наводници „…”/„…\"": 3
+  },
+  "rajac-vesti/svetlosno-zagadjenje-i-biodiverzitet-rajca/index.html": {
+   "target=_blank": 10,
+   "наводници „…”/„…\"": 15
+  },
+  "rajac-vesti/index.html": {
+   "назив": 1,
+   "наводници „…”/„…\"": 54
+  },
+  "rajac-vesti/dan-cistih-planina-rajac-2026/staze-3d/RAJAC-STAZE-v2.14-1X-UBRZANO-PRAVI-KRUGOVI-PATCH/index.html": {
+   "target=_blank": 2,
+   "наводници „…”/„…\"": 7
+  },
+  "rajac-vesti/dan-cistih-planina-rajac-2026/staze-3d/index.html": {
+   "target=_blank": 2,
+   "назив": 1,
+   "наводници „…”/„…\"": 6
+  },
+  "rajac-vesti/dan-cistih-planina-rajac-2026/staze-3d/lokacija/index.html": {
+   "target=_blank": 2,
+   "назив": 1,
+   "наводници „…”/„…\"": 7
+  },
+  "rajac-vesti/dan-cistih-planina-rajac-2026/index.html": {
+   "назив": 2
+  },
+  "rajac-vesti/kategorije/dogadjaji/index.html": {
+   "наводници „…”/„…\"": 2
+  },
+  "rajac-vesti/kategorije/istrazivanja/index.html": {
+   "наводници „…”/„…\"": 8
+  },
+  "rajac-vesti/kategorije/monitoring/index.html": {
+   "назив": 1,
+   "наводници „…”/„…\"": 15
+  },
+  "rajac-vesti/kategorije/vesti/index.html": {
+   "наводници „…”/„…\"": 4
+  },
+  "rajac-vesti/kategorije/nalaz/index.html": {
+   "наводници „…”/„…\"": 8
+  },
+  "rajac-vesti/kategorije/tema/index.html": {
+   "наводници „…”/„…\"": 2
+  },
+  "rajac-vesti/kategorije/izvestaji/index.html": {
+   "назив": 1,
+   "наводници „…”/„…\"": 13
+  },
+  "rajac-vesti/kategorije/izvestaj/index.html": {
+   "назив": 1,
+   "наводници „…”/„…\"": 15
+  },
+  "rajac-vesti/kategorije/u-fokusu/index.html": {
+   "наводници „…”/„…\"": 5
+  },
+  "rajac-vesti/kategorije/vest/index.html": {
+   "назив": 1,
+   "наводници „…”/„…\"": 16
+  },
+  "rajac-vesti/kategorije/aktuelno/index.html": {
+   "наводници „…”/„…\"": 14
+  },
+  "rajac-vesti/kategorije/dogadjaj/index.html": {
+   "наводници „…”/„…\"": 2
+  },
+  "rajac-vesti/pokrenut-inaturalist-monitoring-biodiverziteta-pio-rajac/index.html": {
+   "назив": 1,
+   "наводници „…”/„…\"": 12
+  },
+  "rajac-vesti/stanje-trave-kosidba-rajac-2026/index.html": {
+   "наводници „…”/„…\"": 5
+  },
+  "rajac-vesti/KARTICA-ZA-AKTUELNO.html": {
+   "назив": 1,
+   "наводници „…”/„…\"": 2
+  },
+  "rajac-vesti/ams-rajac-avgust-2026-klimatoloski-izvestaj/index.html": {
+   "наводници „…”/„…\"": 1,
+   "мешана слова": 7
+  },
+  "rajac-vesti/monitoring2025/index.html": {
+   "наводници „…”/„…\"": 3
+  },
+  "rajac-vesti/zvezdano-nebo-iznad-rajca/index.html": {
+   "наводници „…”/„…\"": 8,
+   "мешана слова": 1
+  },
+  "rajac-vesti/vestacka-inteligencija-izvestaj-2025/index.html": {
+   "назив": 1,
+   "наводници „…”/„…\"": 9
+  },
+  "rajac-vesti/VEST_POZARNA_OPASNOST_V3/dnevna-i-trenutna-pozarna-opasnost-rajac/index.html": {
+   "назив": 1,
+   "наводници „…”/„…\"": 13
+  },
+  "rajac-vesti/nevreme-grmljavinska-aktivnost-rajac/index.html": {
+   "назив": 1
+  },
+  "rajac-vesti/pokrenut-ebird-monitoring-ptica-rajac/index.html": {
+   "наводници „…”/„…\"": 11
+  },
+  "rajac-vesti/copernicus-ndvi-mesecna-animacija-pio-rajac-2025/index.html": {
+   "target=_blank": 4,
+   "наводници „…”/„…\"": 12
+  },
+  "rajac-vesti/copernicus-ndvi-mesecna-animacija-pio-rajac-2025/prikaz/index.html": {
+   "target=_blank": 1,
+   "наводници „…”/„…\"": 2
+  },
+  "rajac-vesti/pregled-galerija.html": {
+   "наводници „…”/„…\"": 1,
+   "target=_blank (у скрипти)": 1
+  },
+  "rajac-vesti/studenti-poljoprivrednog-fakulteta-prakticna-nastava-rajac/index.html": {
+   "наводници „…”/„…\"": 1
+  },
+  "rajac-vesti/zimski-monitoring-ptice-2026/index.html": {
+   "назив": 1,
+   "наводници „…”/„…\"": 3
+  },
+  "rajac-vesti/akcija-planinara-rajac-30-31-maj-2026/index.html": {
+   "наводници „…”/„…\"": 2,
+   "мешана слова": 2
+  },
+  "rajac-vesti/hajduckatrava-rajac/index.html": {
+   "назив": 1,
+   "наводници „…”/„…\"": 2
+  },
+  "rajac-vesti/prvi-istrazivacki-rad-svetlosna-zagadjenost-pio-rajac/kartica-za-vesti.html": {
+   "наводници „…”/„…\"": 2
+  },
+  "rajac-vesti/prvi-istrazivacki-rad-svetlosna-zagadjenost-pio-rajac/index.html": {
+   "назив": 22
+  },
+  "rajac-vesti/izvestaj-monitoring-ptica-22-maj-2026/index.html": {
+   "назив": 1,
+   "наводници „…”/„…\"": 7
+  },
+  "rajac-vesti/potvrdjeno-prisustvo-rosalia-alpina/index.html": {
+   "мешана слова (ручни речник)": 1,
+   "наводници „…”/„…\"": 4
+  },
+  "rajac-vesti/aprilski-monitoring-ptica-pio-rajac/index.html": {
+   "назив": 2,
+   "наводници „…”/„…\"": 9
+  },
+  "rajac-vesti/dnevni-satelitski-monitoring-poljoprivrednih-parcela/index.html": {
+   "наводници „…”/„…\"": 4,
+   "мешана слова": 5
+  },
+  "rajac-vesti/svetlosno-zagadjenje-pio-rajac-2014-2025/index.html": {
+   "target=_blank": 3,
+   "назив": 1,
+   "наводници „…”/„…\"": 9
+  },
+  "rajac-vesti/kosidba-na-rajcu-2026/index.html": {
+   "target=_blank": 1,
+   "назив": 1,
+   "наводници „…”/„…\"": 2
+  },
+  "rajac-vesti/posmatranje-dnevnih-leptira-na-rajcu/index.html": {
+   "наводници „…”/„…\"": 9
+  },
+  "motacilla-cinerea/index.html": {
+   "target=_blank": 7,
+   "поправљен type аудио снимка": 1,
+   "назив": 6,
+   "пресловљено назад у латиницу": 5
+  },
+  "kviz-prepoznavanje-ptica-rajac/index.html": {
+   "назив": 3,
+   "наводници „…”/„…\"": 1
+  },
+  "phylloscopus-collybita/index.html": {
+   "target=_blank": 7,
+   "поправљен type аудио снимка": 1,
+   "назив": 6,
+   "наводници „…”/„…\"": 1,
+   "пресловљено назад у латиницу": 3
+  },
+  "dryodurgades-dlabolai/index.html": {
+   "target=_blank": 3,
+   "назив": 2,
+   "наводници „…”/„…\"": 4
+  },
+  "monitoring2025/index.html": {
+   "наводници „…”/„…\"": 2
+  },
+  "lycoperdon-perlatum/index.html": {
+   "target=_blank": 2,
+   "назив": 3,
+   "наводници „…”/„…\"": 6,
+   "мешана слова": 2
+  },
+  "jassargus-obtusivalis/index.html": {
+   "target=_blank": 3,
+   "назив": 2,
+   "наводници „…”/„…\"": 4
+  },
+  "serinus-serinus/index.html": {
+   "target=_blank": 7,
+   "поправљен type аудио снимка": 1,
+   "назив": 6,
+   "наводници „…”/„…\"": 1,
+   "пресловљено назад у латиницу": 5
+  },
+  "pocetna-static.html": {
+   "target=_blank": 1,
+   "назив": 5,
+   "наводници „…”/„…\"": 15
+  },
+  "coenagrion-pulchellum/index.html": {
+   "target=_blank": 2,
+   "назив": 2,
+   "наводници „…”/„…\"": 6
+  },
+  "vestacka-inteligencija-izvestaj-2025/index.html": {
+   "назив": 1,
+   "наводници „…”/„…\"": 9
+  },
+  "monitoring-insekata-rajca/index.html": {
+   "назив": 6,
+   "наводници „…”/„…\"": 1
+  },
+  "phylloscopus-trochilus/index.html": {
+   "target=_blank": 7,
+   "поправљен type аудио снимка": 1,
+   "назив": 6,
+   "наводници „…”/„…\"": 1,
+   "пресловљено назад у латиницу": 6
+  },
+  "gavran/index.html": {
+   "target=_blank": 7,
+   "назив": 6,
+   "пресловљено назад у латиницу": 4
+  },
+  "ponasanje-prema-gljivama-i-stanistima-rajca/index.html": {
+   "назив": 5,
+   "наводници „…”/„…\"": 2
+  },
+  "streptopelia-turtur/index.html": {
+   "target=_blank": 8,
+   "назив": 6,
+   "наводници „…”/„…\"": 1,
+   "пресловљено назад у латиницу": 2
+  },
+  "sylvia-communis/index.html": {
+   "target=_blank": 7,
+   "поправљен type аудио снимка": 1,
+   "назив": 6,
+   "наводници „…”/„…\"": 1,
+   "пресловљено назад у латиницу": 2
+  },
+  "vodena-stanista/index.html": {
+   "назив": 1
+  },
+  "sympecma-fusca/index.html": {
+   "target=_blank": 3,
+   "назив": 2,
+   "наводници „…”/„…\"": 4
+  },
+  "quedius-mesomelinus-skoraszewskyi/index.html": {
+   "target=_blank": 5,
+   "назив": 2,
+   "наводници „…”/„…\"": 4
+  },
+  "klima/index.html": {
+   "мешана слова (ручни речник)": 1,
+   "назив": 1,
+   "наводници „…”/„…\"": 2,
+   "мешана слова": 5
+  },
+  "sumska-stanista/index.html": {
+   "назив": 1,
+   "наводници „…”/„…\"": 3
+  },
+  "rajac-vegetacija/index.html": {
+   "target=_blank": 18,
+   "мешана слова": 6
+  },
+  "sturnus-vulgaris/index.html": {
+   "target=_blank": 7,
+   "поправљен type аудио снимка": 1,
+   "назив": 6,
+   "наводници „…”/„…\"": 5,
+   "пресловљено назад у латиницу": 1
+  },
+  "ficedula-hypoleuca/index.html": {
+   "target=_blank": 7,
+   "поправљен type аудио снимка": 1,
+   "назив": 6,
+   "пресловљено назад у латиницу": 5
+  },
+  "jynx-torquilla/index.html": {
+   "target=_blank": 7,
+   "назив": 6,
+   "наводници „…”/„…\"": 1,
+   "пресловљено назад у латиницу": 5
+  },
+  "ponasanje-prema-gljivama-rajca/index.html": {
+   "назив": 5,
+   "наводници „…”/„…\"": 2
+  },
+  "upupa-epops/index.html": {
+   "target=_blank": 7,
+   "поправљен type аудио снимка": 1,
+   "назив": 6,
+   "наводници „…”/„…\"": 6,
+   "пресловљено назад у латиницу": 5
+  },
+  "astronomska-posmatranja/index.html": {
+   "назив": 1
+  },
+  "ficedula-parva/index.html": {
+   "target=_blank": 7,
+   "поправљен type аудио снимка": 1,
+   "назив": 6,
+   "наводници „…”/„…\"": 1,
+   "пресловљено назад у латиницу": 5
+  },
+  "rajac-ptice/index.html": {
+   "target=_blank": 28,
+   "наводници „…”/„…\"": 3
+  },
+  "calopteryx-splendens/index.html": {
+   "target=_blank": 5,
+   "мешана слова (ручни речник)": 13,
+   "назив": 2,
+   "наводници „…”/„…\"": 8,
+   "мешана слова": 61
+  },
+  "savremene-tehnologije/index.html": {
+   "назив": 3
+  },
+  "fotografisanje-insekata-rajca/index.html": {
+   "назив": 6,
+   "наводници „…”/„…\"": 4
+  },
+  "merops-apiaster/index.html": {
+   "target=_blank": 7,
+   "поправљен type аудио снимка": 1,
+   "назив": 6,
+   "наводници „…”/„…\"": 7,
+   "пресловљено назад у латиницу": 4
+  },
+  "ponasanje-prema-pticama/index.html": {
+   "назив": 3,
+   "наводници „…”/„…\"": 3
+  },
+  "proteinus-ovalis/index.html": {
+   "target=_blank": 3,
+   "назив": 3,
+   "наводници „…”/„…\"": 4
+  },
+  "ebird/index.html": {
+   "назив": 1
+  },
+  "podrska-poljoprivredi-2/index.html": {
+   "назив": 3,
+   "наводници „…”/„…\"": 2
+  },
+  "bombus-spp/index.html": {
+   "target=_blank": 3,
+   "назив": 4,
+   "наводници „…”/„…\"": 2
+  },
+  "agro-kopernikus-automatski-izvestaj-v1/agro-kopernikus/index.html": {
+   "наводници „…”/„…\"": 2,
+   "мешана слова": 5
+  },
+  "agro-kopernikus-automatski-izvestaj-v1/agro-kopernikus/reports/2026-08-23/index.html": {
+   "мешана слова": 1
+  },
+  "agro-kopernikus-automatski-izvestaj-v1/agro-kopernikus/latest-report.html": {
+   "мешана слова": 1
+  },
+  "amanita-caesarea/index.html": {
+   "target=_blank": 2,
+   "мешана слова (ручни речник)": 1,
+   "назив": 3,
+   "наводници „…”/„…\"": 7,
+   "мешана слова": 1
+  },
+  "rajac-leptiri/index.html": {
+   "target=_blank": 8,
+   "назив": 1,
+   "наводници „…”/„…\"": 14
+  },
+  "falco-subbuteo/index.html": {
+   "target=_blank": 7,
+   "назив": 6,
+   "пресловљено назад у латиницу": 3
+  },
+  "duvalius-duvalius-suvoborensis/index.html": {
+   "target=_blank": 6,
+   "назив": 2,
+   "наводници „…”/„…\"": 4
+  },
+  "phoenicurus-ochruros/index.html": {
+   "target=_blank": 7,
+   "поправљен type аудио снимка": 1,
+   "назив": 6,
+   "пресловљено назад у латиницу": 4
+  },
+  "choleva-angustata/index.html": {
+   "target=_blank": 5,
+   "мешана слова (ручни речник)": 16,
+   "назив": 2,
+   "наводници „…”/„…\"": 5,
+   "мешана слова": 59
+  },
+  "syrphus-ribesii/index.html": {
+   "target=_blank": 3,
+   "назив": 4,
+   "наводници „…”/„…\"": 2
+  },
+  "za-istrazivace/index.html": {
+   "назив": 2
+  },
+  "lullula-arborea/index.html": {
+   "target=_blank": 7,
+   "поправљен type аудио снимка": 1,
+   "назив": 6,
+   "пресловљено назад у латиницу": 5
+  },
+  "saxicola-rubicola/index.html": {
+   "target=_blank": 7,
+   "поправљен type аудио снимка": 1,
+   "назив": 6,
+   "пресловљено назад у латиницу": 4
+  },
+  "pica-pica/index.html": {
+   "target=_blank": 8,
+   "назив": 6,
+   "пресловљено назад у латиницу": 1
+  },
+  "studenti-poljoprivrednog-fakulteta-prakticna-nastava-rajac/index.html": {
+   "наводници „…”/„…\"": 1
+  },
+  "delichon-urbicum/index.html": {
+   "target=_blank": 7,
+   "поправљен type аудио снимка": 1,
+   "назив": 6,
+   "наводници „…”/„…\"": 1,
+   "пресловљено назад у латиницу": 5
+  },
+  "staze/index.html": {
+   "мешана слова (ручни речник)": 1
+  },
+  "buteo-buteo/index.html": {
+   "target=_blank": 7,
+   "назив": 6,
+   "пресловљено назад у латиницу": 4
+  },
+  "turdus-philomelos/index.html": {
+   "target=_blank": 7,
+   "поправљен type аудио снимка": 1,
+   "назив": 6,
+   "наводници „…”/„…\"": 10,
+   "мешана слова": 1,
+   "пресловљено назад у латиницу": 2
+  },
+  "monitoring-ekosistema/index.html": {
+   "назив": 2,
+   "наводници „…”/„…\"": 6
+  },
+  "mali-detlic/index.html": {
+   "target=_blank": 8,
+   "поправљен type аудио снимка": 1,
+   "назив": 6,
+   "наводници „…”/„…\"": 2,
+   "пресловљено назад у латиницу": 4
+  },
+  "zimski-monitoring-ptice-2026/index.html": {
+   "назив": 1,
+   "наводници „…”/„…\"": 3
+  },
+  "hajduckatrava-rajac/index.html": {
+   "назив": 1,
+   "наводници „…”/„…\"": 2
+  },
+  "hypholoma-fasciculare/index.html": {
+   "target=_blank": 1,
+   "мешана слова (ручни речник)": 2,
+   "назив": 3,
+   "наводници „…”/„…\"": 3,
+   "мешана слова": 2
+  },
+  "streptopelia-decaocto/index.html": {
+   "target=_blank": 8,
+   "назив": 7,
+   "наводници „…”/„…\"": 1,
+   "пресловљено назад у латиницу": 1
+  },
+  "ponasanje-prema-insektima-rajca/index.html": {
+   "назив": 6,
+   "наводници „…”/„…\"": 8
+  },
+  "polyommatus-rod/index.html": {
+   "target=_blank": 4,
+   "мешана слова (ручни речник)": 2,
+   "назив": 3,
+   "наводници „…”/„…\"": 8,
+   "мешана слова": 3
+  },
+  "archive/index.html": {
+   "target=_blank": 1,
+   "мешана слова (ручни речник)": 2,
+   "назив": 4,
+   "наводници „…”/„…\"": 1,
+   "мешана слова": 1
+  },
+  "picus-viridis/index.html": {
+   "target=_blank": 7,
+   "назив": 6,
+   "наводници „…”/„…\"": 1,
+   "пресловљено назад у латиницу": 3
+  },
+  "apis-mellifera/index.html": {
+   "target=_blank": 2,
+   "назив": 2,
+   "наводници „…”/„…\"": 9,
+   "мешана слова": 2
+  },
+  "boletus-edulis/index.html": {
+   "target=_blank": 2,
+   "мешана слова (ручни речник)": 4,
+   "назив": 3,
+   "наводници „…”/„…\"": 6,
+   "мешана слова": 1
+  },
+  "grupne-posete-i-dozvole/index.html": {
+   "назив": 3,
+   "наводници „…”/„…\"": 4
+  },
+  "phoenicurus-phoenicurus/index.html": {
+   "target=_blank": 7,
+   "поправљен type аудио снимка": 1,
+   "назив": 6,
+   "наводници „…”/„…\"": 1,
+   "пресловљено назад у латиницу": 4
+  },
+  "pleurotus-ostreatus/index.html": {
+   "target=_blank": 2,
+   "назив": 3,
+   "наводници „…”/„…\"": 5,
+   "мешана слова": 3
+  },
+  "akcija-planinara-30-31-maj-2026/mapa/index.html": {
+   "target=_blank": 1,
+   "назив": 1,
+   "наводници „…”/„…\"": 2,
+   "мешана слова": 1
+  },
+  "akcija-planinara-30-31-maj-2026/index.html": {
+   "назив": 1,
+   "мешана слова": 5
+  },
+  "chloris-chloris/index.html": {
+   "target=_blank": 7,
+   "поправљен type аудио снимка": 1,
+   "назив": 6,
+   "наводници „…”/„…\"": 1,
+   "пресловљено назад у латиницу": 4
+  },
+  "insekti/coenonympha-pamphilus/index.html": {
+   "назив": 1
+  },
+  "insekti/pyrgus-sidae/index.html": {
+   "назив": 1
+  },
+  "insekti/ochlodes-sylvanus/index.html": {
+   "назив": 1
+  },
+  "insekti/lysandra-bellargus/index.html": {
+   "назив": 1
+  },
+  "insekti/eupteryx-notata/index.html": {
+   "назив": 1,
+   "наводници „…”/„…\"": 4
+  },
+  "insekti/idiocerus-confusus/index.html": {
+   "назив": 1,
+   "наводници „…”/„…\"": 5
+  },
+  "insekti/apatura-ilia/index.html": {
+   "назив": 1
+  },
+  "insekti/rosalia-alpina/index.html": {
+   "назив": 4,
+   "наводници „…”/„…\"": 4,
+   "наводници \"…\"": 9
+  },
+  "insekti/pieris-rod/index.html": {
+   "назив": 1,
+   "наводници „…”/„…\"": 5
+  },
+  "insekti/erebia-aethiops/index.html": {
+   "назив": 1
+  },
+  "insekti/pyrgus-malvae/index.html": {
+   "назив": 1
+  },
+  "insekti/platycnemis-pennipes/index.html": {
+   "назив": 1,
+   "наводници „…”/„…\"": 3
+  },
+  "insekti/hepialidae/index.html": {
+   "назив": 1,
+   "наводници „…”/„…\"": 5
+  },
+  "insekti/pontia-edusa/index.html": {
+   "назив": 1
+  },
+  "insekti/lycaena-virgaureae/index.html": {
+   "назив": 1
+  },
+  "insekti/pyronia-tithonus/index.html": {
+   "назив": 1
+  },
+  "insekti/colias-crocea/index.html": {
+   "назив": 1
+  },
+  "insekti/idiocerus-populi/index.html": {
+   "назив": 1,
+   "наводници „…”/„…\"": 5
+  },
+  "insekti/argynnis-paphia/index.html": {
+   "назив": 1
+  },
+  "insekti/aglais-urticae/index.html": {
+   "назив": 1
+  },
+  "insekti/psammotettix-cephalotes/index.html": {
+   "назив": 2,
+   "наводници „…”/„…\"": 4
+  },
+  "insekti/lucanus-cervus/index.html": {
+   "назив": 3,
+   "наводници „…”/„…\"": 2
+  },
+  "insekti/thymelicus-lineola/index.html": {
+   "назив": 1
+  },
+  "insekti/limonovac/index.html": {
+   "target=_blank": 4,
+   "назив": 4,
+   "наводници „…”/„…\"": 1
+  },
+  "insekti/plebejus-argyrognomon/index.html": {
+   "назив": 1
+  },
+  "insekti/evacanthus-acuminatus/index.html": {
+   "назив": 1,
+   "наводници „…”/„…\"": 5
+  },
+  "insekti/pyrgus-alveus/index.html": {
+   "назив": 1
+  },
+  "insekti/hipparchia-fagi/index.html": {
+   "назив": 1
+  },
+  "insekti/scolitantides-orion/index.html": {
+   "назив": 1
+  },
+  "insekti/fabriciana-adippe/index.html": {
+   "назив": 1
+  },
+  "insekti/iphiclides-podalirius/index.html": {
+   "назив": 1
+  },
+  "insekti/melitaea-didyma/index.html": {
+   "назив": 1
+  },
+  "insekti/lycaena-tityrus/index.html": {
+   "назив": 1
+  },
+  "insekti/pieris-balcana/index.html": {
+   "назив": 1
+  },
+  "insekti/aporia-crataegi/index.html": {
+   "назив": 1
+  },
+  "insekti/cheilosia-schnabli/index.html": {
+   "назив": 2,
+   "наводници „…”/„…\"": 4
+  },
+  "insekti/atheta-contristata/index.html": {
+   "назив": 3,
+   "наводници „…”/„…\"": 5
+  },
+  "insekti/lycaena-dispar/index.html": {
+   "назив": 1
+  },
+  "insekti/aleochara-funebris/index.html": {
+   "назив": 2,
+   "наводници „…”/„…\"": 4,
+   "наводници \"…\"": 2
+  },
+  "insekti/eupteroidia-stellulata/index.html": {
+   "назив": 1,
+   "наводници „…”/„…\"": 3
+  },
+  "insekti/polygonia-c-album/index.html": {
+   "назив": 1
+  },
+  "insekti/bisnius-fimetarius/index.html": {
+   "назив": 1,
+   "наводници „…”/„…\"": 6
+  },
+  "insekti/megadelphax-sordidula/index.html": {
+   "назив": 1,
+   "наводници „…”/„…\"": 3
+  },
+  "insekti/episyrphus-balteatus/index.html": {
+   "назив": 1,
+   "наводници „…”/„…\"": 6
+  },
+  "insekti/minois-dryas/index.html": {
+   "назив": 1
+  },
+  "insekti/aeshna-cyanea/index.html": {
+   "назив": 3,
+   "наводници „…”/„…\"": 4
+  },
+  "insekti/aglais-io/index.html": {
+   "назив": 1
+  },
+  "insekti/libellula-depressa/index.html": {
+   "назив": 1,
+   "наводници „…”/„…\"": 4
+  },
+  "insekti/pieris-napi/index.html": {
+   "назив": 1
+  },
+  "insekti/brenthis-daphne/index.html": {
+   "назив": 1
+  },
+  "insekti/pomoc-insektima-rajca/index.html": {
+   "назив": 7,
+   "наводници „…”/„…\"": 11
+  },
+  "insekti/maniola-jurtina/index.html": {
+   "назив": 1
+  },
+  "insekti/plebejus-argus/index.html": {
+   "назив": 1
+  },
+  "insekti/lysandra-coridon/index.html": {
+   "назив": 1
+  },
+  "insekti/cupido-argiades/index.html": {
+   "назив": 1
+  },
+  "insekti/admiral/index.html": {
+   "target=_blank": 4,
+   "назив": 2,
+   "наводници „…”/„…\"": 2
+  },
+  "insekti/index.html": {
+   "назив": 2,
+   "наводници „…”/„…\"": 2
+  },
+  "insekti/alati-za-posetioce-insekti-rajca/index.html": {
+   "назив": 6,
+   "наводници „…”/„…\"": 4
+  },
+  "insekti/brintesia-circe/index.html": {
+   "назив": 1
+  },
+  "insekti/speyeria-aglaja/index.html": {
+   "назив": 1
+  },
+  "insekti/cyaniris-semiargus/index.html": {
+   "назив": 1
+  },
+  "insekti/aphrodes-tricinctus/index.html": {
+   "назив": 1,
+   "наводници „…”/„…\"": 4,
+   "наводници \"…\"": 1
+  },
+  "insekti/trechus-cardioderus-balcanicus/index.html": {
+   "назив": 1,
+   "наводници „…”/„…\"": 3
+  },
+  "insekti/liogluta-londiscula/index.html": {
+   "назив": 1,
+   "наводници „…”/„…\"": 3
+  },
+  "insekti/fabriciana-niobe/index.html": {
+   "назив": 1
+  },
+  "insekti/lycaena-phlaeas/index.html": {
+   "назив": 1
+  },
+  "insekti/cupido-minimus/index.html": {
+   "назив": 1
+  },
+  "insekti/idiocerus-distinguendus/index.html": {
+   "назив": 1,
+   "наводници „…”/„…\"": 5
+  },
+  "insekti/aricia-agestis/index.html": {
+   "назив": 1
+  },
+  "insekti/melitaea-phoebe/index.html": {
+   "назив": 1
+  },
+  "insekti/gonepteryx-rhamni/index.html": {
+   "назив": 1
+  },
+  "insekti/papilio-machaon/index.html": {
+   "назив": 1
+  },
+  "insekti/vanessa-atalanta/index.html": {
+   "назив": 1
+  },
+  "insekti/hesperia-comma/index.html": {
+   "назив": 1
+  },
+  "insekti/macropsis-infuscata/index.html": {
+   "назив": 2,
+   "наводници „…”/„…\"": 5
+  },
+  "insekti/colias-alfacariensis/index.html": {
+   "назив": 1
+  },
+  "insekti/brenthis-hecate/index.html": {
+   "назив": 1
+  },
+  "insekti/melitaea-trivia/index.html": {
+   "назив": 1
+  },
+  "insekti/coenonympha-glycerion/index.html": {
+   "назив": 1
+  },
+  "insekti/dnevni-leptiri/index.html": {
+   "назив": 1,
+   "наводници „…”/„…\"": 1
+  },
+  "insekti/diplocolenus-abdominalis/index.html": {
+   "назив": 1,
+   "наводници „…”/„…\"": 3
+  },
+  "insekti/polyommatus-icarus/index.html": {
+   "назив": 1
+  },
+  "insekti/lasiommata-megera/index.html": {
+   "назив": 1
+  },
+  "insekti/omalium-rivulare/index.html": {
+   "назив": 2,
+   "наводници „…”/„…\"": 4
+  },
+  "insekti/pieris-brassicae/index.html": {
+   "назив": 1
+  },
+  "insekti/dryodurgades-dlabolai/index.html": {
+   "назив": 1,
+   "наводници „…”/„…\"": 4
+  },
+  "insekti/aphantopus-hyperantus/index.html": {
+   "назив": 1
+  },
+  "insekti/jassargus-obtusivalis/index.html": {
+   "назив": 1,
+   "наводници „…”/„…\"": 3
+  },
+  "insekti/coenagrion-pulchellum/index.html": {
+   "назив": 1,
+   "наводници „…”/„…\"": 6
+  },
+  "insekti/polyommatus-daphnis/index.html": {
+   "назив": 1
+  },
+  "insekti/monitoring-insekata-rajca/index.html": {
+   "назив": 6,
+   "наводници „…”/„…\"": 1
+  },
+  "insekti/melanargia-galathea/index.html": {
+   "назив": 1
+  },
+  "insekti/issoria-lathonia/index.html": {
+   "назив": 1
+  },
+  "insekti/boloria-dia/index.html": {
+   "назив": 1
+  },
+  "insekti/sympecma-fusca/index.html": {
+   "назив": 1,
+   "наводници „…”/„…\"": 4
+  },
+  "insekti/quedius-mesomelinus-skoraszewskyi/index.html": {
+   "назив": 1,
+   "наводници „…”/„…\"": 3
+  },
+  "insekti/pieris-rapae/index.html": {
+   "назив": 1
+  },
+  "insekti/pararge-aegeria/index.html": {
+   "назив": 1
+  },
+  "insekti/leptidea-sinapis/index.html": {
+   "назив": 1
+  },
+  "insekti/coenonympha-arcania/index.html": {
+   "назив": 1
+  },
+  "insekti/anthocharis-cardamines/index.html": {
+   "назив": 1
+  },
+  "insekti/calopteryx-splendens/index.html": {
+   "мешана слова (ручни речник)": 1,
+   "назив": 1,
+   "наводници „…”/„…\"": 8,
+   "мешана слова": 1
+  },
+  "insekti/fotografisanje-insekata-rajca/index.html": {
+   "назив": 6,
+   "наводници „…”/„…\"": 4
+  },
+  "insekti/thymelicus-sylvestris/index.html": {
+   "назив": 1
+  },
+  "insekti/parnassius-mnemosyne/index.html": {
+   "назив": 1
+  },
+  "insekti/proteinus-ovalis/index.html": {
+   "назив": 2,
+   "наводници „…”/„…\"": 5
+  },
+  "insekti/bombus-spp/index.html": {
+   "назив": 3,
+   "наводници „…”/„…\"": 2
+  },
+  "insekti/melitaea-athalia/index.html": {
+   "назив": 1
+  },
+  "insekti/colias-hyale/index.html": {
+   "назив": 1
+  },
+  "insekti/duvalius-duvalius-suvoborensis/index.html": {
+   "назив": 1,
+   "наводници „…”/„…\"": 3
+  },
+  "insekti/choleva-angustata/index.html": {
+   "назив": 1,
+   "наводници „…”/„…\"": 4,
+   "мешана слова": 1
+  },
+  "insekti/syrphus-ribesii/index.html": {
+   "назив": 3,
+   "наводници „…”/„…\"": 2
+  },
+  "insekti/satyrus-ferula/index.html": {
+   "назив": 1
+  },
+  "insekti/ponasanje-prema-insektima-rajca/index.html": {
+   "назив": 6,
+   "наводници „…”/„…\"": 8
+  },
+  "insekti/polyommatus-rod/index.html": {
+   "назив": 1,
+   "наводници „…”/„…\"": 3
+  },
+  "insekti/apis-mellifera/index.html": {
+   "назив": 1,
+   "наводници „…”/„…\"": 8
+  },
+  "insekti/erynnis-tages/index.html": {
+   "назив": 1
+  },
+  "insekti/erythria-aureola/index.html": {
+   "назив": 1,
+   "наводници „…”/„…\"": 3
+  },
+  "insekti/quedius-distichalius-cinctus/index.html": {
+   "назив": 1,
+   "наводници „…”/„…\"": 3
+  },
+  "insekti/izvori-fotografija/index.html": {
+   "назив": 1
+  },
+  "insekti/celastrina-argiolus/index.html": {
+   "назив": 1
+  },
+  "insekti/noctuidae/index.html": {
+   "назив": 1,
+   "наводници „…”/„…\"": 3
+  },
+  "insekti/erebia-medusa/index.html": {
+   "назив": 1
+  },
+  "insekti/idiocerus-stigmaticalis/index.html": {
+   "назив": 1,
+   "наводници „…”/„…\"": 4
+  },
+  "insekti/vanessa-cardui/index.html": {
+   "назив": 1
+  },
+  "insekti/calopteryx-virgo/index.html": {
+   "назив": 2,
+   "наводници „…”/„…\"": 4
+  },
+  "insekti/araschnia-levana/index.html": {
+   "назив": 1
+  },
+  "insekti/coenagrion-puella/index.html": {
+   "назив": 1,
+   "наводници „…”/„…\"": 8,
+   "мешана слова": 1
+  },
+  "insekti/polyommatus-amandus/index.html": {
+   "назив": 1
+  },
+  "erythria-aureola/index.html": {
+   "target=_blank": 3,
+   "назив": 2,
+   "наводници „…”/„…\"": 4
+  },
+  "ciconia-nigra/index.html": {
+   "target=_blank": 7,
+   "назив": 6,
+   "пресловљено назад у латиницу": 2
+  },
+  "quedius-distichalius-cinctus/index.html": {
+   "target=_blank": 6,
+   "мешана слова (ручни речник)": 2,
+   "назив": 2,
+   "наводници „…”/„…\"": 4
+  },
+  "izvori-fotografija/index.html": {
+   "мешана слова (ручни речник)": 1,
+   "назив": 1
+  },
+  "russula-cyanoxantha/index.html": {
+   "target=_blank": 2,
+   "мешана слова (ручни речник)": 2,
+   "назив": 3,
+   "наводници „…”/„…\"": 5,
+   "мешана слова": 2
+  },
+  "kodeks/index.html": {
+   "назив": 1,
+   "наводници „…”/„…\"": 7
+  },
+  "biljke-karta-proba/index.html": {
+   "назив": 1,
+   "наводници „…”/„…\"": 25,
+   "мешана слова": 1
+  },
+  "falco-vespertinus/index.html": {
+   "target=_blank": 7,
+   "назив": 6,
+   "пресловљено назад у латиницу": 2
+  },
+  "kopindeksi/sentinel1/index.html": {
+   "назив": 1
+  },
+  "kopindeksi/A_parcel_longterm_analytics_trend_v1.html": {
+   "назив": 1
+  },
+  "kopindeksi/teren/index.html": {
+   "назив": 1
+  },
+  "kopindeksi/parcele/index.html": {
+   "назив": 2
+  },
+  "kopindeksi/rajac-monitoring-report-engine-v1/monitoring/meteo/mesecni/2026-05/index.html": {
+   "наводници „…”/„…\"": 1
+  },
+  "kopindeksi/rajac-monitoring-report-engine-v1/monitoring/index.html": {
+   "назив": 1,
+   "наводници „…”/„…\"": 1
+  },
+  "kopindeksi/rajac-monitoring-report-engine-v1/monitoring/svetlosno-zagadjenje/mesecni/index.html": {
+   "наводници „…”/„…\"": 1
+  },
+  "kopindeksi/agro.html": {
+   "назив": 2,
+   "target=_blank (у скрипти)": 1
+  },
+  "kopindeksi/indeksi/index.html": {
+   "назив": 2,
+   "target=_blank (у скрипти)": 1
+  },
+  "kopindeksi/indeksi/kosnja-16-19-2026-tri-indeksa-V2.html": {
+   "назив": 1,
+   "наводници „…”/„…\"": 1
+  },
+  "kopindeksi/parcel_longterm_analytics.html": {
+   "назив": 1,
+   "мешана слова": 2
+  },
+  "kopindeksi/copernicus_histogram_panel.html": {
+   "назив": 1,
+   "наводници „…”/„…\"": 1
+  },
+  "kopindeksi/kosenjetrave/index.html": {
+   "назив": 3
+  },
+  "kopindeksi/A_parcel_longterm_analytics_lowess_ci_v21.html": {
+   "назив": 1
+  },
+  "kopindeksi/mesecni-izvestaji/index.html": {
+   "назив": 2,
+   "наводници „…”/„…\"": 1
+  },
+  "kopindeksi/index-kopindeksi-AKTUELNI-grafikoni-fixed.html": {
+   "назив": 2,
+   "target=_blank (у скрипти)": 1
+  },
+  "kopindeksi/kopindeksi/indeksi/index.html": {
+   "назив": 2,
+   "target=_blank (у скрипти)": 1
+  },
+  "kopindeksi/parcel_analytics.html": {
+   "назив": 1
+  },
+  "kopindeksi/redizajn/copernicus/index.html": {
+   "назив": 2
+  },
+  "kopindeksi/redizajn/index.html": {
+   "назив": 1
+  },
+  "noctuidae/index.html": {
+   "target=_blank": 3,
+   "назив": 2,
+   "наводници „…”/„…\"": 4
+  },
+  "izvestaj-monitoring-ptica-22-maj-2026/index.html": {
+   "назив": 1,
+   "наводници „…”/„…\"": 7
+  },
+  "anthus-trivialis/index.html": {
+   "target=_blank": 7,
+   "поправљен type аудио снимка": 1,
+   "назив": 6,
+   "пресловљено назад у латиницу": 7
+  },
+  "pedologija/index.html": {
+   "назив": 2
+  },
+  "potvrdjeno-prisustvo-rosalia-alpina/index.html": {
+   "мешана слова (ручни речник)": 1,
+   "наводници „…”/„…\"": 4
+  },
+  "sateliti-vegetacija/index.html": {
+   "назив": 2,
+   "наводници „…”/„…\"": 2
+  },
+  "aprilski-monitoring-ptica-pio-rajac/index.html": {
+   "назив": 2,
+   "наводници „…”/„…\"": 8
+  },
+  "dnevni-satelitski-monitoring-poljoprivrednih-parcela/index.html": {
+   "наводници „…”/„…\"": 4,
+   "мешана слова": 5
+  },
+  "rajac-astronomija/index.html": {
+   "target=_blank": 19,
+   "наводници „…”/„…\"": 1
+  },
+  "idiocerus-stigmaticalis/index.html": {
+   "target=_blank": 2,
+   "назив": 2,
+   "наводници „…”/„…\"": 5
+  },
+  "vrabac/index.html": {
+   "target=_blank": 7,
+   "поправљен type аудио снимка": 1,
+   "назив": 6,
+   "пресловљено назад у латиницу": 2
+  },
+  "svetlosno-zagadjenje-pio-rajac-2014-2025/index.html": {
+   "target=_blank": 3,
+   "назив": 1,
+   "наводници „…”/„…\"": 9
+  },
+  "mesec/index.html": {
+   "назив": 1,
+   "наводници „…”/„…\"": 1
+  },
+  "calopteryx-virgo/index.html": {
+   "target=_blank": 3,
+   "назив": 3,
+   "наводници „…”/„…\"": 4
+  },
+  "karta/index.html": {
+   "назив": 1,
+   "наводници „…”/„…\"": 4
+  },
+  "trofodinamika/4_decomposers_threats.html": {
+   "назив": 2,
+   "наводници „…”/„…\"": 3
+  },
+  "trofodinamika/index.html": {
+   "мешана слова (ручни речник)": 1,
+   "назив": 2,
+   "наводници „…”/„…\"": 4
+  },
+  "trofodinamika/1_producers.html": {
+   "назив": 2,
+   "наводници „…”/„…\"": 3
+  },
+  "trofodinamika/vrsta/sitta.html": {
+   "назив": 2,
+   "наводници „…”/„…\"": 2
+  },
+  "trofodinamika/vrsta/apis.html": {
+   "назив": 2,
+   "наводници „…”/„…\"": 2
+  },
+  "trofodinamika/vrsta/buteo-buteo.html": {
+   "назив": 2,
+   "наводници „…”/„…\"": 2
+  },
+  "trofodinamika/vrsta/canis-aureus.html": {
+   "назив": 2,
+   "наводници „…”/„…\"": 2
+  },
+  "trofodinamika/vrsta/abies-alba.html": {
+   "назив": 2,
+   "наводници „…”/„…\"": 2
+  },
+  "trofodinamika/vrsta/platanthera.html": {
+   "назив": 2,
+   "наводници „…”/„…\"": 2
+  },
+  "trofodinamika/vrsta/carduelis.html": {
+   "назив": 2,
+   "наводници „…”/„…\"": 2
+  },
+  "trofodinamika/vrsta/quercus.html": {
+   "назив": 2,
+   "наводници „…”/„…\"": 2
+  },
+  "trofodinamika/vrsta/mushroom.html": {
+   "назив": 2,
+   "наводници „…”/„…\"": 2
+  },
+  "trofodinamika/vrsta/butterfly.html": {
+   "назив": 2,
+   "наводници „…”/„…\"": 2
+  },
+  "trofodinamika/vrsta/fringilla.html": {
+   "назив": 2,
+   "наводници „…”/„…\"": 2
+  },
+  "trofodinamika/vrsta/sus-scrofa.html": {
+   "назив": 2,
+   "наводници „…”/„…\"": 2
+  },
+  "trofodinamika/vrsta/fagus-moesiaca.html": {
+   "назив": 2,
+   "наводници „…”/„…\"": 2
+  },
+  "trofodinamika/vrsta/capreolus-capreolus.html": {
+   "назив": 2,
+   "наводници „…”/„…\"": 2
+  },
+  "trofodinamika/vrsta/accipiter-nisus.html": {
+   "назив": 2,
+   "наводници „…”/„…\"": 2
+  },
+  "trofodinamika/vrsta/syrphidae.html": {
+   "назив": 2,
+   "наводници „…”/„…\"": 2
+  },
+  "trofodinamika/vrsta/vulpes-vulpes.html": {
+   "назив": 2,
+   "наводници „…”/„…\"": 2
+  },
+  "trofodinamika/vrsta/canis-lupus.html": {
+   "назив": 2,
+   "наводници „…”/„…\"": 2
+  },
+  "trofodinamika/vrsta/anacamptis.html": {
+   "назив": 2,
+   "наводници „…”/„…\"": 2
+  },
+  "trofodinamika/vrsta/lepus-europaeus.html": {
+   "назив": 2,
+   "наводници „…”/„…\"": 2
+  },
+  "trofodinamika/vrsta/caterpillars.html": {
+   "target=_blank": 2,
+   "назив": 2,
+   "наводници „…”/„…\"": 2
+  },
+  "trofodinamika/vrsta/strix-aluco.html": {
+   "назив": 2,
+   "наводници „…”/„…\"": 2
+  },
+  "trofodinamika/vrsta/yarrow.html": {
+   "назив": 2,
+   "наводници „…”/„…\"": 2
+  },
+  "trofodinamika/vrsta/agrostis-festuca.html": {
+   "назив": 2,
+   "наводници „…”/„…\"": 2
+  },
+  "trofodinamika/vrsta/aphididae.html": {
+   "назив": 2,
+   "наводници „…”/„…\"": 2
+  },
+  "trofodinamika/vrsta/sciurus-vulgaris.html": {
+   "назив": 2,
+   "наводници „…”/„…\"": 2
+  },
+  "trofodinamika/vrsta/moths.html": {
+   "target=_blank": 2,
+   "назив": 2,
+   "наводници „…”/„…\"": 2
+  },
+  "trofodinamika/2_consumers.html": {
+   "назив": 2,
+   "наводници „…”/„…\"": 3
+  },
+  "trofodinamika/3_pollination.html": {
+   "назив": 2,
+   "наводници „…”/„…\"": 3
+  },
+  "trofodinamika/kviz.html": {
+   "назив": 2,
+   "наводници „…”/„…\"": 3,
+   "мешана слова": 3
+  },
+  "erithacus-rubecula/index.html": {
+   "target=_blank": 7,
+   "поправљен type аудио снимка": 1,
+   "назив": 6,
+   "наводници „…”/„…\"": 4,
+   "пресловљено назад у латиницу": 1
+  },
+  "posmatranje-dnevnih-leptira-na-rajcu/index.html": {
+   "наводници „…”/„…\"": 9
+  },
+  "coenagrion-puella/index.html": {
+   "target=_blank": 2,
+   "мешана слова (ручни речник)": 23,
+   "назив": 2,
+   "наводници „…”/„…\"": 8,
+   "мешана слова": 75
+  },
+  "rubroboletus-satanas/index.html": {
+   "target=_blank": 1,
+   "мешана слова (ручни речник)": 2,
+   "назив": 4,
+   "наводници „…”/„…\"": 3,
+   "мешана слова": 1
+  },
+  "agro-kopernikus/index.html": {
+   "наводници „…”/„…\"": 2,
+   "мешана слова": 5
+  },
+  "agro-kopernikus/reports/2026-05-28/index.html": {
+   "мешана слова": 1
+  },
+  "agro-kopernikus/latest-report.html": {
+   "мешана слова": 1
+  },
+  "saradnja/index.html": {
+   "наводници „…”/„…\"": 2
+  }
+ },
+ "rucno": [
+  [
+   "nИзабрани",
+   220
+  ],
+  [
+   "ЯčćžšđČĆŽŠĐ",
+   6
+  ],
+  [
+   "уv",
+   6
+  ],
+  [
+   "nПровери",
+   4
+  ],
+  [
+   "zА",
+   4
+  ],
+  [
+   "nОблачност",
+   4
+  ],
+  [
+   "Енцyцлопедиа",
+   4
+  ],
+  [
+   "nСтатус",
+   4
+  ],
+  [
+   "nТачност",
+   4
+  ],
+  [
+   "nИзградња",
+   4
+  ],
+  [
+   "nИзвођење",
+   4
+  ],
+  [
+   "nПробано",
+   2
+  ],
+  [
+   "студy",
+   2
+  ],
+  [
+   "враћajući",
+   2
+  ],
+  [
+   "яЉљЊњЋћЂђЏџŠšĐđČčĆćŽž",
+   2
+  ],
+  [
+   "Еyе",
+   2
+  ],
+  [
+   "шёčćžšđ",
+   2
+  ],
+  [
+   "nПоследње",
+   2
+  ],
+  [
+   "rixа",
+   2
+  ],
+  [
+   "релативелy",
+   2
+  ],
+  [
+   "еасy",
+   2
+  ],
+  [
+   "nПревођење",
+   2
+  ],
+  [
+   "nКаптирање",
+   2
+  ],
+  [
+   "nЕксплоатација",
+   2
+  ],
+  [
+   "nОтварање",
+   2
+  ],
+  [
+   "tОпис",
+   2
+  ],
+  [
+   "tСредњезрни",
+   2
+  ],
+  [
+   "tМикасти",
+   2
+  ],
+  [
+   "tФини",
+   2
+  ],
+  [
+   "tТанки",
+   2
+  ],
+  [
+   "tУлога",
+   2
+  ],
+  [
+   "tВлакнасти",
+   2
+  ],
+  [
+   "tПсеудоморфоза",
+   2
+  ],
+  [
+   "tПлочаст",
+   2
+  ],
+  [
+   "tСекундарни",
+   2
+  ],
+  [
+   "tЛокално",
+   2
+  ],
+  [
+   "Флyцатцхерс",
+   2
+  ],
+  [
+   "еарлy",
+   2
+  ],
+  [
+   "оисеауx",
+   2
+  ],
+  [
+   "nПрво",
+   2
+  ],
+  [
+   "роv",
+   2
+  ],
+  [
+   "маx",
+   2
+  ],
+  [
+   "стаyс",
+   2
+  ],
+  [
+   "RHср",
+   2
+  ],
+  [
+   "VPDср",
+   2
+  ],
+  [
+   "wеек",
+   2
+  ],
+  [
+   "хyполеуца",
+   2
+  ],
+  [
+   "Плаyбацк",
+   2
+  ],
+  [
+   "nПосматрач",
+   2
+  ]
+ ]
+}
