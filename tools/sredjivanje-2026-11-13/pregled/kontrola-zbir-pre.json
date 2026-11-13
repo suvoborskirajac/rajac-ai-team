@@ -1,0 +1,26 @@
+{
+ "zbir": {
+  "stranica": 896,
+  "necitljivo": 0,
+  "php_neobuhvaceno": 0,
+  "mesano": 2407,
+  "mesano_str": 464,
+  "latinica_str": 759,
+  "latinica_nije_provereno": 5,
+  "blank": 745,
+  "blank_str": 129,
+  "nedostaje": 608,
+  "nedostaje_str": 213,
+  "preusmerenje": 0,
+  "bez_naslova": 1,
+  "h1_greska": 26,
+  "bez_viewport": 9,
+  "bez_canonical": 549,
+  "bez_opisa": 75,
+  "alt_nedostaje": 0,
+  "alt_prazan": 221,
+  "tudje_slike_str": 66,
+  "bez_pocetne": 66,
+  "pocetna_naziv": 830
+ }
+}

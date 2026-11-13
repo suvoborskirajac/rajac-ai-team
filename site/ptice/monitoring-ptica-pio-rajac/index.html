@@ -155,8 +155,8 @@ footer a{color:var(--green);text-decoration:none}
 <h1>Птице Рајца — у реалном времену</h1>
 <p>Снимио си птицу на Рајцу? Окачи је на <strong>eBird</strong> или <strong>iNaturalist</strong> — твоје посматрање се аутоматски појављује овде, у архиви врста и галерији. Свака чеклиста и фотографија гради заједничку слику живота на Рајцу.</p>
 <div class="hero-actions">
-<a class="btn gold" href="https://ebird.org/hotspot/L7416435" rel="noopener" target="_blank">＋ Постави на eBird</a>
-<a class="btn ghost" href="https://www.inaturalist.org/" rel="noopener" target="_blank">＋ Постави на iNaturalist</a>
+<a class="btn gold" href="https://ebird.org/hotspot/L7416435" rel="noopener">＋ Постави на eBird</a>
+<a class="btn ghost" href="https://www.inaturalist.org/" rel="noopener">＋ Постави на iNaturalist</a>
 </div>
 </div>
 </header>
@@ -179,21 +179,21 @@ footer a{color:var(--green);text-decoration:none}
 <div class="src-head"><div class="src-logo ebird">🟢</div><div>
 <strong>eBird</strong><small>Чеклисте и бројања · Cornell Lab</small></div></div>
 <ol>
-<li>Направи налог на <a href="https://ebird.org" rel="noopener" target="_blank">ebird.org</a> (или Merlin апликација).</li>
+<li>Направи налог на <a href="https://ebird.org" rel="noopener">ebird.org</a> (или Merlin апликација).</li>
 <li>Унеси чеклисту и као локацију изабери хотспот <strong>ПИО Рајац</strong>.</li>
 <li>Додај врсте, број јединки и (по жељи) снимке у Macaulay библиотеку.</li>
 </ol>
-<a class="pill" href="https://ebird.org/hotspot/L7416435" rel="noopener" target="_blank">→ Хотспот Рајац (L7416435)</a>
+<a class="pill" href="https://ebird.org/hotspot/L7416435" rel="noopener">→ Хотспот Рајац (L7416435)</a>
 </div>
 <div class="src-card">
 <div class="src-head"><div class="src-logo inat">🟩</div><div>
 <strong>iNaturalist</strong><small>Фотографије и одређивање врста</small></div></div>
 <ol>
-<li>Направи налог на <a href="https://inaturalist.org" rel="noopener" target="_blank">inaturalist.org</a> (или апликација).</li>
+<li>Направи налог на <a href="https://inaturalist.org" rel="noopener">inaturalist.org</a> (или апликација).</li>
 <li>Окачи фотографију птице — GPS из снимка смешта је на Рајац.</li>
 <li>Заједница потврђује врсту → постаје „research grade" и стиже овде.</li>
 </ol>
-<a class="pill" href="https://www.inaturalist.org/observations?taxon_id=3&amp;place_id=any&amp;lat=44.14&amp;lng=20.31&amp;radius=12" rel="noopener" target="_blank">→ Птице око Рајца на iNaturalist</a>
+<a class="pill" href="https://www.inaturalist.org/observations?taxon_id=3&amp;place_id=any&amp;lat=44.14&amp;lng=20.31&amp;radius=12" rel="noopener">→ Птице око Рајца на iNaturalist</a>
 </div>
 </div>
 </section>
@@ -218,7 +218,7 @@ footer a{color:var(--green);text-decoration:none}
 </section>
 </div>
 <footer><div class="wrap">
-  ПИО „Рајац" · Мониторинг птица уживо · извори: <a href="https://ebird.org/hotspot/L7416435" rel="noopener" target="_blank">eBird</a> и <a href="https://www.inaturalist.org/" rel="noopener" target="_blank">iNaturalist</a>. Подаци припадају ауторима посматрања.
+  ПИО „Рајац" · Мониторинг птица уживо · извори: <a href="https://ebird.org/hotspot/L7416435" rel="noopener">eBird</a> и <a href="https://www.inaturalist.org/" rel="noopener">iNaturalist</a>. Подаци припадају ауторима посматрања.
 </div></footer>
 <script>
 /* ====================== ПОДЕШАВАЊА ====================== */
@@ -291,7 +291,7 @@ function fromEbird(r){ return {source:'ebird', common:cap(r.serbian_name||r.comm
 function renderFeed(items){
   $('feedLoading').style.display='none';
   $('feed').innerHTML = items.slice(0,6).map(o=>`
-    <a class="obs" href="${esc(o.link)}" target="_blank" rel="noopener">
+    <a class="obs" href="${esc(o.link)}" rel="noopener">
       <div class="obs-photo">${badge(o.source)}${imgTag(o,520)}</div>
       <div class="obs-body">
         <strong>${esc(o.common)}</strong>
@@ -312,7 +312,7 @@ function renderArchive(list, reset=true){
   archiveShown=Math.min(archiveShown+12, ARCHIVE.length);
   $('archive').innerHTML = ARCHIVE.slice(0,archiveShown).map(s=>{
     const href=catLink(s.lat,s.code)||s.link||'#';
-    return `<a class="arch" href="${esc(href)}"${href.startsWith(CFG.catalogBase)?'':' target="_blank" rel="noopener"'}>
+    return `<a class="arch" href="${esc(href)}"${href.startsWith(CFG.catalogBase)?'':' rel="noopener"'}>
       <div class="arch-thumb">${imgTag(s,260,true)}</div>
       <div><strong>${esc(s.common)}</strong><div class="lat">${esc(s.lat)}</div><span class="cnt">${s.count} посм.</span></div>
     </a>`;
