@@ -1,0 +1,52 @@
+{
+"zamena": {
+"public_html/kopindeksi/UPUTSTVO_COPERNICUS.txt": 5,
+"public_html/kopindeksi/copernicus_auto_fetch.php": 1,
+"public_html/kopindeksi/copernicus_backfill_2025.php": 1,
+"public_html/kopindeksi/copernicus_config.php": 1,
+"public_html/kopindeksi/copernicus_frames_audit.php": 1,
+"public_html/kopindeksi/cron_copernicus_all.sh": 1,
+"public_html/kopindeksi/cron_copernicus_auto.sh": 1,
+"public_html/kopindeksi/cron_parcel_stats_monthly.sh": 1,
+"public_html/kopindeksi/parcel_longterm_console.php": 1,
+"public_html/kopindeksi/parcel_stats_console.php": 1,
+"public_html/kopindeksi/parcel_vci_console.php": 1,
+"public_html/amsrajac/parcel_vci_builder.php": 1,
+"public_html/amsrajac/parcel_import.php": 1,
+"public_html/amsrajac/parcel_longterm_console.php": 1,
+"public_html/amsrajac/parcel_stats_console.php": 1,
+"public_html/amsrajac/parcel_vci_console.php": 1,
+"public_html/amsrajac/copernicus_config.php": 1,
+"public_html/amsrajac/copernicus_frames_audit.php": 1,
+"public_html/amsrajac/copernicus_backfill_2025.php": 1,
+"public_html/amsrajac/copernicus_auto_fetch.php": 1,
+"public_html/amsrajac/UPUTSTVO_COPERNICUS.txt": 5,
+"public_html/amsrajac/cron_copernicus_all.sh": 1,
+"public_html/amsrajac/cron_parcel_stats_monthly.sh": 1,
+"public_html/amsrajac/cron_copernicus_auto.sh": 1,
+"public_html/monitoring-izvestaji/napravi-kopernikus-29-06-i-04-07.php": 1,
+"public_html/monitoring-izvestaji/copernicus/copernicus_guard_check.php": 1,
+"public_html/monitoring-izvestaji/copernicus/engine/rebuild-existing.php": 1,
+"public_html/monitoring-izvestaji/copernicus/engine/refresh-index.php": 1,
+"public_html/monitoring-izvestaji/copernicus/engine/force-rebuild-maps.php": 1,
+"public_html/monitoring-izvestaji/copernicus/engine/daily-build.php": 1,
+"public_html/monitoring-izvestaji/copernicus/engine/map-probe.php": 1,
+"public_html/monitoring-izvestaji/copernicus/engine/auto-publish.php": 2,
+"public_html/monitoring-izvestaji/copernicus/engine/daily-probe.php": 1,
+"public_html/monitoring-izvestaji/_engine/kopernikus-auto-sync.php": 1,
+"public_html/monitoring-izvestaji/monitoring-izvestaji/napravi-kopernikus-29-06-i-04-07.php": 1,
+"public_html/agroportal/copernicus_backfill_2025.php": 1,
+"public_html/agroportal/copernicus_builder.php": 1,
+"public_html/agroportal/cron_copernicus_all.sh": 1,
+"public_html/kopernikindeks/engine/daily-build.php": 1,
+"rajac-ai/data/fleet-health/eo-forest-diagnostics-v1.5.4.json": 1
+},
+"kar_files": [
+"public_html/kopindeksi/remove_histogram_from_index_v14.php",
+"public_html/amsrajac/install_histogram_sync_clean.php",
+"public_html/amsrajac/remove_histogram_from_index_v14.php"
+],
+"kar_dirs": [
+"public_html/kopindeksi/_arhiva-instalacionih-skripti"
+]
+}
